@@ -1,0 +1,27 @@
+.Row {
+    background-color: #353839;
+}
+
+.Longboxl {
+    color: rgb(255, 6, 6);
+    margin-top: 80px;
+    font-weight: 700;
+}
+
+.Longboxr {
+    color: rgb(255, 6, 6);
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+.Titlebox {
+	background-color: #3b444b;
+	margin-bottom: 15px;
+	margin-top: 40px;
+	color: #F5F5F5;
+	padding: 14px 10px 10px 10px;
+}
+
+.Door {
+    height: 100%;
+}

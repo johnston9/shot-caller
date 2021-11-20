@@ -1,0 +1,163 @@
+.App {
+  font-family: "DM Sans", sans-serif;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+.Main {
+  padding-top: 81px;
+}
+
+.Content {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #dadadf;
+}
+
+.FillerImage {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #555555;
+  transition: color ease-in-out 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover i {
+  color: #2142b2;
+  transition: color ease-in-out 0.3s;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+i {
+  color: #cfced3;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #2142b2;
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*---------------------colours----------------------------*/
+
+.shadow-light {
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.shadow-light1 {
+	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+}
+
+.link-color1 {
+	color: rgb(143, 212, 241);
+}
+
+.link-color {
+	color: rgb(170 231 255);
+}
+
+.antiquewhite {
+	color: antiquewhite;
+}
+
+.blue-sea-dark {
+    color: #0077a7;
+}
+
+.blue-sea {
+	color: #0087BE;
+}
+
+.blueBack-sea {
+	background-color: #0077a7;
+}
+
+.blue-sky {
+	color: #1AA6E4;
+}
+
+.aqua {
+	background-color: aquamarine;
+}
+
+.greentext {
+	color: #26a69a;
+}
+
+.crimson {
+	color: crimson;
+}
+
+.crimson-back {
+	background-color: crimson;
+}
+
+.matt-black {
+	background-color: #3b444b;
+}
+
+.border-red {
+	border-left: 3px solid crimson;
+}
+
+.textmatt-black {
+	color: #2e5b7e;
+}
+
+.white-back {
+	background-color: #F5F5F5;
+}
+
+.body-back {
+	background-color: #353839;
+}
+
+.offwhite {
+	color: #F5F5F5;
+}
+
+
+/*--------------------register/login pages-----------------------*/
