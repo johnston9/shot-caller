@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
 import styles from "../../styles/SignInUpForm.module.css";
@@ -8,24 +8,25 @@ import appStyles from "../../App.module.css";
 import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import axios from "axios";
+import { SetCurrentUserContext } from "../../App";
 
-const SignUpForm = () => { 
-  const [signUpData, setSignUpData] = useState({
+const SignInForm = () => { 
+    const setCurrentUser = useContext(SetCurrentUserContext)
+
+  const [signInData, setSignInData] = useState({
     username: "",
-    password1: "",
     password2: "",
-    key: "",
   })
 
-  const { username, password1, password2, key } = signUpData;
+  const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
 
   const history = useHistory()
 
   const handleChange = (event) => {
-    setSignUpData({
-      ...signUpData,
+    setSignInData({
+      ...signInData,
       [event.target.name]: event.target.value,
     });
   };
@@ -33,7 +34,8 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("/dj-rest-auth/registration/", signUpData)
+      const {data} = await axios.post("/dj-rest-auth/login/", signInData)
+      setCurrentUser(data.user);
       history.push("/signin");
     } catch (err) {
       setErrors(err.response?.data);
@@ -55,8 +57,8 @@ const SignUpForm = () => {
           <Col className="my-auto py-2 p-md-2" xs={10}
           md={{ span: 8, offset: 1 }}
            >
-            <Container >
-              <h1 className={styles.Header}>sign up</h1>
+            <Container>
+              <h1 className={styles.Header}>Sign in</h1>
               <Form onSubmit={handleSubmit} className={styles.Form} >
                 <Form.Group controlId="username" className="mb-2" >
                     <Form.Label className="d-none" >Username</Form.Label>
@@ -74,60 +76,27 @@ const SignUpForm = () => {
                   </Alert>
                 ))}
 
-                <Form.Group controlId="password1" className="mb-2">
+                <Form.Group controlId="password" className="mb-2">
                     <Form.Label className="d-none" >Password</Form.Label>
                     <Form.Control 
                       className={styles.Input}
-                      type="password" placeholder="Password1"
-                      name="password1" 
-                      value={password1}
+                      type="password" placeholder="Password"
+                      name="password" 
+                      value={password}
                       onChange={handleChange}
                       />
                 </Form.Group>
-                {errors.password1?.map((message, idx) => (
+                {errors.password?.map((message, idx) => (
                   <Alert variant="warning" key={idx}>
                     {message}
                   </Alert>
                 ))}
-
-                <Form.Group controlId="password2" className="mb-2">
-                    <Form.Label className="d-none" >Confirm Password</Form.Label>
-                    <Form.Control 
-                      className={styles.Input}
-                      type="password2" placeholder="Confirm Password"
-                      name="password2" 
-                      value={password2}
-                      onChange={handleChange}
-                      />
-                </Form.Group>
-                {errors.password2?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-
-                <Form.Group controlId="key" className="mb-2">
-                    <Form.Label className="d-none" >Enter Key</Form.Label>
-                    <Form.Control 
-                      className={styles.Input}
-                      type="key" placeholder="Enter Key"
-                      name="key" 
-                      value={key}
-                      onChange={handleChange}
-                      />
-                </Form.Group>
-                {errors.key?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-
                 <div className="text-center" >
                 <Button
                   className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
                   type="submit"
                 >
-                  Sign up
+                  Sign in
                 </Button>
                 </div>
                 {errors.non_field_errors?.map((message, idx) => (
@@ -158,4 +127,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default SignInForm;

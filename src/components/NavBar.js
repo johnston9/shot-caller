@@ -1,11 +1,43 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/logo2.png";
 // import door from "../assets/door.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import { CurrentUserContext } from '../App';
 
 const NavBar = () => {
+  const currentUser = useContext(CurrentUserContext)
+  const loggedInIcons = (
+    <>
+      {currentUser?.username}
+      <NavLink
+          className={styles.NavLink} 
+          activeClassName={styles.Active}
+          to="/"
+        >
+          <i className="fas fa-play"></i>Home
+        </NavLink>
+    </>
+  );
+  const loggedOutIcons = (
+    <>
+      <NavLink
+          className={styles.NavLink}
+          activeClassName={styles.Active}
+          to="/signin"
+        >
+          <i className="fas fa-play"></i>Sign in
+        </NavLink>
+        <NavLink
+          className={styles.NavLink}
+          activeClassName={styles.Active}         
+          to="/signup"
+        >
+          <i className="fas fa-play"></i>Sign up
+        </NavLink>
+    </>
+  );
     return (
     <Navbar className={styles.NavBar} expand="md" fixed="top">
         {/* <Container /> */}
@@ -17,24 +49,9 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto text-left">
-        <NavLink
-              className={styles.NavLink}
-              to="/"
-            >
-              <i className="fas fa-play"></i>Home
-            </NavLink>
-            <NavLink
-              className={styles.NavLink}
-              to="/signin"
-            >
-              <i className="fas fa-play"></i>Sign in
-            </NavLink>
-            <NavLink
-              className={styles.NavLink}
-              to="/signup"
-            >
-              <i className="fas fa-play"></i>Sign up
-            </NavLink>
+
+            {currentUser ? loggedInIcons : loggedOutIcons}
+
         </Nav>
         </Navbar.Collapse>
         {/* <Container /> */}
