@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
 import styles from "../../styles/SignInUpForm.module.css";
@@ -8,10 +8,10 @@ import appStyles from "../../App.module.css";
 import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import axios from "axios";
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
-const SignInForm = () => { 
-    const setCurrentUser = useContext(SetCurrentUserContext)
+const SignInForm = () => {
+  const setCurrentUser = useSetCurrentUser()
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -36,7 +36,7 @@ const SignInForm = () => {
     try {
       const {data} = await axios.post("/dj-rest-auth/login/", signInData)
       setCurrentUser(data.user);
-      history.push("/signin");
+      history.push("/home");
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -44,7 +44,7 @@ const SignInForm = () => {
 
   return (
     <div className={styles.SignupBox} >
-        <TopBox />
+        <TopBox title="Sign In" />
         <Row className={styles.Row}>
           <Col
             xs={1} md={1}
@@ -109,7 +109,7 @@ const SignInForm = () => {
             </Container>
             <Container className="mt-3" >
               <Link className={styles.Link} to="/signin">
-                Already have an account? <span>Sign in</span>
+                Register <span>Here</span>
               </Link>
             </Container>
           </Col>

@@ -42,7 +42,7 @@ const SignUpForm = () => {
 
   return (
     <div className={styles.SignupBox} >
-        <TopBox />
+        <TopBox title="Sign Up"/>
         <Row className={styles.Row}>
           <Col
             xs={1} md={1}

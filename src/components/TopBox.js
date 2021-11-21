@@ -3,7 +3,7 @@ import door from "../assets/door.png";
 import styles from "../styles/TopBox.module.css";
 import { Col, Row, Container, Image } from "react-bootstrap";
 
-function TopBox() {
+function TopBox(props) {
     return (
         <div className={styles.RegBox}>
         <Row className={styles.Row}>
@@ -27,7 +27,7 @@ function TopBox() {
                     />
                 </Col>
                 <Col xs={10} className={`${styles.Alignme}`} >
-                    <h2 className="mx-auto">Sign up</h2>
+                    <h2 className="mx-auto">{props.title} </h2>
                 </Col>
             </Row>
             </div>
