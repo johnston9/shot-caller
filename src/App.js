@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <h1>Home page</h1>} />
-        <Route element={<PageNotF />} />
+        <Route render={() => <PageNotF />} />
         {/* </Routes> */}
         </Switch>
       </Container>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PageNotF() {
+const PageNotF = () => {
     return (
         <div>
             <h2>Page not found</h2>

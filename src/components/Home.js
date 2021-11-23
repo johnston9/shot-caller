@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Home() {
+const Home = () => {
     return (
         <div>
             <h2>homio</h2>
@@ -9,3 +9,4 @@ function Home() {
 }
 
 export default Home
+
