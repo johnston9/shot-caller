@@ -1,0 +1,16 @@
+.Container {
+  min-height: 100px;
+}
+.Container2 {
+    min-height: 10px;
+  }
+
+  .Input {
+    background: #ffffff;
+    border: 1px solid #f0f1f9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #7177a1;
+    text-align: center;
+    padding: 10px;
+}
