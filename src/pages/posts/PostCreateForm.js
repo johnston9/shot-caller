@@ -14,16 +14,21 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Image } from "react-bootstrap";
 import { useHistory } from "react-router";
+import { axiosReq } from "../../api/axiosDefaults";
+import TopBox from "../../components/TopBox";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",
         content: "",
+        scene: "",
+        departments: "",
+        category: "",
         image1: "",
         image2: "",
       });
-      const { title, content, image1, image2 } = postData;
+      const { title, content, scene, departments, category, image1, image2 } = postData;
       const imageInput1 = useRef(null)
       const imageInput2 = useRef(null)
 
@@ -64,6 +69,9 @@ function PostCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
+    formData.append("scene", 1);
+    formData.append("departments", 'script');
+    formData.append("category", 'suggestions');
     formData.append("image1", imageInput1.current.files[0]);
     formData.append("image2", imageInput2.current.files[0]);   
     try {
@@ -118,9 +126,11 @@ function PostCreateForm() {
   );
 
   return (
+    <div>
+    <TopBox title="Create Post" />
     <Form onSubmit={handleSubmit}>
     <Row>
-    <Col md={6} className="d-none d-md-block p-0 p-md-2">
+    <Col md={6} className="p-0 p-md-2">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >{textFields}</Container>
         <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
       </Col>
@@ -210,6 +220,7 @@ function PostCreateForm() {
       </Col>   
     </Row>
   </Form>
+  </div>
   );
 }
 

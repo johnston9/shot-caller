@@ -24,6 +24,16 @@ const NavBar = () => {
     }
   };
 
+  const addSceneIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/scenes/create"
+    >
+      <i className="far fa-plus-square"></i>Add scene
+    </NavLink>
+  );
+
   const addPostIcon = (
     <NavLink
       className={styles.NavLink}
@@ -96,7 +106,8 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="30" /> Shot Caller
             </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
+        {currentUser && addSceneIcon }
+        {currentUser && addPostIcon }
         <Navbar.Toggle onClick={() => setExpanded(!expanded)}
           ref={ref}
           aria-controls="basic-navbar-nav" />

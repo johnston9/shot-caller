@@ -9,6 +9,7 @@ import { Route, Switch } from "react-router-dom";
 import SignInForm from './pages/auth/SignInForm';
 import SignUpForm from './pages/auth/SignUpForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
+import SceneCreateForm from './pages/scenes/SceneCreateForm';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <h1>Home page</h1>} />
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route render={() => <PageNotF />} />
         {/* </Routes> */}
         </Switch>
