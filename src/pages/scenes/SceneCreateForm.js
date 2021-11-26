@@ -12,7 +12,7 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Image } from "react-bootstrap";
+import { Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
@@ -33,7 +33,7 @@ function SceneCreateForm() {
         info: "",
         image: "",
       });
-      const { number, title, int_ext, location,
+      const { number, title, int_ext, time, location,
         characters, action, content, shotlist, 
         storyboard, info, image } = postData;
 
@@ -78,6 +78,7 @@ function SceneCreateForm() {
     formData.append("number", number);
     formData.append("title", title);
     formData.append("int_ext", int_ext);
+    formData.append("time", time);
     formData.append("location", location);
     formData.append("characters", characters);
     formData.append("action", action);
@@ -85,11 +86,16 @@ function SceneCreateForm() {
     formData.append("shotlist", shotlist);
     // formData.append("storyboard", storyboard);
     formData.append("info", info);
-    formData.append("image", imageInput.current.files[0]);  
-    formData.append("storyboard", storyboardInput.current.files[0]); 
+    if (image) {
+      formData.append("image", imageInput.current.files[0]);
+    }
+    if (storyboard) {
+      formData.append("storyboard", storyboardInput.current.files[0]); 
+    }
+      
     try {
       const { data } = await axiosReq.post("/scenes/", formData);
-      history.push(`/`);
+      history.push(`/scenes/${data.id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -109,6 +115,11 @@ function SceneCreateForm() {
                 onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.number?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="title" className="mb-2" >
                 <Form.Label className="p-1" >Title</Form.Label>
                 <Form.Control 
@@ -118,6 +129,11 @@ function SceneCreateForm() {
                 onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.title?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="int_ext" className="mb-2" >
                 <Form.Label className="p-1" >Int-Ext</Form.Label>
                 <Form.Control as="select"
@@ -127,9 +143,28 @@ function SceneCreateForm() {
                   aria-label="int ext select">
                   <option>Select</option>
                   <option value="int">Int</option>
-                  <option value="2">Ext</option>
+                  <option value="ext">Ext</option>
                 </Form.Control>
             </Form.Group>
+            {errors?.int_ext?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="time" className="mb-2" >
+                <Form.Label className="p-1" >Time</Form.Label>
+                <Form.Control 
+                type="text"
+                name="time"
+                value={time}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.time?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="location" className="mb-2" >
                 <Form.Label className="p-1" >Location</Form.Label>
                 <Form.Control 
@@ -139,6 +174,11 @@ function SceneCreateForm() {
                 onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.location?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="characters" className="mb-2" >
                 <Form.Label className="p-1" >Characters</Form.Label>
                 <Form.Control 
@@ -148,6 +188,11 @@ function SceneCreateForm() {
                 onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.characters?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="action" className="mb-2" >
                 <Form.Label className="p-1" >Action</Form.Label>
                 <Form.Control 
@@ -157,6 +202,11 @@ function SceneCreateForm() {
                 onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.action?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="content" className="mb-2" >
                 <Form.Label className="p-1" >Content</Form.Label>
                 <Form.Control 
@@ -169,6 +219,11 @@ function SceneCreateForm() {
                     onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.content?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="shotlist" className="mb-2" >
                 <Form.Label className="p-1" >Shot List</Form.Label>
                 <Form.Control 
@@ -181,6 +236,11 @@ function SceneCreateForm() {
                     onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.shotlist?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             {/* <Form.Group controlId="storyboard" className="mb-2" >
                 <Form.Label className="p-1" >storyboard</Form.Label>
                 <Form.Control 
@@ -190,7 +250,12 @@ function SceneCreateForm() {
                     value={storyboard}
                     onChange={handleChange}
                     />
-            </Form.Group> */}
+            </Form.Group>
+            errors?.storyboard?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            )) */}
             <Form.Group controlId="info" className="mb-2" >
                 <Form.Label className="p-1" >Info</Form.Label>
                 <Form.Control 
@@ -201,6 +266,11 @@ function SceneCreateForm() {
                     onChange={handleChange}
                     />
             </Form.Group>
+            {errors?.info?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
       </div>
   )
@@ -208,7 +278,7 @@ function SceneCreateForm() {
     <div className="text-center">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
@@ -223,7 +293,7 @@ function SceneCreateForm() {
     <TopBox title="Create Scene" />
     <Form onSubmit={handleSubmit}>
     <Row>
-    <Col md={6} className="d-none d-md-block p-0 p-md-2">
+    <Col md={6} className="p-0 p-md-2">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >{textFields}</Container>
         <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
       </Col>
@@ -267,6 +337,11 @@ function SceneCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
         </Container>
         {/* storyboard */}
         <Container
@@ -307,6 +382,11 @@ function SceneCreateForm() {
                 ref={storyboardInput}
               />
             </Form.Group>
+            {errors?.storyboard?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             </Container>
       </Col>   
     </Row>

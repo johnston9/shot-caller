@@ -10,6 +10,7 @@ import SignInForm from './pages/auth/SignInForm';
 import SignUpForm from './pages/auth/SignUpForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import SceneCreateForm from './pages/scenes/SceneCreateForm';
+import PostPage from './pages/posts/PostPage';
 
 function App() {
 
@@ -22,9 +23,10 @@ function App() {
         <Route exact path="/" render={() => <h1>Shot Caller</h1>} />
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
-        <Route exact path="/home" render={() => <h1>Home page</h1>} />
-        <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
+        <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        <Route exact path="/posts/:id" render={() => <PostPage />} />
         <Route render={() => <PageNotF />} />
         {/* </Routes> */}
         </Switch>
