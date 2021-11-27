@@ -22,3 +22,8 @@
   .HeartOutline:hover {
     color: #f85032;
   }
+
+  .Info {
+    color: #2142b2;
+    font-weight: 700;
+  }

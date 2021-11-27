@@ -45,8 +45,9 @@ const Post = (props) => {
                         <span>{updated_at}</span>
                         {is_owner && postPage && "..."}
                     </div>
+        
                     {/* like */}
-                    <div className={styles.PostBar}>
+                    <div className={styles.Post}>
                         {is_owner ? (
                             <OverlayTrigger
                             placement="top"
@@ -76,17 +77,21 @@ const Post = (props) => {
                         </Link>
                         {comments_count}
                         </div>
-                </div>
+                    </div>
+                    {<Card.Text className="styles.Info" >SCENE {scene} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
                 </Card.Body>
-                <Card.Img src={image1} alt={title} />
-                <Card.Img src={image2} alt={title} />
-                <Card.Img src={image3} alt={title} />
-                <Card.Img src={image4} alt={title} />
-                <Card.Img src={image5} alt={title} />
-                <Card.Body>
+                <hr />
+                <Card.Body className="pt-1" >
                     {title && <Card.Title className="text-center">{title}</Card.Title>}
+                    <hr />
                     {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>
+                <hr />
+                {image1 && <Card.Img src={image1} alt={title} className="mb-3" />}
+                {image2 && <Card.Img src={image2} alt={title} className="mb-3" />}
+                {image3 && <Card.Img src={image3} alt={title} className="mb-3" />}
+                {image4 && <Card.Img src={image4} alt={title} className="mb-3" />}
+                {image5 && <Card.Img src={image5} alt={title} className="mb-3" />}
             </Card>
         </div>
     )
