@@ -107,8 +107,8 @@ function PostCreateForm() {
     setPostData({
       ...postData,
       scene: 2,
-      departments: 'location',
-      category: 'workspace'
+      departments: 'camera',
+      category: 'finals'
     });
     const formData = new FormData();
 

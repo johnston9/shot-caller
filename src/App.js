@@ -56,6 +56,16 @@ function App() {
               />
             )}
           />
+        <Route
+            exact
+            path="/dept/category"
+            render={() => (
+              <PostsPage
+                message="No results found."
+                filter={`departments=camera&category=finals`}
+              />
+            )}
+          />
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />
         <Route exact path="/posts/:id" render={() => <PostPage />} />
         <Route render={() => <PageNotF />} />
