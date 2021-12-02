@@ -40,7 +40,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i className="far fa-plus-square"></i>Add post
+      <i className="navicon far fa-plus-square"></i>Add post
     </NavLink>
   );
   const loggedInIcons = (
@@ -50,21 +50,25 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/"
         >
-          <i className="fas fa-play"></i>Home
+          <i className="navicon fas fa-play"></i>Home
       </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/posts"
       >
-        <i className="fas fa-stream"></i>Posts
+        <i className="navicon fas fa-stream"></i>Posts
       </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/dept/category"
       >
-        <i className="fas fa-stream"></i>script
+        {/* <div style="font-size: 0.5rem;">
+        <i className="fas fa-stream fa-xs"></i>
+        </div> */}
+        <i className="fas fa-stream fa-xs"></i>
+        script
       </NavLink>
       <NavLink
         className={styles.NavLink}

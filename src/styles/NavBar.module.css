@@ -5,8 +5,13 @@
 
 .NavLink {
   padding: 5px;
+  font-size: 12px;
 }
 
 .Active i {
   color: #2142b2;
+}
+
+i {
+  font-size: .5em !important;
 }
