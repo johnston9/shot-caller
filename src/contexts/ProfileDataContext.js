@@ -11,9 +11,10 @@ export const useSetProfileData  = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({children}) => {
     const [profileData, setProfileData] = useState({
+        pageProfile: { results: [] },
         popularProfiles: { results: [] },
     })
-    // const { popularProfiles } = profileData;
+
     const currentUser = useSetCurrentUser();
 
     useEffect(() => {
