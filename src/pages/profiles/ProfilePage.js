@@ -31,7 +31,7 @@ function ProfilePage() {
   const currentUser = useCurrentUser();
   const { id } = useParams();
 
-  const setProfileData = useSetProfileData();
+  const { setProfileData, handleFollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
 
   const [profile] = pageProfile.results;
@@ -75,7 +75,7 @@ function ProfilePage() {
               <div>{profile?.posts_count}</div>
               <div>posts</div>
             </Col>
-            <Col xs={3} className="my-2">
+            <Col xs={3} className="my-2 mx-3">
               <div>{profile?.followers_count}</div>
               <div>followers</div>
             </Col>
@@ -85,7 +85,7 @@ function ProfilePage() {
             </Col>
           </Row>
         </Col>
-        <Col lg={3} className="text-lg-right">
+        <Col lg={3} className="mt-2 text-lg-right">
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
@@ -98,7 +98,7 @@ function ProfilePage() {
             ) : (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.Black}`}
-                onClick={() => {}}
+                onClick={() => handleFollow(profile)}
               >
                 follow
               </Button>
