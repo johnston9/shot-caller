@@ -4,8 +4,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import Asset from "../../components/Asset";
-import Button from '@restart/ui/esm/Button';
-import Profile from './Profile';
+import Button from '@restart/ui/esm/Button';import Profile from './Profile';
 import { useProfileData } from '../../contexts/ProfileDataContext';
 
 const PopularProfiles = ({mobile}) => {

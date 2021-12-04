@@ -15,7 +15,6 @@ export const fetchMoreData = async (resource, setResource) => {
   } catch (err) {}
 };
 
-
 export const followHelper = (profile, clickedProfile, following_id) => {
   return profile.id === clickedProfile.id
     ? // This is the profile I clicked on,
@@ -33,3 +32,15 @@ export const followHelper = (profile, clickedProfile, following_id) => {
       // the user owns, so just return it unchanged
       profile;
 };
+
+export const unfollowHelper = (profile, clickedProfile) => {
+  return profile.id === clickedProfile.id
+    ? {
+        ...profile,
+        followers_count: profile.followers_count - 1,
+        following_id: null,
+      }
+    : profile.is_owner
+    ? { ...profile, following_count: profile.following_count - 1 }
+    : profile;
+}
