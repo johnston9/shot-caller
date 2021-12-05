@@ -8,7 +8,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
 
-const Post = (props) => {
+const PostTop = (props) => {
   useRedirect("loggedOut")
     const {
         id,
@@ -86,7 +86,9 @@ const Post = (props) => {
     return (
         <div>
             <Card className={styles.Post} >
-                <Card.Body>
+            <Link to={`/posts/${id}`}>
+                <Card.Body className="py-1">
+                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {scene} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
                 <div className="d-flex align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
@@ -100,8 +102,7 @@ const Post = (props) => {
                             handleDelete={handleDelete}
                         />
                         ) }
-                    </div>
-        
+                    </div>        
                     {/* like */}
                     <div className={styles.PostBar}>
                         {is_owner ? (
@@ -134,23 +135,13 @@ const Post = (props) => {
                         {comments_count}
                         </div>
                     </div>
-                     {departments && <Card.Text className={`${styles.Info} text-center`} >SCENE {scene} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
-                </Card.Body>
-                <hr />
-                <Card.Body className="pt-1" >
+                    <hr className="mb-1" />
                     {title && <Card.Title className="text-center">{title}</Card.Title>}
-                    <hr />
-                    {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>
-                <hr />
-                {image1 && <Card.Img src={image1} alt={title} className="mb-3" />}
-                {image2 && <Card.Img src={image2} alt={title} className="mb-3" />}
-                {image3 && <Card.Img src={image3} alt={title} className="mb-3" />}
-                {image4 && <Card.Img src={image4} alt={title} className="mb-3" />}
-                {image5 && <Card.Img src={image5} alt={title} className="mb-3" />}
+            </Link>
             </Card>
         </div>
     )
 }
 
-export default Post
+export default PostTop

@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button"
 
 import appStyles from "../../App.module.css";
-import { useParams } from "react-router";
+import btnStyles from "../../styles/Button.module.css";
+import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
 import Comment from "../comments/Comment";
@@ -15,14 +17,17 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useRedirect } from "../../hooks/Redirect";
 
 function PostPage() {
+  useRedirect("loggedOut")
     const { id } = useParams()
     const [post, setPost] = useState({ results: [] });
 
     const currentUser = useCurrentUser();
     const profile_image = currentUser?.profile_image;
     const [comments, setComments] = useState({ results: [] });
+    const history = useHistory();
 
     useEffect(() => {
       const handleMount = async () => {
@@ -45,6 +50,12 @@ function PostPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+        onClick={() => history.goBack()}
+      >
+        Back to Posts
+      </Button>
         <PopularProfiles mobile />
         <Post {...post.results[0]} setPosts={setPost} postPage/>
         <Container className={appStyles.Content}>

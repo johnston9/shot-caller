@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { axiosReq } from '../../api/axiosDefaults';
+// import { axiosReq } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css";
-import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
+// import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import Asset from "../../components/Asset";
-import Button from '@restart/ui/esm/Button';import Profile from './Profile';
+import Profile from './Profile';
 import { useProfileData } from '../../contexts/ProfileDataContext';
+import { useRedirect } from '../../hooks/Redirect';
 
 const PopularProfiles = ({mobile}) => {
+  useRedirect("loggedOut")
   const [show, setShow] = useState(false);
   const { popularProfiles } = useProfileData();
     return (

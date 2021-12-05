@@ -7,8 +7,10 @@ import { PostDropdown } from "../../components/PostDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentEditForm from "./CommentEditForm";
 import styles from "../../styles/Comment.module.css";
+import { useRedirect } from "../../hooks/Redirect";
 
 const Comment = (props) => {
+  useRedirect("loggedOut")
     const { profile_id, profile_image, owner, updated_at, 
         content, id, setPost, setComments, } = props;
     

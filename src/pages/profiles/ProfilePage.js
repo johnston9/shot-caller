@@ -24,8 +24,10 @@ import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import {ProfileEditDropdown} from "../../components/PostDropdown";
+import { useRedirect } from "../../hooks/Redirect";
 
 function ProfilePage() {
+  useRedirect("loggedOut")
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
 

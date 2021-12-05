@@ -16,8 +16,10 @@ import { Image, Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
+import { useRedirect } from "../../hooks/Redirect";
 
 function PostEditForm() {
+  useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",

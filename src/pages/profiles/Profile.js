@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
 import { Button } from "react-bootstrap";
 import { useSetProfileData } from '../../contexts/ProfileDataContext';
+import { useRedirect } from '../../hooks/Redirect';
 
 const Profile = (props) => {
+    useRedirect("loggedOut")
     const { profile, mobile, imageSize = 40 } = props;
     const { id, following_id, image, owner } = profile;
 

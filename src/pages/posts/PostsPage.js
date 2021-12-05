@@ -15,8 +15,11 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useRedirect } from "../../hooks/Redirect";
+import PostTop from "./PostTop";
 
 function PostsPage({ message, filter = "" }) {
+  useRedirect("loggedOut")
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation()
@@ -65,7 +68,7 @@ function PostsPage({ message, filter = "" }) {
             {posts.results.length ? (
               <InfiniteScroll
               children={posts.results.map((post) => (
-                <Post key={post.id} {...post} setPosts={setPosts} />
+                <PostTop key={post.id} {...post} setPosts={setPosts} />
               ))}
               dataLength={posts.results.length}
               loader={<Asset spinner />}
