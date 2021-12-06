@@ -10,7 +10,7 @@ import { useRedirect } from '../../hooks/Redirect';
 
 const Profile = (props) => {
     useRedirect("loggedOut")
-    const { profile, mobile, imageSize = 40 } = props;
+    const { profile, imageSize = 40 } = props;
     const { id, following_id, image, owner } = profile;
 
     const currentUser = useCurrentUser();

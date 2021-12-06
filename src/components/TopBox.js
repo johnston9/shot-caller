@@ -1,7 +1,7 @@
 import React from "react";
 import door from "../assets/door.png";
 import styles from "../styles/TopBox.module.css";
-import { Col, Row, Container, Image } from "react-bootstrap";
+import { Col, Row, Image } from "react-bootstrap";
 
 function TopBox(props) {
     return (

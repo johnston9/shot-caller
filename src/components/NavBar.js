@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import logo from "../assets/logo2.png";
 // import door from "../assets/door.png";
 import styles from "../styles/NavBar.module.css";
@@ -8,6 +8,7 @@ import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContex
 import Avatar from "./Avatar";
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import { removeTokenTimestamp } from '../utils/utils';
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -19,6 +20,7 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (err) {
       console.log(err);
     }

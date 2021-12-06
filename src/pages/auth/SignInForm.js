@@ -3,13 +3,14 @@ import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
+// import appStyles from "../../App.module.css";
 
 import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/Redirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -38,6 +39,7 @@ const SignInForm = () => {
     try {
       const {data} = await axios.post("/dj-rest-auth/login/", signInData)
       setCurrentUser(data.user);
+      setTokenTimestamp(data);
       history.goBack();
       // history.push("/home");
     } catch (err) {

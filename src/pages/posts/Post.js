@@ -29,7 +29,7 @@ const Post = (props) => {
         image4,
         image5,
         updated_at,
-        postPage,
+        // postPage,
         setPosts,
       } = props;
 

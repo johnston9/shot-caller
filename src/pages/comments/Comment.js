@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
