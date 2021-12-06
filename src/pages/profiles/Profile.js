@@ -25,9 +25,9 @@ const Profile = (props) => {
                 <Link to={`/profiles/${id}`}>
                     <Avatar src={image} height={imageSize}/>
                 </Link>
-                <spam className={`mx-2 ${styles.WordBreak}`}>
+                <span className={`mx-2 ${styles.WordBreak}`}>
                 <strong>{owner}</strong>
-                </spam>
+                </span>
                 </span>
                 <div className="mt-2" style={{float: 'right'}}>
                     {currentUser &&
