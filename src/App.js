@@ -1,7 +1,7 @@
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
-import PageNotF from './components/PageNotF';
+import PageNotFound from './components/PageNotFound';
 import Container from "react-bootstrap/Container";
 // import { Route, Routes } from "react-router-dom";
 import "./api/axiosDefaults";
@@ -90,7 +90,7 @@ function App() {
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
           />
-        <Route render={() => <PageNotF />} />
+        <Route render={() => <PageNotFound />} />
         {/* </Routes> */}
         </Switch>
       </Container>

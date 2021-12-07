@@ -1,5 +1,7 @@
 import React from 'react';
-import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import Card from "react-bootstrap/Card";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from 'react-router-dom';
@@ -19,17 +21,10 @@ const PostTop = (props) => {
         likes_count,
         like_id,
         title,
-        // content,
         scene,
         departments,
         category,
-        // image1,
-        // image2,
-        // image3,
-        // image4,
-        // image5,
         updated_at,
-        // postPage,
         setPosts,
       } = props;
 
