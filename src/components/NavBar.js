@@ -36,6 +36,16 @@ const NavBar = () => {
     </NavLink>
   );
 
+  const scenesIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/scenes"
+    >
+      <i className="navicon fas fa-stream"></i>Scenes
+    </NavLink>
+  );
+
   const addPostIcon = (
     <NavLink
       className={styles.NavLink}
@@ -128,6 +138,7 @@ const NavBar = () => {
         </NavLink>
         {currentUser && addSceneIcon }
         {currentUser && addPostIcon }
+        {currentUser && scenesIcon }
         <Navbar.Toggle onClick={() => setExpanded(!expanded)}
           ref={ref}
           aria-controls="basic-navbar-nav" />

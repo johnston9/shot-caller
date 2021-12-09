@@ -18,6 +18,8 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import ScenesPage from './pages/scenes/ScenesPage';
+import ScenePage from './pages/scenes/ScenePage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -34,6 +36,14 @@ function App() {
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
+        <Route exact path="/scenes/:id" render={() => <ScenePage />} />
+        <Route
+            exact
+            path="/scenes"
+            render={() => (
+              <ScenesPage message="No results found. Please add a scene" />
+            )}
+          />
         <Route
             exact
             path="/posts"
