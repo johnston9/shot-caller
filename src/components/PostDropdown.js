@@ -72,3 +72,46 @@ export function ProfileEditDropdown({ id }) {
     </Dropdown>
   );
 }
+
+// department dropdown 
+// export function DeptDropdown({ setScene, setDept, setcategory, id, department }) {
+// export function DeptDropdown({ handleClick, dept, category, id}) {
+//   const history = useHistory();
+//   return (
+//     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
+//       <Dropdown.Toggle as={DropdownIcon} />
+//       <Dropdown.Menu>
+//         <Dropdown.Item
+//           onClick={handleClick(dept, id, category="requirements") }
+//           aria-label="edit-profile"
+//         >
+//           <i className="fas fa-edit" /> Requirements
+//         </Dropdown.Item>
+//         <Dropdown.Item
+//           onClick={handleClick("requirements") }
+//           aria-label="edit-profile"
+//         >
+//           <i className="fas fa-edit" /> Requirements
+//         </Dropdown.Item>
+//         <Dropdown.Item
+//           onClick={handleClick("requirements") }
+//           aria-label="edit-profile"
+//         >
+//           <i className="fas fa-edit" /> Requirements
+//         </Dropdown.Item>
+//         <Dropdown.Item
+//           onClick={handleClick("requirements") }
+//           aria-label="edit-profile"
+//         >
+//           <i className="fas fa-edit" /> Requirements
+//         </Dropdown.Item>
+//         <Dropdown.Item
+//           onClick={handleClick("requirements") }
+//           aria-label="edit-profile"
+//         >
+//           <i className="fas fa-edit" /> Requirements
+//         </Dropdown.Item>
+//       </Dropdown.Menu>
+//     </Dropdown>
+//   );
+// }

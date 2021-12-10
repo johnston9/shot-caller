@@ -11,12 +11,13 @@ import Container from 'react-bootstrap/Container';
 import btnStyles from "../../styles/Button.module.css";
 import Scene from './Scene';
 
-const ScenePage = () => {
+const ScenePage = (props) => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [scene, setScene] = useState({ results: [] });
     const currentUser = useCurrentUser();
     const history = useHistory();
+    // const {setSceneId, setDept, setCategory} = props; 
 
     useEffect(() => {
         const handleMount = async () => {
@@ -40,7 +41,13 @@ const ScenePage = () => {
                 >
                     Back to Scenes
                 </Button>
-                <Scene {...scene.results[0]} setScene={setScene}/>
+                <Scene {...scene.results[0]} 
+                  setScene={setScene}
+                //   setSceneId={setSceneId}
+                //   setDept={setDept}
+                //   setCategory={setCategory}
+                  />
+
                 </Col>
             </Row>
         </div>

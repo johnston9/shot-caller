@@ -16,3 +16,9 @@
     cursor: default;
     color: #cfced3;
   }
+
+  @media screen and (max-width: 600px) {
+    .Title {
+      font-size: .75em;
+    }
+  }

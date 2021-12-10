@@ -20,8 +20,12 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
+import { useState } from 'react';
 
 function App() {
+  // const [sceneId, setSceneId] = useState("");
+  // const [dept, setDept] = useState("");
+  // const [category, setCategory] = useState("");
   const currentUser = useCurrentUser()
   const profile_id = currentUser?.profile_id || '';
 
@@ -36,12 +40,32 @@ function App() {
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
-        <Route exact path="/scenes/:id" render={() => <ScenePage />} />
+        <Route 
+            exact 
+            path="/scenes/:id" 
+            render={() => (
+            <ScenePage
+              // setSceneId={setSceneId}
+              // setDept={setDept}
+              // setCategory={setCategory}
+             />
+             )} />
+        <Route
+            exact
+            path="/dept/category"
+            render={() => (
+              <PostsPage
+                message="No results found."
+                // filter={`scene=${sceneId}&departments=${dept}&category=${category} `}
+              />
+            )}
+          />
         <Route
             exact
             path="/scenes"
             render={() => (
-              <ScenesPage message="No results found. Please add a scene" />
+              <ScenesPage 
+               message="No results found. Please add a scene" />
             )}
           />
         <Route
@@ -71,16 +95,16 @@ function App() {
               />
             )}
           />
-        <Route
+        {/* <Route
             exact
             path="/dept/category"
             render={() => (
               <PostsPage
                 message="No results found."
-                filter={`departments=camera&category=finals`}
+                filter={`scene=${sceneId}&departments=${dept}&category=${category} `}
               />
             )}
-          />
+          /> */}
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         <Route exact path="/posts/:id" render={() => <PostPage />} />

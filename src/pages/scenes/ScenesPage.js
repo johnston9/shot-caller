@@ -3,12 +3,12 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/PostsPage.module.css";
+import styles from "../../styles/Scene.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
-import InfiniteScroll from 'react-infinite-scroll-component';
+// import InfiniteScroll from 'react-infinite-scroll-component';
+// import { fetchMoreData } from '../../utils/utils';
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
-import { fetchMoreData } from '../../utils/utils';
 import { useRedirect } from '../../hooks/Redirect';
 import appStyles from "../../App.module.css";
 import SceneTop from './SceneTop';
@@ -78,7 +78,6 @@ const ScenesPage = ({message}) => {
                 scenes.results.map((scene) => (
                   <Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
                   <SceneTop key={scene.id} {...scene} setScenes={setScenes} />
-                  {/* <p>{scene.id} {scene.number}</p> */}
                   </Col>
                 ))) 
 

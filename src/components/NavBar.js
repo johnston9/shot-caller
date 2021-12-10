@@ -76,9 +76,6 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/dept/category"
       >
-        {/* <div style="font-size: 0.5rem;">
-        <i className="fas fa-stream fa-xs"></i>
-        </div> */}
         <i className="fas fa-stream fa-xs"></i>
         script
       </NavLink>
