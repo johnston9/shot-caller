@@ -21,6 +21,7 @@ import PostTop from "./PostTop";
 function PostsPage({ message, filter = "" }) {
   useRedirect("loggedOut")
   const [posts, setPosts] = useState({ results: [] });
+  const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation()
 
@@ -34,6 +35,10 @@ function PostsPage({ message, filter = "" }) {
         setHasLoaded(true);
       } catch(err) {
         console.log(err);
+        if (err.response?.status !== 401) {
+          setErrors(err.response?.data);
+          setHasLoaded(true);
+        }
       }
     }
     setHasLoaded(false);

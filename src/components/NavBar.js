@@ -71,14 +71,14 @@ const NavBar = () => {
       >
         <i className="navicon fas fa-stream"></i>Posts
       </NavLink>
-      <NavLink
+      {/* <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/dept/category"
       >
         <i className="fas fa-stream fa-xs"></i>
         script
-      </NavLink>
+      </NavLink> */}
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}

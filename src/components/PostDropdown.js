@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
 import { useHistory } from "react-router";
+import { useSetCategoryContext } from "../contexts/DeptCategoryContext";
 
 const DropdownIcon = React.forwardRef(({ onClick }, ref) => (
   <i
@@ -74,44 +75,43 @@ export function ProfileEditDropdown({ id }) {
 }
 
 // department dropdown 
-// export function DeptDropdown({ setScene, setDept, setcategory, id, department }) {
-// export function DeptDropdown({ handleClick, dept, category, id}) {
-//   const history = useHistory();
-//   return (
-//     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
-//       <Dropdown.Toggle as={DropdownIcon} />
-//       <Dropdown.Menu>
-//         <Dropdown.Item
-//           onClick={handleClick(dept, id, category="requirements") }
-//           aria-label="edit-profile"
-//         >
-//           <i className="fas fa-edit" /> Requirements
-//         </Dropdown.Item>
-//         <Dropdown.Item
-//           onClick={handleClick("requirements") }
-//           aria-label="edit-profile"
-//         >
-//           <i className="fas fa-edit" /> Requirements
-//         </Dropdown.Item>
-//         <Dropdown.Item
-//           onClick={handleClick("requirements") }
-//           aria-label="edit-profile"
-//         >
-//           <i className="fas fa-edit" /> Requirements
-//         </Dropdown.Item>
-//         <Dropdown.Item
-//           onClick={handleClick("requirements") }
-//           aria-label="edit-profile"
-//         >
-//           <i className="fas fa-edit" /> Requirements
-//         </Dropdown.Item>
-//         <Dropdown.Item
-//           onClick={handleClick("requirements") }
-//           aria-label="edit-profile"
-//         >
-//           <i className="fas fa-edit" /> Requirements
-//         </Dropdown.Item>
-//       </Dropdown.Menu>
-//     </Dropdown>
-//   );
-// }
+export function DeptDropdown({ handleClick}) {
+  const history = useHistory();
+  return (
+    <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
+      <Dropdown.Toggle as={DropdownIcon} />
+      <Dropdown.Menu>
+        <Dropdown.Item
+          onClick={() => handleClick('requirements') }
+          aria-label="select requirements"
+        >
+          <i className="fas fa-edit" /> Requirements
+        </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => handleClick("workspace") }
+          aria-label="select workspace"
+        >
+          <i className="fas fa-edit" /> Workspace
+        </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => handleClick("finals") }
+          aria-label="select finals"
+        >
+          <i className="fas fa-edit" /> Finals
+        </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => handleClick("shooting") }
+          aria-label="select shooting"
+        >
+          <i className="fas fa-edit" /> Shooting
+        </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => handleClick("info") }
+          aria-label="select info"
+        >
+          <i className="fas fa-edit" /> Info
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}

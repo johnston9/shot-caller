@@ -21,10 +21,14 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
 import { useState } from 'react';
+import { useCategoryContext, useDeptContext, useSceneContext } from './contexts/DeptCategoryContext';
 
 function App() {
   const currentUser = useCurrentUser()
   const profile_id = currentUser?.profile_id || '';
+  const sceneId = useSceneContext();
+  const dept = useDeptContext();
+  const category = useCategoryContext();
 
   return (
     <div className={styles.App} >
@@ -50,7 +54,8 @@ function App() {
             render={() => (
               <PostsPage
                 message="No results found."
-                // filter={`scene=${sceneId}&departments=${dept}&category=${category} `}
+                // filter={`scene=1&departments=camera&category=finals`}
+                filter={`scene=${sceneId}&departments=${dept}&category=${category} `}
               />
             )}
           />

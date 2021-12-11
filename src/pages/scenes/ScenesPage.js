@@ -42,13 +42,14 @@ const ScenesPage = ({message}) => {
         //     }
         // ) : fetchScenes() }
 
-        const timer = setTimeout(() => {
-            fetchScenes();
-        }, 1000)
+        // const timer = setTimeout(() => {
+        //     fetchScenes();
+        // }, 1000)
 
-        return () => {
-            clearTimeout(timer);
-          };
+        // return () => {
+        //     clearTimeout(timer);
+        //   };
+        fetchScenes();
     
       }, [])
 
