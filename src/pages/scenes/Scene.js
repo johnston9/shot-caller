@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -13,18 +13,21 @@ import { DeptDropdown } from '../../components/PostDropdown';
 
 const Scene = (props) => {
     useRedirect("loggedOut")
-    const { id, number, setSceneId, setDept, setCategory,
+    const [sceneId, setSceneId] = useState("2");
+    const [dept, setDept] = useState("script");
+    const [category, setCategory] = useState("info");
+    const { id, number,
         title, int_ext, time, location,
         characters, action, content, shotlist, 
         storyboard, info, image } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();
 
-    const handleClick = () => {
-      // setSceneId(id);
-      // setDept(dept);
-      // setCategory(category);
-      history.push(`dept/category,`)
+    const handleClickRequirements = (dept) => {
+      setSceneId(id);
+      setDept(dept);
+      setCategory("requirements");
+      history.replace(`dept/category`)
     };
 
     const handleEdit = () => {
@@ -51,7 +54,7 @@ const Scene = (props) => {
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                        <Button onClick={handleClick}>Requirements</Button>
+                        {/* <Button onClick={handleClickRequirements("camera") }>Requirements</Button> */}
                         {/* <DeptDropdown handleClick={handleClick()} dept="camera" /> */}
                         </Card>
                       </Col>

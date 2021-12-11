@@ -23,9 +23,6 @@ import ScenePage from './pages/scenes/ScenePage';
 import { useState } from 'react';
 
 function App() {
-  // const [sceneId, setSceneId] = useState("");
-  // const [dept, setDept] = useState("");
-  // const [category, setCategory] = useState("");
   const currentUser = useCurrentUser()
   const profile_id = currentUser?.profile_id || '';
 
@@ -45,9 +42,6 @@ function App() {
             path="/scenes/:id" 
             render={() => (
             <ScenePage
-              // setSceneId={setSceneId}
-              // setDept={setDept}
-              // setCategory={setCategory}
              />
              )} />
         <Route

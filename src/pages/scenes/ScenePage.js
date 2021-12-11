@@ -17,7 +17,6 @@ const ScenePage = (props) => {
     const [scene, setScene] = useState({ results: [] });
     const currentUser = useCurrentUser();
     const history = useHistory();
-    // const {setSceneId, setDept, setCategory} = props; 
 
     useEffect(() => {
         const handleMount = async () => {
@@ -43,9 +42,6 @@ const ScenePage = (props) => {
                 </Button>
                 <Scene {...scene.results[0]} 
                   setScene={setScene}
-                //   setSceneId={setSceneId}
-                //   setDept={setDept}
-                //   setCategory={setCategory}
                   />
 
                 </Col>
