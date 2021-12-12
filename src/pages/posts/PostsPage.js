@@ -17,25 +17,24 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useRedirect } from "../../hooks/Redirect";
 import PostTop from "./PostTop";
+import PostCreateForm from "./PostCreateForm";
+import { Button } from "react-bootstrap";
 
-function PostsPage({ message, filter = "" }) {
-  useRedirect("loggedOut")
+function PostsPage({ message, sceneId, dept, category, filter = "" }) {
+  useRedirect("loggedOut");
+  const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-  // const [sceneIdent, setSceneIdent] = useState(sceneId);
-  // const [depart, setDepart] = useState(dept);
-  // const [category1, setCategory1] = useState(category);
-  // console.log(`sceneIdent ${message}`);
-  // console.log(`depart ${filter}`);
-  // console.log(`category1 ${category}`)
-
-
+ 
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     console.log(`depart ${filter}`);
+    console.log(`sceneId ${sceneId}`)
+    console.log(`dept ${dept}`)
+    console.log(`category ${category}`)
     const fetchPosts = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/?${filter}&search=${query}`);
@@ -62,7 +61,9 @@ function PostsPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-      {/* <h3 className={`mb-1 ${styles.Info} text-center`}> SCENE {sceneIdent} - {depart.toUpperCase()} - {category1.toUpperCase()}</h3> */}
+        <h3 className={`mb-1 ${styles.Info} text-center`} >Scene {sceneId} Department {dept} Category {category} </h3>
+        <Button onClick={() => setShow(show => !show)} >Add Post</Button>
+        {!show ?("") : (<PostCreateForm sceneId={sceneId} /> ) }
         <PopularProfiles mobile/>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form

@@ -20,7 +20,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-function PostCreateForm() {
+function PostCreateForm({sceneId}) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -199,6 +199,7 @@ function PostCreateForm() {
 
   return (
     <div>
+      <p>nnn{sceneId}</p>
     {/* <TopBox title="Create Post" /> */}
     {/* <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
