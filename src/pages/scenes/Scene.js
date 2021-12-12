@@ -24,10 +24,98 @@ const Scene = (props) => {
     const currentUser = useCurrentUser();
     const history = useHistory();
 
-    const handleClickCamera = (x) => {
+    const handleClickCamera = (category) => {
       setSceneId(id); 
       setDept("camera");
-      setCategory(x);
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickSound = (category) => {
+      setSceneId(id); 
+      setDept("sound");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickLocation = (category) => {
+      setSceneId(id); 
+      setDept("location");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickScript = (category) => {
+      setSceneId(id); 
+      setDept("script");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickArt = (category) => {
+      setSceneId(id); 
+      setDept("art");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickMakeup = (category) => {
+      setSceneId(id); 
+      setDept("make-up");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickWardrobe = (category) => {
+      setSceneId(id); 
+      setDept("wardrobe");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickCasting = (category) => {
+      setSceneId(id); 
+      setDept("casting");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickPost = (category) => {
+      setSceneId(id); 
+      setDept("post");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickProduction = (category) => {
+      setSceneId(id); 
+      setDept("production");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickStunts = (category) => {
+      setSceneId(id); 
+      setDept("stunts");
+      setCategory(category);
+      history.push(`/dept/category`);
+
+    };
+
+    const handleClickElectric = (category) => {
+      setSceneId(id); 
+      setDept("electric");
+      setCategory(category);
       history.push(`/dept/category`);
 
     };
@@ -36,18 +124,18 @@ const Scene = (props) => {
     //   history.push(`/dept/category`);
     //   }, 1000)
 
-    const handleEdit = () => {
-        history.push(`/posts/${id}/edit`);
-      };
+    // const handleEdit = () => {
+    //     history.push(`/posts/${id}/edit`);
+    //   };
     
-      const handleDelete = async () => {
-        try {
-          await axiosRes.delete(`/posts/${id}/`);
-          history.goBack();
-        } catch (err) {
-          // console.log(err);
-        }
-      };
+    //   const handleDelete = async () => {
+    //     try {
+    //       await axiosRes.delete(`/posts/${id}/`);
+    //       history.goBack();
+    //     } catch (err) {
+    //       // console.log(err);
+    //     }
+    //   };
 
     return (
         <div>
@@ -60,74 +148,84 @@ const Scene = (props) => {
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                        {/* <Button onClick={() => handleClickCamera() }>Requirements</Button> */}
-                        <DeptDropdown handleClick={(x) => handleClickCamera(x) } />
+                        <DeptDropdown handleClick={(category) => handleClickCamera(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickSound(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickScript(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickArt(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickPost(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >
                         <Card>
                         <Card.Img src={Camera} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
                         </Card>
                       </Col>
                     </Row>

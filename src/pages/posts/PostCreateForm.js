@@ -199,7 +199,13 @@ function PostCreateForm() {
 
   return (
     <div>
-    <TopBox title="Create Post" />
+    {/* <TopBox title="Create Post" /> */}
+    {/* <Button
+      className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+      onClick={() => history.goBack()}
+      >
+      Back to scene
+      </Button> */}
     <Form onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">

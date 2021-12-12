@@ -55,7 +55,10 @@ function App() {
               <PostsPage
                 message="No results found."
                 // filter={`scene=1&departments=camera&category=finals`}
-                filter={`scene=${sceneId}&departments=${dept}&category=${category} `}
+                filter={`scene=${sceneId}&departments=${dept}&category=${category}`}
+                sceneId={sceneId}
+                dept={dept}
+                category={category}
               />
             )}
           />
