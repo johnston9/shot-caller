@@ -11,9 +11,13 @@ import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { DeptDropdown } from '../../components/PostDropdown';
+import Shotlist from './Shotlist';
+import Storyboard from './Storyboard';
 
 const Scene = (props) => {
     useRedirect("loggedOut")
+    const [showlist, setShowlist] = useState(false);
+    const [showstory, setShowstory] = useState(false);
     const setSceneId = useSetSceneContext();
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
@@ -153,8 +157,25 @@ const Scene = (props) => {
     return (
         <div>
             <Card className={styles.Scene}>
-                  <Card.Header>SceneId{id} Scene{number} {location} </Card.Header>
+                <Card.Header className="text-center"><h3 >Scene{number} {location} {int_ext} {time}</h3>
+                  <h4>{title}</h4>
+                  <h5>Characters: {characters} </h5>
+                  <h5>Action: {action} </h5>
+                  <p>{content} SceneId{id} </p>
+                  <p onClick={() => setShowlist(showlist => !showlist)} >Shotlist</p>
+                  <span onClick={() => setShowstory(showstory => !showstory)} > Storyboard</span>    
+                  </Card.Header>
                   <Card.Body>
+                    {!showlist ? (
+                      ""
+                    ) : (
+                      <Shotlist shotlist={shotlist} />
+                    ) }
+                    {!showstory ? (
+                      ""
+                    ) : (
+                      <Storyboard storyboard={storyboard} />
+                    ) }
                   <Card.Title className={`text-center`}>Departments</Card.Title>
                     <Row>
                       <Col xs={4} lg={3} >

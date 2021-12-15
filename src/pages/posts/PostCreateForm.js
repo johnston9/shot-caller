@@ -266,7 +266,7 @@ function PostCreateForm({sceneId, number, dept, category}) {
             <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group >
               {image2 ? (
                 <>
                   <figure>
@@ -283,7 +283,7 @@ function PostCreateForm({sceneId, number, dept, category}) {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center my-1"
+                  className="my-1"
                   htmlFor="image-upload2"
                 >
                   <Asset2
@@ -314,7 +314,7 @@ function PostCreateForm({sceneId, number, dept, category}) {
         <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group>
               {image3 ? (
                 <>
                   <figure>
@@ -331,14 +331,14 @@ function PostCreateForm({sceneId, number, dept, category}) {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center my-1"
+                  className=" my-1"
                   htmlFor="image-upload3"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload third image"
                   />
                 </Form.Label>
               )}
@@ -362,7 +362,7 @@ function PostCreateForm({sceneId, number, dept, category}) {
         <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group>
               {image4 ? (
                 <>
                   <figure>
@@ -379,14 +379,14 @@ function PostCreateForm({sceneId, number, dept, category}) {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className=" my-1"
                   htmlFor="image-upload4"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload fourth image"
                   />
                 </Form.Label>
               )}
@@ -410,7 +410,7 @@ function PostCreateForm({sceneId, number, dept, category}) {
         <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group>
               {image5 ? (
                 <>
                   <figure>
@@ -427,14 +427,14 @@ function PostCreateForm({sceneId, number, dept, category}) {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className=" my-1"
                   htmlFor="image-upload5"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload last image"
                   />
                 </Form.Label>
               )}

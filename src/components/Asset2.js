@@ -4,10 +4,12 @@ import styles from "../styles/Asset.module.css";
 
 const Asset2 = ({ spinner, src, message, height, width }) => {
   return (
-    <div className={`${styles.Asset}`}>
+    <div className={`${styles.Asset2}`}>
       {spinner && <Spinner animation="border" />}
       <div>
-      {src && <img src={src} alt={message} height={height} width={width} />}
+        <span >
+      {src && <img className="ml-5" src={src} alt={message} height={height} width={width} />}
+      </span>
       {message && <span className="ml-5 my-1">{message}</span>}
       </div>
     </div>

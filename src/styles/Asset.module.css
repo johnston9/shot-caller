@@ -5,3 +5,12 @@
     align-items: center;
     min-height: 20px;
   }
+
+  .Asset2 {
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    min-height: 20px;
+    color: red;
+  }
