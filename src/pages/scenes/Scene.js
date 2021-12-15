@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import Camera from "../../assets/dep17s.png";
@@ -15,6 +15,7 @@ import { DeptDropdown } from '../../components/PostDropdown';
 const Scene = (props) => {
     useRedirect("loggedOut")
     const setSceneId = useSetSceneContext();
+    const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const category = useCategoryContext();
@@ -26,6 +27,7 @@ const Scene = (props) => {
 
     const handleClickCamera = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("camera");
       setCategory(category);
       history.push(`/dept/category`);
@@ -34,6 +36,7 @@ const Scene = (props) => {
 
     const handleClickSound = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("sound");
       setCategory(category);
       history.push(`/dept/category`);
@@ -42,6 +45,7 @@ const Scene = (props) => {
 
     const handleClickLocation = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("location");
       setCategory(category);
       history.push(`/dept/category`);
@@ -50,6 +54,7 @@ const Scene = (props) => {
 
     const handleClickScript = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("script");
       setCategory(category);
       history.push(`/dept/category`);
@@ -58,6 +63,7 @@ const Scene = (props) => {
 
     const handleClickArt = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("art");
       setCategory(category);
       history.push(`/dept/category`);
@@ -66,6 +72,7 @@ const Scene = (props) => {
 
     const handleClickMakeup = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("make-up");
       setCategory(category);
       history.push(`/dept/category`);
@@ -74,6 +81,7 @@ const Scene = (props) => {
 
     const handleClickWardrobe = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("wardrobe");
       setCategory(category);
       history.push(`/dept/category`);
@@ -82,6 +90,7 @@ const Scene = (props) => {
 
     const handleClickCasting = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("casting");
       setCategory(category);
       history.push(`/dept/category`);
@@ -90,6 +99,7 @@ const Scene = (props) => {
 
     const handleClickPost = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("post");
       setCategory(category);
       history.push(`/dept/category`);
@@ -98,6 +108,7 @@ const Scene = (props) => {
 
     const handleClickProduction = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("production");
       setCategory(category);
       history.push(`/dept/category`);
@@ -106,6 +117,7 @@ const Scene = (props) => {
 
     const handleClickStunts = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("stunts");
       setCategory(category);
       history.push(`/dept/category`);
@@ -114,6 +126,7 @@ const Scene = (props) => {
 
     const handleClickElectric = (category) => {
       setSceneId(id); 
+      setNumber(number);
       setDept("electric");
       setCategory(category);
       history.push(`/dept/category`);
@@ -140,7 +153,7 @@ const Scene = (props) => {
     return (
         <div>
             <Card className={styles.Scene}>
-                  <Card.Header>Scene{number} {location} </Card.Header>
+                  <Card.Header>SceneId{id} Scene{number} {location} </Card.Header>
                   <Card.Body>
                   <Card.Title className={`text-center`}>Departments</Card.Title>
                     <Row>

@@ -21,7 +21,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
 import { useState } from 'react';
-import { useCategoryContext, useDeptContext, useSceneContext } from './contexts/DeptCategoryContext';
+import { useCategoryContext, useDeptContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -29,6 +29,7 @@ function App() {
   const sceneId = useSceneContext();
   const dept = useDeptContext();
   const category = useCategoryContext();
+  const number = useNumberContext();
 
   return (
     <div className={styles.App} >
@@ -57,6 +58,7 @@ function App() {
                 // filter={`scene=1&departments=camera&category=finals`}
                 filter={`scene=${sceneId}&departments=${dept}&category=${category}`}
                 sceneId={sceneId}
+                number={number}
                 dept={dept}
                 category={category}
               />

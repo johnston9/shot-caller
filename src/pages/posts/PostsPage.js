@@ -20,7 +20,7 @@ import PostTop from "./PostTop";
 import PostCreateForm from "./PostCreateForm";
 import { Button } from "react-bootstrap";
 
-function PostsPage({ message, sceneId, dept, category, filter = "" }) {
+function PostsPage({ message, sceneId, number, dept, category, filter = "" }) {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
@@ -33,6 +33,7 @@ function PostsPage({ message, sceneId, dept, category, filter = "" }) {
   useEffect(() => {
     console.log(`depart ${filter}`);
     console.log(`sceneId ${sceneId}`)
+    console.log(`number ${number}`)
     console.log(`dept ${dept}`)
     console.log(`category ${category}`)
     const fetchPosts = async () => {
@@ -61,13 +62,18 @@ function PostsPage({ message, sceneId, dept, category, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <h3 className={`mb-1 ${styles.Info} text-center`} >Scene {sceneId} Department {dept} Category {category} </h3>
+        {sceneId ? (
+          <div>
+        <h4 className={`mb-1 ${styles.Info} text-center`} >Scene {number} - Department {dept} - Category {category} </h4>
+        <p>SceneId {sceneId}</p>
+        </div>
+        ) : ""}
         <Button onClick={() => setShow(show => !show)} >Add Post</Button>
-        {!show ?("") : (<PostCreateForm sceneId={sceneId} /> ) }
+        {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
         <PopularProfiles mobile/>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
-          className={styles.SearchBar}
+          className={`${styles.SearchBar} mt-3`}
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control

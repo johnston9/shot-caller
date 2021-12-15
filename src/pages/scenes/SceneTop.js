@@ -33,7 +33,7 @@ const SceneTop = (props) => {
     return (
         <div>
             <Card className="styles.Scene" border="info" >
-                  <Card.Header className="text-center">Scene {number} </Card.Header>
+                  <Card.Header className="text-center">Scene {number} SceneId {id}</Card.Header>
                   <Card.Body className="p-1" >
                       <Link to={`/scenes/${id}`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>

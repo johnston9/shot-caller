@@ -19,23 +19,25 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
+import Asset2 from "../../components/Asset2";
 
-function PostCreateForm({sceneId}) {
+function PostCreateForm({sceneId, number, dept, category}) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
+        sceneNumber: number,
         title: "",
         content: "",
-        scene: "",
-        departments: "",
-        category: "",
+        scene: sceneId,
+        departments: dept,
+        categoryType: category,
         image1: "",
         image2: "",
         image3: "",
         image4: "",
         image5: "",
       });
-      const { title, content, scene, departments, category, image1, image2, image3, image4, image5 } = postData;
+      const { sceneNumber, title, content, scene, departments, categoryType, image1, image2, image3, image4, image5 } = postData;
       const imageInput1 = useRef(null)
       const imageInput2 = useRef(null)
       const imageInput3 = useRef(null)
@@ -109,18 +111,17 @@ function PostCreateForm({sceneId}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setPostData({
-      ...postData,
-      scene: 2,
-      departments: 'camera',
-      category: 'finals'
+      ...postData
     });
     const formData = new FormData();
 
+    formData.append("number", sceneNumber);
     formData.append("title", title);
     formData.append("content", content);
     formData.append("scene", scene);
+    console.log(scene)
     formData.append("departments", departments);
-    formData.append("category", category);
+    formData.append("category", categoryType);
     if(image1) {
       formData.append("image1", imageInput1.current.files[0]);
     }
@@ -199,7 +200,6 @@ function PostCreateForm({sceneId}) {
 
   return (
     <div>
-      <p>nnn{sceneId}</p>
     {/* <TopBox title="Create Post" /> */}
     {/* <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
@@ -207,13 +207,17 @@ function PostCreateForm({sceneId}) {
       >
       Back to scene
       </Button> */}
-    <Form onSubmit={handleSubmit}>
+    <Form className="mt-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">
-        <Container className= {`${appStyles.Content} ${styles.Container}`} >{textFields}</Container>
+        <Container className= {`${appStyles.Content} ${styles.Container}`} >
+        <p>Scene {number} - Dept {dept} - {category} </p>
+        <p>SceneId {sceneId}</p>
+          {textFields}
+          </Container>
         <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
       </Col>
-      <Col className="py-2 p-0 p-md-2" md={6}>
+      <Col className="pt-2 p-0 p-md-2" md={6}>
         <Container
           className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
         >
@@ -279,14 +283,14 @@ function PostCreateForm({sceneId}) {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className="d-flex justify-content-center my-1"
                   htmlFor="image-upload2"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload second image"
                   />
                 </Form.Label>
               )}
@@ -327,7 +331,7 @@ function PostCreateForm({sceneId}) {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className="d-flex justify-content-center my-1"
                   htmlFor="image-upload3"
                 >
                   <Asset
