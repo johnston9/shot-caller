@@ -3,7 +3,6 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import Container from "react-bootstrap/Container";
-// import { Route, Routes } from "react-router-dom";
 import "./api/axiosDefaults";
 import { Route, Switch } from "react-router-dom";
 import SignInForm from './pages/auth/SignInForm';
@@ -20,7 +19,6 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
-import { useState } from 'react';
 import { useCategoryContext, useDeptContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
 
 function App() {
@@ -55,7 +53,6 @@ function App() {
             render={() => (
               <PostsPage
                 message="No results found."
-                // filter={`scene=1&departments=camera&category=finals`}
                 filter={`scene=${sceneId}&departments=${dept}&category=${category}`}
                 sceneId={sceneId}
                 number={number}
@@ -91,24 +88,24 @@ function App() {
           />
           <Route
             exact
+            path="/archived"
+            render={() => (
+              <PostsPage
+                message="No results found. Please archive a post."
+                filter={`archives__owner__profile=${profile_id}&ordering=-archives__created_at&`}
+              />
+            )}
+          />
+          <Route
+            exact
             path="/liked"
             render={() => (
               <PostsPage
-                message="No results found. Adjust the search keyword or like a post."
+                message="No results found. Please like a post."
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
             )}
           />
-        {/* <Route
-            exact
-            path="/dept/category"
-            render={() => (
-              <PostsPage
-                message="No results found."
-                filter={`scene=${sceneId}&departments=${dept}&category=${category} `}
-              />
-            )}
-          /> */}
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         <Route exact path="/posts/:id" render={() => <PostPage />} />

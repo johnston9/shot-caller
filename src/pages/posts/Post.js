@@ -21,6 +21,7 @@ const Post = (props) => {
         comments_count,
         likes_count,
         like_id,
+        archive_id,
         title,
         content,
         scene,
@@ -50,6 +51,38 @@ const Post = (props) => {
           history.goBack();
         } catch (err) {
           // console.log(err);
+        }
+      };
+
+      const handleArchive = async () => {
+        try {
+          const { data } = await axiosRes.post("/archives/", { post: id });
+          setPosts((prevPosts) => ({
+            ...prevPosts,
+            results: prevPosts.results.map((post) => {
+              return post.id === id
+                ? { ...post, archive_id: data.id }
+                : post;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      const handleUnarchive = async () => {
+        try {
+          await axiosRes.delete(`/archives/${archive_id}/`);
+          setPosts((prevPosts) => ({
+            ...prevPosts,
+            results: prevPosts.results.map((post) => {
+              return post.id === id
+                ? { ...post, archive_id: null }
+                : post;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
         }
       };
 
@@ -90,6 +123,7 @@ const Post = (props) => {
         <div>
             <Card className={styles.Post} >
                 <Card.Body>
+                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {scene} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
                 <div className="d-flex align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
@@ -98,15 +132,60 @@ const Post = (props) => {
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
                         {is_owner && (
+                          <OverlayTrigger
+                          placement="top"
+                          overlay={<Tooltip>Edit/delete</Tooltip>}
+                          >
+                          <i className={`fas fa-ellipsis-v ${styles.Edit} p-3 ml-2 mr-0`} />
+                        </OverlayTrigger>
+                        ) }
+                        {is_owner && (
                           <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
                         ) }
+                        {/* {is_owner ? (
+                          <OverlayTrigger
+                          placement="top"
+                          overlay={<Tooltip>Edit/Delete</Tooltip>}
+                          >
+                          <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                        </OverlayTrigger>
+                        ) : "" } */}
                     </div>
-        
-                    {/* like */}
+                    {/* archives */}
                     <div className={styles.PostBar}>
+                    {archive_id ? (
+                            <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Unarchive</Tooltip>}
+                            >
+                            <span onClick={handleUnarchive} >
+                            <i className={`fas fa-folder ${styles.Heart}`} />
+                            </span>
+                            </OverlayTrigger>
+                        ) : currentUser ? (
+                          <OverlayTrigger
+                          placement="top"
+                          overlay={<Tooltip>Archive</Tooltip>}
+                          >
+                            <span onClick={handleArchive}>
+                            <i className={`far fa-folder-open ${styles.HeartOutline}`} />
+                            </span>
+                            </OverlayTrigger>
+                        ) : (
+                            <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Log in please</Tooltip>}
+                            >
+                            <i className="far fa-folder-open" />
+                            </OverlayTrigger>
+                        )}
+                    {/* like */}
                         {is_owner ? (
                             <OverlayTrigger
                             placement="top"
@@ -131,13 +210,15 @@ const Post = (props) => {
                             </OverlayTrigger>
                         )}
                         {likes_count}
-                        <Link to={`/posts/${id}`}>
-                            <i className="far fa-comments" />
-                        </Link>
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Comments</Tooltip>}
+                            >
+                          <i className="far fa-comments" />
+                          </OverlayTrigger>
                         {comments_count}
-                        </div>
                     </div>
-                     {departments && <Card.Text className={`${styles.Info} text-center`} >SCENE {scene} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
+                  </div>
                 </Card.Body>
                 <hr />
                 <Card.Body className="pt-1" >
