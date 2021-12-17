@@ -22,8 +22,8 @@ const ScenesPage = ({message}) => {
     useEffect(() => {
         const fetchScenes = async () => {
           try {
-            const { data } = await axiosReq.get(`/scenes/`);
-            // const { data } = await axiosReq.get(`/scenes/&search=${query}`);
+            // const { data } = await axiosReq.get(`/scenes/`);
+            const { data } = await axiosReq.get(`/scenes/?search=${query}`);
             setScenes(data);
             setHasLoaded(true);
           } catch(err) {
@@ -31,27 +31,15 @@ const ScenesPage = ({message}) => {
           }
         }
         setHasLoaded(false);
-        // const delayFetchScenes = () => {
-        //     const timer = setTimeout(() => {fetchScenes();
-        //     }, 1000)
-        // }
-        // {query ? (
-        //     const delayFetchScenes = () => {
-        //         const timer = setTimeout(() => {fetchScenes();
-        //         }, 1000)
-        //     }
-        // ) : fetchScenes() }
 
-        // const timer = setTimeout(() => {
-        //     fetchScenes();
-        // }, 1000)
+        const timer = setTimeout(() => {fetchScenes();
+        }, 500)
 
-        // return () => {
-        //     clearTimeout(timer);
-        //   };
-        fetchScenes();
+        return () => {
+            clearTimeout(timer);
+          };
     
-      }, [])
+      }, [query])
 
     return (
         <div>

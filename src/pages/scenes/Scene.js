@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { axiosRes } from '../../api/axiosDefaults';
+import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { DeptDropdown } from '../../components/PostDropdown';
+import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import Shotlist from './Shotlist';
 import Storyboard from './Storyboard';
 
@@ -28,6 +29,19 @@ const Scene = (props) => {
         storyboard, info, image } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();
+
+    const handleEdit = () => {
+      history.push(`/scenes/${id}/edit`);
+    };
+  
+    const handleDelete = async () => {
+      try {
+        await axiosReq.delete(`/scenes/${id}/`);
+        history.goBack();
+      } catch (err) {
+        // console.log(err);
+      }
+    };
 
     const handleClickCamera = (category) => {
       setSceneId(id); 
@@ -156,15 +170,61 @@ const Scene = (props) => {
 
     return (
         <div>
-            <Card className={styles.Scene}>
-                <Card.Header className="text-center"><h3 >Scene{number} {location} {int_ext} {time}</h3>
-                  <h4>{title}</h4>
-                  <h5>Characters: {characters} </h5>
-                  <h5>Action: {action} </h5>
-                  <p>{content} SceneId{id} </p>
-                  <p onClick={() => setShowlist(showlist => !showlist)} >Shotlist</p>
-                  <span onClick={() => setShowstory(showstory => !showstory)} > Storyboard</span>    
+            <Card className={` ${styles.Scene}`}>
+                <Card.Header className={` ${styles.Header }`}>
+                  <Row className='d-flex align-items-center'>
+                    <Col className='mx-0 px-0' xs={1}></Col>
+                    <Col xs={10} className='mx-0 px-0 text-center'>
+                    <h3 className={` ${styles.Titlelist }`}>Scene{number} - <span className={styles.Italics }>{title}</span>
+                    </h3>
+                    </Col >
+                    <Col xs={1} className='text-center mx-0 px-0'>
+                    <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                    </Col>
+                    </Row>
                   </Card.Header>
+                  {/* <Row>
+                    <Col xs={1}></Col>
+                    <Col xs={10} >
+                  <h3 className={`text-center mb-0 ${styles.Titlelist }`}>
+                    Scene{number} - <span className={styles.Italics }>{title}</span>
+                  </h3>
+                  </Col>
+                  <Col xs={1} >
+                  <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                  </Col>
+                  </Row> */}
+                  <div className="text-center mt-2">
+                  <h5 className={` ${styles.Titledetail }`}>
+                  Location: <span className={` ${styles.Action }`}>{location} - {int_ext} {time}</span>
+                  </h5>
+                  <h5>Characters: <span className={` ${styles.Action }`}>{characters} </span></h5>
+                  <h5>Action: <span className={` ${styles.Action }`}>{action}</span> </h5>
+                  <h5>Content: <span className={` ${styles.Action }`}>{content}</span> </h5>
+                  </div>
+                  <Row>
+                    <Col className='text-center' xs={6}>
+                    <Button
+                        className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                        onClick={() => setShowlist(showlist => !showlist)} >Shotlist
+                    </Button>
+                    </Col>
+                    <Col className='text-center' xs={6}>
+                      <Button
+                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
+                      </Button>
+                      {/* <p>SceneId{id} </p>   */}
+                    </Col>
+                  </Row>
+                  
+                  <hr />
                   <Card.Body>
                     {!showlist ? (
                       ""

@@ -216,7 +216,7 @@ function PostEditForm() {
 
   return (
     <div>
-    <TopBox title="Create Post" />
+    <TopBox title="Edit Post" />
     <Form onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">
