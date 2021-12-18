@@ -33,7 +33,7 @@ const ScenePage = (props) => {
     return (
         <div>
             <Row className="h-100">
-                <Col>
+                <Col className="mt-4">
                 <Button
                     className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
                     onClick={() => history.goBack()}

@@ -128,9 +128,9 @@ function PostEditForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setPostData({
-      ...postData,
-    });
+    // setPostData({
+    //   ...postData,
+    // });
     const formData = new FormData();
 
     formData.append("title", title);

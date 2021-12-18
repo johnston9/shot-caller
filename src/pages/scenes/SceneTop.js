@@ -1,5 +1,5 @@
 import React from 'react';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Col, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -13,6 +13,7 @@ const SceneTop = (props) => {
     const {
         id,
         number,
+        title,
         action,
         characters,
         location
@@ -35,25 +36,38 @@ const SceneTop = (props) => {
 
     return (
         <div>
-            <Card className="styles.Scene" border="info" >
-                  <Card.Header className="d-flex align-items-center mb-0 px-2">
-                    <span>Scene {number} </span> 
-                          {/* <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Edit/delete</Tooltip>}
-                          >
-                          <i className={`fas fa-ellipsis-v ${styles.Edit} p-3 ml-2 mr-0`} />
-                        </OverlayTrigger> */}
-                          <PostDropdown
+            <Card className={`text-center ${styles.Scene }`} border="info" >
+                  <Card.Header className="mb-0 px-2">
+                  <Row className='mx-0 d-flex align-items-center'>
+                    <Col className='mx-0 px-0' xs={1}></Col>
+                    <Col xs={10} className='mx-0 px-0 text-center'>
+                    <h5 className={` ${styles.Titlelist }`}>Scene {number} 
+                    </h5>
+                    </Col >
+                    <Col xs={1} className=' mx-0 px-0'>
+                    <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
+                    </Col>
+                    </Row>
+                    <div className={` ${styles.Div25 }`}>
+                    <span className={styles.Italics }>{title}</span>
+                    </div>
+                    {/* <span>Scene {number} </span> 
+                          <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        /> */}
                   </Card.Header>
                   <Card.Body className="p-1" >
                       <Link to={`/scenes/${id}`}>
+                        <div className={` ${styles.Div50 }`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>
-                        <p className="mb-1">{characters}</p>
-                        <p>SceneId {id}</p>
+                      </div>
+                      <div className={` ${styles.Div50 }`}><p className="mb-1">{characters}</p></div>
+                      <hr className='m-0'/>
+                      <div className={` ${styles.Div50 }`}><p>{action}</p></div>
                       </Link>
                   </Card.Body>
             </Card>

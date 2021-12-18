@@ -132,30 +132,11 @@ const Post = (props) => {
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
                         {is_owner && (
-                          <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Edit/delete</Tooltip>}
-                          >
-                          <i className={`fas fa-ellipsis-v ${styles.Edit} p-3 ml-2 mr-0`} />
-                        </OverlayTrigger>
-                        ) }
-                        {is_owner && (
                           <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
                         ) }
-                        {/* {is_owner ? (
-                          <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Edit/Delete</Tooltip>}
-                          >
-                          <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
-                        </OverlayTrigger>
-                        ) : "" } */}
                     </div>
                     {/* archives */}
                     <div className={styles.PostBar}>
@@ -194,13 +175,23 @@ const Post = (props) => {
                             <i className="far fa-heart" />
                             </OverlayTrigger>
                         ) : like_id ? (
+                            <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Unike</Tooltip>}
+                            >
                             <span onClick={handleUnlike} >
                             <i className={`fas fa-heart ${styles.Heart}`} />
                             </span>
+                            </OverlayTrigger>
                         ) : currentUser ? (
+                            <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Like</Tooltip>}
+                            >
                             <span onClick={handleLike}>
                             <i className={`far fa-heart ${styles.HeartOutline}`} />
                             </span>
+                            </OverlayTrigger>
                         ) : (
                             <OverlayTrigger
                             placement="top"

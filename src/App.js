@@ -20,6 +20,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
 import { useCategoryContext, useDeptContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
+import SceneEditForm from './pages/scenes/SceneEditForm';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -40,6 +41,14 @@ function App() {
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
+        <Route
+            exact
+            path="/scenes"
+            render={() => (
+              <ScenesPage 
+               message="No results found. Please add a scene" />
+            )}
+          />
         <Route 
             exact 
             path="/scenes/:id" 
@@ -47,6 +56,15 @@ function App() {
             <ScenePage
              />
              )} />
+        <Route exact path="/scenes/:id/edit" render={() => <SceneEditForm />} />
+        <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        <Route
+            exact
+            path="/posts"
+            render={() => (
+              <PostsPage message="No results found. Adjust the search keyword." />
+            )}
+          />
         <Route
             exact
             path="/dept/category"
@@ -59,21 +77,6 @@ function App() {
                 dept={dept}
                 category={category}
               />
-            )}
-          />
-        <Route
-            exact
-            path="/scenes"
-            render={() => (
-              <ScenesPage 
-               message="No results found. Please add a scene" />
-            )}
-          />
-        <Route
-            exact
-            path="/posts"
-            render={() => (
-              <PostsPage message="No results found. Adjust the search keyword." />
             )}
           />
           <Route
@@ -106,7 +109,7 @@ function App() {
               />
             )}
           />
-        <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         <Route exact path="/posts/:id" render={() => <PostPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />

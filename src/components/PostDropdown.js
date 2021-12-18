@@ -3,8 +3,13 @@ import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
 import { useHistory } from "react-router";
 import { useSetCategoryContext } from "../contexts/DeptCategoryContext";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
-const DropdownIcon = React.forwardRef(({ onClick }, ref) => (
+const EditDeleteIcon = React.forwardRef(({ onClick }, ref) => (
+  <OverlayTrigger
+    placement="top"
+    overlay={<Tooltip>Edit/delete</Tooltip>}
+    >
   <i
     className="fas fa-ellipsis-v"
     ref={ref}
@@ -13,12 +18,45 @@ const DropdownIcon = React.forwardRef(({ onClick }, ref) => (
       onClick(e);
     }}
   />
+  </OverlayTrigger>
+));
+
+const DepartmentIcon = React.forwardRef(({ onClick }, ref) => (
+  <OverlayTrigger
+    placement="top"
+    overlay={<Tooltip>Department Category</Tooltip>}
+    >
+  <i
+    className="fas fa-ellipsis-v"
+    ref={ref}
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(e);
+    }}
+  />
+  </OverlayTrigger>
+));
+
+const EditProfileIcon = React.forwardRef(({ onClick }, ref) => (
+  <OverlayTrigger
+    placement="top"
+    overlay={<Tooltip>Edit Profile/Change Username or Password</Tooltip>}
+    >
+  <i
+    className="fas fa-ellipsis-v"
+    ref={ref}
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(e);
+    }}
+  />
+  </OverlayTrigger>
 ));
 
 export const PostDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
-      <Dropdown.Toggle as={DropdownIcon} />
+      <Dropdown.Toggle as={EditDeleteIcon} />
 
       <Dropdown.Menu
         className="text-center"
@@ -47,7 +85,7 @@ export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
-      <Dropdown.Toggle as={DropdownIcon} />
+      <Dropdown.Toggle as={EditProfileIcon} />
       <Dropdown.Menu>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit`)}
@@ -79,7 +117,7 @@ export function DeptDropdown({ handleClick}) {
   const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
-      <Dropdown.Toggle as={DropdownIcon} />
+      <Dropdown.Toggle as={DepartmentIcon} />
       <Dropdown.Menu>
         <Dropdown.Item
           onClick={() => handleClick('requirements') }

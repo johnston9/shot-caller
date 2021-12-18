@@ -175,13 +175,23 @@ const PostTop = (props) => {
                             <i className="far fa-heart" />
                             </OverlayTrigger>
                         ) : like_id ? (
+                            <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Unlike</Tooltip>}
+                            >
                             <span onClick={handleUnlike} >
                             <i className={`fas fa-heart ${styles.Heart}`} />
                             </span>
+                            </OverlayTrigger>
                         ) : currentUser ? (
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={<Tooltip>Like</Tooltip>}
+                              >
                             <span onClick={handleLike}>
                             <i className={`far fa-heart ${styles.HeartOutline}`} />
                             </span>
+                            </OverlayTrigger>
                         ) : (
                             <OverlayTrigger
                             placement="top"

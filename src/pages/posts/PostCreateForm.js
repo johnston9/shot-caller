@@ -37,7 +37,8 @@ function PostCreateForm({sceneId, number, dept, category}) {
         image4: "",
         image5: "",
       });
-      const { sceneNumber, title, content, scene, departments, categoryType, image1, image2, image3, image4, image5 } = postData;
+      const { sceneNumber, title, content, scene, departments, 
+        categoryType, image1, image2, image3, image4, image5 } = postData;
       const imageInput1 = useRef(null)
       const imageInput2 = useRef(null)
       const imageInput3 = useRef(null)
@@ -119,22 +120,21 @@ function PostCreateForm({sceneId, number, dept, category}) {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("scene", scene);
-    console.log(scene)
     formData.append("departments", departments);
     formData.append("category", categoryType);
-    if(image1) {
+    if(imageInput1.current.files[0]) {
       formData.append("image1", imageInput1.current.files[0]);
     }
-    if(image2) {
+    if(imageInput2.current.files[0]) {
       formData.append("image2", imageInput2.current.files[0]);
     }
-    if(image3) {
+    if(imageInput3.current.files[0]) {
       formData.append("image3", imageInput3.current.files[0]);
     }
-    if(image4) {
+    if(imageInput4.current.files[0]) {
       formData.append("image4", imageInput4.current.files[0]);
     }
-    if(image5) {
+    if(imageInput5.current.files[0]) {
       formData.append("image5", imageInput5.current.files[0]);
     }
   

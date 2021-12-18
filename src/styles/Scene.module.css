@@ -38,7 +38,18 @@
   }
 
   .Header {
-    background-color: rgb(24 23 23 / 6%);
+    background-color: #fff;
+    /* background-color: rgb(24 23 23 / 6%); */
+  }
+
+  .Div50 {
+    height: 50px;
+    overflow: hidden;
+  }
+
+  .Div25 {
+    height: 25px;
+    overflow: hidden;
   }
 
   @media screen and (max-width: 600px) {

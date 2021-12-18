@@ -86,12 +86,11 @@ function SceneCreateForm() {
     formData.append("action", action);
     formData.append("content", content);
     formData.append("shotlist", shotlist);
-    // formData.append("storyboard", storyboard);
     formData.append("info", info);
-    if (image) {
+    if (imageInput.current.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
-    if (storyboard) {
+    if (storyboardInput.current.files[0]) {
       formData.append("storyboard", storyboardInput.current.files[0]); 
     }
       

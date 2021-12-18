@@ -27,6 +27,7 @@ const Scene = (props) => {
     const { id, number, title, int_ext, time, location,
         characters, action, content, shotlist, 
         storyboard, info, image } = props;
+    // const ext = int_ext.toUpperCase();
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -151,27 +152,10 @@ const Scene = (props) => {
 
     };
 
-    // const timer = setTimeout(() => {
-    //   history.push(`/dept/category`);
-    //   }, 1000)
-
-    // const handleEdit = () => {
-    //     history.push(`/posts/${id}/edit`);
-    //   };
-    
-    //   const handleDelete = async () => {
-    //     try {
-    //       await axiosRes.delete(`/posts/${id}/`);
-    //       history.goBack();
-    //     } catch (err) {
-    //       // console.log(err);
-    //     }
-    //   };
-
     return (
         <div>
             <Card className={` ${styles.Scene}`}>
-                <Card.Header className={` ${styles.Header }`}>
+                <Card.Header className={`pt-2 pb-1 ${styles.Header }`}>
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
@@ -202,11 +186,12 @@ const Scene = (props) => {
                   </Row> */}
                   <div className="text-center mt-2">
                   <h5 className={` ${styles.Titledetail }`}>
-                  Location: <span className={` ${styles.Action }`}>{location} - {int_ext} {time}</span>
+                  Location: <span className={` ${styles.Action }`}>{location} - {int_ext} - {time}</span>
                   </h5>
                   <h5>Characters: <span className={` ${styles.Action }`}>{characters} </span></h5>
                   <h5>Action: <span className={` ${styles.Action }`}>{action}</span> </h5>
                   <h5>Content: <span className={` ${styles.Action }`}>{content}</span> </h5>
+                  <h5>Info: <span className={` ${styles.Action }`}>{info}</span> </h5>
                   </div>
                   <Row>
                     <Col className='text-center' xs={6}>
@@ -236,7 +221,7 @@ const Scene = (props) => {
                     ) : (
                       <Storyboard storyboard={storyboard} />
                     ) }
-                  <Card.Title className={`text-center`}>Departments</Card.Title>
+                  <h3 className={`text-center`}>Departments</h3>
                     <Row>
                       <Col xs={4} lg={3} >
                         <Card>
