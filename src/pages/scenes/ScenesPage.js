@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import styles from "../../styles/Scene.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
 // import InfiniteScroll from 'react-infinite-scroll-component';
 // import { fetchMoreData } from '../../utils/utils';
@@ -12,18 +13,48 @@ import Asset from "../../components/Asset";
 import { useRedirect } from '../../hooks/Redirect';
 import appStyles from "../../App.module.css";
 import SceneTop from './SceneTop';
+import { Button } from 'react-bootstrap';
+import { useSetActContext } from '../../contexts/ActContext';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import TopBox from '../../components/TopBox';
 
-const ScenesPage = ({message}) => {
+const ScenesPage = ({message, filter = "" }) => {
     useRedirect("loggedOut");
     const [scenes, setScenes] = useState({results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
+    const setAct = useSetActContext();
+    const history = useHistory();
+
+    const handleClickAct1 = () => {
+      setAct('one'); 
+      history.push(`/act/scenes`);
+
+    };
+
+    const handleClickAct2a = () => {
+      setAct('two-a'); 
+      history.push(`/act/scenes`);
+
+    };
+
+    const handleClickAct2b = () => {
+      setAct('two-b'); 
+      history.push(`/act/scenes`);
+
+    };
+
+    const handleClickAct3 = () => {
+      setAct('three'); 
+      history.push(`/act/scenes`);
+
+    };
 
     useEffect(() => {
+      console.log(`depart ${filter}`);
         const fetchScenes = async () => {
           try {
-            // const { data } = await axiosReq.get(`/scenes/`);
-            const { data } = await axiosReq.get(`/scenes/?search=${query}`);
+            const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
             setScenes(data);
             setHasLoaded(true);
           } catch(err) {
@@ -39,12 +70,39 @@ const ScenesPage = ({message}) => {
             clearTimeout(timer);
           };
     
-      }, [query])
+      }, [query, filter])
 
     return (
-        <div>
+        <div className='mt-5'>
+          <TopBox title="Scenes" />
+            <Row className='mt-4' >
+                <Col className='text-center' xs={6} md={3}>
+                <Button
+                    className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                    onClick={handleClickAct1} >Act One
+                </Button>
+                </Col>
+                <Col className='text-center' xs={6} md={3}>
+                  <Button
+                      className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                      onClick={handleClickAct2a} >Act Two A
+                  </Button>
+                </Col>
+                <Col className='text-center' xs={6} md={3}>
+                <Button
+                    className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                    onClick={handleClickAct2b} >Act Two B
+                </Button> 
+                </Col>
+                <Col className='text-center' xs={6} md={3}>
+                  <Button
+                      className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                      onClick={handleClickAct3} >Act Three
+                  </Button>
+                </Col>
+              </Row>
             <Row>
-                <Col className="mt-5" >
+                <Col className="mt-5" xs={12} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={styles.SearchBar}
                     onSubmit={(event) => event.preventDefault()}
@@ -54,7 +112,7 @@ const ScenesPage = ({message}) => {
                         onChange={(event) => setQuery(event.target.value)}
                         type="text"
                         className="mr-sm-2"
-                        placeholder="Search by scene number or location"
+                        placeholder="Search by scene number, title or location"
                     />
                     </Form>
                 </Col>

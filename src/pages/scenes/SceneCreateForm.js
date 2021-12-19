@@ -24,7 +24,9 @@ function SceneCreateForm() {
     const [postData, setPostData] = useState({
         number: "",
         title: "",
+        act: "",
         int_ext: "",
+        day_night: "",
         time: "",
         location: "",
         characters: "",
@@ -35,7 +37,7 @@ function SceneCreateForm() {
         info: "",
         image: "",
       });
-      const { number, title, int_ext, time, location,
+      const { number, title, act, int_ext, day_night, time, location,
         characters, action, content, shotlist, 
         storyboard, info, image } = postData;
 
@@ -79,7 +81,9 @@ function SceneCreateForm() {
 
     formData.append("number", number);
     formData.append("title", title);
+    formData.append("act", act);
     formData.append("int_ext", int_ext);
+    formData.append("day_night", day_night);
     formData.append("time", time);
     formData.append("location", location);
     formData.append("characters", characters);
@@ -135,6 +139,25 @@ function SceneCreateForm() {
                 {message}
               </Alert>
             ))}
+            <Form.Group controlId="act" className="mb-2" >
+                <Form.Label className="p-1" >Act</Form.Label>
+                <Form.Control as="select"
+                  name="act"
+                  value={act}
+                  onChange={handleChange}
+                  aria-label="act select">
+                  <option>Select</option>
+                  <option value="one">One</option>
+                  <option value="two-a">Two - First Half</option>
+                  <option value="two-b">Two - Second Half</option>
+                  <option value="three">Three</option>
+                </Form.Control>
+            </Form.Group>
+            {errors?.act?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="int_ext" className="mb-2" >
                 <Form.Label className="p-1" >Int-Ext</Form.Label>
                 <Form.Control as="select"
@@ -148,6 +171,23 @@ function SceneCreateForm() {
                 </Form.Control>
             </Form.Group>
             {errors?.int_ext?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="day_night" className="mb-2" >
+                <Form.Label className="p-1" >Day/Night</Form.Label>
+                <Form.Control as="select"
+                  name="day_night"
+                  value={day_night}
+                  onChange={handleChange}
+                  aria-label="day or night select">
+                  <option>Select</option>
+                  <option value="DAY">Day</option>
+                  <option value="NIGHT">Night</option>
+                </Form.Control>
+            </Form.Group>
+            {errors?.day_night?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

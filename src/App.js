@@ -20,6 +20,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
 import { useCategoryContext, useDeptContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
+import { useActContext } from './contexts/ActContext';
 import SceneEditForm from './pages/scenes/SceneEditForm';
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
   const dept = useDeptContext();
   const category = useCategoryContext();
   const number = useNumberContext();
+  const act = useActContext();
+  console.log(act)
 
   return (
     <div className={styles.App} >
@@ -47,6 +50,16 @@ function App() {
             render={() => (
               <ScenesPage 
                message="No results found. Please add a scene" />
+            )}
+          />
+        <Route
+            exact
+            path="/act/scenes"
+            render={() => (
+              <ScenesPage
+                message="No results found."
+                filter={`act=${act}`}
+              />
             )}
           />
         <Route 

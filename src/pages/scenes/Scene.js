@@ -24,8 +24,8 @@ const Scene = (props) => {
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const category = useCategoryContext();
-    const { id, number, title, int_ext, time, location,
-        characters, action, content, shotlist, 
+    const { id, number, title, ACT,  int_ext, day_night, 
+        time, location, characters, action, content, shotlist, 
         storyboard, info, image } = props;
     // const ext = int_ext.toUpperCase();
     const currentUser = useCurrentUser();
@@ -159,8 +159,8 @@ const Scene = (props) => {
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
-                    <h3 className={` ${styles.Titlelist }`}>Scene{number} - <span className={styles.Italics }>{title}</span>
-                    </h3>
+                    <h2 className={` ${styles.Titlelist }`}>Scene {number} - <span className={styles.Italics }> "{title}" </span>
+                    </h2>
                     </Col >
                     <Col xs={1} className='text-center mx-0 px-0'>
                     <PostDropdown
@@ -185,10 +185,14 @@ const Scene = (props) => {
                   </Col>
                   </Row> */}
                   <div className="text-center mt-2">
-                  <h5 className={` ${styles.Titledetail }`}>
-                  Location: <span className={` ${styles.Action }`}>{location} - {int_ext} - {time}</span>
-                  </h5>
-                  <h5>Characters: <span className={` ${styles.Action }`}>{characters} </span></h5>
+                  <h4 className={` ${styles.Titledetail }`}>
+                  {/* Location:  */}
+                  <span style={{ textTransform: 'uppercase'}} 
+                  > {int_ext}. {location} - {day_night} {time}</span>
+                  </h4>
+                  <h5 style={{ textTransform: 'uppercase'}}>
+                    {/* Characters:  */}
+                    {characters} </h5>
                   <h5>Action: <span className={` ${styles.Action }`}>{action}</span> </h5>
                   <h5>Content: <span className={` ${styles.Action }`}>{content}</span> </h5>
                   <h5>Info: <span className={` ${styles.Action }`}>{info}</span> </h5>

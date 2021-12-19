@@ -44,6 +44,11 @@ function TopBox(props) {
         <p>E</p>
         <p>R</p> 
         </Col>
+        {/* <Col xs={2}
+            className={`text-center mt-5 ${styles.Longboxr}`}
+        >    
+        <p className="mt-4">C A L L E R</p>
+        </Col> */}
     </Row>
     </div>
     )

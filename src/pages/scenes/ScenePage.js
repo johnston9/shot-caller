@@ -36,7 +36,7 @@ const ScenePage = (props) => {
                 <Col className="mt-4">
                 <Button
                     className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
-                    onClick={() => history.goBack()}
+                    onClick={() => history.push('/scenes')}
                 >
                     Back to Scenes
                 </Button>

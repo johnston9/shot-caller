@@ -7,14 +7,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 import { DeptCategoryProvider } from "./contexts/DeptCategoryContext";
+import { ActProvider } from "./contexts/ActContext";
 
 ReactDOM.render(
     <Router >
       <CurrentUserProvider >
         <ProfileDataProvider >
-          <DeptCategoryProvider >
-            <App />
-          </DeptCategoryProvider>
+          <ActProvider >
+            <DeptCategoryProvider >
+              <App />
+            </DeptCategoryProvider>
+          </ActProvider>
         </ProfileDataProvider>
       </CurrentUserProvider>
     </Router>,
