@@ -26,83 +26,75 @@ const NavBar = () => {
     }
   };
 
-  const addSceneIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/scenes/create"
-    >
-      <i className="far fa-plus-square"></i>Add scene
-    </NavLink>
-  );
+  // const addSceneIcon = (
+  //   <NavLink
+  //     className={styles.NavLink}
+  //     activeClassName={styles.Active}
+  //     to="/scenes/create"
+  //   >
+  //     <i className="far fa-plus-square"></i>Add scene
+  //   </NavLink>
+  // );
 
-  const scenesIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/scenes"
-    >
-      <i className="navicon fas fa-stream"></i>Scenes
-    </NavLink>
-  );
+  // const scenesIcon = (
+  //   <NavLink
+  //     className={styles.NavLink}
+  //     activeClassName={styles.Active}
+  //     to="/scenes"
+  //   >
+  //     <i className="navicon fas fa-stream"></i>Scenes
+  //   </NavLink>
+  // );
 
-  const addPostIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/posts/create"
-    >
-      <i className="navicon far fa-plus-square"></i>Add post
-    </NavLink>
-  );
+  // const profilesIcon = (
+  //   <NavLink
+  //     className={styles.NavLink}
+  //     activeClassName={styles.Active}
+  //     to="/profiles"
+  //   >
+  //     <i className="navicon far fa-plus-square"></i>Profiles
+  //   </NavLink>
+  // );
+
   const loggedInIcons = (
     <>
       <NavLink
-          className={styles.NavLink} 
+          className={`mt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
-          to="/"
+          to="/home"
         >
           <i className="navicon fas fa-play"></i>Home
       </NavLink>
+
       <NavLink
-        className={styles.NavLink}
+        className={`mt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
-        to="/posts"
+        to="/scenes/create"
       >
-        <i className="navicon fas fa-stream"></i>Posts
+        <i className="far fa-plus-square"></i>Add scene
       </NavLink>
-      {/* <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/dept/category"
-      >
-        <i className="fas fa-stream fa-xs"></i>
-        script
-      </NavLink> */}
+
       <NavLink
-        className={styles.NavLink}
+        className={`mt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
-        to="/feed"
+        to="/scenes"
       >
-        <i className="fas fa-stream"></i>Feed
+        <i className="navicon fas fa-stream"></i>Scenes
       </NavLink>
+
       <NavLink
-        className={styles.NavLink}
+        className={`mt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
-        to="/archived"
+        to="/profiles"
       >
-        <i className="fas fa-stream"></i>Archived
+        <i className="navicon far fa-plus-square"></i>Profiles
       </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/liked"
-      >
-        <i className="fas fa-heart"></i>Liked
-      </NavLink>
-      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+
+      <NavLink className={`mt-2 ${styles.NavLink} `} 
+        to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
+
       <NavLink
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
@@ -130,6 +122,54 @@ const NavBar = () => {
         </NavLink>
     </>
   );
+
+  {/* <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/posts"
+      >
+        <i className="navicon fas fa-stream"></i>Posts
+      </NavLink> */}
+      {/* <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/dept/category"
+      >
+        <i className="fas fa-stream fa-xs"></i>
+        script
+      </NavLink> */}
+      {/* <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed"
+      >
+        <i className="fas fa-stream"></i>Feed
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/archived"
+      >
+        <i className="fas fa-stream"></i>Archived
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/liked"
+      >
+        <i className="fas fa-heart"></i>Liked
+      </NavLink> */}
+
+  // const addPostIcon = (
+  //   <NavLink
+  //     className={styles.NavLink}
+  //     activeClassName={styles.Active}
+  //     to="/posts/create"
+  //   >
+  //     <i className="navicon far fa-plus-square"></i>Add post
+  //   </NavLink>
+  // );
+
     return (
     <Navbar 
       expanded={expanded}
@@ -140,9 +180,6 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="30" /> Shot Caller
             </Navbar.Brand>
         </NavLink>
-        {currentUser && addSceneIcon }
-        {currentUser && addPostIcon }
-        {currentUser && scenesIcon }
         <Navbar.Toggle onClick={() => setExpanded(!expanded)}
           ref={ref}
           aria-controls="basic-navbar-nav" />

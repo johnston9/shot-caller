@@ -19,8 +19,9 @@ import { useRedirect } from "../../hooks/Redirect";
 import PostTop from "./PostTop";
 import PostCreateForm from "./PostCreateForm";
 import { Button } from "react-bootstrap";
+import TopBox from "../../components/TopBox";
 
-function PostsPage({ message, sceneId, number, dept, category, filter = "" }) {
+function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, dept, category, filter = "" }) {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
@@ -60,17 +61,37 @@ function PostsPage({ message, sceneId, number, dept, category, filter = "" }) {
   }, [filter, query, pathname])
   
   return (
+    <div>
+      <TopBox title="Posts" />
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
+      <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
         {sceneId ? (
           <div>
-        <h4 className={`mb-1 ${styles.Info} text-center`} >Scene {number} - Department {dept} - Category {category} </h4>
+        <h2 className={`mb-1 ${styles.Info}`} >Scene {number} - Department {dept} - Category {category} </h2>
         <p>SceneId {sceneId}</p>
         </div>
         ) : ""}
-        <Button onClick={() => setShow(show => !show)} >Add Post</Button>
+        {allposts ? (
+          <div>
+        <h2 className={`mb-1 ${styles.Info} text-center`} >All Posts </h2>
+        </div>
+        ) : ""}
+        {feed ? (
+          <div>
+        <h2 className={`mb-1 ${styles.Info} text-center`} >Feed </h2>
+        </div>
+        ) : ""}
+        {archived ? (
+          <div>
+        <h2 className={`mb-1 ${styles.Info} text-center`} >Archived Posts </h2>
+        </div>
+        ) : ""}
+        {liked ? (
+          <Button onClick={() => setShow(show => !show)} >Liked Posts</Button>
+        ) : (
+          ""
+        )}  
         {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
-        <PopularProfiles mobile/>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={`${styles.SearchBar} mt-3`}
@@ -84,6 +105,11 @@ function PostsPage({ message, sceneId, number, dept, category, filter = "" }) {
             placeholder="Search by username or post title"
           />
         </Form>
+        </Col>
+        </Row>
+        <Row>
+          <Col>
+
         {hasLoaded ? (
           <>
             {posts.results.length ? (
@@ -108,10 +134,8 @@ function PostsPage({ message, sceneId, number, dept, category, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
     </Row>
+    </div>
   );
 }
 

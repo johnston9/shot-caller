@@ -46,8 +46,7 @@ const SignInForm = () => {
       const {data} = await axios.post("/dj-rest-auth/login/", signInData)
       setCurrentUser(data.user);
       setTokenTimestamp(data);
-      history.goBack();
-      // history.push("/home");
+      history.push("/home");
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -125,7 +124,7 @@ const SignInForm = () => {
             </Container>
           </Col>
           <Col
-            xs={1} md={1}
+            xs={1} md={2}
             className={`my-auto d-none d-md-block p-2`}
           >
             {/* <Image

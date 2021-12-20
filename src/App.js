@@ -1,6 +1,5 @@
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
-import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import Container from "react-bootstrap/Container";
 import "./api/axiosDefaults";
@@ -22,6 +21,8 @@ import ScenePage from './pages/scenes/ScenePage';
 import { useCategoryContext, useDeptContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
 import { useActContext } from './contexts/ActContext';
 import SceneEditForm from './pages/scenes/SceneEditForm';
+import Home from './pages/home/Home';
+import ProfilesPage from './pages/profiles/ProfilesPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -75,7 +76,10 @@ function App() {
             exact
             path="/posts"
             render={() => (
-              <PostsPage message="No results found. Adjust the search keyword." />
+              <PostsPage 
+              message="No results found. Adjust the search keyword." 
+              allposts
+              />
             )}
           />
         <Route
@@ -99,6 +103,7 @@ function App() {
               <PostsPage
                 message="No results found. Adjust the search keyword or follow a user."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
+                feed
               />
             )}
           />
@@ -109,6 +114,7 @@ function App() {
               <PostsPage
                 message="No results found. Please archive a post."
                 filter={`archives__owner__profile=${profile_id}&ordering=-archives__created_at&`}
+                archived
               />
             )}
           />
@@ -119,12 +125,14 @@ function App() {
               <PostsPage
                 message="No results found. Please like a post."
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                liked
               />
             )}
           />
         
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         <Route exact path="/posts/:id" render={() => <PostPage />} />
+        <Route exact path="/profiles" render={() => <ProfilesPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
         <Route
             exact
