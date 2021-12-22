@@ -20,24 +20,21 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-function PostCreateForm({sceneId, number, dept, category}) {
+function DeptPostCreate() {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        sceneNumber: number,
         title: "",
         content: "",
-        scene: sceneId,
-        departments: dept,
-        categoryType: category,
+        departments: "",
         image1: "",
         image2: "",
         image3: "",
         image4: "",
         image5: "",
       });
-      const { sceneNumber, title, content, scene, departments, 
-        categoryType, image1, image2, image3, image4, image5 } = postData;
+      const { title, content, departments, 
+        image1, image2, image3, image4, image5 } = postData;
       const imageInput1 = useRef(null)
       const imageInput2 = useRef(null)
       const imageInput3 = useRef(null)
@@ -115,12 +112,9 @@ function PostCreateForm({sceneId, number, dept, category}) {
     });
     const formData = new FormData();
 
-    formData.append("number", sceneNumber);
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("scene", scene);
     formData.append("departments", departments);
-    formData.append("category", categoryType);
     if(imageInput1.current.files[0]) {
       formData.append("image1", imageInput1.current.files[0]);
     }
@@ -138,8 +132,9 @@ function PostCreateForm({sceneId, number, dept, category}) {
     }
   
     try {
-      const { data } = await axiosReq.post("/posts/", formData);
-      history.push(`/posts/${data.id}`);
+      const { data } = await axiosReq.post("/department/posts/", formData);
+      history.push(`/home`);
+    // history.push(`/department/posts/${data.id} `);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -150,6 +145,34 @@ function PostCreateForm({sceneId, number, dept, category}) {
 
   const textFields = (
       <div>
+          <Form.Group controlId="departments" className="mb-2" >
+                <Form.Label className="p-1" >Departments</Form.Label>
+                <Form.Control as="select"
+                  name="departments"
+                  value={departments}
+                  onChange={handleChange}
+                  aria-label="act select">
+                  <option>Select</option>
+                  <option value="art">Art</option>
+                  <option value="camera">Camera</option>
+                  <option value="casting">Casting</option>
+                  <option value="electric">Electric/Grip</option>
+                  <option value="location">Location</option>
+                  <option value="make-up">Hair/Make-up</option>
+                  <option value="post">Post/VSF</option>
+                  <option value="production">Production</option>
+                  <option value="script">Script</option>
+                  <option value="sound">Sound</option>
+                  <option value="stunts">Stunts</option>
+                  <option value="wardrobe">Wardrobe</option> 
+                  
+                </Form.Control>
+            </Form.Group>
+            {errors?.departments?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
           <Form.Group controlId="title" className="mb-2" >
                 <Form.Label className="p-1" >Title</Form.Label>
                 <Form.Control 
@@ -199,7 +222,7 @@ function PostCreateForm({sceneId, number, dept, category}) {
 
   return (
     <div>
-    <TopBox title="Create Post" />
+    <TopBox title="Create Dept Post" />
     {/* <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
       onClick={() => history.goBack()}
@@ -210,8 +233,6 @@ function PostCreateForm({sceneId, number, dept, category}) {
     <Row>
     <Col md={6} className="p-0 p-md-2">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
-        <p>Scene {number} - Dept {dept} - {category} </p>
-        <p>SceneId {sceneId}</p>
           {textFields}
           </Container>
         <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
@@ -460,4 +481,4 @@ function PostCreateForm({sceneId, number, dept, category}) {
   );
 }
 
-export default PostCreateForm;
+export default DeptPostCreate;

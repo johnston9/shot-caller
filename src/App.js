@@ -24,6 +24,8 @@ import SceneEditForm from './pages/scenes/SceneEditForm';
 import Home from './pages/home/Home';
 import ProfilesPage from './pages/profiles/ProfilesPage';
 import Departments from './pages/departments/Departments';
+import DeptPostCreate from './pages/departments/DeptPostCreate';
+import DeptPostsPage from './pages/departments/DeptPostsPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -47,6 +49,8 @@ function App() {
         <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route exact path="/depts/page" render={() => <Departments />} />
+        <Route exact path="/departments/posts/create" render={() => <DeptPostCreate />} />
+        <Route exact path="/departments/posts" render={() => <DeptPostsPage />} />
         <Route
             exact
             path="/departments"

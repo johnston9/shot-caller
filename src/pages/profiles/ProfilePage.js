@@ -25,6 +25,7 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import {ProfileEditDropdown} from "../../components/PostDropdown";
 import { useRedirect } from "../../hooks/Redirect";
+import TopBox from "../../components/TopBox";
 
 function ProfilePage() {
   useRedirect("loggedOut")
@@ -138,9 +139,10 @@ function ProfilePage() {
   );
 
   return (
+    <div>
+      <TopBox title="Profiles" />
     <Row>
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+      <Col className="py-2 p-0 p-lg-2">
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>
@@ -152,10 +154,8 @@ function ProfilePage() {
           )}
         </Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
     </Row>
+    </div>
   );
 }
 

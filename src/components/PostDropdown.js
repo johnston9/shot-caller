@@ -24,7 +24,7 @@ const EditDeleteIcon = React.forwardRef(({ onClick }, ref) => (
 const DepartmentIcon = React.forwardRef(({ onClick }, ref) => (
   <OverlayTrigger
     placement="top"
-    overlay={<Tooltip>Department Category</Tooltip>}
+    overlay={<Tooltip>Scene Posts by Category</Tooltip>}
     >
   <i
     className="fas fa-ellipsis-v"
@@ -113,41 +113,50 @@ export function ProfileEditDropdown({ id }) {
 }
 
 // department dropdown 
-export function DeptDropdown({ handleClick}) {
+export function DeptDropdown({ handleClick, depart}) {
   const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={DepartmentIcon} />
       <Dropdown.Menu>
-        <Dropdown.Item
+        {depart ? (
+          <Dropdown.Item
           onClick={() => handleClick('requirements') }
           aria-label="select requirements"
         >
-          <i className="fas fa-edit" /> Requirements
+          <i className="fas fa-play" /> Requirements  <br/>ordered by scene
         </Dropdown.Item>
+        ) : (
+          <Dropdown.Item
+          onClick={() => handleClick('requirements') }
+          aria-label="select requirements"
+        >
+          <i className="fas fa-play" /> Requirements 
+        </Dropdown.Item>
+        ) }
         <Dropdown.Item
           onClick={() => handleClick("workspace") }
           aria-label="select workspace"
         >
-          <i className="fas fa-edit" /> Workspace
+          <i className="fas fa-play" /> Workspace
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => handleClick("finals") }
           aria-label="select finals"
         >
-          <i className="fas fa-edit" /> Finals
+          <i className="fas fa-play" /> Finals
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => handleClick("shooting") }
           aria-label="select shooting"
         >
-          <i className="fas fa-edit" /> Shooting
+          <i className="fas fa-play" /> Shooting
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => handleClick("info") }
           aria-label="select info"
         >
-          <i className="fas fa-edit" /> Info
+          <i className="fas fa-play" /> Info
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

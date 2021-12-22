@@ -17,6 +17,7 @@ const PostTop = (props) => {
     const {
         id,
         owner,
+        name,
         profile_id,
         profile_image,
         comments_count,
@@ -132,18 +133,18 @@ const PostTop = (props) => {
                 <div className="d-flex align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
-                        {owner}
+                        {owner} {name}
                     </Link>
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
-                        {is_owner && (
+                        {/* {is_owner && (
                           <OverlayTrigger
                           placement="top"
                           overlay={<Tooltip>Edit/delete</Tooltip>}
                           >
                           <i className={`fas fa-ellipsis-v ${styles.Edit} p-3 ml-2 mr-0`} />
                         </OverlayTrigger>
-                        ) }
+                        ) } */}
                         {is_owner && (
                           <PostDropdown
                             handleEdit={handleEdit}

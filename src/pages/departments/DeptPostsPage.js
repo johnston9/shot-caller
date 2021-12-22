@@ -17,12 +17,12 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import { useRedirect } from "../../hooks/Redirect";
-import PostTop from "./PostTop";
-import PostCreateForm from "./PostCreateForm";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
+import DeptPostCreate from "./DeptPostCreate";
+import DeptPostTop from "./DeptPostTop";
 
-function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, dept, category, filter = "" }) {
+function DeptPostsPage({ filter = "" }) {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
@@ -35,17 +35,9 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
 
   useEffect(() => {
     console.log(`depart ${filter}`);
-    console.log(`sceneId ${sceneId}`)
-    console.log(`number ${number}`)
-    console.log(`dept ${dept}`)
-    console.log(`category ${category}`)
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}&search=${query}`);
-        if (category == 'requirements') {
-          const reqData = data.results.sort((a, b) => a.number - b.number);
-          setPosts(reqData);
-        }
+        const { data } = await axiosReq.get(`/department/posts/?${filter}&search=${query}`);
         console.log(data)
         setPosts(data);
         setHasLoaded(true);
@@ -69,7 +61,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
   
   return (
     <div>
-      <TopBox title="Posts" />
+      <TopBox title=" Department Posts" />
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
             onClick={() => history.goBack()}
@@ -78,43 +70,18 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         </Button>
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
-            onClick={() => history.push('/scenes')}
+            onClick={() => history.push('/departments')}
         >
             Scenes
         </Button>
     <Row className="h-100">
       <Col className="py-2 text-center" >
-        {sceneId ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info}`} >Scene {number}</h2><span>SceneId {sceneId}</span>
-        </div>
-        ) : ""}
-        {dept ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >
-        <span style={{ textTransform: 'capitalize'}}> {dept} department - {category}</span> </h2>
-        </div>
-        ) : ""}
-        {allposts ? (
+        {/* {allposts ? (
           <div>
         <h2 className={`mb-1 ${styles.Info} text-center`} >All Posts </h2>
         </div>
-        ) : ""}
-        {feed ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >Feed </h2>
-        </div>
-        ) : ""}
-        {archived ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >Archived Posts </h2>
-        </div>
-        ) : ""} 
-        {liked ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >Liked Posts </h2>
-        </div>
-        ) : ""}
+        ) : ""} */}
+        <Button onClick={() => setShow(show => !show)} >Add Post</Button>
         </Col>
         </Row>
         <Row>
@@ -136,14 +103,10 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         </Row>
         <Row>
           <Col className="text-center">
-            {sceneId ? (
-              <Button onClick={() => setShow(show => !show)} 
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-              Add Post</Button>
-            ) : (
-              ""
-            )}
-        {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
+            <Button onClick={() => setShow(show => !show)} 
+            className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+            Add Post</Button>
+        {!show ?("") : (<DeptPostCreate /> ) }
           </Col>
         </Row>
         <Row className="mt-3">
@@ -153,7 +116,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
             {posts.results.length ? (
               <InfiniteScroll
               children={posts.results.map((post) => (
-                <PostTop key={post.id} {...post} setPosts={setPosts} />
+                <DeptPostTop key={post.id} {...post} setPosts={setPosts} />
               ))}
               dataLength={posts.results.length}
               loader={<Asset spinner />}
@@ -162,7 +125,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
             />
             ) : (
               <Container className={appStyles.Content}>
-                <Asset src={NoResults } message={message} />
+                <Asset src={NoResults } />
               </Container>
             )}
           </>
@@ -177,4 +140,4 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
   );
 }
 
-export default PostsPage;
+export default DeptPostsPage;

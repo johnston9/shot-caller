@@ -67,6 +67,14 @@ const NavBar = () => {
       </NavLink>
 
       <NavLink
+          className={`mt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/departments/posts/create"
+        >
+          <i className="navicon fas fa-play"></i>Add Post 
+      </NavLink>
+
+      <NavLink
         className={`mt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
         to="/scenes/create"
