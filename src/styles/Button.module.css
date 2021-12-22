@@ -31,6 +31,11 @@
     padding: 10px 50px;
     width: 50%;
   }
+
+  .Wide2 {
+    padding: 5px 50px;
+    width: 30%;
+  }
   
   .Blue,
   .BlueOutline:hover,

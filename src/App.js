@@ -23,6 +23,7 @@ import { useActContext } from './contexts/ActContext';
 import SceneEditForm from './pages/scenes/SceneEditForm';
 import Home from './pages/home/Home';
 import ProfilesPage from './pages/profiles/ProfilesPage';
+import Departments from './pages/departments/Departments';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -45,6 +46,19 @@ function App() {
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
+        <Route exact path="/depts/page" render={() => <Departments />} />
+        <Route
+            exact
+            path="/departments"
+            render={() => (
+              <PostsPage
+                message="No results found."
+                filter={`departments=${dept}&category=${category}`}
+                dept={dept}
+                category={category}
+              />
+            )}
+          />
         <Route
             exact
             path="/scenes"

@@ -8,7 +8,7 @@ import { useRedirect } from '../../hooks/Redirect';
 import TopBox from '../../components/TopBox';
 import PopularProfiles from './PopularProfiles';
 import btnStyles from "../../styles/Button.module.css";
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router';
 
 // import appStyles from "../../App.module.css";
 
@@ -18,24 +18,45 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const ProfilesPage = () => {
     useRedirect("loggedOut");
-    const history = useHistory();
+    const history = useHistory() ;
     return (
         <div>
             <TopBox title="Profiles" />
             <Container>
-                <Row className='d-flex justify-content-between mt-4'>
-                    <Col md={4} >
-                    <Button onClick={() => history.push("/feed")} >Feed</Button>
+            <Button onClick={() => history.push('/home')}
+                className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
+            >
+                Back to Home
+            </Button>
+                <Row className='mb-4 mt-3'>
+                    <Col className='text-center' xs={4} >
+                    <Button onClick={() => history.push("/archived")} 
+                      className='py-0' >Archived Posts</Button>
                     </Col>
-                    <Col md={4} >
-                    <Button onClick={() => history.push("/archived")} >Archived Posts</Button>
+                    <Col className='text-center' xs={4} >
+                    <Button onClick={() => history.push("/posts")}
+                      className='py-0' >All Posts</Button>
                     </Col>
-                    <Col md={4} >
-                    <Button onClick={() => history.push("/posts")} >Liked Posts</Button>
+                    <Col className='text-center' xs={4} >
+                    <Button onClick={() => history.push("/liked")} 
+                      className='py-0'>Liked Posts</Button>
                     </Col>
                 </Row>
-                <Row>
-                    <Col className='mt-1' >
+                <hr />
+                <h5 className='text-center mt-3'>Followed users</h5>
+                <Row className='mt-1'>
+                    <Col className='text-center' >
+                    <Button onClick={() => history.push("/feed")} 
+                      className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}
+                      >
+                        Feed
+                        </Button>
+                    </Col>
+                </Row>
+                <hr />
+                <h3 className='text-center mt-3'>View Profiles</h3>
+                <Row className='mt-1'>
+                    <Col className='mt-1'>
                       <PopularProfiles /> 
                     </Col>
                 </Row>

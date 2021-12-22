@@ -19,7 +19,8 @@ const PopularProfiles = () => {
         <div>
           <Row>
             <Col className='text-center'>
-            <Button onClick={() => setShow(show => !show)} >Profiles</Button>
+            <Button onClick={() => setShow(show => !show)} 
+              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}>Profiles</Button>
             </Col>
           </Row>
         <Container 

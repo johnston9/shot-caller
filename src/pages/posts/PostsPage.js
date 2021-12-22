@@ -10,6 +10,8 @@ import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
+import btnStyles from "../../styles/Button.module.css";
+import { useHistory } from 'react-router-dom';
 
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -28,6 +30,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const history = useHistory();
  
   const [query, setQuery] = useState("");
 
@@ -63,12 +66,29 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
   return (
     <div>
       <TopBox title="Posts" />
+      <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
+            onClick={() => history.goBack()}
+        >
+            Back
+        </Button>
+      <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
+            onClick={() => history.push('/scenes')}
+        >
+            Scenes
+        </Button>
     <Row className="h-100">
-      <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+      <Col className="py-2 text-center" >
         {sceneId ? (
           <div>
-        <h2 className={`mb-1 ${styles.Info}`} >Scene {number} - Department {dept} - Category {category} </h2>
-        <p>SceneId {sceneId}</p>
+        <h2 className={`mb-1 ${styles.Info}`} >Scene {number}</h2><span>SceneId {sceneId}</span>
+        </div>
+        ) : ""}
+        {dept ? (
+          <div>
+        <h2 className={`mb-1 ${styles.Info} text-center`} >
+        <span style={{ textTransform: 'capitalize'}}> {dept} department - {category}</span> </h2>
         </div>
         ) : ""}
         {allposts ? (
@@ -91,8 +111,11 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         ) : (
           ""
         )}  
-        {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        </Col>
+        </Row>
+        <Row>
+        <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+        {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
           className={`${styles.SearchBar} mt-3`}
           onSubmit={(event) => event.preventDefault()}
@@ -108,8 +131,19 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         </Col>
         </Row>
         <Row>
+          <Col className="text-center">
+            {sceneId ? (
+              <Button onClick={() => setShow(show => !show)} 
+              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              Add Post</Button>
+            ) : (
+              ""
+            )}
+        {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
+          </Col>
+        </Row>
+        <Row className="mt-3">
           <Col>
-
         {hasLoaded ? (
           <>
             {posts.results.length ? (

@@ -12,143 +12,126 @@ import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
-import Shotlist from './Shotlist';
-import Storyboard from './Storyboard';
 
-const Scene = (props) => {
+const Departments = (props) => {
     useRedirect("loggedOut")
-    const [showlist, setShowlist] = useState(false);
-    const [showstory, setShowstory] = useState(false);
     const setSceneId = useSetSceneContext();
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const category = useCategoryContext();
-    const { id, number, title, act, int_ext, day_night, 
+    const { id, number, title, ACT,  int_ext, day_night, 
         time, location, characters, action, content, shotlist, 
         storyboard, info, image } = props;
     // const ext = int_ext.toUpperCase();
     const currentUser = useCurrentUser();
     const history = useHistory();
 
-    const handleEdit = () => {
-      history.push(`/scenes/${id}/edit`);
-    };
-  
-    const handleDelete = async () => {
-      try {
-        await axiosReq.delete(`/scenes/${id}/`);
-        history.goBack();
-      } catch (err) {
-        // console.log(err);
-      }
-    };
-
     const handleClickCamera = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("camera");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickSound = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("sound");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickLocation = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("location");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickScript = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("script");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickArt = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("art");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickMakeup = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("make-up");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickWardrobe = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("wardrobe");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickCasting = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("casting");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickPost = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("post");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickProduction = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("production");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickStunts = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("stunts");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
     const handleClickElectric = (category) => {
-      setSceneId(id); 
-      setNumber(number);
+    //   setSceneId(id); 
+    //   setNumber(number);
       setDept("electric");
       setCategory(category);
-      history.push(`/dept/category`);
+      history.push(`/departments`);
 
     };
 
@@ -156,77 +139,8 @@ const Scene = (props) => {
         <div>
             <Card className={` ${styles.Scene}`}>
                 <Card.Header className={`pt-2 pb-1 ${styles.Header }`}>
-                  <Row className='d-flex align-items-center'>
-                    <Col className='mx-0 px-0' xs={1}></Col>
-                    <Col xs={10} className='mx-0 px-0 text-center'>
-                    <h2 className={` ${styles.Titlelist }`}>Scene {number} - <span className={styles.Italics }> "{title}" </span>
-                    </h2>
-                    <p>Act {act} </p>
-                    <p>scene Id {id} </p>
-                    </Col >
-                    <Col xs={1} className='text-center mx-0 px-0'>
-                    <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
-                    </Col>
-                    </Row>
                   </Card.Header>
-                  {/* <Row>
-                    <Col xs={1}></Col>
-                    <Col xs={10} >
-                  <h3 className={`text-center mb-0 ${styles.Titlelist }`}>
-                    Scene{number} - <span className={styles.Italics }>{title}</span>
-                  </h3>
-                  </Col>
-                  <Col xs={1} >
-                  <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
-                  </Col>
-                  </Row> */}
-                  <div className="text-center mt-2">
-                  <h4 className={` ${styles.Titledetail }`}>
-                  {/* Location:  */}
-                  <span style={{ textTransform: 'uppercase'}} 
-                  > {int_ext}. {location} - {day_night} {time}</span>
-                  </h4>
-                  <h5 style={{ textTransform: 'uppercase'}}>
-                    {/* Characters:  */}
-                    {characters} </h5>
-                  <h5>Action: <span className={` ${styles.Action }`}>{action}</span> </h5>
-                  <h5>Content: <span className={` ${styles.Action }`}>{content}</span> </h5>
-                  <h5>Info: <span className={` ${styles.Action }`}>{info}</span> </h5>
-                  </div>
-                  <Row>
-                    <Col className='text-center' xs={6}>
-                    <Button
-                        className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                        onClick={() => setShowlist(showlist => !showlist)} >Shotlist
-                    </Button>
-                    </Col>
-                    <Col className='text-center' xs={6}>
-                      <Button
-                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
-                      </Button>
-                      {/* <p>SceneId{id} </p>   */}
-                    </Col>
-                  </Row>
-                  
-                  <hr />
                   <Card.Body>
-                    {!showlist ? (
-                      ""
-                    ) : (
-                      <Shotlist shotlist={shotlist} />
-                    ) }
-                    {!showstory ? (
-                      ""
-                    ) : (
-                      <Storyboard storyboard={storyboard} />
-                    ) }
                   <h3 className={`text-center`}>Departments</h3>
                     <Row>
                       <Col xs={4} lg={3} >
@@ -314,13 +228,10 @@ const Scene = (props) => {
                         </Card>
                       </Col>
                     </Row>
-                      <Link to={`/scenes/${id}`}>
-
-                      </Link>
                   </Card.Body>
             </Card>
         </div>
     )
 }
 
-export default Scene
+export default Departments

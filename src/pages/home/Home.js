@@ -16,7 +16,9 @@ import Container from "react-bootstrap/Container";
 
 
 const Home = () => {
-    useRedirect("loggedOut")
+    useRedirect("loggedOut");
+    const history = useHistory();
+
     return (
         <div className={styles.Background}>
             <TopBox title="SHOT CALLER" />
@@ -29,25 +31,53 @@ const Home = () => {
                 src={door}
             />
           </Col>
-          <Col className="pb-0" xs={10}
-           >
-                <Row className="text-center mt-5">
-                    <Col md={4} >
-                        <div className={styles.Homebox}>
-                        <h5 className="text-center pt-2">Scenes</h5>
-                        </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className={styles.Homebox}>
-                            <h5 className="text-center pt-2">Schedule</h5>
-                        </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className={styles.Homebox}>
-                        <h5 className="text-center pt-2">Profiles</h5>
-                        </div>
-                    </Col>
-                </Row>
+          <Col className="pb-0" xs={10}>
+              <Row className="text-center mt-5">
+                  <Col md={4} >
+                    <Link to={`/scenes`} >
+                      <div className={styles.Homebox}>
+                      <h5 className="text-center pt-2">Scenes</h5>
+                      </div>
+                    </Link>
+                  </Col>
+                  <Col md={4} >
+                    <Link to={`/scenes`} >
+                      <div className={styles.Homebox}>
+                          <h5 className="text-center pt-2">Schedule</h5>
+                      </div>
+                    </Link>
+                  </Col>
+                  <Col md={4} >
+                    <Link to={`/profiles`} >
+                      <div className={styles.Homebox}>
+                      <h5 className="text-center pt-2">Profiles</h5>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
+              <Row className="text-center mt-5">
+                  <Col md={4} >
+                    <Link to={`/depts/page`} >
+                      <div className={styles.Homebox}>
+                      <h5 className="text-center pt-2">Departments</h5>
+                      </div>
+                    </Link>
+                  </Col>
+                  <Col md={4} >
+                    <Link to={`/scenes`} >
+                      <div className={styles.Homebox}>
+                          <h5 className="text-center pt-2">xxx</h5>
+                      </div>
+                    </Link>
+                  </Col>
+                  <Col md={4} >
+                    <Link to={`/profiles`} >
+                      <div className={styles.Homebox}>
+                      <h5 className="text-center pt-2">xxx</h5>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
             <Container className="mt-3" >
             </Container>
           </Col>

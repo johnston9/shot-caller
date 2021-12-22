@@ -9,6 +9,8 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
+import { useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { Button } from 'react-bootstrap';
 
 const PostTop = (props) => {
   useRedirect("loggedOut")
@@ -23,6 +25,7 @@ const PostTop = (props) => {
         archive_id,
         title,
         scene,
+        number,
         departments,
         category,
         updated_at,
@@ -32,11 +35,21 @@ const PostTop = (props) => {
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
+      const setSceneId = useSetSceneContext();
+      const setDept = useSetDeptContext();
+      const setCategory = useSetCategoryContext();
 
       const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
       };
     
+      const handleGoToScene = () => {
+        setSceneId(scene);
+        setDept(departments);
+        setCategory(category);
+        history.push(`/dept/category`);
+      };
+
       const handleDelete = async () => {
         try {
           await axiosRes.delete(`/posts/${id}/`);
@@ -115,7 +128,7 @@ const PostTop = (props) => {
         <div>
             <Card className={styles.Post} >
                 <Card.Body className="py-1">
-                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {scene} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
+                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {number} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
                 <div className="d-flex align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
@@ -212,6 +225,8 @@ const PostTop = (props) => {
                         {comments_count}
                         </div>
                     </div>
+                    <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>
+                    <span> Scene Id {scene} Scene Number {number} - Post Id {id}</span>
                     </Card.Body>
                     <Link to={`/posts/${id}`}>
                     <Card.Body>

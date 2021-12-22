@@ -9,7 +9,9 @@ import { Link, useHistory } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
+import { useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
+import { Button } from 'react-bootstrap';
 
 const Post = (props) => {
   useRedirect("loggedOut")
@@ -25,6 +27,7 @@ const Post = (props) => {
         title,
         content,
         scene,
+        number,
         departments,
         category,
         image1,
@@ -40,6 +43,16 @@ const Post = (props) => {
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
+      const setSceneId = useSetSceneContext();
+      const setDept = useSetDeptContext();
+      const setCategory = useSetCategoryContext();
+
+      const handleGoToScene = () => {
+        setSceneId(scene);
+        setDept(departments);
+        setCategory(category);
+        history.push(`/dept/category`);
+      };
 
       const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
@@ -123,7 +136,9 @@ const Post = (props) => {
         <div>
             <Card className={styles.Post} >
                 <Card.Body>
-                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {scene} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
+                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {number} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
+                <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>
+                <p>Scene Id {scene} Scene Number {number} - Post Id {id}</p>
                 <div className="d-flex align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
