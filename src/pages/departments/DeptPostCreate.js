@@ -221,20 +221,23 @@ function DeptPostCreate({deptGeneral="" } ) {
 
   return (
     <div>
-    {/* <TopBox title="Create Dept Post" /> */}
-    {/* <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+      {deptGeneral ? (
+        ""
+      ) : (
+        <TopBox title="Departments Create Post" />
+      ) }
+    <Button
+      className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
       onClick={() => history.goBack()}
       >
-      Back to scene
-      </Button> */}
+      Back
+      </Button>
     <Form className="mt-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           {textFields}
           </Container>
-        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
       </Col>
       <Col className="pt-2 p-0 p-md-2" md={6}>
         <Container
@@ -474,6 +477,11 @@ function DeptPostCreate({deptGeneral="" } ) {
             {/* """ end image 5 """" */}
         </Container>
       </Col>   
+    </Row>
+    <Row>
+      <Col>
+        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+      </Col>
     </Row>
   </Form>
   </div>

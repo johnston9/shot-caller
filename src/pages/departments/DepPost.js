@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from "react-bootstrap/Card";
+
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from 'react-router-dom';
@@ -8,7 +9,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
 
-const DeptPostTop = (props) => {
+const DeptPost = (props) => {
   useRedirect("loggedOut")
     const {
         id,
@@ -17,8 +18,15 @@ const DeptPostTop = (props) => {
         profile_id,
         profile_image,
         title,
+        content,
         departments,
+        image1,
+        image2,
+        image3,
+        image4,
+        image5,
         updated_at,
+        // postPage,
         setPosts,
       } = props;
 
@@ -29,21 +37,21 @@ const DeptPostTop = (props) => {
       const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
       };
-
+    
       const handleDelete = async () => {
         try {
           await axiosRes.delete(`/posts/${id}/`);
           history.goBack();
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       };
 
     return (
         <div>
             <Card className={styles.Post} >
-                <Card.Body className="py-1">
-                <Card.Text className={`mb-1 ${styles.Info} text-center`} >{departments.toUpperCase()} DEPARTMENT</Card.Text>
+                <Card.Body>
+                <Card.Text className={`mb-1 ${styles.Info} text-center`} >{departments.toUpperCase()} DEPARTMENT </Card.Text>
                 <div className="d-flex align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
@@ -57,18 +65,24 @@ const DeptPostTop = (props) => {
                             handleDelete={handleDelete}
                         />
                         ) }
-                    </div>         
-                </div>
+                    </div>
+                  </div>
                 </Card.Body>
-                  <Link to={`/departments/posts/${id}`}>
-                    <Card.Body>
-                    <hr className="mb-1" />
+                <hr />
+                <Card.Body className="pt-1" >
                     {title && <Card.Title className="text-center">{title}</Card.Title>}
+                    <hr />
+                    {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>
-                </Link>
+                <hr />
+                {image1 && <Card.Img src={image1} alt={title} className="mb-3" />}
+                {image2 && <Card.Img src={image2} alt={title} className="mb-3" />}
+                {image3 && <Card.Img src={image3} alt={title} className="mb-3" />}
+                {image4 && <Card.Img src={image4} alt={title} className="mb-3" />}
+                {image5 && <Card.Img src={image5} alt={title} className="mb-3" />}
             </Card>
         </div>
     )
 }
 
-export default DeptPostTop
+export default DeptPost

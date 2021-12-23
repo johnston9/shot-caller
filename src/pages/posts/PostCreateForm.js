@@ -200,12 +200,12 @@ function PostCreateForm({sceneId, number, dept, category}) {
   return (
     <div>
     {/* <TopBox title="Create Post" /> */}
-    {/* <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+    <Button
+      className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
       onClick={() => history.goBack()}
       >
       Back
-      </Button> */}
+      </Button>
     <Form className="mt-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">
@@ -214,7 +214,6 @@ function PostCreateForm({sceneId, number, dept, category}) {
         <p>SceneId {sceneId}</p>
           {textFields}
           </Container>
-        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
       </Col>
       <Col className="pt-2 p-0 p-md-2" md={6}>
         <Container
@@ -454,6 +453,11 @@ function PostCreateForm({sceneId, number, dept, category}) {
             {/* """ end image 5 """" */}
         </Container>
       </Col>   
+    </Row>
+    <Row>
+      <Col>
+        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+      </Col>
     </Row>
   </Form>
   </div>

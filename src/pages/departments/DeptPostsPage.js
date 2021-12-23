@@ -32,7 +32,6 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   const history = useHistory();
  
   const [query, setQuery] = useState("");
-  // const department = useDep
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -61,7 +60,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   
   return (
     <div>
-      <TopBox title=" Department Posts" />
+      <TopBox title=" Departments" />
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
             onClick={() => history.goBack()}
@@ -76,7 +75,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
         </Button>
       <Row className="h-100">
       <Col className="py-2 text-center" >
-        <h2>{deptGeneral} Department</h2>
+        <h2 style={{ textTransform: 'uppercase'}}>{deptGeneral} Department</h2>
         </Col>
         </Row>
         <Row>

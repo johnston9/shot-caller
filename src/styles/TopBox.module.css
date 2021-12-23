@@ -63,6 +63,13 @@
 }
 
 .Alignme {
-    display: flex;
+    /* display: flex;
     align-items: center;
+    justify-content: center; */
   }
+
+@media screen and (max-width: 600px) {
+    .Title {
+        font-size: 1.50em;
+    }
+}

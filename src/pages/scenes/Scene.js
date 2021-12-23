@@ -27,7 +27,6 @@ const Scene = (props) => {
     const { id, number, title, act, int_ext, day_night, 
         time, location, characters, action, content, shotlist, 
         storyboard, info, image } = props;
-    // const ext = int_ext.toUpperCase();
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -172,20 +171,6 @@ const Scene = (props) => {
                     </Col>
                     </Row>
                   </Card.Header>
-                  {/* <Row>
-                    <Col xs={1}></Col>
-                    <Col xs={10} >
-                  <h3 className={`text-center mb-0 ${styles.Titlelist }`}>
-                    Scene{number} - <span className={styles.Italics }>{title}</span>
-                  </h3>
-                  </Col>
-                  <Col xs={1} >
-                  <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
-                  </Col>
-                  </Row> */}
                   <div className="text-center mt-2">
                   <h4 className={` ${styles.Titledetail }`}>
                   {/* Location:  */}

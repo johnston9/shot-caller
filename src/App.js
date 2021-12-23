@@ -27,6 +27,7 @@ import Departments from './pages/departments/Departments';
 import DeptPostCreate from './pages/departments/DeptPostCreate';
 import DeptPostsPage from './pages/departments/DeptPostsPage';
 import DeptsGeneral from './pages/departments/DeptsGeneral';
+import DeptPostPage from './pages/departments/DeptPostPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -157,6 +158,8 @@ function App() {
                 filter={`departments=${deptGeneral}`}
                 deptGeneral={deptGeneral}
             />)} />
+        {/* <Route exact path="/departments/posts/:id/edit" render={() => <PostEditForm />} /> */}
+        <Route exact path="/departments/posts/:id" render={() => <DeptPostPage />} />
         <Route exact path="/profiles" render={() => <ProfilesPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
         <Route
