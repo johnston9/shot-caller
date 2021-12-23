@@ -4,9 +4,9 @@
     width: 100%; 
   }
 
-.Row {
+/* .Row {
     height: calc(100vh - 81px);
-}
+} */
 
 .Homebox {
     /* height: 150px;
@@ -14,6 +14,10 @@
     height: 150px;
     background-color: #3b444b;
     color: #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.Title {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
   

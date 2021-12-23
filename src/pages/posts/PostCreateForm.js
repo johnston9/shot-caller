@@ -199,12 +199,12 @@ function PostCreateForm({sceneId, number, dept, category}) {
 
   return (
     <div>
-    <TopBox title="Create Post" />
+    {/* <TopBox title="Create Post" /> */}
     {/* <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
       onClick={() => history.goBack()}
       >
-      Back to scene
+      Back
       </Button> */}
     <Form className="mt-3" onSubmit={handleSubmit}>
     <Row>

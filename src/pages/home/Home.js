@@ -36,21 +36,24 @@ const Home = () => {
                   <Col md={4} >
                     <Link to={`/scenes`} >
                       <div className={styles.Homebox}>
-                      <h5 className="text-center pt-2">Scenes</h5>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Scenes </h5>
+                      <p className="mt-2">View and add posts to scenes by department and category</p>
                       </div>
                     </Link>
                   </Col>
                   <Col md={4} >
                     <Link to={`/scenes`} >
                       <div className={styles.Homebox}>
-                          <h5 className="text-center pt-2">Schedule</h5>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                       </div>
                     </Link>
                   </Col>
                   <Col md={4} >
                     <Link to={`/profiles`} >
-                      <div className={styles.Homebox}>
-                      <h5 className="text-center pt-2">Profiles</h5>
+                      <div className={`${styles.Homebox}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
+                      <p className="mt-2">View and follow profiles</p>
+                      <p className="mt-2">Access feed and archived posts</p>
                       </div>
                     </Link>
                   </Col>
@@ -59,21 +62,23 @@ const Home = () => {
                   <Col md={4} >
                     <Link to={`/depts/page`} >
                       <div className={styles.Homebox}>
-                      <h5 className="text-center pt-2">Departments</h5>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Scene Posts by Department</h5>
+                      <p className="mt-2"> Requirements and Finals ordered by scene number</p>
                       </div>
                     </Link>
                   </Col>
                   <Col md={4} >
                     <Link to={`/scenes`} >
                       <div className={styles.Homebox}>
-                          <h5 className="text-center pt-2">xxx</h5>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Departments</h5>
+                          <p className="mt-2"> View and add posts to departments outside of scenes</p>
                       </div>
                     </Link>
                   </Col>
                   <Col md={4} >
                     <Link to={`/profiles`} >
                       <div className={styles.Homebox}>
-                      <h5 className="text-center pt-2">xxx</h5>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>xxx</h5>
                       </div>
                     </Link>
                   </Col>

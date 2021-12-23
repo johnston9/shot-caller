@@ -14,7 +14,7 @@ import Row from 'react-bootstrap/Row';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import TopBox from '../../components/TopBox';
 
-const Departments = (props) => {
+const DeptsGeneral = (props) => {
     useRedirect("loggedOut")
     const setSceneId = useSetSceneContext();
     const setNumber = useSetNumberContext();
@@ -243,4 +243,4 @@ const Departments = (props) => {
     )
 }
 
-export default Departments
+export default DeptsGeneral
