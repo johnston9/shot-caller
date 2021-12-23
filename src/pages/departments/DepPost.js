@@ -8,6 +8,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
+import { useDeptGeneralContext } from '../../contexts/DeptCategoryContext';
 
 const DeptPost = (props) => {
   useRedirect("loggedOut")
@@ -19,7 +20,7 @@ const DeptPost = (props) => {
         profile_image,
         title,
         content,
-        departments,
+        // departments,
         image1,
         image2,
         image3,
@@ -33,6 +34,7 @@ const DeptPost = (props) => {
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
+      const departments = useDeptGeneralContext();
 
       const handleEdit = () => {
         history.push(`/department/posts/${id}/edit`);

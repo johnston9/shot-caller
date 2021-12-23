@@ -19,6 +19,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function DeptPostEdit() {
   useRedirect("loggedOut")
@@ -231,18 +232,14 @@ function DeptPostEdit() {
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+        Edit
       </Button>
     </div>
   );
 
   return (
     <div>
-      {deptGeneral ? (
-        ""
-      ) : (
-        <TopBox title="Departments Create Post" />
-      ) }
+        <TopBox title="Departments Edit Post" />
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
       onClick={() => history.goBack()}
