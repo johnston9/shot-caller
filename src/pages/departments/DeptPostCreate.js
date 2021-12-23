@@ -20,13 +20,13 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-function DeptPostCreate() {
+function DeptPostCreate({deptGeneral="" } ) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",
         content: "",
-        departments: "",
+        departments: deptGeneral,
         image1: "",
         image2: "",
         image3: "",
@@ -134,7 +134,6 @@ function DeptPostCreate() {
     try {
       const { data } = await axiosReq.post("/department/posts/", formData);
       history.push(`/home`);
-    // history.push(`/department/posts/${data.id} `);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -222,7 +221,7 @@ function DeptPostCreate() {
 
   return (
     <div>
-    <TopBox title="Create Dept Post" />
+    {/* <TopBox title="Create Dept Post" /> */}
     {/* <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
       onClick={() => history.goBack()}

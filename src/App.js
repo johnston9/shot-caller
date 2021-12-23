@@ -18,7 +18,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
-import { useCategoryContext, useDeptContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
+import { useCategoryContext, useDeptContext, useDeptGeneralContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
 import { useActContext } from './contexts/ActContext';
 import SceneEditForm from './pages/scenes/SceneEditForm';
 import Home from './pages/home/Home';
@@ -26,6 +26,7 @@ import ProfilesPage from './pages/profiles/ProfilesPage';
 import Departments from './pages/departments/Departments';
 import DeptPostCreate from './pages/departments/DeptPostCreate';
 import DeptPostsPage from './pages/departments/DeptPostsPage';
+import DeptsGeneral from './pages/departments/DeptsGeneral';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -35,7 +36,7 @@ function App() {
   const category = useCategoryContext();
   const number = useNumberContext();
   const act = useActContext();
-  console.log(act)
+  const deptGeneral = useDeptGeneralContext();
 
   return (
     <div className={styles.App} >
@@ -48,21 +49,6 @@ function App() {
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
-        <Route exact path="/depts/page" render={() => <Departments />} />
-        <Route exact path="/departments/posts/create" render={() => <DeptPostCreate />} />
-        <Route exact path="/departments/posts" render={() => <DeptPostsPage />} />
-        <Route
-            exact
-            path="/departments"
-            render={() => (
-              <PostsPage
-                message="No results found."
-                filter={`departments=${dept}&category=${category}`}
-                dept={dept}
-                category={category}
-              />
-            )}
-          />
         <Route
             exact
             path="/scenes"
@@ -89,6 +75,19 @@ function App() {
              />
              )} />
         <Route exact path="/scenes/:id/edit" render={() => <SceneEditForm />} />
+        <Route exact path="/depts/page" render={() => <Departments />} />
+        <Route
+            exact
+            path="/departments"
+            render={() => (
+              <PostsPage
+                message="No results found."
+                filter={`departments=${dept}&category=${category}`}
+                dept={dept}
+                category={category}
+              />
+            )}
+          />
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />
         <Route
             exact
@@ -150,6 +149,14 @@ function App() {
         
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         <Route exact path="/posts/:id" render={() => <PostPage />} />
+        <Route exact path="/depts/general" render={() => <DeptsGeneral />} />
+        <Route exact path="/departments/posts/create" render={() => <DeptPostCreate />} />
+        <Route exact path="/departments/posts" 
+            render={() => (
+            <DeptPostsPage 
+                filter={`departments=${deptGeneral}`}
+                deptGeneral={deptGeneral}
+            />)} />
         <Route exact path="/profiles" render={() => <ProfilesPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
         <Route

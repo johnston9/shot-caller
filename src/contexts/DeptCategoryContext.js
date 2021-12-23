@@ -21,12 +21,18 @@ export const SetCategoryContext = createContext();
 export const useCategoryContext = () => useContext(CategoryContext);
 export const useSetCategoryContext = () => useContext(SetCategoryContext);
 
+export const DeptGeneralContext = createContext();
+export const SetDeptGeneralContext = createContext();
+export const useDeptGeneralContext = () => useContext(DeptGeneralContext);
+export const useSetDeptGeneralContext = () => useContext(SetDeptGeneralContext);
+
 export const DeptCategoryProvider = ({ children }) => {
   const [sceneId, setSceneId] = useState("");
   const [number, setNumber] = useState("");
   const [dept, setDept] = useState("");
   const [category, setCategory] = useState("");
   const history = useHistory();
+  const [deptGeneral, setDeptGeneral] = useState("");
 
   return (
     <SceneContext.Provider value={sceneId}>
@@ -37,8 +43,12 @@ export const DeptCategoryProvider = ({ children }) => {
               <SetCategoryContext.Provider value={setCategory}>
                <NumberContext.Provider value={number}>
                 <SetNumberContext.Provider value={setNumber}>
-                  {children}
-                 </SetNumberContext.Provider>
+                  <DeptGeneralContext.Provider value={deptGeneral}>
+                    <SetDeptGeneralContext.Provider value={setDeptGeneral}>
+                      {children}
+                    </SetDeptGeneralContext.Provider>
+                   </DeptGeneralContext.Provider>
+                  </SetNumberContext.Provider>
                 </NumberContext.Provider>
               </SetCategoryContext.Provider>
             </CategoryContext.Provider>

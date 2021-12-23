@@ -68,7 +68,7 @@ const Home = () => {
                     </Link>
                   </Col>
                   <Col md={4} >
-                    <Link to={`/scenes`} >
+                    <Link to={`/depts/general`} >
                       <div className={styles.Homebox}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Departments</h5>
                           <p className="mt-2"> View and add posts to departments outside of scenes</p>

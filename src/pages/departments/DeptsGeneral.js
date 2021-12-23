@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetDeptGeneralContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -16,6 +16,7 @@ import TopBox from '../../components/TopBox';
 
 const DeptsGeneral = (props) => {
     useRedirect("loggedOut")
+    const setDeptGeneral = useSetDeptGeneralContext();
     const setSceneId = useSetSceneContext();
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
@@ -29,12 +30,9 @@ const DeptsGeneral = (props) => {
     const history = useHistory();
     const depart = false;
 
-    const handleClickCamera = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("camera");
-      setCategory(category);
-      history.push(`/departments`);
+    const handleClick = (dept) => {
+      setDeptGeneral(dept);
+      history.push(`/departments/posts`);
 
     };
 
@@ -153,10 +151,9 @@ const DeptsGeneral = (props) => {
                   <Card.Body>
                     <Row>
                       <Col xs={4} lg={3} >
-                        <Card>
+                        <Card onClick={() => handleClick('camera') } >
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                        <DeptDropdown depart handleClick={(category) => handleClickCamera(category) } />
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} >

@@ -22,7 +22,7 @@ import TopBox from "../../components/TopBox";
 import DeptPostCreate from "./DeptPostCreate";
 import DeptPostTop from "./DeptPostTop";
 
-function DeptPostsPage({ filter = "" }) {
+function DeptPostsPage({ deptGeneral, filter = "" }) {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
@@ -32,13 +32,13 @@ function DeptPostsPage({ filter = "" }) {
   const history = useHistory();
  
   const [query, setQuery] = useState("");
+  // const department = useDep
 
   useEffect(() => {
-    console.log(`depart ${filter}`);
     const fetchPosts = async () => {
       try {
+        // const { data } = await axiosReq.get(`/departments/posts/?${filter}`);
         const { data } = await axiosReq.get(`/department/posts/?${filter}&search=${query}`);
-        console.log(data)
         setPosts(data);
         setHasLoaded(true);
       } catch(err) {
@@ -70,23 +70,17 @@ function DeptPostsPage({ filter = "" }) {
         </Button>
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
-            onClick={() => history.push('/departments')}
+            onClick={() => history.push('/scenes')}
         >
             Scenes
         </Button>
-    <Row className="h-100">
+      <Row className="h-100">
       <Col className="py-2 text-center" >
-        {/* {allposts ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >All Posts </h2>
-        </div>
-        ) : ""} */}
-        <Button onClick={() => setShow(show => !show)} >Add Post</Button>
+        <h2>{deptGeneral} Department</h2>
         </Col>
         </Row>
         <Row>
         <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
-        {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
           className={`${styles.SearchBar} mt-3`}
           onSubmit={(event) => event.preventDefault()}
@@ -106,7 +100,7 @@ function DeptPostsPage({ filter = "" }) {
             <Button onClick={() => setShow(show => !show)} 
             className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
             Add Post</Button>
-        {!show ?("") : (<DeptPostCreate /> ) }
+        {!show ?("") : (<DeptPostCreate deptGeneral={deptGeneral} /> ) }
           </Col>
         </Row>
         <Row className="mt-3">
