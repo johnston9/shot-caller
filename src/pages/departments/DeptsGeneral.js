@@ -25,115 +25,114 @@ const DeptsGeneral = (props) => {
     const { id, number, title, ACT,  int_ext, day_night, 
         time, location, characters, action, content, shotlist, 
         storyboard, info, image } = props;
-    // const ext = int_ext.toUpperCase();
     const currentUser = useCurrentUser();
     const history = useHistory();
     const depart = false;
 
     const handleClick = (dept) => {
       setDeptGeneral(dept);
-      history.push(`/departments/posts`);
+      history.push(`/department/posts`);
 
     };
 
-    const handleClickSound = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("sound");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickSound = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("sound");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickLocation = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("location");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickLocation = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("location");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickScript = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("script");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickScript = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("script");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickArt = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("art");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickArt = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("art");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickMakeup = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("make-up");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickMakeup = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("make-up");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickWardrobe = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("wardrobe");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickWardrobe = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("wardrobe");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickCasting = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("casting");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickCasting = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("casting");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickPost = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("post");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickPost = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("post");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickProduction = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("production");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickProduction = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("production");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickStunts = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("stunts");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickStunts = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("stunts");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
-    const handleClickElectric = (category) => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-      setDept("electric");
-      setCategory(category);
-      history.push(`/departments`);
+    // const handleClickElectric = (category) => {
+    // //   setSceneId(id); 
+    // //   setNumber(number);
+    //   setDept("electric");
+    //   setCategory(category);
+    //   history.push(`/departments`);
 
-    };
+    // };
 
     return (
         <div>

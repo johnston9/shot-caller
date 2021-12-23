@@ -69,7 +69,7 @@ const NavBar = () => {
       <NavLink
           className={`mt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
-          to="/departments/posts/create"
+          to="/department/posts/create"
         >
           <i className="navicon fas fa-play"></i>Add Post 
       </NavLink>

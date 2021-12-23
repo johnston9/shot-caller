@@ -2,15 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button"
-
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import Comment from "../comments/Comment";
-import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";

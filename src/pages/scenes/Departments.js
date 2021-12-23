@@ -16,8 +16,6 @@ import TopBox from '../../components/TopBox';
 
 const Departments = (props) => {
     useRedirect("loggedOut")
-    const setSceneId = useSetSceneContext();
-    const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const category = useCategoryContext();

@@ -133,7 +133,7 @@ function DeptPostCreate({deptGeneral="" } ) {
   
     try {
       const { data } = await axiosReq.post("/department/posts/", formData);
-      history.push(`/home`);
+      history.push(`/department/posts/${data.id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

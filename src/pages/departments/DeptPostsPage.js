@@ -36,7 +36,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // const { data } = await axiosReq.get(`/departments/posts/?${filter}`);
+        // const { data } = await axiosReq.get(`/department/posts/?${filter}`);
         const { data } = await axiosReq.get(`/department/posts/?${filter}&search=${query}`);
         setPosts(data);
         setHasLoaded(true);

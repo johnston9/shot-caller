@@ -23,7 +23,7 @@ import { useActContext } from './contexts/ActContext';
 import SceneEditForm from './pages/scenes/SceneEditForm';
 import Home from './pages/home/Home';
 import ProfilesPage from './pages/profiles/ProfilesPage';
-import Departments from './pages/departments/Departments';
+import Departments from './pages/scenes/Departments';
 import DeptPostCreate from './pages/departments/DeptPostCreate';
 import DeptPostsPage from './pages/departments/DeptPostsPage';
 import DeptsGeneral from './pages/departments/DeptsGeneral';
@@ -49,6 +49,7 @@ function App() {
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
+        {/* SCENES*/}
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route
             exact
@@ -76,7 +77,9 @@ function App() {
              />
              )} />
         <Route exact path="/scenes/:id/edit" render={() => <SceneEditForm />} />
+        {/* find scene posts by department */}
         <Route exact path="/depts/page" render={() => <Departments />} />
+        {/* show scene post by department on postspage*/}
         <Route
             exact
             path="/departments"
@@ -88,8 +91,10 @@ function App() {
                 category={category}
               />
             )}
-          />
+        />
+        {/* POSTS*/}
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        {/* All posts*/}
         <Route
             exact
             path="/posts"
@@ -100,6 +105,7 @@ function App() {
               />
             )}
           />
+        {/* Posts for scene bu dept and category*/}
         <Route
             exact
             path="/dept/category"
@@ -114,6 +120,7 @@ function App() {
               />
             )}
           />
+          {/* Feed posts*/}
           <Route
             exact
             path="/feed"
@@ -125,6 +132,7 @@ function App() {
               />
             )}
           />
+          {/* Archived posts*/}
           <Route
             exact
             path="/archived"
@@ -136,6 +144,7 @@ function App() {
               />
             )}
           />
+          {/* Liked posts*/}
           <Route
             exact
             path="/liked"
@@ -147,19 +156,22 @@ function App() {
               />
             )}
           />
-        
+        {/* Edit posts*/}
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+        {/* Post page*/}
         <Route exact path="/posts/:id" render={() => <PostPage />} />
+        {/* DEPARTMENTS*/}
         <Route exact path="/depts/general" render={() => <DeptsGeneral />} />
-        <Route exact path="/departments/posts/create" render={() => <DeptPostCreate />} />
-        <Route exact path="/departments/posts" 
+        <Route exact path="/department/posts/create" render={() => <DeptPostCreate />} />
+        <Route exact path="/department/posts" 
             render={() => (
             <DeptPostsPage 
                 filter={`departments=${deptGeneral}`}
                 deptGeneral={deptGeneral}
             />)} />
-        {/* <Route exact path="/departments/posts/:id/edit" render={() => <PostEditForm />} /> */}
-        <Route exact path="/departments/posts/:id" render={() => <DeptPostPage />} />
+        {/* <Route exact path="/department/posts/:id/edit" render={() => <PostEditForm />} /> */}
+        <Route exact path="/department/posts/:id" render={() => <DeptPostPage />} />
+        {/* Profiles*/}
         <Route exact path="/profiles" render={() => <ProfilesPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
         <Route

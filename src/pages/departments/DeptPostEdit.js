@@ -8,34 +8,33 @@ import Container from "react-bootstrap/Container";
 import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
-
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
+import Asset2 from "../../components/Asset2";
 
-function PostEditForm() {
+function DeptPostEdit() {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",
         content: "",
-        scene: "",
         departments: "",
-        category: "",
         image1: "",
         image2: "",
         image3: "",
         image4: "",
         image5: "",
       });
-      const { title, content, scene, departments, category, image1, image2, image3, image4, image5 } = postData;
+      const { title, content, departments, 
+        image1, image2, image3, image4, image5 } = postData;
       const imageInput1 = useRef(null)
       const imageInput2 = useRef(null)
       const imageInput3 = useRef(null)
@@ -48,13 +47,13 @@ function PostEditForm() {
       useEffect(() => {
         const handleMount = async () => {
           try {
-            const { data } = await axiosReq.get(`/posts/${id}/`);
-            const { title, content, scene, departments, 
-                category, image1, image2, image3, image4, image5,
+            const { data } = await axiosReq.get(`/department/posts/${id}/`);
+            const { title, content, departments, 
+                image1, image2, image3, image4, image5,
                 is_owner } = data;
     
-            is_owner ? setPostData({ title, content, scene, departments, 
-                category, image1, image2, image3, image4, 
+            is_owner ? setPostData({ title, content, departments, 
+                image1, image2, image3, image4, 
                 image5 }) : history.push("/");
           } catch (err) {
             console.log(err);
@@ -132,9 +131,7 @@ function PostEditForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("scene", scene);
     formData.append("departments", departments);
-    formData.append("category", category);
     if(imageInput1.current.files[0]) {
       formData.append("image1", imageInput1.current.files[0]);
     }
@@ -152,8 +149,8 @@ function PostEditForm() {
     }
   
     try {
-      await axiosReq.put(`/posts/${id}/`, formData);
-      history.push(`/posts/${id}`);
+      await axiosReq.put( `/department/posts/${id}`, formData);
+      history.push(`/department/posts/${id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -164,6 +161,34 @@ function PostEditForm() {
 
   const textFields = (
       <div>
+          <Form.Group controlId="departments" className="mb-2" >
+                <Form.Label className="p-1" >Departments</Form.Label>
+                <Form.Control as="select"
+                  name="departments"
+                  value={departments}
+                  onChange={handleChange}
+                  aria-label="act select">
+                  <option>Select</option>
+                  <option value="art">Art</option>
+                  <option value="camera">Camera</option>
+                  <option value="casting">Casting</option>
+                  <option value="electric">Electric/Grip</option>
+                  <option value="location">Location</option>
+                  <option value="make-up">Hair/Make-up</option>
+                  <option value="post">Post/VSF</option>
+                  <option value="production">Production</option>
+                  <option value="script">Script</option>
+                  <option value="sound">Sound</option>
+                  <option value="stunts">Stunts</option>
+                  <option value="wardrobe">Wardrobe</option> 
+                  
+                </Form.Control>
+            </Form.Group>
+            {errors?.departments?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
           <Form.Group controlId="title" className="mb-2" >
                 <Form.Label className="p-1" >Title</Form.Label>
                 <Form.Control 
@@ -206,21 +231,32 @@ function PostEditForm() {
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Save
+        create
       </Button>
     </div>
   );
 
   return (
     <div>
-    <TopBox title="Edit Post" />
-    <Form onSubmit={handleSubmit}>
+      {deptGeneral ? (
+        ""
+      ) : (
+        <TopBox title="Departments Create Post" />
+      ) }
+    <Button
+      className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
+      onClick={() => history.goBack()}
+      >
+      Back
+      </Button>
+    <Form className="mt-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">
-        <Container className= {`${appStyles.Content} ${styles.Container}`} >{textFields}</Container>
-        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+        <Container className= {`${appStyles.Content} ${styles.Container}`} >
+          {textFields}
+          </Container>
       </Col>
-      <Col className="py-2 p-0 p-md-2" md={6}>
+      <Col className="pt-2 p-0 p-md-2" md={6}>
         <Container
           className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
         >
@@ -269,7 +305,7 @@ function PostEditForm() {
             <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group >
               {image2 ? (
                 <>
                   <figure>
@@ -286,14 +322,14 @@ function PostEditForm() {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className="my-1"
                   htmlFor="image-upload2"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload second image"
                   />
                 </Form.Label>
               )}
@@ -317,7 +353,7 @@ function PostEditForm() {
         <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group>
               {image3 ? (
                 <>
                   <figure>
@@ -334,14 +370,14 @@ function PostEditForm() {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className=" my-1"
                   htmlFor="image-upload3"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload third image"
                   />
                 </Form.Label>
               )}
@@ -365,7 +401,7 @@ function PostEditForm() {
         <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group>
               {image4 ? (
                 <>
                   <figure>
@@ -382,14 +418,14 @@ function PostEditForm() {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className=" my-1"
                   htmlFor="image-upload4"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload fourth image"
                   />
                 </Form.Label>
               )}
@@ -413,7 +449,7 @@ function PostEditForm() {
         <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group className="text-center">
+            <Form.Group>
               {image5 ? (
                 <>
                   <figure>
@@ -430,14 +466,14 @@ function PostEditForm() {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className=" my-1"
                   htmlFor="image-upload5"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Click or tap to upload an image"
+                    message="Upload last image"
                   />
                 </Form.Label>
               )}
@@ -459,9 +495,14 @@ function PostEditForm() {
         </Container>
       </Col>   
     </Row>
+    <Row>
+      <Col>
+        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+      </Col>
+    </Row>
   </Form>
   </div>
   );
 }
 
-export default PostEditForm;
+export default DeptPostEdit;

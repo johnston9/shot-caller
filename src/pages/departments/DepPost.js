@@ -35,12 +35,12 @@ const DeptPost = (props) => {
       const history = useHistory();
 
       const handleEdit = () => {
-        history.push(`/posts/${id}/edit`);
+        history.push(`/department/posts/${id}/edit`);
       };
     
       const handleDelete = async () => {
         try {
-          await axiosRes.delete(`/posts/${id}/`);
+          await axiosRes.delete(`/department/posts/${id}/`);
           history.goBack();
         } catch (err) {
           // console.log(err);
