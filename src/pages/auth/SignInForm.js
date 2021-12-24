@@ -53,19 +53,21 @@ const SignInForm = () => {
   }
 
   return (
-    <div className={styles.SignupBox} >
+      // <div>
+      <div className={styles.SignupBox} >
         <TopBox title="Sign In" />
+        {/* <Row > */}
         <Row className={styles.Row}>
           <Col
-            xs={1} md={1}
+            xs={1} md={3}
           >
-            <Image
+            {/* <Image
                 className={`${styles.FillerImagel}`}
                 src={door}
-            />
+            /> */}
           </Col>
           <Col className="my-auto py-2 p-md-2" xs={10}
-          md={{ span: 8, offset: 1 }}
+          md={6}
            >
             <Container>
               <h1 className={styles.Header}>Sign in</h1>
@@ -103,7 +105,7 @@ const SignInForm = () => {
                 ))}
                 <div className="text-center" >
                 <Button
-                  className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+                  className={`px-0 ${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}
                   type="submit"
                 >
                   Sign in
@@ -124,7 +126,7 @@ const SignInForm = () => {
             </Container>
           </Col>
           <Col
-            xs={1} md={2}
+            xs={1} md={3}
             className={`my-auto d-none d-md-block p-2`}
           >
             {/* <Image

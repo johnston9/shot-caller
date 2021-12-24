@@ -20,14 +20,12 @@ const DeptPost = (props) => {
         profile_image,
         title,
         content,
-        // departments,
         image1,
         image2,
         image3,
         image4,
         image5,
         updated_at,
-        // postPage,
         setPosts,
       } = props;
 

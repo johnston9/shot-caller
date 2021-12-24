@@ -29,6 +29,7 @@ import DeptPostsPage from './pages/departments/DeptPostsPage';
 import DeptsGeneral from './pages/departments/DeptsGeneral';
 import DeptPostPage from './pages/departments/DeptPostPage';
 import DeptPostEdit from './pages/departments/DeptPostEdit';
+import Landing from './pages/home/Landing';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -46,7 +47,7 @@ function App() {
       <Container className={styles.Main}>
         <Switch>
         {/* <Routes> */}
-        <Route exact path="/" render={() => <h1>Shot Caller</h1>} />
+        <Route exact path="/" render={() => <Landing />} />
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />

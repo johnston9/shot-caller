@@ -8,8 +8,24 @@
   font-size: 12px;
 }
 
+.DropLink {
+  color: black;
+}
+
 .Active i {
   color: #2142b2;
+}
+
+.Active {
+  color: #2142b2;
+}
+
+Title {
+  color: #000;
+}
+
+#nav-dropdown2.dropdown-toggle.nav-link {
+  color: #000;
 }
 
 i {

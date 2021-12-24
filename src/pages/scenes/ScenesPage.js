@@ -17,14 +17,17 @@ import { Button } from 'react-bootstrap';
 import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TopBox from '../../components/TopBox';
+import SceneCreateForm from './SceneCreateForm';
 
 const ScenesPage = ({message, filter = "" }) => {
     useRedirect("loggedOut");
     const [scenes, setScenes] = useState({results: [] });
+    const [show, setShow] = useState(false);
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
     const setAct = useSetActContext();
     const history = useHistory();
+    const topbox = true
 
     const handleClickAct1 = () => {
       setAct('one'); 
@@ -117,7 +120,14 @@ const ScenesPage = ({message, filter = "" }) => {
                     </Form>
                 </Col>
             </Row>
-
+            <Row>
+              <Col className="text-center">
+                <Button onClick={() => setShow(show => !show)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                Add Scene</Button>
+                {!show ?("") : (<SceneCreateForm topbox /> ) }
+              </Col>
+            </Row>
             <Row className="h-100">
             {hasLoaded ? (
           <>

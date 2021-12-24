@@ -18,7 +18,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-function SceneCreateForm() {
+function SceneCreateForm({topbox}) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -331,7 +331,11 @@ function SceneCreateForm() {
 
   return (
     <div>
-    <TopBox title="Create Scene" />
+      {topbox ? (
+        ""
+      ) : (
+        <TopBox title="Create Scene" />
+      ) }
     <Form onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">

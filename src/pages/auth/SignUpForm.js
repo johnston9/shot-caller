@@ -53,15 +53,15 @@ const SignUpForm = () => {
         <TopBox title="Sign Up"/>
         <Row className={styles.Row}>
           <Col
-            xs={1} md={1}
+            xs={1} md={3}
           >
-            <Image
+            {/* <Image
                 className={`${styles.FillerImagel}`}
                 src={door}
-            />
+            /> */}
           </Col>
           <Col className="my-auto py-2 p-md-2" xs={10}
-          md={{ span: 8, offset: 1 }}
+          md={6}
            >
             <Container >
               <h1 className={styles.Header}>sign up</h1>
@@ -132,7 +132,7 @@ const SignUpForm = () => {
 
                 <div className="text-center" >
                 <Button
-                  className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+                  className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}
                   type="submit"
                 >
                   Sign up
@@ -153,7 +153,7 @@ const SignUpForm = () => {
             </Container>
           </Col>
           <Col
-            xs={1} md={1}
+            xs={1} md={3}
             className={`my-auto d-none d-md-block p-2`}
           >
             {/* <Image

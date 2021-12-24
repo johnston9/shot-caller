@@ -9,6 +9,7 @@ import Avatar from "./Avatar";
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
+import { NavDropdown } from 'react-bootstrap';
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -66,29 +67,91 @@ const NavBar = () => {
           <i className="navicon fas fa-play"></i>Home
       </NavLink>
 
-      <NavLink
+      <NavDropdown 
+          title={
+            <span >
+              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Scenes
+            </span>
+          }
+          id="nav-dropdown"
+          activeClassName={styles.Active}
+          className={`mt-1 pt-1 ${styles.NavLink} `}
+          >
+        <NavDropdown.Item >
+          <NavLink
+          className={` ${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/scenes"
+        >
+          <i className="navicon fas fa-stream"></i>Scenes
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          className={`${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/scenes/create"
+        >
+          <i className="far fa-plus-square"></i>Add scene
+        </NavLink>
+      </NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+
+      <NavDropdown 
+          title={
+            <span className={styles.Title}>
+              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Departments
+            </span>
+          }
+          id="nav-dropdown2"
+          activeClassName={styles.Active}
+          className={`mt-1 pt-1 ${styles.NavLink} `}
+          >
+        <NavDropdown.Item >
+          <NavLink
+          className={` ${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/depts/general"
+        >
+          <i className="navicon fas fa-stream"></i>Departments
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+        <NavLink
           className={`mt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
           to="/department/posts/create"
         >
           <i className="navicon fas fa-play"></i>Add Post 
       </NavLink>
+      </NavDropdown.Item>
+      </NavDropdown>
 
-      <NavLink
+      {/* <NavLink
+          className={`mt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/department/posts/create"
+        >
+          <i className="navicon fas fa-play"></i>Add Post 
+      </NavLink> */}
+
+      {/* <NavLink
         className={`mt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
         to="/scenes/create"
       >
         <i className="far fa-plus-square"></i>Add scene
-      </NavLink>
+      </NavLink> */}
 
-      <NavLink
+      {/* <NavLink
         className={`mt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
         to="/scenes"
       >
         <i className="navicon fas fa-stream"></i>Scenes
-      </NavLink>
+      </NavLink> */}
 
       <NavLink
         className={`mt-2 ${styles.NavLink} `}

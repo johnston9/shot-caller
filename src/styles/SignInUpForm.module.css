@@ -4,7 +4,7 @@
     width: 100%; 
 }
 .Row {
-    height: calc(100vh - 81px);
+    /* height: calc(100vh - 81px); */
   }
 
 .Image {
@@ -38,17 +38,21 @@
   }
 
 .Form {
-  background-color: #ffffff;
+  background-color: #3b444b;
   padding: 10px
 }
 
 
 .Input {
-    background: #ffffff;
-    border: 1px solid #f0f1f9;
+    background: #3b444b;
+    /* border: 1px solid #3b444b; */
     box-sizing: border-box;
-    border-radius: 2px;
-    color: #7177a1;
+    border-bottom:  1px solid #fff;
+    border-top: 1px solid #3b444b;
+    border-left: 1px solid #3b444b;
+    border-right: 1px solid #3b444b;
+    /* border-radius: 2px; */
+    color: #fff;
     text-align: center;
     padding: 10px;
 }
