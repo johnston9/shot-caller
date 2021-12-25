@@ -30,6 +30,8 @@ import DeptsGeneral from './pages/departments/DeptsGeneral';
 import DeptPostPage from './pages/departments/DeptPostPage';
 import DeptPostEdit from './pages/departments/DeptPostEdit';
 import Landing from './pages/home/Landing';
+import DayCreateForm from './pages/schedule/DayCreateForm';
+import ScheduleDays from './pages/schedule/ScheduleDays';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -51,6 +53,16 @@ function App() {
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
+        {/* SCHEDULE*/}
+        <Route exact path="/day/create" render={() => <DayCreateForm />} />
+        <Route
+            exact
+            path="/days"
+            render={() => (
+              <ScheduleDays
+               message="No results found. Please add a scene" />
+            )}
+          />
         {/* SCENES*/}
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route
