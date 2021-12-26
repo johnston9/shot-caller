@@ -60,7 +60,7 @@ const NavBar = () => {
   const loggedInIcons = (
     <>
       <NavLink
-          className={`mt-2 ${styles.NavLink} `}
+          className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
           to="/home"
         >
@@ -69,13 +69,13 @@ const NavBar = () => {
 
       <NavDropdown 
           title={
-            <span >
+            <span style={{ color: '#555555'}}>
               <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Scenes
             </span>
           }
           id="nav-dropdown"
           activeClassName={styles.Active}
-          className={`mt-1 pt-1 ${styles.NavLink} `}
+          className={`mt-1 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
@@ -101,7 +101,7 @@ const NavBar = () => {
 
       <NavDropdown 
           title={
-            <span className={styles.Title}>
+            <span style={{ color: '#555555'}} className={styles.Title}>
               <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Departments
             </span>
           }
@@ -129,6 +129,14 @@ const NavBar = () => {
       </NavDropdown.Item>
       </NavDropdown>
 
+      <NavLink
+          className={`mt-2 pt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/days"
+        >
+          <i className="navicon fas fa-play"></i>Schedule
+      </NavLink>
+
       {/* <NavLink
           className={`mt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
@@ -154,20 +162,20 @@ const NavBar = () => {
       </NavLink> */}
 
       <NavLink
-        className={`mt-2 ${styles.NavLink} `}
+        className={`mt-2 pt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
         to="/profiles"
       >
         <i className="navicon far fa-plus-square"></i>Profiles
       </NavLink>
 
-      <NavLink className={`mt-2 ${styles.NavLink} `} 
+      <NavLink className={`mt-2 pt-2 ${styles.NavLink} `} 
         to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
 
       <NavLink
-        className={styles.NavLink}
+        className={`mt-2 ${styles.NavLink} `} 
         to={`/profiles/${currentUser?.profile_id}`}
       >
         <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
@@ -256,9 +264,7 @@ const NavBar = () => {
           aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto text-left">
-
-            {currentUser ? loggedInIcons : loggedOutIcons}
-
+          {currentUser ? loggedInIcons : loggedOutIcons}
         </Nav>
         </Navbar.Collapse>
         {/* <Container /> */}

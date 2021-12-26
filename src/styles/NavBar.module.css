@@ -1,6 +1,7 @@
 .NavBar {
     background-color: #ffffff;
     border: 1px solid #dadadf;
+    color: black;
   }
 
 .NavLink {
@@ -11,6 +12,10 @@
 .DropLink {
   color: black;
 }
+
+/* .basic-navbar-nav {
+  color: #000;
+} */
 
 .Active i {
   color: #2142b2;
@@ -24,9 +29,13 @@ Title {
   color: #000;
 }
 
-#nav-dropdown2.dropdown-toggle.nav-link {
+/* a #nav-dropdown2.dropdown-toggle.nav-link {
   color: #000;
 }
+
+.basic-navbar-nav a {
+  color: #000;
+} */
 
 i {
   font-size: .5em !important;

@@ -22,6 +22,7 @@ const SchedulePages = () => {
     useRedirect("loggedOut");
     const [days, setDays] = useState({results: [] });
     const [show, setShow] = useState(false);
+    const [error, setError] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
     const history = useHistory();
@@ -34,10 +35,12 @@ const SchedulePages = () => {
         // console.log(`depart ${filter}`);
           const fetchDays = async () => {
             try {
+              // const { data } = await axiosReq.get(`/days/`);
               const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
               setDays(data);
               setHasLoaded(true);
             } catch(err) {
+              setError(err)
               console.log(err);
             }
           }
@@ -82,7 +85,7 @@ const SchedulePages = () => {
                 </Col>
             </Row>
             {/* add day */}
-            <Row>
+            <Row className='mb-3'>
                 <Col className="text-center">
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
@@ -92,7 +95,12 @@ const SchedulePages = () => {
             </Row>
             {/* days */}
             <Row className="h-100">
-            {hasLoaded ? (
+            { error ? (
+              <Container className={appStyles.Content}>
+                <Asset src={NoResults } message="Please add 'Day" />
+              </Container>
+            ) :
+             hasLoaded ? (
           <>
             {days.results.length ? (
                 days.results.map((day) => (

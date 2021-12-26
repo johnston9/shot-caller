@@ -24,6 +24,8 @@ const DayTop = (props) => {
         scene8,
         scene9,
         scene10,
+        scene11,
+        scene12,
         location1,
         location2,
         location3,
@@ -74,7 +76,7 @@ const DayTop = (props) => {
                     <div className={` ${styles.Div50 }`}>
                     <Card.Text style={{ fontWeight: '700' }} className="mb-1">
                         Scenes: {scene1}, {scene2}, {scene3}, {scene4}, {scene5}, {scene6},
-                        {scene7}, {scene8}, {scene9}, {scene10},
+                        {scene7}, {scene8}, {scene9}, {scene10}, {scene11}, {scene12},
                     </Card.Text>
                     </div>
                     <hr className='m-0'/>
