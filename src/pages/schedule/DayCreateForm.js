@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -22,9 +24,20 @@ import { useRedirect } from "../../hooks/Redirect";
 const DayCreateForm = ({topbox} ) => {
     useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
+  const [startDate, setStartDate] = useState("");
+  // const date = startDate.toLocaleDateString('en-GB', {
+  //   day: 'numeric', month: 'short', year: 'numeric'
+  // })
+  // const date = startDate.toLocaleDateString('en-GB', {
+  //   day: 'numeric', month: 'short', year: 'numeric'
+  // }).replace(/ /g, '-');
+  // const date = startDate.toLocaleDateString('en-GB', {
+  //   day: '2-digit', month: 'short', year: 'numeric'
+  // });
+  // const date = startDate.parse().toLocaleDateString();
     const [postData, setPostData] = useState({
         day: "",
-        date: "",
+        // date: "",
         scene1: "",
         scene2: "",
         scene3: "",
@@ -44,11 +57,16 @@ const DayCreateForm = ({topbox} ) => {
         location5: "",
         location6: "",
       });
-      const { day, date, scene1, scene2, scene3, scene4, scene5, scene6, 
+      const { day, scene1, scene2, scene3, scene4, scene5, scene6, 
         scene7, scene8, scene9, scene10, scene11, scene12, location1, location2,
         location3, location4, location5, location6, } = postData;
 
-      const history = useHistory()
+      const history = useHistory();
+
+      const doit = (date) => {
+        const newdate = date.toLocaleDateString();
+        setStartDate(newdate);
+      }
     
       const handleChange = (event) => {
         setPostData({
@@ -58,11 +76,12 @@ const DayCreateForm = ({topbox} ) => {
       };
 
   const handleSubmit = async (event) => {
+    console.log(startDate)
     event.preventDefault();
     const formData = new FormData();
 
     formData.append("day", day);
-    formData.append("date", date);
+    // formData.append("date", startDate);
     formData.append("scene1", scene1);
     formData.append("scene2", scene2);
     formData.append("scene3", scene3);
@@ -84,6 +103,7 @@ const DayCreateForm = ({topbox} ) => {
       
     try {
       const { data } = await axiosReq.post("/days/", formData);
+      console.log(data)
       history.push(`/days/`);
     } catch (err) {
       console.log(err);
@@ -135,12 +155,22 @@ const DayCreateForm = ({topbox} ) => {
       <Col className="p-0 p-md-2" xs={6}>
       <Form.Group controlId="date" className="mb-2" >
                 <Form.Label className="p-1" >Date</Form.Label>
-                <Form.Control 
+                <DatePicker 
+                   value={startDate}
+                  // selected={startDate} 
+                  // format={'dd/mm/yyyy'}
+                  // onChange={(date) => setStartDate(date.toLocaleDateString('en-GB', {
+                  //   day: 'numeric', month: 'short', year: 'numeric'
+                  // }))} 
+                  // onChange={(date) => setStartDate(date) } 
+                  onSelect={(date) => doit(date) }
+                  />
+                {/* <Form.Control 
                 type="date"
                 name="date"
                 value={date}
                 onChange={handleChange}
-                    />
+                    /> */}
             </Form.Group>
             {errors?.date?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
