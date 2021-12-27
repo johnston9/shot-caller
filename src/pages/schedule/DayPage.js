@@ -9,12 +9,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import btnStyles from "../../styles/Button.module.css";
-import Scene from './Scene';
 import DayPageTop from './DayPageTop';
 import SceneScheduleCreate from './SceneScheduleCreate';
 
 const DayPage = () => {
     useRedirect("loggedOut");
+    const [show, setShow] = useState(false);
     const { id } = useParams();
     const [day, setDay] = useState({ results: [] });
     const currentUser = useCurrentUser();
