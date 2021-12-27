@@ -153,7 +153,7 @@ const Scene = (props) => {
 
     return (
         <div>
-            <Card className={` ${styles.Scene}`}>
+            <Card className={` ${styles.DayPage}`}>
                 <Card.Header className={`pt-2 pb-1 ${styles.Header }`}>
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>

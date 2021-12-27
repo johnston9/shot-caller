@@ -33,6 +33,7 @@ import Landing from './pages/home/Landing';
 import DayCreateForm from './pages/schedule/DayCreateForm';
 import ScheduleDays from './pages/schedule/ScheduleDays';
 import DayEdit from './pages/schedule/DayEdit';
+import DayPage from './pages/schedule/DayPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -56,8 +57,9 @@ function App() {
         <Route exact path="/home" render={() => <Home />} />
         {/* SCHEDULE*/}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
-        <Route exact path="/days/:id/edit" render={() => <DayEdit />} />
-        <Route exact path="/days/:id/" render={() => <DayEdit />} />
+        <Route exact path="/days/:id/" render={() => <DayPage />} />
+        <Route exact path="/edit/days/:id/" render={() => <DayEdit />} />
+        
         <Route
             exact
             path="/days"

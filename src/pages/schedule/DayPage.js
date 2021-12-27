@@ -1,9 +1,60 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useHistory, useParams } from 'react-router';
+import { axiosReq } from '../../api/axiosDefaults';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { useRedirect } from '../../hooks/Redirect';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import btnStyles from "../../styles/Button.module.css";
+import Scene from './Scene';
+import DayPageTop from './DayPageTop';
+import SceneScheduleCreate from './SceneScheduleCreate';
 
 const DayPage = () => {
+    useRedirect("loggedOut");
+    const { id } = useParams();
+    const [day, setDay] = useState({ results: [] });
+    const currentUser = useCurrentUser();
+    const history = useHistory();
+
+    useEffect(() => {
+        const handleMount = async () => {
+            try {
+                const { data } = await axiosReq(`/days/${id}`);
+                setDay({ results: [data] });
+            } catch (err) {
+                console.log(err);
+              }
+        }
+        handleMount();
+    }, [id])
+
     return (
         <div>
-            mmm
+            <Row className="pt-1">
+                <Col className="mt-4">
+                <Button
+                    className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+                    onClick={() => history.push('/days')}
+                >
+                    Back to Days
+                </Button>
+                <DayPageTop {...day.results[0]} 
+                  />
+                </Col>
+            </Row>
+            {/* add scene */}
+            <Row className='mb-3'>
+                <Col className="text-center">
+                    <Button onClick={() => setShow(show => !show)} 
+                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                    Add Scene Info section</Button>
+                    {!show ?("") : (<SceneScheduleCreate /> ) }
+                </Col>
+            </Row>
         </div>
     )
 }

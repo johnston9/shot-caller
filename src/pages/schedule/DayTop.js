@@ -36,7 +36,7 @@ const DayTop = (props) => {
     const history = useHistory();
 
     const handleEdit = () => {
-        history.push(`/days/${id}/edit`);
+        history.push(`/edit/days/${id}/`);
         };
     
     const handleDelete = async () => {
@@ -82,8 +82,7 @@ const DayTop = (props) => {
                     <div className={` ${styles.Div50 }`}>
                     <h5> Locations</h5>
                     <p className="mb-1">
-                    {location1},
-                    {location2}, {location3}, {location4}, {location5},
+                    {location1} {location2} {location3} {location4} {location5}
                     </p></div>
                     </Link>
                 </Card.Body>

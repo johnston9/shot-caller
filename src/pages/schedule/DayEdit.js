@@ -115,7 +115,7 @@ const DayEdit = () => {
       
     try {
       await axiosReq.put(`/days/${id}/`, formData);
-      history.push(`/days/`);
+      history.goBack();
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
