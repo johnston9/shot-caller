@@ -13,11 +13,10 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const SceneEditForm = () => {
     useRedirect("loggedOut");
@@ -121,7 +120,7 @@ const SceneEditForm = () => {
             
         try {
             await axiosReq.put(`/scenes/${id}/`, formData);
-            history.push(`/scenes/${id}`);
+            history.push(`/scenes/${id}/`);
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {

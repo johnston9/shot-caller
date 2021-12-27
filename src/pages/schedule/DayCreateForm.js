@@ -27,23 +27,15 @@ const DayCreateForm = ({topbox} ) => {
   const [startDate, setStartDate] = useState("");
   // const date = startDate.toLocaleDateString('en-GB', {
   //   day: 'numeric', month: 'short', year: 'numeric'
-  // })
-  // const date = startDate.toLocaleDateString('en-GB', {
-  //   day: 'numeric', month: 'short', year: 'numeric'
   // }).replace(/ /g, '-');
-  // const date = startDate.toLocaleDateString('en-GB', {
-  //   day: '2-digit', month: 'short', year: 'numeric'
-  // });
-  // const date = startDate.parse().toLocaleDateString();
     const [postData, setPostData] = useState({
         day: "",
-        // date: "",
         scene1: "",
         scene2: "",
         scene3: "",
         scene4: "",
         scene5: "",
-        scene5: "",
+        scene6: "",
         scene7: "",
         scene8: "",
         scene9: "",
@@ -63,9 +55,13 @@ const DayCreateForm = ({topbox} ) => {
 
       const history = useHistory();
 
-      const doit = (date) => {
-        const newdate = date.toLocaleDateString();
+      const handleDate = (date) => {
+        // const newdate = date.toLocaleDateString();
+        const newdate = date.toLocaleDateString('en-GB', {
+          day: 'numeric', month: 'short', year: 'numeric'
+        })
         setStartDate(newdate);
+        console.log(`start ${startDate}`)
       }
     
       const handleChange = (event) => {
@@ -76,12 +72,11 @@ const DayCreateForm = ({topbox} ) => {
       };
 
   const handleSubmit = async (event) => {
-    console.log(startDate)
     event.preventDefault();
     const formData = new FormData();
 
     formData.append("day", day);
-    // formData.append("date", startDate);
+    formData.append("date", startDate);
     formData.append("scene1", scene1);
     formData.append("scene2", scene2);
     formData.append("scene3", scene3);
@@ -104,7 +99,7 @@ const DayCreateForm = ({topbox} ) => {
     try {
       const { data } = await axiosReq.post("/days/", formData);
       console.log(data)
-      history.push(`/days/`);
+      history.push(`/home/`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -158,19 +153,11 @@ const DayCreateForm = ({topbox} ) => {
                 <DatePicker 
                    value={startDate}
                   // selected={startDate} 
-                  // format={'dd/mm/yyyy'}
                   // onChange={(date) => setStartDate(date.toLocaleDateString('en-GB', {
                   //   day: 'numeric', month: 'short', year: 'numeric'
                   // }))} 
-                  // onChange={(date) => setStartDate(date) } 
-                  onSelect={(date) => doit(date) }
+                  onChange={(date) => handleDate(date) }
                   />
-                {/* <Form.Control 
-                type="date"
-                name="date"
-                value={date}
-                onChange={handleChange}
-                    /> */}
             </Form.Group>
             {errors?.date?.map((message, idx) => (
               <Alert variant="warning" key={idx}>

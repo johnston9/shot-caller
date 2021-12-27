@@ -20,10 +20,10 @@ const Home = () => {
     const history = useHistory();
 
     return (
-        <div className={styles.Background}>
+        <div className={styles.Backgroundhome}>
             <TopBox title="SHOT CALLER" />
-            <Row className={styles.Row}>
-            <Col
+            <Row className={`my-3 ${styles.Row}`}>
+            <Col className="my-3 ml-2"
             xs={1} md={1}
           >
             <Image

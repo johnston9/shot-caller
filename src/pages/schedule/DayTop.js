@@ -36,13 +36,13 @@ const DayTop = (props) => {
     const history = useHistory();
 
     const handleEdit = () => {
-        history.push(`/scenes/${id}/edit`);
+        history.push(`/days/${id}/edit`);
         };
     
     const handleDelete = async () => {
     try {
         await axiosReq.delete(`/days/${id}/`);
-        history.goBack();
+        history.push(`/days/`);
     } catch (err) {
         // console.log(err);
     }
@@ -55,10 +55,8 @@ const DayTop = (props) => {
                 <Row className='mx-0 d-flex align-items-center'>
                 <Col className='mx-0 px-0' xs={1}></Col>
                 <Col xs={10} className='mx-0 px-0 text-center'>
-                <h5 className={` ${styles.Titlelist }`}>Day {day} 
+                <h5 className={` ${styles.Titlelist }`}>Day {day}
                 </h5>
-                {/* <p>Act {act} </p>
-                <p>scene Id {id} </p> */}
                 </Col >
                 <Col xs={1} className=' mx-0 px-0'>
                 <PostDropdown
@@ -70,13 +68,14 @@ const DayTop = (props) => {
                 <div className={` ${styles.Div25 }`}>
                 <span className={styles.Italics }>{date}</span>
                 </div>
+                Id {id}
                 </Card.Header>
                 <Card.Body className="p-1" >
                     <Link to={`/days/${id}`}>
                     <div className={` ${styles.Div50 }`}>
                     <Card.Text style={{ fontWeight: '700' }} className="mb-1">
-                        Scenes: {scene1}, {scene2}, {scene3}, {scene4}, {scene5}, {scene6},
-                        {scene7}, {scene8}, {scene9}, {scene10}, {scene11}, {scene12},
+                        Scenes: {scene1} {scene2} {scene3} {scene4} {scene5}  {scene6}
+                         {scene7} {scene8} {scene9} {scene10} {scene11} {scene12}
                     </Card.Text>
                     </div>
                     <hr className='m-0'/>

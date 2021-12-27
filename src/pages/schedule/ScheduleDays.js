@@ -38,6 +38,7 @@ const SchedulePages = () => {
               // const { data } = await axiosReq.get(`/days/`);
               const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
               setDays(data);
+              console.log(data)
               setHasLoaded(true);
             } catch(err) {
               setError(err)
@@ -67,9 +68,20 @@ const SchedulePages = () => {
                 </Col>
             </Row>
             <hr />
+            {/* add day */}
+            <Row className='mb-3'>
+                <Col className="text-center">
+                    <Button onClick={() => setShow(show => !show)} 
+                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                    Add Day</Button>
+                    {!show ?("") : (<DayCreateForm topbox /> ) }
+                </Col>
+            </Row>
+            <hr />
+            <h3 className='text-center'>Days</h3>
             {/* search */}
             <Row>
-                <Col className="mt-5" xs={12} md={{ span: 6, offset: 3 }} >
+                <Col className="mt-1" xs={12} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={styles.SearchBar}
                     onSubmit={(event) => event.preventDefault()}
@@ -84,23 +96,15 @@ const SchedulePages = () => {
                     </Form>
                 </Col>
             </Row>
-            {/* add day */}
-            <Row className='mb-3'>
-                <Col className="text-center">
-                    <Button onClick={() => setShow(show => !show)} 
-                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                    Add Day</Button>
-                    {!show ?("") : (<DayCreateForm topbox /> ) }
-                </Col>
-            </Row>
+            
             {/* days */}
             <Row className="h-100">
-            { error ? (
+            {/* { error ? (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults } message="Please add 'Day" />
               </Container>
-            ) :
-             hasLoaded ? (
+            ) : */}
+          {hasLoaded ? (
           <>
             {days.results.length ? (
                 days.results.map((day) => (
