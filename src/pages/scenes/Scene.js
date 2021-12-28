@@ -24,9 +24,15 @@ const Scene = (props) => {
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const category = useCategoryContext();
-    const { id, number, title, act, int_ext, day_night, 
-        time, location, characters, action, content, shotlist, 
-        storyboard, info, image } = props;
+    const { number, title, act, int_ext, day_night, time, location,
+      filming_location, character1, character1_costume, character2, 
+      character2_costume, character3, character3_costume, character4, 
+      character4_costume, character5, character5_costume, character6, 
+      character6_costume, character7, character7_costume, character8,
+      character8_costume, character9, character9_costume, character10, 
+      character10_costume, other_characters, other_characters_costumes,
+      background_artists, background_artists_costumes, shooting_date,
+      action, content, shotlist, storyboard, info, image } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();
 

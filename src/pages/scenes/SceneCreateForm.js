@@ -29,7 +29,32 @@ function SceneCreateForm({topbox}) {
         day_night: "",
         time: "",
         location: "",
-        characters: "",
+        filming_location: "",
+        shooting_date: "",
+        character1: "",
+        character1_costume: "",
+        character2: "",
+        character2_costume: "",
+        character3: "",
+        character3_costume: "",
+        character4: "",
+        character4_costume: "",
+        character5: "",
+        character5_costume: "",
+        character6: "",
+        character6_costume: "",
+        character7: "",
+        character7_costume: "",
+        character8: "",
+        character8_costume: "",
+        character9: "",
+        character9_costume: "",
+        character10: "",
+        character10_costume: "",
+        other_characters: "",
+        other_characters_costumes: "",
+        background_artists: "",
+        background_artists_costumes: "",
         action: "",
         content: "",
         shotlist: "",
@@ -37,9 +62,16 @@ function SceneCreateForm({topbox}) {
         info: "",
         image: "",
       });
+
       const { number, title, act, int_ext, day_night, time, location,
-        characters, action, content, shotlist, 
-        storyboard, info, image } = postData;
+        filming_location, character1, character1_costume, character2, 
+        character2_costume, character3, character3_costume, character4, 
+        character4_costume, character5, character5_costume, character6, 
+        character6_costume, character7, character7_costume, character8,
+        character8_costume, character9, character9_costume, character10, 
+        character10_costume, other_characters, other_characters_costumes,
+        background_artists, background_artists_costumes, shooting_date,
+        action, content, shotlist, storyboard, info, image } = postData;
 
       const imageInput = useRef(null)
       const storyboardInput = useRef(null)
@@ -86,7 +118,32 @@ function SceneCreateForm({topbox}) {
     formData.append("day_night", day_night);
     formData.append("time", time);
     formData.append("location", location);
-    formData.append("characters", characters);
+    formData.append("filming_location", filming_location);
+    formData.append("shooting_date", shooting_date);
+    formData.append("character1", character1);
+    formData.append("character1_costume", character1_costume);
+    formData.append("character2", character2);
+    formData.append("character2_costume", character2_costume);
+    formData.append("character3", character3);
+    formData.append("character3_costume", character3_costume);
+    formData.append("character4", character4);
+    formData.append("character4_costume", character4_costume);
+    formData.append("character5", character5);
+    formData.append("character5_costume", character5_costume);
+    formData.append("character6", character6);
+    formData.append("character6_costume", character6_costume);
+    formData.append("character7", character7);
+    formData.append("character7_costume", character7_costume);
+    formData.append("character8", character8);
+    formData.append("character8_costume", character8_costume);
+    formData.append("character9", character9);
+    formData.append("character9_costume", character9_costume);
+    formData.append("character10", character10);
+    formData.append("character10_costume", character10_costume);
+    formData.append("other_characters", other_characters);
+    formData.append("other_characters_costumes", other_characters_costumes);
+    formData.append("background_artists", background_artists);
+    formData.append("background_artists_costumes", background_artists_costumes);
     formData.append("action", action);
     formData.append("content", content);
     formData.append("shotlist", shotlist);
@@ -220,20 +277,176 @@ function SceneCreateForm({topbox}) {
                 {message}
               </Alert>
             ))}
-            <Form.Group controlId="characters" className="mb-2" >
-                <Form.Label className="p-1" >Characters</Form.Label>
+            <Form.Group controlId="filming_location" className="mb-2" >
+                <Form.Label className="p-1" >Filming Location</Form.Label>
                 <Form.Control 
                 type="text"
-                name="characters"
-                value={characters}
+                name="filming_location"
+                value={filming_location}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.characters?.map((message, idx) => (
+            {errors?.filming_location?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
             ))}
+            <Form.Group controlId="shooting_date" className="mb-2" >
+                <Form.Label className="p-1" >Shooting Date</Form.Label>
+                <Form.Control 
+                type="text"
+                name="shooting_date"
+                value={shooting_date}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.shooting_date?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            {/* characters */}
+            <Form.Group controlId="character1" className="mb-2" >
+                <Form.Label className="p-1" >Character 1</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character1"
+                value={character1}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character1?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character2" className="mb-2" >
+                <Form.Label className="p-1" >Character 2</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character2"
+                value={character2}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character2?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character3" className="mb-2" >
+                <Form.Label className="p-1" >Character 3</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character3"
+                value={character3}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character3?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character4" className="mb-2" >
+                <Form.Label className="p-1" >Character 4</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character4"
+                value={character4}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character4?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character5" className="mb-2" >
+                <Form.Label className="p-1" >Character 5</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character5"
+                value={character5}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character5?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character6" className="mb-2" >
+                <Form.Label className="p-1" >Character 6</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character6"
+                value={character1}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character6?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character7" className="mb-2" >
+                <Form.Label className="p-1" >Character 7</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character7"
+                value={character7}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character7?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character8" className="mb-2" >
+                <Form.Label className="p-1" >Character 8</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character8"
+                value={character8}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character8?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character9" className="mb-2" >
+                <Form.Label className="p-1" >Character 9</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character9"
+                value={character9}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character9?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="character10" className="mb-2" >
+                <Form.Label className="p-1" >Character 10</Form.Label>
+                <Form.Control 
+                type="text"
+                name="character10"
+                value={character10}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.character10?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            {/* end characters */}
             <Form.Group controlId="action" className="mb-2" >
                 <Form.Label className="p-1" >Action</Form.Label>
                 <Form.Control 

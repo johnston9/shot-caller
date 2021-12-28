@@ -55,6 +55,12 @@ const DayPage = () => {
                     {!show ?("") : (<SceneScheduleCreate /> ) }
                 </Col>
             </Row>
+            {/* Scenes */}
+            <Row>
+                <Col>
+                <h3>Scenes</h3>
+                </Col>
+            </Row>
         </div>
     )
 }

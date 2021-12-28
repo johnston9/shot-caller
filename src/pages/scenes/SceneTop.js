@@ -16,7 +16,9 @@ const SceneTop = (props) => {
         act,
         title,
         action,
-        characters,
+        character1,
+        character2,
+        character3,
         location
     } = props;
     const currentUser = useCurrentUser();
@@ -68,7 +70,8 @@ const SceneTop = (props) => {
                         <div className={` ${styles.Div50 }`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>
                       </div>
-                      <div className={` ${styles.Div50 }`}><p className="mb-1">{characters}</p></div>
+                      <div className={` ${styles.Div50 }`}><p className="mb-1">
+                        {character1} {character2} {character3}</p></div>
                       <hr className='m-0'/>
                       <div className={` ${styles.Div50 }`}><p>{action}</p></div>
                       </Link>

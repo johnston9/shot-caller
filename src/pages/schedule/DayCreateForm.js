@@ -30,6 +30,7 @@ const DayCreateForm = ({topbox} ) => {
   // }).replace(/ /g, '-');
     const [postData, setPostData] = useState({
         day: "",
+        crewcall: "",
         scene1: "",
         scene2: "",
         scene3: "",
@@ -49,7 +50,7 @@ const DayCreateForm = ({topbox} ) => {
         location5: "",
         location6: "",
       });
-      const { day, scene1, scene2, scene3, scene4, scene5, scene6, 
+      const { day, crewcall, scene1, scene2, scene3, scene4, scene5, scene6, 
         scene7, scene8, scene9, scene10, scene11, scene12, location1, location2,
         location3, location4, location5, location6, } = postData;
 
@@ -73,10 +74,11 @@ const DayCreateForm = ({topbox} ) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
+    const formData = new FormData();date = models.DateField()
 
     formData.append("day", day);
     formData.append("date", startDate);
+    formData.append("crewcall", crewcall);
     formData.append("scene1", scene1);
     formData.append("scene2", scene2);
     formData.append("scene3", scene3);
@@ -131,22 +133,6 @@ const DayCreateForm = ({topbox} ) => {
       ) }
     <Form onSubmit={handleSubmit}>
     <Row>
-    <Col xs={6} className="p-0 p-md-2">
-        <Form.Group controlId="day" className="mb-2" >
-            <Form.Label className="p-1" >Day</Form.Label>
-            <Form.Control 
-            type="text"
-            name="day"
-            value={day}
-            onChange={handleChange}
-                />
-        </Form.Group>
-        {errors?.day?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-            {message}
-            </Alert>
-        ))}
-      </Col>
       <Col className="p-0 p-md-2" xs={6}>
       <Form.Group controlId="date" className="mb-2" >
                 <Form.Label className="p-1" >Date</Form.Label>
@@ -164,7 +150,41 @@ const DayCreateForm = ({topbox} ) => {
                 {message}
               </Alert>
             ))}
-      </Col>   
+      </Col>  
+      </Row>
+    <Row>
+    <Col xs={6} className="p-0 p-md-2">
+        <Form.Group controlId="day" className="mb-2" >
+            <Form.Label className="p-1" >Day</Form.Label>
+            <Form.Control 
+            type="text"
+            name="day"
+            value={day}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.day?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+            {message}
+            </Alert>
+        ))}
+      </Col> 
+      <Col xs={6} className="p-0 p-md-2">
+        <Form.Group controlId="crewcall" className="mb-2" >
+            <Form.Label className="p-1" >crewcall</Form.Label>
+            <Form.Control 
+            type="text"
+            name="crewcall"
+            value={crewcall}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.crewcall?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+            {message}
+            </Alert>
+        ))}
+      </Col> 
     </Row>
     <hr />
     {/* scenes */}
