@@ -169,22 +169,6 @@ const DayCreateForm = ({topbox} ) => {
             </Alert>
         ))}
       </Col> 
-      <Col xs={6} className="p-0 p-md-2">
-        <Form.Group controlId="crewcall" className="mb-2" >
-            <Form.Label className="p-1" >crewcall</Form.Label>
-            <Form.Control 
-            type="text"
-            name="crewcall"
-            value={crewcall}
-            onChange={handleChange}
-                />
-        </Form.Group>
-        {errors?.crewcall?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-            {message}
-            </Alert>
-        ))}
-      </Col> 
     </Row>
     <hr />
     {/* scenes */}
@@ -484,6 +468,24 @@ const DayCreateForm = ({topbox} ) => {
               </Alert>
             ))}
         </Col>
+    </Row>
+    <Row>
+      <Col md={{ span: 6, offset: 3 }} className="p-0 p-md-2">
+        <Form.Group controlId="crewcall" className="mb-2" >
+            <Form.Label className="p-1" >crewcall</Form.Label>
+            <Form.Control 
+            type="text"
+            name="crewcall"
+            value={crewcall}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.crewcall?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+            {message}
+            </Alert>
+        ))}
+      </Col>
     </Row>
     {/* buttons */}
     <Row>

@@ -16,7 +16,7 @@ const DayPage = () => {
     useRedirect("loggedOut");
     const [show, setShow] = useState(false);
     const { id } = useParams();
-    const [day, setDay] = useState({ results: [] });
+    const [dayData, setDayData] = useState({ results: [] });
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -24,7 +24,8 @@ const DayPage = () => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq(`/days/${id}`);
-                setDay({ results: [data] });
+                setDayData({ results: [data] });
+                const {day, date} = data;
             } catch (err) {
                 console.log(err);
               }
@@ -42,7 +43,7 @@ const DayPage = () => {
                 >
                     Back to Days
                 </Button>
-                <DayPageTop {...day.results[0]} 
+                <DayPageTop {...dayData.results[0]} 
                   />
                 </Col>
             </Row>
@@ -52,7 +53,7 @@ const DayPage = () => {
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Add Scene Info section</Button>
-                    {!show ?("") : (<SceneScheduleCreate /> ) }
+                    {!show ?("") : (<SceneScheduleCreate id day date/> ) }
                 </Col>
             </Row>
             {/* Scenes */}
