@@ -195,8 +195,8 @@ const SceneScheduleCreate = () => {
       formData.append("background_artists_pickups", background_artists_pickups);
         
       try {
-        const { data } = await axiosReq.post("/scenes/", formData);
-        history.push(`/scenes/${data.id}`);
+        const { data } = await axiosReq.post("/schedule/scenes/", formData);
+        history.push(`/home`);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
