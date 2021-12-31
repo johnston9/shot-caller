@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,7 +9,7 @@ import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
 
-import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/ScheduleCreate.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
@@ -17,21 +17,24 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
+import Act1List from "./Act1List";
 
 const SceneScheduleCreate = ({id, day, date} ) => {
   useRedirect("loggedOut");
   const [scenes, setScenes] = useState({ results: [] });
-  const [error, setErrors] = useState({});
+  // const [scene, setScene] = useState({});
+  const [errors, setErrors] = useState({});
   const history = useHistory();
 //   const [hasLoaded, setHasLoaded] = useState(false);
 //   const { pathname } = useLocation();
-//   const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const [postData, setPostData] = useState({
       day_id: id,
-      day: day,
+      day_name: day,
       day_order_number: "",
-      date: data,
+      date_value: date,
+      scene_id: "",
       scene_number: "",
       act: "",
       title: "",
@@ -85,6 +88,14 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       character10_costume: "",
       character10_calltime: "",
       character10_pickup: "",
+      character11: "",
+      character11_costume: "",
+      character11_calltime: "",
+      character11_pickup: "",
+      character12: "",
+      character12_costume: "",
+      character12_calltime: "",
+      character12_pickup: "",
       other_characters: "",
       other_characters_costumes: "",
       other_characters_calltimes: "",
@@ -93,29 +104,45 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       background_artists_costumes: "",
       background_artists_calltimes: "",
       background_artists_pickups: "",
+      new_info: "",
+      new_content: "",
   })
 
-  const { day_id, day, day_order_number, date, scene_number, 
+  const { day_id, day_name, day_order_number, date_value, scene_id, scene_number, 
     act, title, int_ext, start_time, end_time, content, location,
     filming_location, day_night, time, action, info,
     character1, character1_costume, character2, 
     character2_costume, character3, character3_costume, character4, 
     character4_costume, character5, character5_costume, character6, 
     character6_costume, character7, character7_costume, character8,
-    character8_costume, character9, character9_costume, character10, 
-    character10_costume, character1_calltime, character1_pickup,
+    character8_costume, character9, character9_costume, character10,
+    character10_costume, character11, character11_costume, character12,
+    character12_costume, character1_calltime, character1_pickup,
     character2_calltime, character2_pickup, character3_calltime,
     character3_pickup, character4_calltime, character4_pickup,
     character5_calltime, character5_pickup, character6_calltime, 
     character6_pickup, character7_calltime, character7_pickup,
     character8_calltime, character8_pickup, character9_calltime, 
     character9_pickup, character10_calltime, character10_pickup,
-    other_characters, other_characters_costumes,
+    character11_calltime, character11_pickup, character12_calltime, 
+    character12_pickup, other_characters, other_characters_costumes,
     background_artists, background_artists_costumes,
     other_characters_calltimes, other_characters_pickups,
-    background_artists_calltimes, background_artists_pickups} = postData;
+    background_artists_calltimes, background_artists_pickups,
+    new_info, new_content} = postData;
 
-    const history = useHistory()
+    // useEffect(() => {
+    //     const fetchScenes = async () => {
+    //       try {
+    //         const { data } = await axiosReq.get(`/scenes/?act=one`);
+    //         setScenes({ results: [data] });
+    //         console.log(scenes.results )
+    //       } catch(err) {
+    //         console.log(err);
+    //       }
+    //     }
+    //     fetchScenes();    
+    //   }, [])
     
     const handleChange = (event) => {
       setPostData({
@@ -129,9 +156,10 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       const formData = new FormData();
   
       formData.append("day_id", day_id);
-      formData.append("day", day);
+      formData.append("day", day_name);
       formData.append("day_order_number", day_order_number);
-      formData.append("date", date);
+      formData.append("date", date_value);
+      formData.append("scene_id", scene_id);
       formData.append("scene_number", scene_number);
       formData.append("act", act);
       formData.append("title", title);
@@ -185,6 +213,14 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       formData.append("character10_costume", character10_costume);
       formData.append("character10_calltime", character10_calltime);
       formData.append("character10_pickup", character10_pickup);
+      formData.append("character11", character11);
+      formData.append("character11_costume", character11_costume);
+      formData.append("character11_calltime", character11_calltime);
+      formData.append("character11_pickup", character11_pickup);
+      formData.append("character12", character12);
+      formData.append("character12_costume", character12_costume);
+      formData.append("character12_calltime", character12_calltime);
+      formData.append("character12_pickup", character12_pickup);
       formData.append("other_characters", other_characters);
       formData.append("other_characters_costumes", other_characters_costumes);
       formData.append("other_characters_calltimes", other_characters_calltimes);
@@ -192,8 +228,9 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       formData.append("background_artists", background_artists);
       formData.append("background_artists_costumes", background_artists_costumes);
       formData.append("background_artists_calltimes", background_artists_calltimes);
-      formData.append("background_artists_pickups", background_artists_pickups);
-        
+      formData.append("background_artists_pickups", background_artists_pickups);    
+      formData.append("new_info", new_info);
+      formData.append("new_content", new_content);
       try {
         const { data } = await axiosReq.post("/schedule/scenes/", formData);
         history.push(`/home`);
@@ -258,63 +295,6 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             ))}
           </Col>
         </Row>
-        {/* location int-ext day-night */}
-        {/* <Row>
-        <Col xs={6}>
-            <Form.Group controlId="location" className="mb-2" >
-                <Form.Label className="p-1" >Location</Form.Label>
-                <Form.Control 
-                type="text"
-                name="location"
-                value={location}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.location?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-        <Col xs={3} >         
-            <Form.Group controlId="int_ext" className="mb-2" >
-                <Form.Label className="p-1" >Int-Ext</Form.Label>
-                <Form.Control as="select"
-                  name="int_ext"
-                  value={int_ext}
-                  onChange={handleChange}
-                  aria-label="int ext select">
-                  <option>Select</option>
-                  <option value="int">Int</option>
-                  <option value="ext">Ext</option>
-                </Form.Control>
-            </Form.Group>
-            {errors?.int_ext?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="day_night" className="mb-2" >
-                <Form.Label className="p-1" >Day/Night</Form.Label>
-                <Form.Control as="select"
-                  name="day_night"
-                  value={day_night}
-                  onChange={handleChange}
-                  aria-label="day or night select">
-                  <option>Select</option>
-                  <option value="DAY">Day</option>
-                  <option value="NIGHT">Night</option>
-                </Form.Control>
-            </Form.Group>
-            {errors?.day_night?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row> */}
             {/* Filming Location */}
             <Row>
               <Col xs={12}>
@@ -335,10 +315,10 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             {/* characters */}
-            <h3>Characters</h3>
+            <h3>Characters</h3>            
             <Row>
-              <h5>Character 1</h5>
               <Col xs={6}>
+              <h5>Character 1</h5>
                 <p>{character1}</p> 
                 <p>Costume - {character1_costume}</p> 
               </Col>
@@ -376,8 +356,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 2</h5>
               <Col xs={6}>
+              <h5>Character 2</h5>
                 <p>{character2}</p> 
                 <p>Costume - {character2_costume}</p> 
               </Col>
@@ -415,8 +395,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 3</h5>
               <Col xs={6}>
+              <h5>Character 3</h5>
                 <p>{character3}</p> 
                 <p>Costume - {character3_costume}</p> 
               </Col>
@@ -453,9 +433,9 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             ))}
             </Col>
             </Row>
-            <Row>
-              <h5>Character 4</h5>
+            <Row>              
               <Col xs={6}>
+              <h5>Character 4</h5>
                 <p>{character4}</p> 
                 <p>Costume - {character4_costume}</p> 
               </Col>
@@ -493,7 +473,6 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 5</h5>
               <Col xs={6}>
                 <p>{character5}</p> 
                 <p>Costume - {character5_costume}</p> 
@@ -532,8 +511,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 6</h5>
               <Col xs={6}>
+              <h5>Character 6</h5>
                 <p>{character6}</p> 
                 <p>Costume - {character6_costume}</p> 
               </Col>
@@ -571,8 +550,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 7</h5>
               <Col xs={6}>
+              <h5>Character 7</h5>
                 <p>{character7}</p> 
                 <p>Costume - {character7_costume}</p> 
               </Col>
@@ -610,8 +589,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 8</h5>
               <Col xs={6}>
+              <h5>Character 8</h5>
                 <p>{character8}</p> 
                 <p>Costume - {character8_costume}</p> 
               </Col>
@@ -649,8 +628,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 9</h5>
               <Col xs={6}>
+              <h5>Character 9</h5>
                 <p>{character9}</p> 
                 <p>Costume - {character9_costume}</p> 
               </Col>
@@ -688,8 +667,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 10</h5>
               <Col xs={6}>
+              <h5>Character 10</h5>
                 <p>{character10}</p> 
                 <p>Costume - {character10_costume}</p> 
               </Col>
@@ -727,8 +706,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 11</h5>
               <Col xs={6}>
+              <h5>Character 11</h5>
                 <p>{character11}</p> 
                 <p>Costume - {character11_costume}</p> 
               </Col>
@@ -766,8 +745,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Character 12</h5>
               <Col xs={6}>
+              <h5>Character 12</h5>
                 <p>{character12}</p> 
                 <p>Costume - {character12_costume}</p> 
               </Col>
@@ -806,8 +785,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Row>
             {/* Other Characters */}
             <Row>
-              <h5>Other Characters</h5>
               <Col xs={6}>
+              <h5>Other Characters</h5>
                 <p>{other_characters}</p> 
                 <p>Costumes - {other_characters_costumes}</p> 
               </Col>
@@ -849,8 +828,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
             </Col>
             </Row>
             <Row>
-              <h5>Background Artists</h5>
               <Col xs={6}>
+              <h5>Background Artists</h5>
                 <p>{background_artists}</p> 
                 <p>Costumes - {background_artists_costumes}</p> 
               </Col>
@@ -953,7 +932,40 @@ const SceneScheduleCreate = ({id, day, date} ) => {
     
     return (
         <div>
-          <h3>Day: {day} Date: {date} </h3>
+          <Container className= {`mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
+          <h5>Day: {day} Date: {date} </h5>
+          <h3>SELECT SCENE</h3>
+          <Row>
+              <Col className="text-center">
+                <Button onClick={() => setShow(show => !show)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                Act One Scenes</Button>
+                {!show ?("") : (<Act1List /> ) }
+              </Col>
+            </Row>
+
+          {/* <Form.Group controlId="scene_select" className="mb-2" >
+                <Form.Label className="p-1" >Act One Scenes</Form.Label>
+                <Form.Control as="select"
+                  name="scene_select"
+                  value={act}
+                  onChange={handleChange}
+                  aria-label="scene select">
+                  {scenes.results.length ? (
+                    scenes.results.map((scene) => (
+                      <option onClick={(scene) => setPostData(scene) } value={scene.id} >Number {scene.number} </option>
+                    )) ): (
+                    ""
+                  )                 
+                  }
+                </Form.Control>
+            </Form.Group>
+            {errors?.act?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))} */}
+          
           <p>Scene Number{scene_number} - Act {act} Title {title} </p>
           <p>{location} {int_ext} {day_night} {time} </p>
           <p>Action {action} </p>
@@ -971,6 +983,7 @@ const SceneScheduleCreate = ({id, day, date} ) => {
                 </Col>
               </Row>
             </Form>
+            </Container>
         </div>
     )
 }

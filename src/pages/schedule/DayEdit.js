@@ -26,6 +26,7 @@ const DayEdit = () => {
   const [startDate, setStartDate] = useState("");
     const [postData, setPostData] = useState({
         day: "",
+        crewcall: "",
         scene1: "",
         scene2: "",
         scene3: "",
@@ -45,7 +46,7 @@ const DayEdit = () => {
         location5: "",
         location6: "",
       });
-      const { day, scene1, scene2, scene3, scene4, scene5, scene6, 
+      const { day, crewcall, scene1, scene2, scene3, scene4, scene5, scene6, 
         scene7, scene8, scene9, scene10, scene11, scene12, location1, location2,
         location3, location4, location5, location6, } = postData;
 

@@ -24,15 +24,16 @@ const Scene = (props) => {
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const category = useCategoryContext();
-    const { number, title, act, int_ext, day_night, time, location,
+    const { id, number, title, act, int_ext, day_night, time, location,
       filming_location, character1, character1_costume, character2, 
       character2_costume, character3, character3_costume, character4, 
       character4_costume, character5, character5_costume, character6, 
       character6_costume, character7, character7_costume, character8,
       character8_costume, character9, character9_costume, character10, 
-      character10_costume, other_characters, other_characters_costumes,
+      character10_costume, character11, character11_costume, character12,
+      character12_costume, other_characters, other_characters_costumes,
       background_artists, background_artists_costumes, shooting_date,
-      action, content, shotlist, storyboard, info, image } = props;
+      action, content, storyboard, info, image } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -185,7 +186,12 @@ const Scene = (props) => {
                   </h4>
                   <h5 style={{ textTransform: 'uppercase'}}>
                     {/* Characters:  */}
-                    {characters} </h5>
+                    {character1 ? ( `${character1} Cos - ${character1_costume},` ) : ("")} 
+                     {character2} {character3} {character4} {character5}
+                    {character6} {character7} {character7} {character9} {character10}
+                    {character11} {character12} </h5>
+                    <p>Other Characters: {other_characters}</p>
+                    <p>Other Characters Costumes: {other_characters_costumes}</p>
                   <h5>Action: <span className={` ${styles.Action }`}>{action}</span> </h5>
                   <h5>Content: <span className={` ${styles.Action }`}>{content}</span> </h5>
                   <h5>Info: <span className={` ${styles.Action }`}>{info}</span> </h5>
@@ -208,11 +214,11 @@ const Scene = (props) => {
                   
                   <hr />
                   <Card.Body>
-                    {!showlist ? (
+                    {/* {!showlist ? (
                       ""
                     ) : (
                       <Shotlist shotlist={shotlist} />
-                    ) }
+                    ) } */}
                     {!showstory ? (
                       ""
                     ) : (

@@ -17,6 +17,8 @@ const DayPage = () => {
     const [show, setShow] = useState(false);
     const { id } = useParams();
     const [dayData, setDayData] = useState({ results: [] });
+    const [dataDay, setDataDay] = useState("");
+    const [dataDate, setDataDate] = useState("");
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -25,7 +27,8 @@ const DayPage = () => {
             try {
                 const { data } = await axiosReq(`/days/${id}`);
                 setDayData({ results: [data] });
-                const {day, date} = data;
+                setDataDay(data.day)
+                setDataDate(data.date)
             } catch (err) {
                 console.log(err);
               }
@@ -48,18 +51,20 @@ const DayPage = () => {
                 </Col>
             </Row>
             {/* add scene */}
-            <Row className='mb-3'>
+            <Row className='my-3'>
                 <Col className="text-center">
+                    <h3 className='text-center'>Add scenes to schedule</h3>
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                    Add Scene Info section</Button>
-                    {!show ?("") : (<SceneScheduleCreate id day date/> ) }
+                    Add Scene</Button>
+                    {!show ?("") : (<SceneScheduleCreate id={id} day={dataDay} date={dataDate} /> ) }
                 </Col>
             </Row>
+            <hr />
             {/* Scenes */}
             <Row>
                 <Col>
-                <h3>Scenes</h3>
+                <h3 className='text-center'>Day Shooting Scene Order</h3>
                 </Col>
             </Row>
         </div>

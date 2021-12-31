@@ -51,13 +51,16 @@ function SceneCreateForm({topbox}) {
         character9_costume: "",
         character10: "",
         character10_costume: "",
+        character11: "",
+        character11_costume: "",
+        character12: "",
+        character12_costume: "",
         other_characters: "",
         other_characters_costumes: "",
         background_artists: "",
         background_artists_costumes: "",
         action: "",
         content: "",
-        shotlist: "",
         storyboard: "",
         info: "",
         image: "",
@@ -69,9 +72,10 @@ function SceneCreateForm({topbox}) {
         character4_costume, character5, character5_costume, character6, 
         character6_costume, character7, character7_costume, character8,
         character8_costume, character9, character9_costume, character10, 
-        character10_costume, other_characters, other_characters_costumes,
+        character10_costume, character11, character11_costume, character12,
+        character12_costume, other_characters, other_characters_costumes,
         background_artists, background_artists_costumes, shooting_date,
-        action, content, shotlist, storyboard, info, image } = postData;
+        action, content, storyboard, info, image } = postData;
 
       const imageInput = useRef(null)
       const storyboardInput = useRef(null)
@@ -140,13 +144,16 @@ function SceneCreateForm({topbox}) {
     formData.append("character9_costume", character9_costume);
     formData.append("character10", character10);
     formData.append("character10_costume", character10_costume);
+    formData.append("character11", character11);
+    formData.append("character11_costume", character11_costume);
+    formData.append("character12", character12);
+    formData.append("character12_costume", character12_costume);
     formData.append("other_characters", other_characters);
     formData.append("other_characters_costumes", other_characters_costumes);
     formData.append("background_artists", background_artists);
     formData.append("background_artists_costumes", background_artists_costumes);
     formData.append("action", action);
     formData.append("content", content);
-    formData.append("shotlist", shotlist);
     formData.append("info", info);
     if (imageInput.current.files[0]) {
       formData.append("image", imageInput.current.files[0]);
@@ -587,48 +594,6 @@ function SceneCreateForm({topbox}) {
             </Col>
             </Row>
             {/* end characters */}
-            {/* content info */}
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="content" className="mb-2" >
-                <Form.Label className="p-1" >Content</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={2}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="info" className="mb-2" >
-                <Form.Label className="p-1" >Info</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="info"
-                    as="textarea"
-                    rows={3}
-                    value={info}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.info?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* end info */}
             {/* characters costumes */}
             <Row>
             <Col xs={6} md={4} lg={2}>
@@ -865,6 +830,48 @@ function SceneCreateForm({topbox}) {
             </Col>
             </Row>
             {/* end characters costumes */}
+            {/* content info */}
+            <Row>
+              <Col xs={6}>
+            <Form.Group controlId="content" className="mb-2" >
+                <Form.Label className="p-1" >Content</Form.Label>
+                <Form.Control 
+                    className={styles.Input}
+                    type="text"
+                    name="content"
+                    as="textarea"
+                    rows={2}
+                    value={content}
+                    onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            <Col xs={6}>
+            <Form.Group controlId="info" className="mb-2" >
+                <Form.Label className="p-1" >Info</Form.Label>
+                <Form.Control 
+                    className={styles.Input}
+                    type="text"
+                    name="info"
+                    as="textarea"
+                    rows={3}
+                    value={info}
+                    onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.info?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            </Row>
+            {/* end info */}
       </div>
   )
   const buttons = (

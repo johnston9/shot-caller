@@ -74,7 +74,7 @@ const DayCreateForm = ({topbox} ) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();date = models.DateField()
+    const formData = new FormData();
 
     formData.append("day", day);
     formData.append("date", startDate);

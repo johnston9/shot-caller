@@ -57,7 +57,7 @@ const ScenesPage = ({message, filter = "" }) => {
       console.log(`depart ${filter}`);
         const fetchScenes = async () => {
           try {
-            const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
+            const { data } = await axiosReq.get(`/scenes/?${filter}&ordering=location&search=${query}`);
             setScenes(data);
             setHasLoaded(true);
           } catch(err) {
