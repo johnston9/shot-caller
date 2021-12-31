@@ -20,7 +20,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import SceneTop from "../scenes/SceneTop";
 import ScheduleSceneItem from "./ScheduleSceneItem";
 
-const Act1List = ({setPostData, setShowOne, list} ) => {
+const ActThreeList = ({setPostData, setShowThree, list} ) => {
     useRedirect("loggedOut");
     const [scenes, setScenes] = useState({results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -28,26 +28,27 @@ const Act1List = ({setPostData, setShowOne, list} ) => {
     useEffect(() => {
         const fetchScenes = async () => {
           try {
-            const { data } = await axiosReq.get(`/scenes/?act=one`);
+            const { data } = await axiosReq.get(`/scenes/?act=three`);
             setScenes(data);
             setHasLoaded(true);
+            console.log(data )
+            console.log(scenes.results)
           } catch(err) {
             console.log(err);
           }
         }
         fetchScenes();    
       }, [])
-
     return (
         <div>
           <Container className= {`mt-4 ${appStyles.Content} ${styles.Container}`} >
             {scenes.results.length ? (
                 scenes.results.map((scene) => (
-                    <ScheduleSceneItem setShowOne={setShowOne} list={list} setPostData={setPostData} scene={scene} {...scene} key={scene.id} />
+                    <ScheduleSceneItem setShowThree={setShowThree} list={list} setPostData={setPostData} scene={scene} {...scene} key={scene.id} />
                 ))) : ("")}
           </Container>                            
         </div>
     )
 }
 
-export default Act1List
+export default ActThreeList

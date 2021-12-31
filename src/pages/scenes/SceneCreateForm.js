@@ -446,7 +446,7 @@ function SceneCreateForm({topbox}) {
                 <Form.Control 
                 type="text"
                 name="character6"
-                value={character1}
+                value={character6}
                 onChange={handleChange}
                     />
             </Form.Group>
@@ -716,7 +716,7 @@ function SceneCreateForm({topbox}) {
                 <Form.Control 
                 type="text"
                 name="character8_costume"
-                value={character8}
+                value={character8_costume}
                 onChange={handleChange}
                     />
             </Form.Group>

@@ -18,6 +18,10 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Act1List from "./Act1List";
+import ActTwoAList from "./ActTwoAList";
+import ActTwoBList from "./ActTwoBList";
+import ActThreeList from "./ActThreeList";
+import LocationList from "./LocationList";
 
 const SceneScheduleCreate = ({id, day, date} ) => {
   useRedirect("loggedOut");
@@ -27,7 +31,11 @@ const SceneScheduleCreate = ({id, day, date} ) => {
   const history = useHistory();
 //   const [hasLoaded, setHasLoaded] = useState(false);
 //   const { pathname } = useLocation();
-  const [show, setShow] = useState(false);
+  const [showOne, setShowOne] = useState(false);
+  const [showTwoA, setShowTwoA] = useState(false);
+  const [showTwoB, setShowTwoB] = useState(false);
+  const [showThree, setShowThree] = useState(false);
+  const [showLoc, setShowLoc] = useState(false);
 
   const [postData, setPostData] = useState({
       day_id: id,
@@ -35,7 +43,7 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       day_order_number: "",
       date_value: date,
       scene_id: "",
-      scene_number: "",
+      number: "",
       act: "",
       title: "",
       start_time: "",
@@ -108,7 +116,7 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       new_content: "",
   })
 
-  const { day_id, day_name, day_order_number, date_value, scene_id, scene_number, 
+  const { day_id, day_name, day_order_number, date_value, scene_id, number, 
     act, title, int_ext, start_time, end_time, content, location,
     filming_location, day_night, time, action, info,
     character1, character1_costume, character2, 
@@ -160,7 +168,7 @@ const SceneScheduleCreate = ({id, day, date} ) => {
       formData.append("day_order_number", day_order_number);
       formData.append("date", date_value);
       formData.append("scene_id", scene_id);
-      formData.append("scene_number", scene_number);
+      formData.append("number", number);
       formData.append("act", act);
       formData.append("title", title);
       formData.append("start_time", start_time);
@@ -933,40 +941,49 @@ const SceneScheduleCreate = ({id, day, date} ) => {
     return (
         <div>
           <Container className= {`mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
-          <h5>Day: {day} Date: {date} </h5>
-          <h3>SELECT SCENE</h3>
+          {/* <h5>Day: {day} Date: {date} </h5> */}
+          <p>SELECT SCENE</p>
           <Row>
-              <Col className="text-center">
-                <Button onClick={() => setShow(show => !show)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                Act One Scenes</Button>
-                {!show ?("") : (<Act1List /> ) }
+              <Col xs={6} md={3} className="text-center">
+                <Button onClick={() => setShowOne(showOne => !showOne)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
+                Act One</Button>               
+              </Col>
+              <Col xs={6} md={3} className="text-center">
+                <Button onClick={() => setShowTwoA(showTwoA => !showTwoA)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
+                Act Two A</Button>
+              </Col>
+              <Col xs={6} md={3} className="text-center">
+                <Button onClick={() => setShowTwoB(showTwoB => !showTwoB)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
+                Act Two B</Button>
+              </Col>
+              <Col xs={6} md={3} className="text-center">
+                <Button onClick={() => setShowThree(showThree => !showThree)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
+                Act Three</Button>
               </Col>
             </Row>
-
-          {/* <Form.Group controlId="scene_select" className="mb-2" >
-                <Form.Label className="p-1" >Act One Scenes</Form.Label>
-                <Form.Control as="select"
-                  name="scene_select"
-                  value={act}
-                  onChange={handleChange}
-                  aria-label="scene select">
-                  {scenes.results.length ? (
-                    scenes.results.map((scene) => (
-                      <option onClick={(scene) => setPostData(scene) } value={scene.id} >Number {scene.number} </option>
-                    )) ): (
-                    ""
-                  )                 
-                  }
-                </Form.Control>
-            </Form.Group>
-            {errors?.act?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))} */}
+            <Row className="my-3">
+            <Col xs={12} className="text-center">
+                <Button onClick={() => setShowLoc(showLoc => !showLoc)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                By Location</Button>
+              </Col>
+            </Row>
+            <hr />
+          <Row className="my-3">
+            <Col>
+            {!showOne ?("") : (<Act1List list="one" setShowOne={setShowOne} setPostData={setPostData} /> ) }
+            {!showTwoA ?("") : (<ActTwoAList list="two-a" setShowTwoA={setShowTwoA} setPostData={setPostData} /> ) }
+            {!showTwoB ?("") : (<ActTwoBList list="two-b" setShowTwoB={setShowTwoB} setPostData={setPostData} /> ) }
+            {!showThree ?("") : (<ActThreeList list="three" setShowThree={setShowThree} setPostData={setPostData} /> ) }
+            {!showLoc ?("") : (<LocationList list="loc" setShowLoc={setShowLoc} setPostData={setPostData} /> ) }
+            </Col>
+          </Row>
           
-          <p>Scene Number{scene_number} - Act {act} Title {title} </p>
+          <p>Scene Number {number} - Act {act} Title {title} </p>
           <p>{location} {int_ext} {day_night} {time} </p>
           <p>Action {action} </p>
           <p>Content {content} </p>

@@ -19,8 +19,8 @@ const Landing = () => {
     return (
         <Container className={styles.Background}>
           <TopBox title="SHOT CALLER" />
-            <Row className={`my-5 ${styles.Row}`}>
-            <Col className="my-5 pr-0 pl-3"
+            <Row className={`my-3 ${styles.Row}`}>
+            <Col className="my-3 pr-0 pl-3"
               xs={1} md={1}
           >
             <Image
@@ -28,12 +28,12 @@ const Landing = () => {
                 src={door}
             />
           </Col>
-          <Col className="my-5" xs={10}>
+          <Col className="my-3" xs={10}>
           </Col>
           <Col
             xs={1} 
             // className={`my-auto d-none d-md-block p-2`}
-            className={`my-5 pl-0 pr-3`}
+            className={`my-3 pl-0 pr-3`}
           >
             <Image
               className={`${styles.FillerImagel}`}

@@ -17,8 +17,8 @@ const DayPage = () => {
     const [show, setShow] = useState(false);
     const { id } = useParams();
     const [dayData, setDayData] = useState({ results: [] });
-    const [dataDay, setDataDay] = useState("");
-    const [dataDate, setDataDate] = useState("");
+    const [dataDay, setDataDay] = useState();
+    const [dataDate, setDataDate] = useState();
     const currentUser = useCurrentUser();
     const history = useHistory();
 
