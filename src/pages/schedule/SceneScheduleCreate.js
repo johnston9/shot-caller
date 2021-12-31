@@ -13,7 +13,7 @@ import styles from "../../styles/ScheduleCreate.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
@@ -23,11 +23,12 @@ import ActTwoBList from "./ActTwoBList";
 import ActThreeList from "./ActThreeList";
 import LocationList from "./LocationList";
 
-const SceneScheduleCreate = ({id, day, date} ) => {
+const SceneScheduleCreate = ({day, date} ) => {
   useRedirect("loggedOut");
   const [scenes, setScenes] = useState({ results: [] });
   // const [scene, setScene] = useState({});
   const [errors, setErrors] = useState({});
+  const { id } = useParams();
   const history = useHistory();
 //   const [hasLoaded, setHasLoaded] = useState(false);
 //   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ const SceneScheduleCreate = ({id, day, date} ) => {
   const [showTwoB, setShowTwoB] = useState(false);
   const [showThree, setShowThree] = useState(false);
   const [showLoc, setShowLoc] = useState(false);
+  const [startDate, setStartDate] = useState("");
 
   const [postData, setPostData] = useState({
       day_id: id,
@@ -165,8 +167,8 @@ const SceneScheduleCreate = ({id, day, date} ) => {
   
       formData.append("day_id", day_id);
       formData.append("day", day_name);
-      formData.append("day_order_number", day_order_number);
       formData.append("date", date_value);
+      formData.append("day_order_number", day_order_number);
       formData.append("scene_id", scene_id);
       formData.append("number", number);
       formData.append("act", act);
@@ -941,7 +943,7 @@ const SceneScheduleCreate = ({id, day, date} ) => {
     return (
         <div>
           <Container className= {`mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
-          {/* <h5>Day: {day} Date: {date} </h5> */}
+          <h5>Day: {day} Date: {date} </h5>
           <p>SELECT SCENE</p>
           <Row>
               <Col xs={6} md={3} className="text-center">
