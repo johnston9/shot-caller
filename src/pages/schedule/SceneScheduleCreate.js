@@ -23,7 +23,7 @@ import ActTwoBList from "./ActTwoBList";
 import ActThreeList from "./ActThreeList";
 import LocationList from "./LocationList";
 
-const SceneScheduleCreate = ({day, date} ) => {
+const SceneScheduleCreate = ({xday, xdate} ) => {
   useRedirect("loggedOut");
   const [scenes, setScenes] = useState({ results: [] });
   // const [scene, setScene] = useState({});
@@ -40,11 +40,10 @@ const SceneScheduleCreate = ({day, date} ) => {
   const [startDate, setStartDate] = useState("");
 
   const [postData, setPostData] = useState({
-      day_id: id,
-      day_name: day,
+      // day_id: id,
+      day: xday,
+      date: xdate,
       day_order_number: "",
-      date_value: date,
-      scene_id: "",
       number: "",
       act: "",
       title: "",
@@ -118,7 +117,7 @@ const SceneScheduleCreate = ({day, date} ) => {
       new_content: "",
   })
 
-  const { day_id, day_name, day_order_number, date_value, scene_id, number, 
+  const { day_order_number, day, date, number, 
     act, title, int_ext, start_time, end_time, content, location,
     filming_location, day_night, time, action, info,
     character1, character1_costume, character2, 
@@ -165,11 +164,10 @@ const SceneScheduleCreate = ({day, date} ) => {
       event.preventDefault();
       const formData = new FormData();
   
-      formData.append("day_id", day_id);
-      formData.append("day", day_name);
-      formData.append("date", date_value);
+      formData.append("day_id", id);
+      formData.append("day", day);
+      formData.append("date", date);
       formData.append("day_order_number", day_order_number);
-      formData.append("scene_id", scene_id);
       formData.append("number", number);
       formData.append("act", act);
       formData.append("title", title);
@@ -243,7 +241,7 @@ const SceneScheduleCreate = ({day, date} ) => {
       formData.append("new_content", new_content);
       try {
         const { data } = await axiosReq.post("/schedule/scenes/", formData);
-        history.push(`/home`);
+        history.push(`/days/`);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -254,7 +252,42 @@ const SceneScheduleCreate = ({day, date} ) => {
 
     const textFields = (
       <div>
-        {/* day_order_number start_time act */}
+        {/* day date */}
+        <h5>Day and Date: Change if you have changed the Day or Date on the Day page</h5>
+        <Row>
+          <Col xs={6}>
+          <Form.Group controlId="day" className="mb-2" >
+                <Form.Label className="p-1" >Day</Form.Label>
+                <Form.Control 
+                type="text"
+                name="day"
+                value={day}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.day?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            <Col xs={6}>
+          <Form.Group controlId="date" className="mb-2" >
+                <Form.Label className="p-1" >Date</Form.Label>
+                <Form.Control 
+                type="text"
+                name="date"
+                value={date}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.date?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+        </Row>
         <Row>
           <Col xs={4} >
           <Form.Group controlId="day_order_number" className="mb-2" >
@@ -943,7 +976,7 @@ const SceneScheduleCreate = ({day, date} ) => {
     return (
         <div>
           <Container className= {`mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
-          <h5>Day: {day} Date: {date} </h5>
+          <h5>Day: {xday}  Date: {xdate} {id} </h5>
           <p>SELECT SCENE</p>
           <Row>
               <Col xs={6} md={3} className="text-center">

@@ -12,6 +12,7 @@ import btnStyles from "../../styles/Button.module.css";
 import DayPageTop from './DayPageTop';
 import SceneScheduleCreate from './SceneScheduleCreate';
 import ScheduleScene from './ScheduleScene';
+import TopBox from '../../components/TopBox';
 
 const DayPage = () => {
     useRedirect("loggedOut");
@@ -20,8 +21,9 @@ const DayPage = () => {
     // const [day_int_id, setDay_int_id] = useState();
     const [dayData, setDayData] = useState({ results: [] });
     const [dayScenes, setDayScenes] = useState({ results: [] });
-    const [dataDay, setDataDay] = useState();
-    const [dataDate, setDataDate] = useState();
+    // const [dayScenes, setDayScenes] = useState();
+    const [dataDay, setDataDay] = useState("");
+    const [dataDate, setDataDate] = useState("");
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -32,10 +34,8 @@ const DayPage = () => {
                     axiosReq.get(`/days/${id}`),
                     axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                 ])
-                console.log(scenes)
                 setDayData({ results: [dayGet] });
-                // setDayScenes({ results: [scenes]} )
-                setDayScenes(scenes )
+                setDayScenes(scenes)
                 setDataDay(dayGet.day)
                 setDataDate(dayGet.date);
                 // const id_int = parseInt(id)
@@ -49,6 +49,7 @@ const DayPage = () => {
 
     return (
         <div>
+            <TopBox title="Day"/>
             <Row className="pt-1">
                 <Col className="mt-4">
                 <Button
@@ -64,11 +65,11 @@ const DayPage = () => {
             {/* add scene */}
             <Row className='my-3'>
                 <Col className="text-center">
-                    <h3 className='text-center'>Add scenes to schedule</h3>
+                    <h3 className='text-center'>Schedule scenes for day</h3>
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Add Scene</Button>
-                    {!show ?("") : (<SceneScheduleCreate day={dataDay} date={dataDate} /> ) }
+                    {!show ?("") : (<SceneScheduleCreate xday={dataDay} xdate={dataDate} /> ) }
                 </Col>
             </Row>
             <hr />
@@ -76,14 +77,13 @@ const DayPage = () => {
             <Row>
                 <Col>
                 <h3 className='text-center'>Day Shooting Scene Order</h3>
+                <hr/>
                 <Container className= {`mt-4`} >
-                    {dayScenes.act}
-                    {dataDay}
-                    {/* {dayScenes.results.length ? (
+                    {dayScenes.results.length ? (
                         dayScenes.results.map((scene) => (
-                            <p>{scene.act} </p>
-                            // <ScheduleScene {...scene} key={scene.id} />
-                        ))) : ("")} */}
+                            // <p>{scene.id}...{scene.day}..{scene.day_id}</p>
+                            <ScheduleScene {...scene} key={scene.id} />
+                        ))) : ("")}
                 </Container> 
                 </Col>
             </Row>

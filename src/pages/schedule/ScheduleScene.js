@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
 // import InfiniteScroll from 'react-infinite-scroll-component';
@@ -18,7 +18,7 @@ import TopBox from '../../components/TopBox';
 
 const ScheduleScene = (props) => {
     useRedirect("loggedOut")
-    const {day_id, day_name, day_order_number, date_value, scene_id, number, 
+    const {day_id, day, day_order_number, date, scene_id, number, 
         act, title, int_ext, start_time, end_time, content, location,
         filming_location, day_night, time, action, info,
         character1, character1_costume, character2, 
@@ -39,15 +39,16 @@ const ScheduleScene = (props) => {
         background_artists, background_artists_costumes,
         other_characters_calltimes, other_characters_pickups,
         background_artists_calltimes, background_artists_pickups,
-        new_info, new_content} = props
+        new_info, new_content, } = props
 
     return (
-        <div>
-            <Row>
+        <div className={styles.SceneBox} >
+            <Row className='mb-2'>
                 <Col>
+                <p>Day Id {day_id} Day {day} Day Order {day_order_number} Date {date} Scene Id {scene_id} Scene Number {number} </p>
                 <p>{act} {title} {int_ext}, {start_time}, {end_time}</p>
                 <p> {content}, {location},</p>
-                <p>{character1}, {character1_costume},</p>
+                <p>Character1{character1} - Costume {character1_costume} - Calltime {character1_calltime} - Pickup {character1_pickup} </p>
                 </Col>
             </Row>         
         </div>

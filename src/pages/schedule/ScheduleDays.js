@@ -39,6 +39,7 @@ const SchedulePages = () => {
               const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
               setDays(data);
               console.log(data)
+              console.log(days.results)
               setHasLoaded(true);
             } catch(err) {
               setError(err)
