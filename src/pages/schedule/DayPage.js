@@ -11,13 +11,15 @@ import Container from 'react-bootstrap/Container';
 import btnStyles from "../../styles/Button.module.css";
 import DayPageTop from './DayPageTop';
 import SceneScheduleCreate from './SceneScheduleCreate';
+import ScheduleScene from './ScheduleScene';
 
 const DayPage = () => {
     useRedirect("loggedOut");
     const [show, setShow] = useState(false);
     const { id } = useParams();
-    const [day_int_id, setDay_int_id] = useState();
+    // const [day_int_id, setDay_int_id] = useState();
     const [dayData, setDayData] = useState({ results: [] });
+    const [dayScenes, setDayScenes] = useState({ results: [] });
     const [dataDay, setDataDay] = useState();
     const [dataDate, setDataDate] = useState();
     const currentUser = useCurrentUser();
@@ -26,12 +28,18 @@ const DayPage = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq(`/days/${id}`);
-                setDayData({ results: [data] });
-                setDataDay(data.day)
-                setDataDate(data.date);
-                const id_int = parseInt(id)
-                setDay_int_id(id_int)  
+                const [{ data: dayGet }, { data: scenes }] = await Promise.all([
+                    axiosReq.get(`/days/${id}`),
+                    axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+                ])
+                console.log(scenes)
+                setDayData({ results: [dayGet] });
+                // setDayScenes({ results: [scenes]} )
+                setDayScenes(scenes )
+                setDataDay(dayGet.day)
+                setDataDate(dayGet.date);
+                // const id_int = parseInt(id)
+                // setDay_int_id(id_int)  
             } catch (err) {
                 console.log(err);
               }
@@ -68,6 +76,15 @@ const DayPage = () => {
             <Row>
                 <Col>
                 <h3 className='text-center'>Day Shooting Scene Order</h3>
+                <Container className= {`mt-4`} >
+                    {dayScenes.act}
+                    {dataDay}
+                    {/* {dayScenes.results.length ? (
+                        dayScenes.results.map((scene) => (
+                            <p>{scene.act} </p>
+                            // <ScheduleScene {...scene} key={scene.id} />
+                        ))) : ("")} */}
+                </Container> 
                 </Col>
             </Row>
         </div>
