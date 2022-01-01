@@ -42,7 +42,7 @@ const LocationList = ({setPostData, setShowLoc, list} ) => {
           <Container className= {`mt-4 ${appStyles.Content} ${styles.Container}`} >
             {scenes.results.length ? (
                 scenes.results.map((scene) => (
-                    <ScheduleSceneItem setShowLoc={setShowLoc} list={list} setPostData={setPostData} list={list} scene={scene} {...scene} key={scene.id} />
+                    <ScheduleSceneItem setShowLoc={setShowLoc} list={list} setPostData={setPostData} list={list} scene={scene} key={scene.id} />
                 ))) : ("")}
           </Container>                            
         </div>

@@ -117,7 +117,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       new_content: "",
   })
 
-  const { day_order_number, day, date, number, 
+  const { day_order_number, day, date, number,
     act, title, int_ext, start_time, end_time, content, location,
     filming_location, day_night, time, action, info,
     character1, character1_costume, character2, 
@@ -158,6 +158,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
         ...postData,
         [event.target.name]: event.target.value,
       });
+      console.log(event.target.name)
     };
 
     const handleSubmit = async (event) => {
@@ -242,6 +243,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       try {
         const { data } = await axiosReq.post("/schedule/scenes/", formData);
         history.push(`/days/`);
+        console.log(formData.day_id);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
