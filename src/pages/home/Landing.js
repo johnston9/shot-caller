@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
-import doorr from "../../assets/door.png";
+import rightdoor from "../../assets/rightdoor.png";
 import TopBox from '../../components/TopBox';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Home.module.css";
@@ -37,7 +37,7 @@ const Landing = () => {
           >
             <Image
               className={`${styles.FillerImagel}`}
-              src={doorr}
+              src={rightdoor}
             />
           </Col>
             </Row>

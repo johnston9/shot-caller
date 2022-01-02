@@ -23,24 +23,24 @@ import ActTwoBList from "./ActTwoBList";
 import ActThreeList from "./ActThreeList";
 import LocationList from "./LocationList";
 
-const SceneScheduleCreate = ({xday, xdate} ) => {
+const SceneScheduleEdit = ({xday, xdate} ) => {
   useRedirect("loggedOut");
-  const [scenes, setScenes] = useState({ results: [] });
+  //   const [scenes, setScenes] = useState({ results: [] });
   // const [scene, setScene] = useState({});
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const history = useHistory();
-//   const [hasLoaded, setHasLoaded] = useState(false);
-//   const { pathname } = useLocation();
-  const [showOne, setShowOne] = useState(false);
-  const [showTwoA, setShowTwoA] = useState(false);
-  const [showTwoB, setShowTwoB] = useState(false);
-  const [showThree, setShowThree] = useState(false);
-  const [showLoc, setShowLoc] = useState(false);
-  const [startDate, setStartDate] = useState("");
+
+//   const [showOne, setShowOne] = useState(false);
+//   const [showTwoA, setShowTwoA] = useState(false);
+//   const [showTwoB, setShowTwoB] = useState(false);
+//   const [showThree, setShowThree] = useState(false);
+//   const [showLoc, setShowLoc] = useState(false);
 
   const [postData, setPostData] = useState({
-      // day_id: id,
+      day_id: "",
+      day: "",
+      date: "",
       day_order_number: "",
       number: "",
       act: "",
@@ -115,7 +115,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       new_content: "",
   })
 
-  const { day_order_number, number,
+  const { day_id, day_order_number, day, date, number,
     act, title, int_ext, start_time, end_time, content, location,
     filming_location, day_night, time, action, info,
     character1, character1_costume, character2, 
@@ -136,20 +136,65 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
     background_artists, background_artists_costumes,
     other_characters_calltimes, other_characters_pickups,
     background_artists_calltimes, background_artists_pickups,
-    new_info, new_content} = postData;
+    new_info, new_content } = postData;
 
-    // useEffect(() => {
-    //     const fetchScenes = async () => {
-    //       try {
-    //         const { data } = await axiosReq.get(`/scenes/?act=one`);
-    //         setScenes({ results: [data] });
-    //         console.log(scenes.results )
-    //       } catch(err) {
-    //         console.log(err);
-    //       }
-    //     }
-    //     fetchScenes();    
-    //   }, [])
+    useEffect(() => {
+        const handleMount = async () => {
+          try {
+            const { data } = await axiosReq.get(`/schedule/scenes/${id}/`);
+
+            const { day_id, day_order_number, day, date, number,
+                act, title, int_ext, start_time, end_time, content, location,
+                filming_location, day_night, time, action, info,
+                character1, character1_costume, character2, 
+                character2_costume, character3, character3_costume, character4, 
+                character4_costume, character5, character5_costume, character6, 
+                character6_costume, character7, character7_costume, character8,
+                character8_costume, character9, character9_costume, character10,
+                character10_costume, character11, character11_costume, character12,
+                character12_costume, character1_calltime, character1_pickup,
+                character2_calltime, character2_pickup, character3_calltime,
+                character3_pickup, character4_calltime, character4_pickup,
+                character5_calltime, character5_pickup, character6_calltime, 
+                character6_pickup, character7_calltime, character7_pickup,
+                character8_calltime, character8_pickup, character9_calltime, 
+                character9_pickup, character10_calltime, character10_pickup,
+                character11_calltime, character11_pickup, character12_calltime, 
+                character12_pickup, other_characters, other_characters_costumes,
+                background_artists, background_artists_costumes,
+                other_characters_calltimes, other_characters_pickups,
+                background_artists_calltimes, background_artists_pickups,
+                new_info, new_content } = data;
+     
+            setPostData({ day_id, day_order_number, day, date, number,
+                act, title, int_ext, start_time, end_time, content, location,
+                filming_location, day_night, time, action, info,
+                character1, character1_costume, character2, 
+                character2_costume, character3, character3_costume, character4, 
+                character4_costume, character5, character5_costume, character6, 
+                character6_costume, character7, character7_costume, character8,
+                character8_costume, character9, character9_costume, character10,
+                character10_costume, character11, character11_costume, character12,
+                character12_costume, character1_calltime, character1_pickup,
+                character2_calltime, character2_pickup, character3_calltime,
+                character3_pickup, character4_calltime, character4_pickup,
+                character5_calltime, character5_pickup, character6_calltime, 
+                character6_pickup, character7_calltime, character7_pickup,
+                character8_calltime, character8_pickup, character9_calltime, 
+                character9_pickup, character10_calltime, character10_pickup,
+                character11_calltime, character11_pickup, character12_calltime, 
+                character12_pickup, other_characters, other_characters_costumes,
+                background_artists, background_artists_costumes,
+                other_characters_calltimes, other_characters_pickups,
+                background_artists_calltimes, background_artists_pickups,
+                new_info, new_content });
+            } catch (err) {
+                console.log(err);
+            }
+            };
+        
+            handleMount();
+        }, [id]);
     
     const handleChange = (event) => {
       setPostData({
@@ -163,9 +208,9 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       event.preventDefault();
       const formData = new FormData();
   
-      formData.append("day_id", id);
-      formData.append("day", xday);
-      formData.append("date", xdate);
+      formData.append("day_id", day_id);
+      formData.append("day", day);
+      formData.append("date", date);
       formData.append("day_order_number", day_order_number);
       formData.append("number", number);
       formData.append("act", act);
@@ -239,9 +284,9 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       formData.append("new_info", new_info);
       formData.append("new_content", new_content);
       try {
-        const { data } = await axiosReq.post("/schedule/scenes/", formData);
-        history.push(`/days/`);
-        console.log(formData.day_id);
+        await axiosReq.put(`/schedule/scenes/${id}/`, formData);
+        history.goBack();
+        // console.log(formData.day_id);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -253,7 +298,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
     const textFields = (
       <div>
         {/* day date */}
-        {/* <h5>Day and Date: Change if you have changed the Day or Date on the Day page</h5>
+        <h5>Day and Date: Change if you have changed the Day or Date on the Day page</h5>
         <Row>
           <Col xs={6}>
           <Form.Group controlId="day" className="mb-2" >
@@ -287,7 +332,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
               </Alert>
             ))}
             </Col>
-        </Row> */}
+        </Row>
         <Row>
           <Col xs={4} >
           <Form.Group controlId="day_order_number" className="mb-2" >
@@ -975,49 +1020,10 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
     
     return (
         <div>
-          <Container className= {`mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
+            <TopBox title="Edit Schedule Scene"/>
+           <Container className= {`mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
           <h5>Day: {xday}  Date: {xdate} {id} </h5>
-          <p>SELECT SCENE</p>
-          <Row>
-              <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowOne(showOne => !showOne)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act One</Button>               
-              </Col>
-              <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowTwoA(showTwoA => !showTwoA)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act Two A</Button>
-              </Col>
-              <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowTwoB(showTwoB => !showTwoB)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act Two B</Button>
-              </Col>
-              <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowThree(showThree => !showThree)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act Three</Button>
-              </Col>
-            </Row>
-            <Row className="my-3">
-            <Col xs={12} className="text-center">
-                <Button onClick={() => setShowLoc(showLoc => !showLoc)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                By Location</Button>
-              </Col>
-            </Row>
-            <hr />
-          <Row className="my-3">
-            <Col>
-            {!showOne ?("") : (<Act1List list="one" setShowOne={setShowOne} setPostData={setPostData} /> ) }
-            {!showTwoA ?("") : (<ActTwoAList list="two-a" setShowTwoA={setShowTwoA} setPostData={setPostData} /> ) }
-            {!showTwoB ?("") : (<ActTwoBList list="two-b" setShowTwoB={setShowTwoB} setPostData={setPostData} /> ) }
-            {!showThree ?("") : (<ActThreeList list="three" setShowThree={setShowThree} setPostData={setPostData} /> ) }
-            {!showLoc ?("") : (<LocationList list="loc" setShowLoc={setShowLoc} setPostData={setPostData} /> ) }
-            </Col>
-          </Row>
-          
+            <hr />         
           <p>Scene Number {number} - Act {act} Title {title} </p>
           <p>{location} {int_ext} {day_night} {time} </p>
           <p>Action {action} </p>
@@ -1040,4 +1046,4 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
     )
 }
 
-export default SceneScheduleCreate
+export default SceneScheduleEdit

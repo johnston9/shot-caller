@@ -109,7 +109,7 @@ const SchedulePages = () => {
           <>
             {days.results.length ? (
                 days.results.map((day) => (
-                  <Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
+                  <Col xs={12} md={6} className="py-2">
                   <DayTop key={day.id} {...day} setDays={setDays} />
                   </Col>
                 ))) 

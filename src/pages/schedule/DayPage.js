@@ -9,10 +9,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 import DayPageTop from './DayPageTop';
 import SceneScheduleCreate from './SceneScheduleCreate';
 import ScheduleScene from './ScheduleScene';
 import TopBox from '../../components/TopBox';
+import Asset from '../../components/Asset';
 
 const DayPage = () => {
     useRedirect("loggedOut");
@@ -26,6 +28,7 @@ const DayPage = () => {
     const [dataDate, setDataDate] = useState("");
     const currentUser = useCurrentUser();
     const history = useHistory();
+    const [hasLoaded, setHasLoaded] = useState(false);
 
     useEffect(() => {
         const handleMount = async () => {
@@ -38,6 +41,7 @@ const DayPage = () => {
                 setDayScenes(scenes)
                 setDataDay(dayGet.day)
                 setDataDate(dayGet.date);
+                setHasLoaded(true);
                 // const id_int = parseInt(id)
                 // setDay_int_id(id_int)  
             } catch (err) {
@@ -50,7 +54,9 @@ const DayPage = () => {
     return (
         <div>
             <TopBox title="Day"/>
-            <Row className="pt-1">
+            {hasLoaded ? (
+                <>
+                <Row className="pt-1">
                 <Col className="mt-4">
                 <Button
                     className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
@@ -62,31 +68,34 @@ const DayPage = () => {
                   />
                 </Col>
             </Row>
-            {/* add scene */}
-            <Row className='my-3'>
-                <Col className="text-center">
-                    <h3 className='text-center'>Schedule scenes for day</h3>
-                    <Button onClick={() => setShow(show => !show)} 
-                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                    Add Scene</Button>
-                    {!show ?("") : (<SceneScheduleCreate xday={dataDay} xdate={dataDate} /> ) }
-                </Col>
-            </Row>
-            <hr />
             {/* Scenes */}
             <Row>
                 <Col>
-                <h3 className='text-center'>Day Shooting Scene Order</h3>
-                <hr/>
-                <Container className= {`mt-4`} >
+                <h3 className='text-center mt-3'>Day Schedule</h3>
+                {/* add scene */}
+                <Row className='my-3'>
+                    <Col className="text-center">
+                        <Button onClick={() => setShow(show => !show)} 
+                        className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                        Add Scene</Button>
+                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} xdate={dataDate} /> ) }
+                    </Col>
+                </Row>
+                <Container className={`mt-4`} >
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene) => (
                             // <p>{scene.id}...{scene.day}..{scene.day_id}</p>
-                            <ScheduleScene {...scene} key={scene.id} />
+                            <ScheduleScene {...scene} dayid= {id} key={scene.id} />
                         ))) : ("")}
                 </Container> 
                 </Col>
             </Row>
+                </>
+            ) : (
+                <Container className={appStyles.Content}>
+                    <Asset spinner />
+                </Container>
+            ) }
         </div>
     )
 }

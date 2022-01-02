@@ -23,11 +23,11 @@ const Home = () => {
         <div className={styles.Backgroundhome}>
             <TopBox title="SHOT CALLER" />
             <Row className={`my-3 ${styles.Row}`}>
-            <Col className="my-3 pr-0 pl-3"
+            <Col className="my-3 pr-0 pl-4"
             xs={1} md={1}
           >
             <Image
-                className={`${styles.FillerImagel}`}
+                className={`${styles.FillerImageh}`}
                 src={door}
             />
           </Col>
