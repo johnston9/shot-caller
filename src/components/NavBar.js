@@ -132,6 +132,14 @@ const NavBar = () => {
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
+          to="/characters"
+        >
+          <i className="navicon fas fa-play"></i>Characters
+      </NavLink>
+
+      <NavLink
+          className={`mt-2 pt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
           to="/days"
         >
           <i className="navicon fas fa-play"></i>Schedule

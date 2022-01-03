@@ -23,90 +23,92 @@ import Asset2 from "../../components/Asset2";
 function PostCreateForm({sceneId, number, dept, category}) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
-    const [postData, setPostData] = useState({
-        sceneNumber: number,
-        title: "",
-        content: "",
-        scene: sceneId,
-        departments: dept,
-        categoryType: category,
-        image1: "",
-        image2: "",
-        image3: "",
-        image4: "",
-        image5: "",
+  const [postData, setPostData] = useState({
+    sceneNumber: number,
+    title: "",
+    content: "",
+    scene: sceneId,
+    departments: dept,
+    categoryType: category,
+    image1: "",
+    image2: "",
+    image3: "",
+    image4: "",
+    image5: "",
+  });
+
+  const { sceneNumber, title, content, scene, departments, 
+    categoryType, image1, image2, image3, image4, image5 } = postData;
+
+  const imageInput1 = useRef(null);
+  const imageInput2 = useRef(null);
+  const imageInput3 = useRef(null);
+  const imageInput4 = useRef(null);
+  const imageInput5 = useRef(null);
+
+  const history = useHistory();
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleChangeImage1 = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image1);
+      setPostData({
+        ...postData,
+        image1: URL.createObjectURL(event.target.files[0]),
       });
-      const { sceneNumber, title, content, scene, departments, 
-        categoryType, image1, image2, image3, image4, image5 } = postData;
-      const imageInput1 = useRef(null)
-      const imageInput2 = useRef(null)
-      const imageInput3 = useRef(null)
-      const imageInput4 = useRef(null)
-      const imageInput5 = useRef(null)
+      console.log(`image1 ${image1}`)
+    }
+  };
 
-      const history = useHistory()
-    
-      const handleChange = (event) => {
-        setPostData({
-          ...postData,
-          [event.target.name]: event.target.value,
-        });
-      };
+  const handleChangeImage2 = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image2);
+      setPostData({
+        ...postData,
+        image2: URL.createObjectURL(event.target.files[0]),
+      });
+      console.log(`image2 ${image2}`)
+    }
+  };
 
-      const handleChangeImage1 = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(image1);
-          setPostData({
-            ...postData,
-            image1: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`image1 ${image1}`)
-        }
-      };
+  const handleChangeImage3 = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image3);
+      setPostData({
+        ...postData,
+        image3: URL.createObjectURL(event.target.files[0]),
+      });
+      console.log(`image3 ${image3}`)
+    }
+  };
 
-      const handleChangeImage2 = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(image2);
-          setPostData({
-            ...postData,
-            image2: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`image2 ${image2}`)
-        }
-      };
+  const handleChangeImage4 = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image4);
+      setPostData({
+        ...postData,
+        image4: URL.createObjectURL(event.target.files[0]),
+      });
+      console.log(`image4 ${image4}`)
+    }
+  };
 
-      const handleChangeImage3 = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(image3);
-          setPostData({
-            ...postData,
-            image3: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`image3 ${image3}`)
-        }
-      };
-
-      const handleChangeImage4 = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(image4);
-          setPostData({
-            ...postData,
-            image4: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`image4 ${image4}`)
-        }
-      };
-
-      const handleChangeImage5 = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(image5);
-          setPostData({
-            ...postData,
-            image5: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`image5 ${image5}`)
-        }
-      };
+  const handleChangeImage5 = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image5);
+      setPostData({
+        ...postData,
+        image5: URL.createObjectURL(event.target.files[0]),
+      });
+      console.log(`image5 ${image5}`)
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
