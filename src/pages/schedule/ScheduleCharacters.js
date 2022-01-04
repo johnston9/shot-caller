@@ -41,7 +41,7 @@ const ScheduleCharacters = (props) => {
     } = props
 
     return (
-        <div className={`mt-4 p-3 ${styles.SceneBox}`} >
+        <div className={`my-0 px-3 ${styles.SceneBox}`} >
             <Row>
                 <Col>
                 <p><span style={{ textTransform: 'uppercase', fontWeight: 700 }} >  {character1}</span> - Costume {character1_costume} - Calltime {character1_calltime} - Pickup {character1_pickup} </p>

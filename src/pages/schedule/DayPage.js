@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import styles from "../../styles/DayPage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import DayPageTop from './DayPageTop';
@@ -69,8 +70,8 @@ const DayPage = () => {
                 </Col>
             </Row>
             {/* Scenes */}
-            <Row>
-                <Col>
+            {/* <Row>
+                <Col> */}
                 <h3 className='text-center mt-3'>Day Schedule</h3>
                 {/* add scene */}
                 <Row className='my-3'>
@@ -81,15 +82,54 @@ const DayPage = () => {
                         {!show ?("") : (<SceneScheduleCreate xday={dataDay} xdate={dataDate} /> ) }
                     </Col>
                 </Row>
-                <Container className={`mt-4`} >
+                {/* titles */}
+                <Row className={`${styles.TitleBox}`} >
+                    <Col className={`${styles.TitleBox2}`} xs={2} md={1}>
+                        <p className='mb-0'>Edit</p>
+                        <p className='mb-0'>Order</p>
+                    </Col>
+                    <Col className={`${styles.TitleBox2}`} xs={2} md={1}>
+                        <p className='mb-0'>Start</p>
+                        <p className='mb-0'>End</p>
+                    </Col>
+                    <Col className={`${styles.TitleBox2}`} xs={2} md={1}>
+                        <p className='mb-0'>Scene</p>
+                        <p className='mb-0'>Act</p>
+                    </Col>
+                    <Col className={` ${styles.TitleBox2}`} xs={2} md={1}>
+                        <p className='mb-0'>Int/Ext</p>
+                        <p className='mb-0'>D/N</p>
+                    </Col>
+                    <Col className={` ${styles.TitleBox2}`} xs={2} md={1}>
+                        <p className='mb-0'>Pages</p>
+                    </Col>
+                    <Col className={` ${styles.TitleBox2}`} xs={2} md={1}>
+                        <p className='mb-0'>Pages2</p>
+                    </Col>
+                    <Col className={` ${styles.TitleBox2}`} xs={4} md={2}>
+                        <p className='mb-0'>Heading</p>
+                        <p className='mb-0'>Action</p>
+                    </Col>
+                    <Col className={` ${styles.TitleBox2}`} xs={4} md={2}>
+                    <p className='mb-0'>Location</p>
+                    <p className='mb-0'>Filming Location</p>                        
+                    </Col>
+                    <Col className={` ${styles.TitleBox2}`} xs={2} md={2}>
+                        <p className='mb-0'>Requirements</p>
+                        <p className='mb-0'>Equip</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className='px-0 mx-0'>                   
+                {/* <div className={`mt-0 mx-0`} > */}
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene) => (
                             // <p>{scene.id}...{scene.day}..{scene.day_id}</p>
-                            <ScheduleScene {...scene} dayid= {id} key={scene.id} />
+                            <ScheduleScene {...scene} dayid={id} sceneAll={scene} key={scene.id} />
                         ))) : ("")}
-                </Container> 
+                {/* </div>  */}
                 </Col>
-            </Row>
+                </Row>
                 </>
             ) : (
                 <Container className={appStyles.Content}>

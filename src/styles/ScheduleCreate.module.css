@@ -23,3 +23,16 @@
 .SceneBox {
   border: 1px solid #555;
 }
+
+.Next {
+  background-color: coral;
+  border: 1px solid #555;
+}
+
+.TitleBox {
+  border: 1px solid #555;
+}
+
+.TitleBox2 {
+  border-right : 1px solid #555;
+}
