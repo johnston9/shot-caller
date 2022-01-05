@@ -50,9 +50,11 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
       content: "",
       location: "",
       filming_location: "",
+      location_address: "",
       int_ext: "",
       day_night: "",
       time: "",
+      pages: "",
       action: "",
       info: "",
       character1: "",
@@ -115,9 +117,9 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
       new_content: "",
   })
 
-  const { day_id, day_order_number, day, date, number,
+  const { day_id, day_order_number, day, date, number, location_address,
     act, title, int_ext, start_time, end_time, content, location,
-    filming_location, day_night, time, action, info,
+    filming_location, day_night, time, action, info, pages,
     character1, character1_costume, character2, 
     character2_costume, character3, character3_costume, character4, 
     character4_costume, character5, character5_costume, character6, 
@@ -143,9 +145,9 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
           try {
             const { data } = await axiosReq.get(`/schedule/scenes/${id}/`);
 
-            const { day_id, day_order_number, day, date, number,
+            const { day_id, day_order_number, day, date, number, info, pages,
                 act, title, int_ext, start_time, end_time, content, location,
-                filming_location, day_night, time, action, info,
+                filming_location, location_address, day_night, time, action,
                 character1, character1_costume, character2, 
                 character2_costume, character3, character3_costume, character4, 
                 character4_costume, character5, character5_costume, character6, 
@@ -168,8 +170,8 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
      
             setPostData({ day_id, day_order_number, day, date, number,
                 act, title, int_ext, start_time, end_time, content, location,
-                filming_location, day_night, time, action, info,
-                character1, character1_costume, character2, 
+                filming_location, day_night, time, action, info, pages,
+                character1, character1_costume, character2, location_address,
                 character2_costume, character3, character3_costume, character4, 
                 character4_costume, character5, character5_costume, character6, 
                 character6_costume, character7, character7_costume, character8,
@@ -220,9 +222,11 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
       formData.append("content", content);
       formData.append("location", location);
       formData.append("filming_location", filming_location);
+      formData.append("location_address", location_address);
       formData.append("int_ext", int_ext);
       formData.append("day_night", day_night);
       formData.append("time", time);
+      formData.append("pages", pages);
       formData.append("action", action);
       formData.append("info", info);
       formData.append("character1", character1);
@@ -333,8 +337,9 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
             ))}
             </Col>
         </Row>
+        {/* order pages */}
         <Row>
-          <Col xs={4} >
+          <Col xs={6} >
           <Form.Group controlId="day_order_number" className="mb-2" >
                 <Form.Label className="p-1" >Day Order Number</Form.Label>
                 <Form.Control 
@@ -350,7 +355,26 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={4}>
+            <Col xs={6} >
+          <Form.Group controlId="pages" className="mb-2" >
+                <Form.Label className="p-1" >Pages</Form.Label>
+                <Form.Control 
+                type="text"
+                name="pages"
+                value={pages}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.pages?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            </Row>
+            {/* start end */}
+            <Row>
+            <Col xs={6}>
             <Form.Group controlId="start_time" className="mb-2" >
                 <Form.Label className="p-1" >Start Time</Form.Label>
                 <Form.Control 
@@ -366,7 +390,7 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={4}>
+            <Col xs={6}>
             <Form.Group controlId="end_time" className="mb-2" >
                 <Form.Label className="p-1" >End Time</Form.Label>
                 <Form.Control 
@@ -383,9 +407,9 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
             ))}
           </Col>
         </Row>
-            {/* Filming Location */}
+            {/* Filming Location - Location address */}
             <Row>
-              <Col xs={12}>
+              <Col xs={6}>
             <Form.Group controlId="filming_location" className="mb-2" >
                 <Form.Label className="p-1" >Filming Location</Form.Label>
                 <Form.Control 
@@ -396,6 +420,24 @@ const SceneScheduleEdit = ({xday, xdate} ) => {
                     />
             </Form.Group>
             {errors?.filming_location?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            <Col xs={6}>
+            <Form.Group controlId="location_address" className="mb-2" >
+                <Form.Label className="p-1" >Location Address</Form.Label>
+                <Form.Control 
+                type="text"
+                name="location_address"
+                as="textarea"
+                rows={2}
+                value={location_address}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.location_address?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

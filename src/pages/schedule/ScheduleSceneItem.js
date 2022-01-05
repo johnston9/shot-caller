@@ -24,7 +24,7 @@ const ScheduleSceneItem = (props) => {
         setShowThree, setShowLoc} = props
 
     const { number, title, act, int_ext, day_night, time, location,
-        character1, character1_costume, character2, 
+        character1, character1_costume, character2, filming_location,
         character2_costume, character3, character3_costume, character4, 
         character4_costume, character5, character5_costume, character6, 
         character6_costume, character7, character7_costume, character8,
@@ -32,7 +32,7 @@ const ScheduleSceneItem = (props) => {
         character10_costume, character11, character11_costume, character12,
         character12_costume, other_characters, other_characters_costumes,
         background_artists, background_artists_costumes,
-        action, content, info} = scene;
+        pages, action, content, info } = scene;
 
     const handleClick = () => {
         if (setShowOne) {
@@ -42,13 +42,16 @@ const ScheduleSceneItem = (props) => {
             setShowTwoA(showTwoA => !showTwoA)
         };
         if (setShowTwoB) {
+            setShowTwoB(showTwoB => !showTwoB)
+        };
+        if (setShowThree) {
             setShowThree(showThree => !showThree)
         };
         if (setShowLoc) {
             setShowLoc(showLoc => !showLoc)
         };
         setPostData({ number, title, act, int_ext, day_night, time, location,
-            character1, character1_costume, character2, 
+            character1, character1_costume, character2, filming_location,
             character2_costume, character3, character3_costume, character4, 
             character4_costume, character5, character5_costume, character6, 
             character6_costume, character7, character7_costume, character8,
@@ -56,7 +59,7 @@ const ScheduleSceneItem = (props) => {
             character10_costume, character11, character11_costume, character12,
             character12_costume, other_characters, other_characters_costumes,
             background_artists, background_artists_costumes,
-            action, content, info});
+            pages, action, content, info });
     }
     return (
         <div onClick={handleClick} className={`${styles.Item}`} >

@@ -28,6 +28,7 @@ const SceneEditForm = () => {
       int_ext: "",
       day_night: "",
       time: "",
+      pages: "",
       location: "",
       filming_location: "",
       shooting_date: "",
@@ -75,7 +76,7 @@ const SceneEditForm = () => {
         character10_costume, character11, character11_costume, character12,
         character12_costume, other_characters, other_characters_costumes,
         background_artists, background_artists_costumes, shooting_date,
-        action, content, storyboard, info, image } = postData;
+        pages, action, content, storyboard, info, image } = postData;
     
     const imageInput = useRef(null)
     const storyboardInput = useRef(null)
@@ -96,7 +97,7 @@ const SceneEditForm = () => {
               character10_costume, character11, character11_costume, character12,
               character12_costume, other_characters, other_characters_costumes,
               background_artists, background_artists_costumes, shooting_date,
-              action, content, storyboard, info, image} = data;
+              pages, action, content, storyboard, info, image} = data;
      
         setPostData({ number, title, act, int_ext, day_night, time, location,
           filming_location, character1, character1_costume, character2, 
@@ -107,7 +108,7 @@ const SceneEditForm = () => {
           character10_costume, character11, character11_costume, character12,
           character12_costume, other_characters, other_characters_costumes,
           background_artists, background_artists_costumes, shooting_date,
-          action, content, storyboard, info, image });
+          pages, action, content, storyboard, info, image });
           } catch (err) {
             console.log(err);
           }
@@ -155,6 +156,7 @@ const SceneEditForm = () => {
         formData.append("int_ext", int_ext);
         formData.append("day_night", day_night);
         formData.append("time", time);
+        formData.append("pages", pages);
         formData.append("location", location);
         formData.append("filming_location", filming_location);
         formData.append("shooting_date", shooting_date);
@@ -322,25 +324,9 @@ const SceneEditForm = () => {
             ))}
             </Col>
             </Row>
-            {/* Filming Location shooting date */}
+            {/* shooting date time pages*/}
             <Row>
-              <Col xs={9}>
-            <Form.Group controlId="filming_location" className="mb-2" >
-                <Form.Label className="p-1" >Filming Location</Form.Label>
-                <Form.Control 
-                type="text"
-                name="filming_location"
-                value={filming_location}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.filming_location?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3}>
+            <Col xs={4}>
             <Form.Group controlId="shooting_date" className="mb-2" >
                 <Form.Label className="p-1" >Shooting Date</Form.Label>
                 <Form.Control 
@@ -356,26 +342,7 @@ const SceneEditForm = () => {
               </Alert>
             ))}
             </Col>
-            </Row>
-            {/* action time */}
-            <Row>
-              <Col xs={9}>
-            <Form.Group controlId="action" className="mb-2" >
-                <Form.Label className="p-1" >Action</Form.Label>
-                <Form.Control 
-                type="text"
-                name="action"
-                value={action}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.action?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
+            <Col xs={4} >
             <Form.Group controlId="time" className="mb-2" >
                 <Form.Label className="p-1" >Time</Form.Label>
                 <Form.Control 
@@ -386,6 +353,61 @@ const SceneEditForm = () => {
                     />
             </Form.Group>
             {errors?.time?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            <Col xs={4} >
+            <Form.Group controlId="pages" className="mb-2" >
+                <Form.Label className="p-1" >Pages</Form.Label>
+                <Form.Control 
+                type="text"
+                name="pages"
+                value={pages}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.pages?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            </Row>
+            {/* Filming Location - Action */}
+            <Row>
+              <Col xs={6}>
+            <Form.Group controlId="filming_location" className="mb-2" >
+                <Form.Label className="p-1" >Filming Location</Form.Label>
+                <Form.Control 
+                type="text"
+                name="filming_location"
+                as="textarea"
+                rows={2}
+                value={filming_location}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.filming_location?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            <Col xs={6}>
+            <Form.Group controlId="action" className="mb-2" >
+                <Form.Label className="p-1" >Action</Form.Label>
+                <Form.Control 
+                type="text"
+                name="action"
+                as="textarea"
+                rows={2}
+                value={action}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.action?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

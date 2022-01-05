@@ -33,7 +33,7 @@ const Scene = (props) => {
       character10_costume, character11, character11_costume, character12,
       character12_costume, other_characters, other_characters_costumes,
       background_artists, background_artists_costumes, shooting_date,
-      action, content, storyboard, info, image } = props;
+      pages, action, content, storyboard, info, image } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -182,7 +182,7 @@ const Scene = (props) => {
                   <h4 className={` ${styles.Titledetail }`}>
                   {/* Location:  */}
                   <span style={{ textTransform: 'uppercase'}} 
-                  > {int_ext}. {location} - {day_night} {time}</span>
+                  > {int_ext}. {location} - {day_night} {time} {pages} </span>
                   </h4>
                   <h5 style={{ textTransform: 'uppercase'}}>
                     {/* Characters:  */}

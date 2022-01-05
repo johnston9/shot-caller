@@ -1,9 +1,9 @@
 .TitleBox {
-  border: 1px solid #555;
+  border: 1px solid #fafafa;
 }
 
 .TitleBox2 {
-  border-right : 1px solid #555;
+  border-right : 1px solid #fafafa;
 }
 
 .SearchBar input {

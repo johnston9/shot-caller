@@ -17,15 +17,16 @@ import { Button } from 'react-bootstrap';
 import TopBox from '../../components/TopBox';
 import { PostDropdown } from '../../components/PostDropdown';
 import ScheduleCharacters from './ScheduleCharacters';
+import SchedSceneInfo from './SchedSceneInfo';
 
 const ScheduleScene = (props) => {
     useRedirect("loggedOut");
     const history = useHistory();
     const [show, setShow] = useState(false);
-    const {day_id, sceneAll, day, id, day_order_number, date, number, 
-        act, title, int_ext, start_time, end_time, content, location,
-        filming_location, day_night, time, action, info,
-        new_info, new_content, } = props
+    const [showInfo, setShowInfo] = useState(false);
+    const {sceneAll, id, number, int_ext, start_time, end_time,
+        location, filming_location, day_night, action, pages,
+        new_info} = props
 
         // character1, character1_costume, character2, 
         // character2_costume, character3, character3_costume, character4, 
@@ -63,55 +64,60 @@ const ScheduleScene = (props) => {
           };
 
     return (
-        <div className={`px-3 mt-3 ${styles.SceneBox}`} >
+        <div className={`px-3 pt-4 mt-3 ${styles.SceneBox}`} >
             {/* titles */}                      
             <Row  >
-                <Col className={`${styles.TitleBox2}`} xs={2} md={1}>
+                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`${btnStyles.Button} ${btnStyles.Bright}`}>
+                        Info
+                    </Button>
+                </Col>
+                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>{start_time}</p>
+                    <p className='mb-0'>{end_time}</p>
+                </Col>
+                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>{number}</p>
+                </Col>
+                <Col className={` ${styles.TitleBox2}`} xs={3} md={3}>
+                    <p className='mb-0'>{int_ext}. {location}</p>
+                    <p className='mb-0'>{action}</p>
+                </Col>
+                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>{day_night}</p>
+                </Col>
+                <Col className={` ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0'>{filming_location}</p>                        
+                </Col>
+                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p >{pages}</p>
+                </Col>
+                {/* cast */}
+                <Col xs={1} md={1} className="text-center">
+                    <Button onClick={() => setShow(show => !show)} 
+                    className={`${btnStyles.Button} ${btnStyles.Bright}`}>
+                    Cast
+                    </Button>
+                </Col>
+                {/* edit */}
+                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
                     <PostDropdown
                         handleEdit={handleEdit}
                         handleDelete={handleDelete}
                     />
-                    <p className='mb-0'>{day_order_number} </p>
-                </Col>
-                <Col className={`${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>{start_time}</p>
-                    <p className='mb-0'>{end_time}</p>
-                </Col>
-                <Col className={`${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>{number}</p>
-                    <p className='mb-0'>{act} </p>
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>{int_ext}</p>
-                    <p className='mb-0'>{day_night}</p>
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>pages</p>
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>pages2</p>
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={4} md={2}>
-                    <p className='mb-0'>{title}</p>
-                    <p className='mb-0'>{action}</p>
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={4} md={2}>
-                <p className='mb-0'>{location}</p>
-                <p className='mb-0'>{filming_location}</p>                        
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={4} md={2}>
-                    <p className='mb-0'>{info}</p>
                 </Col>
             </Row>
             {/* characters */}
-            <Row className='my-3'>
+            {/* <Row className='my-3'>
                 <Col className="text-center">
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Characters
                     </Button>
                 </Col>
-            </Row>
+            </Row> */}
+            {/* cast */}
             <Row>
                 <Col>
                     {!show ?("") : (                       
@@ -148,8 +154,17 @@ const ScheduleScene = (props) => {
                     ) }
                     </Col>
                 </Row>
+            {/* info */}
             <Row>
-                <Col className={`mb-0 py-2 ${styles.Next}`}>
+                <Col>
+                    {!showInfo ?("") : (                       
+                    <SchedSceneInfo {...sceneAll}/> 
+                    ) }
+                    </Col>
+                </Row>
+                {/* next */}
+            <Row>
+                <Col className={`mb-0 mt-4 py-2 ${styles.Next}`}>
                 <p className="mb-0" >Next: {new_info} </p>
                 </Col>
             </Row>      

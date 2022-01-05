@@ -50,59 +50,37 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       content: "",
       location: "",
       filming_location: "",
+      location_address: "",
       int_ext: "",
       day_night: "",
       time: "",
+      pages: "",
       action: "",
       info: "",
       character1: "",
       character1_costume: "",
-      character1_calltime: "",
-      character1_pickup: "",
       character2: "",
       character2_costume: "",
-      character2_calltime: "",
-      character2_pickup: "",
       character3: "",
       character3_costume: "",
-      character3_calltime: "",
-      character3_pickup: "",
       character4: "",
       character4_costume: "",
-      character4_calltime: "",
-      character4_pickup: "",
       character5_: "",
       character5_costume: "",
-      character5_calltime: "",
-      character5_pickup: "",
       character6: "",
       character6_costume: "",
-      character6_calltime: "",
-      character6_pickup: "",
       character7: "",
       character7_costume: "",
-      character7_calltime: "",
-      character7_pickup: "",
       character8: "",
       character8_costume: "",
-      character8_calltime: "",
-      character8_pickup: "",
       character9: "",
       character9_costume: "",
-      character9_calltime: "",
-      character9_pickup: "",
       character10: "",
       character10_costume: "",
-      character10_calltime: "",
-      character10_pickup: "",
       character11: "",
       character11_costume: "",
-      character11_calltime: "",
-      character11_pickup: "",
       character12: "",
       character12_costume: "",
-      character12_calltime: "",
-      character12_pickup: "",
       other_characters: "",
       other_characters_costumes: "",
       other_characters_calltimes: "",
@@ -113,30 +91,54 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       background_artists_pickups: "",
       new_info: "",
       new_content: "",
+      character1_calltime: "",
+      character1_pickup: "",
+      character2_calltime: "",
+      character2_pickup: "",
+      character3_calltime: "",
+      character3_pickup: "",
+      character4_calltime: "",
+      character4_pickup: "",
+      character5_calltime: "",
+      character5_pickup: "",
+      character6_calltime: "",
+      character6_pickup: "",
+      character7_calltime: "",
+      character7_pickup: "",
+      character8_calltime: "",
+      character8_pickup: "",
+      character9_calltime: "",
+      character9_pickup: "",
+      character10_calltime: "",
+      characte10_pickup: "",
+      character11_calltime: "",
+      character11_pickup: "",
+      character12_calltime: "",
+      character12_pickup: "",
   })
 
-  const { day_order_number, number,
-    act, title, int_ext, start_time, end_time, content, location,
-    filming_location, day_night, time, action, info,
-    character1, character1_costume, character2, 
-    character2_costume, character3, character3_costume, character4, 
-    character4_costume, character5, character5_costume, character6, 
-    character6_costume, character7, character7_costume, character8,
-    character8_costume, character9, character9_costume, character10,
-    character10_costume, character11, character11_costume, character12,
-    character12_costume, character1_calltime, character1_pickup,
-    character2_calltime, character2_pickup, character3_calltime,
-    character3_pickup, character4_calltime, character4_pickup,
-    character5_calltime, character5_pickup, character6_calltime, 
-    character6_pickup, character7_calltime, character7_pickup,
-    character8_calltime, character8_pickup, character9_calltime, 
-    character9_pickup, character10_calltime, character10_pickup,
-    character11_calltime, character11_pickup, character12_calltime, 
-    character12_pickup, other_characters, other_characters_costumes,
-    background_artists, background_artists_costumes,
-    other_characters_calltimes, other_characters_pickups,
-    background_artists_calltimes, background_artists_pickups,
-    new_info, new_content} = postData;
+  const { day_order_number, number, location_address,
+          act, title, int_ext, start_time, end_time, content, location,
+          filming_location, day_night, time, action, info, pages,
+          character1, character1_costume, character2, 
+          character2_costume, character3, character3_costume, character4, 
+          character4_costume, character5, character5_costume, character6, 
+          character6_costume, character7, character7_costume, character8,
+          character8_costume, character9, character9_costume, character10,
+          character10_costume, character11, character11_costume, character12,
+          character12_costume, character1_calltime, character1_pickup,
+          character2_calltime, character2_pickup, character3_calltime,
+          character3_pickup, character4_calltime, character4_pickup,
+          character5_calltime, character5_pickup, character6_calltime, 
+          character6_pickup, character7_calltime, character7_pickup,
+          character8_calltime, character8_pickup, character9_calltime, 
+          character9_pickup, character10_calltime, character10_pickup,
+          character11_calltime, character11_pickup, character12_calltime, 
+          character12_pickup, other_characters, other_characters_costumes,
+          background_artists, background_artists_costumes,
+          other_characters_calltimes, other_characters_pickups,
+          background_artists_calltimes, background_artists_pickups,
+          new_info, new_content } = postData;
 
     // useEffect(() => {
     //     const fetchScenes = async () => {
@@ -175,9 +177,11 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       formData.append("content", content);
       formData.append("location", location);
       formData.append("filming_location", filming_location);
+      formData.append("location_address", location_address);
       formData.append("int_ext", int_ext);
       formData.append("day_night", day_night);
       formData.append("time", time);
+      formData.append("pages", pages);
       formData.append("action", action);
       formData.append("info", info);
       formData.append("character1", character1);
@@ -241,7 +245,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       try {
         const { data } = await axiosReq.post("/schedule/scenes/", formData);
         history.push(`/days/`);
-        console.log(formData.day_id);
+        console.log(character3)
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -288,8 +292,9 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
             ))}
             </Col>
         </Row> */}
+        {/* order pages */}
         <Row>
-          <Col xs={4} >
+          <Col xs={6} >
           <Form.Group controlId="day_order_number" className="mb-2" >
                 <Form.Label className="p-1" >Day Order Number</Form.Label>
                 <Form.Control 
@@ -305,7 +310,26 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={4}>
+            <Col xs={6} >
+          <Form.Group controlId="pages" className="mb-2" >
+                <Form.Label className="p-1" >Pages</Form.Label>
+                <Form.Control 
+                type="text"
+                name="pages"
+                value={pages}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.pages?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            </Row>
+            {/* start end */}
+            <Row>
+            <Col xs={6}>
             <Form.Group controlId="start_time" className="mb-2" >
                 <Form.Label className="p-1" >Start Time</Form.Label>
                 <Form.Control 
@@ -321,7 +345,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={4}>
+            <Col xs={6}>
             <Form.Group controlId="end_time" className="mb-2" >
                 <Form.Label className="p-1" >End Time</Form.Label>
                 <Form.Control 
@@ -338,9 +362,9 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
             ))}
           </Col>
         </Row>
-            {/* Filming Location */}
+            {/* Filming Location - Location address */}
             <Row>
-              <Col xs={12}>
+              <Col xs={6}>
             <Form.Group controlId="filming_location" className="mb-2" >
                 <Form.Label className="p-1" >Filming Location</Form.Label>
                 <Form.Control 
@@ -351,6 +375,24 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
                     />
             </Form.Group>
             {errors?.filming_location?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            <Col xs={6}>
+            <Form.Group controlId="location_address" className="mb-2" >
+                <Form.Label className="p-1" >Location Address</Form.Label>
+                <Form.Control 
+                type="text"
+                name="location_address"
+                as="textarea"
+                rows={2}
+                value={location_address}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.location_address?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

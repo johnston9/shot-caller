@@ -43,23 +43,101 @@ const ScheduleCharacters = (props) => {
     return (
         <div className={`my-0 px-3 ${styles.SceneBox}`} >
             <Row>
+                <Col xs={5} >
+                    <h5>Character</h5>
+                </Col>
+                <Col xs={3} >
+                <h5>Costume</h5>
+                </Col>
+                <Col xs={2} >
+                <h5>Calltime</h5>
+                </Col>
+                <Col xs={2} >
+                <h5>Pickup</h5>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={5} >
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character1}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character2}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character3}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character4}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character5}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character6}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character7}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character8}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character9}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character10}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character11}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }} >{character12}</p>
+                </Col>
+                <Col xs={3} >
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character1_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character2_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character3_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character4_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character5_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character6_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character7_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character8_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character9_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character10_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character11_costume}</p>
+                <p style={{ textTransform: 'uppercase', fontWeight: 700 }}>{character12_costume}</p>
+                </Col>
+                <Col xs={2} >
+                <p>{character1_calltime}</p>
+                <p>{character2_calltime}</p>
+                <p>{character3_calltime}</p>
+                <p>{character4_calltime}</p>
+                <p>{character5_calltime}</p>
+                <p>{character6_calltime}</p>
+                <p>{character7_calltime}</p>
+                <p>{character8_calltime}</p>
+                <p>{character9_calltime}</p>
+                <p>{character10_calltime}</p>
+                <p>{character11_calltime}</p>
+                <p>{character12_calltime}</p>
+                </Col>
+                <Col xs={2} >
+                <p>{character1_pickup}</p>
+                <p>{character2_pickup}</p>
+                <p>{character3_pickup}</p>
+                <p>{character4_pickup}</p>
+                <p>{character5_pickup}</p>
+                <p>{character6_pickup}</p>
+                <p>{character7_pickup}</p>
+                <p>{character8_pickup}</p>
+                <p>{character9_pickup}</p>
+                <p>{character10_pickup}</p>
+                <p>{character11_pickup}</p>
+                <p>{character12_pickup}</p>
+                </Col>
+            </Row>
+            <Row>
                 <Col>
-                <p><span style={{ textTransform: 'uppercase', fontWeight: 700 }} >  {character1}</span> - Costume {character1_costume} - Calltime {character1_calltime} - Pickup {character1_pickup} </p>
-                <p>Character2 {character2} - Costume {character2_costume} - Calltime {character2_calltime} - Pickup {character2_pickup} </p>
-                <p>Character3 {character3} - Costume {character3_costume} - Calltime {character3_calltime} - Pickup {character3_pickup} </p>
-                <p>Character4 {character4} - Costume {character4_costume} - Calltime {character4_calltime} - Pickup {character4_pickup} </p>
-                <p>Character5 {character5} - Costume {character5_costume} - Calltime {character5_calltime} - Pickup {character5_pickup} </p>
-                <p>Character6 {character6} - Costume {character6_costume} - Calltime {character6_calltime} - Pickup {character6_pickup} </p>
-                <p>Character9 {character7} - Costume {character7_costume} - Calltime {character7_calltime} - Pickup {character7_pickup} </p>
-                <p>Character6 {character8} - Costume {character8_costume} - Calltime {character8_calltime} - Pickup {character8_pickup} </p>
-                <p>Character9 {character9} - Costume {character9_costume} - Calltime {character9_calltime} - Pickup {character9_pickup} </p>
-                <p>Character10 {character10} - Costume {character10_costume} - Calltime {character10_calltime} - Pickup {character10_pickup} </p>
-                <p>Character11 {character11} - Costume {character11_costume} - Calltime {character11_calltime} - Pickup {character11_pickup} </p>
-                <p>Character12 {character12} - Costume {character12_costume} - Calltime {character12_calltime} - Pickup {character12_pickup} </p>
-                <p>other_characters {other_characters} - Costume {other_characters_costumes} - Calltimes {other_characters_calltimes} - Pickups {other_characters_pickups} </p>
-                <p>background_artists {background_artists} - Costumes {background_artists_costumes} - Calltimes {background_artists_calltimes} - Pickups {background_artists_pickups} </p>
+                <h3>Other Characters</h3>
+                <p>{other_characters}</p>
+                <h5>Costumes</h5>
+                <p>{other_characters_costumes}</p>
+                <h5>Calltimes</h5>
+                <p>{other_characters_calltimes}</p>
+                <h5> Pickups</h5>
+                <p>{other_characters_pickups}</p>
                 </Col>
             </Row>  
+            <Row>
+                <Col>
+                <h3>Background Artists</h3>
+                <p>{background_artists}- Calltimes {other_characters_calltimes} - Pickups {other_characters_pickups} </p>
+                <h5>Costumes</h5>
+                <p>{background_artists_costumes}</p>
+                <h5>Calltimes</h5>
+                <p>{background_artists_calltimes}</p>
+                <h5> Pickups</h5>
+                <p>{background_artists_pickups}</p>
+                </Col>
+            </Row> 
         </div>
         )
 }
