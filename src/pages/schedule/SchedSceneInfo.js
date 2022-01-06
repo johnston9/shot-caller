@@ -25,19 +25,15 @@ const SchedSceneInfo = (props) => {
     return (
         <div>
             <hr className='mt-4'/>
-            <h5 className='text-center'>Day {day} {date} Shooting Order {day_order_number} Act {act} Scene {number} <span style={{ textTransform: 'italic' }} >{title} </span> </h5>
-            {/* <h5 className='text-center'>Act {act} Scene {number} <span style={{ textTransform: 'italic' }} >{title} </span></h5> */}
-            <Row>
-                <Col xs={4}><h5>Shoot Address</h5> </Col>
-                <Col xs={4}><h5>Equip/Set</h5> </Col>
-                <Col xs={4}><h5>Content</h5> </Col>
-            </Row>
-            <Row>
-                <Col xs={4}><p>{location_address}</p> </Col>
-                <Col xs={4}><p>{info} </p> </Col>
-                <Col xs={4}><p>{content} {new_content ? new_content : "" } </p>
-                            <p>{time} </p>  </Col>
-            </Row>
+            <p >Day {day} {date} </p>
+            <p className='mb-0'>Shooting Order: {day_order_number} </p>
+            <p className='mb-0'>Act: {act} </p>
+            <p className='mb-2'>Scene Heading: <span style={{ textTransform: 'italic' }} >{title} </span> </p>
+            <p className='mb-0'>Shoot Address: {location_address} </p>
+            <p className='mb-0'>Equip/Set: {info} </p>
+            <p className='mb-0'>Scene Content: {content} </p>
+            <p className='mb-0'>New Content: {new_content} </p>
+            <p className='mb-0'>Scene Time: {time} </p>
         </div>
     )
 }

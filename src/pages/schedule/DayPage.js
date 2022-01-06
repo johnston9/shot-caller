@@ -73,7 +73,7 @@ const DayPage = () => {
             {/* Scenes */}
             {/* <Row>
                 <Col> */}
-                <h3 className='text-center mt-3'>Day Schedule</h3>
+                {/* <h3 className='text-center mt-3'>Day Schedule</h3> */}
                 {/* add scene */}
                 <Row className='my-3'>
                     <Col className="text-center">
@@ -83,12 +83,14 @@ const DayPage = () => {
                         {!show ?("") : (<SceneScheduleCreate xday={dataDay} xdate={dataDate} /> ) }
                     </Col>
                 </Row>
+                <hr />
+                <h3>Running Order</h3>
                 {/* titles */}
-                <Row style={{ textTransform: 'uppercase' }} className={`${styles.TitleBox}`} >
-                    <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                <Row style={{ textTransform: 'uppercase' }} className={`mt-5 ${styles.TitleBox}`} >
+                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Info</p>
                     </Col>
-                    <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Times</p>
                     </Col>
                     <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
@@ -100,7 +102,7 @@ const DayPage = () => {
                     <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>D/N</p>
                     </Col>
-                    <Col className={` ${styles.TitleBox2}`} xs={2} md={2}>
+                    <Col className={`${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Filming</p>                        
                     </Col>
                     <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>

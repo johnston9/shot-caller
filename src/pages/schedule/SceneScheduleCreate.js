@@ -245,7 +245,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       try {
         const { data } = await axiosReq.post("/schedule/scenes/", formData);
         history.push(`/days/`);
-        console.log(character3)
+        console.log(character12_pickup)
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -256,42 +256,6 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
 
     const textFields = (
       <div>
-        {/* day date */}
-        {/* <h5>Day and Date: Change if you have changed the Day or Date on the Day page</h5>
-        <Row>
-          <Col xs={6}>
-          <Form.Group controlId="day" className="mb-2" >
-                <Form.Label className="p-1" >Day</Form.Label>
-                <Form.Control 
-                type="text"
-                name="day"
-                value={day}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.day?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-          <Form.Group controlId="date" className="mb-2" >
-                <Form.Label className="p-1" >Date</Form.Label>
-                <Form.Control 
-                type="text"
-                name="date"
-                value={date}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.date?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-        </Row> */}
         {/* order pages */}
         <Row>
           <Col xs={6} >
@@ -399,566 +363,8 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
             ))}
             </Col>
             </Row>
-            {/* characters */}
-            <h3>Characters</h3>            
-            <Row>
-              <Col xs={6}>
-              <h5>Character 1</h5>
-                <p>{character1}</p> 
-                <p>Costume - {character1_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character1_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character1_calltime"
-                value={character1_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character1_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character1_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character1_pickup"
-                value={character1_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character1_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 2</h5>
-                <p>{character2}</p> 
-                <p>Costume - {character2_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character2_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character2_calltime"
-                value={character2_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character2_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character2_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character2_pickup"
-                value={character2_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character2_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 3</h5>
-                <p>{character3}</p> 
-                <p>Costume - {character3_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character3_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character3_calltime"
-                value={character3_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character3_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character3_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character3_pickup"
-                value={character3_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character3_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>              
-              <Col xs={6}>
-              <h5>Character 4</h5>
-                <p>{character4}</p> 
-                <p>Costume - {character4_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character4_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character4_calltime"
-                value={character4_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character4_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character4_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character4_pickup"
-                value={character4_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character4_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-                <p>{character5}</p> 
-                <p>Costume - {character5_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character5_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character5_calltime"
-                value={character5_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character5_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character5_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character5_pickup"
-                value={character5_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character5_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 6</h5>
-                <p>{character6}</p> 
-                <p>Costume - {character6_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character6_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character6_calltime"
-                value={character6_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character6_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character6_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character6_pickup"
-                value={character6_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character6_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 7</h5>
-                <p>{character7}</p> 
-                <p>Costume - {character7_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character7_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character7_calltime"
-                value={character7_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character7_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character7_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character7_pickup"
-                value={character7_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character7_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 8</h5>
-                <p>{character8}</p> 
-                <p>Costume - {character8_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character8_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character8_calltime"
-                value={character8_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character8_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character8_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character8_pickup"
-                value={character8_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character8_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 9</h5>
-                <p>{character9}</p> 
-                <p>Costume - {character9_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character9_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character9_calltime"
-                value={character9_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character9_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character9_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character9_pickup"
-                value={character9_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character9_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 10</h5>
-                <p>{character10}</p> 
-                <p>Costume - {character10_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character10_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character10_calltime"
-                value={character10_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character10_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character10_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character10_pickup"
-                value={character10_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character10_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 11</h5>
-                <p>{character11}</p> 
-                <p>Costume - {character11_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character11_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character11_calltime"
-                value={character11_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character11_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character11_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character11_pickup"
-                value={character11_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character11_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Character 12</h5>
-                <p>{character12}</p> 
-                <p>Costume - {character12_costume}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character12_calltime" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character12_calltime"
-                value={character12_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character12_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="character12_pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character12_pickup"
-                value={character12_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character12_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* Other Characters */}
-            <Row>
-              <Col xs={6}>
-              <h5>Other Characters</h5>
-                <p>{other_characters}</p> 
-                <p>Costumes - {other_characters_costumes}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="other_characters_calltimes" className="mb-2" >
-                <Form.Label className="p-1" >Call Time</Form.Label>
-                <Form.Control 
-                type="text"
-                name="other_characters_calltimes"
-                as="textarea"
-                rows={2}
-                value={other_characters_calltimes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters_calltimes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="other_characters_pickups" className="mb-2" >
-                <Form.Label className="p-1" >Pickups </Form.Label>
-                <Form.Control 
-                type="text"
-                name="other_characters_pickups"
-                as="textarea"
-                rows={2}
-                value={other_characters_pickups}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters_pickups?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-              <h5>Background Artists</h5>
-                <p>{background_artists}</p> 
-                <p>Costumes - {background_artists_costumes}</p> 
-              </Col>
-            <Col xs={3} >
-            <Form.Group controlId="background_artists_calltimes" className="mb-2" >
-                <Form.Label className="p-1" >Call Times</Form.Label>
-                <Form.Control 
-                type="text"
-                name="background_artists_calltimes"
-                as="textarea"
-                rows={2}
-                value={background_artists_calltimes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists_calltimes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3} >
-            <Form.Group controlId="background_artists_pickups" className="mb-2" >
-                <Form.Label className="p-1" >Pickups </Form.Label>
-                <Form.Control 
-                type="text"
-                name="background_artists_pickups"
-                as="textarea"
-                rows={2}
-                value={background_artists_pickups}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists_pickups?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* end other */}
-            {/* end characters */}
-            {/* new content info */}
-            <Row>
+        {/* new-content Next-info */}
+        <Row>
               <Col xs={6}>
             <Form.Group controlId="new_content" className="mb-2" >
                 <Form.Label className="p-1" >New Content</Form.Label>
@@ -986,7 +392,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
                     type="text"
                     name="new_info"
                     as="textarea"
-                    rows={3}
+                    rows={2}
                     value={new_info}
                     onChange={handleChange}
                     />
@@ -999,10 +405,676 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
             </Col>
             </Row>
             {/* end info */}
+            {/* characters */}
+            <h3 className="my-4" style={{ textTransform: 'uppercase'}}>Characters</h3> 
+            <Row>
+              <Col xs={4}>
+              <h5 style={{ textTransform: 'uppercase'}}>Character</h5>
+              </Col>
+              <Col xs={4}>
+              <h5 style={{ textTransform: 'uppercase'}}>Call time</h5>
+              </Col>
+              <Col xs={4}>
+              <h5 style={{ textTransform: 'uppercase'}}>Pickup</h5>
+              </Col>
+              </Row>    
+              {/* character1 */}
+              {character1 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character1}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character1_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character1_calltime"
+                  value={character1_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character1_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character1_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character1_pickup"
+                  value={character1_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character1_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character2 */}
+              {character2 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character2}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character2_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character2_calltime"
+                  value={character2_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character2_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character2_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character2_pickup"
+                  value={character2_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character2_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character3 */}
+              {character3 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character3}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character3_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character3_calltime"
+                  value={character3_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character3_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character3_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character3_pickup"
+                  value={character3_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character3_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character4 */}
+              {character4 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character4}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character4_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character4_calltime"
+                  value={character4_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character4_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character4_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character4_pickup"
+                  value={character4_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character4_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character5 */}
+              {character5 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character5}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character5_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character5_calltime"
+                  value={character5_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character5_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character5_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character5_pickup"
+                  value={character5_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character5_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character6 */}
+              {character6 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character6}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character6_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character6_calltime"
+                  value={character6_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character6_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character6_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character6_pickup"
+                  value={character6_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character6_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character7 */}
+              {character7 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character7}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character7_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character7_calltime"
+                  value={character7_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character7_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character7_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character7_pickup"
+                  value={character7_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character7_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character8 */}
+              {character8 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character8}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character8_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character8_calltime"
+                  value={character8_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character8_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character8_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character8_pickup"
+                  value={character8_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character8_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character9 */}
+              {character9 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character9}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character9_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character9_calltime"
+                  value={character9_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character9_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character9_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character9_pickup"
+                  value={character9_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character9_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character10 */}
+              {character10 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character10}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character10_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character10_calltime"
+                  value={character10_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character10_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character10_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character10_pickup"
+                  value={character10_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character10_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character11 */}
+              {character11 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character11}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character11_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character11_calltime"
+                  value={character11_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character11_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character11_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character11_pickup"
+                  value={character11_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character11_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* character12 */}
+              {character12 ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{character12}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character12_calltime" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="character12_calltime"
+                  value={character12_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character12_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="character12_pickup" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  placeholder="Pickup"
+                  name="character12_pickup"
+                  value={character12_pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.character12_pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* other_characters */}
+              {other_characters ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{other_characters}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="other_characters_calltimes" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  as="textarea"
+                  rows={2}
+                  className="text-center"
+                  placeholder="Call Time"
+                  name="other_characters_calltimes"
+                  value={other_characters_calltimes}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.other_characters_calltimes?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="other_characters_pickups" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  as="textarea"
+                  rows={2}
+                  placeholder="Pickup"
+                  name="other_characters_pickups"
+                  value={other_characters_pickups}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.other_characters_pickups?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}
+              {/* background_artists */}
+              {background_artists ? (
+                <Row className="mt-3">
+                <Col xs={4}>
+                <h5 className="pt-2" >{background_artists}</h5> 
+                </Col>
+              <Col xs={4} >
+              <Form.Group controlId="background_artists_calltimes" className="mb-0" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className="text-center"
+                  as="textarea"
+                  rows={2}
+                  placeholder="Call Time"
+                  name="background_artists_calltimes"
+                  value={background_artists_calltimes}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.background_artists_calltimes?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              <Col xs={4} >
+              <Form.Group controlId="background_artists_pickups" className="mb-2" >
+                  <Form.Label className="p-1 d-none" ></Form.Label>
+                  <Form.Control 
+                  className="text-center"
+                  type="text"
+                  as="textarea"
+                  rows={2}
+                  placeholder="Pickup"
+                  name="background_artists_pickups"
+                  value={background_artists_pickups}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.background_artists_pickups?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+              </Row>
+              ) : (
+                ""
+              )}             
+            {/* end characters */}
       </div>
   )
   const buttons = (
-    <div className="text-center">    
+    <div className="text-center mt-4">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
@@ -1017,9 +1089,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
     
     return (
         <div>
-          <Container className= {`mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
-          <h5>Day: {xday}  Date: {xdate} {id} </h5>
-          <p>SELECT SCENE</p>
+          <Container className= {`mt-4 pt-3 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
           <Row>
               <Col xs={6} md={3} className="text-center">
                 <Button onClick={() => setShowOne(showOne => !showOne)} 
@@ -1049,7 +1119,6 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
                 By Location</Button>
               </Col>
             </Row>
-            <hr />
           <Row className="my-3">
             <Col>
             {!showOne ?("") : (<Act1List list="one" setShowOne={setShowOne} setPostData={setPostData} /> ) }
@@ -1059,23 +1128,26 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
             {!showLoc ?("") : (<LocationList list="loc" setShowLoc={setShowLoc} setPostData={setPostData} /> ) }
             </Col>
           </Row>
-          
-          <p>Scene Number {number} - Act {act} Title {title} </p>
-          <p>{location} {int_ext} {day_night} {time} </p>
-          <p>Action {action} </p>
-          <p>Content {content} </p>
-          <p>Info {info} </p>
+          <hr />
             <Form onSubmit={handleSubmit}>
               <Row>
-              <Col xs={12} className="p-0 p-md-2">
-                  <Container className= {`${appStyles.Content} ${styles.Container}`} >{textFields}</Container>
+                <Col>
+                  <h3>Scene {number} - {title} </h3>
+                  <p style={{ textTransform: 'uppercase'}}>{int_ext}. {location} {day_night} </p>
+                  <p>{action} </p>
+                  <p>{content} </p>
+                  <p>Info {info} </p>
                 </Col>
               </Row>
               <Row>
-                <Col className="text-center">
-                <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container>
+              <Col xs={12} className="p-0 p-md-2">
+                  <Container className= {`${appStyles.Content} ${styles.Container}`} >
+                    {textFields}
+                    {buttons}
+                  </Container>
                 </Col>
               </Row>
+              <p className="mb-0">Day: {xday}  Date: {xdate} {id} </p>
             </Form>
             </Container>
         </div>
