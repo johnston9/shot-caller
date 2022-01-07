@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/DayPage.module.css";
+import styles from "../../styles/PostsPage.module.css"
 import btnStyles from "../../styles/Button.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
@@ -22,7 +22,7 @@ const CharacterTop = (props) => {
     const history = useHistory();
 
     const handleEdit = () => { 
-        history.push(`/characters/${id}/`);
+        history.push(`/characters/${id}/edit`);
         };
 
     const handleDelete = async () => {
@@ -36,7 +36,7 @@ const CharacterTop = (props) => {
 
     return (
         <div>
-            <Card className={`text-center ${styles.DayPage}`}>
+            <Card className={`text-center ${styles.Top}`}>
                 <Link to={`/characters/${id}`}>
                 <Card.Header className={`pt-2 pb-1 ${styles.Header }`}>
                   <Row className='d-flex align-items-center'>
@@ -47,9 +47,9 @@ const CharacterTop = (props) => {
                     </Col >
                     <Col xs={1} className='text-center mx-0 px-0'>
                     <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                    />
                     </Col>
                   </Row>
                   </Card.Header>

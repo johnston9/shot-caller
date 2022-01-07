@@ -99,6 +99,7 @@ const NavBar = () => {
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
 
+      {/* departments */}
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}} className={styles.Title}>
@@ -129,13 +130,44 @@ const NavBar = () => {
       </NavDropdown.Item>
       </NavDropdown>
 
-      <NavLink
+      {/* characters */}
+      <NavDropdown 
+          title={
+            <span style={{ color: '#555555'}} className={styles.Title}>
+              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Characters
+            </span>
+          }
+          id="nav-dropdown2"
+          activeClassName={styles.Active}
+          className={`mt-1 pt-1 ${styles.NavLink} `}
+          >
+        <NavDropdown.Item >
+          <NavLink
+          className={` ${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/characters"
+        >
+          <i className="navicon fas fa-stream"></i>Characters
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+        <NavLink
+          className={`mt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/characters/create"
+        >
+          <i className="navicon fas fa-play"></i>Add Character 
+      </NavLink>
+      </NavDropdown.Item>
+      </NavDropdown>
+
+      {/* <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
           to="/characters"
         >
           <i className="navicon fas fa-play"></i>Characters
-      </NavLink>
+      </NavLink> */}
 
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}

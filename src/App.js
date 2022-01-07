@@ -36,6 +36,9 @@ import DayEdit from './pages/schedule/DayEdit';
 import DayPage from './pages/schedule/DayPage';
 import SceneScheduleEdit from './pages/schedule/SceneScheduleEdit';
 import Characters from './pages/characters/Characters';
+import CharacterPage from './pages/characters/CharacterPage';
+import CharacterCreate from './pages/characters/CharacterCreate';
+import CharacterEdit from './pages/characters/CharacterEdit';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -77,9 +80,18 @@ function App() {
             path="/characters"
             render={() => (
               <Characters
-               message="No results found. Please add a scene" />
+               message="No results found" />
             )}
           />
+        <Route exact path="/characters/create" render={() => <CharacterCreate />} />
+        <Route 
+            exact 
+            path="/characters/:id" 
+            render={() => (
+            <CharacterPage
+             />
+             )} />
+        <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
         {/* SCENES*/}
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route

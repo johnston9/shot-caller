@@ -134,14 +134,14 @@ const SceneCostumes = ({scene}) => {
                         </Col>
                     </Row>
                     <hr/>
-                    <h5 className='text-center'>Other Characters</h5>
+                    <p className='text-center'>Other Characters</p>
                     <Row >
                         <Col className='mx-0 px-0' xs={12} >
                         <p className='mb-0'>{other_characters_costumes} </p>
                         </Col>
                     </Row>
                     <hr/>
-                    <h5 className='text-center'>Background Artists</h5>
+                    <p className='text-center'>Background Artists</p>
                     <Row >
                         <Col className='mx-0 px-0' xs={12} >
                         <p className='mb-0'>{background_artists_costumes} </p>

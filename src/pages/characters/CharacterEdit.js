@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -14,13 +14,13 @@ import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-const CharacterCreate = ({topbox} ) => {
+const CharacterEdit = () => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -54,33 +54,33 @@ const CharacterCreate = ({topbox} ) => {
       });
 
       const { role,
-              actor,
-              pickup_address,
-              pickup_address_2,
-              make_up_time,
-              commute_time,
-              email,
-              mobile,
-              agent,
-              diet,
-              requirements,
-              costume1,
-              costume2,
-              costume3,
-              costume4,
-              costume5,
-              costume6,
-              costume7,
-              costume8,  
-              costume1_image,
-              costume2_image,
-              costume3_image,
-              costume4_image,
-              costume5_image,
-              costume6_image,
-              costume7_image,
-              costume8_image,
-        } = postData;
+        actor,
+        pickup_address,
+        pickup_address_2,
+        make_up_time,
+        commute_time,
+        email,
+        mobile,
+        agent,
+        diet,
+        requirements,
+        costume1,
+        costume2,
+        costume3,
+        costume4,
+        costume5,
+        costume6,
+        costume7,
+        costume8,  
+        costume1_image,
+        costume2_image,
+        costume3_image,
+        costume4_image,
+        costume5_image,
+        costume6_image,
+        costume7_image,
+        costume8_image,
+     } = postData;
 
     const imageInput1 = useRef(null);
     const imageInput2 = useRef(null);
@@ -92,178 +92,241 @@ const CharacterCreate = ({topbox} ) => {
     const imageInput8 = useRef(null);
 
     const history = useHistory();
+    const { id } = useParams();
+
+    useEffect(() => {
+        const handleMount = async () => {
+          try {
+            const { data } = await axiosReq.get(`/characters/${id}/`);
+            const { role,
+                actor,
+                pickup_address,
+                pickup_address_2,
+                make_up_time,
+                commute_time,
+                email,
+                mobile,
+                agent,
+                diet,
+                requirements,
+                costume1,
+                costume2,
+                costume3,
+                costume4,
+                costume5,
+                costume6,
+                costume7,
+                costume8,  
+                costume1_image,
+                costume2_image,
+                costume3_image,
+                costume4_image,
+                costume5_image,
+                costume6_image,
+                costume7_image,
+                costume8_image } = data;
+     
+        setPostData({ role,
+            actor,
+            pickup_address,
+            pickup_address_2,
+            make_up_time,
+            commute_time,
+            email,
+            mobile,
+            agent,
+            diet,
+            requirements,
+            costume1,
+            costume2,
+            costume3,
+            costume4,
+            costume5,
+            costume6,
+            costume7,
+            costume8,  
+            costume1_image,
+            costume2_image,
+            costume3_image,
+            costume4_image,
+            costume5_image,
+            costume6_image,
+            costume7_image,
+            costume8_image });
+          } catch (err) {
+            console.log(err);
+          }
+        };
+    
+        handleMount();
+      }, [id]);
 
     const handleChange = (event) => {
-        setPostData({
-          ...postData,
-          [event.target.name]: event.target.value,
-        });
-      };
-    
+    setPostData({
+        ...postData,
+        [event.target.name]: event.target.value,
+    });
+    };
+
     const handleChangeImage1 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume1_image);
-        setPostData({
-        ...postData,
-        costume1_image: URL.createObjectURL(event.target.files[0]),
-        });
-        console.log(`costume1_image ${costume1_image}`)
+    URL.revokeObjectURL(costume1_image);
+    setPostData({
+    ...postData,
+    costume1_image: URL.createObjectURL(event.target.files[0]),
+    });
+    console.log(`costume1_image ${costume1_image}`)
     }
     };
 
     const handleChangeImage2 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume2_image);
-        setPostData({
-        ...postData,
-        costume2_image: URL.createObjectURL(event.target.files[0]),
-        });
-        console.log(`costume2_image ${costume2_image}`)
+    URL.revokeObjectURL(costume2_image);
+    setPostData({
+    ...postData,
+    costume2_image: URL.createObjectURL(event.target.files[0]),
+    });
+    console.log(`costume2_image ${costume2_image}`)
     }
     };
 
     const handleChangeImage3 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume3_image);
-        setPostData({
-        ...postData,
-        costume3_image: URL.createObjectURL(event.target.files[0]),
-        });
+    URL.revokeObjectURL(costume3_image);
+    setPostData({
+    ...postData,
+    costume3_image: URL.createObjectURL(event.target.files[0]),
+    });
     }
     };
 
     const handleChangeImage4 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume4_image);
-        setPostData({
-        ...postData,
-        costume4_image: URL.createObjectURL(event.target.files[0]),
-        });
+    URL.revokeObjectURL(costume4_image);
+    setPostData({
+    ...postData,
+    costume4_image: URL.createObjectURL(event.target.files[0]),
+    });
     }
     };
 
     const handleChangeImage5 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume5_image);
-        setPostData({
-        ...postData,
-        costume5_image: URL.createObjectURL(event.target.files[0]),
-        });
+    URL.revokeObjectURL(costume5_image);
+    setPostData({
+    ...postData,
+    costume5_image: URL.createObjectURL(event.target.files[0]),
+    });
     }
     };
 
     const handleChangeImage6 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume6_image);
-        setPostData({
-        ...postData,
-        costume6_image: URL.createObjectURL(event.target.files[0]),
-        });
+    URL.revokeObjectURL(costume6_image);
+    setPostData({
+    ...postData,
+    costume6_image: URL.createObjectURL(event.target.files[0]),
+    });
     }
     };
 
     const handleChangeImage7 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume7_image);
-        setPostData({
-        ...postData,
-        costume7_image: URL.createObjectURL(event.target.files[0]),
-        });
+    URL.revokeObjectURL(costume7_image);
+    setPostData({
+    ...postData,
+    costume7_image: URL.createObjectURL(event.target.files[0]),
+    });
     }
     };
 
     const handleChangeImage8 = (event) => {
-        if (event.target.files.length) {
-            URL.revokeObjectURL(costume8_image);
-            setPostData({
-            ...postData,
-            costume8_image: URL.createObjectURL(event.target.files[0]),
-            });
-        }
-        };
+    if (event.target.files.length) {
+        URL.revokeObjectURL(costume8_image);
+        setPostData({
+        ...postData,
+        costume8_image: URL.createObjectURL(event.target.files[0]),
+        });
+    }
+    };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-        const formData = new FormData();
-    
-        formData.append("role", role);
-        formData.append("actor", actor);
-        formData.append("pickup_address", pickup_address);
-        formData.append("pickup_address_2", pickup_address_2);
-        formData.append("make_up_time", make_up_time);
-        formData.append("commute_time", commute_time);
-        formData.append("email", email);
-        formData.append("mobile", mobile);
-        formData.append("agent", agent);
-        formData.append("diet", diet);
-        formData.append("requirements", requirements);
-        formData.append("costume1", costume1);
-        formData.append("costume2", costume2);
-        formData.append("costume3", costume3);
-        formData.append("costume4", costume4);
-        formData.append("costume5", costume5);
-        formData.append("costume6", costume6);
-        formData.append("costume7", costume7);
-        formData.append("costume8", costume8);
-        if(imageInput1.current.files[0]) {
-          formData.append("costume1_image", imageInput1.current.files[0]);
-        }
-        if(imageInput2.current.files[0]) {
-          formData.append("costume2_image", imageInput2.current.files[0]);
-        }
-        if(imageInput3.current.files[0]) {
-          formData.append("costume3_image", imageInput3.current.files[0]);
-        }
-        if(imageInput4.current.files[0]) {
-          formData.append("costume4_image", imageInput4.current.files[0]);
-        }
-        if(imageInput5.current.files[0]) {
-          formData.append("costume5_image", imageInput5.current.files[0]);
-        }
-        if(imageInput6.current.files[0]) {
-        formData.append("costume6_image", imageInput6.current.files[0]);
-        }
-        if(imageInput7.current.files[0]) {
-        formData.append("costume7_image", imageInput7.current.files[0]);
-        }
-        if(imageInput8.current.files[0]) {
-            formData.append("costume8_image", imageInput8.current.files[0]);
-            }
-      
-        try {
-          const { data } = await axiosReq.post("/characters/", formData);
-          history.push(`/characters/${data.id}/`);
-        } catch (err) {
-          console.log(err);
-          if (err.response?.status !== 401) {
-            setErrors(err.response?.data);
-          }
-        }
+  const formData = new FormData();
+
+  formData.append("role", role);
+  formData.append("actor", actor);
+  formData.append("pickup_address", pickup_address);
+  formData.append("pickup_address_2", pickup_address_2);
+  formData.append("make_up_time", make_up_time);
+  formData.append("commute_time", commute_time);
+  formData.append("email", email);
+  formData.append("mobile", mobile);
+  formData.append("agent", agent);
+  formData.append("diet", diet);
+  formData.append("requirements", requirements);
+  formData.append("costume1", costume1);
+  formData.append("costume2", costume2);
+  formData.append("costume3", costume3);
+  formData.append("costume4", costume4);
+  formData.append("costume5", costume5);
+  formData.append("costume6", costume6);
+  formData.append("costume7", costume7);
+  formData.append("costume8", costume8);
+  if(imageInput1.current.files[0]) {
+    formData.append("costume1_image", imageInput1.current.files[0]);
+  }
+  if(imageInput2.current.files[0]) {
+    formData.append("costume2_image", imageInput2.current.files[0]);
+  }
+  if(imageInput3.current.files[0]) {
+    formData.append("costume3_image", imageInput3.current.files[0]);
+  }
+  if(imageInput4.current.files[0]) {
+    formData.append("costume4_image", imageInput4.current.files[0]);
+  }
+  if(imageInput5.current.files[0]) {
+    formData.append("costume5_image", imageInput5.current.files[0]);
+  }
+  if(imageInput6.current.files[0]) {
+  formData.append("costume6_image", imageInput6.current.files[0]);
+  }
+  if(imageInput7.current.files[0]) {
+  formData.append("costume7_image", imageInput7.current.files[0]);
+  }
+  if(imageInput8.current.files[0]) {
+      formData.append("costume8_image", imageInput8.current.files[0]);
       }
 
-    const buttons = (
-      <div className="text-center">    
-        <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => history.goBack()}
-        >
-          cancel
-        </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          create
-        </Button>
-      </div>
-    );
-  
+  try {
+    await axiosReq.put("/characters/", formData);
+    history.push(`/characters/${id}/`);
+  } catch (err) {
+    console.log(err);
+    if (err.response?.status !== 401) {
+      setErrors(err.response?.data);
+    }
+  }
+}
+
+const buttons = (
+<div className="text-center">    
+  <Button
+    className={`${btnStyles.Button} ${btnStyles.Blue}`}
+    onClick={() => history.goBack()}
+  >
+    cancel
+  </Button>
+  <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+    Edit
+  </Button>
+</div>
+);
     return (
-      <div>
-      {topbox ? (
-        ""
-      ) : (
-        <TopBox title="Create Character" />
-      ) }
-      <Button
+        <div>
+            <TopBox title="Character Edit"/>
+            <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
         onClick={() => history.goBack()}
         >
@@ -272,9 +335,8 @@ const CharacterCreate = ({topbox} ) => {
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-3" onSubmit={handleSubmit}>
       <Row>
-      <Col md={3} ></Col>
           <Col md={6} >
-          <h3>Add Role only needed when creating scenes</h3>
+          <h3>Only Role needed when creating scenes</h3>
           <Form.Group controlId="role" className="mb-2" >
                   <Form.Label className="p-1" >Role</Form.Label>
                   <Form.Control 
@@ -1014,8 +1076,9 @@ const CharacterCreate = ({topbox} ) => {
       </Row>
     </Form>
     </Container>
-    </div>
-    );
+            
+        </div>
+    )
 }
 
-export default CharacterCreate
+export default CharacterEdit

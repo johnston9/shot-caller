@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
+
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
@@ -59,7 +60,7 @@ const Characters = ({message}) => {
 
     return (
         <div>
-            <TopBox title="Posts" />
+            <TopBox title="Characters" />
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
                 onClick={() => history.goBack()}

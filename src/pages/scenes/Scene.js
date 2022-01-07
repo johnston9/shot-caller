@@ -157,7 +157,6 @@ const Scene = (props) => {
       setDept("electric");
       setCategory(category);
       history.push(`/dept/category`);
-
     };
 
     return (
