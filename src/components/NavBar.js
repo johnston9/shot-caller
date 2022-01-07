@@ -70,7 +70,7 @@ const NavBar = () => {
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
-              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Scenes
+              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Workspace
             </span>
           }
           id="nav-dropdown"

@@ -14,9 +14,11 @@ import Row from 'react-bootstrap/Row';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import Shotlist from './Shotlist';
 import Storyboard from './Storyboard';
+import SceneCostumes from './SceneCostumes';
 
 const Scene = (props) => {
-    useRedirect("loggedOut")
+    useRedirect("loggedOut");
+    const [showCos, setShowCos] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showstory, setShowstory] = useState(false);
     const setSceneId = useSetSceneContext();
@@ -33,7 +35,7 @@ const Scene = (props) => {
       character10_costume, character11, character11_costume, character12,
       character12_costume, other_characters, other_characters_costumes,
       background_artists, background_artists_costumes, shooting_date,
-      pages, action, content, storyboard, info, image } = props;
+      pages, action, content, storyboard, info, image, scene } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();
 
@@ -165,10 +167,10 @@ const Scene = (props) => {
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
-                    <h2 className={` ${styles.Titlelist }`}>Scene {number} - <span className={styles.Italics }> "{title}" </span>
+                    <h2 className={` ${styles.Titlelist }`}>Scene {number} - <span className={styles.Italics }> {title} </span>
                     </h2>
-                    <p>Act {act} </p>
-                    <p>scene Id {id} </p>
+                    {/* <p>Act {act} </p>
+                    <p>scene Id {id} </p> */}
                     </Col >
                     <Col xs={1} className='text-center mx-0 px-0'>
                     <PostDropdown
@@ -182,28 +184,34 @@ const Scene = (props) => {
                   <h4 className={` ${styles.Titledetail }`}>
                   {/* Location:  */}
                   <span style={{ textTransform: 'uppercase'}} 
-                  > {int_ext}. {location} - {day_night} {time} {pages} </span>
+                  > {int_ext}. {location} - {day_night} </span>
                   </h4>
-                  <h5 style={{ textTransform: 'uppercase'}}>
+                  <h5 >
                     {/* Characters:  */}
-                    {character1 ? ( `${character1} Cos - ${character1_costume},` ) : ("")} 
-                     {character2} {character3} {character4} {character5}
+                    {character1} {character2} {character3} {character4} {character5}
                     {character6} {character7} {character7} {character9} {character10}
-                    {character11} {character12} </h5>
-                    <p>Other Characters: {other_characters}</p>
-                    <p>Other Characters Costumes: {other_characters_costumes}</p>
-                  <h5>Action: <span className={` ${styles.Action }`}>{action}</span> </h5>
-                  <h5>Content: <span className={` ${styles.Action }`}>{content}</span> </h5>
-                  <h5>Info: <span className={` ${styles.Action }`}>{info}</span> </h5>
+                    {character11} {character12} {other_characters} </h5>
+                    </div>
+                    <div>
+                    <p>ACTION: <span className={` ${styles.Action }`}>{action}</span> </p>
+                  <p>CONTENT: <span className={` ${styles.Action }`}>{content}</span> </p>
+                  <p>INFO/EQUIP/SET: <span className={` ${styles.Action }`}>{info}</span> </p>
+                  <p>PAGES: <span className={` ${styles.Action }`}>{pages}</span> </p>
                   </div>
-                  <Row>
-                    <Col className='text-center' xs={6}>
+                  <Row className='mt-3'>
+                    <Col className='text-center' xs={4}>
                     <Button
                         className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
                         onClick={() => setShowlist(showlist => !showlist)} >Shotlist
                     </Button>
                     </Col>
-                    <Col className='text-center' xs={6}>
+                    <Col className='text-center' xs={4}>
+                    <Button
+                        className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                        onClick={() => setShowCos(showCos => !showCos)} >Costumes
+                    </Button>
+                    </Col>
+                    <Col className='text-center' xs={4}>
                       <Button
                           className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
                           onClick={() => setShowstory(showstory => !showstory)} > Storyboard
@@ -214,11 +222,16 @@ const Scene = (props) => {
                   
                   <hr />
                   <Card.Body>
-                    {/* {!showlist ? (
+                    {!showlist ? (
                       ""
                     ) : (
-                      <Shotlist shotlist={shotlist} />
-                    ) } */}
+                      <Shotlist />
+                    ) }
+                    {!showCos ? (
+                      ""
+                    ) : (
+                      <SceneCostumes scene={scene} />
+                    ) }
                     {!showstory ? (
                       ""
                     ) : (

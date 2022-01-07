@@ -17,10 +17,12 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
+import SceneCreateCostumes from "./SceneCreateCostumes";
 
 const SceneEditForm = () => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
+    const [show, setShow] = useState(false);
     const [postData, setPostData] = useState({
       number: "",
       title: "",
@@ -502,7 +504,7 @@ const SceneEditForm = () => {
                 <Form.Control 
                 type="text"
                 name="character6"
-                value={character1}
+                value={character6}
                 onChange={handleChange}
                     />
             </Form.Group>
@@ -650,8 +652,58 @@ const SceneEditForm = () => {
             </Col>
             </Row>
             {/* end characters */}
-            {/* characters costumes */}
+            {/* content info */}
             <Row>
+              <Col xs={6}>
+            <Form.Group controlId="content" className="mb-2" >
+                <Form.Label className="p-1" >Content</Form.Label>
+                <Form.Control 
+                    className={styles.Input}
+                    type="text"
+                    name="content"
+                    as="textarea"
+                    rows={2}
+                    value={content}
+                    onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            <Col xs={6}>
+            <Form.Group controlId="info" className="mb-2" >
+                <Form.Label className="p-1" >Info/Equip/Set</Form.Label>
+                <Form.Control 
+                    className={styles.Input}
+                    type="text"
+                    name="info"
+                    as="textarea"
+                    rows={3}
+                    value={info}
+                    onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.info?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+            </Row>
+            {/* end info */}
+            {/* characters costumes */}
+            <Row className='my-3'>
+                <Col className="text-center">
+                    <Button onClick={() => setShow(show => !show)} 
+                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                    Add Costumes</Button>
+                    {!show ?("") : (<SceneCreateCostumes postData={postData} handleChange={handleChange} /> ) }
+                </Col>
+            </Row>
+            {/* <Row>
             <Col xs={6} md={4} lg={2}>
             <Form.Group controlId="character1_costume" className="mb-2" >
                 <Form.Label className="p-1" >Ch. 1 Costume</Form.Label>
@@ -884,50 +936,8 @@ const SceneEditForm = () => {
               </Alert>
             ))}
             </Col>
-            </Row>
+            </Row> */}
             {/* end characters costumes */}
-            {/* content info */}
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="content" className="mb-2" >
-                <Form.Label className="p-1" >Content</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={2}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="info" className="mb-2" >
-                <Form.Label className="p-1" >Info</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="info"
-                    as="textarea"
-                    rows={3}
-                    value={info}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.info?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* end info */}
       </div>
   )
     const buttons = (

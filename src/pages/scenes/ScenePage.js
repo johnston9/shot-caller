@@ -40,7 +40,8 @@ const ScenePage = (props) => {
                 >
                     Back to Scenes
                 </Button>
-                <Scene {...scene.results[0]} 
+                <Scene {...scene.results[0]}
+                  scene={scene.results[0]} 
                   setScene={setScene}
                   />
 
