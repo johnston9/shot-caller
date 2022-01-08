@@ -15,6 +15,7 @@ import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import Shotlist from './Shotlist';
 import Storyboard from './Storyboard';
 import SceneCostumes from './SceneCostumes';
+import ShotlistPage from './ShotlistPage';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -221,11 +222,6 @@ const Scene = (props) => {
                   
                   <hr />
                   <Card.Body>
-                    {!showlist ? (
-                      ""
-                    ) : (
-                      <Shotlist />
-                    ) }
                     {!showCos ? (
                       ""
                     ) : (
@@ -235,6 +231,11 @@ const Scene = (props) => {
                       ""
                     ) : (
                       <Storyboard storyboard={storyboard} />
+                    ) }
+                    {!showlist ? (
+                      ""
+                    ) : (
+                      <ShotlistPage />
                     ) }
                   <h3 className={`text-center`}>Departments</h3>
                     <Row>

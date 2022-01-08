@@ -108,15 +108,6 @@ const ScheduleScene = (props) => {
                     />
                 </Col>
             </Row>
-            {/* characters */}
-            {/* <Row className='my-3'>
-                <Col className="text-center">
-                    <Button onClick={() => setShow(show => !show)} 
-                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                    Characters
-                    </Button>
-                </Col>
-            </Row> */}
             {/* cast */}
             <Row>
                 <Col>

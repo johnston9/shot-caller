@@ -114,20 +114,14 @@ const DayPage = () => {
                     <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Edit</p>
                     </Col>
-                    {/* <Col className={` ${styles.TitleBox2}`} xs={2} md={2}>
-                        <p className='mb-0'>Requirements</p>
-                        <p className='mb-0'>Equip</p>
-                    </Col> */}
                 </Row>
+                {/* scenes */}
                 <Row>
                     <Col className='px-0 mx-0'>                   
-                {/* <div className={`mt-0 mx-0`} > */}
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene) => (
-                            // <p>{scene.id}...{scene.day}..{scene.day_id}</p>
                             <ScheduleScene {...scene} dayid={id} sceneAll={scene} key={scene.id} />
                         ))) : ("")}
-                {/* </div>  */}
                 </Col>
                 </Row>
                 </>
