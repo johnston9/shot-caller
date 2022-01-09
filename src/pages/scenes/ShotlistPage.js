@@ -17,7 +17,7 @@ import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 import Shot from './Shot';
 
-const ShotlistPage = () => {
+const ShotlistPage = ({scene} ) => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [addShot, setAddShot] = useState(false);
@@ -48,7 +48,7 @@ const ShotlistPage = () => {
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Add Shot
                 </Button>
-                {!addShot ?("") : (<ShotListCreate handleMount={handleMount} /> ) }
+                {!addShot ?("") : (<ShotListCreate handleMount={handleMount} scene={scene} />  ) }
               </Col>
             </Row>
             <h5>Shots</h5>

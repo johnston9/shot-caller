@@ -235,7 +235,7 @@ const Scene = (props) => {
                     {!showlist ? (
                       ""
                     ) : (
-                      <ShotlistPage />
+                      <ShotlistPage scene={scene} />
                     ) }
                   <h3 className={`text-center`}>Departments</h3>
                     <Row>
