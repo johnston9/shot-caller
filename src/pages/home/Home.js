@@ -36,8 +36,8 @@ const Home = () => {
                   <Col md={4} >
                     <Link to={`/scenes`} >
                       <div className={styles.Homebox}>
-                      <h5 className={`text-center pt-2 ${styles.Title}`}>Scenes </h5>
-                      <p className="mt-2">View and add posts to scenes by department and category</p>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Workspace </h5>
+                      <p className="mt-2">Primary scenes workspace</p>
                       </div>
                     </Link>
                   </Col>
@@ -53,7 +53,7 @@ const Home = () => {
                       <div className={`${styles.Homebox}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
                       <p className="mt-2">View and follow profiles</p>
-                      <p className="mt-2">Access feed and archived posts</p>
+                      <p className="mt-2">View feed and archived posts</p>
                       </div>
                     </Link>
                   </Col>
@@ -62,7 +62,7 @@ const Home = () => {
                   <Col md={4} >
                     <Link to={`/depts/page`} >
                       <div className={styles.Homebox}>
-                      <h5 className={`text-center pt-2 ${styles.Title}`}>Scene Posts by Department</h5>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Workspace Posts by Department</h5>
                       <p className="mt-2"> Requirements and Finals ordered by scene number</p>
                       </div>
                     </Link>

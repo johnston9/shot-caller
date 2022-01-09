@@ -165,8 +165,8 @@ const ShotListEdit = ({handleMount}) => {
         formData.append("script_ref", script_ref);
         formData.append("storyboard_refs", storyboard_refs);
         formData.append("audio", audio);
-        if(imageInput1.current.files[0]) {
-          formData.append("image", imageInput1.current.files[0]);
+        if(imageInput.current.files[0]) {
+          formData.append("image", imageInput.current.files[0]);
         }
       
         try {
@@ -179,6 +179,20 @@ const ShotListEdit = ({handleMount}) => {
           }
         }
       }
+    
+      const buttons = (
+        <div className="text-center">    
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            onClick={() => history.goBack()}
+          >
+            cancel
+          </Button>
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+            create
+          </Button>
+        </div>
+      );
 
     return (
         <div>
@@ -465,7 +479,7 @@ const ShotListEdit = ({handleMount}) => {
             ))}
             </Col>
             <Col xs={6}>
-              {/* image 5 */}
+              {/* image */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                       >
@@ -489,10 +503,8 @@ const ShotListEdit = ({handleMount}) => {
                         className=" my-1"
                         htmlFor="image-upload"
                       >
-                        <Asset2
+                        <Asset
                           src={Upload}
-                          height={"20px"}
-                          width={"20px"}
                           message="Upload image"
                         />
                       </Form.Label>
@@ -514,6 +526,11 @@ const ShotListEdit = ({handleMount}) => {
                   {/* """ end image """" */}
               </Container>
             </Col>
+        </Row>
+        <Row>
+          <Col className="text-center">
+          <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container>
+          </Col>
         </Row>
         </Form>
         </div>

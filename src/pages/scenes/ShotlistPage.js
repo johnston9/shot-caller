@@ -26,22 +26,24 @@ const ShotlistPage = ({scene} ) => {
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
 
+    const handleMount = async () => {
+        try {
+            const { data } = await axiosReq(`/shotlists/?scene_id=${id}`);
+            setShotlist({ results: [data] });
+            console.log(data)
+            setHasLoaded(true);
+        } catch (err) {
+            console.log(err);
+          }
+    }
 
     useEffect(() => {
-        const handleMount = async () => {
-            try {
-                const { data } = await axiosReq(`/shotlists/?scene_id=${id}`);
-                setShotlist({ results: [data] });
-            } catch (err) {
-                console.log(err);
-              }
-        }
         handleMount();
     }, [id])
 
     return (
         <div>
-            <h3>Shotlist</h3>
+            <h3 className='text-center'>Shotlist</h3>
             <Row>
               <Col className="text-center">
                     <Button onClick={() => setAddShot(addShot => !addShot)} 
@@ -51,11 +53,11 @@ const ShotlistPage = ({scene} ) => {
                 {!addShot ?("") : (<ShotListCreate handleMount={handleMount} scene={scene} />  ) }
               </Col>
             </Row>
-            <h5>Shots</h5>
+            {/* <h5 className='text-center'>Shots</h5> */}
             {/* titles */}
             <Row style={{ textTransform: 'uppercase' }} className={`mt-5 ${styles.TitleBox}`} >
                 <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Info</p>
+                    <p className=' mb-0'>Info</p>
                 </Col>
                 <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Shot </p>
@@ -63,22 +65,19 @@ const ShotlistPage = ({scene} ) => {
                 <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Size</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={3} md={3}>
+                <Col className={` ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Description</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Angle</p>
                 </Col>
-                <Col className={`${styles.TitleBox2}`} xs={2} md={2}>
-                <p className='mb-0'>Equipment</p>                        
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Movement</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Image</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Edit</p>
                 </Col>
             </Row>
@@ -86,6 +85,24 @@ const ShotlistPage = ({scene} ) => {
             <Row className="h-100">
             <Col className='px-0 mx-0'> 
             {hasLoaded ? (
+                    <>
+                    {shotlist.results.count ? (
+                        shotlist.results.map((shot) => (
+                        <Shot key={shot.id} {...shot} handleMount={handleMount} shotAll={shot} />
+                        ))) 
+                        : (
+                        <Container className={appStyles.Content}>
+                            <Asset src={NoResults } message="Add Shots" />
+                        </Container>
+                        )}
+                    </>
+                    ) : (
+                    <Container className={appStyles.Content}>
+                        <Asset spinner />
+                    </Container>
+                    )}
+            {/* old */}
+            {/* {hasLoaded ? (
                 <>
                     {shotlist.results.length ? (
                         shotlist.results.map((shot) => (
@@ -101,10 +118,10 @@ const ShotlistPage = ({scene} ) => {
                 <Container className={appStyles.Content}>
                     <Asset spinner />
                 </Container>
-                )}
+                )} */}
             </Col>
             </Row>  
-            
+            <hr/>
         </div>
     )
 }

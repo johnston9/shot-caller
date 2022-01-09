@@ -14,6 +14,7 @@ import TopBox from '../../components/TopBox';
 import { PostDropdown } from '../../components/PostDropdown';
 import ShotInfo from './ShotInfo';
 import ShotImage from './ShotImage';
+import ShotListEdit from './ShotListEdit';
 
 const Shot = (props) => {
     useRedirect("loggedOut");
@@ -21,7 +22,7 @@ const Shot = (props) => {
     const [showImg, setShowImg] = useState(false);
     const history = useHistory();
     const [showEditForm, setShowEditForm] = useState(false);
-    const {shotAll, id, shot_number, size, description, angle,
+    const {shotAll, id, scene_id, shot_number, size, description, angle,
         equipment, movement, handleMount, image } = props
 
     const handleDelete = async () => {
@@ -50,10 +51,10 @@ const Shot = (props) => {
                 </Col>
                 </Row>                  
             <Row  >
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Bright}`}>
-                        Info
+                        I
                     </Button>
                 </Col>
                 <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
@@ -62,26 +63,23 @@ const Shot = (props) => {
                 <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{size}</p>
                 </Col>
-                <Col className={`${styles.TitleBox2}`} xs={3} md={3}>
+                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>{description}</p>
                 </Col>
                 <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>{angle}</p>
+                    <p className='mb-0'>{angle}{scene_id} </p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={2} md={2}>
-                <p className='mb-0'>{equipment}</p>                        
-                </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={2} md={2}>
                     <p >{movement}</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`pl-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowImg(showImg => !showImg)} 
                         className={`${btnStyles.Button} ${btnStyles.Bright}`}>
-                        Image
+                        I
                     </Button>
                 </Col>
                 {/* edit */}
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                     <PostDropdown
                         handleEdit={() => setShowEditForm(true)}
                         handleDelete={handleDelete}

@@ -15,7 +15,7 @@ const ShotImage = ({image} ) => {
             <Row>
                 <Col>
                 {image ? (<> 
-                    <Image src={costume8_image} alt="costume 8" height="200"  />
+                    <Image src={image} alt="costume" height="200"  />
                     </>) : (
                         <p>No image yet</p>
                     )

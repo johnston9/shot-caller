@@ -12,7 +12,6 @@ import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
-import Shotlist from './Shotlist';
 import Storyboard from './Storyboard';
 import SceneCostumes from './SceneCostumes';
 import ShotlistPage from './ShotlistPage';

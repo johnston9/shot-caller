@@ -14,17 +14,17 @@ import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-const ShotListCreate = ({handleMount, id, number}) => {
-    useRedirect("loggedOut")
+const ShotListCreate = ({handleMount, number}) => {
+    useRedirect("loggedOut");
+    const { id } = useParams;
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        scene_id: id,
         scene_number: number,
         shot_number: "",
         size: "",
@@ -46,7 +46,6 @@ const ShotListCreate = ({handleMount, id, number}) => {
     });
 
     const { 
-        scene_id,
         scene_number,
         shot_number,
         size,
@@ -94,7 +93,7 @@ const ShotListCreate = ({handleMount, id, number}) => {
 
         const formData = new FormData();
     
-        formData.append("scene_id", scene_id);
+        formData.append("scene_id", id);
         formData.append("scene_number", scene_number);
         formData.append("shot_number", shot_number);
         formData.append("size", size);
