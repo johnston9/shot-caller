@@ -20,7 +20,7 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-const ShotListEdit = ({handleMount}) => {
+const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -170,7 +170,12 @@ const ShotListEdit = ({handleMount}) => {
         }
       
         try {
-          await axiosReq.put("/shotlists/", formData);
+          const { data } = await axiosReq.put("/shotlists/", formData);
+          setShowEditForm((showEditForm) => !showEditForm)
+          setShotlist((prevShotlist) => ({
+            ...prevShotlist,
+            results: [data, ...prevShotlist.results],
+          }));
           handleMount();
         } catch (err) {
           console.log(err);

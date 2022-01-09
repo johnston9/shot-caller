@@ -17,7 +17,7 @@ import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 import Shot from './Shot';
 
-const ShotlistPage = ({scene} ) => {
+const ShotlistPage = ({scene, setShowlist} ) => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [addShot, setAddShot] = useState(false);
@@ -28,9 +28,10 @@ const ShotlistPage = ({scene} ) => {
 
     const handleMount = async () => {
         try {
-            const { data } = await axiosReq(`/shotlists/?scene_id=${id}`);
-            setShotlist({ results: [data] });
+            const { data } = await axiosReq(`/shotlists/?scene_id=${id}?ordering=day_order_number`);
+            setShotlist(data);
             console.log(data)
+            console.log(shotlist.results)
             setHasLoaded(true);
         } catch (err) {
             console.log(err);
@@ -50,7 +51,7 @@ const ShotlistPage = ({scene} ) => {
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Add Shot
                 </Button>
-                {!addShot ?("") : (<ShotListCreate handleMount={handleMount} scene={scene} />  ) }
+                {!addShot ?("") : (<ShotListCreate setAddShot={setAddShot} setShotlist={setShotlist} handleMount={handleMount} scene={scene} />  ) }
               </Col>
             </Row>
             {/* <h5 className='text-center'>Shots</h5> */}
@@ -86,9 +87,9 @@ const ShotlistPage = ({scene} ) => {
             <Col className='px-0 mx-0'> 
             {hasLoaded ? (
                     <>
-                    {shotlist.results.count ? (
+                    {shotlist.results.length ? (
                         shotlist.results.map((shot) => (
-                        <Shot key={shot.id} {...shot} handleMount={handleMount} shotAll={shot} />
+                        <Shot key={shot.id} {...shot} setAddShot={setAddShot} handleMount={handleMount} shotAll={shot} />
                         ))) 
                         : (
                         <Container className={appStyles.Content}>

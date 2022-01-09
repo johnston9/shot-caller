@@ -20,9 +20,10 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-const ShotListCreate = ({handleMount, number}) => {
+const ShotListCreate = ({handleMount, setAddShot, scene, setShotlist }) => {
     useRedirect("loggedOut");
-    const { id } = useParams;
+    const { id } = useParams();
+    const {number} = scene; 
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         scene_number: number,
@@ -116,8 +117,13 @@ const ShotListCreate = ({handleMount, number}) => {
         }
       
         try {
-          await axiosReq.post("/shotlists/", formData);
-          handleMount();
+          const { data } = await axiosReq.post("/shotlists/", formData);
+          setAddShot((addShot) => !addShot)
+          setShotlist((prevShotlist) => ({
+            ...prevShotlist,
+            results: [data, ...prevShotlist.results],
+          }));
+          // handleMount();
         } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {

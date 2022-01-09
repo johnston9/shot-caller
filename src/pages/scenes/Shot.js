@@ -23,7 +23,7 @@ const Shot = (props) => {
     const history = useHistory();
     const [showEditForm, setShowEditForm] = useState(false);
     const {shotAll, id, scene_id, shot_number, size, description, angle,
-        equipment, movement, handleMount, image } = props
+        equipment, movement, handleMount, image, setAddShot, setShotlist } = props
 
     const handleDelete = async () => {
     try {
@@ -41,6 +41,8 @@ const Shot = (props) => {
                 <Col>
                     {showEditForm ? (
                         <ShotListEdit
+                            setShotlist={setShotlist}
+                            setAddShot={setAddShot}
                             id={id}
                             handleMount={handleMount}
                             setShowEditForm={setShowEditForm}
