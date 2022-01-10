@@ -52,6 +52,43 @@
     overflow: hidden;
   }
 
+  .ShotInfo {
+    background-color: blanchedalmond;
+  }
+
+  .Input {
+    background: #ffffff;
+    border: 1px solid #f0f1f9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #7177a1;
+    /* text-align: center; */
+    padding: 0px 10px;
+    height: 30px !important;
+}
+
+.Blackish {
+  border-top: red;
+}
+
+.ShotEditForm {
+  border-bottom: 1px solid rgb(46, 46, 46);
+}
+
+.InputArea {
+  background: #ffffff;
+    border: 1px solid #f0f1f9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #7177a1;
+    /* text-align: center; */
+    padding: 0px 10px;
+    height: 50px !important;
+}
+
+/* .Input .form-control {
+  height: 30px;
+} */
   @media screen and (max-width: 600px) {
     .Title {
       font-size: .75em;

@@ -28,13 +28,14 @@ const ShotlistPage = ({scene, setShowlist} ) => {
 
     const handleMount = async () => {
         try {
-            const { data } = await axiosReq(`/shotlists/?scene_id=${id}?ordering=day_order_number`);
+            // const { data } = await axiosReq(`/shotlists/?scene_id=10`);
+            const { data } = await axiosReq(`/shotlists/?scene_id=${id}&ordering=day_order_number`);
             setShotlist(data);
-            console.log(data)
+            console.log('has loaded')
             console.log(shotlist.results)
             setHasLoaded(true);
         } catch (err) {
-            console.log(err);
+            console.log(`err ${err}`);
           }
     }
 
@@ -57,35 +58,36 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             {/* <h5 className='text-center'>Shots</h5> */}
             {/* titles */}
             <Row style={{ textTransform: 'uppercase' }} className={`mt-5 ${styles.TitleBox}`} >
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className=' mb-0'>Info</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Shot </p>
                 </Col>
-                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Size</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={4} md={4}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p className='mb-0'>Description</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Angle</p>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`px-0  ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Movement</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Image</p>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Edit</p>
                 </Col>
             </Row>
             {/* shots */}
             <Row className="h-100">
             <Col className='px-0 mx-0'> 
-            {hasLoaded ? (
+            {/* new */}
+            {/* {hasLoaded ? (
                     <>
                     {shotlist.results.length ? (
                         shotlist.results.map((shot) => (
@@ -101,13 +103,12 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     <Container className={appStyles.Content}>
                         <Asset spinner />
                     </Container>
-                    )}
+                    )} */}
             {/* old */}
-            {/* {hasLoaded ? (
                 <>
                     {shotlist.results.length ? (
                         shotlist.results.map((shot) => (
-                        <Shot key={shot.id} {...shot} handleMount={handleMount} shotAll={shot} />
+                        <Shot key={shot.id} handleMount={handleMount} shotAll={shot} />
                         ))) 
                     : (
                     <Container className={appStyles.Content}>
@@ -115,11 +116,6 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     </Container>
                     )}
                 </>
-                ) : (
-                <Container className={appStyles.Content}>
-                    <Asset spinner />
-                </Container>
-                )} */}
             </Col>
             </Row>  
             <hr/>

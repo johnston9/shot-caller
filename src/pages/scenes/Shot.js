@@ -22,8 +22,75 @@ const Shot = (props) => {
     const [showImg, setShowImg] = useState(false);
     const history = useHistory();
     const [showEditForm, setShowEditForm] = useState(false);
-    const {shotAll, id, scene_id, shot_number, size, description, angle,
-        equipment, movement, handleMount, image, setAddShot, setShotlist } = props
+    const [shotNew, setShotNew] = useState({
+        id: "",
+        scene_id: "",
+        scene_number: "",
+        shot_number: "",
+        size: "",
+        angle: "",
+        movement: "",
+        screen_time: "",
+        camera: "",
+        lens: "",
+        script_length: "",
+        description: "",
+        equipment: "",
+        script_ref: "",
+        storyboard_refs: "",
+        fx: "",
+        focus_pulls: "",
+        lighting: "",
+        audio: "",
+        image: "",
+    });
+
+    const {shotAll, handleMount, setAddShot, } = props
+    const { id,
+            scene_id,
+            scene_number,
+            shot_number,
+            size,
+            angle,
+            movement,
+            screen_time,
+            camera,
+            lens,
+            script_length,
+            script_ref,
+            storyboard_refs,
+            description,
+            equipment,
+            fx,
+            focus_pulls,
+            lighting,
+            audio,
+            image, } = shotAll
+
+    useEffect(() => {
+        setShotNew({
+            id,
+            scene_id,
+            scene_number,
+            shot_number,
+            size,
+            angle,
+            movement,
+            screen_time,
+            camera,
+            lens,
+            script_length,
+            script_ref,
+            storyboard_refs,
+            description,
+            equipment,
+            fx,
+            focus_pulls,
+            lighting,
+            audio,
+            image,
+            })
+        }, [])
 
     const handleDelete = async () => {
     try {
@@ -36,52 +103,40 @@ const Shot = (props) => {
 
     return (
         <div>
-            {/* titles */}    
-            <Row>
-                <Col>
-                    {showEditForm ? (
-                        <ShotListEdit
-                            setShotlist={setShotlist}
-                            setAddShot={setAddShot}
-                            id={id}
-                            handleMount={handleMount}
-                            setShowEditForm={setShowEditForm}
-                        />
-                    ) : (
-                        ""
-                    )}
-                </Col>
-                </Row>                  
+            {/* titles */}   
+            <p>Id {id} 
+            Scene_id {scene_id}
+            Scene {scene_number} </p>                
             <Row  >
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={ `${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Bright}`}>
                         I
                     </Button>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{shot_number}</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{size}</p>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={4} md={4}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p className='mb-0'>{description}</p>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>{angle}{scene_id} </p>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>{angle} </p>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p >{movement}</p>
                 </Col>
-                <Col className={`pl-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowImg(showImg => !showImg)} 
                         className={`${btnStyles.Button} ${btnStyles.Bright}`}>
                         I
                     </Button>
                 </Col>
                 {/* edit */}
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <PostDropdown
                         handleEdit={() => setShowEditForm(true)}
                         handleDelete={handleDelete}
@@ -91,7 +146,7 @@ const Shot = (props) => {
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <ShotInfo {...shotAll}/> 
+                    <ShotInfo {...shotNew}/> 
                     ) }
                 </Col>
             </Row>
@@ -102,6 +157,23 @@ const Shot = (props) => {
                     ) }
                 </Col>
             </Row>
+            <Row>
+                <Col>
+                    {showEditForm ? (
+                        <ShotListEdit
+                            shotNew={shotNew}
+                            shot_number={shot_number}
+                            setShotNew={setShotNew}
+                            setAddShot={setAddShot}
+                            id={id}
+                            handleMount={handleMount}
+                            setShowEditForm={setShowEditForm}
+                        />
+                    ) : (
+                        ""
+                    )}
+                </Col>
+                </Row> 
         </div>
     )
 }

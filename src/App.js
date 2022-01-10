@@ -51,9 +51,9 @@ function App() {
   const deptGeneral = useDeptGeneralContext();
 
   return (
-    <div className={styles.App} >
+    <div className={`px-4 ${styles.App }`} >
       <NavBar />
-      <Container className={styles.Main}>
+      <div className={styles.Main}>
         <Switch>
         {/* <Routes> */}
         <Route exact path="/" render={() => <Landing />} />
@@ -235,7 +235,7 @@ function App() {
         <Route render={() => <PageNotFound />} />
         {/* </Routes> */}
         </Switch>
-      </Container>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
-import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
@@ -20,7 +20,7 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
+const ShotListEdit = ({handleMount, setShowEditForm, shotNew, setShotNew, id}) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -70,13 +70,12 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
     const imageInput = useRef(null);
 
     const history = useHistory();
-    const { id } = useParams();
 
     useEffect(() => {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/shotlists/${id}/`);
-
+            console.log(data)
             const { scene_id,
                     scene_number,
                     shot_number,
@@ -97,7 +96,8 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
                     audio,
                     image, } = data;
      
-            setPostData({ scene_id,
+            setPostData({
+                scene_id,
                 scene_number,
                 shot_number,
                 size,
@@ -170,12 +170,12 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         }
       
         try {
-          const { data } = await axiosReq.put("/shotlists/", formData);
-          setShowEditForm((showEditForm) => !showEditForm)
-          setShotlist((prevShotlist) => ({
-            ...prevShotlist,
-            results: [data, ...prevShotlist.results],
-          }));
+          const { data } = await axiosReq.put(`/shotlists/${id}/`, formData);
+          setShowEditForm(false)
+          setShotNew(data);
+          console.log(data)
+          // setShotNew((prevShotNew) => ({
+          // }));
           handleMount();
         } catch (err) {
           console.log(err);
@@ -189,7 +189,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         <div className="text-center">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
-            onClick={() => history.goBack()}
+            onClick={() => setShowEditForm((showEditForm) => !showEditForm)}
           >
             cancel
           </Button>
@@ -200,14 +200,17 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
       );
 
     return (
-        <div>
-            <Form onSubmit={handleSubmit}>
+        <div className={`${styles.ShotInfo}`}>
+          <h5 className="my-3 text-center">Edit Shot {shot_number} </h5>
+            <Form className={`${styles.ShotEditForm}`} onSubmit={handleSubmit}>
             {/* number size act movement*/}
         <Row>
           <Col xs={3} >
           <Form.Group controlId="shot_number" className="mb-2" >
-                <Form.Label className="p-1" >Number</Form.Label>
+                <Form.Label className="p-1 d-none" >Number</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Number"
                 type="text"
                 name="shot_number"
                 value={shot_number}
@@ -222,8 +225,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             </Col>
             <Col xs={3}>
             <Form.Group controlId="size" className="mb-2" >
-                <Form.Label className="p-1" >Size</Form.Label>
+                <Form.Label className="p-1 d-none" >Size</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Size"
                 type="text"
                 name="size"
                 value={size}
@@ -238,8 +243,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             </Col>
             <Col xs={3}>
             <Form.Group controlId="angle" className="mb-2" >
-                <Form.Label className="p-1" >Angle</Form.Label>
+                <Form.Label className="p-1 d-none" >Angle</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Angle"
                 type="text"
                 name="angle"
                 value={angle}
@@ -254,8 +261,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             </Col>
             <Col xs={3}>
             <Form.Group controlId="movement" className="mb-2" >
-                <Form.Label className="p-1" >Movement</Form.Label>
+                <Form.Label className="p-1 d-none" >Movement</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Movement"
                 type="text"
                 name="movement"
                 value={movement}
@@ -273,8 +282,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         <Row>
         <Col xs={6}>
             <Form.Group controlId="description" className="mb-2" >
-                <Form.Label className="p-1" >Description</Form.Label>
+                <Form.Label className="p-1 d-none" >Description</Form.Label>
                 <Form.Control 
+                className={styles.InputArea}
+                placeholder="Description"
                 type="text"
                 as="textarea"
                 rows={2}
@@ -291,8 +302,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         </Col>
         <Col xs={6}>
             <Form.Group controlId="equipment" className="mb-2" >
-                <Form.Label className="p-1" >Equipment</Form.Label>
+                <Form.Label className="d-none p-1" >Equipment</Form.Label>
                 <Form.Control 
+                className={styles.InputArea}
+                placeholder="Equipment"
                 type="text"
                 as="textarea"
                 rows={2}
@@ -309,12 +322,14 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         </Col>
             </Row>
            {/* camera lens screen-time script-length*/}
-           <p>Extra Info if necessary</p>
+           <p className="text-center">Extra Info</p>
            <Row>
           <Col xs={3} >
           <Form.Group controlId="camera" className="mb-2" >
-                <Form.Label className="p-1" >Camera</Form.Label>
+                <Form.Label className="d-none p-1" >Camera</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Camera"
                 type="text"
                 name="camera"
                 value={camera}
@@ -329,8 +344,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             </Col>
             <Col xs={3}>
             <Form.Group controlId="lens" className="mb-2" >
-                <Form.Label className="p-1" >Lens</Form.Label>
+                <Form.Label className="d-none p-1" >Lens</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Lens"
                 type="text"
                 name="lens"
                 value={lens}
@@ -345,8 +362,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             </Col>
             <Col xs={3}>
             <Form.Group controlId="screen_time" className="mb-2" >
-                <Form.Label className="p-1" >Screen Time</Form.Label>
+                <Form.Label className="d-none p-1" >Screen Time</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Screen Time"
                 type="text"
                 name="screen_time"
                 value={screen_time}
@@ -361,8 +380,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             </Col>
             <Col xs={3}>
             <Form.Group controlId="script_length" className="mb-2" >
-                <Form.Label className="p-1" >Pages</Form.Label>
+                <Form.Label className="p-1 d-none" >Pages</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Pages"
                 type="text"
                 name="script_length"
                 value={script_length}
@@ -380,8 +401,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         <Row>
         <Col xs={3}>
             <Form.Group controlId="lighting" className="mb-2" >
-                <Form.Label className="p-1" >Lighting</Form.Label>
+                <Form.Label className="p-1 d-none" >Lighting</Form.Label>
                 <Form.Control 
+                className={styles.InputArea}
+                placeholder="Lighting"
                 type="text"
                 as="textarea"
                 rows={2}
@@ -398,8 +421,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         </Col>
         <Col xs={3}>
             <Form.Group controlId="focus_pulls" className="mb-2" >
-                <Form.Label className="p-1" >Focus Pulls</Form.Label>
+                <Form.Label className="d-none p-1" >Focus Pulls</Form.Label>
                 <Form.Control 
+                className={styles.InputArea}
+                placeholder="Focus Pulls"
                 type="text"
                 as="textarea"
                 rows={2}
@@ -416,8 +441,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         </Col>
         <Col xs={3}>
             <Form.Group controlId="fx" className="mb-2" >
-                <Form.Label className="p-1" >FX</Form.Label>
+                <Form.Label className="d-none p-1" >FX</Form.Label>
                 <Form.Control 
+                className={styles.InputArea}
+                placeholder="FX"
                 type="text"
                 as="textarea"
                 rows={2}
@@ -434,8 +461,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
         </Col>
         <Col xs={3}>
             <Form.Group controlId="audio" className="mb-2" >
-                <Form.Label className="p-1" >Audio</Form.Label>
+                <Form.Label className="p-1 d-none" >Audio</Form.Label>
                 <Form.Control 
+                className={styles.InputArea}
+                placeholder="Audio"
                 type="text"
                 as="textarea"
                 rows={2}
@@ -454,8 +483,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             <Row>
           <Col xs={6} >
           <Form.Group controlId="script_ref" className="mb-2" >
-                <Form.Label className="p-1" >Script Ref</Form.Label>
+                <Form.Label className="p-1 d-none" >Script Ref</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Script Ref"
                 type="text"
                 name="script_ref"
                 value={script_ref}
@@ -469,8 +500,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             ))}
 
             <Form.Group controlId="storyboard_refs" className="mb-2" >
-                <Form.Label className="p-1" >Storyboard Refs</Form.Label>
+                <Form.Label className="p-1 d-none" >Storyboard Refs</Form.Label>
                 <Form.Control 
+                className={styles.Input}
+                placeholder="Storyboard Ref"
                 type="text"
                 name="storyboard_refs"
                 value={storyboard_refs}
@@ -486,7 +519,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             <Col xs={6}>
               {/* image */}
               <Container
-                      className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                      className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center text-center`}
                       >
                   <Form.Group>
                     {image ? (
@@ -508,8 +541,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
                         className=" my-1"
                         htmlFor="image-upload"
                       >
-                        <Asset
+                        <Asset2
                           src={Upload}
+                          height={30}
+                          width={30}
                           message="Upload image"
                         />
                       </Form.Label>
@@ -533,11 +568,13 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotlist}) => {
             </Col>
         </Row>
         <Row>
-          <Col className="text-center">
-          <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container>
+          <Col className="my-3 text-center">
+          {buttons}
+          {/* <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container> */}
           </Col>
         </Row>
         </Form>
+        <hr className={styles.Blackish}/>
         </div>
     )
 }

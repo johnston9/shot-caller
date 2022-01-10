@@ -21,6 +21,7 @@ const Scene = (props) => {
     const [showCos, setShowCos] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showstory, setShowstory] = useState(false);
+    const [showStoryShot, setShowStoryShot] = useState(false);
     const setSceneId = useSetSceneContext();
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
@@ -191,7 +192,7 @@ const Scene = (props) => {
                     {character6} {character7} {character7} {character9} {character10}
                     {character11} {character12} {other_characters} </h5>
                     </div>
-                    <div>
+                    <div className='px-5'>
                     <p>ACTION: <span className={` ${styles.Action }`}>{action}</span> </p>
                   <p>CONTENT: <span className={` ${styles.Action }`}>{content}</span> </p>
                   <p>INFO/EQUIP/SET: <span className={` ${styles.Action }`}>{info}</span> </p>
@@ -215,7 +216,14 @@ const Scene = (props) => {
                           className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
                           onClick={() => setShowstory(showstory => !showstory)} > Storyboard
                       </Button>
-                      {/* <p>SceneId{id} </p>   */}
+                    </Col>
+                  </Row>
+                  <Row className='text-center'>
+                  <Col >
+                      <Button
+                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Storyboard and Shotlist
+                      </Button>
                     </Col>
                   </Row>
                   
@@ -235,6 +243,20 @@ const Scene = (props) => {
                       ""
                     ) : (
                       <ShotlistPage setShowlist={setShowlist} scene={scene} />
+                    ) }
+                    {!showStoryShot ? (
+                      ""
+                    ) : (
+                      
+                      <Row>
+                        <Col xs={6}>
+                        <Storyboard storyboard={storyboard} />
+                        </Col>
+                        <Col xs={6}>
+                        <ShotlistPage setShowlist={setShowlist} scene={scene} />
+                        </Col>
+                      </Row>
+                      
                     ) }
                   <h3 className={`text-center`}>Departments</h3>
                     <Row>

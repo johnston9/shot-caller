@@ -20,7 +20,7 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-const ShotListCreate = ({handleMount, setAddShot, scene, setShotlist }) => {
+const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const {number} = scene; 

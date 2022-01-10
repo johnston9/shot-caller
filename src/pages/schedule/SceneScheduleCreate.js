@@ -245,7 +245,6 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
       try {
         const { data } = await axiosReq.post("/schedule/scenes/", formData);
         history.push(`/days/`);
-        console.log(character12_pickup)
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {

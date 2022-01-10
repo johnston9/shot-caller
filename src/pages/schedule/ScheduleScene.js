@@ -24,7 +24,7 @@ const ScheduleScene = (props) => {
     const history = useHistory();
     const [show, setShow] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
-    const {sceneAll, id, number, int_ext, start_time, end_time,
+    const {sceneAll, day, date, day_id, id, number, int_ext, start_time, end_time,
         location, filming_location, day_night, action, pages,
         new_info} = props
 
@@ -65,7 +65,9 @@ const ScheduleScene = (props) => {
 
     return (
         <div className={`px-3 pt-4 mt-3 ${styles.SceneBox}`} >
-            {/* titles */}                      
+            {/* titles */}   
+            <p >Day {day} --- Date {date} </p>
+            <p >Day Id {day_id} --- scene id{id} </p>                   
             <Row  >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
