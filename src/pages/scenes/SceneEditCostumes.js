@@ -18,7 +18,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const SceneCreateCostumes = ({handleChange, postData}) => {
+const SceneEditCostumes = ({handleChange, postData}) => {
     useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
   const history = useHistory();
@@ -31,7 +31,6 @@ const SceneCreateCostumes = ({handleChange, postData}) => {
     character10_costume,character11_costume,
     character12_costume, other_characters_costumes,
     background_artists_costumes, } = postData;
-    
     return (
         <div>
             {/* characters costumes */}
@@ -298,9 +297,8 @@ const SceneCreateCostumes = ({handleChange, postData}) => {
             </Col>
             </Row>
             {/* end characters costumes */}
-            
         </div>
     )
 }
 
-export default SceneCreateCostumes
+export default SceneEditCostumes

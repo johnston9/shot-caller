@@ -67,10 +67,6 @@
     height: 30px !important;
 }
 
-.Blackish {
-  border-top: red;
-}
-
 .ShotEditForm {
   border-bottom: 1px solid rgb(46, 46, 46);
 }
@@ -84,6 +80,35 @@
     /* text-align: center; */
     padding: 0px 10px;
     height: 50px !important;
+}
+
+/* .InputChar::placeholder {
+  color: #212529;
+} */
+.InputScene {
+   background: #ffffff;
+    /* border: 1px solid #f0f1f9; */
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #7177a1;
+    /* text-align: center; */
+    padding: 0px 10px;
+}
+
+.InputChar {
+  background: #ffffff;
+    /* border: 1px solid #a3a3a8; */
+    box-sizing: border-box;
+    border-radius: 2px;
+    /* color: #212529; */
+    color: #7177a1;
+    /* text-align: center; */
+    padding: 0px 0px;
+    /* height: 30px !important; */
+}
+
+.NewChar {
+  background-color: aquamarine;
 }
 
 /* .Input .form-control {

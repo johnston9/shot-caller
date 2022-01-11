@@ -183,20 +183,20 @@ const Scene = (props) => {
                   <div className="text-center mt-2">
                   <h4 className={` ${styles.Titledetail }`}>
                   {/* Location:  */}
-                  <span style={{ textTransform: 'uppercase'}} 
-                  > {int_ext}. {location} - {day_night} </span>
+                    <span style={{ textTransform: 'uppercase'}} 
+                    > {int_ext}. {location} - {day_night} </span>
                   </h4>
                   <h5 >
                     {/* Characters:  */}
                     {character1} {character2} {character3} {character4} {character5}
                     {character6} {character7} {character7} {character9} {character10}
                     {character11} {character12} {other_characters} </h5>
-                    </div>
-                    <div className='px-5'>
+                  </div>
+                  <div className='px-5'>
                     <p>ACTION: <span className={` ${styles.Action }`}>{action}</span> </p>
-                  <p>CONTENT: <span className={` ${styles.Action }`}>{content}</span> </p>
-                  <p>INFO/EQUIP/SET: <span className={` ${styles.Action }`}>{info}</span> </p>
-                  <p>PAGES: <span className={` ${styles.Action }`}>{pages}</span> </p>
+                    <p>CONTENT: <span className={` ${styles.Action }`}>{content}</span> </p>
+                    <p>INFO/EQUIP/SET: <span className={` ${styles.Action }`}>{info}</span> </p>
+                    <p>PAGES: <span className={` ${styles.Action }`}>{pages}</span> </p>
                   </div>
                   <Row className='mt-3'>
                     <Col className='text-center' xs={4}>

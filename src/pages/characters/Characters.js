@@ -86,13 +86,13 @@ const Characters = ({message}) => {
             </Row>
             {/* add char */}
             <Row>
-              <Col className="text-center">
+              <Col className="text-center" >
                 <Button onClick={() => setShow(show => !show)} 
                 className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                 Add Character</Button>
-                {!show ?("") : (<CharacterCreate topbox /> ) }
               </Col>
             </Row>
+            {!show ?("") : (<CharacterCreate topbox /> ) }
             {/* characters */}
             <Row className="h-100">
                 <Col>

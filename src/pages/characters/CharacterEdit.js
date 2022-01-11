@@ -300,7 +300,7 @@ const handleSubmit = async (event) => {
       }
 
   try {
-    await axiosReq.put("/characters/", formData);
+    await axiosReq.put(`/characters/${id}/`, formData);
     history.push(`/characters/${id}/`);
   } catch (err) {
     console.log(err);
@@ -327,20 +327,23 @@ const buttons = (
         <div>
             <TopBox title="Character Edit"/>
             <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
-        onClick={() => history.goBack()}
-        >
-        Back
-        </Button>
-        <Container className= {`${appStyles.Content} ${styles.Container}`} >
+              className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
+              onClick={() => history.goBack()}
+              >
+              Back
+              </Button>
+              <Container className= {`${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-3" onSubmit={handleSubmit}>
+      <h3 className="text-center">Role</h3>
+      <p className="text-center">Input Roles here to them to the Character dropdown in the scene create form</p>
       <Row>
+      <Col md={3} ></Col>
           <Col md={6} >
-          <h3>Only Role needed when creating scenes</h3>
           <Form.Group controlId="role" className="mb-2" >
-                  <Form.Label className="p-1" >Role</Form.Label>
+                  <Form.Label className="d-none p-1" >Role</Form.Label>
                   <Form.Control 
                   type="text"
+                  placeholder="Role"
                   name="role"
                   value={role}
                   onChange={handleChange}
@@ -354,13 +357,14 @@ const buttons = (
           </Col>
       </Row>
       {/* actor details */}
-      <h3>Actor Details</h3>
+      <h3 className="text-center my-3">Actor Details</h3>
       <Row>
           <Col xs={6} md={4} >
           <Form.Group controlId="actor" className="mb-2" >
-                  <Form.Label className="p-1" >Actor</Form.Label>
+                  <Form.Label className="d-none p-1" >Actor</Form.Label>
                   <Form.Control 
                   type="text"
+                  placeholder="Actor"
                   name="actor"
                   value={actor}
                   onChange={handleChange}
@@ -374,8 +378,9 @@ const buttons = (
           </Col>
           <Col xs={6} md={4} >
           <Form.Group controlId="mobile" className="mb-2" >
-                  <Form.Label className="p-1" >Mobile</Form.Label>
+                  <Form.Label className="d-none p-1" >Mobile</Form.Label>
                   <Form.Control 
+                  placeholder="Mobile"
                   type="text"
                   name="mobile"
                   value={mobile}
@@ -390,8 +395,9 @@ const buttons = (
           </Col>
           <Col xs={12} md={4} >
           <Form.Group controlId="email" className="mb-2" >
-                  <Form.Label className="p-1" >Email</Form.Label>
+                  <Form.Label className="d-none p-1" >Email</Form.Label>
                   <Form.Control 
+                  placeholder="Email"
                   type="text"
                   name="email"
                   value={email}
@@ -409,8 +415,9 @@ const buttons = (
       <Row>
           <Col xs={6} md={4} >
           <Form.Group controlId="make_up_time" className="mb-2" >
-                  <Form.Label className="p-1" >Makeup Time</Form.Label>
+                  <Form.Label className="d-none p-1" >Makeup Time</Form.Label>
                   <Form.Control 
+                  placeholder="Makeup Time"
                   type="text"
                   name="make_up_time"
                   value={make_up_time}
@@ -425,8 +432,9 @@ const buttons = (
           </Col>
           <Col xs={6} md={4} >
           <Form.Group controlId="commute_time" className="mb-2" >
-                  <Form.Label className="p-1" >Commute Time</Form.Label>
+                  <Form.Label className="d-none p-1" >Commute Time</Form.Label>
                   <Form.Control 
+                  placeholder="Commute Time"
                   type="text"
                   name="commute_time"
                   value={commute_time}
@@ -441,8 +449,9 @@ const buttons = (
           </Col>
           <Col xs={12} md={4} >
           <Form.Group controlId="agent" className="mb-2" >
-                  <Form.Label className="p-1" >Agent</Form.Label>
+                  <Form.Label className="d-none p-1" >Agent</Form.Label>
                   <Form.Control 
+                  placeholder="Agent"
                   type="text"
                   name="agent"
                   value={agent}
@@ -460,8 +469,9 @@ const buttons = (
       <Row>
           <Col xs={6} >
           <Form.Group controlId="pickup_address" className="mb-2" >
-                  <Form.Label className="p-1" >Pickup Address</Form.Label>
+                  <Form.Label className="d-none p-1" >Pickup Address</Form.Label>
                   <Form.Control 
+                  placeholder="Pickup Address"
                   type="text"
                   name="pickup_address"
                   as="textarea"
@@ -478,8 +488,9 @@ const buttons = (
           </Col>
           <Col xs={6}>
           <Form.Group controlId="pickup_address_2" className="mb-2" >
-                  <Form.Label className="p-1" >Pickup Address 2</Form.Label>
+                  <Form.Label className="d-none p-1" >Pickup Address 2</Form.Label>
                   <Form.Control 
+                  placeholder="Pickup Address 2"
                   type="text"
                   name="pickup_address_2"
                   as="textarea"
@@ -499,8 +510,9 @@ const buttons = (
       <Row>
           <Col xs={6} >
           <Form.Group controlId="requirements" className="mb-2" >
-                  <Form.Label className="p-1" >Requirements</Form.Label>
+                  <Form.Label className="d-none p-1" >Requirements</Form.Label>
                   <Form.Control 
+                  placeholder="Requirements"
                   type="text"
                   name="requirements"
                   as="textarea"
@@ -517,8 +529,9 @@ const buttons = (
           </Col>
           <Col xs={6}>
           <Form.Group controlId="diet" className="mb-2" >
-                  <Form.Label className="p-1" >Diet</Form.Label>
+                  <Form.Label className="d-none p-1" >Diet</Form.Label>
                   <Form.Control 
+                  placeholder="Diet"
                   type="text"
                   name="diet"
                   as="textarea"
@@ -534,12 +547,14 @@ const buttons = (
               ))}
           </Col>
       </Row>
+      <h3 className="text-center my-3">Costumes</h3>
       {/* costume 1/2 */}
-      <Row>
+      <Row className="mb-5 text-center">
           <Col xs={12} md={6} >
           <Form.Group controlId="costume1" className="mb-2" >
-                  <Form.Label className="p-1" >Costume 1</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 1</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 1"
                   type="text"
                   name="costume1"
                   as="textarea"
@@ -601,8 +616,9 @@ const buttons = (
           </Col>
           <Col xs={12} md={6}>
           <Form.Group controlId="costume2" className="mb-2" >
-                  <Form.Label className="p-1" >costume 2</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 2</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 2"
                   type="text"
                   name="costume2"
                   as="textarea"
@@ -665,11 +681,12 @@ const buttons = (
           </Col>
       </Row>
       {/* costume 3/4  */}
-      <Row>
+      <Row className="mb-5 ">
           <Col xs={12} md={6} >
           <Form.Group controlId="costume3" className="mb-2" >
-                  <Form.Label className="p-1" >Costume 3</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 3</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 3"
                   type="text"
                   name="costume3"
                   as="textarea"
@@ -734,8 +751,9 @@ const buttons = (
           </Col>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume4" className="mb-2" >
-                  <Form.Label className="p-1" >Costume 4</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 4</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 4"
                   type="text"
                   name="costume4"
                   as="textarea"
@@ -798,13 +816,14 @@ const buttons = (
               {/* """ end image 4 """" */}
           </Container>
           </Col>
-      </Row>
+      </Row >
       {/* costume 5/6 */}
-      <Row>
+      <Row className="mb-5 ml-0">
           <Col xs={12} md={6} >
           <Form.Group controlId="costume5" className="mb-2" >
-                  <Form.Label className="p-1" >Costume 5</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 5</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 5"
                   type="text"
                   name="costume5"
                   as="textarea"
@@ -869,8 +888,9 @@ const buttons = (
           </Col>
           <Col xs={12} md={6}>
           <Form.Group controlId="costume6" className="mb-2" >
-                  <Form.Label className="p-1" >Costume 6</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 6</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 6"
                   type="text"
                   name="costume6"
                   as="textarea"
@@ -938,8 +958,9 @@ const buttons = (
       <Row>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume7" className="mb-2" >
-                  <Form.Label className="p-1" >Costume 7</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 7</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 7"
                   type="text"
                   name="costume7"
                   as="textarea"
@@ -1004,8 +1025,9 @@ const buttons = (
           </Col>
           <Col xs={12} md={6}>
           <Form.Group controlId="costume8" className="mb-2" >
-                  <Form.Label className="p-1" >Costume 8</Form.Label>
+                  <Form.Label className="d-none p-1" >Costume 8</Form.Label>
                   <Form.Control 
+                  placeholder="Costume 8"
                   type="text"
                   name="costume8"
                   as="textarea"
@@ -1075,8 +1097,7 @@ const buttons = (
         </Col>
       </Row>
     </Form>
-    </Container>
-            
+    </Container>                   
         </div>
     )
 }
