@@ -1,17 +1,8 @@
 import React, { useState } from 'react'
-import { Button, Card } from 'react-bootstrap';
-import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 
 const SceneCostumes = ({scene}) => {
     useRedirect("loggedOut");
@@ -21,20 +12,19 @@ const SceneCostumes = ({scene}) => {
         character6_costume, character7, character7_costume, character8,
         character8_costume, character9, character9_costume, character10, 
         character10_costume, character11, character11_costume, character12,
-        character12_costume, other_characters_costumes,
-        background_artists_costumes} = scene;
+        character12_costume, } = scene;
     return (
-        <div>
+        <div className='pl-4'>
             <Row>
-                <Col xs={12} md={6} >
-                    <Row>
+                <Col xs={12}  >
+                    {/* <Row>
                         <Col xs={6} >
                             <p>CHARACTER</p>
                         </Col>
                         <Col xs={6} >
                             <p>COSTUME</p>
                         </Col>
-                    </Row>
+                    </Row> */}
                     <Row >
                         <Col className='mx-0 px-0' xs={6} >
                         <p className='mb-0'>{character1} </p>
@@ -129,20 +119,6 @@ const SceneCostumes = ({scene}) => {
                         </Col>
                         <Col className='mx-0 px-0' xs={6} >
                         <p className='mb-0'>{character12_costume}</p>
-                        </Col>
-                    </Row>
-                    <hr/>
-                    <p className='text-center'>Other Characters</p>
-                    <Row >
-                        <Col className='mx-0 px-0' xs={12} >
-                        <p className='mb-0'>{other_characters_costumes} </p>
-                        </Col>
-                    </Row>
-                    <hr/>
-                    <p className='text-center'>Background Artists</p>
-                    <Row >
-                        <Col className='mx-0 px-0' xs={12} >
-                        <p className='mb-0'>{background_artists_costumes} </p>
                         </Col>
                     </Row>
                 </Col>

@@ -1056,10 +1056,10 @@ const SceneEditForm = () => {
           className={`${btnStyles.Button} ${btnStyles.Blue}`}
           onClick={() => history.goBack()}
         >
-          cancel
+          Cancel
         </Button>
         <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          create
+          Apply
         </Button>
       </div>
     );

@@ -46,8 +46,8 @@ const SceneTop = (props) => {
                     <Col xs={10} className='mx-0 px-0 text-center'>
                     <h5 className={` ${styles.Titlelist }`}>Scene {number} 
                     </h5>
-                    <p>Act {act} </p>
-                    <p>scene Id {id} </p>
+                    {/* <p>Act {act} </p>
+                    <p>scene Id {id} </p> */}
                     </Col >
                     <Col xs={1} className=' mx-0 px-0'>
                     <PostDropdown

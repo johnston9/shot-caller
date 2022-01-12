@@ -72,7 +72,8 @@ const Character = (props) => {
                 />
                 </Col>
             </Row>
-            <h5>Actor Info</h5>
+            <hr/>
+            <h5 className='my-3'>Actor Info</h5>
             <Row>
                 <Col xs={4}>
                 <p>ACTOR</p>
@@ -101,16 +102,20 @@ const Character = (props) => {
                 <p>{requirements} </p>
                 </Col>
             </Row>
+            <hr/>
+            <h5 className='my-3'>Schedule Info</h5>
             <Row>
                 <Col xs={6}>
-                <p>Makeup Time</p>
+                <p>MAKE UP TIME</p>
                 <p>{make_up_time} </p>
                 </Col>
                 <Col xs={6}>
-                <p>Commute Time</p>
+                <p>COMMUTE TIME</p>
                 <p>{commute_time} </p>
                 </Col>
             </Row>
+            <hr/>
+            <h5 className='my-3'>Costumes</h5>
             {/* costume 1/2 */}
             <Row>
             <Col xs={6}>

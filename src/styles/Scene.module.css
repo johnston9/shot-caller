@@ -1,3 +1,16 @@
+.BreakBox {
+  border: 1px solid aquamarine;
+  min-height: 100px;
+}
+
+.BreakBoxTitle {
+  color: crimson;
+}
+
+.CostumeLink {
+  color: cyan;
+}
+
 .SearchBar input {
     border-radius: 20px;
     color: #242a3d;

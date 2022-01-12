@@ -78,7 +78,31 @@ const ScenesPage = ({message, filter = "" }) => {
     return (
         <div className='mt-5'>
           <TopBox title="Scenes" />
-            <Row className='mt-4' >
+          <Row className='mt-3'>
+              <Col className="text-center">
+                <Button onClick={() => setShow(show => !show)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                Add Scene</Button>
+                {!show ?("") : (<SceneCreateForm topbox /> ) }
+              </Col>
+            </Row>
+            <Row>
+                <Col className="mt-5" xs={12} md={{ span: 6, offset: 3 }} >
+                <Form
+                    className={styles.SearchBar}
+                    onSubmit={(event) => event.preventDefault()}
+                    >
+                    <Form.Control
+                        value={query}
+                        onChange={(event) => setQuery(event.target.value)}
+                        type="text"
+                        className="mr-sm-2"
+                        placeholder="Search by scene number, title or location"
+                    />
+                    </Form>
+                </Col>
+            </Row>
+            <Row className='mt-3' >
                 <Col className='text-center' xs={6} md={3}>
                 <Button
                     className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
@@ -104,31 +128,7 @@ const ScenesPage = ({message, filter = "" }) => {
                   </Button>
                 </Col>
               </Row>
-            <Row>
-                <Col className="mt-5" xs={12} md={{ span: 6, offset: 3 }} >
-                <Form
-                    className={styles.SearchBar}
-                    onSubmit={(event) => event.preventDefault()}
-                    >
-                    <Form.Control
-                        value={query}
-                        onChange={(event) => setQuery(event.target.value)}
-                        type="text"
-                        className="mr-sm-2"
-                        placeholder="Search by scene number, title or location"
-                    />
-                    </Form>
-                </Col>
-            </Row>
-            <Row>
-              <Col className="text-center">
-                <Button onClick={() => setShow(show => !show)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                Add Scene</Button>
-                {!show ?("") : (<SceneCreateForm topbox /> ) }
-              </Col>
-            </Row>
-            <Row className="h-100">
+            <Row className="h-100 mt-3">
             {hasLoaded ? (
           <>
             {scenes.results.length ? (

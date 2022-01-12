@@ -15,10 +15,14 @@ import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import Storyboard from './Storyboard';
 import SceneCostumes from './SceneCostumes';
 import ShotlistPage from './ShotlistPage';
+import SceneCosOther from './SceneCosOther';
+import SceneCosBack from './SceneCosBack';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
     const [showCos, setShowCos] = useState(false);
+    const [showCosOther, setShowCosOther] = useState(false);
+    const [showCosBack, setShowCosBack] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showstory, setShowstory] = useState(false);
     const [showStoryShot, setShowStoryShot] = useState(false);
@@ -167,8 +171,8 @@ const Scene = (props) => {
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
-                    <h2 className={` ${styles.Titlelist }`}>Scene {number} - <span className={styles.Italics }> {title} </span>
-                    </h2>
+                    <h3 className={` ${styles.Titlelist }`}>Scene {number} - <span className={styles.Italics }> {title} </span>
+                    </h3>
                     {/* <p>Act {act} </p>
                     <p>scene Id {id} </p> */}
                     </Col >
@@ -180,24 +184,99 @@ const Scene = (props) => {
                     </Col>
                     </Row>
                   </Card.Header>
-                  <div className="text-center mt-2">
-                  <h4 className={` ${styles.Titledetail }`}>
-                  {/* Location:  */}
-                    <span style={{ textTransform: 'uppercase'}} 
-                    > {int_ext}. {location} - {day_night} </span>
-                  </h4>
-                  <h5 >
-                    {/* Characters:  */}
-                    {character1} {character2} {character3} {character4} {character5}
-                    {character6} {character7} {character7} {character9} {character10}
-                    {character11} {character12} {other_characters} </h5>
-                  </div>
-                  <div className='px-5'>
-                    <p>ACTION: <span className={` ${styles.Action }`}>{action}</span> </p>
-                    <p>CONTENT: <span className={` ${styles.Action }`}>{content}</span> </p>
-                    <p>INFO/EQUIP/SET: <span className={` ${styles.Action }`}>{info}</span> </p>
-                    <p>PAGES: <span className={` ${styles.Action }`}>{pages}</span> </p>
-                  </div>
+                  <h5 className='ml-3 my-3'>Scene breakdown</h5>
+                  <Row>
+                  <Col xs={6} md={4} >
+                      <div className={`p-1 m-3 ${styles.BreakBox }`}>
+                      <h5 className={` text-center ${styles.BreakBoxTitle }`}>
+                        Action/Content
+                        </h5>
+                        <p>{action} </p>
+                        <p>Pages: {pages} </p>
+                        <p>{content} </p>
+                      </div>
+                    </Col>
+                    <Col xs={6} md={4}>
+                      <div className={`p-1 m-3 ${styles.BreakBox }`}>
+                      <h5 className={` text-center ${styles.BreakBoxTitle }`}>
+                        Location/Shoot
+                        </h5>
+                        <p style={{textTransform: 'uppercase' }}>{int_ext}. {location} - {day_night} </p>
+                        <p>{shooting_date} </p>
+                        <p>{filming_location} </p>
+                      </div>
+                    </Col>
+                    <Col xs={6} md={4} >
+                      <div className={`p-1 m-3 ${styles.BreakBox }`}>
+                      <h5 className={`mb-2 text-center ${styles.BreakBoxTitle }`}>
+                      Equip/Set
+                        </h5>
+                        <p>{info} </p>
+                      </div>
+                    </Col>
+                  </Row>
+                  {/* characters */}
+                  <Row>
+                    <Col xs={6} md={4} >
+                      <div className={`p-1 m-3 ${styles.BreakBox }`}>
+                      <h5 className={`mb-2 text-center ${styles.BreakBoxTitle }`}>
+                        Main Characters
+                        </h5>
+                        <p> {character1} {character2} {character3} {character4} {character5}
+                        {character6} {character7} {character7} {character9} {character10}
+                        {character11} {character12} </p>
+                        <p
+                          className={`${styles.CostumeLink }`}
+                          onClick={() => setShowCos(showCos => !showCos)} >Costumes
+                        </p>
+                        {!showCos ? (
+                          ""
+                        ) : (
+                          <SceneCostumes scene={scene} />
+                        ) }
+                      </div>
+                    </Col>
+                    <Col xs={6} md={4} >
+                      <div className={`p-1 m-3 ${styles.BreakBox }`}>
+                      <h5 className={` text-center ${styles.BreakBoxTitle }`}>
+                        Other Characters
+                        </h5>
+                        <p>{other_characters}</p> 
+                        <p
+                          className={`${styles.CostumeLink }`}
+                          onClick={() => setShowCosOther(showCosOther => !showCosOther)} >Costumes
+                        </p>
+                        <div>
+                          {!showCosOther ? (
+                            ""
+                          ) : (
+                            <SceneCosOther scene={scene} />
+                          ) }
+                        </div>
+                      </div>
+                    </Col>
+                    <Col xs={6} md={4}>
+                      <div className={`p-1 m-3 ${styles.BreakBox }`}>
+                      <h5 className={` text-center ${styles.BreakBoxTitle }`}>
+                        Background Actors
+                        </h5>
+                        <p>{background_artists}</p>
+                        <p
+                          className={`${styles.CostumeLink }`}
+                          onClick={() => setShowCosBack(showCosBack => !showCosBack)} >Costumes
+                        </p>
+                        <div>
+                        {!showCosBack ? (
+                            ""
+                          ) : (
+                            <SceneCosBack scene={scene} />
+                          ) }
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                  <hr/>
+                  <h5 className='ml-3 my-3'>Shotlist and Storyboard</h5>
                   <Row className='mt-3'>
                     <Col className='text-center' xs={4}>
                     <Button
@@ -207,9 +286,9 @@ const Scene = (props) => {
                     </Col>
                     <Col className='text-center' xs={4}>
                     <Button
-                        className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                        onClick={() => setShowCos(showCos => !showCos)} >Costumes
-                    </Button>
+                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Storyboard and Shotlist
+                      </Button>
                     </Col>
                     <Col className='text-center' xs={4}>
                       <Button
@@ -217,23 +296,9 @@ const Scene = (props) => {
                           onClick={() => setShowstory(showstory => !showstory)} > Storyboard
                       </Button>
                     </Col>
-                  </Row>
-                  <Row className='text-center'>
-                  <Col >
-                      <Button
-                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Storyboard and Shotlist
-                      </Button>
-                    </Col>
-                  </Row>
-                  
+                  </Row>                 
                   <hr />
                   <Card.Body>
-                    {!showCos ? (
-                      ""
-                    ) : (
-                      <SceneCostumes scene={scene} />
-                    ) }
                     {!showstory ? (
                       ""
                     ) : (
@@ -258,7 +323,7 @@ const Scene = (props) => {
                       </Row>
                       
                     ) }
-                  <h3 className={`text-center`}>Departments</h3>
+                  <h5 className={` my-3`}>Scene Workspaces</h5>
                     <Row>
                       <Col xs={4} lg={3} >
                         <Card>

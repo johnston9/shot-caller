@@ -35,10 +35,10 @@ const ScenePage = (props) => {
             <Row className="h-100">
                 <Col className="mt-4">
                 <Button
-                    className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+                    className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
                     onClick={() => history.push('/scenes')}
                 >
-                    Back to Scenes
+                    Back
                 </Button>
                 <Scene {...scene.results[0]}
                   scene={scene.results[0]} 
