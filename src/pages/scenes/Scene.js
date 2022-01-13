@@ -324,6 +324,22 @@ const Scene = (props) => {
                       
                     ) }
                   <h5 className={` my-3`}>Scene Workspaces</h5>
+                  <Button className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}>Instructions</Button>
+                  <div className={` my-3`}>Instructions Box</div>
+                  <Button className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}>Add Scene Notes</Button>
+                  <div className={` my-3`}>Form</div>
+                  <div className={` my-3`}>Message Box</div>
+                  <h5 className={` my-3`}>Universal Scene Workspace</h5>
+                  <Row>
+                      <Col xs={4} lg={3} >
+                        <Card>
+                        <Card.Img src={Camera} alt="Card image" />
+                        {/* <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                        <DeptDropdown handleClick={(category) => handleClickCamera(category) } /> */}
+                        </Card>
+                      </Col>
+                  </Row>
+                  <h5 className={` my-3`}>Department Scene Workspaces</h5>
                     <Row>
                       <Col xs={4} lg={3} >
                         <Card>
