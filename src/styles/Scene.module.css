@@ -1,14 +1,47 @@
+kkk
+
+.Back {
+  background-color: #fff;
+}
+
+.Header {
+  background-color: #fff;
+}
+
 .BreakBox {
-  border: 1px solid aquamarine;
+  border:1px solid aquamarine;
   min-height: 100px;
+  /* background-color: rgb(221, 240, 240); */
 }
 
 .BreakBoxTitle {
   color: crimson;
 }
 
+/* .SceneTitle {
+  background-color: #e8f0f1;
+} */
+
+.SubTitle {
+  background-color: #e8f0f1;
+}
+
+.Instructions {
+  background-color: rgb(149, 240, 240);
+}
+
+.Guide {
+  background-color: cornsilk;
+}
+
 .CostumeLink {
-  color: cyan;
+  color: rgb(26, 172, 172);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.CostumeLink:hover {
+  color: rgb(228, 103, 72);
 }
 
 .SearchBar input {
@@ -48,11 +81,6 @@
 
   .Italics {
     font-style: italic;
-  }
-
-  .Header {
-    background-color: #fff;
-    /* background-color: rgb(24 23 23 / 6%); */
   }
 
   .Div50 {
@@ -136,7 +164,7 @@
       font-size: 1.25em;
     }
 
-    .Titlelist {
+    .SceneTitle {
       font-size: 1.25em;
     }
   }
