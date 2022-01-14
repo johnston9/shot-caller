@@ -137,7 +137,7 @@ const Post = (props) => {
         <div>
             <Card className={styles.Post} >
                 <Card.Body>
-                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {number} - {departments.toUpperCase()} - {category.toUpperCase()} </Card.Text>}
+                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {number} - {departments.toUpperCase()} {category.toUpperCase()} </Card.Text>}
                 <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>
                 <p>Scene Id {scene} Scene Number {number} - Post Id {id}</p>
                 <div className="d-flex align-items-center justify-content-between">

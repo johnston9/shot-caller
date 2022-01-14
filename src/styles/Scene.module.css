@@ -26,6 +26,9 @@ kkk
   background-color: #e8f0f1;
 }
 
+.GuideTitle {
+  font-style: italic;
+}
 .Instructions {
   background-color: rgb(149, 240, 240);
 }

@@ -20,6 +20,7 @@ import SceneCosBack from './SceneCosBack';
 import WorkspaceInst from './WorkspaceInst';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
+import Breakdown from './Breakdown';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -27,6 +28,7 @@ const Scene = (props) => {
     const [showCosOther, setShowCosOther] = useState(false);
     const [showCosBack, setShowCosBack] = useState(false);
     const [showlist, setShowlist] = useState(false);
+    const [showBreak, setShowBreak] = useState(false);
     const [showstory, setShowstory] = useState(false);
     const [showStoryShot, setShowStoryShot] = useState(false);
     const [showInts, setShowInts] = useState(false);
@@ -182,7 +184,7 @@ const Scene = (props) => {
     return (
         <div>
             <div className={` ${styles.Header}`}>
-                <div className={`pb-0 ${styles.Header }`}>
+                <div className={`pb-0 pt-2 ${styles.Header }`}>
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0'>
@@ -199,42 +201,72 @@ const Scene = (props) => {
                     </Col>
                     </Row>
                   </div>
-                  <Card.Body>
-                  <h4 style={{ textTransform: 'uppercase'}} className={`my-2 pl-3 py-1 ${styles.SubTitle }`}>Scene breakdown</h4>
+                  <Row className='my-0'>
+                    <Col xs={3} className='text-center'>
+                            <Button
+                              className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                              onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
+                            </Button>
+                        </Col>
+                    <Col className='text-center' xs={3}>
+                      <Button
+                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
+                      </Button>
+                    </Col>
+                    <Col className='text-center' xs={3}>
+                      <Button
+                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Storyboard and Shotlist
+                      </Button>
+                    </Col>
+                    <Col className='text-center' xs={3}>
+                    <Button
+                        className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                        onClick={() => setShowlist(showlist => !showlist)} >Shotlist
+                    </Button>
+                    </Col>
+                  </Row>  
+                  <Card.Body className='pt-0'>
+                      {!showBreak ? (
+                      ""
+                    ) : (
+                      <Breakdown scene={scene} {...scene} setScene={setScene} />                    ) }
+                  {/* <h5 style={{ textTransform: 'uppercase'}} className={`my-2 pl-3 py-1 ${styles.SubTitle }`}>Scene breakdown</h5>
                   <Row>
-                  <Col xs={6} md={4} >
-                      <div className={`p-2 m-3 ${styles.BreakBox }`}>
+                  <Col className='mx-0 px-0' xs={12} md={4}  >
+                      <div className={`p-3 ${styles.BreakBox }`}>
                       <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                        Action/Content
+                        Action Content
                         </h5>
                         <p>{action} </p>
                         <p>Pages: {pages} </p>
                         <p>{content} </p>
                       </div>
                     </Col>
-                    <Col xs={6} md={4}>
-                      <div className={`p-2 m-3 ${styles.BreakBox }`}>
+                    <Col xs={12} md={4} className='mx-0 px-0'>
+                      <div className={`p-3 mx-md-3 ${styles.BreakBox }`}>
                       <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                        Location/Shoot
+                        Location Shoot
                         </h5>
                         <p style={{textTransform: 'uppercase' }}>{int_ext}. {location} - {day_night} </p>
                         <p>{shooting_date} </p>
                         <p>{filming_location} </p>
                       </div>
                     </Col>
-                    <Col xs={6} md={4} >
-                      <div className={`p-2 m-3 ${styles.BreakBox }`}>
+                    <Col className='mx-0 px-0' xs={12} md={4} >
+                      <div className={`p-2 ${styles.BreakBox }`}>
                       <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                      Equip/Set
+                      Equip Set
                         </h5>
                         <p>{info} </p>
                       </div>
                     </Col>
-                  </Row>
+                  {/* </Row> */}
                   {/* characters */}
-                  <Row>
-                    <Col xs={6} md={4} >
-                      <div className={`p-2 m-3 ${styles.BreakBox }`}>
+                  {/* <Row> */}
+                    {/* <Col xs={12} md={4} >
+                      <div className={`p-3 mt-3 ${styles.BreakBox }`}>
                       <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
                         Main Characters
                         </h5>
@@ -257,8 +289,8 @@ const Scene = (props) => {
                         ) }
                       </div>
                     </Col>
-                    <Col xs={6} md={4} >
-                      <div className={`p-3 m-3 ${styles.BreakBox }`}>
+                    <Col xs={12} md={4} >
+                      <div className={`p-3 mt-3 mx-3 ${styles.BreakBox }`}>
                       <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
                         Other Characters
                         </h5>
@@ -281,8 +313,8 @@ const Scene = (props) => {
                         </div>
                       </div>
                     </Col>
-                    <Col xs={6} md={4}>
-                      <div className={`p-2 m-3 ${styles.BreakBox }`}>
+                    <Col xs={12} md={4}>
+                      <div className={`p-3 mt-3 mx-3 ${styles.BreakBox }`}>
                       <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
                         Background Actors
                         </h5>
@@ -303,29 +335,8 @@ const Scene = (props) => {
                           ) }
                       </div>
                     </Col>
-                  </Row>
-                  <h4 style={{ textTransform: 'uppercase'}} className={` mt-5 mb-4 pl-3 py-1 ${styles.SubTitle }`}>Shotlist and Storyboard</h4>
-                  <Row className='my-5'>
-                    <Col className='text-center' xs={4}>
-                      <Button
-                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
-                      </Button>
-                    </Col>
-                    <Col className='text-center' xs={4}>
-                      <Button
-                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Storyboard and Shotlist
-                      </Button>
-                    </Col>
-                    <Col className='text-center' xs={4}>
-                    <Button
-                        className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                        onClick={() => setShowlist(showlist => !showlist)} >Shotlist
-                    </Button>
-                    </Col>
-                  </Row>                 
-                  <hr />
+                  </Row>  */}
+                  {/* <h5 style={{ textTransform: 'uppercase'}} className={` mt-5 mb-4 pl-3 py-1 ${styles.SubTitle }`}>Shotlist and Storyboard</h5> */}               
                     {!showstory ? (
                       ""
                     ) : (
@@ -347,15 +358,12 @@ const Scene = (props) => {
                         <Col xs={6}>
                         <ShotlistPage setShowlist={setShowlist} scene={scene} />
                         </Col>
-                      </Row>
-                      
+                      </Row>             
                     ) }
-
                     {/* workspace */}
-
-                  <h4 style={{ textTransform: 'uppercase'}} className={`mt-5 mb-5 pl-3 py-1 ${styles.SubTitle }`}>Scene Workspaces</h4>
-                  <Row >
-                    <Col xs={9}>
+                  <h5 style={{ textTransform: 'uppercase'}} className={`mt-5 mb-5 pl-3 py-1 ${styles.SubTitle }`}>Scene Workspaces</h5>
+                  <Row className='mb-5'>
+                    <Col className='mx-0 px-0' xs={7} md={9} >
                     {!showInts ? (
                       ""
                     ) : (
@@ -371,33 +379,46 @@ const Scene = (props) => {
                     ) : (
                       <WorkspaceGuideEdit className="my-3" id={id} number={number} setShowGuideEdit={setShowGuideEdit} setScene={setScene} />
                     ) }
-                    <div className={`p-3 ${styles.Guide}`}>
-                    <h5 style={{ textTransform: 'uppercase'}} className='text-center mb-3'>Workspace Guide</h5>
-                      <p>{workspace_guide} </p>
-                    </div>
+                    <Row>
+                      <Col xs={12} >
+                        <div className={`px-3 pb-3 ${styles.Guide}`}>
+                          <p style={{ textTransform: 'uppercase'}} className={`mx-0 px-0 pb-0  text-center ${styles.GuideTitle}`} >Workspace Guide</p>
+                          <p>{workspace_guide} </p>
+                        </div>
+                      </Col>
+                    </Row>
                     </Col>
-                    <Col xs={3}>
-                      {/* <Row>
-                        <Col> */}
+                    <Col className='mx-0 px-0' xs={5} md={3} >
+                      <Row>
+                        <Col className='text-center'>
                           <Button
                           className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
                           onClick={() => setShowInts(showInts => !showInts)} > Instructions
                         </Button>
-                        {/* </Col>
-                      </Row> */}
-                      <Button
-                        className={`my-3 py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                        onClick={() => setShowGuide(showGuide => !showGuide)} > Add Workspace Guide
-                      </Button>
-                      <Button
-                        className={` py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                        onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > Edit Workspace Guide
-                      </Button>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className='text-center'>
+                          <Button
+                            className={`my-3 py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                            onClick={() => setShowGuide(showGuide => !showGuide)} > Add Guide
+                          </Button>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className='text-center'>
+                          <Button
+                            className={` py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                            onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > Edit Guide
+                          </Button>
+                        </Col>
+                      </Row>
                     </Col>
                   </Row>
+                  <hr/>
                   <Row>
                     <Col md={12}>
-                    <h5 style={{ textTransform: 'uppercase'}} className={`text-center my-5 pl-3 py-1 `}>Universal Workspace</h5>
+                    <h5 style={{ textTransform: 'uppercase'}} className={` mt-3 mb-3  mb-3  py-1 `}>Universal Workspace</h5>
                     </Col>
                   </Row>
                   <Row>
@@ -410,7 +431,7 @@ const Scene = (props) => {
                   </Row>
                   <Row>
                     <Col md={12}>
-                    <h5 style={{ textTransform: 'uppercase'}} className={`text-center my-5 pl-3 py-1`}>Department Workspaces</h5>
+                    <h5 style={{ textTransform: 'uppercase'}} className={`mt-5 mb-3  py-1`}>Department Workspaces</h5>
                     </Col>
                   </Row>
                     <Row>

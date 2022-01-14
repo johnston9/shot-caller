@@ -90,11 +90,12 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         </div>
         ) : ""}
         {dept ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >
-        <span style={{ textTransform: 'capitalize'}}> {dept} department - {category}</span> </h2>
-        </div>
-        ) : ""}
+            <div>
+              <h2 className={`mb-1 ${styles.Info} text-center`} >
+              <span style={{ textTransform: 'capitalize'}}> {dept} department {category}</span> </h2>
+            </div>
+          ) : (""
+          ) }
         {allposts ? (
           <div>
         <h2 className={`mb-1 ${styles.Info} text-center`} >All Posts </h2>
@@ -118,6 +119,18 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         </Col>
         </Row>
         <Row>
+          <Col className="text-center">
+            {sceneId ? (
+              <Button onClick={() => setShow(show => !show)} 
+              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              Add Post</Button>
+            ) : (
+              ""
+            )}
+        {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
+          </Col>
+        </Row>
+        <Row>
         <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
         {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
@@ -134,7 +147,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         </Form>
         </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col className="text-center">
             {sceneId ? (
               <Button onClick={() => setShow(show => !show)} 
@@ -145,7 +158,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
             )}
         {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
           </Col>
-        </Row>
+        </Row> */}
         <Row className="mt-3">
           <Col>
         {hasLoaded ? (

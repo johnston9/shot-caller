@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/DayPage.module.css";
+import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import TopBox from '../../components/TopBox';
@@ -45,7 +45,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
 
     return (
         <div>
-            <h3 className='text-center'>Shotlist</h3>
+            <h5 style={{ textTransform: 'uppercase'}} className={` mt-5 mb-4 pl-3 py-1 ${styles.SubTitle }`}>Shotlist</h5>
             <Row>
               <Col className="text-center">
                     <Button onClick={() => setAddShot(addShot => !addShot)} 

@@ -212,7 +212,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
     <Row>
     <Col md={6} className="p-0 p-md-2">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
-        <p>Scene {number} - Dept {dept} - {category} </p>
+        <p style={{textTransform: 'capitalize'}}>Scene {number} - {dept} Dept {category} </p>
         <p>SceneId {sceneId}</p>
           {textFields}
           </Container>
@@ -462,6 +462,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
       </Col>
     </Row>
   </Form>
+  <hr/>
   </div>
   );
 }
