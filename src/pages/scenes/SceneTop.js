@@ -39,10 +39,11 @@ const SceneTop = (props) => {
 
     return (
         <div>
-            <Card className={`text-center ${styles.Scene }`} border="info" >
-                  <Card.Header className="mb-0 px-2">
+            <Card className={`text-center ${styles.SceneCard }`} >
+                  <Card.Header className={`mb-0 px-2 py-1 ${styles.SceneCard }`}>
                   <Row className='mx-0 d-flex align-items-center'>
-                    <Col className='mx-0 px-0' xs={1}></Col>
+                    <Col className='mx-0 px-0' xs={1}>
+                    </Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
                     <h5 className={` ${styles.Titlelist }`}>Scene {number} 
                     </h5>
@@ -59,20 +60,15 @@ const SceneTop = (props) => {
                     <div className={` ${styles.Div25 }`}>
                     <span className={styles.Italics }>{title}</span>
                     </div>
-                    {/* <span>Scene {number} </span> 
-                          <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        /> */}
                   </Card.Header>
                   <Card.Body className="p-1" >
                       <Link to={`/scenes/${id}`}>
                         <div className={` ${styles.Div50 }`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>
                       </div>
-                      <div className={` ${styles.Div50 }`}><p className="mb-1">
+                      {/* <div className={` ${styles.Div50 }`}><p className="mb-1">
                         {character1} {character2} {character3}</p></div>
-                      <hr className='m-0'/>
+                      <hr className='m-0'/> */}
                       <div className={` ${styles.Div50 }`}><p>{action}</p></div>
                       </Link>
                   </Card.Body>

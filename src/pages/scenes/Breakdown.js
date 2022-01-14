@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
@@ -11,32 +9,15 @@ import btnStyles from "../../styles/Button.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
-import Storyboard from './Storyboard';
 import SceneCostumes from './SceneCostumes';
-import ShotlistPage from './ShotlistPage';
 import SceneCosOther from './SceneCosOther';
 import SceneCosBack from './SceneCosBack';
-import WorkspaceInst from './WorkspaceInst';
-import WorkspaceGuideForm from './WorkspaceGuideForm';
-import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 
 const Breakdown = (props) => {
     useRedirect("loggedOut");
     const [showCos, setShowCos] = useState(false);
     const [showCosOther, setShowCosOther] = useState(false);
     const [showCosBack, setShowCosBack] = useState(false);
-    const [showlist, setShowlist] = useState(false);
-    const [showstory, setShowstory] = useState(false);
-    const [showStoryShot, setShowStoryShot] = useState(false);
-    const [showInts, setShowInts] = useState(false);
-    const [showGuide, setShowGuide] = useState(false);
-    const [showGuideEdit, setShowGuideEdit] = useState(false);
-    const setSceneId = useSetSceneContext();
-    const setNumber = useSetNumberContext();
-    const setDept = useSetDeptContext();
-    const setCategory = useSetCategoryContext();
-    const category = useCategoryContext();
     const { id, number, title, act, int_ext, day_night, time, location,
       filming_location, character1, character1_costume, character2, 
       character2_costume, character3, character3_costume, character4, 

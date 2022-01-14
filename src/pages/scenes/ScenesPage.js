@@ -87,7 +87,7 @@ const ScenesPage = ({message, filter = "" }) => {
               </Col>
             </Row>
             <Row>
-                <Col className="mt-5" xs={12} md={{ span: 6, offset: 3 }} >
+                <Col className="mt-3" xs={12} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={styles.SearchBar}
                     onSubmit={(event) => event.preventDefault()}

@@ -80,7 +80,69 @@ figure {
   background: #555;
 }
 
+/*----------------Fonts--------------------*/
+
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.playball {
+  font-family: 'Playball', cursive;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif; 
+}
+
+/*-----line breaks------*/
+
+hr.gold50 {
+	border-top: 2px solid gold;
+	margin: 10px auto 0px;
+	width: 50%;
+}
+
+hr.gold70 {
+	border-top: 2px solid gold;
+	margin: 5px auto 5px;
+	width: 70%;
+}
+
+hr.gold100 {
+	border-top: 2px solid gold;
+	margin: 5px auto 5px;
+	width: 100%;
+}
+
+hr.goldleft {
+	border-top: 2px solid gold;
+	width: 200px;
+}
+
+hr.grey100 {
+    border-top: 2px solid #666666;
+	margin: 5px auto 0px;
+	width: 100%;
+}
+
 /*---------------------colours----------------------------*/
+
+.goldbright {
+  color: rgb(255,215,0);
+}
+
+.golddark {
+  font-weight: 700;
+  color: rgb(140, 111, 25, 99%);
+}
+
+.light-blue {
+  background: rgb(232, 240, 254);
+}
 
 .shadow-light {
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);

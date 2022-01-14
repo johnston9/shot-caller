@@ -17,6 +17,10 @@
   .Button:hover:active {
     background-color: #2142b2 !important;
   }
+
+  .Button:hover {
+    background-color: rgb(5, 187, 187);
+  }
   
   .Button:active {
     background-color: #6380e1 !important;
@@ -25,6 +29,24 @@
   .Button:focus {
     background-color: #2142b2;
   }
+
+  .Back {
+    background-color: aqua;
+  }
+  
+
+  .btn-gold {
+    background: rgb(255,215,0);
+    color: #000;
+    font-weight: 700;
+}
+
+.btn-gold:hover {
+    background: rgb(71, 68, 68);
+    color: rgb(232, 240, 254);
+    font-weight: 700;
+    text-decoration: none;
+}
   
   .Wide {
     padding: 10px 50px;
@@ -41,29 +63,21 @@
     width: 100%;
   }
   
-  .Blue,
-  .BlueOutline:hover,
-  .Bright:hover {
-    background-color: #5477e9;
+  .Blue {
+    background-color: #32c0e4;
     color: #ffffff;
   }
+
+  .BlueLight {
+    background: rgb(232, 240, 254);
+    color: #000;
+    font-weight: 700;
+}
   
   .BlueOutline,
   .Blue:hover {
     background-color: #ffffff;
     color: #2142b2;
-  }
-  
-  .Black,
-  .BlackOutline:hover {
-    background-color: #242a3d;
-    color: aliceblue;
-  }
-  
-  .Black:hover,
-  .BlackOutline {
-    background-color: aliceblue;
-    color: #242a3d;
   }
   
   .Bright {

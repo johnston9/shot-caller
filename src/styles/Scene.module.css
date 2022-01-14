@@ -1,12 +1,28 @@
-kkk
+/* Scene Top */
+
+.SceneCard {
+  background-color: rgb(248, 234, 214);
+  border: 1px solid rgba(0,0,0,0);
+}
+
+/* .SceneCard a {
+  color: #fafafa;
+} */
+
+.SceneCard a:hover {
+  background-color: rgb(248, 234, 214);
+  color: gold;
+}
 
 .Back {
   background-color: #fff;
 }
 
-.Header {
+/* .Header {
   background-color: #fff;
-}
+} */
+
+/* Scene */
 
 .BreakBox {
   border:1px solid aquamarine;
@@ -29,12 +45,30 @@ kkk
 .GuideTitle {
   font-style: italic;
 }
+
+.Button {
+  color: rgb(7, 233, 233);
+}
+
+.Button:hover {
+  color: rgb(9, 182, 182);
+}
+
 .Instructions {
   background-color: rgb(149, 240, 240);
 }
 
 .Guide {
   background-color: cornsilk;
+}
+
+.UniImg {
+  max-height: 130px;
+  cursor: pointer;
+}
+
+.CardBox {
+  border: 1px solid #fff;
 }
 
 .CostumeLink {

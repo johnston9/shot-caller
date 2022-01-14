@@ -12,10 +12,8 @@ import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import TopBox from '../../components/TopBox';
-import ShotListCreate from './ShotListCreate';
 import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
-import Shot from './Shot';
 
 const Storyboard = ({storyboard} ) => {
     return (
