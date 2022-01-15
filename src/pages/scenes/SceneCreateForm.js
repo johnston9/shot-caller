@@ -1030,7 +1030,7 @@ function SceneCreateForm({topbox}) {
   );
 
   return (
-    <div>
+    <div className= {` ${styles.AddScene}`}>
       {topbox ? (
         ""
       ) : (

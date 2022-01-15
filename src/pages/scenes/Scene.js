@@ -283,17 +283,19 @@ const Scene = (props) => {
                         </p>
                         </Col>
                         <Col xs={4} className='mx-0 px-0 text-center'>
-                          <p
-                            className={`py-0 mb-1 ${styles.Button}`}
-                            // className={`my-3 py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                            onClick={() => setShowGuide(showGuide => !showGuide)} > Add Guide
-                          </p>
                         </Col>
                         <Col xs={4} className='mx-0 px-0 text-center'>
-                          <p
+                          {workspace_guide ? (
+                            <p
                             className={` py-0 mb-1 ${styles.Button} `}
                             onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > Edit Guide
                           </p>
+                          ) : (
+                            <p
+                            className={`py-0 mb-1 ${styles.Button}`}
+                            onClick={() => setShowGuide(showGuide => !showGuide)} > Add Guide
+                          </p>
+                          )}
                         </Col>
                       </Row>
                     </div>

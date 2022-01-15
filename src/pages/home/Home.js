@@ -32,59 +32,65 @@ const Home = () => {
             />
           </Col>
           <Col className="pb-0" xs={10}>
-              <Row className="text-center mt-5">
-                  <Col md={4} >
+              <Row className="text-center">
+                <Col md={2}></Col>
+                  <Col md={8} >
                     <Link to={`/scenes`} >
-                      <div className={styles.Homebox}>
-                      <h5 className={`text-center pt-2 ${styles.Title}`}>Workspace </h5>
-                      <p className="mt-2">Primary scenes workspace</p>
-                      </div>
-                    </Link>
-                  </Col>
-                  <Col md={4} >
-                    <Link to={`/days`} >
-                      <div className={styles.Homebox}>
-                          <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
-                      </div>
-                    </Link>
-                  </Col>
-                  <Col md={4} >
-                    <Link to={`/profiles`} >
-                      <div className={`${styles.Homebox}`}>
-                      <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
-                      <p className="mt-2">View and follow profiles</p>
-                      <p className="mt-2">View feed and archived posts</p>
+                      <div className={`px-3 py-1  ${styles.Homebox1}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Primary Scenes Workspace </h5>
+                      <p className="mt-2">
+                         Create scenes and breakdowns and collobarate on them 
+                         in their universal or department workspaces</p>
+                         <p> Create and view storyboards
+                         and shotlists
+                      </p>
                       </div>
                     </Link>
                   </Col>
               </Row>
-              <Row className="text-center mt-5">
-                  <Col md={4} >
+              <Row className="text-center">
+                <Col md={1}></Col>
+                <Col md={5} >
                     <Link to={`/depts/page`} >
-                      <div className={styles.Homebox}>
-                      <h5 className={`text-center pt-2 ${styles.Title}`}>Workspace Posts by Department</h5>
-                      <p className="mt-2"> Requirements and Finals ordered by scene number</p>
+                    <div className={`px-3 py-1  ${styles.Homebox}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Posts by Department</h5>
+                      <p className="mt-2">Access scene workspace posts by department. 
+                      Requirements and Finals ordered by scene number</p>
                       </div>
                     </Link>
                   </Col>
-                  <Col md={4} >
-                    <Link to={`/depts/general`} >
-                      <div className={styles.Homebox}>
-                          <h5 className={`text-center pt-2 ${styles.Title}`}>Departments</h5>
-                          <p className="mt-2"> View and add posts to departments outside of scenes</p>
+                  <Col md={1}></Col>
+                  <Col md={5} >
+                    <Link to={`/days`} >
+                    <div className={`px-3 py-1  ${styles.Homebox}`}>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
+                          <p className="mt-2"> Simple autogenerating schedule creater pre-populated with scene info. </p>
                       </div>
                     </Link>
-                  </Col>
-                  <Col md={4} >
+                  </Col>    
+              </Row>
+              <Row className="text-center">
+              <Col md={1}></Col>
+                  <Col md={5} >
                     <Link to={`/profiles`} >
-                      <div className={styles.Homebox}>
-                      <h5 className={`text-center pt-2 ${styles.Title}`}>xxx</h5>
+                      <div className={`px-3 py-1 ${styles.Homebox}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles and Posts</h5>
+                      <p className="mt-2">View and follow profiles</p>
+                      <p className="mt-2">Access feed and archived posts</p>
+                      </div>
+                    </Link>
+                  </Col>
+                  <Col md={1}></Col>
+                  <Col md={5} >
+                    <Link to={`/depts/general`} >
+                    <div className={`px-3 py-1 ${styles.Homebox}`}>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Departments</h5>
+                          <p className="mt-2"> Separate departments section for communication
+                          outside of the scenes workspaces</p>
                       </div>
                     </Link>
                   </Col>
               </Row>
-            <Container className="mt-3" >
-            </Container>
           </Col>
           <Col
             xs={1} 
@@ -95,7 +101,6 @@ const Home = () => {
               src={door}
             /> */}
           </Col>
-
             </Row>
         </div>
     )

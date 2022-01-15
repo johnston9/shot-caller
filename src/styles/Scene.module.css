@@ -1,17 +1,46 @@
-/* Scene Top */
+/* scene card  */
 
 .SceneCard {
-  background-color: rgb(248, 234, 214);
+  background-color: cornsilk;
   border: 1px solid rgba(0,0,0,0);
+  transition-timing-function: ease;
+  transition: border .5s, background-color .5s, transform .5s;
+}
+
+.SceneCard:hover {
+  background-color: rgb(246, 223, 189);
+  color: #000;
+  border: 5px solid #fff;
+  /* animation: bounce 1s; */
+  /* -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);  */
+  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
 }
 
 /* .SceneCard a {
-  color: #fafafa;
+  color: #000;
 } */
 
 .SceneCard a:hover {
-  background-color: rgb(248, 234, 214);
-  color: gold;
+  color: #000;
 }
 
 .Back {
@@ -21,6 +50,11 @@
 /* .Header {
   background-color: #fff;
 } */
+
+/* add scene */
+.AddScene {
+  background-color: cornsilk;
+}
 
 /* Scene */
 

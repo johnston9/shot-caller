@@ -40,7 +40,8 @@ const SceneTop = (props) => {
     return (
         <div>
             <Card className={`text-center ${styles.SceneCard }`} >
-                  <Card.Header className={`mb-0 px-2 py-1 ${styles.SceneCard }`}>
+            <div className={`mb-0 px-2 py-1`}>
+                  {/* <Card.Header className={`mb-0 px-2 py-1 ${styles.SceneCardHeader }`}> */}
                   <Row className='mx-0 d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}>
                     </Col>
@@ -60,9 +61,10 @@ const SceneTop = (props) => {
                     <div className={` ${styles.Div25 }`}>
                     <span className={styles.Italics }>{title}</span>
                     </div>
-                  </Card.Header>
+                </div>
+                  {/* </Card.Header> */}
                   <Card.Body className="p-1" >
-                      <Link to={`/scenes/${id}`}>
+                      <Link className={`${styles.SceneCardBody }`} to={`/scenes/${id}`}>
                         <div className={` ${styles.Div50 }`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>
                       </div>

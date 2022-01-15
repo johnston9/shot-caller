@@ -25,9 +25,25 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
     const [postData, setPostData] = useState({
         workspace_guide: "",
     })
-    const {workspace_guide } = postData;
+    const { workspace_guide } = postData;
 
-    const history = useHistory()
+    useEffect(() => {
+      const handleMount = async () => {
+        try {
+          const { data } = await axiosReq.get(`/scenes/${id}/`);
+          console.log(data)
+          const { workspace_guide } = data;
+   
+      setPostData({ workspace_guide });
+        } catch (err) {
+          console.log(err);
+        }
+      };
+  
+      handleMount();
+    }, []);
+
+    const history = useHistory();
     
     const handleChange = (event) => {
     setPostData({
@@ -46,7 +62,7 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
         const {data} = await axiosReq.put(`/scenes/${id}/`, formData);
         console.log(data)
         setShowGuideEdit(false);
-        // setScene(data);
+        setScene({ results: [data] });
     } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {

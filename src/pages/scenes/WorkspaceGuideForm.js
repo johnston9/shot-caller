@@ -46,7 +46,7 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
         const {data} = await axiosReq.put(`/scenes/${id}/`, formData);
         console.log(data)
         setShowGuide(false);
-        // setScene(data);
+        setScene({ results: [data] });
     } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
