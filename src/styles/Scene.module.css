@@ -1,10 +1,11 @@
 /* scene card  */
+import j2 from 
 
 .SceneCard {
-  background-color: cornsilk;
+  /* background-color: cornsilk; */
   border: 1px solid rgba(0,0,0,0);
   transition-timing-function: ease;
-  transition: border .5s, background-color .5s, transform .5s;
+  transition: border .5s, background-color .5s, transform 1s;
 }
 
 .SceneCard:hover {

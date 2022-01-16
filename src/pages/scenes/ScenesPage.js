@@ -18,6 +18,9 @@ import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TopBox from '../../components/TopBox';
 import SceneCreateForm from './SceneCreateForm';
+import j8 from "../../assets/j8.png";
+import j2 from "../../assets/j2.png"; 
+import door from "../../assets/door.png"; 
 
 const ScenesPage = ({message, filter = "" }) => {
     useRedirect("loggedOut");
@@ -141,11 +144,47 @@ const ScenesPage = ({message, filter = "" }) => {
             {hasLoaded ? (
           <>
             {scenes.results.length ? (
-                scenes.results.map((scene) => (
-                  <Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
-                  <SceneTop key={scene.id} {...scene} setScenes={setScenes} />
-                  </Col>
-                ))) 
+                scenes.results.map((scene, index) => {
+                  return (
+                    <Col xs={4} md={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
+                      <SceneTop 
+                        key={scene.id} 
+                        {...scene} 
+                        setScenes={setScenes}
+                        style={{ backgroundImage: (index % 2 == 0) ? `url(${j2})` : `url(${door})`, objectFit: "cover", height: '150px', width: 'auto', repeat: 'no-repeat' }}
+                        // style={{ backgroundColor: (index % 2 == 0) ? '#ecf0f1' : '#fff' }}
+                        // background={'#fff'}
+                        />
+                      </Col>
+                    // (index % 2 == 0) ?
+                    //   (<Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
+                    //   <SceneTop 
+                    //     key={scene.id} 
+                    //     {...scene} 
+                    //     setScenes={setScenes}
+                    //     background={'#fff'}
+                    //     />
+                    //   </Col>) : (<Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
+                    //   <SceneTop 
+                    //     key={scene.id} 
+                    //     {...scene} 
+                    //     setScenes={setScenes}
+                    //     background={'#000'}
+                    //     />
+                    //   </Col>)
+
+                )}
+                ))
+                
+                  // <Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
+                  // <SceneTop 
+                  //   key={scene.id} 
+                  //   {...scene} 
+                  //   setScenes={setScenes}
+                  //   background={back}
+                  //   style={{ backgroundColor: (index % 2 == 0) ? '#ecf0f1' : '#fff' }}
+                  //    />
+                  // </Col>
 
             //   <InfiniteScroll
             //   children={scenes.results.map((scene) => (

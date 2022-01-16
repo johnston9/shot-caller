@@ -19,7 +19,9 @@ const SceneTop = (props) => {
         character1,
         character2,
         character3,
-        location
+        location,
+        background,
+        style,
     } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();
@@ -39,7 +41,8 @@ const SceneTop = (props) => {
 
     return (
         <div>
-            <Card className={`text-center ${styles.SceneCard }`} >
+          <Card style={style} className={`text-center ${styles.SceneCard }`} >
+            {/* <Card style={{backgroundColor: background }} className={`text-center ${styles.SceneCard }`} > */}
             <div className={`mb-0 px-2 py-1`}>
                   {/* <Card.Header className={`mb-0 px-2 py-1 ${styles.SceneCardHeader }`}> */}
                   <Row className='mx-0 d-flex align-items-center'>
