@@ -26,7 +26,7 @@ const ScheduleScene = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const {sceneAll, day, date, day_id, id, number, int_ext, start_time, end_time,
         location, filming_location, day_night, action, pages,
-        new_info} = props
+        new_info, style } = props
 
         // character1, character1_costume, character2, 
         // character2_costume, character3, character3_costume, character4, 
@@ -64,10 +64,10 @@ const ScheduleScene = (props) => {
           };
 
     return (
-        <div className={`px-3 pt-4 mt-3 ${styles.SceneBox}`} >
+        <div style={style} className={`px-3 pt-4 ${styles.SceneBox}`} >
             {/* titles */}   
-            <p >Day {day} --- Date {date} </p>
-            <p >Day Id {day_id} --- scene id{id} </p>                   
+            {/* <p >Day {day} --- Date {date} </p>
+            <p >Day Id {day_id} --- scene id{id} </p>                    */}
             <Row  >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 

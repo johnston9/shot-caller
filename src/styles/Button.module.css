@@ -84,3 +84,9 @@
     padding: 2px 10px;
     width: 100%;
   }
+
+  @media screen and (max-width: 600px) {
+    .Wide2 {
+      width: 50%;
+    }
+  }

@@ -1,11 +1,11 @@
 /* scene card  */
-import j2 from 
 
 .SceneCard {
-  /* background-color: cornsilk; */
+  background-color: cornsilk;
   border: 1px solid rgba(0,0,0,0);
   transition-timing-function: ease;
-  transition: border .5s, background-color .5s, transform 1s;
+  transition: border .5s, background-color .5s, transform .5s;
+  color: #000;
 }
 
 .SceneCard:hover {
@@ -36,9 +36,9 @@ import j2 from
   }
 }
 
-/* .SceneCard a {
+.SceneCard a {
   color: #000;
-} */
+}
 
 .SceneCard a:hover {
   color: #000;
@@ -234,6 +234,10 @@ import j2 from
 
     .Titledetail {
       font-size: 1.25em;
+    }
+
+    .Titlelist {
+      font-size: 1em;
     }
 
     .SceneTitle {

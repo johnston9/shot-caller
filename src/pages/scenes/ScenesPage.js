@@ -18,9 +18,11 @@ import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TopBox from '../../components/TopBox';
 import SceneCreateForm from './SceneCreateForm';
-import j8 from "../../assets/j8.png";
-import j2 from "../../assets/j2.png"; 
-import door from "../../assets/door.png"; 
+import b1 from "../../assets/b1.png";
+import b2 from "../../assets/b2.png"; 
+import b3 from "../../assets/b3.png";
+import b4 from "../../assets/b4.png";  
+import d3 from "../../assets/d3.png"; 
 
 const ScenesPage = ({message, filter = "" }) => {
     useRedirect("loggedOut");
@@ -129,13 +131,13 @@ const ScenesPage = ({message, filter = "" }) => {
               </Col>
               <Col className='text-center' xs={6} md={3}>
               <Button
-                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                  className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
                   onClick={handleClickAct2b} >Act Two B
               </Button> 
               </Col>
               <Col className='text-center' xs={6} md={3}>
                 <Button
-                    className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                    className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Blue}`}
                     onClick={handleClickAct3} >Act Three
                 </Button>
               </Col>
@@ -151,8 +153,10 @@ const ScenesPage = ({message, filter = "" }) => {
                         key={scene.id} 
                         {...scene} 
                         setScenes={setScenes}
-                        style={{ backgroundImage: (index % 2 == 0) ? `url(${j2})` : `url(${door})`, objectFit: "cover", height: '150px', width: 'auto', repeat: 'no-repeat' }}
-                        // style={{ backgroundColor: (index % 2 == 0) ? '#ecf0f1' : '#fff' }}
+                        // style={{ backgroundImage: (index % 2 == 0) ? (`url(${b1})`) : (`url(${b3})`), 
+                        style={{ backgroundImage: (index % 3 == 0) ? (`url(${d3})`) : (index % 2 == 0) ? (`url(${d3})`) : (`url(${d3})`) , 
+                          objectFit: "contain", width: 'auto', repeat: 'no-repeat' }}
+                        // style={{ backgroundColor: (index % 3 == 0) ? '#ecf0f1' : (index % 2 == 0) ? '#fff' : '#fafafa }}
                         // background={'#fff'}
                         />
                       </Col>

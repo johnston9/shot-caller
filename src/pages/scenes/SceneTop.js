@@ -41,7 +41,7 @@ const SceneTop = (props) => {
 
     return (
         <div>
-          <Card style={style} className={`text-center ${styles.SceneCard }`} >
+          <Card className={`text-center ${styles.SceneCard }`} >
             {/* <Card style={{backgroundColor: background }} className={`text-center ${styles.SceneCard }`} > */}
             <div className={`mb-0 px-2 py-1`}>
                   {/* <Card.Header className={`mb-0 px-2 py-1 ${styles.SceneCardHeader }`}> */}
@@ -66,7 +66,7 @@ const SceneTop = (props) => {
                     </div>
                 </div>
                   {/* </Card.Header> */}
-                  <Card.Body className="p-1" >
+                  <Card.Body style={style} className="p-1" >
                       <Link className={`${styles.SceneCardBody }`} to={`/scenes/${id}`}>
                         <div className={` ${styles.Div50 }`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>

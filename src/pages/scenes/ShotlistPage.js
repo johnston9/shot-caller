@@ -107,8 +107,12 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             {/* old */}
                 <>
                     {shotlist.results.length ? (
-                        shotlist.results.map((shot) => (
-                        <Shot key={shot.id} handleMount={handleMount} shotAll={shot} />
+                        shotlist.results.map((shot, index) => (
+                        <Shot 
+                            style={{ backgroundColor: (index % 3 == 0) ? '#F8E5E5' : (index % 2 == 0) ? '#FAF1CF' : '#ecf0f1' }}
+                            key={shot.id} 
+                            handleMount={handleMount} 
+                            shotAll={shot} />
                         ))) 
                     : (
                     <Container className={appStyles.Content}>

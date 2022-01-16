@@ -119,8 +119,13 @@ const DayPage = () => {
                 <Row>
                     <Col className='px-0 mx-0'>                   
                     {dayScenes.results.length ? (
-                        dayScenes.results.map((scene) => (
-                            <ScheduleScene {...scene} dayid={id} sceneAll={scene} key={scene.id} />
+                        dayScenes.results.map((scene, index) => (
+                            <ScheduleScene 
+                                style={{ backgroundColor: (index % 3 == 0) ? '#F8E5E5' : (index % 2 == 0) ? '#FAF1CF' : '#ecf0f1' }}
+                                {...scene} 
+                                dayid={id} 
+                                sceneAll={scene} 
+                                key={scene.id} />
                         ))) : ("")}
                 </Col>
                 </Row>

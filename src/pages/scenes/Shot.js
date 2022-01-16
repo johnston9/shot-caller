@@ -45,7 +45,7 @@ const Shot = (props) => {
         image: "",
     });
 
-    const {shotAll, handleMount, setAddShot, } = props
+    const {shotAll, handleMount, setAddShot, style } = props
     const { id,
             scene_id,
             scene_number,
@@ -102,7 +102,7 @@ const Shot = (props) => {
     };
 
     return (
-        <div>
+        <div style={style}>
             {/* titles */}   
             <p>Id {id} 
             Scene_id {scene_id}
