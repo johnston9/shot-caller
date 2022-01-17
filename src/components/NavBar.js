@@ -116,7 +116,7 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/depts/general"
         >
-          <i className="navicon fas fa-stream"></i>Departments
+          Departments
         </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item >
@@ -168,6 +168,13 @@ const NavBar = () => {
         >
           <i className="navicon fas fa-play"></i>Characters
       </NavLink> */}
+
+      <NavLink
+          className={`mt-2 pt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/moodshots"
+        >Moodshots
+      </NavLink>
 
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}

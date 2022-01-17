@@ -21,6 +21,7 @@ import WorkspaceInst from './WorkspaceInst';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
+import MoodshotsPage from '../moodshots/MoodshotsPage';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -29,6 +30,7 @@ const Scene = (props) => {
     const [showCosBack, setShowCosBack] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showBreak, setShowBreak] = useState(false);
+    const [showMoods, setShowMoods] = useState(false);
     const [showstory, setShowstory] = useState(false);
     const [showStoryShot, setShowStoryShot] = useState(false);
     const [showInts, setShowInts] = useState(false);
@@ -181,6 +183,13 @@ const Scene = (props) => {
       history.push(`/dept/category`);
     };
 
+    const handleClickMoods = () => {
+      setSceneId(id); 
+      setNumber(number);
+      history.push(`/moodshots/scene`);
+
+    };
+
     return (
         <div>
             <div className={` ${styles.Header}`}>
@@ -199,6 +208,14 @@ const Scene = (props) => {
                     </Col>
                     </Row>
                   </div>
+                  <Row>
+                  <Col xs={6} md={3} className='text-center'>
+                            <Button
+                              className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                              onClick={() => handleClickMoods()} > Moodshots
+                            </Button>
+                        </Col>
+                  </Row>
                   <Row className='mb-0 mt-2'>
                     <Col xs={6} md={3} className='text-center'>
                             <Button
@@ -226,10 +243,16 @@ const Scene = (props) => {
                     </Col>
                   </Row>  
                   <Card.Body className='pt-0'>
+                  {!showMoods ? (
+                      ""
+                    ) : (
+                      <MoodshotsPage sceneId={id} number={number} location={location} setScene={setScene} />
+                      ) }
                       {!showBreak ? (
                       ""
                     ) : (
-                      <Breakdown scene={scene} {...scene} setScene={setScene} />                    ) }             
+                      <Breakdown scene={scene} {...scene} setScene={setScene} /> 
+                      ) }             
                     {!showstory ? (
                       ""
                     ) : (

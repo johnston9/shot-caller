@@ -39,6 +39,8 @@ import Characters from './pages/characters/Characters';
 import CharacterPage from './pages/characters/CharacterPage';
 import CharacterCreate from './pages/characters/CharacterCreate';
 import CharacterEdit from './pages/characters/CharacterEdit';
+import MoodshotCreate from './pages/moodshots/MoodshotCreate';
+import MoodshotsPage from './pages/moodshots/MoodshotsPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -92,6 +94,30 @@ function App() {
              />
              )} />
         <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
+        {/* MOODS*/}
+        <Route exact path="/moodshot/create" render={() => <MoodshotCreate />} />
+        {/* all moods */}
+        <Route
+            exact
+            path="/moodshots"
+            render={() => (
+              <MoodshotsPage 
+               message="No results found. Please add a shot" />
+            )}
+          />
+        {/* Moodshots for scene */}
+        <Route
+            exact
+            path="/moodshots/scene"
+            render={() => (
+              <MoodshotsPage
+                message="No results found."
+                filter={`scene=${sceneId}`}
+                sceneId={sceneId}
+                number={number}
+              />
+            )}
+          />
         {/* SCENES*/}
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route
@@ -148,7 +174,7 @@ function App() {
               />
             )}
           />
-        {/* Posts for scene bu dept and category*/}
+        {/* Posts for scene by dept and category*/}
         <Route
             exact
             path="/dept/category"

@@ -1,17 +1,18 @@
 /* scene card  */
 
 .SceneCard {
-  background-color: cornsilk;
-  border: 1px solid rgba(0,0,0,0);
+  /* background-color: cornsilk; */
+  /* background-color: rgb(244, 250, 249); */
+  border: 5px solid #fff;
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
   color: #000;
 }
 
 .SceneCard:hover {
-  background-color: rgb(246, 223, 189);
+  background-color: rgb(209, 227, 250);
   color: #000;
-  border: 5px solid #fff;
+  border: 10px solid #fff;
   /* animation: bounce 1s; */
   /* -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);

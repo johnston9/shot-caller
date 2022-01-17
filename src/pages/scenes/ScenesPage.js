@@ -23,6 +23,13 @@ import b2 from "../../assets/b2.png";
 import b3 from "../../assets/b3.png";
 import b4 from "../../assets/b4.png";  
 import d3 from "../../assets/d3.png"; 
+import jb2 from "../../assets/jb2.png"; 
+import jb3 from "../../assets/jb3.png";
+import jb4 from "../../assets/jb4.png";  
+import jb5 from "../../assets/jb5.png"; 
+import jb6 from "../../assets/jb6.png";  
+import jb7 from "../../assets/jb7.png"; 
+import r1 from "../../assets/r1.png"; 
 
 const ScenesPage = ({message, filter = "" }) => {
     useRedirect("loggedOut");
@@ -154,8 +161,8 @@ const ScenesPage = ({message, filter = "" }) => {
                         {...scene} 
                         setScenes={setScenes}
                         // style={{ backgroundImage: (index % 2 == 0) ? (`url(${b1})`) : (`url(${b3})`), 
-                        style={{ backgroundImage: (index % 3 == 0) ? (`url(${d3})`) : (index % 2 == 0) ? (`url(${d3})`) : (`url(${d3})`) , 
-                          objectFit: "contain", width: 'auto', repeat: 'no-repeat' }}
+                        style={{ backgroundImage: (index % 3 == 0) ? (`url(${r1})`) : (index % 2 == 0) ? (`url(${r1})`) : (`url(${r1})`) , 
+                          objectFit: "fill", width: 'auto', repeat: 'no-repeat' }}
                         // style={{ backgroundColor: (index % 3 == 0) ? '#ecf0f1' : (index % 2 == 0) ? '#fff' : '#fafafa }}
                         // background={'#fff'}
                         />

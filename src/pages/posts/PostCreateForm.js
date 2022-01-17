@@ -156,6 +156,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
                 <Form.Label className="p-1" >Title</Form.Label>
                 <Form.Control 
                 type="text"
+                className={styles.Input}
                 name="title"
                 value={title}
                 onChange={handleChange}
