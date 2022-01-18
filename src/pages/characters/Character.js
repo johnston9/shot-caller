@@ -34,7 +34,7 @@ const Character = (props) => {
             costume5,
             costume6,
             costume7,
-            costume8,  
+            makeup,  
             costume1_image,
             costume2_image,
             costume3_image,
@@ -42,7 +42,7 @@ const Character = (props) => {
             costume5_image,
             costume6_image,
             costume7_image,
-            costume8_image } = props;
+            makeup_image } = props;
     const history = useHistory();
 
     const handleEdit = () => {
@@ -102,6 +102,16 @@ const Character = (props) => {
                 <p>{requirements} </p>
                 </Col>
             </Row>
+            <Row>
+                <Col xs={6}>
+                <p>PICKUP ADDRESS</p>
+                <p>{pickup_address} </p>
+                </Col>
+                <Col xs={6}>
+                <p>SECOND SICKUP ADDRESS</p>
+                <p>{pickup_address_2} </p>
+                </Col>
+            </Row>
             <hr/>
             <h5 className='my-3'>Schedule Info</h5>
             <Row>
@@ -116,8 +126,19 @@ const Character = (props) => {
             </Row>
             <hr/>
             <h5 className='my-3'>Costumes</h5>
-            {/* costume 1/2 */}
+            {/* makeup/costume 1 */}
             <Row>
+            <Col xs={6}>
+                {makeup &&  <> 
+                <p>Makeup</p>
+                <p>{makeup} </p>
+                </>}
+                {makeup_image && <> 
+                    <p>Makeup Image</p>
+                    <Image src={makeup_image} alt="makeup image" height="200"  />
+                    </>
+                    }
+                </Col>  
             <Col xs={6}>
                 {costume1 &&  <> 
                 <p>Costume 1</p>
@@ -129,6 +150,9 @@ const Character = (props) => {
                     </>
                     }
                 </Col>
+            </Row>
+            {/* costume 2/3 */}
+            <Row>
                 <Col xs={6}>
                 {costume2 &&  <> 
                 <p>Costume 2</p>
@@ -140,9 +164,6 @@ const Character = (props) => {
                     </>
                     }
                 </Col>                
-            </Row>
-            {/* costume 3/4 */}
-            <Row>
             <Col xs={6}>
                 {costume3 &&  <> 
                 <p>Costume 3</p>
@@ -154,6 +175,9 @@ const Character = (props) => {
                     </>
                     }
                 </Col>
+            </Row>
+            {/* costume 4/5 */}
+            <Row>
                 <Col xs={6}>
                 {costume4 &&  <> 
                 <p>Costume 4</p>
@@ -165,9 +189,6 @@ const Character = (props) => {
                     </>
                     }
                 </Col>                
-            </Row>
-            {/* costume 5/6 */}
-            <Row>
             <Col xs={6}>
                 {costume5 &&  <> 
                 <p>Costume 5</p>
@@ -179,6 +200,9 @@ const Character = (props) => {
                     </>
                     }
                 </Col>
+            </Row>
+            {/* costume 6/7 */}
+            <Row>
                 <Col xs={6}>
                 {costume6 &&  <> 
                 <p>Costume 6</p>
@@ -190,9 +214,6 @@ const Character = (props) => {
                     </>
                     }
                 </Col>                
-            </Row>
-            {/* costume 7/8 */}
-            <Row>
             <Col xs={6}>
                 {costume7 &&  <> 
                 <p>Costume 7</p>
@@ -203,18 +224,7 @@ const Character = (props) => {
                     <Image src={costume7_image} alt="costume 7" height="200"  />
                     </>
                     }
-                </Col>
-                <Col xs={6}>
-                {costume8 &&  <> 
-                <p>Costume 8</p>
-                <p>{costume8} </p>
-                </>}
-                {costume8_image && <> 
-                    <p>Costume 8 Image</p>
-                    <Image src={costume8_image} alt="costume 8" height="200"  />
-                    </>
-                    }
-                </Col>                
+                </Col>              
             </Row>
         </div>
     )

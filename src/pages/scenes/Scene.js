@@ -50,7 +50,7 @@ const Scene = (props) => {
       character10_costume, character11, character11_costume, character12,
       character12_costume, other_characters, other_characters_costumes,
       background_artists, background_artists_costumes, shooting_date,
-      pages, action, content, storyboard, info, image, scene, 
+      pages, action, content, storyboard, info, image, scene, location_detail,
       workspace_guide, setScene } = props;
     const currentUser = useCurrentUser();
     const history = useHistory();

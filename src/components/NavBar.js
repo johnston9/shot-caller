@@ -172,6 +172,13 @@ const NavBar = () => {
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
+          to="/locations"
+        >Locations
+      </NavLink>
+
+      <NavLink
+          className={`mt-2 pt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
           to="/moodshots"
         >Moodshots
       </NavLink>

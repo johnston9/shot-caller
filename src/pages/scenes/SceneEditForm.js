@@ -35,6 +35,7 @@ const SceneEditForm = () => {
       time: "",
       pages: "",
       location: "",
+      location_detail: "",
       filming_location: "",
       shooting_date: "",
       character1: "",
@@ -81,7 +82,7 @@ const SceneEditForm = () => {
         character10_costume, character11, character11_costume, character12,
         character12_costume, other_characters, other_characters_costumes,
         background_artists, background_artists_costumes, shooting_date,
-        pages, action, content, storyboard, info, image } = postData;
+        pages, action, content, storyboard, info, image, location_detail, } = postData;
     
     const imageInput = useRef(null)
     const storyboardInput = useRef(null)
@@ -117,7 +118,7 @@ const SceneEditForm = () => {
               character10_costume, character11, character11_costume, character12,
               character12_costume, other_characters, other_characters_costumes,
               background_artists, background_artists_costumes, shooting_date,
-              pages, action, content, storyboard, info, image} = data;
+              pages, action, content, storyboard, info, image, location_detail, } = data;
      
         setPostData({ number, title, act, int_ext, day_night, time, location,
           filming_location, character1, character1_costume, character2, 
@@ -128,7 +129,7 @@ const SceneEditForm = () => {
           character10_costume, character11, character11_costume, character12,
           character12_costume, other_characters, other_characters_costumes,
           background_artists, background_artists_costumes, shooting_date,
-          pages, action, content, storyboard, info, image });
+          pages, action, content, storyboard, info, image, location_detail });
           } catch (err) {
             console.log(err);
           }
@@ -178,6 +179,7 @@ const SceneEditForm = () => {
         formData.append("time", time);
         formData.append("pages", pages);
         formData.append("location", location);
+        formData.append("location_detail", location_detail);
         formData.append("filming_location", filming_location);
         formData.append("shooting_date", shooting_date);
         formData.append("character1", character1);

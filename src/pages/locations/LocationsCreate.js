@@ -20,66 +20,54 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-const CharacterCreate = ({topbox} ) => {
+const LocationsCreate = ({topbox} ) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        role: "",
-        actor: "",
-        pickup_address: "",
-        pickup_address_2: "",
-        make_up_time: "",
-        commute_time: "",
-        email: "",
-        mobile: "",
-        agent: "",
-        diet: "",
-        requirements: "",
-        costume1: "",
-        costume2: "",
-        costume3: "",
-        costume4: "",
-        costume5: "",
-        costume6: "",
-        costume7: "",
-        makeup: "",
-        costume1_image: "",
-        costume2_image: "",
-        costume3_image: "",
-        costume4_image: "",
-        costume5_image: "",
-        costume6_image: "",
-        costume7_image: "",
-        makeup_image: "",
+        name: "",
+        description: "",
+        filming_address_primary: "",
+        filming_address2: "",
+        filming_address3: "",
+        image1_description: "",
+        image1: "",
+        image2_description: "",
+        image2: "",
+        image3_description: "",
+        image3: "",
+        image4_description: "",
+        image4: "",
+        image5_description: "",
+        image5: "",
+        image6_description: "",
+        image6: "",
+        image7_description: "",
+        image7: "",
+        image8_description: "",
+        image8: "",
       });
 
-      const { role,
-              actor,
-              pickup_address,
-              pickup_address_2,
-              make_up_time,
-              commute_time,
-              email,
-              mobile,
-              agent,
-              diet,
-              requirements,
-              costume1,
-              costume2,
-              costume3,
-              costume4,
-              costume5,
-              costume6,
-              costume7,
-              makeup,  
-              costume1_image,
-              costume2_image,
-              costume3_image,
-              costume4_image,
-              costume5_image,
-              costume6_image,
-              costume7_image,
-              makeup_image,
+      const { name,
+              description,
+              filming_address_primary,
+              filming_address2,
+              filming_address3,
+              image1_description,
+              image1,
+              image2_description,
+              image2,
+              image3_description,
+              image3,
+              image4_description,
+              image4,
+              image5_description,
+              image5,
+              image6_description,
+              image6,
+              image7_description,
+              image7,
+              image8_description,
+              image8,
         } = postData;
 
     const imageInput1 = useRef(null);
@@ -102,82 +90,80 @@ const CharacterCreate = ({topbox} ) => {
     
     const handleChangeImage1 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume1_image);
+        URL.revokeObjectURL(image1);
         setPostData({
         ...postData,
-        costume1_image: URL.createObjectURL(event.target.files[0]),
+        image1: URL.createObjectURL(event.target.files[0]),
         });
-        console.log(`costume1_image ${costume1_image}`)
     }
     };
 
     const handleChangeImage2 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume2_image);
+        URL.revokeObjectURL(image2);
         setPostData({
         ...postData,
-        costume2_image: URL.createObjectURL(event.target.files[0]),
+        image2: URL.createObjectURL(event.target.files[0]),
         });
-        console.log(`costume2_image ${costume2_image}`)
     }
     };
 
     const handleChangeImage3 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume3_image);
+        URL.revokeObjectURL(image3);
         setPostData({
         ...postData,
-        costume3_image: URL.createObjectURL(event.target.files[0]),
+        image3: URL.createObjectURL(event.target.files[0]),
         });
     }
     };
 
     const handleChangeImage4 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume4_image);
+        URL.revokeObjectURL(image4);
         setPostData({
         ...postData,
-        costume4_image: URL.createObjectURL(event.target.files[0]),
+        image4: URL.createObjectURL(event.target.files[0]),
         });
     }
     };
 
     const handleChangeImage5 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume5_image);
+        URL.revokeObjectURL(image5);
         setPostData({
         ...postData,
-        costume5_image: URL.createObjectURL(event.target.files[0]),
+        image5: URL.createObjectURL(event.target.files[0]),
         });
     }
     };
 
     const handleChangeImage6 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume6_image);
+        URL.revokeObjectURL(image6);
         setPostData({
         ...postData,
-        costume6_image: URL.createObjectURL(event.target.files[0]),
+        image6: URL.createObjectURL(event.target.files[0]),
         });
     }
     };
 
     const handleChangeImage7 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume7_image);
+        URL.revokeObjectURL(image7);
         setPostData({
         ...postData,
-        costume7_image: URL.createObjectURL(event.target.files[0]),
+        image7: URL.createObjectURL(event.target.files[0]),
         });
     }
     };
 
     const handleChangeImage8 = (event) => {
         if (event.target.files.length) {
-            URL.revokeObjectURL(makeup_image);
+            URL.revokeObjectURL(image8);
             setPostData({
             ...postData,
-            makeup_image: URL.createObjectURL(event.target.files[0]),
+            image8: URL.createObjectURL(event.target.files[0]),
             });
         }
         };
@@ -187,53 +173,48 @@ const CharacterCreate = ({topbox} ) => {
 
         const formData = new FormData();
     
-        formData.append("role", role);
-        formData.append("actor", actor);
-        formData.append("pickup_address", pickup_address);
-        formData.append("pickup_address_2", pickup_address_2);
-        formData.append("make_up_time", make_up_time);
-        formData.append("commute_time", commute_time);
-        formData.append("email", email);
-        formData.append("mobile", mobile);
-        formData.append("agent", agent);
-        formData.append("diet", diet);
-        formData.append("requirements", requirements);
-        formData.append("costume1", costume1);
-        formData.append("costume2", costume2);
-        formData.append("costume3", costume3);
-        formData.append("costume4", costume4);
-        formData.append("costume5", costume5);
-        formData.append("costume6", costume6);
-        formData.append("costume7", costume7);
-        formData.append("makeup", makeup);
+        formData.append("name", name);
+        formData.append("description", description);
+        formData.append("filming_address_primary", filming_address_primary);
+        formData.append("filming_address2", filming_address2);
+        formData.append("filming_address3", filming_address3);
+        formData.append("image1_description", image1_description);
+        formData.append("image2_description", image2_description);
+        formData.append("image3_description", image3_description);
+        formData.append("image4_description", image4_description);
+        formData.append("image5_description", image5_description);
+        formData.append("image6_description", image6_description);
+        formData.append("image7_description", image7_description);
+        formData.append("image8_description", image8_description);
         if(imageInput1.current.files[0]) {
-          formData.append("costume1_image", imageInput1.current.files[0]);
+          formData.append("image1", imageInput1.current.files[0]);
         }
         if(imageInput2.current.files[0]) {
-          formData.append("costume2_image", imageInput2.current.files[0]);
+          formData.append("image2", imageInput2.current.files[0]);
         }
         if(imageInput3.current.files[0]) {
-          formData.append("costume3_image", imageInput3.current.files[0]);
+          formData.append("image3", imageInput3.current.files[0]);
         }
         if(imageInput4.current.files[0]) {
-          formData.append("costume4_image", imageInput4.current.files[0]);
+          formData.append("image4", imageInput4.current.files[0]);
         }
         if(imageInput5.current.files[0]) {
-          formData.append("costume5_image", imageInput5.current.files[0]);
+          formData.append("image5", imageInput5.current.files[0]);
         }
         if(imageInput6.current.files[0]) {
-        formData.append("costume6_image", imageInput6.current.files[0]);
+        formData.append("image6", imageInput6.current.files[0]);
         }
         if(imageInput7.current.files[0]) {
-        formData.append("costume7_image", imageInput7.current.files[0]);
+        formData.append("image7", imageInput7.current.files[0]);
         }
         if(imageInput8.current.files[0]) {
-            formData.append("makeup_image", imageInput8.current.files[0]);
+            formData.append("image8", imageInput8.current.files[0]);
             }
       
         try {
-          const { data } = await axiosReq.post("/characters/", formData);
-          history.push(`/characters/${data.id}/`);
+          const { data } = await axiosReq.post("/locations/", formData);
+          history.push(`/locations/`);
+        //   history.push(`/locations/${data.id}/`);
         } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {
@@ -248,10 +229,10 @@ const CharacterCreate = ({topbox} ) => {
           className={`${btnStyles.Button} ${btnStyles.Blue}`}
           onClick={() => history.goBack()}
         >
-          cancel
+          Cancel
         </Button>
         <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          create
+          Create
         </Button>
       </div>
     );
@@ -261,7 +242,7 @@ const CharacterCreate = ({topbox} ) => {
       {topbox ? (
         ""
       ) : (
-        <TopBox title="Create Character" />
+        <TopBox title="Create Location" />
       ) }
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} text-left my-2`}
@@ -271,22 +252,24 @@ const CharacterCreate = ({topbox} ) => {
         </Button>
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-3" onSubmit={handleSubmit}>
-      <h3 className="text-center">Role</h3>
-      <p className="text-center">Input Roles here to add them to the Character dropdowns for the scene</p>
+      <h3 className="text-center">Location Name</h3>
+      <p className="text-center">Input Location Names here to add it to the Location dropdown for the scene.
+      If a location has a number of parts which differ greatly you can create a seperate location for each or
+      just add each part to the location detail box, eg 'kitchen', 'bedroom' e.t.c. </p>
       <Row>
       <Col md={3} ></Col>
           <Col md={6} >
-          <Form.Group controlId="role" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Role</Form.Label>
+          <Form.Group controlId="name" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Name</Form.Label>
                   <Form.Control 
                   type="text"
-                  placeholder="Role"
-                  name="role"
-                  value={role}
+                  placeholder="Name"
+                  name="name"
+                  value={name}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.role?.map((message, idx) => (
+              {errors?.name?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -298,292 +281,158 @@ const CharacterCreate = ({topbox} ) => {
           <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
         </Col>
       </Row>
-      {/* actor details */}
-      <h3 className="text-center my-3">Actor Details</h3>
-      <Row>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="actor" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Actor</Form.Label>
-                  <Form.Control 
-                  type="text"
-                  placeholder="Actor"
-                  name="actor"
-                  value={actor}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.actor?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="mobile" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Mobile</Form.Label>
-                  <Form.Control 
-                  placeholder="Mobile"
-                  type="text"
-                  name="mobile"
-                  value={mobile}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.mobile?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={12} md={4} >
-          <Form.Group controlId="email" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Email</Form.Label>
-                  <Form.Control 
-                  placeholder="Email"
-                  type="text"
-                  name="email"
-                  value={email}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.email?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-      </Row>
-      {/* times agent */}
-      <Row>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="make_up_time" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Makeup Time</Form.Label>
-                  <Form.Control 
-                  placeholder="Makeup Time"
-                  type="text"
-                  name="make_up_time"
-                  value={make_up_time}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.make_up_time?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="commute_time" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Commute Time</Form.Label>
-                  <Form.Control 
-                  placeholder="Commute Time"
-                  type="text"
-                  name="commute_time"
-                  value={commute_time}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.commute_time?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={12} md={4} >
-          <Form.Group controlId="agent" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Agent</Form.Label>
-                  <Form.Control 
-                  placeholder="Agent"
-                  type="text"
-                  name="agent"
-                  value={agent}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.agent?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-      </Row>
-      {/* pickups */}
+      {/*  details */}
       <Row>
           <Col xs={6} >
-          <Form.Group controlId="pickup_address" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Pickup Address</Form.Label>
+          <Form.Group controlId="description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Description</Form.Label>
                   <Form.Control 
-                  placeholder="Pickup Address"
                   type="text"
-                  name="pickup_address"
                   as="textarea"
                   rows={3}
-                  value={pickup_address}
+                  placeholder="Description"
+                  name="description"
+                  value={description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.pickup_address?.map((message, idx) => (
+              {errors?.description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
           </Col>
-          <Col xs={6}>
-          <Form.Group controlId="pickup_address_2" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Pickup Address 2</Form.Label>
+          <Col xs={6} >
+          <Form.Group controlId="filming_address_primary" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Primary Filming Address</Form.Label>
                   <Form.Control 
-                  placeholder="Pickup Address 2"
-                  type="text"
-                  name="pickup_address_2"
+                  placeholder="Primary Filming Address"
                   as="textarea"
                   rows={3}
-                  value={pickup_address_2}
+                  type="text"
+                  name="filming_address_primary"
+                  value={filming_address_primary}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.pickup_address_2?.map((message, idx) => (
+              {errors?.filming_address_primary?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
           </Col>
       </Row>
-      {/* Requirements */}
+      {/*  details */}
       <Row>
           <Col xs={6} >
-          <Form.Group controlId="requirements" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Requirements</Form.Label>
+          <Form.Group controlId="description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Description</Form.Label>
                   <Form.Control 
-                  placeholder="Requirements"
                   type="text"
-                  name="requirements"
                   as="textarea"
                   rows={3}
-                  value={requirements}
+                  placeholder="Description"
+                  name="description"
+                  value={description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.requirements?.map((message, idx) => (
+              {errors?.description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
           </Col>
-          <Col xs={6}>
-          <Form.Group controlId="diet" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Diet</Form.Label>
+          <Col xs={6} >
+          <Form.Group controlId="filming_address_primary" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Primary Filming Address</Form.Label>
                   <Form.Control 
-                  placeholder="Diet"
-                  type="text"
-                  name="diet"
+                  placeholder="Primary Filming Address"
                   as="textarea"
                   rows={3}
-                  value={diet}
+                  type="text"
+                  name="filming_address_primary"
+                  value={filming_address_primary}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.diet?.map((message, idx) => (
+              {errors?.filming_address_primary?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
           </Col>
       </Row>
-      <h3 className="text-center my-3">makeup - Costumes</h3>
-      {/* makeup/costume 1 */}
+      <Row>
+          <Col xs={6} >
+          <Form.Group controlId="filming_address2" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Second Filming Address</Form.Label>
+                  <Form.Control 
+                  placeholder="Second Filming Address"
+                  as="textarea"
+                  rows={2}
+                  type="text"
+                  name="filming_address2"
+                  value={filming_address2}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.filming_address2?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
+          <Col xs={6}  >
+          <Form.Group controlId="filming_address3" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Third Filming Address</Form.Label>
+                  <Form.Control 
+                  placeholder="Third Filming Address"
+                  type="text"
+                  as="textarea"
+                  rows={2}
+                  name="filming_address3"
+                  value={filming_address3}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.filming_address3?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
+      </Row>
+      {/* images */}
+      <h3 className="text-center my-3">Images</h3>
       <Row className="mb-5 text-center">
-      <Col xs={12} md={6}>
-          <Form.Group controlId="makeup" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Makeup</Form.Label>
-                  <Form.Control 
-                  placeholder="Makeup"
-                  type="text"
-                  name="makeup"
-                  as="textarea"
-                  rows={3}
-                  value={makeup}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.makeup?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          {/* makeup image. Used image-upload8, handleChangeImage8 and imageInput8 for this one */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group>
-                {makeup_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={makeup_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload8"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload8"
-                  >
-                    <Asset
-                      src={Upload}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload8"
-                  accept="image/*"
-                  onChange={handleChangeImage8}
-                  ref={imageInput8}
-                />
-              </Form.Group>
-              {errors?.makeup_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 8 """" */}
-          </Container>
-          </Col>
           <Col xs={12} md={6} >
-          <Form.Group controlId="costume1" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 1</Form.Label>
+          <Form.Group controlId="image1_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >image1 description </Form.Label>
                   <Form.Control 
-                  placeholder="Costume 1"
+                  placeholder="Image 1"
                   type="text"
-                  name="costume1"
+                  name="image1_description"
                   as="textarea"
                   rows={3}
-                  value={costume1}
+                  value={image1_description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.costume1?.map((message, idx) => (
+              {errors?.image1_description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
-              {/* costume image1 Used image-upload, handleChangeImage1 and imageInput1 for this one */}
+              {/* image1 */}
               <Container
             className={`${appStyles.Content} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center pt-3">
-                {costume1_image ? (
+                {image1 ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={costume1_image} rounded />
+                      <Image className={appStyles.Image} src={image1} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -614,30 +463,27 @@ const CharacterCreate = ({topbox} ) => {
                   ref={imageInput1}
                 />
               </Form.Group>
-              {errors?.costume1_image?.map((message, idx) => (
+              {errors?.image1?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
               </Container>
           </Col>
-      </Row>
-      {/* costume 2/3  */}
-          <Row>
           <Col xs={12} md={6}>
-          <Form.Group controlId="costume2" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 2</Form.Label>
+          <Form.Group controlId="image2_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Image2 Description</Form.Label>
                   <Form.Control 
-                  placeholder="Costume 2"
+                  placeholder="Image2 Description"
                   type="text"
-                  name="costume2"
+                  name="image2_description"
                   as="textarea"
                   rows={3}
-                  value={costume2}
+                  value={image2_description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.costume2?.map((message, idx) => (
+              {errors?.image2_description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -647,10 +493,10 @@ const CharacterCreate = ({topbox} ) => {
                   className={`${appStyles.Content} mt-3 p-0 d-flex flex-column justify-content-center`}
                   >
               <Form.Group >
-                {costume2_image ? (
+                {image2 ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={costume2_image} rounded />
+                      <Image className={appStyles.Image} src={image2} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -681,7 +527,7 @@ const CharacterCreate = ({topbox} ) => {
                   ref={imageInput2}
                 />
               </Form.Group>
-              {errors?.costume2_image?.map((message, idx) => (
+              {errors?.image2?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -689,20 +535,23 @@ const CharacterCreate = ({topbox} ) => {
               {/* """ end image 2 """" */}
           </Container>
           </Col>
+      </Row>
+      {/* costume 3/4  */}
+      <Row className="mb-5 ">
           <Col xs={12} md={6} >
-          <Form.Group controlId="costume3" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 3</Form.Label>
+          <Form.Group controlId="image3_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Image3 Description</Form.Label>
                   <Form.Control 
-                  placeholder="Costume 3"
+                  placeholder="Image3 Description"
                   type="text"
-                  name="costume3"
+                  name="image3_description"
                   as="textarea"
-                  rows={3}
-                  value={costume3}
+                  rows={2}
+                  value={image3_description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.costume3?.map((message, idx) => (
+              {errors?.image3_description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -712,10 +561,10 @@ const CharacterCreate = ({topbox} ) => {
                   className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                   >
               <Form.Group>
-                {costume3_image ? (
+                {image3 ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={costume3_image} rounded />
+                      <Image className={appStyles.Image} src={image3} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -748,7 +597,7 @@ const CharacterCreate = ({topbox} ) => {
                   ref={imageInput3}
                 />
               </Form.Group>
-              {errors?.costume3_image?.map((message, idx) => (
+              {errors?.image3?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -756,23 +605,20 @@ const CharacterCreate = ({topbox} ) => {
               {/* """ end image 3 """" */}
           </Container>
           </Col>
-      </Row>
-      {/* costume 4/5  */}
-      <Row className="mb-5 ">          
           <Col xs={12} md={6} >
-          <Form.Group controlId="costume4" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 4</Form.Label>
+          <Form.Group controlId="image4_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >image4 description</Form.Label>
                   <Form.Control 
-                  placeholder="Costume 4"
+                  placeholder="image4 description"
                   type="text"
-                  name="costume4"
+                  name="image4_description"
                   as="textarea"
-                  rows={3}
-                  value={costume4}
+                  rows={2}
+                  value={image4_description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.costume4?.map((message, idx) => (
+              {errors?.image4_description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -782,10 +628,10 @@ const CharacterCreate = ({topbox} ) => {
                   className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                   >
               <Form.Group>
-                {costume4_image ? (
+                {image4 ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={costume4_image} rounded />
+                      <Image className={appStyles.Image} src={image4} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -818,7 +664,7 @@ const CharacterCreate = ({topbox} ) => {
                   ref={imageInput4}
                 />
               </Form.Group>
-              {errors?.costume4_image?.map((message, idx) => (
+              {errors?.image4?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -826,20 +672,23 @@ const CharacterCreate = ({topbox} ) => {
               {/* """ end image 4 """" */}
           </Container>
           </Col>
+      </Row >
+      {/* costume 5/6 */}
+      <Row className="mb-5 ml-0">
           <Col xs={12} md={6} >
-          <Form.Group controlId="costume5" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 5</Form.Label>
+          <Form.Group controlId="image5_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >image5 description</Form.Label>
                   <Form.Control 
-                  placeholder="Costume 5"
+                  placeholder="image5 description"
                   type="text"
-                  name="costume5"
+                  name="image5_description"
                   as="textarea"
-                  rows={3}
-                  value={costume5}
+                  rows={2}
+                  value={image5_description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.costume5?.map((message, idx) => (
+              {errors?.image5_description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -849,10 +698,10 @@ const CharacterCreate = ({topbox} ) => {
                   className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                   >
               <Form.Group>
-                {costume5_image ? (
+                {image5 ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={costume5_image} rounded />
+                      <Image className={appStyles.Image} src={image5} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -885,7 +734,7 @@ const CharacterCreate = ({topbox} ) => {
                   ref={imageInput5}
                 />
               </Form.Group>
-              {errors?.costume5_image?.map((message, idx) => (
+              {errors?.image5?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -893,23 +742,20 @@ const CharacterCreate = ({topbox} ) => {
               {/* """ end image 5 """" */}
           </Container>
           </Col>
-      </Row>
-      {/* costume 6/7  */}
-      <Row>
           <Col xs={12} md={6}>
-          <Form.Group controlId="costume6" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 6</Form.Label>
+          <Form.Group controlId="image6_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >image6 description</Form.Label>
                   <Form.Control 
-                  placeholder="Costume 6"
+                  placeholder="image6 description"
                   type="text"
-                  name="costume6"
+                  name="image6_description"
                   as="textarea"
-                  rows={3}
-                  value={costume6}
+                  rows={2}
+                  value={image6_description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.costume6?.map((message, idx) => (
+              {errors?.image6_description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -919,10 +765,10 @@ const CharacterCreate = ({topbox} ) => {
                   className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                   >
               <Form.Group>
-                {costume6_image ? (
+                {image6 ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={costume6_image} rounded />
+                      <Image className={appStyles.Image} src={image6} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -955,7 +801,7 @@ const CharacterCreate = ({topbox} ) => {
                   ref={imageInput6}
                 />
               </Form.Group>
-              {errors?.costume6_image?.map((message, idx) => (
+              {errors?.image6?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -963,20 +809,23 @@ const CharacterCreate = ({topbox} ) => {
               {/* """ end image 6 """" */}
           </Container>
           </Col>
+      </Row>
+      {/* costume 7/8 */}
+      <Row>
           <Col xs={12} md={6} >
-          <Form.Group controlId="costume7" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 7</Form.Label>
+          <Form.Group controlId="image7_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >image7 description</Form.Label>
                   <Form.Control 
-                  placeholder="Costume 7"
+                  placeholder="image7 description"
                   type="text"
-                  name="costume7"
+                  name="image7_description"
                   as="textarea"
-                  rows={3}
-                  value={costume7}
+                  rows={2}
+                  value={image7_description}
                   onChange={handleChange}
                       />
               </Form.Group>
-              {errors?.costume7?.map((message, idx) => (
+              {errors?.image7_description?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -986,10 +835,10 @@ const CharacterCreate = ({topbox} ) => {
                   className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                   >
               <Form.Group>
-                {costume7_image ? (
+                {image7 ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={costume7_image} rounded />
+                      <Image className={appStyles.Image} src={image7} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -1022,12 +871,79 @@ const CharacterCreate = ({topbox} ) => {
                   ref={imageInput7}
                 />
               </Form.Group>
-              {errors?.costume7_image?.map((message, idx) => (
+              {errors?.image7?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
               ))}
               {/* """ end image 7 """" */}
+          </Container>
+          </Col>
+          <Col xs={12} md={6}>
+          <Form.Group controlId="image8_description" className="mb-2" >
+                  <Form.Label className="d-none p-1" >image8 description</Form.Label>
+                  <Form.Control 
+                  placeholder="image8 description"
+                  type="text"
+                  name="image8_description"
+                  as="textarea"
+                  rows={2}
+                  value={image8_description}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.image8_description?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          {/* image 8 */}
+          <Container
+                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                  >
+              <Form.Group>
+                {image8 ? (
+                  <>
+                    <figure>
+                      <Image className={appStyles.Image} src={image8} rounded />
+                    </figure>
+                    <div>
+                      <Form.Label
+                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                        htmlFor="image-upload8"
+                      >
+                        Change the image
+                      </Form.Label>
+                    </div>
+                  </>
+                ) : (
+                  <Form.Label
+                    className=" my-1"
+                    htmlFor="image-upload8"
+                  >
+                    <Asset2
+                      src={Upload}
+                      height={"20px"}
+                      width={"20px"}
+                      message="Upload image"
+                    />
+                  </Form.Label>
+                )}
+  
+                <Form.Control
+                  type="file"
+                  id="image-upload8"
+                  accept="image/*"
+                  onChange={handleChangeImage8}
+                  ref={imageInput8}
+                />
+              </Form.Group>
+              {errors?.image8?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              {/* """ end image 8 """" */}
           </Container>
           </Col>
       </Row>
@@ -1042,4 +958,4 @@ const CharacterCreate = ({topbox} ) => {
     );
 }
 
-export default CharacterCreate
+export default LocationsCreate

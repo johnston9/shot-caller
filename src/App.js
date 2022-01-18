@@ -41,6 +41,10 @@ import CharacterCreate from './pages/characters/CharacterCreate';
 import CharacterEdit from './pages/characters/CharacterEdit';
 import MoodshotCreate from './pages/moodshots/MoodshotCreate';
 import MoodshotsPage from './pages/moodshots/MoodshotsPage';
+import LocationsPage from './pages/locations/LocationsPage';
+import LocationsEdit from './pages/locations/LocationsEdit';
+import LocationsCreate from './pages/locations/LocationsCreate';
+import LocationPage from './pages/locations/LocationPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -76,6 +80,24 @@ function App() {
             )}
           />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
+        {/* LOCATIONS */}
+        <Route exact path="/locations/create" render={() => <LocationsCreate />} />
+        <Route 
+            exact 
+            path="/locations/:id" 
+            render={() => (
+            <LocationPage 
+             />
+             )} />
+        <Route exact path="/locations/:id/edit" render={() => <LocationsEdit />} />
+        <Route
+            exact
+            path="/locations"
+            render={() => (
+              <LocationsPage
+               message="No results found" />
+            )}
+          />
         {/* CHARACTERS */}
         <Route
             exact

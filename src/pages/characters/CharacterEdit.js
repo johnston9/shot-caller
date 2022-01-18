@@ -42,7 +42,7 @@ const CharacterEdit = () => {
         costume5: "",
         costume6: "",
         costume7: "",
-        costume8: "",
+        makeup: "",
         costume1_image: "",
         costume2_image: "",
         costume3_image: "",
@@ -50,7 +50,7 @@ const CharacterEdit = () => {
         costume5_image: "",
         costume6_image: "",
         costume7_image: "",
-        costume8_image: "",
+        makeup_image: "",
       });
 
       const { role,
@@ -71,7 +71,7 @@ const CharacterEdit = () => {
         costume5,
         costume6,
         costume7,
-        costume8,  
+        makeup,  
         costume1_image,
         costume2_image,
         costume3_image,
@@ -79,7 +79,7 @@ const CharacterEdit = () => {
         costume5_image,
         costume6_image,
         costume7_image,
-        costume8_image,
+        makeup_image,
      } = postData;
 
     const imageInput1 = useRef(null);
@@ -116,7 +116,7 @@ const CharacterEdit = () => {
                 costume5,
                 costume6,
                 costume7,
-                costume8,  
+                makeup,  
                 costume1_image,
                 costume2_image,
                 costume3_image,
@@ -124,7 +124,7 @@ const CharacterEdit = () => {
                 costume5_image,
                 costume6_image,
                 costume7_image,
-                costume8_image } = data;
+                makeup_image } = data;
      
         setPostData({ role,
             actor,
@@ -144,7 +144,7 @@ const CharacterEdit = () => {
             costume5,
             costume6,
             costume7,
-            costume8,  
+            makeup,  
             costume1_image,
             costume2_image,
             costume3_image,
@@ -152,7 +152,7 @@ const CharacterEdit = () => {
             costume5_image,
             costume6_image,
             costume7_image,
-            costume8_image });
+            makeup_image });
           } catch (err) {
             console.log(err);
           }
@@ -242,10 +242,10 @@ const CharacterEdit = () => {
 
     const handleChangeImage8 = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(costume8_image);
+        URL.revokeObjectURL(makeup_image);
         setPostData({
         ...postData,
-        costume8_image: URL.createObjectURL(event.target.files[0]),
+        makeup_image: URL.createObjectURL(event.target.files[0]),
         });
     }
     };
@@ -273,7 +273,7 @@ const handleSubmit = async (event) => {
   formData.append("costume5", costume5);
   formData.append("costume6", costume6);
   formData.append("costume7", costume7);
-  formData.append("costume8", costume8);
+  formData.append("makeup", makeup);
   if(imageInput1.current.files[0]) {
     formData.append("costume1_image", imageInput1.current.files[0]);
   }
@@ -296,7 +296,7 @@ const handleSubmit = async (event) => {
   formData.append("costume7_image", imageInput7.current.files[0]);
   }
   if(imageInput8.current.files[0]) {
-      formData.append("costume8_image", imageInput8.current.files[0]);
+      formData.append("makeup_image", imageInput8.current.files[0]);
       }
 
   try {
@@ -335,7 +335,7 @@ const buttons = (
               <Container className= {`${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-3" onSubmit={handleSubmit}>
       <h3 className="text-center">Role</h3>
-      <p className="text-center">Input Roles here to them to the Character dropdown in the scene create form</p>
+      <p className="text-center">Input Roles here to add them to the Character dropdown for scenes</p>
       <Row>
       <Col md={3} ></Col>
           <Col md={6} >
@@ -547,9 +547,76 @@ const buttons = (
               ))}
           </Col>
       </Row>
-      <h3 className="text-center my-3">Costumes</h3>
-      {/* costume 1/2 */}
-      <Row className="mb-5 text-center">
+      <h3 className="text-center my-3">makeup - Costumes</h3>
+     {/* makeup/costume 1 */}
+     <Row className="mb-5 text-center">
+      <Col xs={12} md={6}>
+          <Form.Group controlId="makeup" className="mb-2" >
+                  <Form.Label className="d-none p-1" >Makeup</Form.Label>
+                  <Form.Control 
+                  placeholder="Makeup"
+                  type="text"
+                  name="makeup"
+                  as="textarea"
+                  rows={3}
+                  value={makeup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.makeup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          {/* image 8 */}
+          <Container
+                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                  >
+              <Form.Group>
+                {makeup_image ? (
+                  <>
+                    <figure>
+                      <Image className={appStyles.Image} src={makeup_image} rounded />
+                    </figure>
+                    <div>
+                      <Form.Label
+                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                        htmlFor="image-upload8"
+                      >
+                        Change the image
+                      </Form.Label>
+                    </div>
+                  </>
+                ) : (
+                  <Form.Label
+                    className=" my-1"
+                    htmlFor="image-upload8"
+                  >
+                    <Asset2
+                      src={Upload}
+                      height={"20px"}
+                      width={"20px"}
+                      message="Upload image"
+                    />
+                  </Form.Label>
+                )}
+  
+                <Form.Control
+                  type="file"
+                  id="image-upload8"
+                  accept="image/*"
+                  onChange={handleChangeImage8}
+                  ref={imageInput8}
+                />
+              </Form.Group>
+              {errors?.makeup_image?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              {/* """ end image 8 """" */}
+          </Container>
+          </Col>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume1" className="mb-2" >
                   <Form.Label className="d-none p-1" >Costume 1</Form.Label>
@@ -614,6 +681,9 @@ const buttons = (
               ))}
               </Container>
           </Col>
+      </Row>
+      {/* costume 2/3  */}
+          <Row>
           <Col xs={12} md={6}>
           <Form.Group controlId="costume2" className="mb-2" >
                   <Form.Label className="d-none p-1" >Costume 2</Form.Label>
@@ -679,9 +749,6 @@ const buttons = (
               {/* """ end image 2 """" */}
           </Container>
           </Col>
-      </Row>
-      {/* costume 3/4  */}
-      <Row className="mb-5 ">
           <Col xs={12} md={6} >
           <Form.Group controlId="costume3" className="mb-2" >
                   <Form.Label className="d-none p-1" >Costume 3</Form.Label>
@@ -749,6 +816,9 @@ const buttons = (
               {/* """ end image 3 """" */}
           </Container>
           </Col>
+      </Row>
+      {/* costume 4/5  */}
+      <Row className="mb-5 ">          
           <Col xs={12} md={6} >
           <Form.Group controlId="costume4" className="mb-2" >
                   <Form.Label className="d-none p-1" >Costume 4</Form.Label>
@@ -816,9 +886,6 @@ const buttons = (
               {/* """ end image 4 """" */}
           </Container>
           </Col>
-      </Row >
-      {/* costume 5/6 */}
-      <Row className="mb-5 ml-0">
           <Col xs={12} md={6} >
           <Form.Group controlId="costume5" className="mb-2" >
                   <Form.Label className="d-none p-1" >Costume 5</Form.Label>
@@ -886,6 +953,9 @@ const buttons = (
               {/* """ end image 5 """" */}
           </Container>
           </Col>
+      </Row>
+      {/* costume 6/7  */}
+      <Row>
           <Col xs={12} md={6}>
           <Form.Group controlId="costume6" className="mb-2" >
                   <Form.Label className="d-none p-1" >Costume 6</Form.Label>
@@ -953,9 +1023,6 @@ const buttons = (
               {/* """ end image 6 """" */}
           </Container>
           </Col>
-      </Row>
-      {/* costume 7/8 */}
-      <Row>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume7" className="mb-2" >
                   <Form.Label className="d-none p-1" >Costume 7</Form.Label>
@@ -1021,73 +1088,6 @@ const buttons = (
                 </Alert>
               ))}
               {/* """ end image 7 """" */}
-          </Container>
-          </Col>
-          <Col xs={12} md={6}>
-          <Form.Group controlId="costume8" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 8</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 8"
-                  type="text"
-                  name="costume8"
-                  as="textarea"
-                  rows={3}
-                  value={costume8}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume8?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          {/* image 8 */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group>
-                {costume8_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume8_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload8"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload8"
-                  >
-                    <Asset2
-                      src={Upload}
-                      height={"20px"}
-                      width={"20px"}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload8"
-                  accept="image/*"
-                  onChange={handleChangeImage8}
-                  ref={imageInput8}
-                />
-              </Form.Group>
-              {errors?.costume8_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 8 """" */}
           </Container>
           </Col>
       </Row>

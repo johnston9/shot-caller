@@ -34,6 +34,7 @@ function SceneCreateForm({topbox}) {
         time: "",
         pages: "",
         location: "",
+        location_detail: "",
         filming_location: "",
         shooting_date: "",
         character1: "",
@@ -80,7 +81,7 @@ function SceneCreateForm({topbox}) {
         character10_costume, character11, character11_costume, character12,
         character12_costume, other_characters, other_characters_costumes,
         background_artists, background_artists_costumes, shooting_date,
-        pages, action, content, storyboard, info, image } = postData;
+        pages, action, content, storyboard, info, image, location_detail } = postData;
 
       const imageInput = useRef(null)
       const storyboardInput = useRef(null)
@@ -143,6 +144,7 @@ function SceneCreateForm({topbox}) {
     formData.append("time", time);
     formData.append("pages", pages);
     formData.append("location", location);
+    formData.append("location_detail", location_detail);
     formData.append("filming_location", filming_location);
     formData.append("shooting_date", shooting_date);
     formData.append("character1", character1);
@@ -259,7 +261,7 @@ function SceneCreateForm({topbox}) {
         </Row>
         {/* location int-ext day-night */}
         <Row>
-        <Col xs={6}>
+        <Col xs={3}>
             <Form.Group controlId="location" className="mb-2" >
                 <Form.Label className="d-none p-1" >Location</Form.Label>
                 <Form.Control 
@@ -272,6 +274,24 @@ function SceneCreateForm({topbox}) {
                     />
             </Form.Group>
             {errors?.location?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        <Col xs={3}>
+            <Form.Group controlId="location_detail" className="mb-2" >
+                <Form.Label className="d-none p-1" >Location Detail</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                placeholder="Location Detail"
+                type="text"
+                name="location_detail"
+                value={location_detail}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.location_detail?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

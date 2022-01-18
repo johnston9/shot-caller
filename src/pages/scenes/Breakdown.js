@@ -27,7 +27,7 @@ const Breakdown = (props) => {
       character10_costume, character11, character11_costume, character12,
       character12_costume, other_characters, other_characters_costumes,
       background_artists, background_artists_costumes, shooting_date,
-      pages, action, content, storyboard, info, image, scene,
+      pages, action, content, storyboard, info, image, scene, location_detail,
       workspace_guide, setScene } = props;
     return (
         <div>
@@ -48,7 +48,7 @@ const Breakdown = (props) => {
                 <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
                 Location Shoot
                 </h5>
-                <p style={{textTransform: 'uppercase' }}>{int_ext}. {location} - {day_night} </p>
+                <p style={{textTransform: 'uppercase' }}>{int_ext}. {location} {location_detail} - {day_night} </p>
                 <p>{shooting_date} </p>
                 <p>{filming_location} </p>
                 </div>

@@ -9,31 +9,30 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import btnStyles from "../../styles/Button.module.css";
-import Character from './Character';
 import TopBox from '../../components/TopBox';
+import Location from "./Location";
 
-const CharacterPage = (props) => {
+const LocationPage = (props) => {
     useRedirect("loggedOut");
     const { id } = useParams();
-    const [character, setCharacter] = useState({ results: [] });
+    const [location, setLocation] = useState({ results: [] });
     const currentUser = useCurrentUser();
     const history = useHistory();
 
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq(`/characters/${id}`);
-                setCharacter({ results: [data] });
+                const { data } = await axiosReq(`/locations/${id}`);
+                setLocation({ results: [data] });
             } catch (err) {
                 console.log(err);
               }
         }
         handleMount();
     }, [id])
-
     return (
         <div>
-            <TopBox title="Character"/>
+            <TopBox title="Location"/>
             <Row className="h-100">
                 <Col className="mt-4">
                 <Button
@@ -42,12 +41,12 @@ const CharacterPage = (props) => {
                 >
                     Back
                 </Button>
-                <Character {...character.results[0]}
+                <Location {...location.results[0]}
                   />
                 </Col>
-            </Row>            
+            </Row>   
         </div>
     )
 }
 
-export default CharacterPage
+export default LocationPage
