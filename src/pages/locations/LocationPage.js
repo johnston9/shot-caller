@@ -12,7 +12,7 @@ import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
 import Location from "./Location";
 
-const LocationPage = (props) => {
+const LocationPage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [location, setLocation] = useState({ results: [] });
