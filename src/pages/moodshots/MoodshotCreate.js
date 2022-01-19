@@ -19,18 +19,21 @@ import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
+import { useSceneContext } from "../../contexts/DeptCategoryContext";
+import { useCharactersContext, useLocationsContext, useScenesContext } from "../../contexts/Scene_chars_locs";
 
-const MoodshotCreate = ({sceneId="", number="", character1="", location1="" }) => {
+const MoodshotCreate = () => {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
-  const [characters, setCharacters] = useState({ results: [] });
+  // const [characters, setCharacters] = useState({ results: [] });
+  // {sceneId="", number="", character="", location="" }
   const [postData, setPostData] = useState({
-    scene: sceneId,
-    sceneNumber: number,
+    scene: "",
+    sceneNumber: "",
     title: "",
     content: "",
-    character: character1,
-    location: location1,
+    character: "",
+    location: "",
     image1: "",
     image2: "",
     image3: "",
@@ -49,11 +52,16 @@ const MoodshotCreate = ({sceneId="", number="", character1="", location1="" }) =
 
   const history = useHistory();
 
+  const scenes = useScenesContext();
+  const characters = useCharactersContext();
+  const locations = useLocationsContext();
+
   const handleChange = (event) => {
     setPostData({
       ...postData,
       [event.target.name]: event.target.value,
     });
+    console.log(event.target.value)
   };
 
   const handleChangeImage1 = (event) => {
@@ -111,20 +119,20 @@ const MoodshotCreate = ({sceneId="", number="", character1="", location1="" }) =
     }
   };
 
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const { data } = await axiosRes.get("characters/");
-        setCharacters(data);
-        console.log(`chars 1 ${characters.results[0].role }`)
-        console.log(data)
-      } catch (err) {
-        console.log(err)
-      }
-    }
+  // useEffect(() => {
+  //   const handleMount = async () => {
+  //     try {
+  //       const { data } = await axiosRes.get("characters/");
+  //       setCharacters(data);
+  //       console.log(`chars 1 ${characters.results[0].role }`)
+  //       console.log(data)
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   }
 
-    handleMount();
-  }, [])
+  //   handleMount();
+  // }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -158,7 +166,7 @@ const MoodshotCreate = ({sceneId="", number="", character1="", location1="" }) =
   
     try {
       const { data } = await axiosReq.post("/moodshots/", formData);
-      history.push(`/moodshots/${data.id}`);
+      history.push(`/moodshots`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -166,6 +174,143 @@ const MoodshotCreate = ({sceneId="", number="", character1="", location1="" }) =
       }
     }
   }
+
+  const fields = (
+    <div>
+      <p>Inputs</p>
+      <Row>
+        <Col xs={4}>
+        <Form.Group controlId="sceneNumber" className="mb-2" >
+              <Form.Label className="d-none p-1" >Scene Number</Form.Label>
+              <Form.Control 
+              type="text"
+              placeholder="Scene Number"
+              className={styles.InputScene}
+              name="sceneNumber"
+              value={sceneNumber}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sceneNumber?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+        <Col xs={4}>
+          <Form.Group controlId="location" className="mb-2" >
+              <Form.Label className="d-none p-1" >Location</Form.Label>
+              <Form.Control 
+              type="text"
+              placeholder="Location"
+              className={styles.InputScene}
+              name="location"
+              value={location}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        <Col xs={4}><Form.Group controlId="character" className="mb-2" >
+              <Form.Label className="d-none p-1" >Character</Form.Label>
+              <Form.Control 
+              type="text"
+              placeholder="Character"
+              className={styles.InputScene}
+              name="character"
+              value={character}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.character?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}</Col>
+      </Row>
+    </div>
+)
+
+const dropfields = (
+  <div>
+    <p>Use Dropdowns or input fields</p>
+    <p>Dropdowns</p>
+    <Row>
+      <Col xs={4}>
+        {/* scene */}
+        <Form.Group controlId="scenedrop" className="mb-2" >
+            <Form.Label className="p-1 d-none" ></Form.Label>
+            <Form.Control as="select"
+                name="scene"
+                className={styles.InputChar}
+                value={scene.id}
+                onChange={handleChange}
+                aria-label="scene select">
+                <option  value="" >Scene</option>
+                {scenes.results.length && (
+                    scenes.results.map((scene) => (
+                    <option key={scene.id} value={scene.id} >{scene.number}</option>
+                    ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.scene?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+            {message}
+            </Alert>
+        ))}
+      </Col>
+      <Col xs={4}>
+        {/* location */}
+        <Form.Group controlId="locationdrop" className="mb-2" >
+            <Form.Label className="p-1 d-none" ></Form.Label>
+            <Form.Control as="select"
+                name="location"
+                className={styles.InputChar}
+                value={location}
+                onChange={handleChange}
+                aria-label="location select">
+                <option  >Location</option>
+                {locations.results.length && (
+                    locations.results.map((location) => (
+                    <option key={location.id} value={location.name} >{location.name}</option>
+                    ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.location?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+            {message}
+            </Alert>
+        ))}
+        </Col>
+      <Col xs={4}>
+        {/* character */}
+        <Form.Group controlId="characterdrop" className="mb-2" >
+            <Form.Label className="p-1 d-none" ></Form.Label>
+            <Form.Control as="select"
+                name="character"
+                className={styles.InputChar}
+                value={character}
+                onChange={handleChange}
+                aria-label="character select">
+                <option  >Character</option>
+                {characters.results.length && (
+                    characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                    ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}</Col>
+    </Row>
+  </div>
+)
 
   const textFields = (
     <div>
@@ -189,6 +334,7 @@ const MoodshotCreate = ({sceneId="", number="", character1="", location1="" }) =
               <Form.Label className="d-none p-1" >Content</Form.Label>
               <Form.Control 
                   className={styles.InputScene}
+                  placeholder="Content"
                   type="text"
                   name="content"
                   as="textarea"
@@ -202,28 +348,6 @@ const MoodshotCreate = ({sceneId="", number="", character1="", location1="" }) =
               {message}
             </Alert>
           ))}
-          {/* character */}
-        <Form.Group controlId="character" className="mb-2" >
-            <Form.Label className="p-1 d-none" >Add Character to add the moodshot
-            to that character's own moodshots</Form.Label>
-            <Form.Control as="select"
-                name="character"
-                className={styles.InputChar}
-                value={character}
-                onChange={handleChange}
-                aria-label="character select">
-                <option  >Character</option>
-                {characters.results.length && (
-                    characters.results.map((character) => (
-                    <option key={character.id} value={character.role} >{character.role}</option>
-                    ) )) }
-            </Form.Control>
-        </Form.Group>
-        {errors?.character?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-            {message}
-            </Alert>
-        ))}
     </div>
 )
 const buttons = (
@@ -242,17 +366,30 @@ const buttons = (
 
     return (
         <div>
+          <TopBox title="Create Moodshot"/>
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
                 onClick={() => history.goBack()}
                 >
                 Back
             </Button>
+            <Row>
+            <Col xs={1} md={2}></Col>
+              <Col xs={10} md={8}>
+                <p>Enter a scene number, character role or location or a combination 
+                of the above if the Moodshot relates to them. Moodshots can also be 
+                added on the actual scene, character or location pages. If the moodshots
+                relates to a seperate element simply enter that in the title,  e.g. "Example Tones".
+              </p>
+              </Col>
+            </Row>
             <Form className="mt-3" onSubmit={handleSubmit}>
                 <Row>
                 <Col md={6} className="p-0 p-md-2">
                     <Container className= {`${appStyles.Content} ${styles.Container}`} >
-                    <p >SceneId {sceneId} --- Scene {number} - </p>
+                    {/* <p >SceneId {sceneId} --- Scene {number} - </p> */}
+                    {dropfields}
+                    {fields}
                     {textFields}
                     </Container>
                 </Col>

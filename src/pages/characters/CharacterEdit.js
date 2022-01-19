@@ -332,772 +332,772 @@ const buttons = (
               >
               Back
               </Button>
-              <Container className= {`${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-3" onSubmit={handleSubmit}>
-      <h3 className="text-center">Role</h3>
-      <p className="text-center">Input Roles here to add them to the Character dropdown for scenes</p>
-      <Row>
-      <Col md={3} ></Col>
-          <Col md={6} >
-          <Form.Group controlId="role" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Role</Form.Label>
-                  <Form.Control 
-                  type="text"
-                  placeholder="Role"
-                  name="role"
-                  value={role}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.role?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-      </Row>
-      {/* actor details */}
-      <h3 className="text-center my-3">Actor Details</h3>
-      <Row>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="actor" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Actor</Form.Label>
-                  <Form.Control 
-                  type="text"
-                  placeholder="Actor"
-                  name="actor"
-                  value={actor}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.actor?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="mobile" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Mobile</Form.Label>
-                  <Form.Control 
-                  placeholder="Mobile"
-                  type="text"
-                  name="mobile"
-                  value={mobile}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.mobile?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={12} md={4} >
-          <Form.Group controlId="email" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Email</Form.Label>
-                  <Form.Control 
-                  placeholder="Email"
-                  type="text"
-                  name="email"
-                  value={email}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.email?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-      </Row>
-      {/* times agent */}
-      <Row>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="make_up_time" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Makeup Time</Form.Label>
-                  <Form.Control 
-                  placeholder="Makeup Time"
-                  type="text"
-                  name="make_up_time"
-                  value={make_up_time}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.make_up_time?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={6} md={4} >
-          <Form.Group controlId="commute_time" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Commute Time</Form.Label>
-                  <Form.Control 
-                  placeholder="Commute Time"
-                  type="text"
-                  name="commute_time"
-                  value={commute_time}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.commute_time?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={12} md={4} >
-          <Form.Group controlId="agent" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Agent</Form.Label>
-                  <Form.Control 
-                  placeholder="Agent"
-                  type="text"
-                  name="agent"
-                  value={agent}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.agent?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-      </Row>
-      {/* pickups */}
-      <Row>
-          <Col xs={6} >
-          <Form.Group controlId="pickup_address" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Pickup Address</Form.Label>
-                  <Form.Control 
-                  placeholder="Pickup Address"
-                  type="text"
-                  name="pickup_address"
-                  as="textarea"
-                  rows={3}
-                  value={pickup_address}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.pickup_address?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={6}>
-          <Form.Group controlId="pickup_address_2" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Pickup Address 2</Form.Label>
-                  <Form.Control 
-                  placeholder="Pickup Address 2"
-                  type="text"
-                  name="pickup_address_2"
-                  as="textarea"
-                  rows={3}
-                  value={pickup_address_2}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.pickup_address_2?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-      </Row>
-      {/* Requirements */}
-      <Row>
-          <Col xs={6} >
-          <Form.Group controlId="requirements" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Requirements</Form.Label>
-                  <Form.Control 
-                  placeholder="Requirements"
-                  type="text"
-                  name="requirements"
-                  as="textarea"
-                  rows={3}
-                  value={requirements}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.requirements?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col xs={6}>
-          <Form.Group controlId="diet" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Diet</Form.Label>
-                  <Form.Control 
-                  placeholder="Diet"
-                  type="text"
-                  name="diet"
-                  as="textarea"
-                  rows={3}
-                  value={diet}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.diet?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-      </Row>
-      <h3 className="text-center my-3">makeup - Costumes</h3>
-     {/* makeup/costume 1 */}
-     <Row className="mb-5 text-center">
-      <Col xs={12} md={6}>
-          <Form.Group controlId="makeup" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Makeup</Form.Label>
-                  <Form.Control 
-                  placeholder="Makeup"
-                  type="text"
-                  name="makeup"
-                  as="textarea"
-                  rows={3}
-                  value={makeup}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.makeup?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          {/* image 8 */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+            <Container className= {`${appStyles.Content} ${styles.Container}`} >
+              <Form className="mt-3" onSubmit={handleSubmit}>
+              <h3 className="text-center">Role</h3>
+              <p className="text-center">Input Roles here to add them to the Character dropdown for scenes</p>
+              <Row>
+              <Col md={3} ></Col>
+                  <Col md={6} >
+                  <Form.Group controlId="role" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Role</Form.Label>
+                          <Form.Control 
+                          type="text"
+                          placeholder="Role"
+                          name="role"
+                          value={role}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.role?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+              </Row>
+              {/* actor details */}
+              <h3 className="text-center my-3">Actor Details</h3>
+              <Row>
+                  <Col xs={6} md={4} >
+                  <Form.Group controlId="actor" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Actor</Form.Label>
+                          <Form.Control 
+                          type="text"
+                          placeholder="Actor"
+                          name="actor"
+                          value={actor}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.actor?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={6} md={4} >
+                  <Form.Group controlId="mobile" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Mobile</Form.Label>
+                          <Form.Control 
+                          placeholder="Mobile"
+                          type="text"
+                          name="mobile"
+                          value={mobile}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.mobile?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={12} md={4} >
+                  <Form.Group controlId="email" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Email</Form.Label>
+                          <Form.Control 
+                          placeholder="Email"
+                          type="text"
+                          name="email"
+                          value={email}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.email?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+              </Row>
+              {/* times agent */}
+              <Row>
+                  <Col xs={6} md={4} >
+                  <Form.Group controlId="make_up_time" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Makeup Time</Form.Label>
+                          <Form.Control 
+                          placeholder="Makeup Time"
+                          type="text"
+                          name="make_up_time"
+                          value={make_up_time}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.make_up_time?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={6} md={4} >
+                  <Form.Group controlId="commute_time" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Commute Time</Form.Label>
+                          <Form.Control 
+                          placeholder="Commute Time"
+                          type="text"
+                          name="commute_time"
+                          value={commute_time}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.commute_time?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={12} md={4} >
+                  <Form.Group controlId="agent" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Agent</Form.Label>
+                          <Form.Control 
+                          placeholder="Agent"
+                          type="text"
+                          name="agent"
+                          value={agent}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.agent?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+              </Row>
+              {/* pickups */}
+              <Row>
+                  <Col xs={6} >
+                  <Form.Group controlId="pickup_address" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Pickup Address</Form.Label>
+                          <Form.Control 
+                          placeholder="Pickup Address"
+                          type="text"
+                          name="pickup_address"
+                          as="textarea"
+                          rows={3}
+                          value={pickup_address}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.pickup_address?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={6}>
+                  <Form.Group controlId="pickup_address_2" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Pickup Address 2</Form.Label>
+                          <Form.Control 
+                          placeholder="Pickup Address 2"
+                          type="text"
+                          name="pickup_address_2"
+                          as="textarea"
+                          rows={3}
+                          value={pickup_address_2}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.pickup_address_2?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+              </Row>
+              {/* Requirements */}
+              <Row>
+                  <Col xs={6} >
+                  <Form.Group controlId="requirements" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Requirements</Form.Label>
+                          <Form.Control 
+                          placeholder="Requirements"
+                          type="text"
+                          name="requirements"
+                          as="textarea"
+                          rows={3}
+                          value={requirements}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.requirements?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={6}>
+                  <Form.Group controlId="diet" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Diet</Form.Label>
+                          <Form.Control 
+                          placeholder="Diet"
+                          type="text"
+                          name="diet"
+                          as="textarea"
+                          rows={3}
+                          value={diet}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.diet?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+              </Row>
+              <h3 className="text-center my-3">makeup - Costumes</h3>
+            {/* makeup/costume 1 */}
+            <Row className="mb-5 text-center">
+              <Col xs={12} md={6}>
+                  <Form.Group controlId="makeup" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Makeup</Form.Label>
+                          <Form.Control 
+                          placeholder="Makeup"
+                          type="text"
+                          name="makeup"
+                          as="textarea"
+                          rows={3}
+                          value={makeup}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.makeup?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  {/* image 8 */}
+                  <Container
+                          className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          >
+                      <Form.Group>
+                        {makeup_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={makeup_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload8"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className=" my-1"
+                            htmlFor="image-upload8"
+                          >
+                            <Asset2
+                              src={Upload}
+                              height={"20px"}
+                              width={"20px"}
+                              message="Upload image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload8"
+                          accept="image/*"
+                          onChange={handleChangeImage8}
+                          ref={imageInput8}
+                        />
+                      </Form.Group>
+                      {errors?.makeup_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* """ end image 8 """" */}
+                  </Container>
+                  </Col>
+                  <Col xs={12} md={6} >
+                  <Form.Group controlId="costume1" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Costume 1</Form.Label>
+                          <Form.Control 
+                          placeholder="Costume 1"
+                          type="text"
+                          name="costume1"
+                          as="textarea"
+                          rows={3}
+                          value={costume1}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume1?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* image1 */}
+                      <Container
+                    className={`${appStyles.Content} d-flex flex-column justify-content-center`}
                   >
-              <Form.Group>
-                {makeup_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={makeup_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload8"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload8"
-                  >
-                    <Asset2
-                      src={Upload}
-                      height={"20px"}
-                      width={"20px"}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload8"
-                  accept="image/*"
-                  onChange={handleChangeImage8}
-                  ref={imageInput8}
-                />
-              </Form.Group>
-              {errors?.makeup_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 8 """" */}
-          </Container>
-          </Col>
-          <Col xs={12} md={6} >
-          <Form.Group controlId="costume1" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 1</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 1"
-                  type="text"
-                  name="costume1"
-                  as="textarea"
-                  rows={3}
-                  value={costume1}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume1?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* image1 */}
-              <Container
-            className={`${appStyles.Content} d-flex flex-column justify-content-center`}
-          >
-            <Form.Group className="text-center pt-3">
-                {costume1_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume1_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className="d-flex justify-content-center"
-                    htmlFor="image-upload"
-                  >
-                    <Asset
-                      src={Upload}
-                      message="Click or tap to upload an image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload"
-                  accept="image/*"
-                  onChange={handleChangeImage1}
-                  ref={imageInput1}
-                />
-              </Form.Group>
-              {errors?.costume1_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              </Container>
-          </Col>
-      </Row>
-      {/* costume 2/3  */}
-          <Row>
-          <Col xs={12} md={6}>
-          <Form.Group controlId="costume2" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 2</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 2"
-                  type="text"
-                  name="costume2"
-                  as="textarea"
-                  rows={3}
-                  value={costume2}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume2?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* image 2 */}
-              <Container
-                  className={`${appStyles.Content} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group >
-                {costume2_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume2_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload2"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className="my-1"
-                    htmlFor="image-upload2"
-                  >
-                    <Asset
-                      src={Upload}
-                      message="Click or tap to upload an image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload2"
-                  accept="image/*"
-                  onChange={handleChangeImage2}
-                  ref={imageInput2}
-                />
-              </Form.Group>
-              {errors?.costume2_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 2 """" */}
-          </Container>
-          </Col>
-          <Col xs={12} md={6} >
-          <Form.Group controlId="costume3" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 3</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 3"
-                  type="text"
-                  name="costume3"
-                  as="textarea"
-                  rows={3}
-                  value={costume3}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume3?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          {/* image 3 */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group>
-                {costume3_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume3_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload3"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload3"
-                  >
-                    <Asset2
-                      src={Upload}
-                      height={"20px"}
-                      width={"20px"}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload3"
-                  accept="image/*"
-                  onChange={handleChangeImage3}
-                  ref={imageInput3}
-                />
-              </Form.Group>
-              {errors?.costume3_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 3 """" */}
-          </Container>
-          </Col>
-      </Row>
-      {/* costume 4/5  */}
-      <Row className="mb-5 ">          
-          <Col xs={12} md={6} >
-          <Form.Group controlId="costume4" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 4</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 4"
-                  type="text"
-                  name="costume4"
-                  as="textarea"
-                  rows={3}
-                  value={costume4}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume4?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* image 4 */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group>
-                {costume4_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume4_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload4"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload4"
-                  >
-                    <Asset2
-                      src={Upload}
-                      height={"20px"}
-                      width={"20px"}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload4"
-                  accept="image/*"
-                  onChange={handleChangeImage4}
-                  ref={imageInput4}
-                />
-              </Form.Group>
-              {errors?.costume4_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 4 """" */}
-          </Container>
-          </Col>
-          <Col xs={12} md={6} >
-          <Form.Group controlId="costume5" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 5</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 5"
-                  type="text"
-                  name="costume5"
-                  as="textarea"
-                  rows={3}
-                  value={costume5}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume5?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* image 5 */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group>
-                {costume5_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume5_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload5"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload5"
-                  >
-                    <Asset2
-                      src={Upload}
-                      height={"20px"}
-                      width={"20px"}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload5"
-                  accept="image/*"
-                  onChange={handleChangeImage5}
-                  ref={imageInput5}
-                />
-              </Form.Group>
-              {errors?.costume5_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 5 """" */}
-          </Container>
-          </Col>
-      </Row>
-      {/* costume 6/7  */}
-      <Row>
-          <Col xs={12} md={6}>
-          <Form.Group controlId="costume6" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 6</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 6"
-                  type="text"
-                  name="costume6"
-                  as="textarea"
-                  rows={3}
-                  value={costume6}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume6?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          {/* image 6 */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group>
-                {costume6_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume6_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload6"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload6"
-                  >
-                    <Asset2
-                      src={Upload}
-                      height={"20px"}
-                      width={"20px"}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload6"
-                  accept="image/*"
-                  onChange={handleChangeImage6}
-                  ref={imageInput6}
-                />
-              </Form.Group>
-              {errors?.costume6_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 6 """" */}
-          </Container>
-          </Col>
-          <Col xs={12} md={6} >
-          <Form.Group controlId="costume7" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 7</Form.Label>
-                  <Form.Control 
-                  placeholder="Costume 7"
-                  type="text"
-                  name="costume7"
-                  as="textarea"
-                  rows={3}
-                  value={costume7}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume7?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          {/* image 7 */}
-          <Container
-                  className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-                  >
-              <Form.Group>
-                {costume7_image ? (
-                  <>
-                    <figure>
-                      <Image className={appStyles.Image} src={costume7_image} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload7"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className=" my-1"
-                    htmlFor="image-upload7"
-                  >
-                    <Asset2
-                      src={Upload}
-                      height={"20px"}
-                      width={"20px"}
-                      message="Upload image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload7"
-                  accept="image/*"
-                  onChange={handleChangeImage7}
-                  ref={imageInput7}
-                />
-              </Form.Group>
-              {errors?.costume7_image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              {/* """ end image 7 """" */}
-          </Container>
-          </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
-        </Col>
-      </Row>
-    </Form>
-    </Container>                   
+                    <Form.Group className="text-center pt-3">
+                        {costume1_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={costume1_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className="d-flex justify-content-center"
+                            htmlFor="image-upload"
+                          >
+                            <Asset
+                              src={Upload}
+                              message="Click or tap to upload an image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload"
+                          accept="image/*"
+                          onChange={handleChangeImage1}
+                          ref={imageInput1}
+                        />
+                      </Form.Group>
+                      {errors?.costume1_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      </Container>
+                  </Col>
+              </Row>
+              {/* costume 2/3  */}
+                  <Row>
+                  <Col xs={12} md={6}>
+                  <Form.Group controlId="costume2" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Costume 2</Form.Label>
+                          <Form.Control 
+                          placeholder="Costume 2"
+                          type="text"
+                          name="costume2"
+                          as="textarea"
+                          rows={3}
+                          value={costume2}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume2?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* image 2 */}
+                      <Container
+                          className={`${appStyles.Content} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          >
+                      <Form.Group >
+                        {costume2_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={costume2_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload2"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className="my-1"
+                            htmlFor="image-upload2"
+                          >
+                            <Asset
+                              src={Upload}
+                              message="Click or tap to upload an image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload2"
+                          accept="image/*"
+                          onChange={handleChangeImage2}
+                          ref={imageInput2}
+                        />
+                      </Form.Group>
+                      {errors?.costume2_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* """ end image 2 """" */}
+                  </Container>
+                  </Col>
+                  <Col xs={12} md={6} >
+                  <Form.Group controlId="costume3" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Costume 3</Form.Label>
+                          <Form.Control 
+                          placeholder="Costume 3"
+                          type="text"
+                          name="costume3"
+                          as="textarea"
+                          rows={3}
+                          value={costume3}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume3?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  {/* image 3 */}
+                  <Container
+                          className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          >
+                      <Form.Group>
+                        {costume3_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={costume3_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload3"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className=" my-1"
+                            htmlFor="image-upload3"
+                          >
+                            <Asset2
+                              src={Upload}
+                              height={"20px"}
+                              width={"20px"}
+                              message="Upload image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload3"
+                          accept="image/*"
+                          onChange={handleChangeImage3}
+                          ref={imageInput3}
+                        />
+                      </Form.Group>
+                      {errors?.costume3_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* """ end image 3 """" */}
+                  </Container>
+                  </Col>
+              </Row>
+              {/* costume 4/5  */}
+              <Row className="mb-5 ">          
+                  <Col xs={12} md={6} >
+                  <Form.Group controlId="costume4" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Costume 4</Form.Label>
+                          <Form.Control 
+                          placeholder="Costume 4"
+                          type="text"
+                          name="costume4"
+                          as="textarea"
+                          rows={3}
+                          value={costume4}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume4?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* image 4 */}
+                  <Container
+                          className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          >
+                      <Form.Group>
+                        {costume4_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={costume4_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload4"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className=" my-1"
+                            htmlFor="image-upload4"
+                          >
+                            <Asset2
+                              src={Upload}
+                              height={"20px"}
+                              width={"20px"}
+                              message="Upload image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload4"
+                          accept="image/*"
+                          onChange={handleChangeImage4}
+                          ref={imageInput4}
+                        />
+                      </Form.Group>
+                      {errors?.costume4_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* """ end image 4 """" */}
+                  </Container>
+                  </Col>
+                  <Col xs={12} md={6} >
+                  <Form.Group controlId="costume5" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Costume 5</Form.Label>
+                          <Form.Control 
+                          placeholder="Costume 5"
+                          type="text"
+                          name="costume5"
+                          as="textarea"
+                          rows={3}
+                          value={costume5}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume5?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* image 5 */}
+                  <Container
+                          className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          >
+                      <Form.Group>
+                        {costume5_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={costume5_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload5"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className=" my-1"
+                            htmlFor="image-upload5"
+                          >
+                            <Asset2
+                              src={Upload}
+                              height={"20px"}
+                              width={"20px"}
+                              message="Upload image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload5"
+                          accept="image/*"
+                          onChange={handleChangeImage5}
+                          ref={imageInput5}
+                        />
+                      </Form.Group>
+                      {errors?.costume5_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* """ end image 5 """" */}
+                  </Container>
+                  </Col>
+              </Row>
+              {/* costume 6/7  */}
+              <Row>
+                  <Col xs={12} md={6}>
+                  <Form.Group controlId="costume6" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Costume 6</Form.Label>
+                          <Form.Control 
+                          placeholder="Costume 6"
+                          type="text"
+                          name="costume6"
+                          as="textarea"
+                          rows={3}
+                          value={costume6}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume6?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  {/* image 6 */}
+                  <Container
+                          className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          >
+                      <Form.Group>
+                        {costume6_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={costume6_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload6"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className=" my-1"
+                            htmlFor="image-upload6"
+                          >
+                            <Asset2
+                              src={Upload}
+                              height={"20px"}
+                              width={"20px"}
+                              message="Upload image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload6"
+                          accept="image/*"
+                          onChange={handleChangeImage6}
+                          ref={imageInput6}
+                        />
+                      </Form.Group>
+                      {errors?.costume6_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* """ end image 6 """" */}
+                  </Container>
+                  </Col>
+                  <Col xs={12} md={6} >
+                  <Form.Group controlId="costume7" className="mb-2" >
+                          <Form.Label className="d-none p-1" >Costume 7</Form.Label>
+                          <Form.Control 
+                          placeholder="Costume 7"
+                          type="text"
+                          name="costume7"
+                          as="textarea"
+                          rows={3}
+                          value={costume7}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume7?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  {/* image 7 */}
+                  <Container
+                          className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          >
+                      <Form.Group>
+                        {costume7_image ? (
+                          <>
+                            <figure>
+                              <Image className={appStyles.Image} src={costume7_image} rounded />
+                            </figure>
+                            <div>
+                              <Form.Label
+                                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                htmlFor="image-upload7"
+                              >
+                                Change the image
+                              </Form.Label>
+                            </div>
+                          </>
+                        ) : (
+                          <Form.Label
+                            className=" my-1"
+                            htmlFor="image-upload7"
+                          >
+                            <Asset2
+                              src={Upload}
+                              height={"20px"}
+                              width={"20px"}
+                              message="Upload image"
+                            />
+                          </Form.Label>
+                        )}
+          
+                        <Form.Control
+                          type="file"
+                          id="image-upload7"
+                          accept="image/*"
+                          onChange={handleChangeImage7}
+                          ref={imageInput7}
+                        />
+                      </Form.Group>
+                      {errors?.costume7_image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                      {/* """ end image 7 """" */}
+                  </Container>
+                  </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+                </Col>
+              </Row>
+              </Form>
+            </Container>                   
         </div>
     )
 }

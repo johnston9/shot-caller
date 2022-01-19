@@ -19,11 +19,13 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import SceneCreateCostumes from "./SceneCreateCostumes";
 import NewCharacter from "./NewCharacter";
+import NewLocation from "./NewLocation";
 
 function SceneCreateForm({topbox}) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
   const [show, setShow] = useState(false);
+  const [locations, setLocations] = useState({ results: [] });
   const [characters, setCharacters] = useState({ results: [] });
     const [postData, setPostData] = useState({
         number: "",
@@ -86,19 +88,31 @@ function SceneCreateForm({topbox}) {
       const imageInput = useRef(null)
       const storyboardInput = useRef(null)
 
-      useEffect(() => {
-        const handleMount = async () => {
-          try {
-            const { data } = await axiosRes.get("characters/");
-            setCharacters(data);
-            console.log(`chars 1 ${characters.results[0].role }`)
-            console.log(data)
-          } catch (err) {
-            console.log(err)
-          }
+      const fetchCharactersMount = async () => {
+        try {
+          const { data } = await axiosRes.get("characters/");
+          setCharacters(data);
+          console.log(`chars 1 ${characters.results[0].role }`)
+          console.log(data)
+        } catch (err) {
+          console.log(err)
         }
+      }
 
-        handleMount();
+      const fetchLocationsMount = async () => {
+        try {
+          const { data } = await axiosRes.get("locations/");
+          setLocations(data);
+          console.log(`loc 1 ${locations.results[0].name }`)
+          console.log(data)
+        } catch (err) {
+          console.log(err)
+        }
+      }
+
+      useEffect(() => { 
+        fetchCharactersMount();
+        fetchLocationsMount();
       }, [])
 
       const history = useHistory()
@@ -261,8 +275,8 @@ function SceneCreateForm({topbox}) {
         </Row>
         {/* location int-ext day-night */}
         <Row>
-        <Col xs={3}>
-            <Form.Group controlId="location" className="mb-2" >
+        <Col xs={4}>
+            {/* <Form.Group controlId="location" className="mb-2" >
                 <Form.Label className="d-none p-1" >Location</Form.Label>
                 <Form.Control 
                 className={styles.InputScene}
@@ -272,6 +286,21 @@ function SceneCreateForm({topbox}) {
                 value={location}
                 onChange={handleChange}
                     />
+            </Form.Group> */}
+            <Form.Group controlId="location" className="mb-2" >
+                <Form.Label className="p-1 d-none" >Character 1</Form.Label>
+                <Form.Control as="select"
+                  name="location"
+                  className={styles.InputChar}
+                  value={location}
+                  onChange={handleChange}
+                  aria-label="location select">
+                    <option  >Location</option>
+                  {locations.results.length && (
+                      locations.results.map((location) => (
+                        <option key={location.id} value={location.name} >{location.name}</option>
+                      ) )) }
+                </Form.Control>
             </Form.Group>
             {errors?.location?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
@@ -279,7 +308,7 @@ function SceneCreateForm({topbox}) {
               </Alert>
             ))}
         </Col>
-        <Col xs={3}>
+        <Col xs={4}>
             <Form.Group controlId="location_detail" className="mb-2" >
                 <Form.Label className="d-none p-1" >Location Detail</Form.Label>
                 <Form.Control 
@@ -297,7 +326,7 @@ function SceneCreateForm({topbox}) {
               </Alert>
             ))}
         </Col>
-        <Col xs={3} >         
+        <Col xs={2} >         
             <Form.Group controlId="int_ext" className="mb-2" >
                 <Form.Label className="d-none p-1" >Int-Ext</Form.Label>
                 <Form.Control as="select"
@@ -318,7 +347,7 @@ function SceneCreateForm({topbox}) {
               </Alert>
             ))}
             </Col>
-            <Col xs={3} >
+            <Col xs={2} >
             <Form.Group controlId="day_night" className="mb-2" >
                 <Form.Label className="p-1 d-none" >Day/Night</Form.Label>
                 <Form.Control as="select"
@@ -1056,7 +1085,18 @@ function SceneCreateForm({topbox}) {
       ) : (
         <TopBox title="Create Scene" />
       ) }
-    <NewCharacter setCharacters={setCharacters} />
+      <Row>
+        <Col xs={1} md={2}></Col>
+        <Col xs={10} md={8}>
+          <NewCharacter setCharacters={setCharacters} />
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={1} md={2}></Col>
+        <Col xs={10} md={8}>
+          <NewLocation setLocations={setLocations} />
+        </Col>
+      </Row>
     <Form className="my-3" onSubmit={handleSubmit}>
     <Row>
     <Col xs={12} className="p-0 p-md-2">

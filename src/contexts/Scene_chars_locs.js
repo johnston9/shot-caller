@@ -1,5 +1,6 @@
-import { createContext, useContext,  useState } from "react";
+import { createContext, useContext,  useEffect,  useState } from "react";
 import { useHistory } from "react-router";
+import { axiosReq } from "../api/axiosDefaults";
 
 export const ScenesContext = createContext();
 export const SetScenesContext = createContext();
@@ -52,7 +53,7 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
       useEffect(() => {
         fetchScenes();
         fetchCharacters();
-        // fetchLocations();
+        fetchLocations();
       }, []);
 
     return (

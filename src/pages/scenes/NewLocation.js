@@ -17,28 +17,28 @@ import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
-const NewCharacter = ({setCharacters}) => {
+const NewLocation = ({setLocations}) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
-    const [newCharacter, setNewCharacter] = useState("");
+    const [newLocation, setNewLocation] = useState("");
     // const {role} = postData;
     const history = useHistory();
 
     const handleChange = (event) => {
-        setNewCharacter(event.target.value);
+        setNewLocation(event.target.value);
       };
     
       const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData();    
-        formData.append("role", newCharacter);
+        formData.append("name", newLocation);
         try {
-            const { data } = await axiosReq.post("/characters/", formData);
-            setCharacters((prevChars) => ({
-                ...prevChars,
-                results: [data, ...prevChars.results],
+            const { data } = await axiosReq.post("/locations/", formData);
+            setLocations((prevLocs) => ({
+                ...prevLocs,
+                results: [data, ...prevLocs.results],
               }));
-            setNewCharacter("");
+              setNewLocation("");
           } catch (err) {
             console.log(err);
           }
@@ -48,7 +48,7 @@ const NewCharacter = ({setCharacters}) => {
         <div className="text-center">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
-            onClick={() => setNewCharacter("")}
+            onClick={() => setNewLocation("")}
           >
             Cancel
           </Button>
@@ -60,23 +60,23 @@ const NewCharacter = ({setCharacters}) => {
 
     return (
         <div className= {` ${styles.NewChar}`}>
-            <p className="mt-3 text-center">Add new Characters here first to enable the dropdown selection. </p>
+            <p className="mt-3 text-center">Add new Locations here first to enable the dropdown selection. </p>
             <Form onSubmit={handleSubmit}>
             <Row className="mt-3">
                 <Col xs={3}></Col>
                 <Col xs={3}>
-                    <Form.Group controlId="newCharacter" className="mb-2" >
-                    <Form.Label className="d-none p-1" >New Character</Form.Label>
+                    <Form.Group controlId="newLocation" className="mb-2" >
+                    <Form.Label className="d-none p-1" >New Location</Form.Label>
                     <Form.Control 
-                        placeholder="New Character"
+                        placeholder="New Location"
                         className={styles.InputScene}
                         type="text"
-                        name="newCharacter"
-                        value={newCharacter}
+                        name="newLocation"
+                        value={newLocation}
                         onChange={handleChange}
                         />
                 </Form.Group>
-                {errors?.newCharacter?.map((message, idx) => (
+                {errors?.newLocation?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
@@ -86,9 +86,9 @@ const NewCharacter = ({setCharacters}) => {
                     {buttons}
                 </Col>
             </Row>
-            </Form>            
+            </Form> 
         </div>
     )
 }
 
-export default NewCharacter
+export default NewLocation

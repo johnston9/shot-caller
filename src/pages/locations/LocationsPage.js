@@ -84,15 +84,18 @@ const LocationsPage = () => {
                 </Form>
                 </Col>
             </Row>
-            {/* add location */}
+            {/* add location  */}
             <Row>
               <Col className="text-center" >
-                <Button onClick={() => setShow(show => !show)} 
+              <Button onClick={() => history.push(`/locations/create`) } 
                 className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                 Add Location</Button>
+                {/* <Button onClick={() => setShow(show => !show)} 
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                Add Location</Button> */}
               </Col>
             </Row>
-            {!show ?("") : (<LocationsCreate topbox /> ) }
+            {/* {!show ?("") : (<LocationsCreate topbox /> ) } */}
             {/* Locations */}
             <Row className="h-100">
                 <Col>

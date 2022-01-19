@@ -72,10 +72,28 @@ const MoodshotsPage = ({sceneId="", number="", character="", location="", messag
             </Button>
             <Row>
                 <Col className="text-center">
-                    <Button onClick={() => setShow(show => !show)} 
+                    <Button onClick={() => history.push(`/moodshot/create`) }
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Add Moodshot</Button>
-                {!show ?("") : (<MoodshotCreate sceneId={sceneId} number={number} character={character} location1={location} /> ) }
+                {/* {!show ?("") : (<MoodshotCreate /> ) } */}
+                </Col>
+            </Row>
+            {/* sceneId={sceneId} number={number} character={character} location={location} */}
+            {/* search */}
+            <Row>
+                <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+                <Form
+                    className={`${styles.SearchBar} mt-3`}
+                    onSubmit={(event) => event.preventDefault()}
+                    >
+                <Form.Control
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    type="text"
+                    className="mr-sm-2"
+                    placeholder="Search by Scene number, Location or Character"
+                />
+                </Form>
                 </Col>
             </Row>
             {hasLoaded ? (
