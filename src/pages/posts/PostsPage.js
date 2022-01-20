@@ -159,7 +159,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
           </Col>
         </Row> */}
-        <Row className="mt-3">
+        <Row className="my-3">
           <Col>
         {hasLoaded ? (
           <>
@@ -186,6 +186,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         )}
       </Col>
     </Row>
+    <hr/>
     </div>
   );
 }

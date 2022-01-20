@@ -11,6 +11,8 @@ import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
 import { useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { Button } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const PostTop = (props) => {
   useRedirect("loggedOut")
@@ -129,30 +131,24 @@ const PostTop = (props) => {
         <div>
             <Card className={styles.Post} >
                 <Card.Body className="py-1">
-                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {number} - {departments.toUpperCase()} {category.toUpperCase()} </Card.Text>}
-                <div className="d-flex align-items-center justify-content-between">
-                    <Link to={`/profiles/${profile_id}`}>
+                <Row className="d-flex align-items-center">
+                    <Col xs={12} lg={6} >
+                      <Row>
+                        <Col className="d-flex align-items-center justify-content-center" xs={12} md={8}>
+                        <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
-                        {owner} {name}
-                    </Link>
-                    <div className="d-flex align-items-center">
-                        <span>{updated_at}</span>
-                        {/* {is_owner && (
-                          <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Edit/delete</Tooltip>}
-                          >
-                          <i className={`fas fa-ellipsis-v ${styles.Edit} p-3 ml-2 mr-0`} />
-                        </OverlayTrigger>
-                        ) } */}
+                        </Link>
+                        <span className='ml-1 ml-md-3'>{name}</span>
+                        <span className='ml-1 ml-md-3'>{updated_at}</span>
                         {is_owner && (
-                          <PostDropdown
+                        <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
-                        ) }
-                    </div>        
-                    <div className={styles.PostBar}>
+                        ) } 
+                        </Col>
+                        <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
+                        <div className={styles.PostBar}>
                       {/* archives */}
                       {archive_id ? (
                             <OverlayTrigger
@@ -224,17 +220,24 @@ const PostTop = (props) => {
                         </Link>
                         </OverlayTrigger>
                         {comments_count}
-                        </div>
-                    </div>
-                    <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>
-                    <span> Scene Id {scene} Scene Number {number} - Post Id {id}</span>
-                    </Card.Body>
+                        </div>  
+                        </Col>
+                      </Row>            
+                    </Col>  
+                    <Col xs={12} lg={6} > 
                     <Link to={`/posts/${id}`}>
-                    <Card.Body>
-                    <hr className="mb-1" />
-                    {title && <Card.Title className="text-center">{title}</Card.Title>}
+                    <Row className={styles.Content}>                   
+                      <Col className="d-flex align-items-center justify-content-center"  md={8}>
+                      {departments && <span className={`${styles.Info} text-center`} >Scene {number} - {departments} {category} </span>}   
+                      </Col>
+                      <Col className="d-flex align-items-center justify-content-center" md={4}>
+                      {title && <span className="text-center">{title}</span>}
+                      </Col>
+                    </Row>
+                    </Link>
+                    </Col> 
+                  </Row>
                 </Card.Body>
-                </Link>
             </Card>
         </div>
     )

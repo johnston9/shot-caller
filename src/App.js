@@ -10,6 +10,7 @@ import PostCreateForm from './pages/posts/PostCreateForm';
 import SceneCreateForm from './pages/scenes/SceneCreateForm';
 import PostPage from './pages/posts/PostPage';
 import PostsPage from './pages/posts/PostsPage';
+import FindPostsDepartments from './pages/posts/FindPostsDepartments';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import PostEditForm from './pages/posts/PostEditForm';
 import ProfilePage from "./pages/profiles/ProfilePage";
@@ -23,7 +24,6 @@ import { useActContext } from './contexts/ActContext';
 import SceneEditForm from './pages/scenes/SceneEditForm';
 import Home from './pages/home/Home';
 import ProfilesPage from './pages/profiles/ProfilesPage';
-import Departments from './pages/scenes/Departments';
 import DeptPostCreate from './pages/departments/DeptPostCreate';
 import DeptPostsPage from './pages/departments/DeptPostsPage';
 import DeptsGeneral from './pages/departments/DeptsGeneral';
@@ -168,8 +168,6 @@ function App() {
              />
              )} />
         <Route exact path="/scenes/:id/edit" render={() => <SceneEditForm />} />
-        {/* find scene posts by department */}
-        <Route exact path="/depts/page" render={() => <Departments />} />
         {/* show scene post by department on postspage*/}
         <Route
             exact
@@ -211,6 +209,8 @@ function App() {
               />
             )}
           />
+          {/* all posts and by department */}
+          <Route exact path="/findposts/departments" render={() => <FindPostsDepartments />} />
           {/* Feed posts*/}
           <Route
             exact

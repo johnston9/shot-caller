@@ -1,8 +1,8 @@
 .Post {
     background-color: #ffffff;
-    border: 1px solid #dadadf;
+    /* border: 1px solid #dadadf;
     border-radius: 2px;
-    margin-bottom: 16px;
+    margin-bottom: 16px; */
     /* text-align: center; */
   }
   
@@ -31,8 +31,16 @@
     color: #f85032;
   }
 
-  .Info {
+  .GoToScene {
     color: #2142b2;
     font-weight: 700;
     font-size: .75em;
+    cursor: pointer;
+  }
+  .GoToScene:hover {
+    color: #60cac5;
+  }
+
+  .Content {
+    background-color: #e7eeed;
   }

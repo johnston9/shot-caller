@@ -22,35 +22,19 @@ const ProfilesPage = () => {
               >
                   Back
               </Button>
-              <h3 className='text-center mt-3'>View Profiles</h3>
-              <Row className='mt-1'>
-                  <Col className='mt-1'>
-                    <PopularProfiles /> 
-                  </Col>
-              </Row>
-              <hr/>
-              <h3 className='text-center mt-3'>View Posts</h3>
-              <Row className='mb-4 mt-3'>
-                  <Col className='text-center' xs={4} >
-                  <Button onClick={() => history.push("/archived")} 
-                    className={`${btnStyles.Button} py-0 ${btnStyles.Bright}`} >Archived Posts</Button>
-                  </Col>
-                  <Col className='text-center' xs={4} >
-                  <Button onClick={() => history.push("/posts")}
-                    className={`${btnStyles.Button} py-0 ${btnStyles.Bright}`} >All Posts</Button>
-                  </Col>
-                  <Col className='text-center' xs={4} >
-                  <Button onClick={() => history.push("/liked")} 
-                    className={`${btnStyles.Button} py-0 ${btnStyles.Bright}`}>Liked Posts</Button>
-                  </Col>
-              </Row>
-              <Row className='mt-1'>
+              <Row className='mt-3'>
                   <Col className='text-center' >
                   <Button onClick={() => history.push("/feed")} 
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}
                     >
                       Feed
                       </Button>
+                  </Col>
+              </Row>
+              <h3 className='text-center mt-3'>View Profiles</h3>
+              <Row className='mt-1'>
+                  <Col className='mt-1'>
+                    <PopularProfiles /> 
                   </Col>
               </Row>
             </Container>           

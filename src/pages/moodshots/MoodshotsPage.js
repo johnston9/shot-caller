@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/PostsPage.module.css";
+import styles from "../../styles/Moodshots.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
@@ -20,6 +20,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import MoodshotCreate from "./MoodshotCreate";
+import MoodshotTop from "./MoodshotTop";
 
 const MoodshotsPage = ({sceneId="", number="", character="", location="", message, filter="" }) => {
     useRedirect("loggedOut");
@@ -91,7 +92,7 @@ const MoodshotsPage = ({sceneId="", number="", character="", location="", messag
                     onChange={(event) => setQuery(event.target.value)}
                     type="text"
                     className="mr-sm-2"
-                    placeholder="Search by Scene number, Location or Character"
+                    placeholder="Search by Scene-number, Location or Character"
                 />
                 </Form>
                 </Col>
@@ -100,7 +101,7 @@ const MoodshotsPage = ({sceneId="", number="", character="", location="", messag
           <>
             {moodshots.results.length ? (
                 moodshots.results.map((shot) => (
-                  <p key={shot.id} >{shot.title}</p>
+                  <MoodshotTop key={shot.id} {...shot} />
                 ))) 
              : (
               <Container className={appStyles.Content}>

@@ -51,11 +51,11 @@ const Home = () => {
               <Row className="text-center">
                 <Col md={1}></Col>
                 <Col md={5} >
-                    <Link to={`/depts/page`} >
+                    <Link to={`/findposts/departments`} >
                     <div className={`px-3 py-1  ${styles.Homebox}`}>
-                      <h5 className={`text-center pt-2 ${styles.Title}`}>Posts by Department</h5>
-                      <p className="mt-2">Access scene workspace posts by department. 
-                      Requirements and Finals ordered by scene number</p>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Find Posts</h5>
+                      <p className="mt-2">All Posts Archived Posts Liked Posts</p>
+                      <p>Posts by Department - Requirements and Finals ordered by scene number</p>
                       </div>
                     </Link>
                   </Col>

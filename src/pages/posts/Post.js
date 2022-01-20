@@ -12,6 +12,8 @@ import { PostDropdown } from '../../components/PostDropdown';
 import { useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import { Button } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const Post = (props) => {
   useRedirect("loggedOut")
@@ -53,6 +55,7 @@ const Post = (props) => {
         setDept(departments);
         setCategory(category);
         history.push(`/dept/category`);
+        console.log('clicked');
       };
 
       const handleEdit = () => {
@@ -136,27 +139,28 @@ const Post = (props) => {
     return (
         <div>
             <Card className={styles.Post} >
-                <Card.Body>
-                {departments && <Card.Text className={`mb-1 ${styles.Info} text-center`} >SCENE {number} - {departments.toUpperCase()} {category.toUpperCase()} </Card.Text>}
-                <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>
-                <p>Scene Id {scene} Scene Number {number} - Post Id {id}</p>
-                <div className="d-flex align-items-center justify-content-between">
-                    <Link to={`/profiles/${profile_id}`}>
+                {/* new */}
+                <Card.Body className="py-1">
+                <Row className="d-flex align-items-center">
+                    <Col xs={12} lg={6} >
+                      <Row>
+                        <Col className="d-flex align-items-center justify-content-center" xs={12} md={8}>
+                        <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
-                        {owner} {name}
-                    </Link>
-                    <div className="d-flex align-items-center">
-                        <span>{updated_at}</span>
+                        </Link>
+                        <span style={{ fontWeight: '700'}} className='ml-1 ml-md-3'>{name}</span>
+                        <span className='ml-1 ml-md-3'>{updated_at}</span>
                         {is_owner && (
-                          <PostDropdown
+                        <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
-                        ) }
-                    </div>
-                    {/* archives */}
-                    <div className={styles.PostBar}>
-                    {archive_id ? (
+                        ) } 
+                        </Col>
+                        <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
+                        <div className={styles.PostBar}>
+                      {/* archives */}
+                      {archive_id ? (
                             <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Unarchive</Tooltip>}
@@ -182,7 +186,7 @@ const Post = (props) => {
                             <i className="far fa-folder-open" />
                             </OverlayTrigger>
                         )}
-                    {/* like */}
+                        {/* like */}
                         {is_owner ? (
                             <OverlayTrigger
                             placement="top"
@@ -193,7 +197,7 @@ const Post = (props) => {
                         ) : like_id ? (
                             <OverlayTrigger
                             placement="top"
-                            overlay={<Tooltip>Unike</Tooltip>}
+                            overlay={<Tooltip>Unlike</Tooltip>}
                             >
                             <span onClick={handleUnlike} >
                             <i className={`fas fa-heart ${styles.Heart}`} />
@@ -201,9 +205,9 @@ const Post = (props) => {
                             </OverlayTrigger>
                         ) : currentUser ? (
                             <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Like</Tooltip>}
-                            >
+                              placement="top"
+                              overlay={<Tooltip>Like</Tooltip>}
+                              >
                             <span onClick={handleLike}>
                             <i className={`far fa-heart ${styles.HeartOutline}`} />
                             </span>
@@ -221,13 +225,27 @@ const Post = (props) => {
                             placement="top"
                             overlay={<Tooltip>Comments</Tooltip>}
                             >
-                          <i className="far fa-comments" />
-                          </OverlayTrigger>
+                        <Link to={`/posts/${id}`}>
+                            <i className="far fa-comments" />
+                        </Link>
+                        </OverlayTrigger>
                         {comments_count}
-                    </div>
-                  </div>
+                        </div>  
+                        </Col>
+                      </Row>            
+                    </Col>                    
+                      <Col xs={12} lg={6} className="d-flex align-items-center justify-content-center" >
+                        <div className={`${styles.GoToScene} `} onClick={() => handleGoToScene() }>
+                      {departments && <span  >Scene {number} - <span style={{ textTransform: 'capitalize'}}>{departments }</span> <span style={{ textTransform: 'capitalize'}}>{category }</span> </span>} 
+                      </div>  
+                      </Col>
+                      {/* <Col className="d-flex align-items-center justify-content-center" md={4}>
+                      <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>
+                      </Col> */}
+                  </Row>
                 </Card.Body>
-                <hr />
+                <hr/>
+                {/* end new */}
                 <Card.Body className="pt-1" >
                     {title && <Card.Title className="text-center">{title}</Card.Title>}
                     <hr />
