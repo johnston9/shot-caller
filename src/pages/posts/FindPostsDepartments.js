@@ -157,6 +157,7 @@ const Departments = (props) => {
               </Row>
               </Container>
               <h3 className={`text-center mt-3`}>Departments Posts</h3>
+              <p>Requirements and Finals post are ordered by scene number</p>
             <Card className={` ${styles.Scene}`}>
                   <Card.Body>
                   <Row className={`mt-1`} >
