@@ -142,14 +142,14 @@ const Post = (props) => {
                 {/* new */}
                 <Card.Body className="py-1">
                 <Row className="d-flex align-items-center">
-                    <Col xs={12} lg={6} >
+                    <Col xs={12} lg={8} >
                       <Row>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} md={8}>
                         <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
                         </Link>
-                        <span style={{ fontWeight: '700'}} className='ml-1 ml-md-3'>{name}</span>
-                        <span className='ml-1 ml-md-3'>{updated_at}</span>
+                        <span style={{ fontWeight: '700', textTransform: 'capitalize'}} className='ml-1 ml-md-3'>{name}</span>
+                        <span className='ml-1 ml-md-3 d-none d-md-block'>{updated_at}</span>
                         {is_owner && (
                         <PostDropdown
                             handleEdit={handleEdit}
@@ -158,7 +158,7 @@ const Post = (props) => {
                         ) } 
                         </Col>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
-                        <div className={styles.PostBar}>
+                        <div className={`fas fa-folder ${styles.PostBar}`} >
                       {/* archives */}
                       {archive_id ? (
                             <OverlayTrigger
@@ -230,14 +230,17 @@ const Post = (props) => {
                         </Link>
                         </OverlayTrigger>
                         {comments_count}
-                        </div>  
+                        </div> 
                         </Col>
                       </Row>            
                     </Col>                    
-                      <Col xs={12} lg={6} className="d-flex align-items-center justify-content-center" >
+                      <Col xs={12} lg={4} className="d-flex align-items-center justify-content-center" >
                         <div className={`${styles.GoToScene} `} onClick={() => handleGoToScene() }>
                       {departments && <span  >Scene {number} - <span style={{ textTransform: 'capitalize'}}>{departments }</span> <span style={{ textTransform: 'capitalize'}}>{category }</span> </span>} 
                       </div>  
+                      </Col>
+                      <Col className='text-center' xs={12}>
+                      <span className='d-md-none'>{updated_at}</span> 
                       </Col>
                       {/* <Col className="d-flex align-items-center justify-content-center" md={4}>
                       <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>

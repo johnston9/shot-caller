@@ -131,7 +131,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
           </Col>
         </Row>
         <Row>
-        <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+        <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
         {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
           className={`${styles.SearchBar} mt-3`}

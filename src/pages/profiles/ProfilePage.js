@@ -71,7 +71,7 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={6}>
-          <h3 className="m-2">{profile?.owner}</h3>
+          <h3 style={{ textTransform: 'capitalize'}} className="m-2">{profile?.name} {profile?.position}</h3>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
@@ -114,7 +114,7 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
+      <p style={{ textTransform: 'capitalize'}} className="text-center">{profile?.name}'s posts</p>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll

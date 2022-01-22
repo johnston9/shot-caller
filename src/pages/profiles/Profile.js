@@ -10,8 +10,8 @@ import { useRedirect } from '../../hooks/Redirect';
 
 const Profile = (props) => {
     useRedirect("loggedOut")
-    const { profile, imageSize = 40 } = props;
-    const { id, following_id, image, owner } = profile;
+    const { profile, imageSize="40" } = props;
+    const { id, following_id, image, owner, name, position } = profile;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
@@ -26,7 +26,7 @@ const Profile = (props) => {
                     <Avatar src={image} height={imageSize}/>
                 </Link>
                 <span className={`mx-2 ${styles.WordBreak}`}>
-                <strong>{owner}</strong>
+                <strong style={{ textTransform: 'capitalize'}}>{owner} {name} {position} </strong>
                 </span>
                 </span>
                 <div className="mt-2" style={{float: 'right'}}>

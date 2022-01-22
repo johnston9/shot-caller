@@ -139,7 +139,7 @@ const PostTop = (props) => {
                         <Avatar src={profile_image} height={45}  />
                         </Link>
                         <span className='ml-1 ml-md-3'>{name}</span>
-                        <span className='ml-1 ml-md-3'>{updated_at}</span>
+                        <span className='ml-1 ml-md-3 d-none d-md-block'>{updated_at}</span>
                         {is_owner && (
                         <PostDropdown
                             handleEdit={handleEdit}
@@ -149,6 +149,8 @@ const PostTop = (props) => {
                         </Col>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
                         <div className={styles.PostBar}>
+                        <span className='d-md-none'>{updated_at}</span> 
+                        <span className='d-md-none'>" -" </span>
                       {/* archives */}
                       {archive_id ? (
                             <OverlayTrigger
@@ -222,6 +224,9 @@ const PostTop = (props) => {
                         {comments_count}
                         </div>  
                         </Col>
+                        {/* <Col className=' text-center' xs={12} >
+                        <span className='d-md-none'>{updated_at}</span> 
+                        </Col> */}
                       </Row>            
                     </Col>  
                     <Col xs={12} lg={6} > 
