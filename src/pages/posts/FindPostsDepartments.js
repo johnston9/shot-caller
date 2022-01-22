@@ -130,7 +130,7 @@ const Departments = (props) => {
               >
               Back
               </Button>
-              <h3 className='text-center mt-3'>Posts</h3>
+              <h3 className='text-center mt-3'>Workspace Posts</h3>
               <Container className={`my-3 ${appStyles.Content}`}>
               <Row className='mb-4 mt-3'>
                   <Col className='text-center' xs={4} >
@@ -156,8 +156,8 @@ const Departments = (props) => {
                   </Col>
               </Row>
               </Container>
-              <h3 className={`text-center mt-3`}>Departments Posts</h3>
-              <p>Requirements and Finals post are ordered by scene number</p>
+              <h3 className={`text-center mt-3`}>Workspace Posts by Department</h3>
+              <p className='text-center'>Requirements and Finals post are ordered by scene number</p>
             <Card className={` ${styles.Scene}`}>
                   <Card.Body>
                   <Row className={`mt-1`} >

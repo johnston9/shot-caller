@@ -75,7 +75,7 @@ const Home = () => {
                       <Link to={`/profiles`} >
                         <div className={`px-3 py-1 ${styles.HomeboxSmEr}`}>
                         <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
-                        <p className="mt-2">View and follow profiles. Create.Feed</p>
+                        <p className="mt-2">Follow profiles to create Feed</p>
                         </div>
                       </Link>
                     </Col>
@@ -83,7 +83,7 @@ const Home = () => {
                     <Link to={`/days`} >
                       <div className={`px-3 py-1  ${styles.HomeboxSmEr}`}>
                             <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
-                            <p className="mt-2"> Autogenerate schedule view schedule </p>
+                            <p className="mt-2"> Autogenerate schedule. View schedule </p>
                         </div>
                       </Link>
                     </Col>
@@ -112,8 +112,8 @@ const Home = () => {
                   <Col xs={8}>
                   <Link to={`/depts/general`} >
                       <div className={`px-3 py-1 ${styles.HomeboxSmEr}`}>
-                            <h5 className={`text-center pt-2 ${styles.Title}`}>Departments</h5>
-                            <p className="mt-2 text-center"> Posts for departments outside of scenes</p>
+                            <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
+                            <p className="mt-2 text-center"> Extra departments posting area</p>
                         </div>
                       </Link>
                   </Col>
@@ -193,24 +193,24 @@ const Home = () => {
                 <Col xs={8} >
                     <Link to={`/depts/general`} >
                       <div className={`px-0 py-1 ${styles.HomeboxXs}`}>
-                            <h5 className={`text-center pt-2 ${styles.Title}`}>Departments</h5>
-                            <p className="pt-1 mb-0"> Posts outside of scenes</p>
+                            <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
+                            <p className="pt-1 mb-0"> Extra departments posting area </p>
                         </div>
                       </Link>
                     </Col>
                 </Row>
               </div>
           </Col>
-          </Row>
-            {/* <Col
+            {/* <Col className={`my-3`}
             xs={1} 
-            className={`my-3 px-4`}
+            
           >
             <Image
               className={`${styles.FillerImagerh}`}
               src={door}
             />
           </Col> */}
+          </Row>
         </div>
     )
 }

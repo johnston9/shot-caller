@@ -59,6 +59,7 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
+{/*  home */}
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
@@ -66,7 +67,7 @@ const NavBar = () => {
         >
           <i className="navicon fas fa-play"></i>Home
       </NavLink>
-
+{/*  workspace */}
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
@@ -83,7 +84,16 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/scenes"
         >
-          <i className="navicon fas fa-stream"></i>Scenes
+          <i className="navicon fas fa-stream"></i>Workspace
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          className={` ${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/findposts/departments"
+        >
+          <i className="navicon fas fa-stream"></i>Find Posts
         </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item >
@@ -99,11 +109,11 @@ const NavBar = () => {
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
 
-      {/* departments */}
+      {/* characters locations departments-xtra */}
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}} className={styles.Title}>
-              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Departments
+              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Features
             </span>
           }
           id="nav-dropdown2"
@@ -112,38 +122,7 @@ const NavBar = () => {
           >
         <NavDropdown.Item >
           <NavLink
-          className={` ${styles.DropLink} `}
-          activeClassName={styles.Active}
-          to="/depts/general"
-        >
-          Departments
-        </NavLink>
-        </NavDropdown.Item>
-        <NavDropdown.Item >
-        <NavLink
-          className={`mt-2 ${styles.NavLink} `}
-          activeClassName={styles.Active}
-          to="/department/posts/create"
-        >
-          <i className="navicon fas fa-play"></i>Add Post 
-      </NavLink>
-      </NavDropdown.Item>
-      </NavDropdown>
-
-      {/* characters */}
-      <NavDropdown 
-          title={
-            <span style={{ color: '#555555'}} className={styles.Title}>
-              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Characters
-            </span>
-          }
-          id="nav-dropdown2"
-          activeClassName={styles.Active}
-          className={`mt-1 pt-1 ${styles.NavLink} `}
-          >
-        <NavDropdown.Item >
-          <NavLink
-          className={` ${styles.DropLink} `}
+          className={` ${styles.NavLink} `}
           activeClassName={styles.Active}
           to="/characters"
         >
@@ -156,33 +135,79 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/characters/create"
         >
-          <i className="navicon fas fa-play"></i>Add Character 
+          <i className="far fa-plus-square"></i>Add Character 
+      </NavLink>
+      </NavDropdown.Item>
+      <NavDropdown.Item >
+        <NavLink
+          className={`mt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/locations"
+        >
+          <i className="navicon fas fa-stream"></i>Locations
+      </NavLink>
+      </NavDropdown.Item>
+      <NavDropdown.Item >
+        <NavLink
+          className={`mt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/locations/create"
+        >
+          <i className="far fa-plus-square"></i>Add Locations
+      </NavLink>
+      </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          className={` ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/depts/general"
+        >
+          <i className="navicon fas fa-stream"></i>Depts-Xtra
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+        <NavLink
+          className={`mt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/department/posts/create"
+        >
+          <i className="far fa-plus-square"></i>Add Depts-Xtra 
       </NavLink>
       </NavDropdown.Item>
       </NavDropdown>
 
-      {/* <NavLink
-          className={`mt-2 pt-2 ${styles.NavLink} `}
+      {/*  moodshots */}
+      <NavDropdown 
+          title={
+            <span style={{ color: '#555555'}}>
+              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Moodshots
+            </span>
+          }
+          id="nav-dropdown3"
           activeClassName={styles.Active}
-          to="/characters"
-        >
-          <i className="navicon fas fa-play"></i>Characters
-      </NavLink> */}
-
-      <NavLink
-          className={`mt-2 pt-2 ${styles.NavLink} `}
-          activeClassName={styles.Active}
-          to="/locations"
-        >Locations
-      </NavLink>
-
-      <NavLink
-          className={`mt-2 pt-2 ${styles.NavLink} `}
+          className={`mt-1 ${styles.NavLink} `}
+          >
+        <NavDropdown.Item >
+          <NavLink
+          className={` ${styles.DropLink} `}
           activeClassName={styles.Active}
           to="/moodshots"
-        >Moodshots
-      </NavLink>
+        >
+          <i className="navicon fas fa-stream"></i>Moodshots
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          className={`${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/moodshot/create"
+        >
+          <i className="far fa-plus-square"></i>Add Moodshots
+        </NavLink>
+        </NavDropdown.Item>
+      </NavDropdown>
 
+      {/* Schedule */}
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
@@ -191,49 +216,50 @@ const NavBar = () => {
           <i className="navicon fas fa-play"></i>Schedule
       </NavLink>
 
-      {/* <NavLink
-          className={`mt-2 ${styles.NavLink} `}
-          activeClassName={styles.Active}
-          to="/department/posts/create"
-        >
-          <i className="navicon fas fa-play"></i>Add Post 
-      </NavLink> */}
-
-      {/* <NavLink
-        className={`mt-2 ${styles.NavLink} `}
-        activeClassName={styles.Active}
-        to="/scenes/create"
-      >
-        <i className="far fa-plus-square"></i>Add scene
-      </NavLink> */}
-
-      {/* <NavLink
-        className={`mt-2 ${styles.NavLink} `}
-        activeClassName={styles.Active}
-        to="/scenes"
-      >
-        <i className="navicon fas fa-stream"></i>Scenes
-      </NavLink> */}
-
+      {/* old profiles
       <NavLink
         className={`mt-2 pt-2 ${styles.NavLink} `}
         activeClassName={styles.Active}
         to="/profiles"
       >
         <i className="navicon far fa-plus-square"></i>Profiles
-      </NavLink>
+      </NavLink> */}
 
       <NavLink className={`mt-2 pt-2 ${styles.NavLink} `} 
         to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
 
-      <NavLink
-        className={`mt-2 ${styles.NavLink} `} 
-        to={`/profiles/${currentUser?.profile_id}`}
-      >
-        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+      {/* new profiles */}
+      <NavDropdown 
+          title={
+            <span style={{ color: '#555555'}} className={styles.Title}>
+              <Avatar src={currentUser?.profile_image} text="" height={40} />Profiles
+            </span>
+          }
+          id="nav-dropdown3"
+          // activeClassName={styles.Active}
+          className={`pt-1 ${styles.NavLink} `}
+          >
+        <NavDropdown.Item >
+          <NavLink
+          className={` ${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/profiles"
+        >
+          <i className="navicon fas fa-play"></i>Profiles
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+        <NavLink
+          className={`mt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to={`/profiles/${currentUser?.profile_id}`}
+        >
+          <i className="navicon fas fa-play"></i>My Profile 
       </NavLink>
+      </NavDropdown.Item>
+      </NavDropdown>
     </>
   );
 

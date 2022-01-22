@@ -209,7 +209,7 @@ const Scene = (props) => {
                     </Row>
                   </div>
                   <Row>
-                  <Col xs={6} md={3} className='text-center'>
+                  <Col className='text-center'>
                             <Button
                               className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
                               onClick={() => handleClickMoods()} > Moodshots
