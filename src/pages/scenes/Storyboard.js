@@ -15,10 +15,13 @@ import TopBox from '../../components/TopBox';
 import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 
-const Storyboard = ({storyboard} ) => {
+const Storyboard = ({storyboard, setShowstory} ) => {
     return (
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={` mt-5 mb-4 pl-3 py-1 ${styles.SubTitle }`}>Storyboard</h5>
+            <h5 style={{ textTransform: 'uppercase'}} className={` mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
+                Storyboard
+                <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowstory(false) } >Close</span>
+                </h5>
             
         </div>
     )

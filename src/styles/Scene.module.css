@@ -1,8 +1,6 @@
 /* scene card  */
 
 .SceneCard {
-  /* background-color: cornsilk; */
-  /* background-color: rgb(244, 250, 249); */
   border: 5px solid #fff;
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
@@ -59,6 +57,34 @@
 }
 
 /* Scene */
+.ButtonLine {
+  background-color: #f8f8fa;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+.Button {
+  color: aqua;
+}
+
+.Button:hover {
+  color: rgb(34, 153, 153);
+}
+
+.Close {
+  color: aqua;
+}
+
+.Close:hover {
+  color: rgb(34, 153, 153);
+}
+
+.CloseIns {
+  color: #000;
+}
+
+.CloseIns:hover {
+  color: rgb(231, 226, 226);
+}
 
 .BreakBox {
   border:1px solid aquamarine;
@@ -82,8 +108,12 @@
   font-style: italic;
 }
 
+.Guide {
+  background-color: cornsilk;
+}
+
 .Button {
-  color: rgb(7, 233, 233);
+  color: rgb(10, 173, 173);
 }
 
 .Button:hover {

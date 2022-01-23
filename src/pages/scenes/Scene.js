@@ -30,7 +30,6 @@ const Scene = (props) => {
     const [showCosBack, setShowCosBack] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showBreak, setShowBreak] = useState(false);
-    const [showMoods, setShowMoods] = useState(false);
     const [showstory, setShowstory] = useState(false);
     const [showStoryShot, setShowStoryShot] = useState(false);
     const [showInts, setShowInts] = useState(false);
@@ -208,7 +207,39 @@ const Scene = (props) => {
                     </Col>
                     </Row>
                   </div>
-                  <Row>
+                  <Row className={`${styles.ButtonLine}`}>
+                  <Col xs={6} md={{ span: 2, offset: 1 }} className='text-center'>
+                            <p
+                              className={`py-0 mb-0 ${styles.Button}`}
+                              onClick={() => handleClickMoods()} > Moodshots
+                            </p>
+                        </Col>
+                    <Col xs={6} md={2} className='text-center'>
+                            <p
+                              className={`py-0 mb-0 ${styles.Button}`}
+                              onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
+                            </p>
+                        </Col>
+                    <Col className='text-center' xs={4} md={2}>
+                      <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
+                      </p>
+                    </Col>
+                    <Col className='text-center' xs={4} md={2}>
+                    <p
+                        className={`py-0 mb-0 ${styles.Button}`}
+                        onClick={() => setShowlist(showlist => !showlist)} >Shotlist
+                    </p>
+                    </Col>
+                    <Col className='text-center' xs={4} md={2}>
+                      <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
+                      </p>
+                    </Col>
+                  </Row>  
+                  {/* <Row>
                   <Col className='text-center'>
                             <Button
                               className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
@@ -241,22 +272,17 @@ const Scene = (props) => {
                           onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
                       </Button>
                     </Col>
-                  </Row>  
+                  </Row>   */}
                   <Card.Body className='pt-0'>
-                  {!showMoods ? (
-                      ""
-                    ) : (
-                      <MoodshotsPage sceneId={id} number={number} location={location} setScene={setScene} />
-                      ) }
                       {!showBreak ? (
                       ""
                     ) : (
-                      <Breakdown scene={scene} {...scene} setScene={setScene} /> 
+                      <Breakdown scene={scene} {...scene} setShowBreak={setShowBreak} setScene={setScene} /> 
                       ) }             
                     {!showstory ? (
                       ""
                     ) : (
-                      <Storyboard storyboard={storyboard} />
+                      <Storyboard storyboard={storyboard} setShowstory={setShowstory} />
                     ) }
                     {!showlist ? (
                       ""
@@ -268,19 +294,21 @@ const Scene = (props) => {
                     ) : (                      
                       <Row>
                         <Col xs={6}>
-                        <Storyboard storyboard={storyboard} />
+                        <Storyboard setShowstory={setShowStoryShot} storyboard={storyboard} />
                         </Col>
                         <Col xs={6}>
-                        <ShotlistPage setShowlist={setShowlist} scene={scene} />
+                        <ShotlistPage setShowlist={setShowStoryShot} scene={scene} />
                         </Col>
                       </Row>             
                     ) }
                     {/* workspace */}
-                  <h5 style={{ textTransform: 'uppercase'}} className={`mt-3 mb-4 pl-3 py-1 ${styles.SubTitle }`}>Scene Workspaces</h5>
+                  <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 pl-3 py-1 ${styles.SubTitle }`}>Scene Workspaces</h5>
                   <Row className='mb-2'>
                     <Col md={1}></Col>
                     <Col className='mx-0 px-0' xs={12} md={10} >
-                    {!showInts ? (
+                    <div className={`mt-3 pb-0 mb-1`} >
+                    <p style={{ textTransform: 'uppercase'}} className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >Workspace Guide</p>
+                      {!showInts ? (
                       ""
                     ) : (
                       <WorkspaceInst className="my-2" setShowInts={setShowInts} />
@@ -295,9 +323,7 @@ const Scene = (props) => {
                     ) : (
                       <WorkspaceGuideEdit className="my-2" id={id} number={number} setShowGuideEdit={setShowGuideEdit} setScene={setScene} />
                     ) }
-                    <div className={`px-3 pb-0 ${styles.Guide}`}>
-                      <p style={{ textTransform: 'uppercase'}} className={`mx-0 px-0 pb-0  text-center ${styles.GuideTitle}`} >Workspace Guide</p>
-                      <p>{workspace_guide} </p>
+                      <div className={`mt-1 px-3 pb-0 ${styles.Guide}`}>{workspace_guide} </div>
                       <Row>
                         <Col xs={4} className='mx-0 px-0 text-center'>
                           <p
@@ -311,12 +337,12 @@ const Scene = (props) => {
                           {workspace_guide ? (
                             <p
                             className={` py-0 mb-1 ${styles.Button} `}
-                            onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > Edit Guide
+                            onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > Edit
                           </p>
                           ) : (
                             <p
                             className={`py-0 mb-1 ${styles.Button}`}
-                            onClick={() => setShowGuide(showGuide => !showGuide)} > Add Guide
+                            onClick={() => setShowGuide(showGuide => !showGuide)} > Add 
                           </p>
                           )}
                         </Col>
@@ -324,7 +350,7 @@ const Scene = (props) => {
                     </div>
                     </Col>
                   </Row>
-                  <Row className={`mt-5`} >
+                  <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                       <Col className='px-1 px-md-2' xs={4} md={4} lg={4} >
                         <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
@@ -333,7 +359,6 @@ const Scene = (props) => {
                         </Card>
                       </Col>
                   </Row>
-                  <hr/>
                   <Row>
                     <Col md={12}>
                     {/* <h5 style={{ textTransform: 'uppercase'}} className={`mt-5 mb-3  py-1`}>Department Workspaces</h5> */}

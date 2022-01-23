@@ -28,10 +28,13 @@ const Breakdown = (props) => {
       character12_costume, other_characters, other_characters_costumes,
       background_artists, background_artists_costumes, shooting_date,
       pages, action, content, storyboard, info, image, scene, location_detail,
-      workspace_guide, setScene } = props;
+      workspace_guide, setScene, setShowBreak } = props;
     return (
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={`mt-5 mb-4 pl-3 py-1 ${styles.SubTitle }`}>Scene breakdown</h5>
+            <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
+                Scene breakdown
+                <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>
+                </h5>
             <Row>
             <Col className='mx-0 px-0' xs={12} md={4}  >
                 <div className={`p-3 ${styles.BreakBox }`}>

@@ -87,6 +87,7 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
     return (
         <div className={`p-3 mb-3 ${styles.Guide}`}>
             {/* workspace guide */}
+            <span className={` ${styles.CloseIns }`} onClick={() => setShowGuideEdit(false) } >Close</span>
             <h5 className="mb-2 text-center">Edit Workspace Guide</h5>
             <Form onSubmit={handleSubmit}>
             <Row>

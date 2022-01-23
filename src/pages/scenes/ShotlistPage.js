@@ -45,7 +45,10 @@ const ShotlistPage = ({scene, setShowlist} ) => {
 
     return (
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={` mt-5 mb-4 pl-3 py-1 ${styles.SubTitle }`}>Shotlist</h5>
+            <h5 style={{ textTransform: 'uppercase'}} className={` mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
+                Shotlist
+                <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowlist(false) } >Close</span>
+                </h5>
             <Row>
               <Col className="text-center">
                     <Button onClick={() => setAddShot(addShot => !addShot)} 
