@@ -14,30 +14,24 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from 'react-router-dom';
 
 import Asset from "../../components/Asset";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
-import MoodshotCreate from "./MoodshotCreate";
 import MoodshotTop from "./MoodshotTop";
 
-const MoodshotsPage = ({sceneId="", number="", character="", location="", message, filter="" }) => {
+const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="", message, filter="" }) => {
     useRedirect("loggedOut");
   const [moodshots, setMoodshots] = useState({ results: [] });
   const [error, setErrors] = useState({});
-  const [show, setShow] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const history = useHistory();
+  console.log(locationPlace);
+  console.log(characterRole);
  
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    // console.log(`depart ${filter}`);
-    // console.log(`sceneId ${sceneId}`)
-    // console.log(`number ${number}`)
-
     const fetchShots = async () => {
       try {
         const { data } = await axiosReq.get(`/moodshots/?${filter}&search=${query}`);
@@ -71,32 +65,66 @@ const MoodshotsPage = ({sceneId="", number="", character="", location="", messag
                 >
                     Back
             </Button>
-            <Row>
-                <Col className="text-center">
-                    <Button onClick={() => history.push(`/moodshot/create`) }
-                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                    Add Moodshot</Button>
-                {/* {!show ?("") : (<MoodshotCreate /> ) } */}
+            {sceneId ? (
+              <Row className="mb-3">
+              <Col className="text-center">
+                <h5 className="text-center mb-2">Scene {number} Moodshots </h5>
+              <>
+              <Button onClick={() => history.push(`/scene/moodshot/create`) }
+              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              Add Scene {number} Moodshot</Button>
+              </>
+              </Col>
+              </Row >
+            ) : characterRole ? (
+              <Row className="mb-3">
+              <Col className="text-center">
+              <h5 className="text-center locationPlace"> {characterRole} Moodshots </h5>
+              <>
+              <Button onClick={() => history.push(`/character/moodshot/create`) }
+              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              Add {characterRole} Moodshot</Button>
+              </>
+              </Col>
+              </Row>
+            ) : locationPlace ? (
+              <Row className="mb-3">
+              <Col className="text-center">
+              <h5 className="text-center mb-2"> {locationPlace} Moodshots </h5>
+              <>
+              <Button onClick={() => history.push(`/location/moodshot/create`) }
+              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              Add {locationPlace} Moodshot</Button>
+              </>
+              </Col>
+              </Row>
+            ) : (
+              <>
+              <Row>
+              <Col className="text-center">
+                <Button onClick={() => history.push(`/moodshot/create`) }
+                  className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                  Add Moodshot</Button>
                 </Col>
-            </Row>
-            {/* sceneId={sceneId} number={number} character={character} location={location} */}
-            {/* search */}
-            <Row>
-                <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
-                <Form
-                    className={`${styles.SearchBar} mt-3`}
-                    onSubmit={(event) => event.preventDefault()}
-                    >
-                <Form.Control
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    type="text"
-                    className="mr-sm-2"
-                    placeholder="Search by Scene-number, Location or Character"
-                />
-                </Form>
-                </Col>
-            </Row>
+              </Row>
+              <Row>
+              <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+              <Form
+                  className={`${styles.SearchBar} mt-3`}
+                  onSubmit={(event) => event.preventDefault()}
+                  >
+              <Form.Control
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  type="text"
+                  className="mr-sm-2"
+                  placeholder="Search by Scene-number, Location or Character"
+              />
+              </Form>
+              </Col>
+              </Row>
+              </>
+              ) }
             {hasLoaded ? (
           <>
             {moodshots.results.length ? (

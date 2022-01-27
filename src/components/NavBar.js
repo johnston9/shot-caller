@@ -84,7 +84,7 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/scenes"
         >
-          <i className="navicon fas fa-stream"></i>Workspace
+          <i className="navicon fas fa-stream"></i>Scenes
         </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item >

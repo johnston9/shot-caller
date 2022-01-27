@@ -45,6 +45,8 @@ import LocationsPage from './pages/locations/LocationsPage';
 import LocationsEdit from './pages/locations/LocationsEdit';
 import LocationsCreate from './pages/locations/LocationsCreate';
 import LocationPage from './pages/locations/LocationPage';
+import { useCharacterContext, useLocationContext, useSetLocationContext } from './contexts/CharLocatContex';
+import MoodshotEdit from './pages/moodshots/MoodshotEdit';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -55,6 +57,8 @@ function App() {
   const number = useNumberContext();
   const act = useActContext();
   const deptGeneral = useDeptGeneralContext();
+  const character = useCharacterContext();
+  const location = useLocationContext();
 
   return (
     <div className={`px-4 ${styles.App }`} >
@@ -117,8 +121,9 @@ function App() {
              )} />
         <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
         {/* MOODS*/}
+        {/* all moodshots */}
         <Route exact path="/moodshot/create" render={() => <MoodshotCreate />} />
-        {/* all moods */}
+        <Route exact path="/moodshots/:id/edit" render={() => <MoodshotEdit />} />
         <Route
             exact
             path="/moodshots"
@@ -127,7 +132,11 @@ function App() {
                message="No results found. Please add a shot" />
             )}
           />
-        {/* Moodshots for scene */}
+        {/* Moodshots for scenes */}
+        <Route exact path="/scene/moodshot/create" render={() => (
+          <MoodshotCreate
+          sceneId={sceneId}
+          number={number} />) } />
         <Route
             exact
             path="/moodshots/scene"
@@ -137,6 +146,36 @@ function App() {
                 filter={`scene=${sceneId}`}
                 sceneId={sceneId}
                 number={number}
+              />
+            )}
+          />
+        {/* Moodshots for characters */}
+        <Route exact path="/character/moodshot/create" render={() => (
+          <MoodshotCreate
+          characterRole={character}/>) } />
+        <Route
+            exact
+            path="/moodshots/character"
+            render={() => (
+              <MoodshotsPage
+                message="No results found."
+                filter={`character=${character}`}
+                characterRole={character}
+              />
+            )}
+          />
+        {/* Moodshots for locations */}
+        <Route exact path="/location/moodshot/create" render={() => (
+          <MoodshotCreate
+          locationPlace={location}/>) } />
+        <Route
+            exact
+            path="/moodshots/location"
+            render={() => (
+              <MoodshotsPage
+                message="No results found."
+                filter={`location=${location}`}
+                locationPlace={location}
               />
             )}
           />

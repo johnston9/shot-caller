@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'react-bootstrap/Image'
-import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
+import { useSetLocationContext } from '../../contexts/CharLocatContex';
 
 const Location = (props) => {
     useRedirect("loggedOut");
+    const setLocation = useSetLocationContext();
     const { id,
         name,
         description,
@@ -37,20 +34,32 @@ const Location = (props) => {
         image7,
         image8_description,
         image8, } = props;
-        const history = useHistory();
+    
+    const history = useHistory();
 
-        const handleEdit = () => {
+    const handleEdit = () => {
             history.push(`/locations/${id}/edit`);
           };
         
-          const handleDelete = async () => {
-            try {
-              await axiosReq.delete(`/locations/${id}/`);
-              history.goBack();
-            } catch (err) {
-              // console.log(err);
-            }
-          };
+    const handleDelete = async () => {
+        try {
+            await axiosReq.delete(`/locations/${id}/`);
+            history.goBack();
+        } catch (err) {
+            // console.log(err);
+        }
+        };
+    
+    const handleClickMoods = () => {
+        setLocation(name);
+        console.log(name);
+        history.push(`/moodshots/location`);
+    };
+        
+    const handleClickAddMoods = () => {
+        setLocation(name);
+        history.push(`/location/moodshot/create`);
+    };
 
     return (
         <div>
@@ -67,6 +76,20 @@ const Location = (props) => {
                 </Col>
             </Row>
             <hr/>
+            <Row>
+                <Col xs={6} className='text-center'>
+                    <p
+                        className={`py-0 mb-0 ${styles.Button}`}
+                        onClick={() => handleClickMoods()} > Moodshots
+                    </p>
+                </Col>
+                <Col xs={6} className='text-center'>
+                    <p
+                        className={`py-0 mb-0 ${styles.Button}`}
+                        onClick={() => handleClickAddMoods()} > Add Moodshot
+                    </p>
+                </Col>
+            </Row>
             <h5 className='my-3'> Info</h5>
             <Row>
                 <Col xs={6}>
@@ -140,7 +163,7 @@ const Location = (props) => {
                     }
                 </Col>
             </Row>
-            {/* costume 5/6 */}
+            {/* IMAGE 5/6 */}
             <Row>
                 <Col xs={6}>
                 {image5_description &&  <> 
@@ -165,7 +188,7 @@ const Location = (props) => {
                     }
                 </Col>
             </Row>
-            {/* costume 7/8 */}
+            {/* IMAGE 7/8 */}
             <Row>
                 <Col xs={6}>
                 {image7_description &&  <> 

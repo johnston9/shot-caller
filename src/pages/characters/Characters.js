@@ -31,7 +31,7 @@ const Characters = ({message}) => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
   const [query, setQuery] = useState("");
-  const topbox = true
+  const topbox = true;
 
   useEffect(() => {
     const fetchCharacters = async () => {

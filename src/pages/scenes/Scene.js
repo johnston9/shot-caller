@@ -1,27 +1,22 @@
 import React, { useState } from 'react'
-import { Button, Card } from 'react-bootstrap';
+import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
+import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import Storyboard from './Storyboard';
-import SceneCostumes from './SceneCostumes';
 import ShotlistPage from './ShotlistPage';
-import SceneCosOther from './SceneCosOther';
-import SceneCosBack from './SceneCosBack';
 import WorkspaceInst from './WorkspaceInst';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
-import MoodshotsPage from '../moodshots/MoodshotsPage';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -189,6 +184,13 @@ const Scene = (props) => {
 
     };
 
+    const handleClickAddMoods = () => {
+      setSceneId(id); 
+      setNumber(number);
+      history.push(`/scene/moodshot/create`);
+
+    };
+
     return (
         <div>
             <div className={` ${styles.Header}`}>
@@ -208,13 +210,19 @@ const Scene = (props) => {
                     </Row>
                   </div>
                   <Row className={`${styles.ButtonLine}`}>
-                  <Col xs={6} md={{ span: 2, offset: 1 }} className='text-center'>
-                            <p
-                              className={`py-0 mb-0 ${styles.Button}`}
-                              onClick={() => handleClickMoods()} > Moodshots
-                            </p>
-                        </Col>
-                    <Col xs={6} md={2} className='text-center'>
+                    <Col xs={4} md={2} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => handleClickMoods()} > Moodshots
+                        </p>
+                    </Col>
+                    <Col xs={4} md={2} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => handleClickAddMoods()} > Add Moodshots
+                        </p>
+                    </Col>
+                    <Col xs={4} md={2} className='text-center'>
                             <p
                               className={`py-0 mb-0 ${styles.Button}`}
                               onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown

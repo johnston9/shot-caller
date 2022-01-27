@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'react-bootstrap/Image'
-import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
+import { useSetCharacterContext } from '../../contexts/CharLocatContex';
 
 const Character = (props) => {
     useRedirect("loggedOut");
+    const setCharacter = useSetCharacterContext();
     const { role,
             id,
             actor,
@@ -58,6 +55,18 @@ const Character = (props) => {
         }
       };
 
+      const handleClickMoods = () => {
+        setCharacter(role);
+        history.push(`/moodshots/character`);
+    
+      };
+    
+      const handleClickAddMoods = () => {
+        setCharacter(role);
+        history.push(`/character/moodshot/create`);
+    
+      };
+
     return (
         <div>
             <Row className='p-3'>
@@ -73,6 +82,20 @@ const Character = (props) => {
                 </Col>
             </Row>
             <hr/>
+            <Row>
+                <Col xs={6} className='text-center'>
+                    <p
+                        className={`py-0 mb-0 ${styles.Button}`}
+                        onClick={() => handleClickMoods()} > Moodshots
+                    </p>
+                </Col>
+                <Col xs={6} className='text-center'>
+                    <p
+                        className={`py-0 mb-0 ${styles.Button}`}
+                        onClick={() => handleClickAddMoods()} > Add Moodshot
+                    </p>
+                </Col>
+            </Row>
             <h5 className='my-3'>Actor Info</h5>
             <Row>
                 <Col xs={4}>

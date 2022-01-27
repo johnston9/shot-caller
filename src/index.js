@@ -9,6 +9,7 @@ import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 import { DeptCategoryProvider } from "./contexts/DeptCategoryContext";
 import { ActProvider } from "./contexts/ActContext";
 import { ScenesCharactersLocationsProvider } from "./contexts/Scene_chars_locs";
+import { CharacterLocationProvider } from "./contexts/CharLocatContex";
 
 ReactDOM.render(
     <Router >
@@ -17,7 +18,9 @@ ReactDOM.render(
           <ActProvider >
             <DeptCategoryProvider >
               <ScenesCharactersLocationsProvider >
-                <App />
+                <CharacterLocationProvider >
+                  <App />
+                </CharacterLocationProvider>
               </ScenesCharactersLocationsProvider>
             </DeptCategoryProvider>
           </ActProvider>

@@ -14,19 +14,22 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import SceneCreateCostumes from "./SceneCreateCostumes";
 import NewCharacter from "./NewCharacter";
 import NewLocation from "./NewLocation";
+import { useCharactersContext, useLocationsContext, useSetCharactersContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 
 function SceneCreateForm({topbox}) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
   const [show, setShow] = useState(false);
-  const [locations, setLocations] = useState({ results: [] });
-  const [characters, setCharacters] = useState({ results: [] });
+  const characters = useCharactersContext();
+  const setCharacters = useSetCharactersContext();
+  const locations = useLocationsContext();
+  const setLocations = useSetLocationsContext();
     const [postData, setPostData] = useState({
         number: "",
         title: "",
@@ -88,32 +91,32 @@ function SceneCreateForm({topbox}) {
       const imageInput = useRef(null)
       const storyboardInput = useRef(null)
 
-      const fetchCharactersMount = async () => {
-        try {
-          const { data } = await axiosRes.get("characters/");
-          setCharacters(data);
-          console.log(`chars 1 ${characters.results[0].role }`)
-          console.log(data)
-        } catch (err) {
-          console.log(err)
-        }
-      }
+      // const fetchCharactersMount = async () => {
+      //   try {
+      //     const { data } = await axiosRes.get("characters/");
+      //     setCharacters(data);
+      //     console.log(`chars 1 ${characters.results[0].role }`)
+      //     console.log(data)
+      //   } catch (err) {
+      //     console.log(err)
+      //   }
+      // }
 
-      const fetchLocationsMount = async () => {
-        try {
-          const { data } = await axiosRes.get("locations/");
-          setLocations(data);
-          console.log(`loc 1 ${locations.results[0].name }`)
-          console.log(data)
-        } catch (err) {
-          console.log(err)
-        }
-      }
+      // const fetchLocationsMount = async () => {
+      //   try {
+      //     const { data } = await axiosRes.get("locations/");
+      //     setLocations(data);
+      //     console.log(`loc 1 ${locations.results[0].name }`)
+      //     console.log(data)
+      //   } catch (err) {
+      //     console.log(err)
+      //   }
+      // }
 
-      useEffect(() => { 
-        fetchCharactersMount();
-        fetchLocationsMount();
-      }, [])
+      // useEffect(() => { 
+      //   fetchCharactersMount();
+      //   fetchLocationsMount();
+      // }, [])
 
       const history = useHistory()
     
