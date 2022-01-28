@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
+import rightdoor from "../../assets/rightdoor.png";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
@@ -49,23 +50,22 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className={styles.SignupBox} >
+    <Container className={styles.SignupBox} >
         <TopBox title="Sign Up"/>
         <Row className={styles.Row}>
-          <Col
-            xs={1} md={3}
-          >
-            {/* <Image
+          <Col className="my-3 pr-0 pl-3"
+            xs={1} md={1}>
+            <Image
                 className={`${styles.FillerImagel}`}
                 src={door}
-            /> */}
+            />
           </Col>
-          <Col className="my-auto py-2 p-md-2" xs={10}
-          md={6}
-           >
-            <Container >
-              <h1 className={styles.Header}>sign up</h1>
-              <Form onSubmit={handleSubmit} className={styles.Form} >
+          <Col className="my-auto py-2 p-md-2" xs={10} >
+          <Row>
+            <Col xs={10} md={{ span: 6, offset: 3 }}>
+              <Container >
+                <h1 className={styles.Header}>sign up</h1>
+                <Form onSubmit={handleSubmit} className={styles.Form} >
                 <Form.Group controlId="username" className="mb-2" >
                     <Form.Label className="d-none" >Username</Form.Label>
                     <Form.Control 
@@ -144,25 +144,24 @@ const SignUpForm = () => {
                   </Alert>
                 ))}
                 </Form>
-
-            </Container>
+              </Container>
+            </Col>
+            </Row>
             <Container className="mt-3" >
               <Link className={styles.Link} to="/signin">
                 Already have an account? <span>Sign in</span>
               </Link>
             </Container>
           </Col>
-          <Col
-            xs={1} md={3}
-            className={`my-auto d-none d-md-block p-2`}
-          >
-            {/* <Image
-              className={`${appStyles.FillerImager}`}
-              src={door}
-            /> */}
+          <Col className={`my-3 pl-0 pr-3`}
+            xs={1} md={1}
+            className={`my-auto p-2`} >
+            <Image
+              className={`${styles.FillerImagel}`}
+              src={rightdoor}/>
           </Col>
         </Row>
-    </div>
+    </Container>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logo from "../assets/logo2.png";
@@ -15,7 +15,8 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  const { expanded, setExpanded, ref } = useClickOutsideToggle();
+  const { expanded, setExpanded, ref, refw, refw1, refw2, refw3, reff, reff1, 
+    reff2, reff3, reff4, reff5, reff6, refm, refm1, refm2 } = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
@@ -26,36 +27,6 @@ const NavBar = () => {
       // console.log(err);
     }
   };
-
-  // const addSceneIcon = (
-  //   <NavLink
-  //     className={styles.NavLink}
-  //     activeClassName={styles.Active}
-  //     to="/scenes/create"
-  //   >
-  //     <i className="far fa-plus-square"></i>Add scene
-  //   </NavLink>
-  // );
-
-  // const scenesIcon = (
-  //   <NavLink
-  //     className={styles.NavLink}
-  //     activeClassName={styles.Active}
-  //     to="/scenes"
-  //   >
-  //     <i className="navicon fas fa-stream"></i>Scenes
-  //   </NavLink>
-  // );
-
-  // const profilesIcon = (
-  //   <NavLink
-  //     className={styles.NavLink}
-  //     activeClassName={styles.Active}
-  //     to="/profiles"
-  //   >
-  //     <i className="navicon far fa-plus-square"></i>Profiles
-  //   </NavLink>
-  // );
 
   const loggedInIcons = (
     <>
@@ -74,13 +45,15 @@ const NavBar = () => {
               <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Workspace
             </span>
           }
+          ref={refw}
           id="nav-dropdown"
           activeClassName={styles.Active}
-          className={`mt-1 ${styles.NavLink} `}
+          className={`mt-1 ${styles.NavLink} luv `}
           >
         <NavDropdown.Item >
           <NavLink
-          className={` ${styles.DropLink} `}
+          ref={refw1}
+          className={`noluv ${styles.DropLink} `}
           activeClassName={styles.Active}
           to="/scenes"
         >
@@ -89,7 +62,8 @@ const NavBar = () => {
         </NavDropdown.Item>
         <NavDropdown.Item >
           <NavLink
-          className={` ${styles.DropLink} `}
+          ref={refw2}
+          className={`noluv ${styles.DropLink} `}
           activeClassName={styles.Active}
           to="/findposts/departments"
         >
@@ -98,6 +72,7 @@ const NavBar = () => {
         </NavDropdown.Item>
         <NavDropdown.Item >
           <NavLink
+          ref={refw3}
           className={`${styles.DropLink} `}
           activeClassName={styles.Active}
           to="/scenes/create"
@@ -108,21 +83,22 @@ const NavBar = () => {
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-
       {/* characters locations departments-xtra */}
       <NavDropdown 
           title={
-            <span style={{ color: '#555555'}} className={styles.Title}>
+            <span style={{ color: '#555555'}} className={` ${styles.Title} `}>
               <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Features
             </span>
           }
+          ref={reff}
           id="nav-dropdown2"
           activeClassName={styles.Active}
-          className={`mt-1 pt-1 ${styles.NavLink} `}
+          className={`mt-1 pt-1 luv ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
-          className={` ${styles.NavLink} `}
+          ref={reff1}
+          className={`noluv ${styles.NavLink} noluv`}
           activeClassName={styles.Active}
           to="/characters"
         >
@@ -131,7 +107,8 @@ const NavBar = () => {
         </NavDropdown.Item>
         <NavDropdown.Item >
         <NavLink
-          className={`mt-2 ${styles.NavLink} `}
+        ref={reff2}
+          className={`noluv mt-2 ${styles.NavLink} noluv`}
           activeClassName={styles.Active}
           to="/characters/create"
         >
@@ -140,7 +117,8 @@ const NavBar = () => {
       </NavDropdown.Item>
       <NavDropdown.Item >
         <NavLink
-          className={`mt-2 ${styles.NavLink} `}
+        ref={reff3}
+          className={`mt-2 ${styles.NavLink} noluv`}
           activeClassName={styles.Active}
           to="/locations"
         >
@@ -149,7 +127,8 @@ const NavBar = () => {
       </NavDropdown.Item>
       <NavDropdown.Item >
         <NavLink
-          className={`mt-2 ${styles.NavLink} `}
+          ref={reff4}
+          className={`mt-2 ${styles.NavLink} noluv `}
           activeClassName={styles.Active}
           to="/locations/create"
         >
@@ -158,7 +137,8 @@ const NavBar = () => {
       </NavDropdown.Item>
         <NavDropdown.Item >
           <NavLink
-          className={` ${styles.NavLink} `}
+          ref={reff5}
+          className={` ${styles.NavLink} noluv`}
           activeClassName={styles.Active}
           to="/depts/general"
         >
@@ -167,7 +147,8 @@ const NavBar = () => {
         </NavDropdown.Item>
         <NavDropdown.Item >
         <NavLink
-          className={`mt-2 ${styles.NavLink} `}
+         ref={reff6}
+          className={`mt-2 ${styles.NavLink} noluv`}
           activeClassName={styles.Active}
           to="/department/posts/create"
         >
@@ -180,16 +161,18 @@ const NavBar = () => {
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
-              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Moodshots
+              <i activeClassName={styles.Active} className="luv navicon fas fa-stream"></i>Moodshots
             </span>
           }
+          ref={refm}
           id="nav-dropdown3"
           activeClassName={styles.Active}
           className={`mt-1 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
-          className={` ${styles.DropLink} `}
+          ref={refm1}
+          className={` ${styles.DropLink} noluv`}
           activeClassName={styles.Active}
           to="/moodshots"
         >
@@ -198,7 +181,8 @@ const NavBar = () => {
         </NavDropdown.Item>
         <NavDropdown.Item >
           <NavLink
-          className={`${styles.DropLink} `}
+          ref={refm2}
+          className={`${styles.DropLink} noluv`}
           activeClassName={styles.Active}
           to="/moodshot/create"
         >
@@ -239,7 +223,7 @@ const NavBar = () => {
           }
           id="nav-dropdown3"
           // activeClassName={styles.Active}
-          className={`pt-1 ${styles.NavLink} `}
+          className={`py-0 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
@@ -282,58 +266,9 @@ const NavBar = () => {
     </>
   );
 
-  {/* <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/posts"
-      >
-        <i className="navicon fas fa-stream"></i>Posts
-      </NavLink> */}
-      {/* <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/dept/category"
-      >
-        <i className="fas fa-stream fa-xs"></i>
-        script
-      </NavLink> */}
-      {/* <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/feed"
-      >
-        <i className="fas fa-stream"></i>Feed
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/archived"
-      >
-        <i className="fas fa-stream"></i>Archived
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/liked"
-      >
-        <i className="fas fa-heart"></i>Liked
-      </NavLink> */}
-
-  // const addPostIcon = (
-  //   <NavLink
-  //     className={styles.NavLink}
-  //     activeClassName={styles.Active}
-  //     to="/posts/create"
-  //   >
-  //     <i className="navicon far fa-plus-square"></i>Add post
-  //   </NavLink>
-  // );
-
     return (
-    <Navbar 
-      expanded={expanded}
-      className={styles.NavBar} expand="md" fixed="top">
-        {/* <Container /> */}
+    <Navbar expanded={expanded} className={`my-0 py-0 ${styles.NavBar} `}
+       expand="lg" fixed="top">
         <NavLink to="/">
             <Navbar.Brand >
             <img src={logo} alt="logo" height="30" /> Shot Caller
@@ -347,9 +282,7 @@ const NavBar = () => {
           {currentUser ? loggedInIcons : loggedOutIcons}
         </Nav>
         </Navbar.Collapse>
-        {/* <Container /> */}
   </Navbar>
   )
 }
-
 export default NavBar
