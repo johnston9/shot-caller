@@ -27,7 +27,7 @@ const MoodshotEdit = () => {
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
     scene: "",
-    sceneNumber: "",
+    number: "",
     title: "",
     content: "",
     character: "",
@@ -39,7 +39,7 @@ const MoodshotEdit = () => {
     image5: "",
   });
 
-  const { scene, sceneNumber, title, content, character, 
+  const { scene, number, title, content, character, 
     location, image1, image2, image3, image4, image5 } = postData;
 
   const imageInput1 = useRef(null);
@@ -59,10 +59,11 @@ const MoodshotEdit = () => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/moodshots/${id}/`);
-        const { scene, sceneNumber, title, content, character, 
+        console.log(data);
+        const { scene, number, title, content, character, 
             location, image1, image2, image3, image4, image5 } = data;
  
-    setPostData({ scene, sceneNumber, title, content, character, 
+    setPostData({ scene, number, title, content, character, 
         location, image1, image2, image3, image4, image5 });
       } catch (err) {
         console.log(err);
@@ -158,7 +159,7 @@ const MoodshotEdit = () => {
     const formData = new FormData();
 
     formData.append("scene", scene);
-    formData.append("number", sceneNumber);
+    formData.append("number", number);
     formData.append("title", title);
     formData.append("content", content);
     formData.append("scene", scene);
@@ -181,7 +182,7 @@ const MoodshotEdit = () => {
     }
   
     try {
-      await axiosReq.put("/moodshots/", formData);
+      await axiosReq.put(`/moodshots/${id}`, formData);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -193,21 +194,20 @@ const MoodshotEdit = () => {
 
   const fields = (
     <div>
-      <p>Inputs</p>
       <Row>
         <Col xs={4}>
-        <Form.Group controlId="sceneNumber" className="mb-2" >
-              <Form.Label className="d-none p-1" >Scene Number</Form.Label>
+        <Form.Group controlId="number" className="mb-2" >
+              <Form.Label className="p-1" >Scene Number</Form.Label>
               <Form.Control 
               type="text"
               placeholder="Scene Number"
               className={styles.InputScene}
-              name="sceneNumber"
-              value={sceneNumber}
+              name="number"
+              value={number}
               onChange={handleChange}
                   />
           </Form.Group>
-          {errors?.sceneNumber?.map((message, idx) => (
+          {errors?.number?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>
@@ -215,7 +215,7 @@ const MoodshotEdit = () => {
         </Col>
         <Col xs={4}>
           <Form.Group controlId="location" className="mb-2" >
-              <Form.Label className="d-none p-1" >Location</Form.Label>
+              <Form.Label className=" p-1" >Location</Form.Label>
               <Form.Control 
               type="text"
               placeholder="Location"
@@ -232,7 +232,7 @@ const MoodshotEdit = () => {
           ))}
           </Col>
         <Col xs={4}><Form.Group controlId="character" className="mb-2" >
-              <Form.Label className="d-none p-1" >Character</Form.Label>
+              <Form.Label className=" p-1" >Character</Form.Label>
               <Form.Control 
               type="text"
               placeholder="Character"
@@ -251,82 +251,81 @@ const MoodshotEdit = () => {
     </div>
 )
 
-const dropfields = (
-  <div>
-    <p>Use Dropdowns or input fields</p>
-    <p>Dropdowns</p>
-    <Row>
-      <Col xs={4}>
-        {/* scene */}
-        <Form.Group controlId="scenedrop" className="mb-2" >
-            <Form.Label className="p-1 d-none" ></Form.Label>
-            <Form.Control as="select"
-                name="scene"
-                className={styles.InputChar}
-                value={scene.id}
-                onChange={handleChange}
-                aria-label="scene select">
-                <option  value="" >Scene</option>
-                {scenes.results.length && (
-                    scenes.results.map((scene) => (
-                    <option key={scene.id} value={scene.id} >{scene.number} - {scene.location} "{scene.title}"</option>
-                    ) )) }
-            </Form.Control>
-        </Form.Group>
-        {errors?.scene?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-            {message}
-            </Alert>
-        ))}
-      </Col>
-      <Col xs={4}>
-        {/* location */}
-        <Form.Group controlId="locationdrop" className="mb-2" >
-            <Form.Label className="p-1 d-none" ></Form.Label>
-            <Form.Control as="select"
-                name="location"
-                className={styles.InputChar}
-                value={location}
-                onChange={handleChange}
-                aria-label="location select">
-                <option  >Location</option>
-                {locations.results.length && (
-                    locations.results.map((location) => (
-                    <option key={location.id} value={location.name} >{location.name}</option>
-                    ) )) }
-            </Form.Control>
-        </Form.Group>
-        {errors?.location?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-            {message}
-            </Alert>
-        ))}
-        </Col>
-      <Col xs={4}>
-        {/* character */}
-        <Form.Group controlId="characterdrop" className="mb-2" >
-            <Form.Label className="p-1 d-none" ></Form.Label>
-            <Form.Control as="select"
-                name="character"
-                className={styles.InputChar}
-                value={character}
-                onChange={handleChange}
-                aria-label="character select">
-                <option  >Character</option>
-                {characters.results.length && (
-                    characters.results.map((character) => (
-                    <option key={character.id} value={character.role} >{character.role}</option>
-                    ) )) }
-            </Form.Control>
-        </Form.Group>
-        {errors?.character?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}</Col>
-    </Row>
-  </div>
-)
+// const dropfields = (
+//   <div>
+//     <p>Use Dropdowns or input fields</p>
+//     <p>Dropdowns</p>
+//     <Row>
+//       <Col xs={4}>
+//         {/* <Form.Group controlId="scenedrop" className="mb-2" >
+//             <Form.Label className="p-1 d-none" ></Form.Label>
+//             <Form.Control as="select"
+//                 name="scene"
+//                 className={styles.InputChar}
+//                 value={scene.id}
+//                 onChange={handleChange}
+//                 aria-label="scene select">
+//                 <option  value="" >Scene</option>
+//                 {scenes.results.length && (
+//                     scenes.results.map((scene) => (
+//                     <option key={scene.id} value={scene.id} >{scene.number} - {scene.location} "{scene.title}"</option>
+//                     ) )) }
+//             </Form.Control>
+//         </Form.Group>
+//         {errors?.scene?.map((message, idx) => (
+//             <Alert variant="warning" key={idx}>
+//             {message}
+//             </Alert>
+//         ))} */}
+//       </Col>
+//       <Col xs={4}>
+//         {/* location */}
+//         <Form.Group controlId="locationdrop" className="mb-2" >
+//             <Form.Label className="p-1 d-none" ></Form.Label>
+//             <Form.Control as="select"
+//                 name="location"
+//                 className={styles.InputChar}
+//                 value={location}
+//                 onChange={handleChange}
+//                 aria-label="location select">
+//                 <option  >Location</option>
+//                 {locations.results.length && (
+//                     locations.results.map((location) => (
+//                     <option key={location.id} value={location.name} >{location.name}</option>
+//                     ) )) }
+//             </Form.Control>
+//         </Form.Group>
+//         {errors?.location?.map((message, idx) => (
+//             <Alert variant="warning" key={idx}>
+//             {message}
+//             </Alert>
+//         ))}
+//         </Col>
+//       <Col xs={4}>
+//         {/* character */}
+//         <Form.Group controlId="characterdrop" className="mb-2" >
+//             <Form.Label className="p-1 d-none" ></Form.Label>
+//             <Form.Control as="select"
+//                 name="character"
+//                 className={styles.InputChar}
+//                 value={character}
+//                 onChange={handleChange}
+//                 aria-label="character select">
+//                 <option  >Character</option>
+//                 {characters.results.length && (
+//                     characters.results.map((character) => (
+//                     <option key={character.id} value={character.role} >{character.role}</option>
+//                     ) )) }
+//             </Form.Control>
+//         </Form.Group>
+//         {errors?.character?.map((message, idx) => (
+//           <Alert variant="warning" key={idx}>
+//             {message}
+//           </Alert>
+//         ))}</Col>
+//     </Row>
+//   </div>
+// )
 
   const textFields = (
     <div>
@@ -392,16 +391,16 @@ const buttons = (
             <Row>
             <Col xs={1} md={2}></Col>
               <Col xs={10} md={8}>
-                <p>Edit a Moodshot. 
-              </p>
+                <h5>EDIT {number && <span>Scene {number} - </span> }
+              {location && <span> {location} - </span> }
+              {character && <span> {character} </span> }
+              </h5>
               </Col>
             </Row>
             <Form className="mt-3" onSubmit={handleSubmit}>
                 <Row>
                 <Col md={6} className="p-0 p-md-2">
                     <Container className= {`${appStyles.Content} ${styles.Container}`} >
-                    {/* <p >SceneId {sceneId} --- Scene {number} - </p> */}
-                    {dropfields}
                     {fields}
                     {textFields}
                     </Container>
