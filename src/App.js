@@ -41,13 +41,13 @@ import CharacterCreate from './pages/characters/CharacterCreate';
 import CharacterEdit from './pages/characters/CharacterEdit';
 import MoodshotCreate from './pages/moodshots/MoodshotCreate';
 import MoodshotsPage from './pages/moodshots/MoodshotsPage';
-import MoodshotPage from './pages/moodshots/MoodshotPage';
 import LocationsPage from './pages/locations/LocationsPage';
 import LocationsEdit from './pages/locations/LocationsEdit';
 import LocationsCreate from './pages/locations/LocationsCreate';
 import LocationPage from './pages/locations/LocationPage';
 import { useCharacterContext, useLocationContext, useSetLocationContext } from './contexts/CharLocatContex';
 import MoodshotEdit from './pages/moodshots/MoodshotEdit';
+import MoodshotPage from './pages/moodshots/MoodshotPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -147,7 +147,7 @@ function App() {
           number={number} />) } />
         <Route
             exact
-            path="/moodshots/scene"
+            path="/scene/moodshots"
             render={() => (
               <MoodshotsPage
                 message="No results found."
@@ -163,7 +163,7 @@ function App() {
           characterRole={character}/>) } />
         <Route
             exact
-            path="/moodshots/character"
+            path="/character/moodshots"
             render={() => (
               <MoodshotsPage
                 message="No results found."
@@ -178,7 +178,7 @@ function App() {
           locationPlace={location}/>) } />
         <Route
             exact
-            path="/moodshots/location"
+            path="/location/moodshots"
             render={() => (
               <MoodshotsPage
                 message="No results found."

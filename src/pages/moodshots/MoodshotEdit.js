@@ -371,10 +371,10 @@ const buttons = (
       className={`${btnStyles.Button} ${btnStyles.Blue}`}
       onClick={() => history.goBack()}
     >
-      cancel
+      Cancel
     </Button>
     <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-      create
+      Edit
     </Button>
   </div>
 );
@@ -390,8 +390,8 @@ const buttons = (
             </Button>
             <Row>
             <Col xs={1} md={2}></Col>
-              <Col xs={10} md={8}>
-                <h5>EDIT {number && <span>Scene {number} - </span> }
+              <Col className="text-center" xs={10} md={8}>
+                <h5>{number && <span>Scene {number} - </span> }
               {location && <span> {location} - </span> }
               {character && <span> {character} </span> }
               </h5>

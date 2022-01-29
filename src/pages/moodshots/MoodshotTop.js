@@ -55,7 +55,7 @@ const MoodshotTop = (props) => {
                                 <Link to={`/profiles/${profile_id}`}>
                                 <Avatar src={profile_image} height={45}  />
                             </Link>
-                            <span className='ml-3'>{name}</span>
+                            <span style={{ fontWeight: '700' }} className='ml-3'>{name}</span>
                             <span className='ml-3'>{updated_at}</span>
                             {is_owner && (
                             <PostDropdown
@@ -66,7 +66,7 @@ const MoodshotTop = (props) => {
                             </Col>
                     {/* <div className="d-flex align-items-center justify-content-between"> */}
                             <Col xs={12} md={7} >
-                                {number && <span>Scene {number}</span>} {location && <span> {location}</span>} {character && <span> {character}</span>} {title && <span> {title}</span>}
+                                {number && <span style={{  fontWeight: '700' }}>Scene {number} - </span>} {location && <span> {location} - </span>} {character && <span style={{  fontWeight: '700' }}> {character} - </span>} {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
                             </Col>
                         </Row>
                     {/* </div> */}

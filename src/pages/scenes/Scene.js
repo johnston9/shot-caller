@@ -180,7 +180,7 @@ const Scene = (props) => {
     const handleClickMoods = () => {
       setSceneId(id); 
       setNumber(number);
-      history.push(`/moodshots/scene`);
+      history.push(`/scene/moodshots`);
 
     };
 

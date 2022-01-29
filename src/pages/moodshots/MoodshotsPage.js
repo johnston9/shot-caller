@@ -69,7 +69,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
             {sceneId ? (
               <Row className="mb-3">
               <Col className="text-center">
-                <h5 className="text-center mb-2">Scene {number} Moodshots </h5>
+                <h5 className="text-center mb-3"><span style={{ textTransform: 'uppercase'}}>Scene {number}</span> Moodshots </h5>
               <>
               <Button onClick={() => history.push(`/scene/moodshot/create`) }
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
@@ -80,7 +80,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
             ) : characterRole ? (
               <Row className="mb-3">
               <Col className="text-center">
-              <h5 className="text-center locationPlace"> {characterRole} Moodshots </h5>
+              <h5 className="text-center mb-3"><span style={{  fontWeight: '700' }}>{characterRole}</span> Moodshots </h5>
               <>
               <Button onClick={() => history.push(`/character/moodshot/create`) }
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>

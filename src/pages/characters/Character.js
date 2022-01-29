@@ -57,7 +57,7 @@ const Character = (props) => {
 
       const handleClickMoods = () => {
         setCharacter(role);
-        history.push(`/moodshots/character`);
+        history.push(`/character/moodshots`);
     
       };
     

@@ -53,7 +53,7 @@ const Location = (props) => {
     const handleClickMoods = () => {
         setLocation(name);
         console.log(name);
-        history.push(`/moodshots/location`);
+        history.push(`/location/moodshots`);
     };
         
     const handleClickAddMoods = () => {
