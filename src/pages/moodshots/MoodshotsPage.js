@@ -28,6 +28,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
   const history = useHistory();
   console.log(locationPlace);
   console.log(characterRole);
+  console.log(filter);
  
   const [query, setQuery] = useState("");
 

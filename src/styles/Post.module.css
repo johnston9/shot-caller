@@ -42,5 +42,6 @@
   }
 
   .Content {
-    background-color: #e7eeed;
+    background-color: #fafafa;
+    cursor: pointer;
   }

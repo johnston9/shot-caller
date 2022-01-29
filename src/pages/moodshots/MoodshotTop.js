@@ -13,8 +13,7 @@ import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
 import Avatar from '../../components/Avatar';
 
-const MoodshotTop = (props) => {
-    
+const MoodshotTop = (props) => {  
     useRedirect("loggedOut")
     const {
         id,

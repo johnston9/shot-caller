@@ -59,7 +59,7 @@ const SignInForm = () => {
         <TopBox title="Sign In" />
         {/* <Row > */}
         <Row className={styles.Row}>
-          <Col className="my-3 pr-0 pl-3"
+          <Col className="my-3 pr-0 pl-3 pl-md-4"
             xs={1} md={1}>
             <Image
                 className={`${styles.FillerImagel}`}
@@ -67,7 +67,8 @@ const SignInForm = () => {
           </Col>
           <Col className="my-auto py-2 p-md-2" xs={10}>
              <Row>
-               <Col xs={10} md={{ span: 6, offset: 3 }}>
+             <Col md= {3} className="d-nome d-md-block"></Col>
+               <Col xs={12} md={6} >
                <Container>
                 <h1 className={styles.Header}>Sign in</h1>
                 <Form onSubmit={handleSubmit} className={styles.Form} >
@@ -125,9 +126,8 @@ const SignInForm = () => {
                </Col>
              </Row>
           </Col>
-          <Col className={`my-3 pl-0 pr-3`}
-            xs={1} md={1}
-            className={`my-auto p-2`}>
+          <Col className={`my-3 pl-0 pr-3 pr-md-4`}
+            xs={1} md={1}>
             <Image
               className={`${styles.FillerImagel}`}
               src={rightdoor}

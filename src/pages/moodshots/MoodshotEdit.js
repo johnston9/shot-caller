@@ -395,6 +395,7 @@ const buttons = (
               {location && <span> {location} - </span> }
               {character && <span> {character} </span> }
               </h5>
+              <p>{title && <span> {title} </span> }</p>
               </Col>
             </Row>
             <Form className="mt-3" onSubmit={handleSubmit}>

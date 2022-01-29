@@ -62,6 +62,7 @@ function PostPage() {
       </Button>
         <Post {...post.results[0]} setPosts={setPost} postPage/>
         <Container className={appStyles.Content}>
+          <h3 className="my-3 text-center">Comments</h3>
         {currentUser ? (
           <CommentCreateForm
           profile_id={currentUser.profile_id}

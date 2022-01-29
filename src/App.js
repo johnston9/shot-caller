@@ -41,6 +41,7 @@ import CharacterCreate from './pages/characters/CharacterCreate';
 import CharacterEdit from './pages/characters/CharacterEdit';
 import MoodshotCreate from './pages/moodshots/MoodshotCreate';
 import MoodshotsPage from './pages/moodshots/MoodshotsPage';
+import MoodshotPage from './pages/moodshots/MoodshotPage';
 import LocationsPage from './pages/locations/LocationsPage';
 import LocationsEdit from './pages/locations/LocationsEdit';
 import LocationsCreate from './pages/locations/LocationsCreate';
@@ -61,7 +62,7 @@ function App() {
   const location = useLocationContext();
 
   return (
-    <div className={`px-4 ${styles.App }`} >
+    <div className={`px-2 px-md-4 ${styles.App }`} >
       <NavBar />
       <div className={styles.Main}>
         <Switch>
@@ -132,6 +133,13 @@ function App() {
                message="No results found. Please add a shot" />
             )}
           />
+        <Route 
+            exact 
+            path="/moodshots/:id" 
+            render={() => (
+            <MoodshotPage
+             />
+             )} />
         {/* Moodshots for scenes */}
         <Route exact path="/scene/moodshot/create" render={() => (
           <MoodshotCreate

@@ -21,10 +21,10 @@ const Home = () => {
     const history = useHistory();
 
     return (
-      <Container className={styles.Background}>
+      <Container className={`px-2  ${styles.Background}`}>
       <TopBox title="SHOT CALLER" />
         <Row className={`my-3 ${styles.Row}`}>
-        <Col className="my-3 pr-0 pl-3"
+        <Col className="my-3 pr-0 pl-3 pl-md-4"
           xs={1} md={1}
       >
         <Image
@@ -202,11 +202,8 @@ const Home = () => {
             </Row>
           </div>
       </Col>
-      <Col
-        xs={1} 
-        // className={`my-auto d-none d-md-block p-2`}
-        className={`my-3 pl-0 pr-3`}
-      >
+      <Col className={`my-3 pl-0 pr-3 pr-md-4`}
+        xs={1} >
         <Image
           className={`${styles.FillerImagel}`}
           src={rightdoor}

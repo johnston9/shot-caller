@@ -41,6 +41,7 @@ const PostTop = (props) => {
       const setSceneId = useSetSceneContext();
       const setDept = useSetDeptContext();
       const setCategory = useSetCategoryContext();
+      var cat = category.substring(0, 3);
 
       const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
@@ -130,9 +131,9 @@ const PostTop = (props) => {
     return (
         <div>
             <Card className={styles.Post} >
-                <Card.Body className="py-1">
+                <Card.Body className="py-1 px-0">
                 <Row className="d-flex align-items-center">
-                    <Col xs={12} lg={6} >
+                    <Col xs={12} lg={7} >
                       <Row>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} md={8}>
                         <Link to={`/profiles/${profile_id}`}>
@@ -147,95 +148,93 @@ const PostTop = (props) => {
                         />
                         ) } 
                         </Col>
-                        <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
-                        <div className={styles.PostBar}>
-                        <span className='d-md-none'>{updated_at}</span> 
-                        <span className='d-md-none'>" -" </span>
-                      {/* archives */}
-                      {archive_id ? (
-                            <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Unarchive</Tooltip>}
-                            >
-                            <span onClick={handleUnarchive} >
-                            <i className={`fas fa-folder ${styles.Heart}`} />
-                            </span>
-                            </OverlayTrigger>
-                        ) : currentUser ? (
-                          <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Archive</Tooltip>}
-                          >
-                            <span onClick={handleArchive}>
-                            <i className={`far fa-folder-open ${styles.HeartOutline}`} />
-                            </span>
-                            </OverlayTrigger>
-                        ) : (
-                            <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Log in please</Tooltip>}
-                            >
-                            <i className="far fa-folder-open" />
-                            </OverlayTrigger>
-                        )}
-                        {/* like */}
-                        {is_owner ? (
-                            <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>You can't like your own post!</Tooltip>}
-                            >
-                            <i className="far fa-heart" />
-                            </OverlayTrigger>
-                        ) : like_id ? (
-                            <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Unlike</Tooltip>}
-                            >
-                            <span onClick={handleUnlike} >
-                            <i className={`fas fa-heart ${styles.Heart}`} />
-                            </span>
-                            </OverlayTrigger>
-                        ) : currentUser ? (
-                            <OverlayTrigger
+                        <Col xs={12} md={4} className="d-flex align-items-center justify-content-center"> 
+                          <div >
+                          {/* archives */}
+                          {archive_id ? (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Unarchive</Tooltip>}
+                                >
+                                <span onClick={handleUnarchive} >
+                                <i className={`fas fa-folder ${styles.Heart}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : currentUser ? (
+                              <OverlayTrigger
                               placement="top"
-                              overlay={<Tooltip>Like</Tooltip>}
+                              overlay={<Tooltip>Archive</Tooltip>}
                               >
-                            <span onClick={handleLike}>
-                            <i className={`far fa-heart ${styles.HeartOutline}`} />
-                            </span>
-                            </OverlayTrigger>
-                        ) : (
+                                <span onClick={handleArchive}>
+                                <i className={`far fa-folder-open ${styles.HeartOutline}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Log in please</Tooltip>}
+                                >
+                                <i className="far fa-folder-open" />
+                                </OverlayTrigger>
+                            )}
+                            {/* like */}
+                            {is_owner ? (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                                >
+                                <i className="far fa-heart" />
+                                </OverlayTrigger>
+                            ) : like_id ? (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Unlike</Tooltip>}
+                                >
+                                <span onClick={handleUnlike} >
+                                <i className={`fas fa-heart ${styles.Heart}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : currentUser ? (
+                                <OverlayTrigger
+                                  placement="top"
+                                  overlay={<Tooltip>Like</Tooltip>}
+                                  >
+                                <span onClick={handleLike}>
+                                <i className={`far fa-heart ${styles.HeartOutline}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Log in please</Tooltip>}
+                                >
+                                <i className="far fa-heart" />
+                                </OverlayTrigger>
+                            )}
+                            {likes_count}
                             <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Log in please</Tooltip>}
-                            >
-                            <i className="far fa-heart" />
+                                placement="top"
+                                overlay={<Tooltip>Comments</Tooltip>}
+                                >
+                            <Link to={`/posts/${id}`}>
+                                <i className="far fa-comments" />
+                            </Link>
                             </OverlayTrigger>
-                        )}
-                        {likes_count}
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Comments</Tooltip>}
-                            >
-                        <Link to={`/posts/${id}`}>
-                            <i className="far fa-comments" />
-                        </Link>
-                        </OverlayTrigger>
-                        {comments_count}
-                        </div>  
+                            {comments_count}
+                        </div>
                         </Col>
-                        {/* <Col className=' text-center' xs={12} >
+                        <Col className=' text-center' xs={12} >
                         <span className='d-md-none'>{updated_at}</span> 
-                        </Col> */}
+                        </Col>
                       </Row>            
                     </Col>  
-                    <Col xs={12} lg={6} > 
-                    <Link to={`/posts/${id}`}>
-                    <Row className={styles.Content}>                   
-                      <Col className="d-flex align-items-center justify-content-center"  md={8}>
-                      {departments && <span className={`${styles.Info} text-center`} >Scene {number} - {departments} {category} </span>}   
+                    <Col xs={12} lg={5} > 
+                    <Link to={`/posts/${id}`} >
+                    <Row className={`${styles.Content}`}>                   
+                      <Col className="px-0 d-flex align-items-center justify-content-left pl-4"  xs={6}>
+                      {departments && <span className={`py-3 ${styles.Info} text-center`} style={{ textTransform: 'capitalize'}}  >{number} - {departments} {cat} </span>}   
                       </Col>
-                      <Col className="d-flex align-items-center justify-content-center" md={4}>
+                      <Col className="px-0 d-flex align-items-center justify-content-center" xs={6}>
                       {title && <span className="text-center">{title}</span>}
                       </Col>
                     </Row>

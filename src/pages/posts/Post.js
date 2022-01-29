@@ -158,9 +158,9 @@ const Post = (props) => {
                         ) } 
                         </Col>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
-                        <div className={`fas fa-folder ${styles.PostBar}`} >
-                      {/* archives */}
-                      {archive_id ? (
+                        <div className={` ${styles.PostBar}`} >
+                        {/* archives */}
+                        {archive_id ? (
                             <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Unarchive</Tooltip>}
@@ -255,11 +255,51 @@ const Post = (props) => {
                     {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>
                 <hr />
-                {image1 && <Card.Img src={image1} alt={title} className="mb-3" />}
+                {/* {image1 && <Card.Img src={image1} alt={title} className="mb-3" />}
                 {image2 && <Card.Img src={image2} alt={title} className="mb-3" />}
                 {image3 && <Card.Img src={image3} alt={title} className="mb-3" />}
                 {image4 && <Card.Img src={image4} alt={title} className="mb-3" />}
-                {image5 && <Card.Img src={image5} alt={title} className="mb-3" />}
+                {image5 && <Card.Img src={image5} alt={title} className="mb-3" />} */}
+                <Row>
+            {/* image 1/2 */}
+            <Col xs={12} md={6} >
+                {image1 && <> 
+                    <Card.Img src={image1} alt="image1"  />
+                    </>
+                    }
+            </Col>  
+            <Col xs={12} md={6}>
+            {image2 && <> 
+                    <Card.Img src={image2} alt="image2" />
+                    </>
+                    }
+            </Col>
+        </Row>
+        {/* image 3/4 */}
+        <Row>
+            <Col xs={12} md={6}>
+                {image3 && <> 
+                    <Card.Img src={image3} alt="image3" />
+                    </>
+                    }
+            </Col>  
+            <Col xs={12} md={6}>
+            {image4 && <> 
+                    <Card.Img src={image4} alt="image4" />
+                    </>
+                    }
+            </Col>
+        </Row>
+        {/* image 5 */}
+        <Row>
+            <Col className='d-none d-md-block' md={3} ></Col>
+            <Col xs={12} md={6}>
+                {image5 && <> 
+                    <Card.Img src={image5} alt="image5" />
+                    </>
+                    }
+            </Col>  
+        </Row>
             </Card>
         </div>
     )

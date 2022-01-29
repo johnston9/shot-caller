@@ -142,7 +142,6 @@ const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace=
     formData.append("number", sceneNumber);
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("scene", scene);
     formData.append("character", character);
     formData.append("location", location);
     if(imageInput1.current.files[0]) {
