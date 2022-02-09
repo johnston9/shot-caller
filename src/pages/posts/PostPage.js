@@ -61,7 +61,7 @@ function PostPage() {
         Back
       </Button>
         <Post {...post.results[0]} setPosts={setPost} postPage/>
-        <Container className={appStyles.Content}>
+        <Container className={`${appStyles.Content} mt-3 `} >
           <h3 className="my-3 text-center">Comments</h3>
         {currentUser ? (
           <CommentCreateForm

@@ -82,17 +82,18 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         >
             Scenes
         </Button>
-    <Row className="h-100">
+    <Row className={`${styles.Title} `}>
       <Col className="py-2 text-center" >
         {sceneId ? (
           <div>
-        <h2 className={`mb-1 ${styles.Info}`} >Scene {number}</h2><span>SceneId {sceneId}</span>
+        <h2 className={`mb-1 ${styles.Info}`} >Scene {number}</h2>
+        {/* <span>SceneId {sceneId}</span> */}
         </div>
         ) : ""}
         {dept ? (
             <div>
-              <h2 className={`mb-1 ${styles.Info} text-center`} >
-              <span style={{ textTransform: 'capitalize'}}> {dept} department {category}</span> </h2>
+              <h3 className={`mb-1 ${styles.Info} text-center`} >
+              <span style={{ textTransform: 'capitalize'}}> {dept} department {category}</span> </h3>
             </div>
           ) : (""
           ) }
@@ -122,7 +123,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
           <Col className="text-center">
             {sceneId ? (
               <Button onClick={() => setShow(show => !show)} 
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              className={`mt-2 ${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
               Add Post</Button>
             ) : (
               ""
@@ -131,7 +132,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
           </Col>
         </Row>
         <Row>
-        <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
+        <Col className="mt-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
         {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
           className={`${styles.SearchBar} mt-3`}
@@ -159,7 +160,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
         {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
           </Col>
         </Row> */}
-        <Row className="my-3">
+        <Row className="mb-3 mt-2">
           <Col>
         {hasLoaded ? (
           <>

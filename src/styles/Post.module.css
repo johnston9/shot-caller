@@ -1,9 +1,15 @@
-.Post {
-    background-color: #ffffff;
+.PostTop {
+    background-color: #444a4c;
+    color: #fafafa;
     /* border: 1px solid #dadadf;
-    border-radius: 2px;
-    margin-bottom: 16px; */
-    /* text-align: center; */
+    border-radius: 2px;*/
+  }
+
+  .PostTop2 {
+    background-color: #58666b;
+    color: #fafafa;
+    /* border: 1px solid #dadadf;
+    border-radius: 2px; */
   }
   
   .Post figure,
@@ -32,16 +38,33 @@
   }
 
   .GoToScene {
-    color: #2142b2;
+    color: #79f5ef;
     font-weight: 700;
     font-size: .75em;
     cursor: pointer;
   }
   .GoToScene:hover {
-    color: #60cac5;
+    color: #e9f1f1;
+  }
+
+  .GoToScene a {
+    color: #79f5ef;
+    font-weight: 700;
+    font-size: .75em;
+    cursor: pointer;
+  }
+  .GoToScene a:hover {
+    color: #e9f1f1;
   }
 
   .Content {
-    background-color: #fafafa;
+    background-color: #444a4c;
     cursor: pointer;
+    color: #79f5ef;
+  }
+
+  .Content:hover {
+    background-color: #232d30;
+    cursor: pointer;
+    color: #e9f1f1;
   }

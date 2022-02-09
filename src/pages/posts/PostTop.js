@@ -130,7 +130,7 @@ const PostTop = (props) => {
 
     return (
         <div>
-            <Card className={styles.Post} >
+            <Card className={styles.PostTop} >
                 <Card.Body className="py-1 px-0">
                 <Row className="d-flex align-items-center">
                     <Col xs={12} lg={7} >
@@ -229,10 +229,10 @@ const PostTop = (props) => {
                       </Row>            
                     </Col>  
                     <Col xs={12} lg={5} > 
-                    <Link to={`/posts/${id}`} >
+                    <Link  to={`/posts/${id}`} >
                     <Row className={`${styles.Content}`}>                   
                       <Col className="px-0 d-flex align-items-center justify-content-left pl-4"  xs={6}>
-                      {departments && <span className={`py-3 ${styles.Info} text-center`} style={{ textTransform: 'capitalize'}}  >{number} - {departments} {cat} </span>}   
+                      {departments && <span className={`py-3 text-center`} style={{ textTransform: 'capitalize'}}  >S {number} - {departments} </span>} {cat && <span className={`py-3`}  style={{ textTransform: 'capitalize'}} >&nbsp; - {cat}. </span> }   
                       </Col>
                       <Col className="px-0 d-flex align-items-center justify-content-center" xs={6}>
                       {title && <span className="text-center">{title}</span>}

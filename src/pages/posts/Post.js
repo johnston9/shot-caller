@@ -138,9 +138,9 @@ const Post = (props) => {
 
     return (
         <div>
-            <Card className={styles.Post} >
+            <Card  >
                 {/* new */}
-                <Card.Body className="py-1">
+              <Card.Body className={`${styles.PostTop2} py-2`} >
                 <Row className="d-flex align-items-center">
                     <Col xs={12} lg={8} >
                       <Row>
@@ -247,59 +247,53 @@ const Post = (props) => {
                       </Col> */}
                   </Row>
                 </Card.Body>
-                <hr/>
                 {/* end new */}
-                <Card.Body className="pt-1" >
-                    {title && <Card.Title className="text-center">{title}</Card.Title>}
+                <Card.Body  >
+                    {title && <h4 className="text-center">{title}</h4>}
                     <hr />
                     {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>
                 <hr />
-                {/* {image1 && <Card.Img src={image1} alt={title} className="mb-3" />}
-                {image2 && <Card.Img src={image2} alt={title} className="mb-3" />}
-                {image3 && <Card.Img src={image3} alt={title} className="mb-3" />}
-                {image4 && <Card.Img src={image4} alt={title} className="mb-3" />}
-                {image5 && <Card.Img src={image5} alt={title} className="mb-3" />} */}
-                <Row>
-            {/* image 1/2 */}
-            <Col xs={12} md={6} >
-                {image1 && <> 
-                    <Card.Img src={image1} alt="image1"  />
-                    </>
-                    }
-            </Col>  
-            <Col xs={12} md={6}>
-            {image2 && <> 
-                    <Card.Img src={image2} alt="image2" />
-                    </>
-                    }
-            </Col>
-        </Row>
-        {/* image 3/4 */}
-        <Row>
-            <Col xs={12} md={6}>
-                {image3 && <> 
-                    <Card.Img src={image3} alt="image3" />
-                    </>
-                    }
-            </Col>  
-            <Col xs={12} md={6}>
-            {image4 && <> 
-                    <Card.Img src={image4} alt="image4" />
-                    </>
-                    }
-            </Col>
-        </Row>
-        {/* image 5 */}
-        <Row>
-            <Col className='d-none d-md-block' md={3} ></Col>
-            <Col xs={12} md={6}>
-                {image5 && <> 
-                    <Card.Img src={image5} alt="image5" />
-                    </>
-                    }
-            </Col>  
-        </Row>
+                <Row className='mb-2'>
+                  {/* image 1/2 */}
+                  <Col xs={12} md={6}  >
+                      {image1 && <> 
+                          <Card.Img src={image1} alt="image1" className="px-3" />
+                          </>
+                          }
+                  </Col>  
+                  <Col xs={12} md={6}>
+                  {image2 && <> 
+                          <Card.Img src={image2} alt="image2" />
+                          </>
+                          }
+                  </Col>
+              </Row >
+              {/* image 3/4 */}
+              <Row className='mb-2'>
+                  <Col xs={12} md={6}>
+                      {image3 && <> 
+                          <Card.Img src={image3} alt="image3" />
+                          </>
+                          }
+                  </Col>  
+                  <Col xs={12} md={6}>
+                  {image4 && <> 
+                          <Card.Img src={image4} alt="image4" />
+                          </>
+                          }
+                  </Col>
+              </Row>
+              {/* image 5 */}
+              <Row>
+                  <Col className='d-none d-md-block' md={3} ></Col>
+                  <Col xs={12} md={6}>
+                      {image5 && <> 
+                          <Card.Img src={image5} alt="image5" />
+                          </>
+                          }
+                  </Col>  
+              </Row>
             </Card>
         </div>
     )
