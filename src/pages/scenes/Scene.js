@@ -11,12 +11,13 @@ import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
-import Storyboard from './Storyboard';
+// import Storyboard from './Storyboard';
 import ShotlistPage from './ShotlistPage';
 import WorkspaceInst from './WorkspaceInst';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
+import Storyboard from './Storyboard';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -290,7 +291,7 @@ const Scene = (props) => {
                     {!showstory ? (
                       ""
                     ) : (
-                      <Storyboard storyboard={storyboard} setShowstory={setShowstory} />
+                      <Storyboard storyboard={storyboard} setShowstory={setShowstory} scene={scene} setScene={setScene} />
                     ) }
                     {!showlist ? (
                       ""

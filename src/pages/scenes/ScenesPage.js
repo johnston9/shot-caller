@@ -88,10 +88,10 @@ const ScenesPage = ({message, filter = "" }) => {
       }, [query, filter])
 
     return (
-        <div className='mt-5'>
+        <div >
           <TopBox title="Workspace" />
           <Button
-              className={`${btnStyles.Button} ${btnStyles.Back} my-2`}
+              className={`${btnStyles.Button} ${btnStyles.Back} mt-2`}
               onClick={() => history.goBack()}
               >
               Back

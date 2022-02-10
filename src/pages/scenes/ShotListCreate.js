@@ -19,9 +19,11 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
+import DrawShot from "../../canvas/DrawShot";
 
 const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     useRedirect("loggedOut");
+    const [showDraw, setShowDraw] = useState(false);
     const { id } = useParams();
     const {number} = scene; 
     const [errors, setErrors] = useState({});
@@ -430,7 +432,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             ))}
             </Col>
             <Col xs={6}>
-              {/* image 5 */}
+              {/* image  */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                       >
@@ -479,6 +481,21 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
                   {/* """ end image """" */}
               </Container>
             </Col>
+        </Row>
+        <Row>
+          <Col md={6} className='text-center'>
+              {/* <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowDraw(showDraw => !showDraw)} > Draw shot
+              </p>
+              {!showDraw ? (
+                ""
+              ) : (
+                <div height="200">
+                <DrawShot /> 
+                </div>
+                ) }  */}
+          </Col>
         </Row>
         <Row>
           <Col className="text-center">

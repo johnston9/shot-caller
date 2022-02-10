@@ -23,7 +23,7 @@ import NewLocation from "./NewLocation";
 import { useCharactersContext, useLocationsContext, useSetCharactersContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 
 function SceneCreateForm({topbox}) {
-  useRedirect("loggedOut")
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [show, setShow] = useState(false);
   const characters = useCharactersContext();

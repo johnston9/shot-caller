@@ -174,8 +174,6 @@ const ShotListEdit = ({handleMount, setShowEditForm, shotNew, setShotNew, id}) =
           setShowEditForm(false)
           setShotNew(data);
           console.log(data)
-          // setShotNew((prevShotNew) => ({
-          // }));
           handleMount();
         } catch (err) {
           console.log(err);
