@@ -5,18 +5,15 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
 import btnStyles from "../../styles/Button.module.css";
 import Character from './Character';
 import TopBox from '../../components/TopBox';
 
-const CharacterPage = (props) => {
+const CharacterPage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [character, setCharacter] = useState({ results: [] });
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     useEffect(() => {

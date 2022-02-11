@@ -8,15 +8,12 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 
-import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from 'react-router-dom';
 
 import Asset from "../../components/Asset";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";

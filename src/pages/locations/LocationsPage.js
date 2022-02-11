@@ -7,31 +7,24 @@ import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-
-import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from 'react-router-dom';
 
 import Asset from "../../components/Asset";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import LocationTop from "./LocationTop";
-import LocationsCreate from "./LocationsCreate";
 
 const LocationsPage = () => {
     useRedirect("loggedOut");
-  const [show, setShow] = useState(false);
   const [locations, setLocations] = useState({ results: [] });
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
   const [query, setQuery] = useState("");
-  const topbox = true;
 
   useEffect(() => {
     const fetchLocations = async () => {
@@ -90,13 +83,8 @@ const LocationsPage = () => {
               <Button onClick={() => history.push(`/locations/create`) } 
                 className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                 Add Location</Button>
-                {/* <Button onClick={() => setShow(show => !show)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                Add Location</Button> */}
               </Col>
             </Row>
-            {/* {!show ?("") : (<LocationsCreate topbox /> ) } */}
-            {/* Locations */}
             <Row className="h-100">
                 <Col>
                     {hasLoaded ? (

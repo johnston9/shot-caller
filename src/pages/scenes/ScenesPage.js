@@ -18,17 +18,6 @@ import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TopBox from '../../components/TopBox';
 import SceneCreateForm from './SceneCreateForm';
-import b1 from "../../assets/b1.png";
-import b2 from "../../assets/b2.png"; 
-import b3 from "../../assets/b3.png";
-import b4 from "../../assets/b4.png";  
-import d3 from "../../assets/d3.png"; 
-import jb2 from "../../assets/jb2.png"; 
-import jb3 from "../../assets/jb3.png";
-import jb4 from "../../assets/jb4.png";  
-import jb5 from "../../assets/jb5.png"; 
-import jb6 from "../../assets/jb6.png";  
-import jb7 from "../../assets/jb7.png"; 
 import r1 from "../../assets/r1.png"; 
 
 const ScenesPage = ({message, filter = "" }) => {

@@ -51,7 +51,6 @@ const Character = (props) => {
           await axiosReq.delete(`/characters/${id}/`);
           history.goBack();
         } catch (err) {
-          // console.log(err);
         }
       };
 

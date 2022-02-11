@@ -21,7 +21,6 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
     const [scenes, setScenes] = useState({ results: [] });
     const [characters, setCharacters] = useState({ results: [] });
     const [locations, setLocations] = useState({ results: [] });
-    const history = useHistory();
 
     const fetchScenes = async () => {
         try {
@@ -37,7 +36,6 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
           const { data } = await axiosReq.get(`/characters/`);
           setCharacters(data);
         } catch (err) {
-          // console.log(err);
         }
       };
 
@@ -46,7 +44,6 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
           const { data } = await axiosReq.get(`/locations/`);
           setLocations(data);
         } catch (err) {
-          // console.log(err);
         }
       };
     

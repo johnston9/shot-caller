@@ -14,7 +14,6 @@ export const useSetLocationContext = () => useContext(SetLocationContext);
 export const CharacterLocationProvider = ({ children }) => {
     const [character, setCharacter] = useState("");
     const [location, setLocation] = useState("");
-    const history = useHistory();
   
     return (
       <CharacterContext.Provider value={character}>

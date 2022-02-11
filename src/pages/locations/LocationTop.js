@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import { Button, Card } from 'react-bootstrap';
+import React from 'react'
+import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
+import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/PostsPage.module.css"
-import btnStyles from "../../styles/Button.module.css";
-import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
@@ -18,7 +16,6 @@ const LocationTop = (props) => {
         id,
         name,
     } = props;
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     const handleEdit = () => { 
@@ -30,7 +27,6 @@ const LocationTop = (props) => {
             await axiosReq.delete(`/locations/${id}/`);
             history.push(`/locations/`);
         } catch (err) {
-            // console.log(err);
         }
         };
     return (

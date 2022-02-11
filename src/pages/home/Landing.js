@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
 import TopBox from '../../components/TopBox';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Home.module.css";
-import btnStyles from "../../styles/Button.module.css";
 
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
@@ -28,7 +23,28 @@ const Landing = () => {
                 src={door}
             />
           </Col>
-          <Col className="my-3" xs={10} md={10}>
+          <Col className="my-auto py-2 p-md-2" xs={10}>
+             <Row>
+             <Col md= {3} className="d-nome d-md-block"></Col>
+               <Col xs={12} md={6} >
+               <Link to={`signin`} >
+                 <div className={`px-2  ${styles.Landingbox}`}>
+                    <h5 className="py-3 text-center">
+                      Sign in
+                    </h5>
+                 </div>
+                 </Link>
+                 <Link to={`/signup`} >
+                 <div className={`px-2 mt-3 ${styles.Landingbox}`}>
+                    <h5 className="py-3 text-center">
+                      Sign up
+                    </h5>
+                 </div>
+                 </Link>
+               </Col>
+             </Row>
+          </Col>
+          {/* <Col className="my-3" xs={10}>
               <div className="d-none d-md-block">
                 <Row className="text-center">
                   <Col md={1}></Col>
@@ -117,7 +133,7 @@ const Landing = () => {
                 </Row>
               </div>
               {/* mobile view */}
-              <div className=" d-md-none mb-5">
+              {/* <div className=" d-md-none mb-5">
                 <Row className="text-center">
                   <Col md={2}></Col>
                     <Col md={8} >
@@ -197,7 +213,7 @@ const Landing = () => {
                     </Col>
                 </Row>
               </div>
-          </Col>
+          </Col>  */}
           <Col className={`my-3 pl-0 pr-3 pr-md-4`}
             xs={1} >
             <Image

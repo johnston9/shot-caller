@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetDeptGeneralContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
@@ -11,128 +9,18 @@ import btnStyles from "../../styles/Button.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import TopBox from '../../components/TopBox';
 
-const DeptsGeneral = (props) => {
+const DeptsGeneral = () => {
     useRedirect("loggedOut")
     const setDeptGeneral = useSetDeptGeneralContext();
-    const setSceneId = useSetSceneContext();
-    const setNumber = useSetNumberContext();
-    const setDept = useSetDeptContext();
-    const setCategory = useSetCategoryContext();
-    const category = useCategoryContext();
-    const { id, number, title, ACT,  int_ext, day_night, 
-        time, location, characters, action, content, shotlist, 
-        storyboard, info, image } = props;
-    const currentUser = useCurrentUser();
     const history = useHistory();
-    const depart = false;
 
     const handleClick = (dept) => {
       setDeptGeneral(dept);
       history.push(`/department/posts`);
 
     };
-
-    // const handleClickSound = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("sound");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickLocation = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("location");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickScript = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("script");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickArt = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("art");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickMakeup = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("make-up");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickWardrobe = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("wardrobe");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickCasting = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("casting");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickPost = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("post");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickProduction = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("production");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickStunts = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("stunts");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickElectric = (category) => {
-    // //   setSceneId(id); 
-    // //   setNumber(number);
-    //   setDept("electric");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
 
     return (
         <div>
@@ -159,7 +47,6 @@ const DeptsGeneral = (props) => {
                         <Card onClick={() => handleClick('sound') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
-                        {/* <DeptDropdown depart handleClick={(category) => handleClickSound(category) } /> */}
                         </Card>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>

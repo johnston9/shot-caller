@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logo from "../assets/logo2.png";
@@ -24,7 +24,6 @@ const NavBar = () => {
       setCurrentUser(null);
       removeTokenTimestamp();
     } catch (err) {
-      // console.log(err);
     }
   };
 
@@ -80,8 +79,6 @@ const NavBar = () => {
           <i className="far fa-plus-square"></i>Add scene
         </NavLink>
       </NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
       {/* characters locations departments-xtra */}
       <NavDropdown 

@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import btnStyles from "../../styles/Button.module.css";
 import Moodshot from './Moodshot';
 
-const MoodshotPage = (props) => {
+const MoodshotPage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [moodshot, setMoodshot] = useState({ results: [] });

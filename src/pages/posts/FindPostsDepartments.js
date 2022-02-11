@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Card, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
@@ -12,22 +10,17 @@ import btnStyles from "../../styles/Button.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
+import { DeptDropdown } from '../../components/PostDropdown';
 import TopBox from '../../components/TopBox';
 
 const Departments = (props) => {
     useRedirect("loggedOut")
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
-    const category = useCategoryContext();
     const setSceneId = useSetSceneContext();
     const setNumber = useSetNumberContext();
-    const { id, number, title, act,  int_ext, day_night, 
-        time, location, characters, action, content, shotlist, 
-        storyboard, info, image } = props;
-    const currentUser = useCurrentUser();
+    const { id, number } = props;
     const history = useHistory();
-    const depart = true;
 
     const handleClickCamera = (category) => {
       setDept("camera");

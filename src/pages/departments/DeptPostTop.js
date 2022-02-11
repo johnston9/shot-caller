@@ -18,9 +18,7 @@ const DeptPostTop = (props) => {
         profile_id,
         profile_image,
         title,
-        // departments,
         updated_at,
-        setPosts,
       } = props;
 
       const currentUser = useCurrentUser()

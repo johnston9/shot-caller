@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
 import TopBox from '../../components/TopBox';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Home.module.css";
-import btnStyles from "../../styles/Button.module.css";
 
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";

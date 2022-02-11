@@ -15,11 +15,10 @@ import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
 import { useHistory, useParams } from "react-router";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
-import { useSceneContext } from "../../contexts/DeptCategoryContext";
 import { useCharactersContext, useLocationsContext, useScenesContext } from "../../contexts/Scene_chars_locs";
 
 const MoodshotEdit = () => {

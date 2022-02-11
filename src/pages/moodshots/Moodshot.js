@@ -22,7 +22,6 @@ const Moodshot = (props) => {
         position,
         profile_id,
         profile_image,
-        scene, 
         number, 
         title, 
         content,
@@ -45,7 +44,6 @@ const Moodshot = (props) => {
             await axiosReq.delete(`/moodshots/${id}/`);
             history.push(`/moodshots/`);
         } catch (err) {
-            // console.log(err);
         }
 };
   return (
@@ -57,7 +55,6 @@ const Moodshot = (props) => {
                 <Avatar src={profile_image} height={45}  />
                 </Link>
                 <span style={{ fontWeight: '700', textTransform: 'capitalize'}} className='ml-1 ml-md-3'>{name} - {position} </span>
-                {/* <span>{position} </span> */}
                 <span className='ml-1 ml-md-3 d-none d-md-block'>{updated_at}</span>
                 {is_owner && (
                 <PostDropdown

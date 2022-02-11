@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
 import { useHistory } from "react-router";
-import { useSetCategoryContext } from "../contexts/DeptCategoryContext";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const EditDeleteIcon = React.forwardRef(({ onClick }, ref) => (

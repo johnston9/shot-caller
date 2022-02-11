@@ -8,7 +8,6 @@ export const useSetActContext = () => useContext(SetActContext);
 
 export const ActProvider = ({ children }) => {
     const [act, setAct] = useState("");
-    const history = useHistory();
 
     return (
         <ActContext.Provider value={act}>

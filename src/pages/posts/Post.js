@@ -11,7 +11,6 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
-import { Button } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -39,7 +38,6 @@ const Post = (props) => {
         image4,
         image5,
         updated_at,
-        // postPage,
         setPosts,
       } = props;
 
@@ -67,7 +65,6 @@ const Post = (props) => {
           await axiosRes.delete(`/posts/${id}/`);
           history.goBack();
         } catch (err) {
-          // console.log(err);
         }
       };
 
@@ -115,7 +112,6 @@ const Post = (props) => {
             }),
           }));
         } catch (err) {
-          // console.log(err);
         }
       };
 
@@ -131,7 +127,6 @@ const Post = (props) => {
             }),
           }));
         } catch (err) {
-          // console.log(err);
         }
       };
 

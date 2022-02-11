@@ -7,9 +7,6 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import Asset from "../../components/Asset";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
 import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 import DeptPost from "./DepPost";
@@ -20,7 +17,6 @@ function DeptPostPage() {
     const [post, setPost] = useState({ results: [] });
 
     const currentUser = useCurrentUser();
-    const profile_image = currentUser?.profile_image;
     const history = useHistory();
 
     useEffect(() => {

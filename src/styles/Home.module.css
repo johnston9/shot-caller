@@ -14,6 +14,12 @@
     height: 100%;
 }
 
+.Landingbox {
+    height: 60px;
+    background-color: #3b444b;
+    color: #F5F5F5;
+}
+
 .HomeboxXs {
     height: 105px;
     background-color: #3b444b;

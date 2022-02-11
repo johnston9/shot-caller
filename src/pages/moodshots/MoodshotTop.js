@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import { Button, Card } from 'react-bootstrap';
+import React from 'react'
+import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
+import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Moodshots.module.css"
-import btnStyles from "../../styles/Button.module.css";
-import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
@@ -17,20 +15,16 @@ const MoodshotTop = (props) => {
     useRedirect("loggedOut")
     const {
         id,
-        owner,
         is_owner,
         updated_at,
         name,
-        position,
         profile_id,
         profile_image,
-        scene, 
         number, 
         title, 
         character, 
         location,
     } = props;
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     const handleEdit = () => { 
@@ -42,7 +36,6 @@ const MoodshotTop = (props) => {
             await axiosReq.delete(`/moodshots/${id}/`);
             history.push(`/moodshots/`);
         } catch (err) {
-            // console.log(err);
         }
         };
         return (
@@ -64,12 +57,10 @@ const MoodshotTop = (props) => {
                             />
                             ) }               
                             </Col>
-                    {/* <div className="d-flex align-items-center justify-content-between"> */}
                             <Col xs={12} md={7} >
                                 {number && <span style={{  fontWeight: '700' }}>Scene {number} - </span>} {location && <span> {location} - </span>} {character && <span style={{  fontWeight: '700' }}> {character} - </span>} {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
                             </Col>
                         </Row>
-                    {/* </div> */}
                       </Card.Body>
                     </Link>
                 </Card>           
