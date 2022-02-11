@@ -29,6 +29,7 @@ const Breakdown = (props) => {
                 Scene breakdown
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>
                 </h5>
+                <h4 className='text-center'>{title} </h4>
             <Row>
             <Col className='mx-0 px-0' xs={12} md={4}  >
                 <div className={`p-3 ${styles.BreakBox }`}>

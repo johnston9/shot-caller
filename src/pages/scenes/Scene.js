@@ -18,6 +18,7 @@ import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
 import Storyboard from './Storyboard';
+import TopBox from '../../components/TopBox';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -194,60 +195,98 @@ const Scene = (props) => {
 
     return (
         <div>
+          <TopBox title={`Scene ${number} `} />
             <div className={` ${styles.Header}`}>
-                <div className={`pb-0 pt-2 ${styles.Header }`}>
-                  <Row className='d-flex align-items-center'>
-                    <Col className='mx-0 px-0' xs={1}></Col>
-                    <Col xs={10} className='mx-0 px-0'>
-                    <h3 className={`text-center ${styles.SceneTitle }`}>Scene {number} - <span className={styles.Italics }> {title} </span>
-                    </h3>
-                    </Col >
-                    <Col xs={1} className='text-center mx-0 px-0'>
+              <div className='d-none d-md-block'>
+                  <Row className={`${styles.ButtonLine} mt-2`}>
+                  <Col md={1}></Col>
+                    <Col md={2} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => handleClickMoods()} > Moodshots
+                        </p>
+                    </Col>
+                    <Col md={2} className='text-center'>
+                            <p
+                              className={`py-0 mb-0 ${styles.Button}`}
+                              onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
+                            </p>
+                        </Col>
+                    <Col className='text-center' md={2}>
+                      <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
+                      </p>
+                    </Col>
+                    <Col className='text-center' md={2}>
+                    <p
+                        className={`py-0 mb-0 ${styles.Button}`}
+                        onClick={() => setShowlist(showlist => !showlist)} >Shotlist
+                    </p>
+                    </Col>
+                    <Col className='text-center' md={2}>
+                      <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
+                      </p>
+                    </Col>
+                    <Col className='text-center' md={1}>
+                    <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                    </Col>
+                  </Row>  
+              </div>
+              <div className='d-md-none'>
+                  <Row className={`${styles.ButtonLine} mt-2`}>
+                    <Col xs={2}></Col>
+                    <Col xs={4} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => handleClickMoods()} > Moodshots
+                        </p>
+                    </Col>
+                    <Col xs={4} className='text-center'>
+                            <p
+                              className={`py-0 mb-0 ${styles.Button}`}
+                              onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
+                            </p>
+                        </Col>
+                    <Col className='text-center px-0 mx-0' xs={2}>
                     <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
                     </Col>
                     </Row>
-                  </div>
-                  <Row className={`${styles.ButtonLine}`}>
-                    <Col xs={4} md={2} className='text-center'>
-                        <p
-                          className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => handleClickMoods()} > Moodshots
-                        </p>
-                    </Col>
-                    <Col xs={4} md={2} className='text-center'>
-                        <p
-                          className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => handleClickAddMoods()} > Add Moodshots
-                        </p>
-                    </Col>
-                    <Col xs={4} md={2} className='text-center'>
-                            <p
-                              className={`py-0 mb-0 ${styles.Button}`}
-                              onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
-                            </p>
-                        </Col>
-                    <Col className='text-center' xs={4} md={2}>
+                    <Row>
+                    <Col className='text-center' xs={4}>
                       <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowstory(showstory => !showstory)} > Storyboard
                       </p>
                     </Col>
-                    <Col className='text-center' xs={4} md={2}>
+                    <Col className='text-center' xs={4} >
                     <p
                         className={`py-0 mb-0 ${styles.Button}`}
                         onClick={() => setShowlist(showlist => !showlist)} >Shotlist
                     </p>
                     </Col>
-                    <Col className='text-center' xs={4} md={2}>
+                    <Col className='text-center' xs={4}>
                       <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
                       </p>
                     </Col>
                   </Row>  
+              </div>
+                  {/* <Col xs={4} md={2} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => handleClickAddMoods()} > Add Moodshots
+                        </p>
+                    </Col> */}
                   {/* <Row>
                   <Col className='text-center'>
                             <Button
@@ -315,9 +354,7 @@ const Scene = (props) => {
                   <Row className='mb-2'>
                     <Col md={1}></Col>
                     <Col className='mx-0 px-0' xs={12} md={10} >
-                    <div className={`mt-3 pb-0 mb-1`} >
-                    <p style={{ textTransform: 'uppercase'}} className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >Workspace Guide</p>
-                      {!showInts ? (
+                    {!showInts ? (
                       ""
                     ) : (
                       <WorkspaceInst className="my-2" setShowInts={setShowInts} />
@@ -332,7 +369,10 @@ const Scene = (props) => {
                     ) : (
                       <WorkspaceGuideEdit className="my-2" id={id} number={number} setShowGuideEdit={setShowGuideEdit} setScene={setScene} />
                     ) }
-                      <div className={`mt-1 px-3 pb-0 ${styles.Guide}`}>{workspace_guide} </div>
+                    <div className={`mt-3 px-3 pb-0 ${styles.Guide}`}>
+                    <h4 style={{ textTransform: 'uppercase'}} className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >Workspace Guide</h4>
+                      
+                      <div className={`text-center mt-1 px-3 pb-0 ${styles.GuideBox}`}>{workspace_guide} </div>
                       <Row>
                         <Col xs={4} className='mx-0 px-0 text-center'>
                           <p
@@ -354,11 +394,12 @@ const Scene = (props) => {
                             onClick={() => setShowGuide(showGuide => !showGuide)} > Add 
                           </p>
                           )}
-                        </Col>
+                        </Col>                      
                       </Row>
-                    </div>
+                      </div>
                     </Col>
                   </Row>
+
                   <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                       <Col className='px-1 px-md-2' xs={4} md={4} lg={4} >

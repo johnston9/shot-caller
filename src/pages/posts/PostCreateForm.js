@@ -203,12 +203,6 @@ function PostCreateForm({sceneId, number, dept, category }) {
   return (
     <div>
     {/* <TopBox title="Create Post" /> */}
-    <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
-      onClick={() => history.goBack()}
-      >
-      Back
-      </Button>
     <Form className="mt-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">

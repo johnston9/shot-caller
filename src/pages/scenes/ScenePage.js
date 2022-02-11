@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import btnStyles from "../../styles/Button.module.css";
 import Scene from './Scene';
+import TopBox from '../../components/TopBox';
 
 const ScenePage = (props) => {
     useRedirect("loggedOut");
@@ -34,12 +35,12 @@ const ScenePage = (props) => {
         <div>
             <Row className="h-100">
                 <Col>
-                <Button
+                {/* <Button
                     className={`${btnStyles.Button} ${btnStyles.Back} my-2`}
                     onClick={() => history.push('/scenes')}
                 >
                     Back
-                </Button>
+                </Button> */}
                 <Scene {...scene.results[0]}
                   scene={scene.results[0]} 
                   setScene={setScene}

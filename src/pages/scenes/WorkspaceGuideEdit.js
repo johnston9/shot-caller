@@ -1,21 +1,15 @@
-import React, { useRef, useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
-
-import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/Scene.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
+import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
 const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
@@ -42,8 +36,6 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
   
       handleMount();
     }, []);
-
-    const history = useHistory();
     
     const handleChange = (event) => {
     setPostData({
@@ -72,7 +64,7 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
     }
     
     const buttons = (
-        <div className="text-center">    
+        <div className="text-center mb-2">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
             onClick={() => setShowGuideEdit(false) }
@@ -80,15 +72,18 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
             Cancel
           </Button>
           <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-            Create
+            Edit
           </Button>
         </div>
       );
     return (
-        <div className={`p-3 mb-3 ${styles.Guide}`}>
+      <Row>
+        <Col md={1} className="d-none d-md-block"></Col>
+        <Col md={10}>
+        <div className={`px-1 mt-1 mb-3 ${styles.Guide}`}>
             {/* workspace guide */}
             <span className={` ${styles.CloseIns }`} onClick={() => setShowGuideEdit(false) } >Close</span>
-            <h5 className="mb-2 text-center">Edit Workspace Guide</h5>
+            <h5 className="mb-2 text-center">Edit Guide</h5>
             <Form onSubmit={handleSubmit}>
             <Row>
                 <Col xs={1}></Col>
@@ -102,7 +97,7 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
                     className={styles.InputScene}
                     name="workspace_guide"
                     as="textarea"
-                    rows={6}
+                    rows={3}
                     value={workspace_guide}
                     onChange={handleChange}
                     />
@@ -121,6 +116,8 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
         </Row>    
         </Form>     
     </div>
+        </Col>
+      </Row>
     )
 }
 

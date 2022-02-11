@@ -1,4 +1,9 @@
 /* scene card  */
+.Story {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
 
 .SceneCard {
   border: 5px solid #fff;
@@ -85,7 +90,7 @@
 }
 
 .CloseIns {
-  color: #000;
+  color: red;
 }
 
 .CloseIns:hover {
@@ -116,6 +121,10 @@
 
 .Guide {
   background-color: cornsilk;
+}
+
+.GuideBox {
+  background-color: rgb(245, 234, 191);
 }
 
 .Button {

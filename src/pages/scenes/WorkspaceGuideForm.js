@@ -1,21 +1,15 @@
-import React, { useRef, useState, useEffect} from "react";
+import React, { useState} from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
-
-import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/Scene.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
+import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
 const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
@@ -26,8 +20,6 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
         workspace_guide: "",
     })
     const {workspace_guide } = postData;
-
-    const history = useHistory()
     
     const handleChange = (event) => {
     setPostData({
@@ -70,11 +62,12 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
       );
 
     return (
+      <Row>
+        <Col md={1} className="d-none d-md-block"></Col>
+        <Col md={10}>
         <div className={`mb-3 p-3 ${styles.Guide}`}>
-            {/* workspace guide */}
             <span className={` ${styles.CloseIns }`} onClick={() => setShowGuide(false) } >Close</span>
             <h5 className="mb-2 text-center">Create Workspace Guide</h5>
-            {/* <p>Input which workspaces are being used for this scene</p> */}
             <Form onSubmit={handleSubmit}>
             <Row>
               <Col >
@@ -87,7 +80,7 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
                     className={styles.InputScene}
                     name="workspace_guide"
                     as="textarea"
-                    rows={6}
+                    rows={3}
                     value={workspace_guide}
                     onChange={handleChange}
                     />
@@ -106,6 +99,8 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
         </Row>    
         </Form>     
     </div>
+    </Col>
+      </Row>
     )
 }
 

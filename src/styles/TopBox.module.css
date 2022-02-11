@@ -8,43 +8,36 @@
     margin: 0;  
     width: 100%; 
 }
-/* .Row {
-    background-color: #353839;
-    margin: 0;
-} */
 
 .Longboxl {
     color: rgb(255, 6, 6);
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .Longboxr {
     color: rgb(255, 6, 6);
-    margin-top: 40px;
-    font-size: 12px;
+    margin-top: 10px;
+    font-size: 8px;
 }
 
 .Longboxl p {
     color: rgb(255, 6, 6);
     margin-bottom: 0;
-    /* font-weight: 700; */
-    font-size: 12px;
+    font-size: 8px;
 }
 
 .Longboxr p {
     color: rgb(255, 6, 6);
     margin-bottom: 0;
-    /* font-weight: 700; */
     font-size: .75 rem;
 }
 
 .Titlebox {
 	background-color: #3b444b;
 	margin-bottom: 15px;
-	margin-top: 30px;
+	margin-top: 15px;
 	color: #F5F5F5;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-	/* padding: 0; */
 }
 
 .SmallPanel {
@@ -61,12 +54,6 @@
 .Door {
     height: 100%;
 }
-
-.Alignme {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-  }
 
 @media screen and (max-width: 600px) {
     .Title {
