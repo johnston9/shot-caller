@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -14,7 +13,6 @@ const LocationPage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [location, setLocation] = useState({ results: [] });
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     useEffect(() => {

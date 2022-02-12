@@ -3,7 +3,6 @@ import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Moodshots.module.css"
 import Col from 'react-bootstrap/Col';

@@ -1,5 +1,4 @@
 import { createContext, useContext,  useState } from "react";
-import { useHistory } from "react-router";
 
 export const SceneContext = createContext();
 export const SetSceneContext = createContext();
@@ -31,7 +30,6 @@ export const DeptCategoryProvider = ({ children }) => {
   const [number, setNumber] = useState("");
   const [dept, setDept] = useState("");
   const [category, setCategory] = useState("");
-  const history = useHistory();
   const [deptGeneral, setDeptGeneral] = useState("");
 
   return (

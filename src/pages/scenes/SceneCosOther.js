@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 

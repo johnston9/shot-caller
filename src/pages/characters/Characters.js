@@ -28,7 +28,6 @@ const Characters = ({message}) => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
   const [query, setQuery] = useState("");
-  const topbox = true;
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -66,7 +65,7 @@ const Characters = ({message}) => {
             </Button>
             {/* search */}
             <Row>
-                <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+                <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={`${styles.SearchBar} mt-3`}
                     onSubmit={(event) => event.preventDefault()}

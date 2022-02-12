@@ -8,7 +8,6 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
-import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
@@ -74,7 +73,6 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
             <Form.Group controlId="workspace_guide" className="mb-2" >
                 <Form.Label className="p-1 d-none" >Workspace Guide</Form.Label>
                 <Form.Control 
-                    className={styles.Input}
                     type="text"
                     placeholder="Workspace Guide"
                     className={styles.InputScene}

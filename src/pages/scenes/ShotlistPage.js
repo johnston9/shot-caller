@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import TopBox from '../../components/TopBox';
 import ShotListCreate from './ShotListCreate';
 import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
@@ -22,18 +19,13 @@ const ShotlistPage = ({scene, setShowlist} ) => {
     const { id } = useParams();
     const [addShot, setAddShot] = useState(false);
     const [shotlist, setShotlist] =  useState({ results: [] });
-    const currentUser = useCurrentUser();
-    const history = useHistory();
-    const [hasLoaded, setHasLoaded] = useState(false);
 
     const handleMount = async () => {
         try {
-            // const { data } = await axiosReq(`/shotlists/?scene_id=10`);
             const { data } = await axiosReq(`/shotlists/?scene_id=${id}&ordering=day_order_number`);
             setShotlist(data);
             console.log('has loaded')
             console.log(shotlist.results)
-            setHasLoaded(true);
         } catch (err) {
             console.log(`err ${err}`);
           }
@@ -112,7 +104,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     {shotlist.results.length ? (
                         shotlist.results.map((shot, index) => (
                         <Shot 
-                            style={{ backgroundColor: (index % 3 == 0) ? '#F8E5E5' : (index % 2 == 0) ? '#FAF1CF' : '#ecf0f1' }}
+                            style={{ backgroundColor: (index % 3 === 0) ? '#F8E5E5' : (index % 2 === 0) ? '#FAF1CF' : '#ecf0f1' }}
                             key={shot.id} 
                             handleMount={handleMount} 
                             shotAll={shot} />

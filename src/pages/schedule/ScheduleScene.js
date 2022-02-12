@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
 import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
 import { useHistory } from 'react-router';
-// import InfiniteScroll from 'react-infinite-scroll-component';
-// import { fetchMoreData } from '../../utils/utils';
-import NoResults from "../../assets/no-results.png";
-import Asset from "../../components/Asset";
 import { useRedirect } from '../../hooks/Redirect';
-import appStyles from "../../App.module.css";
 import { Button } from 'react-bootstrap';
-import TopBox from '../../components/TopBox';
 import { PostDropdown } from '../../components/PostDropdown';
 import ScheduleCharacters from './ScheduleCharacters';
 import SchedSceneInfo from './SchedSceneInfo';
@@ -24,30 +16,9 @@ const ScheduleScene = (props) => {
     const history = useHistory();
     const [show, setShow] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
-    const {sceneAll, day, date, day_id, id, number, int_ext, start_time, end_time,
+    const {sceneAll, id, number, int_ext, start_time, end_time,
         location, filming_location, day_night, action, pages,
         new_info, style } = props
-
-        // character1, character1_costume, character2, 
-        // character2_costume, character3, character3_costume, character4, 
-        // character4_costume, character5, character5_costume, character6, 
-        // character6_costume, character7, character7_costume, character8,
-        // character8_costume, character9, character9_costume, character10,
-        // character10_costume, character11, character11_costume, character12,
-        // character12_costume, character1_calltime, character1_pickup,
-        // character2_calltime, character2_pickup, character3_calltime,
-        // character3_pickup, character4_calltime, character4_pickup,
-        // character5_calltime, character5_pickup, character6_calltime, 
-        // character6_pickup, character7_calltime, character7_pickup,
-        // character8_calltime, character8_pickup, character9_calltime, 
-        // character9_pickup, character10_calltime, character10_pickup,
-        // character11_calltime, character11_pickup, character12_calltime, 
-        // character12_pickup, other_characters, other_characters_costumes,
-        // background_artists, background_artists_costumes,
-        // other_characters_calltimes, other_characters_pickups,
-        // background_artists_calltimes, background_artists_pickups,
-
-        console.log(sceneAll);
 
         const handleEdit = () => {
             history.push(`/schedule/scenes/edit/${id}/`);
@@ -57,17 +28,12 @@ const ScheduleScene = (props) => {
             try {
               await axiosReq.delete(`/schedule/scenes/${id}/`);
               history.goBack();
-            //   history.push(`/days/${day_id}/`);
             } catch (err) {
-              // console.log(err);
             }
           };
 
     return (
-        <div style={style} className={`px-3 pt-4 ${styles.SceneBox}`} >
-            {/* titles */}   
-            {/* <p >Day {day} --- Date {date} </p>
-            <p >Day Id {day_id} --- scene id{id} </p>                    */}
+        <div style={style} className={`px-3 pt-4 ${styles.SceneBox}`} > 
             <Row  >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 

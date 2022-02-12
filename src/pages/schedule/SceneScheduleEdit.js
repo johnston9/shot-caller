@@ -1,41 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
-
-import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/ScheduleCreate.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import Act1List from "./Act1List";
-import ActTwoAList from "./ActTwoAList";
-import ActTwoBList from "./ActTwoBList";
-import ActThreeList from "./ActThreeList";
-import LocationList from "./LocationList";
 
-const SceneScheduleEdit = ({xday, xdate} ) => {
+const SceneScheduleEdit = () => {
   useRedirect("loggedOut");
-  //   const [scenes, setScenes] = useState({ results: [] });
-  // const [scene, setScene] = useState({});
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const history = useHistory();
-
-//   const [showOne, setShowOne] = useState(false);
-//   const [showTwoA, setShowTwoA] = useState(false);
-//   const [showTwoB, setShowTwoB] = useState(false);
-//   const [showThree, setShowThree] = useState(false);
-//   const [showLoc, setShowLoc] = useState(false);
 
   const [postData, setPostData] = useState({
       day_id: "",

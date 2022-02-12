@@ -1,7 +1,6 @@
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import PageNotFound from './components/PageNotFound';
-import Container from "react-bootstrap/Container";
 import "./api/axiosDefaults";
 import { Route, Switch } from "react-router-dom";
 import SignInForm from './pages/auth/SignInForm';
@@ -45,7 +44,7 @@ import LocationsPage from './pages/locations/LocationsPage';
 import LocationsEdit from './pages/locations/LocationsEdit';
 import LocationsCreate from './pages/locations/LocationsCreate';
 import LocationPage from './pages/locations/LocationPage';
-import { useCharacterContext, useLocationContext, useSetLocationContext } from './contexts/CharLocatContex';
+import { useCharacterContext, useLocationContext } from './contexts/CharLocatContex';
 import MoodshotEdit from './pages/moodshots/MoodshotEdit';
 import MoodshotPage from './pages/moodshots/MoodshotPage';
 

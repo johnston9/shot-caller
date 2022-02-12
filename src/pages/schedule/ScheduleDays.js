@@ -6,14 +6,11 @@ import Container from 'react-bootstrap/Container';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
-// import InfiniteScroll from 'react-infinite-scroll-component';
-// import { fetchMoreData } from '../../utils/utils';
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 import { useRedirect } from '../../hooks/Redirect';
 import appStyles from "../../App.module.css";
 import { Button } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TopBox from '../../components/TopBox';
 import DayCreateForm from './DayCreateForm';
 import DayTop from './DayTop';
@@ -25,17 +22,13 @@ const SchedulePages = () => {
     const [error, setError] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
-    const history = useHistory();
-    const topbox = true
     const filter = ""
     const message = "No Days. Please add Day"
 
 
     useEffect(() => {
-        // console.log(`depart ${filter}`);
           const fetchDays = async () => {
             try {
-              // const { data } = await axiosReq.get(`/days/`);
               const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
               setDays(data);
               setHasLoaded(true);
@@ -98,11 +91,6 @@ const SchedulePages = () => {
             
             {/* days */}
             <Row className="h-100">
-            {/* { error ? (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults } message="Please add 'Day" />
-              </Container>
-            ) : */}
           {hasLoaded ? (
           <>
             {days.results.length ? (
@@ -111,19 +99,6 @@ const SchedulePages = () => {
                   <DayTop key={day.id} {...day} setDays={setDays} />
                   </Col>
                 ))) 
-
-            //   <InfiniteScroll
-            //   children={scenes.results.map((scene) => (
-            //     <Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
-            //     <SceneTop key={scene.id} {...scene} setScenes={setScenes} />
-            //     {/* <p>{scene.id} {scene.number}</p> */}
-            //     </Col>
-            //   ))}
-            //   dataLength={scenes.results.length}
-            //   loader={<Asset spinner />}
-            //   hasMore={!!scenes.next}
-            //   next={() => fetchMoreData(scenes, setScenes)}
-            // />
              : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults } message={message} />

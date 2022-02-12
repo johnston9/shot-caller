@@ -36,8 +36,6 @@
 	background-color: #3b444b;
 	margin-bottom: 15px;
 	margin-top: 15px;
-	color: #F5F5F5;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 .SmallPanel {
@@ -55,9 +53,26 @@
     height: 100%;
 }
 
+.Title {
+    color: #F5F5F5;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.Title2 {
+    color: #F5F5F5;
+}
+
+.Title3 {
+    color: #F5F5F5;
+}
+
 @media screen and (max-width: 600px) {
     .Title {
         font-size: 1.50em;
+    }
+
+    .Title2 {
+        font-size: 1em;
     }
 }
 

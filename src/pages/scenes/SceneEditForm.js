@@ -14,13 +14,12 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import SceneCreateCostumes from "./SceneCreateCostumes";
 import NewCharacter from "./NewCharacter";
 import SceneEditCostumes from "./SceneEditCostumes";
-import { useCharactersContext, useLocationsContext, useSetCharactersContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
+import { useCharactersContext, useLocationsContext } from "../../contexts/Scene_chars_locs";
 
 const SceneEditForm = () => {
     useRedirect("loggedOut");
@@ -91,21 +90,6 @@ const SceneEditForm = () => {
 
     const history = useHistory();
     const { id } = useParams();
-
-    // useEffect(() => {
-    //   const handleMount = async () => {
-    //     try {
-    //       const { data } = await axiosRes.get("characters/");
-    //       setCharacters(data);
-    //       console.log(`chars 1 ${characters.results[0].role }`)
-    //       console.log(data)
-    //     } catch (err) {
-    //       console.log(err)
-    //     }
-    //   }
-
-    //   handleMount();
-    // }, [])
 
     useEffect(() => {
         const handleMount = async () => {
@@ -498,7 +482,6 @@ const SceneEditForm = () => {
             <Form.Group controlId="content" className="mb-2" >
                 <Form.Label className="p-1 d-none" >Content</Form.Label>
                 <Form.Control 
-                    className={styles.Input}
                     type="text"
                     placeholder="Content"
                     className={styles.InputScene}

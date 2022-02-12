@@ -1,8 +1,7 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetDeptGeneralContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { useSetDeptGeneralContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";

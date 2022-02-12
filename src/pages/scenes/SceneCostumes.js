@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -17,14 +16,6 @@ const SceneCostumes = ({scene}) => {
         <div className='pl-4'>
             <Row>
                 <Col xs={12}  >
-                    {/* <Row>
-                        <Col xs={6} >
-                            <p>CHARACTER</p>
-                        </Col>
-                        <Col xs={6} >
-                            <p>COSTUME</p>
-                        </Col>
-                    </Row> */}
                     <Row >
                         <Col className='mx-0 px-0' xs={6} >
                         <p className='mb-0'>{character1} </p>

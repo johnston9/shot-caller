@@ -6,8 +6,6 @@ import Container from 'react-bootstrap/Container';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
-// import InfiniteScroll from 'react-infinite-scroll-component';
-// import { fetchMoreData } from '../../utils/utils';
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 import { useRedirect } from '../../hooks/Redirect';
@@ -26,7 +24,6 @@ const ScenesPage = ({message, filter = "" }) => {
     const [query, setQuery] = useState("");
     const setAct = useSetActContext();
     const history = useHistory();
-    const topbox = true
 
     const handleClickAct1 = () => {
       setAct('one'); 
@@ -140,58 +137,16 @@ const ScenesPage = ({message, filter = "" }) => {
                   return (
                     <Col xs={4} sm={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
                       <SceneTop 
-                        key={scene.id} 
+                        key={scene.title}
                         {...scene} 
                         setScenes={setScenes}
-                        // style={{ backgroundImage: (index % 2 == 0) ? (`url(${b1})`) : (`url(${b3})`), 
-                        style={{ backgroundImage: (index % 3 == 0) ? (`url(${r1})`) : (index % 2 == 0) ? (`url(${r1})`) : (`url(${r1})`) , 
+                        style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
                           objectFit: "fill", width: 'auto', repeat: 'no-repeat' }}
-                        // style={{ backgroundColor: (index % 3 == 0) ? '#ecf0f1' : (index % 2 == 0) ? '#fff' : '#fafafa }}
-                        // background={'#fff'}
                         />
                       </Col>
-                    // (index % 2 == 0) ?
-                    //   (<Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
-                    //   <SceneTop 
-                    //     key={scene.id} 
-                    //     {...scene} 
-                    //     setScenes={setScenes}
-                    //     background={'#fff'}
-                    //     />
-                    //   </Col>) : (<Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
-                    //   <SceneTop 
-                    //     key={scene.id} 
-                    //     {...scene} 
-                    //     setScenes={setScenes}
-                    //     background={'#000'}
-                    //     />
-                    //   </Col>)
 
                 )}
                 ))
-                
-                  // <Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
-                  // <SceneTop 
-                  //   key={scene.id} 
-                  //   {...scene} 
-                  //   setScenes={setScenes}
-                  //   background={back}
-                  //   style={{ backgroundColor: (index % 2 == 0) ? '#ecf0f1' : '#fff' }}
-                  //    />
-                  // </Col>
-
-            //   <InfiniteScroll
-            //   children={scenes.results.map((scene) => (
-            //     <Col xs={4} md={3} lg={2} className="py-2 p-0 p-lg-2">
-            //     <SceneTop key={scene.id} {...scene} setScenes={setScenes} />
-            //     {/* <p>{scene.id} {scene.number}</p> */}
-            //     </Col>
-            //   ))}
-            //   dataLength={scenes.results.length}
-            //   loader={<Asset spinner />}
-            //   hasMore={!!scenes.next}
-            //   next={() => fetchMoreData(scenes, setScenes)}
-            // />
              : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults } message={message} />

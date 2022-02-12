@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -7,14 +7,10 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
-
-import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
@@ -74,7 +70,6 @@ const DayEdit = () => {
       }, [id]);
 
       const handleDate = (date) => {
-        // const newdate = date.toLocaleDateString();
         const newdate = date.toLocaleDateString('en-GB', {
           day: 'numeric', month: 'short', year: 'numeric'
         })
@@ -165,10 +160,6 @@ const DayEdit = () => {
                         <Form.Label className="p-1" >Date</Form.Label>
                         <DatePicker 
                         value={startDate}
-                        // selected={startDate} 
-                        // onChange={(date) => setStartDate(date.toLocaleDateString('en-GB', {
-                        //   day: 'numeric', month: 'short', year: 'numeric'
-                        // }))} 
                         onChange={(date) => handleDate(date) }
                         />
                     </Form.Group>

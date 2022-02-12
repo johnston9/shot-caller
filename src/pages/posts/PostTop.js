@@ -9,8 +9,6 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
-import { useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
-import { Button } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -27,7 +25,6 @@ const PostTop = (props) => {
         like_id,
         archive_id,
         title,
-        scene,
         number,
         departments,
         category,
@@ -38,20 +35,10 @@ const PostTop = (props) => {
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
-      const setSceneId = useSetSceneContext();
-      const setDept = useSetDeptContext();
-      const setCategory = useSetCategoryContext();
       var cat = category.substring(0, 3);
 
       const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
-      };
-    
-      const handleGoToScene = () => {
-        setSceneId(scene);
-        setDept(departments);
-        setCategory(category);
-        history.push(`/dept/category`);
       };
 
       const handleDelete = async () => {

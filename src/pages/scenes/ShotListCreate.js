@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
@@ -16,14 +15,11 @@ import Alert from "react-bootstrap/Alert";
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
-import DrawShot from "../../canvas/DrawShot";
 
 const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     useRedirect("loggedOut");
-    const [showDraw, setShowDraw] = useState(false);
     const { id } = useParams();
     const {number} = scene; 
     const [errors, setErrors] = useState({});
@@ -125,7 +121,6 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             ...prevShotlist,
             results: [data, ...prevShotlist.results],
           }));
-          // handleMount();
         } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {

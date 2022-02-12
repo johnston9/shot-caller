@@ -9,11 +9,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const Landing = () => {
   const currentUser = useCurrentUser();
-  const setCurrentUser = useSetCurrentUser();
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title="SHOT CALLER" />

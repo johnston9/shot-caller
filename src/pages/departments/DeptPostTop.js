@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from "react-bootstrap/Card";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from 'react-router-dom';
@@ -41,31 +43,37 @@ const DeptPostTop = (props) => {
 
     return (
         <div>
-            <Card className={styles.Post} >
-                <Card.Body className="py-1">
-                <Card.Text className={`mb-1 ${styles.Info} text-center`} >{departments.toUpperCase()} DEPARTMENT</Card.Text>
-                <div className="d-flex align-items-center justify-content-between">
-                    <Link to={`/profiles/${profile_id}`}>
+          <Card className={styles.PostTop} >
+                <Card.Body className="py-1 px-0">
+                <Row className="d-flex align-items-center">
+                    <Col xs={12} lg={7} >
+                      <Row>
+                        <Col className="d-flex align-items-center justify-content-center" xs={12} >
+                        <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
-                        {owner} {name}
-                    </Link>
-                    <div className="d-flex align-items-center">
-                        <span>{updated_at}</span>
+                        </Link>
+                        <span className='ml-1 ml-md-3'>{name}</span>
+                        <span className='ml-1 ml-md-3'>{updated_at}</span>
                         {is_owner && (
-                          <PostDropdown
+                        <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
-                        ) }
-                    </div>         
-                </div>
+                        ) } 
+                        </Col>
+                      </Row>            
+                    </Col>  
+                    <Col xs={12} lg={5} > 
+                    <Link to={`/department/posts/${id}`}>
+                    <Row className={`${styles.Content}`}>                   
+                      <Col className="px-0 d-flex align-items-center justify-content-center" xs={6}>
+                      {title && <span className="text-center">{title}</span>}
+                      </Col>
+                    </Row>
+                    </Link>
+                    </Col> 
+                  </Row>
                 </Card.Body>
-                  <Link to={`/department/posts/${id}`}>
-                    <Card.Body>
-                    <hr className="mb-1" />
-                    {title && <Card.Title className="text-center">{title}</Card.Title>}
-                </Card.Body>
-                </Link>
             </Card>
         </div>
     )

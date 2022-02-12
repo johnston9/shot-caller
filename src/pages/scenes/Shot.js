@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
 import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
-import { useHistory } from 'react-router';
 import { useRedirect } from '../../hooks/Redirect';
-import appStyles from "../../App.module.css";
 import { Button } from 'react-bootstrap';
-import TopBox from '../../components/TopBox';
 import { PostDropdown } from '../../components/PostDropdown';
 import ShotInfo from './ShotInfo';
 import ShotImage from './ShotImage';
@@ -20,7 +15,6 @@ const Shot = (props) => {
     useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
     const [showImg, setShowImg] = useState(false);
-    const history = useHistory();
     const [showEditForm, setShowEditForm] = useState(false);
     const [shotNew, setShotNew] = useState({
         id: "",

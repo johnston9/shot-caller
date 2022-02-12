@@ -161,7 +161,7 @@ const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace=
     }
   
     try {
-      const { data } = await axiosReq.post("/moodshots/", formData);
+      await axiosReq.post("/moodshots/", formData);
       history.goBack();
     } catch (err) {
       console.log(err);

@@ -1,28 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useRedirect } from "../../hooks/Redirect";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
-
-import Upload from "../../assets/upload.png";
 import styles from "../../styles/Scene.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
-
-import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
 const NewLocation = ({setLocations}) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [newLocation, setNewLocation] = useState("");
-    // const {role} = postData;
-    const history = useHistory();
 
     const handleChange = (event) => {
         setNewLocation(event.target.value);
@@ -40,7 +30,7 @@ const NewLocation = ({setLocations}) => {
               }));
               setNewLocation("");
           } catch (err) {
-            console.log(err);
+            setErrors(err);
           }
     }
     

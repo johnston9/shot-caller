@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button"
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 import DeptPost from "./DepPost";
@@ -16,7 +15,6 @@ function DeptPostPage() {
     const { id } = useParams()
     const [post, setPost] = useState({ results: [] });
 
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     useEffect(() => {

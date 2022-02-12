@@ -8,7 +8,6 @@ import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
-import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useSetCharactersContext } from "../../contexts/Scene_chars_locs";
 

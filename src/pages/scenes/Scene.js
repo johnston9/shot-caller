@@ -3,15 +3,13 @@ import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useCategoryContext, useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
-// import Storyboard from './Storyboard';
 import ShotlistPage from './ShotlistPage';
 import WorkspaceInst from './WorkspaceInst';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
@@ -22,9 +20,6 @@ import TopBox from '../../components/TopBox';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
-    const [showCos, setShowCos] = useState(false);
-    const [showCosOther, setShowCosOther] = useState(false);
-    const [showCosBack, setShowCosBack] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showBreak, setShowBreak] = useState(false);
     const [showstory, setShowstory] = useState(false);
@@ -36,19 +31,8 @@ const Scene = (props) => {
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
-    const category = useCategoryContext();
-    const { id, number, title, act, int_ext, day_night, time, location,
-      filming_location, character1, character1_costume, character2, 
-      character2_costume, character3, character3_costume, character4, 
-      character4_costume, character5, character5_costume, character6, 
-      character6_costume, character7, character7_costume, character8,
-      character8_costume, character9, character9_costume, character10, 
-      character10_costume, character11, character11_costume, character12,
-      character12_costume, other_characters, other_characters_costumes,
-      background_artists, background_artists_costumes, shooting_date,
-      pages, action, content, storyboard, info, image, scene, location_detail,
+    const { id, number, storyboard, scene,
       workspace_guide, setScene } = props;
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     const handleEdit = () => {
@@ -60,7 +44,6 @@ const Scene = (props) => {
         await axiosReq.delete(`/scenes/${id}/`);
         history.goBack();
       } catch (err) {
-        // console.log(err);
       }
     };
 
@@ -186,12 +169,12 @@ const Scene = (props) => {
 
     };
 
-    const handleClickAddMoods = () => {
-      setSceneId(id); 
-      setNumber(number);
-      history.push(`/scene/moodshot/create`);
+    // const handleClickAddMoods = () => {
+    //   setSceneId(id); 
+    //   setNumber(number);
+    //   history.push(`/scene/moodshot/create`);
 
-    };
+    // };
 
     return (
         <div>
@@ -281,46 +264,6 @@ const Scene = (props) => {
                     </Col>
                   </Row>  
               </div>
-                  {/* <Col xs={4} md={2} className='text-center'>
-                        <p
-                          className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => handleClickAddMoods()} > Add Moodshots
-                        </p>
-                    </Col> */}
-                  {/* <Row>
-                  <Col className='text-center'>
-                            <Button
-                              className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                              onClick={() => handleClickMoods()} > Moodshots
-                            </Button>
-                        </Col>
-                  </Row>
-                  <Row className='mb-0 mt-2'>
-                    <Col xs={6} md={3} className='text-center'>
-                            <Button
-                              className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                              onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
-                            </Button>
-                        </Col>
-                    <Col className='text-center' xs={6} md={3}>
-                      <Button
-                          className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
-                      </Button>
-                    </Col>
-                    <Col className='text-center' xs={6} md={3}>
-                    <Button
-                        className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                        onClick={() => setShowlist(showlist => !showlist)} >Shotlist
-                    </Button>
-                    </Col>
-                    <Col className='text-center' xs={6} md={3}>
-                      <Button
-                          className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
-                      </Button>
-                    </Col>
-                  </Row>   */}
                   <Card.Body className='pt-0'>
                       {!showBreak ? (
                       ""
@@ -350,7 +293,7 @@ const Scene = (props) => {
                       </Row>             
                     ) }
                     {/* workspace */}
-                  <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 pl-3 py-1 ${styles.SubTitle }`}></h5>
+                  <p style={{ textTransform: 'uppercase'}} className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
                   <Row className='mb-2'>
                     <Col md={1}></Col>
                     <Col className='mx-0 px-0' xs={12} md={10} >
@@ -411,7 +354,6 @@ const Scene = (props) => {
                   </Row>
                   <Row>
                     <Col md={12}>
-                    {/* <h5 style={{ textTransform: 'uppercase'}} className={`mt-5 mb-3  py-1`}>Department Workspaces</h5> */}
                     </Col>
                   </Row>
                     <Row >

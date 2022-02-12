@@ -1,5 +1,4 @@
 import { createContext, useContext,  useEffect,  useState } from "react";
-import { useHistory } from "react-router";
 import { axiosReq } from "../api/axiosDefaults";
 
 export const ScenesContext = createContext();

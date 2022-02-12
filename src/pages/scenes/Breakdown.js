@@ -12,24 +12,24 @@ const Breakdown = (props) => {
     const [showCos, setShowCos] = useState(false);
     const [showCosOther, setShowCosOther] = useState(false);
     const [showCosBack, setShowCosBack] = useState(false);
-    const { id, number, title, act, int_ext, day_night, time, location,
-      filming_location, character1, character1_costume, character2, 
-      character2_costume, character3, character3_costume, character4, 
-      character4_costume, character5, character5_costume, character6, 
-      character6_costume, character7, character7_costume, character8,
-      character8_costume, character9, character9_costume, character10, 
-      character10_costume, character11, character11_costume, character12,
-      character12_costume, other_characters, other_characters_costumes,
-      background_artists, background_artists_costumes, shooting_date,
-      pages, action, content, storyboard, info, image, scene, location_detail,
-      workspace_guide, setScene, setShowBreak } = props;
+    const { title, act, int_ext, day_night, time, location,
+      filming_location, character1, character2, 
+      character3, character4, 
+      character5, character6, 
+      character7, character8,
+      character9, character10, 
+      character11, character12,
+      other_characters,
+      background_artists, shooting_date,
+      pages, action, content, info, scene, location_detail,
+      setShowBreak } = props;
     return (
         <div>
             <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
                 Scene breakdown
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>
                 </h5>
-                <h4 className='text-center'>{title} </h4>
+                <h4 className='text-center'>{title} - <span>Act {act} {time} </span> </h4>
             <Row>
             <Col className='mx-0 px-0' xs={12} md={4}  >
                 <div className={`p-3 ${styles.BreakBox }`}>
@@ -67,8 +67,8 @@ const Breakdown = (props) => {
                 <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
                 Main Characters
                 </h5>
-                <p> {character1} {character2} {character3} {character4} {character5}
-                {character6} {character7} {character7} {character9} {character10}
+                <p> {character1 } {character2} {character3} {character4} {character5}
+                {character6} {character7} {character8} {character9} {character10}
                 {character11} {character12} </p>
                 <Row>
                     <Col mx={6}></Col>

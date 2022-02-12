@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect} from "react";
+import React, { useRef, useState} from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -90,33 +90,6 @@ function SceneCreateForm({topbox}) {
 
       const imageInput = useRef(null)
       const storyboardInput = useRef(null)
-
-      // const fetchCharactersMount = async () => {
-      //   try {
-      //     const { data } = await axiosRes.get("characters/");
-      //     setCharacters(data);
-      //     console.log(`chars 1 ${characters.results[0].role }`)
-      //     console.log(data)
-      //   } catch (err) {
-      //     console.log(err)
-      //   }
-      // }
-
-      // const fetchLocationsMount = async () => {
-      //   try {
-      //     const { data } = await axiosRes.get("locations/");
-      //     setLocations(data);
-      //     console.log(`loc 1 ${locations.results[0].name }`)
-      //     console.log(data)
-      //   } catch (err) {
-      //     console.log(err)
-      //   }
-      // }
-
-      // useEffect(() => { 
-      //   fetchCharactersMount();
-      //   fetchLocationsMount();
-      // }, [])
 
       const history = useHistory()
     
@@ -478,7 +451,6 @@ function SceneCreateForm({topbox}) {
             <Form.Group controlId="content" className="mb-2" >
                 <Form.Label className="p-1 d-none" >Content</Form.Label>
                 <Form.Control 
-                    className={styles.Input}
                     type="text"
                     placeholder="Content"
                     className={styles.InputScene}

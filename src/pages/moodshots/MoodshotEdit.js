@@ -19,7 +19,6 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
-import { useCharactersContext, useLocationsContext, useScenesContext } from "../../contexts/Scene_chars_locs";
 
 const MoodshotEdit = () => {
   useRedirect("loggedOut")
@@ -48,10 +47,6 @@ const MoodshotEdit = () => {
   const imageInput5 = useRef(null);
 
   const history = useHistory();
-
-  const scenes = useScenesContext();
-  const characters = useCharactersContext();
-  const locations = useLocationsContext();
   const { id } = useParams();
 
   useEffect(() => {

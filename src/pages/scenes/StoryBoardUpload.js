@@ -14,8 +14,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
+import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
 const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) => {
@@ -72,7 +71,6 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) =
             const data = await axiosReq.put(`/scenes/${id}/`, formData);
             console.log(data)
             setAddStory(false);
-            // setShowstory(false);
             setScene((prevScene) => ({
               ...prevScene,
               storyboard: data.storyboard,

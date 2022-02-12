@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
 import TopBox from '../../components/TopBox';
@@ -14,7 +14,6 @@ import Container from "react-bootstrap/Container";
 
 const Home = () => {
     useRedirect("loggedOut");
-    const history = useHistory();
 
     return (
       <Container className={`px-2  ${styles.Background}`}>

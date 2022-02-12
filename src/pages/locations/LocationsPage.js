@@ -62,7 +62,7 @@ const LocationsPage = () => {
             </Button>
             {/* search */}
             <Row>
-                <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+                <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={`${styles.SearchBar} mt-3`}
                     onSubmit={(event) => event.preventDefault()}

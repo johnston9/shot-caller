@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
-import { Button, Card } from 'react-bootstrap';
+import React from 'react'
+import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/DayPage.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
+import { PostDropdown } from '../../components/PostDropdown';
 
 const DayPageTop = (props) => {
     useRedirect("loggedOut")
@@ -37,7 +32,6 @@ const DayPageTop = (props) => {
         location5,
         crewcall,
     } = props;
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     const handleEditDayTop = () => { 

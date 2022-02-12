@@ -113,7 +113,6 @@ export function ProfileEditDropdown({ id }) {
 
 // department dropdown 
 export function DeptDropdown({ handleClick, depart}) {
-  const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={DepartmentIcon} />

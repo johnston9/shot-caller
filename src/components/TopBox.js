@@ -4,6 +4,7 @@ import styles from "../styles/TopBox.module.css";
 import { Col, Row, Image } from "react-bootstrap";
 
 function TopBox(props) {
+    const {title, scene, title2, title3, work} = props; 
     return (
         <div className={styles.RegBox}>
         <Row className={styles.Row}>
@@ -27,8 +28,14 @@ function TopBox(props) {
                         src={door}
                     />
                 </Col>
-                <Col xs={10} className={` ${styles.Alignme}`} >
-                    <h2 className={`mt-4 pt-3 text-center ${styles.Title}`}>{props.title} </h2>
+                <Col xs={10} className={`d-flex align-items-center justify-content-center ${styles.Alignme}`} >
+                    <div >
+                    {work && <h2 className={` text-center ${styles.Title}`}>{work} </h2>}
+                    {title && <h2 className={` text-center ${styles.Title}`}>{title} </h2>}
+                    {scene && <h5 className={` text-center ${styles.Title}`}>Scene {scene} </h5>}
+                    <h5 style={{ textTransform: 'capitalize'}} className={`text-center ${styles.Title2}`}>{title2} {title3}</h5>
+                    {/* <p style={{ textTransform: 'capitalize'}} className={`mb-0 text-center ${styles.Title3}`}>{title3} </p> */}
+                    </div>
                 </Col>
             </Row>
             </div>

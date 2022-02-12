@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import styles from "../../styles/DayPage.module.css";
@@ -21,13 +19,10 @@ const DayPage = () => {
     useRedirect("loggedOut");
     const [show, setShow] = useState(false);
     const { id } = useParams();
-    // const [day_int_id, setDay_int_id] = useState();
     const [dayData, setDayData] = useState({ results: [] });
     const [dayScenes, setDayScenes] = useState({ results: [] });
-    // const [dayScenes, setDayScenes] = useState();
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
-    const currentUser = useCurrentUser();
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
 
@@ -44,8 +39,6 @@ const DayPage = () => {
                 setDataDay(dayGet.day)
                 setDataDate(dayGet.date);
                 setHasLoaded(true);
-                // const id_int = parseInt(id)
-                // setDay_int_id(id_int)  
             } catch (err) {
                 console.log(err);
               }
@@ -70,10 +63,6 @@ const DayPage = () => {
                   />
                 </Col>
             </Row>
-            {/* Scenes */}
-            {/* <Row>
-                <Col> */}
-                {/* <h3 className='text-center mt-3'>Day Schedule</h3> */}
                 {/* add scene */}
                 <Row className='my-3'>
                     <Col className="text-center">
@@ -121,7 +110,7 @@ const DayPage = () => {
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene, index) => (
                             <ScheduleScene 
-                                style={{ backgroundColor: (index % 3 == 0) ? '#F8E5E5' : (index % 2 == 0) ? '#FAF1CF' : '#ecf0f1' }}
+                                style={{ backgroundColor: (index % 3 === 0) ? '#F8E5E5' : (index % 2 === 0) ? '#FAF1CF' : '#ecf0f1' }}
                                 {...scene} 
                                 dayid={id} 
                                 sceneAll={scene} 

@@ -1,5 +1,4 @@
 import { createContext, useContext,  useState } from "react";
-import { useHistory } from "react-router";
 
 export const CharacterContext = createContext();
 export const SetCharacterContext = createContext();

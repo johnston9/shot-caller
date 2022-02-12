@@ -60,26 +60,24 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   
   return (
     <div>
-      <TopBox title=" Departments" />
+      <TopBox work="Departments"
+        title2={deptGeneral} />
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
             onClick={() => history.goBack()}
         >
             Back
         </Button>
-      <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
-            onClick={() => history.push('/scenes')}
-        >
-            Scenes
-        </Button>
-      <Row className="h-100">
-      <Col className="py-2 text-center" >
-        <h2 style={{ textTransform: 'uppercase'}}>{deptGeneral} Department</h2>
-        </Col>
+        <Row>
+          <Col className="text-center">
+            <Button onClick={() => setShow(show => !show)} 
+            className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+            Add Post</Button>
+        {!show ?("") : (<DeptPostCreate deptGeneral={deptGeneral} /> ) }
+          </Col>
         </Row>
         <Row>
-        <Col className="py-2 text-center" xs={12} md={6} md={{ span: 6, offset: 3 }} >
+        <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
         <Form
           className={`${styles.SearchBar} mt-3`}
           onSubmit={(event) => event.preventDefault()}
@@ -93,14 +91,6 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
           />
         </Form>
         </Col>
-        </Row>
-        <Row>
-          <Col className="text-center">
-            <Button onClick={() => setShow(show => !show)} 
-            className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-            Add Post</Button>
-        {!show ?("") : (<DeptPostCreate deptGeneral={deptGeneral} /> ) }
-          </Col>
         </Row>
         <Row className="mt-3">
           <Col>

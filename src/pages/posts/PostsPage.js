@@ -22,7 +22,7 @@ import PostCreateForm from "./PostCreateForm";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 
-function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, dept, category, filter = "" }) {
+function PostsPage({ feed, archived, allposts, liked, message, sceneId="", number="", dept, category="" , filter="" }) {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
@@ -34,15 +34,10 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    console.log(`depart ${filter}`);
-    console.log(`sceneId ${sceneId}`)
-    console.log(`number ${number}`)
-    console.log(`dept ${dept}`)
-    console.log(`category ${category}`)
     const fetchPosts = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/?${filter}&search=${query}`);
-        if (category == 'requirements') {
+        if (category === 'requirements') {
           const reqData = data.results.sort((a, b) => a.number - b.number);
           setPosts(reqData);
         }
@@ -68,87 +63,34 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
   }, [filter, query, pathname])
   
   return (
-    <div>
-      <TopBox title="Posts" />
-      <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
+    <div>      
+      {dept ? (
+        <TopBox 
+          work="Posts"
+          scene={number}
+          title2={dept} 
+          title3={category}/>
+        ) :  (""
+        ) }
+      {allposts ? (
+        <TopBox title="All Posts"/>
+      ) : ""}
+      {feed ? (
+        <TopBox title="Feed"/>
+      ) : ""}
+      {archived ? (
+        <TopBox title="Archived Posts"/>
+      ) : ""} 
+      {liked ? (
+        <TopBox title="Liked Posts"/>
+      ) : ""}
+        <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}
         >
             Back
         </Button>
-      <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
-            onClick={() => history.push('/scenes')}
-        >
-            Scenes
-        </Button>
-    <Row className={`${styles.Title} `}>
-      <Col className="py-2 text-center" >
-        {sceneId ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info}`} >Scene {number}</h2>
-        {/* <span>SceneId {sceneId}</span> */}
-        </div>
-        ) : ""}
-        {dept ? (
-            <div>
-              <h3 className={`mb-1 ${styles.Info} text-center`} >
-              <span style={{ textTransform: 'capitalize'}}> {dept} department {category}</span> </h3>
-            </div>
-          ) : (""
-          ) }
-        {allposts ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >All Posts </h2>
-        </div>
-        ) : ""}
-        {feed ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >Feed </h2>
-        </div>
-        ) : ""}
-        {archived ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >Archived Posts </h2>
-        </div>
-        ) : ""} 
-        {liked ? (
-          <div>
-        <h2 className={`mb-1 ${styles.Info} text-center`} >Liked Posts </h2>
-        </div>
-        ) : ""}
-        </Col>
-        </Row>
         <Row>
-          <Col className="text-center">
-            {sceneId ? (
-              <Button onClick={() => setShow(show => !show)} 
-              className={`mt-2 ${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-              Add Post</Button>
-            ) : (
-              ""
-            )}
-        {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
-          </Col>
-        </Row>
-        <Row>
-        <Col className="mt-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
-        {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
-        <Form
-          className={`${styles.SearchBar} mt-3`}
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <Form.Control
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            type="text"
-            className="mr-sm-2"
-            placeholder="Search by username or post title"
-          />
-        </Form>
-        </Col>
-        </Row>
-        {/* <Row>
           <Col className="text-center">
             {sceneId ? (
               <Button onClick={() => setShow(show => !show)} 
@@ -159,7 +101,23 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId, number, 
             )}
         {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
           </Col>
-        </Row> */}
+        </Row>
+        <Row>
+        <Col className="mt-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
+        <Form
+          className={`${styles.SearchBar} mt-3`}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            type="text"
+            className="mr-sm-2 text-center"
+            placeholder="Search by username or post title"
+          />
+        </Form>
+        </Col>
+        </Row>
         <Row className="mb-3 mt-2">
           <Col>
         {hasLoaded ? (

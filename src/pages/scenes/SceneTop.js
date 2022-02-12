@@ -1,10 +1,9 @@
 import React from 'react';
-import { Col, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 
@@ -13,17 +12,11 @@ const SceneTop = (props) => {
     const {
         id,
         number,
-        act,
         title,
         action,
-        character1,
-        character2,
-        character3,
         location,
-        background,
         style,
     } = props;
-    const currentUser = useCurrentUser();
     const history = useHistory();
 
     const handleEdit = () => {
@@ -35,24 +28,19 @@ const SceneTop = (props) => {
           await axiosReq.delete(`/scenes/${id}/`);
           history.goBack();
         } catch (err) {
-          // console.log(err);
         }
       };
 
     return (
         <div>
           <Card className={`text-center ${styles.SceneCard }`} >
-            {/* <Card style={{backgroundColor: background }} className={`text-center ${styles.SceneCard }`} > */}
             <div className={`mb-0 px-2 py-1`}>
-                  {/* <Card.Header className={`mb-0 px-2 py-1 ${styles.SceneCardHeader }`}> */}
                   <Row className='mx-0 d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}>
                     </Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
                     <h5 className={` ${styles.Titlelist }`}>Scene {number} 
                     </h5>
-                    {/* <p>Act {act} </p>
-                    <p>scene Id {id} </p> */}
                     </Col >
                     <Col xs={1} className=' mx-0 px-0'>
                     <PostDropdown
@@ -71,9 +59,6 @@ const SceneTop = (props) => {
                         <div className={` ${styles.Div50 }`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>
                       </div>
-                      {/* <div className={` ${styles.Div50 }`}><p className="mb-1">
-                        {character1} {character2} {character3}</p></div>
-                      <hr className='m-0'/> */}
                       <div className={` ${styles.Div50 }`}><p>{action}</p></div>
                       </Link>
                   </Card.Body>

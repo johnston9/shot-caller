@@ -15,7 +15,6 @@ const Moodshot = (props) => {
     useRedirect("loggedOut")
     const {
         id,
-        owner,
         is_owner,
         updated_at,
         name,

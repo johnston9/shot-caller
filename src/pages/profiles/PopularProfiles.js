@@ -2,8 +2,6 @@ import React, {  useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
-import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import Form from 'react-bootstrap/Form';
 import styles from "../../styles/Scene.module.css";
@@ -11,16 +9,12 @@ import styles from "../../styles/Scene.module.css";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.png";
 import Profile from './Profile';
-import { useProfileData } from '../../contexts/ProfileDataContext';
 import { useRedirect } from '../../hooks/Redirect';
 import { axiosReq } from '../../api/axiosDefaults';
-import Asset2 from '../../components/Asset2';
 
 const PopularProfiles = () => {
   useRedirect("loggedOut");
-  const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [show, setShow] = useState(false);
   const [query, setQuery] = useState("");
   const [profiles, setProfiles] = useState({ results: [] });
 
@@ -50,7 +44,6 @@ const PopularProfiles = () => {
         <div>
           <Row>
         <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
-        {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
           className={`${styles.SearchBar} mt-3`}
           onSubmit={(event) => event.preventDefault()}
@@ -65,12 +58,6 @@ const PopularProfiles = () => {
         </Form>
         </Col>
         </Row>
-          {/* <Row>
-            <Col className='text-center'>
-            <Button onClick={() => setShow(show => !show)} 
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}>Profiles</Button>
-            </Col>
-          </Row> */}
         <Container 
           className={`mt-5 ${appStyles.Content}`}
          >
