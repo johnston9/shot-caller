@@ -60,7 +60,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   
   return (
     <div>
-      <TopBox work="Departments"
+      <TopBox work="Depts Xtra"
         title2={deptGeneral} />
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}

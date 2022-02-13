@@ -118,16 +118,16 @@ const PostTop = (props) => {
     return (
         <div>
             <Card className={styles.PostTop} >
-                <Card.Body className="py-1 px-0">
+                <Card.Body className="py-0 px-0">
                 <Row className="d-flex align-items-center">
                     <Col xs={12} lg={7} >
                       <Row>
-                        <Col className="d-flex align-items-center justify-content-center" xs={12} md={8}>
+                        <Col className="d-flex align-items-center justify-content-space-between" xs={12} md={8}>
                         <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
                         </Link>
                         <span className='ml-1 ml-md-3'>{name}</span>
-                        <span className='ml-1 ml-md-3 d-none d-md-block'>{updated_at}</span>
+                        <span className='ml-3 ml-md-3'>{updated_at}</span>
                         {is_owner && (
                         <PostDropdown
                             handleEdit={handleEdit}
@@ -136,7 +136,7 @@ const PostTop = (props) => {
                         ) } 
                         </Col>
                         <Col xs={12} md={4} className="d-flex align-items-center justify-content-center"> 
-                          <div >
+                          <div className='d-none d-md-block' >
                           {/* archives */}
                           {archive_id ? (
                                 <OverlayTrigger
@@ -210,18 +210,15 @@ const PostTop = (props) => {
                             {comments_count}
                         </div>
                         </Col>
-                        <Col className=' text-center' xs={12} >
-                        <span className='d-md-none'>{updated_at}</span> 
-                        </Col>
                       </Row>            
                     </Col>  
                     <Col xs={12} lg={5} > 
                     <Link  to={`/posts/${id}`} >
-                    <Row className={`${styles.Content}`}>                   
-                      <Col className="px-0 d-flex align-items-center justify-content-left pl-4"  xs={6}>
+                    <Row className={`${styles.Content} mx-0`}>                   
+                      <Col className={`${styles.Content1} px-0 d-flex align-items-center justify-content-center`}  xs={7}>
                       {departments && <span className={`py-3 text-center`} style={{ textTransform: 'capitalize'}}  >S {number} - {departments} </span>} {cat && <span className={`py-3`}  style={{ textTransform: 'capitalize'}} >&nbsp; - {cat}. </span> }   
                       </Col>
-                      <Col className="px-0 d-flex align-items-center justify-content-center" xs={6}>
+                      <Col className={`${styles.Content2} px-0 d-flex align-items-center justify-content-center`} xs={5}>
                       {title && <span className="text-center">{title}</span>}
                       </Col>
                     </Row>

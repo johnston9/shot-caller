@@ -20,13 +20,15 @@ const DeptPostTop = (props) => {
         profile_id,
         profile_image,
         title,
+        departments,
         updated_at,
       } = props;
 
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
-      const departments = useDeptGeneralContext();
+      console.log(departments)
+      console.log(props)
 
       const handleEdit = () => {
         history.push(`/department/posts/${id}/edit`);
@@ -62,11 +64,14 @@ const DeptPostTop = (props) => {
                         ) } 
                         </Col>
                       </Row>            
-                    </Col>  
+                    </Col>                      
                     <Col xs={12} lg={5} > 
                     <Link to={`/department/posts/${id}`}>
-                    <Row className={`${styles.Content}`}>                   
-                      <Col className="px-0 d-flex align-items-center justify-content-center" xs={6}>
+                      <Row className={`${styles.Content} mx-0`}>                   
+                      <Col className={`${styles.Content1} px-0 d-flex align-items-center justify-content-center`}  xs={7}>
+                      {departments && <span className={`py-3 text-center`} style={{ textTransform: 'capitalize'}}  >{departments} </span>}  
+                      </Col>
+                      <Col className={`${styles.Content2} px-0 d-flex align-items-center justify-content-center`} xs={5}>
                       {title && <span className="text-center">{title}</span>}
                       </Col>
                     </Row>

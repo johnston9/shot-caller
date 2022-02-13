@@ -14,6 +14,7 @@ function DeptPostPage() {
   useRedirect("loggedOut")
     const { id } = useParams()
     const [post, setPost] = useState({ results: [] });
+    const [title, setTitle] = useState("");
 
     const history = useHistory();
 
@@ -21,8 +22,10 @@ function DeptPostPage() {
       const handleMount = async () => {
         try {
           const { data } = await axiosReq.get(`/department/posts/${id}`)
-          console.log(data);
+          const dept = data.departments
+          console.log(dept)
           setPost({ results: [data] });
+          setTitle(dept)
         } catch (err) {
           console.log(err);
         }
@@ -34,7 +37,7 @@ function DeptPostPage() {
 
   return (
     <div>
-      <TopBox title="Department Post" />
+      <TopBox title="Dept Xtra" title2={title} />
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" >
       <Button

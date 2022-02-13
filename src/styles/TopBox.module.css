@@ -67,18 +67,30 @@
 }
 
 @media screen and (max-width: 600px) {
+    /* .Title {
+        font-size: 1.50em;
+    }
+
+    .Title2 {
+        font-size: 1.50em;
+    } */
+
+    .Title3 {
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .Title3 {
+        font-size: 1em;
+    }
+
     .Title {
         font-size: 1.50em;
     }
 
     .Title2 {
-        font-size: 1em;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .Title {
-        font-size: 1.15em;
+        font-size: 1.25em;
     }
 }
 

@@ -23,7 +23,7 @@ const DeptsGeneral = () => {
 
     return (
         <div>
-            <TopBox title="Departments"/>
+            <TopBox title="Depts Xtra"/>
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}

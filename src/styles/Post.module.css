@@ -60,6 +60,52 @@
   .Content {
     background-color: #444a4c;
     cursor: pointer;
+  }
+
+  .Content:hover {
+    background-color: #232d30;
+    cursor: pointer;
+  }
+
+  .ContentDep {
+    background-color: #444a4c;
+    color: #79f5ef;
+    cursor: pointer;
+  }
+
+  .ContentDep:hover {
+    background-color: #232d30;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .Content1 {
+    /* background-color: #444a4c; */
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .Content1:hover {
+    /* background-color: #232d30; */
+    cursor: pointer;
+    color: #e9f1f1;
+  }
+
+  .Content2 {
+    /* background-color: #444a4c; */
+    cursor: pointer;
+    color: #79f5ef;
+  }
+
+  .Content2:hover {
+    /* background-color: #232d30; */
+    cursor: pointer;
+    color: #e9f1f1;
+  }
+
+  /* .Content {
+    background-color: #444a4c;
+    cursor: pointer;
     color: #79f5ef;
   }
 
@@ -67,4 +113,4 @@
     background-color: #232d30;
     cursor: pointer;
     color: #e9f1f1;
-  }
+  } */

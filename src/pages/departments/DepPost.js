@@ -20,6 +20,7 @@ const DeptPost = (props) => {
         name,
         profile_id,
         profile_image,
+        departments,
         title,
         content,
         image1,
@@ -33,7 +34,6 @@ const DeptPost = (props) => {
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
-      const departments = useDeptGeneralContext();
 
       const handleEdit = () => {
         history.push(`/department/posts/${id}/edit`);
@@ -49,24 +49,24 @@ const DeptPost = (props) => {
 
     return (
         <div>
-            <Card className={styles.Post} >
-                <Card.Body>
-                <Card.Text className={`mb-1 ${styles.Info} text-center`} >{departments.toUpperCase()} DEPARTMENT </Card.Text>
-                <div className="d-flex align-items-center justify-content-between">
-                    <Link to={`/profiles/${profile_id}`}>
-                        <Avatar src={profile_image} height={45}  />
-                        {owner} {name}
-                    </Link>
-                    <div className="d-flex align-items-center">
-                        <span>{updated_at}</span>
-                        {is_owner && (
-                          <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
-                        ) }
-                    </div>
-                  </div>
+            <Card  >
+                <Card.Body className={styles.PostTop}>
+                <Row>
+                  <Col className="d-flex align-items-center justify-content-space-between" xs={12} >
+                  <Link to={`/profiles/${profile_id}`}>
+                  <Avatar src={profile_image} height={45}  />
+                  </Link>
+                  <span className='ml-1 ml-md-3'>{name}</span>
+                  <span className='ml-1 ml-md-3'>{updated_at}</span>
+                  <span style={{ textTransform: 'capitalize'}}  className='d-none d-md-block ml-1 ml-md-3'>{departments}</span>
+                  {is_owner && (
+                  <PostDropdown
+                      handleEdit={handleEdit}
+                      handleDelete={handleDelete}
+                  />
+                  ) } 
+                  </Col>
+                </Row> 
                 </Card.Body>
                 <hr />
                 <Card.Body className="pt-1" >
