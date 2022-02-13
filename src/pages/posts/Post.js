@@ -144,7 +144,7 @@ const Post = (props) => {
                         <Avatar src={profile_image} height={45}  />
                         </Link>
                         <span style={{ fontWeight: '700', textTransform: 'capitalize'}} className='ml-1 ml-md-3'>{name}</span>
-                        <span className='ml-1 ml-md-3 d-none d-md-block'>{updated_at}</span>
+                        <span className='ml-3'>{updated_at}</span>
                         {is_owner && (
                         <PostDropdown
                             handleEdit={handleEdit}
@@ -235,7 +235,6 @@ const Post = (props) => {
                       </div>  
                       </Col>
                       <Col className='text-center' xs={12}>
-                      <span className='d-md-none'>{updated_at}</span> 
                       </Col>
                       {/* <Col className="d-flex align-items-center justify-content-center" md={4}>
                       <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>

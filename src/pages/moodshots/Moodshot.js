@@ -3,12 +3,14 @@ import Image from 'react-bootstrap/Image'
 import { useHistory } from 'react-router';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/Moodshots.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
 import Avatar from '../../components/Avatar';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
 
 const Moodshot = (props) => {
@@ -47,8 +49,14 @@ const Moodshot = (props) => {
 };
   return (
     <div>
-        <TopBox title="Moodshot" />        
-        <Row className='mt-3'>
+        <TopBox title="Moodshot" />   
+        <Button
+            className={`${btnStyles.Button} ${btnStyles.Back} my-2`}
+            onClick={() => history.goBack()}
+        >
+            Back
+        </Button>     
+        <Row className={`${styles.MoodTop2} pt-2 mx-2`}>
             <Col className="d-flex align-items-center justify-content-center" xs={12} md={6} >
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}  />
@@ -63,11 +71,11 @@ const Moodshot = (props) => {
                 ) } 
             </Col>
             <Col xs={12} md={6} className='mx-0 px-0 d-flex align-items-center justify-content-center'>
-            <h5 className={` ${styles.Titlelist }`}>
+            <p className={`mb-0 ${styles.Titlelist }`}>
                  {number && <span>Scene {number} - </span> } 
                  {location && <span> {location} - </span> }
                  {character && <span> {character} </span> }
-            </h5>
+            </p>
             </Col>
         </Row>
         <hr className='my-1'/>

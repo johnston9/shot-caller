@@ -72,7 +72,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
                 <h5 className="text-center mb-3"><span style={{ textTransform: 'uppercase'}}>Scene {number}</span> Moodshots </h5>
               <>
               <Button onClick={() => history.push(`/scene/moodshot/create`) }
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
               Add Scene {number} Moodshot</Button>
               </>
               </Col>
@@ -83,7 +83,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
               <h5 className="text-center mb-3"><span style={{  fontWeight: '700' }}>{characterRole}</span> Moodshots </h5>
               <>
               <Button onClick={() => history.push(`/character/moodshot/create`) }
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
               Add {characterRole} Moodshot</Button>
               </>
               </Col>
@@ -94,7 +94,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
               <h5 className="text-center mb-2"> {locationPlace} Moodshots </h5>
               <>
               <Button onClick={() => history.push(`/location/moodshot/create`) }
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
               Add {locationPlace} Moodshot</Button>
               </>
               </Col>

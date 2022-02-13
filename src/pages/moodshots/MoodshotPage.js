@@ -4,8 +4,6 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import btnStyles from "../../styles/Button.module.css";
 import Moodshot from './Moodshot';
 
 const MoodshotPage = () => {
@@ -30,12 +28,6 @@ const MoodshotPage = () => {
         <div>
             <Row className="h-100">
                 <Col>
-                <Button
-                    className={`${btnStyles.Button} ${btnStyles.Back} my-2`}
-                    onClick={() => history.goBack()}
-                >
-                    Back
-                </Button>
                 <Moodshot {...moodshot.results[0]}
                   moodshot={moodshot.results[0]} />
                 </Col>

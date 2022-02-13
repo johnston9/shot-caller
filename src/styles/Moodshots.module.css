@@ -1,8 +1,43 @@
-.Top {
-    /* background-color: black;
-    color: #fff; */
+.MoodTop {
+    background-color: #444a4c;
+    color: #fff !important;
 }
 
-.Body {
-    background-color: #fff;
+
+.MoodTop2 {
+background-color: #58666b;
+color: #fafafa;
 }
+
+.Content {
+    background-color: #444a4c;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  .Content:hover {
+    background-color: #232d30;
+    cursor: pointer;
+  }
+
+  .Content1 {
+    /* background-color: #444a4c; */
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .Content1:hover {
+    /* background-color: #232d30; */
+    cursor: pointer;
+    color: #e9f1f1;
+  }
+
+  .Content2 {
+    cursor: pointer;
+    color: #79f5ef;
+  }
+
+  .Content2:hover {
+    cursor: pointer;
+    color: #e9f1f1;
+  }

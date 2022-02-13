@@ -56,9 +56,9 @@ const DeptPost = (props) => {
                   <Link to={`/profiles/${profile_id}`}>
                   <Avatar src={profile_image} height={45}  />
                   </Link>
-                  <span className='ml-1 ml-md-3'>{name}</span>
-                  <span className='ml-1 ml-md-3'>{updated_at}</span>
-                  <span style={{ textTransform: 'capitalize'}}  className='d-none d-md-block ml-1 ml-md-3'>{departments}</span>
+                  <span className='ml-1'>{name}</span>
+                  <span className='ml-3'>{updated_at}</span>
+                  <span style={{ textTransform: 'capitalize'}}  className='d-none d-md-block ml-5'>{departments}</span>
                   {is_owner && (
                   <PostDropdown
                       handleEdit={handleEdit}

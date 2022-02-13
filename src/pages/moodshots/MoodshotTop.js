@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Moodshots.module.css"
+import styles from "../../styles/Moodshots.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
@@ -39,16 +39,16 @@ const MoodshotTop = (props) => {
         };
         return (
             <div>
-                <Card className={`text-center ${styles.Top}`}>
+                <Card className={`text-center ${styles.MoodTop}`}>
                     <Link to={`/moodshots/${id}`}>
-                    <Card.Body className={`pt-2 pb-1 ${styles.Body }`}>
+                    <Card.Body className={`py-1 ${styles.MoodTop}`}>
                         <Row className="d-flex align-items-center">
-                            <Col xs={12} md={5} className="d-flex align-items-center justify-content-between">
+                            <Col xs={12} lg={6} className="d-flex align-items-center justify-content-between">
                                 <Link to={`/profiles/${profile_id}`}>
                                 <Avatar src={profile_image} height={45}  />
                             </Link>
-                            <span style={{ fontWeight: '700' }} className='ml-3'>{name}</span>
-                            <span className='ml-3'>{updated_at}</span>
+                            <span style={{ fontWeight: '700' }} className='ml-1 ml-md-3'>{name}</span>
+                            <span className='ml-1 ml-md-3'>{updated_at}</span>
                             {is_owner && (
                             <PostDropdown
                                 handleEdit={handleEdit}
@@ -56,8 +56,15 @@ const MoodshotTop = (props) => {
                             />
                             ) }               
                             </Col>
-                            <Col xs={12} md={7} >
-                                {number && <span style={{  fontWeight: '700' }}>Scene {number} - </span>} {location && <span> {location} - </span>} {character && <span style={{  fontWeight: '700' }}> {character} - </span>} {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
+                            <Col xs={12} lg={6} className="px-0 mx-0" >
+                                <Row className={`${styles.Content} py-2 mx-0`}>
+                                    <Col xs={12} md={6} className={`${styles.Content1}`} >
+                                    {number && <span style={{ fontWeight: '700' }}>Scene {number} </span>} {location && <span> {location} </span>} {character && <span style={{  fontWeight: '700' }}> {character} </span>}
+                                    </Col>
+                                    <Col xs={12} md={6} className={`px-0 mx-0 ${styles.Content2} px-0`} >
+                                    {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
+                                    </Col>
+                                </Row>
                             </Col>
                         </Row>
                       </Card.Body>

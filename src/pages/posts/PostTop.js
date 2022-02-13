@@ -35,7 +35,7 @@ const PostTop = (props) => {
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
-      var cat = category.substring(0, 3);
+      const cat = category.substring(0, 3);
 
       const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
