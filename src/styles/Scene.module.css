@@ -66,11 +66,13 @@
 }
 
 /* Scene */
+
+.Bold { 
+  font-weight: 700;
+}
 .ButtonLine {
   background-color: #fff;
-  /* background-color: #f8f8fa; */
   border-top: 3px solid #fff;
-  border-bottom: 3px solid #fff;
 }
 .Button {
   color: aqua;

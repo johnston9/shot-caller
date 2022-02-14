@@ -257,26 +257,28 @@ const CharacterCreate = ({topbox} ) => {
     );
   
     return (
-      <div>
+      <div className="mt-3">
       {topbox ? (
         ""
       ) : (
+        <div>
         <TopBox title="Create Character" />
-      ) }
-      <Button
+        <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} text-left my-2`}
         onClick={() => history.goBack()}
         >
         Back
         </Button>
+        </div>
+      ) }
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-3" onSubmit={handleSubmit}>
+      <Form className="mt-1" onSubmit={handleSubmit}>
       <h3 className="text-center">Role</h3>
-      <p className="text-center">Input Roles here to add them to the Character dropdowns for the scene</p>
+      <p className="text-center">Quick add for Roles for scene dropdowns</p>
       <Row>
       <Col md={3} ></Col>
           <Col md={6} >
-          <Form.Group controlId="role" className="mb-2" >
+          <Form.Group controlId="role" className="mb-0" >
                   <Form.Label className="d-none p-1" >Role</Form.Label>
                   <Form.Control 
                   type="text"
@@ -295,7 +297,7 @@ const CharacterCreate = ({topbox} ) => {
       </Row>
       <Row>
         <Col>
-          <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+          <div className= {` mt-3`} >{buttons} </div>
         </Col>
       </Row>
       {/* actor details */}

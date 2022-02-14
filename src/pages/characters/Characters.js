@@ -17,12 +17,10 @@ import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
-import CharacterCreate from "./CharacterCreate";
 import CharacterTop from "./CharacterTop";
 
 const Characters = ({message}) => {
     useRedirect("loggedOut");
-  const [show, setShow] = useState(false);
   const [characters, setCharacters] = useState({ results: [] });
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -63,6 +61,14 @@ const Characters = ({message}) => {
                 >
                 Back
             </Button>
+            {/* add char */}
+            <Row>
+              <Col className="text-center" >
+                <Button onClick={() => history.push(`/characters/create`)}
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                Add Character</Button>
+              </Col>
+            </Row>
             {/* search */}
             <Row>
                 <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
@@ -80,23 +86,13 @@ const Characters = ({message}) => {
                 </Form>
                 </Col>
             </Row>
-            {/* add char */}
-            <Row>
-              <Col className="text-center" >
-                <Button onClick={() => setShow(show => !show)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                Add Character</Button>
-              </Col>
-            </Row>
-            {!show ?("") : (<CharacterCreate topbox /> ) }
             {/* characters */}
             <Row className="h-100">
-                <Col>
                     {hasLoaded ? (
                     <>
                     {characters.results.length ? (
                         characters.results.map((character) => (
-                        <Col xs={6} md={4} lg={3} className="py-2 p-0 p-lg-2">
+                        <Col xs={6} sm={4} md={4} lg={3} className="py-2 p-0 mx-0">
                         <CharacterTop key={character.id} {...character} />
                         </Col>
                         ))) 
@@ -111,7 +107,6 @@ const Characters = ({message}) => {
                         <Asset spinner />
                     </Container>
                     )}
-                </Col>
             </Row>               
         </div>
     )

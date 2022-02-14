@@ -20,7 +20,9 @@
     color: #F5F5F5;
 }
 
-.HomeboxXs {
+/* Dark Theme */
+
+/* .HomeboxXs {
     height: 105px;
     background-color: #3b444b;
     color: #F5F5F5;
@@ -56,7 +58,53 @@
     background-color: #3b444b;
     color: #F5F5F5;
     margin-bottom: 20px;
+} */
+
+/* Light Theme */
+.HomeboxXs {
+    height: 105px;
+    background-color: #405766;
+    color: #F5F5F5;
 }
+
+.HomeboxXsXs {
+    height: 90px;
+    background-color: #405766;
+    color: #F5F5F5;
+}
+
+.Homebox1 {
+    min-height: 160px;
+    background-color: #405766;
+    color: #F5F5F5;
+}
+
+.Homebox {
+    height: 100px;
+    background-color: #405766;
+    color: #F5F5F5;
+}
+
+.HomeboxSm {
+    height: 100px;
+    background-color: #405766;
+    color: #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.HomeboxSmEr {
+    height: 80px;
+    background-color: #405766;
+    color: #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.Inner {
+    background-color: #395061;
+    color: #fff;
+}
+
+/* end */
 
 .Title {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);

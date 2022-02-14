@@ -14,11 +14,14 @@ const CharacterPage = () => {
     const { id } = useParams();
     const [character, setCharacter] = useState({ results: [] });
     const history = useHistory();
+    const [title, setTitle] = useState("");
 
     useEffect(() => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq(`/characters/${id}`);
+                const role = data.role;
+                setTitle(role);
                 setCharacter({ results: [data] });
             } catch (err) {
                 console.log(err);
@@ -29,7 +32,7 @@ const CharacterPage = () => {
 
     return (
         <div>
-            <TopBox title="Character"/>
+            <TopBox title={title} />
             <Row className="h-100">
                 <Col className="mt-4">
                 <Button

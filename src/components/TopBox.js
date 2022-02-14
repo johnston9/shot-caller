@@ -4,7 +4,7 @@ import styles from "../styles/TopBox.module.css";
 import { Col, Row, Image } from "react-bootstrap";
 
 function TopBox(props) {
-    const {title, scene, title2, title3, work} = props; 
+    const {title, scene, title2, title3, title4, work} = props; 
     return (
         <div className={styles.RegBox}>
         <Row className={styles.Row}>
@@ -32,6 +32,7 @@ function TopBox(props) {
                     <div >
                     {work && <h2 className={` text-center ${styles.Title}`}>{work} </h2>}
                     {title && <h2 className={` text-center ${styles.Title2}`}>{title} </h2>}
+                    {title4 && <h2 className={` text-center ${styles.Title2}`}>{title4} </h2>}
                     {scene && <h4 className={` text-center ${styles.Title2}`}>Scene {scene} </h4>}
                     <h5 style={{ textTransform: 'capitalize'}} className={`text-center ${styles.Title3}`}>{title2} {title3}</h5>
                     {/* <p style={{ textTransform: 'capitalize'}} className={`mb-0 text-center ${styles.Title3}`}>{title3} </p> */}

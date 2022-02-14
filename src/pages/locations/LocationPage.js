@@ -14,11 +14,14 @@ const LocationPage = () => {
     const { id } = useParams();
     const [location, setLocation] = useState({ results: [] });
     const history = useHistory();
+    const [title, setTitle] = useState("");
 
     useEffect(() => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq(`/locations/${id}`);
+                const name = data.name;
+                setTitle(name);
                 setLocation({ results: [data] });
             } catch (err) {
                 console.log(err);
@@ -28,7 +31,7 @@ const LocationPage = () => {
     }, [id])
     return (
         <div>
-            <TopBox title="Location"/>
+            <TopBox title={title} />
             <Row className="h-100">
                 <Col className="mt-4">
                 <Button
