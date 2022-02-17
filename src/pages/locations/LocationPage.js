@@ -21,6 +21,7 @@ const LocationPage = () => {
             try {
                 const { data } = await axiosReq(`/locations/${id}`);
                 const name = data.name;
+                console.log(name)
                 setTitle(name);
                 setLocation({ results: [data] });
             } catch (err) {
@@ -32,18 +33,14 @@ const LocationPage = () => {
     return (
         <div>
             <TopBox title={title} />
-            <Row className="h-100">
-                <Col className="mt-4">
-                <Button
-                    className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
-                    onClick={() => history.goBack()}
-                >
-                    Back
-                </Button>
-                <Location {...location.results[0]}
-                  />
-                </Col>
-            </Row>   
+            <Button
+                className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
+                onClick={() => history.goBack()}
+            >
+                Back
+            </Button>
+            <Location {...location.results[0]}
+                /> 
         </div>
     )
 }

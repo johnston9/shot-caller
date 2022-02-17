@@ -56,7 +56,7 @@ const Characters = ({message}) => {
         <div>
             <TopBox title="Characters" />
             <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
+                className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-2`}
                 onClick={() => history.goBack()}
                 >
                 Back

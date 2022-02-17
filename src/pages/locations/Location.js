@@ -63,156 +63,151 @@ const Location = (props) => {
 
     return (
         <div>
-           <Row className='p-3'>
-                <Col className='mx-0 px-0' xs={1}></Col>
-                <Col xs={10} className='mx-0 px-0 text-center'>
-                <h2 className={` ${styles.Titlelist }`}> {name} </h2>
-                </Col >
-                <Col xs={1} className='text-center mx-0 px-0'>
-                <PostDropdown
-                    handleEdit={handleEdit}
-                    handleDelete={handleDelete}
-                />
-                </Col>
-            </Row>
-            <hr/>
-            <Row>
-                <Col xs={6} className='text-center'>
-                    <p
+            <div className={`mb-3 ${styles.Header}`}>
+            <Row className={`${styles.ButtonLine} mx-2 mt-2`}>
+                <Col className='text-center mx-0 px-0' xs={1} md={2} ></Col>
+                <Col xs={4} className='text-center mx-0 px-0'>
+                    <h5
                         className={`py-0 mb-0 ${styles.Button}`}
                         onClick={() => handleClickMoods()} > Moodshots
-                    </p>
+                    </h5>
                 </Col>
-                <Col xs={6} className='text-center'>
-                    <p
+                <Col xs={5} md={4} className='text-center mx-0 px-0'>
+                    <h5
                         className={`py-0 mb-0 ${styles.Button}`}
                         onClick={() => handleClickAddMoods()} > Add Moodshot
-                    </p>
+                    </h5>
+                    </Col>
+                <Col className='text-center px-0 mx-0' xs={2}>
+                <PostDropdown
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                    />
                 </Col>
             </Row>
-            <h5 className='my-3'> Info</h5>
-            <Row>
-                <Col xs={6}>
-                <p>DESCRIPTION</p>
+            <p style={{ textTransform: 'uppercase'}} className={` pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+            <div className='px-3'>
+            <h5 className='my-3 text-center' style={{ textTransform: 'uppercase'}}>INFO</h5>
+            {/* <h3 className='my-3 text-center'>Info</h3> */}
+            <Row className='mb-3 text-center'>
+                <Col xs={12} md={6}>
+                <p className={`${styles.BoldTitle} mb-0 text-center mx-4`}>DESCRIPTION</p>
                 <p>{description} </p>
                 </Col>
-                <Col xs={6}>
-                <p>PRIMARY FILMING ADDRESS</p>
+                <Col xs={12} md={6}>
+                <p className={`${styles.BoldTitle} mb-0 text-center mx-4 `}>PRIMARY FILMING ADDRESS</p>
                 <p>{filming_address_primary} </p>
                 </Col>
             </Row>
             <Row>
-                <Col xs={6}>
-                <p>SECOND FILMING ADDRESS</p>
+                <Col xs={12} md={6}>
+                <p className={`${styles.BoldTitle} mb-0 text-center `}>SECOND FILMING ADDRESS</p>
                 <p>{filming_address2} </p>
                 </Col>
-                <Col xs={6}>
-                <p>THIRD FILMING ADDRESS</p>
+                <Col xs={12} md={6}>
+                <p className={`${styles.BoldTitle} mb-0 text-center `}>THIRD FILMING ADDRESS</p>
                 <p>{filming_address3} </p>
                 </Col>
             </Row>
-            <hr/> 
-            <h5 className='my-3'>IMAGES</h5>
+            <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+            <h5 className='my-3 text-center' style={{ textTransform: 'uppercase'}}>images</h5>
             {/* IMAGE 1/2 */}
-            <Row>
-            <Col xs={6}>
-                {image1_description &&  <> 
-                <p>Image 1 Description</p>
-                <p>{image1_description} </p>
-                </>}
+            <Row className='text-center mb-5'>
+            <Col xs={12} md={6}>
                 {image1 && <> 
-                    <p>Image 1</p>
+                    <p className={`${styles.BoldTitle} mb-3`}>Image 1</p>
                     <Image src={image1} alt="Image 1" height="200"  />
                     </>
                     }
-                </Col>  
-            <Col xs={6}>
-            {image2_description &&  <> 
-                <p>Image 2 Description</p>
-                <p>{image2_description} </p>
+                {image1_description &&  <> 
+                <p>{image1_description} </p>
                 </>}
+                </Col>  
+            <Col xs={12} md={6}>
                 {image2 && <> 
-                    <p>Image 2</p>
+                    <p className={`${styles.BoldTitle} mb-2`}>Image 2</p>
                     <Image src={image2} alt="Image 2" height="200"  />
                     </>
                     }
+                {image2_description &&  <> 
+                <p>{image2_description} </p>
+                </>}
                 </Col>
             </Row>
+            <hr/>
             {/* image 3/4 */}
-            <Row>
-                <Col xs={6}>
-                {image3_description &&  <> 
-                <p>Image 3 Description</p>
-                <p>{image3_description} </p>
-                </>}
+            <Row className='text-center mb-5'>
+                <Col xs={12} md={6}>
                 {image3 && <> 
-                    <p>Image 3</p>
+                    <p className={`${styles.BoldTitle} mb-2`}>Image 3</p>
                     <Image src={image3} alt="Image 3" height="200"  />
                     </>
                     }
-                </Col>                
-            <Col xs={6}>
-                {image4_description &&  <> 
-                <p>Image 4 Description</p>
-                <p>{image4_description} </p>
+                {image3_description &&  <> 
+                <p>{image3_description} </p>
                 </>}
+                </Col>                
+            <Col xs={12} md={6}>
                 {image4 && <> 
-                    <p>Image 4</p>
+                    <p className={`${styles.BoldTitle} mb-2`}>Image 4</p>
                     <Image src={image4} alt="Image 4" height="200"  />
                     </>
                     }
+                {image4_description &&  <> 
+                <p>{image4_description} </p>
+                </>}
                 </Col>
             </Row>
+            <hr/>
             {/* IMAGE 5/6 */}
-            <Row>
-                <Col xs={6}>
-                {image5_description &&  <> 
-                <p>Image 5 Description</p>
-                <p>{image5_description} </p>
-                </>}
+            <Row className='text-center mb-5'>
+                <Col xs={12} md={6}>
                 {image5 && <> 
-                    <p>Image 5</p>
+                    <p className={`${styles.BoldTitle} mb-2`}>Image 5</p>
                     <Image src={image5} alt="Image 5" height="200"  />
                     </>
                     }
-                </Col>                
-            <Col xs={6}>
-            {image6_description &&  <> 
-                <p>Image 6 Description</p>
-                <p>{image6_description} </p>
+                {image5_description &&  <> 
+                <p>{image5_description} </p>
                 </>}
+                </Col>                
+            <Col xs={12} md={6}>
                 {image6 && <> 
-                    <p>Image 6</p>
+                    <p className={`${styles.BoldTitle} mb-2`}>Image 6</p>
                     <Image src={image6} alt="Image 6" height="200"  />
                     </>
                     }
+                {image6_description &&  <> 
+                <p>{image6_description} </p>
+                </>}
                 </Col>
             </Row>
+            <hr/>
             {/* IMAGE 7/8 */}
-            <Row>
-                <Col xs={6}>
-                {image7_description &&  <> 
-                <p>Image 7 Description</p>
-                <p>{image7_description} </p>
-                </>}
+            <Row className='text-center mb-5'>
+                <Col xs={12} md={6}>
                 {image7 && <> 
-                    <p>Image 7</p>
+                    <p className={`${styles.BoldTitle} mb-2`}>Image 7</p>
                     <Image src={image7} alt="Image 7" height="200"  />
                     </>
                     }
-                </Col>                
-            <Col xs={6}>
-            {image8_description &&  <> 
-                <p>Image 8 Description</p>
-                <p>{image8_description} </p>
+                {image7_description &&  <> 
+                <p>{image7_description} </p>
                 </>}
+                </Col>                
+                <Col xs={12} md={6}>
                 {image8 && <> 
-                    <p>Image8 </p>
+                    <p className={`${styles.BoldTitle} mb-2`}>Image8 </p>
                     <Image src={image8} alt="Image 8" height="200"  />
                     </>
                     }
+                {image8_description &&  <> 
+                <p>{image8_description} </p>
+                </>}
                 </Col>              
             </Row>
+        </div>
+        </div>
         </div>
     )
 }

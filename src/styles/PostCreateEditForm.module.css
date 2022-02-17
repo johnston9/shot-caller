@@ -5,6 +5,10 @@
     min-height: 10px;
   }
 
+.Bold {
+  font-weight: 700;
+}
+
   .Input {
     background: #ffffff;
     border: 1px solid #f0f1f9;

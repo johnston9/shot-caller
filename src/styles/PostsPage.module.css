@@ -29,3 +29,9 @@
 .Title {
   background-color: #fff;
 }
+
+@media screen and (max-width: 600px) {
+  .Titlelist {
+    font-size: .75rem ;
+  }
+}

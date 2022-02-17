@@ -253,9 +253,8 @@ const LocationsCreate = ({topbox} ) => {
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           <Form className="mt-3" onSubmit={handleSubmit}>
           <h3 className="text-center">Location Name</h3>
-          <p className="text-center">Input Location Names here to add it to the Location dropdown for the scene.
-          If a location has a number of parts which differ greatly you can create a seperate location for each or
-          just add each part to the location detail box, eg 'kitchen', 'bedroom' e.t.c. </p>
+          <p className="text-center">Quick add name for scene dropdown.
+            Location x-tra details can be add in the scene also. </p>
           <Row>
           <Col md={3} ></Col>
               <Col md={6} >

@@ -5,6 +5,12 @@
   width: 100%;
 }
 
+.Images {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
 .SceneCard {
   border: 5px solid #fff;
   transition-timing-function: ease;
@@ -56,23 +62,27 @@
   background-color: #fff;
 }
 
-/* .Header {
-  background-color: #fff;
-} */
-
-/* add scene */
 .AddScene {
   background-color: cornsilk;
 }
 
-/* Scene */
-
 .Bold { 
   font-weight: 700;
 }
+
 .ButtonLine {
   background-color: #fff;
   border-top: 3px solid #fff;
+}
+
+.BoldTitle {
+  font-weight: 700;
+  background-color: rgb(209, 240, 240);
+}
+
+.Actor {
+  background-color: rgb(227, 246, 246);
+  min-height: 65px;
 }
 .Button {
   color: aqua;

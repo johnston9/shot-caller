@@ -358,10 +358,10 @@ const buttons = (
               </Row>
               {/* actor details */}
               <h3 className="text-center my-3">Actor Details</h3>
-              <Row>
+              <Row className="text-center">
                   <Col xs={6} md={4} >
                   <Form.Group controlId="actor" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Actor</Form.Label>
+                          <Form.Label className={styles.Bold} >Actor</Form.Label>
                           <Form.Control 
                           type="text"
                           placeholder="Actor"
@@ -378,7 +378,7 @@ const buttons = (
                   </Col>
                   <Col xs={6} md={4} >
                   <Form.Group controlId="mobile" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Mobile</Form.Label>
+                          <Form.Label className={styles.Bold} >Mobile</Form.Label>
                           <Form.Control 
                           placeholder="Mobile"
                           type="text"
@@ -395,7 +395,7 @@ const buttons = (
                   </Col>
                   <Col xs={12} md={4} >
                   <Form.Group controlId="email" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Email</Form.Label>
+                          <Form.Label className={styles.Bold} >Email</Form.Label>
                           <Form.Control 
                           placeholder="Email"
                           type="text"
@@ -412,10 +412,10 @@ const buttons = (
                   </Col>
               </Row>
               {/* times agent */}
-              <Row>
+              <Row className="text-center">
                   <Col xs={6} md={4} >
                   <Form.Group controlId="make_up_time" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Makeup Time</Form.Label>
+                          <Form.Label className={styles.Bold} >Makeup Time</Form.Label>
                           <Form.Control 
                           placeholder="Makeup Time"
                           type="text"
@@ -432,7 +432,7 @@ const buttons = (
                   </Col>
                   <Col xs={6} md={4} >
                   <Form.Group controlId="commute_time" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Commute Time</Form.Label>
+                          <Form.Label className={styles.Bold} >Commute Time</Form.Label>
                           <Form.Control 
                           placeholder="Commute Time"
                           type="text"
@@ -449,7 +449,7 @@ const buttons = (
                   </Col>
                   <Col xs={12} md={4} >
                   <Form.Group controlId="agent" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Agent</Form.Label>
+                          <Form.Label className={styles.Bold} >Agent</Form.Label>
                           <Form.Control 
                           placeholder="Agent"
                           type="text"
@@ -466,10 +466,10 @@ const buttons = (
                   </Col>
               </Row>
               {/* pickups */}
-              <Row>
+              <Row className="text-center">
                   <Col xs={6} >
                   <Form.Group controlId="pickup_address" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Pickup Address</Form.Label>
+                          <Form.Label className={styles.Bold} >Pickup Address</Form.Label>
                           <Form.Control 
                           placeholder="Pickup Address"
                           type="text"
@@ -488,7 +488,7 @@ const buttons = (
                   </Col>
                   <Col xs={6}>
                   <Form.Group controlId="pickup_address_2" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Pickup Address 2</Form.Label>
+                          <Form.Label className={styles.Bold} >Pickup Address 2</Form.Label>
                           <Form.Control 
                           placeholder="Pickup Address 2"
                           type="text"
@@ -507,10 +507,10 @@ const buttons = (
                   </Col>
               </Row>
               {/* Requirements */}
-              <Row>
+              <Row className="text-center" >
                   <Col xs={6} >
                   <Form.Group controlId="requirements" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Requirements</Form.Label>
+                          <Form.Label className={styles.Bold} >Requirements</Form.Label>
                           <Form.Control 
                           placeholder="Requirements"
                           type="text"
@@ -529,7 +529,7 @@ const buttons = (
                   </Col>
                   <Col xs={6}>
                   <Form.Group controlId="diet" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Diet</Form.Label>
+                          <Form.Label className={styles.Bold} >Diet</Form.Label>
                           <Form.Control 
                           placeholder="Diet"
                           type="text"
@@ -547,12 +547,13 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <h3 className="text-center my-3">makeup - Costumes</h3>
+              <hr/>
+              <h3 className="text-center my-3">Makeup - Costumes</h3>
             {/* makeup/costume 1 */}
-            <Row className="mb-5 text-center">
+            <Row className="mb-3 text-center">
               <Col xs={12} md={6}>
                   <Form.Group controlId="makeup" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Makeup</Form.Label>
+                          <Form.Label className={styles.Bold} >Makeup</Form.Label>
                           <Form.Control 
                           placeholder="Makeup"
                           type="text"
@@ -619,7 +620,7 @@ const buttons = (
                   </Col>
                   <Col xs={12} md={6} >
                   <Form.Group controlId="costume1" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Costume 1</Form.Label>
+                          <Form.Label className={styles.Bold} >Costume 1</Form.Label>
                           <Form.Control 
                           placeholder="Costume 1"
                           type="text"
@@ -683,10 +684,10 @@ const buttons = (
                   </Col>
               </Row>
               {/* costume 2/3  */}
-                  <Row>
+                  <Row className="text-center mb-3">
                   <Col xs={12} md={6}>
                   <Form.Group controlId="costume2" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Costume 2</Form.Label>
+                          <Form.Label className={styles.Bold} >Costume 2</Form.Label>
                           <Form.Control 
                           placeholder="Costume 2"
                           type="text"
@@ -726,9 +727,11 @@ const buttons = (
                             className="my-1"
                             htmlFor="image-upload2"
                           >
-                            <Asset
+                            <Asset2
+                              height={"20px"}
+                              width={"20px"}
                               src={Upload}
-                              message="Click or tap to upload an image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}
@@ -751,7 +754,7 @@ const buttons = (
                   </Col>
                   <Col xs={12} md={6} >
                   <Form.Group controlId="costume3" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Costume 3</Form.Label>
+                          <Form.Label className={styles.Bold} >Costume 3</Form.Label>
                           <Form.Control 
                           placeholder="Costume 3"
                           type="text"
@@ -818,10 +821,10 @@ const buttons = (
                   </Col>
               </Row>
               {/* costume 4/5  */}
-              <Row className="mb-5 ">          
+              <Row className="mb-3 text-center">          
                   <Col xs={12} md={6} >
                   <Form.Group controlId="costume4" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Costume 4</Form.Label>
+                          <Form.Label className={styles.Bold} >Costume 4</Form.Label>
                           <Form.Control 
                           placeholder="Costume 4"
                           type="text"
@@ -888,7 +891,7 @@ const buttons = (
                   </Col>
                   <Col xs={12} md={6} >
                   <Form.Group controlId="costume5" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Costume 5</Form.Label>
+                          <Form.Label className={styles.Bold} >Costume 5</Form.Label>
                           <Form.Control 
                           placeholder="Costume 5"
                           type="text"
@@ -955,10 +958,10 @@ const buttons = (
                   </Col>
               </Row>
               {/* costume 6/7  */}
-              <Row>
+              <Row className="text-center mb-3">
                   <Col xs={12} md={6}>
                   <Form.Group controlId="costume6" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Costume 6</Form.Label>
+                          <Form.Label className={styles.Bold} >Costume 6</Form.Label>
                           <Form.Control 
                           placeholder="Costume 6"
                           type="text"
@@ -1025,7 +1028,7 @@ const buttons = (
                   </Col>
                   <Col xs={12} md={6} >
                   <Form.Group controlId="costume7" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Costume 7</Form.Label>
+                          <Form.Label className={styles.Bold} >Costume 7</Form.Label>
                           <Form.Control 
                           placeholder="Costume 7"
                           type="text"

@@ -310,9 +310,8 @@ const LocationsEdit = () => {
             <Container className= {`${appStyles.Content} ${styles.Container}`} >
             <Form className="mt-3" onSubmit={handleSubmit}>
             <h3 className="text-center">Location Name</h3>
-            <p className="text-center">Input Location Names here to add it to the Location dropdown for the scene.
-            If a location has a number of parts which differ greatly you can create a seperate location for each or
-            just add each part to the location detail box, eg 'kitchen', 'bedroom' e.t.c. </p>
+            <p className="text-center">Quick add name for scene dropdown.
+            Location x-tra details can be add in the scene also.</p>
             <Row>
             <Col md={3} ></Col>
                 <Col md={6} >
@@ -335,7 +334,7 @@ const LocationsEdit = () => {
             </Row>
             <Row>
                 <Col>
-                <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+                <div className= {`my-3`} >{buttons} </div>
                 </Col>
             </Row>
             {/*  details */}
@@ -346,7 +345,7 @@ const LocationsEdit = () => {
                         <Form.Control 
                         type="text"
                         as="textarea"
-                        rows={3}
+                        rows={2}
                         placeholder="Description"
                         name="description"
                         value={description}
@@ -365,48 +364,7 @@ const LocationsEdit = () => {
                         <Form.Control 
                         placeholder="Primary Filming Address"
                         as="textarea"
-                        rows={3}
-                        type="text"
-                        name="filming_address_primary"
-                        value={filming_address_primary}
-                        onChange={handleChange}
-                            />
-                    </Form.Group>
-                    {errors?.filming_address_primary?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                        {message}
-                        </Alert>
-                    ))}
-                </Col>
-            </Row>
-            {/*  details */}
-            <Row>
-                <Col xs={6} >
-                <Form.Group controlId="description" className="mb-2" >
-                        <Form.Label className="d-none p-1" >Description</Form.Label>
-                        <Form.Control 
-                        type="text"
-                        as="textarea"
-                        rows={3}
-                        placeholder="Description"
-                        name="description"
-                        value={description}
-                        onChange={handleChange}
-                            />
-                    </Form.Group>
-                    {errors?.description?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                        {message}
-                        </Alert>
-                    ))}
-                </Col>
-                <Col xs={6} >
-                <Form.Group controlId="filming_address_primary" className="mb-2" >
-                        <Form.Label className="d-none p-1" >Primary Filming Address</Form.Label>
-                        <Form.Control 
-                        placeholder="Primary Filming Address"
-                        as="textarea"
-                        rows={3}
+                        rows={2}
                         type="text"
                         name="filming_address_primary"
                         value={filming_address_primary}

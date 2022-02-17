@@ -491,12 +491,12 @@ const CharacterCreate = ({topbox} ) => {
               ))}
           </Col>
       </Row>
-      <h3 className="text-center my-3">makeup - Costumes</h3>
+      <h3 className="text-center my-3">Makeup - Costumes</h3>
       {/* makeup/costume 1 */}
-      <Row className="mb-5 text-center">
+      <Row className="mb-1 text-center">
       <Col xs={12} md={6}>
           <Form.Group controlId="makeup" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Makeup</Form.Label>
+                  <Form.Label className={styles.Bold} >Makeup</Form.Label>
                   <Form.Control 
                   placeholder="Makeup"
                   type="text"
@@ -559,9 +559,10 @@ const CharacterCreate = ({topbox} ) => {
               {/* """ end image 8 """" */}
           </Container>
           </Col>
+          <hr/>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume1" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 1</Form.Label>
+                  <Form.Label className={styles.Bold} >Costume 1</Form.Label>
                   <Form.Control 
                   placeholder="Costume 1"
                   type="text"
@@ -603,7 +604,7 @@ const CharacterCreate = ({topbox} ) => {
                   >
                     <Asset
                       src={Upload}
-                      message="Click or tap to upload an image"
+                      message="Upload Image"
                     />
                   </Form.Label>
                 )}
@@ -623,18 +624,20 @@ const CharacterCreate = ({topbox} ) => {
               ))}
               </Container>
           </Col>
+          <hr/>
       </Row>
+      <hr/>
       {/* costume 2/3  */}
-          <Row>
+          <Row className="text-center mt-5">
           <Col xs={12} md={6}>
           <Form.Group controlId="costume2" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 2</Form.Label>
+                  <Form.Label className={styles.Bold} >Costume 2</Form.Label>
                   <Form.Control 
                   placeholder="Costume 2"
                   type="text"
                   name="costume2"
                   as="textarea"
-                  rows={3}
+                  rows={2}
                   value={costume2}
                   onChange={handleChange}
                       />
@@ -668,9 +671,11 @@ const CharacterCreate = ({topbox} ) => {
                     className="my-1"
                     htmlFor="image-upload2"
                   >
-                    <Asset
+                    <Asset2 
+                    height={20}
+                    width={20}
                       src={Upload}
-                      message="Click or tap to upload an image"
+                      message="Upload Image"
                     />
                   </Form.Label>
                 )}
@@ -693,13 +698,13 @@ const CharacterCreate = ({topbox} ) => {
           </Col>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume3" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 3</Form.Label>
+                  <Form.Label className={styles.Bold} >Costume 3</Form.Label>
                   <Form.Control 
                   placeholder="Costume 3"
                   type="text"
                   name="costume3"
                   as="textarea"
-                  rows={3}
+                  rows={2}
                   value={costume3}
                   onChange={handleChange}
                       />
@@ -759,17 +764,18 @@ const CharacterCreate = ({topbox} ) => {
           </Container>
           </Col>
       </Row>
+      <hr/>
       {/* costume 4/5  */}
-      <Row className="mb-5 ">          
+      <Row className="text-center mt-5">          
           <Col xs={12} md={6} >
           <Form.Group controlId="costume4" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 4</Form.Label>
+                  <Form.Label className={styles.Bold} >Costume 4</Form.Label>
                   <Form.Control 
                   placeholder="Costume 4"
                   type="text"
                   name="costume4"
                   as="textarea"
-                  rows={3}
+                  rows={2}
                   value={costume4}
                   onChange={handleChange}
                       />
@@ -830,13 +836,13 @@ const CharacterCreate = ({topbox} ) => {
           </Col>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume5" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 5</Form.Label>
+                  <Form.Label className={styles.Bold} >Costume 5</Form.Label>
                   <Form.Control 
                   placeholder="Costume 5"
                   type="text"
                   name="costume5"
                   as="textarea"
-                  rows={3}
+                  rows={2}
                   value={costume5}
                   onChange={handleChange}
                       />
@@ -896,11 +902,12 @@ const CharacterCreate = ({topbox} ) => {
           </Container>
           </Col>
       </Row>
+      <hr/>
       {/* costume 6/7  */}
-      <Row>
+      <Row className="text-center mt-5">
           <Col xs={12} md={6}>
           <Form.Group controlId="costume6" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 6</Form.Label>
+                  <Form.Label className={styles.Bold} >Costume 6</Form.Label>
                   <Form.Control 
                   placeholder="Costume 6"
                   type="text"
@@ -967,7 +974,7 @@ const CharacterCreate = ({topbox} ) => {
           </Col>
           <Col xs={12} md={6} >
           <Form.Group controlId="costume7" className="mb-2" >
-                  <Form.Label className="d-none p-1" >Costume 7</Form.Label>
+                  <Form.Label className={styles.Bold} >Costume 7</Form.Label>
                   <Form.Control 
                   placeholder="Costume 7"
                   type="text"

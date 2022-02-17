@@ -55,11 +55,19 @@ const LocationsPage = () => {
         <div>
             <TopBox title="Locations" />
             <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
+                className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-2`}
                 onClick={() => history.goBack()}
                 >
                 Back
             </Button>
+            {/* add location  */}
+            <Row>
+              <Col className="text-center" >
+              <Button onClick={() => history.push(`/locations/create`) } 
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                Add Location</Button>
+              </Col>
+            </Row>
             {/* search */}
             <Row>
                 <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
@@ -77,36 +85,26 @@ const LocationsPage = () => {
                 </Form>
                 </Col>
             </Row>
-            {/* add location  */}
-            <Row>
-              <Col className="text-center" >
-              <Button onClick={() => history.push(`/locations/create`) } 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                Add Location</Button>
-              </Col>
-            </Row>
             <Row className="h-100">
-                <Col>
-                    {hasLoaded ? (
-                    <>
-                    {locations.results.length ? (
-                        locations.results.map((location) => (
-                        <Col xs={6} md={4} lg={3} className="py-2 p-0 p-lg-2">
-                        <LocationTop key={location.id} {...location} />
-                        </Col>
-                        ))) 
-                        : (
-                        <Container className={appStyles.Content}>
-                            <Asset src={NoResults } />
-                        </Container>
-                        )}
-                    </>
-                    ) : (
+                {hasLoaded ? (
+                <>
+                {locations.results.length ? (
+                    locations.results.map((location) => (
+                    <Col xs={6} sm={4} md={4} lg={3} className="py-2 p-0 mx-0">
+                    <LocationTop key={location.id} {...location} />
+                    </Col>
+                    ))) 
+                    : (
                     <Container className={appStyles.Content}>
-                        <Asset spinner />
+                        <Asset src={NoResults } />
                     </Container>
                     )}
-                </Col>
+                </>
+                ) : (
+                <Container className={appStyles.Content}>
+                    <Asset spinner />
+                </Container>
+                )}
             </Row>               
         </div>
     )

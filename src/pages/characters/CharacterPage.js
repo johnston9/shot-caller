@@ -33,18 +33,14 @@ const CharacterPage = () => {
     return (
         <div>
             <TopBox title={title} />
-            <Row className="h-100">
-                <Col className="mt-4">
                 <Button
-                    className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+                    className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
                     onClick={() => history.goBack()}
                 >
                     Back
                 </Button>
                 <Character {...character.results[0]}
-                  />
-                </Col>
-            </Row>            
+                  />         
         </div>
     )
 }
