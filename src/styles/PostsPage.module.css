@@ -5,25 +5,30 @@
     margin-bottom: 16px;
   }
   
-  .SearchIcon {
-    position: absolute;
-    font-size: 1.2rem;
-    padding: 9px;
-    padding-left: 15px;
-  }
-  
-  .SearchIcon:hover {
-    cursor: default;
-    color: #cfced3;
-  }
+.SearchIcon {
+  position: absolute;
+  font-size: 1.2rem;
+  padding: 9px;
+  padding-left: 15px;
+}
 
-  .Info {
-    color: #000;
-  }
+.SearchIcon:hover {
+  cursor: default;
+  color: #cfced3;
+}
 
-  .Top {
-    background-color: #1d3242;
-    color: #fff;
+.Info {
+  color: #000;
+}
+
+.Top {
+  background-color: #1d3242;
+  color: #fff;
+}
+
+.Top:hover {
+  background-color: #3076ac;
+  color: #fff;
 }
 
 .Title {

@@ -252,9 +252,9 @@ const LocationsCreate = ({topbox} ) => {
         </Button>
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           <Form className="mt-3" onSubmit={handleSubmit}>
-          <h3 className="text-center">Location Name</h3>
+          <h3 className="text-center">Name</h3>
           <p className="text-center">Quick add name for scene dropdown.
-            Location x-tra details can be add in the scene also. </p>
+            Location extra details can be add in the scene also. </p>
           <Row>
           <Col md={3} ></Col>
               <Col md={6} >
@@ -277,50 +277,11 @@ const LocationsCreate = ({topbox} ) => {
           </Row>
           <Row>
             <Col>
-              <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+              <div className= {`mb-4 mt-3 `} >{buttons} </div>
             </Col>
           </Row>
-          {/*  details */}
-          <Row>
-              <Col xs={6} >
-              <Form.Group controlId="description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Description</Form.Label>
-                      <Form.Control 
-                      type="text"
-                      as="textarea"
-                      rows={3}
-                      placeholder="Description"
-                      name="description"
-                      value={description}
-                      onChange={handleChange}
-                          />
-                  </Form.Group>
-                  {errors?.description?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                      {message}
-                    </Alert>
-                  ))}
-              </Col>
-              <Col xs={6} >
-              <Form.Group controlId="filming_address_primary" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Primary Filming Address</Form.Label>
-                      <Form.Control 
-                      placeholder="Primary Filming Address"
-                      as="textarea"
-                      rows={3}
-                      type="text"
-                      name="filming_address_primary"
-                      value={filming_address_primary}
-                      onChange={handleChange}
-                          />
-                  </Form.Group>
-                  {errors?.filming_address_primary?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                      {message}
-                    </Alert>
-                  ))}
-              </Col>
-          </Row>
+          <p style={{ textTransform: 'uppercase'}} className={`mt-3 mb-2  pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+          <h3 className="text-center my-3">Details</h3>
           {/*  details */}
           <Row>
               <Col xs={6} >
@@ -403,13 +364,15 @@ const LocationsCreate = ({topbox} ) => {
               </Col>
           </Row>
           {/* images */}
+          <p style={{ textTransform: 'uppercase'}} className={`mt-3 mb-2  pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
           <h3 className="text-center my-3">Images</h3>
-          <Row className="mb-5 text-center">
+          {/* location 1/2 */}
+          <Row className="mb-3 text-center">
               <Col xs={12} md={6} >
               <Form.Group controlId="image1_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >image1 description </Form.Label>
+                      <Form.Label className={styles.Bold} > Image1 </Form.Label>
                       <Form.Control 
-                      placeholder="Image 1"
+                      placeholder="Image 1 description"
                       type="text"
                       name="image1_description"
                       as="textarea"
@@ -449,7 +412,7 @@ const LocationsCreate = ({topbox} ) => {
                       >
                         <Asset
                           src={Upload}
-                          message="Click or tap to upload an image"
+                          message="Upload Image"
                         />
                       </Form.Label>
                     )}
@@ -471,9 +434,9 @@ const LocationsCreate = ({topbox} ) => {
               </Col>
               <Col xs={12} md={6}>
               <Form.Group controlId="image2_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Image2 Description</Form.Label>
+                      <Form.Label className={styles.Bold} >Image2 </Form.Label>
                       <Form.Control 
-                      placeholder="Image2 Description"
+                      placeholder="Image2 description"
                       type="text"
                       name="image2_description"
                       as="textarea"
@@ -513,7 +476,7 @@ const LocationsCreate = ({topbox} ) => {
                       >
                         <Asset
                           src={Upload}
-                          message="Click or tap to upload an image"
+                          message="Upload Image"
                         />
                       </Form.Label>
                     )}
@@ -535,13 +498,14 @@ const LocationsCreate = ({topbox} ) => {
               </Container>
               </Col>
           </Row>
-          {/* costume 3/4  */}
-          <Row className="mb-5 ">
+          <hr/>
+          {/* location 3/4  */}
+          <Row className="mt-5 mb-3 text-center">
               <Col xs={12} md={6} >
               <Form.Group controlId="image3_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Image3 Description</Form.Label>
+                      <Form.Label className={styles.Bold} >Image3</Form.Label>
                       <Form.Control 
-                      placeholder="Image3 Description"
+                      placeholder="Image3 description"
                       type="text"
                       name="image3_description"
                       as="textarea"
@@ -579,11 +543,9 @@ const LocationsCreate = ({topbox} ) => {
                         className=" my-1"
                         htmlFor="image-upload3"
                       >
-                        <Asset2
+                        <Asset
                           src={Upload}
-                          height={"20px"}
-                          width={"20px"}
-                          message="Upload image"
+                          message="Upload Image"
                         />
                       </Form.Label>
                     )}
@@ -606,7 +568,7 @@ const LocationsCreate = ({topbox} ) => {
               </Col>
               <Col xs={12} md={6} >
               <Form.Group controlId="image4_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >image4 description</Form.Label>
+                      <Form.Label className={styles.Bold} >Image4</Form.Label>
                       <Form.Control 
                       placeholder="image4 description"
                       type="text"
@@ -646,12 +608,10 @@ const LocationsCreate = ({topbox} ) => {
                         className=" my-1"
                         htmlFor="image-upload4"
                       >
-                        <Asset2
-                          src={Upload}
-                          height={"20px"}
-                          width={"20px"}
-                          message="Upload image"
-                        />
+                        <Asset
+                      src={Upload}
+                      message="Upload Image"
+                    />
                       </Form.Label>
                     )}
       
@@ -672,11 +632,12 @@ const LocationsCreate = ({topbox} ) => {
               </Container>
               </Col>
           </Row >
-          {/* costume 5/6 */}
-          <Row className="mb-5 ml-0">
+          <hr/>
+          {/* location 5/6 */}
+          <Row className="mt-5 mb-3 text-center">
               <Col xs={12} md={6} >
               <Form.Group controlId="image5_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >image5 description</Form.Label>
+                      <Form.Label className={styles.Bold} >Image5</Form.Label>
                       <Form.Control 
                       placeholder="image5 description"
                       type="text"
@@ -716,11 +677,9 @@ const LocationsCreate = ({topbox} ) => {
                         className=" my-1"
                         htmlFor="image-upload5"
                       >
-                        <Asset2
+                        <Asset
                           src={Upload}
-                          height={"20px"}
-                          width={"20px"}
-                          message="Upload image"
+                          message="Upload Image"
                         />
                       </Form.Label>
                     )}
@@ -738,12 +697,12 @@ const LocationsCreate = ({topbox} ) => {
                       {message}
                     </Alert>
                   ))}
-                  {/* """ end image 5 """" */}
+                  {/* """ end image 5  """" */}
               </Container>
               </Col>
               <Col xs={12} md={6}>
               <Form.Group controlId="image6_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >image6 description</Form.Label>
+                      <Form.Label className={styles.Bold} >Image6 </Form.Label>
                       <Form.Control 
                       placeholder="image6 description"
                       type="text"
@@ -783,11 +742,9 @@ const LocationsCreate = ({topbox} ) => {
                         className=" my-1"
                         htmlFor="image-upload6"
                       >
-                        <Asset2
+                        <Asset
                           src={Upload}
-                          height={"20px"}
-                          width={"20px"}
-                          message="Upload image"
+                          message="Upload Image"
                         />
                       </Form.Label>
                     )}
@@ -809,11 +766,12 @@ const LocationsCreate = ({topbox} ) => {
               </Container>
               </Col>
           </Row>
-          {/* costume 7/8 */}
-          <Row>
+          <hr/>
+          {/* location 7/8 */}
+          <Row className="mt-5 mb-3 text-center">
               <Col xs={12} md={6} >
               <Form.Group controlId="image7_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >image7 description</Form.Label>
+                      <Form.Label className={styles.Bold} >Image7</Form.Label>
                       <Form.Control 
                       placeholder="image7 description"
                       type="text"
@@ -853,11 +811,9 @@ const LocationsCreate = ({topbox} ) => {
                         className=" my-1"
                         htmlFor="image-upload7"
                       >
-                        <Asset2
+                        <Asset
                           src={Upload}
-                          height={"20px"}
-                          width={"20px"}
-                          message="Upload image"
+                          message="Upload Image"
                         />
                       </Form.Label>
                     )}
@@ -880,9 +836,9 @@ const LocationsCreate = ({topbox} ) => {
               </Col>
               <Col xs={12} md={6}>
               <Form.Group controlId="image8_description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >image8 description</Form.Label>
+                      <Form.Label className={styles.Bold} >Image8</Form.Label>
                       <Form.Control 
-                      placeholder="image8 description"
+                      placeholder="Image8 description"
                       type="text"
                       name="image8_description"
                       as="textarea"
@@ -920,11 +876,9 @@ const LocationsCreate = ({topbox} ) => {
                         className=" my-1"
                         htmlFor="image-upload8"
                       >
-                        <Asset2
+                        <Asset
                           src={Upload}
-                          height={"20px"}
-                          width={"20px"}
-                          message="Upload image"
+                          message="Upload Image"
                         />
                       </Form.Label>
                     )}

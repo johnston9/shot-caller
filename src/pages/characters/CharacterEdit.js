@@ -356,6 +356,7 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
+              <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
               {/* actor details */}
               <h3 className="text-center my-3">Actor Details</h3>
               <Row className="text-center">
@@ -547,7 +548,7 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <hr/>
+              <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
               <h3 className="text-center my-3">Makeup - Costumes</h3>
             {/* makeup/costume 1 */}
             <Row className="mb-3 text-center">
@@ -569,7 +570,7 @@ const buttons = (
                           {message}
                         </Alert>
                       ))}
-                  {/* image 8 */}
+                  {/* image 8 is  makeup image*/}
                   <Container
                           className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                           >
@@ -593,11 +594,9 @@ const buttons = (
                             className=" my-1"
                             htmlFor="image-upload8"
                           >
-                            <Asset2
+                            <Asset
                               src={Upload}
-                              height={"20px"}
-                              width={"20px"}
-                              message="Upload image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}
@@ -662,7 +661,7 @@ const buttons = (
                           >
                             <Asset
                               src={Upload}
-                              message="Click or tap to upload an image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}
@@ -683,6 +682,7 @@ const buttons = (
                       </Container>
                   </Col>
               </Row>
+              <hr/>
               {/* costume 2/3  */}
                   <Row className="text-center mb-3">
                   <Col xs={12} md={6}>
@@ -693,7 +693,7 @@ const buttons = (
                           type="text"
                           name="costume2"
                           as="textarea"
-                          rows={3}
+                          rows={2}
                           value={costume2}
                           onChange={handleChange}
                               />
@@ -727,9 +727,7 @@ const buttons = (
                             className="my-1"
                             htmlFor="image-upload2"
                           >
-                            <Asset2
-                              height={"20px"}
-                              width={"20px"}
+                            <Asset
                               src={Upload}
                               message="Upload Image"
                             />
@@ -760,7 +758,7 @@ const buttons = (
                           type="text"
                           name="costume3"
                           as="textarea"
-                          rows={3}
+                          rows={2}
                           value={costume3}
                           onChange={handleChange}
                               />
@@ -794,11 +792,9 @@ const buttons = (
                             className=" my-1"
                             htmlFor="image-upload3"
                           >
-                            <Asset2
+                            <Asset
                               src={Upload}
-                              height={"20px"}
-                              width={"20px"}
-                              message="Upload image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}
@@ -820,6 +816,7 @@ const buttons = (
                   </Container>
                   </Col>
               </Row>
+              <hr/>
               {/* costume 4/5  */}
               <Row className="mb-3 text-center">          
                   <Col xs={12} md={6} >
@@ -830,7 +827,7 @@ const buttons = (
                           type="text"
                           name="costume4"
                           as="textarea"
-                          rows={3}
+                          rows={2}
                           value={costume4}
                           onChange={handleChange}
                               />
@@ -864,11 +861,9 @@ const buttons = (
                             className=" my-1"
                             htmlFor="image-upload4"
                           >
-                            <Asset2
+                            <Asset
                               src={Upload}
-                              height={"20px"}
-                              width={"20px"}
-                              message="Upload image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}
@@ -897,7 +892,7 @@ const buttons = (
                           type="text"
                           name="costume5"
                           as="textarea"
-                          rows={3}
+                          rows={2}
                           value={costume5}
                           onChange={handleChange}
                               />
@@ -931,11 +926,9 @@ const buttons = (
                             className=" my-1"
                             htmlFor="image-upload5"
                           >
-                            <Asset2
+                            <Asset
                               src={Upload}
-                              height={"20px"}
-                              width={"20px"}
-                              message="Upload image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}
@@ -957,6 +950,7 @@ const buttons = (
                   </Container>
                   </Col>
               </Row>
+              <hr/>
               {/* costume 6/7  */}
               <Row className="text-center mb-3">
                   <Col xs={12} md={6}>
@@ -967,7 +961,7 @@ const buttons = (
                           type="text"
                           name="costume6"
                           as="textarea"
-                          rows={3}
+                          rows={2}
                           value={costume6}
                           onChange={handleChange}
                               />
@@ -1001,11 +995,9 @@ const buttons = (
                             className=" my-1"
                             htmlFor="image-upload6"
                           >
-                            <Asset2
+                            <Asset
                               src={Upload}
-                              height={"20px"}
-                              width={"20px"}
-                              message="Upload image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}
@@ -1034,7 +1026,7 @@ const buttons = (
                           type="text"
                           name="costume7"
                           as="textarea"
-                          rows={3}
+                          rows={2}
                           value={costume7}
                           onChange={handleChange}
                               />
@@ -1068,11 +1060,9 @@ const buttons = (
                             className=" my-1"
                             htmlFor="image-upload7"
                           >
-                            <Asset2
+                            <Asset
                               src={Upload}
-                              height={"20px"}
-                              width={"20px"}
-                              message="Upload image"
+                              message="Upload Image"
                             />
                           </Form.Label>
                         )}

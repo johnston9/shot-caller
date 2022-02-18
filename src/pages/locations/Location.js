@@ -91,21 +91,21 @@ const Location = (props) => {
             {/* <h3 className='my-3 text-center'>Info</h3> */}
             <Row className='mb-3 text-center'>
                 <Col xs={12} md={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-4`}>DESCRIPTION</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>DESCRIPTION</p>
                 <p>{description} </p>
                 </Col>
                 <Col xs={12} md={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-4 `}>PRIMARY FILMING ADDRESS</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>PRIMARY FILMING ADDRESS</p>
                 <p>{filming_address_primary} </p>
                 </Col>
             </Row>
-            <Row>
+            <Row className='mb-3 text-center'>
                 <Col xs={12} md={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center `}>SECOND FILMING ADDRESS</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>SECOND FILMING ADDRESS</p>
                 <p>{filming_address2} </p>
                 </Col>
                 <Col xs={12} md={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center `}>THIRD FILMING ADDRESS</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5 `}>THIRD FILMING ADDRESS</p>
                 <p>{filming_address3} </p>
                 </Col>
             </Row>
@@ -115,22 +115,22 @@ const Location = (props) => {
             <Row className='text-center mb-5'>
             <Col xs={12} md={6}>
                 {image1 && <> 
-                    <p className={`${styles.BoldTitle} mb-3`}>Image 1</p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5 text-center mx-1 mx-sm-5`}>Image 1</p>
                     <Image src={image1} alt="Image 1" height="200"  />
                     </>
                     }
                 {image1_description &&  <> 
-                <p>{image1_description} </p>
+                <p className='mt-2'>{image1_description} </p>
                 </>}
                 </Col>  
             <Col xs={12} md={6}>
                 {image2 && <> 
-                    <p className={`${styles.BoldTitle} mb-2`}>Image 2</p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 2</p>
                     <Image src={image2} alt="Image 2" height="200"  />
                     </>
                     }
                 {image2_description &&  <> 
-                <p>{image2_description} </p>
+                <p className='mt-2'>{image2_description} </p>
                 </>}
                 </Col>
             </Row>
@@ -139,22 +139,22 @@ const Location = (props) => {
             <Row className='text-center mb-5'>
                 <Col xs={12} md={6}>
                 {image3 && <> 
-                    <p className={`${styles.BoldTitle} mb-2`}>Image 3</p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 3</p>
                     <Image src={image3} alt="Image 3" height="200"  />
                     </>
                     }
                 {image3_description &&  <> 
-                <p>{image3_description} </p>
+                <p className='mt-2'>{image3_description} </p>
                 </>}
                 </Col>                
-            <Col xs={12} md={6}>
+                <Col xs={12} md={6}>
                 {image4 && <> 
-                    <p className={`${styles.BoldTitle} mb-2`}>Image 4</p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 4</p>
                     <Image src={image4} alt="Image 4" height="200"  />
                     </>
                     }
                 {image4_description &&  <> 
-                <p>{image4_description} </p>
+                <p className='mt-2'>{image4_description} </p>
                 </>}
                 </Col>
             </Row>
@@ -163,22 +163,22 @@ const Location = (props) => {
             <Row className='text-center mb-5'>
                 <Col xs={12} md={6}>
                 {image5 && <> 
-                    <p className={`${styles.BoldTitle} mb-2`}>Image 5</p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 5</p>
                     <Image src={image5} alt="Image 5" height="200"  />
                     </>
                     }
                 {image5_description &&  <> 
-                <p>{image5_description} </p>
+                <p className='mt-2'>{image5_description} </p>
                 </>}
                 </Col>                
-            <Col xs={12} md={6}>
+                <Col xs={12} md={6}>
                 {image6 && <> 
-                    <p className={`${styles.BoldTitle} mb-2`}>Image 6</p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 6</p>
                     <Image src={image6} alt="Image 6" height="200"  />
                     </>
                     }
                 {image6_description &&  <> 
-                <p>{image6_description} </p>
+                <p className='mt-2'>{image6_description} </p>
                 </>}
                 </Col>
             </Row>
@@ -187,22 +187,22 @@ const Location = (props) => {
             <Row className='text-center mb-5'>
                 <Col xs={12} md={6}>
                 {image7 && <> 
-                    <p className={`${styles.BoldTitle} mb-2`}>Image 7</p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 7</p>
                     <Image src={image7} alt="Image 7" height="200"  />
                     </>
                     }
                 {image7_description &&  <> 
-                <p>{image7_description} </p>
+                <p className='mt-2'>{image7_description} </p>
                 </>}
                 </Col>                
                 <Col xs={12} md={6}>
                 {image8 && <> 
-                    <p className={`${styles.BoldTitle} mb-2`}>Image8 </p>
+                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image8 </p>
                     <Image src={image8} alt="Image 8" height="200"  />
                     </>
                     }
                 {image8_description &&  <> 
-                <p>{image8_description} </p>
+                <p className='mt-2'>{image8_description} </p>
                 </>}
                 </Col>              
             </Row>

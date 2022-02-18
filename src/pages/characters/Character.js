@@ -95,45 +95,45 @@ const Character = (props) => {
             <h5 className='my-3 text-center' style={{ textTransform: 'uppercase'}}>Actor Info</h5>
             <Row className='mb-3 text-center'>
                 <Col xs={6} md={4} >
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`} >ACTOR</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`} >ACTOR</p>
                 <p>{actor} </p>
                 <hr/>
                 </Col>
                 <Col xs={6} md={4}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>MOBILE</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>MOBILE</p>
                 <p>{mobile} </p>
                 <hr/>
                 </Col>
                 <Col xs={12} md={4} >
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>EMAIL</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>EMAIL</p>
                 <p>{email} </p>
                 <hr/>
                 </Col>
             </Row>
             <Row className='mb-3'>
                 <Col className='text-center' md={4} xs={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>AGENT</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>AGENT</p>
                 <p>{agent} </p>
                 <hr/>
                 </Col>
                 <Col className='text-center' md={4} xs={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>DIET</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>DIET</p>
                 <p>{diet} </p>
                 <hr/>
                 </Col>
                 <Col md={4} xs={12} className="text-center" >
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>REQUIREMENTS</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>REQUIREMENTS</p>
                 <p>{requirements} </p>
                 <hr/>
                 </Col>
             </Row>
             <Row >
                 <Col className='text-center' xs={12} md={6} >
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>PICKUP ADDRESS</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>PICKUP ADDRESS</p>
                 <p>{pickup_address} </p>
                 </Col>
                 <Col className='text-center' xs={12} md={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>PICKUP ADDRESS 2</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>PICKUP ADDRESS 2</p>
                 <p>{pickup_address_2} </p>
                 </Col>
             </Row>
@@ -142,11 +142,11 @@ const Character = (props) => {
             <h5 className='my-3 text-center' style={{ textTransform: 'uppercase'}}>Schedule Info</h5>
             <Row>
                 <Col className='text-center' xs={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>MAKE UP TIME</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>MAKE UP TIME</p>
                 <p>{make_up_time} </p>
                 </Col>
                 <Col className='text-center' xs={6}>
-                <p className={`${styles.BoldTitle} mb-0 text-center mx-1 mx-sm-5`}>COMMUTE TIME</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>COMMUTE TIME</p>
                 <p>{commute_time} </p>
                 </Col>
             </Row>
@@ -156,7 +156,7 @@ const Character = (props) => {
             <Row className='text-center mb-5'>
             <Col xs={12} md={6} className='text-center mt-2'>
                 {makeup &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>MAKEUP</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>MAKEUP</p>
                 <p>{makeup} </p>
                 </>}
                 {makeup_image && <> 
@@ -170,7 +170,7 @@ const Character = (props) => {
                 
             <Col className='text-center mt-2' xs={12} md={6}>
                 {costume1 &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>COSTUME 1</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>COSTUME 1</p>
                 <p>{costume1} </p>
                 </>}
                 {costume1_image && <> 
@@ -186,7 +186,7 @@ const Character = (props) => {
             <Row className='text-center mb-5'>
                 <Col className='text-center mt-2' xs={12} md={6}>
                 {costume2 &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>COSTUME 2</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>COSTUME 2</p>
                 <p>{costume2} </p>
                 </>}
                 {costume2_image && <> 
@@ -199,7 +199,7 @@ const Character = (props) => {
                 </Col>                
                 <Col className='text-center mt-2' xs={12} md={6}>
                 {costume3 &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>COSTUME 3</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>COSTUME 3</p>
                 <p>{costume3} </p>
                 </>}
                 {costume3_image && <> 
@@ -215,7 +215,7 @@ const Character = (props) => {
             <Row className='text-center mb-5'>
                 <Col className='text-center mt-2' xs={12} md={6}>
                 {costume4 &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>COSTUME 4</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>COSTUME 4</p>
                 <p>{costume4} </p>
                 </>}
                 {costume4_image && <> 
@@ -228,7 +228,7 @@ const Character = (props) => {
                 </Col>                
                 <Col className='text-center mt-2' xs={12} md={6}>
                 {costume5 &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>COSTUME 5</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>COSTUME 5</p>
                 <p>{costume5} </p>
                 </>}
                 {costume5_image && <> 
@@ -244,7 +244,7 @@ const Character = (props) => {
             <Row className='text-center mb-5'>
                 <Col className='text-center mt-2' xs={12} md={6}>
                 {costume6 &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>COSTUME 7</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>COSTUME 7</p>
                 <p>{costume6} </p>
                 </>}
                 {costume6_image && <> 
@@ -255,9 +255,9 @@ const Character = (props) => {
                     }
                     <hr/>
                 </Col>                
-            <Col className='text-center mt-2' xs={12} md={6}>
+                <Col className='text-center mt-2' xs={12} md={6}>
                 {costume7 &&  <> 
-                <p className={`${styles.BoldTitle} mb-0 mx-1 mx-sm-5`}>COSTUME 7</p>
+                <p className={`${styles.BoldTitle} mb-2 mx-1 mx-sm-5`}>COSTUME 7</p>
                 <p>{costume7} </p>
                 </>}
                 {costume7_image && <> 
