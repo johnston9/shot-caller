@@ -85,7 +85,7 @@ const Location = (props) => {
                     />
                 </Col>
             </Row>
-            <p style={{ textTransform: 'uppercase'}} className={` pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+            <p className={` pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
             <div className='px-3'>
             <h5 className='my-3 text-center' style={{ textTransform: 'uppercase'}}>INFO</h5>
             {/* <h3 className='my-3 text-center'>Info</h3> */}

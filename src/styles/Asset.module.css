@@ -4,13 +4,23 @@
     justify-content: center;
     align-items: center;
     min-height: 20px;
+    color: rgb(136, 0, 0);
   }
+
+  .Asset:hover {
+    cursor: pointer;
+  }
+
+  .Asset2:hover {
+    cursor: pointer;
+  }
+    
 
   .Asset2 {
     /* display: flex;
     flex-direction: column; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     min-height: 20px;
-    color: red;
+    color: rgb(136, 0, 0);
   }

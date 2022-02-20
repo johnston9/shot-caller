@@ -122,8 +122,7 @@ const Departments = (props) => {
               >
               Back
               </Button>
-              <h3 className='text-center mt-3'>Workspace Posts</h3>
-              <Container className={`my-3 ${appStyles.Content}`}>
+              <Container className={`my-3`}>
               <Row className='mb-4 mt-3'>
                   <Col className='text-center' xs={4} >
                   <Button onClick={() => history.push("/archived")} 
@@ -148,10 +147,10 @@ const Departments = (props) => {
                   </Col>
               </Row>
               </Container>
-              <h3 className={`text-center mt-3`}>Workspace Posts by Department</h3>
-              <p className='text-center'>Requirements and Finals post are ordered by scene number</p>
             <Card className={` ${styles.Scene}`}>
                   <Card.Body>
+                  <h3 className={`text-center mt-4`}>Posts by Department</h3>
+              <p className='text-center'>Requirements and Finals post are ordered by scene number</p>
                   <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                       <Col className='px-1 px-md-2' xs={4} md={4} lg={4} >

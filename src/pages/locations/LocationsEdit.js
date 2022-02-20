@@ -340,10 +340,10 @@ const LocationsEdit = () => {
           <p style={{ textTransform: 'uppercase'}} className={`mt-3 mb-2  pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
           <h3 className="text-center my-3">Details</h3>
           {/*  details */}
-          <Row>
+          <Row className="text-center">
               <Col xs={6} >
               <Form.Group controlId="description" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Description</Form.Label>
+                      <Form.Label className={styles.Bold} >Description</Form.Label>
                       <Form.Control 
                       type="text"
                       as="textarea"
@@ -362,7 +362,7 @@ const LocationsEdit = () => {
               </Col>
               <Col xs={6} >
               <Form.Group controlId="filming_address_primary" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Primary Filming Address</Form.Label>
+                      <Form.Label className={styles.Bold} >Primary Filming Address</Form.Label>
                       <Form.Control 
                       placeholder="Primary Filming Address"
                       as="textarea"
@@ -380,10 +380,11 @@ const LocationsEdit = () => {
                   ))}
               </Col>
           </Row>
-          <Row>
+          <hr/>
+          <Row className="text-center">
               <Col xs={6} >
               <Form.Group controlId="filming_address2" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Second Filming Address</Form.Label>
+                      <Form.Label className={styles.Bold} >Second Filming Address</Form.Label>
                       <Form.Control 
                       placeholder="Second Filming Address"
                       as="textarea"
@@ -402,7 +403,7 @@ const LocationsEdit = () => {
               </Col>
               <Col xs={6}  >
               <Form.Group controlId="filming_address3" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Third Filming Address</Form.Label>
+                      <Form.Label className={styles.Bold} >Third Filming Address</Form.Label>
                       <Form.Control 
                       placeholder="Third Filming Address"
                       type="text"

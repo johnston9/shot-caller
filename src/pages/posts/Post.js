@@ -4,12 +4,14 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 import styles from "../../styles/Post.module.css";
+import Button from "react-bootstrap/Button"
+import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import { useSetCategoryContext, useSetDeptContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -47,9 +49,11 @@ const Post = (props) => {
       const setSceneId = useSetSceneContext();
       const setDept = useSetDeptContext();
       const setCategory = useSetCategoryContext();
+      const setNumber = useSetNumberContext();
 
       const handleGoToScene = () => {
         setSceneId(scene);
+        setNumber(number);
         setDept(departments);
         setCategory(category);
         history.push(`/dept/category`);
@@ -135,7 +139,7 @@ const Post = (props) => {
         <div>
             <Card  >
                 {/* new */}
-              <Card.Body className={`${styles.PostTop2} py-2`} >
+              <Card.Body className={`${styles.PostTop} py-1`} >
                 <Row className="d-flex align-items-center">
                     <Col xs={12} lg={8} >
                       <Row>
@@ -242,7 +246,13 @@ const Post = (props) => {
                   </Row>
                 </Card.Body>
                 {/* end new */}
-                <Card.Body  >
+                <Card.Body className='py-1'  >
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                  onClick={() => history.goBack()}
+                >
+                  Back
+                </Button>
                     {title && <h4 className="text-center">{title}</h4>}
                     <hr />
                     {content && <Card.Text>{content}</Card.Text>}

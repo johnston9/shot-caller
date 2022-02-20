@@ -54,12 +54,12 @@ function PostPage() {
       <TopBox title="Post" />
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" >
-      <Button
+      {/* <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
         onClick={() => history.goBack()}
       >
         Back
-      </Button>
+      </Button> */}
         <Post {...post.results[0]} setPosts={setPost} postPage/>
         <Container className={`${appStyles.Content} mt-3 `} >
           <h3 className="my-3 text-center">Comments</h3>

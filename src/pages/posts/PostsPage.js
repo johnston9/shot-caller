@@ -66,10 +66,9 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
     <div>      
       {dept ? (
         <TopBox 
-          work="Posts"
           scene={number}
-          title2={dept} 
-          title3={category}/>
+          title2={dept}
+          title3={category} />
         ) :  (""
         ) }
       {allposts ? (
@@ -90,7 +89,8 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
         >
             Back
         </Button>
-        <Row>
+        {!show ?(
+          <Row>
           <Col className="text-center">
             {sceneId ? (
               <Button onClick={() => setShow(show => !show)} 
@@ -99,9 +99,11 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
             ) : (
               ""
             )}
-        {!show ?("") : (<PostCreateForm sceneId={sceneId} number={number} dept={dept} category={category} /> ) }
           </Col>
         </Row>
+        ) : (
+        <PostCreateForm setShow={setShow} sceneId={sceneId} number={number} dept={dept} category={category} /> 
+        ) }
         <Row>
         <Col className="mt-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
         <Form

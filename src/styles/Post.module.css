@@ -1,112 +1,102 @@
 .PostTop {
-    background-color: #444a4c;
+    background-color: #14404f;
     color: #fff;
   }
 
-  .PostTop2 {
-    background-color: #58666b;
-    color: #fff;
-  }
-  
-  .Post figure,
-  h5 {
-    margin: 0 0;
-  }
-  
-  .Heart {
-    color: #f85032;
-  }
+  /* 0a242d */
 
-  .Edit {
-    color: #fff;
-  }
+.PostTop2 {
+  background-color: #58666b;
+  color: #fff;
+}
 
-  .Edit:hover {
-    color: #fff;
-  }
-  
-  .Heart:hover {
-    color: #2142b2;
-  }
-  
-  .HeartOutline:hover {
-    color: #f85032;
-  }
+.Post figure,
+h5 {
+  margin: 0 0;
+}
 
-  .GoToScene {
-    color: #79f5ef;
-    font-weight: 700;
-    font-size: .75em;
-    cursor: pointer;
-  }
-  .GoToScene:hover {
-    color: #e9f1f1;
-  }
+.Heart {
+  color: #f85032;
+}
 
-  .GoToScene a {
-    color: #79f5ef;
-    font-weight: 700;
-    font-size: .75em;
-    cursor: pointer;
-  }
-  .GoToScene a:hover {
-    color: #e9f1f1;
-  }
+.Edit {
+  color: #fff;
+}
 
-  .Content {
-    background-color: #444a4c;
-    cursor: pointer;
-  }
+.Edit:hover {
+  color: #fff;
+}
 
-  .Content:hover {
-    background-color: #232d30;
-    cursor: pointer;
-  }
+.Heart:hover {
+  color: #2142b2;
+}
 
-  .ContentDep {
-    background-color: #444a4c;
-    color: #79f5ef;
-    cursor: pointer;
-  }
+.HeartOutline:hover {
+  color: #f85032;
+}
 
-  .ContentDep:hover {
-    background-color: #232d30;
-    color: #fff;
-    cursor: pointer;
-  }
+.GoToScene {
+  color: #79f5ef;
+  font-weight: 700;
+  font-size: .75em;
+  cursor: pointer;
+}
+.GoToScene:hover {
+  color: #e9f1f1;
+}
 
-  .Content1 {
-    /* background-color: #444a4c; */
-    color: #fff;
-    cursor: pointer;
-  }
+.GoToScene a {
+  color: #79f5ef;
+  font-weight: 700;
+  font-size: .75em;
+  cursor: pointer;
+}
+.GoToScene a:hover {
+  color: #e9f1f1;
+}
 
-  .Content1:hover {
-    /* background-color: #232d30; */
-    cursor: pointer;
-    color: #e9f1f1;
-  }
+.Content {
+  background-color: #444a4c;
+  cursor: pointer;
+}
 
-  .Content2 {
-    /* background-color: #444a4c; */
-    cursor: pointer;
-    color: #79f5ef;
-  }
+.Content:hover {
+  background-color: #232d30;
+  cursor: pointer;
+}
 
-  .Content2:hover {
-    /* background-color: #232d30; */
-    cursor: pointer;
-    color: #e9f1f1;
-  }
+.ContentDep {
+  background-color: #444a4c;
+  color: #79f5ef;
+  cursor: pointer;
+}
 
-  /* .Content {
-    background-color: #444a4c;
-    cursor: pointer;
-    color: #79f5ef;
-  }
+.ContentDep:hover {
+  background-color: #232d30;
+  color: #fff;
+  cursor: pointer;
+}
 
-  .Content:hover {
-    background-color: #232d30;
-    cursor: pointer;
-    color: #e9f1f1;
-  } */
+.Content1 {
+  /* background-color: #444a4c; */
+  color: #fff;
+  cursor: pointer;
+}
+
+.Content1:hover {
+  /* background-color: #232d30; */
+  cursor: pointer;
+  color: #e9f1f1;
+}
+
+.Content2 {
+  /* background-color: #444a4c; */
+  cursor: pointer;
+  color: #79f5ef;
+}
+
+.Content2:hover {
+  /* background-color: #232d30; */
+  cursor: pointer;
+  color: #e9f1f1;
+}

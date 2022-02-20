@@ -33,7 +33,7 @@ function TopBox(props) {
                     {work && <h2 className={` text-center ${styles.Title}`}>{work} </h2>}
                     {title && <h2 className={` text-center ${styles.Title2}`}>{title} </h2>}
                     {title4 && <h2 className={` text-center ${styles.Title2}`}>{title4} </h2>}
-                    {scene && <h4 className={` text-center ${styles.Title2}`}>Scene {scene} </h4>}
+                    {scene && <h2 className={` text-center ${styles.Title2}`}>Scene {scene} </h2>}
                     <h5 style={{ textTransform: 'capitalize'}} className={`text-center ${styles.Title3}`}>{title2} {title3}</h5>
                     {/* <p style={{ textTransform: 'capitalize'}} className={`mb-0 text-center ${styles.Title3}`}>{title3} </p> */}
                     </div>

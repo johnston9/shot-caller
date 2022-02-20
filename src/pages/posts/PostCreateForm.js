@@ -19,7 +19,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-function PostCreateForm({sceneId, number, dept, category }) {
+function PostCreateForm({sceneId, number, dept, category, setShow }) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
@@ -189,7 +189,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
     <div className="text-center">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
+        onClick={() => setShow(show => !show)} 
       >
         cancel
       </Button>
@@ -200,20 +200,21 @@ function PostCreateForm({sceneId, number, dept, category }) {
   );
 
   return (
-    <div>
-    {/* <TopBox title="Create Post" /> */}
+    <div className={`${styles.Back} mt-3 px-2`} >
+      <h3 className="text-center">Create Post</h3>
+    {/* <TopBox title="Create Post" /> d-flex flex-column justify-content-center*/}
     <Form className="mt-3" onSubmit={handleSubmit}>
     <Row>
-    <Col md={6} className="p-0 p-md-2">
+    <Col md={6} className="">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
-        <p style={{textTransform: 'capitalize'}}>Scene {number} - {dept} Dept {category} </p>
-        <p>SceneId {sceneId}</p>
+        {/* <p style={{textTransform: 'capitalize'}}>Scene {number} - {dept} Dept {category} </p>
+        <p>SceneId {sceneId}</p> */}
           {textFields}
           </Container>
       </Col>
-      <Col className="pt-2 p-0 p-md-2" md={6}>
+      <Col className="mt-md-0 mt-2" md={6}>
         <Container
-          className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+          className={`${appStyles.Content} ${styles.Container}`}
         >
           <Form.Group className="text-center pt-3">
               {image1 ? (
@@ -237,7 +238,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
                 >
                   <Asset
                     src={Upload}
-                    message="Click or tap to upload an image"
+                    message="Upload Image"
                   />
                 </Form.Label>
               )}
@@ -258,7 +259,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
             </Container>
                 {/* image 2 */}
             <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} text-left mt-3`}
                 >
             <Form.Group >
               {image2 ? (
@@ -277,14 +278,14 @@ function PostCreateForm({sceneId, number, dept, category }) {
                 </>
               ) : (
                 <Form.Label
-                  className="my-1"
+                  className="my-1 ml-2 ml-sm-2 ml-md-3 ml-lg-5"
                   htmlFor="image-upload2"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload second image"
+                    message="Second image"
                   />
                 </Form.Label>
               )}
@@ -306,7 +307,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
         </Container>
         {/* image 3 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} text-left mt-3`}
                 >
             <Form.Group>
               {image3 ? (
@@ -325,14 +326,14 @@ function PostCreateForm({sceneId, number, dept, category }) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
+                className="my-1 ml-2 ml-sm-2 ml-md-3 ml-lg-5"
                   htmlFor="image-upload3"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload third image"
+                    message="Third image"
                   />
                 </Form.Label>
               )}
@@ -354,7 +355,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
         </Container>
         {/* image 4 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} text-left mt-3`}
                 >
             <Form.Group>
               {image4 ? (
@@ -373,14 +374,14 @@ function PostCreateForm({sceneId, number, dept, category }) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
+                  className="my-1 ml-2 ml-sm-2 ml-md-3 ml-lg-5"
                   htmlFor="image-upload4"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload fourth image"
+                    message="Fourth image"
                   />
                 </Form.Label>
               )}
@@ -402,7 +403,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
         </Container>
         {/* image 5 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} text-left mt-3`}
                 >
             <Form.Group>
               {image5 ? (
@@ -421,14 +422,14 @@ function PostCreateForm({sceneId, number, dept, category }) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
+                className="my-1 ml-2 ml-sm-2 ml-md-3 ml-lg-5"
                   htmlFor="image-upload5"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload last image"
+                    message="Fifth image"
                   />
                 </Form.Label>
               )}
@@ -452,7 +453,7 @@ function PostCreateForm({sceneId, number, dept, category }) {
     </Row>
     <Row>
       <Col>
-        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+        <div className= {` mt-3`} >{buttons} </div>
       </Col>
     </Row>
   </Form>

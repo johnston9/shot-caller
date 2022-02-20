@@ -49,7 +49,7 @@ const SchedulePages = () => {
         }, [query, filter])
 
     return (
-        <div className='mt-5'>
+        <div >
             <TopBox title="Days" />
             {/* calender */}
             <Row>
@@ -59,7 +59,6 @@ const SchedulePages = () => {
                    </div>
                 </Col>
             </Row>
-            <hr />
             {/* add day */}
             <Row className='mb-3'>
                 <Col className="text-center">
@@ -69,8 +68,6 @@ const SchedulePages = () => {
                     {!show ?("") : (<DayCreateForm topbox /> ) }
                 </Col>
             </Row>
-            <hr />
-            <h3 className='text-center'>Days</h3>
             {/* search */}
             <Row>
                 <Col className="mt-1" xs={12} md={{ span: 6, offset: 3 }} >
@@ -87,8 +84,7 @@ const SchedulePages = () => {
                     />
                     </Form>
                 </Col>
-            </Row>
-            
+            </Row>            
             {/* days */}
             <Row className="h-100">
           {hasLoaded ? (

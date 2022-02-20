@@ -110,7 +110,7 @@ const DayPage = () => {
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene, index) => (
                             <ScheduleScene 
-                                style={{ backgroundColor: (index % 3 === 0) ? '#F8E5E5' : (index % 2 === 0) ? '#FAF1CF' : '#ecf0f1' }}
+                                style={{ backgroundColor: (index % 3 === 0) ? 'rgb(172 244 242)' : (index % 2 === 0) ? 'rgb(204 231 255)' : 'rgb(173 230 246)' }}
                                 {...scene} 
                                 dayid={id} 
                                 sceneAll={scene} 

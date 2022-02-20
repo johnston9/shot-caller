@@ -214,9 +214,9 @@ const PostTop = (props) => {
                     </Col>  
                     <Col xs={12} lg={5} > 
                     <Link  to={`/posts/${id}`} >
-                    <Row className={`${styles.Content} mx-0`}>                   
+                    <Row className={`${styles.Content} py-0 mx-0`}>                   
                       <Col className={`${styles.Content1} px-0 d-flex align-items-center justify-content-center`}  xs={7}>
-                      {departments && <span className={`py-3 text-center`} style={{ textTransform: 'capitalize'}}  >S {number} - {departments} </span>} {cat && <span className={`py-3`}  style={{ textTransform: 'capitalize'}} >&nbsp; - {cat}. </span> }   
+                      {departments && <span className={`py-1 text-center`} style={{ textTransform: 'capitalize'}}  >S {number} - {departments} </span>} {cat && <span className={`py-1`}  style={{ textTransform: 'capitalize'}} >&nbsp; - {cat}. </span> }   
                       </Col>
                       <Col className={`${styles.Content2} px-0 d-flex align-items-center justify-content-center`} xs={5}>
                       {title && <span className="text-center">{title}</span>}

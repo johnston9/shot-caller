@@ -75,7 +75,7 @@ const ScenesPage = ({message, filter = "" }) => {
         <div >
           <TopBox title="Scenes" />
           <Button
-              className={`${btnStyles.Button} ${btnStyles.Back} mt-2`}
+              className={`${btnStyles.Button} ${btnStyles.Blue} mt-2`}
               onClick={() => history.goBack()}
               >
               Back
@@ -129,6 +129,7 @@ const ScenesPage = ({message, filter = "" }) => {
                 </Button>
               </Col>
             </Row>
+            <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
             <Row className="h-100 mt-3">
             {hasLoaded ? (
           <>
