@@ -14,6 +14,16 @@
     cursor: pointer;
   }
 
+  .Grey {
+    background-color: #58666b;
+    color: #fff;
+  }
+
+  .Black {
+    background-color: #000;
+    color: #fff;
+  }
+
   .Blue {
     /* background-color: #14404f; */
     background-color: #32c0e4;

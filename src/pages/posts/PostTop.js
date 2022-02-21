@@ -116,9 +116,9 @@ const PostTop = (props) => {
 
 
     return (
-        <div>
+        <div >
             <Card className={styles.PostTop} >
-                <Card.Body className="py-0 px-0">
+                <Card.Body className="py-1 px-0">
                 <Row className="d-flex align-items-center">
                     <Col xs={12} lg={7} >
                       <Row>

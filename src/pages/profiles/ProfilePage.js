@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-
+import Card from "react-bootstrap/Card";
 import Asset from "../../components/Asset";
-
-import styles from "../../styles/ProfilePage.module.css";
+import styles from "../../styles/Profile.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
@@ -36,6 +33,7 @@ function ProfilePage() {
 
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
+  const [name, setName] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,6 +47,7 @@ function ProfilePage() {
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
+        setName(pageProfile.name)
         setProfilePosts(profilePosts);
         setHasLoaded(true);
       } catch (err) {
@@ -59,10 +58,11 @@ function ProfilePage() {
   }, [id, setProfileData]);
 
   const mainProfile = (
-    <>
+    <Card>
+      <Card.Body className={`${styles.Back1} py-0`} >
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-      <Row noGutters className="px-3 text-center">
-        <Col lg={3} className="text-lg-left">
+      <Row noGutters className="text-center">
+      <Col lg={3} className="text-lg-left">
           <Image
             className={styles.ProfileImage}
             roundedCircle
@@ -70,19 +70,19 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={6}>
-          <h3 style={{ textTransform: 'capitalize'}} className="m-2">{profile?.name} {profile?.position}</h3>
-          <Row className="justify-content-center no-gutters">
-            <Col xs={3} className="my-2">
+          <h2 style={{ textTransform: 'capitalize'}} className="pt-2" >  {profile?.position}</h2>
+          <Row className={`${styles.Likes} mx-0 `} >
+            <Col xs={4} className="my-2 mx-0 px-0">
               <div>{profile?.posts_count}</div>
-              <div>posts</div>
+              <div>Posts</div>
             </Col>
-            <Col xs={3} className="my-2 mx-3">
+            <Col xs={4} className="my-2 mx-0 px-0">
               <div>{profile?.followers_count}</div>
-              <div>followers</div>
+              <div>Followers</div>
             </Col>
-            <Col xs={3} className="my-2">
+            <Col xs={4} className="mx-0 px-0 my-2">
               <div>{profile?.following_count}</div>
-              <div>following</div>
+              <div>Following</div>
             </Col>
           </Row>
         </Col>
@@ -91,7 +91,7 @@ function ProfilePage() {
             !is_owner &&
             (profile?.following_id ? (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
+                className={`${btnStyles.Button} ${btnStyles.Grey}`}
                 onClick={() => handleUnfollow(profile)}
               >
                 unfollow
@@ -105,16 +105,15 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        {profile?.content && <Col >{profile.content}</Col>}
       </Row>
-    </>
+    </Card.Body>
+    </Card>
   );
 
   const mainProfilePosts = (
     <>
-      <hr />
-      <p style={{ textTransform: 'capitalize'}} className="text-center">{profile?.name}'s posts</p>
-      <hr />
+      <h2 style={{ textTransform: 'capitalize'}} className="my-3 text-center"> Posts</h2>
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
@@ -136,10 +135,10 @@ function ProfilePage() {
 
   return (
     <div>
-      <TopBox title="Profiles" />
-    <Row>
-      <Col className="py-2 p-0 p-lg-2">
-        <Container className={appStyles.Content}>
+      <TopBox title={name} />
+    <Row className="mx-0 my-2">
+      <Col className="pb-2 px-0">
+        <div className={appStyles.Content}>
           {hasLoaded ? (
             <>
               {mainProfile}
@@ -148,7 +147,7 @@ function ProfilePage() {
           ) : (
             <Asset spinner />
           )}
-        </Container>
+        </div>
       </Col>
     </Row>
     </div>

@@ -16,28 +16,21 @@ const ProfilesPage = () => {
     return (
         <div>
             <TopBox title="Profiles" />
-            <Container>
               <Button onClick={() => history.push('/home')}
                   className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               >
                   Back
               </Button>
-              <Row className='mt-3'>
+              <Row >
                   <Col className='text-center' >
-                  <Button onClick={() => history.push("/feed")} 
-                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}
-                    >
-                      Feed
-                      </Button>
+                    <Button onClick={() => history.push("/feed")} 
+                        className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}
+                        >
+                        Feed
+                    </Button>
                   </Col>
               </Row>
-              <h3 className='text-center mt-3'>View Profiles</h3>
-              <Row className='mt-1'>
-                  <Col className='mt-1'>
-                    <PopularProfiles /> 
-                  </Col>
-              </Row>
-            </Container>           
+              <PopularProfiles /> 
         </div>
     )
 }

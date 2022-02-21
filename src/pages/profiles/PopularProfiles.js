@@ -43,23 +43,23 @@ const PopularProfiles = () => {
     return (
         <div>
           <Row>
-        <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
-        <Form
-          className={`${styles.SearchBar} mt-3`}
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <Form.Control
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            type="text"
-            className="mr-sm-2"
-            placeholder="Search by name or position"
-          />
-        </Form>
-        </Col>
+            <Col className="text-center" xs={12} md={{ span: 6, offset: 3 }} >
+            <Form
+              className={`${styles.SearchBar} mt-3`}
+              onSubmit={(event) => event.preventDefault()}
+            >
+              <Form.Control
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                type="text"
+                className="mr-sm-2"
+                placeholder="Search by name or position"
+              />
+            </Form>
+            </Col>
         </Row>
         <Container 
-          className={`mt-5 ${appStyles.Content}`}
+          className={`mt-2 ${appStyles.Content}`}
          >
            {hasLoaded ? ( 
              <>

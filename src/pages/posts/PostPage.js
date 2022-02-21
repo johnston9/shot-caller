@@ -3,10 +3,8 @@ import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button"
 
 import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
@@ -53,7 +51,7 @@ function PostPage() {
     <div>
       <TopBox title="Post" />
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" >
+      <Col className="py-2 p-0 p-lg-1" >
       {/* <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
         onClick={() => history.goBack()}
