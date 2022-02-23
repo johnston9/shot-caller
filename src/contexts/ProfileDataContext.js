@@ -10,10 +10,17 @@ export const SetProfileDataContext = createContext();
 export const useProfileData = () => useContext(ProfileDataContext);
 export const useSetProfileData  = () => useContext(SetProfileDataContext);
 
+export const QueryContext = createContext();
+export const SetQueryContext = createContext();
+export const useQueryContext = () => useContext(QueryContext);
+export const useSetQueryContext  = () => useContext(SetQueryContext);
+
 export const ProfileDataProvider = ({children}) => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+    const[query, setQuery] = useState("");
     const [profileData, setProfileData] = useState({
         pageProfile: { results: [] },
-        popularProfiles: { results: [] },
+        profiles: { results: [] },
     })
 
     const currentUser = useSetCurrentUser();
@@ -27,19 +34,19 @@ export const ProfileDataProvider = ({children}) => {
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: {
-            results: prevState.pageProfile.results.map((profile) =>
-              followHelper(profile, clickedProfile, data.id)
+            results: prevState.pageProfile.results.map((profile) => 
+            followHelper(profile, clickedProfile, data.id)
             ),
           },
-          popularProfiles: {
-            ...prevState.popularProfiles,
-            results: prevState.popularProfiles.results.map((profile) =>
-              followHelper(profile, clickedProfile, data.id)
+          profiles: {
+            ...prevState.profiles,
+            results: prevState.profiles.results.map((profile) => 
+            followHelper(profile, clickedProfile, data.id)
             ),
           },
         }));
       } catch(err) {
-        // console.log(err)
+        console.log(err)
       }
     }
 
@@ -53,9 +60,9 @@ export const ProfileDataProvider = ({children}) => {
               unfollowHelper(profile, clickedProfile)
             ),
           },
-          popularProfiles: {
-            ...prevState.popularProfiles,
-            results: prevState.popularProfiles.results.map((profile) =>
+          profiles: {
+            ...prevState.profiles,
+            results: prevState.profiles.results.map((profile) =>
               unfollowHelper(profile, clickedProfile)
             ),
           },
@@ -67,27 +74,29 @@ export const ProfileDataProvider = ({children}) => {
     useEffect(() => {
         const handleMount = async () => {
           try {
-            const { data } = await axiosReq.get(
-              "/profiles/?ordering=-followers_count"
-            );
+            const { data } = await axiosReq.get(`/profiles/?ordering=-followers_count&search=${query}`);
             setProfileData((prevState) => ({
               ...prevState,
-              popularProfiles: data,
+              profiles: data,
             }));
+            setHasLoaded(true);
           } catch (err) {
-            // console.log(err);
+            console.log(err);
           }
         };
     
         handleMount();
-      }, [currentUser]);
+      }, [currentUser, query]);
 
       return (
         <ProfileDataContext.Provider value={profileData}>
-        <SetProfileDataContext.Provider value={{setProfileData, 
-          handleFollow, handleUnfollow}}>
-            {children}
-        </SetProfileDataContext.Provider>
+          <SetProfileDataContext.Provider value={{setProfileData, handleFollow, handleUnfollow}}>
+            <QueryContext.Provider value={query}>
+              <SetQueryContext.Provider value={setQuery}>
+                {children}
+              </SetQueryContext.Provider>
+            </QueryContext.Provider>
+          </SetProfileDataContext.Provider>
         </ProfileDataContext.Provider>
 
       )

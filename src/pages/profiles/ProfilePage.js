@@ -10,7 +10,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useProfileData,useSetProfileData,} from "../../contexts/ProfileDataContext";
+import { useProfileData, useSetProfileData,} from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
@@ -19,6 +19,7 @@ import {ProfileEditDropdown} from "../../components/PostDropdown";
 import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 import PostTop from "../posts/PostTop";
+import { useHistory } from "react-router-dom";
 
 function ProfilePage() {
   useRedirect("loggedOut")
@@ -27,10 +28,10 @@ function ProfilePage() {
 
   const currentUser = useCurrentUser();
   const { id } = useParams();
+  const history = useHistory();
 
   const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
-
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
   const [name, setName] = useState("");
@@ -136,6 +137,11 @@ function ProfilePage() {
   return (
     <div>
       <TopBox title={name} />
+      <Button onClick={() => history.goBack()}
+          className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
+      >
+          Back
+      </Button>
     <Row className="mx-0 my-2">
       <Col className="pb-2 px-0">
         <div className={appStyles.Content}>

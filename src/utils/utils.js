@@ -33,15 +33,18 @@ export const followHelper = (profile, clickedProfile, following_id) => {
 
 export const unfollowHelper = (profile, clickedProfile) => {
   return profile.id === clickedProfile.id
-    ? {
+    ? // update followers count and set following id
+      {
         ...profile,
         followers_count: profile.followers_count - 1,
         following_id: null,
       }
     : profile.is_owner
-    ? { ...profile, following_count: profile.following_count - 1 }
-    : profile;
-}
+    ? // update following count
+      { ...profile, following_count: profile.following_count - 1 }
+    : // return unchanged
+      profile;
+};
 
 export const setTokenTimestamp = (data) => {
   const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
