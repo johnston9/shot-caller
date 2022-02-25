@@ -69,8 +69,13 @@ const ScheduleScene = (props) => {
                     </Button>
                 </Col>
                 {/* edit */}
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 text-center mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Button onClick={() => setShow(show => !show)} 
+                        className={`${btnStyles.Button} ${btnStyles.Order}`}>
+                        Order
+                    </Button>
                     <PostDropdown
+                        className={`${styles.Drop }`}
                         handleEdit={handleEdit}
                         handleDelete={handleDelete}
                     />

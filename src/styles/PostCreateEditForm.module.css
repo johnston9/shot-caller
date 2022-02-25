@@ -13,6 +13,10 @@
   font-weight: 700;
 }
 
+.Width {
+  width: 50%;
+}
+
 .SubTitle {
   background-color: #e8f0f1;
 }
@@ -25,4 +29,5 @@
     color: #7177a1;
     /* text-align: center; */
     padding: 10px;
+    height: 35px;
 }

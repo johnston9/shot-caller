@@ -293,7 +293,7 @@ const Scene = (props) => {
                       </Row>             
                     ) }
                     {/* workspace */}
-                  <p style={{ textTransform: 'uppercase'}} className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+                  <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
                   <Row className='mb-2'>
                     <Col md={1}></Col>
                     <Col className='mx-0 px-0' xs={12} md={10} >

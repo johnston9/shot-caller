@@ -21,6 +21,7 @@ const DayPage = () => {
     const { id } = useParams();
     const [dayData, setDayData] = useState({ results: [] });
     const [dayScenes, setDayScenes] = useState({ results: [] });
+    const [dataId, setDataId] = useState("");
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
@@ -48,23 +49,20 @@ const DayPage = () => {
 
     return (
         <div>
-            <TopBox title="Day"/>
+            <TopBox title={`Day ${dataDay}`} />
+            <Button
+                className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
+                onClick={() => history.push('/days')}
+            >
+                Back
+            </Button>
+            <div className={`mb-3 mt-2 ${styles.Header }`} >
             {hasLoaded ? (
                 <>
-                <Row className="pt-1">
-                <Col className="mt-4">
-                <Button
-                    className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
-                    onClick={() => history.push('/days')}
-                >
-                    Back to Days
-                </Button>
                 <DayPageTop {...dayData.results[0]} 
                   />
-                </Col>
-            </Row>
                 {/* add scene */}
-                <Row className='my-3'>
+                <Row >
                     <Col className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
                         className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
@@ -72,12 +70,10 @@ const DayPage = () => {
                         {!show ?("") : (<SceneScheduleCreate xday={dataDay} xdate={dataDate} /> ) }
                     </Col>
                 </Row>
-                <hr />
-                <h3>Running Order</h3>
                 {/* titles */}
-                <Row style={{ textTransform: 'uppercase' }} className={`mt-5 ${styles.TitleBox}`} >
+                <Row style={{ textTransform: 'uppercase' }} className={`mt-3 ${styles.TitleBox}`} >
                     <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>Info</p>
+                        <p className='mb-0 pl-2'>Info</p>
                     </Col>
                     <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Times</p>
@@ -104,26 +100,29 @@ const DayPage = () => {
                         <p className='mb-0'>Edit</p>
                     </Col>
                 </Row>
+                <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
                 {/* scenes */}
                 <Row>
-                    <Col className='px-0 mx-0'>                   
+                    <Col >                   
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene, index) => (
                             <ScheduleScene 
-                                style={{ backgroundColor: (index % 3 === 0) ? 'rgb(172 244 242)' : (index % 2 === 0) ? 'rgb(204 231 255)' : 'rgb(173 230 246)' }}
+                                style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(230 232 252)' : 'rgb(230 246 239)' }}
                                 {...scene} 
                                 dayid={id} 
                                 sceneAll={scene} 
                                 key={scene.id} />
                         ))) : ("")}
-                </Col>
+                    </Col>
                 </Row>
                 </>
             ) : (
                 <Container className={appStyles.Content}>
                     <Asset spinner />
                 </Container>
-            ) }
+            )             
+            }
+            </div>
         </div>
     )
 }

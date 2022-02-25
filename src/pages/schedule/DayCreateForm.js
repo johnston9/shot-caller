@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -17,7 +16,7 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
 
-const DayCreateForm = ({topbox} ) => {
+const DayCreateForm = ({topbox, setShow} ) => {
     useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
   const [startDate, setStartDate] = useState("");
@@ -106,7 +105,7 @@ const DayCreateForm = ({topbox} ) => {
     <div className="text-center">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
+        onClick={() => setShow(show => !show)} 
       >
         cancel
       </Button>
@@ -123,12 +122,14 @@ const DayCreateForm = ({topbox} ) => {
       ) : (
         <TopBox title="Create Day" />
       ) }
-    <Form onSubmit={handleSubmit}>
+    <Form className={`${styles.Back} mt-4`} onSubmit={handleSubmit}>
+      <h3 className="text-center mt-3">Create Day</h3>
     <Row>
       <Col className="p-0 p-md-2" xs={6}>
-      <Form.Group controlId="date" className="mb-2" >
-                <Form.Label className="p-1" >Date</Form.Label>
+      <Form.Group controlId="date"  >
+                <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
                 <DatePicker 
+                  className={`${styles.Input}`}
                    value={startDate}
                   onChange={(date) => handleDate(date) }
                   />
@@ -139,15 +140,14 @@ const DayCreateForm = ({topbox} ) => {
               </Alert>
             ))}
       </Col>  
-      </Row>
-    <Row>
-    <Col xs={6} className="p-0 p-md-2">
-        <Form.Group controlId="day" className="mb-2" >
-            <Form.Label className="p-1" >Day</Form.Label>
+    <Col xs={6} className="p-0 p-md-2 d-flex justify-content-center ">
+        <Form.Group controlId="day" className={`${styles.Width} `} >
+            <Form.Label className={`${styles.Bold}`} >Day</Form.Label>
             <Form.Control 
             type="text"
             name="day"
             value={day}
+            className={`${styles.Input}`}
             onChange={handleChange}
                 />
         </Form.Group>
@@ -160,10 +160,12 @@ const DayCreateForm = ({topbox} ) => {
     </Row>
     <hr />
     {/* scenes */}
+    <h3 className="text-center mt-3">Add Scenes</h3>
+    <p className="text-center mt-1">Add scenes after schedule is complete for overview </p>
     <Row>
         <Col xs={6} md={3} lg={2}>          
             <Form.Group controlId="scene1" className="mb-2" >
-                <Form.Label className="p-1" >Scene1</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 1</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene1"
@@ -179,7 +181,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene2" className="mb-2" >
-                <Form.Label className="p-1" >scene2</Form.Label>
+                <Form.Label className={`${styles.Bold}`}>Scene 2</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene2"
@@ -195,7 +197,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene3" className="mb-2" >
-                <Form.Label className="p-1" >scene3</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 3</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene3"
@@ -211,7 +213,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene4" className="mb-2" >
-                <Form.Label className="p-1" >scene4</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 4</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene4"
@@ -227,7 +229,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene5" className="mb-2" >
-                <Form.Label className="p-1" >scene5</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 5</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene5"
@@ -243,7 +245,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene6" className="mb-2" >
-                <Form.Label className="p-1" >scene6</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 6</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene6"
@@ -259,7 +261,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene7" className="mb-2" >
-                <Form.Label className="p-1" >scene7</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 7</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene7"
@@ -275,7 +277,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene8" className="mb-2" >
-                <Form.Label className="p-1" >scene8</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 8</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene8"
@@ -291,7 +293,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}> 
             <Form.Group controlId="scene9" className="mb-2" >
-                <Form.Label className="p-1" >scene9</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 9</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene9"
@@ -307,7 +309,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene10" className="mb-2" >
-                <Form.Label className="p-1" >scene10</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 10</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene10"
@@ -323,7 +325,7 @@ const DayCreateForm = ({topbox} ) => {
         </Col>
         <Col xs={6} md={3} lg={2}>
             <Form.Group controlId="scene11" className="mb-2" >
-                <Form.Label className="p-1" >scene11</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 11</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene11"
@@ -339,7 +341,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={3} lg={2} > 
             <Form.Group controlId="scene12" className="mb-2" >
-                <Form.Label className="p-1" >scene12</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Scene 12</Form.Label>
                 <Form.Control 
                 type="text"
                 name="scene12"
@@ -356,10 +358,12 @@ const DayCreateForm = ({topbox} ) => {
     </Row>
     <hr />
     {/* locations */}
+    <h3 className="text-center mt-3">Add Locations</h3>
+    <p className="text-center mt-1">Add locations after schedule is complete for overview </p>
     <Row>
         <Col xs={6} md={4} lg={2}>
             <Form.Group controlId="location1" className="mb-2" >
-                <Form.Label className="p-1" >Location 1</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Location 1</Form.Label>
                 <Form.Control 
                 type="text"
                 name="location1"
@@ -375,7 +379,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={4} lg={2}>
             <Form.Group controlId="location2" className="mb-2" >
-                <Form.Label className="p-1" >location2</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Location 2</Form.Label>
                 <Form.Control 
                 type="text"
                 name="location2"
@@ -391,7 +395,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={4} lg={2} >
             <Form.Group controlId="location3" className="mb-2" >
-                <Form.Label className="p-1" >location3</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Location 3</Form.Label>
                 <Form.Control 
                 type="text"
                 name="location3"
@@ -407,7 +411,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={4} lg={2}>
             <Form.Group controlId="location4" className="mb-2" >
-                <Form.Label className="p-1" >location4</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Location 4</Form.Label>
                 <Form.Control 
                     className={styles.Input}
                     type="text"
@@ -424,7 +428,7 @@ const DayCreateForm = ({topbox} ) => {
             </Col>
             <Col xs={6} md={4} lg={2}>
             <Form.Group controlId="location5" className="mb-2" >
-                <Form.Label className="p-1" >location5</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Location 5</Form.Label>
                 <Form.Control 
                     className={styles.Input}
                     type="text"
@@ -441,7 +445,7 @@ const DayCreateForm = ({topbox} ) => {
         </Col>
         <Col xs={6} md={4} lg={2}>
             <Form.Group controlId="location6" className="mb-2" >
-                <Form.Label className="p-1" >location6</Form.Label>
+                <Form.Label className="p-1" >Location 6</Form.Label>
                 <Form.Control 
                     className={styles.Input}
                     type="text"
@@ -460,7 +464,7 @@ const DayCreateForm = ({topbox} ) => {
     <Row>
       <Col md={{ span: 6, offset: 3 }} className="p-0 p-md-2">
         <Form.Group controlId="crewcall" className="mb-2" >
-            <Form.Label className="p-1" >crewcall</Form.Label>
+            <Form.Label className="p-1" >Crewcall</Form.Label>
             <Form.Control 
             type="text"
             name="crewcall"
@@ -478,7 +482,7 @@ const DayCreateForm = ({topbox} ) => {
     {/* buttons */}
     <Row>
         <Col>
-        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+        <div className= {` my-3`} >{buttons} </div>
         </Col>
     </Row>
   </Form>

@@ -10,6 +10,7 @@ import { DeptCategoryProvider } from "./contexts/DeptCategoryContext";
 import { ActProvider } from "./contexts/ActContext";
 import { ScenesCharactersLocationsProvider } from "./contexts/Scene_chars_locs";
 import { CharacterLocationProvider } from "./contexts/CharLocatContex";
+import { DateProvider } from "./contexts/DateContext";
 
 ReactDOM.render(
     <Router >
@@ -19,7 +20,9 @@ ReactDOM.render(
             <DeptCategoryProvider >
               <ScenesCharactersLocationsProvider >
                 <CharacterLocationProvider >
-                  <App />
+                  <DateProvider >
+                    <App />
+                  </DateProvider>
                 </CharacterLocationProvider>
               </ScenesCharactersLocationsProvider>
             </DeptCategoryProvider>

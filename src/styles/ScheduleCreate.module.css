@@ -20,10 +20,10 @@
   /* color: red; */
 }
 
-.SceneBox {
+/* .SceneBox {
   border: 1px solid #fafafa;
   background-color: #fff;
-}
+} */
 
 .Next1 {
   background-color: #14404f;
@@ -35,6 +35,11 @@
   border: 1px solid #fafafa;
 }
 
+.Drop {
+  color: #000;
+}
+
 .TitleBox2 {
   border-right : 1px solid #fafafa;
+  color: #000;
 }

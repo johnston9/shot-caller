@@ -72,9 +72,8 @@ function App() {
         <Route exact path="/home" render={() => <Home />} />
         {/* SCHEDULE*/}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
-        <Route exact path="/days/:id/" render={() => <DayPage />} />
         <Route exact path="/edit/days/:id/" render={() => <DayEdit />} />
-        
+        <Route exact path="/days/:id/" render={() => <DayPage />} />
         <Route
             exact
             path="/days"

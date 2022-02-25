@@ -28,9 +28,8 @@ const ScheduleCharacters = (props) => {
     } = props
 
     return (
-        <div className={`my-0 px-3 ${styles.SceneBox}`} >
-            <hr/>
-            <h5 className='text-center'>Characters</h5>
+        <div className={`mx-5 ${styles.SceneBox}`} >
+            <hr className='mt-4'/>
             <Row style={{ textTransform: 'uppercase'}}>
                 <Col className='mx-0 px-0' xs={4} >
                 <p className='mb-0'>Character</p>

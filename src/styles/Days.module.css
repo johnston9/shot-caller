@@ -1,3 +1,12 @@
+.Top {
+  background-color: #14404f;
+  color: #fff;
+}
+
+.Bottom:hover {
+  background-color: aliceblue;
+}
+
 .SearchBar input {
     border-radius: 20px;
     color: #242a3d;
@@ -33,13 +42,13 @@
     font-weight: 700;
   }
 
-  .Italics {
-    font-style: italic;
+  .Titledetail {
+    font-weight: 700;
+    color: #000;
   }
 
-  .Header {
-    background-color: #fff;
-    /* background-color: rgb(24 23 23 / 6%); */
+  .Italics {
+    font-style: italic;
   }
 
   .Div50 {
@@ -52,7 +61,7 @@
     overflow: hidden;
   }
 
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     .Title {
       font-size: .75em;
     }
@@ -64,4 +73,4 @@
     .Titlelist {
       font-size: 1.25em;
     }
-  }
+  } */

@@ -6,6 +6,9 @@
   border-right : 1px solid #fafafa;
 }
 
+.SubTitle {
+  background-color: #e8f0f1;
+}
 .SearchBar input {
     border-radius: 20px;
     color: #242a3d;
