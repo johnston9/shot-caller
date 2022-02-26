@@ -1,5 +1,6 @@
 .TitleBox {
   border: 1px solid #fafafa;
+  background-color: #e8f0f1;
 }
 
 .TitleBox2 {
@@ -9,6 +10,11 @@
 .SubTitle {
   background-color: #e8f0f1;
 }
+
+.Bold { 
+  font-weight: 700;
+}
+
 .SearchBar input {
     border-radius: 20px;
     color: #242a3d;
@@ -39,11 +45,7 @@
   .Action {
     font-size: 1rem;
   }
-
-  .Bold {
-    font-weight: 700;
-  }
-
+  
   .Italics {
     font-style: italic;
   }

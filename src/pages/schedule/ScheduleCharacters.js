@@ -28,20 +28,25 @@ const ScheduleCharacters = (props) => {
     } = props
 
     return (
-        <div className={`mx-5 ${styles.SceneBox}`} >
-            <hr className='mt-4'/>
+        <div className={`text-center px-4 ${styles.SceneBox}`} >
+            <h5 className={`text-center mt-1 mb-0 ${styles.Bold}`}>Characters</h5>
+            <p className={`mt-1 pl-3 mb-1 py-1 ${styles.SubTitle }`}></p>
             <Row style={{ textTransform: 'uppercase'}}>
                 <Col className='mx-0 px-0' xs={4} >
-                <p className='mb-0'>Character</p>
+                <p className={`d-none d-md-block mb-0 mt-2 px-5 ${styles.BoldTitle }`}>Character</p>
+                <p className={`d-md-none mb-0 mt-2 ${styles.BoldTitle }`}>Cast</p>
                 </Col>
                 <Col className='mx-0 px-0' xs={2} >
-                <p className='mb-0'>Costume</p>
+                <p className={`d-none d-md-block mb-0 mt-2  ${styles.BoldTitle }`}>Costume</p>
+                <p className={`d-md-none mb-0 mt-2 ${styles.BoldTitle }`}>Cos</p>
                 </Col>
                 <Col className='mx-0 px-0' xs={3} >
-                <p className='mb-0'>Calltime</p>
+                <p className={`d-none d-md-block mb-0 mt-2 px-5  ${styles.BoldTitle }`}>Calltime</p>
+                <p className={`d-md-none mb-0 mt-2 ${styles.BoldTitle }`}>Call</p>
                 </Col>
                 <Col className='mx-0 px-0' xs={3} >
-                <p className='mb-0'>Pickup</p>
+                <p className={`d-none d-md-block mb-0 mt-2 px-5 ${styles.BoldTitle }`}>Pickup</p>
+                <p className={`d-md-none mb-0 mt-2 ${styles.BoldTitle }`}>P/U</p>
                 </Col>
             </Row>
             <Row >
@@ -213,124 +218,60 @@ const ScheduleCharacters = (props) => {
                 </Col>
             </Row>
             {/* other */}
+            <hr/>
+            <h5 className={`text-center mt-1 mb-0 ${styles.Bold}`}>Other Characters</h5>
+            <p className={`mt-1 pl-3 mb-1 py-1 ${styles.SubTitle }`}></p>
             <Row >
-                <Col className='mx-0 px-0' xs={4} >
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 px-5 mx-5 ${styles.BoldTitle }`}>Characters</p>
                 <p className='mb-0'>{other_characters} </p>
+                <hr className='my-0'/>
                 </Col>
-                <Col className='mx-0 px-0' xs={2} >
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 px-5 mx-5 ${styles.BoldTitle }`}>Costumes</p>
                 <p className='mb-0'>{other_characters_costumes}</p>
-                </Col>
-                <Col className='mx-0 px-0' xs={3} >
-                <p className='mb-0'>{other_characters_calltimes}</p>
-                </Col>
-                <Col className='mx-0 px-0' xs={3} >
-                <p className='mb-0'>{other_characters_pickups}</p>
+                <hr className='my-0'/>
                 </Col>
             </Row>
-            {/* <Row style={{ textTransform: 'uppercase'}}>
-                <Col className='mx-0 px-0' xs={4} >
-                <p className='mb-0'>{other_characters} </p>
-                </Col>
-                <Col className='mx-0 px-0' xs={2} >
-                <p className='mb-0'>{other_characters_costumes}</p>
-                </Col>
-                <Col className='mx-0 px-0' xs={3} >
+            <Row>
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Calltimes</p>
                 <p className='mb-0'>{other_characters_calltimes}</p>
+                <hr className='my-0'/>
                 </Col>
-                <Col className='mx-0 px-0' xs={3} >
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Pickups</p>
                 <p className='mb-0'>{other_characters_pickups}</p>
+                <hr className='my-0'/>
                 </Col>
-            </Row> */}
-            {/* <Row className='mt-3'>
-                <Col className='mx-0 px-0' xs={4} >
-                <p className='mb-0'>{character1}</p><hr className='my-0'/>
-                <p className='mb-0' >{character2}</p><hr className='my-0'/>
-                <p className='mb-0' >{character3}</p><hr className='my-0'/>
-                <p className='mb-0' >{character4}</p><hr className='my-0'/>
-                <p className='mb-0' >{character5}</p><hr className='my-0'/>
-                <p className='mb-0' >{character6}</p><hr className='my-0'/>
-                <p className='mb-0' >{character7}</p><hr className='my-0'/>
-                <p className='mb-0' >{character8}</p><hr className='my-0'/>
-                <p className='mb-0' >{character9}</p><hr className='my-0'/>
-                <p className='mb-0' >{character10}</p><hr className='my-0'/>
-                <p className='mb-0' >{character11}</p><hr className='my-0'/>
-                <p className='mb-0' >{character12}</p><hr className='my-0'/>
-                <p className='mb-0' >{other_characters}</p>
-                </Col>
-                <Col xs={2} >
-                <p className='mb-0'>{character1_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character2_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character3_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character4_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character5_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character6_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character7_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character8_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character9_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character10_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character11_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{character12_costume}</p><hr className='my-0'/>
-                <p className='mb-0'>{other_characters_costumes}</p>
-                </Col>
-                <Col xs={3} >
-                <p className='mb-0'>{character1_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character2_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character3_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character4_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character5_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character6_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character7_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character8_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character9_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character10_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character11_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{character12_calltime}</p><hr className='my-0'/>
-                <p className='mb-0'>{other_characters_calltimes}</p>
-                </Col>
-                <Col xs={3} >
-                <p className='mb-0'>{character1_pickup}</p>
-                <p className='mb-0'>{character2_pickup}</p>
-                <p className='mb-0'>{character3_pickup}</p>
-                <p className='mb-0'>{character4_pickup}</p>
-                <p className='mb-0'>{character5_pickup}</p>
-                <p className='mb-0'>{character6_pickup}</p>
-                <p className='mb-0'>{character7_pickup}</p>
-                <p className='mb-0'>{character8_pickup}</p>
-                <p className='mb-0'>{character9_pickup}</p>
-                <p className='mb-0'>{character10_pickup}</p>
-                <p className='mb-0'>{character11_pickup}</p>
-                <p className='mb-0'>{character12_pickup}</p>
-                <p className='mb-0'>{other_characters_pickups}</p>
-                </Col>
-            </Row> */}
-            {/* <Row style={{ textTransform: 'uppercase'}}>
-                <Col xs={4} >
-                <p>Other Characters</p>
-                <p>{other_characters}</p>
-                <h5>Costumes</h5>
-                <p>{other_characters_costumes}</p>
-                <h5>Calltimes</h5>
-                <p>{other_characters_calltimes}</p>
-                <h5> Pickups</h5>
-                <p>{other_characters_pickups}</p>
-                </Col>
-            </Row>   */}
-            <hr/>
-            <h5 className='text-center'>Background Artists</h5>
+            </Row>
+            {/* Background Artists */}
+            <h5 className={`text-center mt-3 mb-0 ${styles.Bold}`}>Background Artists</h5>
+            <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
             <Row >
-                <Col className='mx-0 px-0' xs={4}>
-                <p>{background_artists}</p>
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 px-5 mx-5 ${styles.BoldTitle }`}>Characters</p>
+                <p className='mb-0'>{background_artists} </p>
+                <hr className='my-0'/>
                 </Col>
-                <Col className='mx-0 px-0' xs={4}>
-                <p>{background_artists_costumes}</p>
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Costumes</p>
+                <p className='mb-0'>{background_artists_costumes}</p>
+                <hr className='my-0'/>
                 </Col>
-                <Col className='mx-0 px-0' xs={2}>
-                <p>{background_artists_calltimes}</p>
+            </Row>
+            <Row>
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Calltimes</p>
+                <p className='mb-0'>{background_artists_calltimes}</p>
+                <hr className='my-0'/>
                 </Col>
-                <Col className='mx-0 px-0' xs={2}>
-                <p>{background_artists_pickups}</p>
+                <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Pickups</p>
+                <p className='mb-0'>{background_artists_pickups}</p>
+                <hr className='my-0'/>
                 </Col>
-            </Row> 
+            </Row>
         </div>
         )
 }

@@ -1,5 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { useRedirect } from '../../hooks/Redirect';
+import { Col, Row } from 'react-bootstrap';
+import Card from "react-bootstrap/Card";
+import styles from "../../styles/ScheduleCreate.module.css";
 
 const SchedSceneInfo = (props) => {
     useRedirect("loggedOut");
@@ -7,18 +10,45 @@ const SchedSceneInfo = (props) => {
             act, title, content, location_address,
             time, new_content, day_id, id} = props
     return (
-        <div>
-            <hr className='mt-4'/>
-            <p >Day {day} Day Id {date} {date} </p>
-            <p >Day Id {day_id}  scene id{id} </p>
-            <p className='mb-0'>Shooting Order: {day_order_number} </p>
-            <p className='mb-0'>Act: {act} </p>
-            <p className='mb-2'>Scene Heading: <span style={{ textTransform: 'italic' }} >{title} </span> </p>
-            <p className='mb-0'>Shoot Address: {location_address} </p>
-            <p className='mb-0'>Equip/Set: {info} </p>
-            <p className='mb-0'>Scene Content: {content} </p>
-            <p className='mb-0'>New Content: {new_content} </p>
-            <p className='mb-0'>Scene Time: {time} </p>
+        <div className={`px-3 ${styles.SceneBox}`}>
+            <p className={`text-center mt-1 mb-0 ${styles.Bold}`}>Day {day} - {date} </p>
+            <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+            <Row className='text-center'>
+                <Col xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`} >Act/Time </p>
+                <p className='mb-0'>{act}/{time} </p>
+                <hr/>
+                </Col>
+                <Col xs={12} md={6}>
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Scene Heading </p>
+                <p className='mb-0'><span style={{ textTransform: 'italic' }} >{title} </span> </p>
+                <hr/>
+                </Col>
+            </Row>
+            <Row className='text-center'>
+                <Col xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`} >Shoot Address </p>
+                <p className='mb-0'>{location_address} </p>
+                <hr/>
+                </Col>
+                <Col xs={12} md={6}>
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Equip/Set</p>
+                <p className='mb-0'><span style={{ textTransform: 'italic' }} >{info} </span> </p>
+                <hr/>
+                </Col>
+            </Row>
+            <Row className='text-center'>
+                <Col xs={12} md={6} >
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`} >Scene Content </p>
+                <p className='mb-0'>{content} </p>
+                <hr/>
+                </Col>
+                <Col xs={12} md={6}>
+                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>New Content</p>
+                <p className='mb-0'>{new_content} </p>
+                <hr/>
+                </Col>
+            </Row>
         </div>
     )
 }

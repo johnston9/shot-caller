@@ -12,22 +12,22 @@ import { useRedirect } from '../../hooks/Redirect';
 import appStyles from "../../App.module.css";
 import { Button } from 'react-bootstrap';
 import TopBox from '../../components/TopBox';
-import DayCreateForm from './DayCreateForm';
 import DayTop from './DayTop';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { useHistory } from 'react-router';
 
 const SchedulePages = () => {
     useRedirect("loggedOut");
     const [today, setToday] = useState(new Date());
     const [newdate, setNewdate] = useState("");
     const [days, setDays] = useState({results: [] });
-    const [show, setShow] = useState(false);
     const [error, setError] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
-    const filter = ""
-    const message = "No Days. Please add Day"
+    const filter = "";
+    const message = "No Days Added";
+    const history = useHistory;
 
 
     useEffect(() => {
@@ -57,22 +57,18 @@ const SchedulePages = () => {
             day: 'numeric', month: 'short', year: 'numeric'
           })
           setNewdate(formatdate);
-          console.log(`start ${formatdate}`);
-          console.log(`date ${today}`);
-          // history.push(`/calendar/days`);
         }
 
     return (
         <div >
             <TopBox title="Schedule" />
             {/* add day */}
-            {/* <h3 className='text-center'>Create Shoot Day</h3> */}
+            <h3 className='text-center'>Create Shoot Day</h3>
             <Row className='my-4'>
                 <Col className="text-center">
-                    <Button onClick={() => setShow(show => !show)} 
+                <Button onClick={() => history.push('/days/create')} 
                     className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Create Day</Button>
-                    {!show ?("") : (<DayCreateForm topbox setShow={setShow} /> ) }
                 </Col>
             </Row>
             <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
@@ -88,6 +84,7 @@ const SchedulePages = () => {
                             value={today} />
                          </Col>
                          <Col className='d-flex justify-content-center my-3'  xs={12} md={6}>
+                           <p>Click to find Shooting Day</p>
                           {days.results.map((day) => (
                             day.date == newdate ? (
                               <DayTop {...day} />
@@ -111,7 +108,7 @@ const SchedulePages = () => {
                         onChange={(event) => setQuery(event.target.value)}
                         type="text"
                         className="mr-sm-2"
-                        placeholder="Search by scene number, title or location"
+                        placeholder="Search by Scene or Location"
                     />
                     </Form>
                 </Col>

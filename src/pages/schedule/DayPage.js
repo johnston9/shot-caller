@@ -61,6 +61,7 @@ const DayPage = () => {
                 <>
                 <DayPageTop {...dayData.results[0]} 
                   />
+            {/* <h3 className="text-center mt-3">Running Order</h3> */}
                 {/* add scene */}
                 <Row >
                     <Col className="text-center">
@@ -71,36 +72,37 @@ const DayPage = () => {
                     </Col>
                 </Row>
                 {/* titles */}
-                <Row style={{ textTransform: 'uppercase' }} className={`mt-3 ${styles.TitleBox}`} >
-                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                {/* <p className={` mb-0 py-1 ${styles.SubTitle }`}></p> */}
+                <Row style={{ textTransform: 'uppercase' }} className={`mx-0 px-4 mt-3 ${styles.TitleBox}`} >
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0 pl-2'>Info</p>
                     </Col>
-                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Times</p>
                     </Col>
-                    <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Scene</p>
                     </Col>
-                    <Col className={` ${styles.TitleBox2}`} xs={3} md={3}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                         <p className='mb-0'>Details</p>
                     </Col>
-                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>D/N</p>
                     </Col>
-                    <Col className={`${styles.TitleBox2}`} xs={2} md={2}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Filming</p>                        
                     </Col>
-                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Pages</p>
                     </Col>
-                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Cast</p>
                     </Col>
-                    <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Edit</p>
                     </Col>
                 </Row>
-                <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+                {/* <p className={` mb-0 py-1 ${styles.SubTitle }`}></p> */}
                 {/* scenes */}
                 <Row>
                     <Col >                   

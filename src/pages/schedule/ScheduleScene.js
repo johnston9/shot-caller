@@ -33,7 +33,7 @@ const ScheduleScene = (props) => {
           };
 
     return (
-        <div style={style} className={`px-3 pt-4 ${styles.SceneBox}`} > 
+        <div style={style} className={`px-4 pt-3  ${styles.Bold}`} > 
             <Row  >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
@@ -41,35 +41,35 @@ const ScheduleScene = (props) => {
                         Info
                     </Button>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{start_time}</p>
                     <p className='mb-0'>{end_time}</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{number}</p>
                 </Col>
-                <Col className={`${styles.TitleBox2}`} xs={3} md={3}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
                     <p className='mb-0'>{action}</p>
                 </Col>
-                <Col className={`mx-0 px-0 text-center ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{day_night}</p>
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
-                <Col className={` ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p >{pages}</p>
                 </Col>
                 {/* cast */}
-                <Col xs={1} md={1} className="mx-0 px-0 text-center">
+                <Col xs={1} md={1} className="mx-0 px-0">
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Bright}`}>
                     Cast
                     </Button>
                 </Col>
                 {/* edit */}
-                <Col className={`mx-0 px-0 text-center mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShow(show => !show)} 
                         className={`${btnStyles.Button} ${btnStyles.Order}`}>
                         Order
@@ -82,8 +82,6 @@ const ScheduleScene = (props) => {
                 </Col>
             </Row>
             {/* cast */}
-            <Row>
-                <Col>
                     {!show ?("") : (                       
                     <ScheduleCharacters {...sceneAll}
                     // character1={character1} character1_costume={character1_costume}
@@ -116,8 +114,6 @@ const ScheduleScene = (props) => {
                     // background_artists_calltimes={background_artists_calltimes} background_artists_pickups={background_artists_pickups}
                     /> 
                     ) }
-                    </Col>
-                </Row>
             {/* info */}
             <Row>
                 <Col>

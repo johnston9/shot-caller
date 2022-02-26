@@ -20,11 +20,6 @@
   /* color: red; */
 }
 
-/* .SceneBox {
-  border: 1px solid #fafafa;
-  background-color: #fff;
-} */
-
 .Next1 {
   background-color: #14404f;
   color: #fff;
@@ -42,4 +37,25 @@
 .TitleBox2 {
   border-right : 1px solid #fafafa;
   color: #000;
+}
+
+/* info */
+
+.SceneBox {
+  border: 1px solid #fafafa;
+  background-color: #fff;
+  font-weight: 700;
+}
+
+.SubTitle {
+  background-color: #e8f0f1;
+}
+
+.Bold { 
+  font-weight: 700;
+}
+
+.BoldTitle {
+  font-weight: 700;
+  background-color: rgb(209, 240, 240);
 }

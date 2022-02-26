@@ -35,16 +35,12 @@ const DayCreateForm = ({topbox, setShow} ) => {
         scene10: "",
         scene11: "",
         scene12: "",
+        xtra_scenes: "",
         location1: "",
-        location2: "",
-        location3: "",
-        location4: "",
-        location5: "",
-        location6: "",
       });
       const { day, crewcall, scene1, scene2, scene3, scene4, scene5, scene6, 
-        scene7, scene8, scene9, scene10, scene11, scene12, location1, location2,
-        location3, location4, location5, location6, } = postData;
+        scene7, scene8, scene9, scene10, scene11, scene12, location1, 
+        xtra_scenes } = postData;
 
       const history = useHistory();
 
@@ -82,17 +78,12 @@ const DayCreateForm = ({topbox, setShow} ) => {
     formData.append("scene10", scene10);
     formData.append("scene11", scene11);
     formData.append("scene12", scene12);
+    formData.append("xtra_scenes", xtra_scenes);
     formData.append("location1", location1);
-    formData.append("location2", location2);
-    formData.append("location3", location3);
-    formData.append("location4", location4);
-    formData.append("location5", location5);
-    formData.append("location6", location6);
       
     try {
       const { data } = await axiosReq.post("/days/", formData);
-      console.log(data)
-      history.push(`/home/`);
+      history.goBack();
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -105,12 +96,12 @@ const DayCreateForm = ({topbox, setShow} ) => {
     <div className="text-center">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => setShow(show => !show)} 
+        onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+        Create
       </Button>
     </div>
   );
@@ -124,22 +115,8 @@ const DayCreateForm = ({topbox, setShow} ) => {
       ) }
     <Form className={`${styles.Back} mt-4`} onSubmit={handleSubmit}>
       <h3 className="text-center mt-3">Create Day</h3>
+      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
     <Row>
-      <Col className="p-0 p-md-2" xs={6}>
-      <Form.Group controlId="date"  >
-                <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
-                <DatePicker 
-                  className={`${styles.Input}`}
-                   value={startDate}
-                  onChange={(date) => handleDate(date) }
-                  />
-            </Form.Group>
-            {errors?.date?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </Col>  
     <Col xs={6} className="p-0 p-md-2 d-flex justify-content-center ">
         <Form.Group controlId="day" className={`${styles.Width} `} >
             <Form.Label className={`${styles.Bold}`} >Day</Form.Label>
@@ -157,13 +134,30 @@ const DayCreateForm = ({topbox, setShow} ) => {
             </Alert>
         ))}
       </Col> 
+      <Col className="p-0 p-md-2" xs={6}>
+      <Form.Group controlId="date"  >
+                <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
+                <DatePicker 
+                  className={`${styles.Input}`}
+                   value={startDate}
+                  onChange={(date) => handleDate(date) }
+                  />
+            </Form.Group>
+            {errors?.date?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+      </Col> 
     </Row>
     <hr />
     {/* scenes */}
     <h3 className="text-center mt-3">Add Scenes</h3>
-    <p className="text-center mt-1">Add scenes after schedule is complete for overview </p>
+    <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+    <p className="text-center mt-1">Add scene number and location after scheduling for Day Info<br/>
+       e.g. "7 - Imperial Hotel" </p>
     <Row>
-        <Col xs={6} md={3} lg={2}>          
+        <Col xs={6} md={4}>          
             <Form.Group controlId="scene1" className="mb-2" >
                 <Form.Label className={`${styles.Bold}`} >Scene 1</Form.Label>
                 <Form.Control 
@@ -178,152 +172,152 @@ const DayCreateForm = ({topbox, setShow} ) => {
                 {message}
               </Alert>
             ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene2" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`}>Scene 2</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene2"
-                value={scene2}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene2?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene3" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 3</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene3"
-                value={scene3}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene3?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene4" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 4</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene4"
-                value={scene4}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene4?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene5" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 5</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene5"
-                value={scene5}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene5?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene6" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 6</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene6"
-                value={scene6}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene6?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene7" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 7</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene7"
-                value={scene7}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene7?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene8" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 8</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene8"
-                value={scene8}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene8?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}> 
-            <Form.Group controlId="scene9" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 9</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene9"
-                value={scene9}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene9?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={3} lg={2}>
-            <Form.Group controlId="scene10" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Scene 10</Form.Label>
-                <Form.Control 
-                type="text"
-                name="scene10"
-                value={scene10}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.scene10?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
         </Col>
-        <Col xs={6} md={3} lg={2}>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene2" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`}>Scene 2</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene2"
+            value={scene2}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene2?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene3" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 3</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene3"
+            value={scene3}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene3?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene4" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 4</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene4"
+            value={scene4}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene4?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene5" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 5</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene5"
+            value={scene5}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene5?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene6" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 6</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene6"
+            value={scene6}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene6?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene7" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 7</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene7"
+            value={scene7}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene7?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene8" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 8</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene8"
+            value={scene8}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene8?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}> 
+        <Form.Group controlId="scene9" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 9</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene9"
+            value={scene9}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene9?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
+        <Form.Group controlId="scene10" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Scene 10</Form.Label>
+            <Form.Control 
+            type="text"
+            name="scene10"
+            value={scene10}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.scene10?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4}>
             <Form.Group controlId="scene11" className="mb-2" >
                 <Form.Label className={`${styles.Bold}`} >Scene 11</Form.Label>
                 <Form.Control 
@@ -338,8 +332,8 @@ const DayCreateForm = ({topbox, setShow} ) => {
                 {message}
               </Alert>
             ))}
-            </Col>
-            <Col xs={6} md={3} lg={2} > 
+        </Col>
+        <Col xs={6} md={4} > 
             <Form.Group controlId="scene12" className="mb-2" >
                 <Form.Label className={`${styles.Bold}`} >Scene 12</Form.Label>
                 <Form.Control 
@@ -356,12 +350,46 @@ const DayCreateForm = ({topbox, setShow} ) => {
             ))}
         </Col>
     </Row>
-    <hr />
-    {/* locations */}
-    <h3 className="text-center mt-3">Add Locations</h3>
-    <p className="text-center mt-1">Add locations after schedule is complete for overview </p>
     <Row>
-        <Col xs={6} md={4} lg={2}>
+      <Col xs={{ span: 10, offset: 1 }} md={{ span: 8, offset: 2 }} >
+      <Form.Group controlId="xtra_scenes" className="mb-2" >
+                <Form.Label className={`${styles.Bold}`} >Xtra Scenes </Form.Label>
+                <Form.Control 
+                type="text"
+                name="xtra_scenes"
+                value={xtra_scenes}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_scenes?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+      </Col>
+    </Row>
+    <hr/>
+    {/* crewcall */}
+    <h3 className="text-center mt-3">Crewcall</h3>
+    <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+    <Row className="text-center">
+      <Col xs={6} className=" p-0 p-md-2">
+        <Form.Group controlId="crewcall" className={`mb-2`} >
+            <Form.Label className={`${styles.Bold}`} >Time</Form.Label>
+            <Form.Control 
+            type="text"
+            name="crewcall"
+            value={crewcall}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.crewcall?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+            {message}
+            </Alert>
+        ))}
+      </Col>
+      <Col xs={6} className=" p-0 p-md-2" >
             <Form.Group controlId="location1" className="mb-2" >
                 <Form.Label className={`${styles.Bold}`} >Location 1</Form.Label>
                 <Form.Control 
@@ -376,108 +404,7 @@ const DayCreateForm = ({topbox, setShow} ) => {
                 {message}
               </Alert>
             ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="location2" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Location 2</Form.Label>
-                <Form.Control 
-                type="text"
-                name="location2"
-                value={location2}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.location2?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2} >
-            <Form.Group controlId="location3" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Location 3</Form.Label>
-                <Form.Control 
-                type="text"
-                name="location3"
-                value={location3}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.location3?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="location4" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Location 4</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="location4"
-                    value={location4}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.location4?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="location5" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Location 5</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="location5"
-                    value={location5}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.location5?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
         </Col>
-        <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="location6" className="mb-2" >
-                <Form.Label className="p-1" >Location 6</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="location6"
-                    value={location6}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.location6?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-    </Row>
-    <Row>
-      <Col md={{ span: 6, offset: 3 }} className="p-0 p-md-2">
-        <Form.Group controlId="crewcall" className="mb-2" >
-            <Form.Label className="p-1" >Crewcall</Form.Label>
-            <Form.Control 
-            type="text"
-            name="crewcall"
-            value={crewcall}
-            onChange={handleChange}
-                />
-        </Form.Group>
-        {errors?.crewcall?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-            {message}
-            </Alert>
-        ))}
-      </Col>
     </Row>
     {/* buttons */}
     <Row>

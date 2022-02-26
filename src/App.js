@@ -73,7 +73,6 @@ function App() {
         {/* SCHEDULE*/}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
         <Route exact path="/edit/days/:id/" render={() => <DayEdit />} />
-        <Route exact path="/days/:id/" render={() => <DayPage />} />
         <Route
             exact
             path="/days"
@@ -82,6 +81,7 @@ function App() {
                message="No results found. Please add a scene" />
             )}
           />
+        <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
         {/* LOCATIONS */}
         <Route exact path="/locations/create" render={() => <LocationsCreate />} />

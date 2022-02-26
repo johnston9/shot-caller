@@ -25,11 +25,8 @@ const DayTop = (props) => {
         scene10,
         scene11,
         scene12,
+        xtra_scenes,
         location1,
-        location2,
-        location3,
-        location4,
-        location5,
     } = props;
     const history = useHistory();
 
@@ -64,14 +61,24 @@ const DayTop = (props) => {
                   </Row>
                   </Card.Header>
                 <Card.Body className={`p-1 ${styles.Bottom }`} >
-                    <Link to={`/days/${id}`}>
+                    <Link to={`/day/${id}`}>
                     <div className="ml-2 mt-2">
                       {/* Scenes:  */}
-                    <p className={` ${styles.Titledetail }`}>Scenes: {scene1} {scene2} {scene3} {scene4} {scene5}  {scene6} {scene7} {scene8} {scene9} {scene10} {scene11} {scene12}
-                    </p>
-                    {/* Location:  */}
-                    <p style={{ fontWeight: '700', textTransform: 'capitalize'}} className={` ${styles.Titledetail }`}>
-                    Locations: {location1} {location2} {location3} {location4} {location5} </p>                    
+                    <p className={` ${styles.Titledetail }`}>
+                    {scene1 && <span>{scene1}, </span>}
+                    {scene2 && <span>{scene2}, </span>}
+                    {scene3 && <span>{scene3}, </span>}
+                    {scene4 && <span>{scene4}, </span>}
+                    {scene5 && <span>{scene5}, </span>}
+                    {scene6 && <span>{scene6}, </span>}
+                    {scene7 && <span>{scene7}, </span>}
+                    {scene8 && <span>{scene8}, </span>}
+                    {scene9 && <span>{scene9}, </span>}
+                    {scene10 && <span>{scene10}, </span>}
+                    {scene11 && <span>{scene11}, </span>}
+                    {scene12 && <span>{scene12}, </span>}
+                    {xtra_scenes && <span>{xtra_scenes} </span>}
+                    </p>                 
                     </div>
                     </Link>
                 </Card.Body>
