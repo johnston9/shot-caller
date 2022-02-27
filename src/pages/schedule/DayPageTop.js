@@ -41,21 +41,11 @@ const DayPageTop = (props) => {
 
     return (
         <div>
-            <div className={`p-2 ${styles.Header }`}>
+            <div className={`p-2 mt-1 ${styles.Header }`}>
             <Row className='d-flex align-items-center'>
             <Col className='mx-0 px-0' xs={1}></Col>
             <Col xs={10} className='mx-0 px-0 text-center'>
-            <h5 className={` ${styles.Titlelist }`}>Day {day} - {date}
-            </h5>
-            </Col >
-            <Col xs={1} className='text-center mx-0 px-0'>
-            <PostDropdown
-                    handleEdit={handleEditDayTop}
-                    handleDelete={handleDeleteDayTop}
-                />
-            </Col>
-            </Row>
-            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+            {/* <h5 className={` ${styles.Titlelist }`}>Day {day} - {date}</h5> */}
             <div className="ml-2 mt-2 text-center">
                 {/* Scenes:  */}
             <p className={`${styles.Bold }`}>
@@ -75,7 +65,16 @@ const DayPageTop = (props) => {
             {xtra_scenes && <span>{xtra_scenes} </span>}
             </p>  
             <p className={`${styles.Bold }`}>UNIT CALL - {crewcall} {location1} </p>                 
-            </div>     
+            </div> 
+            </Col >
+            <Col xs={1} className='text-center mx-0 px-0'>
+            <PostDropdown
+                    handleEdit={handleEditDayTop}
+                    handleDelete={handleDeleteDayTop}
+                />
+            </Col>
+            </Row>
+            {/* <p className={` mb-0 py-1 ${styles.SubTitle }`}></p> */}    
         </div>
         </div>
     )

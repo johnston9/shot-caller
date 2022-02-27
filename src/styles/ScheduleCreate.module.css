@@ -1,18 +1,51 @@
 .Container {
     min-height: 100px;
   }
+
 .Container2 {
     min-height: 10px;
   }
+
+.Bold { 
+  font-weight: 700;
+}
   
 .Input {
-    background: #ffffff;
-    border: 1px solid #f0f1f9;
-    box-sizing: border-box;
-    border-radius: 2px;
-    color: #7177a1;
-    /* text-align: center; */
-    padding: 10px;
+  background: #ffffff;
+  border: 1px solid #f0f1f9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #7177a1;
+  padding: 0px 10px;
+  height: 30px !important;
+  /* width: 50%; */
+}
+
+.InputScene {
+  background: #ffffff;
+   /* border: 1px solid #f0f1f9; */
+   box-sizing: border-box;
+   border-radius: 2px;
+   color: #7177a1;
+   /* text-align: center; */
+   padding: 0px 10px;
+}
+
+.Bold { 
+  font-weight: 700;
+}
+
+.TitleBox {
+  background-color: #e8f0f1;
+  color: #000;
+}
+
+.TitleBox2 {
+  border-right : 2px solid #fff;
+}
+
+.SubTitle {
+  background-color: #e8f0f1;
 }
 
 .FormBox {
@@ -26,16 +59,7 @@
   /* border: 1px solid #555; */
 }
 
-.TitleBox {
-  border: 1px solid #fafafa;
-}
-
 .Drop {
-  color: #000;
-}
-
-.TitleBox2 {
-  border-right : 1px solid #fafafa;
   color: #000;
 }
 
@@ -58,4 +82,10 @@
 .BoldTitle {
   font-weight: 700;
   background-color: rgb(209, 240, 240);
+}
+
+/* Order */
+
+.OrderBox {
+  background-color: #f7f9fa;
 }

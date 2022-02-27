@@ -49,31 +49,30 @@ const DayPage = () => {
 
     return (
         <div>
-            <TopBox title={`Day ${dataDay}`} />
+            <TopBox work={`Day ${dataDay}`}
+                    title={dataDate}  />
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
                 onClick={() => history.push('/days')}
             >
                 Back
             </Button>
-            <div className={`mb-3 mt-2 ${styles.Header }`} >
             {hasLoaded ? (
                 <>
                 <DayPageTop {...dayData.results[0]} 
                   />
-            {/* <h3 className="text-center mt-3">Running Order</h3> */}
                 {/* add scene */}
-                <Row >
+                <Row className='my-4'>
                     <Col className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
                         className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                         Add Scene</Button>
-                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} xdate={dataDate} /> ) }
+                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} xdate={dataDate} /> ) }
                     </Col>
                 </Row>
                 {/* titles */}
-                {/* <p className={` mb-0 py-1 ${styles.SubTitle }`}></p> */}
-                <Row style={{ textTransform: 'uppercase' }} className={`mx-0 px-4 mt-3 ${styles.TitleBox}`} >
+                <div className='d-none d-md-block'>
+                <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0 pl-2'>Info</p>
                     </Col>
@@ -102,14 +101,14 @@ const DayPage = () => {
                         <p className='mb-0'>Edit</p>
                     </Col>
                 </Row>
-                {/* <p className={` mb-0 py-1 ${styles.SubTitle }`}></p> */}
+                </div>
                 {/* scenes */}
                 <Row>
                     <Col >                   
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene, index) => (
                             <ScheduleScene 
-                                style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(230 232 252)' : 'rgb(230 246 239)' }}
+                                style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(219 250 236)' : 'rgb(227 248 241)' }}
                                 {...scene} 
                                 dayid={id} 
                                 sceneAll={scene} 
@@ -125,7 +124,7 @@ const DayPage = () => {
             )             
             }
             </div>
-        </div>
+        // </div>
     )
 }
 

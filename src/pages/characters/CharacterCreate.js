@@ -264,7 +264,7 @@ const CharacterCreate = ({topbox} ) => {
         <div>
         <TopBox title="Create Character" />
         <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} text-left my-2`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
         onClick={() => history.goBack()}
         >
         Back

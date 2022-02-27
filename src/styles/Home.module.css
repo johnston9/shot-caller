@@ -4,11 +4,10 @@
     height: 100%;
   }
 
-  .Background {
-    background-color: #353839;
-    width: 100%; 
-    /* height: 600px; */
-  }
+.Background {
+background-color: #353839;
+width: 100%; 
+}
 
 .Row {
     height: 100%;
@@ -20,98 +19,57 @@
     color: #F5F5F5;
 }
 
-/* Dark Theme */
-
-/* .HomeboxXs {
-    height: 105px;
-    background-color: #3b444b;
-    color: #F5F5F5;
-}
-
-.HomeboxXsXs {
-    height: 90px;
-    background-color: #3b444b;
-    color: #F5F5F5;
-}
-
-.Homebox1 {
-    min-height: 160px;
-    background-color: #3b444b;
-    color: #F5F5F5;
-}
-
-.Homebox {
-    height: 100px;
-    background-color: #3b444b;
-    color: #F5F5F5;
-}
-
-.HomeboxSm {
-    height: 100px;
-    background-color: #3b444b;
-    color: #F5F5F5;
-    margin-bottom: 20px;
-}
-
-.HomeboxSmEr {
-    height: 80px;
-    background-color: #3b444b;
-    color: #F5F5F5;
-    margin-bottom: 20px;
-} */
-
-/* Light Theme */
-.HomeboxXs {
-    height: 105px;
-    background-color: #405766;
-    color: #F5F5F5;
-}
-
-.HomeboxXsXs {
-    height: 90px;
-    background-color: #405766;
-    color: #F5F5F5;
-}
-
-.Homebox1 {
-    min-height: 160px;
-    background-color: #405766;
-    color: #F5F5F5;
-}
-
-.Homebox {
-    height: 100px;
-    background-color: #405766;
-    color: #F5F5F5;
-}
-
-.HomeboxSm {
-    height: 100px;
-    background-color: #405766;
-    color: #F5F5F5;
-    margin-bottom: 20px;
-}
-
-.HomeboxSmEr {
-    height: 80px;
-    background-color: #405766;
-    color: #F5F5F5;
-    margin-bottom: 20px;
-}
+/* mobile */
 
 .Inner {
     background-color: #395061;
     color: #fff;
 }
 
-/* end */
+.HomeboxXsXs {
+    height: 120px;
+    background-color: #405766;
+    color: #F5F5F5;
+    border-bottom: 1px solid #fff;
+}
+
+.HomeboxXs {
+    height: 105px;
+    background-color: #405766;
+    color: #F5F5F5;
+}
+
+
+/* large */
+
+.Homebox {
+    height: 140px;
+    background-color: #405766;
+    color: #F5F5F5;
+    border: 1px solid #fff;
+}
+
+.HomeboxSm {
+    height: 100px;
+    background-color: #405766;
+    color: #F5F5F5;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.HomeboxSmEr {
+    height: 80px;
+    background-color: #405766;
+    color: #F5F5F5;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
 
 .Title {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
   
 .Image {
-    /* max-height: 40vh; */
     max-width: 100%;
     object-fit: contain;
 }
@@ -128,20 +86,12 @@
     width: 100%;
     }
     
-/* .FillerImagel {
-    object-fit: cover;
-    height: 300px;
-    width: 50px;
-    margin-top: 50px;
-    background-repeat: no-repeat;
-} */
 
 .FillerImager {
     object-fit: cover;
     height: 300px;
     width: 50px;
     margin-top: 30px;
-    /* background-image: url("./images/door66l.png"); */
     background-repeat: no-repeat;
     margin: 0 auto;
 }

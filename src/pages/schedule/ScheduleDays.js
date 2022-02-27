@@ -63,20 +63,23 @@ const SchedulePages = () => {
         <div >
             <TopBox title="Schedule" />
             {/* add day */}
-            <h3 className='text-center'>Create Shoot Day</h3>
-            <Row className='my-4'>
-                <Col className="text-center">
-                <Button onClick={() => history.push('/days/create')} 
-                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
+              onClick={() => history.goBack()}
+              >
+              Back
+              </Button>
+            <Row className='mb-3'>
+              <Col className='text-center'>
+              <Button className= {`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Create Day</Button>
                 </Col>
             </Row>
-            <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
             {/* calender */}
-            <Row>
+            <Row className={`mx-1 py-2 ${styles.SubTitle }`} >
                 <Col>
+                <h3 className='mb-3 text-center'>Shoot Days Calendar</h3>
                    <div>
-                       <h3 className='my-3 text-center'>Shoot Days Calendar</h3>
                        <Row >
                          <Col className='d-flex justify-content-center '  xs={12}  md={6} >
                          <Calendar 
@@ -95,9 +98,9 @@ const SchedulePages = () => {
                    </div>
                 </Col>
             </Row>
-            <p className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-            <h3 className='my-3 text-center'>All Shoot Days</h3>
-            <Row>
+            <div className={`mx-1 mt-5 mb-3 ${styles.SubTitle }`} >
+            <h3 className='text-center' >All Shoot Days</h3>
+            <Row >
                 <Col className="mt-1" xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={styles.SearchBar}
@@ -135,6 +138,7 @@ const SchedulePages = () => {
           </Container>
         )}
             </Row>  
+            </div>
         </div>
     )
 }

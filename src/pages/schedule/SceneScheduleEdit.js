@@ -22,9 +22,9 @@ const SceneScheduleEdit = () => {
   const history = useHistory();
 
   const [postData, setPostData] = useState({
-      day_id: "",
-      day: "",
-      date: "",
+      // day_id: "",
+      // day: "",
+      // date: "",
       day_order_number: "",
       number: "",
       act: "",
@@ -101,7 +101,7 @@ const SceneScheduleEdit = () => {
       new_content: "",
   })
 
-  const { day_id, day_order_number, day, date, number, location_address,
+  const { day_order_number, number, location_address,
     act, title, int_ext, start_time, end_time, content, location,
     filming_location, day_night, time, action, info, pages,
     character1, character1_costume, character2, 
@@ -129,7 +129,7 @@ const SceneScheduleEdit = () => {
           try {
             const { data } = await axiosReq.get(`/schedule/scenes/${id}/`);
 
-            const { day_id, day_order_number, day, date, number, info, pages,
+            const { day_order_number, number, info, pages,
                 act, title, int_ext, start_time, end_time, content, location,
                 filming_location, location_address, day_night, time, action,
                 character1, character1_costume, character2, 
@@ -152,7 +152,7 @@ const SceneScheduleEdit = () => {
                 background_artists_calltimes, background_artists_pickups,
                 new_info, new_content } = data;
      
-            setPostData({ day_id, day_order_number, day, date, number,
+            setPostData({ day_order_number, number,
                 act, title, int_ext, start_time, end_time, content, location,
                 filming_location, day_night, time, action, info, pages,
                 character1, character1_costume, character2, location_address,
@@ -194,9 +194,9 @@ const SceneScheduleEdit = () => {
       event.preventDefault();
       const formData = new FormData();
   
-      formData.append("day_id", day_id);
-      formData.append("day", day);
-      formData.append("date", date);
+      // formData.append("day_id", day_id);
+      // formData.append("day", day);
+      // formData.append("date", date);
       formData.append("day_order_number", day_order_number);
       formData.append("number", number);
       formData.append("act", act);
@@ -285,42 +285,6 @@ const SceneScheduleEdit = () => {
 
     const textFields = (
       <div>
-        {/* day date */}
-        <h5>Day and Date: Change if you have changed the Day or Date on the Day page</h5>
-        <Row>
-          <Col xs={6}>
-          <Form.Group controlId="day" className="mb-2" >
-                <Form.Label className="p-1" >Day</Form.Label>
-                <Form.Control 
-                type="text"
-                name="day"
-                value={day}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.day?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-          <Form.Group controlId="date" className="mb-2" >
-                <Form.Label className="p-1" >Date</Form.Label>
-                <Form.Control 
-                type="text"
-                name="date"
-                value={date}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.date?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-        </Row>
         {/* order pages */}
         <Row>
           <Col xs={6} >
@@ -355,9 +319,9 @@ const SceneScheduleEdit = () => {
               </Alert>
             ))}
             </Col>
-            </Row>
-            {/* start end */}
-            <Row>
+        </Row>
+        {/* start end */}
+        <Row>
             <Col xs={6}>
             <Form.Group controlId="start_time" className="mb-2" >
                 <Form.Label className="p-1" >Start Time</Form.Label>
@@ -391,46 +355,46 @@ const SceneScheduleEdit = () => {
             ))}
           </Col>
         </Row>
-            {/* Filming Location - Location address */}
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="filming_location" className="mb-2" >
-                <Form.Label className="p-1" >Filming Location</Form.Label>
-                <Form.Control 
-                type="text"
-                name="filming_location"
-                value={filming_location}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.filming_location?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="location_address" className="mb-2" >
-                <Form.Label className="p-1" >Location Address</Form.Label>
-                <Form.Control 
-                type="text"
-                name="location_address"
-                as="textarea"
-                rows={2}
-                value={location_address}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.location_address?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
+        {/* Filming Location - Location address */}
+        <Row>
+          <Col xs={6}>
+        <Form.Group controlId="filming_location" className="mb-2" >
+            <Form.Label className="p-1" >Filming Location</Form.Label>
+            <Form.Control 
+            type="text"
+            name="filming_location"
+            value={filming_location}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.filming_location?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6}>
+        <Form.Group controlId="location_address" className="mb-2" >
+            <Form.Label className="p-1" >Location Address</Form.Label>
+            <Form.Control 
+            type="text"
+            name="location_address"
+            as="textarea"
+            rows={2}
+            value={location_address}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.location_address?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
         {/* new-content Next-info */}
         <Row>
-              <Col xs={6}>
+          <Col xs={6}>
             <Form.Group controlId="new_content" className="mb-2" >
                 <Form.Label className="p-1" >New Content</Form.Label>
                 <Form.Control 
@@ -451,7 +415,7 @@ const SceneScheduleEdit = () => {
             </Col>
             <Col xs={6}>
             <Form.Group controlId="new_info" className="mb-2" >
-                <Form.Label className="p-1" >New Info</Form.Label>
+                <Form.Label className="p-1" >Next Info</Form.Label>
                 <Form.Control 
                     className={styles.Input}
                     type="text"
@@ -468,7 +432,7 @@ const SceneScheduleEdit = () => {
               </Alert>
             ))}
             </Col>
-            </Row>
+        </Row>
             {/* end info */}
             {/* characters */}
             <h3 className="my-4" style={{ textTransform: 'uppercase'}}>Characters</h3> 
@@ -1155,8 +1119,7 @@ const SceneScheduleEdit = () => {
     return (
         <div>
             <TopBox title="Edit Schedule Scene"/>
-           <Container className= {`text-center mt-4 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
-          <h5>Day: {day}  Date: {date} {id} </h5>
+           <Container className= {`text-center mt-4 ${appStyles.Content} ${styles.Container}`} >
             <Form onSubmit={handleSubmit}>
             <Row>
                 <Col>

@@ -10,10 +10,12 @@ import { Button } from 'react-bootstrap';
 import { PostDropdown } from '../../components/PostDropdown';
 import ScheduleCharacters from './ScheduleCharacters';
 import SchedSceneInfo from './SchedSceneInfo';
+import SchedOrder from './SchedOrder';
 
 const ScheduleScene = (props) => {
     useRedirect("loggedOut");
     const history = useHistory();
+    const [showOrder, setShowOrder] = useState(false);
     const [show, setShow] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const {sceneAll, id, number, int_ext, start_time, end_time,
@@ -33,11 +35,12 @@ const ScheduleScene = (props) => {
           };
 
     return (
-        <div style={style} className={`px-4 pt-3  ${styles.Bold}`} > 
-            <Row  >
+        <div style={style} className={`px-3 ${styles.Bold}`} > 
+        <div className='d-none d-md-block'>
+            <Row className='pt-2 text-center' >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Bright}`}>
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
                     </Button>
                 </Col>
@@ -64,12 +67,97 @@ const ScheduleScene = (props) => {
                 {/* cast */}
                 <Col xs={1} md={1} className="mx-0 px-0">
                     <Button onClick={() => setShow(show => !show)} 
-                    className={`${btnStyles.Button} ${btnStyles.Bright}`}>
+                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     Cast
                     </Button>
                 </Col>
                 {/* edit */}
                 <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
+                        className={`${btnStyles.Button} ${btnStyles.Order}`}>
+                        Order
+                    </Button>
+                    <PostDropdown
+                        className={`${styles.Drop }`}
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                    />
+                </Col>
+            </Row>
+            {/* Order  */}
+            {!showOrder ?("") : (                       
+            <SchedOrder sceneAll={sceneAll} setShowOrder={setShowOrder}
+            /> 
+            ) }
+            {/* cast  */}
+            {!show ?("") : (                       
+            <ScheduleCharacters {...sceneAll}
+            /> 
+            ) }
+            {/* info */}
+            <Row>
+                <Col>
+                    {!showInfo ?("") : (                       
+                    <SchedSceneInfo {...sceneAll}/> 
+                    ) }
+                    </Col>
+                </Row>
+                {/* next */}
+                {new_info ? (
+                <Row>
+                    <Col className={`mb-0 mt-4 py-2 ${styles.Next1}`}>
+                    <p className="mb-0" >Next: {new_info} </p>
+                    </Col>
+                </Row> 
+                ) : ("") }     
+        </div>
+        {/* mobile */}
+        <div className='d-block d-md-none'>
+            {/* schedule */}
+            <Row className='text-center' >
+                <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Times</p>
+                    <p className='mb-0'>{start_time}</p>
+                    <p className='mb-0'>{end_time}</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Scene</p>
+                    <p className='mb-0'>{number}</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>D/N</p>
+                    <p className='mb-0'>{day_night}</p>
+                </Col>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
+                <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Details</p>
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                    <p className='mb-0'>{action}</p>
+                </Col>
+            </Row>
+            {/* sechedule */}
+            <Row className='mt-2 text-center'>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} >
+                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Info</p>
+                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        Info
+                    </Button>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4}>
+                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Filming</p>
+                <p className='mb-0'>{filming_location}</p>                        
+                </Col>
+                {/* cast */}
+                <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
+                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Cast</p>
+                    <Button onClick={() => setShow(show => !show)} 
+                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                    Cast
+                    </Button>
+                </Col>
+                {/* edit */}
+                <Col className={`text-center mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={3} >
+                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Edit</p>
                     <Button onClick={() => setShow(show => !show)} 
                         className={`${btnStyles.Button} ${btnStyles.Order}`}>
                         Order
@@ -82,38 +170,10 @@ const ScheduleScene = (props) => {
                 </Col>
             </Row>
             {/* cast */}
-                    {!show ?("") : (                       
-                    <ScheduleCharacters {...sceneAll}
-                    // character1={character1} character1_costume={character1_costume}
-                    // character1_calltime={character1_calltime} character1_pickup={character1_pickup}
-                    // character2={character2} character2_costume={character2_costume}
-                    // character2_calltime={character2_calltime} character2_pickup={character2_pickup}
-                    // character3={character3} character3_costume={character3_costume}
-                    // character3_calltime={character3_calltime} character3_pickup={character3_pickup}
-                    // character4={character4} character4_costume={character4_costume}
-                    // character4_calltime={character4_calltime} character4_pickup={character4_pickup}
-                    // character5={character5} character5_costume={character5_costume}
-                    // character5_calltime={character5_calltime} character5_pickup={character5_pickup}
-                    // character6={character6} character6_costume={character6_costume}
-                    // character6_calltime={character6_calltime} character6_pickup={character6_pickup}
-                    // character7={character7} character7_costume={character7_costume}
-                    // character7_calltime={character7_calltime} character7_pickup={character7_pickup}
-                    // character8={character8} character8_costume={character8_costume}
-                    // character8_calltime={character8_calltime} character8_pickup={character8_pickup}
-                    // character9={character9} character9_costume={character9_costume}
-                    // character9_calltime={character9_calltime} character9_pickup={character9_pickup}
-                    // character10={character10} character10_costume={character10_costume}
-                    // character10_calltime={character10_calltime} character10_pickup={character10_pickup}
-                    // character11={character11} character11_costume={character11_costume}
-                    // character11_calltime={character11_calltime} character11_pickup={character11_pickup}
-                    // character12={character12} character12_costume={character12_costume}
-                    // character12_calltime={character12_calltime} character12_pickup={character12_pickup}
-                    // other_characters={other_characters} other_characters_costumes={other_characters_costumes}
-                    // other_characters_calltimes={other_characters_calltimes} other_characters_pickups={other_characters_pickups}
-                    // background_artists={background_artists} background_artists_costumes={background_artists_costumes}
-                    // background_artists_calltimes={background_artists_calltimes} background_artists_pickups={background_artists_pickups}
-                    /> 
-                    ) }
+            {!show ?("") : (                       
+            <ScheduleCharacters {...sceneAll}
+            /> 
+            ) }
             {/* info */}
             <Row>
                 <Col>
@@ -130,6 +190,7 @@ const ScheduleScene = (props) => {
                     </Col>
                 </Row> 
                 ) : ("") }     
+        </div>
         </div>
     )
 }

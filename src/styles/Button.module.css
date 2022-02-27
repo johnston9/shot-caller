@@ -14,6 +14,11 @@
     cursor: pointer;
   }
 
+  .Shed {
+    background-color: #3fc2d5;
+    color: #fff;
+  }
+
   .Grey {
     background-color: #58666b;
     color: #fff;

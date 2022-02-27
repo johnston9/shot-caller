@@ -139,9 +139,9 @@ const Home = () => {
                   <Link to={`/scenes`} >
                     <div className={`px-2 py-2  ${styles.HomeboxXsXs}`}>
                     <h5 className={`text-center ${styles.Title}`}>Scenes Workspace </h5>
-                    <div className={`${styles.Inner} mt-2 pb-3`}>
+                    <div className={`${styles.Inner} mt-2 pb-1`}>
                     <p className="pt-1 mb-0">
-                      Collaborate by department
+                      Collaborate on scenes by department. View storyboards and shotlists 
                     </p>
                     </div>
                     </div>

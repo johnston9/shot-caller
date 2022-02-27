@@ -19,7 +19,7 @@ import ActTwoBList from "./ActTwoBList";
 import ActThreeList from "./ActThreeList";
 import LocationList from "./LocationList";
 
-const SceneScheduleCreate = ({xday, xdate} ) => {
+const SceneScheduleCreate = ({xday, xdate, setShow } ) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -129,19 +129,6 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
           other_characters_calltimes, other_characters_pickups,
           background_artists_calltimes, background_artists_pickups,
           new_info, new_content } = postData;
-
-    // useEffect(() => {
-    //     const fetchScenes = async () => {
-    //       try {
-    //         const { data } = await axiosReq.get(`/scenes/?act=one`);
-    //         setScenes({ results: [data] });
-    //         console.log(scenes.results )
-    //       } catch(err) {
-    //         console.log(err);
-    //       }
-    //     }
-    //     fetchScenes();    
-    //   }, [])
     
     const handleChange = (event) => {
       setPostData({
@@ -375,7 +362,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
             </Col>
             <Col xs={6}>
             <Form.Group controlId="new_info" className="mb-2" >
-                <Form.Label className="p-1" >New Info</Form.Label>
+                <Form.Label className="p-1" >Next Info</Form.Label>
                 <Form.Control 
                     className={styles.Input}
                     type="text"
@@ -1066,7 +1053,7 @@ const SceneScheduleCreate = ({xday, xdate} ) => {
     <div className="text-center mt-4">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
+        onClick={() => setShow(show => !show)}
       >
         cancel
       </Button>

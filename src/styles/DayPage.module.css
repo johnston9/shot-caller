@@ -1,11 +1,16 @@
 .TitleBox {
-  border: 1px solid #fafafa;
   background-color: #e8f0f1;
+  color: #000;
 }
 
 .TitleBox2 {
   border-right : 1px solid #fafafa;
 }
+
+/* .TitleBox {
+  background-color: #000;
+  color: #fff;
+} */
 
 .SubTitle {
   background-color: #e8f0f1;
