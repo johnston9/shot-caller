@@ -22,7 +22,7 @@ const SceneScheduleEdit = () => {
   const history = useHistory();
 
   const [postData, setPostData] = useState({
-      // day_id: "",
+      day_id: "",
       // day: "",
       // date: "",
       day_order_number: "",
@@ -101,7 +101,7 @@ const SceneScheduleEdit = () => {
       new_content: "",
   })
 
-  const { day_order_number, number, location_address,
+  const { day_order_number, number, location_address, day_id,
     act, title, int_ext, start_time, end_time, content, location,
     filming_location, day_night, time, action, info, pages,
     character1, character1_costume, character2, 
@@ -129,7 +129,7 @@ const SceneScheduleEdit = () => {
           try {
             const { data } = await axiosReq.get(`/schedule/scenes/${id}/`);
 
-            const { day_order_number, number, info, pages,
+            const { day_order_number, number, info, pages, day_id,
                 act, title, int_ext, start_time, end_time, content, location,
                 filming_location, location_address, day_night, time, action,
                 character1, character1_costume, character2, 
@@ -152,7 +152,7 @@ const SceneScheduleEdit = () => {
                 background_artists_calltimes, background_artists_pickups,
                 new_info, new_content } = data;
      
-            setPostData({ day_order_number, number,
+            setPostData({ day_order_number, number, day_id,
                 act, title, int_ext, start_time, end_time, content, location,
                 filming_location, day_night, time, action, info, pages,
                 character1, character1_costume, character2, location_address,
@@ -194,7 +194,7 @@ const SceneScheduleEdit = () => {
       event.preventDefault();
       const formData = new FormData();
   
-      // formData.append("day_id", day_id);
+      formData.append("day_id", day_id);
       // formData.append("day", day);
       // formData.append("date", date);
       formData.append("day_order_number", day_order_number);

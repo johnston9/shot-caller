@@ -14,38 +14,40 @@ import { useRedirect } from "../../hooks/Redirect";
 const SchedOrder = (props ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const {setShowOrder, sceneAll} = props;
-  const { day_order_number, start_time, end_time, new_info, id } = sceneAll;
+  const {setShowOrder, setHasOrder, day_id1, day_order_number1, start_time1, end_time1, new_info1, id } = props;
 
   const [postData, setPostData] = useState({
-    day_order_number2: day_order_number,
-    start_time2: start_time,
-    end_time2: end_time,
-    new_info2: new_info,
+    day_order_number: day_order_number1,
+    start_time: start_time1,
+    end_time: end_time1,
+    new_info: new_info1,
+    day_id: day_id1
   })
 
-  const { day_order_number2, start_time2, end_time2, new_info2 } = postData;
+  const { day_order_number, start_time, end_time, new_info, day_id } = postData;
 
   const handleChange = (event) => {
     setPostData({
       ...postData,
       [event.target.name]: event.target.value,
     });
-    console.log(event.target.name)
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("day_order_number", day_order_number2);
-    formData.append("start_time", start_time2);
-    formData.append("end_time", end_time2);      
-    formData.append("new_info", new_info2);
+    formData.append("day_id", day_id);
+    formData.append("day_order_number", day_order_number);
+    formData.append("start_time", start_time);
+    formData.append("end_time", end_time);      
+    formData.append("new_info", new_info);
     try {
-      await axiosReq.put(`/schedule/scenes/${id}/`, formData);
-      setShowOrder(false); 
-      // console.log(formData.day_id);
+      const data = await axiosReq.put(`/schedule/scenes/${id}/`, formData);
+      console.log(formData.day_id);
+      console.log(id);
+      setShowOrder(false);
+      setHasOrder(true);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -57,10 +59,10 @@ const SchedOrder = (props ) => {
   const textFields = (
     <div>
       {/* order start end */}
-      <Row className="text-center" >
-        <Col className="d-flex justify-content-center" xs={4} >
+      <Row className="text-center pt-2" >
+        <Col className="d-flex justify-content-center" xs={12} md={4} >
         <Form.Group controlId="day_order_number" className="mb-2" >
-              <Form.Label className="p-1" >Day Order Number</Form.Label>
+              <Form.Label  >Day Order Number</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -75,9 +77,9 @@ const SchedOrder = (props ) => {
             </Alert>
           ))}
         </Col>
-          <Col className="d-flex justify-content-center" xs={4}>
+        <Col className="d-flex justify-content-center" md={4} xs={6}>
           <Form.Group controlId="start_time" className="mb-2" >
-              <Form.Label className="p-1" >Start Time</Form.Label>
+              <Form.Label  >Start Time</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -91,10 +93,10 @@ const SchedOrder = (props ) => {
               {message}
             </Alert>
           ))}
-          </Col>
-          <Col className="d-flex justify-content-center" xs={4}>
+        </Col>
+        <Col className="d-flex justify-content-center" md={4} xs={6}>
           <Form.Group controlId="end_time" className="mb-2" >
-              <Form.Label className="p-1" >End Time</Form.Label>
+              <Form.Label  >End Time</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -110,11 +112,12 @@ const SchedOrder = (props ) => {
           ))}
         </Col>
       </Row>
+      <hr className="d-none d-md-block"/>
       {/* Next/New-info */}
       <Row className="text-center">
-          <Col md={{ span: 6, offset: 2 }}>
+          <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 2 }}>
             <Form.Group controlId="new_info" className="mb-2" >
-                <Form.Label className="p-1" >Next Info</Form.Label>
+                <Form.Label  >Next Info</Form.Label>
                 <Form.Control 
                     className={styles.InputScene}
                     type="text"
@@ -132,7 +135,7 @@ const SchedOrder = (props ) => {
             ))}
             </Col>
           <Col md={4}>
-          <div className="text-center mt-5">    
+          <div className="text-center pb-2 mt-1 mt-md-5">    
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => setShowOrder(false)}

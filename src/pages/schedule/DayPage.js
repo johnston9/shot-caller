@@ -26,6 +26,7 @@ const DayPage = () => {
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
+    const [hasOrder, setHasOrder] = useState(false);
 
     useEffect(() => {
         const handleMount = async () => {
@@ -36,16 +37,16 @@ const DayPage = () => {
                 ])
                 setDayData({ results: [dayGet] });
                 setDayScenes(scenes)
-                console.log(scenes);
                 setDataDay(dayGet.day)
                 setDataDate(dayGet.date);
                 setHasLoaded(true);
+                setHasOrder(false)
             } catch (err) {
                 console.log(err);
               }
         }
         handleMount();
-    }, [id])
+    }, [id, hasOrder])
 
     return (
         <div>
@@ -74,7 +75,7 @@ const DayPage = () => {
                 <div className='d-none d-md-block'>
                 <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0 pl-2'>Info</p>
+                        <p className='mb-0 pl-2'>Edit</p>
                     </Col>
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Times</p>
@@ -98,7 +99,7 @@ const DayPage = () => {
                         <p className='mb-0'>Cast</p>
                     </Col>
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>Edit</p>
+                        <p className='mb-0'>Info</p>
                     </Col>
                 </Row>
                 </div>
@@ -108,10 +109,11 @@ const DayPage = () => {
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene, index) => (
                             <ScheduleScene 
-                                style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(219 250 236)' : 'rgb(227 248 241)' }}
+                                style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(199 245 224)' : 'rgb(244 232 245)' }}
                                 {...scene} 
                                 dayid={id} 
                                 sceneAll={scene} 
+                                setHasOrder={setHasOrder}
                                 key={scene.id} />
                         ))) : ("")}
                     </Col>

@@ -81,7 +81,6 @@ const useClickOutsideToggle = () => {
             // page and  toggle icon
             if ( ref.current && !ref.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("page");
             }
             }
             document.addEventListener("mouseup", handleClickOutside);

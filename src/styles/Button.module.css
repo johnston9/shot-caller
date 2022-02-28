@@ -19,6 +19,11 @@
     color: #fff;
   }
 
+  .Shed:hover {
+    background-color: #0f6270;
+    color: #fff;
+  }
+
   .Grey {
     background-color: #58666b;
     color: #fff;

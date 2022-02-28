@@ -4,7 +4,8 @@
 }
 
 .Bottom:hover {
-  background-color: aliceblue;
+  background-color: rgb(143, 252, 237);
+  color: #fff;
 }
 
 .SearchBar input {

@@ -19,7 +19,7 @@ import ActTwoBList from "./ActTwoBList";
 import ActThreeList from "./ActThreeList";
 import LocationList from "./LocationList";
 
-const SceneScheduleCreate = ({xday, xdate, setShow } ) => {
+const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -221,7 +221,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow } ) => {
       formData.append("new_content", new_content);
       try {
         await axiosReq.post("/schedule/scenes/", formData);
-        history.push(`/days/`);
+        setHasOrdered(false);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
