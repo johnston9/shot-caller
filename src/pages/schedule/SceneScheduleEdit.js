@@ -4,10 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 
 import styles from "../../styles/ScheduleCreate.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
@@ -285,12 +283,16 @@ const SceneScheduleEdit = () => {
 
     const textFields = (
       <div>
-        {/* order pages */}
+        {/* order start end */}
         <Row>
-          <Col xs={6} >
-          <Form.Group controlId="day_order_number" className="mb-2" >
-                <Form.Label className="p-1" >Day Order Number</Form.Label>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="day_order_number" className={`${styles.Width3} `}  >
+                <Form.Label className="p-1" >
+                  <span className= "d-md-none">Order Number</span>
+                  <span className="d-none d-md-block">Day Order Number</span>
+                  </Form.Label>
                 <Form.Control 
+                className={`${styles.Input}`}
                 type="text"
                 name="day_order_number"
                 value={day_order_number}
@@ -303,29 +305,11 @@ const SceneScheduleEdit = () => {
               </Alert>
             ))}
             </Col>
-            <Col xs={6} >
-          <Form.Group controlId="pages" className="mb-2" >
-                <Form.Label className="p-1" >Pages</Form.Label>
-                <Form.Control 
-                type="text"
-                name="pages"
-                value={pages}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.pages?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-        </Row>
-        {/* start end */}
-        <Row>
-            <Col xs={6}>
-            <Form.Group controlId="start_time" className="mb-2" >
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="start_time" className={`${styles.Width2} `}  >
                 <Form.Label className="p-1" >Start Time</Form.Label>
                 <Form.Control 
+                className={`${styles.Input}`}
                 type="text"
                 name="start_time"
                 value={start_time}
@@ -338,10 +322,11 @@ const SceneScheduleEdit = () => {
               </Alert>
             ))}
             </Col>
-            <Col xs={6}>
-            <Form.Group controlId="end_time" className="mb-2" >
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="end_time" className={`${styles.Width2} `}  >
                 <Form.Label className="p-1" >End Time</Form.Label>
-                <Form.Control 
+                <Form.Control
+                className={`${styles.Input}`} 
                 type="text"
                 name="end_time"
                 value={end_time}
@@ -357,10 +342,11 @@ const SceneScheduleEdit = () => {
         </Row>
         {/* Filming Location - Location address */}
         <Row>
-          <Col xs={6}>
-        <Form.Group controlId="filming_location" className="mb-2" >
+          <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
             <Form.Label className="p-1" >Filming Location</Form.Label>
             <Form.Control 
+            className={`${styles.Input}`}
             type="text"
             name="filming_location"
             value={filming_location}
@@ -373,78 +359,77 @@ const SceneScheduleEdit = () => {
           </Alert>
         ))}
         </Col>
-        <Col xs={6}>
-        <Form.Group controlId="location_address" className="mb-2" >
-            <Form.Label className="p-1" >Location Address</Form.Label>
+        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="new_content" className={`${styles.Width2} `}  >
+            <Form.Label className="p-1" >New Content</Form.Label>
             <Form.Control 
-            type="text"
-            name="location_address"
-            as="textarea"
-            rows={2}
-            value={location_address}
-            onChange={handleChange}
+                className={styles.Input}
+                type="text"
+                name="new_content"
+                value={new_content}
+                onChange={handleChange}
                 />
         </Form.Group>
-        {errors?.location_address?.map((message, idx) => (
+        {errors?.new_content?.map((message, idx) => (
           <Alert variant="warning" key={idx}>
             {message}
           </Alert>
         ))}
         </Col>
         </Row>
-        {/* new-content Next-info */}
+        {/* shooting Next-info */}
         <Row>
-          <Col xs={6}>
-            <Form.Group controlId="new_content" className="mb-2" >
-                <Form.Label className="p-1" >New Content</Form.Label>
+        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
+                <Form.Label className="p-1" >Location Address</Form.Label>
                 <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="new_content"
-                    as="textarea"
-                    rows={2}
-                    value={new_content}
-                    onChange={handleChange}
+                className={`${styles.InputScene}`}
+                type="text"
+                name="location_address"
+                as="textarea"
+                rows={2}
+                value={location_address}
+                onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.new_content?.map((message, idx) => (
+            {errors?.location_address?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
             ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="new_info" className="mb-2" >
-                <Form.Label className="p-1" >Next Info</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="new_info"
-                    as="textarea"
-                    rows={2}
-                    value={new_info}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.new_info?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
+        </Col> 
+        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="new_info" className={`${styles.Width2} `}  >
+            <Form.Label className="p-1" >Next Info</Form.Label>
+            <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                name="new_info"
+                as="textarea"
+                rows={2}
+                value={new_info}
+                onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.new_info?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
         </Row>
-            {/* end info */}
-            {/* characters */}
-            <h3 className="my-4" style={{ textTransform: 'uppercase'}}>Characters</h3> 
-            <Row>
+        {/* end info */}
+        <h3 className="mt-4" >Characters</h3> 
+        <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+            <Row className="mt-2">
               <Col xs={4}>
-              <h5 style={{ textTransform: 'uppercase'}}>Character</h5>
+              <p >Character</p>
               </Col>
               <Col xs={4}>
-              <h5 style={{ textTransform: 'uppercase'}}>Call time</h5>
+              <p >Call time</p>
               </Col>
               <Col xs={4}>
-              <h5 style={{ textTransform: 'uppercase'}}>Pickup</h5>
+              <p >Pickup</p>
               </Col>
               </Row>    
               {/* character1 */}
@@ -453,12 +438,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character1}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character1_calltime" className="mb-0" >
+              <Col className="d-flex justify-content-center" xs={4} >
+              <Form.Group controlId="character1_calltime" className={`${styles.Width2} `}>
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
+                  className={`${styles.Input}`}
                   type="text"
-                  className="text-center"
                   placeholder="Call Time"
                   name="character1_calltime"
                   value={character1_calltime}
@@ -471,11 +456,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character1_pickup" className="mb-2" >
+              <Col className="d-flex justify-content-center" xs={4} >
+              <Form.Group controlId="character1_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character1_pickup"
@@ -499,12 +484,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character2}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character2_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character2_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
+                  className={`${styles.Input}`}
                   type="text"
-                  className="text-center"
                   placeholder="Call Time"
                   name="character2_calltime"
                   value={character2_calltime}
@@ -517,11 +502,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character2_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center" >
+              <Form.Group controlId="character2_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character2_pickup"
@@ -545,12 +530,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character3}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character3_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character3_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character3_calltime"
                   value={character3_calltime}
@@ -563,11 +548,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character3_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character3_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character3_pickup"
@@ -591,12 +576,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character4}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character4_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character4_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character4_calltime"
                   value={character4_calltime}
@@ -609,11 +594,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character4_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character4_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character4_pickup"
@@ -637,12 +622,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character5}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character5_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character5_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character5_calltime"
                   value={character5_calltime}
@@ -655,11 +640,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character5_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character5_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character5_pickup"
@@ -683,12 +668,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character6}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character6_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character6_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character6_calltime"
                   value={character6_calltime}
@@ -701,11 +686,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character6_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character6_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character6_pickup"
@@ -729,12 +714,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character7}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character7_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character7_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character7_calltime"
                   value={character7_calltime}
@@ -747,11 +732,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character7_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character7_pickup" className={`${styles.Width2} `}className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character7_pickup"
@@ -775,12 +760,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character8}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character8_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character8_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character8_calltime"
                   value={character8_calltime}
@@ -793,11 +778,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character8_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character8_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character8_pickup"
@@ -821,12 +806,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character9}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character9_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character9_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character9_calltime"
                   value={character9_calltime}
@@ -839,11 +824,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character9_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character9_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character9_pickup"
@@ -867,12 +852,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character10}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character10_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character10_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character10_calltime"
                   value={character10_calltime}
@@ -885,11 +870,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character10_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character10_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character10_pickup"
@@ -913,12 +898,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character11}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character11_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character11_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character11_calltime"
                   value={character11_calltime}
@@ -931,11 +916,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character11_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character11_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character11_pickup"
@@ -959,12 +944,12 @@ const SceneScheduleEdit = () => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character12}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character12_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character12_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character12_calltime"
                   value={character12_calltime}
@@ -977,11 +962,11 @@ const SceneScheduleEdit = () => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character12_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character12_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character12_pickup"
@@ -1000,6 +985,8 @@ const SceneScheduleEdit = () => {
                 ""
               )}
               {/* other_characters */}
+              <h3 className="mt-4" >Other Characters</h3> 
+              <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
               {other_characters ? (
                 <Row className="mt-3">
                 <Col xs={4}>
@@ -1012,8 +999,8 @@ const SceneScheduleEdit = () => {
                   type="text"
                   as="textarea"
                   rows={2}
-                  className="text-center"
-                  placeholder="Call Time"
+                  className={`${styles.InputScene}`}
+                  placeholder="Call Times"
                   name="other_characters_calltimes"
                   value={other_characters_calltimes}
                   onChange={handleChange}
@@ -1029,11 +1016,11 @@ const SceneScheduleEdit = () => {
               <Form.Group controlId="other_characters_pickups" className="mb-2" >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.InputScene}`}
                   type="text"
                   as="textarea"
                   rows={2}
-                  placeholder="Pickup"
+                  placeholder="Pickups"
                   name="other_characters_pickups"
                   value={other_characters_pickups}
                   onChange={handleChange}
@@ -1049,6 +1036,8 @@ const SceneScheduleEdit = () => {
               ) : (
                 ""
               )}
+              <h3 className="mt-4" >Background Artists</h3> 
+              <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
               {/* background_artists */}
               {background_artists ? (
                 <Row className="mt-3">
@@ -1060,7 +1049,7 @@ const SceneScheduleEdit = () => {
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.InputScene}`}
                   as="textarea"
                   rows={2}
                   placeholder="Call Time"
@@ -1079,7 +1068,7 @@ const SceneScheduleEdit = () => {
               <Form.Group controlId="background_artists_pickups" className="mb-2" >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.InputScene}`}
                   type="text"
                   as="textarea"
                   rows={2}
@@ -1102,16 +1091,17 @@ const SceneScheduleEdit = () => {
             {/* end characters */}
       </div>
   )
+
   const buttons = (
     <div className="text-center mt-4">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+        Create
       </Button>
     </div>
   );
@@ -1119,27 +1109,20 @@ const SceneScheduleEdit = () => {
     return (
         <div>
             <TopBox title="Edit Schedule Scene"/>
-           <Container className= {`text-center mt-4 ${appStyles.Content} ${styles.Container}`} >
-            <Form onSubmit={handleSubmit}>
-            <Row>
+            <Form className= {`px-3 pb-3 mt-5 mb-4 text-center ${styles.FormBox} `} onSubmit={handleSubmit}>
+              <Row>
                 <Col>
-                  <h3>Scene {number} - {title} </h3>
-                  <p style={{ textTransform: 'uppercase'}}>{int_ext}. {location} {day_night} </p>
-                  <p>{action} </p>
-                  <p>{content} </p>
-                  <p>Info {info} </p>
+                  <h3>Scene {number}  </h3>
+                  <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
                 </Col>
               </Row>
               <Row>
               <Col xs={12} className="p-0 p-md-2">
-                  <Container className= {`${appStyles.Content} ${styles.Container}`} >
-                    {textFields}
-                    {buttons}
-                    </Container>
-                </Col>
+                  {textFields}
+                  {buttons}
+              </Col>
               </Row>
             </Form>
-            </Container>
         </div>
     )
 }

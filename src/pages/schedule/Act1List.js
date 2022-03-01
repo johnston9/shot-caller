@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 
-import styles from "../../styles/ScheduleCreate.module.css";
-import appStyles from "../../App.module.css";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import ScheduleSceneItem from "./ScheduleSceneItem";
 
-const Act1List = ({setPostData, setShowOne, list} ) => {
+const Act1List = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThree, setShowLoc, list} ) => {
     useRedirect("loggedOut");
     const [scenes, setScenes] = useState({results: [] });
     // const [hasLoaded, setHasLoaded] = useState(false);
@@ -27,12 +27,27 @@ const Act1List = ({setPostData, setShowOne, list} ) => {
 
     return (
         <div>
-          <Container className= {`mt-4 ${appStyles.Content} ${styles.Container}`} >
+          <div className= {`mt-4`} >
+            <h5 className="pb-2 text-center">Select scene to pre-fill form</h5>
+            <Row >
             {scenes.results.length ? (
                 scenes.results.map((scene) => (
-                    <ScheduleSceneItem setShowOne={setShowOne} list={list} setPostData={setPostData} scene={scene} {...scene} key={scene.id} />
+                  <Col xs={12} md={6}>
+                    <ScheduleSceneItem 
+                      setShowOne={setShowOne} 
+                      setShowTwoA={setShowTwoA}
+                      setShowTwoB={setShowTwoB}
+                      setShowThree={setShowThree}
+                      setShowLoc={setShowLoc} 
+                      list={list} 
+                      setPostData={setPostData} 
+                      scene={scene} 
+                      {...scene} 
+                      key={scene.id} />
+                  </Col>
                 ))) : ("")}
-          </Container>                            
+            </Row>
+          </div>                            
         </div>
     )
 }

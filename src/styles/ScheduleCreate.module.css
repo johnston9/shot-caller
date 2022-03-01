@@ -2,6 +2,10 @@
     min-height: 100px;
   }
 
+.Back {
+  background-color: aliceblue;
+}
+
 .Container2 {
     min-height: 10px;
   }
@@ -17,17 +21,14 @@
   border-radius: 2px;
   color: #7177a1;
   padding: 0px 10px;
-  height: 30px !important;
-  /* width: 50%; */
+  height: 35px !important;
 }
 
 .InputScene {
   background: #ffffff;
-   /* border: 1px solid #f0f1f9; */
    box-sizing: border-box;
    border-radius: 2px;
    color: #7177a1;
-   /* text-align: center; */
    padding: 0px 10px;
 }
 
@@ -49,8 +50,28 @@
 }
 
 .FormBox {
-  border: 1px solid #fff;
-  /* color: red; */
+  background-color: aliceblue;
+  font-weight: 700;
+}
+
+.ScenesBox {
+  background-color: #eaf2fa;
+}
+
+.Bold {
+  font-weight: 700;
+}
+
+.Width {
+  width: 50%;
+}
+
+.Width2 {
+  width: 80%;
+}
+
+.Width3 {
+  width: 80%;
 }
 
 .Next1 {
@@ -88,4 +109,16 @@
 
 .OrderBox {
   background-color: rgb(209, 240, 240);
+}
+
+@media screen and (max-width: 600px) {
+  .Width {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Width3 {
+    width: 50%;
+  }
 }

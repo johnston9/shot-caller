@@ -66,21 +66,26 @@ const ScheduleSceneItem = (props) => {
         pages, action, content, info } = scene;
 
     const handleClick = () => {
-        if (setShowOne) {
-            setShowOne(showOne => !showOne)
-        };
-        if (setShowTwoA) {
-            setShowTwoA(showTwoA => !showTwoA)
-        };
-        if (setShowTwoB) {
-            setShowTwoB(showTwoB => !showTwoB)
-        };
-        if (setShowThree) {
-            setShowThree(showThree => !showThree)
-        };
-        if (setShowLoc) {
-            setShowLoc(showLoc => !showLoc)
-        };
+            setShowOne(false);
+            setShowTwoA(false);
+            setShowTwoB(false);
+            setShowThree(false);
+            setShowLoc(false);
+        // if (setShowOne) {
+        //     setShowOne(showOne => !showOne)
+        // };
+        // if (setShowTwoA) {
+        //     setShowTwoA(showTwoA => !showTwoA)
+        // };
+        // if (setShowTwoB) {
+        //     setShowTwoB(showTwoB => !showTwoB)
+        // };
+        // if (setShowThree) {
+        //     setShowThree(showThree => !showThree)
+        // };
+        // if (setShowLoc) {
+        //     setShowLoc(showLoc => !showLoc)
+        // };
         setPostData({ number, title, act, int_ext, day_night, time, location,
             character1, character1_costume, character2, filming_location, info,
             character2_costume, character3, character3_costume, character4, 
@@ -104,9 +109,11 @@ const ScheduleSceneItem = (props) => {
             background_artists_pickups, 
         });
     }
+
     return (
-        <div onClick={handleClick} className={`${styles.Item}`} >
-            <p>Scene - {number} {location} - {title}</p>
+        <div onClick={handleClick} className={`mx-5 mx-md-1 ${styles.Item}`} >
+            <p className="d-none d-md-block py-2">Scene - {number} {location} - {title}</p>
+            <p className="d-md-none py-2">Scene - {number} {location}</p>
         </div>
     )
 }

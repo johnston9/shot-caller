@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 import styles from "../../styles/ScheduleCreate.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
@@ -29,7 +28,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
   const [showTwoB, setShowTwoB] = useState(false);
   const [showThree, setShowThree] = useState(false);
   const [showLoc, setShowLoc] = useState(false);
-
+  
   const [postData, setPostData] = useState({
       day_order_number: "",
       number: "",
@@ -232,12 +231,16 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
 
     const textFields = (
       <div>
-        {/* order pages */}
+        {/* order start end */}
         <Row>
-          <Col xs={6} >
-          <Form.Group controlId="day_order_number" className="mb-2" >
-                <Form.Label className="p-1" >Day Order Number</Form.Label>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="day_order_number" className={`${styles.Width3} `}  >
+                <Form.Label className="p-1" >
+                  <span className= "d-md-none">Order Number</span>
+                  <span className="d-none d-md-block">Day Order Number</span>
+                  </Form.Label>
                 <Form.Control 
+                className={`${styles.Input}`}
                 type="text"
                 name="day_order_number"
                 value={day_order_number}
@@ -250,29 +253,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={6} >
-          <Form.Group controlId="pages" className="mb-2" >
-                <Form.Label className="p-1" >Pages</Form.Label>
-                <Form.Control 
-                type="text"
-                name="pages"
-                value={pages}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.pages?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* start end */}
-            <Row>
-            <Col xs={6}>
-            <Form.Group controlId="start_time" className="mb-2" >
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="start_time" className={`${styles.Width2} `}  >
                 <Form.Label className="p-1" >Start Time</Form.Label>
                 <Form.Control 
+                className={`${styles.Input}`}
                 type="text"
                 name="start_time"
                 value={start_time}
@@ -285,10 +270,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={6}>
-            <Form.Group controlId="end_time" className="mb-2" >
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="end_time" className={`${styles.Width2} `}  >
                 <Form.Label className="p-1" >End Time</Form.Label>
-                <Form.Control 
+                <Form.Control
+                className={`${styles.Input}`} 
                 type="text"
                 name="end_time"
                 value={end_time}
@@ -302,28 +288,50 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
             ))}
           </Col>
         </Row>
-            {/* Filming Location - Location address */}
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="filming_location" className="mb-2" >
-                <Form.Label className="p-1" >Filming Location</Form.Label>
-                <Form.Control 
+        {/* Filming Location - Location address */}
+        <Row>
+          <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
+            <Form.Label className="p-1" >Filming Location</Form.Label>
+            <Form.Control 
+            className={`${styles.Input}`}
+            type="text"
+            name="filming_location"
+            value={filming_location}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.filming_location?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="new_content" className={`${styles.Width2} `}  >
+            <Form.Label className="p-1" >New Content</Form.Label>
+            <Form.Control 
+                className={styles.Input}
                 type="text"
-                name="filming_location"
-                value={filming_location}
+                name="new_content"
+                value={new_content}
                 onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.filming_location?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="location_address" className="mb-2" >
+                />
+        </Form.Group>
+        {errors?.new_content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        {/* shooting Next-info */}
+        <Row>
+        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
                 <Form.Label className="p-1" >Location Address</Form.Label>
                 <Form.Control 
+                className={`${styles.InputScene}`}
                 type="text"
                 name="location_address"
                 as="textarea"
@@ -337,61 +345,39 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 {message}
               </Alert>
             ))}
-            </Col>
-            </Row>
-        {/* new-content Next-info */}
-        <Row>
-              <Col xs={6}>
-            <Form.Group controlId="new_content" className="mb-2" >
-                <Form.Label className="p-1" >New Content</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="new_content"
-                    as="textarea"
-                    rows={2}
-                    value={new_content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.new_content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="new_info" className="mb-2" >
-                <Form.Label className="p-1" >Next Info</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="new_info"
-                    as="textarea"
-                    rows={2}
-                    value={new_info}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.new_info?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* end info */}
-            {/* characters */}
-            <h3 className="my-4" style={{ textTransform: 'uppercase'}}>Characters</h3> 
-            <Row>
+        </Col> 
+        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="new_info" className={`${styles.Width2} `}  >
+            <Form.Label className="p-1" >Next Info</Form.Label>
+            <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                name="new_info"
+                as="textarea"
+                rows={2}
+                value={new_info}
+                onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.new_info?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        {/* end info */}
+        <h3 className="mt-4" >Characters</h3> 
+        <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+            <Row className="mt-2">
               <Col xs={4}>
-              <h5 style={{ textTransform: 'uppercase'}}>Character</h5>
+              <p >Character</p>
               </Col>
               <Col xs={4}>
-              <h5 style={{ textTransform: 'uppercase'}}>Call time</h5>
+              <p >Call time</p>
               </Col>
               <Col xs={4}>
-              <h5 style={{ textTransform: 'uppercase'}}>Pickup</h5>
+              <p >Pickup</p>
               </Col>
               </Row>    
               {/* character1 */}
@@ -400,12 +386,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character1}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character1_calltime" className="mb-0" >
+              <Col className="d-flex justify-content-center" xs={4} >
+              <Form.Group controlId="character1_calltime" className={`${styles.Width2} `}>
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
+                  className={`${styles.Input}`}
                   type="text"
-                  className="text-center"
                   placeholder="Call Time"
                   name="character1_calltime"
                   value={character1_calltime}
@@ -418,11 +404,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character1_pickup" className="mb-2" >
+              <Col className="d-flex justify-content-center" xs={4} >
+              <Form.Group controlId="character1_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character1_pickup"
@@ -446,12 +432,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character2}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character2_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character2_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
+                  className={`${styles.Input}`}
                   type="text"
-                  className="text-center"
                   placeholder="Call Time"
                   name="character2_calltime"
                   value={character2_calltime}
@@ -464,11 +450,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character2_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center" >
+              <Form.Group controlId="character2_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character2_pickup"
@@ -492,12 +478,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character3}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character3_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character3_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character3_calltime"
                   value={character3_calltime}
@@ -510,11 +496,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character3_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character3_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character3_pickup"
@@ -538,12 +524,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character4}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character4_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character4_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character4_calltime"
                   value={character4_calltime}
@@ -556,11 +542,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character4_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character4_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character4_pickup"
@@ -584,12 +570,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character5}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character5_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character5_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character5_calltime"
                   value={character5_calltime}
@@ -602,11 +588,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character5_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character5_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character5_pickup"
@@ -630,12 +616,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character6}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character6_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character6_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character6_calltime"
                   value={character6_calltime}
@@ -648,11 +634,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character6_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character6_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character6_pickup"
@@ -676,12 +662,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character7}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character7_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character7_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character7_calltime"
                   value={character7_calltime}
@@ -694,11 +680,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character7_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character7_pickup" className={`${styles.Width2} `}className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character7_pickup"
@@ -722,12 +708,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character8}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character8_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character8_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character8_calltime"
                   value={character8_calltime}
@@ -740,11 +726,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character8_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character8_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character8_pickup"
@@ -768,12 +754,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character9}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character9_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character9_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character9_calltime"
                   value={character9_calltime}
@@ -786,11 +772,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character9_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character9_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character9_pickup"
@@ -814,12 +800,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character10}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character10_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character10_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character10_calltime"
                   value={character10_calltime}
@@ -832,11 +818,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character10_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character10_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character10_pickup"
@@ -860,12 +846,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character11}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character11_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character11_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character11_calltime"
                   value={character11_calltime}
@@ -878,11 +864,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character11_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character11_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character11_pickup"
@@ -906,12 +892,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 <Col xs={4}>
                 <h5 className="pt-2" >{character12}</h5> 
                 </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character12_calltime" className="mb-0" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character12_calltime" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.Input}`}
                   placeholder="Call Time"
                   name="character12_calltime"
                   value={character12_calltime}
@@ -924,11 +910,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 </Alert>
               ))}
               </Col>
-              <Col xs={4} >
-              <Form.Group controlId="character12_pickup" className="mb-2" >
+              <Col xs={4} className="d-flex justify-content-center">
+              <Form.Group controlId="character12_pickup" className={`${styles.Width2} `} >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.Input}`}
                   type="text"
                   placeholder="Pickup"
                   name="character12_pickup"
@@ -947,6 +933,8 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                 ""
               )}
               {/* other_characters */}
+              <h3 className="mt-4" >Other Characters</h3> 
+              <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
               {other_characters ? (
                 <Row className="mt-3">
                 <Col xs={4}>
@@ -959,8 +947,8 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                   type="text"
                   as="textarea"
                   rows={2}
-                  className="text-center"
-                  placeholder="Call Time"
+                  className={`${styles.InputScene}`}
+                  placeholder="Call Times"
                   name="other_characters_calltimes"
                   value={other_characters_calltimes}
                   onChange={handleChange}
@@ -976,11 +964,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
               <Form.Group controlId="other_characters_pickups" className="mb-2" >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.InputScene}`}
                   type="text"
                   as="textarea"
                   rows={2}
-                  placeholder="Pickup"
+                  placeholder="Pickups"
                   name="other_characters_pickups"
                   value={other_characters_pickups}
                   onChange={handleChange}
@@ -996,6 +984,8 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
               ) : (
                 ""
               )}
+              <h3 className="mt-4" >Background Artists</h3> 
+              <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
               {/* background_artists */}
               {background_artists ? (
                 <Row className="mt-3">
@@ -1007,7 +997,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
                   type="text"
-                  className="text-center"
+                  className={`${styles.InputScene}`}
                   as="textarea"
                   rows={2}
                   placeholder="Call Time"
@@ -1026,7 +1016,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
               <Form.Group controlId="background_artists_pickups" className="mb-2" >
                   <Form.Label className="p-1 d-none" ></Form.Label>
                   <Form.Control 
-                  className="text-center"
+                  className={`${styles.InputScene}`}
                   type="text"
                   as="textarea"
                   rows={2}
@@ -1062,70 +1052,135 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
       </Button>
     </div>
   );
+
+  const handleClick1 = () => {
+    setShowOne(showOne => !showOne);
+    setShowTwoA(false);
+    setShowTwoB(false);
+    setShowThree(false);
+    setShowLoc(false);
+  }
+
+  const handleClick2 = () => {
+    setShowOne(false);
+    setShowTwoA(showTwoA => !showTwoA);
+    setShowTwoB(false);
+    setShowThree(false);
+    setShowLoc(false);
+  }
+
+  const handleClick3 = () => {
+    setShowOne(false);
+    setShowTwoA(false);
+    setShowTwoB(showTwoB => !showTwoB);
+    setShowThree(false);
+    setShowLoc(false);
+  }
+
+  const handleClick4 = () => {
+    setShowOne(false);
+    setShowTwoA(false);
+    setShowTwoB(false);
+    setShowThree(showThree => !showThree);
+    setShowLoc(false);
+  }
+
+  const handleClickLoc = () => {
+    setShowOne(false);
+    setShowTwoA(false);
+    setShowTwoB(false);
+    setShowThree(false);
+    setShowLoc(showLoc => !showLoc);
+  }
     
     return (
         <div>
-          <Container className= {`mt-4 pt-3 ${styles.FormBox} ${appStyles.Content} ${styles.Container}`} >
+            <div className= {`px-3 mx-3 my-4 pt-3 ${styles.ScenesBox} `}>
+            <h4 className="text-center">Click to find Scenes</h4>
           <Row>
               <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowOne(showOne => !showOne)} 
+                <Button onClick={handleClick1} 
                 className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
                 Act One</Button>               
               </Col>
               <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowTwoA(showTwoA => !showTwoA)} 
+                <Button onClick={handleClick2} 
                 className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
                 Act Two A</Button>
               </Col>
-              <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowTwoB(showTwoB => !showTwoB)} 
+              <Col xs={6} md={3} className="text-center pt-2 pt-md-0">
+                <Button onClick={handleClick3} 
                 className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
                 Act Two B</Button>
               </Col>
-              <Col xs={6} md={3} className="text-center">
-                <Button onClick={() => setShowThree(showThree => !showThree)} 
+              <Col xs={6} md={3} className="text-center pt-2 pt-md-0">
+                <Button onClick={handleClick4} 
                 className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
                 Act Three</Button>
               </Col>
             </Row>
-            <Row className="my-3">
+            <Row className="my-2">
             <Col xs={12} className="text-center">
-                <Button onClick={() => setShowLoc(showLoc => !showLoc)} 
+                <Button onClick={handleClickLoc} 
                 className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                 By Location</Button>
               </Col>
             </Row>
-          <Row className="my-3">
+          <Row className="my-3 mx-sm-5 ">
             <Col>
-            {!showOne ?("") : (<Act1List list="one" setShowOne={setShowOne} setPostData={setPostData} /> ) }
-            {!showTwoA ?("") : (<ActTwoAList list="two-a" setShowTwoA={setShowTwoA} setPostData={setPostData} /> ) }
-            {!showTwoB ?("") : (<ActTwoBList list="two-b" setShowTwoB={setShowTwoB} setPostData={setPostData} /> ) }
-            {!showThree ?("") : (<ActThreeList list="three" setShowThree={setShowThree} setPostData={setPostData} /> ) }
-            {!showLoc ?("") : (<LocationList list="loc" setShowLoc={setShowLoc} setPostData={setPostData} /> ) }
+            {!showOne ?("") : (<Act1List list="one" 
+              setShowOne={setShowOne} 
+              setShowTwoA={setShowTwoA}
+              setShowTwoB={setShowTwoB}
+              setShowThree={setShowThree}
+              setShowLoc={setShowLoc}
+              setPostData={setPostData} /> ) }
+            {!showTwoA ?("") : (<ActTwoAList list="two-a"
+              setShowOne={setShowOne} 
+              setShowTwoA={setShowTwoA}
+              setShowTwoB={setShowTwoB}
+              setShowThree={setShowThree}
+              setShowLoc={setShowLoc}
+              setPostData={setPostData} /> ) }
+            {!showTwoB ?("") : (<ActTwoBList list="two-b"
+              setShowOne={setShowOne} 
+              setShowTwoA={setShowTwoA}
+              setShowTwoB={setShowTwoB}
+              setShowThree={setShowThree}
+              setShowLoc={setShowLoc} 
+              setPostData={setPostData} /> ) }
+            {!showThree ?("") : (<ActThreeList list="three"
+              setShowOne={setShowOne} 
+              setShowTwoA={setShowTwoA}
+              setShowTwoB={setShowTwoB}
+              setShowThree={setShowThree}
+              setShowLoc={setShowLoc}
+              setPostData={setPostData} /> ) }
+            {!showLoc ?("") : (<LocationList list="loc"
+              setShowOne={setShowOne} 
+              setShowTwoA={setShowTwoA}
+              setShowTwoB={setShowTwoB}
+              setShowThree={setShowThree}
+              setShowLoc={setShowLoc}
+              setPostData={setPostData} /> ) }
             </Col>
           </Row>
-          <hr />
-            <Form onSubmit={handleSubmit}>
+          </div>
+            <Form className= {`px-3 pb-3 mt-5 ${styles.FormBox} `} onSubmit={handleSubmit}>
               <Row>
                 <Col>
-                  <h3>Scene {number} - {title} </h3>
-                  <p style={{ textTransform: 'uppercase'}}>{int_ext}. {location} {day_night} </p>
-                  <p>{action} </p>
-                  <p>{content} </p>
-                  <p>Info {info} </p>
+                  <h3>Scene {number}  </h3>
+                  <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
                 </Col>
               </Row>
               <Row>
               <Col xs={12} className="p-0 p-md-2">
-                  <Container className= {`${appStyles.Content} ${styles.Container}`} >
-                    {textFields}
-                    {buttons}
-                  </Container>
-                </Col>
+                  {textFields}
+                  {buttons}
+              </Col>
               </Row>
-              <p className="mb-0">Day: {xday}  Date: {xdate} {id} </p>
             </Form>
-            </Container>
+            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
         </div>
     )
 }

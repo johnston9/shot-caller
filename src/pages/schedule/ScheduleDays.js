@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
@@ -15,7 +15,7 @@ import TopBox from '../../components/TopBox';
 import DayTop from './DayTop';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 const SchedulePages = () => {
     useRedirect("loggedOut");
@@ -27,7 +27,7 @@ const SchedulePages = () => {
     const [query, setQuery] = useState("");
     const filter = "";
     const message = "No Days Added";
-    const history = useHistory;
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -71,7 +71,8 @@ const SchedulePages = () => {
               </Button>
             <Row className='mb-3'>
               <Col className='text-center'>
-              <Button className= {`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              <Button onClick={() => history.push('/days/create')}
+                className= {`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Create Day</Button>
                 </Col>
             </Row>

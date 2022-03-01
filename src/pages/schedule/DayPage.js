@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router';
+import React, { useEffect, useState } from 'react';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -14,6 +13,7 @@ import SceneScheduleCreate from './SceneScheduleCreate';
 import ScheduleScene from './ScheduleScene';
 import TopBox from '../../components/TopBox';
 import Asset from '../../components/Asset';
+import { useParams, useHistory } from 'react-router-dom';
 
 const DayPage = () => {
     useRedirect("loggedOut");
@@ -54,7 +54,7 @@ const DayPage = () => {
                     title={dataDate}  />
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
-                onClick={() => history.push('/days')}
+                onClick={() => history.goBack()}
             >
                 Back
             </Button>
