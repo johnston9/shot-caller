@@ -6,7 +6,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
 import { useHistory } from 'react-router';
 import { useRedirect } from '../../hooks/Redirect';
-import { Button } from 'react-bootstrap';
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { PostDropdown } from '../../components/PostDropdown';
 import ScheduleCharacters from './ScheduleCharacters';
 import SchedSceneInfo from './SchedSceneInfo';
@@ -29,7 +29,7 @@ const ScheduleScene = (props) => {
           const handleDelete = async () => {
             try {
               await axiosReq.delete(`/schedule/scenes/${id}/`);
-              history.goBack();
+              setHasOrder(true);
             } catch (err) {
             }
           };
@@ -40,10 +40,15 @@ const ScheduleScene = (props) => {
             <Row className='pt-2 text-center' >
                 {/* edit */}
                 <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Re-Order</Tooltip>}
+                    >
                     <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-4 `}>
                         {day_order_number}
                     </Button>
+                </OverlayTrigger>
                     <PostDropdown
                         className={`${styles.Drop }`}
                         handleEdit={handleEdit}

@@ -23,20 +23,41 @@ width: 100%;
 
 .Inner {
     background-color: #395061;
+    /* background-color: #112533; */
     color: #fff;
 }
 
+
 .HomeboxXsXs {
     height: 120px;
-    background-color: #405766;
+    background-color: #395061;
+    /* background-color: #405766; */
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
 }
 
+.HomeboxXsXs:hover {
+    background-color: #112533;
+    border-bottom: 1px solid #fff;
+}
+
+.HomeboxXsXs:hover .Inner {
+    background-color: #112533;
+}
+
 .HomeboxXs {
     height: 105px;
-    background-color: #405766;
+    /* background-color: #405766; */
+    background-color: #395061;
     color: #F5F5F5;
+}
+
+.HomeboxXs:hover {
+    background-color: #112533;
+}
+
+.HomeboxXs:hover .Inner {
+    background-color: #112533;
 }
 
 
@@ -44,25 +65,55 @@ width: 100%;
 
 .Homebox {
     height: 140px;
-    background-color: #405766;
+    /* background-color: #112533; */
+    background-color: #395061;
+    /* background-color: #405766; */
     color: #F5F5F5;
     border: 1px solid #fff;
 }
 
+.Homebox:hover {
+    background-color: #112533;
+    /* background-color: #405766; */
+}
+
+.Homebox:hover .Inner {
+    background-color: #112533;
+}
+
 .HomeboxSm {
     height: 100px;
-    background-color: #405766;
+    background-color: #395061;
+    /* background-color: #405766; */
+    /* background-color: #112533; */
     color: #F5F5F5;
     margin-bottom: 20px;
     border-bottom: 1px solid #fff;
 }
 
+.HomeboxSm:hover {
+    background-color: #112533;
+}
+
+.HomeboxSm:hover .Inner {
+    background-color: #112533;
+}
+
 .HomeboxSmEr {
     height: 80px;
-    background-color: #405766;
+    background-color: #395061;
+    /* background-color: #405766; */
     color: #F5F5F5;
-    margin-bottom: 20px;
     border-bottom: 1px solid #fff;
+}
+
+.HomeboxSmEr:hover {
+    background-color: #112533;
+}
+
+
+.HomeboxSmEr:hover .Inner {
+    background-color: #112533;
 }
 
 .Title {

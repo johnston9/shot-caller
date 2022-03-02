@@ -28,6 +28,7 @@ const DayPageTop = (props) => {
         xtra_scenes,
         location1,
         crewcall,
+        dayScenes
     } = props;
     const history = useHistory();
 
@@ -45,10 +46,28 @@ const DayPageTop = (props) => {
             <Row className='d-flex align-items-center'>
             <Col className='mx-0 px-0' xs={1}></Col>
             <Col xs={10} className='mx-0 px-0 text-center'>
+            <h3>Day Info</h3>
+            </Col>
+            <Col xs={1} className='text-center mx-0 px-0'>
+            <PostDropdown
+                    handleEdit={handleEditDayTop}
+                    handleDelete={handleDeleteDayTop}
+                />
+            </Col>
+            </Row>
             {/* <h5 className={` ${styles.Titlelist }`}>Day {day} - {date}</h5> */}
-            <div className="ml-2 mt-2 text-center">
+            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+            {/* <h5 className={`${styles.Bold }`} className='text-center'>Scenes</h5>
+            <Row className='text-center'>
+                <Col xs={{span: 10, offset: 1 }}  md={{span: 6, offset: 3 }}>                   
+                {dayScenes.results.length ? (
+                    dayScenes.results.map((scene, index) => (
+                        <span>{scene.number} - {scene.location} </span>
+                    ))) : ("")}
+                </Col>
+            </Row>  */}
                 {/* Scenes:  */}
-            <p className={`${styles.Bold }`}>
+            {/* <p className={`${styles.Bold }`}>
             <span className={`${styles.Bold }`} >SCENES: </span>
             {scene1 && <span>{scene1}, </span>}
             {scene2 && <span>{scene2}, </span>}
@@ -63,18 +82,8 @@ const DayPageTop = (props) => {
             {scene11 && <span>{scene11}, </span>}
             {scene12 && <span>{scene12}, </span>}
             {xtra_scenes && <span>{xtra_scenes} </span>}
-            </p>  
-            <p className={`${styles.Bold }`}>UNIT CALL - {crewcall} {location1} </p>                 
-            </div> 
-            </Col >
-            <Col xs={1} className='text-center mx-0 px-0'>
-            <PostDropdown
-                    handleEdit={handleEditDayTop}
-                    handleDelete={handleDeleteDayTop}
-                />
-            </Col>
-            </Row>
-            {/* <p className={` mb-0 py-1 ${styles.SubTitle }`}></p> */}    
+            </p>   */}
+            <h5 className={`${styles.Bold }`} className='text-center'>UNIT CALL: {crewcall} {location1}  </h5>               
         </div>
         </div>
     )

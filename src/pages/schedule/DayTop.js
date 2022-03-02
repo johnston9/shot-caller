@@ -26,7 +26,7 @@ const DayTop = (props) => {
         scene11,
         scene12,
         xtra_scenes,
-        location1,
+        daysScenes,
     } = props;
     const history = useHistory();
 
@@ -62,8 +62,7 @@ const DayTop = (props) => {
                   </Card.Header>
                 <Card.Body className={`p-1 ${styles.Bottom }`} >
                     <Link to={`/day/${id}`}>
-                    <div className="ml-2 mt-2">
-                      {/* Scenes:  */}
+                    {/* <div className="ml-2 mt-2">
                     <p className={` ${styles.Titledetail }`}>
                     {scene1 && <span>{scene1}, </span>}
                     {scene2 && <span>{scene2}, </span>}
@@ -79,7 +78,17 @@ const DayTop = (props) => {
                     {scene12 && <span>{scene12}, </span>}
                     {xtra_scenes && <span>{xtra_scenes} </span>}
                     </p>                 
-                    </div>
+                    </div> */}
+                    <Col >  
+                        <div className={` ${styles.SceneLoc }`}>                 
+                        {daysScenes.results.length ? (
+                            daysScenes.results.map((scene) => (
+                                scene.day_id === id ? (
+                                    <span className={` ${styles.Titledetail }`}>{scene.number} - {scene.location}, </span>
+                                )  : ("")
+                            ))) : ("")}
+                        </div>
+                        </Col>
                     </Link>
                 </Card.Body>
             </Card>

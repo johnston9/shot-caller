@@ -71,7 +71,7 @@ const Home = () => {
                   </Link>
                 </Col>    
             </Row>
-            <Row className="text-center">
+            <Row className=" text-center">
             <Col lg={1}></Col>
                 <Col xs={6} lg={5}  >
                   <Link to={`/profiles`} >
@@ -94,7 +94,7 @@ const Home = () => {
                   </Link>
                 </Col>
             </Row>
-            <Row className="text-center">
+            <Row className="mt-3 text-center">
             <Col lg={1} ></Col>
                 <Col xs={6} lg={5} >
                   <Link to={`/characters`} >
@@ -117,7 +117,7 @@ const Home = () => {
                   </Link>
                 </Col>
             </Row>
-            <Row>
+            <Row className="mt-4">
               <Col xs={2}></Col>
               <Col xs={8}>
               <Link to={`/depts/general`} >

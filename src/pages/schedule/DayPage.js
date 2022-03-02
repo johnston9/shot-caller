@@ -50,8 +50,8 @@ const DayPage = () => {
 
     return (
         <div>
-            <TopBox work={`Day ${dataDay}`}
-                    title={dataDate}  />
+            <TopBox work={`Shoot Day ${dataDay}`}
+                    title2={dataDate}  />
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
                 onClick={() => history.goBack()}
@@ -60,7 +60,7 @@ const DayPage = () => {
             </Button>
             {hasLoaded ? (
                 <>
-                <DayPageTop {...dayData.results[0]} 
+                <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} 
                   />
                 {/* add scene */}
                 <Row className='my-4'>
@@ -68,7 +68,7 @@ const DayPage = () => {
                         <Button onClick={() => setShow(show => !show)} 
                         className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                         Add Scene</Button>
-                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} xdate={dataDate} /> ) }
+                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} setShow={setShow} xdate={dataDate} /> ) }
                     </Col>
                 </Row>
                 {/* titles */}

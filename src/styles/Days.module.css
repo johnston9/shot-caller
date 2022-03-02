@@ -3,8 +3,25 @@
   color: #fff;
 }
 
+.Titledetail {
+  font-weight: 700;
+  color: #000;
+}
+
 .Bottom:hover {
-  background-color: rgb(143, 252, 237);
+  background-color: #112533;
+  color: #fff;
+}
+
+.Bottom:hover .Titledetail {
+  color: #fff;
+}
+
+.SceneLoc {
+  min-height: 100px;
+}
+.Bottom span:hover {
+  background-color: #112533;
   color: #fff;
 }
 
@@ -41,11 +58,6 @@
 
   .Bold {
     font-weight: 700;
-  }
-
-  .Titledetail {
-    font-weight: 700;
-    color: #000;
   }
 
   .Italics {

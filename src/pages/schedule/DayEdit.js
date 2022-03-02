@@ -171,7 +171,7 @@ const DayEdit = () => {
       </Col> 
     </Row>
     {/* crewcall */}
-    <h5 className="text-center mt-3"> Add/Edit Crewcall when Scheduled</h5>
+    <h5 className="text-center mt-3"> Add crewcall when scheduling is finalized</h5>
     <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
     <Row className="text-center">
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -210,7 +210,7 @@ const DayEdit = () => {
         </Col>
     </Row>
     {/* scenes */}
-    <h5 className="text-center mt-3">Add/Edit Scene and Location when Scheduled</h5>
+    <h5 className="text-center mt-3">Add scene and location</h5>
     <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
     <p className="text-center mt-1">e.g. "7 - Imperial Hotel" </p>
     <Row className="text-center" >

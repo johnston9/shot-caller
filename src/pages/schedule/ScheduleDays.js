@@ -22,6 +22,7 @@ const SchedulePages = () => {
     const [today, setToday] = useState(new Date());
     const [newdate, setNewdate] = useState("");
     const [days, setDays] = useState({results: [] });
+    const [daysScenes, setDaysScenes] = useState({ results: [] });
     const [error, setError] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
@@ -33,8 +34,13 @@ const SchedulePages = () => {
     useEffect(() => {
           const fetchDays = async () => {
             try {
-              const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
-              setDays(data);
+              const [{ data: daysData }, { data: scenesData }] = await Promise.all([
+                axiosReq.get(`/days/?${filter}&search=${query}`),
+                axiosReq.get(`/schedule/scenes`),
+            ])
+              // const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
+              setDays(daysData);
+              setDaysScenes(scenesData);
               setHasLoaded(true);
             } catch(err) {
               setError(err)
@@ -112,7 +118,7 @@ const SchedulePages = () => {
                         onChange={(event) => setQuery(event.target.value)}
                         type="text"
                         className="mr-sm-2"
-                        placeholder="Search by Scene or Location"
+                        placeholder="Search by Day Number"
                     />
                     </Form>
                 </Col>
@@ -124,7 +130,7 @@ const SchedulePages = () => {
             {days.results.length ? (
                 days.results.map((day) => (
                   <Col xs={10}  md={6} lg={4} className="py-2">
-                  <DayTop key={day.id} {...day} setDays={setDays} />
+                  <DayTop daysScenes={daysScenes} key={day.id} {...day} setDays={setDays} />
                   </Col>
                 ))) 
              : (

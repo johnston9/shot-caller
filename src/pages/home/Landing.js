@@ -84,7 +84,7 @@ const Landing = () => {
                     </Link>
                   </Col>
               </Row>
-              <Row className="text-center">
+              <Row className="mt-3 text-center">
               <Col lg={1} ></Col>
                   <Col xs={6} lg={5} >
                     <Link to={`/characters`} >
@@ -103,7 +103,7 @@ const Landing = () => {
                     </Link>
                   </Col>
               </Row>
-              <Row>
+              <Row className="mt-2" >
                 <Col xs={2}></Col>
                 <Col xs={8}>
                 <Link to={`/depts/general`} >
@@ -124,7 +124,7 @@ const Landing = () => {
                       <div className={`px-0 py-2  ${styles.HomeboxXsXs}`}>
                       <h5 className={`text-center ${styles.Title}`}>Scenes Workspace </h5>
                       <p className="pt-1 mb-0">
-                        Collaborate by department
+                      Collaborate on scenes by department. View storyboards and shotlists 
                       </p>
                       </div>
                     </Link>
@@ -184,7 +184,7 @@ const Landing = () => {
                     </Link>
                   </Col>
               </Row>
-              <Row className="text-center mt-2">
+              <Row className="text-center mt-4">
                 <Col xs={2}></Col>
               <Col xs={8} >
                   <Link to={`/depts/general`} >

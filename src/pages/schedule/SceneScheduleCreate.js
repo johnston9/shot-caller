@@ -18,7 +18,7 @@ import ActTwoBList from "./ActTwoBList";
 import ActThreeList from "./ActThreeList";
 import LocationList from "./LocationList";
 
-const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
+const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -220,7 +220,8 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
       formData.append("new_content", new_content);
       try {
         await axiosReq.post("/schedule/scenes/", formData);
-        setHasOrdered(false);
+        setShow(false);
+        setHasOrder(true);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -369,6 +370,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
         {/* end info */}
         <h3 className="mt-4" >Characters</h3> 
         <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+        <p style={{ textTransform: 'uppercase'}}>Add call times and pickups when scheduling is finalized </p>
             <Row className="mt-2">
               <Col xs={4}>
               <p >Character</p>
@@ -1096,7 +1098,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrdered } ) => {
     return (
         <div>
             <div className= {`px-3 mx-3 my-4 pt-3 ${styles.ScenesBox} `}>
-            <h4 className="text-center">Click to find Scenes</h4>
+            <h4 className="text-center">Select Scene</h4>
           <Row>
               <Col xs={6} md={3} className="text-center">
                 <Button onClick={handleClick1} 
