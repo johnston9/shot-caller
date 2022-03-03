@@ -21,15 +21,14 @@
   background-color: #e8f0f1;
 }
 
-  .Input {
-    background: #ffffff;
-    border: 1px solid #f0f1f9;
-    box-sizing: border-box;
-    border-radius: 2px;
-    color: #7177a1;
-    /* text-align: center; */
-    padding: 10px;
-    height: 35px;
+.Input {
+  background: #ffffff;
+  border: 1px solid #f0f1f9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #7177a1;
+  padding: 10px;
+  height: 35px;
 }
 
 @media screen and (max-width: 600px) {

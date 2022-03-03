@@ -197,6 +197,15 @@ const NavBar = () => {
           <i className="navicon fas fa-play"></i>Schedule
       </NavLink>
 
+      {/* Callsheets */}
+      <NavLink
+          className={`mt-2 pt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/callsheet"
+        >
+          <i className="navicon fas fa-play"></i>Callsheets
+      </NavLink>
+
       {/* old profiles
       <NavLink
         className={`mt-2 pt-2 ${styles.NavLink} `}

@@ -1,0 +1,118 @@
+.Container {
+    min-height: 100px;
+  }
+
+.Back {
+  background-color: aliceblue;
+}
+
+.Bold { 
+  font-weight: 700;
+}
+
+.Top {
+  background-color: #14404f;
+  color: #fff;
+}
+
+.Top:hover {
+  background-color: #3076ac;
+  color: #fff;
+}
+
+.Title {
+  background-color: #fff;
+}
+  
+.Input {
+  background: #ffffff;
+  border: 1px solid #f0f1f9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #7177a1;
+  padding: 0px 10px;
+  height: 35px !important;
+}
+
+.InputScene {
+  background: #ffffff;
+   box-sizing: border-box;
+   border-radius: 2px;
+   color: #7177a1;
+   padding: 0px 10px;
+}
+
+
+.TitleBox {
+  background-color: #e8f0f1;
+  color: #000;
+}
+
+.TitleBox2 {
+  border-right : 2px solid #fff;
+}
+
+.SubTitle {
+  background-color: #e8f0f1;
+}
+
+.FormBox {
+  background-color: aliceblue;
+  font-weight: 700;
+}
+
+.ScenesBox {
+  background-color: #eaf2fa;
+}
+
+.Width {
+  width: 50%;
+}
+
+.Width2 {
+  width: 80%;
+}
+
+.Width3 {
+  width: 80%;
+}
+
+.Next1 {
+  background-color: #14404f;
+  color: #fff;
+}
+
+.Drop i {
+  color: #000;
+}
+
+/* info */
+
+.SceneBox {
+  border: 1px solid #fafafa;
+  background-color: #fff;
+  font-weight: 700;
+}
+
+.BoldTitle {
+  font-weight: 700;
+  background-color: rgb(209, 240, 240);
+}
+
+/* Order */
+
+.OrderBox {
+  background-color: rgb(209, 240, 240);
+}
+
+@media screen and (max-width: 600px) {
+  .Width {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Width3 {
+    width: 50%;
+  }
+}

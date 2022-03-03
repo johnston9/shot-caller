@@ -47,6 +47,9 @@ import LocationPage from './pages/locations/LocationPage';
 import { useCharacterContext, useLocationContext } from './contexts/CharLocatContex';
 import MoodshotEdit from './pages/moodshots/MoodshotEdit';
 import MoodshotPage from './pages/moodshots/MoodshotPage';
+import CallsheetsBaseCreate from './pages/callsheets/CallsheetsBaseCreate';
+import CallsheetsPage from './pages/callsheets/CallsheetsPage';
+import CallsheetsBaseEdit from './pages/callsheets/CallsheetsBaseEdit';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -83,6 +86,18 @@ function App() {
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
+        {/* SCHEDULE*/}
+        <Route exact path="/info/callsheets/create" render={() => <CallsheetsBaseCreate />} />
+        <Route exact path="/info/callsheets/edit" render={() => <CallsheetsBaseEdit />} />
+        {/* <Route exact path="/edit/days/:id/" render={() => <DayEdit />} /> */}
+        <Route
+            exact
+            path="/callsheets"
+            render={() => (
+              <CallsheetsPage
+               message="No results found" />
+            )}
+          />
         {/* LOCATIONS */}
         <Route exact path="/locations/create" render={() => <LocationsCreate />} />
         <Route 

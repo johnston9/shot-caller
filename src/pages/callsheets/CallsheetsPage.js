@@ -7,41 +7,31 @@ import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/Callsheets.module.css";
 import { useHistory } from 'react-router-dom';
 
 import Asset from "../../components/Asset";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
 import { useRedirect } from "../../hooks/Redirect";
-import PostTop from "./PostTop";
-import PostCreateForm from "./PostCreateForm";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
+import CallsheetTop from "./CallsheetTop";
 
-function PostsPage({ feed, archived, allposts, liked, message, sceneId="", number="", dept, category="" , filter="" }) {
+const CallsheetsPage = ({ filter="" }) => {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
-  const [posts, setPosts] = useState({ results: [] });
+  const [callsheets, setCallsheets] = useState({ results: [] });
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
-  const { pathname } = useLocation();
   const history = useHistory();
- 
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchCallsheets = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}&search=${query}`);
-        if (category === 'requirements') {
-          const reqData = data.results.sort((a, b) => a.number - b.number);
-          setPosts(reqData);
-        }
-        setPosts(data);
+        const { data } = await axiosReq.get(`/callsheets/?${filter}&search=${query}`);
+        setCallsheets(data);
         setHasLoaded(true);
       } catch(err) {
         console.log(err);
@@ -53,57 +43,45 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
     }
     setHasLoaded(false);
     const timer = setTimeout(() => {
-      fetchPosts();
+        fetchCallsheets();
     }, 500);
 
     return () => {
       clearTimeout(timer);
     };
   }, [filter, query, pathname])
-  
+
   return (
-    <div>      
-      {dept ? (
-        <TopBox 
-          scene={number}
-          title2={dept}
-          title3={category} />
-        ) :  (""
-        ) }
-      {allposts ? (
-        <TopBox work="All Posts"/>
-      ) : ""}
-      {feed ? (
-        <TopBox work="Feed"/>
-      ) : ""}
-      {archived ? (
-        <TopBox work="Archived Posts"/>
-      ) : ""} 
-      {liked ? (
-        <TopBox work="Liked Posts"/>
-      ) : ""}
+    <div>
+        <TopBox work="Callsheets" />
+        {/* title={`Shoot Day ${day}`} 
+            title3={`${date}`}*/}
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}
         >
             Back
         </Button>
-        {!show ?(
-          <Row>
-          <Col className="text-center">
-            {sceneId ? (
-              <Button onClick={() => setShow(show => !show)} 
+        {/* Add info callsheet */}
+        <h3 className="text-center">Callsheet Base Info</h3>
+        <Row>
+            <Col xs={4} >
+            <Button onClick={() => history.push("info/callsheets/create")}
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-              Add Post</Button>
-            ) : (
-              ""
-            )}
-          </Col>
+              Add Info</Button>
+            </Col>
+            <Col xs={4}>
+            <Button onClick={() => history.push("info/callsheets/create")}
+              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              View Info</Button>
+            </Col>
+            <Col xs={4}>
+            <Button onClick={() => history.push("info/callsheets/edit")}
+              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+              Edit Info</Button>
+            </Col>
         </Row>
-        ) : (
-        <PostCreateForm setShow={setShow} sceneId={sceneId} number={number} dept={dept} category={category} /> 
-        ) }
-        {/* search */}
+        {/* search  */}
         <Row>
         <Col className="mt-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
         <Form
@@ -115,27 +93,28 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2 text-center"
-            placeholder="Search by username or post title"
+            placeholder="Search by day, location or cast"
           />
         </Form>
         </Col>
         </Row>
-        {/* posts */}
-        <Row className="mb-3 mt-2">
-          <Col>
-        {hasLoaded ? (
-          <>
-            {posts.results.length ? (
-              <InfiniteScroll
-              children={posts.results.map((post) => (
-                <PostTop key={post.id} {...post} setPosts={setPosts} />
-              ))}
-              dataLength={posts.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!posts.next}
-              next={() => fetchMoreData(posts, setPosts)}
-            />
-            ) : (
+        {/* callsheets */}
+        <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+            <Row className="h-100 mt-3">
+            {hasLoaded ? (
+                <>
+            {callsheets.results.length ? (
+                callsheets.results.map((callsheet) => {
+                  return (
+                    <Col xs={4} sm={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
+                      <CallsheetTop
+                        key={callsheet.id}
+                        {...callsheet} 
+                        />
+                      </Col>
+                )}
+                ))
+             : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults } message={message} />
               </Container>
@@ -146,11 +125,9 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
             <Asset spinner />
           </Container>
         )}
-      </Col>
-    </Row>
-    <hr/>
+            </Row> 
     </div>
-  );
+  )
 }
 
-export default PostsPage;
+export default CallsheetsPage

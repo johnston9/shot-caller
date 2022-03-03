@@ -50,7 +50,6 @@ const ScenesPage = ({message, filter = "" }) => {
     };
 
     useEffect(() => {
-      console.log(`depart ${filter}`);
         const fetchScenes = async () => {
           try {
             const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
@@ -80,6 +79,7 @@ const ScenesPage = ({message, filter = "" }) => {
               >
               Back
           </Button>
+          {/* Add Scene */}
           <Row className='mt-0'>
             <Col className="text-center">
             <Button onClick={() => history.push('/scenes/create')} 
@@ -87,6 +87,7 @@ const ScenesPage = ({message, filter = "" }) => {
               Add Scene</Button>
             </Col>
           </Row>
+          {/* search  */}
           <Row>
             <Col className="mt-2" xs={12} sm={{ span: 6, offset: 3 }} >
             <Form
@@ -145,7 +146,6 @@ const ScenesPage = ({message, filter = "" }) => {
                           objectFit: "fill", width: 'auto', repeat: 'no-repeat' }}
                         />
                       </Col>
-
                 )}
                 ))
              : (
