@@ -61,7 +61,6 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
         ...postData,
         image1: URL.createObjectURL(event.target.files[0]),
       });
-      console.log(`image1 ${image1}`)
     }
   };
 
@@ -72,7 +71,6 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
         ...postData,
         image2: URL.createObjectURL(event.target.files[0]),
       });
-      console.log(`image2 ${image2}`)
     }
   };
 
@@ -83,7 +81,6 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
         ...postData,
         image3: URL.createObjectURL(event.target.files[0]),
       });
-      console.log(`image3 ${image3}`)
     }
   };
 
@@ -94,7 +91,6 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
         ...postData,
         image4: URL.createObjectURL(event.target.files[0]),
       });
-      console.log(`image4 ${image4}`)
     }
   };
 
@@ -105,7 +101,6 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
         ...postData,
         image5: URL.createObjectURL(event.target.files[0]),
       });
-      console.log(`image5 ${image5}`)
     }
   };
 

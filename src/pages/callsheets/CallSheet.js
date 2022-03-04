@@ -178,6 +178,18 @@ const CallSheet = () => {
             <h5>Google Maps</h5>
             </Col>
         </Row>
+        {/* Important Notes */}
+        <Row>
+            <Col>
+            <h5>Important Notes</h5>
+            </Col>
+        </Row>
+        {/* Schedule - add (1/8 and Dramatic Day) */}
+        <Row>
+            <Col>
+            <h5>Schedule</h5>
+            </Col>
+        </Row>
         {/* Crew Contacts */}
         <Row>
             <Col>
@@ -195,20 +207,86 @@ const CallSheet = () => {
         </Row>
         {/* Talent */}
         <Row>
+        <Col>
+            <h5>Number</h5>
+            </Col>
             <Col>
             <h5>Role</h5>
             </Col>
             <Col>
-            <h5>Name</h5>
+            <h5>Artist</h5>
             </Col>
             <Col>
             <h5>Contact Info</h5>
             </Col>
             <Col>
-            <h5>Call Time</h5>
+            <h5>SWF</h5>
             </Col>
             <Col>
             <h5>Pickup</h5>
+            </Col>
+            <Col>
+            <h5>Call</h5>
+            </Col>
+            <Col>
+            <h5>H/M/W</h5>
+            </Col>
+            <Col>
+            <h5>On Set</h5>
+            </Col>
+            <Col>
+            <h5>Inst. misc.</h5>
+            </Col>
+        </Row>
+        {/* BG */}
+        <Row>
+        <Col>
+            <h5>Number</h5>
+            </Col>
+            <Col>
+            <h5>Role</h5>
+            </Col>
+            <Col>
+            <h5>Artist</h5>
+            </Col>
+            <Col>
+            <h5>Contact Info</h5>
+            </Col>
+            <Col>
+            <h5>SWF</h5>
+            </Col>
+            <Col>
+            <h5>Pickup</h5>
+            </Col>
+            <Col>
+            <h5>Call</h5>
+            </Col>
+            <Col>
+            <h5>H/M/W</h5>
+            </Col>
+            <Col>
+            <h5>On Set</h5>
+            </Col>
+            <Col>
+            <h5>Inst. misc.</h5>
+            </Col>
+        </Row>
+        {/* Transport Notes */}
+        <Row>
+            <Col>
+            <h5>Transport Notes</h5>
+            </Col>
+        </Row>
+        {/* Department Notes */}
+        <Row>
+            <Col>
+            <h5>Department Notes</h5>
+            </Col>
+        </Row>
+        {/* Advanced Callsheet */}
+        <Row>
+            <Col>
+            <h5>Advanced Callsheet</h5>
             </Col>
         </Row>
     </div>

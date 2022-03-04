@@ -87,8 +87,8 @@ function App() {
         <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
         {/* SCHEDULE*/}
-        <Route exact path="/info/callsheets/create" render={() => <CallsheetsBaseCreate />} />
-        <Route exact path="/info/callsheets/edit" render={() => <CallsheetsBaseEdit />} />
+        <Route exact path="/base/callsheets/create" render={() => <CallsheetsBaseCreate />} />
+        <Route exact path="/base/callsheets/edit" render={() => <CallsheetsBaseEdit />} />
         {/* <Route exact path="/edit/days/:id/" render={() => <DayEdit />} /> */}
         <Route
             exact
