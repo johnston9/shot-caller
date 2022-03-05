@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,7 +9,7 @@ import Alert from "react-bootstrap/Alert";
 import Asset from "../../components/Asset";
 import Upload from "../../assets/upload.png";
 import appStyles from "../../App.module.css";
-import styles from "../../styles/ScheduleCreate.module.css";
+import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -79,9 +79,55 @@ const CallsheetsBaseCreate = () => {
     ad_5_name: "",
     ad_5_email: "",
     ad_5_phone: "",
-    character5_costume: "",
-    character6: "",
-    character6_costume: "",
+    pro_assistant_1_name: "",
+    pro_assistant_1_email: "",
+    pro_assistant_1_phone: "",
+    pro_assistant_2_name: "",
+    pro_assistant_2_email: "",
+    pro_assistant_2_phone: "",
+    pro_assistant_3_name: "",
+    pro_assistant_3_email: "",
+    pro_assistant_3_phone: "",
+    pro_assistant_4_name: "",
+    pro_assistant_4_email: "",
+    pro_assistant_4_phone: "",
+    pro_assistant_5_name: "",
+    pro_assistant_5_email: "",
+    pro_assistant_5_phone: "",
+    dop_name: "",
+    dop_email: "",
+    dop_phone: "",
+    camera_operator_name: "",
+    camera_operator_email: "",
+    camera_operator_phone: "",
+    camera_ass_1_name: "",
+    camera_ass_1_email: "",
+    camera_ass_1_phone: "",
+    camera_ass_2_name: "",
+    camera_ass_2_email: "",
+    camera_ass_2_phone: "",
+    dit_name: "",
+    dit_email: "",
+    dit_phone: "",
+    steadicam_name: "",
+    steadicam_email: "",
+    steadicam_phone: "",
+    camera_pa__name: "",
+    camera_pa_email: "",
+    camera_pa_phone: "",
+    oth_camera_pos_1_job: "",
+    oth_camera_pos_1_name: "",
+    oth_camera_pos_1_email: "",
+    oth_camera_pos_1_phone: "",
+    oth_camera_pos_2_job: "",
+    oth_camera_pos_2_name: "",
+    oth_camera_pos_2_email: "",
+    oth_camera_pos_2_phone: "",
+    oth_camera_pos_3_job: "",
+    oth_camera_pos_3_name: "",
+    oth_camera_pos_3_email: "",
+    oth_camera_pos_3_phone: "",
+    // xxxxx 
     character7: "",
     character7_costume: "",
     character8: "",
@@ -147,7 +193,22 @@ const CallsheetsBaseCreate = () => {
           ad_3_name, ad_3_email, ad_3_phone,
           ad_4_name, ad_4_email, ad_4_phone,
           ad_5_name, ad_5_email, ad_5_phone,
-          filming_location, day_night, time, action, info, pages,
+          pro_assistant_1_name, pro_assistant_1_email, pro_assistant_1_phone,
+          pro_assistant_2_name, pro_assistant_2_email, pro_assistant_2_phone,
+          pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
+          pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
+          pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
+          dop_name, dop_email, dop_phone,
+          camera_operator_name, camera_operator_email, camera_operator_phone,
+          camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
+          camera_ass_2_name, camera_ass_2_email, camera_ass_2_phone,
+          dit_name, dit_email, dit_phone,
+          steadicam_name, steadicam_email, steadicam_phone,
+          camera_pa_name, camera_pa_email, camera_pa_phone,
+          oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
+          oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
+          oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+          // filming_location, day_night, time, action, info, pages,
           character1, character1_costume, character2, 
           character2_costume, character3, character3_costume, character4, 
           character4_costume, character5, character5_costume, character6, 
@@ -167,27 +228,7 @@ const CallsheetsBaseCreate = () => {
           other_characters_calltimes, other_characters_pickups,
           background_artists_calltimes, background_artists_pickups,
           new_info, new_content } = postData;
-      
-  const imageInput1 = useRef(null);
     
-  const handleChange = (event) => {
-    setPostData({
-      ...postData,
-      [event.target.name]: event.target.value,
-    });
-    console.log(event.target.name)
-  };
-
-  const handleChangeLogo = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(company_logo);
-      setPostData({
-        ...postData,
-        company_logo: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -217,6 +258,22 @@ const CallsheetsBaseCreate = () => {
     formData.append("oth_production_pos_1_name", oth_production_pos_1_name);
     formData.append("oth_production_pos_1_email", oth_production_pos_1_email);
     formData.append("oth_production_pos_1_phone", oth_production_pos_1_phone);
+    formData.append("oth_production_pos_2_job", oth_production_pos_2_job);
+    formData.append("oth_production_pos_2_name", oth_production_pos_2_name);
+    formData.append("oth_production_pos_2_email", oth_production_pos_2_email);
+    formData.append("oth_production_pos_2_phone", oth_production_pos_2_phone);
+    formData.append("oth_production_pos_3_job", oth_production_pos_3_job);
+    formData.append("oth_production_pos_3_name", oth_production_pos_3_name);
+    formData.append("oth_production_pos_3_email", oth_production_pos_3_email);
+    formData.append("oth_production_pos_3_phone", oth_production_pos_3_phone);
+    formData.append("oth_production_pos_4_job", oth_production_pos_4_job);
+    formData.append("oth_production_pos_4_name", oth_production_pos_4_name);
+    formData.append("oth_production_pos_4_email", oth_production_pos_4_email);
+    formData.append("oth_production_pos_4_phone", oth_production_pos_4_phone);
+    formData.append("oth_production_pos_5_job", oth_production_pos_5_job);
+    formData.append("oth_production_pos_5_name", oth_production_pos_5_name);
+    formData.append("oth_production_pos_5_email", oth_production_pos_5_email);
+    formData.append("oth_production_pos_5_phone", oth_production_pos_5_phone);
     formData.append("character2_calltime", character2_calltime);
     formData.append("ad_1_name", ad_1_name);
     formData.append("ad_1_email", ad_1_email);
@@ -233,9 +290,55 @@ const CallsheetsBaseCreate = () => {
     formData.append("ad_5_name", ad_5_name);
     formData.append("ad_5_email", ad_5_email);
     formData.append("ad_5_phone", ad_5_phone);
-    formData.append("character3_calltime", character3_calltime);
-    formData.append("character3_pickup", character3_pickup);
-    formData.append("character4", character4);
+    formData.append("pro_assistant_1_name", pro_assistant_1_name);
+    formData.append("pro_assistant_1_email", pro_assistant_1_email);
+    formData.append("pro_assistant_1_phone", pro_assistant_1_phone);
+    formData.append("pro_assistant_2_name", pro_assistant_2_name);
+    formData.append("pro_assistant_2_email", pro_assistant_2_email);
+    formData.append("pro_assistant_2_phone", pro_assistant_2_phone);
+    formData.append("pro_assistant_3_name", pro_assistant_3_name);
+    formData.append("pro_assistant_3_email", pro_assistant_3_email);
+    formData.append("pro_assistant_3_phone", pro_assistant_3_phone);
+    formData.append("pro_assistant_4_name", pro_assistant_4_name);
+    formData.append("pro_assistant_4_email", pro_assistant_4_email);
+    formData.append("pro_assistant_4_phone", pro_assistant_4_phone);
+    formData.append("pro_assistant_5_name", pro_assistant_5_name);
+    formData.append("pro_assistant_5_email", pro_assistant_5_email);
+    formData.append("pro_assistant_5_phone", pro_assistant_5_phone);
+    formData.append("dop_name", dop_name);
+    formData.append("dop_email", dop_email);
+    formData.append("dop_phone", dop_phone);
+    formData.append("camera_operator_name", camera_operator_name);
+    formData.append("camera_operator_email", camera_operator_email);
+    formData.append("camera_operator_phone", camera_operator_phone);
+    formData.append("camera_ass_1_name", camera_ass_1_name);
+    formData.append("camera_ass_1_email", camera_ass_1_email);
+    formData.append("camera_ass_1_phone", camera_ass_1_phone);
+    formData.append("camera_ass_2_name", camera_ass_2_name);
+    formData.append("camera_ass_2_email", camera_ass_2_email);
+    formData.append("camera_ass_2_phone", camera_ass_2_phone);
+    formData.append("dit_name", dit_name);
+    formData.append("dit_email", dit_email);
+    formData.append("dit_phone", dit_phone);
+    formData.append("steadicam_name", steadicam_name);
+    formData.append("steadicam_email", steadicam_email);
+    formData.append("steadicam_phone", steadicam_phone);
+    formData.append("camera_pa_name", camera_pa_name);
+    formData.append("camera_pa_email", camera_pa_email);
+    formData.append("camera_pa_phone", camera_pa_phone);
+    formData.append("oth_camera_pos_1_job", oth_camera_pos_1_job);
+    formData.append("oth_camera_pos_1_name", oth_camera_pos_1_name);
+    formData.append("oth_camera_pos_1_email", oth_camera_pos_1_email);
+    formData.append("oth_camera_pos_1_phone", oth_camera_pos_1_phone);
+    formData.append("oth_camera_pos_2_job", oth_camera_pos_2_job);
+    formData.append("oth_camera_pos_2_name", oth_camera_pos_2_name);
+    formData.append("oth_camera_pos_2_email", oth_camera_pos_2_email);
+    formData.append("oth_camera_pos_2_phone", oth_camera_pos_2_phone);
+    formData.append("oth_camera_pos_3_job", oth_camera_pos_3_job);
+    formData.append("oth_camera_pos_3_name", oth_camera_pos_3_name);
+    formData.append("oth_camera_pos_3_email", oth_camera_pos_3_email);
+    formData.append("oth_camera_pos_3_phone", oth_camera_pos_3_phone);
+    // formData.append("character4", character4);
     formData.append("character4_costume", character4_costume);
     formData.append("character4_calltime", character4_calltime);
     formData.append("character4_pickup", character4_pickup);
@@ -295,6 +398,26 @@ const CallsheetsBaseCreate = () => {
     }
   }
 
+  const imageInput1 = useRef(null);
+    
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+    console.log(event.target.name)
+  };
+
+  const handleChangeLogo = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(company_logo);
+      setPostData({
+        ...postData,
+        company_logo: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+
   const buttons = (
   <div className="text-center mt-4">    
     <Button
@@ -312,8 +435,8 @@ const CallsheetsBaseCreate = () => {
   const textFields = (
     <div className="text-center">
       {/* PRODUCTION COMPANY INFO */}
-      <h3 className="mt-4" >Production Company Info</h3> 
-      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >Production Company Info</h3> 
       {/* Production Name - Production Company */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -351,6 +474,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* phone - email */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -388,6 +512,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* company address - company logo */}
       <Row>
       <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -456,14 +581,14 @@ const CallsheetsBaseCreate = () => {
           </div>
       </Col>
       </Row>
-
-      {/* DEPARTMENTS CONTACTS */}
-      <h3 className="mt-4" >Departments Contacts</h3> 
-      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+      <hr/>
+      {/* CREW INFO BY DEPARTMENTS */}
+      <h3 className="my-4" >CREW INFO BY DEPARTMENT</h3> 
+      </div>
 
       {/* PRODUCTION */}
-      <h3 className="mt-1" >Production</h3> 
-      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PRODUCTION</h3> 
       {/* Producer */}
       <h5 className="mt-1" >Producer</h5> 
       <Row>
@@ -519,6 +644,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Production Coordinator */}
       <h5 className="mt-1" >Production Coordinator</h5> 
       <Row>
@@ -574,6 +700,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Travel Coordinator */}
       <h5 className="mt-1" >Travel Coordinator</h5> 
       <Row>
@@ -629,6 +756,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* P.A. */}
       <h5 className="mt-1" >Production P.A.</h5> 
       <Row>
@@ -684,6 +812,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Locations Manager */}
       <h5 className="mt-1" >Locations Manager</h5> 
       <Row>
@@ -739,11 +868,11 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Other Production Position 1 */}
       <h5 className="mt-1" >Add Other Production Position 1</h5> 
       <Row>
-          <Col sx={4} ></Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_1_job" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
               <Form.Control 
@@ -814,11 +943,11 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Other Production Position 2 */}
       <h5 className="mt-1" >Add Other Production Position 2</h5> 
       <Row>
-          <Col sx={4} ></Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_2_job" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
               <Form.Control 
@@ -889,11 +1018,11 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Other Production Position 3 */}
       <h5 className="mt-1" >Add Other Production Position 3</h5> 
       <Row>
-          <Col sx={4} ></Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_3_job" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
               <Form.Control 
@@ -964,11 +1093,11 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Other Production Position 4 */}
       <h5 className="mt-1" >Add Other Production Position 4</h5> 
       <Row>
-          <Col sx={4} ></Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_4_job" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
               <Form.Control 
@@ -1039,11 +1168,11 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* Other Production Position 5 */}
       <h5 className="mt-1" >Add Other Production Position 5</h5> 
       <Row>
-          <Col sx={4} ></Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_5_job" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
               <Form.Control 
@@ -1114,10 +1243,12 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
+      </div>
 
       {/* ASSISTANT DIRECTORS */}
-      <h3 className="mt-1" >Production</h3> 
-      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`}>ASSISTANT DIRECTORS</h3> 
       {/* 1st Assistant Director */}
       <h5 className="mt-1" >1st Assistant Director</h5> 
       <Row>
@@ -1173,6 +1304,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* 2nd Assistant Director */}
       <h5 className="mt-1" >2nd Assistant Director</h5> 
       <Row>
@@ -1228,6 +1360,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* 3rd Assistant Director */}
       <h5 className="mt-1" >3rd Assistant Director</h5> 
       <Row>
@@ -1283,6 +1416,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* 4th Assistant Director */}
       <h5 className="mt-1" >4th Assistant Director</h5> 
       <Row>
@@ -1338,6 +1472,7 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
       {/* 5th Assistant Director */}
       <h5 className="mt-1" >5th Assistant Director</h5> 
       <Row>
@@ -1393,8 +1528,914 @@ const CallsheetsBaseCreate = () => {
           ))}
           </Col>
       </Row>
+      <hr/>
+      {/* Production Assistant 1 */}
+      <h5 className="mt-1" >Production Assistant 1 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_1_name"
+              value={pro_assistant_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_1_email"
+              value={pro_assistant_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_1_phone"
+              value={pro_assistant_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Production Assistant 2 */}
+      <h5 className="mt-1" >Production Assistant 2 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_2_name"
+              value={pro_assistant_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_2_email"
+              value={pro_assistant_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_2_phone"
+              value={pro_assistant_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Production Assistant 3 */}
+      <h5 className="mt-1" >Production Assistant 3 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_3_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_3_name"
+              value={pro_assistant_3_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_3_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_3_email"
+              value={pro_assistant_3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_3_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_3_phone"
+              value={pro_assistant_3_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Production Assistant 4 */}
+      <h5 className="mt-1" >Production Assistant 4 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_4_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_4_name"
+              value={pro_assistant_4_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_4_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_4_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_4_email"
+              value={pro_assistant_4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_4_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_4_phone"
+              value={pro_assistant_4_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_4_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Production Assistant 5 */}
+      <h5 className="mt-1" >Production Assistant 5 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_5_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_5_name"
+              value={pro_assistant_5_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_5_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_5_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_5_email"
+              value={pro_assistant_5_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_5_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="pro_assistant_5_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="pro_assistant_5_phone"
+              value={pro_assistant_5_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.pro_assistant_5_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
 
+      {/* CAMERA */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CAMERA</h3> 
+      {/* Director of Photography */}
+      <h5 className="mt-1" >Director of Photography</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="dop_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dop_name"
+              value={dop_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dop_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="dop_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dop_email"
+              value={dop_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dop_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="dop_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dop_phone"
+              value={dop_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dop_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Camera Operator */}
+      <h5 className="mt-1" >Camera Operator</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_operator_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_operator_name"
+              value={camera_operator_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_operator_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_operator_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_operator_email"
+              value={camera_operator_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_operator_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_operator_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_operator_phone"
+              value={camera_operator_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_operator_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* 1st Assistant Camera */}
+      <h5 className="mt-1" >1st Assistant Camera</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_ass_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_1_name"
+              value={camera_ass_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_ass_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_1_email"
+              value={camera_ass_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_ass_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_1_phone"
+              value={camera_ass_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* 2nd Assistant Camera */}
+      <h5 className="mt-1" >2nd Assistant Camera</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_ass_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_2_name"
+              value={camera_ass_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_ass_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_2_email"
+              value={camera_ass_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_ass_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_2_phone"
+              value={camera_ass_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* DIT */}
+      <h5 className="mt-1" >DIT</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="dit_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dit_name"
+              value={dit_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dit_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="dit_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dit_email"
+              value={dit_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dit_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="dit_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dit_phone"
+              value={dit_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dit_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Steadicam */}
+      <h5 className="mt-1" >Steadicam Operator</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="steadicam_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="steadicam_name"
+              value={steadicam_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.steadicam_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="steadicam_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="steadicam_email"
+              value={steadicam_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.steadicam_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="steadicam_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="steadicam_phone"
+              value={steadicam_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.steadicam_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Camera PA */}
+      <h5 className="mt-1" >Camera PA </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_pa_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_pa_name"
+              value={camera_pa_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_pa_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_pa_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_pa_email"
+              value={camera_pa_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_pa_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera_pa_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_pa_phone"
+              value={camera_pa_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_pa_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Other Camera Position 1 */}
+      <h5 className="mt-1" >Add Other Camera Position 1</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_1_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_1_job"
+              value={oth_camera_pos_1_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_1_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_1_name"
+              value={oth_camera_pos_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_1_email"
+              value={oth_camera_pos_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_1_phone"
+              value={oth_camera_pos_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Other Camera Position 2 */}
+      <h5 className="mt-1" >Add Other Camera Position 2</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_2_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_2_job"
+              value={oth_camera_pos_2_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_2_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_2_name"
+              value={oth_camera_pos_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_2_email"
+              value={oth_camera_pos_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_2_phone"
+              value={oth_camera_pos_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Other Camera Position 3 */}
+      <h5 className="mt-1" >Add Other Camera Position 3</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_3_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_3_job"
+              value={oth_camera_pos_3_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_3_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_3_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_3_name"
+              value={oth_camera_pos_3_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_3_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_3_email"
+              value={oth_camera_pos_3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_3_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_3_phone"
+              value={oth_camera_pos_3_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
 
+      </div>
+
+          {/* characters */}
+          <div>
           <Row className="mt-2">
             <Col xs={4}>
             <p >Character</p>
@@ -1707,7 +2748,7 @@ const CallsheetsBaseCreate = () => {
             ))}
             </Col>
             <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character7_pickup" className={`${styles.Width2} `}className={`${styles.Width2} `} >
+            <Form.Group controlId="character7_pickup" className={`${styles.Width2} `} >
                 <Form.Label className="p-1 d-none" ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
@@ -2061,13 +3102,18 @@ const CallsheetsBaseCreate = () => {
             </Row>
             ) : (
               ""
-            )}             
+            )}        
+            </div>     
           {/* end characters */}
     </div>
   )
 
   return (
-    <div>CallsheetsBaseCreate</div>
+    <div>
+    <TopBox work="Callsheet Base"
+            title="Create"/>
+    {textFields}
+    </div>
   )
 }
 
