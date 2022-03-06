@@ -127,6 +127,33 @@ const CallsheetsBaseCreate = () => {
     oth_camera_pos_3_name: "",
     oth_camera_pos_3_email: "",
     oth_camera_pos_3_phone: "",
+    key_hairmakeup_name: "",
+    key_hairmakeup_email: "",
+    key_hairmakeup_phone: "",
+    key_hairstylist_name: "",
+    key_hairstylist_email: "",
+    key_hairstylist_phone: "",
+    sfx_makeup_name: "",
+    sfx_makeup_email: "",
+    sfx_makeup_phone: "",
+    sfx_makeup_assistant_name: "",
+    sfx_makeup_assistant_email: "",
+    sfx_makeup_assistant_phone: "",
+    makeup_artist_1_name: "",
+    makeup_artist_1_email: "",
+    makeup_artist_1_phone: "",
+    makeup_artist_2_name: "",
+    makeup_artist_2_email: "",
+    makeup_artist_2_phone: "",
+    makeup_artist_3_name: "",
+    makeup_artist_3_email: "",
+    makeup_artist_3_phone: "",
+    makeup_artist_4_name: "",
+    makeup_artist_4_email: "",
+    makeup_artist_4_phone: "",
+    makeup_artist_5_name: "",
+    makeup_artist_5_email: "",
+    makeup_artist_5_phone: "",
     // xxxxx 
     character7: "",
     character7_costume: "",
@@ -208,6 +235,15 @@ const CallsheetsBaseCreate = () => {
           oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
           oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
           oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+          key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
+          key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
+          sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
+          sfx_makeup_assistant_name, sfx_makeup_assistant_email, sfx_makeup_assistant_phone,
+          makeup_artist_1_name, makeup_artist_1_email, makeup_artist_1_phone,
+          makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
+          makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
+          makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
+          makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
           // filming_location, day_night, time, action, info, pages,
           character1, character1_costume, character2, 
           character2_costume, character3, character3_costume, character4, 
@@ -274,7 +310,6 @@ const CallsheetsBaseCreate = () => {
     formData.append("oth_production_pos_5_name", oth_production_pos_5_name);
     formData.append("oth_production_pos_5_email", oth_production_pos_5_email);
     formData.append("oth_production_pos_5_phone", oth_production_pos_5_phone);
-    formData.append("character2_calltime", character2_calltime);
     formData.append("ad_1_name", ad_1_name);
     formData.append("ad_1_email", ad_1_email);
     formData.append("ad_1_phone", ad_1_phone);
@@ -338,6 +373,33 @@ const CallsheetsBaseCreate = () => {
     formData.append("oth_camera_pos_3_name", oth_camera_pos_3_name);
     formData.append("oth_camera_pos_3_email", oth_camera_pos_3_email);
     formData.append("oth_camera_pos_3_phone", oth_camera_pos_3_phone);
+    formData.append("key_hairmakeup_name", key_hairmakeup_name);
+    formData.append("key_hairmakeup_email", key_hairmakeup_email);
+    formData.append("key_hairmakeup_phone", key_hairmakeup_phone);
+    formData.append("key_hairstylist_name", key_hairstylist_name);
+    formData.append("key_hairstylist_email", key_hairstylist_email);
+    formData.append("key_hairstylist_phone", key_hairstylist_phone);
+    formData.append("sfx_makeup_name", sfx_makeup_name);
+    formData.append("sfx_makeup_email", sfx_makeup_email);
+    formData.append("sfx_makeup_phone", sfx_makeup_phone);
+    formData.append("sfx_makeup_assistant_name", sfx_makeup_assistant_name);
+    formData.append("sfx_makeup_assistant_email", sfx_makeup_assistant_email);
+    formData.append("sfx_makeup_assistant_phone", sfx_makeup_assistant_phone);
+    formData.append("makeup_artist_1_name", makeup_artist_1_name);
+    formData.append("makeup_artist_1_email", makeup_artist_1_email);
+    formData.append("makeup_artist_1_phone", makeup_artist_1_phone);
+    formData.append("makeup_artist_2_name", makeup_artist_2_name);
+    formData.append("makeup_artist_2_email", makeup_artist_2_email);
+    formData.append("makeup_artist_2_phone", makeup_artist_2_phone);
+    formData.append("makeup_artist_3_name", makeup_artist_3_name);
+    formData.append("makeup_artist_3_email", makeup_artist_3_email);
+    formData.append("makeup_artist_3_phone", makeup_artist_3_phone);
+    formData.append("makeup_artist_4_name", makeup_artist_4_name);
+    formData.append("makeup_artist_4_email", makeup_artist_4_email);
+    formData.append("makeup_artist_4_phone", makeup_artist_4_phone);
+    formData.append("makeup_artist_5_name", makeup_artist_5_name);
+    formData.append("makeup_artist_5_email", makeup_artist_5_email);
+    formData.append("makeup_artist_5_phone", makeup_artist_5_phone);
     // formData.append("character4", character4);
     formData.append("character4_costume", character4_costume);
     formData.append("character4_calltime", character4_calltime);
@@ -2431,6 +2493,516 @@ const CallsheetsBaseCreate = () => {
           </Col>
       </Row>
       <hr/>
+      </div>
+
+      {/* MAKEUP */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >MAKEUP</h3> 
+      {/* Key Hair and Makeup */}
+      <h5 className="mt-1" >Key Hair and Makeup</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="key_hairmakeup_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="key_hairmakeup_name"
+              value={key_hairmakeup_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.key_hairmakeup_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="key_hairmakeup_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="key_hairmakeup_email"
+              value={key_hairmakeup_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.key_hairmakeup_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="key_hairmakeup_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="key_hairmakeup_phone"
+              value={key_hairmakeup_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.key_hairmakeup_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Key Hair Stylist Wigs */}
+      <h5 className="mt-1" >Key Hair Stylist and Wigs</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="key_hairstylist_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="key_hairstylist_name"
+              value={key_hairstylist_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.key_hairstylist_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="key_hairstylist_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="key_hairstylist_email"
+              value={key_hairstylist_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.key_hairstylist_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="key_hairstylist_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="key_hairstylist_phone"
+              value={key_hairstylist_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.key_hairstylist_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* SFX Makeup */}
+      <h5 className="mt-1" >SFX Makeup </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sfx_makeup_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sfx_makeup_name"
+              value={sfx_makeup_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sfx_makeup_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sfx_makeup_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sfx_makeup_email"
+              value={sfx_makeup_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sfx_makeup_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sfx_makeup_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sfx_makeup_phone"
+              value={sfx_makeup_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sfx_makeup_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* SFX Makeup Assistant */}
+      <h5 className="mt-1" >SFX Makeup Assistant</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sfx_makeup_assistant_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sfx_makeup_assistant_name"
+              value={sfx_makeup_assistant_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sfx_makeup_assistant_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sfx_makeup_assistant_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sfx_makeup_assistant_email"
+              value={sfx_makeup_assistant_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sfx_makeup_assistant_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sfx_makeup_assistant_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sfx_makeup_assistant_phone"
+              value={sfx_makeup_assistant_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sfx_makeup_assistant_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Makeup Artist 1 */}
+      <h5 className="mt-1" >Makeup Artist 1</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_1_name"
+              value={makeup_artist_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_1_email"
+              value={makeup_artist_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_1_phone"
+              value={makeup_artist_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Makeup Artist 2 */}
+      <h5 className="mt-1" >Makeup Artist 2</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_2_name"
+              value={makeup_artist_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_2_email"
+              value={makeup_artist_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_2_phone"
+              value={makeup_artist_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Makeup Artist 3 */}
+      <h5 className="mt-1" >Makeup Artist 3</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_3_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_3_name"
+              value={makeup_artist_3_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_3_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_3_email"
+              value={makeup_artist_3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_3_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_3_phone"
+              value={makeup_artist_3_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Makeup Artist 4 */}
+      <h5 className="mt-1" >Makeup Artist 4</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_4_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_4_name"
+              value={makeup_artist_4_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_4_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_4_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_4_email"
+              value={makeup_artist_4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_4_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_4_phone"
+              value={makeup_artist_4_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_4_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Makeup Artist 5 */}
+      <h5 className="mt-1" >Makeup Artist 5</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_5_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_5_name"
+              value={makeup_artist_5_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_5_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_5_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_5_email"
+              value={makeup_artist_5_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_5_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="makeup_artist_5_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="makeup_artist_5_phone"
+              value={makeup_artist_5_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.makeup_artist_5_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+
 
       </div>
 
@@ -3112,6 +3684,9 @@ const CallsheetsBaseCreate = () => {
     <div>
     <TopBox work="Callsheet Base"
             title="Create"/>
+            <h5>Important</h5>
+            <p>Only the create info button once to create the crew info callsheet base. Use the edit 
+               buttons to add or edit is at future stages</p>
     {textFields}
     </div>
   )

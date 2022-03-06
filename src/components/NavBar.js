@@ -203,7 +203,7 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/callsheets"
         >
-          <i className="navicon fas fa-play"></i>Callsheets
+          <i className="navicon fas fa-play"></i>Calls
       </NavLink>
 
       {/* old profiles

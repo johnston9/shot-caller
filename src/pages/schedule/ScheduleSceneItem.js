@@ -5,6 +5,7 @@ const ScheduleSceneItem = (props) => {
     const {setPostData, scene,
         setShowOne, setShowTwoA, setShowTwoB,
         setShowThree, setShowLoc} = props
+
     const [newData, setNewData] = useState({
         day_order_number: "",
         start_time: "",
@@ -71,21 +72,7 @@ const ScheduleSceneItem = (props) => {
             setShowTwoB(false);
             setShowThree(false);
             setShowLoc(false);
-        // if (setShowOne) {
-        //     setShowOne(showOne => !showOne)
-        // };
-        // if (setShowTwoA) {
-        //     setShowTwoA(showTwoA => !showTwoA)
-        // };
-        // if (setShowTwoB) {
-        //     setShowTwoB(showTwoB => !showTwoB)
-        // };
-        // if (setShowThree) {
-        //     setShowThree(showThree => !showThree)
-        // };
-        // if (setShowLoc) {
-        //     setShowLoc(showLoc => !showLoc)
-        // };
+    
         setPostData({ number, title, act, int_ext, day_night, time, location,
             character1, character1_costume, character2, filming_location, info,
             character2_costume, character3, character3_costume, character4, 

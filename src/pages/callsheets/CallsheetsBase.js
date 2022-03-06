@@ -11,8 +11,14 @@ import appStyles from "../../App.module.css";
 import TopBox from '../../components/TopBox';
 import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
+import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const CallsheetsBase = () => {
+  useRedirect("loggedOut");
+  const [errors, setErrors] = useState({});
+  const { id } = useParams();
+  const history = useHistory();
+  const crewInfo = useCrewInfoContext();
   return (
     <div>CallsheetsBase</div>
   )
