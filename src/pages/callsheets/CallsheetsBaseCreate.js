@@ -23,6 +23,13 @@ const CallsheetsBaseCreate = () => {
   const history = useHistory();
 
   const [postData, setPostData] = useState({
+    set_decorator_name: "",
+    set_decorator_email: "",
+    set_decorator_phone: "",
+    set_dresser_name: "",
+    set_dresser_email: "",
+    set_dresser_phone: "",
+    
     production_name: "",
     production_company: "",
     company_email: "",
@@ -127,6 +134,21 @@ const CallsheetsBaseCreate = () => {
     oth_camera_pos_3_name: "",
     oth_camera_pos_3_email: "",
     oth_camera_pos_3_phone: "",
+    sound_mixer_name: "",
+    sound_mixer_email: "",
+    sound_mixer_phone: "",
+    boom_operator_name: "",
+    boom_operator_email: "",
+    boom_operator_phone: "",
+    sound_assistant_1_name: "",
+    sound_assistant_1_email: "",
+    sound_assistant_1_phone: "",
+    sound_assistant_2_name: "",
+    sound_assistant_2_email: "",
+    sound_assistant_2_phone: "",
+    script_supervisor_name: "",
+    script_supervisor_email: "",
+    script_supervisor_phone: "",
     key_hairmakeup_name: "",
     key_hairmakeup_email: "",
     key_hairmakeup_phone: "",
@@ -154,6 +176,36 @@ const CallsheetsBaseCreate = () => {
     makeup_artist_5_name: "",
     makeup_artist_5_email: "",
     makeup_artist_5_phone: "",
+    costume_designer_name: "",
+    costume_designer_email: "",
+    costume_designer_phone: "",
+    ass_costume_designer_name: "",
+    ass_costume_designer_email: "",
+    ass_costume_designer_phone: "",
+    wardrobe_assistant_1_name: "",
+    wardrobe_assistant_1_email: "",
+    wardrobe_assistant_1_phone: "",
+    wardrobe_assistant_2_name: "",
+    wardrobe_assistant_2_email: "",
+    wardrobe_assistant_2_phone: "",
+    wardrobe_assistant_3_name: "",
+    wardrobe_assistant_3_email: "",
+    wardrobe_assistant_3_phone: "",
+    wardrobe_assistant_4_name: "",
+    wardrobe_assistant_4_email: "",
+    wardrobe_assistant_4_phone: "",
+    wardrobe_assistant_5_name: "",
+    wardrobe_assistant_5_email: "",
+    wardrobe_assistant_5_phone: "",
+    production_designer_name: "",
+    production_designer_email: "",
+    production_designer_phone: "",
+    art_director_name: "",
+    art_director_email: "",
+    art_director_phone: "",
+    art_assistant_name: "",
+    art_assistant_email: "",
+    art_assistant_phone: "",
     // xxxxx 
     character7: "",
     character7_costume: "",
@@ -203,7 +255,9 @@ const CallsheetsBaseCreate = () => {
     character12_pickup: "",
 })
 
-  const { production_name, production_company, company_phone, company_email,
+  const { set_decorator_name, set_decorator_email, set_decorator_phone,
+          set_dresser_name, set_dresser_email, set_dresser_phone,
+          production_name, production_company, company_phone, company_email,
           company_address, company_logo, 
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
@@ -235,6 +289,11 @@ const CallsheetsBaseCreate = () => {
           oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
           oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
           oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+          sound_mixer_name, sound_mixer_email, sound_mixer_phone,
+          boom_operator_name, boom_operator_email, boom_operator_phone,
+          sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
+          sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
+          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
           key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
           key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
           sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
@@ -244,6 +303,16 @@ const CallsheetsBaseCreate = () => {
           makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
           makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
           makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
+          costume_designer_name, costume_designer_email, costume_designer_phone,
+          ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
+          wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
+          wardrobe_assistant_2_name, wardrobe_assistant_2_email, wardrobe_assistant_2_phone,
+          wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
+          wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
+          wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,
+          production_designer_name, production_designer_email, production_designer_phone,
+          art_director_name, art_director_email, art_director_phone,
+          art_assistant_name, art_assistant_email, art_assistant_phone,
           // filming_location, day_night, time, action, info, pages,
           character1, character1_costume, character2, 
           character2_costume, character3, character3_costume, character4, 
@@ -268,7 +337,13 @@ const CallsheetsBaseCreate = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-
+    formData.append("set_decorator_name", set_decorator_name);
+    formData.append("set_decorator_email", set_decorator_email);
+    formData.append("set_decorator_phone", set_decorator_phone);
+    formData.append("set_dresser_name", set_dresser_name);
+    formData.append("set_dresser_email", set_dresser_email);
+    formData.append("set_dresser_phone", set_dresser_phone);
+    
     formData.append("production_name", production_name);
     formData.append("production_company", production_company);
     formData.append("company_phone", company_phone);
@@ -373,6 +448,21 @@ const CallsheetsBaseCreate = () => {
     formData.append("oth_camera_pos_3_name", oth_camera_pos_3_name);
     formData.append("oth_camera_pos_3_email", oth_camera_pos_3_email);
     formData.append("oth_camera_pos_3_phone", oth_camera_pos_3_phone);
+    formData.append("sound_mixer_name", sound_mixer_name);
+    formData.append("sound_mixer_email", sound_mixer_email);
+    formData.append("sound_mixer_phone", sound_mixer_phone);
+    formData.append("boom_operator_name", boom_operator_name);
+    formData.append("boom_operator_email", boom_operator_email);
+    formData.append("boom_operator_phone", boom_operator_phone);
+    formData.append("sound_assistant_1_name", sound_assistant_1_name);
+    formData.append("sound_assistant_1_email", sound_assistant_1_email);
+    formData.append("sound_assistant_1_phone", sound_assistant_1_phone);
+    formData.append("sound_assistant_2_name", sound_assistant_2_name);
+    formData.append("sound_assistant_2_email", sound_assistant_2_email);
+    formData.append("sound_assistant_2_phone", sound_assistant_2_phone);
+    formData.append("script_supervisor_name", script_supervisor_name);
+    formData.append("script_supervisor_email", script_supervisor_email);
+    formData.append("script_supervisor_phone", script_supervisor_phone);
     formData.append("key_hairmakeup_name", key_hairmakeup_name);
     formData.append("key_hairmakeup_email", key_hairmakeup_email);
     formData.append("key_hairmakeup_phone", key_hairmakeup_phone);
@@ -400,6 +490,36 @@ const CallsheetsBaseCreate = () => {
     formData.append("makeup_artist_5_name", makeup_artist_5_name);
     formData.append("makeup_artist_5_email", makeup_artist_5_email);
     formData.append("makeup_artist_5_phone", makeup_artist_5_phone);
+    formData.append("costume_designer_name", costume_designer_name);
+    formData.append("costume_designer_email", costume_designer_email);
+    formData.append("costume_designer_phone", costume_designer_phone);
+    formData.append("ass_costume_designer_name", ass_costume_designer_name);
+    formData.append("ass_costume_designer_email", ass_costume_designer_email);
+    formData.append("ass_costume_designer_phone", ass_costume_designer_phone);
+    formData.append("wardrobe_assistant_1_name", wardrobe_assistant_1_name);
+    formData.append("wardrobe_assistant_1_email", wardrobe_assistant_1_email);
+    formData.append("wardrobe_assistant_1_phone", wardrobe_assistant_1_phone);
+    formData.append("wardrobe_assistant_2_name", wardrobe_assistant_2_name);
+    formData.append("wardrobe_assistant_2_email", wardrobe_assistant_2_email);
+    formData.append("wardrobe_assistant_2_phone", wardrobe_assistant_2_phone);
+    formData.append("wardrobe_assistant_3_name", wardrobe_assistant_3_name);
+    formData.append("wardrobe_assistant_3_email", wardrobe_assistant_3_email);
+    formData.append("wardrobe_assistant_3_phone", wardrobe_assistant_3_phone);
+    formData.append("wardrobe_assistant_4_name", wardrobe_assistant_4_name);
+    formData.append("wardrobe_assistant_4_email", wardrobe_assistant_4_email);
+    formData.append("wardrobe_assistant_4_phone", wardrobe_assistant_4_phone);
+    formData.append("wardrobe_assistant_5_name", wardrobe_assistant_5_name);
+    formData.append("wardrobe_assistant_5_email", wardrobe_assistant_5_email);
+    formData.append("wardrobe_assistant_5_phone", wardrobe_assistant_5_phone);
+    formData.append("production_designer_name", production_designer_name);
+    formData.append("production_designer_email", production_designer_email);
+    formData.append("production_designer_phone", production_designer_phone);
+    formData.append("art_director_name", art_director_name);
+    formData.append("art_director_email", art_director_email);
+    formData.append("art_director_phone", art_director_phone);
+    formData.append("art_assistant_name", art_assistant_name);
+    formData.append("art_assistant_email", art_assistant_email);
+    formData.append("art_assistant_phone", art_assistant_phone);
     // formData.append("character4", character4);
     formData.append("character4_costume", character4_costume);
     formData.append("character4_calltime", character4_calltime);
@@ -3004,6 +3124,1041 @@ const CallsheetsBaseCreate = () => {
       <hr/>
 
 
+      </div>
+
+      {/* above added to drf */}
+
+      {/* SOUND */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SOUND</h3> 
+      {/* Sound Mixer */}
+      <h5 className="mt-1" >Sound Mixer</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_mixer_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_mixer_name"
+              value={sound_mixer_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_mixer_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_mixer_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_mixer_email"
+              value={sound_mixer_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_mixer_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_mixer_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_mixer_phone"
+              value={sound_mixer_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_mixer_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Boom Operator */}
+      <h5 className="mt-1" >Boom Operator</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="boom_operator_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="boom_operator_name"
+              value={boom_operator_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.boom_operator_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="boom_operator_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="boom_operator_email"
+              value={boom_operator_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.boom_operator_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="boom_operator_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="boom_operator_phone"
+              value={boom_operator_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.boom_operator_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Sound Assistant */}
+      <h5 className="mt-1" >Sound Assistant 1 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_assistant_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_assistant_1_name"
+              value={sound_assistant_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_assistant_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_assistant_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_assistant_1_email"
+              value={sound_assistant_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_assistant_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_assistant_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_assistant_1_phone"
+              value={sound_assistant_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_assistant_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Sound Assistant 2 */}
+      <h5 className="mt-1" >Sound Assistant 2</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_assistant_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_assistant_2_name"
+              value={sound_assistant_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_assistant_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_assistant_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_assistant_2_email"
+              value={sound_assistant_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_assistant_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="sound_assistant_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="sound_assistant_2_phone"
+              value={sound_assistant_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.sound_assistant_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
+
+      {/* CONTINUITY */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CONTINUITY</h3> 
+      {/* Script Supervisor */}
+      <h5 className="mt-1" >Script Supervisor</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="script_supervisor_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_name"
+              value={script_supervisor_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="script_supervisor_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_email"
+              value={script_supervisor_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="script_supervisor_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_phone"
+              value={script_supervisor_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
+
+      {/* WARDROBE */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >WARDROBE</h3> 
+      {/* Costume Designer */}
+      <h5 className="mt-1" >Costume Designer</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="costume_designer_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="costume_designer_name"
+              value={costume_designer_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.costume_designer_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="costume_designer_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="costume_designer_email"
+              value={costume_designer_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.costume_designer_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="costume_designer_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="costume_designer_phone"
+              value={costume_designer_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.costume_designer_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Assistant Costume Designer */}
+      <h5 className="mt-1" > Assistant Costume Designer</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="ass_costume_designer_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="ass_costume_designer_name"
+              value={ass_costume_designer_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.ass_costume_designer_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="ass_costume_designer_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="ass_costume_designer_email"
+              value={ass_costume_designer_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.ass_costume_designer_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="ass_costume_designer_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="ass_costume_designer_phone"
+              value={ass_costume_designer_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.ass_costume_designer_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Wardrobe Assistant 1*/}
+      <h5 className="mt-1" >Wardrobe Assistant 1</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_1_name"
+              value={wardrobe_assistant_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_1_email"
+              value={wardrobe_assistant_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_1_phone"
+              value={wardrobe_assistant_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Wardrobe Assistant 2*/}
+      <h5 className="mt-1" >Wardrobe Assistant 2</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_2_name"
+              value={wardrobe_assistant_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_2_email"
+              value={wardrobe_assistant_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_2_phone"
+              value={wardrobe_assistant_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Wardrobe Assistant 3*/}
+      <h5 className="mt-1" >Wardrobe Assistant 3</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_3_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_3_name"
+              value={wardrobe_assistant_3_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_3_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_3_email"
+              value={wardrobe_assistant_3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_3_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_3_phone"
+              value={wardrobe_assistant_3_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Wardrobe Assistant 4*/}
+      <h5 className="mt-1" >Wardrobe Assistant 4</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_4_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_4_name"
+              value={wardrobe_assistant_4_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_4_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_4_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_4_email"
+              value={wardrobe_assistant_4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_4_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_4_phone"
+              value={wardrobe_assistant_4_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_4_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Wardrobe Assistant 5*/}
+      <h5 className="mt-1" >Wardrobe Assistant 5</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_5_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_5_name"
+              value={wardrobe_assistant_5_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_5_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_5_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_5_email"
+              value={wardrobe_assistant_5_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_5_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wardrobe_assistant_5_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="wardrobe_assistant_5_phone"
+              value={wardrobe_assistant_5_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wardrobe_assistant_5_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
+
+      {/* ART */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >ART</h3> 
+      {/* Production Designer */}
+      <h5 className="mt-1" >Production Designer</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="production_designer_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="production_designer_name"
+              value={production_designer_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.production_designer_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="production_designer_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="production_designer_email"
+              value={production_designer_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.production_designer_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="production_designer_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="production_designer_phone"
+              value={production_designer_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.production_designer_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Art Director */}
+      <h5 className="mt-1" >Art Director</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_director_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_director_name"
+              value={art_director_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_director_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_director_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_director_email"
+              value={art_director_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_director_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_director_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_director_phone"
+              value={art_director_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_director_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Art Assistant */}
+      <h5 className="mt-1" >Art Assistant</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_assistant_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_assistant_name"
+              value={art_assistant_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_assistant_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_assistant_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_assistant_email"
+              value={art_assistant_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_assistant_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_assistant_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_assistant_phone"
+              value={art_assistant_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_assistant_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
+
+      {/* SET DECORATION */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SET DECORATION</h3> 
+      {/* Set Decorator */}
+      <h5 className="mt-1" >Set Decorator</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_decorator_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_decorator_name"
+              value={set_decorator_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_decorator_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_decorator_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_decorator_email"
+              value={set_decorator_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_decorator_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_decorator_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_decorator_phone"
+              value={set_decorator_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_decorator_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Set Dresser */}
+      <h5 className="mt-1" >Set Dresser</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_dresser_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_dresser_name"
+              value={set_dresser_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_dresser_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_dresser_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_dresser_email"
+              value={set_dresser_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_dresser_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_dresser_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_dresser_phone"
+              value={set_dresser_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_dresser_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Lead Man */}
+      <h5 className="mt-1" >Art Assistant</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_assistant_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_assistant_name"
+              value={art_assistant_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_assistant_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_assistant_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_assistant_email"
+              value={art_assistant_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_assistant_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="art_assistant_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="art_assistant_phone"
+              value={art_assistant_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.art_assistant_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
       </div>
 
           {/* characters */}
