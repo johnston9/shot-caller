@@ -14,10 +14,12 @@ import ScheduleScene from './ScheduleScene';
 import TopBox from '../../components/TopBox';
 import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
+import CallsheetCreate from '../callsheets/CallsheetCreate';
 
 const DayPage = () => {
     useRedirect("loggedOut");
     const [show, setShow] = useState(false);
+    const [showCall, setShowCall] = useState(false);
     const { id } = useParams();
     const [dayData, setDayData] = useState({ results: [] });
     const [dayScenes, setDayScenes] = useState({ results: [] });
@@ -62,13 +64,18 @@ const DayPage = () => {
                 <>
                 <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} 
                   />
-                {/* add scene */}
+                {/* add scene setShowCall */}
                 <Row className='my-4'>
-                    <Col className="text-center">
+                    <Col xs={6} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
                         className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                         Add Scene</Button>
-                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} setShow={setShow} xdate={dataDate} /> ) }
+                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
+                    </Col>
+                    <Col xs={6} className="text-center">
+                        <Button onClick={() => setShowCall(showCall => !showCall)} 
+                        className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                        Create Callsheet</Button>
                     </Col>
                 </Row>
                 {/* titles */}
@@ -125,8 +132,9 @@ const DayPage = () => {
                 </Container>
             )             
             }
+            {/* callsheet */}
+            {!showCall ?("") : (<CallsheetCreate dayday={dataDay} setShowCall={setShowCall} setHasOrder={setHasOrder} daydate={dataDate} /> ) }
             </div>
-        // </div>
     )
 }
 

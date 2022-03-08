@@ -24,6 +24,7 @@ const CharacterEdit = () => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
+        number: "",
         role: "",
         actor: "",
         pickup_address: "",
@@ -53,7 +54,8 @@ const CharacterEdit = () => {
         makeup_image: "",
       });
 
-      const { role,
+      const { number,
+        role,
         actor,
         pickup_address,
         pickup_address_2,
@@ -98,7 +100,8 @@ const CharacterEdit = () => {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/characters/${id}/`);
-            const { role,
+            const { number,
+                role,
                 actor,
                 pickup_address,
                 pickup_address_2,
@@ -126,7 +129,8 @@ const CharacterEdit = () => {
                 costume7_image,
                 makeup_image } = data;
      
-        setPostData({ role,
+        setPostData({ number,
+            role,
             actor,
             pickup_address,
             pickup_address_2,
@@ -334,13 +338,11 @@ const buttons = (
               </Button>
             <Container className= {`${appStyles.Content} ${styles.Container}`} >
               <Form className="mt-3" onSubmit={handleSubmit}>
-              <h3 className="text-center">Role</h3>
-              <p className="text-center">Input Roles here to add them to the Character dropdown for scenes</p>
+              <h3 className="text-center">Role Number</h3>
               <Row>
-              <Col md={3} ></Col>
                   <Col md={6} >
                   <Form.Group controlId="role" className="mb-2" >
-                          <Form.Label className="d-none p-1" >Role</Form.Label>
+                          <Form.Label className="p-1" >Role</Form.Label>
                           <Form.Control 
                           type="text"
                           placeholder="Role"
@@ -350,6 +352,24 @@ const buttons = (
                               />
                       </Form.Group>
                       {errors?.role?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <h3 className="text-center">Number</h3>
+                  <Col md={6} >
+                  <Form.Group controlId="number" className="mb-0" >
+                          <Form.Label className=" p-1" >Number</Form.Label>
+                          <Form.Control 
+                          type="text"
+                          placeholder="Number"
+                          name="number"
+                          value={number}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.number?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>

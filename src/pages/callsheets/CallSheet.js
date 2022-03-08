@@ -61,7 +61,7 @@ const CallSheet = () => {
         </Button>
         {/* top */}
         <Row>
-            <Col>
+            <Col xs={4} >
             <div>
             <h5>Production Company</h5>
             <h5>Production Company Address</h5>
@@ -76,7 +76,7 @@ const CallSheet = () => {
             <h5>DoP</h5>
             </div>
             </Col>
-            <Col>
+            <Col xs={4} >
             <div>
             <h5>Production Name</h5>
             <h5>Production Company Logo</h5>

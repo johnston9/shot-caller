@@ -22,6 +22,7 @@ const CharacterCreate = ({topbox} ) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
+        number: "",
         role: "",
         actor: "",
         pickup_address: "",
@@ -51,7 +52,8 @@ const CharacterCreate = ({topbox} ) => {
         makeup_image: "",
       });
 
-      const { role,
+      const { number,
+              role,
               actor,
               pickup_address,
               pickup_address_2,
@@ -183,6 +185,7 @@ const CharacterCreate = ({topbox} ) => {
 
         const formData = new FormData();
     
+        formData.append("number", number);
         formData.append("role", role);
         formData.append("actor", actor);
         formData.append("pickup_address", pickup_address);
@@ -295,6 +298,27 @@ const CharacterCreate = ({topbox} ) => {
         <Col>
           <div className= {` mt-3`} >{buttons} </div>
         </Col>
+      </Row>
+      <h3 className="text-center">Number</h3>
+      <Row>
+      <Col md={3} ></Col>
+          <Col md={6} >
+          <Form.Group controlId="number" className="mb-0" >
+                  <Form.Label className="d-none p-1" >Number</Form.Label>
+                  <Form.Control 
+                  type="text"
+                  placeholder="Number"
+                  name="number"
+                  value={number}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.number?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
       </Row>
       <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
       {/* actor details */}
