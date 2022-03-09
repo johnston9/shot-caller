@@ -8,6 +8,7 @@ export const useSetCrewInfoContext = () => useContext(SetCrewInfoContext);
 
 export const CrewInfoProvider = ({ children }) => {
     const [crewInfo, setCrewInfo] = useState({ results: [] });
+    const crewInfoOne = crewInfo[0];
 
     const fetchCrewInfo = async () => {
         try {
@@ -23,7 +24,7 @@ export const CrewInfoProvider = ({ children }) => {
       }, []);
 
     return (
-        <CrewInfoContext.Provider value={crewInfo}>
+        <CrewInfoContext.Provider value={crewInfoOne}>
             <SetCrewInfoContext.Provider value={setCrewInfo}>
                 {children}
             </SetCrewInfoContext.Provider>

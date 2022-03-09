@@ -13,7 +13,7 @@ import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
-const CallsheetsBase = () => {
+const CrewInfo = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -24,4 +24,4 @@ const CallsheetsBase = () => {
   )
 }
 
-export default CallsheetsBase
+export default CrewInfo
