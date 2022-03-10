@@ -7,7 +7,6 @@ import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Callsheets.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { PostDropdown } from '../../components/PostDropdown';
 
 const CallsheetTop = (props) => {
     useRedirect("loggedOut")

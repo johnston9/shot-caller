@@ -15,7 +15,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import CallsheetTop from "./CallsheetTop";
-import CallsheetsBase from "./CallsheetsBase";
+import CrewInfo from "./CrewInfo";
 
 const CallsheetsPage = ({ filter="" }) => {
   useRedirect("loggedOut");
@@ -65,7 +65,7 @@ const CallsheetsPage = ({ filter="" }) => {
         <h3 className="text-center">Callsheet Base Info</h3>
         <Row className="text-center">
             <Col xs={4} >
-            <Button onClick={() => history.push("base/callsheets/create")}
+            <Button onClick={() => history.push("crewinfo/create")}
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Shed}`}>
               Add Info</Button>
             </Col>
@@ -75,14 +75,14 @@ const CallsheetsPage = ({ filter="" }) => {
               View Info</Button>
             </Col>
             <Col xs={4}>
-            <Button onClick={() => history.push("base/callsheets/edit")}
+            <Button onClick={() => history.push("crewinfo/edit")}
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Shed}`}>
               Edit Info</Button>
             </Col>
         </Row>
         {/* Base */}
         {showBase ? (
-          <CallsheetsBase />
+          <CrewInfo />
         ) : ("") }
         {/* search  */}
         <Row>

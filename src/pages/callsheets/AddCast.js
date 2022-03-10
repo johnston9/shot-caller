@@ -1,27 +1,20 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-
-import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
-import Asset2 from "../../components/Asset2";
 
 const AddCast = ({setShowAddCast}) => {
     useRedirect("loggedOut");
     const { id } = useParams();
-    const {number} = scene; 
     const [errors, setErrors] = useState({});
     const [cast, setCast] = useState({results: [] });
 
@@ -65,7 +58,6 @@ const AddCast = ({setShowAddCast}) => {
           try {
               const { data } = await axiosReq.get(`/castcalls/?day_id=${id}`)
               setCast(data);
-              setHasLoaded(true);
           } catch (err) {
               console.log(err);
             }
@@ -85,7 +77,7 @@ const AddCast = ({setShowAddCast}) => {
       formData.append("contact", contact);
       formData.append("swf", swf);
       formData.append("pickup", pickup);
-      formData.append("call", vall);
+      formData.append("call", call);
       formData.append("hmw", hmw);
       formData.append("on_set", on_set);
       formData.append("inst", inst);
