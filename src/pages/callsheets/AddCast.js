@@ -12,7 +12,7 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const AddCast = ({setShowAddCast}) => {
+const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [errors, setErrors] = useState({});
@@ -71,6 +71,8 @@ const AddCast = ({setShowAddCast}) => {
       const formData = new FormData();
   
       formData.append("day_id", id);
+      formData.append("day", dataDay);
+      formData.append("date", dataDate);
       formData.append("cast_number", cast_number);
       formData.append("role", role);
       formData.append("artist", artist);

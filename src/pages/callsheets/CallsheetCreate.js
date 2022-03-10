@@ -10,11 +10,11 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import { useCrewInfoContext } from "../../contexts/BaseCallContext";
+import { useCrewInfoContext, useDayContext } from "../../contexts/BaseCallContext";
 import AddCast from "./AddCast";
 import CallsheetSchedule from "./CallsheetSchedule";
 
-const CallsheetCreate = ({setShowCall, setHasOrder, dayday, daydate }) => {
+const CallsheetCreate = ({setShowCall}) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -22,7 +22,12 @@ const CallsheetCreate = ({setShowCall, setHasOrder, dayday, daydate }) => {
   const crewInfo = useCrewInfoContext();
   const [showSchedule, setShowSchedule] = useState(false);
   const [showAddCast, setShowAddCast] = useState(false);
-  const [scenes, setScenes] = useState({results: [] });
+  const [dayData, setDayData] = useState({ results: [] });
+  const [scenes, setScenes] = useState({ results: [] });
+  const [dataId, setDataId] = useState("");
+  const [dataDay, setDataDay] = useState("");
+  const [dataDate, setDataDate] = useState("");
+  // const dataDay = useDayContext();
 
   // const { production_name, production_company, company_phone, company_email,
   //         company_address, company_logo, 
@@ -150,8 +155,14 @@ const CallsheetCreate = ({setShowCall, setHasOrder, dayday, daydate }) => {
   useEffect(() => {
     const handleMount = async () => {
         try {
-            const { data } = await axiosReq.get(`/schedule/scenes/?day_id=${id}`)
-            setScenes(data);
+          const [{ data: dayGet }, { data: scenes }] = await Promise.all([
+            axiosReq.get(`/days/${id}`),
+            axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+        ])
+        setDayData({ results: [dayGet] });
+        setScenes(scenes)
+        setDataDay(dayGet.day);
+        setDataDate(dayGet.date);
         } catch (err) {
             console.log(err);
           }
@@ -172,8 +183,8 @@ const CallsheetCreate = ({setShowCall, setHasOrder, dayday, daydate }) => {
 
     formData.append("day_id", id);
     formData.append("producer_calltime", producer_calltime);
-    formData.append("day", dayday);
-    formData.append("date", daydate);
+    formData.append("day", dataDay);
+    formData.append("date", dataDate);
     formData.append("unit_call", unit_call);
     formData.append("talent_call", talent_call);
     formData.append("shoot_call", shoot_call);
@@ -752,8 +763,8 @@ const buttons = (
   
   return (
     <div>
-    <TopBox work="Callsheet"
-            title="Create"/>
+    <TopBox work="Callsheet Create"
+            title={`Day ${dataDay} ${dataDate} `} />
     {/* schedule button */}
     <Row>
     <Col className='text-center' xs={4} >
@@ -787,7 +798,7 @@ const buttons = (
     {!showAddCast ? (
       ""
     ) : (
-      <AddCast setShowAddCast={setShowAddCast} />
+      <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
     ) }
 
     </div>

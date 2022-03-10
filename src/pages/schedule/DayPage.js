@@ -16,6 +16,7 @@ import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
 import CallsheetCreate from '../callsheets/CallsheetCreate';
 import { Link } from 'react-router-dom';
+import { useSetDayContext } from '../../contexts/BaseCallContext';
 
 const DayPage = () => {
     useRedirect("loggedOut");
@@ -30,6 +31,7 @@ const DayPage = () => {
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
     const [hasOrder, setHasOrder] = useState(false);
+    const setDayContext = useSetDayContext();
 
     useEffect(() => {
         const handleMount = async () => {
@@ -39,8 +41,9 @@ const DayPage = () => {
                     axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                 ])
                 setDayData({ results: [dayGet] });
-                setDayScenes(scenes)
-                setDataDay(dayGet.day)
+                setDayScenes(scenes);
+                // setDayContext(dayGet.day);
+                setDataDay(dayGet.day);
                 setDataDate(dayGet.date);
                 setHasLoaded(true);
                 setHasOrder(false)
