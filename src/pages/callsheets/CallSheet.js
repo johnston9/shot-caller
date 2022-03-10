@@ -19,8 +19,8 @@ const CallSheet = () => {
     useRedirect("loggedOut");
     const [show, setShow] = useState(false);
     const { id } = useParams();
-    const [dayData, setDayData] = useState({ results: [] });
-    const [dayScenes, setDayScenes] = useState({ results: [] });
+    const [callsheet, setCallsheet] = useState({ results: [] });
+    const [cast, setCast] = useState({ results: [] });
     const [dataId, setDataId] = useState("");
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
@@ -31,16 +31,16 @@ const CallSheet = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: dayGet }, { data: scenes }] = await Promise.all([
-                    axiosReq.get(`/days/${id}`),
-                    axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+                const [{ data: callsheetdata }, { data: castcalldata }] = await Promise.all([
+                    axiosReq.get(`/callsheets/?day_id=${id}`),
+                    axiosReq.get(`/castcall/?day_id=${id}`),
                 ])
-                setDayData({ results: [dayGet] });
-                setDayScenes(scenes)
-                setDataDay(dayGet.day)
-                setDataDate(dayGet.date);
+                setCallsheet({ results: [callsheetdata] });
+                setCast(castcalldata)
+                setDataDay(callsheetdata.day)
+                setDataDate(callsheetdata.date);
                 setHasLoaded(true);
-                setHasOrder(false)
+                // setHasOrder(false)
             } catch (err) {
                 console.log(err);
               }

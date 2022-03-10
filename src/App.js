@@ -50,6 +50,7 @@ import MoodshotPage from './pages/moodshots/MoodshotPage';
 import CallsheetsBaseCreate from './pages/callsheets/CallsheetsBaseCreate';
 import CallsheetsPage from './pages/callsheets/CallsheetsPage';
 import CallsheetsBaseEdit from './pages/callsheets/CallsheetsBaseEdit';
+import CallsheetCreate from './pages/callsheets/CallsheetCreate';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -86,9 +87,10 @@ function App() {
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
-        {/* SCHEDULE*/}
+        {/* CALLSHEETS /callsheet/create/${id} */}
         <Route exact path="/crewinfo/create" render={() => <CallsheetsBaseCreate />} />
         <Route exact path="/crewinfo/edit" render={() => <CallsheetsBaseEdit />} />
+        <Route exact path="/callsheet/create/:id/" render={() => <CallsheetCreate />} />
         {/* <Route exact path="/edit/days/:id/" render={() => <DayEdit />} /> */}
         <Route
             exact

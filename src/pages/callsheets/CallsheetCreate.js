@@ -15,6 +15,9 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
+import AddCast from "./AddCast";
+import ScheduleScene from "../schedule/ScheduleScene";
+import CallsheetSchedule from "./CallsheetSchedule";
 
 const CallsheetCreate = ({setShowCall, setHasOrder, dayday, daydate }) => {
   useRedirect("loggedOut");
@@ -22,6 +25,9 @@ const CallsheetCreate = ({setShowCall, setHasOrder, dayday, daydate }) => {
   const { id } = useParams();
   const history = useHistory();
   const crewInfo = useCrewInfoContext();
+  const [showSchedule, setShowSchedule] = useState(false);
+  const [showAddCast, setShowAddCast] = useState(false);
+  const [scenes, setScenes] = useState({results: [] });
 
   const { production_name, production_company, company_phone, company_email,
           company_address, company_logo, 
@@ -145,6 +151,19 @@ const CallsheetCreate = ({setShowCall, setHasOrder, dayday, daydate }) => {
         department_info,
         producer_calltime, 
         pro_coordinator_calltime, } = postData;
+
+  useEffect(() => {
+    const handleMount = async () => {
+        try {
+            const { data } = await axiosReq.get(`/schedule/scenes/?day_id=${id}`)
+            setScenes(data);
+            setHasLoaded(true);
+        } catch (err) {
+            console.log(err);
+          }
+    }
+    handleMount();
+    }, [id])
     
   const handleChange = (event) => {
     setPostData({
@@ -737,13 +756,50 @@ const buttons = (
   </div>
 );
   
-
-
   return (
     <div>
-    {/* <TopBox work="Callsheet"
-            title="Create"/> */}
-    <h3 className="text-center mt-3"> Create Callsheet</h3>
+    <TopBox work="Callsheet"
+            title="Create"/>
+    {/* schedule button */}
+    <Row>
+    <Col className='text-center' xs={4} >
+    <p
+        className={`py-0 mb-0 ${styles.Button}`}
+        onClick={() => setShowSchedule(showSchedule => !showSchedule)} >Schedule
+    </p>
+    </Col>
+    </Row>
+    {/* schedule */}
+    {!showSchedule ? (
+      ""
+    ) : (
+      <CallsheetSchedule scenes={scenes} setShowSchedule={setShowSchedule} />
+    ) }
+    <Row>
+    <Col className='text-center' xs={4} >
+    <p
+        className={`py-0 mb-0 ${styles.Button}`}
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Cast
+    </p>
+    </Col>
+    {/* <Col className='text-center' xs={4}>
+      <p
+          className={`py-0 mb-0 ${styles.Button}`}
+          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
+      </p>
+    </Col> */}
+    </Row>
+    <div>
+    {!showAddCast ? (
+      ""
+    ) : (
+      <AddCast setShowAddCast={setShowAddCast} />
+    ) }
+
+    </div>
+    <h3 className="text-center mt-3"> Add Info</h3>
+    {infoFields}
+    <h3 className="text-center mt-3"> Add Crew</h3>
     {crewFields}
     </div>
   )

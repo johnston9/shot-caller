@@ -15,6 +15,7 @@ import TopBox from '../../components/TopBox';
 import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
 import CallsheetCreate from '../callsheets/CallsheetCreate';
+import { Link } from 'react-router-dom';
 
 const DayPage = () => {
     useRedirect("loggedOut");
@@ -73,9 +74,12 @@ const DayPage = () => {
                         {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
                     </Col>
                     <Col xs={6} className="text-center">
-                        <Button onClick={() => setShowCall(showCall => !showCall)} 
+                        <Link className={`p-1`} to={`/callsheet/create/${id}`}>
+                            <p className={`p-1`}>Create Callsheet</p>
+                        {/* <Button onClick={() => setShowCall(showCall => !showCall)} 
                         className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                        Create Callsheet</Button>
+                        Create Callsheet</Button> */}
+                        </Link>
                     </Col>
                 </Row>
                 {/* titles */}
