@@ -23,47 +23,32 @@ const AddCast = ({setShowAddCast}) => {
     const { id } = useParams();
     const {number} = scene; 
     const [errors, setErrors] = useState({});
+    const [cast, setCast] = useState({results: [] });
 
     const [postData, setPostData] = useState({
-        scene_number: number,
-        shot_number: "",
-        size: "",
-        angle: "",
-        movement: "",
-        screen_time: "",
-        camera: "",
-        lens: "",
-        script_length: "",
-        description: "",
-        equipment: "",
-        script_ref: "",
-        storyboard_refs: "",
-        fx: "",
-        focus_pulls: "",
-        lighting: "",
-        audio: "",
-        image: "",
+        cast_number: "",
+        role: "",
+        artist: "",
+        contact: "",
+        swf: "",
+        pickup: "",
+        call: "",
+        hmw: "",
+        on_set: "",
+        inst: "",
     });
 
     const { 
-        scene_number,
-        shot_number,
-        size,
-        angle,
-        movement,
-        screen_time,
-        camera,
-        lens,
-        script_length,
-        script_ref,
-        storyboard_refs,
-        description,
-        equipment,
-        fx,
-        focus_pulls,
-        lighting,
-        audio,
-        image,
+        cast_number,
+        role,
+        artist,
+        contact,
+        swf,
+        pickup,
+        call,
+        hmw,
+        on_set,
+        inst,
     } = postData;
 
     const history = useHistory();
@@ -75,48 +60,50 @@ const AddCast = ({setShowAddCast}) => {
         });
       };
 
-      const handleSubmit = async (event) => {
-        event.preventDefault();
+    useEffect(() => {
+      const handleMount = async () => {
+          try {
+              const { data } = await axiosReq.get(`/castcalls/?day_id=${id}`)
+              setCast(data);
+              setHasLoaded(true);
+          } catch (err) {
+              console.log(err);
+            }
+      }
+      handleMount();
+      }, [id])
 
-        const formData = new FormData();
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData();
+  
+      formData.append("day_id", id);
+      formData.append("cast_number", cast_number);
+      formData.append("role", role);
+      formData.append("artist", artist);
+      formData.append("contact", contact);
+      formData.append("swf", swf);
+      formData.append("pickup", pickup);
+      formData.append("call", vall);
+      formData.append("hmw", hmw);
+      formData.append("on_set", on_set);
+      formData.append("inst", inst);
     
-        formData.append("scene_id", id);
-        formData.append("cast_number", cast_number);
-        formData.append("role", role);
-        formData.append("artist", artist);
-        formData.append("contact", contact);
-        formData.append("swf", swf);
-        formData.append("pickup", pickup);
-        formData.append("call", vall);
-        formData.append("hmw", hmw);
-        formData.append("on_set", on_set);
-        formData.append("inst", inst);
-        formData.append("focus_pulls", focus_pulls);
-        formData.append("lighting", lighting);
-        formData.append("camera", camera);
-        formData.append("lens", lens);
-        formData.append("script_length", script_length);
-        formData.append("script_ref", script_ref);
-        formData.append("storyboard_refs", storyboard_refs);
-        formData.append("audio", audio);
-        if(imageInput.current.files[0]) {
-          formData.append("image", imageInput.current.files[0]);
-        }
-      
-        try {
-          const { data } = await axiosReq.post("/castcalls/", formData);
-          setShowAddCast((showAddCast) => !showAddCast)
-        //   setShotlist((prevShotlist) => ({
-        //     ...prevShotlist,
-        //     results: [data, ...prevShotlist.results],
-        //   }));
-        } catch (err) {
-          console.log(err);
-          if (err.response?.status !== 401) {
-            setErrors(err.response?.data);
-          }
+      try {
+        const { data } = await axiosReq.post("/castcalls/", formData);
+        setShowAddCast((showAddCast) => !showAddCast)
+      //   setShotlist((prevShotlist) => ({
+      //     ...prevShotlist,
+      //     results: [data, ...prevShotlist.results],
+      //   }));
+      } catch (err) {
+        console.log(err);
+        if (err.response?.status !== 401) {
+          setErrors(err.response?.data);
         }
       }
+    }
     const buttons = (
       <div className="text-center">    
         <Button
@@ -135,29 +122,21 @@ const AddCast = ({setShowAddCast}) => {
     <div>
       <h3 className="text-center mt-3"> Add Cast</h3>
       <p>Enter each cast member from their first scheduled scene</p>
+      <p>Cast Added so far</p>
+      <div >
+      {cast.results.length ? (
+          cast.results.map((ca) => (
+            <spam key={cast.id}>{cast.role} </spam>
+          ))) : ("")}
+      </div>
       <Form onSubmit={handleSubmit}>
-            {/* number size act movement*/}
+            {/* role artist contact inst*/}
         <Row>
-          <Col xs={1} >
-          <Form.Group controlId="cast_number" className="mb-2" >
-                <Form.Label className="p-1" >Number</Form.Label>
-                <Form.Control 
-                type="text"
-                name="cast_number"
-                value={cast_number}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.cast_number?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={2}>
-            <Form.Group controlId="role" className="mb-2" >
-                <Form.Label className="p-1" >Role</Form.Label>
-                <Form.Control 
+            <Col xs={3}>
+            <Form.Group controlId="role" className={`${styles.Width} `}  >
+                <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
+                <Form.Control
+                className={`${styles.Input}`} 
                 type="text"
                 name="role"
                 value={role}
@@ -170,10 +149,11 @@ const AddCast = ({setShowAddCast}) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={2}>
-            <Form.Group controlId="artist" className="mb-2" >
-                <Form.Label className="p-1" >Artist</Form.Label>
+            <Col xs={3}>
+            <Form.Group controlId="artist" className={`${styles.Width} `}  >
+                <Form.Label className={`${styles.Bold}`} >Artist</Form.Label>
                 <Form.Control 
+                className={`${styles.Input}`} 
                 type="text"
                 name="artist"
                 value={artist}
@@ -186,10 +166,11 @@ const AddCast = ({setShowAddCast}) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={2}>
-            <Form.Group controlId="contact" className="mb-2" >
-                <Form.Label className="p-1" >Contact</Form.Label>
+            <Col xs={3}>
+            <Form.Group controlId="contact" className={`${styles.Width} `}  >
+                <Form.Label className={`${styles.Bold}`} >Contact</Form.Label>
                 <Form.Control 
+                className={`${styles.Input}`} 
                 type="text"
                 name="contact"
                 value={contact}
@@ -202,94 +183,11 @@ const AddCast = ({setShowAddCast}) => {
               </Alert>
             ))}
             </Col>
-        </Row>
-        {/* swf equip */}
-        <Row>
-        <Col xs={2}>
-            <Form.Group controlId="swf" className="mb-2" >
-                <Form.Label className="p-1" >SWF</Form.Label>
+            <Col xs={3}>
+            <Form.Group controlId="inst" className={`${styles.Width} `}  >
+                <Form.Label className={`${styles.Bold}`} >Inst. misc.</Form.Label>
                 <Form.Control 
-                type="text"
-                name="swf"
-                value={swf}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.swf?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-        <Col xs={2}>
-            <Form.Group controlId="pickup" className="mb-2" >
-                <Form.Label className="p-1" >Pickup</Form.Label>
-                <Form.Control 
-                type="text"
-                name="pickup"
-                value={pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-          <Col xs={2} >
-          <Form.Group controlId="call" className="mb-2" >
-                <Form.Label className="p-1" >Call</Form.Label>
-                <Form.Control 
-                type="text"
-                name="call"
-                value={call}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.call?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={2}>
-            <Form.Group controlId="hmw" className="mb-2" >
-                <Form.Label className="p-1" >H/M/W</Form.Label>
-                <Form.Control 
-                type="text"
-                name="hmw"
-                value={hmw}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.hmw?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={2}>
-            <Form.Group controlId="on_set" className="mb-2" >
-                <Form.Label className="p-1" >On Set</Form.Label>
-                <Form.Control 
-                type="text"
-                name="on_set"
-                value={on_set}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.on_set?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-
-        <Col xs={2}>
-            <Form.Group controlId="inst" className="mb-2" >
-                <Form.Label className="p-1" >Inst. misc.</Form.Label>
-                <Form.Control 
+                className={`${styles.Input}`} 
                 type="text"
                 name="inst"
                 value={inst}
@@ -302,107 +200,119 @@ const AddCast = ({setShowAddCast}) => {
               </Alert>
             ))}
         </Col>
-        <Col xs={3}>
-            <Form.Group controlId="focus_pulls" className="mb-2" >
-                <Form.Label className="p-1" >Focus Pulls</Form.Label>
-                <Form.Control 
-                type="text"
-                as="textarea"
-                rows={2}
-                name="focus_pulls"
-                value={focus_pulls}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.focus_pulls?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-        <Col xs={3}>
-            <Form.Group controlId="fx" className="mb-2" >
-                <Form.Label className="p-1" >FX</Form.Label>
-                <Form.Control 
-                type="text"
-                as="textarea"
-                rows={2}
-                name="fx"
-                value={fx}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.fx?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-        <Col xs={3}>
-            <Form.Group controlId="audio" className="mb-2" >
-                <Form.Label className="p-1" >Audio</Form.Label>
-                <Form.Control 
-                type="text"
-                as="textarea"
-                rows={2}
-                name="audio"
-                value={audio}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.audio?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-            </Row>
-            <Row>
-          <Col xs={6} >
-          <Form.Group controlId="script_ref" className="mb-2" >
-                <Form.Label className="p-1" >Script Ref</Form.Label>
-                <Form.Control 
-                type="text"
-                name="script_ref"
-                value={script_ref}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.script_ref?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
-            <Form.Group controlId="storyboard_refs" className="mb-2" >
-                <Form.Label className="p-1" >Storyboard Refs</Form.Label>
-                <Form.Control 
-                type="text"
-                name="storyboard_refs"
-                value={storyboard_refs}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.storyboard_refs?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            </Col>
         </Row>
+        {/* number swf pickup call hmw on_set */}
         <Row>
-          <Col md={6} className='text-center'>
+          <Col xs={2} >
+            <Form.Group controlId="cast_number" className={`${styles.Width} `}  >
+                  <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
+                  <Form.Control 
+                  className={`${styles.Input}`} 
+                  type="text"
+                  name="cast_number"
+                  value={cast_number}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.cast_number?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+          <Col xs={2}>
+              <Form.Group controlId="swf" className={`${styles.Width} `}  >
+                  <Form.Label className={`${styles.Bold}`} >SWF</Form.Label>
+                  <Form.Control 
+                  className={`${styles.Input}`} 
+                  type="text"
+                  name="swf"
+                  value={swf}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.swf?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
+          <Col xs={2}>
+              <Form.Group controlId="pickup" className={`${styles.Width} `}  >
+                  <Form.Label className={`${styles.Bold}`} >Pickup</Form.Label>
+                  <Form.Control 
+                  className={`${styles.Input}`} 
+                  type="text"
+                  name="pickup"
+                  value={pickup}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.pickup?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
+          <Col xs={2} >
+          <Form.Group controlId="call" className={`${styles.Width} `}  >
+                <Form.Label className={`${styles.Bold}`} >Call</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`} 
+                type="text"
+                name="call"
+                value={call}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.call?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          <Col xs={2}>
+          <Form.Group controlId="hmw" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >H/M/W</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`} 
+              type="text"
+              name="hmw"
+              value={hmw}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.hmw?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={2}>
+          <Form.Group controlId="on_set" className={`${styles.Width} `} >
+              <Form.Label className={`${styles.Bold}`} >On Set</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`} 
+              type="text"
+              name="on_set"
+              value={on_set}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.on_set?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           </Col>
         </Row>
+        {/* buttons */}
         <Row>
           <Col className="text-center">
           <div className= {`mt-3 `} >{buttons}</div>
           </Col>
         </Row>
         </Form>
-
     </div>
   )
 }
