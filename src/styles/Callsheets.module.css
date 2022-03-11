@@ -6,6 +6,10 @@
   background-color: aliceblue;
 }
 
+.CastEntered {
+  background-color: #f0f1f9;
+}
+
 .Bold { 
   font-weight: 700;
 }
@@ -117,9 +121,21 @@
   background-color: rgb(209, 240, 240);
 }
 
+.Width {
+  width: 70%;
+}
+
+.Width2 {
+  width: 80%;
+}
+
+.Width3 {
+  width: 80%;
+}
+
 @media screen and (max-width: 600px) {
   .Width {
-    width: 80%;
+    width: 90%;
   }
 }
 

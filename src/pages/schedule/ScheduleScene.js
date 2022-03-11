@@ -37,7 +37,7 @@ const ScheduleScene = (props) => {
     return (
         <div style={style} className={`px-3 ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
-            <Row className='pt-2 text-center' >
+            <Row className='pt-2 text-center mx-0' >
                 {/* edit */}
                 <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
                 <OverlayTrigger

@@ -8,7 +8,6 @@ import Container from 'react-bootstrap/Container';
 import styles from "../../styles/DayPage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import DayPageTop from './DayPageTop';
 import SceneScheduleCreate from './SceneScheduleCreate';
 import ScheduleScene from './ScheduleScene';
 import TopBox from '../../components/TopBox';
@@ -16,7 +15,6 @@ import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
 import CallsheetCreate from '../callsheets/CallsheetCreate';
 import { Link } from 'react-router-dom';
-import { useSetDayContext } from '../../contexts/BaseCallContext';
 
 const DayPage = () => {
     useRedirect("loggedOut");
@@ -31,7 +29,6 @@ const DayPage = () => {
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
     const [hasOrder, setHasOrder] = useState(false);
-    const setDayContext = useSetDayContext();
 
     useEffect(() => {
         const handleMount = async () => {
@@ -66,19 +63,18 @@ const DayPage = () => {
             </Button>
             {hasLoaded ? (
                 <>
-                <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} 
-                  />
+                {/* <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} /> */}
                 {/* add scene setShowCall */}
                 <Row className='my-4'>
                     <Col xs={6} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
-                        className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                        className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`} >
                         Add Scene</Button>
                         {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
                     </Col>
                     <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheet/create/${id}`}>
-                            <p className={`p-1`}>Create Callsheet</p>
+                            <Button className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`} >Create Callsheet</Button>
                         {/* <Button onClick={() => setShowCall(showCall => !showCall)} 
                         className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                         Create Callsheet</Button> */}

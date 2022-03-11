@@ -6,13 +6,13 @@ export const SetCrewInfoContext = createContext();
 export const useCrewInfoContext = () => useContext(CrewInfoContext);
 export const useSetCrewInfoContext = () => useContext(SetCrewInfoContext);
 
-export const DayContext = createContext();
-export const SetDayContext = createContext();
-export const useDayContext = () => useContext(DayContext);
-export const useSetDayContext = () => useContext(SetDayContext);
+// export const CrewInfoIdContext = createContext();
+// export const SetCrewInfoIdContext = createContext();
+// export const useCrewInfoIdContext = () => useContext(CrewInfoIdContext);
+// export const useSetCrewInfoIdContext = () => useContext(SetCrewInfoIdContext);
 
 export const CrewInfoProvider = ({ children }) => {
-    const [shootDay, setShootDay] = useState("");
+    // const [crewInfoId, setCrewInfoId] = useState("");
     const [crewInfo, setCrewInfo] = useState({ results: [] });
     const crewInfoOne = crewInfo[0];
 
@@ -33,11 +33,7 @@ export const CrewInfoProvider = ({ children }) => {
     return (
         <CrewInfoContext.Provider value={crewInfoOne}>
             <SetCrewInfoContext.Provider value={setCrewInfo}>
-               <DayContext.Provider value={shootDay} >
-                 <SetDayContext.Provider value={setShootDay} >
                    {children}
-                </SetDayContext.Provider>
-                </DayContext.Provider>
             </SetCrewInfoContext.Provider>
         </CrewInfoContext.Provider>
     )

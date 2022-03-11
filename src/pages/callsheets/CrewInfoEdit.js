@@ -13,7 +13,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const CallsheetsBaseEdit = () => {
+const CrewInfoEdit = () => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -23,4 +23,4 @@ const CallsheetsBaseEdit = () => {
   )
 }
 
-export default CallsheetsBaseEdit
+export default CrewInfoEdit

@@ -16,7 +16,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const CallsheetsBaseCreate = () => {
+const CrewInfoCreate = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -641,7 +641,7 @@ const CallsheetsBaseCreate = () => {
       formData.append("company_logo", imageInput1.current.files[0]);
     }
     try {
-      await axiosReq.post("/crewinfo/", formData);
+      const {data} = await axiosReq.post("/crewinfo/", formData);
       history.push(`/callsheets/`);
     } catch (err) {
       console.log(err);
@@ -5453,4 +5453,4 @@ const CallsheetsBaseCreate = () => {
   )
 }
 
-export default CallsheetsBaseCreate
+export default CrewInfoCreate

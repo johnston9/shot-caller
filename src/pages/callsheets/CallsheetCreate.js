@@ -22,6 +22,7 @@ const CallsheetCreate = ({setShowCall}) => {
   const crewInfo = useCrewInfoContext();
   const [showSchedule, setShowSchedule] = useState(false);
   const [showAddCast, setShowAddCast] = useState(false);
+  const [showSideBySide, setShowSideBySide] = useState(false);
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
   const [dataId, setDataId] = useState("");
@@ -221,8 +222,7 @@ const CallsheetCreate = ({setShowCall}) => {
   }
 
   const infoFields = (
-    <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >Add General Info</h3> 
+    <div className="text-center">
       {/* Unit call - Talent call Shoot call */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -764,35 +764,47 @@ const buttons = (
   return (
     <div>
     <TopBox work="Callsheet Create"
-            title={`Day ${dataDay} ${dataDate} `} />
-    {/* schedule button */}
-    <Row>
-    <Col className='text-center' xs={4} >
-    <p
-        className={`py-0 mb-0 ${styles.Button}`}
-        onClick={() => setShowSchedule(showSchedule => !showSchedule)} >Schedule
-    </p>
+            title3={`Day ${dataDay} - ${dataDate} `} />
+    {/* schedule */}
+    {/* schedule - side by side buttons */}
+    <Row className='text-center'>
+    <Col  >
+    <Button
+        className={`my-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowSchedule(showSchedule => !showSchedule)} >View Schedule
+    </Button>
     </Col>
     </Row>
-    {/* schedule */}
+    <h3 className={`text-center py-0 ${styles.SubTitle }`} >ADD CAST</h3> 
+    <div className="mt-3">
     {!showSchedule ? (
       ""
     ) : (
+      <>
       <CallsheetSchedule scenes={scenes} setShowSchedule={setShowSchedule} />
+      </>
     ) }
-    <Row>
-    <Col className='text-center' xs={4} >
-    <p
-        className={`py-0 mb-0 ${styles.Button}`}
-        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Cast
-    </p>
+    </div>
+    {/* cast buttons */}
+    <Row className='text-center'>
+    <Col className='text-center' xs={4}>
+    <Button
+        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Characters
+    </Button>
     </Col>
-    {/* <Col className='text-center' xs={4}>
-      <p
-          className={`py-0 mb-0 ${styles.Button}`}
-          onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
-      </p>
-    </Col> */}
+    <Col className='text-center' xs={4}  >
+    <Button
+        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Background
+    </Button>
+    </Col>
+    <Col className='text-center' xs={4} >
+    <Button
+        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Stand Ins
+    </Button>
+    </Col>
     </Row>
     <div>
     {!showAddCast ? (
@@ -800,11 +812,32 @@ const buttons = (
     ) : (
       <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
     ) }
-
     </div>
-    <h3 className="text-center mt-3"> Add Info</h3>
+    {/* schedule - side by side buttons */}
+    <Row className='text-center'>
+    <Col className='text-center'  >
+    <Button
+        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowSideBySide(showSideBySide => !showSideBySide)} >
+          Schedule and Cast Forms Side by Side
+    </Button>
+    </Col>
+    </Row>
+    {!showSideBySide ? (
+      ""
+    ) : (                      
+      <Row className="mx-0">
+        <Col className="px-1" xs={6}>
+        <CallsheetSchedule scenes={scenes} setShowSchedule={setShowSchedule} />
+        </Col>
+        <Col xs={6}>
+        <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+        </Col>
+      </Row>             
+    ) }
+    <h3 className={`text-center mt-5 py-0 ${styles.SubTitle }`} >ADD INFO</h3> 
     {infoFields}
-    <h3 className="text-center mt-3"> Add Crew</h3>
+    <h3 className={`text-center my-2 py-0 ${styles.SubTitle }`} >ADD CREW</h3> 
     {/* {crewFields} */}
     </div>
   )

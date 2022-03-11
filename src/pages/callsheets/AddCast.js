@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
@@ -106,27 +106,31 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         >
           Cancel
         </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Create
+        <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          Add
         </Button>
       </div>
     );
 
   return (
-    <div>
-      <h3 className="text-center mt-3"> Add Cast</h3>
-      <p>Enter each cast member from their first scheduled scene</p>
-      <p>Cast Added so far</p>
-      <div >
-      {cast.results.length ? (
-          cast.results.map((ca) => (
-            <spam key={cast.id}>{cast.role} </spam>
-          ))) : ("")}
-      </div>
-      <Form onSubmit={handleSubmit}>
+    <div className="my-3">
+      <h3 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD CHARACTERS</h3> 
+      <p className="text-center">Enter each cast member from their first scheduled scene</p>
+      <p className="text-center mb-0">Cast Added</p>
+      <Row className="mt-0 pt-0">
+        <Col sm={{span: 8, offset: 2} }>
+        <div className={` my-2 py-1 ${styles.CastEntered }`} >
+          {cast.results.length ? (
+              cast.results.map((ca) => (
+                <spam key={ca.id}>{ca.role} </spam>
+              ))) : ("")}
+          </div>
+          </Col>
+      </Row>
+      <Form className="text-center" onSubmit={handleSubmit}>
             {/* role artist contact inst*/}
-        <Row>
-            <Col xs={3}>
+        <Row className="mx-0">
+            <Col className="mx-0 "  xs={3}>
             <Form.Group controlId="role" className={`${styles.Width} `}  >
                 <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
                 <Form.Control
@@ -143,7 +147,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3}>
+            <Col className="mx-0 px-1"  xs={3}>
             <Form.Group controlId="artist" className={`${styles.Width} `}  >
                 <Form.Label className={`${styles.Bold}`} >Artist</Form.Label>
                 <Form.Control 
@@ -160,7 +164,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3}>
+            <Col className="mx-0 px-1"  xs={3}>
             <Form.Group controlId="contact" className={`${styles.Width} `}  >
                 <Form.Label className={`${styles.Bold}`} >Contact</Form.Label>
                 <Form.Control 
@@ -177,9 +181,9 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3}>
+            <Col className="mx-0 px-1"  xs={3}>
             <Form.Group controlId="inst" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Inst. misc.</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Inst</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -196,9 +200,9 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         </Col>
         </Row>
         {/* number swf pickup call hmw on_set */}
-        <Row>
-          <Col xs={2} >
-            <Form.Group controlId="cast_number" className={`${styles.Width} `}  >
+        <Row className="mx-0">
+          <Col className="mx-0 px-1" xs={2} >
+            <Form.Group controlId="cast_number" className={`${styles.Width } `}  >
                   <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -214,8 +218,8 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
                 </Alert>
               ))}
               </Col>
-          <Col xs={2}>
-              <Form.Group controlId="swf" className={`${styles.Width} `}  >
+          <Col className="mx-0 px-1" xs={2}>
+              <Form.Group controlId="swf" className={`${styles.Width2} `}  >
                   <Form.Label className={`${styles.Bold}`} >SWF</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -231,8 +235,8 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
                 </Alert>
               ))}
           </Col>
-          <Col xs={2}>
-              <Form.Group controlId="pickup" className={`${styles.Width} `}  >
+          <Col className="mx-0 px-1" xs={2}>
+              <Form.Group controlId="pickup" className={`${styles.Width2} `}  >
                   <Form.Label className={`${styles.Bold}`} >Pickup</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -248,8 +252,8 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
                 </Alert>
               ))}
           </Col>
-          <Col xs={2} >
-          <Form.Group controlId="call" className={`${styles.Width} `}  >
+          <Col className="mx-0 px-1" xs={2} >
+          <Form.Group controlId="call" className={`${styles.Width2} `}  >
                 <Form.Label className={`${styles.Bold}`} >Call</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
@@ -265,8 +269,8 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
               </Alert>
             ))}
             </Col>
-          <Col xs={2}>
-          <Form.Group controlId="hmw" className={`${styles.Width} `}  >
+          <Col className="mx-0 px-1" xs={2}>
+          <Form.Group controlId="hmw" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.Bold}`} >H/M/W</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
@@ -282,9 +286,12 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={2}>
-          <Form.Group controlId="on_set" className={`${styles.Width} `} >
-              <Form.Label className={`${styles.Bold}`} >On Set</Form.Label>
+          <Col className="mx-0 px-1" xs={2}>
+          <Form.Group controlId="on_set" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.Bold}`} >
+                <span className="d-none d-sm-block">On Set</span> 
+                <span className="d-sm-none">Set</span>
+                </Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
               type="text"

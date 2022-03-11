@@ -19,7 +19,7 @@ import CrewInfo from "./CrewInfo";
 
 const CallsheetsPage = ({ filter="" }) => {
   useRedirect("loggedOut");
-  const [showBase, setShowBase] = useState(false);
+  const [showCrewInfo, setShowCrewInfo] = useState(false);
   const [callsheets, setCallsheets] = useState({ results: [] });
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -53,8 +53,6 @@ const CallsheetsPage = ({ filter="" }) => {
   return (
     <div>
         <TopBox work="Callsheets" />
-        {/* title={`Shoot Day ${day}`} 
-            title3={`${date}`}*/}
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}
@@ -62,7 +60,7 @@ const CallsheetsPage = ({ filter="" }) => {
             Back
         </Button>
         {/* Add base callsheet */}
-        <h3 className="text-center">Callsheet Base Info</h3>
+        <h3 className="text-center">Crew Info</h3>
         <Row className="text-center">
             <Col xs={4} >
             <Button onClick={() => history.push("crewinfo/create")}
@@ -70,7 +68,7 @@ const CallsheetsPage = ({ filter="" }) => {
               Add Info</Button>
             </Col>
             <Col xs={4}>
-            <Button onClick={() => setShowBase(showBase => !showBase ) }
+            <Button onClick={() => setShowCrewInfo(showCrewInfo => !showCrewInfo ) }
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Shed}`}>
               View Info</Button>
             </Col>
@@ -80,8 +78,8 @@ const CallsheetsPage = ({ filter="" }) => {
               Edit Info</Button>
             </Col>
         </Row>
-        {/* Base */}
-        {showBase ? (
+        {/* CrewInfo */}
+        {showCrewInfo ? (
           <CrewInfo />
         ) : ("") }
         {/* search  */}

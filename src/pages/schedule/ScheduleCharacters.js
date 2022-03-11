@@ -255,7 +255,7 @@ const ScheduleCharacters = (props) => {
                 <hr className='my-0'/>
                 </Col>
                 <Col className='mx-0 px-0 mt-2' xs={12} md={6} >
-                <p className={`mb-0 mt-2 px-5 mx-5 ${styles.BoldTitle }`}>Costumes</p>
+                <p className={`mb-0 px-5 mx-5 ${styles.BoldTitle }`}>Costumes</p>
                 <p className='mb-0'>{background_artists_costumes}</p>
                 <hr className='my-0'/>
                 </Col>

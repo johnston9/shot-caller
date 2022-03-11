@@ -14,36 +14,36 @@ const SchedSceneInfo = (props) => {
             <p className={`text-center mt-1 mb-0 ${styles.Bold}`}>Day {day} - {date} </p>
             <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
             <Row className='text-center'>
-                <Col xs={12} md={6} >
+                <Col className='mx-0 px-0' xs={12} md={6} >
                 <p className={`mb-0 mt-2 mx-5 ${styles.BoldTitle }`} >Act/Pages/Time </p>
                 <p className='mb-0'>{act} / {pages} / {time} </p>
                 <hr className='my-0'/>
                 </Col>
-                <Col xs={12} md={6}>
+                <Col className='mx-0 px-0' xs={12} md={6}>
                 <p className={`mb-0 mt-2 mx-5 ${styles.BoldTitle }`}>Scene Heading </p>
                 <p className='mb-0'><span style={{ textTransform: 'italic' }} >{title} </span> </p>
                 <hr className='my-0'/>
                 </Col>
             </Row>
             <Row className='text-center'>
-                <Col xs={12} md={6} >
+                <Col className='mx-0 px-0' xs={12} md={6} >
                 <p className={`mb-0 mt-2 mx-5 ${styles.BoldTitle }`} >Shoot Address </p>
                 <p className='mb-0'>{location_address} </p>
                 <hr className='my-0'/>
                 </Col>
-                <Col xs={12} md={6}>
+                <Col className='mx-0 px-0' xs={12} md={6}>
                 <p className={`mb-0 mt-2 mx-5 ${styles.BoldTitle }`}>Equip/Set</p>
                 <p className='mb-0'><span style={{ textTransform: 'italic' }} >{info} </span> </p>
                 <hr className='my-0'/>
                 </Col>
             </Row>
             <Row className='text-center'>
-                <Col xs={12} md={6} >
+                <Col className='mx-0 px-0' xs={12} md={6} >
                 <p className={`mb-0 mt-2 mx-5 ${styles.BoldTitle }`} >Scene Content </p>
                 <p className='mb-0'>{content} </p>
                 <hr className='my-0'/>
                 </Col>
-                <Col xs={12} md={6}>
+                <Col className='mx-0 px-0' xs={12} md={6}>
                 <p className={`mb-0 mt-2 mx-5 ${styles.BoldTitle }`}>New Content</p>
                 <p className='mb-0'>{new_content} </p>
                 </Col>
