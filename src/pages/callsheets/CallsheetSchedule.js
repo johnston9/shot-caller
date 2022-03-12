@@ -7,23 +7,23 @@ import { useParams, useHistory } from 'react-router-dom';
 import ScheduleScene from '../schedule/ScheduleScene';
 import styles from "../../styles/DayPage.module.css";
 
-const CallsheetSchedule = ({scenes}) => {
+const CallsheetSchedule = ({scenes, showSideBySide}) => {
     useRedirect("loggedOut");
     const { id } = useParams();
   return (
     <div>
-        <h3 className={`text-center mt-3 mx-5 py-0 ${styles.SubTitle }`} >SCHEDULE</h3> 
         {/* titles */}
         <div className='d-none d-md-block'>
-            <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
+        <h5 className={`text-center my-3 py-0 ${styles.SubTitle }`} >SCHEDULE</h5> 
+            <Row style={{ textTransform: 'uppercase' }} className={` mx-0  ${styles.TitleBox}`} >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0 pl-2'>Edit</p>
+                    <p className='mb-0 pl-2'>Ed</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Times</p>
+                    <p className='mb-0'>Tms</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Scene</p>
+                    <p className='mb-0 pl-2'>S</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p className='mb-0'>Details</p>
@@ -35,13 +35,13 @@ const CallsheetSchedule = ({scenes}) => {
                 <p className='mb-0'>Filming</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Pages</p>
+                    <p className='mb-0'>P</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Cast</p>
+                    <p className='mb-0'>C</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Info</p>
+                    <p className='mb-0'>In</p>
                 </Col>
             </Row>
         </div>
@@ -54,6 +54,7 @@ const CallsheetSchedule = ({scenes}) => {
                         {...scene} 
                         dayid={id} 
                         sceneAll={scene} 
+                        showSideBySide={showSideBySide}
                         // setHasOrder={setHasOrder}
                         key={scene.id} />
                 ))) : ("")}

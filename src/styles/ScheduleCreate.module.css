@@ -26,10 +26,15 @@
 
 .InputScene {
   background: #ffffff;
+  border: 1px solid #f0f1f9;
    box-sizing: border-box;
    border-radius: 2px;
    color: #7177a1;
    padding: 0px 10px;
+}
+
+.Number {
+  border-right: 1px solid #eaf2fa;
 }
 
 .Bold { 

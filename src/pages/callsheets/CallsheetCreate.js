@@ -277,7 +277,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* breakfast - lunch - wrap */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -332,7 +331,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* basecamp address - basecamp parking and notes */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -356,9 +354,12 @@ const CallsheetCreate = ({setShowCall}) => {
           </Col>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="basecamp_parking_n_notes" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Basecamp Parking and Notes</Form.Label>
+              <Form.Label className={`d-none d-sm-block ${styles.Bold}`}>Basecamp Parking and Notes</Form.Label>
+              <Form.Label className={`d-sm-none ${styles.Bold}`}>Basecamp Notes</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="basecamp_parking_n_notes"
                 value={basecamp_parking_n_notes}
@@ -372,7 +373,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* location 1 address - location 1 parking and notes */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -396,9 +396,12 @@ const CallsheetCreate = ({setShowCall}) => {
           </Col>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_1_parking_n_notes" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Location 1 Parking and Notes</Form.Label>
+              <Form.Label className={`d-none d-sm-block ${styles.Bold}`}>Location 1 Parking and Notes</Form.Label>
+              <Form.Label className={`d-sm-none ${styles.Bold}`}>Location 1 Notes</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="location_1_parking_n_notes"
                 value={location_1_parking_n_notes}
@@ -412,7 +415,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* location 2 address - location 2 parking and notes */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -436,9 +438,12 @@ const CallsheetCreate = ({setShowCall}) => {
           </Col>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_2_parking_n_notes" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Location 2 Parking and Notes</Form.Label>
+          <Form.Label className={`d-none d-sm-block ${styles.Bold}`}>Location 2 Parking and Notes</Form.Label>
+              <Form.Label className={`d-sm-none ${styles.Bold}`}>Location 2 Notes</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="location_2_parking_n_notes"
                 value={location_2_parking_n_notes}
@@ -452,7 +457,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* location 3 address - location 3 parking and notes */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -476,9 +480,12 @@ const CallsheetCreate = ({setShowCall}) => {
           </Col>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_3_parking_n_notes" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Location 3 Parking and Notes</Form.Label>
+          <Form.Label className={`d-none d-sm-block ${styles.Bold}`}>Location 3 Parking and Notes</Form.Label>
+              <Form.Label className={`d-sm-none ${styles.Bold}`}>Location 3 Notes</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="location_3_parking_n_notes"
                 value={location_3_parking_n_notes}
@@ -492,7 +499,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* location 4 address - location 4 parking and notes */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -516,9 +522,12 @@ const CallsheetCreate = ({setShowCall}) => {
           </Col>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_4_parking_n_notes" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Location 4 Parking and Notes</Form.Label>
+          <Form.Label className={`d-none d-sm-block ${styles.Bold}`}>Location 4 Parking and Notes</Form.Label>
+              <Form.Label className={`d-sm-none ${styles.Bold}`}>Location 4 Notes</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="location_4_parking_n_notes"
                 value={location_4_parking_n_notes}
@@ -532,7 +541,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* location 5 address - location 5 parking and notes */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -556,9 +564,12 @@ const CallsheetCreate = ({setShowCall}) => {
           </Col>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_5_parking_n_notes" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Location 5 Parking and Notes</Form.Label>
+          <Form.Label className={`d-none d-sm-block ${styles.Bold}`}>Location 5 Parking and Notes</Form.Label>
+              <Form.Label className={`d-sm-none ${styles.Bold}`}>Location 5 Notes</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="location_5_parking_n_notes"
                 value={location_5_parking_n_notes}
@@ -572,7 +583,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* nearest hospital - important info */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -598,7 +608,9 @@ const CallsheetCreate = ({setShowCall}) => {
           <Form.Group controlId="important_info" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold}`}>Important Info</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="important_info"
                 value={important_info}
@@ -612,7 +624,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* transport info - department info */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -638,7 +649,9 @@ const CallsheetCreate = ({setShowCall}) => {
           <Form.Group controlId="department_info" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold}`}>Department Info</Form.Label>
               <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
                 type="text"
                 name="department_info"
                 value={department_info}
@@ -652,7 +665,6 @@ const CallsheetCreate = ({setShowCall}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* weather location */}
       <Row>
           <Col xs={{span: 6, offset: 3} } className="d-flex justify-content-center p-0 p-md-2">
@@ -828,7 +840,7 @@ const buttons = (
     ) : (                      
       <Row className="mx-0">
         <Col className="px-1" xs={6}>
-        <CallsheetSchedule scenes={scenes} setShowSchedule={setShowSchedule} />
+        <CallsheetSchedule showSideBySide={showSideBySide} scenes={scenes} setShowSchedule={setShowSchedule} />
         </Col>
         <Col xs={6}>
         <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />

@@ -20,7 +20,7 @@ const ScheduleScene = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const {sceneAll, id, day_id, number, int_ext, start_time, end_time,
         location, filming_location, day_night, action, pages,
-        new_info, day_order_number, setHasOrder, style } = props
+        new_info, day_order_number, setHasOrder, style, showSideBySide } = props
         
         const handleEdit = () => {
             history.push(`/schedule/scenes/edit/${id}/`);
@@ -45,7 +45,7 @@ const ScheduleScene = (props) => {
                     overlay={<Tooltip>Re-Order</Tooltip>}
                     >
                     <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-4 `}>
+                        className={`${btnStyles.Button} ${btnStyles.Shed} py-0 `}>
                         {day_order_number}
                     </Button>
                 </OverlayTrigger>
@@ -76,19 +76,38 @@ const ScheduleScene = (props) => {
                     <p >{pages}</p>
                 </Col>
                 {/* cast */}
-                <Col xs={1} md={1} className="mx-0 px-0">
+                {showSideBySide ? (
+                    <Col xs={1} md={1} className="mx-0 px-0">
+                    <Button onClick={() => setShow(show => !show)} 
+                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                    C
+                    </Button>
+                </Col>
+                ) : (
+                    <Col xs={1} md={1} className="mx-0 px-0">
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     Cast
                     </Button>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                )}
+                {showSideBySide ? (
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        I
+                    </Button>
+                    <p className='mb-0'>{id}</p>
+                </Col>
+                ) : (
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
                     </Button>
                     <p className='mb-0'>{id}</p>
                 </Col>
+                )}      
             </Row>
             {/* Order  */}
             {!showOrder ?("") : (                       
@@ -162,13 +181,13 @@ const ScheduleScene = (props) => {
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
                 {/* cast */}
-                <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
+                    <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Cast</p>
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     Cast
                     </Button>
-                </Col>
+                </Col>               
                 {/* edit */}
                 <Col className={`text-center mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={3} >
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Edit</p>

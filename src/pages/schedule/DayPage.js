@@ -70,17 +70,14 @@ const DayPage = () => {
                         <Button onClick={() => setShow(show => !show)} 
                         className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`} >
                         Add Scene</Button>
-                        {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
                     </Col>
                     <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheet/create/${id}`}>
                             <Button className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`} >Create Callsheet</Button>
-                        {/* <Button onClick={() => setShowCall(showCall => !showCall)} 
-                        className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                        Create Callsheet</Button> */}
                         </Link>
                     </Col>
                 </Row>
+                {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
                 {/* titles */}
                 <div className='d-none d-md-block'>
                 <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
@@ -135,8 +132,6 @@ const DayPage = () => {
                 </Container>
             )             
             }
-            {/* callsheet */}
-            {!showCall ?("") : (<CallsheetCreate dayday={dataDay} setShowCall={setShowCall} setHasOrder={setHasOrder} daydate={dataDate} /> ) }
             </div>
     )
 }

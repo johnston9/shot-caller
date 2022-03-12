@@ -28,7 +28,7 @@ const Act1List = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThr
     return (
         <div>
           <div className= {`mt-4`} >
-            <h5 className="pb-2 text-center">Select scene to pre-fill form</h5>
+            <h5 className="pb-2 text-center">Select scene</h5>
             <Row >
             {scenes.results.length ? (
                 scenes.results.map((scene) => (
