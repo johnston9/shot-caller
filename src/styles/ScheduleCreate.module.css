@@ -92,6 +92,7 @@
 /* info */
 
 .SceneBox {
+  /* border: 5px solid #f0f1f9; */
   border: 1px solid #fafafa;
   background-color: #fff;
   font-weight: 700;

@@ -27,6 +27,7 @@ const SceneEditForm = () => {
     const [show, setShow] = useState(false);
     const characters = useCharactersContext();
     const locations = useLocationsContext();
+
     const [postData, setPostData] = useState({
       number: "",
       title: "",
@@ -39,6 +40,10 @@ const SceneEditForm = () => {
       location_detail: "",
       filming_location: "",
       shooting_date: "",
+      action: "",
+      department_info: "",
+      equip_set_props: "",
+      dramatic_day: "",
       character1: "",
       character1_costume: "",
       character2: "",
@@ -67,23 +72,21 @@ const SceneEditForm = () => {
       other_characters_costumes: "",
       background_artists: "",
       background_artists_costumes: "",
-      action: "",
-      content: "",
       storyboard: "",
-      info: "",
       image: "",
-      });
+    });
 
-      const { number, title, act, int_ext, day_night, time, location,
-        filming_location, character1, character1_costume, character2, 
-        character2_costume, character3, character3_costume, character4, 
-        character4_costume, character5, character5_costume, character6, 
-        character6_costume, character7, character7_costume, character8,
-        character8_costume, character9, character9_costume, character10, 
-        character10_costume, character11, character11_costume, character12,
-        character12_costume, other_characters, other_characters_costumes,
-        background_artists, background_artists_costumes, shooting_date,
-        pages, action, content, storyboard, info, image, location_detail, } = postData;
+  const { number, title, act, int_ext, day_night, time, location,
+    filming_location, character1, character1_costume, character2, 
+    character2_costume, character3, character3_costume, character4, 
+    character4_costume, character5, character5_costume, character6, 
+    character6_costume, character7, character7_costume, character8,
+    character8_costume, character9, character9_costume, character10, 
+    character10_costume, character11, character11_costume, character12,
+    character12_costume, other_characters, other_characters_costumes,
+    background_artists, background_artists_costumes, shooting_date,
+    dramatic_day, equip_set_props, department_info,
+    pages, action, storyboard, image, location_detail } = postData;
     
     const imageInput = useRef(null)
     const storyboardInput = useRef(null)
@@ -104,7 +107,8 @@ const SceneEditForm = () => {
               character10_costume, character11, character11_costume, character12,
               character12_costume, other_characters, other_characters_costumes,
               background_artists, background_artists_costumes, shooting_date,
-              pages, action, content, storyboard, info, image, location_detail, } = data;
+              dramatic_day, equip_set_props, department_info,
+              pages, action, storyboard, image, location_detail } = data;
      
         setPostData({ number, title, act, int_ext, day_night, time, location,
           filming_location, character1, character1_costume, character2, 
@@ -115,7 +119,8 @@ const SceneEditForm = () => {
           character10_costume, character11, character11_costume, character12,
           character12_costume, other_characters, other_characters_costumes,
           background_artists, background_artists_costumes, shooting_date,
-          pages, action, content, storyboard, info, image, location_detail });
+          dramatic_day, equip_set_props, department_info,
+          pages, action, storyboard, image, location_detail });
           } catch (err) {
             console.log(err);
           }
@@ -164,10 +169,14 @@ const SceneEditForm = () => {
         formData.append("day_night", day_night);
         formData.append("time", time);
         formData.append("pages", pages);
+        formData.append("dramatic_day", dramatic_day);
         formData.append("location", location);
         formData.append("location_detail", location_detail);
         formData.append("filming_location", filming_location);
         formData.append("shooting_date", shooting_date);
+        formData.append("action", action);
+        formData.append("equip_set_props", equip_set_props);
+        formData.append("department_info", department_info);
         formData.append("character1", character1);
         formData.append("character1_costume", character1_costume);
         formData.append("character2", character2);
@@ -196,9 +205,6 @@ const SceneEditForm = () => {
         formData.append("other_characters_costumes", other_characters_costumes);
         formData.append("background_artists", background_artists);
         formData.append("background_artists_costumes", background_artists_costumes);
-        formData.append("action", action);
-        formData.append("content", content);
-        formData.append("info", info);
         if (imageInput.current.files[0]) {
             formData.append("image", imageInput.current.files[0]);
         }
@@ -218,15 +224,15 @@ const SceneEditForm = () => {
     }
 
     const textFields = (
-      <div className="mt-3">
+      <div className="mt-3 text-center">
         {/* number title act */}
         <Row>
           <Col xs={3} >
           <Form.Group controlId="number" className="mb-2" >
-                <Form.Label className="d-none p-1" >Number</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
                 <Form.Control 
                 placeholder="Number"
-                className={styles.InputScene}
+                className={styles.Input}
                 type="text"
                 name="number"
                 value={number}
@@ -241,10 +247,10 @@ const SceneEditForm = () => {
             </Col>
             <Col xs={6}>
             <Form.Group controlId="title" className="mb-2" >
-                <Form.Label className="d-none p-1" >Title</Form.Label>
+                <Form.Label className={`${styles.Bold}`}>Title</Form.Label>
                 <Form.Control 
                 placeholder="Title"
-                className={styles.InputScene}
+                className={styles.Input}
                 type="text"
                 name="title"
                 value={title}
@@ -259,9 +265,9 @@ const SceneEditForm = () => {
             </Col>
             <Col xs={3}>
             <Form.Group controlId="act" className="mb-2" >
-                <Form.Label className="d-none p-1" >Act</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Act</Form.Label>
                 <Form.Control as="select"
-                  className={styles.InputScene}
+                  className={styles.Input}
                   name="act"
                   value={act}
                   onChange={handleChange}
@@ -280,25 +286,14 @@ const SceneEditForm = () => {
             ))}
           </Col>
         </Row>
-        {/* location int-ext day-night */}
+        {/* location location-detail  */}
         <Row>
-        <Col xs={4}>
-            {/* <Form.Group controlId="location" className="mb-2" >
-                <Form.Label className="d-none p-1" >Location</Form.Label>
-                <Form.Control 
-                className={styles.InputScene}
-                placeholder="Location"
-                type="text"
-                name="location"
-                value={location}
-                onChange={handleChange}
-                    />
-            </Form.Group> */}
+        <Col xs={6}>
             <Form.Group controlId="location" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 1</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Location</Form.Label>
                 <Form.Control as="select"
                   name="location"
-                  className={styles.InputChar}
+                  className={styles.Input}
                   value={location}
                   onChange={handleChange}
                   aria-label="location select">
@@ -315,11 +310,11 @@ const SceneEditForm = () => {
               </Alert>
             ))}
         </Col>
-        <Col xs={4}>
+        <Col xs={6}>
             <Form.Group controlId="location_detail" className="mb-2" >
-                <Form.Label className="d-none p-1" >Location Detail</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Location Detail</Form.Label>
                 <Form.Control 
-                className={styles.InputScene}
+                className={styles.Input}
                 placeholder="Location Detail"
                 type="text"
                 name="location_detail"
@@ -333,11 +328,14 @@ const SceneEditForm = () => {
               </Alert>
             ))}
         </Col>
-        <Col xs={2} >         
+        </Row>
+        {/* Int-Ext Day/Night Dramatic-day  */}
+        <Row>
+        <Col xs={4} >         
             <Form.Group controlId="int_ext" className="mb-2" >
-                <Form.Label className="d-none p-1" >Int-Ext</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Int-Ext</Form.Label>
                 <Form.Control as="select"
-                  className={styles.InputScene}
+                  className={styles.Input}
                   placeholder="Int-Ext"
                   name="int_ext"
                   value={int_ext}
@@ -354,720 +352,502 @@ const SceneEditForm = () => {
               </Alert>
             ))}
             </Col>
-            <Col xs={2} >
-            <Form.Group controlId="day_night" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Day/Night</Form.Label>
-                <Form.Control as="select"
-                  name="day_night"
+        <Col xs={4} >
+        <Form.Group controlId="day_night" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Day/Night</Form.Label>
+            <Form.Control as="select"
+              name="day_night"
+              className={styles.Input}
+              placeholder="Day/Night"
+              value={day_night}
+              onChange={handleChange}
+              aria-label="day or night select">
+              <option>Day/Night</option>
+              <option value="DAY">Day</option>
+              <option value="NIGHT">Night</option>
+            </Form.Control>
+        </Form.Group>
+        {errors?.day_night?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={4} >
+            <Form.Group controlId="dramatic_day" className="mb-2" >
+                <Form.Label className={`${styles.Bold}`} >Dramatic Day</Form.Label>
+                <Form.Control 
+                type="text"
+                className={styles.Input}
+                placeholder="Dramatic Day"
+                name="dramatic_day"
+                value={dramatic_day}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.dramatic_day?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+        </Row>
+        {/* shooting-date time pages*/}
+        <Row>
+        <Col xs={4}>
+        <Form.Group controlId="shooting_date" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Shooting Date</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.Input}
+            placeholder="Shooting Date"
+            name="shooting_date"
+            value={shooting_date}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.shooting_date?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={4} >
+        <Form.Group controlId="time" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Time</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.Input}
+            placeholder="Time"
+            name="time"
+            value={time}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.time?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={4} >
+        <Form.Group controlId="pages" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Pages</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.Input}
+            placeholder="Pages"
+            name="pages"
+            value={pages}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.pages?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        {/* Filming Location - Action */}
+        <Row>
+          <Col xs={6}>
+          <Form.Group controlId="filming_location" className="mb-2" >
+              <Form.Label className={`${styles.Bold}`} >Filming Location</Form.Label>
+              <Form.Control 
+              type="text"
+              className={styles.Input}
+              placeholder="Filming Location"
+              name="filming_location"
+              as="textarea"
+              rows={2}
+              value={filming_location}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.filming_location?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6}>
+          <Form.Group controlId="action" className="mb-2" >
+              <Form.Label className={`${styles.Bold}`} >Action</Form.Label>
+              <Form.Control 
+              type="text"
+              className={styles.Input}
+              placeholder="Action"
+              name="action"
+              as="textarea"
+              rows={2}
+              value={action}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.action?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        {/* department-info equip_set_props  */}
+        <Row>
+          <Col xs={6}>
+          <Form.Group controlId="content" className="mb-2" >
+              <Form.Label className={`${styles.Bold}`} >Department Info</Form.Label>
+              <Form.Control 
+                  type="text"
+                  placeholder="Department Info"
                   className={styles.InputScene}
-                  placeholder="Day/Night"
-                  value={day_night}
+                  name="department_info"
+                  as="textarea"
+                  rows={2}
+                  value={department_info}
                   onChange={handleChange}
-                  aria-label="day or night select">
-                  <option>Day/Night</option>
-                  <option value="DAY">Day</option>
-                  <option value="NIGHT">Night</option>
-                </Form.Control>
-            </Form.Group>
-            {errors?.day_night?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* shooting-date time pages*/}
-            <Row>
-            <Col xs={4}>
-            <Form.Group controlId="shooting_date" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Shooting Date</Form.Label>
-                <Form.Control 
-                type="text"
+                  />
+          </Form.Group>
+          {errors?.department_info?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+        <Col xs={6}>
+        <Form.Group controlId="equip_set_props" className="mb-2" >
+            <Form.Label className={`${styles.Bold}`} >Info/Equip/Set</Form.Label>
+            <Form.Control 
                 className={styles.InputScene}
-                placeholder="Shooting Date"
-                name="shooting_date"
-                value={shooting_date}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.shooting_date?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} >
-            <Form.Group controlId="time" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Time</Form.Label>
-                <Form.Control 
+                placeholder="Info/Equip/Set"
                 type="text"
-                className={styles.InputScene}
-                placeholder="Time"
-                name="time"
-                value={time}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.time?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} >
-            <Form.Group controlId="pages" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Pages</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.InputScene}
-                placeholder="Pages"
-                name="pages"
-                value={pages}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.pages?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* Filming Location - Action */}
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="filming_location" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Filming Location</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.InputScene}
-                placeholder="Filming Location"
-                name="filming_location"
+                name="equip_set_props"
                 as="textarea"
                 rows={2}
-                value={filming_location}
+                value={equip_set_props}
                 onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.filming_location?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="action" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Action</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.InputScene}
-                placeholder="Action"
-                name="action"
-                as="textarea"
-                rows={2}
-                value={action}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.action?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* content info */}
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="content" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Content</Form.Label>
-                <Form.Control 
-                    type="text"
-                    placeholder="Content"
-                    className={styles.InputScene}
-                    name="content"
-                    as="textarea"
-                    rows={2}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="info" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Info/Equip/Set</Form.Label>
-                <Form.Control 
-                    className={styles.InputScene}
-                    placeholder="Info/Equip/Set"
-                    type="text"
-                    name="info"
-                    as="textarea"
-                    rows={2}
-                    value={info}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.info?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* end info */}
-            {/* characters */}
-            <Row className="mt-3">
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character1" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 1</Form.Label>
-                <Form.Control as="select"
-                  name="character1"
-                  className={styles.InputChar}
-                  value={character1}
-                  onChange={handleChange}
-                  aria-label="character1 select">
-                    <option  >Character 1</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character1?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character2" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 2</Form.Label>
-                <Form.Control as="select"
-                  name="character2"
-                  className={styles.InputChar}
-                  value={character2}
-                  onChange={handleChange}
-                  aria-label="character2 select">
-                    <option  >Character 2</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character2?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character3" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 3</Form.Label>
-                <Form.Control as="select"
-                  name="character3"
-                  className={styles.InputChar}
-                  value={character3}
-                  onChange={handleChange}
-                  aria-label="character3 select">
-                    <option  >Character 3</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character3?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character4" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 4</Form.Label>
-                <Form.Control as="select"
-                  name="character4"
-                  className={styles.InputChar}
-                  value={character4}
-                  onChange={handleChange}
-                  aria-label="character4 select">
-                    <option  >Character 4</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character4?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character5" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 5</Form.Label>
-                <Form.Control as="select"
-                  name="character5"
-                  className={styles.InputChar}
-                  value={character5}
-                  onChange={handleChange}
-                  aria-label="character5 select">
-                    <option  >Character 5</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character5?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character6" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 6</Form.Label>
-                <Form.Control as="select"
-                  name="character6"
-                  className={styles.InputChar}
-                  value={character6}
-                  onChange={handleChange}
-                  aria-label="character6 select">
-                    <option  >Character 6</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character6?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character7" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 7</Form.Label>
-                <Form.Control as="select"
-                  name="character7"
-                  className={styles.InputChar}
-                  value={character7}
-                  onChange={handleChange}
-                  aria-label="character7 select">
-                    <option  >Character 7</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character7?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character8" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 8</Form.Label>
-                <Form.Control as="select"
-                  name="character8"
-                  className={styles.InputChar}
-                  value={character8}
-                  onChange={handleChange}
-                  aria-label="character8 select">
-                    <option  >Character 8</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character8?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character9" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 9</Form.Label>
-                <Form.Control as="select"
-                  name="character9"
-                  className={styles.InputChar}
-                  value={character9}
-                  onChange={handleChange}
-                  aria-label="character9 select">
-                    <option  >Character 9</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character9?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character10" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 10</Form.Label>
-                <Form.Control as="select"
-                  name="character10"
-                  className={styles.InputChar}
-                  value={character10}
-                  onChange={handleChange}
-                  aria-label="character10 select">
-                    <option  >Character 10</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character10?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character11" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 11</Form.Label>
-                <Form.Control as="select"
-                  name="character11"
-                  className={styles.InputChar}
-                  value={character11}
-                  onChange={handleChange}
-                  aria-label="character11 select">
-                    <option  >Character 11</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character11?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character12" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Character 12</Form.Label>
-                <Form.Control as="select"
-                  name="character12"
-                  className={styles.InputChar}
-                  value={character12}
-                  onChange={handleChange}
-                  aria-label="character12 select">
-                    <option  >Character 12</option>
-                  {characters.results.length && (
-                      characters.results.map((character) => (
-                        <option key={character.id} value={character.role} >{character.role}</option>
-                      ) )) }
-                </Form.Control>
-            </Form.Group>
-            {errors?.character12?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="other_characters" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Other Characters</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.InputScene}
-                placeholder="Other Characters"
-                name="other_characters"
-                as="textarea"
-                rows={2}
-                value={other_characters}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="background_artists" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Background Artists</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.InputScene}
-                placeholder="Background Artists"
-                name="background_artists"
-                as="textarea"
-                rows={2}
-                value={background_artists}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            {/* end characters */}
-            {/* characters costumes */}
-            {/* <Row>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character1_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 1 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character1_costume"
-                value={character1_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character1_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character2_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 2 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character2_costume"
-                value={character2_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character2_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character3_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 3 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character3_costume"
-                value={character3_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character3_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character4_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 4 Costume </Form.Label>
-                <Form.Control 
-                type="text"
-                name="character4_costume"
-                value={character4_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character4_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character5_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 5 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character5_costume"
-                value={character5_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character5_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character6_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 6 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character6_costume"
-                value={character6_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character6_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character7_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 7 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character7_costume"
-                value={character7_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character7_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character8_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 8 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character8_costume"
-                value={character8_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character8_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character9_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 9 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character9_costume"
-                value={character9_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character9_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character10_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 10 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character10_costume"
-                value={character10_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character10_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character11_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 11 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character11_costume"
-                value={character11_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character11_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="character12_costume" className="mb-2" >
-                <Form.Label className="p-1" >Ch. 12 Costume</Form.Label>
-                <Form.Control 
-                type="text"
-                name="character12_costume"
-                value={character12_costume}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character12_costume?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            <Row>
-              <Col xs={6}>
-            <Form.Group controlId="other_characters_costumes" className="mb-2" >
-                <Form.Label className="p-1" >Other Characters Costumes</Form.Label>
-                <Form.Control 
-                type="text"
-                name="other_characters_costumes"
-                as="textarea"
-                rows={2}
-                value={other_characters_costumes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters_costumes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={6}>
-            <Form.Group controlId="background_artists_costumes" className="mb-2" >
-                <Form.Label className="p-1" >Background Artists Costumes</Form.Label>
-                <Form.Control 
-                type="text"
-                name="background_artists_costumes"
-                as="textarea"
-                rows={2}
-                value={background_artists_costumes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists_costumes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row> */}
-            {/* end characters costumes */}
+                />
+        </Form.Group>
+        {errors?.equip_set_props?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        {/* end info */}
+        {/* characters */}
+        <Row className="mt-3">
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character1" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 1</Form.Label>
+            <Form.Control as="select"
+              name="character1"
+              className={styles.InputChar}
+              value={character1}
+              onChange={handleChange}
+              aria-label="character1 select">
+                <option  >Character 1</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character1?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character2" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 2</Form.Label>
+            <Form.Control as="select"
+              name="character2"
+              className={styles.InputChar}
+              value={character2}
+              onChange={handleChange}
+              aria-label="character2 select">
+                <option  >Character 2</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character2?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character3" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 3</Form.Label>
+            <Form.Control as="select"
+              name="character3"
+              className={styles.InputChar}
+              value={character3}
+              onChange={handleChange}
+              aria-label="character3 select">
+                <option  >Character 3</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character3?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character4" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 4</Form.Label>
+            <Form.Control as="select"
+              name="character4"
+              className={styles.InputChar}
+              value={character4}
+              onChange={handleChange}
+              aria-label="character4 select">
+                <option  >Character 4</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character4?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character5" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 5</Form.Label>
+            <Form.Control as="select"
+              name="character5"
+              className={styles.InputChar}
+              value={character5}
+              onChange={handleChange}
+              aria-label="character5 select">
+                <option  >Character 5</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character5?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character6" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 6</Form.Label>
+            <Form.Control as="select"
+              name="character6"
+              className={styles.InputChar}
+              value={character6}
+              onChange={handleChange}
+              aria-label="character6 select">
+                <option  >Character 6</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character6?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        <Row>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character7" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 7</Form.Label>
+            <Form.Control as="select"
+              name="character7"
+              className={styles.InputChar}
+              value={character7}
+              onChange={handleChange}
+              aria-label="character7 select">
+                <option  >Character 7</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character7?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character8" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 8</Form.Label>
+            <Form.Control as="select"
+              name="character8"
+              className={styles.InputChar}
+              value={character8}
+              onChange={handleChange}
+              aria-label="character8 select">
+                <option  >Character 8</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character8?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character9" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 9</Form.Label>
+            <Form.Control as="select"
+              name="character9"
+              className={styles.InputChar}
+              value={character9}
+              onChange={handleChange}
+              aria-label="character9 select">
+                <option  >Character 9</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character9?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character10" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 10</Form.Label>
+            <Form.Control as="select"
+              name="character10"
+              className={styles.InputChar}
+              value={character10}
+              onChange={handleChange}
+              aria-label="character10 select">
+                <option  >Character 10</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character10?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character11" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 11</Form.Label>
+            <Form.Control as="select"
+              name="character11"
+              className={styles.InputChar}
+              value={character11}
+              onChange={handleChange}
+              aria-label="character11 select">
+                <option  >Character 11</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character11?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={4} lg={2}>
+        <Form.Group controlId="character12" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Character 12</Form.Label>
+            <Form.Control as="select"
+              name="character12"
+              className={styles.InputChar}
+              value={character12}
+              onChange={handleChange}
+              aria-label="character12 select">
+                <option  >Character 12</option>
+              {characters.results.length && (
+                  characters.results.map((character) => (
+                    <option key={character.id} value={character.role} >{character.role}</option>
+                  ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.character12?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>
+        <Form.Group controlId="other_characters" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Other Characters</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.InputScene}
+            placeholder="Other Characters"
+            name="other_characters"
+            as="textarea"
+            rows={2}
+            value={other_characters}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.other_characters?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6}>
+        <Form.Group controlId="background_artists" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Background Artists</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.InputScene}
+            placeholder="Background Artists"
+            name="background_artists"
+            as="textarea"
+            rows={2}
+            value={background_artists}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.background_artists?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        {/* end characters */}
       </div>
   )
     const buttons = (

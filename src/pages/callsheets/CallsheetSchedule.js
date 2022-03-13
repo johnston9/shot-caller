@@ -14,16 +14,16 @@ const CallsheetSchedule = ({scenes, showSideBySide}) => {
     <div>
         {/* titles */}
         <div className='d-none d-md-block'>
-        <h5 className={`text-center my-3 py-0 ${styles.SubTitle }`} >SCHEDULE</h5> 
-            <Row style={{ textTransform: 'uppercase' }} className={` mx-0  ${styles.TitleBox}`} >
+        <h5 className={`text-center my-3 py-0 mx-5 ${styles.SubTitle }`} >SCHEDULE</h5> 
+            <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0 pl-2'>Ed</p>
+                    <p className='mb-0 pl-2'>Edit</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Tms</p>
+                    <p className='mb-0'>Time</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0 pl-2'>S</p>
+                    <p className='mb-0 pl-2'>Scene</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p className='mb-0'>Details</p>
@@ -38,10 +38,10 @@ const CallsheetSchedule = ({scenes, showSideBySide}) => {
                     <p className='mb-0'>P</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>C</p>
+                    <p className='mb-0'>Cast</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>In</p>
+                    <p className='mb-0'>Info</p>
                 </Col>
             </Row>
         </div>

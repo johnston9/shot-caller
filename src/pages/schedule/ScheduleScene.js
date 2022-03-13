@@ -35,7 +35,7 @@ const ScheduleScene = (props) => {
           };
 
     return (
-        <div style={style} className={`px-3 ${styles.Bold}`} > 
+        <div style={style} className={` ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
             <Row className='pt-2 text-center mx-0' >
                 {/* edit */}
@@ -92,7 +92,7 @@ const ScheduleScene = (props) => {
                 </Col>
                 )}
                 {showSideBySide ? (
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         I
@@ -100,7 +100,7 @@ const ScheduleScene = (props) => {
                     <p className='mb-0'>{id}</p>
                 </Col>
                 ) : (
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
@@ -137,7 +137,7 @@ const ScheduleScene = (props) => {
                 </Row>
                 {/* next */}
                 {new_info ? (
-                <Row>
+                <Row className='px-3'>
                     <Col className={`mb-0 py-2 ${styles.Next1}`}>
                     <p className="mb-0" >Next: {new_info} </p>
                     </Col>

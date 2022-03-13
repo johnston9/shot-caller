@@ -230,9 +230,27 @@
     box-sizing: border-box;
     border-radius: 2px;
     color: #7177a1;
-    /* text-align: center; */
     padding: 0px 10px;
     height: 30px !important;
+}
+
+.InputScene {
+   background: #ffffff;
+   border: 1px solid #f0f1f9;
+   box-sizing: border-box;
+   border-radius: 2px;
+   color: #7177a1;
+   padding: 0px 10px;
+}
+
+.InputChar {
+   background: #ffffff;
+   border: 1px solid #f0f1f9;
+   box-sizing: border-box;
+   border-radius: 2px;
+   color: #7177a1;
+   padding: 0px 0px;
+   height: 30px !important;
 }
 
 .ShotEditForm {
@@ -245,29 +263,8 @@
     box-sizing: border-box;
     border-radius: 2px;
     color: #7177a1;
-    /* text-align: center; */
     padding: 0px 10px;
     height: 50px !important;
-}
-
-/* .InputChar::placeholder {
-  color: #212529;
-} */
-.InputScene {
-   background: #ffffff;
-    box-sizing: border-box;
-    border-radius: 2px;
-    color: #7177a1;
-    padding: 0px 10px;
-}
-
-.InputChar {
-  background: #ffffff;
-    box-sizing: border-box;
-    border-radius: 2px;
-    color: #7177a1;
-    padding: 0px 0px;
-    /* height: 30px !important; */
 }
 
 .NewChar {
