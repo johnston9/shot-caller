@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/Scene.module.css";
 import { Alert } from "react-bootstrap";
 import { useRedirect } from "../../hooks/Redirect";
 
@@ -21,7 +21,7 @@ const SceneCreateCostumes = ({handleChange, postData}) => {
     background_artists_costumes, } = postData;
     
     return (
-        <div>
+        <div className="px-3">
             {/* characters costumes */}
             <Row className="mt-3">
             <Col xs={6} md={4} lg={2}>

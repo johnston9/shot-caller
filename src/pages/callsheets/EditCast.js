@@ -12,13 +12,13 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
+const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
     useRedirect("loggedOut");
-    const { id } = useParams();
     const [errors, setErrors] = useState({});
-    const [cast, setCast] = useState({results: [] });
+    // const [cast, setCast] = useState({results: [] });
 
     const [postData, setPostData] = useState({
+        day_id: "",
         cast_number: "",
         role: "",
         artist: "",
@@ -32,6 +32,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     });
 
     const { 
+        day_id,
         cast_number,
         role,
         artist,
@@ -44,6 +45,43 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         inst,
     } = postData;
 
+    useEffect(() => {
+        const handleMount = async () => {
+          try {
+            const { data } = await axiosReq.get(`/castcalls/${id}/`);
+            console.log(data)
+            const {  day_id,
+                cast_number,
+                role,
+                artist,
+                contact,
+                swf,
+                pickup,
+                call,
+                hmw,
+                on_set,
+                inst } = data;
+     
+            setPostData({
+                day_id,
+                cast_number,
+                role,
+                artist,
+                contact,
+                swf,
+                pickup,
+                call,
+                hmw,
+                on_set,
+                inst, });
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        handleMount();
+      }, [id]);
+
     const history = useHistory();
 
     const handleChange = (event) => {
@@ -53,24 +91,12 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         });
       };
 
-    useEffect(() => {
-      const handleMount = async () => {
-          try {
-              const { data } = await axiosReq.get(`/castcalls/?day_id=${id}`)
-              setCast(data);
-          } catch (err) {
-              console.log(err);
-            }
-      }
-      handleMount();
-      }, [id])
-
     const handleSubmit = async (event) => {
       event.preventDefault();
 
       const formData = new FormData();
   
-      formData.append("day_id", id);
+      formData.append("day_id", day_id);
       formData.append("day", dataDay);
       formData.append("date", dataDate);
       formData.append("cast_number", cast_number);
@@ -85,8 +111,8 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       formData.append("inst", inst);
     
       try {
-        const { data } = await axiosReq.post("/castcalls/", formData);
-        setShowAddCast((showAddCast) => !showAddCast)
+        const { data } = await axiosReq.put(`/castcalls/${id}/`, formData);
+        setShowCastEdit((showCastEdit) => !showCastEdit)
       //   setShotlist((prevShotlist) => ({
       //     ...prevShotlist,
       //     results: [data, ...prevShotlist.results],
@@ -102,7 +128,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       <div className="mb-2 text-center">    
         <Button
           className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => setShowAddCast(showAddCast => !showAddCast)}
+          onClick={() => setShowCastEdit(showCastEdit => !showCastEdit)}
         >
           Cancel
         </Button>
@@ -114,20 +140,8 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     
   return (
     <div className={`my-3 ${styles.Back }`}>
-      <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD CHARACTER</h5> 
-      <p className="text-center">Enter each cast member from their first scheduled scene. 
-         Open Characters Page in new tab to get H/M/W and Commute time.</p>
+      <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT CHARACTER</h5> 
       <p className="text-center mb-0">Cast Added</p>
-      <Row className="mt-0 pt-0">
-        <Col sm={{span: 8, offset: 2} }>
-        <div className={` my-2 py-1 ${styles.CastEntered }`} >
-          {cast.results.length ? (
-              cast.results.map((ca) => (
-                <spam key={ca.id}>{ca.role} </spam>
-              ))) : ("")}
-          </div>
-          </Col>
-      </Row>
       <Form className="text-center" onSubmit={handleSubmit}>
             {/* role artist contact inst*/}
         <Row className="mx-0">
@@ -319,4 +333,4 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
   )
 }
 
-export default AddCast
+export default EditCast

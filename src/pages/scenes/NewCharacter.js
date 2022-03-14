@@ -52,16 +52,15 @@ const NewCharacter = () => {
       );
 
     return (
-        <div className= {` ${styles.NewChar}`}>
+        <div className= {` ${styles.Back}`}>
             <p className="mt-3 text-center">Add new Characters here first to enable the dropdown selection. </p>
             <Form onSubmit={handleSubmit}>
             <Row className="mt-3">
-                <Col xs={3}></Col>
-                <Col xs={3}>
-                    <Form.Group controlId="newCharacter" className="mb-2" >
+                <Col className="d-flex justify-content-center pb-1" xs={6}>
+                    <Form.Group controlId="newCharacter" className={`${styles.Width2} `} >
                     <Form.Label className="d-none p-1" >New Character</Form.Label>
                     <Form.Control 
-                        placeholder="New Character"
+                        // placeholder="Character"
                         className={styles.InputScene}
                         type="text"
                         name="newCharacter"

@@ -138,6 +138,10 @@
   .Width {
     width: 90%;
   }
+
+  .Width2 {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 780px) {

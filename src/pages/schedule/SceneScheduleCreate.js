@@ -203,7 +203,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       {/* order start end */}
       <Row>
         <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
-        <Form.Group controlId="day_order_number" className={`${styles.Width3} `}  >
+        <Form.Group controlId="day_order_number" className={`${styles.Width2} `}  >
               <Form.Label className="p-1" >
                 <span className= "d-md-none">Order Number</span>
                 <span className="d-none d-md-block">Day Order Number</span>

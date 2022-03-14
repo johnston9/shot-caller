@@ -49,16 +49,15 @@ const NewLocation = ({setLocations}) => {
       );
 
     return (
-        <div className= {` ${styles.NewChar}`}>
+        <div className= {` ${styles.Back}`}>
             <p className="mt-3 text-center">Add new Locations here first to enable the dropdown selection. </p>
             <Form onSubmit={handleSubmit}>
             <Row className="mt-3">
-                <Col xs={3}></Col>
-                <Col xs={3}>
-                    <Form.Group controlId="newLocation" className="mb-2" >
+                <Col className="d-flex justify-content-center pb-1" xs={6}>
+                    <Form.Group controlId="newLocation" className={`${styles.Width2} `} >
                     <Form.Label className="d-none p-1" >New Location</Form.Label>
                     <Form.Control 
-                        placeholder="New Location"
+                        placeholder=""
                         className={styles.InputScene}
                         type="text"
                         name="newLocation"

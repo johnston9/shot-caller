@@ -15,6 +15,7 @@ const CallSheet = () => {
     const { id } = useParams();
     const [callsheet, setCallsheet] = useState({ results: [] });
     const [cast, setCast] = useState({ results: [] });
+    const [background, setBackground] = useState({ results: [] });
     const [dataId, setDataId] = useState("");
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
@@ -25,12 +26,14 @@ const CallSheet = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: callsheetdata }, { data: castcalldata }] = await Promise.all([
+                const [{ data: callsheetdata }, { data: castcalldata }, { data: bgcalldata }] = await Promise.all([
                     axiosReq.get(`/callsheets/?day_id=${id}`),
                     axiosReq.get(`/castcall/?day_id=${id}`),
+                    axiosReq.get(`/backgroundcalls/?day_id=${id}`),
                 ])
                 setCallsheet({ results: [callsheetdata] });
-                setCast(castcalldata)
+                setCast(castcalldata);
+                setBackground(bgcalldata);
                 setDataDay(callsheetdata.day)
                 setDataDate(callsheetdata.date);
                 setHasLoaded(true);

@@ -10,9 +10,10 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import { useCrewInfoContext, useDayContext } from "../../contexts/BaseCallContext";
+import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import AddCast from "./AddCast";
 import CallsheetSchedule from "./CallsheetSchedule";
+import AddBackGround from "./AddBackGround";
 
 const CallsheetCreate = ({setShowCall}) => {
   useRedirect("loggedOut");
@@ -22,6 +23,7 @@ const CallsheetCreate = ({setShowCall}) => {
   const crewInfo = useCrewInfoContext();
   const [showSchedule, setShowSchedule] = useState(false);
   const [showAddCast, setShowAddCast] = useState(false);
+  const [showAddBg, setShowAddBg] = useState(false);
   const [showSideBySide, setShowSideBySide] = useState(false);
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
@@ -222,7 +224,7 @@ const CallsheetCreate = ({setShowCall}) => {
   }
 
   const infoFields = (
-    <div className="text-center">
+    <div className={`text-center ${styles.Back }`}>
       {/* Unit call - Talent call Shoot call */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -787,7 +789,6 @@ const buttons = (
     </Button>
     </Col>
     </Row>
-    <h3 className={`text-center py-0 ${styles.SubTitle }`} >ADD CAST</h3> 
     <div className="mt-3">
     {!showSchedule ? (
       ""
@@ -798,23 +799,18 @@ const buttons = (
     ) }
     </div>
     {/* cast buttons */}
+    <h3 className={`text-center py-0 ${styles.SubTitle }`} >ADD CAST</h3> 
     <Row className='text-center'>
-    <Col className='text-center' xs={4}>
+    <Col className='text-center' xs={6}>
     <Button
-        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`mt-3 px-5 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Characters
     </Button>
     </Col>
-    <Col className='text-center' xs={4}  >
+    <Col className='text-center' xs={6}  >
     <Button
-        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Background
-    </Button>
-    </Col>
-    <Col className='text-center' xs={4} >
-    <Button
-        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Stand Ins
+        className={`mt-3 px-4 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Bg/Stand-Ins
     </Button>
     </Col>
     </Row>
@@ -824,12 +820,19 @@ const buttons = (
     ) : (
       <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
     ) }
-    </div>
+    </div> 
+    <div>
+    {!showAddBg ? (
+      ""
+    ) : (
+      <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+    ) }
+    </div> 
     {/* schedule - side by side buttons */}
     <Row className='text-center'>
     <Col className='text-center'  >
     <Button
-        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`mt-3 px-3 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowSideBySide(showSideBySide => !showSideBySide)} >
           Schedule and Cast Forms Side by Side
     </Button>
@@ -843,7 +846,12 @@ const buttons = (
         <CallsheetSchedule showSideBySide={showSideBySide} scenes={scenes} setShowSchedule={setShowSchedule} />
         </Col>
         <Col xs={6}>
+          <div>
         <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+          </div>
+          <div>
+        <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+          </div>
         </Col>
       </Row>             
     ) }
