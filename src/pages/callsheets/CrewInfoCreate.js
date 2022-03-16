@@ -367,56 +367,50 @@ const CrewInfoCreate = () => {
     catering_co_3_name: "",
     catering_co_3_email: "",
     catering_co_3_phone: "",
-    // xxxxx 
-    character7: "",
-    character7_costume: "",
-    character8: "",
-    character8_costume: "",
-    character9: "",
-    character9_costume: "",
-    character10: "",
-    character10_costume: "",
-    character11: "",
-    character11_costume: "",
-    character12: "",
-    character12_costume: "",
-    other_characters: "",
-    other_characters_costumes: "",
-    other_characters_calltimes: "",
-    other_characters_pickups: "",
-    background_artists: "",
-    background_artists_costumes: "",
-    background_artists_calltimes: "",
-    background_artists_pickups: "",
-    new_info: "",
-    new_content: "",
-    character1_calltime: "",
-    character1_pickup: "",
-    character2_calltime: "",
-    character2_pickup: "",
-    character3_calltime: "",
-    character3_pickup: "",
-    character4_calltime: "",
-    character4_pickup: "",
-    character5_calltime: "",
-    character5_pickup: "",
-    character6_calltime: "",
-    character6_pickup: "",
-    character7_calltime: "",
-    character7_pickup: "",
-    character8_calltime: "",
-    character8_pickup: "",
-    character9_calltime: "",
-    character9_pickup: "",
-    character10_calltime: "",
-    characte10_pickup: "",
-    character11_calltime: "",
-    character11_pickup: "",
-    character12_calltime: "",
-    character12_pickup: "",
+    add_pos_1_job: "",
+    add_pos_1_name: "",
+    add_pos_1_email: "",
+    add_pos_1_phone: "",
+    add_pos_2_job: "",
+    add_pos_2_name: "",
+    add_pos_2_email: "",
+    add_pos_2_phone: "",
+    add_pos_3_job: "",
+    add_pos_3_name: "",
+    add_pos_3_email: "",
+    add_pos_3_phone: "",
+    add_pos_4_job: "",
+    add_pos_4_name: "",
+    add_pos_4_email: "",
+    add_pos_4_phone: "",
+    add_pos_5_job: "",
+    add_pos_5_name: "",
+    add_pos_5_email: "",
+    add_pos_5_phone: "",
+    add_pos_6_job: "",
+    add_pos_6_name: "",
+    add_pos_6_email: "",
+    add_pos_6_phone: "",
+    add_pos_7_job: "",
+    add_pos_7_name: "",
+    add_pos_7_email: "",
+    add_pos_7_phone: "",
+    add_pos_8_job: "",
+    add_pos_8_name: "",
+    add_pos_8_email: "",
+    add_pos_8_phone: "",
+    add_pos_9_job: "",
+    add_pos_9_name: "",
+    add_pos_9_email: "",
+    add_pos_9_phone: "",
+    add_pos_10_job: "",
+    add_pos_10_name: "",
+    add_pos_10_email: "",
+    add_pos_10_phone: "",
 })
 
-  const { production_name, production_company, company_phone, company_email,
+  const { 
+          production_name, production_company, company_phone, company_email,
           company_address, company_logo, total_shoot_days,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
@@ -527,26 +521,16 @@ const CrewInfoCreate = () => {
           catering_co_3_name, catering_co_3_email, catering_co_3_phone,
           craft_service_name, craft_service_email, craft_service_phone,
           crafty_ass_name, crafty_ass_email, crafty_ass_phone,
-          // filming_location, day_night, time, action, info, pages,
-          character1, character1_costume, character2, 
-          character2_costume, character3, character3_costume, character4, 
-          character4_costume, character5, character5_costume, character6, 
-          character6_costume, character7, character7_costume, character8,
-          character8_costume, character9, character9_costume, character10,
-          character10_costume, character11, character11_costume, character12,
-          character12_costume, character1_calltime, character1_pickup,
-          character2_calltime, character2_pickup, character3_calltime,
-          character3_pickup, character4_calltime, character4_pickup,
-          character5_calltime, character5_pickup, character6_calltime, 
-          character6_pickup, character7_calltime, character7_pickup,
-          character8_calltime, character8_pickup, character9_calltime, 
-          character9_pickup, character10_calltime, character10_pickup,
-          character11_calltime, character11_pickup, character12_calltime, 
-          character12_pickup, other_characters, other_characters_costumes,
-          background_artists, background_artists_costumes,
-          other_characters_calltimes, other_characters_pickups,
-          background_artists_calltimes, background_artists_pickups,
-          new_info, new_content } = postData;
+          add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
+          add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
+          add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
+          add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
+          add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
+          add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
+          add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
+          add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
+          add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
+          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone, } = postData;
     
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -878,58 +862,61 @@ const CrewInfoCreate = () => {
     formData.append("car3_name", car3_name);
     formData.append("car3_email", car3_email);
     formData.append("car3_phone", car3_phone);
+    formData.append("catering_co_1_name", catering_co_1_name);
+    formData.append("catering_co_1_email", catering_co_1_email);
+    formData.append("catering_co_1_phone", catering_co_1_phone);
+    formData.append("catering_co_2_name", catering_co_2_name);
+    formData.append("catering_co_2_email", catering_co_2_email);
+    formData.append("catering_co_2_phone", catering_co_2_phone);
+    formData.append("catering_co_3_name", catering_co_3_name);
+    formData.append("catering_co_3_email", catering_co_3_email);
+    formData.append("catering_co_3_phone", catering_co_3_phone);
     formData.append("craft_service_name", craft_service_name);
     formData.append("craft_service_email", craft_service_email);
     formData.append("craft_service_phone", craft_service_phone);
     formData.append("crafty_ass_name", crafty_ass_name);
     formData.append("crafty_ass_email", crafty_ass_email);
-    formData.append("crafty_ass_phone", crafty_ass_phone);
-    // formData.append("character4", character4);
-    formData.append("character4_costume", character4_costume);
-    formData.append("character4_calltime", character4_calltime);
-    formData.append("character4_pickup", character4_pickup);
-    formData.append("character5", character5);
-    formData.append("character5_costume", character5_costume);
-    formData.append("character5_calltime", character5_calltime);
-    formData.append("character5_pickup", character5_pickup);
-    formData.append("character6", character6);
-    formData.append("character6_costume", character6_costume);
-    formData.append("character6_calltime", character6_calltime);
-    formData.append("character6_pickup", character6_pickup);
-    formData.append("character7", character7);
-    formData.append("character7_costume", character7_costume);
-    formData.append("character7_calltime", character7_calltime);
-    formData.append("character7_pickup", character7_pickup);
-    formData.append("character8", character8);
-    formData.append("character8_costume", character8_costume);
-    formData.append("character8_calltime", character8_calltime);
-    formData.append("character8_pickup", character8_pickup);
-    formData.append("character9", character9);
-    formData.append("character9_costume", character9_costume);
-    formData.append("character9_calltime", character9_calltime);
-    formData.append("character9_pickup", character9_pickup);
-    formData.append("character10", character10);
-    formData.append("character10_costume", character10_costume);
-    formData.append("character10_calltime", character10_calltime);
-    formData.append("character10_pickup", character10_pickup);
-    formData.append("character11", character11);
-    formData.append("character11_costume", character11_costume);
-    formData.append("character11_calltime", character11_calltime);
-    formData.append("character11_pickup", character11_pickup);
-    formData.append("character12", character12);
-    formData.append("character12_costume", character12_costume);
-    formData.append("character12_calltime", character12_calltime);
-    formData.append("character12_pickup", character12_pickup);
-    formData.append("other_characters", other_characters);
-    formData.append("other_characters_costumes", other_characters_costumes);
-    formData.append("other_characters_calltimes", other_characters_calltimes);
-    formData.append("other_characters_pickups", other_characters_pickups);
-    formData.append("background_artists", background_artists);
-    formData.append("background_artists_costumes", background_artists_costumes);
-    formData.append("background_artists_calltimes", background_artists_calltimes);
-    formData.append("background_artists_pickups", background_artists_pickups);    
-    formData.append("new_info", new_info);
-    formData.append("new_content", new_content);
+    formData.append("crafty_ass_phone", crafty_ass_phone); 
+    formData.append("add_pos_1_job", add_pos_1_job);
+    formData.append("add_pos_1_name", add_pos_1_name);
+    formData.append("add_pos_1_email", add_pos_1_email);
+    formData.append("add_pos_1_phone", add_pos_1_phone);
+    formData.append("add_pos_2_job", add_pos_2_job);
+    formData.append("add_pos_2_name", add_pos_2_name);
+    formData.append("add_pos_2_email", add_pos_2_email);
+    formData.append("add_pos_2_phone", add_pos_2_phone); 
+    formData.append("add_pos_3_job", add_pos_3_job);
+    formData.append("add_pos_3_name", add_pos_3_name);
+    formData.append("add_pos_3_email", add_pos_3_email);
+    formData.append("add_pos_3_phone", add_pos_3_phone); 
+    formData.append("add_pos_4_job", add_pos_4_job);
+    formData.append("add_pos_4_name", add_pos_4_name);
+    formData.append("add_pos_4_email", add_pos_4_email);
+    formData.append("add_pos_4_phone", add_pos_4_phone); 
+    formData.append("add_pos_5_job", add_pos_5_job);
+    formData.append("add_pos_5_name", add_pos_5_name);
+    formData.append("add_pos_5_email", add_pos_5_email);
+    formData.append("add_pos_5_phone", add_pos_5_phone); 
+    formData.append("add_pos_6_job", add_pos_6_job);
+    formData.append("add_pos_6_name", add_pos_6_name);
+    formData.append("add_pos_6_email", add_pos_6_email);
+    formData.append("add_pos_6_phone", add_pos_6_phone); 
+    formData.append("add_pos_7_job", add_pos_7_job);
+    formData.append("add_pos_7_name", add_pos_7_name);
+    formData.append("add_pos_7_email", add_pos_7_email);
+    formData.append("add_pos_7_phone", add_pos_7_phone); 
+    formData.append("add_pos_8_job", add_pos_8_job);
+    formData.append("add_pos_8_name", add_pos_8_name);
+    formData.append("add_pos_8_email", add_pos_8_email);
+    formData.append("add_pos_8_phone", add_pos_8_phone); 
+    formData.append("add_pos_9_job", add_pos_9_job);
+    formData.append("add_pos_9_name", add_pos_9_name);
+    formData.append("add_pos_9_email", add_pos_9_email);
+    formData.append("add_pos_9_phone", add_pos_9_phone); 
+    formData.append("add_pos_10_job", add_pos_10_job);
+    formData.append("add_pos_10_name", add_pos_10_name);
+    formData.append("add_pos_10_email", add_pos_10_email);
+    formData.append("add_pos_10_phone", add_pos_10_phone);  
     if(imageInput1.current.files[0]) {
       formData.append("company_logo", imageInput1.current.files[0]);
     }
@@ -1492,8 +1479,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Production Position 1 */}
-      <h5 className="mt-1" >Add Other Production Position 1</h5> 
+      {/* Additional Production Position 1 */}
+      <h5 className="mt-1" >Additional Production Position 1</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_1_job" className={`${styles.Width} `}  >
@@ -1567,8 +1554,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Production Position 2 */}
-      <h5 className="mt-1" >Add Other Production Position 2</h5> 
+      {/* Additional Production Position 2 */}
+      <h5 className="mt-1" >Additional Production Position 2</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_2_job" className={`${styles.Width} `}  >
@@ -1642,8 +1629,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Production Position 3 */}
-      <h5 className="mt-1" >Add Other Production Position 3</h5> 
+      {/* Additional Production Position 3 */}
+      <h5 className="mt-1" >Additional Production Position 3</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_3_job" className={`${styles.Width} `}  >
@@ -1717,8 +1704,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Production Position 4 */}
-      <h5 className="mt-1" >Add Other Production Position 4</h5> 
+      {/* Additional Production Position 4 */}
+      <h5 className="mt-1" >Additional Production Position 4</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_4_job" className={`${styles.Width} `}  >
@@ -1792,8 +1779,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Production Position 5 */}
-      <h5 className="mt-1" >Add Other Production Position 5</h5> 
+      {/* Additional Production Position 5 */}
+      <h5 className="mt-1" >Additional Production Position 5</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_5_job" className={`${styles.Width} `}  >
@@ -2829,8 +2816,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Camera Position 1 */}
-      <h5 className="mt-1" >Add Other Camera Position 1</h5> 
+      {/* Additional Camera Position 1 */}
+      <h5 className="mt-1" >Additional Camera Position 1</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_camera_pos_1_job" className={`${styles.Width} `}  >
@@ -2904,8 +2891,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Camera Position 2 */}
-      <h5 className="mt-1" >Add Other Camera Position 2</h5> 
+      {/* Additional Camera Position 2 */}
+      <h5 className="mt-1" >Additional Camera Position 2</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_camera_pos_2_job" className={`${styles.Width} `}  >
@@ -2979,8 +2966,8 @@ const CrewInfoCreate = () => {
           </Col>
       </Row>
       <hr/>
-      {/* Other Camera Position 3 */}
-      <h5 className="mt-1" >Add Other Camera Position 3</h5> 
+      {/* Additional Camera Position 3 */}
+      <h5 className="mt-1" >Additional Camera Position 3</h5> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_camera_pos_3_job" className={`${styles.Width} `}  >
@@ -7533,19 +7520,786 @@ const CrewInfoCreate = () => {
       <hr/>
       </div>
 
+      {/* ADDITIONAL CREW POSITIONS */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >ADDITIONAL CREW POSITIONS </h3> 
+      {/* Additional Crew Position 1 */}
+      <h5 className="mt-1" >Additional Crew Position 1</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_1_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_1_job"
+              value={add_pos_1_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_1_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_1_name"
+              value={add_pos_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_1_email"
+              value={add_pos_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_1_phone"
+              value={add_pos_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 2 */}
+      <h5 className="mt-1" >Additional Crew Position 2</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_2_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_2_job"
+              value={add_pos_2_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_2_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_2_name"
+              value={add_pos_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_2_email"
+              value={add_pos_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_2_phone"
+              value={add_pos_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 3 */}
+      <h5 className="mt-1" >Additional Crew Position 3</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_3_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_3_job"
+              value={add_pos_1_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_3_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_3_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_3_name"
+              value={add_pos_3_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_3_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_3_email"
+              value={add_pos_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_3_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_3_phone"
+              value={add_pos_3_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 4 */}
+      <h5 className="mt-1" >Additional Crew Position 4</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_4_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_4_job"
+              value={add_pos_4_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_4_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_4_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_4_name"
+              value={add_pos_4_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_4_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_4_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_4_email"
+              value={add_pos_4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_4_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_4_phone"
+              value={add_pos_4_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_4_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 5 */}
+      <h5 className="mt-1" >Additional Crew Position 1</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_5_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_5_job"
+              value={add_pos_5_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_5_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_5_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_5_name"
+              value={add_pos_5_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_5_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_5_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_5_email"
+              value={add_pos_5_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_5_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_5_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_5_phone"
+              value={add_pos_5_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_5_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 6 */}
+      <h5 className="mt-1" >Additional Crew Position 6</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_6_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_6_job"
+              value={add_pos_6_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_6_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_6_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_6_name"
+              value={add_pos_6_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_6_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_6_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_6_email"
+              value={add_pos_6_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_6_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_6_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_6_phone"
+              value={add_pos_6_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_6_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 7 */}
+      <h5 className="mt-1" >Additional Crew Position 7</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_7_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_7_job"
+              value={add_pos_7_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_7_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_7_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_7_name"
+              value={add_pos_7_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_7_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_7_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_7_email"
+              value={add_pos_7_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_7_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_7_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_7_phone"
+              value={add_pos_7_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_7_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 8 */}
+      <h5 className="mt-1" >Additional Crew Position 8</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_8_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_8_job"
+              value={add_pos_8_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_8_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_8_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_8_name"
+              value={add_pos_8_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_8_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_8_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_8_email"
+              value={add_pos_8_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_8_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_8_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_8_phone"
+              value={add_pos_8_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_8_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 9 */}
+      <h5 className="mt-1" >Additional Crew Position 9</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_9_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_9_job"
+              value={add_pos_9_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_9_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_9_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_9_name"
+              value={add_pos_9_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_9_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_9_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_9_email"
+              value={add_pos_9_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_9_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_9_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_9_phone"
+              value={add_pos_9_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_9_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Additional Crew Position 10 */}
+      <h5 className="mt-1" >Additional Crew Position 10</h5> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_10_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_10_job"
+              value={add_pos_10_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_10_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_10_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_10_name"
+              value={add_pos_10_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_10_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_10_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_10_email"
+              value={add_pos_10_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_10_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="add_pos_10_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="add_pos_10_phone"
+              value={add_pos_10_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_10_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* All Other Additional Crew Positions */}
+      <h5 className="mt-1" >All Other Additional Crew Positions</h5>  
+      <Row>
+          <Col xs={{span: 10, offset: 1 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="all_other_add_positions" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Enter: Position - Name - Email - Phone for each.</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="all_other_add_positions"
+              value={all_other_add_positions}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.all_other_add_positions?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
+
+
           {/* characters */}
-          <div>
-          <Row className="mt-2">
-            <Col xs={4}>
-            <p >Character</p>
-            </Col>
-            <Col xs={4}>
-            <p >Call time</p>
-            </Col>
-            <Col xs={4}>
-            <p >Pickup</p>
-            </Col>
-            </Row>    
+          <div> 
             {/* character1 */}
             {character1 ? (
               <Row className="mt-3">

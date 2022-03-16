@@ -15,7 +15,7 @@ import AddCast from "./AddCast";
 import CallsheetSchedule from "./CallsheetSchedule";
 import AddBackGround from "./AddBackGround";
 
-const CallsheetCreate = ({setShowCall}) => {
+const CallsheetEdit = ({setShowCall}) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -1023,4 +1023,4 @@ const buttons = (
   )
 }
 
-export default CallsheetCreate
+export default CallsheetEdit
