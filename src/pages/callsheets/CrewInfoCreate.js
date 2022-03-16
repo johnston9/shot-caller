@@ -16,6 +16,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
+// other pro 5 - other cam 3 
+
 const CrewInfoCreate = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
@@ -23,42 +25,6 @@ const CrewInfoCreate = () => {
   const history = useHistory();
 
   const [postData, setPostData] = useState({
-    transport_captain_name: "",
-    transport_captain_email: "",
-    transport_captain_phone: "",
-    transport_manager_1_name: "",
-    transport_manager_1_email: "",
-    transport_manager_1_phone: "",
-    transport_manager_2_name: "",
-    transport_manager_2_email: "",
-    transport_manager_2_phone: "",
-    head_driver_name: "",
-    head_driver_email: "",
-    head_driver_phone: "",
-    car1_name: "",
-    car1_email: "",
-    car1_phone: "",
-    car2_name: "",
-    car2_email: "",
-    car2_phone: "",
-    car3_name: "",
-    car3_email: "",
-    car3_phone: "",
-    truck1_name: "",
-    truck1_email: "",
-    truck1_phone: "",
-    truck2_name: "",
-    truck2_email: "",
-    truck2_phone: "",
-    truck3_name: "",
-    truck3_email: "",
-    truck3_phone: "",
-    writer_name: "",
-    writer_email: "",
-    writer_phone: "",
-    fx_name: "", 
-    fx_email: "",
-    fx_phone: "",
     total_shoot_days: "",
     production_name: "",
     production_company: "",
@@ -323,6 +289,12 @@ const CrewInfoCreate = () => {
     editor_name: "",
     editor_email: "",
     editor_phone: "",
+    writer_name: "",
+    writer_email: "",
+    writer_phone: "",
+    fx_name: "", 
+    fx_email: "",
+    fx_phone: "",
     set_medic_name: "",
     set_medic_email: "",
     set_medic_phone: "",
@@ -350,6 +322,51 @@ const CrewInfoCreate = () => {
     location_security_name: "",
     location_security_email: "",
     location_security_phone: "",
+    transport_captain_name: "",
+    transport_captain_email: "",
+    transport_captain_phone: "",
+    transport_manager_1_name: "",
+    transport_manager_1_email: "",
+    transport_manager_1_phone: "",
+    transport_manager_2_name: "",
+    transport_manager_2_email: "",
+    transport_manager_2_phone: "",
+    head_driver_name: "",
+    head_driver_email: "",
+    head_driver_phone: "",
+    car1_name: "",
+    car1_email: "",
+    car1_phone: "",
+    car2_name: "",
+    car2_email: "",
+    car2_phone: "",
+    car3_name: "",
+    car3_email: "",
+    car3_phone: "",
+    truck1_name: "",
+    truck1_email: "",
+    truck1_phone: "",
+    truck2_name: "",
+    truck2_email: "",
+    truck2_phone: "",
+    truck3_name: "",
+    truck3_email: "",
+    truck3_phone: "",
+    craft_service_name: "",
+    craft_service_email: "",
+    craft_service_phone: "",
+    crafty_ass_name: "",
+    crafty_ass_email: "",
+    crafty_ass_phone: "",
+    catering_co_1_name: "",
+    catering_co_1_email: "",
+    catering_co_1_phone: "",
+    catering_co_2_name: "",
+    catering_co_2_email: "",
+    catering_co_2_phone: "",
+    catering_co_3_name: "",
+    catering_co_3_email: "",
+    catering_co_3_phone: "",
     // xxxxx 
     character7: "",
     character7_costume: "",
@@ -399,19 +416,7 @@ const CrewInfoCreate = () => {
     character12_pickup: "",
 })
 
-  const { transport_captain_name, transport_captain_email, transport_captain_phone,
-          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
-          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
-          head_driver_name, head_driver_email, head_driver_phone,
-          car1_name, car1_email, car1_phone,
-          car2_name, car2_email, car2_phone,
-          car3_name, car3_email, car3_phone,
-          truck1_name, truck1_email, truck1_phone,
-          truck2_name, truck2_email, truck2_phone,
-          truck3_name, truck3_email, truck3_phone,
-          writer_name, writer_email, writer_phone,
-          fx_name, fx_email, fx_phone,
-          production_name, production_company, company_phone, company_email,
+  const { production_name, production_company, company_phone, company_email,
           company_address, company_logo, total_shoot_days,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
@@ -499,12 +504,29 @@ const CrewInfoCreate = () => {
           set_medic_name, set_medic_email, set_medic_phone,
           casting_director_name, casting_director_email, casting_director_phone,
           extras_casting_name, extras_casting_email, extras_casting_phone,
+          writer_name, writer_email, writer_phone,
+          fx_name, fx_email, fx_phone,
           location_mngr_name, location_mngr_email, location_mngr_phone,
           location_ass_1_name, location_ass_1_email, location_ass_1_phone,
           location_ass_2_name, location_ass_2_email, location_ass_2_phone,
           location_ass_3_name, location_ass_3_email, location_ass_3_phone,
           location_ass_4_name, location_ass_4_email, location_ass_4_phone,
           location_security_name, location_security_email, location_security_phone,
+          transport_captain_name, transport_captain_email, transport_captain_phone,
+          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
+          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
+          head_driver_name, head_driver_email, head_driver_phone,
+          car1_name, car1_email, car1_phone,
+          car2_name, car2_email, car2_phone,
+          car3_name, car3_email, car3_phone,
+          truck1_name, truck1_email, truck1_phone,
+          truck2_name, truck2_email, truck2_phone,
+          truck3_name, truck3_email, truck3_phone,
+          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
+          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
+          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
+          craft_service_name, craft_service_email, craft_service_phone,
+          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
           // filming_location, day_night, time, action, info, pages,
           character1, character1_costume, character2, 
           character2_costume, character3, character3_costume, character4, 
@@ -528,45 +550,7 @@ const CrewInfoCreate = () => {
     
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();truck1_name
-    formData.append("truck1_name", truck1_name);
-    formData.append("truck1_email", truck1_email);
-    formData.append("truck1_phone", truck1_phone);
-    formData.append("truck2_name", truck2_name);
-    formData.append("truck2_email", truck2_email);
-    formData.append("truck2_phone", truck2_phone);
-    formData.append("truck3_name", truck3_name);
-    formData.append("truck3_email", truck3_email);
-    formData.append("truck3_phone", truck3_phone);
-    formData.append("car1_name", car1_name);
-    formData.append("car1_email", car1_email);
-    formData.append("car1_phone", car1_phone);
-    formData.append("car2_name", car2_name);
-    formData.append("car2_email", car2_email);
-    formData.append("car2_phone", car2_phone);
-    formData.append("car3_name", car3_name);
-    formData.append("car3_email", car3_email);
-    formData.append("car3_phone", car3_phone);
-
-
-    formData.append("transport_captain_name", transport_captain_name);
-    formData.append("transport_captain_email", transport_captain_email);
-    formData.append("transport_captain_phone", transport_captain_phone);
-    formData.append("transport_manager_1_name", transport_manager_1_name);
-    formData.append("transport_manager_1_email", transport_manager_1_email);
-    formData.append("transport_manager_1_phone", transport_manager_1_phone);
-    formData.append("transport_manager_2_name", transport_manager_2_name);
-    formData.append("transport_manager_2_email", transport_manager_2_email);
-    formData.append("transport_manager_2_phone", transport_manager_2_phone);
-    formData.append("head_driver_name", head_driver_name);
-    formData.append("head_driver_email", head_driver_email);
-    formData.append("head_driver_phone", head_driver_phone);
-    formData.append("writer_name", writer_name);
-    formData.append("writer_email", writer_email);
-    formData.append("writer_phone", writer_phone);
-    formData.append("fx_name", fx_name);
-    formData.append("fx_email", fx_email);
-    formData.append("fx_phone", fx_phone);
+    const formData = new FormData();
     formData.append("total_shoot_days", total_shoot_days);
     formData.append("production_name", production_name);
     formData.append("production_company", production_company);
@@ -831,6 +815,12 @@ const CrewInfoCreate = () => {
     formData.append("editor_name", editor_name);
     formData.append("editor_email", editor_email);
     formData.append("editor_phone", editor_phone);
+    formData.append("writer_name", writer_name);
+    formData.append("writer_email", writer_email);
+    formData.append("writer_phone", writer_phone);
+    formData.append("fx_name", fx_name);
+    formData.append("fx_email", fx_email);
+    formData.append("fx_phone", fx_phone);
     formData.append("set_medic_name", set_medic_name);
     formData.append("set_medic_email", set_medic_email);
     formData.append("set_medic_phone", set_medic_phone);
@@ -858,6 +848,42 @@ const CrewInfoCreate = () => {
     formData.append("location_security_name", location_security_name);
     formData.append("location_security_email", location_security_email);
     formData.append("location_security_phone", location_security_phone);
+    formData.append("transport_captain_name", transport_captain_name);
+    formData.append("transport_captain_email", transport_captain_email);
+    formData.append("transport_captain_phone", transport_captain_phone);
+    formData.append("transport_manager_1_name", transport_manager_1_name);
+    formData.append("transport_manager_1_email", transport_manager_1_email);
+    formData.append("transport_manager_1_phone", transport_manager_1_phone);
+    formData.append("transport_manager_2_name", transport_manager_2_name);
+    formData.append("transport_manager_2_email", transport_manager_2_email);
+    formData.append("transport_manager_2_phone", transport_manager_2_phone);
+    formData.append("head_driver_name", head_driver_name);
+    formData.append("head_driver_email", head_driver_email);
+    formData.append("head_driver_phone", head_driver_phone);
+    formData.append("truck1_name", truck1_name);
+    formData.append("truck1_email", truck1_email);
+    formData.append("truck1_phone", truck1_phone);
+    formData.append("truck2_name", truck2_name);
+    formData.append("truck2_email", truck2_email);
+    formData.append("truck2_phone", truck2_phone);
+    formData.append("truck3_name", truck3_name);
+    formData.append("truck3_email", truck3_email);
+    formData.append("truck3_phone", truck3_phone);
+    formData.append("car1_name", car1_name);
+    formData.append("car1_email", car1_email);
+    formData.append("car1_phone", car1_phone);
+    formData.append("car2_name", car2_name);
+    formData.append("car2_email", car2_email);
+    formData.append("car2_phone", car2_phone);
+    formData.append("car3_name", car3_name);
+    formData.append("car3_email", car3_email);
+    formData.append("car3_phone", car3_phone);
+    formData.append("craft_service_name", craft_service_name);
+    formData.append("craft_service_email", craft_service_email);
+    formData.append("craft_service_phone", craft_service_phone);
+    formData.append("crafty_ass_name", crafty_ass_name);
+    formData.append("crafty_ass_email", crafty_ass_email);
+    formData.append("crafty_ass_phone", crafty_ass_phone);
     // formData.append("character4", character4);
     formData.append("character4_costume", character4_costume);
     formData.append("character4_calltime", character4_calltime);
@@ -7208,6 +7234,296 @@ const CrewInfoCreate = () => {
                   />
           </Form.Group>
           {errors?.car3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
+
+      {/* CATERING */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CATERING </h3> 
+      {/* Catering Company 1 */}
+      <h5 className="mt-1" >Catering Company 1 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_1_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_1_name"
+              value={catering_co_1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_1_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_1_email"
+              value={catering_co_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_1_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_1_phone"
+              value={catering_co_1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Catering Company 2 */}
+      <h5 className="mt-1" >Catering Company 2 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_2_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_2_name"
+              value={catering_co_2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_2_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_2_email"
+              value={catering_co_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_2_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_2_phone"
+              value={catering_co_2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Catering Company 3 */}
+      <h5 className="mt-1" >Catering Company 3 </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_3_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_3_name"
+              value={catering_co_3_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_3_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_3_email"
+              value={catering_co_3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="catering_co_3_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="catering_co_3_phone"
+              value={catering_co_3_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.catering_co_3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
+
+      {/* CRAFT SERVICES */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CRAFT SERVICES </h3> 
+      {/* Craft Service  */}
+      <h5 className="mt-1" >Craft Service </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="craft_service_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="craft_service_name"
+              value={craft_service_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.craft_service_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="craft_service_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="craft_service_email"
+              value={craft_service_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.craft_service_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="craft_service_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="craft_service_phone"
+              value={craft_service_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.craft_service_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      {/* Crafty Assistant  */}
+      <h5 className="mt-1" >Crafty Assistant </h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="crafty_ass_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="crafty_ass_name"
+              value={crafty_ass_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.crafty_ass_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="crafty_ass_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="crafty_ass_email"
+              value={crafty_ass_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.crafty_ass_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="crafty_ass_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="crafty_ass_phone"
+              value={crafty_ass_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.crafty_ass_phone?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>
