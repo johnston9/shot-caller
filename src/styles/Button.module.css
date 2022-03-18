@@ -15,7 +15,7 @@
   }
 
   .Shed {
-    background-color: #3fc2d5;
+    background-color: #0f6270;
     color: #fff;
   }
 
@@ -23,6 +23,31 @@
     background-color: #0f6270;
     color: #fff;
   }
+
+  .Once {
+    background-color: grey;
+    color: #000;
+  }
+
+  .Once:hover {
+    background-color: red;
+    color: #fff;
+  }
+
+  .CrewEdit {
+    background-color: #59c1d2;
+    color: #fff;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .CrewEdit:hover {
+    background-color: #0f6270;
+    color: #fff;
+  }
+
 
   .Grey {
     background-color: #58666b;

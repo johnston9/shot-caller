@@ -12,10 +12,11 @@ import { useHistory } from 'react-router-dom';
 
 import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/Redirect";
-import { Button } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import CallsheetTop from "./CallsheetTop";
 import CrewInfo from "./CrewInfo";
+import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const CallsheetsPage = ({ filter="" }) => {
   useRedirect("loggedOut");
@@ -24,7 +25,12 @@ const CallsheetsPage = ({ filter="" }) => {
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
+  const crewInfo = useCrewInfoContext();
+  const crewInfoOne = crewInfo.results[0];
   const [query, setQuery] = useState("");
+  const {id, production_name, production_company, company_phone, company_email,
+    company_address_line_1, company_address_line_2, company_address_line_3,
+    company_address_line_4, company_logo, total_shoot_days} = crewInfoOne;
 
   useEffect(() => {
     const fetchCallsheets = async () => {
@@ -59,28 +65,51 @@ const CallsheetsPage = ({ filter="" }) => {
         >
             Back
         </Button>
-        {/* Add base callsheet */}
-        <h3 className="text-center">Crew Info</h3>
+        <Row>
+          <Col xs={6}>
+          <h3>ID - {id} </h3>
+            <h3>{production_name} </h3>
+            <h5>{production_company} </h5>
+            {company_logo && <> 
+              <div className='px-1'>
+                <Image className={styles.Logo} src={company_logo} alt="logo" />
+            </div>
+            </>
+            }
+            <p>Total Shoot Days {total_shoot_days} </p>
+          </Col>
+          <Col xs={6}>
+            <p className="mb-0">
+              {company_address_line_1}
+            </p>
+            <p className="mb-0">
+              {company_address_line_2}
+            </p>
+            <p className="mb-0">
+              {company_address_line_3}
+            </p>
+            <p className="mb-0">
+              {company_address_line_4}
+            </p>
+            <p className="mb-0">
+              {company_phone}
+            </p>
+            <p className="mb-0">
+              {company_email}
+            </p>
+          </Col>
+        </Row>
+        {/* crew info */}
         <Row className="text-center">
-            <Col xs={4} >
-            <Button onClick={() => history.push("crewinfo/create")}
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Shed}`}>
-              Add Info</Button>
-            </Col>
-            <Col xs={4}>
+            <Col >
             <Button onClick={() => setShowCrewInfo(showCrewInfo => !showCrewInfo ) }
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Shed}`}>
-              View Info</Button>
-            </Col>
-            <Col xs={4}>
-            <Button onClick={() => history.push("crewinfo/edit")}
-              className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Shed}`}>
-              Edit Info</Button>
+              className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+              Crew Info</Button>
             </Col>
         </Row>
         {/* CrewInfo */}
         {showCrewInfo ? (
-          <CrewInfo />
+          <CrewInfo setShowCrewInfo={setShowCrewInfo}  />
         ) : ("") }
         {/* search  */}
         <Row>

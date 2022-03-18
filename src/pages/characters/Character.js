@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
 import { useHistory } from 'react-router';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';

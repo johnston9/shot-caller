@@ -14,12 +14,10 @@ export const useSetCrewInfoContext = () => useContext(SetCrewInfoContext);
 export const CrewInfoProvider = ({ children }) => {
     // const [crewInfoId, setCrewInfoId] = useState("");
     const [crewInfo, setCrewInfo] = useState({ results: [] });
-    const crewInfoOne = crewInfo[0];
 
     const fetchCrewInfo = async () => {
         try {
           const { data } = await axiosReq.get(`/crewinfo/`);
-          console.log(data)
           setCrewInfo(data);
         } catch(err) {
           console.log(err);
@@ -31,7 +29,7 @@ export const CrewInfoProvider = ({ children }) => {
       }, []);
 
     return (
-        <CrewInfoContext.Provider value={crewInfoOne}>
+        <CrewInfoContext.Provider value={crewInfo}>
             <SetCrewInfoContext.Provider value={setCrewInfo}>
                    {children}
             </SetCrewInfoContext.Provider>

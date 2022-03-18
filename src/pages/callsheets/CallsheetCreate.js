@@ -203,7 +203,7 @@ const {
     const formData = new FormData();
 
     formData.append("day_id", id);
-    formData.append("producer_calltime", producer_calltime);
+    // formData.append("producer_calltime", producer_calltime);
     formData.append("day", dataDay);
     formData.append("date", dataDate);
     formData.append("unit_call", unit_call);

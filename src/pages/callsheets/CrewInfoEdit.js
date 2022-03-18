@@ -19,8 +19,8 @@ import { useRedirect } from "../../hooks/Redirect";
 const CrewInfoEdit = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const { id } = useParams();
   const history = useHistory();
+  const { id } = useParams();
 
   const [postData, setPostData] = useState({
     total_shoot_days: "",
@@ -28,7 +28,10 @@ const CrewInfoEdit = () => {
     production_company: "",
     company_email: "",
     company_phone: "",
-    company_address: "",
+    company_address_line_1: "",
+    company_address_line_2: "",
+    company_address_line_3: "",
+    company_address_line_4: "",
     company_logo: "",
     producer_name: "",
     producer_email: "",
@@ -116,7 +119,7 @@ const CrewInfoEdit = () => {
     steadicam_name: "",
     steadicam_email: "",
     steadicam_phone: "",
-    camera_pa__name: "",
+    camera_pa_name: "",
     camera_pa_email: "",
     camera_pa_phone: "",
     oth_camera_pos_1_job: "",
@@ -405,11 +408,13 @@ const CrewInfoEdit = () => {
     add_pos_10_name: "",
     add_pos_10_email: "",
     add_pos_10_phone: "",
+    all_other_add_positions: "",
 })
 
   const { 
           production_name, production_company, company_phone, company_email,
-          company_address, company_logo, total_shoot_days,
+          company_address_line_1, company_address_line_2, company_address_line_3,
+          company_address_line_4, company_logo, total_shoot_days,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
           upm_name, upm_email, upm_phone,
@@ -528,7 +533,289 @@ const CrewInfoEdit = () => {
           add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
           add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
           add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
-          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone, } = postData;
+          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
+          all_other_add_positions } = postData;
+
+  const imageInput1 = useRef(null);
+
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/crewinfo/${id}/`);
+        const { 
+          production_name, production_company, company_phone, company_email,
+          company_address_line_1, company_address_line_2, company_address_line_3,
+          company_address_line_4, company_logo, total_shoot_days,
+          producer_name, producer_email, producer_phone,
+          pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
+          upm_name, upm_email, upm_phone,
+          travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
+          production_pa_name, production_pa_email, production_pa_phone,
+          locations_manager_name, locations_manager_email, locations_manager_phone,
+          oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
+          oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
+          oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
+          oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
+          oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
+          ad_1_name, ad_1_email, ad_1_phone,
+          ad_2_name, ad_2_email, ad_2_phone,
+          ad_3_name, ad_3_email, ad_3_phone,
+          ad_4_name, ad_4_email, ad_4_phone,
+          ad_5_name, ad_5_email, ad_5_phone,
+          pro_assistant_1_name, pro_assistant_1_email, pro_assistant_1_phone,
+          pro_assistant_2_name, pro_assistant_2_email, pro_assistant_2_phone,
+          pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
+          pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
+          pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
+          dop_name, dop_email, dop_phone,
+          camera_operator_name, camera_operator_email, camera_operator_phone,
+          camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
+          camera_ass_2_name, camera_ass_2_email, camera_ass_2_phone,
+          dit_name, dit_email, dit_phone,
+          steadicam_name, steadicam_email, steadicam_phone,
+          camera_pa_name, camera_pa_email, camera_pa_phone,
+          oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
+          oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
+          oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+          sound_mixer_name, sound_mixer_email, sound_mixer_phone,
+          boom_operator_name, boom_operator_email, boom_operator_phone,
+          sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
+          sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
+          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
+          key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
+          key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
+          sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
+          sfx_makeup_assistant_name, sfx_makeup_assistant_email, sfx_makeup_assistant_phone,
+          makeup_artist_1_name, makeup_artist_1_email, makeup_artist_1_phone,
+          makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
+          makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
+          makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
+          makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
+          costume_designer_name, costume_designer_email, costume_designer_phone,
+          ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
+          wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
+          wardrobe_assistant_2_name, wardrobe_assistant_2_email, wardrobe_assistant_2_phone,
+          wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
+          wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
+          wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,
+          production_designer_name, production_designer_email, production_designer_phone,
+          art_director_name, art_director_email, art_director_phone,
+          art_assistant_name, art_assistant_email, art_assistant_phone,
+          set_decorator_name, set_decorator_email, set_decorator_phone,
+          set_dresser_name, set_dresser_email, set_dresser_phone,
+          lead_man_name, lead_man_email, lead_man_phone,
+          dresser_name, dresser_email, dresser_phone,
+          prop_master_name, prop_master_email, prop_master_phone,
+          ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
+          prop_buyer_name, prop_buyer_email, prop_buyer_phone,
+          armorer_name, armorer_email, armorer_phone,
+          gaffer_name, gaffer_email, gaffer_phone,
+          best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
+          electric_3_name, electric_3_email, electric_3_phone,
+          electric_4_name, electric_4_email, electric_4_phone,
+          keygrip_name, keygrip_email, keygrip_phone,
+          best_boy_grip_name, best_boy_grip_email, best_boy_grip_phone,
+          dolly_grip_name, dolly_grip_email, dolly_grip_phone,
+          swing_ge1_name, swing_ge1_email, swing_ge1_phone,
+          swing_ge2_name, swing_ge2_email, swing_ge2_phone,
+          swing_ge3_name, swing_ge3_email, swing_ge3_phone,
+          swing_ge4_name, swing_ge4_email, swing_ge4_phone,
+          swing_ge5_name, swing_ge5_email, swing_ge5_phone,
+          stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
+          stunts_1_name, stunts_1_email, stunts_1_phone,
+          stunts_2_name, stunts_2_email, stunts_2_phone,
+          stunts_3_name, stunts_3_email, stunts_3_phone,
+          stunts_4_name, stunts_4_email, stunts_4_phone,
+          stunts_5_name, stunts_5_email, stunts_5_phone,
+          legal_name, legal_email, legal_phone,
+          editor_name, editor_email, editor_phone,
+          set_medic_name, set_medic_email, set_medic_phone,
+          casting_director_name, casting_director_email, casting_director_phone,
+          extras_casting_name, extras_casting_email, extras_casting_phone,
+          writer_name, writer_email, writer_phone,
+          fx_name, fx_email, fx_phone,
+          location_mngr_name, location_mngr_email, location_mngr_phone,
+          location_ass_1_name, location_ass_1_email, location_ass_1_phone,
+          location_ass_2_name, location_ass_2_email, location_ass_2_phone,
+          location_ass_3_name, location_ass_3_email, location_ass_3_phone,
+          location_ass_4_name, location_ass_4_email, location_ass_4_phone,
+          location_security_name, location_security_email, location_security_phone,
+          transport_captain_name, transport_captain_email, transport_captain_phone,
+          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
+          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
+          head_driver_name, head_driver_email, head_driver_phone,
+          car1_name, car1_email, car1_phone,
+          car2_name, car2_email, car2_phone,
+          car3_name, car3_email, car3_phone,
+          truck1_name, truck1_email, truck1_phone,
+          truck2_name, truck2_email, truck2_phone,
+          truck3_name, truck3_email, truck3_phone,
+          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
+          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
+          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
+          craft_service_name, craft_service_email, craft_service_phone,
+          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
+          add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
+          add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
+          add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
+          add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
+          add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
+          add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
+          add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
+          add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
+          add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
+          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
+          all_other_add_positions } = data;
+        console.log(data)
+
+        setPostData({ 
+          production_name, production_company, company_phone, company_email,
+          company_address_line_1, company_address_line_2, company_address_line_3,
+          company_address_line_4, company_logo, total_shoot_days,
+          producer_name, producer_email, producer_phone,
+          pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
+          upm_name, upm_email, upm_phone,
+          travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
+          production_pa_name, production_pa_email, production_pa_phone,
+          locations_manager_name, locations_manager_email, locations_manager_phone,
+          oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
+          oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
+          oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
+          oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
+          oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
+          ad_1_name, ad_1_email, ad_1_phone,
+          ad_2_name, ad_2_email, ad_2_phone,
+          ad_3_name, ad_3_email, ad_3_phone,
+          ad_4_name, ad_4_email, ad_4_phone,
+          ad_5_name, ad_5_email, ad_5_phone,
+          pro_assistant_1_name, pro_assistant_1_email, pro_assistant_1_phone,
+          pro_assistant_2_name, pro_assistant_2_email, pro_assistant_2_phone,
+          pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
+          pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
+          pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
+          dop_name, dop_email, dop_phone,
+          camera_operator_name, camera_operator_email, camera_operator_phone,
+          camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
+          camera_ass_2_name, camera_ass_2_email, camera_ass_2_phone,
+          dit_name, dit_email, dit_phone,
+          steadicam_name, steadicam_email, steadicam_phone,
+          camera_pa_name, camera_pa_email, camera_pa_phone,
+          oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
+          oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
+          oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+          sound_mixer_name, sound_mixer_email, sound_mixer_phone,
+          boom_operator_name, boom_operator_email, boom_operator_phone,
+          sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
+          sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
+          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
+          key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
+          key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
+          sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
+          sfx_makeup_assistant_name, sfx_makeup_assistant_email, sfx_makeup_assistant_phone,
+          makeup_artist_1_name, makeup_artist_1_email, makeup_artist_1_phone,
+          makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
+          makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
+          makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
+          makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
+          costume_designer_name, costume_designer_email, costume_designer_phone,
+          ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
+          wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
+          wardrobe_assistant_2_name, wardrobe_assistant_2_email, wardrobe_assistant_2_phone,
+          wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
+          wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
+          wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,
+          production_designer_name, production_designer_email, production_designer_phone,
+          art_director_name, art_director_email, art_director_phone,
+          art_assistant_name, art_assistant_email, art_assistant_phone,
+          set_decorator_name, set_decorator_email, set_decorator_phone,
+          set_dresser_name, set_dresser_email, set_dresser_phone,
+          lead_man_name, lead_man_email, lead_man_phone,
+          dresser_name, dresser_email, dresser_phone,
+          prop_master_name, prop_master_email, prop_master_phone,
+          ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
+          prop_buyer_name, prop_buyer_email, prop_buyer_phone,
+          armorer_name, armorer_email, armorer_phone,
+          gaffer_name, gaffer_email, gaffer_phone,
+          best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
+          electric_3_name, electric_3_email, electric_3_phone,
+          electric_4_name, electric_4_email, electric_4_phone,
+          keygrip_name, keygrip_email, keygrip_phone,
+          best_boy_grip_name, best_boy_grip_email, best_boy_grip_phone,
+          dolly_grip_name, dolly_grip_email, dolly_grip_phone,
+          swing_ge1_name, swing_ge1_email, swing_ge1_phone,
+          swing_ge2_name, swing_ge2_email, swing_ge2_phone,
+          swing_ge3_name, swing_ge3_email, swing_ge3_phone,
+          swing_ge4_name, swing_ge4_email, swing_ge4_phone,
+          swing_ge5_name, swing_ge5_email, swing_ge5_phone,
+          stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
+          stunts_1_name, stunts_1_email, stunts_1_phone,
+          stunts_2_name, stunts_2_email, stunts_2_phone,
+          stunts_3_name, stunts_3_email, stunts_3_phone,
+          stunts_4_name, stunts_4_email, stunts_4_phone,
+          stunts_5_name, stunts_5_email, stunts_5_phone,
+          legal_name, legal_email, legal_phone,
+          editor_name, editor_email, editor_phone,
+          set_medic_name, set_medic_email, set_medic_phone,
+          casting_director_name, casting_director_email, casting_director_phone,
+          extras_casting_name, extras_casting_email, extras_casting_phone,
+          writer_name, writer_email, writer_phone,
+          fx_name, fx_email, fx_phone,
+          location_mngr_name, location_mngr_email, location_mngr_phone,
+          location_ass_1_name, location_ass_1_email, location_ass_1_phone,
+          location_ass_2_name, location_ass_2_email, location_ass_2_phone,
+          location_ass_3_name, location_ass_3_email, location_ass_3_phone,
+          location_ass_4_name, location_ass_4_email, location_ass_4_phone,
+          location_security_name, location_security_email, location_security_phone,
+          transport_captain_name, transport_captain_email, transport_captain_phone,
+          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
+          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
+          head_driver_name, head_driver_email, head_driver_phone,
+          car1_name, car1_email, car1_phone,
+          car2_name, car2_email, car2_phone,
+          car3_name, car3_email, car3_phone,
+          truck1_name, truck1_email, truck1_phone,
+          truck2_name, truck2_email, truck2_phone,
+          truck3_name, truck3_email, truck3_phone,
+          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
+          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
+          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
+          craft_service_name, craft_service_email, craft_service_phone,
+          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
+          add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
+          add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
+          add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
+          add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
+          add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
+          add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
+          add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
+          add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
+          add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
+          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
+          all_other_add_positions } );
+          } catch (err) {
+            console.log(err);
+          }
+        };
+
+    handleMount();
+  }, [id]);
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleChangeLogo = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(company_logo);
+      setPostData({
+        ...postData,
+        company_logo: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
     
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -538,7 +825,10 @@ const CrewInfoEdit = () => {
     formData.append("production_company", production_company);
     formData.append("company_phone", company_phone);
     formData.append("company_email", company_email);
-    formData.append("company_address", company_address);
+    formData.append("company_address_line_1", company_address_line_1);
+    formData.append("company_address_line_2", company_address_line_2);
+    formData.append("company_address_line_3", company_address_line_3);
+    formData.append("company_address_line_4", company_address_line_4);
     formData.append("company_logo", company_logo);
     formData.append("producer_name", producer_name);
     formData.append("producer_email", producer_email);
@@ -914,12 +1204,13 @@ const CrewInfoEdit = () => {
     formData.append("add_pos_10_job", add_pos_10_job);
     formData.append("add_pos_10_name", add_pos_10_name);
     formData.append("add_pos_10_email", add_pos_10_email);
-    formData.append("add_pos_10_phone", add_pos_10_phone);  
+    formData.append("add_pos_10_phone", add_pos_10_phone);
+    formData.append("all_other_add_positions", all_other_add_positions); 
     if(imageInput1.current.files[0]) {
       formData.append("company_logo", imageInput1.current.files[0]);
     }
     try {
-      const {data} = await axiosReq.post("/crewinfo/", formData);
+      const {data} = await axiosReq.put(`/crewinfo/${id}/`, formData);
       history.push(`/callsheets/`);
     } catch (err) {
       console.log(err);
@@ -929,28 +1220,8 @@ const CrewInfoEdit = () => {
     }
   }
 
-  const imageInput1 = useRef(null);
-    
-  const handleChange = (event) => {
-    setPostData({
-      ...postData,
-      [event.target.name]: event.target.value,
-    });
-    console.log(event.target.name)
-  };
-
-  const handleChangeLogo = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(company_logo);
-      setPostData({
-        ...postData,
-        company_logo: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
-
   const buttons = (
-  <div className="text-center mt-4">    
+  <div className="text-center pb-3 mb-4 mt-4">    
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue}`}
       onClick={() => history.goBack()}
@@ -1046,28 +1317,83 @@ const CrewInfoEdit = () => {
       <hr/>
       {/* company address - company logo */}
       <Row>
-      <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
-      <Form.Group controlId="company_address" className={`${styles.Width2} `}  >
-          <Form.Label className={`${styles.Bold}`} >Company Address</Form.Label>
+      <Col xs={12} md={6} className=" p-0 p-md-2">
+        <div className="d-flex justify-content-center">
+      <Form.Group controlId="company_address_line_1" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 1</Form.Label>
           <Form.Control 
               className={`${styles.InputScene}`}
               type="text"
-              name="company_address"
-              as="textarea"
-              rows={2}
-              value={company_address}
+              name="company_address_line_1"
+              value={company_address_line_1}
               onChange={handleChange}
               />
       </Form.Group>
-      {errors?.company_address?.map((message, idx) => (
+      {errors?.company_address_line_1?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+      </div>
+      {/* line 2 */}
+      <div className="d-flex justify-content-center">
+      <Form.Group controlId="company_address_line_2" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 2</Form.Label>
+          <Form.Control 
+              className={`${styles.InputScene}`}
+              type="text"
+              name="company_address_line_2"
+              value={company_address_line_2}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.company_address_line_2?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </div>
+      <div className="d-flex justify-content-center">
+      {/* line 3 */}
+      <Form.Group controlId="company_address_line_3" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 3</Form.Label>
+          <Form.Control 
+              className={`${styles.InputScene}`}
+              type="text"
+              name="company_address_line_3"
+              value={company_address_line_3}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.company_address_line_3?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </div>
+      <div className="d-flex justify-content-center">
+      {/* line 4 */}
+      <Form.Group controlId="company_address_line_4" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 4 </Form.Label>
+          <Form.Control 
+              className={`${styles.InputScene}`}
+              type="text"
+              name="company_address_line_4"
+              value={company_address_line_4}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.company_address_line_4?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </div>
       </Col>
-      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <Col xs={6} className=" p-0 p-md-2">
+      <p className={`${styles.Bold}`}>Company Logo</p>
           <div
-              className={`${appStyles.Content} d-flex flex-column justify-content-center`}
+              className={`mr-4 ${appStyles.Content} d-flex flex-column justify-content-center`}
             >
               <Form.Group className="text-center pt-3">
                   {company_logo ? (
@@ -1110,13 +1436,8 @@ const CrewInfoEdit = () => {
                 </Alert>
               ))}
           </div>
-      </Col>
-      </Row>
-      <hr/>
-      {/* total shoot days*/}
-      <Row>
-      <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
-      <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
+          <div className="mt-3 d-flex justify-content-center text-center">
+            <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.Bold}`} >Total Shoot Days</Form.Label>
           <Form.Control 
               className={`${styles.Input}`}
@@ -1125,15 +1446,22 @@ const CrewInfoEdit = () => {
               value={total_shoot_days}
               onChange={handleChange}
               />
-      </Form.Group>
-      {errors?.total_shoot_days?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
+            </Form.Group>
+            {errors?.total_shoot_days?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </div>
       </Col>
       </Row>
       <hr/>
+      {/* total shoot days*/}
+      {/* <Row>
+      <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
+      </Col>
+      </Row>
+      <hr/> */}
       </div>
       {/* CREW INFO BY DEPARTMENTS */}
       <h3 className="my-4" >CREW INFO BY DEPARTMENT</h3> 
@@ -1366,7 +1694,7 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* P.A. */}
-      <h5 className="mt-1" >Production P.A.</h5> 
+      <h5 className="mt-1" >Production PA</h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="production_pa_name" className={`${styles.Width} `}  >
@@ -5558,7 +5886,7 @@ const CrewInfoEdit = () => {
       <div>
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >LOCATIONS</h3> 
       {/* Location Mngr  */}
-      <h5 className="mt-1" >Location Mngr </h5> 
+      <h5 className="mt-1" >Location Manager </h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_mngr_name" className={`${styles.Width} `}  >
@@ -6662,7 +6990,7 @@ const CrewInfoEdit = () => {
       <div>
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >TRANSPORTATION </h3> 
       {/* Transport Captain  */} 
-      <h5 className="mt-1" >FX </h5> 
+      <h5 className="mt-1" >Transport Captain </h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="transport_captain_name" className={`${styles.Width} `}  >
@@ -8278,8 +8606,10 @@ const CrewInfoEdit = () => {
           <Form.Group controlId="all_other_add_positions" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Enter: Position - Name - Email - Phone for each.</Form.Label>
               <Form.Control 
-              className={`${styles.Input}`}
+              className={`${styles.InputScene}`}
               type="text"
+              as="textarea"
+              rows={3}
               name="all_other_add_positions"
               value={all_other_add_positions}
               onChange={handleChange}
@@ -8294,682 +8624,20 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       </div>
-
-
-          {/* characters */}
-          <div> 
-            {/* character1 */}
-            {character1 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character1}</h5> 
-              </Col>
-            <Col className="d-flex justify-content-center" xs={4} >
-            <Form.Group controlId="character1_calltime" className={`${styles.Width2} `}>
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call Time"
-                name="character1_calltime"
-                value={character1_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character1_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col className="d-flex justify-content-center" xs={4} >
-            <Form.Group controlId="character1_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character1_pickup"
-                value={character1_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character1_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character2 */}
-            {character2 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character2}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character2_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call Time"
-                name="character2_calltime"
-                value={character2_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character2_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center" >
-            <Form.Group controlId="character2_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character2_pickup"
-                value={character2_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character2_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character3 */}
-            {character3 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character3}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character3_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character3_calltime"
-                value={character3_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character3_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character3_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character3_pickup"
-                value={character3_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character3_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character4 */}
-            {character4 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character4}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character4_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character4_calltime"
-                value={character4_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character4_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character4_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character4_pickup"
-                value={character4_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character4_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character5 */}
-            {character5 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character5}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character5_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character5_calltime"
-                value={character5_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character5_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character5_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character5_pickup"
-                value={character5_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character5_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character6 */}
-            {character6 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character6}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character6_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character6_calltime"
-                value={character6_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character6_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character6_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character6_pickup"
-                value={character6_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character6_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character7 */}
-            {character7 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character7}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character7_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character7_calltime"
-                value={character7_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character7_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character7_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character7_pickup"
-                value={character7_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character7_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character8 */}
-            {character8 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character8}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character8_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character8_calltime"
-                value={character8_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character8_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character8_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character8_pickup"
-                value={character8_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character8_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character9 */}
-            {character9 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character9}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character9_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character9_calltime"
-                value={character9_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character9_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character9_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character9_pickup"
-                value={character9_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character9_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character10 */}
-            {character10 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character10}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character10_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character10_calltime"
-                value={character10_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character10_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character10_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character10_pickup"
-                value={character10_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character10_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character11 */}
-            {character11 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character11}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character11_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character11_calltime"
-                value={character11_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character11_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character11_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character11_pickup"
-                value={character11_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character11_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character12 */}
-            {character12 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character12}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character12_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character12_calltime"
-                value={character12_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character12_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character12_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character12_pickup"
-                value={character12_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character12_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* other_characters */}
-            <h3 className="mt-4" >Other Characters</h3> 
-            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-            {other_characters ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{other_characters}</h5> 
-              </Col>
-            <Col xs={4} >
-            <Form.Group controlId="other_characters_calltimes" className="mb-0" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                as="textarea"
-                rows={2}
-                className={`${styles.InputScene}`}
-                placeholder="Call Times"
-                name="other_characters_calltimes"
-                value={other_characters_calltimes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters_calltimes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} >
-            <Form.Group controlId="other_characters_pickups" className="mb-2" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                placeholder="Pickups"
-                name="other_characters_pickups"
-                value={other_characters_pickups}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters_pickups?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            <h3 className="mt-4" >Background Artists</h3> 
-            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-            {/* background_artists */}
-            {background_artists ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{background_artists}</h5> 
-              </Col>
-            <Col xs={4} >
-            <Form.Group controlId="background_artists_calltimes" className="mb-0" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                placeholder="Call Time"
-                name="background_artists_calltimes"
-                value={background_artists_calltimes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists_calltimes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} >
-            <Form.Group controlId="background_artists_pickups" className="mb-2" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                placeholder="Pickup"
-                name="background_artists_pickups"
-                value={background_artists_pickups}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists_pickups?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}        
-            </div>     
-          {/* end characters */}
     </div>
   )
 
-
   return (
     <div>
-      <div>
-    <TopBox work="Callsheet Base"
-            title="Create"/>
-            <h5>Important</h5>
-            <p>Always use this edit page to add to the crew info page once 
-              it has been created.</p>
+    <TopBox work="Crew Info"
+            title="Edit"/>
+    <h5>Important</h5>
+    <p>Always use this edit page to add to the crew info page once 
+      it has been created.</p>
+      <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
     {textFields}
-    </div>
+    {buttons}
+    </Form>
     </div>
   )
 }

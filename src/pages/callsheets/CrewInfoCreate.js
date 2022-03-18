@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -11,7 +11,7 @@ import Upload from "../../assets/upload.png";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
@@ -21,7 +21,6 @@ import { useRedirect } from "../../hooks/Redirect";
 const CrewInfoCreate = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const { id } = useParams();
   const history = useHistory();
 
   const [postData, setPostData] = useState({
@@ -30,7 +29,10 @@ const CrewInfoCreate = () => {
     production_company: "",
     company_email: "",
     company_phone: "",
-    company_address: "",
+    company_address_line_1: "",
+    company_address_line_2: "",
+    company_address_line_3: "",
+    company_address_line_4: "",
     company_logo: "",
     producer_name: "",
     producer_email: "",
@@ -118,7 +120,7 @@ const CrewInfoCreate = () => {
     steadicam_name: "",
     steadicam_email: "",
     steadicam_phone: "",
-    camera_pa__name: "",
+    camera_pa_name: "",
     camera_pa_email: "",
     camera_pa_phone: "",
     oth_camera_pos_1_job: "",
@@ -407,11 +409,13 @@ const CrewInfoCreate = () => {
     add_pos_10_name: "",
     add_pos_10_email: "",
     add_pos_10_phone: "",
+    all_other_add_positions: "",
 })
 
   const { 
           production_name, production_company, company_phone, company_email,
-          company_address, company_logo, total_shoot_days,
+          company_address_line_1, company_address_line_2, company_address_line_3,
+          company_address_line_4, company_logo, total_shoot_days,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
           upm_name, upm_email, upm_phone,
@@ -530,7 +534,28 @@ const CrewInfoCreate = () => {
           add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
           add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
           add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
-          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone, } = postData;
+          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
+          all_other_add_positions } = postData;
+
+  const imageInput1 = useRef(null);
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleChangeLogo = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(company_logo);
+      setPostData({
+        ...postData,
+        company_logo: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+    // console.log(event.target.files[0])
+  };
     
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -540,7 +565,10 @@ const CrewInfoCreate = () => {
     formData.append("production_company", production_company);
     formData.append("company_phone", company_phone);
     formData.append("company_email", company_email);
-    formData.append("company_address", company_address);
+    formData.append("company_address_line_1", company_address_line_1);
+    formData.append("company_address_line_2", company_address_line_2);
+    formData.append("company_address_line_3", company_address_line_3);
+    formData.append("company_address_line_4", company_address_line_4);
     formData.append("company_logo", company_logo);
     formData.append("producer_name", producer_name);
     formData.append("producer_email", producer_email);
@@ -916,12 +944,13 @@ const CrewInfoCreate = () => {
     formData.append("add_pos_10_job", add_pos_10_job);
     formData.append("add_pos_10_name", add_pos_10_name);
     formData.append("add_pos_10_email", add_pos_10_email);
-    formData.append("add_pos_10_phone", add_pos_10_phone);  
+    formData.append("add_pos_10_phone", add_pos_10_phone);
+    formData.append("all_other_add_positions", all_other_add_positions);   
     if(imageInput1.current.files[0]) {
       formData.append("company_logo", imageInput1.current.files[0]);
     }
     try {
-      const {data} = await axiosReq.post("/crewinfo/", formData);
+      const {data} = await axiosReq.put("/crewinfo/", formData);
       history.push(`/callsheets/`);
     } catch (err) {
       console.log(err);
@@ -931,28 +960,8 @@ const CrewInfoCreate = () => {
     }
   }
 
-  const imageInput1 = useRef(null);
-    
-  const handleChange = (event) => {
-    setPostData({
-      ...postData,
-      [event.target.name]: event.target.value,
-    });
-    console.log(event.target.name)
-  };
-
-  const handleChangeLogo = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(company_logo);
-      setPostData({
-        ...postData,
-        company_logo: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
-
   const buttons = (
-  <div className="text-center mt-4">    
+  <div className="text-center mt-4 mb-4">    
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue}`}
       onClick={() => history.goBack()}
@@ -1048,26 +1057,81 @@ const CrewInfoCreate = () => {
       <hr/>
       {/* company address - company logo */}
       <Row>
-      <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
-      <Form.Group controlId="company_address" className={`${styles.Width2} `}  >
-          <Form.Label className={`${styles.Bold}`} >Company Address</Form.Label>
+      <Col xs={12} md={6} className=" p-0 p-md-2">
+        <div className="d-flex justify-content-center">
+      <Form.Group controlId="company_address_line_1" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 1</Form.Label>
           <Form.Control 
               className={`${styles.InputScene}`}
               type="text"
-              name="company_address"
-              as="textarea"
-              rows={2}
-              value={company_address}
+              name="company_address_line_1"
+              value={company_address_line_1}
               onChange={handleChange}
               />
       </Form.Group>
-      {errors?.company_address?.map((message, idx) => (
+      {errors?.company_address_line_1?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+      </div>
+      {/* line 2 */}
+      <div className="d-flex justify-content-center">
+      <Form.Group controlId="company_address_line_2" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 2</Form.Label>
+          <Form.Control 
+              className={`${styles.InputScene}`}
+              type="text"
+              name="company_address_line_2"
+              value={company_address_line_2}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.company_address_line_2?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </div>
+      <div className="d-flex justify-content-center">
+      {/* line 3 */}
+      <Form.Group controlId="company_address_line_3" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 3</Form.Label>
+          <Form.Control 
+              className={`${styles.InputScene}`}
+              type="text"
+              name="company_address_line_3"
+              value={company_address_line_3}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.company_address_line_3?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </div>
+      <div className="d-flex justify-content-center">
+      {/* line 4 */}
+      <Form.Group controlId="company_address_line_4" className={`${styles.Width2} `}  >
+          <Form.Label className={`${styles.Bold}`} >Company Address Line 4 </Form.Label>
+          <Form.Control 
+              className={`${styles.InputScene}`}
+              type="text"
+              name="company_address_line_4"
+              value={company_address_line_4}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.company_address_line_4?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </div>
       </Col>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <p className={`${styles.Bold}`}>Company Logo</p>
           <div
               className={`${appStyles.Content} d-flex flex-column justify-content-center`}
             >
@@ -1112,13 +1176,8 @@ const CrewInfoCreate = () => {
                 </Alert>
               ))}
           </div>
-      </Col>
-      </Row>
-      <hr/>
-      {/* total shoot days*/}
-      <Row>
-      <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
-      <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
+          <div className="mt-3 d-flex justify-content-center text-center">
+            <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.Bold}`} >Total Shoot Days</Form.Label>
           <Form.Control 
               className={`${styles.Input}`}
@@ -1127,15 +1186,15 @@ const CrewInfoCreate = () => {
               value={total_shoot_days}
               onChange={handleChange}
               />
-      </Form.Group>
-      {errors?.total_shoot_days?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
+            </Form.Group>
+            {errors?.total_shoot_days?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </div>
       </Col>
       </Row>
-      <hr/>
       </div>
       {/* CREW INFO BY DEPARTMENTS */}
       <h3 className="my-4" >CREW INFO BY DEPARTMENT</h3> 
@@ -1368,7 +1427,7 @@ const CrewInfoCreate = () => {
       </Row>
       <hr/>
       {/* P.A. */}
-      <h5 className="mt-1" >Production P.A.</h5> 
+      <h5 className="mt-1" >Production PA</h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="production_pa_name" className={`${styles.Width} `}  >
@@ -5560,7 +5619,7 @@ const CrewInfoCreate = () => {
       <div>
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >LOCATIONS</h3> 
       {/* Location Mngr  */}
-      <h5 className="mt-1" >Location Mngr </h5> 
+      <h5 className="mt-1" >Location Manager </h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_mngr_name" className={`${styles.Width} `}  >
@@ -6664,7 +6723,7 @@ const CrewInfoCreate = () => {
       <div>
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >TRANSPORTATION </h3> 
       {/* Transport Captain  */} 
-      <h5 className="mt-1" >FX </h5> 
+      <h5 className="mt-1" >Transport Captain</h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="transport_captain_name" className={`${styles.Width} `}  >
@@ -8280,8 +8339,10 @@ const CrewInfoCreate = () => {
           <Form.Group controlId="all_other_add_positions" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Enter: Position - Name - Email - Phone for each.</Form.Label>
               <Form.Control 
-              className={`${styles.Input}`}
+              className={`${styles.InputScene}`}
               type="text"
+              as="textarea"
+              rows={3}
               name="all_other_add_positions"
               value={all_other_add_positions}
               onChange={handleChange}
@@ -8296,679 +8357,25 @@ const CrewInfoCreate = () => {
       </Row>
       <hr/>
       </div>
-
-
-          {/* characters */}
-          <div> 
-            {/* character1 */}
-            {character1 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character1}</h5> 
-              </Col>
-            <Col className="d-flex justify-content-center" xs={4} >
-            <Form.Group controlId="character1_calltime" className={`${styles.Width2} `}>
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call Time"
-                name="character1_calltime"
-                value={character1_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character1_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col className="d-flex justify-content-center" xs={4} >
-            <Form.Group controlId="character1_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character1_pickup"
-                value={character1_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character1_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character2 */}
-            {character2 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character2}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character2_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call Time"
-                name="character2_calltime"
-                value={character2_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character2_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center" >
-            <Form.Group controlId="character2_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character2_pickup"
-                value={character2_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character2_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character3 */}
-            {character3 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character3}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character3_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character3_calltime"
-                value={character3_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character3_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character3_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character3_pickup"
-                value={character3_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character3_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character4 */}
-            {character4 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character4}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character4_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character4_calltime"
-                value={character4_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character4_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character4_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character4_pickup"
-                value={character4_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character4_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character5 */}
-            {character5 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character5}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character5_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character5_calltime"
-                value={character5_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character5_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character5_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character5_pickup"
-                value={character5_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character5_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character6 */}
-            {character6 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character6}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character6_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character6_calltime"
-                value={character6_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character6_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character6_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character6_pickup"
-                value={character6_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character6_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character7 */}
-            {character7 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character7}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character7_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character7_calltime"
-                value={character7_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character7_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character7_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character7_pickup"
-                value={character7_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character7_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character8 */}
-            {character8 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character8}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character8_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character8_calltime"
-                value={character8_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character8_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character8_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character8_pickup"
-                value={character8_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character8_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character9 */}
-            {character9 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character9}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character9_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character9_calltime"
-                value={character9_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character9_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character9_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character9_pickup"
-                value={character9_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character9_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character10 */}
-            {character10 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character10}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character10_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character10_calltime"
-                value={character10_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character10_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character10_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character10_pickup"
-                value={character10_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character10_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character11 */}
-            {character11 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character11}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character11_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character11_calltime"
-                value={character11_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character11_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character11_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character11_pickup"
-                value={character11_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character11_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* character12 */}
-            {character12 ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{character12}</h5> 
-              </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character12_calltime" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.Input}`}
-                placeholder="Call Time"
-                name="character12_calltime"
-                value={character12_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character12_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} className="d-flex justify-content-center">
-            <Form.Group controlId="character12_pickup" className={`${styles.Width2} `} >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Pickup"
-                name="character12_pickup"
-                value={character12_pickup}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.character12_pickup?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            {/* other_characters */}
-            <h3 className="mt-4" >Other Characters</h3> 
-            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-            {other_characters ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{other_characters}</h5> 
-              </Col>
-            <Col xs={4} >
-            <Form.Group controlId="other_characters_calltimes" className="mb-0" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                as="textarea"
-                rows={2}
-                className={`${styles.InputScene}`}
-                placeholder="Call Times"
-                name="other_characters_calltimes"
-                value={other_characters_calltimes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters_calltimes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} >
-            <Form.Group controlId="other_characters_pickups" className="mb-2" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                placeholder="Pickups"
-                name="other_characters_pickups"
-                value={other_characters_pickups}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.other_characters_pickups?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}
-            <h3 className="mt-4" >Background Artists</h3> 
-            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-            {/* background_artists */}
-            {background_artists ? (
-              <Row className="mt-3">
-              <Col xs={4}>
-              <h5 className="pt-2" >{background_artists}</h5> 
-              </Col>
-            <Col xs={4} >
-            <Form.Group controlId="background_artists_calltimes" className="mb-0" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                type="text"
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                placeholder="Call Time"
-                name="background_artists_calltimes"
-                value={background_artists_calltimes}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists_calltimes?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={4} >
-            <Form.Group controlId="background_artists_pickups" className="mb-2" >
-                <Form.Label className="p-1 d-none" ></Form.Label>
-                <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                placeholder="Pickup"
-                name="background_artists_pickups"
-                value={background_artists_pickups}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.background_artists_pickups?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            </Row>
-            ) : (
-              ""
-            )}        
-            </div>     
-          {/* end characters */}
     </div>
   )
 
   return (
     <div>
-    <TopBox work="Callsheet Base"
+    <TopBox work="Crew Info"
             title="Create"/>
-            <h5>Important</h5>
-            <p>Only the create info button once to create the crew info page base. Use the edit 
-               buttons to add or edit is at future stages</p>
+    <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
+        onClick={() => history.goBack()}
+    >
+        Back
+    </Button>
+    <p>Fill in this page once to create the crew info page base. Use the edit 
+        buttons to add or edit at future stages</p>
+    <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
     {textFields}
+    {buttons}
+    </Form>
     </div>
   )
 }

@@ -3,7 +3,24 @@
   }
 
 .Back {
-  background-color: aliceblue;
+  background-color: rgb(222, 236, 248);
+}
+
+.CrewInfoRow {
+  border-bottom: 1px solid #c8d1da;
+}
+
+.CrewInfoP {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.CrewInfop {
+  margin-bottom: 3px;
+}
+
+.Red {
+  background-color: red;
 }
 
 .CastEntered {
