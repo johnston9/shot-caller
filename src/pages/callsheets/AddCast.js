@@ -56,7 +56,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     useEffect(() => {
       const handleMount = async () => {
           try {
-              const { data } = await axiosReq.get(`/castcalls/?day_id=${id}`)
+              const { data } = await axiosReq.get(`/castcallsnew/?day_id=${id}`)
               setCast(data);
           } catch (err) {
               console.log(err);
@@ -71,8 +71,8 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       const formData = new FormData();
   
       formData.append("day_id", id);
-      formData.append("day", dataDay);
-      formData.append("date", dataDate);
+      formData.append("shoot_day", dataDay);
+      formData.append("shoot_date", dataDate);
       formData.append("cast_number", cast_number);
       formData.append("role", role);
       formData.append("artist", artist);
@@ -85,7 +85,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       formData.append("inst", inst);
     
       try {
-        const { data } = await axiosReq.post("/castcalls/", formData);
+        const { data } = await axiosReq.post("/castcallsnew/", formData);
         setShowAddCast((showAddCast) => !showAddCast)
       //   setShotlist((prevShotlist) => ({
       //     ...prevShotlist,

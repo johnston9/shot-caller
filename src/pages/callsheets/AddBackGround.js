@@ -47,7 +47,7 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     useEffect(() => {
     const handleMount = async () => {
         try {
-            const { data } = await axiosReq.get(`/background/?day_id=${id}`)
+            const { data } = await axiosReq.get(`/backgroundcallsnew/?day_id=${id}`)
             setBackground(data);
         } catch (err) {
             console.log(err);
@@ -62,8 +62,8 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     const formData = new FormData();
 
     formData.append("day_id", id);
-    formData.append("day", dataDay);
-    formData.append("date", dataDate);
+    formData.append("shoot_day", dataDay);
+    formData.append("shoot_date", dataDate);
     formData.append("qty", qty);
     formData.append("type", type);
     formData.append("call", call);
@@ -72,7 +72,7 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     formData.append("costumes", costumes);
     
     try {
-        const { data } = await axiosReq.post("/background/", formData);
+        const { data } = await axiosReq.post("/backgroundcallsnew/", formData);
         setShowAddBg((showAddBg) => !showAddBg)
     //   setShotlist((prevShotlist) => ({
     //     ...prevShotlist,

@@ -18,12 +18,12 @@ const CallsheetTop = (props) => {
     const history = useHistory();
 
     const handleEdit = () => { 
-        history.push(`/callsheets/${id}/edit`);
+        history.push(`/callsheetsnew/${id}/edit`);
         };
 
     const handleDelete = async () => {
         try {
-            await axiosReq.delete(`/callsheets/${id}/`);
+            await axiosReq.delete(`/callsheetsnew/${id}/`);
             history.push(`/callsheets/`);
         } catch (err) {
         }

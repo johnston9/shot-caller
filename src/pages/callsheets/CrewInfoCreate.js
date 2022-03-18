@@ -950,8 +950,9 @@ const CrewInfoCreate = () => {
       formData.append("company_logo", imageInput1.current.files[0]);
     }
     try {
-      const {data} = await axiosReq.put("/crewinfo/", formData);
+      const {data} = await axiosReq.post("/crewinfonew/", formData);
       history.push(`/callsheets/`);
+      console.log(data)
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -1130,10 +1131,10 @@ const CrewInfoCreate = () => {
       ))}
       </div>
       </Col>
-      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <Col xs={6} className=" p-0 p-md-2">
       <p className={`${styles.Bold}`}>Company Logo</p>
           <div
-              className={`${appStyles.Content} d-flex flex-column justify-content-center`}
+              className={`mr-4 ${appStyles.Content} d-flex flex-column justify-content-center`}
             >
               <Form.Group className="text-center pt-3">
                   {company_logo ? (

@@ -27,9 +27,9 @@ const CallSheet = () => {
         const handleMount = async () => {
             try {
                 const [{ data: callsheetdata }, { data: castcalldata }, { data: bgcalldata }] = await Promise.all([
-                    axiosReq.get(`/callsheets/?day_id=${id}`),
-                    axiosReq.get(`/castcall/?day_id=${id}`),
-                    axiosReq.get(`/backgroundcalls/?day_id=${id}`),
+                    axiosReq.get(`/callsheetsnew/?day_id=${id}`),
+                    axiosReq.get(`/castcallsnew/?day_id=${id}`),
+                    axiosReq.get(`/backgroundcallsnew/?day_id=${id}`),
                 ])
                 setCallsheet({ results: [callsheetdata] });
                 setCast(castcalldata);

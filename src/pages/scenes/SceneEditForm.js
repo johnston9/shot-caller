@@ -110,24 +110,24 @@ const SceneEditForm = () => {
               dramatic_day, equip_set_props, department_info,
               pages, action, storyboard, image, location_detail } = data;
      
-        setPostData({ number, title, act, int_ext, day_night, time, location,
-          filming_location, character1, character1_costume, character2, 
-          character2_costume, character3, character3_costume, character4, 
-          character4_costume, character5, character5_costume, character6, 
-          character6_costume, character7, character7_costume, character8,
-          character8_costume, character9, character9_costume, character10, 
-          character10_costume, character11, character11_costume, character12,
-          character12_costume, other_characters, other_characters_costumes,
-          background_artists, background_artists_costumes, shooting_date,
-          dramatic_day, equip_set_props, department_info,
-          pages, action, storyboard, image, location_detail });
-          } catch (err) {
-            console.log(err);
-          }
-        };
-    
-        handleMount();
-      }, [id]);
+            setPostData({ number, title, act, int_ext, day_night, time, location,
+              filming_location, character1, character1_costume, character2, 
+              character2_costume, character3, character3_costume, character4, 
+              character4_costume, character5, character5_costume, character6, 
+              character6_costume, character7, character7_costume, character8,
+              character8_costume, character9, character9_costume, character10, 
+              character10_costume, character11, character11_costume, character12,
+              character12_costume, other_characters, other_characters_costumes,
+              background_artists, background_artists_costumes, shooting_date,
+              dramatic_day, equip_set_props, department_info,
+              pages, action, storyboard, image, location_detail });
+              } catch (err) {
+                console.log(err);
+              }
+            };
+        
+            handleMount();
+          }, [id]);
 
     const handleChange = (event) => {
         setPostData({

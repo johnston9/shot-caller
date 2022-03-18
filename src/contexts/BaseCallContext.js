@@ -6,19 +6,26 @@ export const SetCrewInfoContext = createContext();
 export const useCrewInfoContext = () => useContext(CrewInfoContext);
 export const useSetCrewInfoContext = () => useContext(SetCrewInfoContext);
 
-// export const CrewInfoIdContext = createContext();
-// export const SetCrewInfoIdContext = createContext();
-// export const useCrewInfoIdContext = () => useContext(CrewInfoIdContext);
-// export const useSetCrewInfoIdContext = () => useContext(SetCrewInfoIdContext);
+export const EditCrewInfoContext = createContext();
+export const SetEditCrewInfoContext = createContext();
+export const useEditCrewInfoContext = () => useContext(EditCrewInfoContext);
+export const useSetEditCrewInfoContext = () => useContext(SetEditCrewInfoContext);
 
 export const CrewInfoProvider = ({ children }) => {
-    // const [crewInfoId, setCrewInfoId] = useState("");
+    const [editCrewInfo, setEditCrewInfo] = useState(false);
     const [crewInfo, setCrewInfo] = useState({ results: [] });
+
+    const con = () => {
+      console.log(setCrewInfo)
+    }
 
     const fetchCrewInfo = async () => {
         try {
           const { data } = await axiosReq.get(`/crewinfo/`);
           setCrewInfo(data);
+          setEditCrewInfo(false);
+          console.log(data);
+          console.log(crewInfo)
         } catch(err) {
           console.log(err);
         }
@@ -26,12 +33,16 @@ export const CrewInfoProvider = ({ children }) => {
     
       useEffect(() => {
         fetchCrewInfo();
-      }, []);
+      }, [editCrewInfo]);
 
     return (
         <CrewInfoContext.Provider value={crewInfo}>
             <SetCrewInfoContext.Provider value={setCrewInfo}>
-                   {children}
+            <EditCrewInfoContext.Provider value={editCrewInfo}>
+              <SetEditCrewInfoContext.Provider value={setEditCrewInfo}>
+                {children}
+              </SetEditCrewInfoContext.Provider>
+            </EditCrewInfoContext.Provider>
             </SetCrewInfoContext.Provider>
         </CrewInfoContext.Provider>
     )

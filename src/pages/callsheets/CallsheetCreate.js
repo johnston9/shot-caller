@@ -230,7 +230,7 @@ const {
     formData.append("transport_info", transport_info);
     formData.append("department_info", department_info);
     try {
-      await axiosReq.post("/callsheets/", formData);
+      await axiosReq.post("/callsheetsnew/", formData);
       setShowCall(false);
       // setHasOrder(true);
     } catch (err) {
@@ -1016,9 +1016,12 @@ const buttons = (
       </Row>             
     ) }
     <h3 className={`text-center mt-5 py-0 ${styles.SubTitle }`} >ADD INFO</h3> 
+    <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
     {infoFields}
     <h3 className={`text-center my-2 py-0 ${styles.SubTitle }`} >ADD CREW</h3> 
     {/* {crewFields} */}
+    {buttons}
+    </Form>
     </div>
   )
 }

@@ -48,7 +48,7 @@ const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
     useEffect(() => {
         const handleMount = async () => {
           try {
-            const { data } = await axiosReq.get(`/castcalls/${id}/`);
+            const { data } = await axiosReq.get(`/castcallsnew/${id}/`);
             console.log(data)
             const {  day_id,
                 cast_number,
@@ -97,8 +97,8 @@ const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
       const formData = new FormData();
   
       formData.append("day_id", day_id);
-      formData.append("day", dataDay);
-      formData.append("date", dataDate);
+      // formData.append("shoot_day", dataDay);
+      // formData.append("shoot_date", dataDate);
       formData.append("cast_number", cast_number);
       formData.append("role", role);
       formData.append("artist", artist);
@@ -111,7 +111,7 @@ const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
       formData.append("inst", inst);
     
       try {
-        const { data } = await axiosReq.put(`/castcalls/${id}/`, formData);
+        const { data } = await axiosReq.put(`/castcallsnew/${id}/`, formData);
         setShowCastEdit((showCastEdit) => !showCastEdit)
       //   setShotlist((prevShotlist) => ({
       //     ...prevShotlist,

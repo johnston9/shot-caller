@@ -32,6 +32,7 @@ const NavBar = () => {
 {/*  home */}
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
+          // activeClassName={styles.Active}
           activeClassName={styles.Active}
           to="/home"
         >

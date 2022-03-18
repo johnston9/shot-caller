@@ -40,7 +40,7 @@ const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-            const { data } = await axiosReq.get(`/backgroundcalls/${id}/`);
+            const { data } = await axiosReq.get(`/backgroundcallsnew/${id}/`);
             const {  day_id,
                 qty,
                 type,
@@ -80,8 +80,8 @@ const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
     const formData = new FormData();
 
     formData.append("day_id", day_id);
-    formData.append("day", dataDay);
-    formData.append("date", dataDate);
+    // formData.append("shoot_day", dataDay);
+    // formData.append("shoot_date", dataDate);
     formData.append("qty", qty);
     formData.append("type", type);
     formData.append("call", call);
@@ -90,7 +90,7 @@ const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
     formData.append("costumes", costumes);
     
     try {
-        const { data } = await axiosReq.post(`/backgroundcalls/${id}/`, formData);
+        const { data } = await axiosReq.post(`/backgroundcallsnew/${id}/`, formData);
         setShowAddBg((showAddBg) => !showAddBg)
     //   setShotlist((prevShotlist) => ({
     //     ...prevShotlist,
