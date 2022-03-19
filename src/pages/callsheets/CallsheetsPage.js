@@ -25,19 +25,12 @@ const CallsheetsPage = ({ filter="" }) => {
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
-  const crewInfo = useCrewInfoContext();
-  const crewInfoOne = crewInfo.results[0];
   const [query, setQuery] = useState("");
-
-  const {id, production_name, production_company, company_phone, company_email,
-    company_address_line_1, company_address_line_2, company_address_line_3,
-    company_address_line_4, company_logo, total_shoot_days} = crewInfoOne || {};
   
-
   useEffect(() => {
     const fetchCallsheets = async () => {
       try {
-        const { data } = await axiosReq.get(`/callsheets/?${filter}&search=${query}`);
+        const { data } = await axiosReq.get(`/callsheetsnew/?${filter}&search=${query}`);
         setCallsheets(data);
         setHasLoaded(true);
       } catch(err) {
@@ -66,48 +59,13 @@ const CallsheetsPage = ({ filter="" }) => {
             onClick={() => history.goBack()}
         >
             Back
-        </Button>
-        {/* <Row>
-          <Col xs={6}>
-          <h3>ID - {id} </h3>
-            <h3>{production_name} </h3>
-            <h5>{production_company} </h5>
-            {company_logo && <> 
-              <div className='px-1'>
-                <p>logo</p>
-                <Image className={styles.Logo} src={company_logo} alt="logo" />
-            </div>
-            </>
-            }
-            <p>Total Shoot Days {total_shoot_days} </p>
-          </Col>
-          <Col xs={6}>
-            <p className="mb-0">
-              {company_address_line_1}
-            </p>
-            <p className="mb-0">
-              {company_address_line_2}
-            </p>
-            <p className="mb-0">
-              {company_address_line_3}
-            </p>
-            <p className="mb-0">
-              {company_address_line_4}
-            </p>
-            <p className="mb-0">
-              {company_phone}
-            </p>
-            <p className="mb-0">
-              {company_email}
-            </p>
-          </Col>
-        </Row> */}
+        </Button>      
         {/* crew info */}
         <Row className="text-center">
             <Col >
             <Button onClick={() => setShowCrewInfo(showCrewInfo => !showCrewInfo ) }
               className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-              Crew Info</Button>
+              Company and Crew Info</Button>
             </Col>
         </Row>
         {/* CrewInfo */}

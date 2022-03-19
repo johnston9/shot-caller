@@ -15,13 +15,9 @@ export const CrewInfoProvider = ({ children }) => {
     const [editCrewInfo, setEditCrewInfo] = useState(false);
     const [crewInfo, setCrewInfo] = useState({ results: [] });
 
-    const con = () => {
-      console.log(setCrewInfo)
-    }
-
     const fetchCrewInfo = async () => {
         try {
-          const { data } = await axiosReq.get(`/crewinfo/`);
+          const { data } = await axiosReq.get(`/crewinfonew/`);
           setCrewInfo(data);
           setEditCrewInfo(false);
           console.log(data);

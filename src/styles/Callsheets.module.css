@@ -2,6 +2,19 @@
     min-height: 100px;
   }
 
+.Close {
+  color: rgb(28, 131, 131);
+  padding-right: 30px;
+}
+
+.Close:hover {
+  color: rgb(0, 8, 8);
+}
+
+.CloseIns {
+  color: red;
+}
+
 .Back {
   background-color: rgb(222, 236, 248);
 }
@@ -19,8 +32,21 @@
   margin-bottom: 3px;
 }
 
-.Red {
-  background-color: red;
+.Button {
+  color: rgb(28, 204, 204);
+  cursor: pointer;
+}
+
+.Button:hover {
+  color: rgb(31, 98, 98);
+}
+
+.Important {
+  background-color: antiquewhite;
+}
+
+.ImportantText {
+  color: #000;
 }
 
 .CastEntered {

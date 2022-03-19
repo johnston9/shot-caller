@@ -15,6 +15,7 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
+import { useSetEditCrewInfoContext } from "../../contexts/BaseCallContext";
 
 // other pro 5 - other cam 3 
 
@@ -22,6 +23,7 @@ const CrewInfoCreate = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const history = useHistory();
+  const setEditCrewInfo = useSetEditCrewInfoContext();
 
   const [postData, setPostData] = useState({
     total_shoot_days: "",
@@ -569,7 +571,6 @@ const CrewInfoCreate = () => {
     formData.append("company_address_line_2", company_address_line_2);
     formData.append("company_address_line_3", company_address_line_3);
     formData.append("company_address_line_4", company_address_line_4);
-    formData.append("company_logo", company_logo);
     formData.append("producer_name", producer_name);
     formData.append("producer_email", producer_email);
     formData.append("producer_phone", producer_phone);  
@@ -951,6 +952,8 @@ const CrewInfoCreate = () => {
     }
     try {
       const {data} = await axiosReq.post("/crewinfonew/", formData);
+      setEditCrewInfo(true);
+      console.log(data);
       history.push(`/callsheets/`);
       console.log(data)
     } catch (err) {
