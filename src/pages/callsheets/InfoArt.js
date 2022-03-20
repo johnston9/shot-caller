@@ -3,9 +3,8 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
-import { Image } from 'react-bootstrap';
 
-const InfoArt = ({crewInfoOne}) => {
+const InfoArt = ({crewInfoOne, setShowArt}) => {
   useRedirect("loggedOut");
   const {art_director_name, art_director_email, art_director_phone,
     art_assistant_name, art_assistant_email, art_assistant_phone,
@@ -19,7 +18,204 @@ const InfoArt = ({crewInfoOne}) => {
     armorer_name, armorer_email, armorer_phone,  } = crewInfoOne || {};
 
   return (
-    <div>InfoArt</div>
+    <div>
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART </h5>
+      </div>
+      <div className='mt-3'>
+        {/* art director */}
+        {art_director_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Art Director</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{art_director_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{art_director_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{art_director_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* art assistant */}
+         {art_assistant_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Art Assistant</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{art_assistant_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{art_assistant_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{art_assistant_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* set decorator */}
+         {set_decorator_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Set Decorator</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{set_decorator_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{set_decorator_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{set_decorator_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* set dresser */}
+         {set_dresser_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Set Dresser</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{set_dresser_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{set_dresser_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{set_dresser_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* lead man */}
+         {lead_man_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Lead Man</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{lead_man_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{lead_man_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{lead_man_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* dresser */}
+         {dresser_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Dresser</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{dresser_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{dresser_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{dresser_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* prop master */}
+         {prop_master_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Prop Master</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{prop_master_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{prop_master_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{prop_master_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* ass prop master */}
+         {ass_prop_master_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Ass Prop Master</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{ass_prop_master_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{ass_prop_master_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{ass_prop_master_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* prop buyer */}
+         {prop_buyer_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>prop_buyer_name</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{prop_buyer_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{prop_buyer_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{prop_buyer_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* armorer name */}
+         {armorer_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>Armorer</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{armorer_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{armorer_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{armorer_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+        </div>
+    </div>
   )
 }
 

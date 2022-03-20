@@ -72,11 +72,12 @@ const CallsheetsPage = ({ filter="" }) => {
         {showCrewInfo ? (
           <CrewInfo setShowCrewInfo={setShowCrewInfo}  />
         ) : ("") }
+        <h4 style={{ textTransform: 'uppercase'}} className={`mt-4 text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>CALLSHEETS</h4>
         {/* search  */}
         <Row>
-        <Col className="mt-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
+        <Col className="mt-0 text-center" xs={12} md={{ span: 6, offset: 3 }} >
         <Form
-          className={`${styles.SearchBar} mt-3`}
+          className={`${styles.SearchBar} mt-1`}
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
@@ -90,7 +91,7 @@ const CallsheetsPage = ({ filter="" }) => {
         </Col>
         </Row>
         {/* callsheets */}
-        <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+        {/* <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
             <Row className="h-100 mt-3">
             {hasLoaded ? (
                 <>
