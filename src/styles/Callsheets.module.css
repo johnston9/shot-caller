@@ -19,8 +19,28 @@
   background-color: rgb(222, 236, 248);
 }
 
+.Back2 {
+  background-color: #ffffff;
+}
+
+.Back3 {
+  background-color: rgb(241 248 253);
+}
+
+.Crew {
+  min-height: 100px;
+}
+
+.White {
+  background-color: #fff;
+}
+
 .CrewInfoRow {
-  border-bottom: 1px solid #c8d1da;
+  border-bottom: 1px solid #fff;
+}
+
+.CrewInfoRowAdd {
+  border-bottom: 1px solid #fff;
 }
 
 .CrewInfoP {

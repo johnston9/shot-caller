@@ -113,7 +113,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     );
     
   return (
-    <div className={`my-3 ${styles.Back }`}>
+    <div className={`my-3 ${styles.Back3 }`}>
       <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD CHARACTER</h5> 
       <p className="text-center">Enter each cast member from their first scheduled scene. 
          Open Characters Page in new tab to get H/M/W and Commute time.</p>

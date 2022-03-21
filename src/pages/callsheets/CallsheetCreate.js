@@ -14,6 +14,18 @@ import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import AddCast from "./AddCast";
 import CallsheetSchedule from "./CallsheetSchedule";
 import AddBackGround from "./AddBackGround";
+import AddProduction from './AddProduction';
+import AddCamera from './AddCamera';
+import AddCastingAD from './AddCastingAD';
+import AddLocations from './AddLocations';
+import AddWardrobe from './AddWardrobe';
+import AddScriptCater from "./AddScriptCater";
+import AddElectricGrip from './AddElectricGrip';
+import AddMakeup from './AddMakeup';
+import AddArt from './AddArt';
+import AddSoundTransport from './AddSoundTransport';
+import AddStunts from './AddStunts';
+import AddPostAdditional from './AddPostAdditional';
 
 const CallsheetCreate = ({setShowCall}) => {
   useRedirect("loggedOut");
@@ -21,21 +33,32 @@ const CallsheetCreate = ({setShowCall}) => {
   const { id } = useParams();
   const history = useHistory();
   const crewInfo = useCrewInfoContext();
+  const crewInfoOne = crewInfo.results[0];
   const [showSchedule, setShowSchedule] = useState(false);
   const [showAddCast, setShowAddCast] = useState(false);
   const [showAddBg, setShowAddBg] = useState(false);
   const [showSideBySide, setShowSideBySide] = useState(false);
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
-  const [dataId, setDataId] = useState("");
   const [dataDay, setDataDay] = useState("");
   const [dataDate, setDataDate] = useState("");
-  // const dataDay = useDayContext();
+  const [showPro, setShowPro] = useState(false);
+  const [showCam, setShowCam] = useState(false);
+  const [showSou, setShowSou] = useState(false);
+  const [showLoc, setShowLoc] = useState(false);
+  const [showMak, setShowMak] = useState(false);
+  const [showEle, setShowEle] = useState(false);
+  const [showScr, setShowScr] = useState(false);
+  const [showArt, setShowArt] = useState(false);
+  const [showCas, setShowCas] = useState(false);
+  const [showStu, setShowStu] = useState(false);
+  const [showPos, setShowPos] = useState(false);
+  const [showWar, setShowWar] = useState(false);
 
-  // const { production_name, production_company, company_phone, company_email,
-  //         company_address, company_logo, 
+  // const { 
   //         producer_name, producer_email, producer_phone,
   //         pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
+  //         upm_name, upm_email, upm_phone,
   //         travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
   //         production_pa_name, production_pa_email, production_pa_phone,
   //         locations_manager_name, locations_manager_email, locations_manager_phone,
@@ -102,6 +125,20 @@ const CallsheetCreate = ({setShowCall}) => {
   //         electric_4_name, electric_4_email, electric_4_phone, } = crewInfo;
 
   const [postData, setPostData] = useState({
+      producer_calltime: "",
+      pro_coordinator_calltime: "",
+      travel_coordinator_calltime: "",
+      upm_calltime: "",
+      production_pa_calltime: "",
+      script_supervisor_calltime: "",
+      legal_calltime: "",
+      set_medic_calltime: "",
+      oth_production_pos_1_calltime: "",
+      oth_production_pos_2_calltime: "",
+      oth_production_pos_3_calltime: "",
+      oth_production_pos_4_calltime: "",
+      oth_production_pos_5_calltime: "",
+      // info 
       unit_call: "",
       talent_call: "",
       shoot_call: "",
@@ -133,11 +170,21 @@ const CallsheetCreate = ({setShowCall}) => {
       walkie_channel_camera: "",
       walkie_channel_electric: "",
       walkie_channel_grip: "",
-      // producer_calltime: "",
-      // pro_coordinator_calltime: "",
   })
 
-const { 
+const { producer_calltime,
+        pro_coordinator_calltime,
+        travel_coordinator_calltime,
+        upm_calltime,
+        production_pa_calltime,
+        script_supervisor_calltime,
+        legal_calltime,
+        set_medic_calltime,
+        oth_production_pos_1_calltime,
+        oth_production_pos_2_calltime,
+        oth_production_pos_3_calltime,
+        oth_production_pos_4_calltime,
+        oth_production_pos_5_calltime,
         unit_call,
         talent_call, 
         shoot_call, 
@@ -173,37 +220,25 @@ const {
         // pro_coordinator_calltime, 
       } = postData;
 
-  useEffect(() => {
-    const handleMount = async () => {
-        try {
-          const [{ data: dayGet }, { data: scenes }] = await Promise.all([
-            axiosReq.get(`/days/${id}`),
-            axiosReq.get(`/schedule/scenes/?day_id=${id}`),
-        ])
-        setDayData({ results: [dayGet] });
-        setScenes(scenes)
-        setDataDay(dayGet.day);
-        setDataDate(dayGet.date);
-        } catch (err) {
-            console.log(err);
-          }
-    }
-    handleMount();
-    }, [id])
-    
-  const handleChange = (event) => {
-    setPostData({
-      ...postData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("day_id", id);
+    formData.append("producer_calltime", producer_calltime);
+    formData.append("pro_coordinator_calltime", pro_coordinator_calltime);
+    formData.append("travel_coordinator_calltime", travel_coordinator_calltime);
+    formData.append("upm_calltime", upm_calltime);
+    formData.append("production_pa_calltime", production_pa_calltime);
+    formData.append("script_supervisor_calltime", script_supervisor_calltime);
+    formData.append("legal_calltime", legal_calltime);  
+    formData.append("set_medic_calltime", set_medic_calltime);
+    formData.append("oth_production_pos_1_calltime", oth_production_pos_1_calltime);
+    formData.append("oth_production_pos_2_calltime", oth_production_pos_2_calltime);
+    formData.append("oth_production_pos_3_calltime", oth_production_pos_3_calltime);
+    formData.append("oth_production_pos_4_calltime", oth_production_pos_4_calltime);
+    formData.append("oth_production_pos_5_calltime", oth_production_pos_5_calltime);
     // formData.append("producer_calltime", producer_calltime);
+    formData.append("day_id", id);
     formData.append("day", dataDay);
     formData.append("date", dataDate);
     formData.append("unit_call", unit_call);
@@ -241,8 +276,33 @@ const {
     }
   }
 
+  useEffect(() => {
+    const handleMount = async () => {
+        try {
+          const [{ data: dayGet }, { data: scenes }] = await Promise.all([
+            axiosReq.get(`/days/${id}`),
+            axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+        ])
+        setDayData({ results: [dayGet] });
+        setScenes(scenes)
+        setDataDay(dayGet.day);
+        setDataDate(dayGet.date);
+        } catch (err) {
+            console.log(err);
+          }
+    }
+    handleMount();
+    }, [id])
+    
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const infoFields = (
-    <div className={`text-center ${styles.Back }`}>
+    <div className={`text-center ${styles.Back3 }`}>
       {/* Unit call - Talent call Shoot call */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -707,7 +767,9 @@ const {
       </Row>       
       {/* WALKIE CHANNELS */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >WALKIE CHANNELS  </h3> 
+        <div className={`my-3 ${styles.Bold }`} > 
+        <span className={`px-5 my-3 py-1 ${styles.SubTitle }`} >WALKIE CHANNELS  </span> 
+        </div>
       <Row>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_production" className={`${styles.Width} `}  >
@@ -852,85 +914,16 @@ const {
     </div>
   )
 
-//   const crewFields = (
-//     <div>
-//     <h3>Add crew call times</h3>
-//       {/* producer */}
-//             {producer_name ? (
-//               <Row className="mt-3">
-//               <Col xs={4}>
-//               <p className={`mb-0 ${styles.Bold} `} >Producer </p> 
-//               </Col>
-//               <Col xs={4}>
-//               <p className="mb-0" >{producer_name}</p> 
-//               </Col>
-//             <Col className="d-flex justify-content-center" xs={4} >
-//             <Form.Group controlId="producer_calltime" className={`${styles.Width} `}>
-//                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-//                 <Form.Control 
-//                 className={`${styles.Input}`}
-//                 type="text"
-//                 placeholder="Call"
-//                 name="producer_calltime"
-//                 value={producer_calltime}
-//                 onChange={handleChange}
-//                     />
-//             </Form.Group>
-//             {errors?.producer_calltime?.map((message, idx) => (
-//               <Alert variant="warning" key={idx}>
-//                 {message}
-//               </Alert>
-//             ))}
-//             </Col>
-//             </Row>
-//             ) : (
-//               ""
-//             )}
-//       {/* pro coordinator */}
-//             {pro_coordinator_name ? (
-//               <Row className="mt-3">
-//               <Col xs={4}>
-//               <p className={`mb-0 ${styles.Bold} `} >Production Coordinator</p> 
-//               </Col>
-//               <Col xs={4}>
-//               <p className="mb-0" >{pro_coordinator_name}</p> 
-//               </Col>
-//             <Col className="d-flex justify-content-center" xs={4} >
-//             <Form.Group controlId="pro_coordinator_calltime" className={`${styles.Width} `}>
-//                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-//                 <Form.Control 
-//                 className={`${styles.Input}`}
-//                 type="text"
-//                 placeholder="Call"
-//                 name="pro_coordinator_calltime"
-//                 value={pro_coordinator_calltime}
-//                 onChange={handleChange}
-//                     />
-//             </Form.Group>
-//             {errors?.pro_coordinator_calltime?.map((message, idx) => (
-//               <Alert variant="warning" key={idx}>
-//                 {message}
-//               </Alert>
-//             ))}
-//             </Col>
-//             </Row>
-//             ) : (
-//               ""
-//             )}
-
-//     </div>
-// )
-
 const buttons = (
-  <div className="text-center mt-4">    
+  <div className={`text-center py-4 mb-3 mt-4 ${styles.White }`} >    
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue}`}
       onClick={() => setShowCall(showCall => !showCall)}
     >
-      cancel
+      Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-      create
+    <Button className={`ml-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      Create
     </Button>
   </div>
 );
@@ -944,7 +937,7 @@ const buttons = (
     <Row className='text-center'>
     <Col  >
     <Button
-        className={`my-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowSchedule(showSchedule => !showSchedule)} >View Schedule
     </Button>
     </Col>
@@ -959,18 +952,19 @@ const buttons = (
     ) }
     </div>
     {/* cast buttons */}
-    <h3 className={`text-center py-0 ${styles.SubTitle }`} >ADD CAST</h3> 
+    <h3 className={`text-center py-3 ${styles.SubTitle }`} >ADD CAST</h3> 
+    <div className= {`mb-3 ${styles.Back3}`}>
     <Row className='text-center'>
     <Col className='text-center' xs={6}>
     <Button
         className={`mt-3 px-5 ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Characters
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Characters
     </Button>
     </Col>
     <Col className='text-center' xs={6}  >
     <Button
-        className={`mt-3 px-4 ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Bg/Stand-Ins
+        className={`my-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Add Background/Stand-Ins
     </Button>
     </Col>
     </Row>
@@ -992,7 +986,7 @@ const buttons = (
     <Row className='text-center'>
     <Col className='text-center'  >
     <Button
-        className={`mt-3 px-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`my-3 px-3 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowSideBySide(showSideBySide => !showSideBySide)} >
           Schedule and Cast Forms Side by Side
     </Button>
@@ -1015,11 +1009,171 @@ const buttons = (
         </Col>
       </Row>             
     ) }
-    <h3 className={`text-center mt-5 py-0 ${styles.SubTitle }`} >ADD INFO</h3> 
-    <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
+    </div>
+    {/* info */}
+    <h3 className={`text-center mt-5 py-3 ${styles.SubTitle }`} >ADD INFO</h3> 
+    <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
     {infoFields}
-    <h3 className={`text-center my-2 py-0 ${styles.SubTitle }`} >ADD CREW</h3> 
-    {/* {crewFields} */}
+    <div className={`py-2 ${styles.White }`}></div> 
+    <h3 className={`text-center mt-0 mb-0 py-3 ${styles.SubTitle }`} >ADD CREW CALLS</h3> 
+    <div className={`pt-2 ${styles.White }`}> 
+      <Row className={`${styles.ButtonLine} mt-0`}>
+        <Col xs={4} md={2} className='text-center'>
+            <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowPro(showPro => !showPro)} > Production
+            </p>
+        </Col>
+        <Col xs={4} md={2} className='text-center'>
+                <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowCam(showCam => !showCam)} > Camera
+                </p>
+            </Col>
+        <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
+          </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+        <p
+            className={`py-0 mb-0 ${styles.Button}`}
+            onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
+        </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
+          </p>
+        </Col>
+        <Col xs={4} className='mx-0 px-0 text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowScr(showScr => !showScr)} > Script/Catering
+          </p>
+        </Col>
+      </Row>  
+      <Row className={`${styles.ButtonLine} text-center mt-0`}>
+        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+            <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
+            </p>
+        </Col>
+        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+                <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowMak(showMak => !showMak)} > Makeup
+                </p>
+            </Col>
+        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
+          </p>
+        </Col>
+        <Col xs={4} className='py-0' md={2}>
+        <p
+            className={`py-0 mb-0 ${styles.Button}`}
+            onClick={() => setShowStu(showStu => !showStu)} >Stunts
+        </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowArt(showArt => !showArt)} > Art
+          </p>
+        </Col>
+        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowPos(showPos => !showPos)} > Post/Additional
+          </p>
+        </Col>
+      </Row>  
+      <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+    </div>
+    <div className={`mt-0 ${styles.Crew }`}>
+        {/* Add Production */}
+        {!showPro ? (
+          <Row>
+            <Col xs={12} md={{span: 8, offset:2 }}>
+            <p className="text-center">Add all crew members to the Crew Info page so they will appear in each 
+                department. Complete all departments before clicking Create.</p>
+            </Col>
+          </Row>
+              ) : (
+                <AddProduction postData={postData} handleChange={handleChange} crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
+                ) }  
+        {/* Add Casting */}
+        {!showCas ? (
+                ""
+              ) : (
+                <AddCastingAD crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
+                ) } 
+        {/* Add Locations */}
+        {!showLoc ? (
+                ""
+              ) : (
+                <AddLocations crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} /> 
+                ) } 
+        {/* Add Script  */}
+        {!showScr ? (
+                ""
+              ) : (
+                <AddScriptCater crewInfoOne={crewInfoOne} setShowScr={setShowScr} /> 
+                ) } 
+        {/* Add Electric */}
+        {!showEle ? (
+                ""
+              ) : (
+                <AddElectricGrip crewInfoOne={crewInfoOne} setShowEle={setShowEle} /> 
+                ) } 
+        {/* Add Makeup */}
+        {!showMak ? (
+                ""
+              ) : (
+                <AddMakeup crewInfoOne={crewInfoOne} setShowMak={setShowMak} /> 
+                ) } 
+        {/* Add Sound */}
+        {!showSou ? (
+                ""
+              ) : (
+                <AddSoundTransport crewInfoOne={crewInfoOne} setShowSou={setShowSou} /> 
+                ) } 
+        {/* Add Stunts */}
+        {!showStu ? (
+                ""
+              ) : (
+                <AddStunts crewInfoOne={crewInfoOne} setShowStu={setShowStu} /> 
+                ) } 
+        {/* Add Art */}
+        {!showArt ? (
+                ""
+              ) : (
+                <AddArt crewInfoOne={crewInfoOne} setShowArt={setShowArt} /> 
+                ) } 
+        {/* Add Camera */}
+        {!showCam ? (
+                ""
+              ) : (
+                <AddCamera crewInfoOne={crewInfoOne} setShowCam={setShowCam} /> 
+                ) } 
+        {/* Add Post */}
+        {!showPos ? (
+                ""
+              ) : (
+                <AddPostAdditional crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
+                ) } 
+        {/* Add Wardrobe  */}
+        {!showWar ? (
+                ""
+              ) : (
+                <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
+                ) } 
+        </div>
     {buttons}
     </Form>
     </div>

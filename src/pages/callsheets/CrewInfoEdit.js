@@ -50,9 +50,6 @@ const CrewInfoEdit = () => {
     production_pa_name: "",
     production_pa_email: "",
     production_pa_phone: "",
-    locations_manager_name: "",
-    locations_manager_email: "",
-    locations_manager_phone: "",
     oth_production_pos_1_job: "",
     oth_production_pos_1_name: "",
     oth_production_pos_1_email: "",
@@ -422,7 +419,6 @@ const CrewInfoEdit = () => {
           upm_name, upm_email, upm_phone,
           travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
           production_pa_name, production_pa_email, production_pa_phone,
-          locations_manager_name, locations_manager_email, locations_manager_phone,
           oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
           oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
           oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
@@ -553,7 +549,6 @@ const CrewInfoEdit = () => {
           upm_name, upm_email, upm_phone,
           travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
           production_pa_name, production_pa_email, production_pa_phone,
-          locations_manager_name, locations_manager_email, locations_manager_phone,
           oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
           oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
           oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
@@ -678,7 +673,6 @@ const CrewInfoEdit = () => {
           upm_name, upm_email, upm_phone,
           travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
           production_pa_name, production_pa_email, production_pa_phone,
-          locations_manager_name, locations_manager_email, locations_manager_phone,
           oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
           oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
           oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
@@ -846,9 +840,6 @@ const CrewInfoEdit = () => {
     formData.append("production_pa_name", production_pa_name);
     formData.append("production_pa_email", production_pa_email);
     formData.append("production_pa_phone", production_pa_phone);
-    formData.append("locations_manager_name", locations_manager_name);
-    formData.append("locations_manager_email", locations_manager_email);
-    formData.append("locations_manager_phone", locations_manager_phone);
     formData.append("oth_production_pos_1_job", oth_production_pos_1_job);
     formData.append("oth_production_pos_1_name", oth_production_pos_1_name);
     formData.append("oth_production_pos_1_email", oth_production_pos_1_email);
@@ -1745,62 +1736,6 @@ const CrewInfoEdit = () => {
                   />
           </Form.Group>
           {errors?.production_pa_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      {/* Locations Manager */}
-      <h5 className="mt-1" >Locations Manager</h5> 
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="locations_manager_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="locations_manager_name"
-              value={locations_manager_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.locations_manager_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="locations_manager_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="locations_manager_email"
-              value={locations_manager_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.locations_manager_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="locations_manager_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="locations_manager_phone"
-              value={locations_manager_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.locations_manager_phone?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>

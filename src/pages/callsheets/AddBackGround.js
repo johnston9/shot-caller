@@ -100,7 +100,7 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     );
 
 return (
-    <div className={`my-3 ${styles.Back }`}>
+    <div className={`my-3 ${styles.Back3 }`}>
     <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD BACKGROUND/STAND-INS</h5> 
     <p className="text-center">Enter background artists from the schedule and add stand-ins.</p>
     <p className="text-center mb-0">Background Added</p>

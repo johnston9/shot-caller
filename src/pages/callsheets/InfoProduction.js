@@ -6,12 +6,11 @@ import styles from "../../styles/Callsheets.module.css";
 
 const Production = ({crewInfoOne, setShowPro}) => {
   useRedirect("loggedOut");
-  const {id, producer_name, producer_email, producer_phone,
+  const {producer_name, producer_email, producer_phone,
     pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
     upm_name, upm_email, upm_phone,
     travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
     production_pa_name, production_pa_email, production_pa_phone,
-    locations_manager_name, locations_manager_email, locations_manager_phone,
     oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
     oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
     oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
@@ -118,25 +117,6 @@ const Production = ({crewInfoOne, setShowPro}) => {
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{production_pa_phone}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* locations manager */}
-        {locations_manager_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Locations Mngr</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{locations_manager_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{locations_manager_email}</p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{locations_manager_phone}</p>
             </Col>
           </Row>
           </div> )

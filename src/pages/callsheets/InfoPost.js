@@ -65,7 +65,7 @@ const InfoPost = ({crewInfoOne, setShowPos}) => {
           </div> )
          }
          <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ADDITIONAL POSITIONS </h5>
+          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >ADDITIONAL POSITIONS </h5>
         </div>
          {/* add pos 1 */}
         {add_pos_1_job && 

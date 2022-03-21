@@ -13,7 +13,7 @@ import InfoCamera from './InfoCamera';
 import InfoCompany from './InfoCompany';
 import InfoCasting from './InfoCasting';
 import InfoLocations from './InfoLocations';
-import InfoWardrobe from './InfoLocations';
+import InfoWardrobe from './InfoWardrobe';
 import InfoScript from "./InfoScript";
 import InfoElectric from './InfoElectric';
 import InfoMakeup from './InfoMakeup';
@@ -28,13 +28,11 @@ const CrewInfo = ({setShowCrewInfo}) => {
   const history = useHistory();
   const crewInfo = useCrewInfoContext();
   const crewInfoOne = crewInfo.results[0];
-    console.log(crewInfoOne);
   const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);
   const [showCam, setShowCam] = useState(false);
   const [showSou, setShowSou] = useState(false);
   const [showLoc, setShowLoc] = useState(false);
-  const [showWar, setShowWar] = useState(false);
   const [showMak, setShowMak] = useState(false);
   const [showEle, setShowEle] = useState(false);
   const [showScr, setShowScr] = useState(false);
@@ -42,6 +40,7 @@ const CrewInfo = ({setShowCrewInfo}) => {
   const [showCas, setShowCas] = useState(false);
   const [showStu, setShowStu] = useState(false);
   const [showPos, setShowPos] = useState(false);
+  const [showWar, setShowWar] = useState(false);
   const { id } = crewInfoOne|| {};
 
   return (
@@ -97,7 +96,7 @@ const CrewInfo = ({setShowCrewInfo}) => {
             <Col xs={4} className='text-center' md={2}>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
-                  onClick={() => setShowWar(showWar => !showWar)} > Wardrobe
+                  onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
               </p>
             </Col>
             <Col xs={4} className='mx-0 px-0 text-center' md={2}>
@@ -166,17 +165,11 @@ const CrewInfo = ({setShowCrewInfo}) => {
               ) : (
                 <InfoCasting crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
                 ) } 
-        {/* InfoProduction */}
+        {/* Info Locations */}
         {!showLoc ? (
                 ""
               ) : (
                 <InfoLocations crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} /> 
-                ) } 
-        {/* InfoProduction */}
-        {!showWar ? (
-                ""
-              ) : (
-                <InfoWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
                 ) } 
         {/* Info Script  */}
         {!showScr ? (
@@ -225,6 +218,12 @@ const CrewInfo = ({setShowCrewInfo}) => {
                 ""
               ) : (
                 <InfoPost crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
+                ) } 
+        {/* Info Wardrobe  */}
+        {!showWar ? (
+                ""
+              ) : (
+                <InfoWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
                 ) } 
         </div>
     </div>
