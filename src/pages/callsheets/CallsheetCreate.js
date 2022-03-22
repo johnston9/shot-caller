@@ -56,17 +56,6 @@ const CallsheetCreate = ({setShowCall}) => {
   const [showWar, setShowWar] = useState(false);
 
   // const { 
-  //         producer_name, producer_email, producer_phone,
-  //         pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
-  //         upm_name, upm_email, upm_phone,
-  //         travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
-  //         production_pa_name, production_pa_email, production_pa_phone,
-  //         locations_manager_name, locations_manager_email, locations_manager_phone,
-  //         oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
-  //         oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
-  //         oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
-  //         oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
-  //         oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
   //         ad_1_name, ad_1_email, ad_1_phone,
   //         ad_2_name, ad_2_email, ad_2_phone,
   //         ad_3_name, ad_3_email, ad_3_phone,
@@ -125,6 +114,31 @@ const CallsheetCreate = ({setShowCall}) => {
   //         electric_4_name, electric_4_email, electric_4_phone, } = crewInfo;
 
   const [postData, setPostData] = useState({
+      art_director_calltime: "",
+      art_assistant_calltime: "",
+      set_decorator_calltime: "",
+      set_dresser_calltime: "",
+      lead_man_calltime: "",
+      dresser_calltime: "",
+      prop_master_calltime: "",
+      ass_prop_master_calltime: "",
+      prop_buyer_calltime: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      // xxxxxxxxxxx
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
+      // dress: "",
       producer_calltime: "",
       pro_coordinator_calltime: "",
       travel_coordinator_calltime: "",
@@ -138,7 +152,7 @@ const CallsheetCreate = ({setShowCall}) => {
       oth_production_pos_3_calltime: "",
       oth_production_pos_4_calltime: "",
       oth_production_pos_5_calltime: "",
-      // info 
+      // yyyyyyyyyyyyyyyyyyyy
       unit_call: "",
       talent_call: "",
       shoot_call: "",
@@ -172,7 +186,18 @@ const CallsheetCreate = ({setShowCall}) => {
       walkie_channel_grip: "",
   })
 
-const { producer_calltime,
+const { 
+        art_director_calltime,
+        art_assistant_calltime,
+        set_decorator_calltime,
+        set_dresser_calltime,
+        lead_man_calltime,
+        dresser_calltime,
+        prop_master_calltime,
+        ass_prop_master_calltime,
+        prop_buyer_calltime,
+        // xxxxxxxxx
+        producer_calltime,
         pro_coordinator_calltime,
         travel_coordinator_calltime,
         upm_calltime,
@@ -185,6 +210,7 @@ const { producer_calltime,
         oth_production_pos_3_calltime,
         oth_production_pos_4_calltime,
         oth_production_pos_5_calltime,
+        // yyyyyyyyyyyyyyyyyyyy
         unit_call,
         talent_call, 
         shoot_call, 
@@ -223,7 +249,35 @@ const { producer_calltime,
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-
+    formData.append("art_director_calltime", art_director_calltime);
+    formData.append("art_assistant_calltime", art_assistant_calltime);
+    formData.append("set_decorator_calltime", set_decorator_calltime);
+    formData.append("set_dresser_calltime", set_dresser_calltime);
+    formData.append("lead_man_calltime", lead_man_calltime);
+    formData.append("dresser_calltime", dresser_calltime);
+    formData.append("prop_master_calltime", prop_master_calltime);
+    formData.append("ass_prop_master_calltime", ass_prop_master_calltime);
+    formData.append("prop_buyer_calltime", prop_buyer_calltime);
+    formData.append("dress", dress);
+    formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
     formData.append("producer_calltime", producer_calltime);
     formData.append("pro_coordinator_calltime", pro_coordinator_calltime);
     formData.append("travel_coordinator_calltime", travel_coordinator_calltime);

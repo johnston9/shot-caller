@@ -62,6 +62,9 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           </Row>
           </div> )
          }
+         <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >SET DECORATION </h5>
+        </div>
          {/* set decorator */}
          {set_decorator_name && 
           (<div className={`${styles.CrewInfoRow}`}>
@@ -138,6 +141,9 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           </Row>
           </div> )
          }
+         <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
+        </div>
          {/* prop master */}
          {prop_master_name && 
           (<div className={`${styles.CrewInfoRow}`}>

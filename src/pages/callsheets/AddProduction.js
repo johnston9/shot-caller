@@ -104,10 +104,10 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
         {upm_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfoP} `}>UPM</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{upm_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
@@ -135,10 +135,10 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
         {travel_coordinator_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfoP} `}>Travel Coordinator</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{travel_coordinator_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
@@ -166,10 +166,10 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
         {production_pa_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfoP} `}>Production PA</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{production_pa_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
