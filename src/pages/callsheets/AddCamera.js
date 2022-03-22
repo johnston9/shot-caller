@@ -10,43 +10,54 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const { } = crewInfoOne || {};
+  const { dop_name, dop_email, dop_phone,
+    camera_operator_name, camera_operator_email, camera_operator_phone,
+    camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
+    camera_ass_2_name, camera_ass_2_email, camera_ass_2_phone,
+    dit_name, dit_email, dit_phone,
+    steadicam_name, steadicam_email, steadicam_phone,
+    camera_pa_name, camera_pa_email, camera_pa_phone,
+    oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, 
+    oth_camera_pos_1_phone, oth_camera_pos_2_job, oth_camera_pos_2_name, 
+    oth_camera_pos_2_email, oth_camera_pos_2_phone, oth_camera_pos_3_job, 
+    oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,} = crewInfoOne || {};
 
-  const { art_director_calltime, art_assistant_calltime, set_decorator_calltime,
-    set_dresser_calltime, lead_man_calltime, dresser_calltime, prop_master_calltime,
-    ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime,
+  const { dop_calltime, camera_operator_calltime, camera_ass_1_calltime,
+    camera_ass_2_calltime, dit_calltime, steadicam_calltime, camera_pa_calltime,
+    oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, oth_camera_pos_3_calltime,
+
     } = postData;
 
   return (
     <div>
       <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
+      <span className={`float-right ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CAMERA </h5>
       </div>
       <div className='mt-3'>
-        {/* art director */}
-        {art_director_name && 
+        {/* dop */}
+        {dop_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Art Director</p>
+              <p className={`${styles.CrewInfoP} `}>DOP</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{art_director_name} </p>
+              <p className={`${styles.CrewInfop} `}>{dop_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="art_director_calltime" className={`${styles.Width} `}>
+            <Form.Group controlId="dop_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="art_director_calltime"
-                value={art_director_calltime}
+                name="dop_calltime"
+                value={dop_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.art_director_calltime?.map((message, idx) => (
+            {errors?.dop_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -55,29 +66,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         {/* art assistant */}
-        {art_assistant_name && 
+         {/* camera operator */}
+        {camera_operator_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Art Assistant</p>
+              <p className={`${styles.CrewInfoP} `}>Camera Operator</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{art_assistant_name} </p>
+              <p className={`${styles.CrewInfop} `}>{camera_operator_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="art_assistant_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="camera_operator_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="art_assistant_calltime"
-                value={art_assistant_calltime}
+                name="camera_operator_calltime"
+                value={camera_operator_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.art_assistant_calltime?.map((message, idx) => (
+            {errors?.camera_operator_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -86,32 +97,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >SET DECORATION </h5>
-        </div>
-         {/* set decorator */}
-        {set_decorator_name && 
+         {/* 1st AC */}
+         {camera_ass_1_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Set Decorator</p>
+              <p className={`${styles.CrewInfoP} `}>1st AC</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{set_decorator_name} </p>
+              <p className={`${styles.CrewInfop} `}>{camera_ass_1_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="set_decorator_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="camera_ass_1_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="set_decorator_calltime"
-                value={set_decorator_calltime}
+                name="camera_ass_1_calltime"
+                value={camera_ass_1_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.set_decorator_calltime?.map((message, idx) => (
+            {errors?.camera_ass_1_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -120,29 +128,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         {/* set dresser */}
-        {set_dresser_name && 
+         {/* 2nd AC */}
+         {camera_ass_2_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Set Dresser</p>
+              <p className={`${styles.CrewInfoP} `}>2nd AC</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{set_dresser_name} </p>
+              <p className={`${styles.CrewInfop} `}>{camera_ass_2_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="set_dresser_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="camera_ass_2_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="set_dresser_calltime"
-                value={set_dresser_calltime}
+                name="camera_ass_2_calltime"
+                value={camera_ass_2_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.set_dresser_calltime?.map((message, idx) => (
+            {errors?.camera_ass_2_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -151,29 +159,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         {/* lead man */}
-        {lead_man_name && 
+         {/* DIT */}
+         {dit_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Lead Man</p>
+              <p className={`${styles.CrewInfoP} `}>DIT</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{lead_man_name} </p>
+              <p className={`${styles.CrewInfop} `}>{dit_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="lead_man_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="dit_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="lead_man_calltime"
-                value={lead_man_calltime}
+                name="dit_calltime"
+                value={dit_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.lead_man_calltime?.map((message, idx) => (
+            {errors?.dit_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -182,29 +190,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         {/* dresser */}
-         {dresser_name && 
+         {/* steadicam */}
+        {steadicam_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Dresser</p>
+              <p className={`${styles.CrewInfoP} `}>Steadicam</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{dresser_name} </p>
+              <p className={`${styles.CrewInfop} `}>{steadicam_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="dresser_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="steadicam_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="dresser_calltime"
-                value={dresser_calltime}
+                name="steadicam_calltime"
+                value={steadicam_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.dresser_calltime?.map((message, idx) => (
+            {errors?.steadicam_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -213,32 +221,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
-        </div>
-         {/* prop Master */}
-         {prop_master_name && 
+         {/* camera pa */}
+         {camera_pa_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Prop master</p>
+              <p className={`${styles.CrewInfoP} `}>Camera PA</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{prop_master_name} </p>
+              <p className={`${styles.CrewInfop} `}>{camera_pa_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="prop_master_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="camera_pa_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="prop_master_calltime"
-                value={prop_master_calltime}
+                name="camera_pa_calltime"
+                value={camera_pa_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.prop_master_calltime?.map((message, idx) => (
+            {errors?.camera_pa_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -247,29 +252,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         {/* ass prop master */}
-         {ass_prop_master_name && 
+         {/* oth camera pos 1 */}
+         {oth_camera_pos_1_job && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Assist Prop Master</p>
+              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_1_job} </p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{ass_prop_master_name} </p>
+              <p className={`${styles.CrewInfop} `}>{oth_camera_pos_1_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="ass_prop_master_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="oth_camera_pos_1_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="ass_prop_master_calltime"
-                value={ass_prop_master_calltime}
+                name="oth_camera_pos_1_calltime"
+                value={oth_camera_pos_1_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.ass_prop_master_calltime?.map((message, idx) => (
+            {errors?.oth_camera_pos_1_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -278,29 +283,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         {/* prop buyer */}
-         {prop_buyer_name && 
+         {/* oth camera pos 2 */}
+         {oth_camera_pos_2_job && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Prop Buyer</p>
+              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_2_job} </p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{prop_buyer_name} </p>
+              <p className={`${styles.CrewInfop} `}>{oth_camera_pos_2_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="prop_buyer_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="oth_camera_pos_2_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="prop_buyer_calltime"
-                value={prop_buyer_calltime}
+                name="oth_camera_pos_2_calltime"
+                value={oth_camera_pos_2_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.prop_buyer_calltime?.map((message, idx) => (
+            {errors?.oth_camera_pos_2_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -309,29 +314,29 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </Row>
           </div> )
          }
-         {/* armorer name */}
-         {armorer_name && 
+         {/* oth camera pos 3 */}
+         {oth_camera_pos_3_job && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Armorer Name</p>
+              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_3_job} </p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{armorer_name} </p>
+              <p className={`${styles.CrewInfop} `}>{oth_camera_pos_3_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="armorer_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="oth_camera_pos_3_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="armorer_calltime"
-                value={armorer_calltime}
+                name="oth_camera_pos_3_calltime"
+                value={oth_camera_pos_3_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.armorer_calltime?.map((message, idx) => (
+            {errors?.oth_camera_pos_3_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

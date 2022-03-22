@@ -114,18 +114,6 @@ const CallsheetCreate = ({setShowCall}) => {
   //         electric_4_name, electric_4_email, electric_4_phone, } = crewInfo;
 
   const [postData, setPostData] = useState({
-      art_director_calltime: "",
-      art_assistant_calltime: "",
-      set_decorator_calltime: "",
-      set_dresser_calltime: "",
-      lead_man_calltime: "",
-      dresser_calltime: "",
-      prop_master_calltime: "",
-      ass_prop_master_calltime: "",
-      prop_buyer_calltime: "",
-      dress: "",
-      dress: "",
-      dress: "",
       // xxxxxxxxxxx
       // dress: "",
       // dress: "",
@@ -139,6 +127,7 @@ const CallsheetCreate = ({setShowCall}) => {
       // dress: "",
       // dress: "",
       // dress: "",
+      // pro
       producer_calltime: "",
       pro_coordinator_calltime: "",
       travel_coordinator_calltime: "",
@@ -152,6 +141,40 @@ const CallsheetCreate = ({setShowCall}) => {
       oth_production_pos_3_calltime: "",
       oth_production_pos_4_calltime: "",
       oth_production_pos_5_calltime: "",
+      // art
+      art_director_calltime: "",
+      art_assistant_calltime: "",
+      set_decorator_calltime: "",
+      set_dresser_calltime: "",
+      lead_man_calltime: "",
+      dresser_calltime: "",
+      prop_master_calltime: "",
+      ass_prop_master_calltime: "",
+      prop_buyer_calltime: "",
+      // cam
+      dop_calltime: "",
+      camera_operator_calltime: "",
+      camera_ass_1_calltime: "",
+      camera_ass_2_calltime: "",
+      dit_calltime: "",
+      steadicam_calltime: "",
+      camera_pa_calltime: "",
+      oth_camera_pos_1_calltime: "",
+      oth_camera_pos_2_calltime: "",
+      oth_camera_pos_3_calltime: "",
+      // casting
+      casting_director_calltime: "",
+      extras_casting_calltime: "",
+      ad_1_calltime: "",
+      ad_2_calltime: "",
+      ad_3_calltime: "",
+      ad_4_calltime: "",
+      ad_5_calltime: "",
+      pro_assistant_1_calltime: "",
+      pro_assistant_2_calltime: "",
+      pro_assistant_3_calltime: "",
+      pro_assistant_4_calltime: "",
+      pro_assistant_5_calltime: "",
       // yyyyyyyyyyyyyyyyyyyy
       unit_call: "",
       talent_call: "",
@@ -186,17 +209,8 @@ const CallsheetCreate = ({setShowCall}) => {
       walkie_channel_grip: "",
   })
 
-const { 
-        art_director_calltime,
-        art_assistant_calltime,
-        set_decorator_calltime,
-        set_dresser_calltime,
-        lead_man_calltime,
-        dresser_calltime,
-        prop_master_calltime,
-        ass_prop_master_calltime,
-        prop_buyer_calltime,
-        // xxxxxxxxx
+  const { 
+        // pro
         producer_calltime,
         pro_coordinator_calltime,
         travel_coordinator_calltime,
@@ -210,6 +224,40 @@ const {
         oth_production_pos_3_calltime,
         oth_production_pos_4_calltime,
         oth_production_pos_5_calltime,
+        // art
+        art_director_calltime,
+        art_assistant_calltime,
+        set_decorator_calltime,
+        set_dresser_calltime,
+        lead_man_calltime,
+        dresser_calltime,
+        prop_master_calltime,
+        ass_prop_master_calltime,
+        prop_buyer_calltime,
+        // cam
+        dop_calltime,
+        camera_operator_calltime,
+        camera_ass_1_calltime,
+        camera_ass_2_calltime,
+        dit_calltime,
+        steadicam_calltime,
+        camera_pa_calltime,
+        oth_camera_pos_1_calltime,
+        oth_camera_pos_2_calltime,
+        oth_camera_pos_3_calltime,
+        // casting
+        casting_director_calltime,
+        extras_casting_calltime,
+        ad_1_calltime,
+        ad_2_calltime,
+        ad_3_calltime,
+        ad_4_calltime,
+        ad_5_calltime,
+        pro_assistant_1_calltime,
+        pro_assistant_2_calltime,
+        pro_assistant_3_calltime,
+        pro_assistant_4_calltime,
+        pro_assistant_5_calltime,
         // yyyyyyyyyyyyyyyyyyyy
         unit_call,
         talent_call, 
@@ -249,17 +297,6 @@ const {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("art_director_calltime", art_director_calltime);
-    formData.append("art_assistant_calltime", art_assistant_calltime);
-    formData.append("set_decorator_calltime", set_decorator_calltime);
-    formData.append("set_dresser_calltime", set_dresser_calltime);
-    formData.append("lead_man_calltime", lead_man_calltime);
-    formData.append("dresser_calltime", dresser_calltime);
-    formData.append("prop_master_calltime", prop_master_calltime);
-    formData.append("ass_prop_master_calltime", ass_prop_master_calltime);
-    formData.append("prop_buyer_calltime", prop_buyer_calltime);
-    formData.append("dress", dress);
-    formData.append("dress", dress);
     // formData.append("dress", dress);
     // formData.append("dress", dress);
     // formData.append("dress", dress);
@@ -277,7 +314,7 @@ const {
     // formData.append("dress", dress);
     // formData.append("dress", dress);
     // formData.append("dress", dress);
-    // formData.append("dress", dress);
+    // pro
     formData.append("producer_calltime", producer_calltime);
     formData.append("pro_coordinator_calltime", pro_coordinator_calltime);
     formData.append("travel_coordinator_calltime", travel_coordinator_calltime);
@@ -291,7 +328,41 @@ const {
     formData.append("oth_production_pos_3_calltime", oth_production_pos_3_calltime);
     formData.append("oth_production_pos_4_calltime", oth_production_pos_4_calltime);
     formData.append("oth_production_pos_5_calltime", oth_production_pos_5_calltime);
-    // formData.append("producer_calltime", producer_calltime);
+    // art
+    formData.append("art_director_calltime", art_director_calltime);
+    formData.append("art_assistant_calltime", art_assistant_calltime);
+    formData.append("set_decorator_calltime", set_decorator_calltime);
+    formData.append("set_dresser_calltime", set_dresser_calltime);
+    formData.append("lead_man_calltime", lead_man_calltime);
+    formData.append("dresser_calltime", dresser_calltime);
+    formData.append("prop_master_calltime", prop_master_calltime);
+    formData.append("ass_prop_master_calltime", ass_prop_master_calltime);
+    formData.append("prop_buyer_calltime", prop_buyer_calltime);
+    // cam
+    formData.append("dop_calltime", dop_calltime);
+    formData.append("camera_operator_calltime", camera_operator_calltime);
+    formData.append("camera_ass_1_calltime", camera_ass_1_calltime);
+    formData.append("camera_ass_2_calltime", camera_ass_2_calltime);
+    formData.append("dit_calltime", dit_calltime);
+    formData.append("steadicam_calltime", steadicam_calltime);
+    formData.append("camera_pa_calltime", camera_pa_calltime);
+    formData.append("oth_camera_pos_1_calltime", oth_camera_pos_1_calltime);
+    formData.append("oth_camera_pos_2_calltime", oth_camera_pos_2_calltime);
+    formData.append("oth_camera_pos_3_calltime", oth_camera_pos_3_calltime);
+    // casting
+    formData.append("casting_director_calltime", casting_director_calltime);
+    formData.append("extras_casting_calltime", extras_casting_calltime);
+    formData.append("ad_1_calltime", ad_1_calltime);
+    formData.append("ad_2_calltime", ad_2_calltime);
+    formData.append("ad_3_calltime", ad_3_calltime);
+    formData.append("ad_4_calltime", ad_4_calltime);
+    formData.append("ad_5_calltime", ad_5_calltime);
+    formData.append("pro_assistant_1_calltime", pro_assistant_1_calltime);
+    formData.append("pro_assistant_2_calltime", pro_assistant_2_calltime);
+    formData.append("pro_assistant_3_calltime", pro_assistant_3_calltime);
+    formData.append("pro_assistant_4_calltime", pro_assistant_4_calltime);
+    formData.append("pro_assistant_5_calltime", pro_assistant_5_calltime);
+    // yyyyyyyyyyyyyyyyyyyyyyy
     formData.append("day_id", id);
     formData.append("day", dataDay);
     formData.append("date", dataDate);

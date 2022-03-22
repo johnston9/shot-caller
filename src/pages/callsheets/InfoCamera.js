@@ -15,7 +15,8 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
     camera_pa_name, camera_pa_email, camera_pa_phone,
     oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
     oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
-    oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,} = crewInfoOne || {};
+    oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, 
+    oth_camera_pos_3_phone,} = crewInfoOne || {};
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>

@@ -30,7 +30,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
     <div>
       <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART </h5>
       </div>
       <div className='mt-3'>
         {/* art director */}
