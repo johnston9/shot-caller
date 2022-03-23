@@ -10,10 +10,14 @@ const AddLocations = ({crewInfoOne, handleChange, postData, setShowCas }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const {producer_name, producer_email, producer_phone,
-   } = crewInfoOne || {};
+  const {location_mngr_name, location_mngr_email, location_mngr_phone,
+    location_ass_1_name, location_ass_1_email, location_ass_1_phone,
+    location_ass_2_name, location_ass_2_email, location_ass_2_phone,
+    location_ass_3_name, location_ass_3_email, location_ass_3_phone,
+    location_ass_4_name, location_ass_4_email, location_ass_4_phone,
+    location_security_name, location_security_email, location_security_phone,} = crewInfoOne || {};
 
-  const { producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
+  const { location_mngr_calltime,
     } = postData;
 
   return (
@@ -23,29 +27,29 @@ const AddLocations = ({crewInfoOne, handleChange, postData, setShowCas }) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
       </div>
       <div className='mt-3'>
-        {/* producer */}
-        {producer_name && 
+        {/* location mngr */}
+        {location_mngr_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Producer</p>
+              <p className={`${styles.CrewInfoP} `}>Location Mngr</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{producer_name} </p>
+              <p className={`${styles.CrewInfop} `}>{location_mngr_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="producer_calltime" className={`${styles.Width} `}>
+            <Form.Group controlId="location_mngr_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="producer_calltime"
-                value={producer_calltime}
+                name="location_mngr_calltime"
+                value={location_mngr_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.producer_calltime?.map((message, idx) => (
+            {errors?.location_mngr_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

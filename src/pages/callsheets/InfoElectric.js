@@ -6,6 +6,7 @@ import styles from "../../styles/Callsheets.module.css";
 
 const InfoElectric = ({crewInfoOne, setShowEle}) => {
   useRedirect("loggedOut");
+
   const {gaffer_name, gaffer_email, gaffer_phone,
     best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
     electric_3_name, electric_3_email, electric_3_phone,
@@ -18,6 +19,7 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
     swing_ge3_name, swing_ge3_email, swing_ge3_phone,
     swing_ge4_name, swing_ge4_email, swing_ge4_phone,
     swing_ge5_name, swing_ge5_email, swing_ge5_phone,} = crewInfoOne || {};
+
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
@@ -45,7 +47,7 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
           </div> )
          }
          {/* best boy electric */}
-        {best_boy_electric_name && 
+         {best_boy_electric_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center' >
             <Col xs={6} md={3} >
@@ -64,7 +66,7 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
           </div> )
          }
          {/* 3rd electric */}
-        {electric_3_name && 
+         {electric_3_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center' >
             <Col xs={6} md={3} >
@@ -83,7 +85,7 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
           </div> )
          }
          {/* 4th electric */}
-        {electric_4_name && 
+         {electric_4_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center' >
             <Col xs={6} md={3} >

@@ -6,46 +6,59 @@ import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../styles/Callsheets.module.css";
 
-const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowCas }) => {
+const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const {producer_name, producer_email, producer_phone,
-   } = crewInfoOne || {};
+  const {gaffer_name, gaffer_email, gaffer_phone,
+    best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
+    electric_3_name, electric_3_email, electric_3_phone,
+    electric_4_name, electric_4_email, electric_4_phone,
+    keygrip_name, keygrip_email, keygrip_phone,
+    best_boy_grip_name, best_boy_grip_email, best_boy_grip_phone,
+    dolly_grip_name, dolly_grip_email, dolly_grip_phone,
+    swing_ge1_name, swing_ge1_email, swing_ge1_phone,
+    swing_ge2_name, swing_ge2_email, swing_ge2_phone,
+    swing_ge3_name, swing_ge3_email, swing_ge3_phone,
+    swing_ge4_name, swing_ge4_email, swing_ge4_phone,
+    swing_ge5_name, swing_ge5_email, swing_ge5_phone,} = crewInfoOne || {};
 
-  const { producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
+  const { gaffer_calltime, best_boy_electric_calltime, electric_3_calltime,
+    electric_4_calltime, keygrip_calltime, best_boy_grip_calltime,
+    dolly_grip_calltime, swing_ge1_calltime, swing_ge2_calltime,
+    swing_ge3_calltime, swing_ge4_calltime, swing_ge5_calltime,
     } = postData;
 
   return (
     <div>
       <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
+      <span className={`float-right ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
       </div>
       <div className='mt-3'>
-        {/* producer */}
-        {producer_name && 
+        {/* gaffer */}
+        {gaffer_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Producer</p>
+              <p className={`${styles.CrewInfoP} `}>Gaffer</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{producer_name} </p>
+              <p className={`${styles.CrewInfop} `}>{gaffer_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="producer_calltime" className={`${styles.Width} `}>
+            <Form.Group controlId="gaffer_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="producer_calltime"
-                value={producer_calltime}
+                name="gaffer_calltime"
+                value={gaffer_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.producer_calltime?.map((message, idx) => (
+            {errors?.gaffer_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -54,29 +67,29 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowCas }) => 
           </Row>
           </div> )
          }
-         {/* pro_coordinator */}
-        {pro_coordinator_name && 
+         {/* best boy electric */}
+         {best_boy_electric_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Pro Coordinator</p>
+              <p className={`${styles.CrewInfoP} `}>BB Electric</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{pro_coordinator_name} </p>
+              <p className={`${styles.CrewInfop} `}>{best_boy_electric_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="pro_coordinator_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="best_boy_electric_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="pro_coordinator_calltime"
-                value={pro_coordinator_calltime}
+                name="best_boy_electric_calltime"
+                value={best_boy_electric_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.pro_coordinator_calltime?.map((message, idx) => (
+            {errors?.best_boy_electric_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -85,29 +98,60 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowCas }) => 
           </Row>
           </div> )
          }
-         {/* upm */}
-        {upm_name && 
+         {/* 3rd electric */}
+         {electric_3_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>3rd Electric</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{electric_3_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="electric_3_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="electric_3_calltime"
+                value={electric_3_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.electric_3_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* 4th electric */}
+         {electric_4_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>UPM</p>
+              <p className={`${styles.CrewInfoP} `}>4th Electric</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{upm_name} </p>
+              <p className={`${styles.CrewInfop} `}>{electric_4_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="upm_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="electric_4_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="upm_calltime"
-                value={upm_calltime}
+                name="electric_4_calltime"
+                value={electric_4_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.upm_calltime?.map((message, idx) => (
+            {errors?.electric_4_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -116,29 +160,32 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowCas }) => 
           </Row>
           </div> )
          }
-         {/* travel coordinator */}
-        {travel_coordinator_name && 
+         <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >GRIP </h5>
+        </div>
+        {/* gaffer */}
+        {keygrip_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Travel Coordinator</p>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Keygrip</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{travel_coordinator_name} </p>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{keygrip_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="travel_coordinator_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="keygrip_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="travel_coordinator_calltime"
-                value={travel_coordinator_calltime}
+                name="keygrip_calltime"
+                value={keygrip_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.travel_coordinator_calltime?.map((message, idx) => (
+            {errors?.keygrip_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -147,29 +194,29 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowCas }) => 
           </Row>
           </div> )
          }
-         {/* oth production pos 3 */}
-        {oth_production_pos_3_job && 
+         {/* best boy grip */}
+         {best_boy_grip_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_3_job} </p>
+              <p className={`${styles.CrewInfoP} `}>Best Boy Grip</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_3_name} </p>
+              <p className={`${styles.CrewInfop} `}>{best_boy_grip_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_3_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="best_boy_grip_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="oth_production_pos_3_calltime"
-                value={oth_production_pos_3_calltime}
+                name="best_boy_grip_calltime"
+                value={best_boy_grip_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.oth_production_pos_3_calltime?.map((message, idx) => (
+            {errors?.best_boy_grip_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -178,29 +225,29 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowCas }) => 
           </Row>
           </div> )
          }
-         {/* oth production pos 4 */}
-        {oth_production_pos_4_job && 
+         {/* dolly grip */}
+         {dolly_grip_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_4_job} </p>
+              <p className={`${styles.CrewInfoP} `}>Dolly Grip</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_4_name} </p>
+              <p className={`${styles.CrewInfop} `}>{dolly_grip_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_4_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="dolly_grip_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="oth_production_pos_4_calltime"
-                value={oth_production_pos_4_calltime}
+                name="dolly_grip_calltime"
+                value={dolly_grip_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.oth_production_pos_4_calltime?.map((message, idx) => (
+            {errors?.dolly_grip_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -209,29 +256,153 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowCas }) => 
           </Row>
           </div> )
          }
-         {/* oth production pos 5 */}
-        {oth_production_pos_5_job && 
+         {/* swing ge 1 */}
+         {swing_ge1_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_5_job} </p>
+              <p className={`${styles.CrewInfoP} `}>Swing G/E 1</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_5_name} </p>
+              <p className={`${styles.CrewInfop} `}>{swing_ge1_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_5_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="swing_ge1_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="oth_production_pos_5_calltime"
-                value={oth_production_pos_5_calltime}
+                name="swing_ge1_calltime"
+                value={swing_ge1_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.oth_production_pos_5_calltime?.map((message, idx) => (
+            {errors?.swing_ge1_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* swing ge 2 */}
+         {swing_ge2_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Swing G/E 2</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{swing_ge2_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="swing_ge2_calltime" className={`${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="swing_ge2_calltime"
+                value={swing_ge2_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.swing_ge2_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* swing ge 3 */}
+         {swing_ge3_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Swing G/E 3</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{swing_ge3_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="swing_ge3_calltime" className={`${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="swing_ge3_calltime"
+                value={swing_ge3_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.swing_ge3_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* swing ge 4 */}
+         {swing_ge4_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Swing G/E 4</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{swing_ge4_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="swing_ge4_calltime" className={`${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="swing_ge4_calltime"
+                value={swing_ge4_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.swing_ge4_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* swing ge 5 */}
+         {swing_ge5_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Swing G/E 5</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{swing_ge5_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="swing_ge5_calltime" className={`${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="swing_ge5_calltime"
+                value={swing_ge5_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.swing_ge5_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

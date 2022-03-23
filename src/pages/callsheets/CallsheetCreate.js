@@ -114,6 +114,19 @@ const CallsheetCreate = ({setShowCall}) => {
   //         electric_4_name, electric_4_email, electric_4_phone, } = crewInfo;
 
   const [postData, setPostData] = useState({
+      // loc
+      location_mngr_calltime: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
+      dress: "",
       // xxxxxxxxxxx
       // dress: "",
       // dress: "",
@@ -175,6 +188,19 @@ const CallsheetCreate = ({setShowCall}) => {
       pro_assistant_3_calltime: "",
       pro_assistant_4_calltime: "",
       pro_assistant_5_calltime: "",
+      // elegrip
+      gaffer_calltime: "",
+      best_boy_electric_calltime: "",
+      electric_3_calltime: "",
+      electric_4_calltime: "",
+      keygrip_calltime: "",
+      best_boy_grip_calltime: "",
+      dolly_grip_calltime: "",
+      swing_ge1_calltime: "",
+      swing_ge2_calltime: "",
+      swing_ge3_calltime: "",
+      swing_ge4_calltime: "",
+      swing_ge5_calltime: "",
       // yyyyyyyyyyyyyyyyyyyy
       unit_call: "",
       talent_call: "",
@@ -210,6 +236,8 @@ const CallsheetCreate = ({setShowCall}) => {
   })
 
   const { 
+        // xxx
+        location_mngr_calltime,
         // pro
         producer_calltime,
         pro_coordinator_calltime,
@@ -258,6 +286,19 @@ const CallsheetCreate = ({setShowCall}) => {
         pro_assistant_3_calltime,
         pro_assistant_4_calltime,
         pro_assistant_5_calltime,
+        // eleGrip
+        gaffer_calltime,
+        best_boy_electric_calltime,
+        electric_3_calltime,
+        electric_4_calltime,
+        keygrip_calltime,
+        best_boy_grip_calltime,
+        dolly_grip_calltime,
+        swing_ge1_calltime,
+        swing_ge2_calltime,
+        swing_ge3_calltime,
+        swing_ge4_calltime,
+        swing_ge5_calltime,
         // yyyyyyyyyyyyyyyyyyyy
         unit_call,
         talent_call, 
@@ -297,7 +338,17 @@ const CallsheetCreate = ({setShowCall}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    // formData.append("dress", dress);
+    // loc
+    formData.append("location_mngr_calltime", location_mngr_calltime);
+    formData.append("dress", dress);
+    formData.append("dress", dress);
+    formData.append("dress", dress);
+    formData.append("dress", dress);
+    formData.append("dress", dress);
+    formData.append("dress", dress);
+    formData.append("dress", dress);
+    formData.append("dress", dress); 
+    // xxxxxxxxxxxx
     // formData.append("dress", dress);
     // formData.append("dress", dress);
     // formData.append("dress", dress);
@@ -362,6 +413,19 @@ const CallsheetCreate = ({setShowCall}) => {
     formData.append("pro_assistant_3_calltime", pro_assistant_3_calltime);
     formData.append("pro_assistant_4_calltime", pro_assistant_4_calltime);
     formData.append("pro_assistant_5_calltime", pro_assistant_5_calltime);
+    // ElectricGrip
+    formData.append("gaffer_calltime", gaffer_calltime);
+    formData.append("best_boy_electric_calltime", best_boy_electric_calltime);
+    formData.append("electric_3_calltime", electric_3_calltime);
+    formData.append("electric_4_calltime", electric_4_calltime);
+    formData.append("keygrip_calltime", keygrip_calltime);
+    formData.append("best_boy_grip_calltime", best_boy_grip_calltime);
+    formData.append("dolly_grip_calltime", dolly_grip_calltime);
+    formData.append("swing_ge1_calltime", swing_ge1_calltime);
+    formData.append("swing_ge2_calltime", swing_ge2_calltime);
+    formData.append("swing_ge3_calltime", swing_ge3_calltime);
+    formData.append("swing_ge4_calltime", swing_ge4_calltime);
+    formData.append("swing_ge5_calltime", swing_ge5_calltime);
     // yyyyyyyyyyyyyyyyyyyyyyy
     formData.append("day_id", id);
     formData.append("day", dataDay);

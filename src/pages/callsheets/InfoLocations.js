@@ -6,6 +6,7 @@ import styles from "../../styles/Callsheets.module.css";
 
 const InfoLocations = ({crewInfoOne, setShowLoc}) => {
   useRedirect("loggedOut");
+  
   const {location_mngr_name, location_mngr_email, location_mngr_phone,
     location_ass_1_name, location_ass_1_email, location_ass_1_phone,
     location_ass_2_name, location_ass_2_email, location_ass_2_phone,
