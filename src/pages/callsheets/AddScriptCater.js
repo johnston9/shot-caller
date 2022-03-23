@@ -6,46 +6,56 @@ import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../styles/Callsheets.module.css";
 
-const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowCas }) => {
+const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowScr }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const {producer_name, producer_email, producer_phone,
-   } = crewInfoOne || {};
+  const {writer_name, writer_email, writer_phone,
+    catering_co_1_name, catering_co_1_email, catering_co_1_phone,
+    catering_co_2_name, catering_co_2_email, catering_co_2_phone,
+    catering_co_3_name, catering_co_3_email, catering_co_3_phone,
+    craft_service_name, craft_service_email, craft_service_phone,
+    crafty_ass_name, crafty_ass_email, crafty_ass_phone,
+  } = crewInfoOne || {};
 
-  const { producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
+  const { writer_calltime,
+    catering_co_1_calltime,
+    catering_co_2_calltime,
+    catering_co_3_calltime,
+    craft_service_calltime,
+    crafty_ass_calltime,
     } = postData;
 
   return (
     <div>
       <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
+      <span className={`float-right ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >SCRIPT </h5>
       </div>
       <div className='mt-3'>
-        {/* producer */}
-        {producer_name && 
+        {/* writer */}
+        {writer_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Producer</p>
+              <p className={`${styles.CrewInfoP} `}>Writer</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{producer_name} </p>
+              <p className={`${styles.CrewInfop} `}>{writer_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="producer_calltime" className={`${styles.Width} `}>
+            <Form.Group controlId="writer_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="producer_calltime"
-                value={producer_calltime}
+                name="writer_calltime"
+                value={writer_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.producer_calltime?.map((message, idx) => (
+            {errors?.writer_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -54,29 +64,33 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* pro_coordinator */}
-        {pro_coordinator_name && 
+         {/* CATERING  */}
+         <div className={`mx-5 mb-3 mt-0 text-center ${styles.SubTitle }`}>
+         <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >CATERING </h5>
+         </div>
+         {/* catering co 1 */}
+         {catering_co_1_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Pro Coordinator</p>
+              <p className={`${styles.CrewInfoP} `}>Catering Co 1</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{pro_coordinator_name} </p>
+              <p className={`${styles.CrewInfop} `}>{catering_co_1_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="pro_coordinator_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="catering_co_1_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="pro_coordinator_calltime"
-                value={pro_coordinator_calltime}
+                name="catering_co_1_calltime"
+                value={catering_co_1_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.pro_coordinator_calltime?.map((message, idx) => (
+            {errors?.catering_co_1_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -85,29 +99,29 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* upm */}
-        {upm_name && 
+         {/* catering co 2 */}
+         {catering_co_2_name && 
           (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>UPM</p>
+          <Row className='text-center d-flex align-items-center ' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Catering Co 2</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{upm_name} </p>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{catering_co_2_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="upm_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="catering_co_2_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="upm_calltime"
-                value={upm_calltime}
+                name="catering_co_2_calltime"
+                value={catering_co_2_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.upm_calltime?.map((message, idx) => (
+            {errors?.catering_co_2_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -116,29 +130,29 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* travel coordinator */}
-        {travel_coordinator_name && 
+         {/* catering co 3 */}
+         {catering_co_3_name && 
           (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Travel Coordinator</p>
+          <Row className='text-center d-flex align-items-center ' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Catering Co 3</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{travel_coordinator_name} </p>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{catering_co_3_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="travel_coordinator_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="catering_co_3_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="travel_coordinator_calltime"
-                value={travel_coordinator_calltime}
+                name="catering_co_3_calltime"
+                value={catering_co_3_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.travel_coordinator_calltime?.map((message, idx) => (
+            {errors?.catering_co_3_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -147,29 +161,33 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* oth production pos 3 */}
-        {oth_production_pos_3_job && 
+         {/* CRAFT SERVICES */}
+         <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+         <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >CRAFT SERVICES </h5>
+         </div>
+         {/* craft service */}
+         {craft_service_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_3_job} </p>
+              <p className={`${styles.CrewInfoP} `}>Craft Service</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_3_name} </p>
+              <p className={`${styles.CrewInfop} `}>{craft_service_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_3_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="craft_service_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="oth_production_pos_3_calltime"
-                value={oth_production_pos_3_calltime}
+                name="craft_service_calltime"
+                value={craft_service_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.oth_production_pos_3_calltime?.map((message, idx) => (
+            {errors?.craft_service_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -178,60 +196,29 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* oth production pos 4 */}
-        {oth_production_pos_4_job && 
+         {/* crafty ass */}
+         {crafty_ass_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_4_job} </p>
+              <p className={`${styles.CrewInfoP} `}>Crafty Assist</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_4_name} </p>
+              <p className={`${styles.CrewInfop} `}>{crafty_ass_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_4_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="crafty_ass_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="oth_production_pos_4_calltime"
-                value={oth_production_pos_4_calltime}
+                name="crafty_ass_calltime"
+                value={crafty_ass_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.oth_production_pos_4_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* oth production pos 5 */}
-        {oth_production_pos_5_job && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_5_job} </p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_5_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_5_calltime" className={`my-1 ${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call"
-                name="oth_production_pos_5_calltime"
-                value={oth_production_pos_5_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.oth_production_pos_5_calltime?.map((message, idx) => (
+            {errors?.crafty_ass_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

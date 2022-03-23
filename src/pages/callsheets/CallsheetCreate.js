@@ -214,6 +214,27 @@ const CallsheetCreate = ({setShowCall}) => {
       makeup_artist_3_calltime: "",
       makeup_artist_4_calltime: "",
       makeup_artist_5_calltime: "",
+      // post/add-pos
+      editor_calltime: "",
+      fx_calltime: "",
+      add_pos_1_calltime: "",
+      add_pos_2_calltime: "",
+      add_pos_3_calltime: "",
+      add_pos_4_calltime: "",
+      add_pos_5_calltime: "",
+      add_pos_6_calltime: "",
+      add_pos_7_calltime: "",
+      add_pos_8_calltime: "",
+      add_pos_9_calltime: "",
+      add_pos_10_calltime: "",
+      all_other_add_positions_calltimes: "",
+      // script/cater
+      writer_calltime: "",
+      catering_co_1_calltime: "",
+      catering_co_2_calltime: "",
+      catering_co_3_calltime: "",
+      craft_service_calltime: "",
+      crafty_ass_calltime: "",
       // yyyyyyyyyyyyyyyyyyyy
       unit_call: "",
       talent_call: "",
@@ -318,7 +339,7 @@ const CallsheetCreate = ({setShowCall}) => {
         location_ass_2_calltime,
         location_ass_3_calltime,
         location_ass_4_calltime,
-        // mak
+        // makeup
         key_hairmakeup_calltime,
         key_hairstylist_calltime,
         sfx_makeup_calltime,
@@ -328,6 +349,27 @@ const CallsheetCreate = ({setShowCall}) => {
         makeup_artist_3_calltime,
         makeup_artist_4_calltime,
         makeup_artist_5_calltime,
+        // post/add-pos
+        editor_calltime,
+        fx_calltime,
+        add_pos_1_calltime,
+        add_pos_2_calltime,
+        add_pos_3_calltime,
+        add_pos_4_calltime,
+        add_pos_5_calltime,
+        add_pos_6_calltime,
+        add_pos_7_calltime,
+        add_pos_8_calltime,
+        add_pos_9_calltime,
+        add_pos_10_calltime,
+        all_other_add_positions_calltimes,
+        // script/cater
+        writer_calltime,
+        catering_co_1_calltime,
+        catering_co_2_calltime,
+        catering_co_3_calltime,
+        craft_service_calltime,
+        crafty_ass_calltime,
         // yyyyyyyyyyyyyyyyyyyy
         unit_call,
         talent_call, 
@@ -367,7 +409,7 @@ const CallsheetCreate = ({setShowCall}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    // xxx
+    // xxxxxxxxxxxx
     // formData.append("dress", dress);
     // formData.append("dress", dress);
     // formData.append("dress", dress);
@@ -465,7 +507,7 @@ const CallsheetCreate = ({setShowCall}) => {
     formData.append("location_ass_2_calltime", location_ass_2_calltime);
     formData.append("location_ass_3_calltime", location_ass_3_calltime);
     formData.append("location_ass_4_calltime", location_ass_4_calltime);
-    // mak
+    // makeup
     formData.append("key_hairmakeup_calltime", key_hairmakeup_calltime);
     formData.append("key_hairstylist_calltime", key_hairstylist_calltime);
     formData.append("sfx_makeup_calltime", sfx_makeup_calltime);
@@ -475,6 +517,27 @@ const CallsheetCreate = ({setShowCall}) => {
     formData.append("makeup_artist_3_calltime", makeup_artist_3_calltime);
     formData.append("makeup_artist_4_calltime", makeup_artist_4_calltime);
     formData.append("makeup_artist_5_calltime", makeup_artist_5_calltime);
+    // post/add-pos
+    formData.append("editor_calltime", editor_calltime);
+    formData.append("fx_calltime", fx_calltime);
+    formData.append("add_pos_1_calltime", add_pos_1_calltime);
+    formData.append("add_pos_2_calltime", add_pos_2_calltime);
+    formData.append("add_pos_3_calltime", add_pos_3_calltime);
+    formData.append("add_pos_4_calltime", add_pos_4_calltime);
+    formData.append("add_pos_5_calltime", add_pos_5_calltime);
+    formData.append("add_pos_6_calltime", add_pos_6_calltime);
+    formData.append("add_pos_7_calltime", add_pos_7_calltime);
+    formData.append("add_pos_8_calltime", add_pos_8_calltime);
+    formData.append("add_pos_9_calltime", add_pos_9_calltime);
+    formData.append("add_pos_10_calltime", add_pos_10_calltime);
+    formData.append("all_other_add_positions_calltimes", all_other_add_positions_calltimes);
+    // script/cater
+    formData.append("writer_calltime", writer_calltime);
+    formData.append("catering_co_1_calltime", catering_co_1_calltime);
+    formData.append("catering_co_2_calltime", catering_co_2_calltime);
+    formData.append("catering_co_3_calltime", catering_co_3_calltime);
+    formData.append("craft_service_calltime", craft_service_calltime);
+    formData.append("crafty_ass_calltime", crafty_ass_calltime);
     // yyyyyyyyyyyyyyyyyyyyyyy
     formData.append("day_id", id);
     formData.append("day", dataDay);

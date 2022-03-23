@@ -6,6 +6,7 @@ import styles from "../../styles/Callsheets.module.css";
 
 const InfoSsript = ({crewInfoOne, setShowScr }) => {
   useRedirect("loggedOut");
+
   const {writer_name, writer_email, writer_phone,
     catering_co_1_name, catering_co_1_email, catering_co_1_phone,
     catering_co_2_name, catering_co_2_email, catering_co_2_phone,
@@ -13,6 +14,7 @@ const InfoSsript = ({crewInfoOne, setShowScr }) => {
     craft_service_name, craft_service_email, craft_service_phone,
     crafty_ass_name, crafty_ass_email, crafty_ass_phone,
   } = crewInfoOne || {};
+
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
@@ -39,7 +41,7 @@ const InfoSsript = ({crewInfoOne, setShowScr }) => {
           </Row>
           </div> )
          }
-         {/* catering  */}
+         {/* CATERING  */}
          <div className={`mx-5 mb-3 mt-0 text-center ${styles.SubTitle }`}>
          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >CATERING </h5>
          </div>
@@ -100,7 +102,7 @@ const InfoSsript = ({crewInfoOne, setShowScr }) => {
           </Row>
           </div> )
          }
-         {/* craft services  */}
+         {/* CRAFT SERVICES */}
          <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >CRAFT SERVICES </h5>
          </div>
@@ -128,7 +130,7 @@ const InfoSsript = ({crewInfoOne, setShowScr }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Crafty Ass</p>
+              <p className={`${styles.CrewInfoP} `}>Crafty Assist</p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{crafty_ass_name} </p>
