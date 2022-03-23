@@ -114,32 +114,28 @@ const CallsheetCreate = ({setShowCall}) => {
   //         electric_4_name, electric_4_email, electric_4_phone, } = crewInfo;
 
   const [postData, setPostData] = useState({
-      // loc
-      location_mngr_calltime: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      dress: "",
-      // xxxxxxxxxxx
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
-      // dress: "",
+      // xxx
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // xxx
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
+      // wrap: "",
       // pro
       producer_calltime: "",
       pro_coordinator_calltime: "",
@@ -201,6 +197,23 @@ const CallsheetCreate = ({setShowCall}) => {
       swing_ge3_calltime: "",
       swing_ge4_calltime: "",
       swing_ge5_calltime: "",
+      // loc
+      location_mngr_calltime: "",
+      location_ass_1_calltime: "",
+      location_ass_2_calltime: "",
+      location_ass_3_calltime: "",
+      location_ass_4_calltime: "",
+      location_security_calltime: "",
+      // mak
+      key_hairmakeup_calltime: "",
+      key_hairstylist_calltime: "",
+      sfx_makeup_calltime: "",
+      sfx_makeup_assistant_calltime: "",
+      makeup_artist_1_calltime: "",
+      makeup_artist_2_calltime: "",
+      makeup_artist_3_calltime: "",
+      makeup_artist_4_calltime: "",
+      makeup_artist_5_calltime: "",
       // yyyyyyyyyyyyyyyyyyyy
       unit_call: "",
       talent_call: "",
@@ -237,7 +250,6 @@ const CallsheetCreate = ({setShowCall}) => {
 
   const { 
         // xxx
-        location_mngr_calltime,
         // pro
         producer_calltime,
         pro_coordinator_calltime,
@@ -299,6 +311,23 @@ const CallsheetCreate = ({setShowCall}) => {
         swing_ge3_calltime,
         swing_ge4_calltime,
         swing_ge5_calltime,
+        // loc
+        location_mngr_calltime,
+        location_security_calltime,
+        location_ass_1_calltime,
+        location_ass_2_calltime,
+        location_ass_3_calltime,
+        location_ass_4_calltime,
+        // mak
+        key_hairmakeup_calltime,
+        key_hairstylist_calltime,
+        sfx_makeup_calltime,
+        sfx_makeup_assistant_calltime,
+        makeup_artist_1_calltime,
+        makeup_artist_2_calltime,
+        makeup_artist_3_calltime,
+        makeup_artist_4_calltime,
+        makeup_artist_5_calltime,
         // yyyyyyyyyyyyyyyyyyyy
         unit_call,
         talent_call, 
@@ -338,16 +367,19 @@ const CallsheetCreate = ({setShowCall}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    // loc
-    formData.append("location_mngr_calltime", location_mngr_calltime);
-    formData.append("dress", dress);
-    formData.append("dress", dress);
-    formData.append("dress", dress);
-    formData.append("dress", dress);
-    formData.append("dress", dress);
-    formData.append("dress", dress);
-    formData.append("dress", dress);
-    formData.append("dress", dress); 
+    // xxx
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
+    // formData.append("dress", dress);
     // xxxxxxxxxxxx
     // formData.append("dress", dress);
     // formData.append("dress", dress);
@@ -426,6 +458,23 @@ const CallsheetCreate = ({setShowCall}) => {
     formData.append("swing_ge3_calltime", swing_ge3_calltime);
     formData.append("swing_ge4_calltime", swing_ge4_calltime);
     formData.append("swing_ge5_calltime", swing_ge5_calltime);
+    // loc
+    formData.append("location_mngr_calltime", location_mngr_calltime);
+    formData.append("location_security_calltime", location_security_calltime);
+    formData.append("location_ass_1_calltime", location_ass_1_calltime);
+    formData.append("location_ass_2_calltime", location_ass_2_calltime);
+    formData.append("location_ass_3_calltime", location_ass_3_calltime);
+    formData.append("location_ass_4_calltime", location_ass_4_calltime);
+    // mak
+    formData.append("key_hairmakeup_calltime", key_hairmakeup_calltime);
+    formData.append("key_hairstylist_calltime", key_hairstylist_calltime);
+    formData.append("sfx_makeup_calltime", sfx_makeup_calltime);
+    formData.append("sfx_makeup_assistant_calltime", sfx_makeup_assistant_calltime);
+    formData.append("makeup_artist_1_calltime", makeup_artist_1_calltime);
+    formData.append("makeup_artist_2_calltime", makeup_artist_2_calltime);
+    formData.append("makeup_artist_3_calltime", makeup_artist_3_calltime);
+    formData.append("makeup_artist_4_calltime", makeup_artist_4_calltime);
+    formData.append("makeup_artist_5_calltime", makeup_artist_5_calltime);
     // yyyyyyyyyyyyyyyyyyyyyyy
     formData.append("day_id", id);
     formData.append("day", dataDay);

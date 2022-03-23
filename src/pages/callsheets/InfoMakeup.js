@@ -6,6 +6,7 @@ import styles from "../../styles/Callsheets.module.css";
 
 const InfoMakeup = ({crewInfoOne, setShowMak }) => {
   useRedirect("loggedOut");
+
   const {key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
     key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
     sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
@@ -15,6 +16,7 @@ const InfoMakeup = ({crewInfoOne, setShowMak }) => {
     makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
     makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
     makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,} = crewInfoOne || {};
+
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>

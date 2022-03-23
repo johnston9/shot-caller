@@ -33,7 +33,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
     <div>
       <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ELECTRIC </h5>
       </div>
       <div className='mt-3'>
         {/* gaffer */}

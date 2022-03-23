@@ -6,21 +6,32 @@ import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../styles/Callsheets.module.css";
 
-const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowCas }) => {
+const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowPos }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const {producer_name, producer_email, producer_phone,
-   } = crewInfoOne || {};
+  const {editor_name, editor_email, editor_phone,
+    fx_name, fx_email, fx_phone,
+    add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
+    add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
+    add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
+    add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
+    add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
+    add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
+    add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
+    add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
+    add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
+    add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
+    all_other_add_positions } = crewInfoOne || {};
 
-  const { producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
+  const { 
     } = postData;
 
   return (
     <div>
       <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
+      <span className={`float-right ${styles.Close }`} onClick={() => setShowPos(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >POST </h5>
       </div>
       <div className='mt-3'>
         {/* producer */}
@@ -85,7 +96,10 @@ const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowCas }) =
           </Row>
           </div> )
          }
-         {/* upm */}
+         <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >ADDITIONAL POSITIONS </h5>
+        </div>
+         {/* add pos 1 */}
         {upm_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
