@@ -6,46 +6,51 @@ import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../styles/Callsheets.module.css";
 
-const AddStunts = ({crewInfoOne, handleChange, postData, setShowCas }) => {
+const AddStunts = ({crewInfoOne, handleChange, postData, setShowStu }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const {producer_name, producer_email, producer_phone,
-   } = crewInfoOne || {};
+  const {stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
+    stunts_1_name, stunts_1_email, stunts_1_phone,
+    stunts_2_name, stunts_2_email, stunts_2_phone,
+    stunts_3_name, stunts_3_email, stunts_3_phone,
+    stunts_4_name, stunts_4_email, stunts_4_phone,
+    stunts_5_name, stunts_5_email, stunts_5_phone,} = crewInfoOne || {};
 
-  const { producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
-    } = postData;
+  const { stunt_coordinator_calltime, stunts_1_calltime, stunts_2_calltime,
+    stunts_3_calltime, stunts_4_calltime, stunts_5_calltime,
+    } = postData || {};
 
   return (
     <div>
       <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
+      <span className={`float-right ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNTS </h5>
       </div>
       <div className='mt-3'>
-        {/* producer */}
-        {producer_name && 
+        {/* stunt coordinator */}
+        {stunt_coordinator_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Producer</p>
+              <p className={`${styles.CrewInfoP} `}>Stunt Coordinator</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{producer_name} </p>
+              <p className={`${styles.CrewInfop} `}>{stunt_coordinator_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="producer_calltime" className={`${styles.Width} `}>
+            <Form.Group controlId="stunt_coordinator_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="producer_calltime"
-                value={producer_calltime}
+                name="stunt_coordinator_calltime"
+                value={stunt_coordinator_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.producer_calltime?.map((message, idx) => (
+            {errors?.stunt_coordinator_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -54,29 +59,29 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* pro_coordinator */}
-        {pro_coordinator_name && 
+         {/* stunts 1 */}
+         {stunts_1_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Pro Coordinator</p>
+              <p className={`${styles.CrewInfoP} `}>Stunts 1</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{pro_coordinator_name} </p>
+              <p className={`${styles.CrewInfop} `}>{stunts_1_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="pro_coordinator_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="stunts_1_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="pro_coordinator_calltime"
-                value={pro_coordinator_calltime}
+                name="stunts_1_calltime"
+                value={stunts_1_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.pro_coordinator_calltime?.map((message, idx) => (
+            {errors?.stunts_1_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -85,29 +90,29 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* upm */}
-        {upm_name && 
+         {/* stunts 2 */}
+         {stunts_2_name && 
           (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>UPM</p>
+          <Row className='text-center d-flex align-items-center ' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Stunts 2</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{upm_name} </p>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{stunts_2_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="upm_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="stunts_2_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="upm_calltime"
-                value={upm_calltime}
+                name="stunts_2_calltime"
+                value={stunts_2_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.upm_calltime?.map((message, idx) => (
+            {errors?.stunts_2_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -116,29 +121,29 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* travel coordinator */}
-        {travel_coordinator_name && 
+         {/* stunts 3 */}
+         {stunts_3_name && 
           (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Travel Coordinator</p>
+          <Row className='text-center d-flex align-items-center ' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Stunts 3</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{travel_coordinator_name} </p>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{stunts_3_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="travel_coordinator_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="stunts_3_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="travel_coordinator_calltime"
-                value={travel_coordinator_calltime}
+                name="stunts_3_calltime"
+                value={stunts_3_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.travel_coordinator_calltime?.map((message, idx) => (
+            {errors?.stunts_3_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -147,29 +152,29 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* oth production pos 3 */}
-        {oth_production_pos_3_job && 
+         {/* stunts 4 */}
+         {stunts_4_name && 
           (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
+          <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_3_job} </p>
+              <p className={`${styles.CrewInfoP} `}>Stunts 4</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_3_name} </p>
+              <p className={`${styles.CrewInfop} `}>{stunts_4_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_3_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="stunts_4_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="oth_production_pos_3_calltime"
-                value={oth_production_pos_3_calltime}
+                name="stunts_4_calltime"
+                value={stunts_4_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.oth_production_pos_3_calltime?.map((message, idx) => (
+            {errors?.stunts_4_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -178,60 +183,29 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           </Row>
           </div> )
          }
-         {/* oth production pos 4 */}
-        {oth_production_pos_4_job && 
+         {/* stunts 5 */}
+         {stunts_5_name && 
           (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
+          <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_4_job} </p>
+              <p className={`${styles.CrewInfoP} `}>Stunts 5</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_4_name} </p>
+              <p className={`${styles.CrewInfop} `}>{stunts_5_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_4_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="stunts_5_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="oth_production_pos_4_calltime"
-                value={oth_production_pos_4_calltime}
+                name="stunts_5_calltime"
+                value={stunts_5_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.oth_production_pos_4_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* oth production pos 5 */}
-        {oth_production_pos_5_job && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_production_pos_5_job} </p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{oth_production_pos_5_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_production_pos_5_calltime" className={`my-1 ${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call"
-                name="oth_production_pos_5_calltime"
-                value={oth_production_pos_5_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.oth_production_pos_5_calltime?.map((message, idx) => (
+            {errors?.stunts_5_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

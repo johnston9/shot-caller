@@ -23,7 +23,7 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
   const { key_hairmakeup_calltime, key_hairstylist_calltime, sfx_makeup_calltime,
     sfx_makeup_assistant_calltime, makeup_artist_1_calltime, makeup_artist_2_calltime,
     makeup_artist_3_calltime, makeup_artist_4_calltime, makeup_artist_5_calltime,
-    } = postData;
+    } = postData || {};
 
   return (
     <div>

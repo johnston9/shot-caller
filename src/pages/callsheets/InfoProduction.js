@@ -7,6 +7,7 @@ import styles from "../../styles/Callsheets.module.css";
 const Production = ({crewInfoOne, setShowPro}) => {
   useRedirect("loggedOut");
   const {producer_name, producer_email, producer_phone,
+    director_name, director_email, director_phone,
     pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
     upm_name, upm_email, upm_phone,
     travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
@@ -26,6 +27,25 @@ const Production = ({crewInfoOne, setShowPro}) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
       </div>
       <div className='mt-3'>
+        {/* DIRECTOR */}
+        {producer_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>DIRECTOR</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{director_name} </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{director_email}</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{director_phone}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
         {/* producer */}
         {producer_name && 
           (<div className={`${styles.CrewInfoRow}`}>

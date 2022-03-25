@@ -27,7 +27,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
     electric_4_calltime, keygrip_calltime, best_boy_grip_calltime,
     dolly_grip_calltime, swing_ge1_calltime, swing_ge2_calltime,
     swing_ge3_calltime, swing_ge4_calltime, swing_ge5_calltime,
-    } = postData;
+    } = postData || {};
 
   return (
     <div>

@@ -35,6 +35,9 @@ const CrewInfoEdit = () => {
     company_address_line_3: "",
     company_address_line_4: "",
     company_logo: "",
+    director_name: "",
+    director_email: "",
+    director_phone: "",
     producer_name: "",
     producer_email: "",
     producer_phone: "",
@@ -414,6 +417,7 @@ const CrewInfoEdit = () => {
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
           company_address_line_4, company_logo, total_shoot_days,
+          director_name, director_email, director_phone,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
           upm_name, upm_email, upm_phone,
@@ -825,6 +829,9 @@ const CrewInfoEdit = () => {
     formData.append("company_address_line_2", company_address_line_2);
     formData.append("company_address_line_3", company_address_line_3);
     formData.append("company_address_line_4", company_address_line_4);
+    formData.append("director_name", director_name);
+    formData.append("director_email", director_email);
+    formData.append("director_phone", director_phone); 
     formData.append("producer_name", producer_name);
     formData.append("producer_email", producer_email);
     formData.append("producer_phone", producer_phone);  
@@ -1463,6 +1470,62 @@ const CrewInfoEdit = () => {
       {/* PRODUCTION */}
       <div>
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PRODUCTION</h3> 
+      {/* DIRECTOR */}
+      <h5 className="mt-1" >DIRECTOR</h5> 
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="director_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="director_name"
+              value={director_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.director_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="director_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="director_email"
+              value={director_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.director_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="director_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="director_phone"
+              value={director_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.director_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
       {/* Producer */}
       <h5 className="mt-1" >Producer</h5> 
       <Row>

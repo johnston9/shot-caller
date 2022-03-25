@@ -13,6 +13,7 @@ const CallsheetTop = (props) => {
     const {
         id,
         day,
+        day_id,
         date
     } = props;
     const history = useHistory();
@@ -31,7 +32,7 @@ const CallsheetTop = (props) => {
   return (
     <div>
         <Card className={`mx-1 text-center ${styles.Top}`}>
-            <Link to={`/callsheets/${id}`}>
+            <Link to={`/callsheets/${day_id}`}>
             <Card.Header className={`pt-2 pb-1 ${styles.Top }`}>
                 <Row className='d-flex align-items-center'>
                 <Col xs={10} className='text-center px-0'>

@@ -27,7 +27,7 @@ const AddCastingAD = ({crewInfoOne, handleChange, postData, setShowCas }) => {
     ad_2_calltime, ad_3_calltime, ad_4_calltime, ad_5_calltime, pro_assistant_1_calltime,
     pro_assistant_2_calltime, pro_assistant_3_calltime, pro_assistant_4_calltime,
     pro_assistant_5_calltime,
-    } = postData;
+    } = postData || {};
 
   return (
     <div>

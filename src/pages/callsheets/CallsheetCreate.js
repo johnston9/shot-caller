@@ -114,29 +114,9 @@ const CallsheetCreate = ({setShowCall}) => {
   //         electric_4_name, electric_4_email, electric_4_phone, } = crewInfo;
 
   const [postData, setPostData] = useState({
-      // xxx
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // xxx
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // wrap: "",
-      // pro
+      // CALLS
+      // production 
+      director_calltime: "",
       producer_calltime: "",
       pro_coordinator_calltime: "",
       travel_coordinator_calltime: "",
@@ -235,7 +215,37 @@ const CallsheetCreate = ({setShowCall}) => {
       catering_co_3_calltime: "",
       craft_service_calltime: "",
       crafty_ass_calltime: "",
-      // yyyyyyyyyyyyyyyyyyyy
+      // sound/transport
+      sound_mixer_calltime: "",
+      boom_operator_calltime: "",
+      sound_assistant_1_calltime: "",
+      sound_assistant_2_calltime: "",
+      transport_captain_calltime: "",
+      transport_manager_1_calltime: "",
+      transport_manager_2_calltime: "",
+      head_driver_calltime: "",
+      car1_calltime: "",
+      car2_calltime: "",
+      car3_calltime: "",
+      truck1_calltime: "",
+      truck2_calltime: "",
+      truck3_calltime: "",
+      // stunts
+      stunt_coordinator_calltime: "",
+      stunts_1_calltime: "",
+      stunts_2_calltime: "",
+      stunts_3_calltime: "",
+      stunts_4_calltime: "",
+      stunts_5_calltime: "",
+      // wardrobe
+      costume_designer_calltime: "",
+      ass_costume_designer_calltime: "",
+      wardrobe_assistant_1_calltime: "",
+      wardrobe_assistant_2_calltime: "",
+      wardrobe_assistant_3_calltime: "",
+      wardrobe_assistant_4_calltime: "",
+      wardrobe_assistant_5_calltime: "",
+      // info
       unit_call: "",
       talent_call: "",
       shoot_call: "",
@@ -270,8 +280,8 @@ const CallsheetCreate = ({setShowCall}) => {
   })
 
   const { 
-        // xxx
-        // pro
+        // production
+        director_calltime,
         producer_calltime,
         pro_coordinator_calltime,
         travel_coordinator_calltime,
@@ -319,7 +329,7 @@ const CallsheetCreate = ({setShowCall}) => {
         pro_assistant_3_calltime,
         pro_assistant_4_calltime,
         pro_assistant_5_calltime,
-        // eleGrip
+        // ele/Grip
         gaffer_calltime,
         best_boy_electric_calltime,
         electric_3_calltime,
@@ -332,7 +342,7 @@ const CallsheetCreate = ({setShowCall}) => {
         swing_ge3_calltime,
         swing_ge4_calltime,
         swing_ge5_calltime,
-        // loc
+        // locations
         location_mngr_calltime,
         location_security_calltime,
         location_ass_1_calltime,
@@ -370,7 +380,37 @@ const CallsheetCreate = ({setShowCall}) => {
         catering_co_3_calltime,
         craft_service_calltime,
         crafty_ass_calltime,
-        // yyyyyyyyyyyyyyyyyyyy
+        // sound/transport
+        sound_mixer_calltime,
+        boom_operator_calltime,
+        sound_assistant_1_calltime,
+        sound_assistant_2_calltime,
+        transport_captain_calltime,
+        transport_manager_1_calltime,
+        transport_manager_2_calltime,
+        head_driver_calltime,
+        car1_calltime,
+        car2_calltime,
+        car3_calltime,
+        truck1_calltime,
+        truck2_calltime,
+        truck3_calltime,
+        // stunts
+        stunt_coordinator_calltime,
+        stunts_1_calltime,
+        stunts_2_calltime,
+        stunts_3_calltime,
+        stunts_4_calltime,
+        stunts_5_calltime,
+        // wardrobe
+        costume_designer_calltime,
+        ass_costume_designer_calltime,
+        wardrobe_assistant_1_calltime,
+        wardrobe_assistant_2_calltime,
+        wardrobe_assistant_3_calltime,
+        wardrobe_assistant_4_calltime,
+        wardrobe_assistant_5_calltime,
+        // info
         unit_call,
         talent_call, 
         shoot_call, 
@@ -402,44 +442,13 @@ const CallsheetCreate = ({setShowCall}) => {
         walkie_channel_camera,
         walkie_channel_electric,
         walkie_channel_grip,
-        // producer_calltime, 
-        // pro_coordinator_calltime, 
       } = postData;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    // xxxxxxxxxxxx
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // xxxxxxxxxxxx
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // formData.append("dress", dress);
-    // pro
+    // production 
+    formData.append("director_calltime", director_calltime);
     formData.append("producer_calltime", producer_calltime);
     formData.append("pro_coordinator_calltime", pro_coordinator_calltime);
     formData.append("travel_coordinator_calltime", travel_coordinator_calltime);
@@ -538,7 +547,37 @@ const CallsheetCreate = ({setShowCall}) => {
     formData.append("catering_co_3_calltime", catering_co_3_calltime);
     formData.append("craft_service_calltime", craft_service_calltime);
     formData.append("crafty_ass_calltime", crafty_ass_calltime);
-    // yyyyyyyyyyyyyyyyyyyyyyy
+    // sound/transport
+    formData.append("sound_mixer_calltime", sound_mixer_calltime);
+    formData.append("boom_operator_calltime", boom_operator_calltime);
+    formData.append("sound_assistant_1_calltime", sound_assistant_1_calltime);
+    formData.append("sound_assistant_2_calltime", sound_assistant_2_calltime);
+    formData.append("transport_captain_calltime", transport_captain_calltime);
+    formData.append("transport_manager_1_calltime", transport_manager_1_calltime);
+    formData.append("transport_manager_2_calltime", transport_manager_2_calltime);
+    formData.append("head_driver_calltime", head_driver_calltime);
+    formData.append("car1_calltime", car1_calltime);
+    formData.append("car2_calltime", car2_calltime);
+    formData.append("car3_calltime", car3_calltime);
+    formData.append("truck1_calltime", truck1_calltime);
+    formData.append("truck2_calltime", truck2_calltime);
+    formData.append("truck3_calltime", truck3_calltime);
+    // stunts
+    formData.append("stunt_coordinator_calltime", stunt_coordinator_calltime);
+    formData.append("stunts_1_calltime", stunts_1_calltime);
+    formData.append("stunts_2_calltime", stunts_2_calltime);
+    formData.append("stunts_3_calltime", stunts_3_calltime);
+    formData.append("stunts_4_calltime", stunts_4_calltime);
+    formData.append("stunts_5_calltime", stunts_5_calltime);
+    // wardrobe
+    formData.append("costume_designer_calltime", costume_designer_calltime);
+    formData.append("ass_costume_designer_calltime", ass_costume_designer_calltime);
+    formData.append("wardrobe_assistant_1_calltime", wardrobe_assistant_1_calltime);
+    formData.append("wardrobe_assistant_2_calltime", wardrobe_assistant_2_calltime);
+    formData.append("wardrobe_assistant_3_calltime", wardrobe_assistant_3_calltime);
+    formData.append("wardrobe_assistant_4_calltime", wardrobe_assistant_4_calltime);
+    formData.append("wardrobe_assistant_5_calltime", wardrobe_assistant_5_calltime);
+    // info
     formData.append("day_id", id);
     formData.append("day", dataDay);
     formData.append("date", dataDate);
@@ -567,7 +606,7 @@ const CallsheetCreate = ({setShowCall}) => {
     formData.append("department_info", department_info);
     try {
       await axiosReq.post("/callsheetsnew/", formData);
-      setShowCall(false);
+      history.goBack();
       // setHasOrder(true);
     } catch (err) {
       console.log(err);
@@ -603,7 +642,7 @@ const CallsheetCreate = ({setShowCall}) => {
   };
 
   const infoFields = (
-    <div className={`text-center ${styles.Back3 }`}>
+    <div className={`pb-5 text-center ${styles.Back3 }`}>
       {/* Unit call - Talent call Shoot call */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -1219,7 +1258,7 @@ const buttons = (
   <div className={`text-center py-4 mb-3 mt-4 ${styles.White }`} >    
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue}`}
-      onClick={() => setShowCall(showCall => !showCall)}
+      onClick={() => history.goBack()}
     >
       Cancel
     </Button>
@@ -1254,6 +1293,15 @@ const buttons = (
     </div>
     {/* cast buttons */}
     <h3 className={`text-center py-3 ${styles.SubTitle }`} >ADD CAST</h3> 
+    <Row className="text-center">
+      <Col xs={10} md={{span: 8, offset: 2 }} >
+        <p>Add each cast member and BG/Stand-in item separately. 
+          This can be done before clicking the "Create" button 
+          for the Callsheet Info and Crew Calls below or after it is created 
+          from the Edit page.
+        </p>
+      </Col>
+    </Row>
     <div className= {`mb-3 ${styles.Back3}`}>
     <Row className='text-center'>
     <Col className='text-center' xs={6}>
@@ -1312,11 +1360,24 @@ const buttons = (
     ) }
     </div>
     {/* info */}
-    <h3 className={`text-center mt-5 py-3 ${styles.SubTitle }`} >ADD INFO</h3> 
+    <h3 className={`text-center mt-5 mb-0 py-3 ${styles.SubTitle }`} >ADD INFO AND CREW CALLS</h3> 
+    <div className={`${styles.White }`}> 
+    <h4 className={` text-center mt-0 mb-0 py-1`} > INFO</h4> 
+    </div>
+    <h4 className={` text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > </h4> 
     <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
+    <Row className="text-center">
+      <Col xs={10} md={{span: 8, offset: 2 }} >
+        <p className="my-3">Add the Callsheets general info here and the Crew calls below
+        </p>
+      </Col>
+    </Row>
     {infoFields}
-    <div className={`py-2 ${styles.White }`}></div> 
-    <h3 className={`text-center mt-0 mb-0 py-3 ${styles.SubTitle }`} >ADD CREW CALLS</h3> 
+    <div className={`py-2 ${styles.White }`}>
+    <h4 className="text-center" > CREW CALLS</h4> 
+    <h4 className={`text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} ></h4> 
+      </div> 
+    {/* <h4 className={`text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > CREW CALLS</h4>  */}
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
         <Col xs={4} md={2} className='text-center'>
@@ -1397,14 +1458,15 @@ const buttons = (
       <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
     </div>
     <div className={`mt-0 ${styles.Crew }`}>
-        {/* Add Production */}
-        {!showPro ? (
-          <Row>
+    <Row>
             <Col xs={12} md={{span: 8, offset:2 }}>
-            <p className="text-center">Add all crew members to the Crew Info page so they will appear in each 
-                department. Complete all departments before clicking Create.</p>
+            <p className="py-2 text-center"> Add all crew members to the Crew Info page first. Click on
+             each department above and fill in the call times. Complete all departments before clicking Create.</p>
             </Col>
           </Row>
+        {/* Add Production */}
+        {!showPro ? (
+          ""
               ) : (
                 <AddProduction postData={postData} handleChange={handleChange} crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
                 ) }  

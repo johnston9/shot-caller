@@ -32,6 +32,7 @@ const CallsheetsPage = ({ filter="" }) => {
       try {
         const { data } = await axiosReq.get(`/callsheetsnew/?${filter}&search=${query}`);
         setCallsheets(data);
+        console.log(data)
         setHasLoaded(true);
       } catch(err) {
         console.log(err);

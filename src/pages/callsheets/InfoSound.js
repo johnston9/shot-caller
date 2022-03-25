@@ -6,6 +6,7 @@ import styles from "../../styles/Callsheets.module.css";
 
 const InfoSound = ({crewInfoOne, setShowSou}) => {
   useRedirect("loggedOut");
+
   const {sound_mixer_name, sound_mixer_email, sound_mixer_phone,
     boom_operator_name, boom_operator_email, boom_operator_phone,
     sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
@@ -20,6 +21,7 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
     truck1_name, truck1_email, truck1_phone,
     truck2_name, truck2_email, truck2_phone,
     truck3_name, truck3_email, truck3_phone,} = crewInfoOne || {};
+
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
@@ -183,6 +185,10 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
           </Row>
           </div> )
          }
+         {/* VEHICLES  */}
+         <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+         <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >VEHICLES </h5>
+         </div>
          {/* car 1 */}
          {car1_name && 
           (<div className={`${styles.CrewInfoRow}`}>

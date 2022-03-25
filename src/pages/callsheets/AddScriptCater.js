@@ -24,7 +24,7 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowScr }) => {
     catering_co_3_calltime,
     craft_service_calltime,
     crafty_ass_calltime,
-    } = postData;
+    } = postData || {};
 
   return (
     <div>

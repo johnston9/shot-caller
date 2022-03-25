@@ -66,14 +66,19 @@ const DayPage = () => {
                 {/* <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} /> */}
                 {/* add scene setShowCall */}
                 <Row className='my-4'>
-                    <Col xs={6} className="text-center">
+                    <Col xs={4} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
-                        className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`} >
+                        className={`${btnStyles.Button} ${btnStyles.Bright}`} >
                         Add Scene</Button>
                     </Col>
-                    <Col xs={6} className="text-center">
+                    <Col xs={4} className="text-center">
                         <Link className={`p-1`} to={`/callsheet/create/${id}`}>
-                            <Button className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`} >Create Callsheet</Button>
+                            <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} >Create Callsheet</Button>
+                        </Link>
+                    </Col>
+                    <Col xs={4} className="text-center">
+                        <Link className={`p-1`} to={`/callsheets/${id}`}>
+                            <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} > View Callsheet</Button>
                         </Link>
                     </Col>
                 </Row>

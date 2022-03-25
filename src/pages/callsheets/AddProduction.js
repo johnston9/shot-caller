@@ -11,6 +11,7 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
   const [errors, setErrors] = useState({});
 
   const {producer_name, producer_email, producer_phone,
+    director_name, director_email, director_phone,
     pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
     upm_name, upm_email, upm_phone,
     travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
@@ -25,11 +26,11 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
     set_medic_name, set_medic_email, set_medic_phone,
    } = crewInfoOne || {};
 
-  const { producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
+  const { director_calltime, producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
     upm_calltime, production_pa_calltime, script_supervisor_calltime, legal_calltime,
     set_medic_calltime, oth_production_pos_1_calltime, oth_production_pos_2_calltime,
     oth_production_pos_3_calltime, oth_production_pos_4_calltime, oth_production_pos_5_calltime, 
-    } = postData;
+    } = postData || {};
 
   return (
     <div>
@@ -38,6 +39,37 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
       </div>
       <div className='mt-3'>
+        {/* director_ */}
+        {director_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Director</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{director_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="director_calltime" className={`${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="director_calltime"
+                value={director_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.director_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
         {/* producer */}
         {producer_name && 
           (<div className={`${styles.CrewInfoRow}`}>

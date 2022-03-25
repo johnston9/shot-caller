@@ -6,6 +6,7 @@ import styles from "../../styles/Callsheets.module.css";
 
 const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
   useRedirect("loggedOut");
+
   const {costume_designer_name, costume_designer_email, costume_designer_phone,
     ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
     wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
@@ -13,6 +14,7 @@ const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
     wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
     wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
     wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,} = crewInfoOne || {};
+
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
@@ -44,7 +46,7 @@ const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Assist Costume D.</p>
+              <p className={`${styles.CrewInfoP} `}>Assist Costume Design </p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{ass_costume_designer_name} </p>

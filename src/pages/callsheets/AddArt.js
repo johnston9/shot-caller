@@ -24,7 +24,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
   const { art_director_calltime, art_assistant_calltime, set_decorator_calltime,
     set_dresser_calltime, lead_man_calltime, dresser_calltime, prop_master_calltime,
     ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime,
-    } = postData;
+    } = postData || {};
 
   return (
     <div>

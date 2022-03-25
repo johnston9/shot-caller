@@ -20,7 +20,7 @@ const AddLocations = ({crewInfoOne, handleChange, postData, setShowLoc }) => {
   const { location_mngr_calltime, location_ass_1_calltime, location_ass_2_calltime,
     location_ass_3_calltime, location_ass_4_calltime,
     location_security_calltime,
-    } = postData;
+    } = postData || {};
 
   return (
     <div>

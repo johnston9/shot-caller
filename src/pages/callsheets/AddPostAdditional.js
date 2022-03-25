@@ -36,7 +36,7 @@ const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowPos }) =
     add_pos_9_calltime,
     add_pos_10_calltime,
     all_other_add_positions_calltimes,
-    } = postData;
+    } = postData || {};
 
   return (
     <div>

@@ -51,6 +51,8 @@ import CrewInfoCreate from './pages/callsheets/CrewInfoCreate';
 import CallsheetsPage from './pages/callsheets/CallsheetsPage';
 import CrewInfoEdit from './pages/callsheets/CrewInfoEdit';
 import CallsheetCreate from './pages/callsheets/CallsheetCreate';
+import CallSheet from './pages/callsheets/CallSheet';
+import CallSheetPage from './pages/callsheets/CallSheetPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -87,11 +89,10 @@ function App() {
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
-        {/* CALLSHEETS /callsheet/create/${id} */}
+        {/* CALLSHEETS */}
         <Route exact path="/crewinfo/create" render={() => <CrewInfoCreate />} />
         <Route exact path="/crewinfo/edit/:id/" render={() => <CrewInfoEdit />} />
         <Route exact path="/callsheet/create/:id/" render={() => <CallsheetCreate />} />
-        {/* <Route exact path="/edit/days/:id/" render={() => <DayEdit />} /> */}
         <Route
             exact
             path="/callsheets"
@@ -100,6 +101,23 @@ function App() {
                message="No results found" />
             )}
           />
+        <Route
+            exact
+            path="/callsheets/:id/"
+            // filter={`day_id=${id}`}
+            render={() => (
+              <CallSheetPage
+               message="No results found" />
+            )}
+          />
+        {/* <Route
+            exact
+            path="/callsheets/:id/"
+            render={() => (
+              <CallSheet 
+               message="No results found" />
+            )}
+          /> */}
         {/* LOCATIONS */}
         <Route exact path="/locations/create" render={() => <LocationsCreate />} />
         <Route 
