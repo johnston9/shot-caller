@@ -443,6 +443,31 @@ const CallsheetCreate = ({setShowCall}) => {
         walkie_channel_electric,
         walkie_channel_grip,
       } = postData;
+    
+      useEffect(() => {
+        const handleMount = async () => {
+            try {
+              const [{ data: dayGet }, { data: scenes }] = await Promise.all([
+                axiosReq.get(`/days/${id}`),
+                axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+            ])
+            setDayData({ results: [dayGet] });
+            setScenes(scenes)
+            setDataDay(dayGet.day);
+            setDataDate(dayGet.date);
+            } catch (err) {
+                console.log(err);
+              }
+        }
+        handleMount();
+        }, [id])
+        
+      const handleChange = (event) => {
+        setPostData({
+          ...postData,
+          [event.target.name]: event.target.value,
+        });
+      };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -615,31 +640,6 @@ const CallsheetCreate = ({setShowCall}) => {
       }
     }
   }
-
-  useEffect(() => {
-    const handleMount = async () => {
-        try {
-          const [{ data: dayGet }, { data: scenes }] = await Promise.all([
-            axiosReq.get(`/days/${id}`),
-            axiosReq.get(`/schedule/scenes/?day_id=${id}`),
-        ])
-        setDayData({ results: [dayGet] });
-        setScenes(scenes)
-        setDataDay(dayGet.day);
-        setDataDate(dayGet.date);
-        } catch (err) {
-            console.log(err);
-          }
-    }
-    handleMount();
-    }, [id])
-    
-  const handleChange = (event) => {
-    setPostData({
-      ...postData,
-      [event.target.name]: event.target.value,
-    });
-  };
 
   const infoFields = (
     <div className={`pb-5 text-center ${styles.Back3 }`}>

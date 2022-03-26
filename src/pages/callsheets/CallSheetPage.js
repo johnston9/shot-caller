@@ -17,7 +17,7 @@ const CallSheetPage = () => {
     const [callsheet, setCallsheet] = useState({ results: [] });
     const [cast, setCast] = useState({ results: [] });
     const [background, setBackground] = useState({ results: [] });
-    const [dataId, setDataId] = useState("");
+    const [scenes, setScenes] = useState({ results: [] });
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
@@ -27,10 +27,12 @@ const CallSheetPage = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: callsheetdata }, { data: castcalldata }, { data: bgcalldata }] = await Promise.all([
+                const [{ data: callsheetdata }, { data: castcalldata }, 
+                    { data: bgcalldata }, { data: scenes }] = await Promise.all([
                     axiosReq.get(`/callsheetsnew/?day_id=${id}`),
                     axiosReq.get(`/castcallsnew/?day_id=${id}`),
                     axiosReq.get(`/backgroundcallsnew/?day_id=${id}`),
+                    axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                 ])
                 // setCallsheet({ results: [callsheetdata] });
                 setCallsheet(callsheetdata);
@@ -39,6 +41,7 @@ const CallSheetPage = () => {
                 // console.log(bgcalldata);
                 setCast(castcalldata);
                 setBackground(bgcalldata);
+                setScenes(scenes);
                 setDataDay(callsheetdata.results[0].day)
                 setDataDate(callsheetdata.results[0].date);
                 setHasLoaded(true);
@@ -66,6 +69,7 @@ const CallSheetPage = () => {
             {hasLoaded ? (
                 <CallSheet 
                 {...callsheet.results[0]}
+                scenes={scenes}
                 />
             ) : (
                 ""

@@ -35,6 +35,16 @@
   background-color: #fff;
 }
 
+.UnitCall {
+  background-color: #c1f1f7;
+  color: #000;
+}
+
+.Titles {
+  background-color: #dbf2f5;
+  color: #000;
+}
+
 .CrewInfoRow {
   border-bottom: 1px solid #fff;
 }
@@ -120,8 +130,13 @@
   border-right : 2px solid #fff;
 }
 
+.Border {
+  border: 2px solid #e8f0f1;
+}
+
 .SubTitle {
   background-color: #e8f0f1;
+  font-weight: 700;
 }
 
 .FormBox {

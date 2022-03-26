@@ -4,11 +4,12 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import styles from "../../styles/DayPage.module.css";
+import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
 import { useParams, useHistory } from 'react-router-dom';
 import { useCrewInfoContext } from '../../contexts/BaseCallContext';
+import CharScheduleScene from './CharScheduleScene';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -143,7 +144,7 @@ const CallSheet = (props ) => {
         add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
         all_other_add_positions } = crewInfoOne || {};
 
-    const { 
+    const { scenes,
         id, 
         day_id, 
         day,
@@ -310,11 +311,12 @@ const CallSheet = (props ) => {
       } = props;
 
   return (
-    <div className={`${styles.Back}`}>
+    <div className={`${styles.White} p-3`} >
         {/* top */}
+        <div className='mt-0'>
         <Row >
             <Col xs={4} >
-            <div>
+            <div className='mt-3'>
             <h5>{production_company} </h5>
             <p className='mb-0'>{company_address_line_1} </p>
             <p className='mb-0'>{company_address_line_2} </p>
@@ -325,10 +327,10 @@ const CallSheet = (props ) => {
             </div>
             <div className='mt-3'>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Producer:</span ><span className='pl-4'>{producer_name}</span> </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-2'>{pro_coordinator_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-5'>{producer_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-5'>{ad_1_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5'>{dop_name}</span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-4'>{pro_coordinator_name}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-4'>{producer_name}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-4 ml-3'>{ad_1_name}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name}</span> </p>
             </div>
             </Col>
             <Col className='text-center' xs={4} >
@@ -338,149 +340,149 @@ const CallSheet = (props ) => {
             </div>
             <div>
             <h2>Unit Call</h2>
-            <h1 className={` ${styles.SubTitle }`}>{unit_call} </h1>
+            <h1 className={` ${styles.UnitCall }`}>{unit_call} </h1>
             <p>Please check individual calltimes</p>
-            <h2 className={` ${styles.SubTitle }`}>{date} </h2>
-            <h5 className={` ${styles.SubTitle }`}>Day {day} of {total_shoot_days} </h5>
+            <h2 className={` ${styles.UnitCall }`}>{date} </h2>
+            <h5 className={` ${styles.UnitCall }`}>Day {day} of {total_shoot_days} </h5>
             {/* <h2>{date} </h2> */}
             <h5>First Location Address</h5>
             <h5>{location_1_address} </h5>
             </div>
             </Col>
             <Col>
-            <div>
-            <p>Weather {weather_location} </p>
-            <p>Sunrise {weather_location}</p>
-            <p>Sunset {weather_location}</p>
+            <div className='mt-3'>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span ><span className='pl-4'>{weather_location} </span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span><span className='pl-2'>{weather_location}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span><span className='pl-5'>{weather_location}</span></p>
             </div>
             <div>
-            <p>Nearest Hospital:</p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span><span className='pl-5'>{ad_1_name}</span></p>
             <p>{nearest_hospital} </p>
-            <p>Sunset</p>
             </div>
             <div>
-            <h5>Talent Call: {talent_call}  </h5>
-            <h5>First Shot: {shoot_call} </h5>
-            <h5>Breakfast {breakfast} </h5>
-            <h5>Lunch {lunch} </h5>
-            <h5>Est. Wrap {wrap} </h5>
+            </div>
+            <div>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Talent Call:</span ><span className='pl-4'>{talent_call} </span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span><span className='pl-2'>{shoot_call}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span><span className='pl-5'>{breakfast}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span ><span className='pl-4'>{lunch} </span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span><span className='pl-2'>{wrap}</span></p>
             </div>
             </Col>
         </Row>
-        {/* Locations */}
-        <Row className='mt-3'>
-            <Col>
-            <p>p call {producer_calltime} </p>
-            <p>Sunrise {all_other_add_positions_calltimes}</p>
-            <p>Sunset {weather_location}</p>
+        </div>
+        <h5 style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <div className='mt-3'>
+        <h4 className={`text-center `} style={{ textTransform: 'uppercase' }}>Locations</h4>
+        {/* Locations px-0 my-0 py-0*/}
+        <h5 className={`mb-0 py-0 ${styles.Titles }`}>
+        <Row className='my-0 py-0 mx-3'>
+            <Col className={`${styles.Border}`} xs={1} >
+            <p className='my-0 py-0'>#</p>
+            </Col>
+            <Col className={`${styles.Border} px-0 mx-0`} xs={5}>
+            <h5>Address</h5>
+            </Col>
+            <Col className={`${styles.Border} px-0 mx-0`} xs={6}>
+            <h5>Crew Parking and Notes</h5>
             </Col>
         </Row>
-        
-        <h4>Locations</h4>
-        {/* Titles */}
-        <Row>
-            <Col>
-            <h5>Basecamp</h5>
-            {basecamp_address}
-            {basecamp_parking_n_notes}
+        </h5>
+        {basecamp_address ? (
+            <Row className='px-3'>
+            <Col className={`${styles.Border}`} xs={1} >
+            <p></p>
             </Col>
-            <Col>
-            <h5>Crew Park</h5>
+            <Col className={`${styles.Border}`} xs={5}>
+            <p>Basecamp</p>
+            <p>{basecamp_address}</p>
             </Col>
-            <Col>
-            <h5>Teck Trucks</h5>
+            <Col className={`${styles.Border}`} xs={6}>
+            <p>{basecamp_parking_n_notes}</p>
             </Col>
-            <Col>
-            <h5>BG holding</h5>
+            </Row>
+        ) : (
+            ""
+        )}
+        {location_1_address ? (
+            <Row>
+            <Col xs={1} >
+            <p></p>
             </Col>
-            <Col>
-            <h5>BG Parking</h5>
+            <Col xs={5}>
+            <p>{location_1_address}</p>
             </Col>
-            <Col>
-            <h5>Parking and Notes Name</h5>
+            <Col xs={6}>
+            <p>{location_1_parking_n_notes}</p>
             </Col>
-            <Col>
-            <h5>Nearest Hostipal</h5>
-            </Col>
-            <Col>
-            <h5>Google Maps</h5>
-            </Col>
-        </Row>
-        {/* Locations */}
-        <h4>Locations</h4>
-        {/* Titles */}
-        <Row>
-            <Col>
-            <h5>Number</h5>
-            </Col>
-            <Col>
-            <h5>Location Name</h5>
-            </Col>
-            <Col>
-            <h5>Location Address</h5>
-            </Col>
-            <Col>
-            <h5>Parking and Notes Name</h5>
-            </Col>
-            <Col>
-            <h5>Nearest Hostipal</h5>
-            </Col>
-            <Col>
-            <h5>Google Maps</h5>
-            </Col>
-        </Row>
-        {/* actual */}
-        <Row>
-            <Col>
-            <h5>Number</h5>
-            </Col>
-            <Col>
-            <h5>Location Name</h5>
-            </Col>
-            <Col>
-            <h5>Location Address</h5>
-            </Col>
-            <Col>
-            <h5>Parking and Notes Name</h5>
-            </Col>
-            <Col>
-            <h5>Nearest Hostipal</h5>
-            </Col>
-            <Col>
-            <h5>Google Maps</h5>
-            </Col>
-        </Row>
+            </Row>
+        ) : (
+            ""
+        )}
+        </div>
         {/* Important Notes */}
+        <div className='mt-3'>
+        <h4>Important Notes</h4>
+        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
         <Row>
             <Col>
-            <h5>Important Notes</h5>
+            <p>{important_info} </p>
             </Col>
         </Row>
-        {/* Schedule - add (1/8 and Dramatic Day) */}
+        </div>
+        {/* Schedule  */}
+        <div className='mt-3'>
+        <h4>Schedule - (xxx Pages) </h4>
+        <h5 className={`pl-3 py-1 ${styles.SubTitle }`}></h5>
+            {/* titles */}
+        <div className='d-none d-md-block'>
+            <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Time</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0 pl-2'>Scene</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
+                    <p className='mb-0'>Details</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>D/N</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0'>Filming Loc</p>                        
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>Cast</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Pages</p>
+                </Col>
+            </Row>
+        </div>
         <Row>
-            <Col>
-            <h5>Schedule</h5>
+            <Col >                   
+            {scenes.results.length ? (
+                scenes.results.map((scene, index) => (
+                    <CharScheduleScene
+                        style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(199 245 224)' : 'rgb(244 232 245)' }}
+                        {...scene} 
+                        // dayid={id} 
+                        // scene={scene} 
+                        // showSideBySide={showSideBySide}
+                        // setHasOrder={setHasOrder}
+                        key={scene.id} />
+                ))) : ("")}
             </Col>
         </Row>
-        {/* Crew Contacts */}
+        </div>
+        {/* Talent  */}
+        <div className='mt-3'>
+        <h4>Talent</h4>
+        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
         <Row>
             <Col>
-            <h5>Role</h5>
-            </Col>
-            <Col>
-            <h5>Name</h5>
-            </Col>
-            <Col>
-            <h5>Contact Info</h5>
-            </Col>
-            <Col>
-            <h5>Call Time</h5>
-            </Col>
-        </Row>
-        {/* Talent */}
-        <Row>
-        <Col>
-            <h5>Number</h5>
+            <h5>#</h5>
             </Col>
             <Col>
             <h5>Role</h5>
@@ -510,57 +512,152 @@ const CallSheet = (props ) => {
             <h5>Inst. misc.</h5>
             </Col>
         </Row>
-        {/* BG */}
+        </div>
+        {/* Background & Standins  */}
+        <div className='mt-3'>
+        <h4>Background / Standins</h4>(total)
+        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
         <Row>
-        <Col>
-            <h5>Number</h5>
+           <Col>
+            <h5>Scenes</h5>
             </Col>
             <Col>
-            <h5>Role</h5>
+            <h5>Qty</h5>
             </Col>
             <Col>
-            <h5>Artist</h5>
+            <h5>Type</h5>
             </Col>
             <Col>
-            <h5>Contact Info</h5>
-            </Col>
-            <Col>
-            <h5>SWF</h5>
-            </Col>
-            <Col>
-            <h5>Pickup</h5>
+            <h5>Costumes</h5>
             </Col>
             <Col>
             <h5>Call</h5>
             </Col>
             <Col>
-            <h5>H/M/W</h5>
-            </Col>
-            <Col>
-            <h5>On Set</h5>
-            </Col>
-            <Col>
-            <h5>Inst. misc.</h5>
+            <h5>Set</h5>
             </Col>
         </Row>
+        </div>
+        <div className='mt-3'>
         {/* Transport Notes */}
+        <h4>Transport Notes</h4>
+        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
         <Row>
             <Col>
-            <h5>Transport Notes</h5>
+            <p>{transport_info} </p>
             </Col>
         </Row>
+        </div>
+        <div className='mt-3'>
         {/* Department Notes */}
+        <h4>Department Notes</h4>
+        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
         <Row>
             <Col>
-            <h5>Department Notes</h5>
+            <p>{department_info} </p>
             </Col>
         </Row>
-        {/* Advanced Callsheet */}
+        </div>
+        <div className='mt-3'>
+        {/* Crew */}
+        <h4>Crew</h4>(total)
+        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <Row>
+            <Col xs={12} md={6}>
+                <Row>
+                    <Col>
+                    <h5>Postition</h5>
+                    </Col>
+                    <Col>
+                    <h5>Name</h5>
+                    </Col>
+                    <Col>
+                    <h5>Call</h5>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    <h4>Department</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    <h5>Postition</h5>
+                    </Col>
+                    <Col>
+                    <h5>Name</h5>
+                    </Col>
+                    <Col>
+                    <h5>Call</h5>
+                    </Col>
+                </Row>
+            </Col>
+            <Col xs={12} md={6}>
+                <Row>
+                    <Col>
+                    <h5>Postition</h5>
+                    </Col>
+                    <Col>
+                    <h5>Name</h5>
+                    </Col>
+                    <Col>
+                    <h5>Call</h5>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    <h4>Department</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    <h5>Postition</h5>
+                    </Col>
+                    <Col>
+                    <h5>Name</h5>
+                    </Col>
+                    <Col>
+                    <h5>Call</h5>
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
+        </div>
+        <div className='mt-3'>
+        {/* advanced Schedule  */}
+        <h4>Advanced Schedule - (xxx Pages)  Day x Date </h4>
+        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
         <Row>
             <Col>
-            <h5>Advanced Callsheet</h5>
+            <h5>Time</h5>
+            </Col>
+            <Col>
+            <h5>Scene</h5>
+            </Col>
+            <Col>
+            <h5>Description</h5>
+            </Col>
+            <Col>
+            <h5>D/N</h5>
+            </Col>
+            <Col>
+            <h5>Cast</h5>
+            </Col>
+            <Col>
+            <h5>Location (Number)</h5>
+            </Col>
+            <Col>
+            <h5>Pages</h5>
             </Col>
         </Row>
+        </div>
+        <div className='mt-3'>
+        <Row>
+            <Col>
+            <h5>Walkie Channels: xxx</h5>
+            </Col>
+        </Row>
+        </div>
     </div>
   )
 }
