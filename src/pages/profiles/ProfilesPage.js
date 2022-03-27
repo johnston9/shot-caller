@@ -14,7 +14,7 @@ import Container from "react-bootstrap/Container";
 import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 import Profile from './Profile';
-import { useProfileData, useQueryContext, useSetQueryContext } from '../../contexts/ProfileDataContext';
+import { useProfileData, useSetQueryContext } from '../../contexts/ProfileDataContext';
 
 const ProfilesPage = () => {
     useRedirect("loggedOut");
@@ -22,7 +22,6 @@ const ProfilesPage = () => {
     const { profiles } = useProfileData();
 
     const setQuery = useSetQueryContext();
-    const [hasLoaded, setHasLoaded] = useState();
  
     const [name, setName] = useState("");
     const handleChange = (event) => {
@@ -40,6 +39,7 @@ const ProfilesPage = () => {
         return () => {
           clearTimeout(timer);
         };
+        // eslint-disable-next-line
       }, [name])
     
     return (

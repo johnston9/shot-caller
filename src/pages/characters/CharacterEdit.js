@@ -18,7 +18,6 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import Asset2 from "../../components/Asset2";
 
 const CharacterEdit = () => {
     useRedirect("loggedOut")

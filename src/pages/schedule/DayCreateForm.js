@@ -50,7 +50,7 @@ const DayCreateForm = ({topbox, setShow} ) => {
     formData.append("date", startDate);
       
     try {
-      const { data } = await axiosReq.post("/days/", formData);
+      await axiosReq.post("/days/", formData);
       history.goBack();
     } catch (err) {
       console.log(err);

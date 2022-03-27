@@ -16,8 +16,6 @@ const ActThreeList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setSho
           try {
             const { data } = await axiosReq.get(`/scenes/?act=three`);
             setScenes(data);
-            console.log(data )
-            console.log(scenes.results)
           } catch(err) {
             console.log(err);
           }

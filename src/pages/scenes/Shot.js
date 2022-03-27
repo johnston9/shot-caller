@@ -84,6 +84,7 @@ const Shot = (props) => {
             audio,
             image,
             })
+            // eslint-disable-next-line
         }, [])
 
     const handleDelete = async () => {

@@ -8,7 +8,8 @@ import { Alert } from "react-bootstrap";
 import { useRedirect } from "../../hooks/Redirect";
 
 const SceneCreateCostumes = ({handleChange, postData}) => {
-    useRedirect("loggedOut")
+    useRedirect("loggedOut");
+    // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
   const { character1_costume, 

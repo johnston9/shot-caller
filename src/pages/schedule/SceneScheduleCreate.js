@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import Act1List from "./Act1List";
@@ -20,7 +20,6 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
-  const history = useHistory();
   const [showOne, setShowOne] = useState(false);
   const [showTwoA, setShowTwoA] = useState(false);
   const [showTwoB, setShowTwoB] = useState(false);
@@ -50,7 +49,6 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       new_info: "",
       character1: "",
       character1_costume: "",
-      character1_number: "",
       character2: "",
       character2_costume: "",
       character3: "",

@@ -9,7 +9,6 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
-import { useDeptGeneralContext } from '../../contexts/DeptCategoryContext';
 
 const DeptPostTop = (props) => {
   useRedirect("loggedOut")

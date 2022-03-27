@@ -21,6 +21,7 @@ import LocationTop from "./LocationTop";
 const LocationsPage = () => {
     useRedirect("loggedOut");
   const [locations, setLocations] = useState({ results: [] });
+  // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();

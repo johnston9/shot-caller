@@ -43,7 +43,7 @@ const SchedOrder = (props ) => {
     formData.append("end_time", end_time);      
     formData.append("new_info", new_info);
     try {
-      const data = await axiosReq.put(`/schedule/scenes/${id}/`, formData);
+      await axiosReq.put(`/schedule/scenes/${id}/`, formData);
       console.log(formData.day_id);
       console.log(id);
       setShowOrder(false);

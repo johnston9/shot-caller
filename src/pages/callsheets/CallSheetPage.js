@@ -4,7 +4,6 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import styles from "../../styles/DayPage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
 import { useParams, useHistory } from 'react-router-dom';
@@ -12,17 +11,17 @@ import CallSheet from './CallSheet';
 
 const CallSheetPage = () => {
     useRedirect("loggedOut");
-    const [show, setShow] = useState(false);
     const { id } = useParams();
     const [callsheet, setCallsheet] = useState({ results: [] });
+    // eslint-disable-next-line
     const [cast, setCast] = useState({ results: [] });
+    // eslint-disable-next-line
     const [background, setBackground] = useState({ results: [] });
     const [scenes, setScenes] = useState({ results: [] });
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
-    const [hasOrder, setHasOrder] = useState(false);
 
     useEffect(() => {
         const handleMount = async () => {

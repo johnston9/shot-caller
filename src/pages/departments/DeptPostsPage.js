@@ -26,6 +26,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
+  // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();

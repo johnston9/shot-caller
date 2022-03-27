@@ -24,8 +24,6 @@ const ShotlistPage = ({scene, setShowlist} ) => {
         try {
             const { data } = await axiosReq(`/shotlists/?scene_id=${id}&ordering=day_order_number`);
             setShotlist(data);
-            console.log('has loaded')
-            console.log(shotlist.results)
         } catch (err) {
             console.log(`err ${err}`);
           }
@@ -33,7 +31,8 @@ const ShotlistPage = ({scene, setShowlist} ) => {
 
     useEffect(() => {
         handleMount();
-    }, [id])
+        // eslint-disable-next-line
+    }, [id,])
 
     return (
         <div>

@@ -16,8 +16,6 @@ const ActTwoBList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShow
           try {
             const { data } = await axiosReq.get(`/scenes/?act=two-b`);
             setScenes(data);
-            console.log(data )
-            console.log(scenes.results)
           } catch(err) {
             console.log(err);
           }

@@ -3,7 +3,6 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
-import { Image } from 'react-bootstrap';
 
 const InfoStunts = ({crewInfoOne, setShowStu}) => {
   useRedirect("loggedOut");

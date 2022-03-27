@@ -24,7 +24,6 @@ import InfoPost from './InfoPost';
 
 const CrewInfo = ({setShowCrewInfo}) => {
   useRedirect("loggedOut");
-  const [errors, setErrors] = useState({});
   const history = useHistory();
   const crewInfo = useCrewInfoContext();
   const crewInfoOne = crewInfo.results[0];

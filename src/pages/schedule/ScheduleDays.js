@@ -19,10 +19,12 @@ import { useHistory } from 'react-router-dom';
 
 const SchedulePages = () => {
     useRedirect("loggedOut");
+    // eslint-disable-next-line
     const [today, setToday] = useState(new Date());
     const [newdate, setNewdate] = useState("");
     const [days, setDays] = useState({results: [] });
     const [daysScenes, setDaysScenes] = useState({ results: [] });
+    // eslint-disable-next-line
     const [error, setError] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
@@ -96,7 +98,7 @@ const SchedulePages = () => {
                          <Col className='d-flex justify-content-center my-3'  xs={12} md={6}>
                            <p>Click to find Shooting Day</p>
                           {days.results.map((day) => (
-                            day.date == newdate ? (
+                            day.date === newdate ? (
                               <DayTop {...day} />
                             ) : ("")
                           )) }

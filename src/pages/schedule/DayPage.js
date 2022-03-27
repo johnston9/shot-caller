@@ -13,17 +13,15 @@ import ScheduleScene from './ScheduleScene';
 import TopBox from '../../components/TopBox';
 import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
-import CallsheetCreate from '../callsheets/CallsheetCreate';
 import { Link } from 'react-router-dom';
 
 const DayPage = () => {
     useRedirect("loggedOut");
     const [show, setShow] = useState(false);
-    const [showCall, setShowCall] = useState(false);
     const { id } = useParams();
+    // eslint-disable-next-line
     const [dayData, setDayData] = useState({ results: [] });
     const [dayScenes, setDayScenes] = useState({ results: [] });
-    const [dataId, setDataId] = useState("");
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();

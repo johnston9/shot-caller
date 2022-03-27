@@ -22,6 +22,7 @@ import CharacterTop from "./CharacterTop";
 const Characters = ({message}) => {
     useRedirect("loggedOut");
   const [characters, setCharacters] = useState({ results: [] });
+  // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();

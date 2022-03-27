@@ -22,6 +22,7 @@ import MoodshotTop from "./MoodshotTop";
 const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="", message, filter="" }) => {
     useRedirect("loggedOut");
   const [moodshots, setMoodshots] = useState({ results: [] });
+  // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();

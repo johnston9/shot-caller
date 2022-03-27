@@ -18,10 +18,12 @@ const CallsheetTop = (props) => {
     } = props;
     const history = useHistory();
 
+    // eslint-disable-next-line
     const handleEdit = () => { 
         history.push(`/callsheetsnew/${id}/edit`);
         };
 
+        // eslint-disable-next-line
     const handleDelete = async () => {
         try {
             await axiosReq.delete(`/callsheetsnew/${id}/`);

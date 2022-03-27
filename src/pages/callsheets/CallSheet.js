@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { axiosReq } from '../../api/axiosDefaults';
+import React, {useState} from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
 import styles from "../../styles/Callsheets.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import TopBox from '../../components/TopBox';
-import { useParams, useHistory } from 'react-router-dom';
 import { useCrewInfoContext } from '../../contexts/BaseCallContext';
 import CharScheduleScene from './CharScheduleScene';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
-    const [show, setShow] = useState(false);
-    const history = useHistory();
     const crewInfo = useCrewInfoContext();
     const crewInfoOne = crewInfo.results[0];
     // const {callsheet} = props.callsheet.results[0] || {};
     console.log(props)
 
 
+    // eslint-disable-next-line
     const { production_name, production_company, company_phone, company_email,
         company_address_line_1, company_address_line_2, company_address_line_3,
         company_address_line_4, company_logo, total_shoot_days,
@@ -371,7 +365,7 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         </div>
-        <h5 style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 py-1 ${styles.SubTitle }`}></p>
         <div className='mt-3'>
         <h4 className={`text-center `} style={{ textTransform: 'uppercase' }}>Locations</h4>
         {/* Locations px-0 my-0 py-0*/}
@@ -423,7 +417,7 @@ const CallSheet = (props ) => {
         {/* Important Notes */}
         <div className='mt-3'>
         <h4>Important Notes</h4>
-        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <span className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></span>
         <Row>
             <Col>
             <p>{important_info} </p>
@@ -433,7 +427,7 @@ const CallSheet = (props ) => {
         {/* Schedule  */}
         <div className='mt-3'>
         <h4>Schedule - (xxx Pages) </h4>
-        <h5 className={`pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <span className={`pl-3 py-1 ${styles.SubTitle }`}></span>
             {/* titles */}
         <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
@@ -479,7 +473,7 @@ const CallSheet = (props ) => {
         {/* Talent  */}
         <div className='mt-3'>
         <h4>Talent</h4>
-        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <span className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></span>
         <Row>
             <Col>
             <h5>#</h5>
@@ -516,7 +510,7 @@ const CallSheet = (props ) => {
         {/* Background & Standins  */}
         <div className='mt-3'>
         <h4>Background / Standins</h4>(total)
-        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <span className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></span>
         <Row>
            <Col>
             <h5>Scenes</h5>
@@ -541,7 +535,7 @@ const CallSheet = (props ) => {
         <div className='mt-3'>
         {/* Transport Notes */}
         <h4>Transport Notes</h4>
-        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <span className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></span>
         <Row>
             <Col>
             <p>{transport_info} </p>
@@ -551,7 +545,7 @@ const CallSheet = (props ) => {
         <div className='mt-3'>
         {/* Department Notes */}
         <h4>Department Notes</h4>
-        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <span className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></span>
         <Row>
             <Col>
             <p>{department_info} </p>
@@ -561,7 +555,7 @@ const CallSheet = (props ) => {
         <div className='mt-3'>
         {/* Crew */}
         <h4>Crew</h4>(total)
-        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <span className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></span>
         <Row>
             <Col xs={12} md={6}>
                 <Row>
@@ -626,7 +620,7 @@ const CallSheet = (props ) => {
         <div className='mt-3'>
         {/* advanced Schedule  */}
         <h4>Advanced Schedule - (xxx Pages)  Day x Date </h4>
-        <h5 className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></h5>
+        <p className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}></p>
         <Row>
             <Col>
             <h5>Time</h5>

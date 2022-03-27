@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -17,7 +16,6 @@ const Act1List = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThr
           try {
             const { data } = await axiosReq.get(`/scenes/?act=one`);
             setScenes(data);
-            // setHasLoaded(true);
           } catch(err) {
             console.log(err);
           }

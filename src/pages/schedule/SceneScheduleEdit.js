@@ -43,7 +43,6 @@ const SceneScheduleEdit = () => {
     new_info: "",
     character1: "",
     character1_costume: "",
-    character1_number: "",
     character2: "",
     character2_costume: "",
     character3: "",
@@ -85,7 +84,7 @@ const SceneScheduleEdit = () => {
     background_artists_costumes: "",
 })
 
-const { day_id, day_order_number, number,
+const { day_order_number, number,
   act, title, int_ext, start_time, end_time, 
   day_night, time, action, pages, dramatic_day,
   location, location_detail, filming_location, location_address,

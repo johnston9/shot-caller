@@ -12,16 +12,16 @@ import { useHistory } from 'react-router-dom';
 
 import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/Redirect";
-import { Button, Image } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import CallsheetTop from "./CallsheetTop";
 import CrewInfo from "./CrewInfo";
-import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const CallsheetsPage = ({ filter="" }) => {
   useRedirect("loggedOut");
   const [showCrewInfo, setShowCrewInfo] = useState(false);
   const [callsheets, setCallsheets] = useState({ results: [] });
+  // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();

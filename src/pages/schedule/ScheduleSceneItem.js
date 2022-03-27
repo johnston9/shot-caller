@@ -6,6 +6,7 @@ const ScheduleSceneItem = (props) => {
         setShowOne, setShowTwoA, setShowTwoB,
         setShowThree, setShowLoc} = props
 
+    // eslint-disable-next-line
     const [newData, setNewData] = useState({
         day_order_number: "",
         start_time: "",

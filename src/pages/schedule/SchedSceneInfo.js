@@ -1,13 +1,11 @@
 import React from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
-import Card from "react-bootstrap/Card";
 import styles from "../../styles/ScheduleCreate.module.css";
 
 const SchedSceneInfo = (props) => {
     useRedirect("loggedOut");
-     const {day, date,
-            act, pages, title, time, dramatic_day, location_address,
+     const { title, dramatic_day, location_address,
             equip_set_props, new_info,
             department_info } = props
     return (

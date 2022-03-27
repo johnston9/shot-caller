@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +10,6 @@ const MoodshotPage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [moodshot, setMoodshot] = useState({ results: [] });
-    const history = useHistory();
 
     useEffect(() => {
         const handleMount = async () => {

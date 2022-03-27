@@ -26,6 +26,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
+  // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -59,6 +60,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
     return () => {
       clearTimeout(timer);
     };
+    // eslint-disable-next-line
   }, [filter, query, pathname])
   
   return (
