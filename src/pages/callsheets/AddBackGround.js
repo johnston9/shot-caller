@@ -8,7 +8,7 @@ import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
@@ -35,14 +35,21 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
         set,
         costumes } = postData;
 
-    const history = useHistory();
-
     const handleChange = (event) => {
         setPostData({
         ...postData,
         [event.target.name]: event.target.value,
         });
     };
+
+    const clear = () => {
+        setPostData({qty: "",
+                    type: "",
+                    scenes: "",
+                    costumes: "",
+                    call: "",
+                    set: "",})
+    }
 
     useEffect(() => {
     const handleMount = async () => {
@@ -73,11 +80,17 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     
     try {
         const { data } = await axiosReq.post("/backgroundcallsnew/", formData);
-        setShowAddBg((showAddBg) => !showAddBg)
-    //   setShotlist((prevShotlist) => ({
-    //     ...prevShotlist,
-    //     results: [data, ...prevShotlist.results],
-    //   }));
+        setPostData({qty: "",
+                    type: "",
+                    scenes: "",
+                    costumes: "",
+                    call: "",
+                    set: "",});
+        setBackground((prevBack) => ({
+          ...prevBack,
+          results: [data, ...prevBack.results],
+        }));
+
     } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -89,7 +102,7 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     <div className="mb-2 text-center">    
         <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => setShowAddBg(showAddBg => !showAddBg)}
+        onClick={clear}
         >
         Cancel
         </Button>
@@ -100,16 +113,16 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     );
 
 return (
-    <div className={`my-3 ${styles.Back3 }`}>
+    <div className={`my-3 `}>
     <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD BACKGROUND/STAND-INS</h5> 
-    <p className="text-center">Enter background artists from the schedule and add stand-ins.</p>
-    <p className="text-center mb-0">Background Added</p>
+    <div className={`my-3 ${styles.Back }`}>
     <Row className="mt-0 pt-0">
         <Col sm={{span: 8, offset: 2} }>
-        <div className={` my-2 py-1 ${styles.CastEntered }`} >
+        <div className={`px-2 my-2 py-1 ${styles.CastEntered }`} >
+        <p className="text-center mb-0">BACKGROUND ADDED</p>
         {background.results.length ? (
             background.results.map((back) => (
-                <spam key={back.id}>{back.type} </spam>
+                <spam key={back.id}>{back.type}, </spam>
             ))) : ("")}
         </div>
         </Col>
@@ -230,6 +243,7 @@ return (
         </Col>
         </Row>
         </Form>
+    </div>
     </div>
 )
 }

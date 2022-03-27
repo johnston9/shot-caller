@@ -273,7 +273,6 @@ const CharacterCreate = ({topbox} ) => {
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-1" onSubmit={handleSubmit}>
       <h3 className="text-center">Role</h3>
-      <p className="text-center">Quick add for Roles for scene dropdowns</p>
       <Row>
       <Col md={3} ></Col>
           <Col md={6} >

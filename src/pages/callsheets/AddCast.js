@@ -7,21 +7,28 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
+import DropdownButton from 'react-bootstrap/DropdownButton'
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
+import { useCharactersContext } from "../../contexts/Scene_chars_locs";
+import { Dropdown } from "react-bootstrap";
 
 const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [errors, setErrors] = useState({});
     const [cast, setCast] = useState({results: [] });
+    const characters = useCharactersContext();
 
     const [postData, setPostData] = useState({
         cast_number: "",
         role: "",
         artist: "",
+        pickup_address: "",
+        make_up_time: "",
+        commute_time: "",
         contact: "",
         swf: "",
         pickup: "",
@@ -35,6 +42,9 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         cast_number,
         role,
         artist,
+        pickup_address,
+        make_up_time,
+        commute_time,
         contact,
         swf,
         pickup,
@@ -44,6 +54,20 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         inst,
     } = postData;
 
+    const setData = (character) => {
+      setPostData({
+        cast_number: character.number,
+        role: character.role,
+        artist: character.actor,
+        pickup_address: character.pickup_address,
+        make_up_time: character.make_up_time,
+        commute_time: character.commute_time,
+        contact: character.mobile,
+        inst: character.requirements,
+        
+      });
+    }
+
     const history = useHistory();
 
     const handleChange = (event) => {
@@ -52,6 +76,22 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
           [event.target.name]: event.target.value,
         });
       };
+
+      const clear = () => {
+        setPostData({cast_number: "",
+        role: "",
+        artist: "",
+        pickup_address: "",
+        make_up_time: "",
+        commute_time: "",
+        contact: "",
+        swf: "",
+        pickup: "",
+        call: "",
+        hmw: "",
+        on_set: "",
+        inst: "",})
+    }
 
     useEffect(() => {
       const handleMount = async () => {
@@ -85,12 +125,24 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       formData.append("inst", inst);
     
       try {
-        const { data } = await axiosReq.post("/castcallsnew/", formData);
-        setShowAddCast((showAddCast) => !showAddCast)
-      //   setShotlist((prevShotlist) => ({
-      //     ...prevShotlist,
-      //     results: [data, ...prevShotlist.results],
-      //   }));
+        const {data} = await axiosReq.post("/castcallsnew/", formData);
+        setPostData({cast_number: "",
+                      role: "",
+                      artist: "",
+                      pickup_address: "",
+                      make_up_time: "",
+                      commute_time: "",
+                      contact: "",
+                      swf: "",
+                      pickup: "",
+                      call: "",
+                      hmw: "",
+                      on_set: "",
+                      inst: "",});
+        setCast((prevCast) => ({
+          ...prevCast,
+          results: [data, ...prevCast.results],
+        }));
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -102,7 +154,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       <div className="mb-2 text-center">    
         <Button
           className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => setShowAddCast(showAddCast => !showAddCast)}
+          onClick={clear}
         >
           Cancel
         </Button>
@@ -113,25 +165,40 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     );
     
   return (
-    <div className={`my-3 ${styles.Back3 }`}>
+    <div className={`my-3 `}>
       <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD CHARACTER</h5> 
-      <p className="text-center">Enter each cast member from their first scheduled scene. 
-         Open Characters Page in new tab to get H/M/W and Commute time.</p>
-      <p className="text-center mb-0">Cast Added</p>
-      <Row className="mt-0 pt-0">
+      <div className={`my-3 ${styles.Back }`}>
+      <Row  >
         <Col sm={{span: 8, offset: 2} }>
-        <div className={` my-2 py-1 ${styles.CastEntered }`} >
+        <div className={`px-2 my-2 py-1 ${styles.CastEntered }`} >
+        <p className="text-center mb-0">CAST ADDED</p>
           {cast.results.length ? (
               cast.results.map((ca) => (
-                <spam key={ca.id}>{ca.role} </spam>
+                <spam key={ca.id}>{ca.role}, </spam>
               ))) : ("")}
           </div>
           </Col>
       </Row>
       <Form className="text-center" onSubmit={handleSubmit}>
+      {/* Dropdown DropButt */}
+        <Row>
+          <Col>
+          <DropdownButton id="dropdown-basic-button" className={`py-0 ${styles.DropButt}`} title="Select Role">
+          {characters.results.length && (
+                characters.results.map((character) => (
+                  <Dropdown.Item onClick={() => setData(character) } key={character.id} >{character.role}</Dropdown.Item>
+                ) )) }
+          </DropdownButton>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+          <p>Makeup: {make_up_time} Commute: {commute_time} Address:{pickup_address} </p>
+          </Col>
+        </Row>
             {/* role artist contact inst*/}
         <Row className="mx-0">
-            <Col className="d-flex justify-content-center mx-0 "  xs={3}>
+        <Col className="d-flex justify-content-center mx-0 "  xs={3}>
             <Form.Group controlId="role" className={`${styles.Width} `}  >
                 <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
                 <Form.Control
@@ -148,6 +215,31 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
               </Alert>
             ))}
             </Col>
+            {/* 
+            {characters.results.length && (
+                characters.results.map((character) => (
+                  <Dropdown.Item href="#/action-1" key={character.id} >{character.role}</Dropdown.Item>
+                ) )) }
+            <Col className="d-flex justify-content-center mx-0 "  xs={3}>
+            <Form.Group controlId="role" className={`${styles.Width} `} >
+              <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
+              <Form.Control as="select"
+                className={`${styles.Input}`} 
+                type="text"
+                name="role"
+                value={role}
+                onChange={handleChange}
+                aria-label="role select">
+                  <option  >Role</option>
+                Dropdown
+                </Form.Control>
+                </Form.Group>
+                {errors?.role?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
+            </Col> */}
             <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
             <Form.Group controlId="artist" className={`${styles.Width} `}  >
                 <Form.Label className={`${styles.Bold}`} >Artist</Form.Label>
@@ -315,6 +407,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
           </Col>
         </Row>
         </Form>
+        </div>
     </div>
   )
 }

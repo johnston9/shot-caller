@@ -7,6 +7,18 @@
   padding-right: 30px;
 }
 
+#dropdown-basic-button {
+  padding: 0.1rem 0.1rem;
+  color: #000;
+}
+
+.DropButt {
+  color: #000
+}
+
+.dropdown-toggle.btn.btn-primary {
+  color: #000
+}
 .Close:hover {
   color: rgb(0, 8, 8);
 }
@@ -80,7 +92,7 @@
 }
 
 .CastEntered {
-  background-color: #f0f1f9;
+  background-color: aliceblue;
 }
 
 .Bold { 
