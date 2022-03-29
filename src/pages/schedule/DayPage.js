@@ -69,19 +69,19 @@ const DayPage = () => {
                 <Row className='my-4'>
                     <Col xs={6} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
-                        className={`px-5 ${btnStyles.Button} ${btnStyles.Bright}`} >
+                        className={`px-4 px-sm-5 ${btnStyles.Button} ${btnStyles.Bright}`} >
                         Add Scene</Button>
                     </Col>
                     {callsheet.results.length ? (
                         <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheets/${id}`}>
-                            <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Bright}`} > View Callsheet</Button>
+                            <Button className={`px-2 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} > View Callsheet</Button>
                         </Link>
                     </Col>
                     ) : (
                         <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheet/create/${id}`}>
-                            <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Bright}`} >Create Callsheet</Button>
+                            <Button className={`px-2 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} >Create Callsheet</Button>
                         </Link>
                     </Col>
                     )}
@@ -125,7 +125,9 @@ const DayPage = () => {
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene, index) => (
                             <ScheduleScene 
-                                style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(199 245 224)' : 'rgb(244 232 245)' }}
+                                style={{ backgroundColor: (index % 3 === 0) 
+                                    ? '#dbfaf9' : (index % 2 === 0) ? 
+                                    'rgb(223 254 240)' : 'rgb(248 241 249)' }}
                                 {...scene} 
                                 dayid={id} 
                                 sceneAll={scene} 

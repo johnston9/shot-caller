@@ -6,6 +6,10 @@
   background-color: aliceblue;
 }
 
+p {
+  color: #666;
+}
+
 .Container2 {
     min-height: 10px;
   }
@@ -43,11 +47,12 @@
 
 .TitleBox {
   background-color: #e8f0f1;
-  color: #000;
+  color: #666;
 }
 
 .TitleBox2 {
   border-right : 2px solid #fff;
+  color: #666;
 }
 
 .SubTitle {
@@ -80,9 +85,8 @@
 }
 
 .Next1 {
-  background-color: #14404f;
-  color: #fff;
-  /* border: 1px solid #555; */
+  background-color: #fffff5;
+  color: #666;
 }
 
 .Drop i {

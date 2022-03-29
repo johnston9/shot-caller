@@ -69,6 +69,7 @@ const CallSheetPage = () => {
                 <CallSheet 
                 {...callsheet.results[0]}
                 scenes={scenes}
+                cast={cast}
                 />
             ) : (
                 ""

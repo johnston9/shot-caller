@@ -151,6 +151,22 @@
   font-weight: 700;
 }
 
+/* .SubTitle {
+  background-color: #fffff5;
+  font-weight: 700;
+} */
+
+.HSpan {
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+.SubTitleSpan {
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .FormBox {
   background-color: aliceblue;
   font-weight: 700;
@@ -172,20 +188,20 @@
   width: 80%;
 }
 
-.Next1 {
-  background-color: antiquewhite;
-  color: #000;
-}
-
-/* .Next1 {
+/* .NextCall {
   background-color: #14404f;
   color: #fff;
 } */
 
 .NextCall {
-  background-color: #c1e9f6;
-  color: #fff;
+  background-color: #fffff5;
+  color: #000;
 }
+
+/* .NextCall {
+  background-color: antiquewhite;
+  color: #fff;
+} */
 
 .Drop i {
   color: #000;

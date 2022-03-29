@@ -1,12 +1,12 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from "../../styles/ScheduleCreate.module.css";
+import styles from "../../styles/Callsheets.module.css";
 import { useRedirect } from '../../hooks/Redirect';
 
 const CharScheduleScene = (props) => {
     useRedirect("loggedOut");
-    const {number, int_ext, start_time, end_time,
+    const {number, int_ext, start_time,
         location, filming_location, day_night, action, pages,
         new_info, style, 
         character1_number, character2_number, character3_number,
@@ -21,7 +21,7 @@ const CharScheduleScene = (props) => {
             <Row className='pt-2 text-center mx-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{start_time}</p>
-                    <p className='mb-0'>{end_time}</p>
+                    {/* <p className='mb-0'>{end_time}</p> */}
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{number}</p>
@@ -59,7 +59,7 @@ const CharScheduleScene = (props) => {
             {/* next */}
             {new_info ? (
             <Row className='px-3'>
-                <Col className={`mb-0 py-2 ${styles.Next1}`}>
+                <Col className={`mb-0 py-2 ${styles.NextCall}`}>
                 <p className="mb-0" >Next: {new_info} </p>
                 </Col>
             </Row> 
@@ -68,11 +68,11 @@ const CharScheduleScene = (props) => {
         {/* mobile */}
         <div className='d-block d-md-none'>
             {/* schedule */}
-            <Row className='text-center' >
+            <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Times</p>
                     <p className='mb-0'>{start_time}</p>
-                    <p className='mb-0'>{end_time}</p>
+                    {/* <p className='mb-0'>{end_time}</p> */}
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Scene</p>
@@ -89,9 +89,9 @@ const CharScheduleScene = (props) => {
                 </Col>
             </Row>
             {/* 2 */}
-            <Row className='mt-2 text-center'>
+            <Row className='mt-2 text-center px-0 mx-0'>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Filming Loc</p>
+                <p style={{ textTransform: 'uppercase' }} className={`${styles.TitleBox}`}>Filming Loc</p>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
                 {/* cast */}
@@ -112,6 +112,7 @@ const CharScheduleScene = (props) => {
                 {other_characters_numbers && <span className='mb-0'> {other_characters_numbers} </span>} 
                 </Col>               
             </Row>
+            <hr className='my-0'/>
             {/* next */}
             {new_info ? (
                 <Row>
@@ -121,7 +122,7 @@ const CharScheduleScene = (props) => {
             </Row> 
             ) : (
                 <Row>
-                <Col className={`mb-0 py-2 ${styles.NextCall}`}>
+                <Col className={`mb-0 pt-1 ${styles.NextCall}`}>
                 </Col>
             </Row> 
             ) }     

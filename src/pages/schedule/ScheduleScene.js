@@ -147,10 +147,10 @@ const ScheduleScene = (props) => {
         {/* mobile */}
         <div className='d-block d-md-none'>
             {/* schedule */}
-            <Row className='text-center' >
+            <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Times</p>
-                    <p className='mb-0'>{start_time}</p>
+                    <p className={`mb-0  ${styles.TitleBox2}`}>{start_time}</p>
                     <p className='mb-0'>{end_time}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
@@ -168,7 +168,7 @@ const ScheduleScene = (props) => {
                 </Col>
             </Row>
             {/* sechedule */}
-            <Row className='mt-2 text-center'>
+            <Row className='mt-2 text-center mx-0 px-0'>
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} >
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Info</p>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
@@ -237,7 +237,7 @@ const ScheduleScene = (props) => {
                 </Row> 
                 ) : (
                     <Row>
-                    <Col className={`mb-0 py-2 ${styles.Next1}`}>
+                    <Col className={`mb-0 pt-1 ${styles.Next1}`}>
                     </Col>
                 </Row> 
                 ) }     

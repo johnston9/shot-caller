@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import { useCrewInfoContext } from '../../contexts/BaseCallContext';
 import CharScheduleScene from './CharScheduleScene';
+import CallCast from './CallCast';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -139,6 +140,7 @@ const CallSheet = (props ) => {
         all_other_add_positions } = crewInfoOne || {};
 
     const { scenes,
+        cast,
         id, 
         day_id, 
         day,
@@ -309,7 +311,7 @@ const CallSheet = (props ) => {
         {/* top */}
         <div className='mt-0'>
         <Row >
-            <Col xs={4} >
+            <Col xs={12} md={4} >
             <div className='mt-3'>
             <h5>{production_company} </h5>
             <p className='mb-0'>{company_address_line_1} </p>
@@ -327,7 +329,7 @@ const CallSheet = (props ) => {
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name}</span> </p>
             </div>
             </Col>
-            <Col className='text-center' xs={4} >
+            <Col className='text-center' xs={12} md={4} >
             <div>
             <h1>{production_name}</h1>
             <h5>Production Company Logo</h5>
@@ -343,7 +345,7 @@ const CallSheet = (props ) => {
             <h5>{location_1_address} </h5>
             </div>
             </Col>
-            <Col>
+            <Col xs={12} md={4}>
             <div className='mt-3'>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span ><span className='pl-4'>{weather_location} </span> </p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span><span className='pl-2'>{weather_location}</span></p>
@@ -366,9 +368,10 @@ const CallSheet = (props ) => {
         </Row>
         </div>
         {/* <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 py-1 ${styles.SubTitle }`}></p> */}
-        <div className='mt-4'>
-        <h4 className={`mt-3 pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Locations</h4>
+        <div className='mt-5'>
+        <span className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Locations</span>
         {/* Locations className={`my-0 py-0 px-3 ${styles.SubTitle }`} */}
+        {/* <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p> */}
         <Row className={`my-0 py-0 px-3`}>
             <Col className={`${styles.Border}`} xs={1} >
             <p className='my-0 py-0'>#</p>
@@ -473,8 +476,9 @@ const CallSheet = (props ) => {
         )}
         </div>
         {/* Important Notes */}
-        <div className='mt-3'>
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Important Notes</h4>
+        <div className='mt-5'>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Important Notes</span>
+        <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
         <Row>
             <Col>
             <p className={`px-3 ${styles.SubTitle }`}>{important_info} </p>
@@ -482,9 +486,11 @@ const CallSheet = (props ) => {
         </Row>
         </div>
         {/* Schedule  */}
-        <div className='mt-3'>
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Schedule - (xxx Pages)</h4>
-            {/* titles */}
+        <div className='mt-5'>
+        <h4 className={`mt-3 pl-3 mb-1 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>
+            Schedule <span className={`mt-3 pl-3 py-0 px-1 ${styles.HSpan }`} >xx Pages</span></h4>
+        {/* <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p> */}
+        {/* titles */}
         <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
@@ -515,56 +521,68 @@ const CallSheet = (props ) => {
             {scenes.results.length ? (
                 scenes.results.map((scene, index) => (
                     <CharScheduleScene
-                        style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(199 245 224)' : 'rgb(244 232 245)' }}
+                    style={{ backgroundColor: (index % 3 === 0) 
+                        ? '#dbfaf9' : (index % 2 === 0) ? 
+                        'rgb(223 254 240)' : 'rgb(248 241 249)' }}
                         {...scene} 
-                        // dayid={id} 
-                        // scene={scene} 
-                        // showSideBySide={showSideBySide}
-                        // setHasOrder={setHasOrder}
                         key={scene.id} />
                 ))) : ("")}
             </Col>
         </Row>
         </div>
         {/* Talent  */}
-        <div className='mt-3'>
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Talent</h4>
+        <div className='mt-5'>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Talent</span>
+        {/* titles */}
+        <div className='d-none d-md-block'>
+            <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>#</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0 pl-2'>Role</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>Artist</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>Contact</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>SWF</p>                        
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>PU</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Call</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>H/M/W</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Set</p>
+                </Col>
+            </Row>
+        </div>
         <Row>
             <Col>
-            <h5>#</h5>
-            </Col>
-            <Col>
-            <h5>Role</h5>
-            </Col>
-            <Col>
-            <h5>Artist</h5>
-            </Col>
-            <Col>
-            <h5>Contact</h5>
-            </Col>
-            <Col>
-            <h5>SWF</h5>
-            </Col>
-            <Col>
-            <h5>Pickup</h5>
-            </Col>
-            <Col>
-            <h5>Call</h5>
-            </Col>
-            <Col>
-            <h5>H/M/W</h5>
-            </Col>
-            <Col>
-            <h5>On Set</h5>
-            </Col>
-            <Col>
-            <h5>Inst</h5>
+            {cast.results.length ? (
+                cast.results.map((ca, index) => (
+                    <CallCast
+                    // style={{ backgroundColor: (index % 3 === 0) 
+                    //     ? '#dbfaf9' : (index % 2 === 0) ? 
+                    //     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
+                        {...ca} 
+                        key={ca.id} />
+                ))) : ("")}
             </Col>
         </Row>
+
         </div>
         {/* Background & Standins  */}
-        <div className='mt-3'>
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Background / Standins (total)</h4>
+        <div className='mt-5'>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Background / Standins (total)</span>
         <Row>
            <Col>
             <h5>Scenes</h5>
@@ -586,27 +604,29 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         </div>
-        <div className='mt-3'>
+        <div className='mt-5'>
         {/* Transport Notes */}
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Transport Notes</h4>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Transport Notes</span>
+        <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
         <Row>
             <Col>
             <p>{transport_info} </p>
             </Col>
         </Row>
         </div>
-        <div className='mt-3'>
+        <div className='mt-5'>
         {/* Department Notes */}
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Department Notes</h4>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Department Notes</span>
+        <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
         <Row>
             <Col>
             <p>{department_info} </p>
             </Col>
         </Row>
         </div>
-        <div className='mt-3'>
+        <div className='mt-5'>
         {/* Crew */}
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Crew (total)</h4>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Crew (total)</span>
         <Row>
             <Col xs={12} md={6}>
                 <Row>
@@ -668,9 +688,9 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         </div>
-        <div className='mt-3'>
+        <div className='mt-5'>
         {/* advanced Schedule  */}
-        <h4 className={`mt-3  pl-3 py-0 ${styles.SubTitle }`} style={{ textTransform: 'uppercase' }}>Advanced Schedule - (xxx Pages)  Day x Date </h4>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Advanced Schedule - (xxx Pages)  Day x Date </span>
         <Row>
             <Col>
             <h5>Time</h5>
@@ -696,6 +716,7 @@ const CallSheet = (props ) => {
         </Row>
         </div>
         <div className='mt-3'>
+        <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
         <Row>
             <Col>
             <h5>Walkie Channels: xxx</h5>
