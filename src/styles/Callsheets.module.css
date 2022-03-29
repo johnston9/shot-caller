@@ -173,7 +173,17 @@
 }
 
 .Next1 {
+  background-color: antiquewhite;
+  color: #000;
+}
+
+/* .Next1 {
   background-color: #14404f;
+  color: #fff;
+} */
+
+.NextCall {
+  background-color: #c1e9f6;
   color: #fff;
 }
 

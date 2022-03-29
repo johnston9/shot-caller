@@ -2,13 +2,12 @@ import React from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useParams } from 'react-router-dom';
-import ScheduleScene from '../schedule/ScheduleScene';
+// import ScheduleScene from '../schedule/ScheduleScene';
 import styles from "../../styles/DayPage.module.css";
+import CharScheduleScene from './CharScheduleScene';
 
-const CallsheetSchedule = ({scenes, showSideBySide}) => {
+const CallsheetSchedule = ({scenes}) => {
     useRedirect("loggedOut");
-    const { id } = useParams();
   return (
     <div>
         {/* titles */}
@@ -48,14 +47,15 @@ const CallsheetSchedule = ({scenes, showSideBySide}) => {
             <Col >                   
             {scenes.results.length ? (
                 scenes.results.map((scene, index) => (
-                    <ScheduleScene
-                        style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(199 245 224)' : 'rgb(244 232 245)' }}
-                        {...scene} 
-                        dayid={id} 
+                    <CharScheduleScene
+                    {...scene} 
                         sceneAll={scene} 
-                        showSideBySide={showSideBySide}
-                        // setHasOrder={setHasOrder}
                         key={scene.id} />
+                    // <ScheduleScene
+                    //     style={{ backgroundColor: (index % 3 === 0) ? '#dbfaf9' : (index % 2 === 0) ? 'rgb(199 245 224)' : 'rgb(244 232 245)' }}
+                    //     {...scene} 
+                    //     sceneAll={scene} 
+                    //     key={scene.id} />
                 ))) : ("")}
             </Col>
         </Row>

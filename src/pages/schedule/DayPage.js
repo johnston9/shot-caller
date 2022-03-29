@@ -22,6 +22,7 @@ const DayPage = () => {
     // eslint-disable-next-line
     const [dayData, setDayData] = useState({ results: [] });
     const [dayScenes, setDayScenes] = useState({ results: [] });
+    const [callsheet, setCallsheet] = useState({ results: [] });
     const [dataDay, setDataDay] = useState("");
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
@@ -31,12 +32,14 @@ const DayPage = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: dayGet }, { data: scenes }] = await Promise.all([
+                const [{ data: dayGet }, { data: scenes }, { data: callsheetdata }] = await Promise.all([
                     axiosReq.get(`/days/${id}`),
                     axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+                    axiosReq.get(`/callsheetsnew/?day_id=${id}`),
                 ])
                 setDayData({ results: [dayGet] });
                 setDayScenes(scenes);
+                setCallsheet(callsheetdata);
                 // setDayContext(dayGet.day);
                 setDataDay(dayGet.day);
                 setDataDate(dayGet.date);
@@ -64,21 +67,24 @@ const DayPage = () => {
                 {/* <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} /> */}
                 {/* add scene setShowCall */}
                 <Row className='my-4'>
-                    <Col xs={4} className="text-center">
+                    <Col xs={6} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
-                        className={`${btnStyles.Button} ${btnStyles.Bright}`} >
+                        className={`px-5 ${btnStyles.Button} ${btnStyles.Bright}`} >
                         Add Scene</Button>
                     </Col>
-                    <Col xs={4} className="text-center">
-                        <Link className={`p-1`} to={`/callsheet/create/${id}`}>
-                            <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} >Create Callsheet</Button>
-                        </Link>
-                    </Col>
-                    <Col xs={4} className="text-center">
+                    {callsheet.results.length ? (
+                        <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheets/${id}`}>
-                            <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} > View Callsheet</Button>
+                            <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Bright}`} > View Callsheet</Button>
                         </Link>
                     </Col>
+                    ) : (
+                        <Col xs={6} className="text-center">
+                        <Link className={`p-1`} to={`/callsheet/create/${id}`}>
+                            <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Bright}`} >Create Callsheet</Button>
+                        </Link>
+                    </Col>
+                    )}
                 </Row>
                 {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
                 {/* titles */}

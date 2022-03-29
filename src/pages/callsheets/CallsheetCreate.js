@@ -1273,6 +1273,12 @@ const buttons = (
     <div>
     <TopBox work="Callsheet Create"
             title3={`Day ${dataDay} - ${dataDate} `} />
+    <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
+        onClick={() => history.goBack()}
+    >
+        Back
+    </Button>
     {/* schedule */}
     {/* schedule - side by side buttons */}
     <Row className='text-center'>

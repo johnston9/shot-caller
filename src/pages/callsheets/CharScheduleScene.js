@@ -115,13 +115,13 @@ const CharScheduleScene = (props) => {
             {/* next */}
             {new_info ? (
                 <Row>
-                <Col className={`mb-0 py-2 ${styles.Next1}`}>
+                <Col className={`mb-0 py-2 ${styles.NextCall}`}>
                 <p className="mb-0" >Next: {new_info} </p>
                 </Col>
             </Row> 
             ) : (
                 <Row>
-                <Col className={`mb-0 py-2 ${styles.Next1}`}>
+                <Col className={`mb-0 py-2 ${styles.NextCall}`}>
                 </Col>
             </Row> 
             ) }     

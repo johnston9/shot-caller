@@ -54,7 +54,8 @@ const CallsheetsPage = ({ filter="" }) => {
 
   return (
     <div>
-        <TopBox work="Callsheets" />
+        <TopBox work="Callsheets"
+                title2="Crew Info" />
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}
@@ -66,7 +67,7 @@ const CallsheetsPage = ({ filter="" }) => {
             <Col >
             <Button onClick={() => setShowCrewInfo(showCrewInfo => !showCrewInfo ) }
               className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-              Company and Crew Info</Button>
+              Add / View Company and Crew Info</Button>
             </Col>
         </Row>
         {/* CrewInfo */}
