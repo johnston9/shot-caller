@@ -114,12 +114,12 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
 
 return (
     <div className={`my-3 `}>
-    <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD BACKGROUND/STAND-INS</h5> 
-    <div className={`my-3 ${styles.Back }`}>
-    <Row className="mt-0 pt-0">
+    <h5 className={`text-center mb-0 py-0   ${styles.SubTitle }`} >ADD BACKGROUND/STAND-INS</h5> 
+    <div className={`mb-3 ${styles.Back3 }`}>
+    <Row className="mt-2 pt-0">
         <Col sm={{span: 8, offset: 2} }>
-        <div className={`px-2 my-2 py-1 ${styles.CastEntered }`} >
         <p className="text-center mb-0">BACKGROUND ADDED</p>
+        <div className={`px-2 my-0 py-1 ${styles.CastEntered }`} >
         {background.results.length ? (
             background.results.map((back) => (
                 <spam key={back.id}>{back.type}, </spam>

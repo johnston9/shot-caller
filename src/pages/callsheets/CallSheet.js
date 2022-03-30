@@ -6,14 +6,16 @@ import styles from "../../styles/Callsheets.module.css";
 import { useCrewInfoContext } from '../../contexts/BaseCallContext';
 import CharScheduleScene from './CharScheduleScene';
 import CallCast from './CallCast';
+import { axiosReq } from '../../api/axiosDefaults';
+import { useHistory } from "react-router";
+import { PostDropdown } from '../../components/PostDropdown';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
     const crewInfo = useCrewInfoContext();
     const crewInfoOne = crewInfo.results[0];
-    // const {callsheet} = props.callsheet.results[0] || {};
+    const history = useHistory();
     console.log(props)
-
 
     // eslint-disable-next-line
     const { production_name, production_company, company_phone, company_email,
@@ -151,8 +153,14 @@ const CallSheet = (props ) => {
         breakfast, 
         lunch, 
         wrap, 
+        basecamp_name,
         basecamp_address, 
         basecamp_parking_n_notes, 
+        location_1_name,
+        location_2_name,
+        location_3_name,
+        location_4_name,
+        location_5_name,
         location_1_address, 
         location_2_address, 
         location_3_address, 
@@ -306,12 +314,36 @@ const CallSheet = (props ) => {
         wardrobe_assistant_5_calltime,
       } = props;
 
+      const handleEdit = () => {
+        history.push(`/callsheet/edit/${day_id}/`);
+      };
+    
+      const handleDelete = async () => {
+        try {
+          await axiosReq.delete(`/callsheetsnew/${id}/`);
+          history.goBack();
+        } catch (err) {
+        }
+      };
+
   return (
     <div className={`${styles.White} p-3`} >
         {/* top */}
-        <div className='mt-0'>
+        <div className='d-none d-md-block'>
+            <Row>
+                <Col className='text-center' md={{span: 10, offset: 1}}>
+                    <h1>{production_name}</h1>
+                    <p>{day_id} </p>
+                </Col>
+                <Col className='text-center' md={1}>
+                    <PostDropdown
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                    />
+                </Col>
+            </Row>
         <Row >
-            <Col xs={12} md={4} >
+            <Col md={4} >
             <div className='mt-3'>
             <h5>{production_company} </h5>
             <p className='mb-0'>{company_address_line_1} </p>
@@ -329,9 +361,8 @@ const CallSheet = (props ) => {
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name}</span> </p>
             </div>
             </Col>
-            <Col className='text-center' xs={12} md={4} >
+            <Col  md={4} className='text-center'  >
             <div>
-            <h1>{production_name}</h1>
             <h5>Production Company Logo</h5>
             </div>
             <div>
@@ -345,7 +376,7 @@ const CallSheet = (props ) => {
             <h5>{location_1_address} </h5>
             </div>
             </Col>
-            <Col xs={12} md={4}>
+            <Col   md={4}>
             <div className='mt-3'>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span ><span className='pl-4'>{weather_location} </span> </p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span><span className='pl-2'>{weather_location}</span></p>
@@ -367,6 +398,66 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         </div>
+        {/* mobile */}
+        <div className='d-block d-md-none'>
+        <Row >
+        <Col xs={12} className='text-center'  >
+            <div>
+            <h1>{production_name}</h1>
+            <h5>Production Company Logo</h5>
+            </div>
+            <div>
+            <h2>Unit Call</h2>
+            <h1 className={` ${styles.UnitCall }`}>{unit_call} </h1>
+            <p>Please check individual calltimes</p>
+            <h2 className={` ${styles.UnitCall }`}>{date} </h2>
+            <h5 className={` ${styles.UnitCall }`}>Day {day} of {total_shoot_days} </h5>
+            {/* <h2>{date} </h2> */}
+            <h5>First Location Address</h5>
+            <h5>{location_1_address} </h5>
+            </div>
+            </Col>
+            <Col xs={6} >
+            <div className='mt-3'>
+            <h5>{production_company} </h5>
+            <p className='mb-0'>{company_address_line_1} </p>
+            <p className='mb-0'>{company_address_line_2} </p>
+            <p className='mb-0'>{company_address_line_3} </p>
+            <p className='mb-0'>{company_address_line_4} </p>
+            <p className='mb-0'>{company_phone} </p>
+            <p className='mb-0'>{company_email} </p>
+            </div>
+            <div className='mt-3'>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Producer:</span ><span className='pl-4'>{producer_name}</span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-4'>{pro_coordinator_name}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-4'>{producer_name}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-4 ml-3'>{ad_1_name}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name}</span> </p>
+            </div>
+            </Col>
+            <Col xs={6}>
+            <div className='mt-3'>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span ><span className='pl-4'>{weather_location} </span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span><span className='pl-2'>{weather_location}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span><span className='pl-5'>{weather_location}</span></p>
+            </div>
+            <div>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span><span className='pl-5'>{ad_1_name}</span></p>
+            <p>{nearest_hospital} </p>
+            </div>
+            <div>
+            </div>
+            <div>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Talent Call:</span ><span className='pl-4'>{talent_call} </span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span><span className='pl-2'>{shoot_call}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span><span className='pl-5'>{breakfast}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span ><span className='pl-4'>{lunch} </span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span><span className='pl-2'>{wrap}</span></p>
+            </div>
+            </Col>
+        </Row>
+        </div>
+        {/* Locations */}
         {/* <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 py-1 ${styles.SubTitle }`}></p> */}
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Locations</span>
@@ -390,6 +481,7 @@ const CallSheet = (props ) => {
             </Col>
             <Col className={`${styles.Border}`} xs={5}>
             <p>Basecamp</p>
+            <p>{basecamp_name}</p>
             <p>{basecamp_address}</p>
             </Col>
             <Col className={`${styles.Border}`} xs={6}>
@@ -405,6 +497,7 @@ const CallSheet = (props ) => {
             <p>1</p>
             </Col>
             <Col className={`${styles.Border}`} xs={5}>
+            <p className={`${styles.Bold}`} >{location_1_name}</p>
             <p>{location_1_address}</p>
             </Col>
             <Col className={`${styles.Border}`} xs={6}>
@@ -420,6 +513,7 @@ const CallSheet = (props ) => {
             <p>2</p>
             </Col>
             <Col className={`${styles.Border}`} xs={5}>
+            <p className={`${styles.Bold}`} >{location_2_name}</p>
             <p>{location_2_address}</p>
             </Col>
             <Col className={`${styles.Border}`} xs={6}>
@@ -435,6 +529,7 @@ const CallSheet = (props ) => {
             <p>3</p>
             </Col>
             <Col className={`${styles.Border}`} xs={5}>
+            <p className={`${styles.Bold}`} >{location_3_name}</p>
             <p>{location_3_address}</p>
             </Col>
             <Col className={`${styles.Border}`} xs={6}>
@@ -450,6 +545,7 @@ const CallSheet = (props ) => {
             <p>4</p>
             </Col>
             <Col className={`${styles.Border}`} xs={5}>
+            <p className={`${styles.Bold}`} >{location_4_name}</p>
             <p>{location_4_address}</p>
             </Col>
             <Col className={`${styles.Border}`} xs={6}>
@@ -465,6 +561,7 @@ const CallSheet = (props ) => {
             <p>5</p>
             </Col>
             <Col className={`${styles.Border}`} xs={5}>
+            <p className={`${styles.Bold}`} >{location_1_name}</p>
             <p>{location_5_address}</p>
             </Col>
             <Col className={`${styles.Border}`} xs={6}>
@@ -525,6 +622,7 @@ const CallSheet = (props ) => {
                         ? '#dbfaf9' : (index % 2 === 0) ? 
                         'rgb(223 254 240)' : 'rgb(248 241 249)' }}
                         {...scene} 
+                        scene={scene}
                         key={scene.id} />
                 ))) : ("")}
             </Col>

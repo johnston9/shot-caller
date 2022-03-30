@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import { useRedirect } from '../../hooks/Redirect';
+import CharSceneInfo from './CharSceneInfo';
+import btnStyles from "../../styles/Button.module.css";
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 const CharScheduleScene = (props) => {
     useRedirect("loggedOut");
-    const {number, int_ext, start_time,
+    const [showInfo, setShowInfo] = useState(false);
+    const {scene, number, int_ext, start_time,
         location, filming_location, day_night, action, pages,
         new_info, style, 
         character1_number, character2_number, character3_number,
@@ -67,10 +71,9 @@ const CharScheduleScene = (props) => {
         </div>
         {/* mobile */}
         <div className='d-block d-md-none'>
-            {/* schedule */}
             <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Times</p>
+                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Time</p>
                     <p className='mb-0'>{start_time}</p>
                     {/* <p className='mb-0'>{end_time}</p> */}
                 </Col>
@@ -78,14 +81,21 @@ const CharScheduleScene = (props) => {
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Scene</p>
                     <p className='mb-0'>{number}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                {/* <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>D/N</p>
                     <p className='mb-0'>{day_night}</p>
-                </Col>  
+                </Col>   */}
                 <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
                 <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Details</p>
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext} - {location} - {day_night}</p>
                     <p className='mb-0'>{action}</p>
+                </Col>
+                <Col className={`mx-0 px-0 `} xs={2} md={1}>
+                <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Info</p>
+                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        I
+                    </Button>
                 </Col>
             </Row>
             {/* 2 */}
@@ -112,7 +122,14 @@ const CharScheduleScene = (props) => {
                 {other_characters_numbers && <span className='mb-0'> {other_characters_numbers} </span>} 
                 </Col>               
             </Row>
-            <hr className='my-0'/>
+            {/* info */}
+            <Row>
+                <Col>
+                    {!showInfo ?("") : (                       
+                    <CharSceneInfo {...scene}/> 
+                    ) }
+                    </Col>
+                </Row>
             {/* next */}
             {new_info ? (
                 <Row>

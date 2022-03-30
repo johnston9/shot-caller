@@ -27,7 +27,7 @@ import AddSoundTransport from './AddSoundTransport';
 import AddStunts from './AddStunts';
 import AddPostAdditional from './AddPostAdditional';
 
-const CallsheetCreate = () => {
+const CallsheetEditPage = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
@@ -38,9 +38,11 @@ const CallsheetCreate = () => {
   const [showAddCast, setShowAddCast] = useState(false);
   const [showAddBg, setShowAddBg] = useState(false);
   const [showSideBySide, setShowSideBySide] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
   // eslint-disable-next-line
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
+  const [callsheet, setCallsheet] = useState({ results: [] });
   const [dataDay, setDataDay] = useState("");
   const [dataDate, setDataDate] = useState("");
   const [showPro, setShowPro] = useState(false);
@@ -57,359 +59,701 @@ const CallsheetCreate = () => {
   const [showWar, setShowWar] = useState(false);
 
   const [postData, setPostData] = useState({
-      // info
-      unit_call: "",
-      talent_call: "",
-      shoot_call: "",
-      breakfast: "",
-      lunch: "",
-      wrap: "",
-      basecamp_name: "",
-      basecamp_address: "",
-      basecamp_parking_n_notes: "",
-      location_1_name: "",
-      location_2_name: "",
-      location_3_name: "",
-      location_4_name: "",
-      location_5_name: "",
-      location_1_address: "",
-      location_2_address: "",
-      location_3_address: "",
-      location_4_address: "",
-      location_5_address: "",
-      location_1_parking_n_notes: "",
-      location_2_parking_n_notes: "",
-      location_3_parking_n_notes: "",
-      location_4_parking_n_notes: "",
-      location_5_parking_n_notes: "",
-      nearest_hospital: "",
-      weather_location: "",
-      important_info: "",
-      transport_info: "",
-      department_info: "",
-      walkie_channel_production: "",
-      walkie_channel_open: "",
-      walkie_channel_transportation: "",
-      walkie_channel_art_dept: "",
-      walkie_channel_rollover: "",
-      walkie_channel_camera: "",
-      walkie_channel_electric: "",
-      walkie_channel_grip: "",
-      // CALLS
-      // production 
-      director_calltime: "",
-      producer_calltime: "",
-      pro_coordinator_calltime: "",
-      travel_coordinator_calltime: "",
-      upm_calltime: "",
-      production_pa_calltime: "",
-      script_supervisor_calltime: "",
-      legal_calltime: "",
-      set_medic_calltime: "",
-      oth_production_pos_1_calltime: "",
-      oth_production_pos_2_calltime: "",
-      oth_production_pos_3_calltime: "",
-      oth_production_pos_4_calltime: "",
-      oth_production_pos_5_calltime: "",
-      // art
-      art_director_calltime: "",
-      art_assistant_calltime: "",
-      set_decorator_calltime: "",
-      set_dresser_calltime: "",
-      lead_man_calltime: "",
-      dresser_calltime: "",
-      prop_master_calltime: "",
-      ass_prop_master_calltime: "",
-      prop_buyer_calltime: "",
-      // cam
-      dop_calltime: "",
-      camera_operator_calltime: "",
-      camera_ass_1_calltime: "",
-      camera_ass_2_calltime: "",
-      dit_calltime: "",
-      steadicam_calltime: "",
-      camera_pa_calltime: "",
-      oth_camera_pos_1_calltime: "",
-      oth_camera_pos_2_calltime: "",
-      oth_camera_pos_3_calltime: "",
-      // casting
-      casting_director_calltime: "",
-      extras_casting_calltime: "",
-      ad_1_calltime: "",
-      ad_2_calltime: "",
-      ad_3_calltime: "",
-      ad_4_calltime: "",
-      ad_5_calltime: "",
-      pro_assistant_1_calltime: "",
-      pro_assistant_2_calltime: "",
-      pro_assistant_3_calltime: "",
-      pro_assistant_4_calltime: "",
-      pro_assistant_5_calltime: "",
-      // elegrip
-      gaffer_calltime: "",
-      best_boy_electric_calltime: "",
-      electric_3_calltime: "",
-      electric_4_calltime: "",
-      keygrip_calltime: "",
-      best_boy_grip_calltime: "",
-      dolly_grip_calltime: "",
-      swing_ge1_calltime: "",
-      swing_ge2_calltime: "",
-      swing_ge3_calltime: "",
-      swing_ge4_calltime: "",
-      swing_ge5_calltime: "",
-      // loc
-      location_mngr_calltime: "",
-      location_ass_1_calltime: "",
-      location_ass_2_calltime: "",
-      location_ass_3_calltime: "",
-      location_ass_4_calltime: "",
-      location_security_calltime: "",
-      // mak
-      key_hairmakeup_calltime: "",
-      key_hairstylist_calltime: "",
-      sfx_makeup_calltime: "",
-      sfx_makeup_assistant_calltime: "",
-      makeup_artist_1_calltime: "",
-      makeup_artist_2_calltime: "",
-      makeup_artist_3_calltime: "",
-      makeup_artist_4_calltime: "",
-      makeup_artist_5_calltime: "",
-      // post/add-pos
-      editor_calltime: "",
-      fx_calltime: "",
-      add_pos_1_calltime: "",
-      add_pos_2_calltime: "",
-      add_pos_3_calltime: "",
-      add_pos_4_calltime: "",
-      add_pos_5_calltime: "",
-      add_pos_6_calltime: "",
-      add_pos_7_calltime: "",
-      add_pos_8_calltime: "",
-      add_pos_9_calltime: "",
-      add_pos_10_calltime: "",
-      all_other_add_positions_calltimes: "",
-      // script/cater
-      writer_calltime: "",
-      catering_co_1_calltime: "",
-      catering_co_2_calltime: "",
-      catering_co_3_calltime: "",
-      craft_service_calltime: "",
-      crafty_ass_calltime: "",
-      // sound/transport
-      sound_mixer_calltime: "",
-      boom_operator_calltime: "",
-      sound_assistant_1_calltime: "",
-      sound_assistant_2_calltime: "",
-      transport_captain_calltime: "",
-      transport_manager_1_calltime: "",
-      transport_manager_2_calltime: "",
-      head_driver_calltime: "",
-      car1_calltime: "",
-      car2_calltime: "",
-      car3_calltime: "",
-      truck1_calltime: "",
-      truck2_calltime: "",
-      truck3_calltime: "",
-      // stunts
-      stunt_coordinator_calltime: "",
-      stunts_1_calltime: "",
-      stunts_2_calltime: "",
-      stunts_3_calltime: "",
-      stunts_4_calltime: "",
-      stunts_5_calltime: "",
-      // wardrobe
-      costume_designer_calltime: "",
-      ass_costume_designer_calltime: "",
-      wardrobe_assistant_1_calltime: "",
-      wardrobe_assistant_2_calltime: "",
-      wardrobe_assistant_3_calltime: "",
-      wardrobe_assistant_4_calltime: "",
-      wardrobe_assistant_5_calltime: "",
-  })
+    // info
+    unit_call: "",
+    talent_call: "",
+    shoot_call: "",
+    breakfast: "",
+    lunch: "",
+    wrap: "",
+    basecamp_name: "",
+    basecamp_address: "",
+    basecamp_parking_n_notes: "",
+    location_1_name: "",
+    location_2_name: "",
+    location_3_name: "",
+    location_4_name: "",
+    location_5_name: "",
+    location_1_address: "",
+    location_2_address: "",
+    location_3_address: "",
+    location_4_address: "",
+    location_5_address: "",
+    location_1_parking_n_notes: "",
+    location_2_parking_n_notes: "",
+    location_3_parking_n_notes: "",
+    location_4_parking_n_notes: "",
+    location_5_parking_n_notes: "",
+    nearest_hospital: "",
+    weather_location: "",
+    important_info: "",
+    transport_info: "",
+    department_info: "",
+    walkie_channel_production: "",
+    walkie_channel_open: "",
+    walkie_channel_transportation: "",
+    walkie_channel_art_dept: "",
+    walkie_channel_rollover: "",
+    walkie_channel_camera: "",
+    walkie_channel_electric: "",
+    walkie_channel_grip: "",
+    // CALLS
+    // production 
+    director_calltime: "",
+    producer_calltime: "",
+    pro_coordinator_calltime: "",
+    travel_coordinator_calltime: "",
+    upm_calltime: "",
+    production_pa_calltime: "",
+    script_supervisor_calltime: "",
+    legal_calltime: "",
+    set_medic_calltime: "",
+    oth_production_pos_1_calltime: "",
+    oth_production_pos_2_calltime: "",
+    oth_production_pos_3_calltime: "",
+    oth_production_pos_4_calltime: "",
+    oth_production_pos_5_calltime: "",
+    // art
+    art_director_calltime: "",
+    art_assistant_calltime: "",
+    set_decorator_calltime: "",
+    set_dresser_calltime: "",
+    lead_man_calltime: "",
+    dresser_calltime: "",
+    prop_master_calltime: "",
+    ass_prop_master_calltime: "",
+    prop_buyer_calltime: "",
+    // cam
+    dop_calltime: "",
+    camera_operator_calltime: "",
+    camera_ass_1_calltime: "",
+    camera_ass_2_calltime: "",
+    dit_calltime: "",
+    steadicam_calltime: "",
+    camera_pa_calltime: "",
+    oth_camera_pos_1_calltime: "",
+    oth_camera_pos_2_calltime: "",
+    oth_camera_pos_3_calltime: "",
+    // casting
+    casting_director_calltime: "",
+    extras_casting_calltime: "",
+    ad_1_calltime: "",
+    ad_2_calltime: "",
+    ad_3_calltime: "",
+    ad_4_calltime: "",
+    ad_5_calltime: "",
+    pro_assistant_1_calltime: "",
+    pro_assistant_2_calltime: "",
+    pro_assistant_3_calltime: "",
+    pro_assistant_4_calltime: "",
+    pro_assistant_5_calltime: "",
+    // elegrip
+    gaffer_calltime: "",
+    best_boy_electric_calltime: "",
+    electric_3_calltime: "",
+    electric_4_calltime: "",
+    keygrip_calltime: "",
+    best_boy_grip_calltime: "",
+    dolly_grip_calltime: "",
+    swing_ge1_calltime: "",
+    swing_ge2_calltime: "",
+    swing_ge3_calltime: "",
+    swing_ge4_calltime: "",
+    swing_ge5_calltime: "",
+    // loc
+    location_mngr_calltime: "",
+    location_ass_1_calltime: "",
+    location_ass_2_calltime: "",
+    location_ass_3_calltime: "",
+    location_ass_4_calltime: "",
+    location_security_calltime: "",
+    // mak
+    key_hairmakeup_calltime: "",
+    key_hairstylist_calltime: "",
+    sfx_makeup_calltime: "",
+    sfx_makeup_assistant_calltime: "",
+    makeup_artist_1_calltime: "",
+    makeup_artist_2_calltime: "",
+    makeup_artist_3_calltime: "",
+    makeup_artist_4_calltime: "",
+    makeup_artist_5_calltime: "",
+    // post/add-pos
+    editor_calltime: "",
+    fx_calltime: "",
+    add_pos_1_calltime: "",
+    add_pos_2_calltime: "",
+    add_pos_3_calltime: "",
+    add_pos_4_calltime: "",
+    add_pos_5_calltime: "",
+    add_pos_6_calltime: "",
+    add_pos_7_calltime: "",
+    add_pos_8_calltime: "",
+    add_pos_9_calltime: "",
+    add_pos_10_calltime: "",
+    all_other_add_positions_calltimes: "",
+    // script/cater
+    writer_calltime: "",
+    catering_co_1_calltime: "",
+    catering_co_2_calltime: "",
+    catering_co_3_calltime: "",
+    craft_service_calltime: "",
+    crafty_ass_calltime: "",
+    // sound/transport
+    sound_mixer_calltime: "",
+    boom_operator_calltime: "",
+    sound_assistant_1_calltime: "",
+    sound_assistant_2_calltime: "",
+    transport_captain_calltime: "",
+    transport_manager_1_calltime: "",
+    transport_manager_2_calltime: "",
+    head_driver_calltime: "",
+    car1_calltime: "",
+    car2_calltime: "",
+    car3_calltime: "",
+    truck1_calltime: "",
+    truck2_calltime: "",
+    truck3_calltime: "",
+    // stunts
+    stunt_coordinator_calltime: "",
+    stunts_1_calltime: "",
+    stunts_2_calltime: "",
+    stunts_3_calltime: "",
+    stunts_4_calltime: "",
+    stunts_5_calltime: "",
+    // wardrobe
+    costume_designer_calltime: "",
+    ass_costume_designer_calltime: "",
+    wardrobe_assistant_1_calltime: "",
+    wardrobe_assistant_2_calltime: "",
+    wardrobe_assistant_3_calltime: "",
+    wardrobe_assistant_4_calltime: "",
+    wardrobe_assistant_5_calltime: "",
+})
 
-  const { 
-        // info
-        unit_call,
-        talent_call, 
-        shoot_call, 
-        breakfast, 
-        lunch, 
-        wrap, 
-        basecamp_name,
-        basecamp_address, 
-        basecamp_parking_n_notes, 
-        location_1_name,
-        location_2_name,
-        location_3_name,
-        location_4_name,
-        location_5_name,
-        location_1_address, 
-        location_2_address, 
-        location_3_address, 
-        location_4_address, 
-        location_5_address, 
-        location_1_parking_n_notes, 
-        location_2_parking_n_notes, 
-        location_3_parking_n_notes, 
-        location_4_parking_n_notes,
-        location_5_parking_n_notes,
-        nearest_hospital,
-        weather_location,
-        important_info,
-        transport_info,
-        department_info,
-        walkie_channel_production,
-        walkie_channel_open,
-        walkie_channel_transportation,
-        walkie_channel_art_dept,
-        walkie_channel_rollover,
-        walkie_channel_camera,
-        walkie_channel_electric,
-        walkie_channel_grip,
-        // production
-        director_calltime,
-        producer_calltime,
-        pro_coordinator_calltime,
-        travel_coordinator_calltime,
-        upm_calltime,
-        production_pa_calltime,
-        script_supervisor_calltime,
-        legal_calltime,
-        set_medic_calltime,
-        oth_production_pos_1_calltime,
-        oth_production_pos_2_calltime,
-        oth_production_pos_3_calltime,
-        oth_production_pos_4_calltime,
-        oth_production_pos_5_calltime,
-        // art
-        art_director_calltime,
-        art_assistant_calltime,
-        set_decorator_calltime,
-        set_dresser_calltime,
-        lead_man_calltime,
-        dresser_calltime,
-        prop_master_calltime,
-        ass_prop_master_calltime,
-        prop_buyer_calltime,
-        // cam
-        dop_calltime,
-        camera_operator_calltime,
-        camera_ass_1_calltime,
-        camera_ass_2_calltime,
-        dit_calltime,
-        steadicam_calltime,
-        camera_pa_calltime,
-        oth_camera_pos_1_calltime,
-        oth_camera_pos_2_calltime,
-        oth_camera_pos_3_calltime,
-        // casting
-        casting_director_calltime,
-        extras_casting_calltime,
-        ad_1_calltime,
-        ad_2_calltime,
-        ad_3_calltime,
-        ad_4_calltime,
-        ad_5_calltime,
-        pro_assistant_1_calltime,
-        pro_assistant_2_calltime,
-        pro_assistant_3_calltime,
-        pro_assistant_4_calltime,
-        pro_assistant_5_calltime,
-        // ele/Grip
-        gaffer_calltime,
-        best_boy_electric_calltime,
-        electric_3_calltime,
-        electric_4_calltime,
-        keygrip_calltime,
-        best_boy_grip_calltime,
-        dolly_grip_calltime,
-        swing_ge1_calltime,
-        swing_ge2_calltime,
-        swing_ge3_calltime,
-        swing_ge4_calltime,
-        swing_ge5_calltime,
-        // locations
-        location_mngr_calltime,
-        location_security_calltime,
-        location_ass_1_calltime,
-        location_ass_2_calltime,
-        location_ass_3_calltime,
-        location_ass_4_calltime,
-        // makeup
-        key_hairmakeup_calltime,
-        key_hairstylist_calltime,
-        sfx_makeup_calltime,
-        sfx_makeup_assistant_calltime,
-        makeup_artist_1_calltime,
-        makeup_artist_2_calltime,
-        makeup_artist_3_calltime,
-        makeup_artist_4_calltime,
-        makeup_artist_5_calltime,
-        // post/add-pos
-        editor_calltime,
-        fx_calltime,
-        add_pos_1_calltime,
-        add_pos_2_calltime,
-        add_pos_3_calltime,
-        add_pos_4_calltime,
-        add_pos_5_calltime,
-        add_pos_6_calltime,
-        add_pos_7_calltime,
-        add_pos_8_calltime,
-        add_pos_9_calltime,
-        add_pos_10_calltime,
-        all_other_add_positions_calltimes,
-        // script/cater
-        writer_calltime,
-        catering_co_1_calltime,
-        catering_co_2_calltime,
-        catering_co_3_calltime,
-        craft_service_calltime,
-        crafty_ass_calltime,
-        // sound/transport
-        sound_mixer_calltime,
-        boom_operator_calltime,
-        sound_assistant_1_calltime,
-        sound_assistant_2_calltime,
-        transport_captain_calltime,
-        transport_manager_1_calltime,
-        transport_manager_2_calltime,
-        head_driver_calltime,
-        car1_calltime,
-        car2_calltime,
-        car3_calltime,
-        truck1_calltime,
-        truck2_calltime,
-        truck3_calltime,
-        // stunts
-        stunt_coordinator_calltime,
-        stunts_1_calltime,
-        stunts_2_calltime,
-        stunts_3_calltime,
-        stunts_4_calltime,
-        stunts_5_calltime,
-        // wardrobe
-        costume_designer_calltime,
-        ass_costume_designer_calltime,
-        wardrobe_assistant_1_calltime,
-        wardrobe_assistant_2_calltime,
-        wardrobe_assistant_3_calltime,
-        wardrobe_assistant_4_calltime,
-        wardrobe_assistant_5_calltime,
-      } = postData;
-    
+const { 
+      // info
+      unit_call,
+      talent_call, 
+      shoot_call, 
+      breakfast, 
+      lunch, 
+      wrap, 
+      basecamp_name,
+      basecamp_address, 
+      basecamp_parking_n_notes, 
+      location_1_name,
+      location_2_name,
+      location_3_name,
+      location_4_name,
+      location_5_name,
+      location_1_address, 
+      location_2_address, 
+      location_3_address, 
+      location_4_address, 
+      location_5_address, 
+      location_1_parking_n_notes, 
+      location_2_parking_n_notes, 
+      location_3_parking_n_notes, 
+      location_4_parking_n_notes,
+      location_5_parking_n_notes,
+      nearest_hospital,
+      weather_location,
+      important_info,
+      transport_info,
+      department_info,
+      walkie_channel_production,
+      walkie_channel_open,
+      walkie_channel_transportation,
+      walkie_channel_art_dept,
+      walkie_channel_rollover,
+      walkie_channel_camera,
+      walkie_channel_electric,
+      walkie_channel_grip,
+      // production
+      director_calltime,
+      producer_calltime,
+      pro_coordinator_calltime,
+      travel_coordinator_calltime,
+      upm_calltime,
+      production_pa_calltime,
+      script_supervisor_calltime,
+      legal_calltime,
+      set_medic_calltime,
+      oth_production_pos_1_calltime,
+      oth_production_pos_2_calltime,
+      oth_production_pos_3_calltime,
+      oth_production_pos_4_calltime,
+      oth_production_pos_5_calltime,
+      // art
+      art_director_calltime,
+      art_assistant_calltime,
+      set_decorator_calltime,
+      set_dresser_calltime,
+      lead_man_calltime,
+      dresser_calltime,
+      prop_master_calltime,
+      ass_prop_master_calltime,
+      prop_buyer_calltime,
+      // cam
+      dop_calltime,
+      camera_operator_calltime,
+      camera_ass_1_calltime,
+      camera_ass_2_calltime,
+      dit_calltime,
+      steadicam_calltime,
+      camera_pa_calltime,
+      oth_camera_pos_1_calltime,
+      oth_camera_pos_2_calltime,
+      oth_camera_pos_3_calltime,
+      // casting
+      casting_director_calltime,
+      extras_casting_calltime,
+      ad_1_calltime,
+      ad_2_calltime,
+      ad_3_calltime,
+      ad_4_calltime,
+      ad_5_calltime,
+      pro_assistant_1_calltime,
+      pro_assistant_2_calltime,
+      pro_assistant_3_calltime,
+      pro_assistant_4_calltime,
+      pro_assistant_5_calltime,
+      // ele/Grip
+      gaffer_calltime,
+      best_boy_electric_calltime,
+      electric_3_calltime,
+      electric_4_calltime,
+      keygrip_calltime,
+      best_boy_grip_calltime,
+      dolly_grip_calltime,
+      swing_ge1_calltime,
+      swing_ge2_calltime,
+      swing_ge3_calltime,
+      swing_ge4_calltime,
+      swing_ge5_calltime,
+      // locations
+      location_mngr_calltime,
+      location_security_calltime,
+      location_ass_1_calltime,
+      location_ass_2_calltime,
+      location_ass_3_calltime,
+      location_ass_4_calltime,
+      // makeup
+      key_hairmakeup_calltime,
+      key_hairstylist_calltime,
+      sfx_makeup_calltime,
+      sfx_makeup_assistant_calltime,
+      makeup_artist_1_calltime,
+      makeup_artist_2_calltime,
+      makeup_artist_3_calltime,
+      makeup_artist_4_calltime,
+      makeup_artist_5_calltime,
+      // post/add-pos
+      editor_calltime,
+      fx_calltime,
+      add_pos_1_calltime,
+      add_pos_2_calltime,
+      add_pos_3_calltime,
+      add_pos_4_calltime,
+      add_pos_5_calltime,
+      add_pos_6_calltime,
+      add_pos_7_calltime,
+      add_pos_8_calltime,
+      add_pos_9_calltime,
+      add_pos_10_calltime,
+      all_other_add_positions_calltimes,
+      // script/cater
+      writer_calltime,
+      catering_co_1_calltime,
+      catering_co_2_calltime,
+      catering_co_3_calltime,
+      craft_service_calltime,
+      crafty_ass_calltime,
+      // sound/transport
+      sound_mixer_calltime,
+      boom_operator_calltime,
+      sound_assistant_1_calltime,
+      sound_assistant_2_calltime,
+      transport_captain_calltime,
+      transport_manager_1_calltime,
+      transport_manager_2_calltime,
+      head_driver_calltime,
+      car1_calltime,
+      car2_calltime,
+      car3_calltime,
+      truck1_calltime,
+      truck2_calltime,
+      truck3_calltime,
+      // stunts
+      stunt_coordinator_calltime,
+      stunts_1_calltime,
+      stunts_2_calltime,
+      stunts_3_calltime,
+      stunts_4_calltime,
+      stunts_5_calltime,
+      // wardrobe
+      costume_designer_calltime,
+      ass_costume_designer_calltime,
+      wardrobe_assistant_1_calltime,
+      wardrobe_assistant_2_calltime,
+      wardrobe_assistant_3_calltime,
+      wardrobe_assistant_4_calltime,
+      wardrobe_assistant_5_calltime,
+    } = postData;
+
+
   useEffect(() => {
     const handleMount = async () => {
         try {
-          const [{ data: dayGet }, { data: scenes }] = await Promise.all([
+          const [{ data: dayGet }, { data: scenes }, { data: callsheetdata }] = await Promise.all([
             axiosReq.get(`/days/${id}`),
             axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+            axiosReq.get(`/callsheetsnew/?day_id=${id}`),
         ])
+        console.log(dayGet);
+        console.log(scenes);
+        console.log(callsheetdata);
         setDayData({ results: [dayGet] });
-        setScenes(scenes)
+        setScenes(scenes);
+        const { unit_call,
+          talent_call, 
+          shoot_call, 
+          breakfast, 
+          lunch, 
+          wrap, 
+          basecamp_name,
+          basecamp_address, 
+          basecamp_parking_n_notes, 
+          location_1_name,
+          location_2_name,
+          location_3_name,
+          location_4_name,
+          location_5_name,
+          location_1_address, 
+          location_2_address, 
+          location_3_address, 
+          location_4_address, 
+          location_5_address, 
+          location_1_parking_n_notes, 
+          location_2_parking_n_notes, 
+          location_3_parking_n_notes, 
+          location_4_parking_n_notes,
+          location_5_parking_n_notes,
+          nearest_hospital,
+          weather_location,
+          important_info,
+          transport_info,
+          department_info,
+          walkie_channel_production,
+          walkie_channel_open,
+          walkie_channel_transportation,
+          walkie_channel_art_dept,
+          walkie_channel_rollover,
+          walkie_channel_camera,
+          walkie_channel_electric,
+          walkie_channel_grip,
+          // production
+          director_calltime,
+          producer_calltime,
+          pro_coordinator_calltime,
+          travel_coordinator_calltime,
+          upm_calltime,
+          production_pa_calltime,
+          script_supervisor_calltime,
+          legal_calltime,
+          set_medic_calltime,
+          oth_production_pos_1_calltime,
+          oth_production_pos_2_calltime,
+          oth_production_pos_3_calltime,
+          oth_production_pos_4_calltime,
+          oth_production_pos_5_calltime,
+          // art
+          art_director_calltime,
+          art_assistant_calltime,
+          set_decorator_calltime,
+          set_dresser_calltime,
+          lead_man_calltime,
+          dresser_calltime,
+          prop_master_calltime,
+          ass_prop_master_calltime,
+          prop_buyer_calltime,
+          // cam
+          dop_calltime,
+          camera_operator_calltime,
+          camera_ass_1_calltime,
+          camera_ass_2_calltime,
+          dit_calltime,
+          steadicam_calltime,
+          camera_pa_calltime,
+          oth_camera_pos_1_calltime,
+          oth_camera_pos_2_calltime,
+          oth_camera_pos_3_calltime,
+          // casting
+          casting_director_calltime,
+          extras_casting_calltime,
+          ad_1_calltime,
+          ad_2_calltime,
+          ad_3_calltime,
+          ad_4_calltime,
+          ad_5_calltime,
+          pro_assistant_1_calltime,
+          pro_assistant_2_calltime,
+          pro_assistant_3_calltime,
+          pro_assistant_4_calltime,
+          pro_assistant_5_calltime,
+          // ele/Grip
+          gaffer_calltime,
+          best_boy_electric_calltime,
+          electric_3_calltime,
+          electric_4_calltime,
+          keygrip_calltime,
+          best_boy_grip_calltime,
+          dolly_grip_calltime,
+          swing_ge1_calltime,
+          swing_ge2_calltime,
+          swing_ge3_calltime,
+          swing_ge4_calltime,
+          swing_ge5_calltime,
+          // locations
+          location_mngr_calltime,
+          location_security_calltime,
+          location_ass_1_calltime,
+          location_ass_2_calltime,
+          location_ass_3_calltime,
+          location_ass_4_calltime,
+          // makeup
+          key_hairmakeup_calltime,
+          key_hairstylist_calltime,
+          sfx_makeup_calltime,
+          sfx_makeup_assistant_calltime,
+          makeup_artist_1_calltime,
+          makeup_artist_2_calltime,
+          makeup_artist_3_calltime,
+          makeup_artist_4_calltime,
+          makeup_artist_5_calltime,
+          // post/add-pos
+          editor_calltime,
+          fx_calltime,
+          add_pos_1_calltime,
+          add_pos_2_calltime,
+          add_pos_3_calltime,
+          add_pos_4_calltime,
+          add_pos_5_calltime,
+          add_pos_6_calltime,
+          add_pos_7_calltime,
+          add_pos_8_calltime,
+          add_pos_9_calltime,
+          add_pos_10_calltime,
+          all_other_add_positions_calltimes,
+          // script/cater
+          writer_calltime,
+          catering_co_1_calltime,
+          catering_co_2_calltime,
+          catering_co_3_calltime,
+          craft_service_calltime,
+          crafty_ass_calltime,
+          // sound/transport
+          sound_mixer_calltime,
+          boom_operator_calltime,
+          sound_assistant_1_calltime,
+          sound_assistant_2_calltime,
+          transport_captain_calltime,
+          transport_manager_1_calltime,
+          transport_manager_2_calltime,
+          head_driver_calltime,
+          car1_calltime,
+          car2_calltime,
+          car3_calltime,
+          truck1_calltime,
+          truck2_calltime,
+          truck3_calltime,
+          // stunts
+          stunt_coordinator_calltime,
+          stunts_1_calltime,
+          stunts_2_calltime,
+          stunts_3_calltime,
+          stunts_4_calltime,
+          stunts_5_calltime,
+          // wardrobe
+          costume_designer_calltime,
+          ass_costume_designer_calltime,
+          wardrobe_assistant_1_calltime,
+          wardrobe_assistant_2_calltime,
+          wardrobe_assistant_3_calltime,
+          wardrobe_assistant_4_calltime,
+          wardrobe_assistant_5_calltime,
+        } = callsheetdata;
+        setPostData({ unit_call,
+          talent_call, 
+          shoot_call, 
+          breakfast, 
+          lunch, 
+          wrap, 
+          basecamp_name,
+          basecamp_address, 
+          basecamp_parking_n_notes, 
+          location_1_name,
+          location_2_name,
+          location_3_name,
+          location_4_name,
+          location_5_name,
+          location_1_address, 
+          location_2_address, 
+          location_3_address, 
+          location_4_address, 
+          location_5_address, 
+          location_1_parking_n_notes, 
+          location_2_parking_n_notes, 
+          location_3_parking_n_notes, 
+          location_4_parking_n_notes,
+          location_5_parking_n_notes,
+          nearest_hospital,
+          weather_location,
+          important_info,
+          transport_info,
+          department_info,
+          walkie_channel_production,
+          walkie_channel_open,
+          walkie_channel_transportation,
+          walkie_channel_art_dept,
+          walkie_channel_rollover,
+          walkie_channel_camera,
+          walkie_channel_electric,
+          walkie_channel_grip,
+          // production
+          director_calltime,
+          producer_calltime,
+          pro_coordinator_calltime,
+          travel_coordinator_calltime,
+          upm_calltime,
+          production_pa_calltime,
+          script_supervisor_calltime,
+          legal_calltime,
+          set_medic_calltime,
+          oth_production_pos_1_calltime,
+          oth_production_pos_2_calltime,
+          oth_production_pos_3_calltime,
+          oth_production_pos_4_calltime,
+          oth_production_pos_5_calltime,
+          // art
+          art_director_calltime,
+          art_assistant_calltime,
+          set_decorator_calltime,
+          set_dresser_calltime,
+          lead_man_calltime,
+          dresser_calltime,
+          prop_master_calltime,
+          ass_prop_master_calltime,
+          prop_buyer_calltime,
+          // cam
+          dop_calltime,
+          camera_operator_calltime,
+          camera_ass_1_calltime,
+          camera_ass_2_calltime,
+          dit_calltime,
+          steadicam_calltime,
+          camera_pa_calltime,
+          oth_camera_pos_1_calltime,
+          oth_camera_pos_2_calltime,
+          oth_camera_pos_3_calltime,
+          // casting
+          casting_director_calltime,
+          extras_casting_calltime,
+          ad_1_calltime,
+          ad_2_calltime,
+          ad_3_calltime,
+          ad_4_calltime,
+          ad_5_calltime,
+          pro_assistant_1_calltime,
+          pro_assistant_2_calltime,
+          pro_assistant_3_calltime,
+          pro_assistant_4_calltime,
+          pro_assistant_5_calltime,
+          // ele/Grip
+          gaffer_calltime,
+          best_boy_electric_calltime,
+          electric_3_calltime,
+          electric_4_calltime,
+          keygrip_calltime,
+          best_boy_grip_calltime,
+          dolly_grip_calltime,
+          swing_ge1_calltime,
+          swing_ge2_calltime,
+          swing_ge3_calltime,
+          swing_ge4_calltime,
+          swing_ge5_calltime,
+          // locations
+          location_mngr_calltime,
+          location_security_calltime,
+          location_ass_1_calltime,
+          location_ass_2_calltime,
+          location_ass_3_calltime,
+          location_ass_4_calltime,
+          // makeup
+          key_hairmakeup_calltime,
+          key_hairstylist_calltime,
+          sfx_makeup_calltime,
+          sfx_makeup_assistant_calltime,
+          makeup_artist_1_calltime,
+          makeup_artist_2_calltime,
+          makeup_artist_3_calltime,
+          makeup_artist_4_calltime,
+          makeup_artist_5_calltime,
+          // post/add-pos
+          editor_calltime,
+          fx_calltime,
+          add_pos_1_calltime,
+          add_pos_2_calltime,
+          add_pos_3_calltime,
+          add_pos_4_calltime,
+          add_pos_5_calltime,
+          add_pos_6_calltime,
+          add_pos_7_calltime,
+          add_pos_8_calltime,
+          add_pos_9_calltime,
+          add_pos_10_calltime,
+          all_other_add_positions_calltimes,
+          // script/cater
+          writer_calltime,
+          catering_co_1_calltime,
+          catering_co_2_calltime,
+          catering_co_3_calltime,
+          craft_service_calltime,
+          crafty_ass_calltime,
+          // sound/transport
+          sound_mixer_calltime,
+          boom_operator_calltime,
+          sound_assistant_1_calltime,
+          sound_assistant_2_calltime,
+          transport_captain_calltime,
+          transport_manager_1_calltime,
+          transport_manager_2_calltime,
+          head_driver_calltime,
+          car1_calltime,
+          car2_calltime,
+          car3_calltime,
+          truck1_calltime,
+          truck2_calltime,
+          truck3_calltime,
+          // stunts
+          stunt_coordinator_calltime,
+          stunts_1_calltime,
+          stunts_2_calltime,
+          stunts_3_calltime,
+          stunts_4_calltime,
+          stunts_5_calltime,
+          // wardrobe
+          costume_designer_calltime,
+          ass_costume_designer_calltime,
+          wardrobe_assistant_1_calltime,
+          wardrobe_assistant_2_calltime,
+          wardrobe_assistant_3_calltime,
+          wardrobe_assistant_4_calltime,
+          wardrobe_assistant_5_calltime,
+        })
         setDataDay(dayGet.day);
         setDataDate(dayGet.date);
+        setHasLoaded(true);
         } catch (err) {
             console.log(err);
           }
@@ -591,7 +935,7 @@ const CallsheetCreate = () => {
     formData.append("wardrobe_assistant_4_calltime", wardrobe_assistant_4_calltime);
     formData.append("wardrobe_assistant_5_calltime", wardrobe_assistant_5_calltime);
     try {
-      await axiosReq.post("/callsheetsnew/", formData);
+      await axiosReq.put(`/callsheetsnew/${id}/`, formData);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -1316,33 +1660,35 @@ const CallsheetCreate = () => {
     </div>
   )
 
-const buttons = (
-  <div className={`text-center py-4 mb-3 mt-4 ${styles.White }`} >    
-    <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue}`}
-      onClick={() => history.goBack()}
-    >
-      Cancel
-    </Button>
-    <Button className={`ml-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-      Create
-    </Button>
-  </div>
-);
+  const buttons = (
+    <div className="text-center mt-4">    
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        onClick={() => history.goBack()}
+      >
+        Cancel
+      </Button>
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Create
+      </Button>
+    </div>
+  );
   
   return (
     <div>
-    <TopBox work="Callsheet Create"
-            title3={`Day ${dataDay} - ${dataDate} `} />
-    <Button
+    {hasLoaded ?(
+      <>
+      <TopBox work="Callsheet Edit"
+      title3={`Day ${dataDay} - ${dataDate} `} />
+      <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
         onClick={() => history.goBack()}
-    >
+      >
         Back
-    </Button>
-    {/* cast buttons */}
-    <h3 className={`text-center py-1 ${styles.SubTitle }`} >ADD CAST</h3> 
-    <Row className="text-center">
+      </Button>
+      {/* cast buttons */}
+      <h3 className={`text-center py-1 ${styles.SubTitle }`} >ADD CAST</h3> 
+      <Row className="text-center">
       <Col xs={10} md={{span: 8, offset: 2 }} >
         <p>Add each cast member and BG/Stand-in item separately. 
           This can be done on this page before the "Create" button 
@@ -1350,65 +1696,65 @@ const buttons = (
           from the Edit page. Each item can then be edited fron the Callsheet.
         </p>
       </Col>
-    </Row>
-    <div className= {`mb-3`}>
+      </Row>
+      <div className= {`mb-3`}>
       {/* schedule button */}
-    {/* schedule */}
-    <Row className='text-center'>
-    <Col  >
-    <Button
+      {/* schedule */}
+      <Row className='text-center'>
+      <Col  >
+      <Button
         className={`mt-3 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowSchedule(showSchedule => !showSchedule)} >View Schedule
-    </Button>
-    </Col>
-    </Row>
-    <Row className='text-center'>
-    <Col className='text-center mx-0 px-0' xs={6} md={4}>
-    <Button
+      </Button>
+      </Col>
+      </Row>
+      <Row className='text-center'>
+      <Col className='text-center mx-0 px-0' xs={6} md={4}>
+      <Button
         className={`mt-3 px-2 px-md-5 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Characters
-    </Button>
-    </Col>
-    <Col className='text-center mx-0 px-0' xs={6} md={4}  >
-    <Button
+      </Button>
+      </Col>
+      <Col className='text-center mx-0 px-0' xs={6} md={4}  >
+      <Button
         className={`my-3 px-2 px-md-5  ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Add Background
-    </Button>
-    </Col>
-    <Col xs={{span: 10, offset: 1}} md={4} className='text-center mx-0 px-0'  >
-    <Button
+      </Button>
+      </Col>
+      <Col xs={{span: 10, offset: 1}} md={4} className='text-center mx-0 px-0'  >
+      <Button
         className={`my-3 px-3 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowSideBySide(showSideBySide => !showSideBySide)} >
           Schedule and Cast Forms
-    </Button>
-    </Col>
-    </Row>
-    <div className="mt-3">
-    {!showSchedule ? (
+      </Button>
+      </Col>
+      </Row>
+      <div className="mt-3">
+      {!showSchedule ? (
       ""
-    ) : (
+      ) : (
       <>
       <CallsheetSchedule scenes={scenes} setShowSchedule={setShowSchedule} />
       </>
-    ) }
-    </div>
-    <div>
-    {!showAddCast ? (
+      ) }
+      </div>
+      <div>
+      {!showAddCast ? (
       ""
-    ) : (
+      ) : (
       <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
-    ) }
-    </div> 
-    <div>
-    {!showAddBg ? (
+      ) }
+      </div> 
+      <div>
+      {!showAddBg ? (
       ""
-    ) : (
+      ) : (
       <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
-    ) }
-    </div> 
-    {!showSideBySide ? (
+      ) }
+      </div> 
+      {!showSideBySide ? (
       ""
-    ) : (                      
+      ) : (                      
       <Row className="mx-0">
         <Col className="px-1" xs={6}>
         <CallsheetSchedule showSideBySide={showSideBySide} scenes={scenes} setShowSchedule={setShowSchedule} />
@@ -1422,22 +1768,22 @@ const buttons = (
           </div>
         </Col>
       </Row>             
-    ) }
-    </div>
-    {/* info */}
-    <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >ADD INFO AND CREW CALLS</h3> 
-    {/* <div className={`${styles.White }`}> 
-    <h4 className={` text-center mt-0 mb-0 py-1`} > INFO</h4> 
-    </div>
-    <h4 className={` text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > </h4>  */}
-    <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
-    <Row className="text-center">
+      ) }
+      </div>
+      {/* info */}
+      <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >ADD INFO AND CREW CALLS</h3> 
+      {/* <div className={`${styles.White }`}> 
+      <h4 className={` text-center mt-0 mb-0 py-1`} > INFO</h4> 
+      </div>
+      <h4 className={` text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > </h4>  */}
+      <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
+      <Row className="text-center">
       <Col xs={10} md={{span: 8, offset: 2 }} >
       </Col>
-    </Row>
-    {infoFields}
-    <h4 className={`text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > CREW CALLS</h4> 
-    <div className={`pt-2 ${styles.White }`}> 
+      </Row>
+      {infoFields}
+      <h4 className={`text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > CREW CALLS</h4> 
+      <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
         <Col xs={4} md={2} className='text-center'>
             <p
@@ -1515,14 +1861,14 @@ const buttons = (
         </Col>
       </Row>  
       <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-    </div>
-    <div className={`mt-0 ${styles.Crew }`}>
-    <Row>
+      </div>
+      <div className={`mt-0 ${styles.Crew }`}>
+      <Row>
       <Col xs={12} md={{span: 8, offset:2 }}>
       <p className="py-2 text-center"> Add all crew members to the Crew Info page first. Click on
         each department above and fill in the call times. Complete all departments before clicking Create.</p>
       </Col>
-    </Row>
+      </Row>
         {/* Add Production */}
         {!showPro ? (
           ""
@@ -1596,10 +1942,14 @@ const buttons = (
                 <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
                 ) } 
         </div>
-    {buttons}
-    </Form>
+      {buttons}
+      </Form>
+      </>
+    ) : (
+      ""
+    )}
     </div>
   )
 }
 
-export default CallsheetCreate
+export default CallsheetEditPage

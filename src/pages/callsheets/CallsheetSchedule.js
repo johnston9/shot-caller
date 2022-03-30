@@ -12,7 +12,7 @@ const CallsheetSchedule = ({scenes}) => {
     <div>
         {/* titles */}
         <div className='d-none d-md-block'>
-        <h5 className={`text-center my-3 py-0 mx-5 ${styles.SubTitle }`} >SCHEDULE</h5> 
+        <h5 className={`text-center mt-3 py-0 ${styles.SubTitle }`} >SCHEDULE</h5> 
             <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0 pl-2'>Edit</p>

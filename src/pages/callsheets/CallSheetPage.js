@@ -33,11 +33,7 @@ const CallSheetPage = () => {
                     axiosReq.get(`/backgroundcallsnew/?day_id=${id}`),
                     axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                 ])
-                // setCallsheet({ results: [callsheetdata] });
                 setCallsheet(callsheetdata);
-                console.log(callsheetdata);
-                // console.log(castcalldata);
-                // console.log(bgcalldata);
                 setCast(castcalldata);
                 setBackground(bgcalldata);
                 setScenes(scenes);

@@ -52,7 +52,7 @@ const CallCast = (props) => {
                 </Col>
             </Row>
             {/* inst */}
-            {/* {inst ? (
+            {inst ? (
             <Row className='px-3'>
                 <Col md={{span: 7, offset: 5} } className={`mb-0  ${styles.NextCall}`}>
                 <p className="mb-0" >{inst} </p>
@@ -63,7 +63,7 @@ const CallCast = (props) => {
                 <Col className={`mb-0 ${styles.NextCall}`}>
                 </Col>
             </Row> 
-            ) }      */}
+            ) }     
         </div>
         {/* mobile */}
         <div className='d-block d-md-none'>
@@ -80,7 +80,7 @@ const CallCast = (props) => {
                 <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Role</p>
                     <p className='mb-0'>{role}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4}>
                 <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Artist</p>
                     <p className='mb-0'>{artist}</p>
                 </Col>  
@@ -116,7 +116,7 @@ const CallCast = (props) => {
                 </Col>
             </Row> 
             ) : (<Row>
-            <Col className={`mb-0 pt-1 ${styles.NextCall}`}>
+            <Col className={`mb-0 py-1 ${styles.NextCall}`}>
             </Col>
         </Row>)  }      
         </div>

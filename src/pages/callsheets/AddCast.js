@@ -166,24 +166,23 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     
   return (
     <div className={`my-3 `}>
-      <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >ADD CHARACTER</h5> 
-      <div className={`my-3 ${styles.Back }`}>
-      <Row  >
-        <Col sm={{span: 8, offset: 2} }>
-        <div className={`px-2 my-2 py-1 ${styles.CastEntered }`} >
-        <p className="text-center mb-0">CAST ADDED</p>
+      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD CHARACTER</h5> 
+      <div className={`mb-3 ${styles.Back3 }`}>
+        {/* <p className="text-center">ADD CAST</p> */}
+      <Form className="text-center" onSubmit={handleSubmit}>
+      {/* Dropdown DropButt */}
+        <Row>
+        <Col xs={12} md={6}>
+        <p className="text-center pt-2 mb-0">CAST ADDED</p>
+        <div className={`px-2 py-1 ${styles.CastEntered }`} >
           {cast.results.length ? (
               cast.results.map((ca) => (
                 <spam key={ca.id}>{ca.role}, </spam>
               ))) : ("")}
           </div>
           </Col>
-      </Row>
-      <Form className="text-center" onSubmit={handleSubmit}>
-      {/* Dropdown DropButt */}
-        <Row>
-          <Col>
-          <DropdownButton id="dropdown-basic-button" className={`py-0 ${styles.DropButt}`} title="Select Role">
+          <Col xs={12} md={6}>
+          <DropdownButton id="dropdown-basic-button" className={`pt-2 ${styles.DropButt}`} title="Select Role">
           {characters.results.length && (
                 characters.results.map((character) => (
                   <Dropdown.Item onClick={() => setData(character) } key={character.id} >{character.role}</Dropdown.Item>
@@ -191,11 +190,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
           </DropdownButton>
           </Col>
         </Row>
-        <Row>
-          <Col>
-          <p>Makeup: {make_up_time} Commute: {commute_time} Address:{pickup_address} </p>
-          </Col>
-        </Row>
+        <p>Makeup: {make_up_time} Commute: {commute_time} Address:{pickup_address} </p>
             {/* role artist contact inst*/}
         <Row className="mx-0">
         <Col className="d-flex justify-content-center mx-0 "  xs={3}>

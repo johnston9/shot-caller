@@ -92,7 +92,7 @@
 }
 
 .CastEntered {
-  background-color: aliceblue;
+  background-color: #deedfa;
 }
 
 .Bold { 
@@ -176,32 +176,10 @@
   background-color: #eaf2fa;
 }
 
-.Width {
-  width: 70%;
-}
-
-.Width2 {
-  width: 80%;
-}
-
-.Width3 {
-  width: 80%;
-}
-
-/* .NextCall {
-  background-color: #14404f;
-  color: #fff;
-} */
-
 .NextCall {
   background-color: #fffff5;
   color: #000;
 }
-
-/* .NextCall {
-  background-color: antiquewhite;
-  color: #fff;
-} */
 
 .Drop i {
   color: #000;
