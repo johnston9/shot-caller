@@ -330,19 +330,19 @@ const CallSheet = (props ) => {
     <div className={`${styles.White} p-3`} >
         {/* top */}
         <div className='d-none d-md-block'>
-            <Row>
-                <Col className='text-center' md={{span: 10, offset: 1}}>
-                    <h1>{production_name}</h1>
-                    <p>{day_id} </p>
-                </Col>
-                <Col className='text-center' md={1}>
-                    <PostDropdown
-                        handleEdit={handleEdit}
-                        handleDelete={handleDelete}
-                    />
-                </Col>
-            </Row>
-        <Row >
+        <Row>
+            <Col className='text-center' md={{span: 10, offset: 1}}>
+                <h1>{production_name}</h1>
+                <p>{day_id} </p>
+            </Col>
+            <Col className='text-center' md={1}>
+                <PostDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                />
+            </Col>
+        </Row>
+        <Row className='px-3'>
             <Col md={4} >
             <div className='mt-3'>
             <h5>{production_company} </h5>
@@ -458,114 +458,111 @@ const CallSheet = (props ) => {
         </Row>
         </div>
         {/* Locations */}
-        {/* <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 py-1 ${styles.SubTitle }`}></p> */}
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Locations</span>
-        {/* Locations className={`my-0 py-0 px-3 ${styles.SubTitle }`} */}
-        {/* <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p> */}
-        <Row className={`my-0 py-0 px-3`}>
-            <Col className={`${styles.Border}`} xs={1} >
+        <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} >
             <p className='my-0 py-0'>#</p>
             </Col>
             <Col className={`${styles.Border} px-0 mx-0`} xs={5}>
-            <h5>Address</h5>
+            <p className='my-0 py-0'><span className='d-none d-sm-inline-block'>Name -</span> Address</p>
             </Col>
             <Col className={`${styles.Border} px-0 mx-0`} xs={6}>
-            <h5>Crew Parking and Notes</h5>
+            <p className='my-0 py-0'><span className='d-none d-sm-inline-block'>Crew Parking and </span> Notes</p>
             </Col>
         </Row>
         {basecamp_address ? (
             <Row className='px-3'>
-            <Col className={`${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 px-md-3 ${styles.Border}`} xs={1} >
             <p></p>
             </Col>
-            <Col className={`${styles.Border}`} xs={5}>
-            <p>Basecamp</p>
-            <p>{basecamp_name}</p>
-            <p>{basecamp_address}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <p className={`mb-0 ${styles.Bold}`} >Basecamp</p>
+            <p className={`mb-0 ${styles.Bold}`} >{basecamp_name}</p>
+            <p className='mb-0'>{basecamp_address}</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={6}>
-            <p>{basecamp_parking_n_notes}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <p className='mb-0'>{basecamp_parking_n_notes}</p>
             </Col>
             </Row>
         ) : (
             ""
         )}
         {location_1_address ? (
-            <Row>
-            <Col className={`${styles.Border}`} xs={1} >
-            <p>1</p>
+            <Row className='px-3'>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <p className={`mb-0 text-center ${styles.Bold}`}>1</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={5}>
-            <p className={`${styles.Bold}`} >{location_1_name}</p>
-            <p>{location_1_address}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <p className={`mb-0 ${styles.Bold}`} >{location_1_name}</p>
+            <p className='mb-0'>{location_1_address}</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={6}>
-            <p>{location_1_parking_n_notes}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <p className={`mb-0`}>{location_1_parking_n_notes}</p>
             </Col>
             </Row>
         ) : (
             ""
         )}
         {location_2_address ? (
-            <Row>
-            <Col className={`${styles.Border}`} xs={1} >
-            <p>2</p>
+            <Row className='px-3'>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <p className={`mb-0 text-center ${styles.Bold}`}>2</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={5}>
-            <p className={`${styles.Bold}`} >{location_2_name}</p>
-            <p>{location_2_address}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <p className={`mb-0 ${styles.Bold}`} >{location_2_name}</p>
+            <p className='mb-0'>{location_2_address}</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={6}>
-            <p>{location_2_parking_n_notes}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <p className={`mb-0`}>{location_2_parking_n_notes}</p>
             </Col>
             </Row>
         ) : (
             ""
         )}
         {location_3_address ? (
-            <Row>
-            <Col className={`${styles.Border}`} xs={1} >
-            <p>3</p>
+            <Row className='px-3'>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <p className={`mb-0 text-center ${styles.Bold}`}>3</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={5}>
-            <p className={`${styles.Bold}`} >{location_3_name}</p>
-            <p>{location_3_address}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <p className={`mb-0 ${styles.Bold}`} >{location_3_name}</p>
+            <p className='mb-0'>{location_3_address}</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={6}>
-            <p>{location_3_parking_n_notes}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <p className={`mb-0`}>{location_3_parking_n_notes}</p>
             </Col>
             </Row>
         ) : (
             ""
         )}
         {location_4_address ? (
-            <Row>
-            <Col className={`${styles.Border}`} xs={1} >
-            <p>4</p>
+            <Row className='px-3'>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <p className={`mb-0 text-center ${styles.Bold}`}>4</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={5}>
-            <p className={`${styles.Bold}`} >{location_4_name}</p>
-            <p>{location_4_address}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <p className={`mb-0 ${styles.Bold}`} >{location_4_name}</p>
+            <p className='mb-0'>{location_4_address}</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={6}>
-            <p>{location_4_parking_n_notes}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <p className={`mb-0`}>{location_4_parking_n_notes}</p>
             </Col>
             </Row>
         ) : (
             ""
         )}
         {location_5_address ? (
-            <Row>
-            <Col className={`${styles.Border}`} xs={1} >
-            <p>5</p>
+            <Row className='px-3'>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <p className={`mb-0 text-center ${styles.Bold}`}>5</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={5}>
-            <p className={`${styles.Bold}`} >{location_1_name}</p>
-            <p>{location_5_address}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <p className={`mb-0 ${styles.Bold}`} >{location_5_name}</p>
+            <p className='mb-0'>{location_5_address}</p>
             </Col>
-            <Col className={`${styles.Border}`} xs={6}>
-            <p>{location_5_parking_n_notes}</p>
+            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <p className={`mb-0`}>{location_5_parking_n_notes}</p>
             </Col>
             </Row>
         ) : (
@@ -613,6 +610,23 @@ const CallSheet = (props ) => {
                 </Col>
             </Row>
         </div>
+        <div className='d-block d-md-none'>
+            <Row className='text-center mx-0 px-0' >
+                <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Time</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
+                </Col>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Details</p>
+                </Col>
+                <Col className={`mx-0 px-0 `} xs={2} md={1}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Info</p>
+                </Col>
+            </Row>
+        </div>
+        {/* xxx */}
         <Row>
             <Col >                   
             {scenes.results.length ? (
@@ -643,9 +657,6 @@ const CallSheet = (props ) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Artist</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>Contact</p>
-                </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                 <p className='mb-0'>SWF</p>                        
                 </Col>
@@ -661,18 +672,25 @@ const CallSheet = (props ) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Set</p>
                 </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Info</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Edit</p>
+                </Col>
             </Row>
         </div>
         <Row>
             <Col>
             {cast.results.length ? (
-                cast.results.map((ca, index) => (
+                cast.results.map((cast_member, index) => (
                     <CallCast
                     // style={{ backgroundColor: (index % 3 === 0) 
                     //     ? '#dbfaf9' : (index % 2 === 0) ? 
                     //     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
-                        {...ca} 
-                        key={ca.id} />
+                        {...cast_member}
+                        cast_member={cast_member} 
+                        key={cast_member.id} />
                 ))) : ("")}
             </Col>
         </Row>

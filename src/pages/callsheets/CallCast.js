@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import CallCastInfo from './CallCastInfo';
+import { PostDropdown } from '../../components/PostDropdown';
 
 const CallCast = (props) => {
     useRedirect("loggedOut");
+    const [showInfo, setShowInfo] = useState(false);
     const { 
+      cast_member,
       cast_number,
       role,
       artist,
@@ -32,9 +38,6 @@ const CallCast = (props) => {
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
                     <p className='mb-0'>{artist}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{contact}</p>
-                </Col>
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} md={1}>
                 <p className='mb-0'>{swf}</p>                        
                 </Col>
@@ -50,20 +53,32 @@ const CallCast = (props) => {
                 <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
                     <p >{on_set}</p>
                 </Col>
-            </Row>
-            {/* inst */}
-            {inst ? (
-            <Row className='px-3'>
-                <Col md={{span: 7, offset: 5} } className={`mb-0  ${styles.NextCall}`}>
-                <p className="mb-0" >{inst} </p>
+                <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
+                <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                    I
+                </Button>
                 </Col>
-            </Row> 
-            ) : (
+                <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
+                <PostDropdown
+                        // className={`${styles.Drop }`}
+                        // handleEdit={handleEdit}
+                        // handleDelete={handleDelete}
+                    />
+                </Col>
+            </Row>
+            {/* info */}
+            <Row>
+                <Col>
+                    {!showInfo ?("") : (                       
+                    <CallCastInfo {...cast_member}/> 
+                    ) }
+                </Col>
+            </Row>
               <Row>
                 <Col className={`mb-0 ${styles.NextCall}`}>
                 </Col>
-            </Row> 
-            ) }     
+            </Row>  
         </div>
         {/* mobile */}
         <div className='d-block d-md-none'>

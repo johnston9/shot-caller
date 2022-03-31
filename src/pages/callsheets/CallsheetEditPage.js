@@ -42,7 +42,7 @@ const CallsheetEditPage = () => {
   // eslint-disable-next-line
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
-  const [callsheet, setCallsheet] = useState({ results: [] });
+  const [callsheet_id, setCallsheet_id] = useState({ results: [] });
   const [dataDay, setDataDay] = useState("");
   const [dataDate, setDataDate] = useState("");
   const [showPro, setShowPro] = useState(false);
@@ -230,7 +230,7 @@ const CallsheetEditPage = () => {
     wardrobe_assistant_5_calltime: "",
 })
 
-const { 
+  const { 
       // info
       unit_call,
       talent_call, 
@@ -405,16 +405,11 @@ const {
   useEffect(() => {
     const handleMount = async () => {
         try {
-          const [{ data: dayGet }, { data: scenes }, { data: callsheetdata }] = await Promise.all([
+          const [{ data: dayGet }, { data: scenesdata }, { data: callsheetdata }] = await Promise.all([
             axiosReq.get(`/days/${id}`),
             axiosReq.get(`/schedule/scenes/?day_id=${id}`),
-            axiosReq.get(`/callsheetsnew/?day_id=${id}`),
+            await axiosReq.get(`/callsheetsnew/?day_id=${id}`)
         ])
-        console.log(dayGet);
-        console.log(scenes);
-        console.log(callsheetdata);
-        setDayData({ results: [dayGet] });
-        setScenes(scenes);
         const { unit_call,
           talent_call, 
           shoot_call, 
@@ -452,7 +447,6 @@ const {
           walkie_channel_camera,
           walkie_channel_electric,
           walkie_channel_grip,
-          // production
           director_calltime,
           producer_calltime,
           pro_coordinator_calltime,
@@ -467,7 +461,6 @@ const {
           oth_production_pos_3_calltime,
           oth_production_pos_4_calltime,
           oth_production_pos_5_calltime,
-          // art
           art_director_calltime,
           art_assistant_calltime,
           set_decorator_calltime,
@@ -477,7 +470,6 @@ const {
           prop_master_calltime,
           ass_prop_master_calltime,
           prop_buyer_calltime,
-          // cam
           dop_calltime,
           camera_operator_calltime,
           camera_ass_1_calltime,
@@ -488,7 +480,6 @@ const {
           oth_camera_pos_1_calltime,
           oth_camera_pos_2_calltime,
           oth_camera_pos_3_calltime,
-          // casting
           casting_director_calltime,
           extras_casting_calltime,
           ad_1_calltime,
@@ -501,7 +492,6 @@ const {
           pro_assistant_3_calltime,
           pro_assistant_4_calltime,
           pro_assistant_5_calltime,
-          // ele/Grip
           gaffer_calltime,
           best_boy_electric_calltime,
           electric_3_calltime,
@@ -514,14 +504,12 @@ const {
           swing_ge3_calltime,
           swing_ge4_calltime,
           swing_ge5_calltime,
-          // locations
           location_mngr_calltime,
           location_security_calltime,
           location_ass_1_calltime,
           location_ass_2_calltime,
           location_ass_3_calltime,
           location_ass_4_calltime,
-          // makeup
           key_hairmakeup_calltime,
           key_hairstylist_calltime,
           sfx_makeup_calltime,
@@ -531,7 +519,6 @@ const {
           makeup_artist_3_calltime,
           makeup_artist_4_calltime,
           makeup_artist_5_calltime,
-          // post/add-pos
           editor_calltime,
           fx_calltime,
           add_pos_1_calltime,
@@ -545,14 +532,12 @@ const {
           add_pos_9_calltime,
           add_pos_10_calltime,
           all_other_add_positions_calltimes,
-          // script/cater
           writer_calltime,
           catering_co_1_calltime,
           catering_co_2_calltime,
           catering_co_3_calltime,
           craft_service_calltime,
           crafty_ass_calltime,
-          // sound/transport
           sound_mixer_calltime,
           boom_operator_calltime,
           sound_assistant_1_calltime,
@@ -567,14 +552,12 @@ const {
           truck1_calltime,
           truck2_calltime,
           truck3_calltime,
-          // stunts
           stunt_coordinator_calltime,
           stunts_1_calltime,
           stunts_2_calltime,
           stunts_3_calltime,
           stunts_4_calltime,
           stunts_5_calltime,
-          // wardrobe
           costume_designer_calltime,
           ass_costume_designer_calltime,
           wardrobe_assistant_1_calltime,
@@ -582,7 +565,8 @@ const {
           wardrobe_assistant_3_calltime,
           wardrobe_assistant_4_calltime,
           wardrobe_assistant_5_calltime,
-        } = callsheetdata;
+        } = callsheetdata.results[0];
+        setCallsheet_id(callsheetdata.results[0].id);
         setPostData({ unit_call,
           talent_call, 
           shoot_call, 
@@ -751,6 +735,8 @@ const {
           wardrobe_assistant_4_calltime,
           wardrobe_assistant_5_calltime,
         })
+        setDayData({ results: [dayGet] });
+        setScenes(scenesdata);
         setDataDay(dayGet.day);
         setDataDate(dayGet.date);
         setHasLoaded(true);
@@ -760,6 +746,7 @@ const {
     }
     handleMount();
     }, [id])
+
     
   const handleChange = (event) => {
     setPostData({
@@ -935,7 +922,9 @@ const {
     formData.append("wardrobe_assistant_4_calltime", wardrobe_assistant_4_calltime);
     formData.append("wardrobe_assistant_5_calltime", wardrobe_assistant_5_calltime);
     try {
-      await axiosReq.put(`/callsheetsnew/${id}/`, formData);
+      const {data} = await axiosReq.put(`/callsheetsnew/${callsheet_id}/`, formData);
+      console.log(data);
+      console.log(formData);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -1686,20 +1675,15 @@ const {
       >
         Back
       </Button>
-      {/* cast buttons */}
       <h3 className={`text-center py-1 ${styles.SubTitle }`} >ADD CAST</h3> 
       <Row className="text-center">
       <Col xs={10} md={{span: 8, offset: 2 }} >
-        <p>Add each cast member and BG/Stand-in item separately. 
-          This can be done on this page before the "Create" button 
-          for the Callsheet below is clicked or after the Callsheet is created 
-          from the Edit page. Each item can then be edited fron the Callsheet.
+        <p>Edit added items fron the Callsheet.
         </p>
       </Col>
       </Row>
       <div className= {`mb-3`}>
       {/* schedule button */}
-      {/* schedule */}
       <Row className='text-center'>
       <Col  >
       <Button
@@ -1708,6 +1692,7 @@ const {
       </Button>
       </Col>
       </Row>
+      {/* cast buttons */}
       <Row className='text-center'>
       <Col className='text-center mx-0 px-0' xs={6} md={4}>
       <Button
@@ -1729,6 +1714,7 @@ const {
       </Button>
       </Col>
       </Row>
+      {/* schedule */}
       <div className="mt-3">
       {!showSchedule ? (
       ""
@@ -1738,6 +1724,7 @@ const {
       </>
       ) }
       </div>
+      {/* add cast */}
       <div>
       {!showAddCast ? (
       ""
@@ -1745,6 +1732,7 @@ const {
       <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
       ) }
       </div> 
+      {/* add bg */}
       <div>
       {!showAddBg ? (
       ""
@@ -1752,6 +1740,7 @@ const {
       <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
       ) }
       </div> 
+      {/* SideBySide */}
       {!showSideBySide ? (
       ""
       ) : (                      
@@ -1782,6 +1771,7 @@ const {
       </Col>
       </Row>
       {infoFields}
+      {/* crew */}
       <h4 className={`text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > CREW CALLS</h4> 
       <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>

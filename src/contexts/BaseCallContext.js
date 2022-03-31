@@ -20,8 +20,6 @@ export const CrewInfoProvider = ({ children }) => {
           const { data } = await axiosReq.get(`/crewinfonew/`);
           setCrewInfo(data);
           setEditCrewInfo(false);
-          console.log(data);
-          console.log(crewInfo)
         } catch(err) {
           console.log(err);
         }
