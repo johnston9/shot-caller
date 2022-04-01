@@ -16,6 +16,7 @@ const Shot = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const [showImg, setShowImg] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);
+    
     const [shotNew, setShotNew] = useState({
         id: "",
         scene_id: "",

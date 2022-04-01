@@ -27,13 +27,7 @@ const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
         costumes: "",
     });
 
-    const { 
-        qty,
-        type,
-        call,
-        scenes,
-        set,
-        costumes } = postData;
+    const { qty, type, call, scenes, set, costumes } = postData;
 
     const handleChange = (event) => {
         setPostData({

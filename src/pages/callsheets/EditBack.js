@@ -8,25 +8,27 @@ import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
+const EditBack = (props) => {
     useRedirect("loggedOut");
-    const { id } = useParams();
     const [errors, setErrors] = useState({});
-    // const [background, setBackground] = useState({results: [] });
+
+    const { setBgNew, setShowEdit,
+        id1, day_id1, qty1, type1, call1, scenes1, set1, 
+        costumes1 } = props;
 
     const [postData, setPostData] = useState({
-        day_id: "",
-        qty: "",
-        type: "",
-        call: "",
-        scenes: "",
-        set: "",
-        costumes: "",
-    });
+        day_id: day_id1,
+        qty: qty1,
+        type: type1,
+        call: call1,
+        scenes: scenes1,
+        set: set1,
+        costumes: costumes1,
+        });
 
     const { 
         day_id,
@@ -36,36 +38,6 @@ const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
         scenes,
         set,
         costumes } = postData;
-
-    useEffect(() => {
-        const handleMount = async () => {
-            try {
-            const { data } = await axiosReq.get(`/backgroundcallsnew/${id}/`);
-            const {  day_id,
-                qty,
-                type,
-                call,
-                scenes,
-                set,
-                costumes } = data;
-        
-            setPostData({
-                day_id,
-                qty,
-                type,
-                call,
-                scenes,
-                set,
-                costumes });
-            } catch (err) {
-                console.log(err);
-            }
-        };
-
-        handleMount();
-        }, [id]);
-
-    const history = useHistory();
 
     const handleChange = (event) => {
         setPostData({
@@ -80,9 +52,6 @@ const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
     const formData = new FormData();
 
     formData.append("day_id", day_id);
-    // formData.append("shoot_day", dataDay);
-    // formData.append("shoot_date", dataDate);
-    formData.append("qty", qty);
     formData.append("type", type);
     formData.append("call", call);
     formData.append("scenes", scenes);
@@ -90,12 +59,18 @@ const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
     formData.append("costumes", costumes);
     
     try {
-        const { data } = await axiosReq.post(`/backgroundcallsnew/${id}/`, formData);
-        setShowAddBg((showAddBg) => !showAddBg)
-    //   setShotlist((prevShotlist) => ({
-    //     ...prevShotlist,
-    //     results: [data, ...prevShotlist.results],
-    //   }));
+        const { data } = await axiosReq.put(`/backgroundcallsnew/${id1}/`, formData);
+        const { id, day_id, qty, type,
+            call, scenes, set, costumes } = data;
+            setBgNew({id1: id,
+                day_id1: day_id,
+                qty1: qty,
+                type1: type,
+                call1: call,
+                scenes1: scenes,
+                set1: set,
+                costumes1: costumes});
+            setShowEdit((showEdit) => !showEdit)
     } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -107,18 +82,18 @@ const EditBack = ({setShowAddBg, dataDay, dataDate, id}) => {
     <div className="mb-2 text-center">    
         <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => setShowAddBg(showAddBg => !showAddBg)}
+        onClick={() => setShowEdit(showEdit => !showEdit)}
         >
         Cancel
         </Button>
         <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Add
+        Edit
         </Button>
     </div>
     );
 
 return (
-    <div className={`my-3 ${styles.Back }`}>
+    <div className={`my-3 ${styles.Back3 }`}>
     <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT BACKGROUND/STAND-INS</h5> 
     <Form className="text-center" onSubmit={handleSubmit}>
             {/* qty call set scenes*/}

@@ -8,27 +8,30 @@ import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
+const EditCast = (props) => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
-    // const [cast, setCast] = useState({results: [] });
+
+    const { setShowEdit, setCastNew,
+      id1, day_id1, cast_number1, role1, artist1, contact1,
+      swf1, pickup1, call1, hmw1, on_set1, inst1} = props
 
     const [postData, setPostData] = useState({
-        day_id: "",
-        cast_number: "",
-        role: "",
-        artist: "",
-        contact: "",
-        swf: "",
-        pickup: "",
-        call: "",
-        hmw: "",
-        on_set: "",
-        inst: "",
+        day_id: day_id1,
+        cast_number: cast_number1,
+        role: role1,
+        artist: artist1,
+        contact: contact1,
+        swf: swf1,
+        pickup: pickup1,
+        call: call1,
+        hmw: hmw1,
+        on_set: on_set1,
+        inst: inst1,
     });
 
     const { 
@@ -45,45 +48,6 @@ const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
         inst,
     } = postData;
 
-    useEffect(() => {
-        const handleMount = async () => {
-          try {
-            const { data } = await axiosReq.get(`/castcallsnew/${id}/`);
-            console.log(data)
-            const {  day_id,
-                cast_number,
-                role,
-                artist,
-                contact,
-                swf,
-                pickup,
-                call,
-                hmw,
-                on_set,
-                inst } = data;
-     
-            setPostData({
-                day_id,
-                cast_number,
-                role,
-                artist,
-                contact,
-                swf,
-                pickup,
-                call,
-                hmw,
-                on_set,
-                inst, });
-            } catch (err) {
-                console.log(err);
-            }
-        };
-
-        handleMount();
-      }, [id]);
-
-    const history = useHistory();
-
     const handleChange = (event) => {
         setPostData({
           ...postData,
@@ -97,8 +61,6 @@ const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
       const formData = new FormData();
   
       formData.append("day_id", day_id);
-      // formData.append("shoot_day", dataDay);
-      // formData.append("shoot_date", dataDate);
       formData.append("cast_number", cast_number);
       formData.append("role", role);
       formData.append("artist", artist);
@@ -111,12 +73,22 @@ const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
       formData.append("inst", inst);
     
       try {
-        const { data } = await axiosReq.put(`/castcallsnew/${id}/`, formData);
-        setShowCastEdit((showCastEdit) => !showCastEdit)
-      //   setShotlist((prevShotlist) => ({
-      //     ...prevShotlist,
-      //     results: [data, ...prevShotlist.results],
-      //   }));
+        const { data } = await axiosReq.put(`/castcallsnew/${id1}/`, formData);
+        const { id, day_id, cast_number, role, artist, contact,
+          swf, pickup, call, hmw, on_set, inst } = data;
+        setCastNew({id1: id,
+          day_id1: day_id,
+          cast_number1: cast_number,
+          role1: role,
+          artist1: artist,
+          contact1: contact,
+          swf1: swf,
+          pickup1: pickup,
+          call1: call,
+          hmw1: hmw,
+          on_set1: on_set,
+          inst1: inst,});
+        setShowEdit((showEdit) => !showEdit)
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -128,18 +100,18 @@ const EditCast = ({setShowCastEdit, dataDay, dataDate, id}) => {
       <div className="mb-2 text-center">    
         <Button
           className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => setShowCastEdit(showCastEdit => !showCastEdit)}
+          onClick={() => setShowEdit(showEdit => !showEdit)}
         >
           Cancel
         </Button>
         <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Add
+          Edit
         </Button>
       </div>
     );
     
   return (
-    <div className={`my-3 ${styles.Back }`}>
+    <div className={`my-3 ${styles.Back3 }`}>
       <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT CHARACTER</h5> 
       <p className="text-center mb-0">Cast Added</p>
       <Form className="text-center" onSubmit={handleSubmit}>

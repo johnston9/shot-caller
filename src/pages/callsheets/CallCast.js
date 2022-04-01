@@ -7,51 +7,101 @@ import btnStyles from "../../styles/Button.module.css";
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import CallCastInfo from './CallCastInfo';
 import { PostDropdown } from '../../components/PostDropdown';
+import { axiosReq } from '../../api/axiosDefaults';
+import { useHistory } from "react-router";
+import EditCast from './EditCast';
 
 const CallCast = (props) => {
     useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
+    const [showEdit, setShowEdit] = useState(false);
+
     const { 
-      cast_member,
-      cast_number,
-      role,
-      artist,
-      contact,
-      swf,
-      pickup,
-      call,
-      hmw,
-      on_set,
-      inst,
-  }= props
+        id,
+        day_id,
+        cast_member,
+        cast_number,
+        role,
+        artist,
+        contact,
+        swf,
+        pickup,
+        call,
+        hmw,
+        on_set,
+        inst,
+      } = props
+
+    const [castNew, setCastNew] = useState({
+        id1: id,
+        day_id1: day_id,
+        cast_number1: cast_number,
+        role1: role,
+        artist1: artist,
+        contact1: contact,
+        swf1: swf,
+        pickup1: pickup,
+        call1: call,
+        hmw1: hmw,
+        on_set1: on_set,
+        inst1: inst,
+    });
+
+    const { 
+        day_id1,
+        cast_number1,
+        role1,
+        artist1,
+        contact1,
+        swf1,
+        pickup1,
+        call1,
+        hmw1,
+        on_set1,
+        inst1,
+      } = castNew;
+
+    const history = useHistory();
+
+    const handleEdit = () => {
+        setShowEdit(showEdit => !showEdit)
+      };
+    
+    const handleDelete = async () => {
+        try {
+            await axiosReq.delete(`/castcallsnew/${id}/`);
+            history.goBack();
+        } catch (err) {
+        }
+    };
 
     return (
         <div className={` ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
             <Row className='text-center mx-0' >
                 <Col className={`mx-0 px-0  ${styles.Border}`} xs={1} md={1}>
-                    <p className='mb-0'>{cast_number}</p>
+                    <p className='mb-0'>{cast_number1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{role}</p>
+                    <p className='mb-0'>{role1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{artist}</p>
+                    <p className='mb-0'>{artist1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} md={1}>
-                <p className='mb-0'>{swf}</p>                        
+                <p className='mb-0'>{swf1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} md={1}>
-                    <p >{pickup}</p>
+                    <p >{pickup1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} md={1}>
-                <p className='mb-0'>{call}</p>                        
+                <p className='mb-0'>{call1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
-                    <p >{hmw}</p>
+                    <p >{hmw1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
-                    <p >{on_set}</p>
+                    <p >{on_set1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
@@ -61,22 +111,32 @@ const CallCast = (props) => {
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
                 <PostDropdown
-                        // className={`${styles.Drop }`}
-                        // handleEdit={handleEdit}
-                        // handleDelete={handleDelete}
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
                     />
                 </Col>
             </Row>
-            {/* info */}
+            {/* info cast_member castNew */}
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <CallCastInfo {...cast_member}/> 
+                    <CallCastInfo {...castNew}/> 
                     ) }
                 </Col>
             </Row>
               <Row>
                 <Col className={`mb-0 ${styles.NextCall}`}>
+                </Col>
+            </Row>
+            {/* edit */}
+            <Row>
+                <Col>
+                    {!showEdit ?("") : (                       
+                    <EditCast
+                    setCastNew={setCastNew}
+                    setShowEdit={setShowEdit}
+                    {...castNew}/> 
+                    ) }
                 </Col>
             </Row>  
         </div>

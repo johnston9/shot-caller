@@ -2,6 +2,15 @@
     min-height: 100px;
   }
 
+/* .WhiteAqua {
+  background-color: f6fffe;
+} */
+
+.WhiteAqua {
+  background-color: #f6fffe;
+}
+
+
 .Close {
   color: rgb(28, 131, 131);
   padding-right: 30px;
