@@ -6,37 +6,39 @@ import styles from "../../styles/ScheduleCreate.module.css";
 const SchedSceneInfo = (props) => {
     useRedirect("loggedOut");
      const { title, dramatic_day, location_address,
-            equip_set_props, new_info,
+            equip_set_props, new_info, filming_location,
             department_info } = props
     return (
-        <div className={`mb-2 mx-5 pb-2 px-5 ${styles.SceneBox}`}>
-            {/* <p className={`text-center mt-1 mb-0 ${styles.Bold}`}>Day {day} - {date} </p>
-            <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
+        <div className={`mb-2 mx-3 pb-2`}>
             <Row className='text-center'>
-                <Col className='mx-0 px-0' xs={12} md={6} >
-                <span className={`mb-0 mt-2 px-5 ${styles.BoldTitle }`} >Heading - DD </span>
-                <p className='mb-0'>{title} - {dramatic_day} </p>
+                <Col className={`mx-0 px-0 mb-0 ${styles.TitleBox2 }`} xs={6} >
+                <p className={`mb-0 ${styles.TitleBox }`} >Heading - DD </p>
+                <p style={{ textTransform: 'italic' }} className='mb-0'>{title} - {dramatic_day} </p>
                 {/* <hr className='my-0'/> */}
                 </Col>
-                <Col className='mx-0 px-0' xs={12} md={6} >
-                <span className={`mb-0 mt-2 px-5 ${styles.BoldTitle }`} >Shoot Address </span>
-                <p className='mb-0'>{location_address} </p>
+                <Col className={`mx-0 px-0 mb-0 `} xs={6} >
+                <p className={`mb-0 ${styles.TitleBox }`} >Location Name </p>
+                <p className='mb-0'>{filming_location} </p>
                 </Col>
             </Row>
             <Row className='text-center'>
-                <Col className='mx-0 px-0' xs={12} md={6}>
-                <span className={`mb-0 mt-2 px-4 ${styles.BoldTitle }`}>Equip Set Props</span>
-                <p className='mb-0'><span style={{ textTransform: 'italic' }} >{equip_set_props} </span> </p>
+                <Col className={`mx-0 px-0 mb-0 ${styles.TitleBox2 }`} xs={6}>
+                <p className={`mb-0 ${styles.TitleBox }`}>Equip Set Props</p>
+                <p className='mb-0' >{equip_set_props} </p>
                 </Col>
-                <Col className='mx-0 px-0' xs={12} md={6}>
-                <span className={`mb-0 mt-2 px-5 ${styles.BoldTitle }`}>New Info</span>
-                <p className='mb-0'><span style={{ textTransform: 'italic' }} >{new_info} </span> </p>
+                <Col className='mx-0 px-0' xs={6}>
+                <p className={`mb-0 ${styles.TitleBox }`}>Location Address</p>
+                <p className='mb-0' >{location_address} </p>
                 </Col>
             </Row>
             <Row className='text-center'>
-                <Col className='mx-0 px-0' xs={12} >
-                <span className={`mb-0 mt-2 px-3 ${styles.BoldTitle }`} >Department Info </span>
+                <Col className={`mx-0 px-0 mb-0 ${styles.TitleBox2 }`} xs={6}>
+                <p className={`mb-0 mt-2 ${styles.TitleBox }`} >Department Info </p>
                 <p className='mb-0'>{department_info} </p>
+                </Col>
+                <Col className='mx-0 px-0' xs={6}>
+                <p className={`mb-0 mt-2 ${styles.TitleBox }`}>New Info</p>
+                <p className='mb-0'><span >{new_info} </span> </p>
                 </Col>
             </Row>
         </div>

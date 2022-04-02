@@ -140,7 +140,7 @@ const CallCast = (props) => {
                 </Col>
             </Row>  
         </div>
-        {/* mobile */}
+        {/* MOBILE */}
         <div className='d-block d-md-none'>
             <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>

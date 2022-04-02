@@ -2,6 +2,16 @@
     min-height: 100px;
   }
 
+.Info {
+  color: #8f2544;
+  cursor: pointer;
+}
+
+.Info:hover {
+  color: #e8dce0;
+}
+
+
 .Back {
   background-color: aliceblue;
 }

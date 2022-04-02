@@ -344,7 +344,7 @@ const CallSheet = (props ) => {
         </Row>
         <Row className='px-3'>
             <Col md={4} >
-            <div className={`${styles.WhiteAqua} px-1 mt-3`} >
+            <div className={`${styles.WhiteAqua} px-1`} >
             <h5>{production_company} </h5>
             <p className='mb-0'>{company_address_line_1} </p>
             <p className='mb-0'>{company_address_line_2} </p>
@@ -354,11 +354,11 @@ const CallSheet = (props ) => {
             <p className='mb-0'>{company_email} </p>
             </div>
             <div className={`${styles.WhiteAqua} px-1 mt-3`}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Producer:</span ><span className='pl-4'>{producer_name}</span> </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-4'>{pro_coordinator_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-4'>{producer_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-4 ml-3'>{ad_1_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name}</span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Producer:</span ><span className='pl-4'>{producer_name} {producer_phone}</span> </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-4'>{pro_coordinator_name} {pro_coordinator_phone}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-4'>{producer_name} {producer_name}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-4 ml-3'>{ad_1_name} {ad_1_phone}</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name} {dop_phone}</span> </p>
             </div>
             </Col>
             <Col  md={4} className='text-center'  >
@@ -376,8 +376,8 @@ const CallSheet = (props ) => {
             <h5>{location_1_address} </h5>
             </div>
             </Col>
-            <Col   md={4}>
-            <div className={`${styles.WhiteAqua} px-1 mt-3`}>
+            <Col md={4}>
+            <div className={`${styles.WhiteAqua} px-1`}>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span ><span className='pl-4'>{weather_location} </span> </p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span><span className='pl-2'>{weather_location}</span></p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span><span className='pl-5'>{weather_location}</span></p>
@@ -401,7 +401,7 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         </div>
-        {/* mobile */}
+        {/* mobile top */}
         <div className='d-block d-md-none'>
         <Row >
         <Col xs={12} className='text-center'  >
@@ -576,9 +576,9 @@ const CallSheet = (props ) => {
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Important Notes</span>
         <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
-        <Row>
-            <Col>
-            <p className={`px-3 ${styles.SubTitle }`}>{important_info} </p>
+        <Row className='px-3'>
+            <Col className={`px-1 ${styles.Border }`}>
+            <p className={`px-1`}>{important_info} </p>
             </Col>
         </Row>
         </div>
@@ -732,9 +732,9 @@ const CallSheet = (props ) => {
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Transport Notes</span>
         <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
-        <Row>
-            <Col>
-            <p>{transport_info} </p>
+        <Row className='px-3'>
+            <Col className={`px-1 ${styles.Border }`}>
+            <p className={`px-1`}>{transport_info} </p>
             </Col>
         </Row>
         </div>
@@ -742,9 +742,9 @@ const CallSheet = (props ) => {
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Department Notes</span>
         <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
-        <Row>
-            <Col>
-            <p>{department_info} </p>
+        <Row className='px-3'>
+            <Col className={`px-1 ${styles.Border }`}>
+            <p className={`px-1`}>{department_info} </p>
             </Col>
         </Row>
         </div>

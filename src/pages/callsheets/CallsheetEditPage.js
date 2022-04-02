@@ -39,6 +39,7 @@ const CallsheetEditPage = () => {
   const [showAddBg, setShowAddBg] = useState(false);
   const [showSideBySide, setShowSideBySide] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const callsheetshed = true;
   // eslint-disable-next-line
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
@@ -1720,7 +1721,7 @@ const CallsheetEditPage = () => {
       ""
       ) : (
       <>
-      <CallsheetSchedule scenes={scenes} setShowSchedule={setShowSchedule} />
+      <CallsheetSchedule scenes={scenes} callsheetshed={callsheetshed} setShowSchedule={setShowSchedule} />
       </>
       ) }
       </div>
@@ -1746,7 +1747,7 @@ const CallsheetEditPage = () => {
       ) : (                      
       <Row className="mx-0">
         <Col className="px-1" xs={6}>
-        <CallsheetSchedule showSideBySide={showSideBySide} scenes={scenes} setShowSchedule={setShowSchedule} />
+        <CallsheetSchedule showSideBySide={showSideBySide} callsheetshed={callsheetshed} scenes={scenes} setShowSchedule={setShowSchedule} />
         </Col>
         <Col xs={6}>
           <div>

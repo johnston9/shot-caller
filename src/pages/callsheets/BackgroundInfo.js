@@ -3,7 +3,7 @@ import { useRedirect } from '../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../styles/Callsheets.module.css";
 
-const BaclgroundInfo = (props) => {
+const BackgroundInfo = (props) => {
     useRedirect("loggedOut");
     const { scenes, set, costumes } = props
   return (
@@ -26,4 +26,4 @@ const BaclgroundInfo = (props) => {
   )
 }
 
-export default BaclgroundInfo
+export default BackgroundInfo

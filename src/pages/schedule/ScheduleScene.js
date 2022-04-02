@@ -18,8 +18,9 @@ const ScheduleScene = (props) => {
     const [show, setShow] = useState(false);
     const [showOrder, setShowOrder] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
+    const admin = false;
     const {sceneAll, id, day_id, number, int_ext, start_time, end_time,
-        location, filming_location, day_night, action, pages,
+        location, filming_location, day_night, action, pages, callsheetshed,
         new_info, day_order_number, setHasOrder, style, showSideBySide } = props
         
         const handleEdit = () => {
@@ -38,34 +39,65 @@ const ScheduleScene = (props) => {
         <div style={style} className={` ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
             <Row className='pt-2 text-center mx-0' >
-                {/* edit */}
-                <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Re-Order</Tooltip>}
-                    >
-                    <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed} py-0 `}>
-                        {day_order_number}
-                    </Button>
-                </OverlayTrigger>
-                    <PostDropdown
-                        className={`${styles.Drop }`}
-                        handleEdit={handleEdit}
-                        handleDelete={handleDelete}
-                    />
-                </Col>
-                <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>{start_time}</p>
-                    <p className='mb-0'>{end_time}</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>{number}</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
-                    <p className='mb-0'>{action}</p>
-                </Col>
+                {admin ? (
+                    <>
+                {callsheetshed ? (
+                    <>
+                    <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
+                        <p className='mb-0'>{start_time}</p>
+                    </Col>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                        <p className='mb-0'>{number}</p>
+                    </Col>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
+                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                        <p className='mb-0'>{action}</p>
+                    </Col>
+                    </>
+                ) : (
+                    <>
+                    <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Re-Order</Tooltip>}
+                        >
+                        <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
+                            className={`${btnStyles.Button} ${btnStyles.Shed} py-0 `}>
+                            {day_order_number}
+                        </Button>
+                    </OverlayTrigger>
+                        <PostDropdown
+                            className={`${styles.Drop }`}
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                    </Col>
+                    <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
+                        <p className='mb-0'>{start_time}</p>
+                    </Col>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                        <p className='mb-0'>{number}</p>
+                    </Col>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                        <p className='mb-0'>{action}</p>
+                    </Col>
+                    </>
+                )}
+                </>) : (
+                    <>
+                        <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
+                            <p className='mb-0'>{start_time}</p>
+                        </Col>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                            <p className='mb-0'>{number}</p>
+                        </Col>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
+                            <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                            <p className='mb-0'>{action}</p>
+                        </Col>
+                        </>
+                ) }
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{day_night}</p>
                 </Col>
@@ -149,58 +181,73 @@ const ScheduleScene = (props) => {
             {/* schedule */}
             <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Times</p>
                     <p className={`mb-0  ${styles.TitleBox2}`}>{start_time}</p>
-                    <p className='mb-0'>{end_time}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Scene</p>
                     <p className='mb-0'>{number}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>D/N</p>
-                    <p className='mb-0'>{day_night}</p>
-                </Col>  
-                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
-                <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Details</p>
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} {day_night}</p>
                     <p className='mb-0'>{action}</p>
                 </Col>
             </Row>
             {/* sechedule */}
             <Row className='mt-2 text-center mx-0 px-0'>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} >
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Info</p>
-                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-                        Info
-                    </Button>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4}>
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Filming</p>
-                <p className='mb-0'>{filming_location}</p>                        
+                {/* order */}
+            {admin ? (
+                    <>
+                {callsheetshed ? (
+                    <Col xs={2}></Col>
+                ) : (
+                    <>
+                    <hr className=' my-0'></hr>
+                    <Col className={`text-center mx-0 px-0 mt-0 pt-0`} xs={2} >
+                        <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
+                            className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-3`}>
+                            {day_order_number}
+                        </Button>
+                    </Col> 
+                    </>
+                )}
+                </>) : (
+                    <>
+                    <Col xs={2} ></Col>
+                    </>
+                    ) }    
+                <Col xs={2}></Col>         
+                {/* info */}
+                <Col className={`mx-0 px-0`} xs={2} >
+                    <p onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`mb-0 ${styles.Info}`}>
+                        INFO
+                    </p>
                 </Col>
                 {/* cast */}
-                    <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Cast</p>
-                    <Button onClick={() => setShow(show => !show)} 
-                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-                    Cast
-                    </Button>
-                </Col>               
-                {/* edit */}
-                <Col className={`text-center mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={3} >
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Edit</p>
-                    <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed} px-4`}>
-                        {day_order_number}
-                    </Button>
-                    <PostDropdown
-                        className={`${styles.Drop }`}
-                        handleEdit={handleEdit}
-                        handleDelete={handleDelete}
-                    />
-                </Col>
+                <Col className={`text-center mx-0 px-0 `} xs={2}>
+                    <p onClick={() => setShow(show => !show)} 
+                    className={`mb-0 ${styles.Info}`}>
+                    CAST
+                    </p>
+                </Col>  
+                <Col xs={2}></Col>
+                {admin ? (
+                    <>
+                {callsheetshed ? (
+                    <Col xs={2}></Col>
+                ) : (
+                <Col className={`text-center mx-0 px-0 mt-0 pt-0`} xs={1} >
+                <PostDropdown
+                    className={`${styles.Drop }`}
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                />
+            </Col> 
+                )}
+                </>) : (
+                    <>
+                    <Col xs={2} ></Col>
+                    </>
+                    ) }              
             </Row>
             {/* Order  */}
             {!showOrder ?("") : (                       
@@ -247,3 +294,47 @@ const ScheduleScene = (props) => {
 }
 
 export default ScheduleScene
+
+// {callsheetshed ? (
+//     <>
+//     <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
+//         <p className='mb-0'>{start_time}</p>
+//     </Col>
+//     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+//         <p className='mb-0'>{number}</p>
+//     </Col>
+//     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
+//         <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+//         <p className='mb-0'>{action}</p>
+//     </Col>
+//     </>
+// ) : (
+//     <>
+//     <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
+//     <OverlayTrigger
+//         placement="top"
+//         overlay={<Tooltip>Re-Order</Tooltip>}
+//         >
+//         <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
+//             className={`${btnStyles.Button} ${btnStyles.Shed} py-0 `}>
+//             {day_order_number}
+//         </Button>
+//     </OverlayTrigger>
+//         <PostDropdown
+//             className={`${styles.Drop }`}
+//             handleEdit={handleEdit}
+//             handleDelete={handleDelete}
+//         />
+//     </Col>
+//     <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
+//         <p className='mb-0'>{start_time}</p>
+//     </Col>
+//     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+//         <p className='mb-0'>{number}</p>
+//     </Col>
+//     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+//         <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+//         <p className='mb-0'>{action}</p>
+//     </Col>
+//     </>
+// )}

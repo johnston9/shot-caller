@@ -28,6 +28,7 @@ const DayPage = () => {
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
     const [hasOrder, setHasOrder] = useState(false);
+    const admin = false;
 
     useEffect(() => {
         const handleMount = async () => {
@@ -65,7 +66,7 @@ const DayPage = () => {
             {hasLoaded ? (
                 <>
                 {/* <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} /> */}
-                {/* add scene setShowCall */}
+                {/* add scene */}
                 <Row className='my-4'>
                     <Col xs={6} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
@@ -87,21 +88,37 @@ const DayPage = () => {
                     )}
                 </Row>
                 {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
-                {/* titles */}
+                {/* titles*/}
                 <div className='d-none d-md-block'>
                 <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    {admin ? (
+                        <>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0 pl-2'>Edit</p>
-                    </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>Times</p>
-                    </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>Scene</p>
-                    </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                        <p className='mb-0'>Details</p>
-                    </Col>
+                        </Col>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                            <p className='mb-0'>Time</p>
+                        </Col>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                            <p className='mb-0'>Scene</p>
+                        </Col>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                            <p className='mb-0'>Details</p>
+                        </Col>
+                        </>
+                    ) : (
+                        <>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                            <p className='mb-0'>Times</p>
+                        </Col>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                            <p className='mb-0'>Scene</p>
+                        </Col>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
+                            <p className='mb-0'>Details</p>
+                        </Col>
+                        </>
+                    )}
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>D/N</p>
                     </Col>
@@ -117,6 +134,20 @@ const DayPage = () => {
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>Info</p>
                     </Col>
+                </Row>
+                </div>
+                {/* mobile */}
+                <div className='d-block d-md-none'>
+                <Row className='text-center mx-0 px-0' >
+                <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Time</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
+                </Col>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Details</p>
+                </Col>
                 </Row>
                 </div>
                 {/* scenes */}

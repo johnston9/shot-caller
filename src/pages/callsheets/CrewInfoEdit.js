@@ -548,6 +548,7 @@ const CrewInfoEdit = () => {
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
           company_address_line_4, company_logo, total_shoot_days,
+          director_name, director_email, director_phone,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
           upm_name, upm_email, upm_phone,
@@ -672,6 +673,7 @@ const CrewInfoEdit = () => {
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
           company_address_line_4, company_logo, total_shoot_days,
+          director_name, director_email, director_phone,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
           upm_name, upm_email, upm_phone,
@@ -1212,7 +1214,7 @@ const CrewInfoEdit = () => {
       const {data} = await axiosReq.put(`/crewinfonew/${id}/`, formData);
       setEditCrewInfo(true);
       console.log(data)
-      history.push(`/callsheets/`);
+      history.goBack();
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -8010,7 +8012,7 @@ const CrewInfoEdit = () => {
               className={`${styles.Input}`}
               type="text"
               name="add_pos_3_job"
-              value={add_pos_1_job}
+              value={add_pos_3_job}
               onChange={handleChange}
                   />
           </Form.Group>
@@ -8046,7 +8048,7 @@ const CrewInfoEdit = () => {
               className={`${styles.Input}`}
               type="text"
               name="add_pos_3_email"
-              value={add_pos_1_email}
+              value={add_pos_3_email}
               onChange={handleChange}
                   />
           </Form.Group>
