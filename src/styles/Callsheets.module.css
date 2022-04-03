@@ -28,6 +28,7 @@
 .dropdown-toggle.btn.btn-primary {
   color: #000
 }
+
 .Close:hover {
   color: rgb(0, 8, 8);
 }
@@ -59,6 +60,12 @@
 .UnitCall {
   background-color: #c1f1f7;
   color: #000;
+}
+
+.UnitCallBorder {
+  background-color: #c1f1f7;
+  color: #000;
+  border: 2px solid #e8f0f1;
 }
 
 .Titles {

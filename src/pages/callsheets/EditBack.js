@@ -93,7 +93,7 @@ const EditBack = (props) => {
     );
 
 return (
-    <div className={`my-3 ${styles.Back3 }`}>
+    <div className={` ${styles.Back3 }`}>
     <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT BACKGROUND/STAND-INS</h5> 
     <Form className="text-center" onSubmit={handleSubmit}>
             {/* qty call set scenes*/}

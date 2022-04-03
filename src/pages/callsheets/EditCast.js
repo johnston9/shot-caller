@@ -111,8 +111,10 @@ const EditCast = (props) => {
     );
     
   return (
-    <div className={`my-3 ${styles.Back3 }`}>
-      <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT CHARACTER</h5> 
+    <div >
+      <Row>
+        <Col className={` ${styles.Back3 }`} xs={12} md={{span: 8, offset: 2 }} >
+        <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT CHARACTER</h5> 
       <p className="text-center mb-0">Cast Added</p>
       <Form className="text-center" onSubmit={handleSubmit}>
             {/* role artist contact inst*/}
@@ -301,6 +303,8 @@ const EditCast = (props) => {
           </Col>
         </Row>
         </Form>
+        </Col>
+      </Row>
     </div>
   )
 }

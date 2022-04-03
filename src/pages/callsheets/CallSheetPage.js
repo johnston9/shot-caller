@@ -22,6 +22,7 @@ const CallSheetPage = () => {
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
+    const admin = true;
 
     useEffect(() => {
         const handleMount = async () => {
@@ -67,6 +68,7 @@ const CallSheetPage = () => {
                 scenes={scenes}
                 cast={cast}
                 background={background}
+                admin={admin}
                 />
             ) : (
                 ""

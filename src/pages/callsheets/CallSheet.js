@@ -9,6 +9,7 @@ import CallCast from './CallCast';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useHistory } from "react-router";
 import { PostDropdown } from '../../components/PostDropdown';
+import Background from './Background';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -142,6 +143,7 @@ const CallSheet = (props ) => {
         all_other_add_positions } = crewInfoOne || {};
 
     const { scenes,
+        admin,
         cast,
         background,
         id, 
@@ -463,7 +465,7 @@ const CallSheet = (props ) => {
         {/* Locations */}
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Locations</span>
-        <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
+        <Row style={{ textTransform: 'uppercase' }} className={` text-center mx-0  ${styles.TitleBox}`} >
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} >
             <p className='my-0 py-0'>#</p>
             </Col>
@@ -475,16 +477,16 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         {basecamp_address ? (
-            <Row className='px-3'>
-            <Col className={`mx-0 px-0 px-md-3 ${styles.Border}`} xs={1} >
+            <Row className='px-3 '>
+            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={1} >
             <p></p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
             <p className={`mb-0 ${styles.Bold}`} >Basecamp</p>
             <p className={`mb-0 ${styles.Bold}`} >{basecamp_name}</p>
             <p className='mb-0'>{basecamp_address}</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
             <p className='mb-0'>{basecamp_parking_n_notes}</p>
             </Col>
             </Row>
@@ -492,16 +494,16 @@ const CallSheet = (props ) => {
             ""
         )}
         {location_1_address ? (
-            <Row className='px-3'>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <Row className=' px-3'>
+            <Col className={`mx-0 px-0 px-md-3 ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>1</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_1_name}</p>
             <p className='mb-0'>{location_1_address}</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
-            <p className={`mb-0`}>{location_1_parking_n_notes}</p>
+            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={6}>
+            <p className={`mb-0 py-1`}>{location_1_parking_n_notes}</p>
             </Col>
             </Row>
         ) : (
@@ -512,11 +514,11 @@ const CallSheet = (props ) => {
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>2</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_2_name}</p>
             <p className='mb-0'>{location_2_address}</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
             <p className={`mb-0`}>{location_2_parking_n_notes}</p>
             </Col>
             </Row>
@@ -528,11 +530,11 @@ const CallSheet = (props ) => {
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>3</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_3_name}</p>
             <p className='mb-0'>{location_3_address}</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
             <p className={`mb-0`}>{location_3_parking_n_notes}</p>
             </Col>
             </Row>
@@ -544,11 +546,11 @@ const CallSheet = (props ) => {
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>4</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_4_name}</p>
             <p className='mb-0'>{location_4_address}</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
             <p className={`mb-0`}>{location_4_parking_n_notes}</p>
             </Col>
             </Row>
@@ -560,11 +562,11 @@ const CallSheet = (props ) => {
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>5</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_5_name}</p>
             <p className='mb-0'>{location_5_address}</p>
             </Col>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
             <p className={`mb-0`}>{location_5_parking_n_notes}</p>
             </Col>
             </Row>
@@ -586,7 +588,6 @@ const CallSheet = (props ) => {
         <div className='mt-5'>
         <h4 className={`mt-3 pl-3 mb-1 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>
             Schedule <span className={`mt-3 pl-3 py-0 px-1 ${styles.HSpan }`} >xx Pages</span></h4>
-        {/* <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p> */}
         {/* titles */}
         <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
@@ -675,11 +676,38 @@ const CallSheet = (props ) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Set</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                {admin ? (
+                    <>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Info</p>
+                    </Col>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                        <p className='mb-0'>Edit</p>
+                    </Col>
+                    </>
+                ): (
+                    <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>Info</p>
+                    </Col>
+                )}
+            </Row>
+        </div>
+        <div className='d-block d-md-none'>
+            <Row className='text-center mx-0 px-0' >
+                <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>#</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Edit</p>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Role</p>
+                </Col>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Artist</p>
+                </Col>
+                <Col className={`mx-0 px-0 `} xs={2} md={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Call</p>
+                </Col>
+                <Col className={`mx-0 px-0 `} xs={2} md={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Info</p>
                 </Col>
             </Row>
         </div>
@@ -688,47 +716,143 @@ const CallSheet = (props ) => {
             {cast.results.length ? (
                 cast.results.map((cast_member, index) => (
                     <CallCast
-                    // style={{ backgroundColor: (index % 3 === 0) 
-                    //     ? '#dbfaf9' : (index % 2 === 0) ? 
-                    //     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
+                    style={{ backgroundColor: (index % 3 === 0) 
+                        ? '#f6fffe' : (index % 2 === 0) ? 
+                        'rgb(246 254 245)' : 'rgb(254 249 254)' }}
                         {...cast_member}
+                        admin={admin}
                         cast_member={cast_member} 
                         key={cast_member.id} />
                 ))) : ("")}
             </Col>
         </Row>
         </div>
-        {/* Background & Standins background */}
+        {/* BG AND STANDINS */}
         <div className='mt-5'>
-        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Background / Standins (total)</span>
-        {/* titles className='d-none d-md-block' */}
-        <div >
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>BG / Stand-ins (total)</span>
+            {/* medium */}
+        <div className='d-none d-md-block'>
+            {/* titles */}
+        <Row >
+        <Col md={6}>
         <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>Qty</p>
-            </Col>
-            {/* <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                <p className='mb-0 pl-2'>Scenes</p>
-            </Col> */}
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={5} md={5}>
-                <p className='mb-0'>Type</p>
             </Col>
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>Call</p>
             </Col>
+            {admin ? (
+                <>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
+                <p className='mb-0'>Type</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Info</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Ed</p>
+                </Col>
+                </>
+            ) : (
+                <>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
+                <p className='mb-0'>Type</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>Info</p>
+                </Col>
+                </>
+            )}
+        </Row>
+        </Col>
+        <Col md={6}>
+        <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                <p className='mb-0'>Scenes</p>
+                <p className='mb-0'>Qty</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0'>Call</p>
+            </Col>
+            {admin ? (
+                <>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
+                <p className='mb-0'>Type</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Info</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Ed</p>
+                </Col>
+                </>
+            ) : (
+                <>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
+                <p className='mb-0'>Type</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>Info</p>
+                </Col>
+                </>
+            )}
+        </Row> 
+        </Col>
+        </Row>
+             {/* items background */}
+             <Row>
+            {background.results.length ? (
+                background.results.map((back, index) => (
+                    <Col md={6} >
+                    <Background
+                    style={{ backgroundColor: (index % 3 === 0) 
+                        ? '#f6fffe' : (index % 2 === 0) ? 
+                        'rgb(246 254 245)' : 'rgb(254 249 254)' }}
+                        {...back}
+                        admin={admin}
+                        back={back} 
+                        key={back.id} />
+                    </Col>
+                ))) : ("")}
+        </Row>
+        </div>
+            {/* mobile */}
+        <div className='d-block d-md-none'>
+        {/* titles */}
+        <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0'>Qty</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0'>Call</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
+            <p className='mb-0'>Type</p>
             </Col>
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                 <p className='mb-0'>Info</p>
             </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                <p className='mb-0'>Edit</p>
-            </Col>
+        </Row>
+        {/* items */}
+        {/* items background */}
+        <Row>
+            {background.results.length ? (
+                background.results.map((back, index) => (
+                    <Col md={12} >
+                    <Background
+                    style={{ backgroundColor: (index % 3 === 0) 
+                        ? '#f6fffe' : (index % 2 === 0) ? 
+                        'rgb(246 254 245)' : 'rgb(254 249 254)' }}
+                        {...back}
+                        admin={admin}
+                        back={back} 
+                        key={back.id} />
+                    </Col>
+                ))) : ("")}
         </Row>
         </div>
         </div>
-        {/* Transport Notes */}
+        {/* TRANSPORT NOTES */}
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Transport Notes</span>
         <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
