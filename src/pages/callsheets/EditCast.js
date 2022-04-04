@@ -113,14 +113,15 @@ const EditCast = (props) => {
   return (
     <div >
       <Row>
-        <Col className={` ${styles.Back3 }`} xs={12} md={{span: 8, offset: 2 }} >
+        <Col xs={12} md={{span: 10, offset: 1 }} >
         <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT CHARACTER</h5> 
-      <p className="text-center mb-0">Cast Added</p>
       <Form className="text-center" onSubmit={handleSubmit}>
-            {/* role artist contact inst*/}
+        <Row>
+          <Col xs={12} md={8} >
+          {/* role artist contact inst*/}
         <Row className="mx-0">
-            <Col className="d-flex justify-content-center mx-0 "  xs={3}>
-            <Form.Group controlId="role" className={`${styles.Width} `}  >
+            <Col className="d-flex justify-content-center mx-0 "  xs={4}>
+            <Form.Group controlId="role" className={`${styles.Width95 } `}   >
                 <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
                 <Form.Control
                 className={`${styles.Input}`} 
@@ -136,8 +137,8 @@ const EditCast = (props) => {
               </Alert>
             ))}
             </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
-            <Form.Group controlId="artist" className={`${styles.Width} `}  >
+            <Col className="d-flex justify-content-center mx-0 px-1"  xs={4}>
+            <Form.Group controlId="artist" className={`${styles.Width95} `}  >
                 <Form.Label className={`${styles.Bold}`} >Artist</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
@@ -153,8 +154,8 @@ const EditCast = (props) => {
               </Alert>
             ))}
             </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
-            <Form.Group controlId="contact" className={`${styles.Width} `}  >
+            <Col className="d-flex justify-content-center mx-0 px-1"  xs={4}>
+            <Form.Group controlId="contact" className={`${styles.Width95} `}  >
                 <Form.Label className={`${styles.Bold}`} >Contact</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
@@ -170,28 +171,11 @@ const EditCast = (props) => {
               </Alert>
             ))}
             </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
-            <Form.Group controlId="inst" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Inst</Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`} 
-                type="text"
-                name="inst"
-                value={inst}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.inst?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
         </Row>
         {/* number swf pickup call hmw on_set */}
         <Row className="mx-0">
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={2} >
-            <Form.Group controlId="cast_number" className={`${styles.Width } `}  >
+        <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2} >
+            <Form.Group controlId="cast_number" className={`${styles.Width95 } `}  >
                   <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -207,8 +191,8 @@ const EditCast = (props) => {
                 </Alert>
               ))}
               </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={2}>
-              <Form.Group controlId="swf" className={`${styles.Width2} `}  >
+          <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2}>
+              <Form.Group controlId="swf" className={`${styles.Width95} `}  >
                   <Form.Label className={`${styles.Bold}`} >SWF</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -224,8 +208,8 @@ const EditCast = (props) => {
                 </Alert>
               ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={2}>
-              <Form.Group controlId="pickup" className={`${styles.Width2} `}  >
+          <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2}>
+              <Form.Group controlId="pickup" className={`${styles.Width95} `}  >
                   <Form.Label className={`${styles.Bold}`} >Pickup</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -241,8 +225,8 @@ const EditCast = (props) => {
                 </Alert>
               ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={2} >
-          <Form.Group controlId="call" className={`${styles.Width2} `}  >
+          <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2} >
+          <Form.Group controlId="call" className={`${styles.Width95} `}  >
                 <Form.Label className={`${styles.Bold}`} >Call</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
@@ -258,8 +242,8 @@ const EditCast = (props) => {
               </Alert>
             ))}
             </Col>
-          <Col className=" -flex justify-content-centermx-0 px-1" xs={2}>
-          <Form.Group controlId="hmw" className={`${styles.Width2} `}  >
+          <Col className=" -flex justify-content-centermx-0 px-0" xs={2}>
+          <Form.Group controlId="hmw" className={`${styles.Width95} `}  >
               <Form.Label className={`${styles.Bold}`} >H/M/W</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
@@ -275,8 +259,8 @@ const EditCast = (props) => {
             </Alert>
           ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={2}>
-          <Form.Group controlId="on_set" className={`${styles.Width2} `} >
+          <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2}>
+          <Form.Group controlId="on_set" className={`${styles.Width95} `} >
               <Form.Label className={`${styles.Bold}`} >
                 <span className="d-none d-sm-block">On Set</span> 
                 <span className="d-sm-none">Set</span>
@@ -294,6 +278,38 @@ const EditCast = (props) => {
               {message}
             </Alert>
           ))}
+          </Col>
+        </Row>
+          </Col>
+          <Col xs={12} md={4} >
+            <Col className="d-flex justify-content-center mx-0 px-1"  xs={12}>
+            <Form.Group controlId="inst" className={`${styles.Width95} `}  >
+                <Form.Label className={`${styles.Bold}`} >Inst</Form.Label>
+                <Form.Control
+                className={`d-block d-md-none ${styles.InputScene}`} 
+                as="textarea"
+                rows={2}
+                type="text"
+                name="inst"
+                value={inst}
+                onChange={handleChange}
+                    />
+                <Form.Control
+                className={`d-none d-md-block ${styles.InputScene}`} 
+                as="textarea"
+                rows={4}
+                type="text"
+                name="inst"
+                value={inst}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.inst?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
           </Col>
         </Row>
         {/* buttons */}

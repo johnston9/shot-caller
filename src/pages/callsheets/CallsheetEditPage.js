@@ -1676,7 +1676,7 @@ const CallsheetEditPage = () => {
       >
         Back
       </Button>
-      <h3 className={`text-center py-1 ${styles.SubTitle }`} >ADD CAST</h3> 
+      <h3 className={`text-center py-1 mt-2 ${styles.SubTitle }`} >ADD CAST</h3> 
       <Row className="text-center">
       <Col xs={10} md={{span: 8, offset: 2 }} >
         <p>Edit added items fron the Callsheet.

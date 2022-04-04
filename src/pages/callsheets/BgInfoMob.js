@@ -25,7 +25,7 @@ const BgInfoMob = (props) => {
 
   return (
     <div>
-        <Row className='text-center px-0 mx-0'>
+        <Row className='text-center px-3 mx-0'>
         <Col className={`mx-0 px-0  ${styles.Border}`} xs={2}>
             <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Set</p>
             <p className='mb-0 py-2'>{set1}</p>

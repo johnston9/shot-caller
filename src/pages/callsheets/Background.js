@@ -55,7 +55,7 @@ const Background = (props) => {
                 <Col className={`mx-0 px-0  ${styles.Border}`} xs={2} md={2}>
                     <p className='mb-0'>{qty1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.UnitCallBorder}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
                     <p className='mb-0'>{call1}</p>
                 </Col>
                 {admin ? (
@@ -79,8 +79,8 @@ const Background = (props) => {
 
                 ) : (
                     <>
-                    <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{call1}</p>
+                    <Col className={`mx-0 px-0 ${styles.Border}`} xs={6} md={6}>
+                    <p className='mb-0'>{type1}</p>
                     </Col>
                     <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
@@ -111,7 +111,7 @@ const Background = (props) => {
                 </Col>
             </Row> 
             {/* <Row>
-            <Col className={`mb-0 py-1 ${styles.NextCall}`}>
+            <Col className={`mb-0 pt-1 ${styles.NextCall}`}>
             </Col>
             </Row>    */}
         </div>
@@ -121,13 +121,13 @@ const Background = (props) => {
                 <Col className={`mx-0 px-0  ${styles.Border}`} xs={2} md={2}>
                     <p className='mb-0'>{qty1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.UnitCallBorder}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
                     <p className='mb-0'>{call1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.Border}`} xs={6} md={6}>
                     <p className='mb-0'>{type1}</p>
                     </Col>
-                <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
+                <Col className={`mx-0 px-0 ${styles.Border} `} xs={2} md={2}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     I
@@ -153,10 +153,10 @@ const Background = (props) => {
                     ) }
                 </Col>
             </Row>  
-            <Row>
+            {/* <Row>
             <Col className={`mb-0 py-1 ${styles.NextCall}`}>
             </Col>
-            </Row>  
+            </Row>   */}
         </div>
     </div>
   )

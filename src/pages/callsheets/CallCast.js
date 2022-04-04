@@ -82,7 +82,7 @@ const CallCast = (props) => {
     return (
         <div style={style} className={` ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
-            <Row className='text-center mx-0' >
+            <Row className='text-center mx-0 mb-0 pb-0' >
                 <Col className={`mx-0 px-0 py-2 ${styles.Border}`} xs={1} md={1}>
                     <p className='mb-0'>{cast_number1}</p>
                 </Col>
@@ -132,13 +132,9 @@ const CallCast = (props) => {
                 )}
             </Row>
             {/* info */}
-            <Row>
-                <Col>
                     {!showInfo ?("") : (                       
                     <CallCastInfo {...castNew}/> 
                     ) }
-                </Col>
-            </Row>
               <Row>
                 <Col className={`mb-0 ${styles.NextCall}`}>
                 </Col>
@@ -185,6 +181,17 @@ const CallCast = (props) => {
                     ) }
                 </Col>
             </Row>
+            {/* edit */}
+            <Row>
+                <Col>
+                    {!showEdit ?("") : (                       
+                    <EditCast
+                    setCastNew={setCastNew}
+                    setShowEdit={setShowEdit}
+                    {...castNew}/> 
+                    ) }
+                </Col>
+            </Row>  
             <Row>
             <Col className={`mb-0 py-1 ${styles.NextCall}`}>
             </Col>
