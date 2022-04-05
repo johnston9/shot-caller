@@ -10,6 +10,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { useHistory } from "react-router";
 import { PostDropdown } from '../../components/PostDropdown';
 import Background from './Background';
+import CrewCalls from './CrewCalls';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -22,6 +23,7 @@ const CallSheet = (props ) => {
     const { production_name, production_company, company_phone, company_email,
         company_address_line_1, company_address_line_2, company_address_line_3,
         company_address_line_4, company_logo, total_shoot_days,
+        director_name, director_email, director_phone,
         producer_name, producer_email, producer_phone,
         pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
         upm_name, upm_email, upm_phone,
@@ -145,6 +147,7 @@ const CallSheet = (props ) => {
     const { scenes,
         admin,
         cast,
+        callsheet,
         background,
         id, 
         day_id, 
@@ -175,6 +178,10 @@ const CallSheet = (props ) => {
         location_4_parking_n_notes,
         location_5_parking_n_notes,
         nearest_hospital,
+        hospital_address_line_1,
+        hospital_address_line_2,
+        hospital_address_line_3,
+        hospital_address_line_4,
         weather_location,
         important_info,
         transport_info,
@@ -187,6 +194,8 @@ const CallSheet = (props ) => {
         walkie_channel_camera,
         walkie_channel_electric,
         walkie_channel_grip,
+        // production
+        director_calltime,
         producer_calltime,
         pro_coordinator_calltime,
         travel_coordinator_calltime,
@@ -387,9 +396,10 @@ const CallSheet = (props ) => {
             <div className={`px-1 ${styles.WhiteAqua} `}>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
             <p className={`mb-0`}>{nearest_hospital} </p>
-            <p className={`mb-0`}>{company_address_line_1} </p>
-            <p className={`mb-0`}>{company_address_line_1} </p>
-            <p >{company_address_line_1} </p>
+            <p className={`mb-0`}>{hospital_address_line_1} </p>
+            <p className={`mb-0`}>{hospital_address_line_2} </p>
+            <p className={`mb-0`}>{hospital_address_line_3} </p>
+            <p className={`mb-0`}>{hospital_address_line_4} </p>
             </div>
             <div>
             </div>
@@ -462,17 +472,17 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         </div>
-        {/* Locations */}
+        {/* Locations producer_calltime */}
         <div className='mt-5'>
         <span className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} style={{ textTransform: 'uppercase' }}>Locations</span>
         <Row style={{ textTransform: 'uppercase' }} className={` text-center mx-0  ${styles.TitleBox}`} >
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} >
             <p className='my-0 py-0'>#</p>
             </Col>
-            <Col className={`${styles.Border} px-0 mx-0`} xs={5}>
+            <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={5}>
             <p className='my-0 py-0'><span className='d-none d-sm-inline-block'>Name -</span> Address</p>
             </Col>
-            <Col className={`${styles.Border} px-0 mx-0`} xs={6}>
+            <Col className='px-0 mx-0' xs={6}>
             <p className='my-0 py-0'><span className='d-none d-sm-inline-block'>Crew Parking and </span> Notes</p>
             </Col>
         </Row>
@@ -874,67 +884,10 @@ const CallSheet = (props ) => {
         </div>
         {/* Crew */}
         <div className='mt-5'>
-        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Crew (total)</span>
-        <Row>
-            <Col xs={12} md={6}>
-                <Row>
-                    <Col>
-                    <h5>Postition</h5>
-                    </Col>
-                    <Col>
-                    <h5>Name</h5>
-                    </Col>
-                    <Col>
-                    <h5>Call</h5>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                    <h4>Department</h4>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                    <h5>Postition</h5>
-                    </Col>
-                    <Col>
-                    <h5>Name</h5>
-                    </Col>
-                    <Col>
-                    <h5>Call</h5>
-                    </Col>
-                </Row>
-            </Col>
-            <Col xs={12} md={6}>
-                <Row>
-                    <Col>
-                    <h5>Postition</h5>
-                    </Col>
-                    <Col>
-                    <h5>Name</h5>
-                    </Col>
-                    <Col>
-                    <h5>Call</h5>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                    <h4>Department</h4>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                    <h5>Postition</h5>
-                    </Col>
-                    <Col>
-                    <h5>Name</h5>
-                    </Col>
-                    <Col>
-                    <h5>Call</h5>
-                    </Col>
-                </Row>
-            </Col>
-        </Row>
+        <span className={`pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Crew (total)</span>
+        <p style={{ textTransform: 'uppercase'}} className={` pl-3 pt-1 ${styles.SubTitle }`}></p>
+        {/* titles */}
+        <CrewCalls callsheet={callsheet}/>
         </div>
         <div className='mt-5'>
         {/* advanced Schedule  */}
@@ -971,6 +924,345 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         </div>
+
+        {/* END Crew */}
+        <div className='mt-5'>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Crew (total)</span>
+        {/* titles */}
+        <Row>
+            <Col>
+            <Row style={{ textTransform: 'uppercase' }} className={` mx-0  ${styles.TitleBox}`} >
+            <Col className={`mx-0  ${styles.TitleBox2}`} xs={5} >
+            <p className='my-0 py-0'>Postition</p>
+            </Col>
+            <Col className={`${styles.TitleBox2} mx-0`} xs={5}>
+            <p className='my-0 py-0'>Name</p>
+            </Col>
+            <Col className={` mx-0`} xs={2}>
+            <p className='my-0 py-0'>Call</p>
+            </Col>
+            </Row>
+            </Col>
+            <Col className='d-none d-md-block'>
+            <Row style={{ textTransform: 'uppercase' }} className={` mx-0  ${styles.TitleBox}`} >
+            <Col className={`mx-0  ${styles.TitleBox2}`} xs={5} >
+            <p className='my-0 py-0'>Postition</p>
+            </Col>
+            <Col className={`${styles.TitleBox2} mx-0`} xs={5}>
+            <p className='my-0 py-0'>Name</p>
+            </Col>
+            <Col className={` mx-0`} xs={2}>
+            <p className='my-0 py-0'>Call</p>
+            </Col>
+            </Row>
+            </Col>
+            </Row>
+        {/* departments */}
+        <div>
+        <Row>
+            {/* Production */}
+            <Col className='my-0 py-0' xs={12} md={6} xl={4}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >Production</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0 px-1 ${styles.Border}`} xs={4} >
+                    <p className='my-0 py-0'>Director</p>
+                    </Col>
+                    <Col className={`${styles.Border} px-1 mx-0`} xs={6}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} px-1 mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* AD */}
+            <Col xs={12} md={6} xl={4}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >Assistant Directors</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>1st AD</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Camera */}
+            <Col xs={12} md={6} xl={4}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }} >Camera</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>1st AD</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Sound */}
+            <Col className='my-0 py-0' xs={12} md={6}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >Sound</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Director</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Hair/Makeup */}
+            <Col xs={12} md={6}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >Hair/Makeup</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Key Hair/Makeup</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Wardrobe */}
+            <Col xs={12} md={6}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }} >Wardrobe</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Costume Designer</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* ELECTRIC */}
+            <Col className='my-0 py-0' xs={12} md={6}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >ELECTRIC</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Gaffer</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* GRIP */}
+            <Col xs={12} md={6} >
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >GRIP</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Keygrip</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Camera */}
+            <Col xs={12} md={6} >
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }} >Camera</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>1st AD</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Sound */}
+            <Col className='my-0 py-0' xs={12} md={6}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >Sound</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Director</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Hair/Makeup */}
+            <Col xs={12} md={6}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }}  >Hair/Makeup</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Key Hair/Makeup</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+            {/* Wardrobe */}
+            <Col xs={12} md={6}>
+            <div>
+            <Row >
+                <Col xs={12}>
+                <p className={`mb-0 ${styles.Back3} pl-3`} style={{ textTransform: 'uppercase' }} >Wardrobe</p>
+                {director_calltime ? (
+                    <Row className={` mx-0 `} >
+                    <Col className={`mx-0  ${styles.Border}`} xs={5} >
+                    <p className='my-0 py-0'>Costume Designer</p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={5}>
+                    <p className='my-0 py-0'>{director_name} </p>
+                    </Col>
+                    <Col className={`${styles.Border} mx-0`} xs={2}>
+                    <p className='my-0 py-0'>{director_calltime} </p>
+                    </Col>
+                    </Row>
+                ) : (
+                    ""
+                ) }
+                </Col>
+            </Row>
+            </div>
+            </Col>
+        </Row>
+        </div>
+        </div> 
     </div>
   )
 }

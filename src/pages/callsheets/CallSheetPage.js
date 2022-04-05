@@ -65,6 +65,7 @@ const CallSheetPage = () => {
             {hasLoaded ? (
                 <CallSheet 
                 {...callsheet.results[0]}
+                callsheet={callsheet.results[0]}
                 scenes={scenes}
                 cast={cast}
                 background={background}

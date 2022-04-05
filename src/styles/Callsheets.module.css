@@ -2,6 +2,10 @@
     min-height: 100px;
   }
 
+p {
+  margin-bottom: 0;
+}
+
 /* .WhiteAqua {
   background-color: f6fffe;
 } */
