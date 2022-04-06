@@ -8,20 +8,21 @@ import styles from "../../styles/Callsheets.module.css";
 
 const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowPos }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {editor_name, editor_email, editor_phone,
-    fx_name, fx_email, fx_phone,
-    add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
-    add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
-    add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
-    add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
-    add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
-    add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
-    add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
-    add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
-    add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
-    add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
+  const {editor_name,
+    fx_name, 
+    add_pos_1_job, add_pos_1_name,
+    add_pos_2_job, add_pos_2_name,
+    add_pos_3_job, add_pos_3_name,
+    add_pos_4_job, add_pos_4_name,
+    add_pos_5_job, add_pos_5_name,
+    add_pos_6_job, add_pos_6_name,
+    add_pos_7_job, add_pos_7_name,
+    add_pos_8_job, add_pos_8_name,
+    add_pos_9_job, add_pos_9_name,
+    add_pos_10_job, add_pos_10_name,
     all_other_add_positions } = crewInfoOne || {};
 
   const { editor_calltime, fx_calltime,

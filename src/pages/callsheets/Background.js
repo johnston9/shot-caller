@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
+// eslint-disable-next-line
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { PostDropdown } from '../../components/PostDropdown';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -31,8 +32,7 @@ const Background = (props) => {
         costumes1: costumes,
     });
 
-    const { id1, qty1, type1, call1, scenes1, set1, 
-        costumes1 } = bgNew;
+    const { id1, qty1, type1, call1, } = bgNew;
     
     const history = useHistory();
 

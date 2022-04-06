@@ -8,14 +8,15 @@ import styles from "../../styles/Callsheets.module.css";
 
 const AddLocations = ({crewInfoOne, handleChange, postData, setShowLoc }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {location_mngr_name, location_mngr_email, location_mngr_phone,
-    location_ass_1_name, location_ass_1_email, location_ass_1_phone,
-    location_ass_2_name, location_ass_2_email, location_ass_2_phone,
-    location_ass_3_name, location_ass_3_email, location_ass_3_phone,
-    location_ass_4_name, location_ass_4_email, location_ass_4_phone,
-    location_security_name, location_security_email, location_security_phone,} = crewInfoOne || {};
+  const {location_mngr_name, 
+    location_ass_1_name,
+    location_ass_2_name,
+    location_ass_3_name,
+    location_ass_4_name,
+    location_security_name, } = crewInfoOne || {};
 
   const { location_mngr_calltime, location_ass_1_calltime, location_ass_2_calltime,
     location_ass_3_calltime, location_ass_4_calltime,

@@ -5,7 +5,7 @@ import styles from "../../styles/Callsheets.module.css";
 import { useRedirect } from '../../hooks/Redirect';
 import CharSceneInfo from './CharSceneInfo';
 import btnStyles from "../../styles/Button.module.css";
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 
 const CharScheduleScene = (props) => {
     useRedirect("loggedOut");

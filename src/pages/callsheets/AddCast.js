@@ -9,7 +9,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import { useCharactersContext } from "../../contexts/Scene_chars_locs";
@@ -67,8 +67,6 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         
       });
     }
-
-    const history = useHistory();
 
     const handleChange = (event) => {
         setPostData({

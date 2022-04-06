@@ -8,14 +8,15 @@ import styles from "../../styles/Callsheets.module.css";
 
 const AddStunts = ({crewInfoOne, handleChange, postData, setShowStu }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
-    stunts_1_name, stunts_1_email, stunts_1_phone,
-    stunts_2_name, stunts_2_email, stunts_2_phone,
-    stunts_3_name, stunts_3_email, stunts_3_phone,
-    stunts_4_name, stunts_4_email, stunts_4_phone,
-    stunts_5_name, stunts_5_email, stunts_5_phone,} = crewInfoOne || {};
+  const {stunt_coordinator_name, 
+    stunts_1_name,
+    stunts_2_name,
+    stunts_3_name,
+    stunts_4_name,
+    stunts_5_name,} = crewInfoOne || {};
 
   const { stunt_coordinator_calltime, stunts_1_calltime, stunts_2_calltime,
     stunts_3_calltime, stunts_4_calltime, stunts_5_calltime,

@@ -6,25 +6,27 @@ import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../styles/Callsheets.module.css";
 
-const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
+const AddCamera = ({crewInfoOne, handleChange, callsheet, setShowCam }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const { dop_name, dop_email, dop_phone,
-    camera_operator_name, camera_operator_email, camera_operator_phone,
-    camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
-    camera_ass_2_name, camera_ass_2_email, camera_ass_2_phone,
-    dit_name, dit_email, dit_phone,
-    steadicam_name, steadicam_email, steadicam_phone,
-    camera_pa_name, camera_pa_email, camera_pa_phone,
-    oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, 
-    oth_camera_pos_1_phone, oth_camera_pos_2_job, oth_camera_pos_2_name, 
-    oth_camera_pos_2_email, oth_camera_pos_2_phone, oth_camera_pos_3_job, 
-    oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,} = crewInfoOne || {};
+  const { dop_name, 
+    camera_operator_name, 
+    camera_ass_1_name, 
+    camera_ass_2_name,
+    dit_name, 
+    steadicam_name, 
+    camera_pa_name, 
+    oth_camera_pos_1_job, oth_camera_pos_1_name, 
+    oth_camera_pos_2_job, oth_camera_pos_2_name, 
+    oth_camera_pos_3_job, 
+    oth_camera_pos_3_name,} = crewInfoOne || {};
 
   const { dop_calltime, camera_operator_calltime, camera_ass_1_calltime,
     camera_ass_2_calltime, dit_calltime, steadicam_calltime, camera_pa_calltime,
-    oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, oth_camera_pos_3_calltime,} = postData || {};
+    oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, 
+    oth_camera_pos_3_calltime,} = callsheet || {};
 
   return (
     <div>
@@ -65,7 +67,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </div> )
          }
          {/* camera operator */}
-        {camera_operator_name && 
+         {camera_operator_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
@@ -189,7 +191,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           </div> )
          }
          {/* steadicam */}
-        {steadicam_name && 
+         {steadicam_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >

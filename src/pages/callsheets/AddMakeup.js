@@ -8,17 +8,18 @@ import styles from "../../styles/Callsheets.module.css";
 
 const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
-    key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
-    sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
-    sfx_makeup_assistant_name, sfx_makeup_assistant_email, sfx_makeup_assistant_phone,
-    makeup_artist_1_name, makeup_artist_1_email, makeup_artist_1_phone,
-    makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
-    makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
-    makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
-    makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,} = crewInfoOne || {};
+  const {key_hairmakeup_name,
+    key_hairstylist_name,
+    sfx_makeup_name, 
+    sfx_makeup_assistant_name,
+    makeup_artist_1_name,
+    makeup_artist_2_name,
+    makeup_artist_3_name,
+    makeup_artist_4_name,
+    makeup_artist_5_name, } = crewInfoOne || {};
 
   const { key_hairmakeup_calltime, key_hairstylist_calltime, sfx_makeup_calltime,
     sfx_makeup_assistant_calltime, makeup_artist_1_calltime, makeup_artist_2_calltime,

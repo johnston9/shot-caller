@@ -23,7 +23,7 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CASTING </h5>
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CASTING</h5>
       </div>
       <div className='mt-3'>
         {/* casting director */}

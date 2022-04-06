@@ -2,34 +2,26 @@ import React, { useState } from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
 import styles from "../../styles/Callsheets.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import { useHistory } from 'react-router-dom';
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
-import CreateOnce from './CreateOnce';
-import InfoProduction from "./InfoProduction";
 import InfoCamera from './InfoCamera';
-import InfoCompany from './InfoCompany';
-import InfoCasting from './InfoCasting';
-import InfoLocations from './InfoLocations';
 import InfoWardrobe from './InfoWardrobe';
 import InfoScript from "./InfoScript";
-import InfoElectric from './InfoElectric';
 import InfoMakeup from './InfoMakeup';
-import InfoArt from './InfoArt';
 import InfoSound from './InfoSound';
 import InfoStunts from './InfoStunts';
 import InfoPost from './InfoPost';
-import CallsProduction from './CallsProduction';
+import TimesProduction from './TimesProduction';
+import TimesArt from './TimesArt';
+import TimesCastingAD from './TimesCastingAD';
+import TimesLocations from './TimesLocations';
+import TimesElectricGrip from './TimesElectricGrip';
 
 const CrewCalls = ({callsheet}) => {
   useRedirect("loggedOut");
-  const history = useHistory();
 
   const crewInfo = useCrewInfoContext();
   const crewInfoOne = crewInfo.results[0];
-  const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);
   const [showCam, setShowCam] = useState(false);
   const [showSou, setShowSou] = useState(false);
@@ -42,7 +34,6 @@ const CrewCalls = ({callsheet}) => {
   const [showStu, setShowStu] = useState(false);
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
-  const { id } = crewInfoOne|| {};
 
   return (
     <div className='mt-3'>
@@ -126,24 +117,25 @@ const CrewCalls = ({callsheet}) => {
           </Row>  
           {/* <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
         </div>
+        <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         <div className='mt-0'>
         {/* Info Production */}
         {!showPro ? (
-                 <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+                 ""
               ) : (
-                <CallsProduction callsheet={callsheet} crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
+                <TimesProduction callsheet={callsheet} crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
                 ) }  
         {/* Info Casting */}
         {!showCas ? (
                 ""
               ) : (
-                <InfoCasting crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
+                <TimesCastingAD callsheet={callsheet} crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
                 ) } 
         {/* Info Locations */}
         {!showLoc ? (
                 ""
               ) : (
-                <InfoLocations crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} /> 
+                <TimesLocations callsheet={callsheet} crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} /> 
                 ) } 
         {/* Info Script  */}
         {!showScr ? (
@@ -155,7 +147,7 @@ const CrewCalls = ({callsheet}) => {
         {!showEle ? (
                 ""
               ) : (
-                <InfoElectric crewInfoOne={crewInfoOne} setShowEle={setShowEle} /> 
+                <TimesElectricGrip crewInfoOne={crewInfoOne} setShowEle={setShowEle} /> 
                 ) } 
         {/* Info Makeup */}
         {!showMak ? (
@@ -179,7 +171,7 @@ const CrewCalls = ({callsheet}) => {
         {!showArt ? (
                 ""
               ) : (
-                <InfoArt crewInfoOne={crewInfoOne} setShowArt={setShowArt} /> 
+                <TimesArt crewInfoOne={crewInfoOne} setShowArt={setShowArt} /> 
                 ) } 
         {/* Info Camera */}
         {!showCam ? (

@@ -5,15 +5,7 @@ import styles from "../../styles/ScheduleCreate.module.css";
 
 const CharSceneInfo = (props) => {
     useRedirect("loggedOut");
-    const {filming_location, pages, new_info, dramatic_day, location_address,
-        character1, character1_costume, character2, 
-        character2_costume, character3, character3_costume, character4, 
-        character4_costume, character5, character5_costume, character6, 
-        character6_costume, character7, character7_costume, character8,
-        character8_costume, character9, character9_costume, character10,
-        character10_costume, character11, character11_costume, character12,
-        character12_costume, other_characters, other_characters_costumes,
-        background_artists, background_artists_costumes,
+    const {filming_location,
         character1_number, character2_number, character3_number,
         character4_number, character5_number, character6_number, 
         character7_number, character8_number, character9_number,

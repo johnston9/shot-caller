@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import CallCastInfo from './CallCastInfo';
 import { PostDropdown } from '../../components/PostDropdown';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -22,7 +22,6 @@ const CallCast = (props) => {
         admin,
         id,
         day_id,
-        cast_member,
         cast_number,
         role,
         artist,
@@ -51,18 +50,18 @@ const CallCast = (props) => {
     });
 
     const { 
+        // eslint-disable-next-line
         id1,
+        // eslint-disable-next-line
         day_id1,
         cast_number1,
         role1,
         artist1,
-        contact1,
         swf1,
         pickup1,
         call1,
         hmw1,
         on_set1,
-        inst1,
       } = castNew;
 
     const history = useHistory();

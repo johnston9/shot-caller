@@ -8,20 +8,21 @@ import styles from "../../styles/Callsheets.module.css";
 
 const AddCastingAD = ({crewInfoOne, handleChange, postData, setShowCas }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {casting_director_name, casting_director_email, casting_director_phone,
-    extras_casting_name, extras_casting_email, extras_casting_phone,
-    ad_1_name, ad_1_email, ad_1_phone,
-    ad_2_name, ad_2_email, ad_2_phone,
-    ad_3_name, ad_3_email, ad_3_phone,
-    ad_4_name, ad_4_email, ad_4_phone,
-    ad_5_name, ad_5_email, ad_5_phone,
-    pro_assistant_1_name, pro_assistant_1_email, pro_assistant_1_phone,
-    pro_assistant_2_name, pro_assistant_2_email, pro_assistant_2_phone,
-    pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
-    pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
-    pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,} = crewInfoOne || {};
+  const {casting_director_name,
+    extras_casting_name, 
+    ad_1_name,
+    ad_2_name,
+    ad_3_name,
+    ad_4_name,
+    ad_5_name,
+    pro_assistant_1_name,
+    pro_assistant_2_name,
+    pro_assistant_3_name,
+    pro_assistant_4_name,
+    pro_assistant_5_name,} = crewInfoOne || {};
 
   const { casting_director_calltime, extras_casting_calltime, ad_1_calltime,
     ad_2_calltime, ad_3_calltime, ad_4_calltime, ad_5_calltime, pro_assistant_1_calltime,

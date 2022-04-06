@@ -16,6 +16,7 @@ export const useQueryContext = () => useContext(QueryContext);
 export const useSetQueryContext  = () => useContext(SetQueryContext);
 
 export const ProfileDataProvider = ({children}) => {
+  // eslint-disable-next-line
   const [hasLoaded, setHasLoaded] = useState(false);
     const[query, setQuery] = useState("");
     const [profileData, setProfileData] = useState({

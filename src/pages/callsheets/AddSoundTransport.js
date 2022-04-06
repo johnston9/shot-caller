@@ -8,22 +8,23 @@ import styles from "../../styles/Callsheets.module.css";
 
 const AddSoundTransport = ({crewInfoOne, handleChange, postData, setShowSou }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {sound_mixer_name, sound_mixer_email, sound_mixer_phone,
-    boom_operator_name, boom_operator_email, boom_operator_phone,
-    sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
-    sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
-    transport_captain_name, transport_captain_email, transport_captain_phone,
-    transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
-    transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
-    head_driver_name, head_driver_email, head_driver_phone,
-    car1_name, car1_email, car1_phone,
-    car2_name, car2_email, car2_phone,
-    car3_name, car3_email, car3_phone,
-    truck1_name, truck1_email, truck1_phone,
-    truck2_name, truck2_email, truck2_phone,
-    truck3_name, truck3_email, truck3_phone,} = crewInfoOne || {};
+  const {sound_mixer_name,
+    boom_operator_name, 
+    sound_assistant_1_name,
+    sound_assistant_2_name,
+    transport_captain_name,
+    transport_manager_1_name, 
+    transport_manager_2_name, 
+    head_driver_name, 
+    car1_name, 
+    car2_name, 
+    car3_name, 
+    truck1_name,
+    truck2_name,
+    truck3_name, } = crewInfoOne || {};
 
   const { sound_mixer_calltime, boom_operator_calltime, sound_assistant_1_calltime,
     sound_assistant_2_calltime, transport_captain_calltime, transport_manager_1_calltime,

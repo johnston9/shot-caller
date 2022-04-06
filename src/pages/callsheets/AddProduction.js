@@ -8,22 +8,23 @@ import styles from "../../styles/Callsheets.module.css";
 
 const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
   useRedirect("loggedOut");
+  // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {producer_name, producer_email, producer_phone,
-    director_name, director_email, director_phone,
-    pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
-    upm_name, upm_email, upm_phone,
-    travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
-    production_pa_name, production_pa_email, production_pa_phone,
-    oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
-    oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
-    oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
-    oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
-    oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
-    script_supervisor_name, script_supervisor_email, script_supervisor_phone,
-    legal_name, legal_email, legal_phone,
-    set_medic_name, set_medic_email, set_medic_phone,
+  const {producer_name, 
+    director_name, 
+    pro_coordinator_name, 
+    upm_name, 
+    travel_coordinator_name, 
+    production_pa_name, 
+    oth_production_pos_1_job, oth_production_pos_1_name,
+    oth_production_pos_2_job, oth_production_pos_2_name,
+    oth_production_pos_3_job, oth_production_pos_3_name,
+    oth_production_pos_4_job, oth_production_pos_4_name,
+    oth_production_pos_5_job, oth_production_pos_5_name,
+    script_supervisor_name, 
+    legal_name, 
+    set_medic_name, 
    } = crewInfoOne || {};
 
   const { director_calltime, producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
