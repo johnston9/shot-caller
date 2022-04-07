@@ -17,7 +17,7 @@ import TimesCastingAD from './TimesCastingAD';
 import TimesLocations from './TimesLocations';
 import TimesElectricGrip from './TimesElectricGrip';
 
-const CrewCalls = ({callsheet}) => {
+const CrewCallsPage = ({callsheet}) => {
   useRedirect("loggedOut");
 
   const crewInfo = useCrewInfoContext();
@@ -37,6 +37,8 @@ const CrewCalls = ({callsheet}) => {
 
   return (
     <div className='mt-3'>
+      <span className={`pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Crew (total)</span>
+        <p style={{ textTransform: 'uppercase'}} className={` pl-3 pt-1 ${styles.SubTitle }`}></p>
       {/* <h4 style={{ textTransform: 'uppercase'}} className={`text-center mt-0 mb-4 pl-3 py-0 ${styles.SubTitle }`}>CREW CALLS</h4> */}
         <div className='mt-0 mb-3'>
           <Row className={`${styles.ButtonLine} mt-0`}>
@@ -196,4 +198,4 @@ const CrewCalls = ({callsheet}) => {
   )
 }
 
-export default CrewCalls
+export default CrewCallsPage
