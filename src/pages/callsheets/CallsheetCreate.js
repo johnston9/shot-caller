@@ -473,6 +473,14 @@ const CallsheetCreate = () => {
     formData.append("important_info", important_info);
     formData.append("transport_info", transport_info);
     formData.append("department_info", department_info);
+    formData.append("walkie_channel_production", walkie_channel_production);
+    formData.append("walkie_channel_open", walkie_channel_open);
+    formData.append("walkie_channel_transportation", walkie_channel_transportation);
+    formData.append("walkie_channel_art_dept", walkie_channel_art_dept);
+    formData.append("walkie_channel_rollover", walkie_channel_rollover);
+    formData.append("walkie_channel_camera", walkie_channel_camera);
+    formData.append("walkie_channel_electric", walkie_channel_electric);
+    formData.append("walkie_channel_grip", walkie_channel_grip);
     // production 
     formData.append("director_calltime", director_calltime);
     formData.append("producer_calltime", producer_calltime);

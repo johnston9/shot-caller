@@ -116,7 +116,7 @@ const CallSheet = (props ) => {
       };
 
   return (
-    <div className={`${styles.White} p-3`} >
+    <div className={`${styles.White} px-3`} >
         {/* MEDIUM pink fff6f6*/}
         <div className='d-none d-md-block'>
         <Row>
@@ -146,25 +146,31 @@ const CallSheet = (props ) => {
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-4'>{pro_coordinator_name} {pro_coordinator_phone}</span></p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-4'>{producer_name} {producer_name}</span></p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-4 ml-3'>{ad_1_name} {ad_1_phone}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name} {dop_phone}</span> </p>
+            {/* <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name} {dop_phone}</span> </p> */}
             </div>
             </Col>
             <Col  md={4} className='text-center'  >
+            {/* call */}
+            <h2 className='mt-0 mb-0 pb-0'>Unit Call</h2>
             <div>
-            <h5>Production Company Logo</h5>
+            <span className={`px-3 ${styles.UnitCallMed }`}>{unit_call} </span>
+            </div>
+            <h2 className='mt-1 mb-0 pb-0'>Your Call</h2>
+            <div>
+            <span className={`px-3 ${styles.UnitCallMed }`}>{unit_call} </span>
+            </div>
+            <div className='mt-2 mb-0 pb-0'>
+            <span className={`px-3 ${styles.UnitCallMedDate }`}>{date} </span>
             </div>
             <div>
-            <h2>Unit Call</h2>
-            <h1 className={` ${styles.UnitCall }`}>{unit_call} </h1>
-            <p>Please check individual calltimes</p>
-            <h2 className={` ${styles.UnitCall }`}>{date} </h2>
-            <h5 className={` ${styles.UnitCall }`}>Day {day} of {total_shoot_days} </h5>
-            {/* <h2>{date} </h2> */}
-            <h5>First Location Address</h5>
-            <h5>{location_1_address} </h5>
+            <span className={`px-3 ${styles.UnitCallMedDay }`}>Day {day} of {total_shoot_days} </span>
+            </div>
+            {/* logo */}
+            <div className={`mt-2 px-1 mx-4 ${styles.CallLogoDiv }`}>
+            <h1>LOGO</h1>
             </div>
             </Col>
-            <Col md={4}>
+            <Col className='pl-5' md={4}>
             <div className={`${styles.WhiteAqua} px-1`}>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span ><span className='pl-4'>{weather_location} </span> </p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span><span className='pl-2'>{weather_location}</span></p>
@@ -186,6 +192,10 @@ const CallSheet = (props ) => {
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span><span className='pl-5'>{breakfast}</span></p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span ><span className='pl-4'>{lunch} </span> </p>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span><span className='pl-2'>{wrap}</span></p>
+            </div>
+            <div className={`${styles.WhiteAqua} mt-3`}>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Location:</span></p>
+            <h5>{location_1_name} </h5>
             </div>
             </Col>
         </Row>
@@ -209,8 +219,8 @@ const CallSheet = (props ) => {
         {/* Walkie Channels */}
         <WalkiesPage callsheet={callsheet} />
         </div>
-        {/* MOBLIE  */}
-        <div className='d-block d-md-none'>
+        {/* MOBILE  */}
+        <div className='d-block d-md-none mb-5'>
         <div>
         {/* name */}
         <Row>
@@ -224,79 +234,72 @@ const CallSheet = (props ) => {
                 />
             </Col>
         </Row>
-        <Row >
         {/* header */}
-        <Col xs={12} className='text-center'  >
-            <div>
-            <h5>Production Company Logo</h5>
-            </div>
-            <div>
-            <h2>Unit Call</h2>
-            <h1 className={` ${styles.UnitCall }`}>{unit_call} </h1>
-            <p>Please check individual calltimes</p>
-            <h2 className={` ${styles.UnitCall }`}>{date} </h2>
-            <h5 className={` ${styles.UnitCall }`}>Day {day} of {total_shoot_days} </h5>
-            {/* <h2>{date} </h2> */}
-            <h5>First Location Address</h5>
-            <h5>{location_1_address} </h5>
-            </div>
-        </Col>
-        </Row>
-        {/* weather/calls */}
-        <Row className='px-3 mt-3'>
-        <Col className={`${styles.WhiteAqua} px-1`} xs={6}>
+        <Row >
+          {/* weather/calls */}
+        <Col className={` px-0 text-center`} xs={3}>
             {/* Weather */}
-        <Row>
-            <Col xs={6}>
+          <div className={`${styles.WhiteAqua}`}>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span > </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span></p>
-            </Col>
-            <Col xs={6}>
             <p className='pl-2'>{weather_location} </p> 
-            <p className='pl-2'>{weather_location}</p>
-            <p className='pl-2'>{weather_location}</p>
-            </Col>
-        </Row>
-        {/* calls */}
-        <div className={`${styles.WhiteAqua} px-1`}>
-        <Row>
-            <Col xs={8}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Talent Call:</span > </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
-            </Col>
-            <Col className='px-0' xs={4}>
-            <p className='pl-2'>{talent_call}  </p>
-            <p className='pl-2'>{shoot_call}</p>
-            <p className='pl-2'>{wrap}</p>
-            </Col>
-        </Row>
-        </div>
-        </Col>
-        <Col className={`${styles.WhiteAqua} px-1`} xs={6}>
-        {/* Hospital */}
-        <div >
-        <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
-        <p>{nearest_hospital} </p>
-        </div>
-        {/* meals */}
-        <div>
-        <Row>
-            <Col xs={6}>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span></p>
+            <p className='pl-2'>{weather_location} </p> 
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span></p>
+            <p className='pl-2'>{weather_location} </p> 
+          </div>
+          {/* calls */}
+          <div className={` mt-3 ${styles.WhiteAqua}`}>
+              <p className={`mb-0`} ><span className={`${styles.Bold}`}>Talent Call:</span > </p>
+              <p className='pl-2'>{talent_call}  </p>
+              <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
+              <p className='pl-2'>{shoot_call}</p>
+              <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
+              <p className='pl-2'>{wrap}</p>
+          </div>
+          </Col>
+        <Col xs={6} className='px-0 mx-0 text-center'  >
+            {/* call */}
+            <h2 className='mt-0 mb-0 pb-0'>Unit Call</h2>
+            <div>
+            <span className={`px-3 ${styles.UnitCallMob }`}>{unit_call} </span>
+            </div>
+            <h2 className='mt-1 mb-0 pb-0'>Your Call</h2>
+            <div>
+            <span className={`px-3 ${styles.UnitCallMob }`}>{unit_call} </span>
+            </div>
+            <div className='mt-3 mb-0 pb-0'>
+            <span className={`px-3 ${styles.UnitCallMobDate }`}>{date} </span>
+            </div>
+            <div className='mt-2'>
+            <span className={`px-3 ${styles.UnitCallMobDay }`}>Day {day} of {total_shoot_days} </span>
+            </div>
+            {/* logo */}
+            <div className={`mt-2 mx-3 px-2 ${styles.CallLogoDivMob }`}>
+            <h1>LOGO</h1>
+            </div>
+          </Col>
+        <Col xs={3} className={`px-0 text-center`}>
+           {/* Hospital */}
+        <div className={`${styles.WhiteAqua}`}>
+        <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest</span></p>
+        <p className={`mb-0`} ><span className={`${styles.Bold}`}>Hospital:</span></p>
+        <p className={`mb-0`}>{nearest_hospital} </p>
+        <p className={`mb-0`}>{hospital_address_line_1} </p>
+        <p className={`mb-0`}>{hospital_address_line_2} </p>
+        <p className={`mb-0`}>{hospital_address_line_3} </p>
+        <p className={`mb-0`}>{hospital_address_line_4} </p>
+        </div >
+          {/* meals */}
+        <div className={` mt-3 ${styles.WhiteAqua}`}>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span > </p>
-            </Col>
-            <Col xs={6}>
             <p className='pl-2'>{breakfast}</p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span > </p>
             <p className='pl-2'>{lunch}  </p>
-            </Col>
-        </Row>
         </div>
         </Col>
         </Row>
         </div>
-        <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+        <p className={`mt-4 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         {/* buttons */}
         <Row>
         <Col xs={4} className='text-center' md={2}>
@@ -356,7 +359,7 @@ const CallSheet = (props ) => {
               </p>
             </Col>
         </Row>  
-        <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+        <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
         {/* pages */}
         {/* Locations setShowContacts */}
         {!showContacts ? (

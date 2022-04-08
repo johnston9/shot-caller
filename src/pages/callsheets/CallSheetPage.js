@@ -59,8 +59,8 @@ const CallSheetPage = () => {
         >
             Back
         </Button>
-        {/* top {...callsheet.results[0]}  */}
-        <Row className='mt-3'>
+        {/*n */}
+        <Row className='mt-0'>
             <Col>
             {hasLoaded ? (
                 <CallSheet 
