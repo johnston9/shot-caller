@@ -207,24 +207,7 @@ const CallSheet = (props ) => {
         {/* Advanced Schedule  */}
         <AdvancedSchedPage callsheet={callsheet}/>
         {/* Walkie Channels */}
-        <div className='mt-3'>
-        <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
-        <Row>
-            <Col>
-            <h5>Walkie Channels: xxx</h5>
-            <span> 
-            Production{walkie_channel_production}
-            {walkie_channel_open}
-            {walkie_channel_transportation}
-            {walkie_channel_art_dept}
-            {walkie_channel_rollover}
-            {walkie_channel_camera}
-            {walkie_channel_electric}
-            {walkie_channel_grip}
-            </span>
-            </Col>
-        </Row>
-        </div>
+        <WalkiesPage callsheet={callsheet} />
         </div>
         {/* MOBLIE  */}
         <div className='d-block d-md-none'>
@@ -348,7 +331,7 @@ const CallSheet = (props ) => {
                       onClick={() => setShowTalent(showTalent => !showTalent)} > Talent
                     </p>
             </Col>
-            <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
+            <Col xs={4} className='mx-0 text-center py-0' md={2}>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowBg(showBg => !showBg)} > Background
@@ -357,7 +340,7 @@ const CallSheet = (props ) => {
             <Col xs={4} className='text-center' md={2}>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
-                  onClick={() => showNotes(showNotes => !showNotes)} >Notes
+                  onClick={() => setShowNotes(showNotes => !showNotes)} >Notes
               </p>
             </Col>
             <Col xs={4} className='mx-0 px-0 text-center' md={2}>
@@ -415,7 +398,11 @@ const CallSheet = (props ) => {
         {!showNotes ? (
                 ""
               ) : (
-                <NotesPage callsheet={callsheet} setShow={setShowNotes} /> 
+                <NotesPage 
+                  important_info={important_info} 
+                  transport_info={transport_info} 
+                  department_info={department_info}
+                 setShow={setShowNotes} /> 
                 ) 
         } 
         {!showCrew ? (
@@ -427,7 +414,7 @@ const CallSheet = (props ) => {
         {!showAdvanSched ? (
                 ""
               ) : (
-                <CrewCallsPage callsheet={callsheet} setShow={setShowAdvanSched} /> 
+                <AdvancedSchedPage callsheet={callsheet} setShow={setShowAdvanSched} /> 
                 ) 
         }
         </div>

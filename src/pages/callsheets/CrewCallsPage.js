@@ -17,7 +17,7 @@ import TimesCastingAD from './TimesCastingAD';
 import TimesLocations from './TimesLocations';
 import TimesElectricGrip from './TimesElectricGrip';
 
-const CrewCallsPage = ({callsheet}) => {
+const CrewCallsPage = ({callsheet, setShow}) => {
   useRedirect("loggedOut");
 
   const crewInfo = useCrewInfoContext();
@@ -37,9 +37,20 @@ const CrewCallsPage = ({callsheet}) => {
 
   return (
     <div className='mt-3'>
-      <span className={`pl-3 py-0 px-1 ${styles.SubTitleSpan }`}style={{ textTransform: 'uppercase' }}>Crew (total)</span>
+      <div className='d-none d-md-block mt-5'>
+       <h4 className={`pl-3 py-0 px-1 ${styles.SubTitleSpan }`}
+        style={{ textTransform: 'uppercase' }}>
+        Crew Calls <span className={`${styles.HSpan }`} >Total</span></h4>
+      </div>
+        {/* mobile */}
+        <div className='d-block d-md-none'>
+        <div className={`mb-3 text-center ${styles.SubTitle }`}>
+            <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+            <h5 className={`pl-5 text-center`} 
+            style={{ textTransform: 'uppercase'}} >crew calls </h5>
+            </div>
+        </div>
         <p style={{ textTransform: 'uppercase'}} className={` pl-3 pt-1 ${styles.SubTitle }`}></p>
-      {/* <h4 style={{ textTransform: 'uppercase'}} className={`text-center mt-0 mb-4 pl-3 py-0 ${styles.SubTitle }`}>CREW CALLS</h4> */}
         <div className='mt-0 mb-3'>
           <Row className={`${styles.ButtonLine} mt-0`}>
             <Col xs={4} md={2} className='text-center'>
@@ -54,7 +65,7 @@ const CrewCallsPage = ({callsheet}) => {
                       onClick={() => setShowCam(showCam => !showCam)} > Camera
                     </p>
                 </Col>
-            <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
+            <Col xs={4} className='text-center mx-0 py-0' md={2}>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
@@ -120,7 +131,7 @@ const CrewCallsPage = ({callsheet}) => {
           {/* <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
         </div>
         <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
-        <div className='mt-0'>
+        <div className='mt-3'>
         {/* Info Production */}
         {!showPro ? (
                  ""

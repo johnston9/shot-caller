@@ -23,13 +23,13 @@ const ContactsPage = (props) => {
         set_medic_name, set_medic_email, set_medic_phone,} = crewInfoOne;
   return (
     <div className='mt-3'>
-        <div className={`mt-0 text-center ${styles.SubTitle }`}>
+        <div className={`mb-3 text-center ${styles.SubTitle }`}>
         <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >Contacts </h5>
         </div>
         <Row>
         <Col xs={12} >
-            <div className='mt-3 text-center'>
+            <div className='text-center'>
             <h5>{production_company} </h5>
             <p className='mb-0'>{company_address_line_1} </p>
             <p className='mb-0'>{company_address_line_2} </p>

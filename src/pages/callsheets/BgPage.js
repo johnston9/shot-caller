@@ -12,12 +12,10 @@ const BgPage = (props) => {
     const {background, setShow} = props;
   return (
     <div className='mt-3'>
-        <div className={`mt-0 text-center ${styles.SubTitle }`}>
-        <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-        <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >BG / Stand-ins (total) </h5>
-        </div>
         {/* MEDIUM */}
-        <div className='d-none d-md-block'>
+        <div className='d-none d-md-block mt-5'>
+        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
+        style={{ textTransform: 'uppercase' }}>BG / STANDINS</span>
         {/* titles */}
         <Row >
         <Col md={6}>
@@ -104,6 +102,10 @@ const BgPage = (props) => {
         </div>
         {/* MOBILE */}
         <div className='d-block d-md-none'>
+        <div className={`mb-3 text-center ${styles.SubTitle }`}>
+        <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+        <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >BG / Stand-ins (total) </h5>
+        </div>
         {/* titles */}
         <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
