@@ -153,11 +153,11 @@ const CallSheet = (props ) => {
             {/* call */}
             <h2 className='mt-0 mb-0 pb-0'>Unit Call</h2>
             <div>
-            <span className={`px-3 ${styles.UnitCallMed }`}>{unit_call} </span>
+            <span className={`px-5 ${styles.UnitCallMed }`}>{unit_call} </span>
             </div>
             <h2 className='mt-1 mb-0 pb-0'>Your Call</h2>
             <div>
-            <span className={`px-3 ${styles.UnitCallMed }`}>{unit_call} </span>
+            <span className={`px-5 ${styles.UnitCallMed }`}>{unit_call} </span>
             </div>
             <div className='mt-2 mb-0 pb-0'>
             <span className={`px-3 ${styles.UnitCallMedDate }`}>{date} </span>

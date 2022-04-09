@@ -65,8 +65,9 @@ const CallsheetsPage = ({ filter="" }) => {
         {/* crew info */}
         <Row className="text-center">
             <Col >
+            <p>Add all crew members to the Crew Info page before creating the callsheets.</p>
             <Button onClick={() => setShowCrewInfo(showCrewInfo => !showCrewInfo ) }
-              className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+              className={` mt-2 ${btnStyles.Button} ${btnStyles.Shed}`}>
               Add / View Company and Crew Info</Button>
             </Col>
         </Row>

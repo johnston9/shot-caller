@@ -410,7 +410,6 @@ const CallsheetEditPage = () => {
       wardrobe_assistant_5_calltime,
     } = postData;
 
-
   useEffect(() => {
     const handleMount = async () => {
         try {
@@ -1800,6 +1799,16 @@ const CallsheetEditPage = () => {
       >
         Back
       </Button>
+      <div className="text-center d-none d-md-block ">
+      <Row>
+        <Col md={{span:8, offset:2}}>
+        <p>The Add Cast and Add Background forms here are seperate from the main 
+      Callsheet Info and Crew Calls form below. They allow each cast member 
+      or background item to be added individually. The schedule is provided
+      to facilitate this and can also be viewed beside these forms. </p>
+        </Col>
+      </Row>
+      </div>
       <h3 className={`text-center py-1 mt-2 ${styles.SubTitle }`} >ADD CAST</h3> 
       <Row className="text-center">
       <Col xs={10} md={{span: 8, offset: 2 }} >
@@ -1885,7 +1894,7 @@ const CallsheetEditPage = () => {
       ) }
       </div>
       {/* info */}
-      <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >ADD INFO AND CREW CALLS</h3> 
+      <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >EDIT INFO AND CREW CALLS</h3> 
       {/* <div className={`${styles.White }`}> 
       <h4 className={` text-center mt-0 mb-0 py-1`} > INFO</h4> 
       </div>
@@ -1978,12 +1987,6 @@ const CallsheetEditPage = () => {
       <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
       </div>
       <div className={`mt-0 ${styles.Crew }`}>
-      <Row>
-      <Col xs={12} md={{span: 8, offset:2 }}>
-      <p className="py-2 text-center"> Add all crew members to the Crew Info page first. Click on
-        each department above and fill in the call times. Complete all departments before clicking Create.</p>
-      </Col>
-      </Row>
         {/* Add Production */}
         {!showPro ? (
           ""
@@ -2056,6 +2059,15 @@ const CallsheetEditPage = () => {
               ) : (
                 <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
                 ) } 
+        <Row>
+          <Col xs={12} md={{span: 8, offset:2 }}>
+          <p className="py-2 text-center"> Add all crew members to the Crew Info page located
+          on the Callsheets main page first to enable automatic "Call Time" input boxes being
+          generated for each member.
+          Click on each department to fill in the call times for each crew member. 
+          Complete all departments before clicking Create.</p>
+          </Col>
+          </Row>
         </div>
       {buttons}
       </Form>

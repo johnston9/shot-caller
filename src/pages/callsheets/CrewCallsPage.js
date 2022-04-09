@@ -50,8 +50,9 @@ const CrewCallsPage = ({callsheet, setShow}) => {
             style={{ textTransform: 'uppercase'}} >crew calls </h5>
             </div>
         </div>
-        <p style={{ textTransform: 'uppercase'}} className={` pl-3 pt-1 ${styles.SubTitle }`}></p>
-        <div className='mt-0 mb-3'>
+        {/* MEDIUM */}
+        <p style={{ textTransform: 'uppercase'}} className={`mb-3 pl-3 pt-1 ${styles.SubTitle }`}></p>
+        <div className='mt-0 mb-1'>
           <Row className={`${styles.ButtonLine} mt-0`}>
             <Col xs={4} md={2} className='text-center'>
                 <p
