@@ -103,7 +103,7 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
           </Row>
           </div> )
          }
-         <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+         <div className={ `mt-0 text-center ${styles.SubTitle }`}>
           <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >GRIP </h5>
         </div>
          {/* keygrip */}

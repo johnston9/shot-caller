@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
-import InfoCamera from './InfoCamera';
 import InfoWardrobe from './InfoWardrobe';
 import InfoScript from "./InfoScript";
 import InfoMakeup from './InfoMakeup';
@@ -16,6 +15,8 @@ import TimesArt from './TimesArt';
 import TimesCastingAD from './TimesCastingAD';
 import TimesLocations from './TimesLocations';
 import TimesElectricGrip from './TimesElectricGrip';
+import TimesCamera from './TimesCamera';
+import TimesMakeup from './TimesMakeup';
 
 const CrewCallsPage = ({callsheet, setShow}) => {
   useRedirect("loggedOut");
@@ -133,77 +134,88 @@ const CrewCallsPage = ({callsheet, setShow}) => {
         </div>
         <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         <div className='mt-3'>
-        {/* Info Production */}
+        {/* Production */}
         {!showPro ? (
                  ""
               ) : (
                 <TimesProduction callsheet={callsheet} crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
                 ) }  
-        {/* Info Casting */}
+        {/* Camera */}
+        {!showCam ? (
+                ""
+              ) : (
+                <TimesCamera callsheet={callsheet} 
+                crewInfoOne={crewInfoOne} setShowCam={setShowCam} /> 
+                ) } 
+        {/* Casting */}
         {!showCas ? (
                 ""
               ) : (
-                <TimesCastingAD callsheet={callsheet} crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
+                <TimesCastingAD callsheet={callsheet} 
+                crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
                 ) } 
-        {/* Info Locations */}
+        {/* Locations */}
         {!showLoc ? (
                 ""
               ) : (
-                <TimesLocations callsheet={callsheet} crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} /> 
+                <TimesLocations callsheet={callsheet} 
+                crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} /> 
+                ) } 
+        {/* Electric */}
+        {!showEle ? (
+                ""
+              ) : (
+                <TimesElectricGrip crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowEle={setShowEle} /> 
+                ) } 
+        {/* Makeup */}
+        {!showMak ? (
+                ""
+              ) : (
+                <TimesMakeup callsheet={callsheet} 
+                crewInfoOne={crewInfoOne} setShowMak={setShowMak} /> 
                 ) } 
         {/* Info Script  */}
         {!showScr ? (
                 ""
               ) : (
-                <InfoScript crewInfoOne={crewInfoOne} setShowScr={setShowScr} /> 
-                ) } 
-        {/* Info Electric */}
-        {!showEle ? (
-                ""
-              ) : (
-                <TimesElectricGrip crewInfoOne={crewInfoOne} setShowEle={setShowEle} /> 
-                ) } 
-        {/* Info Makeup */}
-        {!showMak ? (
-                ""
-              ) : (
-                <InfoMakeup crewInfoOne={crewInfoOne} setShowMak={setShowMak} /> 
+                <InfoScript crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowScr={setShowScr} /> 
                 ) } 
         {/* Info Sound */}
         {!showSou ? (
                 ""
               ) : (
-                <InfoSound crewInfoOne={crewInfoOne} setShowSou={setShowSou} /> 
+                <InfoSound crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowSou={setShowSou} /> 
                 ) } 
         {/* Info Stunts */}
         {!showStu ? (
                 ""
               ) : (
-                <InfoStunts crewInfoOne={crewInfoOne} setShowStu={setShowStu} /> 
+                <InfoStunts crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowStu={setShowStu} /> 
                 ) } 
         {/* Info Art */}
         {!showArt ? (
                 ""
               ) : (
-                <TimesArt crewInfoOne={crewInfoOne} setShowArt={setShowArt} /> 
-                ) } 
-        {/* Info Camera */}
-        {!showCam ? (
-                ""
-              ) : (
-                <InfoCamera crewInfoOne={crewInfoOne} setShowCam={setShowCam} /> 
+                <TimesArt crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowArt={setShowArt} /> 
                 ) } 
         {/* Info Post */}
         {!showPos ? (
                 ""
               ) : (
-                <InfoPost crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
+                <InfoPost crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowPos={setShowPos} /> 
                 ) } 
         {/* Info Wardrobe  */}
         {!showWar ? (
                 ""
               ) : (
-                <InfoWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
+                <InfoWardrobe crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowWar={setShowWar} /> 
                 ) } 
         </div>
     </div>

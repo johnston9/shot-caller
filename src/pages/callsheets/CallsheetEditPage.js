@@ -1984,83 +1984,95 @@ const CallsheetEditPage = () => {
           </p>
         </Col>
       </Row>  
-      <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+      <p className={`mt-1 pl-3 mb-3 pt-1 ${styles.SubTitle }`}></p>
       </div>
       <div className={`mt-0 ${styles.Crew }`}>
         {/* Add Production */}
         {!showPro ? (
           ""
               ) : (
-                <AddProduction postData={postData} handleChange={handleChange} crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
+                <AddProduction postData={postData} handleChange={handleChange} 
+                crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
                 ) }  
         {/* Add Casting */}
         {!showCas ? (
                 ""
               ) : (
-                <AddCastingAD crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
+                <AddCastingAD crewInfoOne={crewInfoOne} setShowCas={setShowCas}
+                postData={postData} handleChange={handleChange} /> 
                 ) } 
         {/* Add Locations */}
         {!showLoc ? (
                 ""
               ) : (
-                <AddLocations crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} /> 
+                <AddLocations crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Script  */}
         {!showScr ? (
                 ""
               ) : (
-                <AddScriptCater crewInfoOne={crewInfoOne} setShowScr={setShowScr} /> 
+                <AddScriptCater crewInfoOne={crewInfoOne} setShowScr={setShowScr} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Electric */}
         {!showEle ? (
                 ""
               ) : (
-                <AddElectricGrip crewInfoOne={crewInfoOne} setShowEle={setShowEle} /> 
+                <AddElectricGrip crewInfoOne={crewInfoOne} setShowEle={setShowEle} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Makeup */}
         {!showMak ? (
                 ""
               ) : (
-                <AddMakeup crewInfoOne={crewInfoOne} setShowMak={setShowMak} /> 
+                <AddMakeup crewInfoOne={crewInfoOne} setShowMak={setShowMak} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Sound */}
         {!showSou ? (
                 ""
               ) : (
-                <AddSoundTransport crewInfoOne={crewInfoOne} setShowSou={setShowSou} /> 
+                <AddSoundTransport crewInfoOne={crewInfoOne} setShowSou={setShowSou} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Stunts */}
         {!showStu ? (
                 ""
               ) : (
-                <AddStunts crewInfoOne={crewInfoOne} setShowStu={setShowStu} /> 
+                <AddStunts crewInfoOne={crewInfoOne} setShowStu={setShowStu} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Art */}
         {!showArt ? (
                 ""
               ) : (
-                <AddArt crewInfoOne={crewInfoOne} setShowArt={setShowArt} /> 
+                <AddArt crewInfoOne={crewInfoOne} setShowArt={setShowArt} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Camera */}
         {!showCam ? (
                 ""
               ) : (
-                <AddCamera crewInfoOne={crewInfoOne} setShowCam={setShowCam} /> 
+                <AddCamera crewInfoOne={crewInfoOne} setShowCam={setShowCam} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Post */}
         {!showPos ? (
                 ""
               ) : (
-                <AddPostAdditional crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
+                <AddPostAdditional crewInfoOne={crewInfoOne} setShowPos={setShowPos} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Wardrobe  */}
         {!showWar ? (
                 ""
               ) : (
-                <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
+                <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} 
+                postData={postData} handleChange={handleChange}/> 
                 ) } 
         <Row>
-          <Col xs={12} md={{span: 8, offset:2 }}>
+          <Col className={`mt-3 ${styles.White} `} xs={12} md={{span: 8, offset:2 }}>
           <p className="py-2 text-center"> Add all crew members to the Crew Info page located
           on the Callsheets main page first to enable automatic "Call Time" input boxes being
           generated for each member.

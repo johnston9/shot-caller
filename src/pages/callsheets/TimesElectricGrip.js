@@ -31,6 +31,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       <span className={`float-right ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ELECTRIC </h5>
       </div>
+      <Row>
       {/* Gaffer */}
       {gaffer_calltime && 
           (<Col xs={12} md={6}>
@@ -95,10 +96,12 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
           </Row>
           </Col> )
       }
+      </Row>
       {/* GRIP */}
-      <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+      <div className={` mt-0 text-center ${styles.Back3 }`}>
           <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >GRIP </h5>
       </div>
+      <Row>
       {/* Keygrip */}
       {keygrip_calltime && 
           (<Col xs={12} md={6}>
@@ -227,6 +230,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
           </Row>
           </Col> )
       }
+      </Row>
     </div>
   )
 }

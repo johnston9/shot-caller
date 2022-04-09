@@ -41,7 +41,7 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >POST </h5>
       </div>
       {/* addit */}
-      <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+      <div className={`mt-0 text-center ${styles.Back3 }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >ADDITIONAL POSITIONS </h5>
         </div>
     </div>

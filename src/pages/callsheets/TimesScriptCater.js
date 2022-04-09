@@ -30,7 +30,7 @@ const TimesScriptCater = ({crewInfoOne, callsheet, setShowScr }) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >SCRIPT </h5>
       </div>
       {/* addit */}
-      <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+      <div className={`mt-0 text-center ${styles.Back3 }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >CATERING / CRAFT </h5>
         </div>
     </div>

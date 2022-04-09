@@ -22,7 +22,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
   const { dop_calltime, camera_operator_calltime, camera_ass_1_calltime,
     camera_ass_2_calltime, dit_calltime, steadicam_calltime, camera_pa_calltime,
     oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, 
-    oth_camera_pos_3_calltime,} = callsheet;
+    oth_camera_pos_3_calltime,} = callsheet ;
 
   return (
     <div>

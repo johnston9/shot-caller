@@ -64,7 +64,7 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
           </Row>
           </div> )
         }
-        <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+        <div className={`mt-3 mt-0 text-center ${styles.SubTitle }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >AD </h5>
         </div>
         {/* 1st AD */}

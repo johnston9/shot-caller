@@ -31,6 +31,7 @@ const TimesCastingAD = ({crewInfoOne, callsheet, setShowCas }) => {
       <span className={`float-right ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CASTING </h5>
       </div>
+      <Row>
       {/* Casting Director */}
       {casting_director_calltime && 
           (<Col xs={12} md={6}>
@@ -63,10 +64,12 @@ const TimesCastingAD = ({crewInfoOne, callsheet, setShowCas }) => {
         </Row>
         </Col> )
       }
+      </Row>
       {/* AD */}
-      <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+      <div className={`mt-3 mt-0 text-center ${styles.Back3 }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >AD </h5>
       </div>
+      <Row>
       {/* 1st AD */}
       {ad_1_calltime && 
         (<Col xs={12} md={6}>
@@ -227,6 +230,7 @@ const TimesCastingAD = ({crewInfoOne, callsheet, setShowCas }) => {
         </Row>
         </Col> )
       }
+    </Row>
     </div>
   )
 }

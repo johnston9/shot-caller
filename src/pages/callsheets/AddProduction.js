@@ -40,7 +40,7 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
       </div>
       <div className='mt-3'>
-        {/* director_ */}
+        {/* director */}
         {director_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >

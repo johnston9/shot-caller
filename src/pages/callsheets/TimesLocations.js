@@ -24,6 +24,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
       <span className={`float-right ${styles.Close }`} onClick={() => setShowLoc(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >LOCATIONS </h5>
       </div>
+      <Row>
       {/* Location Mngr */}
       {location_mngr_calltime && 
           (<Col xs={12} md={6}>
@@ -120,6 +121,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
           </Row>
           </Col> )
         }
+      </Row>
     </div>
   )
 }
