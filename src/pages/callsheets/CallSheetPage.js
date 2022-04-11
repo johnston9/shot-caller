@@ -16,6 +16,7 @@ const CallSheetPage = () => {
     // eslint-disable-next-line
     const [cast, setCast] = useState({ results: [] });
     // eslint-disable-next-line
+    const [currentUser, setCurrentUser] = useState(null);
     const [background, setBackground] = useState({ results: [] });
     const [scenes, setScenes] = useState({ results: [] });
     const [dataDay, setDataDay] = useState("");
@@ -28,16 +29,19 @@ const CallSheetPage = () => {
         const handleMount = async () => {
             try {
                 const [{ data: callsheetdata }, { data: castcalldata }, 
-                    { data: bgcalldata }, { data: scenes }] = await Promise.all([
+                    { data: bgcalldata }, { data: scenes },
+                    { data: user }] = await Promise.all([
                     axiosReq.get(`/callsheetsnew/?day_id=${id}`),
                     axiosReq.get(`/castcallsnew/?day_id=${id}`),
                     axiosReq.get(`/backgroundcallsnew/?day_id=${id}`),
                     axiosReq.get(`/schedule/scenes/?day_id=${id}`),
+                    axiosReq.get("dj-rest-auth/user/"),
                 ])
                 setCallsheet(callsheetdata);
                 setCast(castcalldata);
                 setBackground(bgcalldata);
                 setScenes(scenes);
+                setCurrentUser(user.username);
                 setDataDay(callsheetdata.results[0].day)
                 setDataDate(callsheetdata.results[0].date);
                 setHasLoaded(true);
@@ -66,6 +70,8 @@ const CallSheetPage = () => {
                 <CallSheet 
                 {...callsheet.results[0]}
                 callsheet={callsheet.results[0]}
+                // userName={userName}
+                currentUser={currentUser}
                 scenes={scenes}
                 cast={cast}
                 background={background}

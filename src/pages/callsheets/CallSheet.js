@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -22,7 +22,7 @@ const CallSheet = (props ) => {
     const crewInfo = useCrewInfoContext();
     const crewInfoOne = crewInfo.results[0];
     const history = useHistory();
-    console.log(props);
+    const [yourcalltime, setYourcalltime] = useState("");
     const [showContacts, setShowContacts] = useState(false);
     const [showLoc, setShowLoc] = useState(false);
     const [showWalkies, setShowWalkies] = useState(false);
@@ -51,6 +51,7 @@ const CallSheet = (props ) => {
 
     const { scenes,
         admin,
+        currentUser,
         cast,
         callsheet,
         background,
@@ -101,7 +102,21 @@ const CallSheet = (props ) => {
         walkie_channel_grip,
         // production
         director_calltime,
+        gaffer_calltime,
       } = props;
+
+      useEffect(() => {
+        const yourcall = ( currentUser) => {
+          switch(currentUser) {
+            case "director": return callsheet.director_calltime;
+            case "producer": return callsheet.producer_calltime;
+            case "dop": return callsheet.dop_calltime;
+            case "davey": return callsheet.gaffer_calltime;
+            default: return 'xx';
+          }
+        };
+        setYourcalltime(yourcall(currentUser));
+      }, [])
 
       const handleEdit = () => {
         history.push(`/callsheet/edit/${day_id}/`);
@@ -151,11 +166,11 @@ const CallSheet = (props ) => {
             </Col>
             <Col  md={4} className='text-center'  >
             {/* call */}
-            <h2 className='mt-0 mb-0 pb-0'>Unit Call</h2>
-            <div>
-            <span className={`px-5 ${styles.UnitCallMed }`}>{unit_call} </span>
-            </div>
             <h2 className='mt-1 mb-0 pb-0'>Your Call</h2>
+            <div>
+            <span className={`px-5 ${styles.YourCallMed }`}>{yourcalltime} </span>
+            </div>
+            <h4 className='mt-0 mb-0 pb-0'>Unit Call</h4>
             <div>
             <span className={`px-5 ${styles.UnitCallMed }`}>{unit_call} </span>
             </div>
@@ -259,15 +274,15 @@ const CallSheet = (props ) => {
           </Col>
         <Col xs={6} className='px-0 mx-0 text-center'  >
             {/* call */}
-            <h2 className='mt-0 mb-0 pb-0'>Unit Call</h2>
-            <div>
-            <span className={`px-3 ${styles.UnitCallMob }`}>{unit_call} </span>
-            </div>
             <h2 className='mt-1 mb-0 pb-0'>Your Call</h2>
             <div>
+            <span className={`px-3 ${styles.YourCallMob }`}>{yourcalltime} </span>
+            </div>
+            <h4 className='mt-3 mb-0 pb-0'>Unit Call</h4>
+            <div>
             <span className={`px-3 ${styles.UnitCallMob }`}>{unit_call} </span>
             </div>
-            <div className='mt-3 mb-0 pb-0'>
+            <div className='mt-1 mb-0 pb-0'>
             <span className={`px-3 ${styles.UnitCallMobDate }`}>{date} </span>
             </div>
             <div className='mt-2'>
