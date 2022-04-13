@@ -177,8 +177,8 @@ const CallSheet = (props ) => {
             <div className='mt-2 mb-0 pb-0'>
             <span className={`px-3 ${styles.UnitCallMedDate }`}>{date} </span>
             </div>
-            <div>
-            <span className={`px-3 ${styles.UnitCallMedDay }`}>Day {day} of {total_shoot_days} </span>
+            <div className='mt-2'>
+            <span className={` px-3 ${styles.UnitCallMedDay }`}>Day {day} of {total_shoot_days} </span>
             </div>
             {/* logo */}
             <div className={`mt-2 px-1 mx-4 ${styles.CallLogoDiv }`}>

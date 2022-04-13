@@ -128,7 +128,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
          }
       </Row>
       {/* PROPS */}
-      <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+      <div className={`mt-3 mt-0 text-center ${styles.Back3 }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
         </div>
         <Row>

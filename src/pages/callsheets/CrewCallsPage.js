@@ -4,12 +4,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
-import InfoWardrobe from './InfoWardrobe';
-import InfoScript from "./InfoScript";
-import InfoMakeup from './InfoMakeup';
-import InfoSound from './InfoSound';
-import InfoStunts from './InfoStunts';
-import InfoPost from './InfoPost';
 import TimesProduction from './TimesProduction';
 import TimesArt from './TimesArt';
 import TimesCastingAD from './TimesCastingAD';
@@ -17,6 +11,11 @@ import TimesLocations from './TimesLocations';
 import TimesElectricGrip from './TimesElectricGrip';
 import TimesCamera from './TimesCamera';
 import TimesMakeup from './TimesMakeup';
+import TimesScriptCater from './TimesScriptCater';
+import TimesSoundTransport from './TimesSoundTransport';
+import TimesPostAdditional from './TimesPostAdditional';
+import TimesStunts from './TimesStunts';
+import TimesWardrobe from './TimesWardrobe';
 
 const CrewCallsPage = ({callsheet, setShow}) => {
   useRedirect("loggedOut");
@@ -130,7 +129,6 @@ const CrewCallsPage = ({callsheet, setShow}) => {
               </p>
             </Col>
           </Row>  
-          {/* <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
         </div>
         <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         <div className='mt-3'>
@@ -175,25 +173,25 @@ const CrewCallsPage = ({callsheet, setShow}) => {
                 <TimesMakeup callsheet={callsheet} 
                 crewInfoOne={crewInfoOne} setShowMak={setShowMak} /> 
                 ) } 
-        {/* Info Script  */}
+        {/* Script  */}
         {!showScr ? (
                 ""
               ) : (
-                <InfoScript crewInfoOne={crewInfoOne}
+                <TimesScriptCater crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowScr={setShowScr} /> 
                 ) } 
-        {/* Info Sound */}
+        {/* Sound */}
         {!showSou ? (
                 ""
               ) : (
-                <InfoSound crewInfoOne={crewInfoOne}
+                <TimesSoundTransport crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowSou={setShowSou} /> 
                 ) } 
-        {/* Info Stunts */}
+        {/* Stunts */}
         {!showStu ? (
                 ""
               ) : (
-                <InfoStunts crewInfoOne={crewInfoOne}
+                <TimesStunts crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowStu={setShowStu} /> 
                 ) } 
         {/* Info Art */}
@@ -203,18 +201,18 @@ const CrewCallsPage = ({callsheet, setShow}) => {
                 <TimesArt crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowArt={setShowArt} /> 
                 ) } 
-        {/* Info Post */}
+        {/* Post */}
         {!showPos ? (
                 ""
               ) : (
-                <InfoPost crewInfoOne={crewInfoOne}
+                <TimesPostAdditional crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowPos={setShowPos} /> 
                 ) } 
-        {/* Info Wardrobe  */}
+        {/* Wardrobe  */}
         {!showWar ? (
                 ""
               ) : (
-                <InfoWardrobe crewInfoOne={crewInfoOne}
+                <TimesWardrobe crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowWar={setShowWar} /> 
                 ) } 
         </div>

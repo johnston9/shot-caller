@@ -202,7 +202,7 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowScr }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Crafty Assist</p>
+              <p className={`${styles.CrewInfoP} `}>Crafty Assistant</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{crafty_ass_name} </p>
