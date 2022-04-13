@@ -53,6 +53,7 @@ import CrewInfoEdit from './pages/callsheets/CrewInfoEdit';
 import CallsheetCreate from './pages/callsheets/CallsheetCreate';
 import CallSheetPage from './pages/callsheets/CallSheetPage';
 import CallsheetEditPage from './pages/callsheets/CallsheetEditPage';
+import CrewInfo from './pages/callsheets/CrewInfo';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -76,6 +77,8 @@ function App() {
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
+        {/* CREWINFO */}
+        <Route exact path="/crewinfo" render={() => <CrewInfo />} />
         {/* SCHEDULE*/}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
         <Route exact path="/edit/days/:id/" render={() => <DayEdit />} />

@@ -21,6 +21,7 @@ import InfoArt from './InfoArt';
 import InfoSound from './InfoSound';
 import InfoStunts from './InfoStunts';
 import InfoPost from './InfoPost';
+import TopBox from '../../components/TopBox';
 
 const CrewInfo = ({setShowCrewInfo}) => {
   useRedirect("loggedOut");
@@ -44,7 +45,21 @@ const CrewInfo = ({setShowCrewInfo}) => {
 
   return (
     <div className='mt-3'>
-      <h4 style={{ textTransform: 'uppercase'}} className={`text-center mt-1 mb-4 pl-3 py-1 mx-5 ${styles.SubTitle }`}>CREW INFO</h4>
+      <TopBox work="Crew Info" />
+      <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
+            onClick={() => history.goBack()}
+        >
+            Back
+        </Button>   
+      <h4 style={{ textTransform: 'uppercase'}} className={`text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>CREW INFO</h4>
+      <Row className="text-center">
+            <Col >
+            <p>Add all crew members to the Crew Info page to enable automatic generation
+              of their call time input box on Callsheets.
+            </p>
+            </Col>
+        </Row>
       {id ? (
         ""
       ) : (
@@ -55,7 +70,7 @@ const CrewInfo = ({setShowCrewInfo}) => {
           <Col className='text-center'>
           <Button onClick={() => history.push("crewinfo/edit/1")}
             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-            Edit Info</Button>
+            Add / Edit Info</Button>
           </Col>
         </Row>
         <div className='mt-3'>

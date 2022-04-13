@@ -53,31 +53,24 @@ const CallsheetsPage = ({ filter="" }) => {
 
   return (
     <div>
-        <TopBox work="Callsheets"
-                title2="Crew Info" />
+        <TopBox work="Callsheets" />
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}
         >
             Back
-        </Button>      
-        {/* crew info */}
-        <Row className="text-center">
-            <Col >
-            <p>Add all crew members to the Crew Info page before creating the callsheets.</p>
-            <Button onClick={() => setShowCrewInfo(showCrewInfo => !showCrewInfo ) }
-              className={` mt-2 ${btnStyles.Button} ${btnStyles.Shed}`}>
-              Add / View Company and Crew Info</Button>
+        </Button>              
+        <h4 style={{ textTransform: 'uppercase'}} className={`mt-1 text-center mt-1 mb-2 pl-3 py-1 ${styles.SubTitle }`}>CALLSHEETS</h4>
+        <Row className="text-center d-none d-md-block">
+            <Col xs={12} md={{span: 8, offset: 2}} >
+            <p>Add all crew members to the Crew Info page. Create Callsheets from their 
+              scheduling page. Add to them or edit them from here or their Schedule page.
+            </p>
             </Col>
         </Row>
-        {/* CrewInfo */}
-        {showCrewInfo ? (
-          <CrewInfo setShowCrewInfo={setShowCrewInfo}  />
-        ) : ("") }
-        <h4 style={{ textTransform: 'uppercase'}} className={`mt-4 text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>CALLSHEETS</h4>
         {/* search  */}
         <Row>
-        <Col className="mt-0 text-center" xs={12} md={{ span: 6, offset: 3 }} >
+        <Col className="mt-3 text-center" xs={12} md={{ span: 6, offset: 3 }} >
         <Form
           className={`${styles.SearchBar} mt-1`}
           onSubmit={(event) => event.preventDefault()}

@@ -16,7 +16,8 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref, refw, refw1, refw2, refw3, reff, reff1, 
-    reff2, reff3, reff4, reff5, reff6, refm, refm1, refm2 } = useClickOutsideToggle();
+    reff2, reff3, reff4, reff5, reff6, refm, refm1, refm2,
+  refs, refs1, refs2 } = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
@@ -38,7 +39,7 @@ const NavBar = () => {
         >
           <i className="navicon fas fa-play"></i>Home
       </NavLink>
-{/*  workspace */}
+      {/*  workspace */}
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
@@ -81,6 +82,7 @@ const NavBar = () => {
         </NavLink>
       </NavDropdown.Item>
       </NavDropdown>
+
       {/* characters locations departments-xtra */}
       <NavDropdown 
           title={
@@ -189,23 +191,67 @@ const NavBar = () => {
         </NavDropdown.Item>
       </NavDropdown>
 
+      {/*  calls */}
+      <NavDropdown 
+          title={
+            <span style={{ color: '#555555'}}>
+              <i activeClassName={styles.Active} className="luv navicon fas fa-stream"></i>Scheduling
+            </span>
+          }
+          ref={refs}
+          id="nav-dropdown3"
+          activeClassName={styles.Active}
+          className={`mt-1 ${styles.NavLink} `}
+          >
+        <NavDropdown.Item >
+          <NavLink
+          ref={refm2}
+          className={`${styles.DropLink} noluv`}
+          activeClassName={styles.Active}
+          to="/crewinfo"
+        >
+          <i className="navicon fas fa-stream"></i>Crew Info
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          ref={refs1}
+          className={` ${styles.DropLink} noluv`}
+          activeClassName={styles.Active}
+          to="/days"
+        >
+          <i className="navicon fas fa-stream"></i>Schedule
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          ref={refm2}
+          className={`${styles.DropLink} noluv`}
+          activeClassName={styles.Active}
+          to="/callsheets"
+        >
+          <i className="navicon fas fa-stream"></i>Callsheets
+        </NavLink>
+        </NavDropdown.Item>
+      </NavDropdown>
+
       {/* Schedule */}
-      <NavLink
+      {/* <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
           to="/days"
         >
           <i className="navicon fas fa-play"></i>Schedule
-      </NavLink>
+      </NavLink> */}
 
       {/* Callsheets */}
-      <NavLink
+      {/* <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
           to="/callsheets"
         >
           <i className="navicon fas fa-play"></i>Calls
-      </NavLink>
+      </NavLink> */}
 
       {/* old profiles
       <NavLink
@@ -277,7 +323,7 @@ const NavBar = () => {
     <Navbar expanded={expanded} className={`my-0 py-0 ${styles.NavBar} `}
        expand="lg" fixed="top">
         <NavLink to="/">
-            <Navbar.Brand >
+            <Navbar.Brand className='mr-1' >
             <img src={logo} alt="logo" height="30" /> Shot Caller
             </Navbar.Brand>
         </NavLink>
