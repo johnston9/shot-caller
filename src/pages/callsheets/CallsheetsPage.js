@@ -19,7 +19,6 @@ import CrewInfo from "./CrewInfo";
 
 const CallsheetsPage = ({ filter="" }) => {
   useRedirect("loggedOut");
-  const [showCrewInfo, setShowCrewInfo] = useState(false);
   const [callsheets, setCallsheets] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
@@ -80,39 +79,38 @@ const CallsheetsPage = ({ filter="" }) => {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2 text-center"
-            placeholder="Search by Day"
+            placeholder="Search by Day or Date"
           />
         </Form>
         </Col>
         </Row>
         {/* callsheets */}
-        {/* <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
-            <Row className="h-100 mt-3">
-            {hasLoaded ? (
-                <>
-            {callsheets.results.length ? (
-                callsheets.results.map((callsheet) => {
-                  return (
-                    <Col xs={4} sm={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
-                      <CallsheetTop
-                        key={callsheet.id}
-                        {...callsheet} 
-                        />
-                      </Col>
-                )}
-                ))
-             : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults } message="No Results" />
-              </Container>
+        <Row className="h-100 mt-3 mb-5">
+        {hasLoaded ? (
+            <>
+        {callsheets.results.length ? (
+            callsheets.results.map((callsheet) => {
+              return (
+                <Col xs={4} sm={3} lg={2} className="p-0 p-lg-2">
+                  <CallsheetTop
+                    key={callsheet.id}
+                    {...callsheet} 
+                    />
+                  </Col>
             )}
-          </>
-        ) : (
+            ))
+          : (
           <Container className={appStyles.Content}>
-            <Asset spinner />
+            <Asset src={NoResults } message="No Results" />
           </Container>
         )}
-            </Row> 
+      </>
+    ) : (
+      <Container className={appStyles.Content}>
+        <Asset spinner />
+      </Container>
+    )}
+        </Row> 
     </div>
   )
 }

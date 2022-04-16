@@ -34,18 +34,18 @@ const CallsheetTop = (props) => {
   return (
     <div>
         <Card className={`mx-1 text-center ${styles.Top}`}>
-            <Link to={`/callsheets/${day_id}`}>
-            <Card.Header className={`pt-2 pb-1 ${styles.Top }`}>
-                <Row className='d-flex align-items-center'>
-                <Col xs={10} className='text-center px-0'>
+        <Link to={`/callsheets/${day_id}`}>
+            <Card.Header className={`pt-2 pb-1  ${styles.Top }`}>
+                <Row>
+                <Col xs={{span: 10, offset: 1}} className=' px-0'>
                 <h5 className={` ${styles.Titlelist }`}>Day {day}
                 </h5>
                 <h5 className={` ${styles.Titlelist }`}> {date}
                 </h5>
                 </Col >
                 </Row>
-                </Card.Header>
-            </Link>
+            </Card.Header>
+        </Link>
         </Card>  
     </div>
   )

@@ -16,6 +16,7 @@ import CrewCallsPage from './CrewCallsPage';
 import AdvancedSchedPage from './AdvancedSchedPage';
 import ContactsPage from './ContactsPage';
 import WalkiesPage from './WalkiesPage';
+import { Image } from 'react-bootstrap';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -147,26 +148,65 @@ const CallSheet = (props ) => {
         </Row>
         <Row className='px-3'>
             <Col md={4} >
-            <div className={`${styles.WhiteAqua} px-1`} >
-            <h5>{production_company} </h5>
-            <p className='mb-0'>{company_address_line_1} </p>
-            <p className='mb-0'>{company_address_line_2} </p>
-            <p className='mb-0'>{company_address_line_3} </p>
-            <p className='mb-0'>{company_address_line_4} </p>
-            <p className='mb-0'>{company_phone} </p>
-            <p className='mb-0'>{company_email} </p>
-            </div>
-            <div className={`${styles.WhiteAqua} px-1 mt-3`}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Producer:</span ><span className='pl-4'>{producer_name} {producer_phone}</span> </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-4'>{pro_coordinator_name} {pro_coordinator_phone}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-4'>{producer_name} {producer_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-4 ml-3'>{ad_1_name} {ad_1_phone}</span></p>
-            {/* <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name} {dop_phone}</span> </p> */}
-            </div>
+            <Row className='mb-3'>
+              <Col xs={{span: 8, offset: 1}}>
+              <h5 className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{production_company} </h5>
+              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_1} </p>
+              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_2} </p>
+              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_3} </p>
+              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_4} </p>
+              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>Phone {company_phone} </p>
+              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>Email {company_email} </p>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Producer:</span > </p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} ml-2 mb-1`} >{producer_name} - {producer_phone} </p>
+              </Col>
+            </Row>
+            {/* pro-cor */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Pro Cord:</span></p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} ml-2 mb-1`} >{pro_coordinator_name} - {pro_coordinator_phone}</p>
+              </Col>
+            </Row>
+            {/* Director */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Director:</span></p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} ml-2 mb-1`}>{director_name} - {director_phone} </p>
+              </Col>
+            </Row>
+            {/* 1st AD */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>1st AD:</span></p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} ml-2 mb-1`}>{ad_1_name} - {ad_1_phone} </p>
+              </Col>
+            </Row>
             </Col>
             <Col  md={4} className='text-center'  >
+              {/* logo */}
+            <div className={`mt-0`}>
+            {company_logo && <> 
+                <div className='px-0'>
+                    <Image className={styles.Logo} src={company_logo} alt="logo image" height="200"  />
+                    </div>
+                    </>
+                    }
+            </div>
             {/* call */}
-            <h2 className='mt-1 mb-0 pb-0'>Your Call</h2>
+            <h2 className='mt-3 mb-0 pb-0'>Your Call</h2>
             <div>
             <span className={`px-5 ${styles.YourCallMed }`}>{yourcalltime} </span>
             </div>
@@ -181,37 +221,60 @@ const CallSheet = (props ) => {
             <span className={` px-3 ${styles.UnitCallMedDay }`}>Day {day} of {total_shoot_days} </span>
             </div>
             {/* logo */}
-            <div className={`mt-2 px-1 mx-4 ${styles.CallLogoDiv }`}>
-            <h1>LOGO</h1>
-            </div>
+            {/* <div className={`mt-0`}>
+            {company_logo && <> 
+                <div className='px-3'>
+                    <Image className={styles.Logo} src={company_logo} alt="logo image" height="200"  />
+                    </div>
+                    </>
+                    }
+            </div> */}
             </Col>
             <Col className='pl-5' md={4}>
-            <div className={`${styles.WhiteAqua} px-1`}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span ><span className='pl-4'>{weather_location} </span> </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span><span className='pl-2'>{weather_location}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span><span className='pl-5'>{weather_location}</span></p>
-            </div>
-            <div className={`px-1 ${styles.WhiteAqua} `}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
-            <p className={`mb-0`}>{nearest_hospital} </p>
-            <p className={`mb-0`}>{hospital_address_line_1} </p>
-            <p className={`mb-0`}>{hospital_address_line_2} </p>
-            <p className={`mb-0`}>{hospital_address_line_3} </p>
-            <p className={`mb-0`}>{hospital_address_line_4} </p>
-            </div>
-            <div>
-            </div>
-            <div className={`${styles.WhiteAqua} mt-3`}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Talent Call:</span ><span className='pl-4'>{talent_call} </span> </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span><span className='pl-2'>{shoot_call}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span><span className='pl-5'>{breakfast}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span ><span className='pl-4'>{lunch} </span> </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span><span className='pl-2'>{wrap}</span></p>
-            </div>
-            <div className={`${styles.WhiteAqua} mt-3`}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Location:</span></p>
-            <h5>{location_1_name} </h5>
-            </div>
+            <Row>
+              <Col xs={6} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Weather:</span > </p>
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Sunrise:</span></p>
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Sunset:</span></p>
+              </Col>
+              <Col xs={6} >
+              <p className={`${styles.WhiteAqua} mb-1`} >{weather_location}  </p>
+              <p className={`${styles.WhiteAqua} mb-1`} >{weather_location}</p>
+              <p className={`${styles.WhiteAqua} mb-1`}>{weather_location}</p>
+              </Col>
+            </Row>
+            <Row>
+                <Col xs={6} >
+                <p className={`mb-1`} ><span className={`${styles.Bold}`}>Talent Call:</span > </p>
+                <p className={`mb-1`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
+                <p className={`mb-1`} ><span className={`${styles.Bold}`}>Breakfast:</span></p>
+                <p className={`mb-1`} ><span className={`${styles.Bold}`}>Lunch:</span></p>
+                <p className={`mb-1`} ><span className={`${styles.Bold}`}>Est. Wrap:</span></p>
+                </Col>
+                <Col xs={6} >
+                <p className={`${styles.WhiteAqua} mb-1`} >{talent_call}  </p>
+                <p className={`${styles.WhiteAqua} mb-1`} >{shoot_call}</p>
+                <p className={`${styles.WhiteAqua} mb-1`}>{breakfast}</p>
+                <p className={`${styles.WhiteAqua} mb-1`} >{lunch}</p>
+                <p className={`${styles.WhiteAqua} mb-1`}>{wrap}</p>
+                </Col>
+              </Row>
+              <p className={`mb-0 mt-3 `} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
+            <Row>
+            <Col xs={12} >
+            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
+            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_1} </p>
+            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_2} </p>
+            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_3} </p>
+            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_4} </p>
+            </Col>
+            </Row>
+            <p className={`mb-0 pt-3`} ><span className={`${styles.Bold}`}>First Location:</span></p>
+            <Row>
+            <Col xs={12} >
+            <h5 className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{location_1_name} </h5>
+            </Col>
+            </Row>
             </Col>
         </Row>
         {/* Locations */}
