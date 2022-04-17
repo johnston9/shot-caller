@@ -99,25 +99,68 @@ p {
   color: #000;
 }
 
-.UnitCallMed {
-  /* background-color: #c1f1f7; */
-  background-color: #f6fffe;
+.MovieName {
   color: #000;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  background-color: #f6fffe;
+  font-family: Playball;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.MovieNameMo {
+  color: #000;
+  font-size: 1.75rem;
+  background-color: #f6fffe;
+  font-family: Playball;
+}
+
+.Logo {
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.LogoMo {
+  height: 50px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .YourCallMed {
   background-color: #c1f1f7;
   color: #000;
   font-size: 2.5rem;
-  /* border: 5px solid crimson; */
+}
+
+.YourCallMob {
+  background-color: #c1f1f7;
+  color: #000;
+  font-size: 1.75rem;
+}
+
+.UnitCallMed {
+  background-color: #f6fffe;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.UnitCallMob {
+  background-color: #f6fffe;
+  color: #000;
+  font-size: 1.25rem;
 }
 
 .UnitCallMedDate {
-  background-color: #c1f1f7;
+  background-color: #e9fffd;
   color: #000;
   font-size: 1.5rem;
-  /* border: 2px solid crimson; */
+}
+
+.UnitCallMobDate {
+  background-color: #e9fffd;
+  color: #000;
+  font-size: 1.25rem;
 }
 
 .UnitCallMedDay {
@@ -126,28 +169,8 @@ p {
   font-size: 1.25rem;
 }
 
-.YourCallMob {
-  background-color: #c1f1f7;
-  color: #000;
-  font-size: 2rem;
-  border: 2px solid crimson;
-}
-
-.UnitCallMob {
-  background-color: #c1f1f7;
-  color: #000;
-  font-size: 1.25rem;
-}
-
-.UnitCallMobDate {
-  background-color: #c1f1f7;
-  color: #000;
-  font-size: 1.25rem;
-  border: 2px solid crimson;
-}
-
 .UnitCallMobDay {
-  background-color: #c1f1f7;
+  background-color: #f6fffe;
   color: #000;
   font-size: 1rem;
 }
@@ -301,12 +324,6 @@ p {
 .BoldTitle {
   font-weight: 700;
   background-color: rgb(209, 240, 240);
-}
-
-.Logo {
-  height: 100px;
-  max-width: 100%;
-  object-fit: contain;
 }
 
 .Image {

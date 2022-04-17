@@ -12,6 +12,8 @@ const LocationsPage = ({callsheet, setShow}) => {
             location_3_name, location_3_address, location_3_parking_n_notes,
             location_4_name, location_4_address, location_4_parking_n_notes,
             location_5_name, location_5_address, location_5_parking_n_notes,
+            nearest_hospital, hospital_address_line_1, hospital_address_line_2, 
+            hospital_address_line_3, hospital_address_line_4,
            } = callsheet;
   return (
     <div>
@@ -39,7 +41,9 @@ const LocationsPage = ({callsheet, setShow}) => {
             </Col>
         </Row>
         {basecamp_address ? (
-            <Row className='px-3 '>
+            <Row 
+            style={{ backgroundColor: 'rgb(254 249 254)' }}
+            className='px-3 '>
             <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={1} >
             <p></p>
             </Col>
@@ -56,7 +60,9 @@ const LocationsPage = ({callsheet, setShow}) => {
             ""
         )}
         {location_1_address ? (
-            <Row className=' px-3'>
+            <Row 
+            style={{ backgroundColor: 'rgb(246 254 245)'}}
+            className=' px-3'>
             <Col className={`mx-0 px-0 px-md-3 ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>1</p>
             </Col>
@@ -72,7 +78,9 @@ const LocationsPage = ({callsheet, setShow}) => {
             ""
         )}
         {location_2_address ? (
-            <Row className='px-3'>
+            <Row 
+            style={{ backgroundColor: '#f6fffe'}}
+            className='px-3'>
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>2</p>
             </Col>
@@ -88,7 +96,9 @@ const LocationsPage = ({callsheet, setShow}) => {
             ""
         )}
         {location_3_address ? (
-            <Row className='px-3'>
+            <Row
+            style={{ backgroundColor: 'rgb(246 254 245)'}} 
+            className='px-3'>
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>3</p>
             </Col>
@@ -104,7 +114,9 @@ const LocationsPage = ({callsheet, setShow}) => {
             ""
         )}
         {location_4_address ? (
-            <Row className='px-3'>
+            <Row 
+            style={{ backgroundColor: '#f6fffe'}}
+            className='px-3'>
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>4</p>
             </Col>
@@ -120,7 +132,9 @@ const LocationsPage = ({callsheet, setShow}) => {
             ""
         )}
         {location_5_address ? (
-            <Row className='px-3'>
+            <Row 
+            style={{ backgroundColor: 'rgb(246 254 245)'}}
+            className='px-3'>
             <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>5</p>
             </Col>
@@ -135,6 +149,25 @@ const LocationsPage = ({callsheet, setShow}) => {
         ) : (
             ""
         )}
+        {/* {nearest_hospital ? (
+            <Row 
+            style={{ backgroundColor: 'rgb(254 249 254)' }}
+            className='px-3 '>
+            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={1} >
+            <p></p>
+            </Col>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
+            <p className={`mb-0 ${styles.Bold}`} >Nearest Hospital</p>
+            <p className={`mb-0 ${styles.Bold}`} >{nearest_hospital}</p>
+            </Col>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
+            <p className='mb-0'>{hospital_address_line_1} {hospital_address_line_2}
+             {hospital_address_line_3} {hospital_address_line_4}</p>
+            </Col>
+            </Row>
+        ) : (
+            ""
+        )} */}
         </div>
     </div>
   )

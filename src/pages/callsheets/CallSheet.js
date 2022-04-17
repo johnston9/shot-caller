@@ -93,17 +93,6 @@ const CallSheet = (props ) => {
         important_info,
         transport_info,
         department_info,
-        walkie_channel_production,
-        walkie_channel_open,
-        walkie_channel_transportation,
-        walkie_channel_art_dept,
-        walkie_channel_rollover,
-        walkie_channel_camera,
-        walkie_channel_electric,
-        walkie_channel_grip,
-        // production
-        director_calltime,
-        gaffer_calltime,
       } = props;
 
       useEffect(() => {
@@ -136,10 +125,10 @@ const CallSheet = (props ) => {
         {/* MEDIUM pink fff6f6*/}
         <div className='d-none d-md-block'>
         <Row>
-            <Col className='text-center' md={{span: 10, offset: 1}}>
-                <h1>{production_name} {day_id} </h1>
+            <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
+                <span className={` ${styles.MovieName}`} >{production_name} {day_id} </span>
             </Col>
-            <Col className='text-center' md={1}>
+            <Col className={`text-center `} md={1}>
                 <PostDropdown
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
@@ -148,15 +137,15 @@ const CallSheet = (props ) => {
         </Row>
         <Row className='px-3'>
             <Col md={4} >
-            <Row className='mb-3'>
-              <Col xs={{span: 8, offset: 1}}>
-              <h5 className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{production_company} </h5>
-              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_1} </p>
-              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_2} </p>
-              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_3} </p>
-              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>{company_address_line_4} </p>
-              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>Phone {company_phone} </p>
-              <p className={`mb-1 pl-3 ${styles.WhiteAquaPro}`}>Email {company_email} </p>
+            <Row className='mb-1'>
+              <Col xs={{span: 8, offset: 0}}>
+              <h5 className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{production_company} </h5>
+              <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{company_address_line_1} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{company_address_line_2} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{company_address_line_3} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{company_address_line_4} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>Phone {company_phone} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>Email {company_email} </p>
               </Col>
             </Row>
             <Row>
@@ -164,7 +153,7 @@ const CallSheet = (props ) => {
               <p className={`mb-1`} ><span className={`${styles.Bold}`}>Producer:</span > </p>
               </Col>
               <Col xs={12} >
-              <p className={`${styles.WhiteAqua} ml-2 mb-1`} >{producer_name} - {producer_phone} </p>
+              <p className={`${styles.WhiteAqua} mb-1`} >{producer_name} - {producer_phone} </p>
               </Col>
             </Row>
             {/* pro-cor */}
@@ -173,7 +162,7 @@ const CallSheet = (props ) => {
               <p className={`mb-1`} ><span className={`${styles.Bold}`}>Pro Cord:</span></p>
               </Col>
               <Col xs={12} >
-              <p className={`${styles.WhiteAqua} ml-2 mb-1`} >{pro_coordinator_name} - {pro_coordinator_phone}</p>
+              <p className={`${styles.WhiteAqua} mb-1`} >{pro_coordinator_name} - {pro_coordinator_phone}</p>
               </Col>
             </Row>
             {/* Director */}
@@ -182,7 +171,7 @@ const CallSheet = (props ) => {
               <p className={`mb-1`} ><span className={`${styles.Bold}`}>Director:</span></p>
               </Col>
               <Col xs={12} >
-              <p className={`${styles.WhiteAqua} ml-2 mb-1`}>{director_name} - {director_phone} </p>
+              <p className={`${styles.WhiteAqua} mb-1`}>{director_name} - {director_phone} </p>
               </Col>
             </Row>
             {/* 1st AD */}
@@ -191,12 +180,12 @@ const CallSheet = (props ) => {
               <p className={`mb-1`} ><span className={`${styles.Bold}`}>1st AD:</span></p>
               </Col>
               <Col xs={12} >
-              <p className={`${styles.WhiteAqua} ml-2 mb-1`}>{ad_1_name} - {ad_1_phone} </p>
+              <p className={`${styles.WhiteAqua} mb-1`}>{ad_1_name} - {ad_1_phone} </p>
               </Col>
             </Row>
             </Col>
             <Col  md={4} className='text-center'  >
-              {/* logo */}
+            {/* logo */}
             <div className={`mt-0`}>
             {company_logo && <> 
                 <div className='px-0'>
@@ -205,20 +194,26 @@ const CallSheet = (props ) => {
                     </>
                     }
             </div>
-            {/* call */}
-            <h2 className='mt-3 mb-0 pb-0'>Your Call</h2>
-            <div>
-            <span className={`px-5 ${styles.YourCallMed }`}>{yourcalltime} </span>
-            </div>
-            <h4 className='mt-0 mb-0 pb-0'>Unit Call</h4>
-            <div>
-            <span className={`px-5 ${styles.UnitCallMed }`}>{unit_call} </span>
-            </div>
+            {/* call className={`mt-3 mb-0 pb-0 px-2 ${styles.YourCallMed }`} */}
+            {/* <h2 className='mt-3 mb-0 pb-0'>Your Call</h2> */}
             <div className='mt-2 mb-0 pb-0'>
-            <span className={`px-3 ${styles.UnitCallMedDate }`}>{date} </span>
+            <p className={`px-3 ${styles.UnitCallMedDate }`}>{date} </p>
             </div>
-            <div className='mt-2'>
-            <span className={` px-3 ${styles.UnitCallMedDay }`}>Day {day} of {total_shoot_days} </span>
+            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border }`} >
+            <h2 className={` mb-0 pb-0 `} >Your Call</h2>
+            <p className={`px-1 mx-4 pb-0 ${styles.YourCallMed }`}>{yourcalltime} </p>
+            </div>
+            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border }`}>
+            <h4 className='mt-0 mb-0 pb-0'>Unit Call</h4>
+            <p className={`mx-4 ${styles.UnitCallMed }`}>{unit_call} </p>
+            </div>
+            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border }`}  >
+            <p className={`mb-0 pt-1`} ><span className={`${styles.Bold}`}>First Location:</span></p>
+            <Row>
+            <Col xs={12} >
+            <h5 className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </h5>
+            </Col>
+            </Row>
             </div>
             {/* logo */}
             {/* <div className={`mt-0`}>
@@ -262,19 +257,16 @@ const CallSheet = (props ) => {
               <p className={`mb-0 mt-3 `} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
             <Row>
             <Col xs={12} >
-            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
-            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_1} </p>
-            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_2} </p>
-            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_3} </p>
-            <p className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{hospital_address_line_4} </p>
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_1} </p>
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_2} </p>
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_3} </p>
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_4} </p>
             </Col>
             </Row>
-            <p className={`mb-0 pt-3`} ><span className={`${styles.Bold}`}>First Location:</span></p>
-            <Row>
-            <Col xs={12} >
-            <h5 className={`mb-1 ml-3 ${styles.WhiteAqua}`}>{location_1_name} </h5>
-            </Col>
-            </Row>
+            <div className='mt-2'>
+            <span className={`${styles.UnitCallMedDay }`}>Day {day} of {total_shoot_days} </span>
+            </div>
             </Col>
         </Row>
         {/* Locations */}
@@ -303,7 +295,7 @@ const CallSheet = (props ) => {
         {/* name */}
         <Row>
             <Col className='text-center' xs={{span: 8, offset: 2}}>
-                <h1>{production_name} {day_id} </h1>
+            <p className={`mx-3 ${styles.MovieNameMo}`} >{production_name} </p>
             </Col>
             <Col className='text-center' xs={2}>
                 <PostDropdown
@@ -314,69 +306,92 @@ const CallSheet = (props ) => {
         </Row>
         {/* header */}
         <Row >
-          {/* weather/calls */}
-        <Col className={` px-0 text-center`} xs={3}>
+        {/* weather/calls */}
+        <Col className={`pl-0 pr-0`} xs={3}>
             {/* Weather */}
-          <div className={`${styles.WhiteAqua}`}>
+          <div >
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span > </p>
-            <p className='pl-2'>{weather_location} </p> 
+            <p className={`${styles.WhiteAqua}`} >{weather_location} </p> 
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span></p>
-            <p className='pl-2'>{weather_location} </p> 
+            <p className={`${styles.WhiteAqua}`}>{weather_location} </p> 
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span></p>
-            <p className='pl-2'>{weather_location} </p> 
+            <p className={`${styles.WhiteAqua}`}>{weather_location} </p> 
           </div>
           {/* calls */}
-          <div className={` mt-3 ${styles.WhiteAqua}`}>
-              <p className={`mb-0`} ><span className={`${styles.Bold}`}>Talent Call:</span > </p>
-              <p className='pl-2'>{talent_call}  </p>
+          <div className={` mt-3`}>
+              <p className={`mb-0`} ><span className={`${styles.Bold}`}>Cast Call:</span > </p>
+              <p className={`${styles.WhiteAqua}`}>{talent_call}  </p>
               <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
-              <p className='pl-2'>{shoot_call}</p>
+              <p className={`${styles.WhiteAqua}`}>{shoot_call}</p>
               <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
-              <p className='pl-2'>{wrap}</p>
+              <p className={`${styles.WhiteAqua}`}>{wrap}</p>
           </div>
           </Col>
-        <Col xs={6} className='px-0 mx-0 text-center'  >
-            {/* call */}
-            <h2 className='mt-1 mb-0 pb-0'>Your Call</h2>
-            <div>
-            <span className={`px-3 ${styles.YourCallMob }`}>{yourcalltime} </span>
+        {/* logo calls */}
+        <Col xs={6} className='px-0 mx-0 text-center' >
+        <h5 className={`my-1 pl-0 ${styles.WhiteAquaPro}`}>{production_company} </h5>
+            <div className={`mt-1`}>
+            {company_logo && <> 
+                <div className='px-0'>
+                    <Image className={styles.LogoMo} src={company_logo} alt="logo image" height="200"  />
+                    </div>
+                    </>
+                    }
             </div>
-            <h4 className='mt-3 mb-0 pb-0'>Unit Call</h4>
-            <div>
-            <span className={`px-3 ${styles.UnitCallMob }`}>{unit_call} </span>
-            </div>
-            <div className='mt-1 mb-0 pb-0'>
+            <div className='mt-2 mb-0 pb-0'>
             <span className={`px-3 ${styles.UnitCallMobDate }`}>{date} </span>
             </div>
-            <div className='mt-2'>
-            <span className={`px-3 ${styles.UnitCallMobDay }`}>Day {day} of {total_shoot_days} </span>
+            <div className={`mt-1 mx-3 pb-0 px-2 ${styles.Border }`} >
+            <h2 className='mb-0 pb-0'>Your Call</h2>
+            <p className={`px-1 mx-2 ${styles.YourCallMob }`}>{yourcalltime} </p>
             </div>
-            {/* logo */}
-            <div className={`mt-2 mx-3 px-2 ${styles.CallLogoDivMob }`}>
-            <h1>LOGO</h1>
+            <div className={`mt-1 mx-3 pb-0 px-2 ${styles.Border }`} >
+            <h5 className='mb-0 pb-0'>Unit Call</h5>
+            <p className={`px-1 mx-2 ${styles.UnitCallMob }`}>{unit_call} </p>
             </div>
-          </Col>
-        <Col xs={3} className={`px-0 text-center`}>
-           {/* Hospital */}
-        <div className={`${styles.WhiteAqua}`}>
+            {/* loc */}
+            <div className={`mt-1 mx-3 pb-0 px-2 ${styles.Border }`}  >
+            <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Location</span></p>
+            <Row>
+            <Col xs={12} >
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
+            </Col>
+            </Row>
+        </div>
+        </Col>
+        {/* Hospital */}
+        <Col xs={3} className={`px-0`}>
+        <div >
         <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest</span></p>
         <p className={`mb-0`} ><span className={`${styles.Bold}`}>Hospital:</span></p>
-        <p className={`mb-0`}>{nearest_hospital} </p>
-        <p className={`mb-0`}>{hospital_address_line_1} </p>
-        <p className={`mb-0`}>{hospital_address_line_2} </p>
-        <p className={`mb-0`}>{hospital_address_line_3} </p>
-        <p className={`mb-0`}>{hospital_address_line_4} </p>
+        <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
+        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_1} </p>
+        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_2} </p>
+        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_3} </p>
+        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_4} </p>
         </div >
-          {/* meals */}
-        <div className={` mt-3 ${styles.WhiteAqua}`}>
+        {/* meals */}
+        <div className={` mt-3`}>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span></p>
-            <p className='pl-2'>{breakfast}</p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span > </p>
-            <p className='pl-2'>{lunch}  </p>
+            <p className={`${styles.WhiteAqua} mb-0`} >{breakfast}</p>
+            <p className={` mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span > </p>
+            <p className={`${styles.WhiteAqua} mb-0`} >{lunch}  </p>
+        </div>
+        <div className='mt-2'>
+            <p className={`${styles.UnitCallMobDay }`}>Day {day} of {total_shoot_days} </p>
         </div>
         </Col>
         </Row>
         </div>
+        {/* hos */}
+        {/* <Row>
+          <Col className='px-1'>
+          <div className={`mt-1 pb-0 px-2 ${styles.Border }`} >
+        <p className={`mb-0 text-center`} ><span className={`${styles.Bold}`}>Nearest Hospital</span></p>
+        <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} - {hospital_address_line_1} {hospital_address_line_2} {hospital_address_line_3} {hospital_address_line_4} </p>
+        </div >
+          </Col>
+        </Row> */}
         <p className={`mt-4 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         {/* buttons */}
         <Row>
