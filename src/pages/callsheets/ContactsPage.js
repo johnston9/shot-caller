@@ -9,18 +9,14 @@ const ContactsPage = (props) => {
     const {crewInfoOne, setShow} = props;
     const {production_company, company_phone, company_email,
         company_address_line_1, company_address_line_2, company_address_line_3,
-        // eslint-disable-next-line
         company_address_line_4,
-        // eslint-disable-next-line
         director_name, director_phone,
         producer_name, producer_phone,
         pro_coordinator_name, pro_coordinator_phone,
-        // eslint-disable-next-line
         upm_name, upm_phone,
         ad_1_name, ad_1_phone,
         dop_name, dop_phone,
-        // eslint-disable-next-line
-        set_medic_name, set_medic_email, set_medic_phone,} = crewInfoOne;
+        set_medic_name, set_medic_phone,} = crewInfoOne;
   return (
     <div className='mt-3'>
         <div className={`mb-3 text-center ${styles.SubTitle }`}>
@@ -29,21 +25,84 @@ const ContactsPage = (props) => {
         </div>
         <Row>
         <Col xs={12} >
-            <div className='text-center'>
-            <h5>{production_company} </h5>
-            <p className='mb-0'>{company_address_line_1} </p>
-            <p className='mb-0'>{company_address_line_2} </p>
-            <p className='mb-0'>{company_address_line_3} </p>
-            <p className='mb-0'>{company_address_line_4} </p>
-            <p className='mb-0'>{company_phone} </p>
-            <p className='mb-0'>{company_email} </p>
+            <div >
+            <Row className='mb-1'>
+              <Col xs={{span: 10, offset: 0}}>
+              <p className={`mb-0 ${styles.Bold} `} >Production Company: </p>
+              <h5 className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{production_company} </h5>
+              <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{company_address_line_1} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{company_address_line_2} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{company_address_line_3} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{company_address_line_4} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>Phone {company_phone} </p>
+              <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>Email {company_email} </p>
+              </Col>
+            </Row>
             </div>
             <div className='mt-3'>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Producer:</span ><span className='pl-4'>{producer_name}</span> </p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Pro Cord:</span><span className='pl-4'>{pro_coordinator_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Director:</span><span className='pl-4'>{producer_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st AD:</span><span className='pl-4 ml-3'>{ad_1_name}</span></p>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>DoP:</span><span className='pl-5 ml-2'>{dop_name}</span> </p>
+            {/* Producer */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Producer:</span > </p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} mb-1`} >{producer_name} - {producer_phone} </p>
+              </Col>
+            </Row>
+            {/* pro-cor */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Pro Cord:</span></p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} mb-1`} >{pro_coordinator_name} - {pro_coordinator_phone}</p>
+              </Col>
+            </Row>
+            {/* Director */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Director:</span></p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} mb-1`}>{director_name} - {director_phone} </p>
+              </Col>
+            </Row>
+            {/* 1st AD */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>1st AD:</span></p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} mb-1`}>{ad_1_name} - {ad_1_phone} </p>
+              </Col>
+            </Row>
+            {/* DOP */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>DOP:</span > </p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} mb-1`} >{dop_name} - {dop_phone} </p>
+              </Col>
+            </Row>
+            {/* UPM */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>UPM:</span></p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} mb-1`}>{upm_name} - {upm_phone} </p>
+              </Col>
+            </Row>
+            {/* SET MEDIC */}
+            <Row>
+              <Col xs={12} >
+              <p className={`mb-1`} ><span className={`${styles.Bold}`}>SET MEDIC:</span > </p>
+              </Col>
+              <Col xs={12} >
+              <p className={`${styles.WhiteAqua} mb-1`} >{set_medic_name} - {set_medic_phone} </p>
+              </Col>
+            </Row>
             </div>
             </Col>
         </Row>

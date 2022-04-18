@@ -17,6 +17,7 @@ import AdvancedSchedPage from './AdvancedSchedPage';
 import ContactsPage from './ContactsPage';
 import WalkiesPage from './WalkiesPage';
 import { Image } from 'react-bootstrap';
+import HospitalPage from './HospitalPage';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -24,6 +25,7 @@ const CallSheet = (props ) => {
     const crewInfoOne = crewInfo.results[0];
     const history = useHistory();
     const [yourcalltime, setYourcalltime] = useState("");
+    const [showHos, setShowHos] = useState(false);
     const [showContacts, setShowContacts] = useState(false);
     const [showLoc, setShowLoc] = useState(false);
     const [showWalkies, setShowWalkies] = useState(false);
@@ -148,6 +150,7 @@ const CallSheet = (props ) => {
               <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>Email {company_email} </p>
               </Col>
             </Row>
+            {/* Producer */}
             <Row>
               <Col xs={12} >
               <p className={`mb-1`} ><span className={`${styles.Bold}`}>Producer:</span > </p>
@@ -308,7 +311,7 @@ const CallSheet = (props ) => {
         <Row >
         {/* weather/calls */}
         <Col className={`pl-0 pr-0`} xs={3}>
-            {/* Weather */}
+          {/* Weather */}
           <div >
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span > </p>
             <p className={`${styles.WhiteAqua}`} >{weather_location} </p> 
@@ -317,14 +320,12 @@ const CallSheet = (props ) => {
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span></p>
             <p className={`${styles.WhiteAqua}`}>{weather_location} </p> 
           </div>
-          {/* calls */}
+          {/* meals */}
           <div className={` mt-3`}>
-              <p className={`mb-0`} ><span className={`${styles.Bold}`}>Cast Call:</span > </p>
-              <p className={`${styles.WhiteAqua}`}>{talent_call}  </p>
-              <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
-              <p className={`${styles.WhiteAqua}`}>{shoot_call}</p>
-              <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
-              <p className={`${styles.WhiteAqua}`}>{wrap}</p>
+              <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span></p>
+              <p className={`${styles.WhiteAqua} mb-0`} >{breakfast}</p>
+              <p className={` mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span > </p>
+              <p className={`${styles.WhiteAqua} mb-0`} >{lunch}  </p>
           </div>
           </Col>
         {/* logo calls */}
@@ -350,50 +351,62 @@ const CallSheet = (props ) => {
             <p className={`px-1 mx-2 ${styles.UnitCallMob }`}>{unit_call} </p>
             </div>
             {/* loc */}
-            <div className={`mt-1 mx-3 pb-0 px-2 ${styles.Border }`}  >
+            {/* <div className={`mt-1 mx-3 pb-0 px-2 ${styles.Border }`}  >
             <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Location</span></p>
             <Row>
             <Col xs={12} >
             <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
             </Col>
             </Row>
-        </div>
+            </div> */}
         </Col>
-        {/* Hospital */}
+        {/* Hospital Meals */}
         <Col xs={3} className={`px-0`}>
-        <div >
+        {/* <div >
         <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest</span></p>
         <p className={`mb-0`} ><span className={`${styles.Bold}`}>Hospital:</span></p>
         <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
-        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_1} </p>
-        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_2} </p>
-        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_3} </p>
-        <p className={`mb-1 ${styles.WhiteAqua}`}>{hospital_address_line_4} </p>
-        </div >
-        {/* meals */}
-        <div className={` mt-3`}>
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span></p>
-            <p className={`${styles.WhiteAqua} mb-0`} >{breakfast}</p>
-            <p className={` mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span > </p>
-            <p className={`${styles.WhiteAqua} mb-0`} >{lunch}  </p>
+        </div > */}
+        {/* calls */}
+        <div className={` mt-0`}>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Cast Call:</span > </p>
+            <p className={`${styles.WhiteAqua}`}>{talent_call}  </p>
+            <p className={`mb-0 mt-4`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
+            <p className={`${styles.WhiteAqua}`}>{shoot_call}</p>
+            <p className={`mb-0 mt-4`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
+            <p className={`${styles.WhiteAqua}`}>{wrap}</p>
         </div>
-        <div className='mt-2'>
+        <div className='mt-4 pt-3'>
             <p className={`${styles.UnitCallMobDay }`}>Day {day} of {total_shoot_days} </p>
         </div>
         </Col>
         </Row>
-        </div>
-        {/* hos */}
-        {/* <Row>
-          <Col className='px-1'>
-          <div className={`mt-1 pb-0 px-2 ${styles.Border }`} >
-        <p className={`mb-0 text-center`} ><span className={`${styles.Bold}`}>Nearest Hospital</span></p>
-        <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} - {hospital_address_line_1} {hospital_address_line_2} {hospital_address_line_3} {hospital_address_line_4} </p>
-        </div >
+        {/* loc */}
+        <Row>
+          <Col className='px-0' xs={6} >
+          <div className={`mt-1 pb-0 px-2 mr-2 ${styles.Border }`}  >
+            <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Location</span></p>
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
+          </div>
           </Col>
-        </Row> */}
-        <p className={`mt-4 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+          <Col className='px-0' xs={6} >
+          <div className={`mt-1 pb-0 px-2 ml-2 ${styles.Border }`} >
+          <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
+          <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
+          </div >
+          </Col>
+        </Row>
+        </div>
+        <p className={`mt-2 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         {/* buttons */}
+        <Row>
+        <Col xs={{span: 8, offset: 2}} className='text-center' md={2}>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowHos(showHos => !showHos)} >Nearest Hospital
+            </p>
+        </Col>
+        </Row>
         <Row>
         <Col xs={4} className='text-center' md={2}>
             <p
@@ -454,11 +467,16 @@ const CallSheet = (props ) => {
         </Row>  
         <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
         {/* pages */}
-        {/* Locations setShowContacts */}
+        {!showHos ? (
+                ""
+              ) : (
+                <HospitalPage callsheet={callsheet} crewInfoOne={crewInfoOne} setShow={setShowHos} /> 
+                )
+        }
         {!showContacts ? (
                 ""
               ) : (
-                <ContactsPage crewInfoOne={crewInfoOne} setShow={setShowContacts} /> 
+                <ContactsPage callsheet={callsheet} crewInfoOne={crewInfoOne} setShow={setShowContacts} /> 
                 )
         }
         {!showLoc ? (
