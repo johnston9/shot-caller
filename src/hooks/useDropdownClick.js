@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const useClickOutsideToggle = () => {
+const useDropdownClick = () => {
     const [expanded, setExpanded] = useState(false);
     const ref = useRef(null)
     const refw = useRef(null)
@@ -17,6 +17,13 @@ const useClickOutsideToggle = () => {
     const refm = useRef(null)
     const refm1 = useRef(null)
     const refm2 = useRef(null)
+    const refs = useRef(null)
+    const refs1 = useRef(null)
+    const refs2 = useRef(null)
+    const refs3 = useRef(null)
+    const refp = useRef(null)
+    const refp1 = useRef(null)
+    const refp2 = useRef(null)
     useEffect(() => {
         const handleClickOutside = (event) => {
             // workspace dropdown
@@ -78,7 +85,37 @@ const useClickOutsideToggle = () => {
                 console.log("refm");
                 return;
             }
-            // page and  toggle icon
+            // schedule dropdown
+            if ( refs1.current && refs1.current.contains(event.target)) {
+                setExpanded(false);
+                console.log("refs1");
+            }
+            if ( refs2.current && refs2.current.contains(event.target)) {
+                setExpanded(false);
+                console.log("refs2");
+            }
+            if ( refs3.current && refs3.current.contains(event.target)) {
+                setExpanded(false);
+                console.log("refs3");
+            }
+            if (refs.current && refs.current.contains(event.target)) {
+                console.log("refs");
+                return;
+            }
+            // Profiles dropdown
+            if ( refp1.current && refp1.current.contains(event.target)) {
+                setExpanded(false);
+                console.log("refp1");
+            }
+            if ( refp2.current && refp2.current.contains(event.target)) {
+                setExpanded(false);
+                console.log("refp2");
+            }
+            if (refp.current && refp.current.contains(event.target)) {
+                console.log("refp");
+                return;
+            }
+            // page and toggle icon
             if ( ref.current && !ref.current.contains(event.target)) {
                 setExpanded(false);
             }
@@ -89,9 +126,13 @@ const useClickOutsideToggle = () => {
             };
         }, [ref])
 
-        return { expanded, setExpanded, ref, refw, refw1, refw2, refw3, 
-            reff, reff1, reff2, reff3, reff4, reff5, reff6, refm, refm1, refm2, 
+        return { expanded, setExpanded, 
+            ref, refw, refw1, refw2, refw3, 
+            reff, reff1, reff2, reff3, reff4, reff5, reff6, 
+            refm, refm1, refm2, 
+            refs, refs1, refs2, refs3,
+            refp, refp1, refp2
             };
 }
 
-export default useClickOutsideToggle;
+export default useDropdownClick;

@@ -12,8 +12,6 @@ const LocationsPage = ({callsheet, setShow}) => {
             location_3_name, location_3_address, location_3_parking_n_notes,
             location_4_name, location_4_address, location_4_parking_n_notes,
             location_5_name, location_5_address, location_5_parking_n_notes,
-            nearest_hospital, hospital_address_line_1, hospital_address_line_2, 
-            hospital_address_line_3, hospital_address_line_4,
            } = callsheet;
   return (
     <div>

@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from "./Avatar";
 import axios from 'axios';
-import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import useDropdownClick from '../hooks/useDropdownClick';
 import { removeTokenTimestamp } from '../utils/utils';
 import { NavDropdown } from 'react-bootstrap';
 
@@ -15,9 +15,12 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  const { expanded, setExpanded, ref, refw, refw1, refw2, refw3, reff, reff1, 
-    reff2, reff3, reff4, reff5, reff6, refm, refm1, refm2,
-  refs, refs1, refs2 } = useClickOutsideToggle();
+  const { expanded, setExpanded, ref, 
+    refw, refw1, refw2, refw3, 
+    reff, reff1, reff2, reff3, reff4, reff5, reff6, 
+    refm, refm1, refm2,
+    refs, refs1, refs2, refs3,
+    refp, refp1, refp2 } = useDropdownClick();
 
   const handleSignOut = async () => {
     try {
@@ -30,10 +33,9 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-{/*  home */}
+      {/*  home */}
       <NavLink
           className={`mt-2 pt-2 ${styles.NavLink} `}
-          // activeClassName={styles.Active}
           activeClassName={styles.Active}
           to="/home"
         >
@@ -191,7 +193,7 @@ const NavBar = () => {
         </NavDropdown.Item>
       </NavDropdown>
 
-      {/*  calls */}
+      {/*  Crew Info Schedule Callsheet */}
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
@@ -199,13 +201,13 @@ const NavBar = () => {
             </span>
           }
           ref={refs}
-          id="nav-dropdown3"
+          id="nav-dropdown4"
           activeClassName={styles.Active}
           className={`mt-1 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
-          ref={refm2}
+          ref={refs1}
           className={`${styles.DropLink} noluv`}
           activeClassName={styles.Active}
           to="/crewinfo"
@@ -215,7 +217,7 @@ const NavBar = () => {
         </NavDropdown.Item>
         <NavDropdown.Item >
           <NavLink
-          ref={refs1}
+          ref={refs2}
           className={` ${styles.DropLink} noluv`}
           activeClassName={styles.Active}
           to="/days"
@@ -225,7 +227,7 @@ const NavBar = () => {
         </NavDropdown.Item>
         <NavDropdown.Item >
           <NavLink
-          ref={refm2}
+          ref={refs3}
           className={`${styles.DropLink} noluv`}
           activeClassName={styles.Active}
           to="/callsheets"
@@ -274,7 +276,8 @@ const NavBar = () => {
               <Avatar src={currentUser?.profile_image} text="" height={40} />Profiles
             </span>
           }
-          id="nav-dropdown3"
+          ref={refp}
+          id="nav-dropdown5"
           // activeClassName={styles.Active}
           className={`py-0 ${styles.NavLink} `}
           >
@@ -282,6 +285,7 @@ const NavBar = () => {
           <NavLink
           className={` ${styles.DropLink} `}
           activeClassName={styles.Active}
+          ref={refp1}
           to="/profiles"
         >
           <i className="navicon fas fa-play"></i>Profiles
@@ -291,6 +295,7 @@ const NavBar = () => {
         <NavLink
           className={`mt-2 ${styles.NavLink} `}
           activeClassName={styles.Active}
+          ref={refp2}
           to={`/profiles/${currentUser?.profile_id}`}
         >
           <i className="navicon fas fa-play"></i>My Profile 

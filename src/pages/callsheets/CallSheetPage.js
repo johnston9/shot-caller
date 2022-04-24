@@ -13,13 +13,12 @@ const CallSheetPage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [callsheet, setCallsheet] = useState({ results: [] });
-    // eslint-disable-next-line
     const [cast, setCast] = useState({ results: [] });
-    // eslint-disable-next-line
     const [currentUser, setCurrentUser] = useState(null);
     const [background, setBackground] = useState({ results: [] });
     const [scenes, setScenes] = useState({ results: [] });
     const [dataDay, setDataDay] = useState("");
+    const [advancedScenes, setAdvancedScenes] = useState({ results: [] });
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);

@@ -60,6 +60,21 @@
     color: #fff;
   }
 
+  .Grey:hover {
+    background-color: #58666b;
+    color: #fff;
+  }
+
+  .Black:hover {
+    background-color: rgb(97, 62, 62);
+    color: #fff;
+  }
+
+  .Order:hover {
+    background-color: rgb(95, 73, 73);
+    color: #fff;
+  }
+
   .Blue {
     /* background-color: #14404f; */
     background-color: #32c0e4;

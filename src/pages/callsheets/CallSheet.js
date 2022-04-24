@@ -36,23 +36,22 @@ const CallSheet = (props ) => {
     const [showCrew, setShowCrew] = useState(false);
     const [showAdvanSched, setShowAdvanSched] = useState(false);
 
-    // eslint-disable-next-line
     const { production_name, production_company, company_phone, company_email,
         company_address_line_1, company_address_line_2, company_address_line_3,
-        // eslint-disable-next-line
         company_address_line_4, company_logo, total_shoot_days,
-        // eslint-disable-next-line
         director_name, director_phone,
         producer_name, producer_phone,
         pro_coordinator_name, pro_coordinator_phone,
         // eslint-disable-next-line
         upm_name, upm_phone,
         ad_1_name, ad_1_phone,
+        // eslint-disable-next-line
         dop_name, dop_phone,
         // eslint-disable-next-line
         set_medic_name, set_medic_email, set_medic_phone, } = crewInfoOne || {};
 
     const { scenes,
+        // eslint-disable-next-line
         admin,
         currentUser,
         cast,
@@ -68,24 +67,7 @@ const CallSheet = (props ) => {
         breakfast, 
         lunch, 
         wrap, 
-        basecamp_name,
-        basecamp_address, 
-        basecamp_parking_n_notes, 
         location_1_name,
-        location_2_name,
-        location_3_name,
-        location_4_name,
-        location_5_name,
-        location_1_address, 
-        location_2_address, 
-        location_3_address, 
-        location_4_address, 
-        location_5_address, 
-        location_1_parking_n_notes, 
-        location_2_parking_n_notes, 
-        location_3_parking_n_notes, 
-        location_4_parking_n_notes,
-        location_5_parking_n_notes,
         nearest_hospital,
         hospital_address_line_1,
         hospital_address_line_2,
@@ -96,6 +78,9 @@ const CallSheet = (props ) => {
         transport_info,
         department_info,
       } = props;
+    
+    const advancedDay = parseInt(day) + 1;
+    console.log(advancedDay);
 
       useEffect(() => {
         const yourcall = ( currentUser) => {
@@ -108,6 +93,7 @@ const CallSheet = (props ) => {
           }
         };
         setYourcalltime(yourcall(currentUser));
+        // eslint-disable-next-line
       }, [])
 
       const handleEdit = () => {
@@ -288,7 +274,7 @@ const CallSheet = (props ) => {
         {/* Crew */}
         <CrewCallsPage callsheet={callsheet}/>
         {/* Advanced Schedule  */}
-        <AdvancedSchedPage callsheet={callsheet}/>
+        <AdvancedSchedPage callsheet={callsheet} advancedDay={advancedDay} />
         {/* Walkie Channels */}
         <WalkiesPage callsheet={callsheet} />
         </div>
@@ -528,7 +514,10 @@ const CallSheet = (props ) => {
         {!showAdvanSched ? (
                 ""
               ) : (
-                <AdvancedSchedPage callsheet={callsheet} setShow={setShowAdvanSched} /> 
+                <AdvancedSchedPage 
+                advancedDay={advancedDay} 
+                callsheet={callsheet} 
+                setShow={setShowAdvanSched} /> 
                 ) 
         }
         </div>

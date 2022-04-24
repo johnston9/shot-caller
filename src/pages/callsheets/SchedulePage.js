@@ -79,7 +79,7 @@ const SchedulePage = (props) => {
                 ))) : ("")}
             </Col>
         </Row>
-        </div>
+    </div>
   )
 }
 

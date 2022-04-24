@@ -28,7 +28,7 @@ const DayPage = () => {
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
     const [hasOrder, setHasOrder] = useState(false);
-    const admin = false;
+    const admin = true;
 
     useEffect(() => {
         const handleMount = async () => {
@@ -150,12 +150,14 @@ const DayPage = () => {
                 </Col>
                 </Row>
                 </div>
-                {/* scenes */}
+                {/* scenes pink rgb(248 241 249)
+                grey 235 255 255 */}
                 <Row>
                     <Col >                   
                     {dayScenes.results.length ? (
                         dayScenes.results.map((scene, index) => (
                             <ScheduleScene 
+                                admin={admin}
                                 style={{ backgroundColor: (index % 3 === 0) 
                                     ? '#dbfaf9' : (index % 2 === 0) ? 
                                     'rgb(223 254 240)' : 'rgb(248 241 249)' }}

@@ -15,7 +15,6 @@ import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import CallsheetTop from "./CallsheetTop";
-import CrewInfo from "./CrewInfo";
 
 const CallsheetsPage = ({ filter="" }) => {
   useRedirect("loggedOut");

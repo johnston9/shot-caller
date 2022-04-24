@@ -18,8 +18,7 @@ const ScheduleScene = (props) => {
     const [show, setShow] = useState(false);
     const [showOrder, setShowOrder] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
-    const admin = false;
-    const {sceneAll, id, day_id, number, int_ext, start_time, end_time,
+    const {sceneAll, id, day_id, number, int_ext, start_time, end_time, admin,
         location, filming_location, day_night, action, pages, callsheetshed,
         new_info, day_order_number, setHasOrder, style, showSideBySide } = props
         
@@ -62,7 +61,7 @@ const ScheduleScene = (props) => {
                         overlay={<Tooltip>Re-Order</Tooltip>}
                         >
                         <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
-                            className={`${btnStyles.Button} ${btnStyles.Shed} py-0 `}>
+                            className={`${btnStyles.Button} ${btnStyles.Black} py-0 px-3`}>
                             {day_order_number}
                         </Button>
                     </OverlayTrigger>
@@ -126,7 +125,7 @@ const ScheduleScene = (props) => {
                 {showSideBySide ? (
                     <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        className={`${btnStyles.Button} ${btnStyles.Black}`}>
                         I
                     </Button>
                     <p className='mb-0'>{id}</p>
@@ -134,7 +133,7 @@ const ScheduleScene = (props) => {
                 ) : (
                     <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        className={`${btnStyles.Button} ${btnStyles.Black}`}>
                         Info
                     </Button>
                     <p className='mb-0'>{id}</p>
