@@ -18,7 +18,6 @@ const CallSheetPage = () => {
     const [background, setBackground] = useState({ results: [] });
     const [scenes, setScenes] = useState({ results: [] });
     const [dataDay, setDataDay] = useState("");
-    const [advancedScenes, setAdvancedScenes] = useState({ results: [] });
     const [dataDate, setDataDate] = useState("");
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);

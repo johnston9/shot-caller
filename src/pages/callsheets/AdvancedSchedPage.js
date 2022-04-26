@@ -9,7 +9,8 @@ import CharScheduleScene from './CharScheduleScene';
 const AdvancedSchedPage = (props) => {
   useRedirect("loggedOut");
   const {setShow, advancedDay} = props;
-  const [hasLoaded, setHasLoaded] = useState(false);
+  // eslint-disable-next-line
+  const [hasLoaded, setHasLoaded] = useState("");
   const [advancedSchedule, setAdvancedSchedule] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
@@ -30,7 +31,7 @@ const AdvancedSchedPage = (props) => {
       }
     }
     fetchAdvancedSchedule();
-
+  // eslint-disable-next-line
   }, [])
 
 

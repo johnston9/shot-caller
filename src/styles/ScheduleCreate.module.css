@@ -3,7 +3,7 @@
   }
 
 .Info {
-  color: #8f2544;
+  color: rgb(170, 27, 55);
   cursor: pointer;
 }
 
@@ -11,6 +11,14 @@
   color: #e8dce0;
 }
 
+/* .Info {
+  color: cornsilk;
+  cursor: pointer;
+}
+
+.Info:hover {
+  color: #e8dce0;
+} */
 
 .Back {
   background-color: aliceblue;
@@ -91,10 +99,10 @@
 }
 
 .Next1 {
-  background-color: #14404f;
-  color: #fff;
-  /* background-color: #fffff5;
-  color: #666; */
+  /* background-color: #14404f;
+  color: #fff; */
+  background-color: #fffff5;
+  color: #333;
 }
 
 .Drop i {

@@ -61,7 +61,7 @@ const ScheduleScene = (props) => {
                         overlay={<Tooltip>Re-Order</Tooltip>}
                         >
                         <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
-                            className={`${btnStyles.Button} ${btnStyles.Black} py-0 px-3`}>
+                            className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-3`}>
                             {day_order_number}
                         </Button>
                     </OverlayTrigger>
@@ -125,7 +125,7 @@ const ScheduleScene = (props) => {
                 {showSideBySide ? (
                     <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Black}`}>
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         I
                     </Button>
                     <p className='mb-0'>{id}</p>
@@ -133,7 +133,7 @@ const ScheduleScene = (props) => {
                 ) : (
                     <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Black}`}>
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
                     </Button>
                     <p className='mb-0'>{id}</p>
@@ -190,17 +190,17 @@ const ScheduleScene = (props) => {
                     <p className='mb-0'>{action}</p>
                 </Col>
             </Row>
+            <hr className=' my-1'></hr>
             {/* sechedule */}
-            <Row className='mt-2 text-center mx-0 px-0'>
-                {/* order */}
+            <Row className='mt-2 mx-0 px-0 text-center'>
+            {/* order */}
             {admin ? (
                     <>
                 {callsheetshed ? (
                     <Col xs={2}></Col>
                 ) : (
                     <>
-                    <hr className=' my-0'></hr>
-                    <Col className={`text-center mx-0 px-0 mt-0 pt-0`} xs={2} >
+                    <Col className={`mx-0 px-0 mt-0 pt-0`} xs={2} >
                         <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
                             className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-3`}>
                             {day_order_number}
@@ -212,29 +212,31 @@ const ScheduleScene = (props) => {
                     <>
                     <Col xs={2} ></Col>
                     </>
-                    ) }    
-                <Col xs={2}></Col>         
-                {/* info */}
-                <Col className={`mx-0 px-0`} xs={2} >
+                    ) }          
+                {/* info styles.Info */}
+                <Col className={`mx-0 pl-0 pr-2 text-right`} xs={4} >
                     <p onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`mb-0 ${styles.Info}`}>
+                    className={`${styles.Info}`}
+                    //    className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-1`}
+                       >
                         INFO
                     </p>
                 </Col>
                 {/* cast */}
-                <Col className={`text-center mx-0 px-0 `} xs={2}>
+                <Col className={`text-left mx-0 pr-0 pl-2 `} xs={4}>
                     <p onClick={() => setShow(show => !show)} 
-                    className={`mb-0 ${styles.Info}`}>
+                    className={`${styles.Info}`}
+                    // className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-1`}
+                    >
                     CAST
                     </p>
                 </Col>  
-                <Col xs={2}></Col>
                 {admin ? (
                     <>
                 {callsheetshed ? (
                     <Col xs={2}></Col>
                 ) : (
-                <Col className={`text-center mx-0 px-0 mt-0 pt-0`} xs={1} >
+                <Col className={`text-center mx-0 px-0 mt-0 pt-0`} xs={2} >
                 <PostDropdown
                     className={`${styles.Drop }`}
                     handleEdit={handleEdit}
