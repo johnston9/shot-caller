@@ -81,6 +81,23 @@ width: 100%;
     background-color: #112533;
 }
 
+.HomeboxFind {
+    /* background-color: #112533; */
+    /* background-color: #395061; */
+    /* background-color: #405766; */
+    /* color: #F5F5F5; */
+    height: 60px;
+    background-color: rgb(206, 232, 255);
+    color: #112533;
+    border: 1px solid #fff;
+}
+
+.HomeboxFind:hover {
+    background-color: #112533;
+    color: #F5F5F5;
+    /* background-color: #405766; */
+}
+
 .HomeboxSm {
     height: 100px;
     background-color: #395061;
