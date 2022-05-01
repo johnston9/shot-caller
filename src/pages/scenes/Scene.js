@@ -9,6 +9,8 @@ import styles from "../../styles/Scene.module.css";
 import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import btnStyles from "../../styles/Button.module.css";
+import { Button } from 'react-bootstrap';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import ShotlistPage from './ShotlistPage';
 import WorkspaceInst from './WorkspaceInst';
@@ -179,9 +181,15 @@ const Scene = (props) => {
     return (
         <div>
           <TopBox title={`Scene ${number} `} />
+          <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue} mt-2`}
+              onClick={() => history.goBack()}
+              >
+              Back
+          </Button>
             <div className={` ${styles.Header}`}>
               <div className='d-none d-md-block'>
-                  <Row className={`${styles.ButtonLine} mt-2`}>
+                  <Row className={`${styles.ButtonLine} mt-2 mx-3`}>
                   <Col md={1}></Col>
                     <Col md={2} className='text-center'>
                         <p
@@ -264,7 +272,7 @@ const Scene = (props) => {
                     </Col>
                   </Row>  
               </div>
-                  <Card.Body className='pt-0'>
+                  <Card.Body className='pt-0'>                   
                       {!showBreak ? (
                       ""
                     ) : (
@@ -294,6 +302,15 @@ const Scene = (props) => {
                     ) }
                     {/* workspace */}
                   <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+                  <Row className='mt-2'>
+                    <Col md={{span: 8, offset: 2 }}>
+                    <p className='text-center'>
+                      Edit or Add to the scene Breakdown using the Edit 
+                      Button above. Use the Workspace Guide to indicate which
+                      Departments Workspaces will be used for this Scene.
+                      </p>   
+                    </Col>
+                  </Row>
                   <Row className='mb-2'>
                     <Col md={1}></Col>
                     <Col className='mx-0 px-0' xs={12} md={10} >
@@ -314,8 +331,7 @@ const Scene = (props) => {
                     ) }
                     <div className={`mt-3 px-3 pb-0 ${styles.Guide}`}>
                     <h4 style={{ textTransform: 'uppercase'}} className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >Workspace Guide</h4>
-                      
-                      <div className={`text-center mt-1 px-3 pb-0 ${styles.GuideBox}`}>{workspace_guide} </div>
+                      <div className={`text-center mt-2 px-3 pb-0 ${styles.GuideBox}`}>{workspace_guide} </div>
                       <Row>
                         <Col xs={4} className='mx-0 px-0 text-center'>
                           <p

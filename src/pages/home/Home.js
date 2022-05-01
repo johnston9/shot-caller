@@ -14,6 +14,7 @@ import Container from "react-bootstrap/Container";
 
 const Home = () => {
     useRedirect("loggedOut");
+    const admin = true;
 
     return (
       <Container className={`px-2  ${styles.Background}`}>
@@ -37,9 +38,9 @@ const Home = () => {
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Primary Scenes Workspace </h5>
                     <div className={`${styles.Inner}`}>
                     <p className="mt-2">
-                      Create scenes and breakdowns and colloborate on them 
-                      in their universal or department workspaces. Create and view storyboards
-                      and shotlists
+                      Create Scene breakdowns. Colloborate on them 
+                      in their department workspaces. Create and view storyboards
+                      and shotlists.
                     </p>
                     </div>
                     </div>
@@ -91,7 +92,11 @@ const Home = () => {
                   <div className={`px-1 py-1  ${styles.HomeboxSmEr}`}>
                         <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                         <div className={`${styles.Inner}`}>
-                        <p className="mt-2"> Create / View schedule  </p>
+                        {admin ? (
+                              <p className="mt-2"> Create / View schedule </p>
+                            ) : (
+                              <p className="mt-2"> View schedule </p>
+                            )}
                         </div>
                     </div>
                   </Link>
@@ -167,7 +172,7 @@ const Home = () => {
                     <h5 className={`text-center ${styles.Title}`}>Scenes Workspace </h5>
                     <div className={`${styles.Inner} mt-2 pb-1`}>
                     <p className="pt-1 mb-0">
-                      Collaborate on scenes by department. View storyboards and shotlists 
+                      Collaborate on scenes by department. View storyboards and shotlists. 
                     </p>
                     </div>
                     </div>
@@ -215,7 +220,11 @@ const Home = () => {
                   <div className={`px-2 py-1  ${styles.HomeboxXs}`}>
                         <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                         <div className={`${styles.Inner} mt-2 pb-2`}>
-                        <p className="mb-0 pt-1"> Add / View Schedule </p>
+                        {admin ? (
+                              <p className="mt-2"> Create / View schedule </p>
+                            ) : (
+                              <p className="mt-2"> View schedule </p>
+                            )}
                         </div>
                     </div>
                   </Link>

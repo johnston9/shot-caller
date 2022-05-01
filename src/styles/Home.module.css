@@ -19,52 +19,10 @@ width: 100%;
     color: #F5F5F5;
 }
 
-/* mobile */
-
-.Inner {
-    background-color: #395061;
-    /* background-color: #112533; */
-    color: #fff;
-}
-
-
-.HomeboxXsXs {
-    height: 120px;
-    background-color: #395061;
-    /* background-color: #405766; */
-    color: #F5F5F5;
-    border-bottom: 1px solid #fff;
-}
-
-.HomeboxXsXs:hover {
-    background-color: #112533;
-    border-bottom: 1px solid #fff;
-}
-
-.HomeboxXsXs:hover .Inner {
-    background-color: #112533;
-}
-
-.HomeboxXs {
-    height: 105px;
-    /* background-color: #405766; */
-    background-color: #395061;
-    color: #F5F5F5;
-}
-
-.HomeboxXs:hover {
-    background-color: #112533;
-}
-
-.HomeboxXs:hover .Inner {
-    background-color: #112533;
-}
-
-
 /* large */
 
 .Homebox {
-    height: 140px;
+    height: 110px;
     /* background-color: #112533; */
     background-color: #395061;
     /* background-color: #405766; */
@@ -130,6 +88,47 @@ width: 100%;
 
 
 .HomeboxSmEr:hover .Inner {
+    background-color: #112533;
+}
+
+/* mobile */
+
+.Inner {
+    background-color: #395061;
+    /* background-color: #112533; */
+    color: #fff;
+}
+
+
+.HomeboxXsXs {
+    height: 120px;
+    background-color: #395061;
+    /* background-color: #405766; */
+    color: #F5F5F5;
+    border-bottom: 1px solid #fff;
+}
+
+.HomeboxXsXs:hover {
+    background-color: #112533;
+    border-bottom: 1px solid #fff;
+}
+
+.HomeboxXsXs:hover .Inner {
+    background-color: #112533;
+}
+
+.HomeboxXs {
+    height: 105px;
+    /* background-color: #405766; */
+    background-color: #395061;
+    color: #F5F5F5;
+}
+
+.HomeboxXs:hover {
+    background-color: #112533;
+}
+
+.HomeboxXs:hover .Inner {
     background-color: #112533;
 }
 

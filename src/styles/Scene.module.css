@@ -127,15 +127,17 @@
 
 .GuideTitle {
   font-style: italic;
+  background-color: #e8f0f1;
 }
 
 .Guide {
-  background-color: cornsilk;
+  background-color: aliceblue;
 }
 
 .GuideBox {
   /* background-color: rgb(229 224 201); */
-  background-color: rgb(245, 234, 191);
+  background-color: aliceblue;
+  border-bottom: 1px solid #999 ;
 }
 
 .Button {
@@ -147,11 +149,17 @@
 }
 
 .Instructions {
-  background-color: rgb(149, 240, 240);
+  background-color: aliceblue;
 }
 
 .Guide {
-  background-color: cornsilk;
+  background-color: aliceblue;
+}
+
+.Break {
+  border-bottom: #000;
+  background-color: #000;
+  color: #000;
 }
 
 .UniImg {

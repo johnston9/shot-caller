@@ -38,9 +38,9 @@ const Landing = () => {
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Primary Scenes Workspace </h5>
                       <div className={`${styles.Inner}`}>
                       <p className="mt-2">
-                        Create scenes and breakdowns and colloborate on them 
-                        in their universal or department workspaces. Create and view storyboards
-                        and shotlists
+                      Create Scene breakdowns. Colloborate on them 
+                      in their department workspaces. Create and view storyboards
+                      and shotlists.
                       </p>
                       </div>
                       </div>
@@ -218,7 +218,11 @@ const Landing = () => {
                     <div className={`px-2 py-1  ${styles.HomeboxXs}`}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                           <div className={`${styles.Inner} mt-2 pb-2`}>
-                          <p className="mb-0 pt-1"> Add / View Schedule </p>
+                          {admin ? (
+                              <p className="mt-2"> Create / View schedule </p>
+                            ) : (
+                              <p className="mt-2"> View schedule </p>
+                            )}
                           </div>
                       </div>
                     </Link>

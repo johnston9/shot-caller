@@ -137,6 +137,12 @@ const Post = (props) => {
 
     return (
         <div>
+          <Button
+                  className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+                  onClick={() => history.goBack()}
+                >
+                  Back
+                </Button>
             <Card  >
                 {/* new */}
               <Card.Body className={`${styles.PostTop} py-1`} >
@@ -247,12 +253,6 @@ const Post = (props) => {
                 </Card.Body>
                 {/* end new */}
                 <Card.Body className='py-1'  >
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                  onClick={() => history.goBack()}
-                >
-                  Back
-                </Button>
                     {title && <h4 className="text-center">{title}</h4>}
                     <hr />
                     {content && <Card.Text>{content}</Card.Text>}

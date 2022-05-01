@@ -65,8 +65,10 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
         <Col md={1} className="d-none d-md-block"></Col>
         <Col md={10}>
         <div className={`mb-3 p-3 ${styles.Guide}`}>
-            <span className={` ${styles.CloseIns }`} onClick={() => setShowGuide(false) } >Close</span>
-            <h5 className="mb-2 text-center">Create Workspace Guide</h5>
+        <div className={`mt-0 text-center mb-2 ${styles.SubTitle }`}>
+            <span className={`float-right ${styles.Close }`} onClick={() => setShowGuide(false) } >Close</span> 
+            <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >Create Workspace Guide </h5>
+            </div>
             <Form onSubmit={handleSubmit}>
             <Row>
               <Col >
