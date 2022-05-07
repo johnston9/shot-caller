@@ -1240,7 +1240,7 @@ const CrewInfoEdit = () => {
   const textFields = (
     <div className="text-center">
       {/* PRODUCTION COMPANY INFO */}
-      <div>
+      <div className="pb-4">
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >Production Company Info</h3> 
       {/* Production Name - Production Company */}
       <Row>
@@ -1280,7 +1280,7 @@ const CrewInfoEdit = () => {
           </Col>
       </Row>
       <hr/>
-      {/* phone - email */}
+      {/* phone - email BodyColor */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="company_phone" className={`${styles.Width} `}  >
@@ -1458,22 +1458,18 @@ const CrewInfoEdit = () => {
             </div>
       </Col>
       </Row>
-      <hr/>
-      {/* total shoot days*/}
-      {/* <Row>
-      <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
-      </Col>
-      </Row>
-      <hr/> */}
+      </div>
+      <div className={`py-1 ${styles.BodyColor }`}>
       </div>
       {/* CREW INFO BY DEPARTMENTS */}
-      <h3 className="my-4" >CREW INFO BY DEPARTMENT</h3> 
-
       {/* PRODUCTION */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PRODUCTION</h3> 
+      <h3 className={`mb-0 py-1 ${styles.SubTitle }`} >PRODUCTION DEPARTMENT</h3> 
       {/* DIRECTOR */}
-      <h5 className="mt-1" >DIRECTOR</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Director</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: director</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="director_name" className={`${styles.Width} `}  >
@@ -1527,9 +1523,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Producer */}
-      <h5 className="mt-1" >Producer</h5> 
+      <h5 className={`mt-4 mb-3 py-1 ${styles.SubTitle2 }`} >Producer</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: producer</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="producer_name" className={`${styles.Width} `}  >
@@ -1583,9 +1581,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Production Coordinator */}
-      <h5 className="mt-1" >Production Coordinator</h5> 
+      <h5 className={`mt-4 mb-3 py-1 ${styles.SubTitle2 }`} >Production Coordinator</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: procoord</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="pro_coordinator_name" className={`${styles.Width} `}  >
@@ -1639,9 +1639,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* UPM */}
-      <h5 className="mt-1" >UPM</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >UPM</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: unitpm</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="upm_name" className={`${styles.Width} `}  >
@@ -1695,9 +1697,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Travel Coordinator */}
-      <h5 className="mt-1" >Travel Coordinator</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Travel Coordinator</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: travelco</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="travel_coordinator_name" className={`${styles.Width} `}  >
@@ -1751,9 +1755,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* P.A. */}
-      <h5 className="mt-1" >Production PA</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production PA</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: produpa</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="production_pa_name" className={`${styles.Width} `}  >
@@ -1807,9 +1813,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Production Position 1 */}
-      <h5 className="mt-1" >Additional Production Position 1</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Production Position 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addpropos1</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_1_job" className={`${styles.Width} `}  >
@@ -1882,9 +1890,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Production Position 2 */}
-      <h5 className="mt-1" >Additional Production Position 2</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Production Position 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addpropos2</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_2_job" className={`${styles.Width} `}  >
@@ -1957,9 +1967,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Production Position 3 */}
-      <h5 className="mt-1" >Additional Production Position 3</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Production Position 3</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addpropos3</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_3_job" className={`${styles.Width} `}  >
@@ -2032,9 +2044,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Production Position 4 */}
-      <h5 className="mt-1" >Additional Production Position 4</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Production Position 4</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addpropos4</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_4_job" className={`${styles.Width} `}  >
@@ -2107,9 +2121,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Production Position 5 */}
-      <h5 className="mt-1" >Additional Production Position 5</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Production Position 5</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addpropos5</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_5_job" className={`${styles.Width} `}  >
@@ -2129,7 +2145,7 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <Row>
+      <Row className="pb-3" >
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_production_pos_5_name" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
@@ -2182,14 +2198,17 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
-
+      <div className={`py-1 ${styles.BodyColor }`}>
+      </div>
       {/* ASSISTANT DIRECTORS */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`}>ASSISTANT DIRECTORS</h3> 
+      <h3 className={`mb-0 py-1 ${styles.SubTitle }`}>ASSISTANT DIRECTORS</h3> 
       {/* 1st Assistant Director */}
-      <h5 className="mt-1" >1st Assistant Director</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Director</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir1</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="ad_1_name" className={`${styles.Width} `}  >
@@ -2243,9 +2262,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* 2nd Assistant Director */}
-      <h5 className="mt-1" >2nd Assistant Director</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >2nd Assistant Director</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir2</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="ad_2_name" className={`${styles.Width} `}  >
@@ -2299,9 +2320,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* 3rd Assistant Director */}
-      <h5 className="mt-1" >3rd Assistant Director</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >3rd Assistant Director</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir3</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="ad_3_name" className={`${styles.Width} `}  >
@@ -2357,7 +2380,10 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* 4th Assistant Director */}
-      <h5 className="mt-1" >4th Assistant Director</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >4th Assistant Director</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir4</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="ad_4_name" className={`${styles.Width} `}  >
@@ -2413,7 +2439,10 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* 5th Assistant Director */}
-      <h5 className="mt-1" >5th Assistant Director</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >5th Assistant Director</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir5</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="ad_5_name" className={`${styles.Width} `}  >
@@ -2469,7 +2498,10 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* Production Assistant 1 */}
-      <h5 className="mt-1" >Production Assistant 1 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist1</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="pro_assistant_1_name" className={`${styles.Width} `}  >
@@ -2523,9 +2555,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Production Assistant 2 */}
-      <h5 className="mt-1" >Production Assistant 2 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist2</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="pro_assistant_2_name" className={`${styles.Width} `}  >
@@ -2579,9 +2613,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Production Assistant 3 */}
-      <h5 className="mt-1" >Production Assistant 3 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 3</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist3</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="pro_assistant_3_name" className={`${styles.Width} `}  >
@@ -2637,7 +2673,10 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* Production Assistant 4 */}
-      <h5 className="mt-1" >Production Assistant 4 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 4</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist4</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="pro_assistant_4_name" className={`${styles.Width} `}  >
@@ -2693,8 +2732,11 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* Production Assistant 5 */}
-      <h5 className="mt-1" >Production Assistant 5 </h5> 
-      <Row>
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 5</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist5</span> 
+      </div>
+      <Row className="pb-3">
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="pro_assistant_5_name" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
@@ -2747,14 +2789,17 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
-
+      <div className={`py-1 ${styles.BodyColor }`}>
+      </div>
       {/* CAMERA */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CAMERA</h3> 
+      <h3 className={`mb-3 py-1 ${styles.SubTitle }`} >CAMERA</h3> 
       {/* Director of Photography */}
-      <h5 className="mt-1" >Director of Photography</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Director of Photography</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dophoto</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="dop_name" className={`${styles.Width} `}  >
@@ -2808,9 +2853,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Camera Operator */}
-      <h5 className="mt-1" >Camera Operator</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Camera Operator</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: cameraop</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="camera_operator_name" className={`${styles.Width} `}  >
@@ -2864,9 +2911,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* 1st Assistant Camera */}
-      <h5 className="mt-1" >1st Assistant Camera</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Camera</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistcam1</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="camera_ass_1_name" className={`${styles.Width} `}  >
@@ -2920,9 +2969,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* 2nd Assistant Camera */}
-      <h5 className="mt-1" >2nd Assistant Camera</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >2nd Assistant Camera</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistcam2</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="camera_ass_2_name" className={`${styles.Width} `}  >
@@ -2976,9 +3027,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* DIT */}
-      <h5 className="mt-1" >DIT</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >DIT</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dimagetec</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="dit_name" className={`${styles.Width} `}  >
@@ -3032,9 +3085,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Steadicam */}
-      <h5 className="mt-1" >Steadicam Operator</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Steadicam Operator</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: steadicamo</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="steadicam_name" className={`${styles.Width} `}  >
@@ -3088,9 +3143,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Camera PA */}
-      <h5 className="mt-1" >Camera PA </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Camera PA</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: camerapa</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="camera_pa_name" className={`${styles.Width} `}  >
@@ -3144,9 +3201,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Camera Position 1 */}
-      <h5 className="mt-1" >Additional Camera Position 1</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam1</span> 
+      </div> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_camera_pos_1_job" className={`${styles.Width} `}  >
@@ -3219,9 +3278,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Camera Position 2 */}
-      <h5 className="mt-1" >Additional Camera Position 2</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam2</span> 
+      </div> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_camera_pos_2_job" className={`${styles.Width} `}  >
@@ -3294,9 +3355,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Camera Position 3 */}
-      <h5 className="mt-1" >Additional Camera Position 3</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 3</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam3</span> 
+      </div> 
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_camera_pos_3_job" className={`${styles.Width} `}  >
@@ -3316,7 +3379,7 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <Row>
+      <Row className="pb-3">
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="oth_camera_pos_3_name" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
@@ -3369,14 +3432,17 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
-
+      <div className={`py-1 ${styles.BodyColor }`}>
+      </div>
       {/* SOUND */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SOUND</h3> 
+      <h3 className={` mb-3 py-1 ${styles.SubTitle }`} >SOUND</h3> 
       {/* Sound Mixer */}
-      <h5 className="mt-1" >Sound Mixer</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Mixer</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: soundmix</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="sound_mixer_name" className={`${styles.Width} `}  >
@@ -8640,7 +8706,25 @@ const CrewInfoEdit = () => {
     >
         Back
     </Button>
-    <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
+    <Row>
+      <Col className="d-none d-md-block" md={2}></Col>     
+      <Col xs={12} md={8} >
+      <div className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+      <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
+      <p className={`text-center px-3 py-1 ${styles.Red }`}>
+        All Crew Members MUST BE Registered
+        </p>     
+        <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+          Register an account for each crew member 
+          using their position's Username.
+          Send the Shot Caller link to them with the Username 
+          and whatever password you used instructing them 
+          to sign in and change their password.
+        </p>
+      </div>
+      </Col>
+    </Row>
+    <Form className= {`my-3 ${styles.Back3}`} onSubmit={handleSubmit}>
     {textFields}
     {buttons}
     </Form>

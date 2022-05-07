@@ -51,32 +51,167 @@ const CallSheet = (props ) => {
         set_medic_name, set_medic_email, set_medic_phone, } = crewInfoOne || {};
 
     const { scenes,
-        // eslint-disable-next-line
-        admin,
-        currentUser,
-        cast,
-        callsheet,
-        background,
-        id, 
-        day_id, 
-        day,
-        date,
-        unit_call,
-        talent_call, 
-        shoot_call, 
-        breakfast, 
-        lunch, 
-        wrap, 
-        location_1_name,
-        nearest_hospital,
-        hospital_address_line_1,
-        hospital_address_line_2,
-        hospital_address_line_3,
-        hospital_address_line_4,
-        weather_location,
-        important_info,
-        transport_info,
-        department_info,
+          // eslint-disable-next-line
+          admin,
+          currentUser,
+          cast,
+          callsheet,
+          background,
+          // info
+          id,
+          day,
+          date,
+          day_id,
+          unit_call,
+          talent_call, 
+          shoot_call, 
+          breakfast, 
+          lunch, 
+          wrap, 
+          location_1_name,
+          location_2_name,
+          location_3_name,
+          location_4_name,
+          location_5_name,
+          nearest_hospital,
+          hospital_address_line_1,
+          hospital_address_line_2,
+          hospital_address_line_3,
+          hospital_address_line_4,
+          weather_location,
+          important_info,
+          transport_info,
+          department_info,
+          // production
+          director_calltime,
+          producer_calltime,
+          pro_coordinator_calltime,
+          travel_coordinator_calltime,
+          upm_calltime,
+          production_pa_calltime,
+          script_supervisor_calltime,
+          legal_calltime,
+          set_medic_calltime,
+          oth_production_pos_1_calltime,
+          oth_production_pos_2_calltime,
+          oth_production_pos_3_calltime,
+          oth_production_pos_4_calltime,
+          oth_production_pos_5_calltime,
+          // art
+          art_director_calltime,
+          art_assistant_calltime,
+          set_decorator_calltime,
+          set_dresser_calltime,
+          lead_man_calltime,
+          dresser_calltime,
+          prop_master_calltime,
+          ass_prop_master_calltime,
+          prop_buyer_calltime,
+          // cam
+          dop_calltime,
+          camera_operator_calltime,
+          camera_ass_1_calltime,
+          camera_ass_2_calltime,
+          dit_calltime,
+          steadicam_calltime,
+          camera_pa_calltime,
+          oth_camera_pos_1_calltime,
+          oth_camera_pos_2_calltime,
+          oth_camera_pos_3_calltime,
+          // casting
+          casting_director_calltime,
+          extras_casting_calltime,
+          ad_1_calltime,
+          ad_2_calltime,
+          ad_3_calltime,
+          ad_4_calltime,
+          ad_5_calltime,
+          pro_assistant_1_calltime,
+          pro_assistant_2_calltime,
+          pro_assistant_3_calltime,
+          pro_assistant_4_calltime,
+          pro_assistant_5_calltime,
+          // ele/Grip
+          gaffer_calltime,
+          best_boy_electric_calltime,
+          electric_3_calltime,
+          electric_4_calltime,
+          keygrip_calltime,
+          best_boy_grip_calltime,
+          dolly_grip_calltime,
+          swing_ge1_calltime,
+          swing_ge2_calltime,
+          swing_ge3_calltime,
+          swing_ge4_calltime,
+          swing_ge5_calltime,
+          // locations
+          location_mngr_calltime,
+          location_security_calltime,
+          location_ass_1_calltime,
+          location_ass_2_calltime,
+          location_ass_3_calltime,
+          location_ass_4_calltime,
+          // makeup
+          key_hairmakeup_calltime,
+          key_hairstylist_calltime,
+          sfx_makeup_calltime,
+          sfx_makeup_assistant_calltime,
+          makeup_artist_1_calltime,
+          makeup_artist_2_calltime,
+          makeup_artist_3_calltime,
+          makeup_artist_4_calltime,
+          makeup_artist_5_calltime,
+          // post/add-pos
+          editor_calltime,
+          fx_calltime,
+          add_pos_1_calltime,
+          add_pos_2_calltime,
+          add_pos_3_calltime,
+          add_pos_4_calltime,
+          add_pos_5_calltime,
+          add_pos_6_calltime,
+          add_pos_7_calltime,
+          add_pos_8_calltime,
+          add_pos_9_calltime,
+          add_pos_10_calltime,
+          all_other_add_positions_calltimes,
+          // script/cater
+          writer_calltime,
+          catering_co_1_calltime,
+          catering_co_2_calltime,
+          catering_co_3_calltime,
+          craft_service_calltime,
+          crafty_ass_calltime,
+          // sound/transport
+          sound_mixer_calltime,
+          boom_operator_calltime,
+          sound_assistant_1_calltime,
+          sound_assistant_2_calltime,
+          transport_captain_calltime,
+          transport_manager_1_calltime,
+          transport_manager_2_calltime,
+          head_driver_calltime,
+          car1_calltime,
+          car2_calltime,
+          car3_calltime,
+          truck1_calltime,
+          truck2_calltime,
+          truck3_calltime,
+          // stunts
+          stunt_coordinator_calltime,
+          stunts_1_calltime,
+          stunts_2_calltime,
+          stunts_3_calltime,
+          stunts_4_calltime,
+          stunts_5_calltime,
+          // wardrobe
+          costume_designer_calltime,
+          ass_costume_designer_calltime,
+          wardrobe_assistant_1_calltime,
+          wardrobe_assistant_2_calltime,
+          wardrobe_assistant_3_calltime,
+          wardrobe_assistant_4_calltime,
+          wardrobe_assistant_5_calltime,
       } = props;
     
     const advancedDay = parseInt(day) + 1;
@@ -85,10 +220,41 @@ const CallSheet = (props ) => {
       useEffect(() => {
         const yourcall = ( currentUser) => {
           switch(currentUser) {
-            case "director": return callsheet.director_calltime;
-            case "producer": return callsheet.producer_calltime;
-            case "dop": return callsheet.dop_calltime;
-            case "davey": return callsheet.gaffer_calltime;
+            // production
+            case "director": return director_calltime;
+            case "producer": return producer_calltime;
+            case "procoord": return pro_coordinator_calltime;
+            case "davey": return gaffer_calltime;
+            case "unitpm": return upm_calltime;
+            case "travelco": return travel_coordinator_calltime;
+            case "produpa": return production_pa_calltime;
+            case "addpropos1": return oth_production_pos_1_calltime;
+            case "addpropos2": return oth_production_pos_2_calltime;
+            case "addpropos3": return oth_production_pos_3_calltime;
+            case "addpropos4": return oth_production_pos_4_calltime;
+            case "addpropos5": return oth_production_pos_5_calltime;
+            // assistant directors
+            case "assistdir1": return ad_1_calltime;
+            case "assistdir2": return ad_2_calltime;
+            case "assistdir3": return ad_3_calltime;
+            case "assistdir4": return ad_4_calltime;
+            case "assistdir5": return ad_5_calltime;
+            case "proassist1": return pro_assistant_1_calltime;
+            case "proassist2": return pro_assistant_2_calltime;
+            case "proassist3": return pro_assistant_3_calltime;
+            case "proassist4": return pro_assistant_4_calltime;
+            case "proassist5": return pro_assistant_5_calltime;
+            // camera
+            case "dophoto": return dop_calltime;
+            case "cameraop": return camera_operator_calltime;
+            case "assistcam1": return camera_ass_1_calltime;
+            case "assistcam2": return camera_ass_2_calltime;
+            case "dimagetec": return dit_calltime;
+            case "steadicamo": return steadicam_calltime;
+            case "camerapa": return camera_pa_calltime;
+            case "addcam1": return oth_camera_pos_1_calltime;
+            case "addcam2": return oth_camera_pos_2_calltime;
+            case "addcam3": return oth_camera_pos_3_calltime;
             default: return 'xx';
           }
         };

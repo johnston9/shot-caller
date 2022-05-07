@@ -10,6 +10,15 @@ p {
   background-color: f6fffe;
 } */
 
+.BodyColor {
+  background-color: #f8f8f8;
+  height: 40px;
+}
+
+.Red {
+  color: crimson;
+}
+
 .WhiteAqua {
   background-color: #f6fffe;
 }
@@ -65,7 +74,7 @@ p {
 }
 
 .Back {
-  background-color: rgb(222, 236, 248);
+  background-color: rgb(242, 247, 252);
 }
 
 .Back2 {
@@ -276,6 +285,18 @@ p {
 
 .SubTitle {
   background-color: #e8f0f1;
+  font-weight: 700;
+}
+
+.SubTitle2 {
+  /* background-color: #e0fafe; */
+  background-color: #d6fcff;;
+  font-weight: 700;
+}
+
+.SubTitle3 {
+  /* background-color: #e0fafe; */
+  background-color: #e0f6f8;;
   font-weight: 700;
 }
 

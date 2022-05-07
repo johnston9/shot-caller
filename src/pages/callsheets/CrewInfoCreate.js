@@ -1208,6 +1208,7 @@ const CrewInfoCreate = () => {
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PRODUCTION - DIRECTOR</h3> 
       {/* DIRECTOR */}
       <h5 className="mt-1" >DIRECTOR</h5> 
+      <h5 className="mt-1" >username: director</h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="director_name" className={`${styles.Width} `}  >
@@ -8374,8 +8375,26 @@ const CrewInfoCreate = () => {
     >
         Back
     </Button>
-    <p>Fill in this page once to create the crew info page base. Use the edit 
-        buttons to add or edit at future stages</p>
+    <p>The "Create" Button on this page creates the "Crew Info" page one time.
+      After that the Edit button on the "Crew Info" page is used 
+       to add to or edit the page at future stages.</p>
+       <Row>
+      <Col md={{span: 8, offset: 2}} >
+      <div className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+      <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
+      <p className={`text-center px-3 py-1 ${styles.Red }`}>
+        All Crew Members MUST BE Registered
+        </p>     
+        <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+          Register an account for each crew member 
+          using their position's Username.
+          Send the Shot Caller link to them with the Username 
+          and whatever password you used instructing them 
+          to sign in and change their password.
+        </p>
+      </div>
+      </Col>
+    </Row>
     <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
     {textFields}
     {buttons}
