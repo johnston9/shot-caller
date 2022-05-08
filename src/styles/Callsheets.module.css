@@ -46,7 +46,6 @@ p {
   font-family: Parisienne;
 }
 
-
 .Close {
   color: rgb(28, 131, 131);
   padding-right: 30px;
@@ -212,13 +211,23 @@ p {
 }
 
 .Button {
+  color: rgb(46 55 159);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.Button:hover {
+  color: #32c0e4;
+}
+
+/* .Button {
   color: rgb(28, 204, 204);
   cursor: pointer;
 }
 
 .Button:hover {
   color: rgb(31, 98, 98);
-}
+} */
 
 .Important {
   background-color: antiquewhite;

@@ -25,7 +25,7 @@ const AddLocations = ({crewInfoOne, handleChange, postData, setShowLoc }) => {
 
   return (
     <div>
-      <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
+      <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowLoc(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >LOCATIONS </h5>
       </div>

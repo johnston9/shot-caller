@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../styles/Callsheets.module.css";
 
-const AddCamera = ({crewInfoOne, handleChange, callsheet, setShowCam }) => {
+const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
   useRedirect("loggedOut");
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
@@ -26,11 +26,11 @@ const AddCamera = ({crewInfoOne, handleChange, callsheet, setShowCam }) => {
   const { dop_calltime, camera_operator_calltime, camera_ass_1_calltime,
     camera_ass_2_calltime, dit_calltime, steadicam_calltime, camera_pa_calltime,
     oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, 
-    oth_camera_pos_3_calltime,} = callsheet || {};
+    oth_camera_pos_3_calltime,} = postData || {};
 
   return (
     <div>
-      <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
+      <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CAMERA </h5>
       </div>

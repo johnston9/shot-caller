@@ -16,6 +16,19 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { useSetEditCrewInfoContext } from "../../contexts/BaseCallContext";
+import CrewCompany from "./CrewCompany";
+import CrewProduction from "./CrewProduction";
+import CrewCastingAD from "./CrewCastingAD";
+import CrewLocations from "./CrewLocations";
+import CrewScriptCater from "./CrewScriptCater";
+import CrewElecGrip from "./CrewElecGrip";
+import CrewMakeup from "./CrewMakeup";
+import CrewSoundTransport from "./CrewSoundTransport";
+import CrewStunts from "./CrewStunts";
+import CrewArt from "./CrewArt";
+import CrewCamera from "./CrewCamera";
+import CrewPostAdditional from "./CrewPostAdditional";
+import CrewWardrobe from "./CrewWardrobe";
 
 // other pro 5 - other cam 3 
 
@@ -24,6 +37,20 @@ const CrewInfoCreate = () => {
   const [errors, setErrors] = useState({});
   const history = useHistory();
   const setEditCrewInfo = useSetEditCrewInfoContext();
+
+  const [showCom, setShowCom] = useState(false);
+  const [showPro, setShowPro] = useState(false);
+  const [showCam, setShowCam] = useState(false);
+  const [showSou, setShowSou] = useState(false);
+  const [showLoc, setShowLoc] = useState(false);
+  const [showMak, setShowMak] = useState(false);
+  const [showEle, setShowEle] = useState(false);
+  const [showScr, setShowScr] = useState(false);
+  const [showArt, setShowArt] = useState(false);
+  const [showCas, setShowCas] = useState(false);
+  const [showStu, setShowStu] = useState(false);
+  const [showPos, setShowPos] = useState(false);
+  const [showWar, setShowWar] = useState(false);
 
   const [postData, setPostData] = useState({
     total_shoot_days: "",
@@ -8396,6 +8423,186 @@ const CrewInfoCreate = () => {
       </Col>
     </Row>
     <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
+    <div className={`pt-2 ${styles.White }`}> 
+    <Row className={`${styles.ButtonLine} mt-0`}>
+      <Col className='text-center'>
+              <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowCom(showCom => !showCom)} > Company
+              </p>
+          </Col>
+      </Row>
+      <Row className={`${styles.ButtonLine} mt-0`}>
+        <Col xs={4} md={2} className='text-center'>
+            <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowPro(showPro => !showPro)} > Production
+            </p>
+        </Col>
+        <Col xs={4} md={2} className='text-center'>
+                <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowCam(showCam => !showCam)} > Camera
+                </p>
+            </Col>
+        <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
+          </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+        <p
+            className={`py-0 mb-0 ${styles.Button}`}
+            onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
+        </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
+          </p>
+        </Col>
+        <Col xs={4} className='mx-0 px-0 text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowScr(showScr => !showScr)} > Script/Catering
+          </p>
+        </Col>
+      </Row>  
+      <Row className={`${styles.ButtonLine} text-center mt-0`}>
+        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+            <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
+            </p>
+        </Col>
+        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+                <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowMak(showMak => !showMak)} > Makeup
+                </p>
+            </Col>
+        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
+          </p>
+        </Col>
+        <Col xs={4} className='py-0' md={2}>
+        <p
+            className={`py-0 mb-0 ${styles.Button}`}
+            onClick={() => setShowStu(showStu => !showStu)} >Stunts
+        </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowArt(showArt => !showArt)} > Art
+          </p>
+        </Col>
+        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowPos(showPos => !showPos)} > Post/Additional
+          </p>
+        </Col>
+      </Row>  
+      <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+    </div>
+    <div className={`mt-0 ${styles.Crew }`}>
+        {/* Add Company */}
+        {!showCom ? (
+          ""
+              ) : (
+                <CrewCompany handleChange={handleChange} 
+                  setShow={setShowCom} /> 
+                ) }  
+        {/* Add Production */}
+        {!showPro ? (
+          ""
+              ) : (
+                <CrewProduction handleChange={handleChange} 
+                  setShow={setShowPro} /> 
+                ) }  
+        {/* Add Casting */}
+        {!showCas ? (
+                ""
+              ) : (
+                <CrewCastingAD setShow={setShowCas} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Locations */}
+        {!showLoc ? (
+                ""
+              ) : (
+                <CrewLocations setShow={setShowLoc} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Script  */}
+        {!showScr ? (
+                ""
+              ) : (
+                <CrewScriptCater setShow={setShowScr} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Electric */}
+        {!showEle ? (
+                ""
+              ) : (
+                <CrewElecGrip setShow={setShowEle} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Makeup */}
+        {!showMak ? (
+                ""
+              ) : (
+                <CrewMakeup setShow={setShowMak} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Sound */}
+        {!showSou ? (
+                ""
+              ) : (
+                <CrewSoundTransport setShow={setShowSou} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Stunts */}
+        {!showStu ? (
+                ""
+              ) : (
+                <CrewStunts setShow={setShowStu} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Art */}
+        {!showArt ? (
+                ""
+              ) : (
+                <CrewArt setShow={setShowArt} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Camera */}
+        {!showCam ? (
+                ""
+              ) : (
+                <CrewCamera setShow={setShowCam} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Post */}
+        {!showPos ? (
+                ""
+              ) : (
+                <CrewPostAdditional setShow={setShowPos} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Wardrobe  */}
+        {!showWar ? (
+                ""
+              ) : (
+                <CrewWardrobe setShow={setShowWar}
+                postData={postData} handleChange={handleChange} /> 
+                ) } 
+        </div>
     {textFields}
     {buttons}
     </Form>

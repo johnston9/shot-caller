@@ -16,6 +16,19 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { useSetEditCrewInfoContext } from "../../contexts/BaseCallContext";
+import CrewCompany from "./CrewCompany";
+import CrewProduction from "./CrewProduction";
+import CrewCastingAD from "./CrewCastingAD";
+import CrewLocations from "./CrewLocations";
+import CrewScriptCater from "./CrewScriptCater";
+import CrewElecGrip from "./CrewElecGrip";
+import CrewMakeup from "./CrewMakeup";
+import CrewSoundTransport from "./CrewSoundTransport";
+import CrewStunts from "./CrewStunts";
+import CrewArt from "./CrewArt";
+import CrewCamera from "./CrewCamera";
+import CrewPostAdditional from "./CrewPostAdditional";
+import CrewWardrobe from "./CrewWardrobe";
 
 const CrewInfoEdit = () => {
   useRedirect("loggedOut");
@@ -23,6 +36,21 @@ const CrewInfoEdit = () => {
   const history = useHistory();
   const { id } = useParams();
   const setEditCrewInfo = useSetEditCrewInfoContext();
+  const [show, setShow] = useState(false);
+
+  const [showCom, setShowCom] = useState(false);
+  const [showPro, setShowPro] = useState(false);
+  const [showCam, setShowCam] = useState(false);
+  const [showSou, setShowSou] = useState(false);
+  const [showLoc, setShowLoc] = useState(false);
+  const [showMak, setShowMak] = useState(false);
+  const [showEle, setShowEle] = useState(false);
+  const [showScr, setShowScr] = useState(false);
+  const [showArt, setShowArt] = useState(false);
+  const [showCas, setShowCas] = useState(false);
+  const [showStu, setShowStu] = useState(false);
+  const [showPos, setShowPos] = useState(false);
+  const [showWar, setShowWar] = useState(false);
 
   const [postData, setPostData] = useState({
     total_shoot_days: "",
@@ -414,20 +442,27 @@ const CrewInfoEdit = () => {
 })
 
   const { 
+          // company
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
           company_address_line_4, company_logo, total_shoot_days,
+          // production
           director_name, director_email, director_phone,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
           upm_name, upm_email, upm_phone,
           travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
           production_pa_name, production_pa_email, production_pa_phone,
+          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
           oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
           oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
           oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
           oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
           oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
+          // casting
+          casting_director_name, casting_director_email, casting_director_phone,
+          extras_casting_name, extras_casting_email, extras_casting_phone,
+          // AD
           ad_1_name, ad_1_email, ad_1_phone,
           ad_2_name, ad_2_email, ad_2_phone,
           ad_3_name, ad_3_email, ad_3_phone,
@@ -438,6 +473,7 @@ const CrewInfoEdit = () => {
           pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
           pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
           pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
+          // camera
           dop_name, dop_email, dop_phone,
           camera_operator_name, camera_operator_email, camera_operator_phone,
           camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
@@ -448,11 +484,23 @@ const CrewInfoEdit = () => {
           oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
           oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
           oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+          // sound
           sound_mixer_name, sound_mixer_email, sound_mixer_phone,
           boom_operator_name, boom_operator_email, boom_operator_phone,
           sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
           sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
-          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
+          // transport
+          transport_captain_name, transport_captain_email, transport_captain_phone,
+          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
+          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
+          head_driver_name, head_driver_email, head_driver_phone,
+          car1_name, car1_email, car1_phone,
+          car2_name, car2_email, car2_phone,
+          car3_name, car3_email, car3_phone,
+          truck1_name, truck1_email, truck1_phone,
+          truck2_name, truck2_email, truck2_phone,
+          truck3_name, truck3_email, truck3_phone,
+          // makeup
           key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
           key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
           sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
@@ -462,6 +510,7 @@ const CrewInfoEdit = () => {
           makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
           makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
           makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
+          // wardrobe
           costume_designer_name, costume_designer_email, costume_designer_phone,
           ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
           wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
@@ -469,6 +518,7 @@ const CrewInfoEdit = () => {
           wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
           wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
           wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,
+          // art
           production_designer_name, production_designer_email, production_designer_phone,
           art_director_name, art_director_email, art_director_phone,
           art_assistant_name, art_assistant_email, art_assistant_phone,
@@ -480,6 +530,7 @@ const CrewInfoEdit = () => {
           ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
           prop_buyer_name, prop_buyer_email, prop_buyer_phone,
           armorer_name, armorer_email, armorer_phone,
+          // electric/props
           gaffer_name, gaffer_email, gaffer_phone,
           best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
           electric_3_name, electric_3_email, electric_3_phone,
@@ -492,6 +543,7 @@ const CrewInfoEdit = () => {
           swing_ge3_name, swing_ge3_email, swing_ge3_phone,
           swing_ge4_name, swing_ge4_email, swing_ge4_phone,
           swing_ge5_name, swing_ge5_email, swing_ge5_phone,
+          // stunts
           stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
           stunts_1_name, stunts_1_email, stunts_1_phone,
           stunts_2_name, stunts_2_email, stunts_2_phone,
@@ -499,33 +551,24 @@ const CrewInfoEdit = () => {
           stunts_4_name, stunts_4_email, stunts_4_phone,
           stunts_5_name, stunts_5_email, stunts_5_phone,
           legal_name, legal_email, legal_phone,
-          editor_name, editor_email, editor_phone,
           set_medic_name, set_medic_email, set_medic_phone,
-          casting_director_name, casting_director_email, casting_director_phone,
-          extras_casting_name, extras_casting_email, extras_casting_phone,
+          editor_name, editor_email, editor_phone,
+          // script cater
           writer_name, writer_email, writer_phone,
-          fx_name, fx_email, fx_phone,
+          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
+          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
+          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
+          craft_service_name, craft_service_email, craft_service_phone,
+          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
+          // locations
           location_mngr_name, location_mngr_email, location_mngr_phone,
           location_ass_1_name, location_ass_1_email, location_ass_1_phone,
           location_ass_2_name, location_ass_2_email, location_ass_2_phone,
           location_ass_3_name, location_ass_3_email, location_ass_3_phone,
           location_ass_4_name, location_ass_4_email, location_ass_4_phone,
           location_security_name, location_security_email, location_security_phone,
-          transport_captain_name, transport_captain_email, transport_captain_phone,
-          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
-          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
-          head_driver_name, head_driver_email, head_driver_phone,
-          car1_name, car1_email, car1_phone,
-          car2_name, car2_email, car2_phone,
-          car3_name, car3_email, car3_phone,
-          truck1_name, truck1_email, truck1_phone,
-          truck2_name, truck2_email, truck2_phone,
-          truck3_name, truck3_email, truck3_phone,
-          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
-          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
-          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
-          craft_service_name, craft_service_email, craft_service_phone,
-          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
+          // post additional
+          fx_name, fx_email, fx_phone,
           add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
           add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
           add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
@@ -2199,11 +2242,201 @@ const CrewInfoEdit = () => {
           </Col>
       </Row>
       </div>
+      {/* CONTINUITY */}
+      <div className="pb-3">
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CONTINUITY</h3>
+      {/* Script Supervisor */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Script Supervisor</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: scriptsup</span>  
+      </div>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="script_supervisor_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_name"
+              value={script_supervisor_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="script_supervisor_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_email"
+              value={script_supervisor_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="script_supervisor_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_phone"
+              value={script_supervisor_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* MEDIC / FIRE SAFETY */}
+      <div className="pb-3">
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >MEDIC / FIRE SAFETY </h3> 
+      {/* Set Medic */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Set Medic</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: setmedic</span>  
+      </div>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_medic_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_medic_name"
+              value={set_medic_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_medic_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_medic_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_medic_email"
+              value={set_medic_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_medic_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="set_medic_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_medic_phone"
+              value={set_medic_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_medic_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* LEGAL */}
+      <div>
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >LEGAL </h3> 
+      {/* legal  */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Legal Consultant</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: legalcon</span>  
+      </div>
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="legal_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="legal_name"
+              value={legal_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.legal_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="legal_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="legal_email"
+              value={legal_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.legal_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="legal_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="legal_phone"
+              value={legal_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.legal_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <hr/>
+      </div>
       <div className={`py-1 ${styles.BodyColor }`}>
       </div>
       {/* ASSISTANT DIRECTORS */}
-      <div>
-      <h3 className={`mb-0 py-1 ${styles.SubTitle }`}>ASSISTANT DIRECTORS</h3> 
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >ASSISTANT DIRECTORS </h3>
+      </div>
       {/* 1st Assistant Director */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Director</h5> 
       <div>
@@ -2794,7 +3027,10 @@ const CrewInfoEdit = () => {
       </div>
       {/* CAMERA */}
       <div>
-      <h3 className={`mb-3 py-1 ${styles.SubTitle }`} >CAMERA</h3> 
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >CAMERA </h3>
+      </div>
       {/* Director of Photography */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Director of Photography</h5> 
       <div>
@@ -3436,8 +3672,11 @@ const CrewInfoEdit = () => {
       <div className={`py-1 ${styles.BodyColor }`}>
       </div>
       {/* SOUND */}
-      <div>
-      <h3 className={` mb-3 py-1 ${styles.SubTitle }`} >SOUND</h3> 
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >SOUND </h3>
+      </div>
       {/* Sound Mixer */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Mixer</h5> 
       <div>
@@ -3496,9 +3735,11 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Boom Operator */}
-      <h5 className="mt-1" >Boom Operator</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Boom Operator</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: boomoper</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="boom_operator_name" className={`${styles.Width} `}  >
@@ -3554,7 +3795,10 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* Sound Assistant */}
-      <h5 className="mt-1" >Sound Assistant 1 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Assistant 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: soundist1</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="sound_assistant_1_name" className={`${styles.Width} `}  >
@@ -3610,7 +3854,10 @@ const CrewInfoEdit = () => {
       </Row>
       <hr/>
       {/* Sound Assistant 2 */}
-      <h5 className="mt-1" >Sound Assistant 2</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Assistant 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: soundist2</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="sound_assistant_2_name" className={`${styles.Width} `}  >
@@ -3664,14 +3911,20 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
-
+      <div className={`py-1 ${styles.BodyColor }`}>
+      </div>
       {/* MAKEUP */}
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >MAKEUP </h3>
+      </div>
+      {/* Key Hair and Makeup */} 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Key Hair and Makeup</h5> 
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >MAKEUP</h3> 
-      {/* Key Hair and Makeup */}
-      <h5 className="mt-1" >Key Hair and Makeup</h5> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: keymakeup</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="key_hairmakeup_name" className={`${styles.Width} `}  >
@@ -4178,70 +4431,12 @@ const CrewInfoEdit = () => {
 
       </div>
 
-      {/* CONTINUITY */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CONTINUITY</h3> 
-      {/* Script Supervisor */}
-      <h5 className="mt-1" >Script Supervisor</h5> 
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="script_supervisor_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="script_supervisor_name"
-              value={script_supervisor_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.script_supervisor_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="script_supervisor_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="script_supervisor_email"
-              value={script_supervisor_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.script_supervisor_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="script_supervisor_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="script_supervisor_phone"
-              value={script_supervisor_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.script_supervisor_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      </div>
-
       {/* WARDROBE */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >WARDROBE</h3> 
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >WARDROBE </h3>
+      </div>
       {/* Costume Designer */}
       <h5 className="mt-1" >Costume Designer</h5> 
       <Row>
@@ -4637,8 +4832,11 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* ART */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >ART</h3> 
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >ART </h3>
+      </div> 
       {/* Production Designer */}
       <h5 className="mt-1" >Production Designer</h5> 
       <Row>
@@ -4810,8 +5008,8 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* SET DECORATION */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SET DECORATION</h3> 
+      <div >
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SET DECORATION </h3> 
       {/* Set Decorator */}
       <h5 className="mt-1" >Set Decorator</h5> 
       <Row>
@@ -4980,7 +5178,7 @@ const CrewInfoEdit = () => {
           </Col>
       </Row>
       <hr/>
-      {/*  */}Dresser
+      {/*Dresser */}
       <h5 className="mt-1" >Dresser</h5> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -5039,8 +5237,8 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* PROPERTY */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PROPERTY</h3> 
+      <div className="pb-3">
+      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PROPERTY </h3> 
       {/* Prop Master */}
       <h5 className="mt-1" >Prop Master</h5> 
       <Row>
@@ -5269,7 +5467,10 @@ const CrewInfoEdit = () => {
 
       {/* ELECTRIC */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >ELECTRIC</h3> 
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >ELECTRIC </h3>
+      </div>
       {/* Gaffer */} 
       <h5 className="mt-1" >Gaffer</h5> 
       <Row>
@@ -5496,10 +5697,8 @@ const CrewInfoEdit = () => {
       <hr/>
       </div>
 
-      {/* drf to here  */}
-
       {/* GRIP */}
-      <div>
+      <div className="pb-3">
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >GRIP</h3> 
       {/* Key Grip< */} 
       <h5 className="mt-1" >Key Grip</h5> 
@@ -5952,8 +6151,11 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* LOCATIONS */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >LOCATIONS</h3> 
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >LOCATIONS </h3>
+      </div>
       {/* Location Mngr  */}
       <h5 className="mt-1" >Location Manager </h5> 
       <Row>
@@ -6293,8 +6495,11 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* STUNTS */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >STUNTS </h3> 
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >STUNTS </h3>
+      </div>
       {/* Stunt Coordinator  */}
       <h5 className="mt-1" >Stunt Coordinator </h5> 
       <Row>
@@ -6633,70 +6838,12 @@ const CrewInfoEdit = () => {
       <hr/>
       </div>
 
-      {/* MEDIC / FIRE SAFETY */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >MEDIC / FIRE SAFETY </h3> 
-      {/* Set Medic */}
-      <h5 className="mt-1" >Set Medic </h5> 
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="set_medic_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="set_medic_name"
-              value={set_medic_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.set_medic_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="set_medic_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="set_medic_email"
-              value={set_medic_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.set_medic_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="set_medic_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="set_medic_phone"
-              value={set_medic_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.set_medic_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      </div>
-
       {/* POST PRODUCTION */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >POST PRODUCTION </h3> 
+      <div className="pb-3">
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >POST PRODUCTION </h3>
+      </div>
       {/* Editor */}
       <h5 className="mt-1" >Editor </h5> 
       <Row>
@@ -6752,73 +6899,14 @@ const CrewInfoEdit = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
-      </div>
-
-      {/* LEGAL */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >LEGAL </h3> 
-      {/* legal  */}
-      <h5 className="mt-1" >Legal Consultant </h5> 
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="legal_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="legal_name"
-              value={legal_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.legal_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="legal_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="legal_email"
-              value={legal_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.legal_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="legal_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="legal_phone"
-              value={legal_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.legal_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
       </div>
 
       {/* CASTING/EXTRAS */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CASTING/EXTRAS </h3> 
+      <div >
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >CASTING / EXTRAS </h3>
+      </div>
       {/* Casting Director  */}
       <h5 className="mt-1" >Casting Director </h5> 
       <Row>
@@ -6934,8 +7022,11 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* SCRIPT */}
-      <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SCRIPT </h3> 
+      <div >
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >SCRIPT </h3>
+      </div>
       {/* Writer  */}
       <h5 className="mt-1" >Writer </h5> 
       <Row>
@@ -7799,7 +7890,7 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* CRAFT SERVICES */}
-      <div>
+      <div className="pb-3">
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CRAFT SERVICES </h3> 
       {/* Craft Service  */}
       <h5 className="mt-1" >Craft Service </h5> 
@@ -7916,7 +8007,7 @@ const CrewInfoEdit = () => {
       </div>
 
       {/* ADDITIONAL CREW POSITIONS */}
-      <div>
+      <div className="pb-3">
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >ADDITIONAL CREW POSITIONS </h3> 
       {/* Additional Crew Position 1 */}
       <h5 className="mt-1" >Additional Crew Position 1</h5> 
@@ -8706,12 +8797,250 @@ const CrewInfoEdit = () => {
     >
         Back
     </Button>
-    <Row>
+    {/* <h4 style={{ textTransform: 'uppercase'}} 
+    className={`text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
+      EDIT CREW INFO</h4> */}
+    <Form className= {`mt-3 mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
+    {/* logo */}
+    <div>
+      <Row>
+      <Col md={{span: 6, offset: 4 }} className="text-center">
+          <div
+              className={`px-1`}
+            >
+              <Form.Group className="text-center pl-5 pt-3">
+                  {company_logo ? (
+                    <>
+                      <figure>
+                        <Image className={styles.Logo} src={company_logo} rounded />
+                      </figure>
+                      <div className="float-right pt-4 mt-5 ">
+                        <Form.Label
+                          className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                          htmlFor="image-upload"
+                        >
+                          Change the Company Logo
+                        </Form.Label>
+                      </div>
+                    </>
+                  ) : (
+                    <Form.Label
+                      className="d-flex justify-content-center"
+                      htmlFor="image-upload"
+                    >
+                      <Asset
+                        src={Upload}
+                        message="Upload Company Logo"
+                      />
+                    </Form.Label>
+                  )}
+    
+                  <Form.Control
+                    type="file"
+                    id="image-upload"
+                    accept="image/*"
+                    onChange={handleChangeLogo}
+                    ref={imageInput1}
+                  />
+              </Form.Group>
+              {errors?.company_logo?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </div>
+      </Col>
+      </Row>
+    </div>
+    <div className={`pt-2 ${styles.White }`}> 
+      <Row className={`${styles.ButtonLine} mt-0`}>
+      <Col className='text-center'>
+              <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowCom(showCom => !showCom)} > Company
+              </p>
+          </Col>
+      </Row>
+      <Row className={`${styles.ButtonLine} mt-0`}>
+        <Col xs={4} md={2} className='text-center'>
+            <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowPro(showPro => !showPro)} > Production
+            </p>
+        </Col>
+        <Col xs={4} md={2} className='text-center'>
+                <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowCam(showCam => !showCam)} > Camera
+                </p>
+            </Col>
+        <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
+          </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+        <p
+            className={`py-0 mb-0 ${styles.Button}`}
+            onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
+        </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
+          </p>
+        </Col>
+        <Col xs={4} className='mx-0 px-0 text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowScr(showScr => !showScr)} > Script/Catering
+          </p>
+        </Col>
+      </Row>  
+      <Row className={`${styles.ButtonLine} text-center mt-0`}>
+        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+            <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
+            </p>
+        </Col>
+        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+                <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowMak(showMak => !showMak)} > Makeup
+                </p>
+            </Col>
+        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
+          </p>
+        </Col>
+        <Col xs={4} className='py-0' md={2}>
+        <p
+            className={`py-0 mb-0 ${styles.Button}`}
+            onClick={() => setShowStu(showStu => !showStu)} >Stunts
+        </p>
+        </Col>
+        <Col xs={4} className='text-center' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowArt(showArt => !showArt)} > Art
+          </p>
+        </Col>
+        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowPos(showPos => !showPos)} > Post/Additional
+          </p>
+        </Col>
+      </Row>  
+      <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+    </div>
+    <div className={`mt-0`}>
+        {/* Add Company */}
+        {!showCom ? (
+          ""
+              ) : (
+                <CrewCompany handleChange={handleChange} 
+                postData={postData} setShow={setShowCom}
+                imageInput1={imageInput1} handleChangeLogo={handleChangeLogo} /> 
+                ) }  
+        {/* Add Production */}
+        {!showPro ? (
+          ""
+              ) : (
+                <CrewProduction handleChange={handleChange} 
+                postData={postData} setShow={setShowPro} /> 
+                ) }  
+        {/* Add Casting */}
+        {!showCas ? (
+                ""
+              ) : (
+                <CrewCastingAD setShow={setShowCas} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Locations */}
+        {!showLoc ? (
+                ""
+              ) : (
+                <CrewLocations setShow={setShowLoc} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Script  */}
+        {!showScr ? (
+                ""
+              ) : (
+                <CrewScriptCater setShow={setShowScr} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Electric */}
+        {!showEle ? (
+                ""
+              ) : (
+                <CrewElecGrip setShow={setShowEle} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Makeup */}
+        {!showMak ? (
+                ""
+              ) : (
+                <CrewMakeup setShow={setShowMak} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Sound */}
+        {!showSou ? (
+                ""
+              ) : (
+                <CrewSoundTransport setShow={setShowSou} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Stunts */}
+        {!showStu ? (
+                ""
+              ) : (
+                <CrewStunts setShow={setShowStu} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Art */}
+        {!showArt ? (
+                ""
+              ) : (
+                <CrewArt setShow={setShowArt} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Camera */}
+        {!showCam ? (
+                ""
+              ) : (
+                <CrewCamera setShow={setShowCam} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Post */}
+        {!showPos ? (
+                ""
+              ) : (
+                <CrewPostAdditional setShow={setShowPos} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Wardrobe  */}
+        {!showWar ? (
+                ""
+              ) : (
+                <CrewWardrobe setShow={setShowWar}
+                postData={postData} handleChange={handleChange} /> 
+                ) } 
+    </div>
+    {buttons}
+    </Form>
+    <Row className="mb-3">
       <Col className="d-none d-md-block" md={2}></Col>     
       <Col xs={12} md={8} >
-      <div className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+      <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
       <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
-      <p className={`text-center px-3 py-1 ${styles.Red }`}>
+      <p className={`text-center px-3 pt-1 ${styles.Red }`}>
         All Crew Members MUST BE Registered
         </p>     
         <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
@@ -8724,10 +9053,6 @@ const CrewInfoEdit = () => {
       </div>
       </Col>
     </Row>
-    <Form className= {`my-3 ${styles.Back3}`} onSubmit={handleSubmit}>
-    {textFields}
-    {buttons}
-    </Form>
     </div>
   )
 }

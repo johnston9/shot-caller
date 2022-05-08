@@ -220,7 +220,7 @@ const CallSheet = (props ) => {
       useEffect(() => {
         const yourcall = ( currentUser) => {
           switch(currentUser) {
-            // production
+            // production 
             case "director": return director_calltime;
             case "producer": return producer_calltime;
             case "procoord": return pro_coordinator_calltime;
@@ -233,6 +233,9 @@ const CallSheet = (props ) => {
             case "addpropos3": return oth_production_pos_3_calltime;
             case "addpropos4": return oth_production_pos_4_calltime;
             case "addpropos5": return oth_production_pos_5_calltime;
+            case "scriptsup": return script_supervisor_calltime;
+            case "setmedic": return set_medic_calltime;
+            case "legalcon": return legal_calltime;
             // assistant directors
             case "assistdir1": return ad_1_calltime;
             case "assistdir2": return ad_2_calltime;
@@ -255,6 +258,16 @@ const CallSheet = (props ) => {
             case "addcam1": return oth_camera_pos_1_calltime;
             case "addcam2": return oth_camera_pos_2_calltime;
             case "addcam3": return oth_camera_pos_3_calltime;
+            // sound 
+            case "soundmix": return sound_mixer_calltime;
+            case "boomoper": return boom_operator_calltime;
+            case "soundist1": return sound_assistant_1_calltime;
+            case "soundist2": return sound_assistant_2_calltime;
+            // sound 
+            case "keymakeup": return sound_mixer_calltime;
+            case "boomoper": return boom_operator_calltime;
+            case "soundist1": return sound_assistant_1_calltime;
+            case "soundist2": return sound_assistant_2_calltime;
             default: return 'xx';
           }
         };

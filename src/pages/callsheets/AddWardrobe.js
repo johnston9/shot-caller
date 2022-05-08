@@ -27,7 +27,7 @@ const AddWardrobe = ({crewInfoOne, handleChange, postData, setShowWar }) => {
 
   return (
     <div>
-      <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
+      <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowWar(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >WARDROBE </h5>
       </div>

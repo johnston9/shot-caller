@@ -24,7 +24,7 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowStu }) => {
 
   return (
     <div>
-      <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
+      <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNTS </h5>
       </div>

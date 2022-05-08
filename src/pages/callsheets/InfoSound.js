@@ -106,7 +106,7 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
           </div> )
          }
          {/* TRANSPORT  */}
-         <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+         <div className={`mx-5 my-3 text-center ${styles.SubTitle }`}>
          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >TRANSPORT </h5>
          </div>
          {/* transport captain */}
