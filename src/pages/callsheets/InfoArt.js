@@ -17,6 +17,8 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
     prop_buyer_name, prop_buyer_email, prop_buyer_phone,
     armorer_name, armorer_email, armorer_phone,  } = crewInfoOne || {};
 
+    console.log(crewInfoOne);
+
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>

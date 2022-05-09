@@ -4,23 +4,25 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
-import Asset from "../../components/Asset";
-import Upload from "../../assets/upload.png";
-import appStyles from "../../App.module.css";
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import { useHistory } from 'react-router';
 
-const CrewCompany = ({handleChange, postData, setShow, handleChangeLogo, imageInput1}) => {
+const CrewCompany = ({handleChange, postData, setShow,}) => {
   useRedirect("loggedOut");
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
+  const history = useHistory();
 
   const { production_name, production_company, company_phone, company_email,
     company_address_line_1, company_address_line_2, company_address_line_3,
     company_address_line_4, company_logo, total_shoot_days,
   } = postData || {};
+
+  const handleClick = () => {
+    history.push(`/logo/edit`);
+  };
 
   return (
     <div className="text-center pb-4">
@@ -28,6 +30,15 @@ const CrewCompany = ({handleChange, postData, setShow, handleChangeLogo, imageIn
       <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
       <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >PRODUCTION COMPANY </h3>
       </div>
+      {/* logo button*/}
+      <Row className={`${styles.ButtonLine} my-4`}>
+      <Col className='text-center'>
+              <Button
+                className={`py-0 mb-0 ${btnStyles.Blue}`}
+                onClick={() => handleClick() }>Add / Change Company Logo
+              </Button>
+          </Col>
+      </Row>
       {/* Production Name - Production Company */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -142,6 +153,8 @@ const CrewCompany = ({handleChange, postData, setShow, handleChangeLogo, imageIn
         </Alert>
       ))}
       </div>
+      </Col>
+      <Col xs={6} className=" p-0 p-md-2">
       <div className="d-flex justify-content-center">
       {/* line 3 */}
       <Form.Group controlId="company_address_line_3" className={`${styles.Width2} `}  >
@@ -178,9 +191,9 @@ const CrewCompany = ({handleChange, postData, setShow, handleChangeLogo, imageIn
         </Alert>
       ))}
       </div>
-      </Col>
-      <Col xs={6} className=" p-0 p-md-2">
-      <p className={`${styles.Bold}`}>Company Logo</p>
+      {/* logo */}
+      <div>
+      {/* <p className={`${styles.Bold}`}>Company Logo</p>
           <div
               className={`mr-4 ${appStyles.Content} d-flex flex-column justify-content-center`}
             >
@@ -224,8 +237,14 @@ const CrewCompany = ({handleChange, postData, setShow, handleChangeLogo, imageIn
                   {message}
                 </Alert>
               ))}
-          </div>
-          <div className="mt-3 d-flex justify-content-center text-center">
+          </div> */}
+      </div>
+      {/* end */}
+      </Col>
+      </Row>
+      <Row>
+        <Col md={{span: 6, offset:3 }} >
+        <div className="mt-3 d-flex justify-content-center text-center">
             <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.Bold}`} >Total Shoot Days</Form.Label>
           <Form.Control 
@@ -242,7 +261,7 @@ const CrewCompany = ({handleChange, postData, setShow, handleChangeLogo, imageIn
               </Alert>
             ))}
             </div>
-      </Col>
+        </Col>
       </Row>
       </div>
   )

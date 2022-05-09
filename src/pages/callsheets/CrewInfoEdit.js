@@ -29,6 +29,7 @@ import CrewArt from "./CrewArt";
 import CrewCamera from "./CrewCamera";
 import CrewPostAdditional from "./CrewPostAdditional";
 import CrewWardrobe from "./CrewWardrobe";
+import Important from "./Important";
 
 const CrewInfoEdit = () => {
   useRedirect("loggedOut");
@@ -37,6 +38,7 @@ const CrewInfoEdit = () => {
   const { id } = useParams();
   const setEditCrewInfo = useSetEditCrewInfoContext();
   const [show, setShow] = useState(false);
+  const [showImp, setShowImp] = useState(false);
 
   const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);
@@ -581,7 +583,7 @@ const CrewInfoEdit = () => {
           add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
           all_other_add_positions } = postData;
 
-  const imageInput1 = useRef(null);
+  // const imageInput1 = useRef(null);
 
   useEffect(() => {
     const handleMount = async () => {
@@ -1250,9 +1252,9 @@ const CrewInfoEdit = () => {
     formData.append("add_pos_10_email", add_pos_10_email);
     formData.append("add_pos_10_phone", add_pos_10_phone);
     formData.append("all_other_add_positions", all_other_add_positions); 
-    if(imageInput1.current.files[0]) {
-      formData.append("company_logo", imageInput1.current.files[0]);
-    }
+    // if(imageInput1.current.files[0]) {
+    //   formData.append("company_logo", imageInput1.current.files[0]);
+    // }
     try {
       const {data} = await axiosReq.put(`/crewinfonew/${id}/`, formData);
       setEditCrewInfo(true);
@@ -1437,7 +1439,8 @@ const CrewInfoEdit = () => {
       </div>
       </Col>
       <Col xs={6} className=" p-0 p-md-2">
-      <p className={`${styles.Bold}`}>Company Logo</p>
+        {/*logo  old */}
+      {/* <p className={`${styles.Bold}`}>Company Logo</p>
           <div
               className={`mr-4 ${appStyles.Content} d-flex flex-column justify-content-center`}
             >
@@ -1481,7 +1484,8 @@ const CrewInfoEdit = () => {
                   {message}
                 </Alert>
               ))}
-          </div>
+          </div> */}
+        {/* end */}
           <div className="mt-3 d-flex justify-content-center text-center">
             <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.Bold}`} >Total Shoot Days</Form.Label>
@@ -8797,12 +8801,27 @@ const CrewInfoEdit = () => {
     >
         Back
     </Button>
-    {/* <h4 style={{ textTransform: 'uppercase'}} 
-    className={`text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
-      EDIT CREW INFO</h4> */}
+    <Button
+      className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+    </Button>
+      {!showImp ? (
+          ""
+              ) : (
+                <Important  /> 
+                ) }   
+      <Row className="text-center">
+        <Col md={{span: 8, offset: 2}}>
+          <p>
+            Click on department links to edit. Use Create button below for 
+            each department individually or to submit all at the one time.
+          </p>
+        </Col>
+      </Row>
     <Form className= {`mt-3 mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
-    {/* logo */}
     <div>
+    {/* logo */}
+    {/* <div>
       <Row>
       <Col md={{span: 6, offset: 4 }} className="text-center">
           <div
@@ -8851,6 +8870,8 @@ const CrewInfoEdit = () => {
           </div>
       </Col>
       </Row>
+    </div> */}
+    {/* end */}
     </div>
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
@@ -8937,7 +8958,7 @@ const CrewInfoEdit = () => {
           </p>
         </Col>
       </Row>  
-      <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+      <p className={`mt-1 pl-3 mb-4 pt-1 ${styles.SubTitle }`}></p>
     </div>
     <div className={`mt-0`}>
         {/* Add Company */}
@@ -8945,8 +8966,7 @@ const CrewInfoEdit = () => {
           ""
               ) : (
                 <CrewCompany handleChange={handleChange} 
-                postData={postData} setShow={setShowCom}
-                imageInput1={imageInput1} handleChangeLogo={handleChangeLogo} /> 
+                postData={postData} setShow={setShowCom} /> 
                 ) }  
         {/* Add Production */}
         {!showPro ? (
@@ -9035,24 +9055,6 @@ const CrewInfoEdit = () => {
     </div>
     {buttons}
     </Form>
-    <Row className="mb-3">
-      <Col className="d-none d-md-block" md={2}></Col>     
-      <Col xs={12} md={8} >
-      <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-      <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
-      <p className={`text-center px-3 pt-1 ${styles.Red }`}>
-        All Crew Members MUST BE Registered
-        </p>     
-        <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
-          Register an account for each crew member 
-          using their position's Username.
-          Send the Shot Caller link to them with the Username 
-          and whatever password you used instructing them 
-          to sign in and change their password.
-        </p>
-      </div>
-      </Col>
-    </Row>
     </div>
   )
 }

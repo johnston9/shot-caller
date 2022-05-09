@@ -54,6 +54,7 @@ import CallsheetCreate from './pages/callsheets/CallsheetCreate';
 import CallSheetPage from './pages/callsheets/CallSheetPage';
 import CallsheetEditPage from './pages/callsheets/CallsheetEditPage';
 import CrewInfo from './pages/callsheets/CrewInfo';
+import CrewLogo from './pages/callsheets/CrewLogo';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -92,7 +93,8 @@ function App() {
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
-        {/* CALLSHEETS */}
+        {/* CALLSHEETS  */}
+        <Route exact path="/logo/edit" render={() => <CrewLogo />} />
         <Route exact path="/crewinfo/create" render={() => <CrewInfoCreate />} />
         <Route exact path="/crewinfo/edit/:id/" render={() => <CrewInfoEdit />} />
         <Route exact path="/callsheet/create/:id/" render={() => <CallsheetCreate />} />
