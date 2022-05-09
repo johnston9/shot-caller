@@ -57,8 +57,8 @@ const CrewLogo = () => {
         formData.append("company_logo", imageInput1.current.files[0]);
       }
       try {
-        const {data} = await axiosReq.put(`/crewinfonew/${id}/`, formData);
-        // setEditCrewInfo(true);
+        const {data} = await axiosReq.put(`/crewinfonew/1/`, formData);
+        setEditCrewInfo(true);
         console.log(`gooooooo ${data}`)
         history.goBack();
       } catch (err) {
@@ -98,7 +98,7 @@ const CrewLogo = () => {
             <Row>
                 <Col md={{span:6, offset:3}}>
                 <div className={` ${appStyles.Content} d-flex flex-column justify-content-center`}>
-                <p className={`${styles.Bold}`}>Add or Change the Company Logo</p>      
+                <p className={`text-center ${styles.Bold}`}>Add or Change the Company Logo</p>      
                 <Form.Group className="text-center pt-3">
                     {logo ? (
                     <>

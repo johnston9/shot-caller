@@ -22,12 +22,14 @@ import InfoSound from './InfoSound';
 import InfoStunts from './InfoStunts';
 import InfoPost from './InfoPost';
 import TopBox from '../../components/TopBox';
+import Important from './Important';
 
 const CrewInfo = () => {
   useRedirect("loggedOut");
   const history = useHistory();
   const crewInfo = useCrewInfoContext();
   const crewInfoOne = crewInfo.results[0];
+  const [showImp, setShowImp] = useState(false);
   const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);
   const [showCam, setShowCam] = useState(false);
@@ -52,9 +54,15 @@ const CrewInfo = () => {
         >
             Back
         </Button>   
-      {/* <h4 style={{ textTransform: 'uppercase'}} 
-      className={`text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
-        CREW INFO</h4> */}
+        <Button
+      className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+    </Button>
+      {!showImp ? (
+          ""
+              ) : (
+                <Important  /> 
+                ) }  
       {id ? (
         ""
       ) : (
