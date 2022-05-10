@@ -33,11 +33,13 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* SOUND */}
       <div className="pb-3">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >SOUND </h3>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 mb-0 ml-4 text-center py-1 ${styles.Bold }`} >SOUND </h3>
+      </div>
+      <div className={`py-1 ${styles.White }`}>
       </div>
       {/* Sound Mixer */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Mixer</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Sound Mixer</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: soundmix</span> 
       </div>
@@ -152,7 +154,6 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Sound Assistant */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Assistant 1</h5> 
       <div>
@@ -211,7 +212,6 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Sound Assistant 2 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Assistant 2</h5> 
       <div>
@@ -271,11 +271,18 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* TRANSPORTATION */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >TRANSPORTATION </h3> 
+      <h3 className={`py-1 mb-0 ${styles.SubTitle }`} >TRANSPORTATION </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Transport Captain  */} 
-      <h5 className="mt-1" >Transport Captain </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Transport Captain</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transportca</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="transport_captain_name" className={`${styles.Width} `}  >
@@ -329,7 +336,6 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Transport Manager 1  */}
       <h5 className="mt-1" >Transport Manager 1 </h5> 
       <Row>

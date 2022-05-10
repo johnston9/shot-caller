@@ -26,8 +26,8 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
   return (
     <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-0 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-0 ${styles.Bold }`} >CAMERA </h3>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >CAMERA </h3>
       </div>
       {/* Director of Photography */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Director of Photography</h5> 

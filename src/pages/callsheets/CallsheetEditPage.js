@@ -119,6 +119,7 @@ const CallsheetEditPage = () => {
     oth_production_pos_4_calltime: "",
     oth_production_pos_5_calltime: "",
     // art
+    production_designer_calltime: "",
     art_director_calltime: "",
     art_assistant_calltime: "",
     set_decorator_calltime: "",
@@ -128,6 +129,7 @@ const CallsheetEditPage = () => {
     prop_master_calltime: "",
     ass_prop_master_calltime: "",
     prop_buyer_calltime: "",
+    armorer_calltime: "",
     // cam
     dop_calltime: "",
     camera_operator_calltime: "",
@@ -294,6 +296,7 @@ const CallsheetEditPage = () => {
       oth_production_pos_4_calltime,
       oth_production_pos_5_calltime,
       // art
+      production_designer_calltime,
       art_director_calltime,
       art_assistant_calltime,
       set_decorator_calltime,
@@ -303,6 +306,7 @@ const CallsheetEditPage = () => {
       prop_master_calltime,
       ass_prop_master_calltime,
       prop_buyer_calltime,
+      armorer_calltime,
       // cam
       dop_calltime,
       camera_operator_calltime,
@@ -473,6 +477,7 @@ const CallsheetEditPage = () => {
           oth_production_pos_3_calltime,
           oth_production_pos_4_calltime,
           oth_production_pos_5_calltime,
+          production_designer_calltime,
           art_director_calltime,
           art_assistant_calltime,
           set_decorator_calltime,
@@ -482,6 +487,7 @@ const CallsheetEditPage = () => {
           prop_master_calltime,
           ass_prop_master_calltime,
           prop_buyer_calltime,
+          armorer_calltime,
           dop_calltime,
           camera_operator_calltime,
           camera_ass_1_calltime,
@@ -636,6 +642,7 @@ const CallsheetEditPage = () => {
           oth_production_pos_4_calltime,
           oth_production_pos_5_calltime,
           // art
+          production_designer_calltime,
           art_director_calltime,
           art_assistant_calltime,
           set_decorator_calltime,
@@ -645,6 +652,7 @@ const CallsheetEditPage = () => {
           prop_master_calltime,
           ass_prop_master_calltime,
           prop_buyer_calltime,
+          armorer_calltime,
           // cam
           dop_calltime,
           camera_operator_calltime,
@@ -834,7 +842,8 @@ const CallsheetEditPage = () => {
     formData.append("oth_production_pos_3_calltime", oth_production_pos_3_calltime);
     formData.append("oth_production_pos_4_calltime", oth_production_pos_4_calltime);
     formData.append("oth_production_pos_5_calltime", oth_production_pos_5_calltime);
-    // art
+    // art 
+    formData.append("production_designer_calltime", production_designer_calltime);
     formData.append("art_director_calltime", art_director_calltime);
     formData.append("art_assistant_calltime", art_assistant_calltime);
     formData.append("set_decorator_calltime", set_decorator_calltime);
@@ -844,7 +853,8 @@ const CallsheetEditPage = () => {
     formData.append("prop_master_calltime", prop_master_calltime);
     formData.append("ass_prop_master_calltime", ass_prop_master_calltime);
     formData.append("prop_buyer_calltime", prop_buyer_calltime);
-    // cam
+    formData.append("armorer_calltime", armorer_calltime);
+    // camera
     formData.append("dop_calltime", dop_calltime);
     formData.append("camera_operator_calltime", camera_operator_calltime);
     formData.append("camera_ass_1_calltime", camera_ass_1_calltime);

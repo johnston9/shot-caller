@@ -583,8 +583,6 @@ const CrewInfoEdit = () => {
           add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
           all_other_add_positions } = postData;
 
-  // const imageInput1 = useRef(null);
-
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -851,17 +849,6 @@ const CrewInfoEdit = () => {
       ...postData,
       [event.target.name]: event.target.value,
     });
-  };
-
-  const handleChangeLogo = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(company_logo);
-      setPostData({
-        ...postData,
-        company_logo: URL.createObjectURL(event.target.files[0]),
-      });
-      console.log(event.target.files[0])
-    }
   };
     
   const handleSubmit = async (event) => {
@@ -8958,7 +8945,9 @@ const CrewInfoEdit = () => {
           </p>
         </Col>
       </Row>  
-      <p className={`mt-1 pl-3 mb-4 pt-1 ${styles.SubTitle }`}></p>
+      <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+      <div className={`py-1 ${styles.White }`}>
+      </div>
     </div>
     <div className={`mt-0`}>
         {/* Add Company */}

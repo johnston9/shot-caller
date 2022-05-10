@@ -236,7 +236,9 @@ const CallSheet = (props ) => {
             case "scriptsup": return script_supervisor_calltime;
             case "setmedic": return set_medic_calltime;
             case "legalcon": return legal_calltime;
-            // assistant directors
+            // casting / assistant directors 
+            case "castdirec": return casting_director_calltime;
+            case "extracast": return extras_casting_calltime;
             case "assistdir1": return ad_1_calltime;
             case "assistdir2": return ad_2_calltime;
             case "assistdir3": return ad_3_calltime;
@@ -258,16 +260,24 @@ const CallSheet = (props ) => {
             case "addcam1": return oth_camera_pos_1_calltime;
             case "addcam2": return oth_camera_pos_2_calltime;
             case "addcam3": return oth_camera_pos_3_calltime;
-            // sound 
+            // sound transport
             case "soundmix": return sound_mixer_calltime;
             case "boomoper": return boom_operator_calltime;
             case "soundist1": return sound_assistant_1_calltime;
             case "soundist2": return sound_assistant_2_calltime;
-            // sound 
-            case "keymakeup": return sound_mixer_calltime;
-            case "boomoper": return boom_operator_calltime;
-            case "soundist1": return sound_assistant_1_calltime;
-            case "soundist2": return sound_assistant_2_calltime;
+            case "transportca": return transport_captain_calltime;
+            // art 
+            case "prodesig": return art_director_calltime;
+            case "artdirect": return art_director_calltime;
+            case "artassist": return art_assistant_calltime;
+            case "setdecor": return set_decorator_calltime;
+            case "setdress": return set_dresser_calltime;
+            case "leadman": return lead_man_calltime;
+            case "dresser": return dresser_calltime;
+            case "propmast": return prop_master_calltime;
+            case "assistprop": return ass_prop_master_calltime;
+            case "propbuy": return sound_assistant_1_calltime;
+            case "armorer": return prop_buyer_calltime;
             default: return 'xx';
           }
         };

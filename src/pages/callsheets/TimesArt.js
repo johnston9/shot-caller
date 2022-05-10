@@ -7,7 +7,8 @@ import styles from "../../styles/Callsheets.module.css";
 const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
   useRedirect("loggedOut");
 
-  const {art_director_name, 
+  const {production_designer_name,
+    art_director_name, 
     art_assistant_name, 
     set_decorator_name, 
     set_dresser_name, 
@@ -20,7 +21,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
 
   const { art_director_calltime, art_assistant_calltime, set_decorator_calltime,
     set_dresser_calltime, lead_man_calltime, dresser_calltime, prop_master_calltime,
-    ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime,
+    ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime, production_designer_calltime,
     } = callsheet || {};
 
   return (
@@ -30,6 +31,22 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART </h5>
       </div>
       <Row>
+      {/* production designer */}
+      {production_designer_calltime && 
+          (<Col xs={12} md={6}>
+          <Row className={` mx-0 `} >
+            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
+              <p className={`my-0 py-0 `}>Production Designer</p>
+            </Col>
+            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
+              <p className={`my-0 py-0 `}>{production_designer_name} </p>
+            </Col>
+            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
+              <p className={`my-0 py-0 `}>{production_designer_calltime} </p>
+            </Col>
+          </Row>
+          </Col> )
+         }
       {/* art director */}
       {art_director_calltime && 
           (<Col xs={12} md={6}>

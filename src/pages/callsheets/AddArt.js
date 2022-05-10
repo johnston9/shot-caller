@@ -11,7 +11,8 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 
-  const {art_director_name, 
+  const {production_designer_name,
+    art_director_name, 
     art_assistant_name, 
     set_decorator_name, 
     set_dresser_name, 
@@ -24,7 +25,8 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
 
   const { art_director_calltime, art_assistant_calltime, set_decorator_calltime,
     set_dresser_calltime, lead_man_calltime, dresser_calltime, prop_master_calltime,
-    ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime,
+    ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime, 
+    production_designer_calltime,
     } = postData || {};
 
   return (
@@ -34,6 +36,37 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART </h5>
       </div>
       <div className='mt-3'>
+        {/* production designer */}
+        {production_designer_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>Production Designer</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{production_designer_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="production_designer_calltime" className={`${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="production_designer_calltime"
+                value={production_designer_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.production_designer_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
         {/* art director */}
         {art_director_name && 
           (<div className={`${styles.CrewInfoRow}`}>

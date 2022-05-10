@@ -28,11 +28,14 @@ const CrewArt = ({handleChange, postData, setShow}) => {
     <div className="text-center">
     <div >
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
       <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >ART </h3>
       </div>
       {/* Production Designer */}
-      <h5 className="mt-1" >Production Designer</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Designer</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: prodesig</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="production_designer_name" className={`${styles.Width} `}  >
@@ -86,9 +89,11 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Art Director */}
-      <h5 className="mt-1" >Art Director</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Art Director</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: artdirect</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="art_director_name" className={`${styles.Width} `}  >
@@ -142,10 +147,12 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Art Assistant */}
-      <h5 className="mt-1" >Art Assistant</h5> 
-      <Row>
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Art Assistant</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: artassist</span>  
+      </div>
+      <Row className="pb-3">
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="art_assistant_name" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
@@ -198,13 +205,15 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
     </div>
     {/* SET DECORATION */}
     <div >
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SET DECORATION </h3> 
       {/* Set Decorator */}
-      <h5 className="mt-1" >Set Decorator</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Set Decorator</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: setdecor</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="set_decorator_name" className={`${styles.Width} `}  >
@@ -258,9 +267,11 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Set Dresser */}
-      <h5 className="mt-1" >Set Dresser</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Set Dresser</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: setdress</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="set_dresser_name" className={`${styles.Width} `}  >
@@ -314,9 +325,11 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Lead Man */}
-      <h5 className="mt-1" >Lead Man</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Lead Man</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: leadman</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="lead_man_name" className={`${styles.Width} `}  >
@@ -370,10 +383,12 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/*Dresser */}
-      <h5 className="mt-1" >Dresser</h5> 
-      <Row>
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Dresser</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dresser</span>  
+      </div>
+      <Row className="pb-3">
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="dresser_name" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
@@ -426,14 +441,16 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
 
       {/* PROPERTY */}
       <div className="pb-3">
       <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PROPERTY </h3> 
       {/* Prop Master */}
-      <h5 className="mt-1" >Prop Master</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Prop Master</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: propmast</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="prop_master_name" className={`${styles.Width} `}  >
@@ -487,9 +504,11 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Assistant Prop Master */}
-      <h5 className="mt-1" >Assistant Prop Master</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Assistant Prop Master</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistprop</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="ass_prop_master_name" className={`${styles.Width} `}  >
@@ -543,9 +562,11 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Prop Buyer */}
-      <h5 className="mt-1" >Prop Buyer</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Prop Buyer</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: propbuy</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="prop_buyer_name" className={`${styles.Width} `}  >
@@ -599,9 +620,11 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
-      {/* Armorer */}
-      <h5 className="mt-1" >Armorer</h5> 
+      {/* Armorer */} 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Armorer</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: armorer</span>  
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="armorer_name" className={`${styles.Width} `}  >
@@ -655,7 +678,6 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
     </div>
   )
