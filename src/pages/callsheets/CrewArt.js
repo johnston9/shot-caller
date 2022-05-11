@@ -29,10 +29,12 @@ const CrewArt = ({handleChange, postData, setShow}) => {
     <div >
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >ART </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ART </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Production Designer */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Designer</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Production Designer</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: prodesig</span>  
       </div>
@@ -206,11 +208,15 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
     </div>
+    <div className={`py-2 ${styles.White }`}>
+      </div>
     {/* SET DECORATION */}
     <div >
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >SET DECORATION </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >SET DECORATION </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Set Decorator */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Set Decorator</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Set Decorator</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: setdecor</span>  
       </div>
@@ -442,12 +448,15 @@ const CrewArt = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
-
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* PROPERTY */}
       <div className="pb-3">
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >PROPERTY </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >PROPERTY </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Prop Master */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Prop Master</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Prop Master</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: propmast</span>  
       </div>

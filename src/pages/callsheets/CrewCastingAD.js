@@ -27,13 +27,15 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
   return (
     <div className="text-center">
       {/* CASTING/EXTRAS */}
-      <div >
+      <div className="pb-3">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >CASTING / EXTRAS </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CASTING / EXTRAS </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Casting Director  */} 
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Casting Director </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Casting Director </h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: castdirec </span> 
       </div>
@@ -149,11 +151,15 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* ASSISTANT DIRECTORS */}
       <div className="pb-3">
-      <h3 className={`pl-5 text-center py-1 ${styles.SubTitle }`} >ASSISTANT DIRECTORS </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.SubTitle }`} >ASSISTANT DIRECTORS </h3>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* 1st Assistant Director */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Director</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Director</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir1</span> 
       </div>

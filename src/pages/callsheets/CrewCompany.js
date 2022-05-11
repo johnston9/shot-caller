@@ -28,10 +28,12 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
     <div className="text-center pb-4">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >PRODUCTION COMPANY </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION COMPANY </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* logo button*/}
-      <Row className={`${styles.ButtonLine} my-4`}>
+      <Row className={`${styles.ButtonLine} mt-3 mb-4`}>
       <Col className='text-center'>
               <Button
                 className={`py-0 mb-0 ${btnStyles.Blue}`}

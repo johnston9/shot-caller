@@ -281,7 +281,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* Transport Captain  */} 
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Transport Captain</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transportca</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transporca</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -337,7 +337,10 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       {/* Transport Manager 1  */}
-      <h5 className="mt-1" >Transport Manager 1 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Transport Manager 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transpor1</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="transport_manager_1_name" className={`${styles.Width} `}  >
@@ -391,9 +394,11 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Transport Manager 2  */}
-      <h5 className="mt-1" >Transport Manager 2 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Transport Manager 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transpor2</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="transport_manager_2_name" className={`${styles.Width} `}  >
@@ -447,9 +452,11 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Head Driver  */}
-      <h5 className="mt-1" >Head Driver </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Head Driver</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: headrive</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="head_driver_name" className={`${styles.Width} `}  >
@@ -503,14 +510,19 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
-
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* VEHICLES */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >VEHICLES </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >VEHICLES </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Truck 1  */}
-      <h5 className="mt-1" >Truck 1 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Truck 1 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: truckone</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="truck1_name" className={`${styles.Width} `}  >
@@ -564,9 +576,11 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Truck 2  */}
-      <h5 className="mt-1" >Truck 2 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Truck 2 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: trucktwo</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="truck2_name" className={`${styles.Width} `}  >
@@ -620,9 +634,11 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Truck 3  */}
-      <h5 className="mt-1" >Truck 3 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Truck 3 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: truckthree</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="truck3_name" className={`${styles.Width} `}  >
@@ -676,9 +692,11 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Car 1  */}
-      <h5 className="mt-1" >Car 1 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Car 1 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: carone</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="car1_name" className={`${styles.Width} `}  >
@@ -731,10 +749,12 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-      </Row>
-      <hr/>
+      </Row >
       {/* Car 2 */}
-      <h5 className="mt-1" >Car 2 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Car 2 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: cartwo</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="car2_name" className={`${styles.Width} `}  >
@@ -788,10 +808,12 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Car 3  */}
-      <h5 className="mt-1" >Car 3 </h5> 
-      <Row>
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Car 3 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: carthree</span> 
+      </div> 
+      <Row className="pb-3">
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="car3_name" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Name</Form.Label>

@@ -265,7 +265,16 @@ const CallSheet = (props ) => {
             case "boomoper": return boom_operator_calltime;
             case "soundist1": return sound_assistant_1_calltime;
             case "soundist2": return sound_assistant_2_calltime;
-            case "transportca": return transport_captain_calltime;
+            case "transporca": return transport_captain_calltime;
+            case "transpor1": return transport_manager_1_calltime;
+            case "transpor2": return transport_manager_2_calltime;
+            case "headrive": return head_driver_calltime;
+            case "truckone": return truck1_calltime;
+            case "trucktwo": return truck2_calltime;
+            case "truckthree": return truck3_calltime;
+            case "carone": return car1_calltime;
+            case "cartwo": return car2_calltime;
+            case "carthree": return car3_calltime;
             // art 
             case "prodesig": return art_director_calltime;
             case "artdirect": return art_director_calltime;

@@ -211,7 +211,8 @@ p {
 }
 
 .Button {
-  color: rgb(46 55 159);
+  /* color: #32c0e4; */
+  color: #185f70;
   font-weight: 700;
   cursor: pointer;
 }

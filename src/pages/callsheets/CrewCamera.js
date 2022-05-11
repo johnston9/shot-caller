@@ -27,10 +27,12 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
     <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >CAMERA </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Director of Photography */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Director of Photography</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Director of Photography</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dophoto</span> 
       </div>
