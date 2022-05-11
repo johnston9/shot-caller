@@ -287,6 +287,46 @@ const CallSheet = (props ) => {
             case "assistprop": return ass_prop_master_calltime;
             case "propbuy": return sound_assistant_1_calltime;
             case "armorer": return prop_buyer_calltime;
+            // thegaffer
+            case "thegaffer": return gaffer_calltime;
+            case "bbelectric": return best_boy_electric_calltime;
+            case "electric3": return electric_3_calltime;
+            case "electric4": return electric_4_calltime;
+            case "keygrip": return keygrip_calltime;
+            case "bestbgrip": return best_boy_grip_calltime;
+            case "dollygrip": return dolly_grip_calltime;
+            case "swingge1": return swing_ge1_calltime;
+            case "swingge2": return swing_ge2_calltime;
+            case "swingge3": return swing_ge3_calltime;
+            case "swingge4": return swing_ge4_calltime;
+            case "swingge5": return swing_ge5_calltime;
+            // locations
+            case "locmanage": return location_mngr_calltime;
+            case "davey": return gaffer_calltime;
+            case "locassist1": return location_ass_1_calltime;
+            case "locassist2": return location_ass_2_calltime;
+            case "locassist3": return location_ass_3_calltime;
+            case "locassist4": return location_ass_4_calltime;
+            case "locsecur": return location_security_calltime;
+            // xxx cosdesign
+            case "cosdesign": return costume_designer_calltime;
+            case "ascosdes": return ass_costume_designer_calltime;
+            case "wardrobe1": return wardrobe_assistant_1_calltime;
+            case "wardrobe2": return wardrobe_assistant_2_calltime;
+            case "wardrobe3": return wardrobe_assistant_3_calltime;
+            case "wardrobe4": return wardrobe_assistant_4_calltime;
+            case "wardrobe5": return wardrobe_assistant_5_calltime;
+            // xxx 
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
+            case "davey": return gaffer_calltime;
             default: return 'xx';
           }
         };

@@ -23,10 +23,15 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
     <div className="text-center pb-3">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >LOCATIONS </h3>
+      <h3 className={`pl-5 ml-4 mb-0 text-center py-1 ${styles.Bold }`} >LOCATIONS </h3>
       </div>
-      {/* Location Mngr  */}
-      <h5 className="mt-1" >Location Manager </h5> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
+      {/* Location Mngr  */} 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Location Manager</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locmanage </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_mngr_name" className={`${styles.Width} `}  >
@@ -80,9 +85,11 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
-      {/* Location Assistant 1  */}
-      <h5 className="mt-1" >Location Assistant 1 </h5> 
+      {/* Location Assistant 1  */} 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 1 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist1  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_ass_1_name" className={`${styles.Width} `}  >
@@ -136,9 +143,11 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Location Assistant 2  */}
-      <h5 className="mt-1" >Location Assistant 2 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 2 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist2  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_ass_2_name" className={`${styles.Width} `}  >
@@ -192,9 +201,11 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Location Assistant 3  */}
-      <h5 className="mt-1" >Location Assistant 3 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 3 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist3  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_ass_3_name" className={`${styles.Width} `}  >
@@ -248,9 +259,11 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Location Assistant 4  */}
-      <h5 className="mt-1" >Location Assistant 4 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 4 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist4  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_ass_4_name" className={`${styles.Width} `}  >
@@ -304,9 +317,11 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
-      {/* Location Security 4  */}
-      <h5 className="mt-1" >Location Security </h5> 
+      {/* Location Security  */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Security </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locsecur  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_security_name" className={`${styles.Width} `}  >

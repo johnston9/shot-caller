@@ -32,8 +32,9 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Company Logo</h5> 
       {/* logo button*/}
-      <Row className={`${styles.ButtonLine} mt-3 mb-4`}>
+      <Row className={`${styles.ButtonLine} my-4`}>
       <Col className='text-center'>
               <Button
                 className={`py-0 mb-0 ${btnStyles.Blue}`}
@@ -41,6 +42,7 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
               </Button>
           </Col>
       </Row>
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Company Details</h5> 
       {/* Production Name - Production Company */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -78,7 +80,6 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* phone - email BodyColor */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -116,11 +117,11 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
-      {/* company address - company logo */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Company Address</h5> 
+      {/* company address */}
       <Row>
       <Col xs={12} md={6} className=" p-0 p-md-2">
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mb-3">
       <Form.Group controlId="company_address_line_1" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.Bold}`} >Company Address Line 1</Form.Label>
           <Form.Control 
@@ -157,7 +158,7 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
       </div>
       </Col>
       <Col xs={6} className=" p-0 p-md-2">
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center mb-3">
       {/* line 3 */}
       <Form.Group controlId="company_address_line_3" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.Bold}`} >Company Address Line 3</Form.Label>
@@ -193,7 +194,7 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
         </Alert>
       ))}
       </div>
-      {/* logo */}
+      {/* old logo */}
       <div>
       {/* <p className={`${styles.Bold}`}>Company Logo</p>
           <div
@@ -244,6 +245,7 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
       {/* end */}
       </Col>
       </Row>
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Shoot Days</h5> 
       <Row>
         <Col md={{span: 6, offset:3 }} >
         <div className="mt-3 d-flex justify-content-center text-center">

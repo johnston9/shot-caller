@@ -30,11 +30,16 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* ELECTRIC */}
       <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >ELECTRIC </h3>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`mb-0 pl-5 text-center py-1 ${styles.Bold }`} >ELECTRIC </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Gaffer */} 
-      <h5 className="mt-1" >Gaffer</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Gaffer </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: thegaffer </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="gaffer_name" className={`${styles.Width} `}  >
@@ -88,9 +93,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Best Boy Electric */}
-      <h5 className="mt-1" >Best Boy Electric</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Best Boy Electric </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: bbelectric </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="best_boy_electric_name" className={`${styles.Width} `}  >
@@ -144,9 +151,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* 3rd Electric */} 
-      <h5 className="mt-1" >3rd Electric</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >3rd Electric </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: electric3 </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="electric_3_name" className={`${styles.Width} `}  >
@@ -200,9 +209,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* 4th Electric */}
-      <h5 className="mt-1" >4th Electric</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >4th Electric </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: electric4 </span> 
+      </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="electric_4_name" className={`${styles.Width} `}  >
@@ -256,14 +267,19 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
-
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* GRIP */}
       <div className="pb-3">
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >GRIP</h3> 
-      {/* Key Grip< */} 
-      <h5 className="mt-1" >Key Grip</h5> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >GRIP</h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
+      {/* Key Grip */} 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Key Grip </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: keygrip </span> 
+      </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="keygrip_name" className={`${styles.Width} `}  >
@@ -317,9 +333,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Best Boy Grip */}
-      <h5 className="mt-1" >Best Boy Grip</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Best Boy Grip </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: bestbgrip </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="best_boy_grip_name" className={`${styles.Width} `}  >
@@ -373,9 +391,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Dolly Grip */} 
-      <h5 className="mt-1" >Dolly Grip </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Dolly Grip </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dollygrip </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="dolly_grip_name " className={`${styles.Width} `}  >
@@ -429,9 +449,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Swing G&E 1 */}
-      <h5 className="mt-1" >Swing G/E 1</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 1 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge1 </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="swing_ge1_name" className={`${styles.Width} `}  >
@@ -485,9 +507,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Swing G&E 2 */}
-      <h5 className="mt-1" >Swing G/E 2</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 2 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge2 </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="swing_ge2_name" className={`${styles.Width} `}  >
@@ -541,9 +565,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Swing G&E 3 */}
-      <h5 className="mt-1" >Swing G/E 3</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 3 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge3 </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="swing_ge3_name" className={`${styles.Width} `}  >
@@ -597,9 +623,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Swing G&E 4 */}
-      <h5 className="mt-1" >Swing G/E 4</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 4 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge4 </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="swing_ge4_name" className={`${styles.Width} `}  >
@@ -653,9 +681,11 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Swing G&E 5 */}
-      <h5 className="mt-1" >Swing G/E 5</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 5 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge5 </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="swing_ge5_name" className={`${styles.Width} `}  >
@@ -709,7 +739,6 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
     </div>
   )
