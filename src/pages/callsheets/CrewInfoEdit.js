@@ -8800,66 +8800,12 @@ const CrewInfoEdit = () => {
       <Row className="text-center">
         <Col md={{span: 8, offset: 2}}>
           <p>
-            Click on department links to edit. Use Create button below for 
+            Click on department links to add or edit. Use Create button below for 
             each department individually or to submit all at the one time.
           </p>
         </Col>
       </Row>
     <Form className= {`mt-3 mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
-    <div>
-    {/* logo */}
-    {/* <div>
-      <Row>
-      <Col md={{span: 6, offset: 4 }} className="text-center">
-          <div
-              className={`px-1`}
-            >
-              <Form.Group className="text-center pl-5 pt-3">
-                  {company_logo ? (
-                    <>
-                      <figure>
-                        <Image className={styles.Logo} src={company_logo} rounded />
-                      </figure>
-                      <div className="float-right pt-4 mt-5 ">
-                        <Form.Label
-                          className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                          htmlFor="image-upload"
-                        >
-                          Change the Company Logo
-                        </Form.Label>
-                      </div>
-                    </>
-                  ) : (
-                    <Form.Label
-                      className="d-flex justify-content-center"
-                      htmlFor="image-upload"
-                    >
-                      <Asset
-                        src={Upload}
-                        message="Upload Company Logo"
-                      />
-                    </Form.Label>
-                  )}
-    
-                  <Form.Control
-                    type="file"
-                    id="image-upload"
-                    accept="image/*"
-                    onChange={handleChangeLogo}
-                    ref={imageInput1}
-                  />
-              </Form.Group>
-              {errors?.company_logo?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </div>
-      </Col>
-      </Row>
-    </div> */}
-    {/* end */}
-    </div>
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
       <Col className='text-center'>

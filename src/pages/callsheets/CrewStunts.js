@@ -22,11 +22,16 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
   return (
     <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >STUNTS </h3>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >STUNTS </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Stunt Coordinator  */}
-      <h5 className="mt-1" >Stunt Coordinator </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Stunt Coordinator</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: stuntco</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="stunt_coordinator_name" className={`${styles.Width} `}  >
@@ -80,9 +85,11 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Stunts 1  */}
-      <h5 className="mt-1" >Stunts 1 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Stunts 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: stunts1</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="stunts_1_name" className={`${styles.Width} `}  >
@@ -136,9 +143,11 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Stunts 2  */}
-      <h5 className="mt-1" >Stunts 2 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Stunts 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: stunts2</span> 
+      </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="stunts_2_name" className={`${styles.Width} `}  >
@@ -192,9 +201,11 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Stunt 3  */}
-      <h5 className="mt-1" >Stunts 3 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Stunts 3</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: stunts3</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="stunts_3_name" className={`${styles.Width} `}  >
@@ -248,9 +259,11 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Stunts 4  */}
-      <h5 className="mt-1" >Stunts 4 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Stunts 4</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: stunts4</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="stunts_4_name" className={`${styles.Width} `}  >
@@ -304,9 +317,11 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Stunts 5  */}
-      <h5 className="mt-1" >Stunts 5 </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Stunts 5</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: stunts5</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="stunts_5_name" className={`${styles.Width} `}  >

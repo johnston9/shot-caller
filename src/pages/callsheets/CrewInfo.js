@@ -76,7 +76,7 @@ const CrewInfo = () => {
             Add / Edit Info</Button>
           </Col>
       </Row>
-      <div className='my-3'>
+      <div className={` mt-3 pt-2 ${styles.White }`}> 
         <Row className={`${styles.ButtonLine} mt-0`}>
           <Col xs={{span: 4, offset: 4}} md={{span: 4, offset: 4}} className='text-center'>
               <p
@@ -161,7 +161,9 @@ const CrewInfo = () => {
             </p>
           </Col>
         </Row>  
-        <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+        <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+        <div className={`py-1 ${styles.White }`}>
+      </div>
       </div>
       <div className='mt-0'>
       {/* Info Company */}

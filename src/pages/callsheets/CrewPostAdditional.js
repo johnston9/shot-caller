@@ -31,11 +31,16 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* POST PRODUCTION */}
       <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >POST PRODUCTION </h3>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 ml-5 mb-0 text-center py-1 ${styles.Bold }`} >POST PRODUCTION </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Editor */}
-      <h5 className="mt-1" >Editor </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Editor</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: editor</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="editor_name" className={`${styles.Width} `}  >
@@ -90,11 +95,18 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* VISUAL EFFECTS */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >VISUAL EFFECTS </h3> 
+      <h3 className={`mb-0 py-1 ${styles.SubTitle }`} >VISUAL EFFECTS </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* FX  */}
-      <h5 className="mt-1" >FX </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >FX</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: seffects</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="fx_name" className={`${styles.Width} `}  >
@@ -149,11 +161,18 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* ADDITIONAL CREW POSITIONS */}
       <div className="pb-3">
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >ADDITIONAL CREW POSITIONS </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >ADDITIONAL CREW POSITIONS </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Additional Crew Position 1 */}
-      <h5 className="mt-1" >Additional Crew Position 1</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos1</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_1_job" className={`${styles.Width} `}  >
@@ -226,9 +245,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 2 */}
-      <h5 className="mt-1" >Additional Crew Position 2</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos2</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_2_job" className={`${styles.Width} `}  >
@@ -301,9 +322,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 3 */}
-      <h5 className="mt-1" >Additional Crew Position 3</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 3</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos3</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_3_job" className={`${styles.Width} `}  >
@@ -376,9 +399,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 4 */}
-      <h5 className="mt-1" >Additional Crew Position 4</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 4</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos4</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_4_job" className={`${styles.Width} `}  >
@@ -451,9 +476,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 5 */}
-      <h5 className="mt-1" >Additional Crew Position 1</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 5</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos5</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_5_job" className={`${styles.Width} `}  >
@@ -526,9 +553,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 6 */}
-      <h5 className="mt-1" >Additional Crew Position 6</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 6</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos6</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_6_job" className={`${styles.Width} `}  >
@@ -601,9 +630,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 7 */}
-      <h5 className="mt-1" >Additional Crew Position 7</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 7</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos7</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_7_job" className={`${styles.Width} `}  >
@@ -676,9 +707,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 8 */}
-      <h5 className="mt-1" >Additional Crew Position 8</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 8</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos8</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_8_job" className={`${styles.Width} `}  >
@@ -751,9 +784,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 9 */}
-      <h5 className="mt-1" >Additional Crew Position 9</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 9</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos9</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_9_job" className={`${styles.Width} `}  >
@@ -826,9 +861,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Additional Crew Position 10 */}
-      <h5 className="mt-1" >Additional Crew Position 10</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 10</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos10</span> 
+      </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="add_pos_10_job" className={`${styles.Width} `}  >
@@ -901,12 +938,11 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
-      {/* All Other Additional Crew Positions */}
-      <h5 className="mt-1" >All Other Additional Crew Positions</h5>  
+      {/* All Other Additional Crew Positions className={`${styles.Width} `} */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >All Other Additional Crew Positions</h5> 
       <Row>
           <Col xs={{span: 10, offset: 1 }} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="all_other_add_positions" className={`${styles.Width} `}  >
+          <Form.Group controlId="all_other_add_positions" className={`${styles.Width95} `} >
               <Form.Label className={`${styles.Bold} `} >Enter: Position - Name - Email - Phone for each.</Form.Label>
               <Form.Control 
               className={`${styles.InputScene}`}
@@ -925,7 +961,6 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       </div>
     </div>
   )

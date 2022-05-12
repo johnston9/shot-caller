@@ -29,6 +29,7 @@ import CrewArt from "./CrewArt";
 import CrewCamera from "./CrewCamera";
 import CrewPostAdditional from "./CrewPostAdditional";
 import CrewWardrobe from "./CrewWardrobe";
+import Important from "./Important";
 
 // other pro 5 - other cam 3 
 
@@ -38,6 +39,7 @@ const CrewInfoCreate = () => {
   const history = useHistory();
   const setEditCrewInfo = useSetEditCrewInfoContext();
 
+  const [showImp, setShowImp] = useState(false);
   const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);
   const [showCam, setShowCam] = useState(false);
@@ -8402,29 +8404,28 @@ const CrewInfoCreate = () => {
     >
         Back
     </Button>
-    <p>The "Create" Button on this page creates the "Crew Info" page one time.
-      After that the Edit button on the "Crew Info" page is used 
-       to add to or edit the page at future stages.</p>
-       <Row>
-      <Col md={{span: 8, offset: 2}} >
-      <div className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
-      <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
-      <p className={`text-center px-3 py-1 ${styles.Red }`}>
-        All Crew Members MUST BE Registered
-        </p>     
-        <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
-          Register an account for each crew member 
-          using their position's Username.
-          Send the Shot Caller link to them with the Username 
-          and whatever password you used instructing them 
-          to sign in and change their password.
-        </p>
-      </div>
-      </Col>
-    </Row>
+    <Button
+      className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+    </Button>
+      {!showImp ? (
+          ""
+              ) : (
+                <Important  /> 
+                ) } 
+    <Row className="text-center">
+        <Col md={{span: 8, offset: 2}}>
+        <p>The "Create" Button on this page creates the "Crew Info" page one time
+          whether you add one crew member or numerius ones in 
+          different departments.
+          After that the Edit button on the "Crew Info" page is used 
+          to add to or edit the page at future stages. 
+          Click on department links to add or edit.</p>
+        </Col>
+      </Row>
     <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
     <div className={`pt-2 ${styles.White }`}> 
-    <Row className={`${styles.ButtonLine} mt-0`}>
+      <Row className={`${styles.ButtonLine} mt-0`}>
       <Col className='text-center'>
               <p
                 className={`py-0 mb-0 ${styles.Button}`}
@@ -8508,22 +8509,24 @@ const CrewInfoCreate = () => {
           </p>
         </Col>
       </Row>  
-      <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+      <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+      <div className={`py-1 ${styles.White }`}>
+      </div>
     </div>
-    <div className={`mt-0 ${styles.Crew }`}>
+    <div className={`mt-0`}>
         {/* Add Company */}
         {!showCom ? (
           ""
               ) : (
                 <CrewCompany handleChange={handleChange} 
-                  setShow={setShowCom} /> 
+                postData={postData} setShow={setShowCom} /> 
                 ) }  
         {/* Add Production */}
         {!showPro ? (
           ""
               ) : (
                 <CrewProduction handleChange={handleChange} 
-                  setShow={setShowPro} /> 
+                postData={postData} setShow={setShowPro} /> 
                 ) }  
         {/* Add Casting */}
         {!showCas ? (
@@ -8602,8 +8605,7 @@ const CrewInfoCreate = () => {
                 <CrewWardrobe setShow={setShowWar}
                 postData={postData} handleChange={handleChange} /> 
                 ) } 
-        </div>
-    {textFields}
+    </div>
     {buttons}
     </Form>
     </div>

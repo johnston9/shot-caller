@@ -22,13 +22,18 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
   return (
     <div className="text-center">
       {/* SCRIPT */}
-      <div >
+      <div className="mb-3">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >SCRIPT </h3>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h3 className={`pl-5 ml-4 mb-0 text-center py-1 ${styles.Bold }`} >SCRIPT </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Writer  */}
-      <h5 className="mt-1" >Writer </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Writer</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: writer</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="writer_name" className={`${styles.Width} `}  >
@@ -82,13 +87,19 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* CATERING */}
       <div>
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CATERING </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >CATERING </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Catering Company 1 */}
-      <h5 className="mt-1" >Catering Company 1 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Catering Company 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: catering1</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="catering_co_1_name" className={`${styles.Width} `}  >
@@ -142,9 +153,11 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Catering Company 2 */}
-      <h5 className="mt-1" >Catering Company 2 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Catering Company 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: catering2</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="catering_co_2_name" className={`${styles.Width} `}  >
@@ -198,9 +211,11 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Catering Company 3 */}
-      <h5 className="mt-1" >Catering Company 3 </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Catering Company 3</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: catering3</span> 
+      </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="catering_co_3_name" className={`${styles.Width} `}  >
@@ -254,14 +269,19 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
+      </div>        
+      <div className={`py-2 ${styles.White }`}>
       </div>
-
       {/* CRAFT SERVICES */}
       <div className="pb-3">
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CRAFT SERVICES </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >CRAFT SERVICES </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Craft Service  */}
-      <h5 className="mt-1" >Craft Service </h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Craft Service </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: craftser</span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="craft_service_name" className={`${styles.Width} `}  >
@@ -315,9 +335,11 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Crafty Assistant  */}
-      <h5 className="mt-1" >Crafty Assistant </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Crafty Assistant</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: craftyass</span> 
+      </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="crafty_ass_name" className={`${styles.Width} `}  >

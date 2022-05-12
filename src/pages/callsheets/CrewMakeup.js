@@ -26,10 +26,12 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
     <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 text-center py-1 ${styles.Bold }`} >MAKEUP </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >MAKEUP </h3>
+      </div>
+      <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Key Hair and Makeup */} 
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Key Hair and Makeup</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Key Hair and Makeup</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: keymakeup</span> 
       </div>
@@ -86,9 +88,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Key Hair Stylist Wigs */}
-      <h5 className="mt-1" >Key Hair Stylist and Wigs</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Key Hair Stylist and Wigs</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: keyhair  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="key_hairstylist_name" className={`${styles.Width} `}  >
@@ -142,9 +146,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* SFX Makeup */}
-      <h5 className="mt-1" >SFX Makeup </h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >SFX Makeup</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: fxmakeup  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="sfx_makeup_name" className={`${styles.Width} `}  >
@@ -198,9 +204,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* SFX Makeup Assistant */}
-      <h5 className="mt-1" >SFX Makeup Assistant</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >SFX Makeup Assistant</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: fxmakeupa  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="sfx_makeup_assistant_name" className={`${styles.Width} `}  >
@@ -254,9 +262,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Makeup Artist 1 */}
-      <h5 className="mt-1" >Makeup Artist 1</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Makeup Artist 1</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: makeup1  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="makeup_artist_1_name" className={`${styles.Width} `}  >
@@ -310,9 +320,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Makeup Artist 2 */}
-      <h5 className="mt-1" >Makeup Artist 2</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Makeup Artist 2</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: makeup2  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="makeup_artist_2_name" className={`${styles.Width} `}  >
@@ -366,9 +378,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Makeup Artist 3 */}
-      <h5 className="mt-1" >Makeup Artist 3</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Makeup Artist 3</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: makeup3  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="makeup_artist_3_name" className={`${styles.Width} `}  >
@@ -422,9 +436,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Makeup Artist 4 */}
-      <h5 className="mt-1" >Makeup Artist 4</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Makeup Artist 4</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: makeup4  </span> 
+      </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="makeup_artist_4_name" className={`${styles.Width} `}  >
@@ -478,9 +494,11 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Makeup Artist 5 */}
-      <h5 className="mt-1" >Makeup Artist 5</h5> 
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Makeup Artist 5 </h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: makeup5  </span> 
+      </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="makeup_artist_5_name" className={`${styles.Width} `}  >

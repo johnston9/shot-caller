@@ -287,7 +287,7 @@ const CallSheet = (props ) => {
             case "assistprop": return ass_prop_master_calltime;
             case "propbuy": return sound_assistant_1_calltime;
             case "armorer": return prop_buyer_calltime;
-            // thegaffer
+            // elec / grip
             case "thegaffer": return gaffer_calltime;
             case "bbelectric": return best_boy_electric_calltime;
             case "electric3": return electric_3_calltime;
@@ -308,7 +308,7 @@ const CallSheet = (props ) => {
             case "locassist3": return location_ass_3_calltime;
             case "locassist4": return location_ass_4_calltime;
             case "locsecur": return location_security_calltime;
-            // xxx cosdesign
+            // wardrobe
             case "cosdesign": return costume_designer_calltime;
             case "ascosdes": return ass_costume_designer_calltime;
             case "wardrobe1": return wardrobe_assistant_1_calltime;
@@ -316,18 +316,43 @@ const CallSheet = (props ) => {
             case "wardrobe3": return wardrobe_assistant_3_calltime;
             case "wardrobe4": return wardrobe_assistant_4_calltime;
             case "wardrobe5": return wardrobe_assistant_5_calltime;
-            // xxx 
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            case "davey": return gaffer_calltime;
-            default: return 'xx';
+            // makeup
+            case "keymakeup": return key_hairmakeup_calltime;
+            case "keyhair": return key_hairstylist_calltime;
+            case "fxmakeup": return sfx_makeup_calltime;
+            case "fxmakeupa": return sfx_makeup_assistant_calltime;
+            case "makeup1": return makeup_artist_1_calltime;
+            case "makeup2": return makeup_artist_2_calltime;
+            case "makeup3": return makeup_artist_3_calltime;
+            case "makeup4": return makeup_artist_4_calltime;
+            case "makeup5": return makeup_artist_5_calltime;
+            // post / additional
+            case "editor": return editor_calltime;
+            case "seffects": return fx_calltime;
+            case "addcrewpos1": return add_pos_1_calltime;
+            case "addcrewpos2": return add_pos_2_calltime;
+            case "addcrewpos3": return add_pos_3_calltime;
+            case "addcrewpos4": return add_pos_4_calltime;
+            case "addcrewpos5": return add_pos_5_calltime;
+            case "addcrewpos6": return add_pos_6_calltime;
+            case "addcrewpos7": return add_pos_7_calltime;
+            case "addcrewpos8": return add_pos_8_calltime;
+            case "addcrewpos9": return add_pos_9_calltime;
+            case "addcrewpos10": return add_pos_10_calltime;
+            // script /catering
+            case "writer": return writer_calltime;
+            case "catering1": return catering_co_1_calltime;
+            case "catering2": return catering_co_2_calltime;
+            case "catering3": return catering_co_3_calltime;
+            case "craftser": return craft_service_calltime;
+            case "craftyass": return crafty_ass_calltime;
+            // stunt
+            case "stuntco": return stunt_coordinator_calltime;
+            case "stunts1": return stunts_1_calltime;
+            case "stunts2": return stunts_2_calltime;
+            case "stunts3": return stunts_3_calltime;
+            case "stunts4": return stunts_4_calltime;
+            case "stunts5": return stunts_5_calltime;
           }
         };
         setYourcalltime(yourcall(currentUser));

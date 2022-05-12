@@ -40,12 +40,9 @@ width: 100%;
 }
 
 .HomeboxFind {
-    /* background-color: #112533; */
-    /* background-color: #395061; */
-    /* background-color: #405766; */
     /* color: #F5F5F5; */
     height: 60px;
-    background-color: rgb(206, 232, 255);
+    background-color: rgb(179 208 233);
     color: #112533;
     border: 1px solid #fff;
 }

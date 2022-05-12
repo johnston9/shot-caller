@@ -92,6 +92,10 @@ p {
   background-color: #fff;
 }
 
+/* .Italic {
+  text-emphasis: fontStyle: 'italic';
+} */
+
 .CallLogoDiv {
   height: 80px;
   border: 2px solid #456989;
