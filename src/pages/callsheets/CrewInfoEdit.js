@@ -1312,7 +1312,7 @@ const CrewInfoEdit = () => {
           </Col>
       </Row>
       <hr/>
-      {/* phone - email BodyColor */}
+      {/* phone - email */}
       <Row>
           <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="company_phone" className={`${styles.Width} `}  >
@@ -8988,6 +8988,12 @@ const CrewInfoEdit = () => {
                 postData={postData} handleChange={handleChange} /> 
                 ) } 
     </div>
+    <div className={`py-2 ${styles.White }`}>
+      </div>
+      {/* buttons */}
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} > </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
     {buttons}
     </Form>
     </div>

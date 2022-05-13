@@ -771,11 +771,15 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* CONTINUITY */}
       <div className="pb-3">
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >CONTINUITY</h3>
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >CONTINUITY</h3>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Script Supervisor */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Script Supervisor</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Script Supervisor</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: scriptsup</span>  
       </div>
@@ -833,11 +837,15 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* MEDIC / FIRE SAFETY */}
       <div className="pb-3">
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >MEDIC / FIRE SAFETY </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >MEDIC / FIRE SAFETY </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* Set Medic */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Set Medic</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Set Medic</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: setmedic</span>  
       </div>
@@ -895,11 +903,15 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       </div>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* LEGAL */}
       <div className="pb-3">
-      <h3 className={` my-3 py-1 ${styles.SubTitle }`} >LEGAL </h3> 
+      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >LEGAL </h3> 
+      <div className={`py-2 ${styles.White }`}>
+      </div>
       {/* legal  */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Legal Consultant</h5> 
+      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Legal Consultant</h5> 
       <div>
       <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: legalcon</span>  
       </div>
