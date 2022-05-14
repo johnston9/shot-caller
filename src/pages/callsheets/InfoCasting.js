@@ -6,6 +6,7 @@ import styles from "../../styles/Callsheets.module.css";
 
 const InfoCasting = ({crewInfoOne, setShowCas }) => {
   useRedirect("loggedOut");
+
   const {casting_director_name, casting_director_email, casting_director_phone,
     extras_casting_name, extras_casting_email, extras_casting_phone,
     ad_1_name, ad_1_email, ad_1_phone,
@@ -22,19 +23,24 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CASTING</h5>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
+      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >CASTING</h3>
       </div>
-      <div className='mt-3'>
+      <div className={`py-2 ${styles.White }`}>
+      </div>
+      <div className='px-md-5 pt-2'>
         {/* casting director */}
         {casting_director_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Casting Director</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Casting Director</p>
+              <p className={`${styles.CrewInfoP} `}>{casting_director_name} </p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{casting_director_name} </p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>castdir</p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{casting_director_email}</p>
@@ -47,149 +53,266 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
         }
         {/* extras casting */}
         {extras_casting_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Extras Casting</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Extras Casting</p>
+              <p className={`${styles.CrewInfoP} `}>{extras_casting_name}</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{extras_casting_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{extras_casting_email}</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>xtracas </p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{extras_casting_phone}</p>
             </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{extras_casting_email}</p>
+            </Col>
           </Row>
           </div> )
         }
-        <div className={`mt-3 mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >AD </h5>
         </div>
+        <div className={`py-2 ${styles.White }`}>
+        </div>
+        <div className={`mt-0 text-center ${styles.SubTitle }`}>
+        <h3 className={`mb-0 text-center py-1 ${styles.Bold }`} >ASSITANT DIRECTORS </h3>
+        </div>
+        <div className='px-md-5 pt-2'>
         {/* 1st AD */}
         {ad_1_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >1st AD</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>1st AD</p>
+              <p className={`${styles.CrewInfoP} `}>{ad_1_name} </p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_1_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_1_email}</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>astdir1</p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{ad_1_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{ad_1_email}</p>
             </Col>
           </Row>
           </div> )
         }
         {/* 2nd AD */}
         {ad_2_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >2nd AD</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>2nd AD</p>
+              <p className={`${styles.CrewInfoP} `}>{ad_2_name} </p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_2_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_2_email}</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>astdir2</p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{ad_2_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{ad_2_email}</p>
             </Col>
           </Row>
           </div> )
         }
         {/* 3rd AD */}
         {ad_3_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >3rd AD</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>3rd AD</p>
+              <p className={`${styles.CrewInfoP} `}>{ad_3_name}</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_3_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_3_email}</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>astdir3 </p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{ad_3_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{ad_3_email}</p>
             </Col>
           </Row>
           </div> )
         }
         {/* 4th AD */}
         {ad_4_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >4th AD</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>4th AD</p>
+              <p className={`${styles.CrewInfoP} `}>{ad_4_name}</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_4_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_4_email}</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>astdir4 </p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{ad_4_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{ad_4_email}</p>
             </Col>
           </Row>
           </div> )
         }
         {/* 5th AD */}
         {ad_5_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >5th AD</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>5th AD</p>
+              <p className={`${styles.CrewInfoP} `}>{ad_5_name} </p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_5_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ad_5_email}</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>astdir5</p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{ad_5_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{ad_5_email}</p>
             </Col>
           </Row>
           </div> )
         }
         {/* pro assistant 1 */}
         {pro_assistant_1_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Production Assistant 1</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Pro Assistant 1</p>
+              <p className={`${styles.CrewInfoP} `}>{pro_assistant_1_name}</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{pro_assistant_1_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{pro_assistant_1_email}</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>proast1 </p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{pro_assistant_1_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{pro_assistant_1_email}</p>
             </Col>
           </Row>
           </div> )
         }
         {/* pro assistant 2 */}
         {pro_assistant_2_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Production Assistant 2</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{pro_assistant_2_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>proast2 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{pro_assistant_2_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{pro_assistant_2_email}</p>
+            </Col>
+          </Row>
+          </div> )
+        }
+        {/* pro assistant 3 */}
+        {pro_assistant_3_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Production Assistant 3</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{pro_assistant_3_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>proast3 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{pro_assistant_3_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{pro_assistant_3_email}</p>
+            </Col>
+          </Row>
+          </div> )
+        }
+        {/* pro assistant 4 */}
+        {pro_assistant_4_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Production Assistant 4</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{pro_assistant_4_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>proast4 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{pro_assistant_4_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{pro_assistant_4_email}</p>
+            </Col>
+          </Row>
+          </div> )
+        }
+        {/* pro assistant 5 */}
+        {pro_assistant_5_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Production Assistant 5</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{pro_assistant_5_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>proast5 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{pro_assistant_5_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{pro_assistant_5_email}</p>
+            </Col>
+          </Row>
+          </div> )
+        }
+        mmmmmm
+        {/* pro assistant 2 */}
+        {pro_assistant_2_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Camera Operator</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfoP} `}>Pro Assistant 2</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{pro_assistant_2_name} </p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>{pro_assistant_2_name} </p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{pro_assistant_2_email}</p>
@@ -202,13 +325,16 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
         }
         {/* pro assistant 3 */}
         {pro_assistant_3_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Camera Operator</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfoP} `}>Pro Assistant 3</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{pro_assistant_3_name} </p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>{pro_assistant_3_name} </p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{pro_assistant_3_email}</p>
@@ -221,13 +347,16 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
         }
         {/* pro assistant 4 */}
         {pro_assistant_4_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Camera Operator</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfoP} `}>Pro Assistant 4</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{pro_assistant_4_name} </p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>{pro_assistant_4_name} </p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{pro_assistant_4_email}</p>
@@ -240,13 +369,16 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
         }
         {/* pro assistant 5 */}
         {pro_assistant_5_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Camera Operator</h5> 
+          </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfoP} `}>Pro Assistant 5</p>
             </Col>
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{pro_assistant_5_name} </p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>{pro_assistant_5_name} </p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{pro_assistant_5_email}</p>

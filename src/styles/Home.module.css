@@ -19,20 +19,25 @@ width: 100%;
     color: #F5F5F5;
 }
 
+.Inner {
+    background-color: #0b3d63;
+    /* background-color: #395061; */
+    /* background-color: #112533; */
+    color: #fff;
+}
+
 /* large */
 
 .Homebox {
     height: 110px;
-    /* background-color: #112533; */
-    background-color: #395061;
-    /* background-color: #405766; */
+    background-color: #112533;
     color: #F5F5F5;
-    border: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
 }
 
 .Homebox:hover {
-    background-color: #112533;
-    /* background-color: #405766; */
+    background-color: #405766;
 }
 
 .Homebox:hover .Inner {
@@ -40,17 +45,15 @@ width: 100%;
 }
 
 .HomeboxFind {
-    /* color: #F5F5F5; */
     height: 60px;
-    background-color: rgb(179 208 233);
-    color: #112533;
-    border: 1px solid #fff;
+    background-color: #405766;
+    color: #fafafa;
+    border-bottom: 1px solid #fff;
 }
 
 .HomeboxFind:hover {
-    background-color: #112533;
+    background-color: #2e5f82;
     color: #F5F5F5;
-    /* background-color: #405766; */
 }
 
 .HomeboxSm {
@@ -73,14 +76,16 @@ width: 100%;
 
 .HomeboxSmEr {
     height: 80px;
-    background-color: #395061;
+    background-color: #112533;
+    /* background-color: #395061; */
     /* background-color: #405766; */
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
 }
 
 .HomeboxSmEr:hover {
-    background-color: #112533;
+    background-color: #405766;
+    /* background-color: #112533; */
 }
 
 
@@ -90,23 +95,16 @@ width: 100%;
 
 /* mobile */
 
-.Inner {
-    background-color: #395061;
-    /* background-color: #112533; */
-    color: #fff;
-}
-
-
 .HomeboxXsXs {
     height: 120px;
-    background-color: #395061;
-    /* background-color: #405766; */
+    background-color: #112533;
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
 }
 
 .HomeboxXsXs:hover {
-    background-color: #112533;
+    background-color: #405766;
     border-bottom: 1px solid #fff;
 }
 
@@ -116,8 +114,7 @@ width: 100%;
 
 .HomeboxXs {
     height: 105px;
-    /* background-color: #405766; */
-    background-color: #395061;
+    background-color: #112533;
     color: #F5F5F5;
 }
 

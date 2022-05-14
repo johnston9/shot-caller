@@ -228,34 +228,34 @@ const CallSheet = (props ) => {
             case "unitpm": return upm_calltime;
             case "travelco": return travel_coordinator_calltime;
             case "produpa": return production_pa_calltime;
-            case "addpropos1": return oth_production_pos_1_calltime;
-            case "addpropos2": return oth_production_pos_2_calltime;
-            case "addpropos3": return oth_production_pos_3_calltime;
-            case "addpropos4": return oth_production_pos_4_calltime;
-            case "addpropos5": return oth_production_pos_5_calltime;
+            case "addpro1": return oth_production_pos_1_calltime;
+            case "addpro2": return oth_production_pos_2_calltime;
+            case "addpro3": return oth_production_pos_3_calltime;
+            case "addpro4": return oth_production_pos_4_calltime;
+            case "addpro5": return oth_production_pos_5_calltime;
             case "scriptsup": return script_supervisor_calltime;
             case "setmedic": return set_medic_calltime;
             case "legalcon": return legal_calltime;
             // casting / assistant directors 
-            case "castdirec": return casting_director_calltime;
-            case "extracast": return extras_casting_calltime;
-            case "assistdir1": return ad_1_calltime;
-            case "assistdir2": return ad_2_calltime;
-            case "assistdir3": return ad_3_calltime;
-            case "assistdir4": return ad_4_calltime;
-            case "assistdir5": return ad_5_calltime;
-            case "proassist1": return pro_assistant_1_calltime;
-            case "proassist2": return pro_assistant_2_calltime;
-            case "proassist3": return pro_assistant_3_calltime;
-            case "proassist4": return pro_assistant_4_calltime;
-            case "proassist5": return pro_assistant_5_calltime;
+            case "castdir": return casting_director_calltime;
+            case "xtracas": return extras_casting_calltime;
+            case "astdir1": return ad_1_calltime;
+            case "astdir2": return ad_2_calltime;
+            case "astdir3": return ad_3_calltime;
+            case "astdir4": return ad_4_calltime;
+            case "astdir5": return ad_5_calltime;
+            case "proast1": return pro_assistant_1_calltime;
+            case "proast2": return pro_assistant_2_calltime;
+            case "proast3": return pro_assistant_3_calltime;
+            case "proast4": return pro_assistant_4_calltime;
+            case "proast5": return pro_assistant_5_calltime;
             // camera
             case "dophoto": return dop_calltime;
-            case "cameraop": return camera_operator_calltime;
-            case "assistcam1": return camera_ass_1_calltime;
-            case "assistcam2": return camera_ass_2_calltime;
-            case "dimagetec": return dit_calltime;
-            case "steadicamo": return steadicam_calltime;
+            case "camerop": return camera_operator_calltime;
+            case "astcam1": return camera_ass_1_calltime;
+            case "astcam2": return camera_ass_2_calltime;
+            case "digitec": return dit_calltime;
+            case "steadicam": return steadicam_calltime;
             case "camerapa": return camera_pa_calltime;
             case "addcam1": return oth_camera_pos_1_calltime;
             case "addcam2": return oth_camera_pos_2_calltime;
@@ -276,7 +276,7 @@ const CallSheet = (props ) => {
             case "cartwo": return car2_calltime;
             case "carthree": return car3_calltime;
             // art 
-            case "prodesig": return art_director_calltime;
+            case "prodesign": return art_director_calltime;
             case "artdirect": return art_director_calltime;
             case "artassist": return art_assistant_calltime;
             case "setdecor": return set_decorator_calltime;
@@ -284,7 +284,7 @@ const CallSheet = (props ) => {
             case "leadman": return lead_man_calltime;
             case "dresser": return dresser_calltime;
             case "propmast": return prop_master_calltime;
-            case "assistprop": return ass_prop_master_calltime;
+            case "propast": return ass_prop_master_calltime;
             case "propbuy": return sound_assistant_1_calltime;
             case "armorer": return prop_buyer_calltime;
             // elec / grip

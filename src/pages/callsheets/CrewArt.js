@@ -29,14 +29,14 @@ const CrewArt = ({handleChange, postData, setShow}) => {
     <div >
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ART </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ART DEPT</h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
       {/* Production Designer */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Production Designer</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: prodesig</span>  
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: prodesign</span>  
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -516,7 +516,7 @@ const CrewArt = ({handleChange, postData, setShow}) => {
       {/* Assistant Prop Master */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Assistant Prop Master</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistprop</span>  
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: propast</span>  
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">

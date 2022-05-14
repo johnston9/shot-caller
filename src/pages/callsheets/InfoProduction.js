@@ -26,7 +26,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h3 className={`pl-5 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION </h3>
+      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION </h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
@@ -39,7 +39,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </div>
           <Row  >
             <Col xs={6} md={3}  >
-              <p className={`${styles.CrewInfop} ${styles.Bold} `}>{director_name} </p>
+              <p className={`${styles.CrewInfoP} ${styles.Bold} `}>{director_name} </p>
             </Col>
             <Col className='px-0 px-md-3'  xs={6} md={3}  >
               <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>director </p>
@@ -240,7 +240,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfoP} `}>{oth_production_pos_4_name} </p>
             </Col>
             <Col xs={6} md={3} >
-              <p className='px-0 px-md-3' style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>addpropos4</p>
+              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>addpropos4</p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{oth_production_pos_4_phone}</p>

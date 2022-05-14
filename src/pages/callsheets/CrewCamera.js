@@ -92,7 +92,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
       {/* Camera Operator */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Camera Operator</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: cameraop</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: camerop</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -150,7 +150,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
       {/* 1st Assistant Camera */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Camera</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistcam1</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astcam1</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -208,7 +208,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
       {/* 2nd Assistant Camera */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >2nd Assistant Camera</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistcam2</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astcam2</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -266,7 +266,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
       {/* DIT */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >DIT</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dimagetec</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: digitec</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -324,7 +324,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
       {/* Steadicam */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Steadicam Operator</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: steadicamo</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: steadicam</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">

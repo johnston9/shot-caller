@@ -34,7 +34,7 @@ const Landing = () => {
                 <Col md={1}></Col>
                   <Col lg={10} >
                     <Link to={`/scenes`} >
-                      <div className={`px-3 py-1  ${styles.Homebox}`}>
+                      <div className={` py-1  ${styles.Homebox}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Primary Scenes Workspace </h5>
                       <div className={`${styles.Inner}`}>
                       <p className="mt-2">
@@ -51,7 +51,7 @@ const Landing = () => {
               <Col lg={1} ></Col>
                 <Col lg={10} >
                     <Link to={`/findposts/departments`} >
-                    <div className={`px-3 py-1  ${styles.HomeboxFind}`}>
+                    <div className={` py-1  ${styles.HomeboxFind}`}>
                       <h5 className={`text-center pt-0 `}>Quick Find Posts</h5>
                       <p className="mt-2">All - Archived - Liked - Feed - Posts by Department </p>
                       </div>
@@ -63,7 +63,7 @@ const Landing = () => {
                   {/* Moodshots */}
                   <Col md={6} lg={5} >
                     <Link to={`/moodshots`} >
-                      <div className={`px-1 py-1 ${styles.HomeboxSmEr}`}>
+                      <div className={`py-1 ${styles.HomeboxSmEr}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
                       <div className={`${styles.Inner}`}>
                       <p className="mt-2">Add and View Moodshots</p>
@@ -74,7 +74,7 @@ const Landing = () => {
                   {/* Profiles */}
                   <Col md={6} lg={5} >
                     <Link to={`/profiles`} >
-                      <div className={`px-3 py-1 ${styles.HomeboxSmEr}`}>
+                      <div className={`py-1 ${styles.HomeboxSmEr}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
                       <div className={`${styles.Inner}`}>
                       <p className="mt-2">Follow Profiles to Create Feed</p>
@@ -87,7 +87,7 @@ const Landing = () => {
               <Col lg={1}></Col>
                   <Col md={6} lg={5}  >
                   <Link to={`/days`} >
-                    <div className={`px-1 py-1  ${styles.HomeboxSmEr}`}>
+                    <div className={ `py-1  ${styles.HomeboxSmEr}`}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                           <div className={`${styles.Inner}`}>
                             {admin ? (
@@ -102,7 +102,7 @@ const Landing = () => {
                   {/* Callsheets */}
                   <Col md={6} lg={5} >
                     <Link to={`/callsheets`} >
-                      <div className={`px-1 py-1 ${styles.HomeboxSmEr}`}>
+                      <div className={`py-1 ${styles.HomeboxSmEr}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
                       <div className={`${styles.Inner}`}>
                       <p className="mt-2">Callsheets for Shoot Days</p>
@@ -115,7 +115,7 @@ const Landing = () => {
               <Col lg={1} ></Col>
                   <Col xs={6} lg={5} >
                     <Link to={`/characters`} >
-                      <div className={`px-3 py-1 ${styles.HomeboxSmEr}`}>
+                      <div className={`py-1 ${styles.HomeboxSmEr}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Characters</h5>
                       <div className={`${styles.Inner}`}>
                       <p className="mt-2">All Character Details</p>
@@ -125,7 +125,7 @@ const Landing = () => {
                   </Col>
                   <Col xs={6} lg={5} >
                   <Link to={`/locations`} >
-                    <div className={`px-3 py-1  ${styles.HomeboxSmEr}`}>
+                    <div className={`py-1  ${styles.HomeboxSmEr}`}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Locations</h5>
                           <div className={`${styles.Inner}`}>
                           <p className="mt-2">Filming Addresses and Images </p>
@@ -140,7 +140,7 @@ const Landing = () => {
                   <Col lg={1} ></Col>
                   <Col xs={6} lg={5} >
                     <Link to={`/crewinfo`} >
-                      <div className={`px-3 py-1 ${styles.HomeboxSmEr}`}>
+                      <div className={`py-1 ${styles.HomeboxSmEr}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
                       <div className={`${styles.Inner}`}>
                       <p className="mb-0 pt-1"> Crew Info Details</p>
@@ -151,7 +151,7 @@ const Landing = () => {
                   {/* depts general */}
                   <Col xs={6} lg={5} > 
                   <Link to={`/depts/general`} >
-                    <div className={`px-2 py-1  ${styles.HomeboxSmEr}`}>
+                    <div className={`py-1  ${styles.HomeboxSmEr}`}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
                           <div className={`${styles.Inner}`}>
                           <p className="mb-0 pt-1">Departments Posting Area  </p>
@@ -166,7 +166,7 @@ const Landing = () => {
               <Row className="text-center">
                   <Col>
                     <Link to={`/scenes`} >
-                      <div className={`px-2 py-2  ${styles.HomeboxXsXs}`}>
+                      <div className={`py-2  ${styles.HomeboxXsXs}`}>
                       <h5 className={`text-center ${styles.Title}`}>Scenes Workspace </h5>
                       <div className={`${styles.Inner} mt-2 pb-1`}>
                       <p className="pt-1 mb-0">
@@ -191,7 +191,7 @@ const Landing = () => {
                   {/* Moodshots */}
                   <Col xs={6} >
                   <Link to={`/moodshots`} >
-                      <div className={`px-2 py-1 ${styles.HomeboxXs}`}>
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
                       <p className="mb-0 pt-1">Add / View Moodshots</p>
@@ -202,7 +202,7 @@ const Landing = () => {
                   {/* Profiles */}
                   <Col xs={6} >
                     <Link to={`/profiles`} >
-                      <div className={`px-2 py-1 ${styles.HomeboxXs}`}>
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
                       <p className="mb-0 pt-1">Create / View Feed</p>
@@ -215,7 +215,7 @@ const Landing = () => {
                   {/* Schedule */}
                   <Col xs={6} >
                   <Link to={`/days`} >
-                    <div className={`px-2 py-1  ${styles.HomeboxXs}`}>
+                    <div className={`py-1  ${styles.HomeboxXs}`}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                           <div className={`${styles.Inner} mt-2 pb-2`}>
                           {admin ? (
@@ -229,8 +229,8 @@ const Landing = () => {
                   </Col>
                   {/* Callsheets   */}
                   <Col xs={6} >
-                  <Link to={`/moodshots`} >
-                      <div className={`px-2 py-1 ${styles.HomeboxXs}`}>
+                  <Link to={`/callsheets`} >
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
                       <p className="mb-0 pt-1">Add / View Callsheets</p>
@@ -243,7 +243,7 @@ const Landing = () => {
                   {/* Characters */}
                   <Col xs={6} >
                     <Link to={`/characters`} >
-                      <div className={`px-2 py-1 ${styles.HomeboxXs}`}>
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Characters</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
                       <p className="mb-0 pt-1"> Character Details</p>
@@ -254,7 +254,7 @@ const Landing = () => {
                   {/* Locations */}
                   <Col xs={6} >
                   <Link to={`/locations`} >
-                    <div className={`px-2 py-1  ${styles.HomeboxXs}`}>
+                    <div className={`py-1  ${styles.HomeboxXs}`}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Locations</h5>
                           <div className={`${styles.Inner} mt-2 pb-2`}>
                           <p className="mb-0 pt-1">Addresses and Images </p>
@@ -268,7 +268,7 @@ const Landing = () => {
                   {/* Crew Info */}
                   <Col xs={6} >
                     <Link to={`/crewinfo`} >
-                      <div className={`px-2 py-1 ${styles.HomeboxXs}`}>
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
                       <p className="mb-0 pt-1"> Crew Info Details</p>
@@ -279,7 +279,7 @@ const Landing = () => {
                   {/* depts general */}
                   <Col xs={6} >
                   <Link to={`/depts/general`} >
-                    <div className={`px-2 py-1  ${styles.HomeboxXs}`}>
+                    <div className={`py-1  ${styles.HomeboxXs}`}>
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
                           <div className={`${styles.Inner} mt-2 pb-2`}>
                           <p className="mb-0 pt-1">Departments Posting Area  </p>

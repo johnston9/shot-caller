@@ -37,7 +37,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* Casting Director  */} 
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Casting Director </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: castdirec </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >castdir </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -95,7 +95,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* Extras Casting  */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Extras Casting </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: extracast </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: xtracas </span> 
       </div>
       <Row className="pb-3">
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -161,7 +161,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* 1st Assistant Director */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Director</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir1</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astdir1</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -219,7 +219,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* 2nd Assistant Director */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >2nd Assistant Director</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir2</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astdir2</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -277,7 +277,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* 3rd Assistant Director */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >3rd Assistant Director</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir3</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astdir3</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -335,7 +335,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* 4th Assistant Director */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >4th Assistant Director</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir4</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astdir4</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -393,7 +393,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* 5th Assistant Director */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >5th Assistant Director</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: assistdir5</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astdir5</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -451,7 +451,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* Production Assistant 1 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 1</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist1</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proast1</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -509,7 +509,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* Production Assistant 2 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 2</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist2</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proast2</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -567,7 +567,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* Production Assistant 3 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 3</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist3</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proast3</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -625,7 +625,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* Production Assistant 4 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 4</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist4</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proast4</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -683,7 +683,7 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       {/* Production Assistant 5 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Production Assistant 5</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proassist5</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: proast5</span> 
       </div>
       <Row className="pb-3">
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
