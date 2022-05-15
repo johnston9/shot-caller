@@ -325,19 +325,19 @@ const CallSheet = (props ) => {
             case "makeup3": return makeup_artist_3_calltime;
             case "makeup4": return makeup_artist_4_calltime;
             case "makeup5": return makeup_artist_5_calltime;
-            // post / additional
+            // post / additional 
             case "editor": return editor_calltime;
-            case "seffects": return fx_calltime;
-            case "addcrewpos1": return add_pos_1_calltime;
-            case "addcrewpos2": return add_pos_2_calltime;
-            case "addcrewpos3": return add_pos_3_calltime;
-            case "addcrewpos4": return add_pos_4_calltime;
-            case "addcrewpos5": return add_pos_5_calltime;
-            case "addcrewpos6": return add_pos_6_calltime;
-            case "addcrewpos7": return add_pos_7_calltime;
-            case "addcrewpos8": return add_pos_8_calltime;
-            case "addcrewpos9": return add_pos_9_calltime;
-            case "addcrewpos10": return add_pos_10_calltime;
+            case "specfx": return fx_calltime;
+            case "addcrew1": return add_pos_1_calltime;
+            case "addcrew2": return add_pos_2_calltime;
+            case "addcrew3": return add_pos_3_calltime;
+            case "addcrew4": return add_pos_4_calltime;
+            case "addcrew5": return add_pos_5_calltime;
+            case "addcrew6": return add_pos_6_calltime;
+            case "addcrew7": return add_pos_7_calltime;
+            case "addcrew8": return add_pos_8_calltime;
+            case "addcrew9": return add_pos_9_calltime;
+            case "addcrew10": return add_pos_10_calltime;
             // script /catering
             case "writer": return writer_calltime;
             case "catering1": return catering_co_1_calltime;

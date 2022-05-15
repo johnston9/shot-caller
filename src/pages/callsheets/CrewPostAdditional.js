@@ -105,7 +105,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* FX  */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >FX</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: seffects</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: specfx</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -171,7 +171,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 1 */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 1</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos1</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew1</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -248,7 +248,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 2 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 2</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos2</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew2</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -325,7 +325,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 3 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 3</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos3</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew3</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -402,7 +402,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 4 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 4</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos4</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew4</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -479,7 +479,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 5 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 5</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos5</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew5</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -556,7 +556,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 6 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 6</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos6</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew6</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -633,7 +633,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 7 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 7</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos7</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew7</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -710,7 +710,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 8 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 8</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos8</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew8</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -787,7 +787,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 9 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 9</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos9</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewp9</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
@@ -864,7 +864,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       {/* Additional Crew Position 10 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Crew Position 10</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrewpos10</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcrew10</span> 
       </div>
       <Row>
           <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">

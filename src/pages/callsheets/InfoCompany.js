@@ -14,44 +14,158 @@ const InfoCompany = ({crewInfoOne, setShowCom}) => {
   return (
     <div className='mt-0'>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowCom(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION COMPANY</h5>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} 
+        onClick={() => setShowCom(false) } >Close</span> 
+      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >
+        PRODUCTION COMPANY </h3>
       </div>
-      <Row className='text-center'>
-      <Col xs={6}>
-        <h3>{production_name} </h3>
-        <h5>{production_company} </h5>
-        {company_logo && <> 
-          <div className='px-1'>
-            <p>logo</p>
-            <Image className={styles.Logo} src={company_logo} alt="logo" />
-        </div>
-        </>
-        }
-        <p>Total Shoot Days {total_shoot_days} </p>
-        <p>Id {id} </p>
-      </Col>
-      <Col xs={6}>
-        <p className="mb-0">
+      <div className={`py-2 ${styles.White }`}>
+      </div>
+      <div className='px-md-5 pt-2'>
+        {/* logo */}
+        <Row className='mt-3'>
+          <Col >
+          <div className={`${styles.CrewInfoRow} pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >Production Company and Logo</h5> 
+          </div>
+          { company_logo && 
+            (<div className={` pb-3`}>
+            <Row className='text-center' >
+              <Col xs={{span: 10, offset: 1 }} >
+                <div className='px-1'>
+                <Image className={styles.Logo} src={company_logo} alt="logo" />
+                </div>
+              </Col>
+            </Row>
+            </div> )
+          }
+          { production_company && 
+          (<div >
+          <Row className='text-center' >
+            <Col xs={{span: 10, offset: 1 }} >
+              <h5 style={{textTransform: 'uppercase', fontWeight: '700'}} 
+                className={`${styles.CrewInfoP} `}
+                >{production_company}</h5>
+            </Col>
+          </Row>
+          </div> )
+          }
+          </div>
+          </Col>
+        </Row> 
+        {/* Address */}
+        <Row className='mt-3'>
+          <Col >
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >Company Address</h5> 
+          </div>
+          </Col>
+        </Row>
+        <div className={`${styles.CrewInfoRow} pb-3`}>
+        <Row className='text-center'>
+          <Col md={6}>
+          { company_address_line_1 && 
+          (<p className="mb-0">
           {company_address_line_1}
-        </p>
-        <p className="mb-0">
+          </p> )
+          }
+          { company_address_line_2 && 
+          (<p className="mb-0">
           {company_address_line_2}
-        </p>
-        <p className="mb-0">
+          </p> )
+          }
+          </Col>
+          <Col md={6}>
+          { company_address_line_3 && 
+          (<p className="mb-0">
           {company_address_line_3}
-        </p>
-        <p className="mb-0">
+          </p> )
+          }
+          { company_address_line_4 && 
+          (<p className="mb-0">
           {company_address_line_4}
-        </p>
-        <p className="mb-0">
-          {company_phone}
-        </p>
-        <p className="mb-0">
-          {company_email}
-        </p>
-      </Col>
-    </Row>
+          </p> )
+          }
+          </Col>
+        </Row>
+        </div>
+        {/* phone */}
+        <Row className='mt-3'>
+          <Col md={6}>
+          {/* company phone */}
+          { company_phone && 
+            (<div className={`${styles.CrewInfoRow} pb-3`}>
+            <div className='d-flex justify-content-center '>
+            <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width95 } 
+              ${styles.SubTitle2 }`} >Company Phone</h5> 
+            </div>
+            <Row className='text-center' >
+              <Col xs={{span: 10, offset: 1 }} >
+                <p className={`${styles.CrewInfop} `}
+                  >{company_phone}</p>
+              </Col>
+            </Row>
+            </div> )
+          }
+          </Col>
+          <Col md={6}>
+          { company_email && 
+          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >Company Email</h5> 
+          </div>
+          <Row className='text-center' >
+              <Col xs={{span: 10, offset: 1 }} >
+                <p className={`${styles.CrewInfop} `}
+                  >{company_email}</p>
+              </Col>
+            </Row>
+          </div> )
+          }
+          </Col>
+        </Row>
+        <Row className='mt-4'>
+          <Col md={6}>
+          {/* production name */}
+          { production_name && 
+            (<div className={`${styles.CrewInfoRow} pb-3`}>
+            <div className='d-flex justify-content-center '>
+            <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width95 } 
+              ${styles.SubTitle2 }`} >Production Name</h5> 
+            </div>
+            <Row className='text-center' >
+              <Col xs={{span: 10, offset: 1 }} >
+                <h5 style={{textTransform: 'uppercase', fontStyle: 'italic', fontWeight: '700'}} 
+                  className={`${styles.CrewInfoP} `}
+                  >{production_name}</h5>
+              </Col>
+            </Row>
+            </div> )
+          }
+          </Col>
+          <Col md={6}>
+          { total_shoot_days && 
+          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width95 } 
+            ${styles.SubTitle2 }`} >Total Shoot Days</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={{span: 10, offset: 1 }} >
+              <h5 style={{textTransform: 'uppercase', fontWeight: '700'}} 
+                className={`${styles.CrewInfoP} `}
+                >{total_shoot_days}</h5>
+            </Col>
+          </Row>
+          </div> )
+          }
+          </Col>
+        </Row>
+      </div>
     </div>
   )
 }
