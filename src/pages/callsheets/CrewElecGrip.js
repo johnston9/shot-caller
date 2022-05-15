@@ -38,7 +38,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Gaffer */} 
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Gaffer </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: thegaffer </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: gaffer </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -96,7 +96,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Best Boy Electric */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Best Boy Electric </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: bbelectric </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: bbelect </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -154,7 +154,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* 3rd Electric */} 
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >3rd Electric </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: electric3 </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: elect3 </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -212,7 +212,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* 4th Electric */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >4th Electric </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: electric4 </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: elect4 </span> 
       </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -336,7 +336,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Best Boy Grip */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Best Boy Grip </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: bestbgrip </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: bbgrip </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -394,7 +394,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Dolly Grip */} 
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Dolly Grip </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dollygrip </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dolgrip </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -452,7 +452,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Swing G&E 1 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 1 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge1 </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swing1 </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -510,7 +510,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Swing G&E 2 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 2 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge2 </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swing2 </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -568,7 +568,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Swing G&E 3 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 3 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge3 </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swing3 </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -626,7 +626,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Swing G&E 4 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 4 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge4 </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swing4 </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -684,7 +684,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       {/* Swing G&E 5 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Swing G/E 5 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swingge5 </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: swing5 </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">

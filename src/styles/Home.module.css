@@ -46,13 +46,14 @@ width: 100%;
 
 .HomeboxFind {
     height: 60px;
-    background-color: #405766;
+    background-color: #2e5f82;
     color: #fafafa;
     border-bottom: 1px solid #fff;
 }
 
 .HomeboxFind:hover {
     background-color: #2e5f82;
+    background-color: #405766;
     color: #F5F5F5;
 }
 

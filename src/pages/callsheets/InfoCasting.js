@@ -79,6 +79,8 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
         <div className={`mt-0 text-center ${styles.SubTitle }`}>
         <h3 className={`mb-0 text-center py-1 ${styles.Bold }`} >ASSITANT DIRECTORS </h3>
         </div>
+        <div className={`py-2 ${styles.White }`}>
+        </div>
         <div className='px-md-5 pt-2'>
         {/* 1st AD */}
         {ad_1_name && 

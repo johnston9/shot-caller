@@ -33,7 +33,7 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
       {/* Key Hair and Makeup */} 
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Key Hair and Makeup</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: keymakeup</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: keymake</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -149,7 +149,7 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
       {/* SFX Makeup */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >SFX Makeup</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: fxmakeup  </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: fxmake  </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -207,7 +207,7 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
       {/* SFX Makeup Assistant */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >SFX Makeup Assistant</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: fxmakeupa  </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: fxmakast  </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">

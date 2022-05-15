@@ -288,39 +288,38 @@ const CallSheet = (props ) => {
             case "propbuy": return sound_assistant_1_calltime;
             case "armorer": return prop_buyer_calltime;
             // elec / grip
-            case "thegaffer": return gaffer_calltime;
-            case "bbelectric": return best_boy_electric_calltime;
-            case "electric3": return electric_3_calltime;
-            case "electric4": return electric_4_calltime;
+            case "gaffer": return gaffer_calltime;
+            case "bbelect": return best_boy_electric_calltime;
+            case "elect3": return electric_3_calltime;
+            case "elect4": return electric_4_calltime;
             case "keygrip": return keygrip_calltime;
-            case "bestbgrip": return best_boy_grip_calltime;
-            case "dollygrip": return dolly_grip_calltime;
-            case "swingge1": return swing_ge1_calltime;
-            case "swingge2": return swing_ge2_calltime;
-            case "swingge3": return swing_ge3_calltime;
-            case "swingge4": return swing_ge4_calltime;
-            case "swingge5": return swing_ge5_calltime;
-            // locations
-            case "locmanage": return location_mngr_calltime;
-            case "davey": return gaffer_calltime;
-            case "locassist1": return location_ass_1_calltime;
-            case "locassist2": return location_ass_2_calltime;
-            case "locassist3": return location_ass_3_calltime;
-            case "locassist4": return location_ass_4_calltime;
+            case "bbgrip": return best_boy_grip_calltime;
+            case "dolgrip": return dolly_grip_calltime;
+            case "swing1": return swing_ge1_calltime;
+            case "swing2": return swing_ge2_calltime;
+            case "swing3": return swing_ge3_calltime;
+            case "swing4": return swing_ge4_calltime;
+            case "swing5": return swing_ge5_calltime;
+            // locations locmngr
+            case "locmngr": return location_mngr_calltime;
+            case "locast1": return location_ass_1_calltime;
+            case "locast2": return location_ass_2_calltime;
+            case "locast3": return location_ass_3_calltime;
+            case "locast4": return location_ass_4_calltime;
             case "locsecur": return location_security_calltime;
-            // wardrobe
+            // wardrobe 
             case "cosdesign": return costume_designer_calltime;
-            case "ascosdes": return ass_costume_designer_calltime;
+            case "cosdesast": return ass_costume_designer_calltime;
             case "wardrobe1": return wardrobe_assistant_1_calltime;
             case "wardrobe2": return wardrobe_assistant_2_calltime;
             case "wardrobe3": return wardrobe_assistant_3_calltime;
             case "wardrobe4": return wardrobe_assistant_4_calltime;
             case "wardrobe5": return wardrobe_assistant_5_calltime;
             // makeup
-            case "keymakeup": return key_hairmakeup_calltime;
+            case "keymake": return key_hairmakeup_calltime;
             case "keyhair": return key_hairstylist_calltime;
-            case "fxmakeup": return sfx_makeup_calltime;
-            case "fxmakeupa": return sfx_makeup_assistant_calltime;
+            case "fxmake": return sfx_makeup_calltime;
+            case "fxmakast": return sfx_makeup_assistant_calltime;
             case "makeup1": return makeup_artist_1_calltime;
             case "makeup2": return makeup_artist_2_calltime;
             case "makeup3": return makeup_artist_3_calltime;

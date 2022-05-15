@@ -89,7 +89,7 @@ const CrewWardrobe = ({handleChange, postData, setShow}) => {
       {/* Assistant Costume Designer */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Assistant Costume Designer </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: ascosdes  </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: cosdesast  </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">

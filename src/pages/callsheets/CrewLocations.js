@@ -30,7 +30,7 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       {/* Location Mngr  */} 
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Location Manager</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locmanage </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locmngr </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -88,7 +88,7 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       {/* Location Assistant 1  */} 
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 1 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist1  </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast1  </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -146,7 +146,7 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       {/* Location Assistant 2  */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 2 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist2  </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast2  </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -204,7 +204,7 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       {/* Location Assistant 3  */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 3 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist3  </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast3  </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -262,7 +262,7 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       {/* Location Assistant 4  */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 4 </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locassist4  </span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast4  </span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
