@@ -99,7 +99,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* Boom Operator */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Boom Operator</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: boomoper</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: boomop</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -157,7 +157,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* Sound Assistant */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Assistant 1</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: soundist1</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: sound1</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -215,7 +215,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* Sound Assistant 2 */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Sound Assistant 2</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: soundist2</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: sound2</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -281,7 +281,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* Transport Captain  */} 
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Transport Captain</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transporca</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: trancap</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -339,7 +339,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* Transport Manager 1  */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Transport Manager 1</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transpor1</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transpo1</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -397,7 +397,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
       {/* Transport Manager 2  */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Transport Manager 2</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transpor2</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: transpo1</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">

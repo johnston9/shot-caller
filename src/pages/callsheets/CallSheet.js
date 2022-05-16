@@ -262,12 +262,13 @@ const CallSheet = (props ) => {
             case "addcam3": return oth_camera_pos_3_calltime;
             // sound transport
             case "soundmix": return sound_mixer_calltime;
-            case "boomoper": return boom_operator_calltime;
-            case "soundist1": return sound_assistant_1_calltime;
-            case "soundist2": return sound_assistant_2_calltime;
-            case "transporca": return transport_captain_calltime;
-            case "transpor1": return transport_manager_1_calltime;
-            case "transpor2": return transport_manager_2_calltime;
+            case "boomop": return boom_operator_calltime;
+            case "sound1": return sound_assistant_1_calltime;
+            case "sound2": return sound_assistant_2_calltime;
+            case "trancap": return transport_captain_calltime;
+            case "transpo1": return transport_manager_1_calltime;
+            case "transpo2": return transport_manager_2_calltime;
+            // to here
             case "headrive": return head_driver_calltime;
             case "truckone": return truck1_calltime;
             case "trucktwo": return truck2_calltime;
@@ -340,11 +341,11 @@ const CallSheet = (props ) => {
             case "addcrew10": return add_pos_10_calltime;
             // script /catering
             case "writer": return writer_calltime;
-            case "catering1": return catering_co_1_calltime;
-            case "catering2": return catering_co_2_calltime;
-            case "catering3": return catering_co_3_calltime;
-            case "craftser": return craft_service_calltime;
-            case "craftyass": return crafty_ass_calltime;
+            case "cater1": return catering_co_1_calltime;
+            case "cater2": return catering_co_2_calltime;
+            case "cater3": return catering_co_3_calltime;
+            case "crafts": return craft_service_calltime;
+            case "crafty": return crafty_ass_calltime;
             // stunt
             case "stuntco": return stunt_coordinator_calltime;
             case "stunts1": return stunts_1_calltime;

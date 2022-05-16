@@ -16,8 +16,11 @@ const InfoCompany = ({crewInfoOne, setShowCom}) => {
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} 
         onClick={() => setShowCom(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 d-none d-md-block ${styles.Bold }`} >
         PRODUCTION COMPANY </h3>
+      <h3 className={`pl-4 ml-5 mb-0 text-center py-1 
+       d-md-none ${styles.Bold }`} >
+        COMPANY </h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
@@ -27,8 +30,10 @@ const InfoCompany = ({crewInfoOne, setShowCom}) => {
           <Col >
           <div className={`${styles.CrewInfoRow} pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+          <h5 className={`mb-3 mx-4 py-1 text-center d-none d-md-block ${styles.Width } 
             ${styles.SubTitle2 }`} >Production Company and Logo</h5> 
+          <h5 className={`mb-3 mx-4 py-1 text-center d-md-none ${styles.Width } 
+            ${styles.SubTitle2 }`} > Company and Logo</h5> 
           </div>
           { company_logo && 
             (<div className={` pb-3`}>

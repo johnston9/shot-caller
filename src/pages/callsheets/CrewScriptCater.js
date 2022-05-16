@@ -98,7 +98,7 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
       {/* Catering Company 1 */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Catering Company 1</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: catering1</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: cater1</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -156,7 +156,7 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
       {/* Catering Company 2 */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Catering Company 2</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: catering2</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: cater2</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -214,7 +214,7 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
       {/* Catering Company 3 */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Catering Company 3</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: catering3</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: cater3</span> 
       </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -280,7 +280,7 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
       {/* Craft Service  */}
       <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Craft Service </h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: craftser</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: crafts</span> 
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -338,7 +338,7 @@ const CrewScriptCater = ({handleChange, postData, setShow}) => {
       {/* Crafty Assistant  */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Crafty Assistant</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: craftyass</span> 
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: crafty</span> 
       </div> 
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">

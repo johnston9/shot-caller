@@ -21,9 +21,7 @@ width: 100%;
 
 .Inner {
     background-color: #0b3d63;
-    /* background-color: #395061; */
-    /* background-color: #112533; */
-    color: #fff;
+    color: #fafafa;
 }
 
 /* large */
@@ -46,14 +44,13 @@ width: 100%;
 
 .HomeboxFind {
     height: 60px;
-    background-color: #2e5f82;
+    background-color: #4f5c64;
     color: #fafafa;
     border-bottom: 1px solid #fff;
 }
 
 .HomeboxFind:hover {
-    background-color: #2e5f82;
-    background-color: #405766;
+    background-color: #73848f;
     color: #F5F5F5;
 }
 
