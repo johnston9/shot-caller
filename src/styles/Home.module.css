@@ -44,14 +44,14 @@ width: 100%;
 
 .HomeboxFind {
     height: 60px;
-    background-color: #4f5c64;
+    background-color: #6a9cba;
     color: #fafafa;
     border-bottom: 1px solid #fff;
 }
 
 .HomeboxFind:hover {
-    background-color: #73848f;
-    color: #F5F5F5;
+    background-color: #bfd1dc;
+    color: #000;
 }
 
 .HomeboxSm {

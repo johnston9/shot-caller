@@ -21,7 +21,7 @@ const CallsheetTop = (props) => {
     // eslint-disable-next-line
     const handleEdit = () => { 
         history.push(`/callsheetsnew/${id}/edit`);
-        };
+    };
 
         // eslint-disable-next-line
     const handleDelete = async () => {
@@ -30,18 +30,21 @@ const CallsheetTop = (props) => {
             history.push(`/callsheets/`);
         } catch (err) {
         }
-        };
+    };
+
   return (
     <div>
         <Card className={`mx-1 text-center ${styles.Top}`}>
         <Link to={`/callsheets/${day_id}`}>
-            <Card.Header className={`pt-2 pb-1  ${styles.Top }`}>
+            <Card.Header className={`pt-2 pb-1 px-0 ${styles.Top }`}>
                 <Row>
                 <Col xs={{span: 10, offset: 1}} className=' px-0'>
                 <h5 className={` ${styles.Titlelist }`}>Day {day}
                 </h5>
-                <h5 className={` ${styles.Titlelist }`}> {date}
+                <div className={`${styles.Inner} mt-2 px-0 mx-0`}>
+                <h5 className={`py-1 ${styles.Titlelist }`}> {date}
                 </h5>
+                </div>
                 </Col >
                 </Row>
             </Card.Header>

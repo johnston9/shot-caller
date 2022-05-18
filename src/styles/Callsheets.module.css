@@ -6,9 +6,26 @@ p {
   margin-bottom: 0;
 }
 
-/* .WhiteAqua {
-  background-color: f6fffe;
-} */
+/* CallsheetTop */
+
+.Top {
+  background-color: #112533;
+  color: #fff;
+}
+
+.Top:hover {
+  background-color: #405766;
+  color: #fff;
+}
+
+.Inner {
+  background-color: #0b3d63;
+  color: #fafafa;
+}
+
+.Top:hover .Inner {
+  background-color: #112533;
+}
 
 .BodyColor {
   background-color: #f8f8f8;
@@ -91,10 +108,6 @@ p {
 .White {
   background-color: #fff;
 }
-
-/* .Italic {
-  text-emphasis: fontStyle: 'italic';
-} */
 
 .CallLogoDiv {
   height: 80px;
@@ -187,7 +200,6 @@ p {
   font-size: 1rem;
 }
 .UnitCallBorder {
-  /* background-color: #c1f1f7; */
   color: #000;
   border: 3px solid #c1f1f7;
 }
@@ -215,7 +227,6 @@ p {
 }
 
 .Button {
-  /* color: #32c0e4; */
   color: #185f70;
   font-weight: 700;
   cursor: pointer;
@@ -224,15 +235,6 @@ p {
 .Button:hover {
   color: #32c0e4;
 }
-
-/* .Button {
-  color: rgb(28, 204, 204);
-  cursor: pointer;
-}
-
-.Button:hover {
-  color: rgb(31, 98, 98);
-} */
 
 .Important {
   background-color: antiquewhite;
@@ -248,16 +250,6 @@ p {
 
 .Bold { 
   font-weight: 700;
-}
-
-.Top {
-  background-color: #14404f;
-  color: #fff;
-}
-
-.Top:hover {
-  background-color: #3076ac;
-  color: #fff;
 }
 
 .Title {
@@ -293,8 +285,14 @@ p {
   border-right : 2px solid #fff;
 }
 
-.Border {
+.Border2 {
   border: 2px solid #e8f0f1;
+}
+
+.Border {
+  border-bottom: 2px solid #e8f0f1;
+  border-left: 2px solid #e8f0f1;
+  border-right: 2px solid #e8f0f1;
 }
 
 .SubTitle {

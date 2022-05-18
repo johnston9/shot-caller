@@ -166,7 +166,7 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
          }
          {/* transport manager 1 */}
          {transport_manager_1_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
             ${styles.SubTitle2 }`} >Transport Mngr 1</h5> 
@@ -190,7 +190,7 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
          }
          {/* transport manager 2 */}
          {transport_manager_2_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
             ${styles.SubTitle2 }`} >Transport Mngr 2</h5> 
@@ -214,24 +214,24 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
          }
          {/* head driver */}
          {head_driver_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Writer</h5> 
+            ${styles.SubTitle2 }`} >Head Driver</h5> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Head Driver</p>
+              <p className={`${styles.CrewInfoP} `}>{head_driver_name}</p>
             </Col>
             <Col xs={6} md={3} >
               <p style={{fontStyle: 'italic'}}
-                className={`${styles.CrewInfop} `}>{head_driver_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{head_driver_email}</p>
+                className={`${styles.CrewInfop} `}>headrive </p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{head_driver_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{head_driver_email}</p>
             </Col>
           </Row>
           </div> )
@@ -249,50 +249,144 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
         <div className='px-md-5 pt-2'>
          {/* car 1 */}
          {car1_name && 
-          (<div className={`${styles.CrewInfoRow}pb-3`}>
+          (<div className={`${styles.CrewInfoRow } pb-3`}>
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Writer</h5> 
+            ${styles.SubTitle2 }`} >Car 1</h5> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Car 1</p>
+              <p className={`${styles.CrewInfoP} `}>{car1_name}</p>
             </Col>
             <Col xs={6} md={3} >
               <p style={{fontStyle: 'italic'}}
-                className={`${styles.CrewInfop} `}>{car1_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{car1_email}</p>
+                className={`${styles.CrewInfop} `}>carone</p>
             </Col>
             <Col xs={6} md={3} >
             <p className={`${styles.CrewInfop} `}>{car1_phone}</p>
             </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{car1_email}</p>
+            </Col>
           </Row>
           </div> )
          }
-
-
-         {/* truck 1 */}
-         {truck1_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+         {/* car 2 */}
+         {car2_name && 
+          (<div className={`${styles.CrewInfoRow } pb-3`}>
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Writer</h5> 
+            ${styles.SubTitle2 }`} >Car 2</h5> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>Truck 1</p>
+              <p className={`${styles.CrewInfoP} `}>{car2_name}</p>
             </Col>
             <Col xs={6} md={3} >
               <p style={{fontStyle: 'italic'}}
-                className={`${styles.CrewInfop} `}>{truck1_name} </p>
+                className={`${styles.CrewInfop} `}>cartwo</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{car2_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{car2_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* car 3 */}
+         {car3_name && 
+          (<div className={`${styles.CrewInfoRow } pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >Car 3</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{car3_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}
+                className={`${styles.CrewInfop} `}>carthree</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{car3_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{car3_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* truck 1 */}
+         {truck1_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >Truck 1</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{truck1_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}
+                className={`${styles.CrewInfop} `}>truck1 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{truck1_phone}</p>
             </Col>
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfop} `}>{truck1_email}</p>
             </Col>
+          </Row>
+          </div> )
+         }
+         {/* truck 2 */}
+         {truck2_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >Truck 2</h5> 
+          </div>
+          <Row className='text-center' >
             <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{truck1_phone}</p>
+              <p className={`${styles.CrewInfoP} `}>{truck2_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}
+                className={`${styles.CrewInfop} `}>truck2 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{truck2_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{truck2_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* truck 3 */}
+         {truck3_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >Truck 3</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{truck3_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}
+                className={`${styles.CrewInfop} `}>truck3 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{truck3_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{truck3_email}</p>
             </Col>
           </Row>
           </div> )

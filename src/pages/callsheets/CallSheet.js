@@ -270,9 +270,9 @@ const CallSheet = (props ) => {
             case "transpo2": return transport_manager_2_calltime;
             // to here
             case "headrive": return head_driver_calltime;
-            case "truckone": return truck1_calltime;
-            case "trucktwo": return truck2_calltime;
-            case "truckthree": return truck3_calltime;
+            case "truck1": return truck1_calltime;
+            case "truck2": return truck2_calltime;
+            case "truck3": return truck3_calltime;
             case "carone": return car1_calltime;
             case "cartwo": return car2_calltime;
             case "carthree": return car3_calltime;
@@ -451,15 +451,15 @@ const CallSheet = (props ) => {
             <div className='mt-2 mb-0 pb-0'>
             <p className={`px-3 ${styles.UnitCallMedDate }`}>{date} </p>
             </div>
-            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border }`} >
+            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border2 }`} >
             <h2 className={` mb-0 pb-0 `} >Your Call</h2>
             <p className={`px-1 mx-4 pb-0 ${styles.YourCallMed }`}>{yourcalltime} </p>
             </div>
-            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border }`}>
+            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border2 }`}>
             <h4 className='mt-0 mb-0 pb-0'>Unit Call</h4>
             <p className={`mx-4 ${styles.UnitCallMed }`}>{unit_call} </p>
             </div>
-            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border }`}  >
+            <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border2 }`}  >
             <p className={`mb-0 pt-1`} ><span className={`${styles.Bold}`}>First Location:</span></p>
             <Row>
             <Col xs={12} >

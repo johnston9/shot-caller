@@ -35,35 +35,6 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
       <span className={`float-right ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
       </div>
-      {/* titles */}
-      {/* <Row className="mt-2">
-            <Col>
-            <Row style={{ textTransform: 'uppercase' }} className={` mx-0  ${styles.TitleBox}`} >
-            <Col className={`mx-0  ${styles.TitleBox2}`} xs={5} >
-            <p className='my-0 py-0'>Postition</p>
-            </Col>
-            <Col className={`${styles.TitleBox2} mx-0`} xs={5}>
-            <p className='my-0 py-0'>Name</p>
-            </Col>
-            <Col className={` mx-0`} xs={2}>
-            <p className='my-0 py-0'>Call</p>
-            </Col>
-            </Row>
-            </Col>
-            <Col className='d-none d-md-block'>
-            <Row style={{ textTransform: 'uppercase' }} className={` mx-0  ${styles.TitleBox}`} >
-            <Col className={`mx-0  ${styles.TitleBox2}`} xs={5} >
-            <p className='my-0 py-0'>Postition</p>
-            </Col>
-            <Col className={`${styles.TitleBox2} mx-0`} xs={5}>
-            <p className='my-0 py-0'>Name</p>
-            </Col>
-            <Col className={` mx-0`} xs={2}>
-            <p className='my-0 py-0'>Call</p>
-            </Col>
-            </Row>
-            </Col>
-      </Row> */}
       <div >
         <Row>
         {/* director */}

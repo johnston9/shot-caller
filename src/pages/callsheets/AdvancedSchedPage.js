@@ -12,6 +12,7 @@ const AdvancedSchedPage = (props) => {
   // eslint-disable-next-line
   const [hasLoaded, setHasLoaded] = useState("");
   const [advancedSchedule, setAdvancedSchedule] = useState({ results: [] });
+  const day = advancedSchedule.day
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
 
@@ -39,7 +40,11 @@ const AdvancedSchedPage = (props) => {
     <div className='mt-3'>
       <div className='d-none d-md-block mt-5'>
           <h4 className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
-          style={{ textTransform: 'uppercase' }}>Advanced Schedule <span className={`${styles.HSpan }`} >(xxx Pages)  Day x Date </span></h4>
+          style={{ textTransform: 'uppercase' }}>Advanced Schedule 
+          <span className={`${styles.HSpan }`} >(xxx Pages)  
+          Day { advancedSchedule.results.length && (
+            advancedSchedule.results[0].day) } - { advancedSchedule.results.length && (
+            advancedSchedule.results[0].date) }  </span></h4>
       </div>
       <div className='d-block d-md-none'>
           <div className={`mt-0 text-center ${styles.SubTitle }`}>
