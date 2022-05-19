@@ -719,15 +719,15 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
 )
 
 const buttons = (
-  <div className="text-center mt-4">    
+  <div className={`${styles.White} py-3`}>    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-3`}
       onClick={() => setShow(show => !show)}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-      Create
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-5 ml-3`} type="submit">
+      Add Scene
     </Button>
   </div>
 );

@@ -20,6 +20,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import NewCharacter from "./NewCharacter";
 import SceneEditCostumes from "./SceneEditCostumes";
 import { useCharactersContext, useLocationsContext } from "../../contexts/Scene_chars_locs";
+import Important from "./Important";
 
 const SceneEditForm = () => {
     useRedirect("loggedOut");
@@ -27,6 +28,7 @@ const SceneEditForm = () => {
     const [show, setShow] = useState(false);
     const characters = useCharactersContext();
     const locations = useLocationsContext();
+    const [showImp, setShowImp] = useState(false);
 
     const [postData, setPostData] = useState({
       number: "",
@@ -231,7 +233,6 @@ const SceneEditForm = () => {
           <Form.Group controlId="number" className={`${styles.Width2} `}  >
                 <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
                 <Form.Control 
-                // placeholder="Number"
                 className={styles.Input}
                 type="text"
                 name="number"
@@ -282,6 +283,7 @@ const SceneEditForm = () => {
             ))}
             </Col>
         </Row>
+        <hr/>
         {/* Int-Ext Day/Night Dramatic-day  */}
         <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >         
@@ -349,6 +351,7 @@ const SceneEditForm = () => {
             ))}
           </Col>
         </Row  >
+        <hr/>
         {/* shooting-date time pages*/}
         <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
@@ -406,6 +409,7 @@ const SceneEditForm = () => {
         ))}
         </Col>
         </Row >
+        <hr/>
         {/* location location-detail  */}
         <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
@@ -449,6 +453,7 @@ const SceneEditForm = () => {
             ))}
         </Col>
         </Row>
+        <hr/>
         {/* Filming Location - Action */}
         <Row className="mt-3">
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
@@ -492,6 +497,7 @@ const SceneEditForm = () => {
           ))}
           </Col>
         </Row>
+        <hr/>
         {/* department-info equip_set_props  */}
         <Row>
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
@@ -534,24 +540,25 @@ const SceneEditForm = () => {
           </Alert>
         ))}
         </Col>
-        </Row>        
+        </Row>  
+        <hr/>      
       </div>
-  )
+    )
 
   const charFields = (
-    <div className="mt-3 px-3 text-center">
+    <div className="mt-3 px-5 text-center">
       {/* characters */}
       <Row className="mt-3">
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character1" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 1</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 1</Form.Label>
           <Form.Control as="select"
             name="character1"
             className={styles.InputChar}
             value={character1}
             onChange={handleChange}
             aria-label="character1 select">
-              <option  >Character 1</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -566,14 +573,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character2" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 2</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 2</Form.Label>
           <Form.Control as="select"
             name="character2"
             className={styles.InputChar}
             value={character2}
             onChange={handleChange}
             aria-label="character2 select">
-              <option  >Character 2</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -588,14 +595,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character3" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 3</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 3</Form.Label>
           <Form.Control as="select"
             name="character3"
             className={styles.InputChar}
             value={character3}
             onChange={handleChange}
             aria-label="character3 select">
-              <option  >Character 3</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -610,14 +617,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character4" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 4</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 4</Form.Label>
           <Form.Control as="select"
             name="character4"
             className={styles.InputChar}
             value={character4}
             onChange={handleChange}
             aria-label="character4 select">
-              <option  >Character 4</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -632,14 +639,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character5" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 5</Form.Label>
+          <Form.Label className={`${styles.Bold}`}>Character 5</Form.Label>
           <Form.Control as="select"
             name="character5"
             className={styles.InputChar}
             value={character5}
             onChange={handleChange}
             aria-label="character5 select">
-              <option  >Character 5</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -654,14 +661,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character6" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 6</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 6</Form.Label>
           <Form.Control as="select"
             name="character6"
             className={styles.InputChar}
             value={character6}
             onChange={handleChange}
             aria-label="character6 select">
-              <option  >Character 6</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -675,17 +682,18 @@ const SceneEditForm = () => {
       ))}
       </Col>
       </Row>
+      <hr/>
       <Row>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character7" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 7</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 7</Form.Label>
           <Form.Control as="select"
             name="character7"
             className={styles.InputChar}
             value={character7}
             onChange={handleChange}
             aria-label="character7 select">
-              <option  >Character 7</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -700,14 +708,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character8" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 8</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 8</Form.Label>
           <Form.Control as="select"
             name="character8"
             className={styles.InputChar}
             value={character8}
             onChange={handleChange}
             aria-label="character8 select">
-              <option  >Character 8</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -722,14 +730,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character9" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 9</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 9</Form.Label>
           <Form.Control as="select"
             name="character9"
             className={styles.InputChar}
             value={character9}
             onChange={handleChange}
             aria-label="character9 select">
-              <option  >Character 9</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -744,14 +752,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character10" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 10</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 10</Form.Label>
           <Form.Control as="select"
             name="character10"
             className={styles.InputChar}
             value={character10}
             onChange={handleChange}
             aria-label="character10 select">
-              <option  >Character 10</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -766,14 +774,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character11" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 11</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 11</Form.Label>
           <Form.Control as="select"
             name="character11"
             className={styles.InputChar}
             value={character11}
             onChange={handleChange}
             aria-label="character11 select">
-              <option  >Character 11</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -788,14 +796,14 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6} md={4} lg={2}>
       <Form.Group controlId="character12" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Character 12</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Character 12</Form.Label>
           <Form.Control as="select"
             name="character12"
             className={styles.InputChar}
             value={character12}
             onChange={handleChange}
             aria-label="character12 select">
-              <option  >Character 12</option>
+              <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} value={character.role} >{character.role}</option>
@@ -809,14 +817,14 @@ const SceneEditForm = () => {
       ))}
       </Col>
       </Row>
+      <hr/>
       <Row>
         <Col xs={6}>
       <Form.Group controlId="other_characters" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Other Characters</Form.Label>
+          <Form.Label className={`${styles.Bold}`}>Other Characters</Form.Label>
           <Form.Control 
           type="text"
           className={styles.InputScene}
-          placeholder="Other Characters"
           name="other_characters"
           as="textarea"
           rows={2}
@@ -832,11 +840,10 @@ const SceneEditForm = () => {
       </Col>
       <Col xs={6}>
       <Form.Group controlId="background_artists" className="mb-2" >
-          <Form.Label className="p-1 d-none" >Background Artists</Form.Label>
+          <Form.Label className={`${styles.Bold}`} >Background Artists</Form.Label>
           <Form.Control 
           type="text"
           className={styles.InputScene}
-          placeholder="Background Artists"
           name="background_artists"
           as="textarea"
           rows={2}
@@ -851,26 +858,43 @@ const SceneEditForm = () => {
       ))}
       </Col>
       </Row>
+      <hr/>
       {/* end characters */}          
     </div>
-)
-    const buttons = (
-      <div className="text-center">    
-        <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => history.goBack()}
-        >
-          Cancel
-        </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Apply
-        </Button>
-      </div>
-    );
+  )
+
+  const buttons = (
+    <div className={`text-center mt-3 mb-3 pt-5 pb-2 ${styles.White }`} >    
+      <Button
+        className={`mr-3 px-5 py-1 ${btnStyles.Button} ${btnStyles.Blue}`}
+        onClick={() => history.goBack()}
+      >
+        Cancel
+      </Button>
+      <Button className={`ml-3 px-5 py-1  ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Submit
+      </Button>
+    </div>
+  );
 
     return (
         <div>
         <TopBox title="Edit Scene" />
+        <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-2`}
+            onClick={() => history.goBack()}
+        >
+            Back
+        </Button>   
+        <Button
+      className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+    </Button>
+      {!showImp ? (
+          ""
+              ) : (
+                <Important  /> 
+                ) } 
         <Row>
         <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 3}}>
           <h5 className="mt-3 text-center">New Characters</h5>
@@ -878,7 +902,7 @@ const SceneEditForm = () => {
           <NewCharacter  />
         </Col>
         </Row>
-        <h3 className={`text-center my-3 py-0 mx-5 ${styles.SubTitle }`} >SCENE INFO</h3> 
+        <h3 className={`text-center my-3 py-0 ${styles.SubTitle }`} >SCENE INFO</h3> 
     <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
     <Row>
     <Col xs={12} className="p-0 p-md-2">
@@ -939,7 +963,7 @@ const SceneEditForm = () => {
         <p className={`${styles.Bold} text-center mb-1`}>Storyboard</p>
         {/* storyboard */}
         <Container
-          className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+          className={`${appStyles.Content} ${styles.Width2} ${styles.Container} d-flex flex-column justify-content-center`}
         >
           <Form.Group className="text-center pt-3">
               {storyboard ? (
@@ -986,22 +1010,25 @@ const SceneEditForm = () => {
             </Container>
       </Col>   
     </Row> 
-    <h5 className={`text-center my-3 py-0 mx-5 ${styles.SubTitle }`} >Characters</h5> 
+    <h5 className={`text-center mt-5 mb-3 py-0 mx-5 ${styles.SubTitle }`} >Characters</h5> 
     {charFields}
         {/* Costumes */}
         <Row className='my-3'>
             <Col className="text-center">
+                <p className={`text-center ${styles.Bold}`}>
+                  Add Character Costumes here
+                </p>
                 <Button onClick={() => setShow(show => !show)} 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                Edit Costumes</Button>
+                className={`mt-3 ${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
+                Costumes</Button>
                 {!show ?("") : (<SceneEditCostumes postData={postData} handleChange={handleChange} /> ) }
             </Col>
         </Row>
         <Row>
-          <Col className="text-center">
-          <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container>
-          </Col>
-        </Row>
+      <Col className="text-center">
+      <div className= {`mt-3 ${styles.Container}`} >{buttons}</div>
+      </Col>
+    </Row>
       </Form>
       </div>
       );

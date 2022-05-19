@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
+import { axiosReq } from '../../api/axiosDefaults';
 import CharScheduleScene from './CharScheduleScene';
 
-const SchedulePage = (props) => {
-    useRedirect("loggedOut");
-    const {scenes, setShow} = props;
+const AdvancedSchedule = (props) => {
+  useRedirect("loggedOut");
+  const {setShow, scenes} = props;
+  // eslint-disable-next-line
+  const [error, setErrors] = useState({});
 
-    const pages = scenes.results.map((scene) => (
-             parseFloat(scene.pages)));
+//   const day = scenes[0].day;
+//   const date = scenes[0].date;
+
+  const pages = scenes.map((scene) => (
+    parseFloat(scene.pages)));
 
     function addpages(page) {
     return page > 0;
@@ -20,24 +26,26 @@ const SchedulePage = (props) => {
 
     const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
+
   return (
-    <div className='mt-5'>
-        <div className='d-none d-md-block'>
-        <h4 className={`mt-3 pl-3 py-0 ${styles.SubTitleSpan }`} 
-        style={{ textTransform: 'uppercase' }}>
-            Schedule <span className={`${styles.HSpan }`} >                
-                {pagestotal} Pages
-                </span></h4>
-        </div>
-        <div className='d-block d-md-none'>
-        <div className={`mb-3 text-center ${styles.SubTitle }`}>
-        <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-        <h5 className={`pl-5 text-center`} 
-        style={{ textTransform: 'uppercase'}} >Schedule <span className={`${styles.HSpan }`} >xx Pages</span></h5>
-        </div>
-        </div>
-        {/* titles */}
-        <div className='d-none d-md-block'>
+    <div className='mt-3'>
+      <div className='d-none d-md-block mt-5'>
+          <h4 className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
+          style={{ textTransform: 'uppercase' }}>Advanced Schedule <span className={`${styles.HSpan }`} >({pagestotal} Pages)  
+          Day { scenes && (scenes[0].day) } - { scenes && (scenes[0].date) }  </span>
+          </h4>
+      </div>
+      <div className='d-block d-md-none'>
+          <div className={`mt-0 text-center ${styles.SubTitle }`}>
+          <span className={`float-right ${styles.Close }`} 
+          onClick={() => setShow(false) } >Close</span> 
+          <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
+            Advanced Schedule </h5>
+          <p className='pr-3'>(xxx Pages)  Day x Date </p>
+          </div>
+      </div>
+      {/* titles */}
+      <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Time</p>
@@ -78,23 +86,23 @@ const SchedulePage = (props) => {
                 </Col>
             </Row>
         </div>
-        {/* scenes */}
-        <Row>
-            <Col >                   
-            {scenes.results.length ? (
-                scenes.results.map((scene, index) => (
-                    <CharScheduleScene
-                    style={{ backgroundColor: (index % 3 === 0) 
-                        ? '#dbfaf9' : (index % 2 === 0) ? 
-                        'rgb(223 254 240)' : 'rgb(248 241 249)' }}
-                        {...scene} 
-                        scene={scene}
-                        key={scene.id} />
-                ))) : ("")}
-            </Col>
-        </Row>
+      {/* scenes */}
+      <Row>
+        <Col >                   
+        {scenes ? (
+            scenes.map((scene, index) => (
+                <CharScheduleScene
+                style={{ backgroundColor: (index % 3 === 0) 
+                    ? '#dbfaf9' : (index % 2 === 0) ? 
+                    'rgb(223 254 240)' : 'rgb(248 241 249)' }}
+                    {...scene} 
+                    scene={scene}
+                    key={scene.id} />
+            ))) : ("Sorry no Advanced Schedule yet")}
+        </Col>
+      </Row>
     </div>
   )
 }
 
-export default SchedulePage
+export default AdvancedSchedule

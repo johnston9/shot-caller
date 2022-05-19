@@ -44,46 +44,25 @@ width: 100%;
 
 .HomeboxFind {
     height: 60px;
-    background-color: #6a9cba;
+    background-color: #869197;
     color: #fafafa;
     border-bottom: 1px solid #fff;
 }
 
 .HomeboxFind:hover {
-    background-color: #bfd1dc;
+    background-color: #abb6bc;
     color: #000;
-}
-
-.HomeboxSm {
-    height: 100px;
-    background-color: #395061;
-    /* background-color: #405766; */
-    /* background-color: #112533; */
-    color: #F5F5F5;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #fff;
-}
-
-.HomeboxSm:hover {
-    background-color: #112533;
-}
-
-.HomeboxSm:hover .Inner {
-    background-color: #112533;
 }
 
 .HomeboxSmEr {
     height: 80px;
     background-color: #112533;
-    /* background-color: #395061; */
-    /* background-color: #405766; */
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
 }
 
 .HomeboxSmEr:hover {
     background-color: #405766;
-    /* background-color: #112533; */
 }
 
 

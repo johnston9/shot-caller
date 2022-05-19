@@ -14,6 +14,7 @@ import TopBox from '../../components/TopBox';
 import Asset from '../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Pages from './Pages';
 
 const DayPage = () => {
     useRedirect("loggedOut");
@@ -88,6 +89,7 @@ const DayPage = () => {
                     )}
                 </Row>
                 {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
+                <Pages scenes={dayScenes.results}/>
                 {/* titles*/}
                 <div className='d-none d-md-block'>
                 <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >

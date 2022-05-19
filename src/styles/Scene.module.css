@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.White {
+  background-color: #fff;
+}
+
 .SceneCard {
   border: 5px solid #fff;
   transition-timing-function: ease;
