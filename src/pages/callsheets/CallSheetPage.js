@@ -3,9 +3,6 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import btnStyles from "../../styles/Button.module.css";
-import TopBox from '../../components/TopBox';
 import { useParams, useHistory } from 'react-router-dom';
 import CallSheet from './CallSheet';
 
@@ -17,8 +14,6 @@ const CallSheetPage = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [background, setBackground] = useState({ results: [] });
     const [scenes, setScenes] = useState({ results: [] });
-    const [dataDay, setDataDay] = useState("");
-    const [dataDate, setDataDate] = useState("");
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
     const admin = true;
@@ -40,8 +35,6 @@ const CallSheetPage = () => {
                 setBackground(bgcalldata);
                 setScenes(scenes);
                 setCurrentUser(user.username);
-                setDataDay(callsheetdata.results[0].day)
-                setDataDate(callsheetdata.results[0].date);
                 setHasLoaded(true);
             } catch (err) {
                 console.log(err);
@@ -52,23 +45,12 @@ const CallSheetPage = () => {
 
   return (
     <div >
-        <TopBox work={`Call Sheet`}
-                title={`Day ${dataDay}`}
-                title2={dataDate}  />
-        <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
-            onClick={() => history.goBack()}
-        >
-            Back
-        </Button>
-        {/*n */}
         <Row className='mt-0'>
             <Col>
             {hasLoaded ? (
                 <CallSheet 
                 {...callsheet.results[0]}
                 callsheet={callsheet.results[0]}
-                // userName={userName}
                 currentUser={currentUser}
                 scenes={scenes}
                 cast={cast}

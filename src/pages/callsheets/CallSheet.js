@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../hooks/Redirect';
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../styles/Button.module.css";
+import TopBox from '../../components/TopBox';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
@@ -373,6 +376,15 @@ const CallSheet = (props ) => {
 
   return (
     <div className={`${styles.White} px-3`} >
+      <TopBox work={`Call Sheet`}
+                title={`Day ${day}`}
+                title2={date}  />
+        <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
+            onClick={() => history.goBack()}
+        >
+            Back
+        </Button>
         {/* MEDIUM pink fff6f6*/}
         <div className='d-none d-md-block'>
         <Row>
