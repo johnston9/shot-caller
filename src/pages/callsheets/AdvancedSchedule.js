@@ -8,11 +8,16 @@ import CharScheduleScene from './CharScheduleScene';
 
 const AdvancedSchedule = (props) => {
   useRedirect("loggedOut");
-  const {setShow, scenes} = props;
+  const {setShow, scenes, dayInfo="" } = props;
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
-  var day= 1;
-  var date = 2;
+  const [day, setDay] = useState("");
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    setDay(dayInfo.day);
+    setDate(dayInfo.date);
+  }, [dayInfo])
 
   const pages = scenes.map((scene) => (
     parseFloat(scene.pages)));
@@ -32,8 +37,7 @@ const AdvancedSchedule = (props) => {
           <h4 className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
           style={{ textTransform: 'uppercase' }}>
             Advanced Schedule <span className={`${styles.HSpan }`} >
-              ({pagestotal} Pages)  
-              {/* Day {day ? ({day}) : ("Not Created") } {date && {date} } */}
+              ({pagestotal} Pages) Day {day ? (day) : ("Not Created") } - {date && (date) }
                </span>
           </h4>
       </div>
@@ -43,10 +47,8 @@ const AdvancedSchedule = (props) => {
           onClick={() => setShow(false) } >Close</span> 
           <h5 className={`pl-5 text-center`} 
           style={{ textTransform: 'uppercase'}} >
-            Advanced Schedule </h5>
-          <p className='pr-3'>({pagestotal} Pages)  
-              {/* Day {day ? ({day}) : ("Not Created") } {date && {date} } */}
-              </p>
+            Adv Schedule </h5>
+          <p className='pr-3'> ({pagestotal} Pages) Day {day ? (day) : ("Not Created") } - {date && (date) }</p>
           </div>
       </div>
       {/* titles */}

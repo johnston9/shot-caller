@@ -17,36 +17,17 @@ const AdvancedSchedPage = (props) => {
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
 
-  // useEffect(() => {
-  //   const fetchAdvancedSchedule = async () => {
-  //     try {
-  //       const [{ data: dayGet }, { data: scenes }] = await Promise.all([
-  //         axiosReq.get(`/days/?day=${advancedDay}`),
-  //         axiosReq.get(`/schedule/scenes/?day=${advancedDay}`), 
-  //     ])
-  //       setDayInfo({ results: [dayGet] });
-  //       setAdvancedSchedule(scenes);
-  //       setHasLoaded(true);
-  //       console.log(dayGet)
-  //     } catch(err) {
-  //       console.log(err);
-  //       if (err.response?.status !== 401) {
-  //         setErrors(err.response?.data);
-  //         setHasLoaded(true);
-  //       }
-  //     }
-  //   }
-  //   fetchAdvancedSchedule();
-  // // eslint-disable-next-line
-  // }, [])
-
   useEffect(() => {
     const fetchAdvancedSchedule = async () => {
       try {
-        const {data} = await axiosReq.get(`/schedule/scenes/?day=${advancedDay}`); 
-        // setDayInfo({ results: [dayGet] });
-        setAdvancedSchedule(data);
+        const [{ data: dayGet }, { data: scenes }] = await Promise.all([
+          axiosReq.get(`/days/?day=${advancedDay}`),
+          axiosReq.get(`/schedule/scenes/?day=${advancedDay}`), 
+      ])
+        setDayInfo(dayGet);
+        setAdvancedSchedule(scenes);
         setHasLoaded(true);
+        console.log(dayGet)
       } catch(err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -59,11 +40,31 @@ const AdvancedSchedPage = (props) => {
   // eslint-disable-next-line
   }, [])
 
+  // useEffect(() => {
+  //   const fetchAdvancedSchedule = async () => {
+  //     try {
+  //       const {data} = await axiosReq.get(`/schedule/scenes/?day=${advancedDay}`); 
+  //       // setDayInfo({ results: [dayGet] });
+  //       setAdvancedSchedule(data);
+  //       setHasLoaded(true);
+  //     } catch(err) {
+  //       console.log(err);
+  //       if (err.response?.status !== 401) {
+  //         setErrors(err.response?.data);
+  //         setHasLoaded(true);
+  //       }
+  //     }
+  //   }
+  //   fetchAdvancedSchedule();
+  // // eslint-disable-next-line
+  // }, [])
+
 
   return (
     <div>
       <AdvancedSchedule
        setShow={setShow}
+       dayInfo={dayInfo.results[0]}
       //  dayInfo={dayInfo.results[0] }
        scenes={advancedSchedule.results}/>
     </div>
