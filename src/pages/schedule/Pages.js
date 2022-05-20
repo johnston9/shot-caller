@@ -1,5 +1,8 @@
 import React from 'react';
 import { useRedirect } from '../../hooks/Redirect';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import styles from "../../styles/Callsheets.module.css";
 
 const Pages = ({scenes}) => {
     useRedirect("loggedOut");
@@ -16,9 +19,13 @@ const Pages = ({scenes}) => {
 
   return (
     <div>
-        <p className='ml-3'>
-        Pages {pagestotal}
-        </p>
+      <Row>
+        <Col>
+        <h5 className={`mb-3  ${styles.SubTitle }`}>
+          Schedule <span className={`${styles.HSpan }`}>{pagestotal} Pages </span> 
+        </h5>
+        </Col>
+      </Row>
          </div>
   )
 }

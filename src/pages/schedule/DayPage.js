@@ -77,7 +77,8 @@ const DayPage = () => {
                     {callsheet.results.length ? (
                         <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheets/${id}`}>
-                            <Button className={`px-2 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} > View Callsheet</Button>
+                            <Button className={`px-2 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} > 
+                            View Callsheet</Button>
                         </Link>
                     </Col>
                     ) : (

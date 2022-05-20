@@ -32,7 +32,7 @@ const AdvancedSchedule = (props) => {
       <div className='d-none d-md-block mt-5'>
           <h4 className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
           style={{ textTransform: 'uppercase' }}>Advanced Schedule <span className={`${styles.HSpan }`} >({pagestotal} Pages)  
-          Day { scenes && (scenes[0].day) } - { scenes && (scenes[0].date) }  </span>
+          Day { scenes.length && (scenes[0].day) } - { scenes.length && (scenes[0].date) }  </span>
           </h4>
       </div>
       <div className='d-block d-md-none'>
