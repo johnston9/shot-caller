@@ -48,10 +48,10 @@ const AdvancedSchedule = (props) => {
           <h5 className={`pl-5 text-center`} 
           style={{ textTransform: 'uppercase'}} >
             Adv Schedule </h5>
-          <p className='pr-3'> ({pagestotal} Pages) Day {day ? (day) : ("Not Created") } - {date && (date) }</p>
+          <p className='pr-3'> ({pagestotal} Pages) Day {day ? (day) : ("Not Created yet") } - {date && (date) }</p>
           </div>
       </div>
-      {/* titles */}
+      {/* titles xxx */}
       <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
