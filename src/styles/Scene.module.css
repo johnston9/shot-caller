@@ -126,6 +126,12 @@
 
 .SubTitle {
   background-color: #e8f0f1;
+  font-weight: 700;
+}
+
+.SubTitle2   {
+  background-color: #d6fcff;;
+  font-weight: 700;
 }
 
 .SubTitle3 {

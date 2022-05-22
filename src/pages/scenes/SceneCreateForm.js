@@ -866,16 +866,20 @@ const charFields = (
               ) : (
                 <Important  /> 
                 ) } 
-      <Row className="mt-3">
-        <Col className="text-center" md={{span: 10, offset: 1}}>
-          <p>
-            Scene Info can be added at any time as work progresses.<br/>
-            Characters must be assigned a number on their "Character Page". <br/>
-            New Characters and Locations may be added in the input forms
-             below for convenience.
-          </p>
+      <Row>
+        <Col md={{span: 8, offset: 2}}>
+        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+        <h5 className={`text-center ${styles.Red }`} >INFO</h5>  
+        <p className={`text-center px-3 pt-1 ${styles.Red }`}>
+          Scene Info may be added at any time as work progresses.
+          New Characters and Locations may be added in the input forms
+          below for convenience.<br/>
+          All Characters must be assigned a number. This cannot be changed.
+          If necessary the character can be deleted and given a new number.
+          </p>     
+         </div>
         </Col>
-      </Row> 
+      </Row>
       <Row className="mt-3">
         <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 0}}>
         <h5 className="mt-3 text-center">New Characters</h5>

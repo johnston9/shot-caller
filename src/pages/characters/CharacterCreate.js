@@ -270,30 +270,31 @@ const CharacterCreate = ({topbox} ) => {
         </Button>
         </div>
       ) }
-        <Container className= {`${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-1" onSubmit={handleSubmit}>
-      <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Character Info</h5>
-      <Row>
+      <Row className="mb-3">
         <Col md={{span: 8, offset: 2}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-      <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
-      <p className={`text-center px-3 pt-1 ${styles.Red }`}>
-        All Characters must be assigned a number.
-        </p>     
-        <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
-          This will create the Username
-        for the actor playing the role. All actors
-        must be registered using the given username.
-        </p>
-      </div>
+        <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
+        <p className={`text-center px-3 pt-1 ${styles.Red }`}>
+          All Characters must be assigned a number. This cannot be changed.
+          If necessary the character should be deleted and given a new number.
+          </p>     
+          <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+            Actor and costume details are to be added in the Edit Chatacter page
+            which is accessible from the Edit button on the Character's Page.
+          </p>
+         </div>
         </Col>
       </Row>
+        <Container className= {`${appStyles.Content} ${styles.Container}`} >
+      <Form className="mt-0" onSubmit={handleSubmit}>
+      <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Character Info</h5>
       <Row>
           <Col xs={6} className="d-flex justify-content-center" >
-          <Form.Group controlId="role" className={`${styles.Width} text-center`}  >
+          <Form.Group controlId="role" className={`${styles.Width2} text-center`}  >
                   <Form.Label className={`${styles.Bold} `} >Role</Form.Label>
                   <Form.Control 
+                  className={styles.Input}
                   type="text"
                   name="role"
                   value={role}
@@ -307,9 +308,10 @@ const CharacterCreate = ({topbox} ) => {
               ))}
           </Col>
           <Col xs={6} className="d-flex justify-content-center" >
-          <Form.Group controlId="number" className={`${styles.Width} text-center`} >
+          <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
                   <Form.Label className={` ${styles.Bold} `} >Number</Form.Label>
                   <Form.Control 
+                  className={styles.Input}
                   type="text"
                   name="number"
                   value={number}

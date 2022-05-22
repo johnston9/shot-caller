@@ -24,7 +24,7 @@ const CharacterTop = (props) => {
     const handleDelete = async () => {
         try {
             await axiosReq.delete(`/characters/${id}/`);
-            history.push(`/characters/`);
+            history.push(`/home/`);
         } catch (err) {
         }
         };

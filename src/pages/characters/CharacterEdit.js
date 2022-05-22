@@ -319,7 +319,7 @@ const buttons = (
     className={`${btnStyles.Button} ${btnStyles.Blue}`}
     onClick={() => history.goBack()}
   >
-    cancel
+    Cancel
   </Button>
   <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
     Edit
@@ -328,64 +328,70 @@ const buttons = (
 );
     return (
         <div>
-            <TopBox title="Character Edit"/>
+            <TopBox title={`${role} Edit`} />
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}
               >
               Back
-              </Button>
-            <Container className= {`${appStyles.Content} ${styles.Container}`} >
-              <Form className="mt-3" onSubmit={handleSubmit}>
-              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+            </Button>
+            <Row>
+              <Col md={{span: 8, offset: 2}}>
+              <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+              <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
+              <p className={`text-center px-3 pt-1 pb-1 ${styles.Red }`}>
+              All actors must be registered using the given username.
+                </p>     
+              </div>
+              </Col>
+            </Row>
+            <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
+              <Form className="mt-0" onSubmit={handleSubmit}>
+              <h5 className={`text-center mt-0 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Character Info</h5>
+             <Row>
+             <Col xs={{span: 6, offset: 3 }} className="d-flex justify-content-center" >
+              <h4 className="text-center">Number {number} </h4>
+              </Col>
+             </Row>
               <Row>
-                  <Col md={6} >
-                  <Form.Group controlId="role" className="mb-2" >
-                          <Form.Label className="p-1" >Role</Form.Label>
-                          <Form.Control 
-                          type="text"
-                          placeholder="Role"
-                          name="role"
-                          value={role}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.role?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                  </Col>
-                  <h3 className="text-center">Number</h3>
-                  <Col md={6} >
-                  <Form.Group controlId="number" className="mb-0" >
-                          <Form.Label className=" p-1" >Number</Form.Label>
-                          <Form.Control 
-                          type="text"
-                          placeholder="Number"
-                          name="number"
-                          value={number}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.number?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                  </Col>
+              <Col xs={{span: 6, offset: 3 }} className="d-flex justify-content-center" >
+              <Form.Group controlId="role" className={`${styles.Width2} text-center`}  >
+                      <Form.Label className={`${styles.Bold} `} >Role</Form.Label>
+                      <Form.Control 
+                      className={styles.Input}
+                      type="text"
+                      name="role"
+                      value={role}
+                      onChange={handleChange}
+                          />
+                  </Form.Group>
+                  {errors?.role?.map((message, idx) => (
+                    <Alert variant="warning" key={idx}>
+                      {message}
+                    </Alert>
+                  ))}
+              </Col>
               </Row>
               {/* actor details */}
-              <h5 className={`text-center mt-5 mb-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}
+              <h5 className={`text-center mx-3 mt-5 mb-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Actor Info</h5>
+             <Row>
+                 <Col className='text-center mb-3'>
+                <div>
+                 <span className={`py-1 px-3 ${styles.SubTitle3 } `} >
+                {number ? (`USERNAME: cast${number}`) : ("") }
+                  </span>  
+                 </div>
+                 </Col>
+             </Row>
               <Row className="text-center">
-                  <Col xs={6} md={4} >
-                  <Form.Group controlId="actor" className="mb-2" >
+                  <Col className="d-flex justify-content-center" xs={6} md={4} >
+                  <Form.Group controlId="actor" className={`${styles.Width2} text-center`}  >
                           <Form.Label className={styles.Bold} >Actor</Form.Label>
                           <Form.Control 
                           type="text"
-                          placeholder="Actor"
+                          className={styles.Input}
                           name="actor"
                           value={actor}
                           onChange={handleChange}
@@ -397,11 +403,12 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={6} md={4} >
-                  <Form.Group controlId="mobile" className="mb-2" >
+                  <Col xs={6} md={4} className="d-flex justify-content-center" >
+                  <Form.Group controlId="mobile" 
+                  className={`${styles.Width2} text-center`}  >
                           <Form.Label className={styles.Bold} >Mobile</Form.Label>
                           <Form.Control 
-                          placeholder="Mobile"
+                          className={styles.Input}
                           type="text"
                           name="mobile"
                           value={mobile}
@@ -414,11 +421,12 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} md={4} >
-                  <Form.Group controlId="email" className="mb-2" >
+                  <Col xs={12} md={4} className="d-flex justify-content-center" >
+                  <Form.Group controlId="email"
+                  className={`${styles.Width2} text-center`} >
                           <Form.Label className={styles.Bold} >Email</Form.Label>
                           <Form.Control 
-                          placeholder="Email"
+                          className={styles.Input}
                           type="text"
                           name="email"
                           value={email}
@@ -486,60 +494,16 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              {/* pickups */}
-              <Row className="text-center">
-                  <Col xs={6} >
-                  <Form.Group controlId="pickup_address" className="mb-2" >
-                          <Form.Label className={styles.Bold} >Pickup Address</Form.Label>
-                          <Form.Control 
-                          placeholder="Pickup Address"
-                          type="text"
-                          name="pickup_address"
-                          as="textarea"
-                          rows={3}
-                          value={pickup_address}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.pickup_address?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                  </Col>
-                  <Col xs={6}>
-                  <Form.Group controlId="pickup_address_2" className="mb-2" >
-                          <Form.Label className={styles.Bold} >Pickup Address 2</Form.Label>
-                          <Form.Control 
-                          placeholder="Pickup Address 2"
-                          type="text"
-                          name="pickup_address_2"
-                          as="textarea"
-                          rows={3}
-                          value={pickup_address_2}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.pickup_address_2?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                  </Col>
-              </Row>
-              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Callsheet Info</h5>
               {/* Requirements */}
               <Row className="text-center" >
                   <Col xs={6} >
                   <Form.Group controlId="requirements" className="mb-2" >
                           <Form.Label className={styles.Bold} >Requirements</Form.Label>
                           <Form.Control 
-                          placeholder="Requirements"
                           type="text"
                           name="requirements"
                           as="textarea"
-                          rows={3}
+                          rows={1}
                           value={requirements}
                           onChange={handleChange}
                               />
@@ -554,16 +518,56 @@ const buttons = (
                   <Form.Group controlId="diet" className="mb-2" >
                           <Form.Label className={styles.Bold} >Diet</Form.Label>
                           <Form.Control 
-                          placeholder="Diet"
                           type="text"
                           name="diet"
                           as="textarea"
-                          rows={3}
+                          rows={1}
                           value={diet}
                           onChange={handleChange}
                               />
                       </Form.Group>
                       {errors?.diet?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+              </Row>
+              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Callsheet Info</h5>
+             {/* pickups */}
+             <Row className="text-center">
+                  <Col xs={6} >
+                  <Form.Group controlId="pickup_address" className="mb-2" >
+                          <Form.Label className={styles.Bold} >Pickup Address</Form.Label>
+                          <Form.Control 
+                          type="text"
+                          name="pickup_address"
+                          as="textarea"
+                          rows={2}
+                          value={pickup_address}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.pickup_address?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={6}>
+                  <Form.Group controlId="pickup_address_2" className="mb-2" >
+                          <Form.Label className={styles.Bold} >Pickup Address 2</Form.Label>
+                          <Form.Control 
+                          type="text"
+                          name="pickup_address_2"
+                          as="textarea"
+                          rows={2}
+                          value={pickup_address_2}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.pickup_address_2?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
