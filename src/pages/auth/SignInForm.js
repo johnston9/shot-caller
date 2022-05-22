@@ -64,11 +64,16 @@ const SignInForm = () => {
                 src={door}/>
           </Col>
           <Col className="my-auto py-2 p-md-2" xs={10}>
-             <Row>
-             <Col md= {3} className="d-nome d-md-block"></Col>
-               <Col xs={12} md={6} >
+            <Row>
+             <Col md= {3} className="d-none d-md-block"></Col>
+               <Col xs={12} md={6} className="text-center" >
+                <p className={`${styles.Inner} mb-3`}>
+                  GUEST<br/>
+                  Username - gaffer<br/>
+                  Password - silver77
+                </p>
                <Container>
-                <h1 className={styles.Header}>Sign in</h1>
+                <h1 className={`${styles.Header}`}>Sign in</h1>
                 <Form onSubmit={handleSubmit} className={styles.Form} >
                   <Form.Group controlId="username" className="mb-2" >
                       <Form.Label className="d-none" >Username</Form.Label>

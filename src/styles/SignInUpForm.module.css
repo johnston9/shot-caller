@@ -2,14 +2,24 @@
   background-color: #353839;
     width: 100%; 
 }
-.Row {
-    /* height: calc(100vh - 81px); */
-  }
+
+/* .Row {
+    height: calc(100vh - 81px);
+  } */
 
 .Image {
     max-height: 40vh;
     max-width: 100%;
     object-fit: contain;
+}
+
+.Inner {
+  background-color: #0b3d63;
+  color: #fafafa;
+}
+
+.Guest {
+  color: #fafafa;
 }
 
 .FillerImagel {

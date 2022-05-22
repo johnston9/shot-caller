@@ -28,7 +28,7 @@ const Landing = () => {
           </Col>
           
           { currentUser ? (
-            <Col className="my-3" xs={10} md={10}>
+            <Col className="my-3" xs={10} >
             <div className="d-none d-md-block">
               <Row className="text-center">
                 <Col md={1}></Col>
@@ -292,8 +292,15 @@ const Landing = () => {
         </Col>
           ) : (
             <Col className="my-auto py-2 p-md-2" xs={10}>
+              <Row>
+                <Col xs={{span: 8, offset: 2}}>
+                <p className={`${styles.Inner} text-center my-3`}>
+                  Guest Please click Sign In and use the Login details there
+                </p>
+                </Col>
+              </Row>
              <Row>
-             <Col md= {3} className="d-nome d-md-block"></Col>
+             <Col md= {3} className="d-none d-md-block"></Col>
                <Col xs={12} md={6} >
                <Link to={`signin`} >
                  <div className={`px-2  ${styles.Landingbox}`}>

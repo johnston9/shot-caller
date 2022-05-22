@@ -19,6 +19,18 @@
 
 .SubTitle {
   background-color: #e8f0f1;
+  font-weight: 700;
+}
+
+.SubTitle2 {
+  /* background-color: #e0fafe; */
+  background-color: #d6fcff;;
+  font-weight: 700;
+}
+
+.SubTitle3 {
+  background-color: #e4f2f4;
+  font-weight: 700;
 }
 
 .Input {

@@ -574,11 +574,13 @@ const CrewArt = ({handleChange, postData, setShow}) => {
       {/* Prop Buyer */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Prop Buyer</h5> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: propbuy</span>  
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >
+        USERNAME: propbuy</span>  
       </div>
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="prop_buyer_name" className={`${styles.Width} `}  >
+          <Form.Group controlId="prop_buyer_name" 
+           className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}

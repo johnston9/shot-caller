@@ -244,13 +244,13 @@ const CharacterCreate = ({topbox} ) => {
     const buttons = (
       <div className="text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`}
           onClick={() => history.goBack()}
         >
-          cancel
+          Cancel
         </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          create
+        <Button className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`} type="submit">
+          Create
         </Button>
       </div>
     );
@@ -272,15 +272,29 @@ const CharacterCreate = ({topbox} ) => {
       ) }
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-1" onSubmit={handleSubmit}>
-      <h3 className="text-center">Role</h3>
+      <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Character Info</h5>
       <Row>
-      <Col md={3} ></Col>
-          <Col md={6} >
-          <Form.Group controlId="role" className="mb-0" >
-                  <Form.Label className="d-none p-1" >Role</Form.Label>
+        <Col md={{span: 8, offset: 2}}>
+        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+      <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
+      <p className={`text-center px-3 pt-1 ${styles.Red }`}>
+        All Characters must be assigned a number.
+        </p>     
+        <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+          This will create the Username
+        for the actor playing the role. All actors
+        must be registered using the given username.
+        </p>
+      </div>
+        </Col>
+      </Row>
+      <Row>
+          <Col xs={6} className="d-flex justify-content-center" >
+          <Form.Group controlId="role" className={`${styles.Width} text-center`}  >
+                  <Form.Label className={`${styles.Bold} `} >Role</Form.Label>
                   <Form.Control 
                   type="text"
-                  placeholder="Role"
                   name="role"
                   value={role}
                   onChange={handleChange}
@@ -292,21 +306,11 @@ const CharacterCreate = ({topbox} ) => {
                 </Alert>
               ))}
           </Col>
-      </Row>
-      <Row>
-        <Col>
-          <div className= {` mt-3`} >{buttons} </div>
-        </Col>
-      </Row>
-      <h3 className="text-center">Number</h3>
-      <Row>
-      <Col md={3} ></Col>
-          <Col md={6} >
-          <Form.Group controlId="number" className="mb-0" >
-                  <Form.Label className="d-none p-1" >Number</Form.Label>
+          <Col xs={6} className="d-flex justify-content-center" >
+          <Form.Group controlId="number" className={`${styles.Width} text-center`} >
+                  <Form.Label className={` ${styles.Bold} `} >Number</Form.Label>
                   <Form.Control 
                   type="text"
-                  placeholder="Number"
                   name="number"
                   value={number}
                   onChange={handleChange}
@@ -319,9 +323,14 @@ const CharacterCreate = ({topbox} ) => {
               ))}
           </Col>
       </Row>
-      <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+      <Row>
+        <Col>
+          <div className= {` mt-3`} >{buttons} </div>
+        </Col>
+      </Row>
       {/* actor details */}
-      <h3 className="text-center my-3">Actor Details</h3>
+      <h5 className={`text-center mt-5 mb-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Actor Info</h5>
       <Row>
           <Col xs={6} md={4} >
           <Form.Group controlId="actor" className="mb-2" >
@@ -430,6 +439,8 @@ const CharacterCreate = ({topbox} ) => {
           </Col>
       </Row>
       {/* pickups */}
+      <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Callsheet Info</h5>
       <Row>
           <Col xs={6} >
           <Form.Group controlId="pickup_address" className="mb-2" >
@@ -511,8 +522,8 @@ const CharacterCreate = ({topbox} ) => {
               ))}
           </Col>
       </Row>
-      <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-      <h3 className="text-center my-3">Makeup - Costumes</h3>
+      <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Makeup / Costumes</h5>
       {/* makeup/costume 1 */}
       <Row className="mb-1 text-center">
       <Col xs={12} md={6}>

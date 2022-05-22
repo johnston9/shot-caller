@@ -337,7 +337,8 @@ const buttons = (
               </Button>
             <Container className= {`${appStyles.Content} ${styles.Container}`} >
               <Form className="mt-3" onSubmit={handleSubmit}>
-              <h3 className="text-center">Role Number</h3>
+              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Character Info</h5>
               <Row>
                   <Col md={6} >
                   <Form.Group controlId="role" className="mb-2" >
@@ -375,9 +376,9 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
               {/* actor details */}
-              <h3 className="text-center my-3">Actor Details</h3>
+              <h5 className={`text-center mt-5 mb-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Actor Info</h5>
               <Row className="text-center">
                   <Col xs={6} md={4} >
                   <Form.Group controlId="actor" className="mb-2" >
@@ -526,6 +527,8 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
+              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Callsheet Info</h5>
               {/* Requirements */}
               <Row className="text-center" >
                   <Col xs={6} >
@@ -567,8 +570,8 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-              <h3 className="text-center my-3">Makeup - Costumes</h3>
+              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Makeup / Costumes</h5>
             {/* makeup/costume 1 */}
             <Row className="mb-3 text-center">
               <Col xs={12} md={6}>
