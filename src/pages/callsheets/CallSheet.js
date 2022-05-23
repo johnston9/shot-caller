@@ -72,10 +72,6 @@ const CallSheet = (props ) => {
           lunch, 
           wrap, 
           location_1_name,
-          location_2_name,
-          location_3_name,
-          location_4_name,
-          location_5_name,
           nearest_hospital,
           hospital_address_line_1,
           hospital_address_line_2,
@@ -177,6 +173,7 @@ const CallSheet = (props ) => {
           add_pos_8_calltime,
           add_pos_9_calltime,
           add_pos_10_calltime,
+          // eslint-disable-next-line
           all_other_add_positions_calltimes,
           // script/cater
           writer_calltime,
@@ -356,6 +353,7 @@ const CallSheet = (props ) => {
             case "stunts3": return stunts_3_calltime;
             case "stunts4": return stunts_4_calltime;
             case "stunts5": return stunts_5_calltime;
+            default: return "";
           }
         };
         setYourcalltime(yourcall(currentUser));

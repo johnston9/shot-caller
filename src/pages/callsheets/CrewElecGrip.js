@@ -256,7 +256,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
               className={`${styles.Input}`}
               type="text"
               name="electric_4_phone"
-              value={electric_3_phone}
+              value={electric_4_phone}
               onChange={handleChange}
                   />
           </Form.Group>
@@ -653,7 +653,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
               className={`${styles.Input}`}
               type="text"
               name="swing_ge4_email"
-              value={swing_ge1_email}
+              value={swing_ge4_email}
               onChange={handleChange}
                   />
           </Form.Group>

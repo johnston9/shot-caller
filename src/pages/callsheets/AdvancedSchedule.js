@@ -3,7 +3,6 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
-import { axiosReq } from '../../api/axiosDefaults';
 import CharScheduleScene from './CharScheduleScene';
 
 const AdvancedSchedule = (props) => {
@@ -22,13 +21,13 @@ const AdvancedSchedule = (props) => {
   const pages = scenes.map((scene) => (
     parseFloat(scene.pages)));
 
-    function addpages(page) {
-    return page > 0;
-    }
+  function addpages(page) {
+  return page > 0;
+  }
 
-    const pagenumbers = pages.filter(addpages);
+  const pagenumbers = pages.filter(addpages);
 
-    const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
+  const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
 
   return (
@@ -37,7 +36,8 @@ const AdvancedSchedule = (props) => {
           <h4 className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
           style={{ textTransform: 'uppercase' }}>
             Advanced Schedule <span className={`${styles.HSpan }`} >
-              ({pagestotal} Pages) Day {day ? (day) : ("Not Created") } - {date && (date) }
+              ({pagestotal} Pages) 
+              Day {day ? (day) : ("Not Created") } - {date && (date) }
                </span>
           </h4>
       </div>
@@ -48,7 +48,9 @@ const AdvancedSchedule = (props) => {
           <h5 className={`pl-5 text-center`} 
           style={{ textTransform: 'uppercase'}} >
             Adv Schedule </h5>
-          <p className='pr-3'> ({pagestotal} Pages) Day {day ? (day) : ("Not Created yet") } - {date && (date) }</p>
+          <p className='pr-3'> 
+          ({pagestotal} Pages) 
+          Day {day ? (day) : ("Not Created yet") } - {date && (date) }</p>
           </div>
       </div>
       {/* titles xxx */}

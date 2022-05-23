@@ -3,7 +3,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CallSheet from './CallSheet';
 
 const CallSheetPage = () => {
@@ -14,7 +14,6 @@ const CallSheetPage = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [background, setBackground] = useState({ results: [] });
     const [scenes, setScenes] = useState({ results: [] });
-    const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
     const admin = true;
 

@@ -295,7 +295,7 @@ const Landing = () => {
               <Row>
                 <Col xs={{span: 8, offset: 2}}>
                 <p className={`${styles.Inner} text-center my-3`}>
-                  Guest Please click Sign In and use the Login details there
+                  Guest, please click Sign In and use the login details there
                 </p>
                 </Col>
               </Row>

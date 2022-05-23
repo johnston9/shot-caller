@@ -350,12 +350,10 @@ const buttons = (
               <h5 className={`text-center mt-0 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Character Info</h5>
              <Row>
-             <Col xs={{span: 6, offset: 3 }} className="d-flex justify-content-center" >
-              <h4 className="text-center">Number {number} </h4>
+             <Col xs={6} className="d-flex justify-content-center" >
+              <h5 className="text-center">Number - {number} </h5>
               </Col>
-             </Row>
-              <Row>
-              <Col xs={{span: 6, offset: 3 }} className="d-flex justify-content-center" >
+              <Col xs={6} className="d-flex justify-content-center" >
               <Form.Group controlId="role" className={`${styles.Width2} text-center`}  >
                       <Form.Label className={`${styles.Bold} `} >Role</Form.Label>
                       <Form.Control 
@@ -372,7 +370,7 @@ const buttons = (
                     </Alert>
                   ))}
               </Col>
-              </Row>
+             </Row>
               {/* actor details */}
               <h5 className={`text-center mx-3 mt-5 mb-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Actor Info</h5>
@@ -385,8 +383,8 @@ const buttons = (
                  </div>
                  </Col>
              </Row>
-              <Row className="text-center">
-                  <Col className="d-flex justify-content-center" xs={6} md={4} >
+              <Row className="text-center mb-3">
+                  <Col className="d-flex justify-content-center" xs={6}  >
                   <Form.Group controlId="actor" className={`${styles.Width2} text-center`}  >
                           <Form.Label className={styles.Bold} >Actor</Form.Label>
                           <Form.Control 
@@ -403,7 +401,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={6} md={4} className="d-flex justify-content-center" >
+                  <Col xs={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="mobile" 
                   className={`${styles.Width2} text-center`}  >
                           <Form.Label className={styles.Bold} >Mobile</Form.Label>
@@ -421,7 +419,9 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} md={4} className="d-flex justify-content-center" >
+              </Row>
+              <Row>
+                  <Col xs={6}  className="d-flex justify-content-center" >
                   <Form.Group controlId="email"
                   className={`${styles.Width2} text-center`} >
                           <Form.Label className={styles.Bold} >Email</Form.Label>
@@ -434,6 +434,24 @@ const buttons = (
                               />
                       </Form.Group>
                       {errors?.email?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={6} className="d-flex justify-content-center">
+                  <Form.Group controlId="agent" 
+                   className={`${styles.Width2} text-center`}  >
+                          <Form.Label className={styles.Bold} >Agent</Form.Label>
+                          <Form.Control 
+                          className={styles.Input}
+                          type="text"
+                          name="agent"
+                          value={agent}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.agent?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
@@ -471,23 +489,6 @@ const buttons = (
                               />
                       </Form.Group>
                       {errors?.commute_time?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                  </Col>
-                  <Col xs={12} md={4} >
-                  <Form.Group controlId="agent" className="mb-2" >
-                          <Form.Label className={styles.Bold} >Agent</Form.Label>
-                          <Form.Control 
-                          placeholder="Agent"
-                          type="text"
-                          name="agent"
-                          value={agent}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.agent?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>

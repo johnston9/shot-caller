@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../hooks/Redirect';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import styles from "../../styles/Callsheets.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
-import CharScheduleScene from './CharScheduleScene';
 import AdvancedSchedule from './AdvancedSchedule';
 
 const AdvancedSchedPage = (props) => {

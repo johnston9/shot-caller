@@ -7,7 +7,7 @@ import { Image } from 'react-bootstrap';
 
 const InfoCompany = ({crewInfoOne, setShowCom}) => {
   useRedirect("loggedOut");
-  const {id, production_name, production_company, company_phone, company_email,
+  const {production_name, production_company, company_phone, company_email,
     company_address_line_1, company_address_line_2, company_address_line_3,
     company_address_line_4, company_logo, total_shoot_days} = crewInfoOne || {};
 

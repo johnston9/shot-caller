@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -11,7 +11,7 @@ import Upload from "../../assets/upload.png";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
@@ -21,7 +21,6 @@ const CrewLogo = () => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const history = useHistory();
-  const { id } = useParams();
   const setEditCrewInfo = useSetEditCrewInfoContext();
   const crewInfo = useCrewInfoContext();
   const crewInfoOne = crewInfo.results[0];

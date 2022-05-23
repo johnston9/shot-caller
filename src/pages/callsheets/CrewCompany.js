@@ -17,7 +17,7 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
 
   const { production_name, production_company, company_phone, company_email,
     company_address_line_1, company_address_line_2, company_address_line_3,
-    company_address_line_4, company_logo, total_shoot_days,
+    company_address_line_4, total_shoot_days,
   } = postData || {};
 
   const handleClick = () => {

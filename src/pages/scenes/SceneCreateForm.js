@@ -363,7 +363,7 @@ function SceneCreateForm({topbox}) {
           <Form.Control 
           type="text"
           className={styles.Input}
-          // placeholder="Pages"
+          placeholder="Decimal only"
           name="pages"
           value={pages}
           onChange={handleChange}
@@ -871,9 +871,10 @@ const charFields = (
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center ${styles.Red }`} >INFO</h5>  
         <p className={`text-center px-3 pt-1 ${styles.Red }`}>
-          Scene Info may be added at any time as work progresses.
-          New Characters and Locations may be added in the input forms
-          below for convenience.<br/>
+          Scene Info may be added at any time on the Scene
+          Page Edit button. New Characters and Locations must be 
+          created first on the Add Character or Add Location Pages or
+          in the Add Character or Add Location boxes below.<br/>
           All Characters must be assigned a number. This cannot be changed.
           If necessary the character can be deleted and given a new number.
           </p>     

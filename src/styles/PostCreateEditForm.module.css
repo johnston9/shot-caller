@@ -33,18 +33,76 @@
   font-weight: 700;
 }
 
+.Width {
+  width: 70%;
+}
+
+.Width2 {
+  width: 80%;
+}
+
+.Width3 {
+  width: 80%;
+}
+
+.Width95 {
+  width: 95%;
+}
+
 .Input {
   background: #ffffff;
   border: 1px solid #f0f1f9;
   box-sizing: border-box;
   border-radius: 2px;
   color: #7177a1;
-  padding: 10px;
-  height: 35px;
+  padding: 0px 10px;
+  height: 30px !important;
+  text-align: center;
+}
+
+.InputScene {
+ background: #ffffff;
+ border: 1px solid #f0f1f9;
+ box-sizing: border-box;
+ border-radius: 2px;
+ color: #7177a1;
+ padding: 0px 10px;
+}
+
+.InputChar {
+ background: #ffffff;
+ border: 1px solid #f0f1f9;
+ box-sizing: border-box;
+ border-radius: 2px;
+ color: #7177a1;
+ padding: 0px 0px;
+ height: 30px !important;
 }
 
 @media screen and (max-width: 600px) {
   .Width {
-    width: 80%;
+    width: 90%;
+  }
+
+  .Width2 {
+    width: 90%;
+  }
+
+  .Width95 {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Width3 {
+    width: 50%;
   }
 }

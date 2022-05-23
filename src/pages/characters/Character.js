@@ -71,7 +71,7 @@ const Character = (props) => {
         <div>
             <div className={`mb-3 ${styles.Header}`}>
             <Row className={`${styles.ButtonLine} mx-2 mt-2`}>
-                <Col className='text-center mx-0 px-0' xs={1} md={2}>{number} </Col>
+                <Col className='text-center mx-0 px-0' xs={1} md={2}></Col>
                 <Col xs={4} className='text-center mx-0 px-0'>
                     <h5
                         className={`py-0 mb-0 ${styles.Button}`}
