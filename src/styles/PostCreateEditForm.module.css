@@ -79,6 +79,11 @@
  height: 30px !important;
 }
 
+.BoldTitle {
+  font-weight: 700;
+  background-color: rgb(209, 240, 240);
+}
+
 @media screen and (max-width: 600px) {
   .Width {
     width: 90%;

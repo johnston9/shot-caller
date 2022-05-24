@@ -122,18 +122,18 @@ const CharacterCreate = ({topbox} ) => {
         Back
         </Button>
         <Button
-      className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-      onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
-    </Button>
-    <p>{unusedNumbers}</p>  
-    {usedNumbers}
-      {!showImp ? (
-          ""
-              ) : (
-                <Important  /> 
-                ) }   
-        </div>
-      ) }
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+        </Button>
+        {/* <p>{unusedNumbers}</p>  
+        {usedNumbers} */}
+          {!showImp ? (
+              ""
+                  ) : (
+                    <Important  /> 
+                    ) }   
+            </div>
+          ) }
         <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-0" onSubmit={handleSubmit}>
       <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}

@@ -121,7 +121,8 @@ const Character = (props) => {
              </Row>
             <Row className='mb-3 text-center'>
                 <Col xs={6} md={4} >
-                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`} >ACTOR</p>
+                <p className={`${styles.BoldTitle} 
+                  mb-2 text-center mx-1 mx-sm-5`} >ACTOR</p>
                 <p>{actor} </p>
                 </Col>
                 <Col xs={6} md={4}>
