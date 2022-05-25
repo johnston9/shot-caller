@@ -29,7 +29,8 @@ const CallSheetPage = () => {
                     axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                     axiosReq.get("dj-rest-auth/user/"),
                 ])
-                setCallsheet(callsheetdata);
+                console.log(castcalldata);
+                setCallsheet(callsheetdata); 
                 setCast(castcalldata);
                 setBackground(bgcalldata);
                 setScenes(scenes);

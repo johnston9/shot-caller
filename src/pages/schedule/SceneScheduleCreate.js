@@ -344,6 +344,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
               <>
               <Col xs={3}>
               <h5 className="pt-2" >{character1}</h5> 
+              <h5>{character1_number} </h5>
               </Col>
             <Col className={`${styles.Number} d-flex justify-content-center`} xs={3} >
             <Form.Group controlId="character1_number" className={`${styles.Width2} `} >
@@ -775,7 +776,7 @@ const buttons = (
     return (
         <div className="text-center">
             <div className= {`px-3 mx-3 my-4 pt-3 ${styles.ScenesBox} `}>
-            <h4 className="text-center">Select Scene</h4>
+            <h4 className="text-center">Select from Act or Location </h4>
           <Row>
               <Col xs={6} md={3} className="text-center">
                 <Button onClick={handleClick1} 
