@@ -70,6 +70,18 @@ const SceneEditForm = () => {
       character11_costume: "",
       character12: "",
       character12_costume: "",
+      character1_number: "",
+      character2_number: "",
+      character3_number: "",
+      character4_number: "",
+      character5_number: "",
+      character6_number: "",
+      character7_number: "",
+      character8_number: "",
+      character9_number: "",
+      character10_number: "",
+      character11_number: "",
+      character12_number: "",
       other_characters: "",
       other_characters_costumes: "",
       background_artists: "",
@@ -85,6 +97,10 @@ const SceneEditForm = () => {
     character6_costume, character7, character7_costume, character8,
     character8_costume, character9, character9_costume, character10, 
     character10_costume, character11, character11_costume, character12,
+    character1_number, character2_number, character3_number,
+    character4_number, character5_number, character6_number, 
+    character7_number, character8_number, character9_number,
+    character10_number, character11_number, character12_number,
     character12_costume, other_characters, other_characters_costumes,
     background_artists, background_artists_costumes, shooting_date,
     dramatic_day, equip_set_props, department_info,
@@ -107,6 +123,10 @@ const SceneEditForm = () => {
               character6_costume, character7, character7_costume, character8,
               character8_costume, character9, character9_costume, character10, 
               character10_costume, character11, character11_costume, character12,
+              character1_number, character2_number, character3_number,
+              character4_number, character5_number, character6_number, 
+              character7_number, character8_number, character9_number,
+              character10_number, character11_number, character12_number,
               character12_costume, other_characters, other_characters_costumes,
               background_artists, background_artists_costumes, shooting_date,
               dramatic_day, equip_set_props, department_info,
@@ -119,6 +139,10 @@ const SceneEditForm = () => {
               character6_costume, character7, character7_costume, character8,
               character8_costume, character9, character9_costume, character10, 
               character10_costume, character11, character11_costume, character12,
+              character1_number, character2_number, character3_number,
+              character4_number, character5_number, character6_number, 
+              character7_number, character8_number, character9_number,
+              character10_number, character11_number, character12_number,
               character12_costume, other_characters, other_characters_costumes,
               background_artists, background_artists_costumes, shooting_date,
               dramatic_day, equip_set_props, department_info,
@@ -203,6 +227,18 @@ const SceneEditForm = () => {
         formData.append("character11_costume", character11_costume);
         formData.append("character12", character12);
         formData.append("character12_costume", character12_costume);
+        formData.append("character1_number", character1_number);
+        formData.append("character2_number", character2_number);
+        formData.append("character3_number", character3_number);
+        formData.append("character4_number", character4_number);
+        formData.append("character5_number", character5_number);
+        formData.append("character6_number", character6_number);
+        formData.append("character7_number", character7_number);
+        formData.append("character8_number", character8_number);
+        formData.append("character9_number", character9_number);
+        formData.append("character10_number", character10_number);
+        formData.append("character11_number", character11_number);
+        formData.append("character12_number", character12_number);
         formData.append("other_characters", other_characters);
         formData.append("other_characters_costumes", other_characters_costumes);
         formData.append("background_artists", background_artists);
@@ -545,6 +581,20 @@ const SceneEditForm = () => {
       </div>
     )
 
+    const handleChangeChar2 = (event) => {
+      const role1 = event.target.value.split("_")[0];
+      const number1 = event.target.value.split("_")[1];
+      const username1 = `cast${number1} `
+      setPostData({
+        ...postData,
+        character2: role1,
+        character2_number: number1,
+      });
+      console.log(role1);
+      console.log(number1);
+      console.log(username1);
+    };
+
   const charFields = (
     <div className="mt-3 px-5 text-center">
       {/* characters */}
@@ -578,12 +628,14 @@ const SceneEditForm = () => {
             name="character2"
             className={styles.InputChar}
             value={character2}
-            onChange={handleChange}
+            onChange={handleChangeChar2}
             aria-label="character2 select">
               <option  ></option>
             {characters.results.length && (
                 characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
+                  <option key={character.id} 
+                    value={`${character.role}_${character.number}`} >
+                    {character.role}</option>
                 ) )) }
           </Form.Control>
       </Form.Group>
