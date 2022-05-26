@@ -555,10 +555,11 @@ const charFields = (
           aria-label="character1 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >
-                  {character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character1?.map((message, idx) => (
@@ -578,9 +579,11 @@ const charFields = (
           aria-label="character2 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character2?.map((message, idx) => (
@@ -600,9 +603,11 @@ const charFields = (
           aria-label="character3 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character3?.map((message, idx) => (
@@ -622,9 +627,11 @@ const charFields = (
           aria-label="character4 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character4?.map((message, idx) => (
@@ -644,9 +651,11 @@ const charFields = (
           aria-label="character5 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character5?.map((message, idx) => (
@@ -666,9 +675,11 @@ const charFields = (
           aria-label="character6 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character6?.map((message, idx) => (
@@ -691,9 +702,11 @@ const charFields = (
           aria-label="character7 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character7?.map((message, idx) => (
@@ -713,9 +726,11 @@ const charFields = (
           aria-label="character8 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character8?.map((message, idx) => (
@@ -735,9 +750,11 @@ const charFields = (
           aria-label="character9 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character9?.map((message, idx) => (
@@ -757,9 +774,11 @@ const charFields = (
           aria-label="character10 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character10?.map((message, idx) => (
@@ -779,9 +798,11 @@ const charFields = (
           aria-label="character11 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character11?.map((message, idx) => (
@@ -801,9 +822,11 @@ const charFields = (
           aria-label="character12 select">
             <option  ></option>
           {characters.results.length && (
-              characters.results.map((character) => (
-                <option key={character.id} value={character.role} >{character.role}</option>
-              ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character12?.map((message, idx) => (

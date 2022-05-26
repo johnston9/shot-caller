@@ -581,18 +581,124 @@ const SceneEditForm = () => {
       </div>
     )
 
-    const handleChangeChar2 = (event) => {
-      const role1 = event.target.value.split("_")[0];
-      const number1 = event.target.value.split("_")[1];
-      const username1 = `cast${number1} `
+    const handleChangeChar1 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
       setPostData({
         ...postData,
-        character2: role1,
-        character2_number: number1,
+        character1: role,
+        character1_number: number,
       });
-      console.log(role1);
-      console.log(number1);
-      console.log(username1);
+    };
+
+    const handleChangeChar2 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character2: role,
+        character2_number: number,
+      });
+    };
+
+    const handleChangeChar3 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character3: role,
+        character3_number: number,
+      });
+    };
+
+    const handleChangeChar4 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character4: role,
+        character4_number: number,
+      });
+    };
+
+    const handleChangeChar5 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character5: role,
+        character5_number: number,
+      });
+    };
+
+    const handleChangeChar6 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character6: role,
+        character6_number: number,
+      });
+    };
+
+    const handleChangeChar7 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character7: role,
+        character7_number: number,
+      });
+    };
+
+    const handleChangeChar8 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character8: role,
+        character8_number: number,
+      });
+    };
+
+    const handleChangeChar9 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character9: role,
+        character9_number: number,
+      });
+    };
+
+    const handleChangeChar10 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character10: role,
+        character10_number: number,
+      });
+    };
+
+    const handleChangeChar11 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character11: role,
+        character11_number: number,
+      });
+    };
+
+    const handleChangeChar12 = (event) => {
+      const role = event.target.value.split("_")[0];
+      const number = event.target.value.split("_")[1];
+      setPostData({
+        ...postData,
+        character12: role,
+        character12_number: number,
+      });
     };
 
   const charFields = (
@@ -609,9 +715,11 @@ const SceneEditForm = () => {
             onChange={handleChange}
             aria-label="character1 select">
               <option  ></option>
-            {characters.results.length && (
+              {characters.results.length && (
                 characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
+                  <option key={character.id} 
+                    value={`${character.role}_${character.number}`} >
+                    {character.role}</option>
                 ) )) }
           </Form.Control>
       </Form.Group>
@@ -655,9 +763,11 @@ const SceneEditForm = () => {
             onChange={handleChange}
             aria-label="character3 select">
               <option  ></option>
-            {characters.results.length && (
+              {characters.results.length && (
                 characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
+                  <option key={character.id} 
+                    value={`${character.role}_${character.number}`} >
+                    {character.role}</option>
                 ) )) }
           </Form.Control>
       </Form.Group>
@@ -678,9 +788,11 @@ const SceneEditForm = () => {
             aria-label="character4 select">
               <option  ></option>
             {characters.results.length && (
-                characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
-                ) )) }
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
           </Form.Control>
       </Form.Group>
       {errors?.character4?.map((message, idx) => (
@@ -699,9 +811,11 @@ const SceneEditForm = () => {
             onChange={handleChange}
             aria-label="character5 select">
               <option  ></option>
-            {characters.results.length && (
+              {characters.results.length && (
                 characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
+                  <option key={character.id} 
+                    value={`${character.role}_${character.number}`} >
+                    {character.role}</option>
                 ) )) }
           </Form.Control>
       </Form.Group>
@@ -721,9 +835,11 @@ const SceneEditForm = () => {
             onChange={handleChange}
             aria-label="character6 select">
               <option  ></option>
-            {characters.results.length && (
+              {characters.results.length && (
                 characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
+                  <option key={character.id} 
+                    value={`${character.role}_${character.number}`} >
+                    {character.role}</option>
                 ) )) }
           </Form.Control>
       </Form.Group>
@@ -746,9 +862,11 @@ const SceneEditForm = () => {
             onChange={handleChange}
             aria-label="character7 select">
               <option  ></option>
-            {characters.results.length && (
+              {characters.results.length && (
                 characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
+                  <option key={character.id} 
+                    value={`${character.role}_${character.number}`} >
+                    {character.role}</option>
                 ) )) }
           </Form.Control>
       </Form.Group>
@@ -768,9 +886,11 @@ const SceneEditForm = () => {
             onChange={handleChange}
             aria-label="character8 select">
               <option  ></option>
-            {characters.results.length && (
+              {characters.results.length && (
                 characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
+                  <option key={character.id} 
+                    value={`${character.role}_${character.number}`} >
+                    {character.role}</option>
                 ) )) }
           </Form.Control>
       </Form.Group>
@@ -791,9 +911,11 @@ const SceneEditForm = () => {
             aria-label="character9 select">
               <option  ></option>
             {characters.results.length && (
-                characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
-                ) )) }
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
           </Form.Control>
       </Form.Group>
       {errors?.character9?.map((message, idx) => (
@@ -813,9 +935,11 @@ const SceneEditForm = () => {
             aria-label="character10 select">
               <option  ></option>
             {characters.results.length && (
-                characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
-                ) )) }
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
           </Form.Control>
       </Form.Group>
       {errors?.character10?.map((message, idx) => (
@@ -835,9 +959,11 @@ const SceneEditForm = () => {
             aria-label="character11 select">
               <option  ></option>
             {characters.results.length && (
-                characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
-                ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
           </Form.Control>
       </Form.Group>
       {errors?.character11?.map((message, idx) => (
@@ -857,9 +983,11 @@ const SceneEditForm = () => {
             aria-label="character12 select">
               <option  ></option>
             {characters.results.length && (
-                characters.results.map((character) => (
-                  <option key={character.id} value={character.role} >{character.role}</option>
-                ) )) }
+            characters.results.map((character) => (
+              <option key={character.id} 
+                value={`${character.role}_${character.number}`} >
+                {character.role}</option>
+            ) )) }
           </Form.Control>
       </Form.Group>
       {errors?.character12?.map((message, idx) => (
