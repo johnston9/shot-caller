@@ -143,83 +143,6 @@ function SceneCreateForm({topbox}) {
         }
       };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-
-    formData.append("number", number);
-    formData.append("title", title);
-    formData.append("act", act);
-    formData.append("int_ext", int_ext);
-    formData.append("day_night", day_night);
-    formData.append("time", time);
-    formData.append("pages", pages);
-    formData.append("dramatic_day", dramatic_day);
-    formData.append("location", location);
-    formData.append("location_detail", location_detail);
-    formData.append("filming_location", filming_location);
-    formData.append("shooting_date", shooting_date);
-    formData.append("action", action);
-    formData.append("equip_set_props", equip_set_props);
-    formData.append("department_info", department_info);
-    formData.append("character1", character1);
-    formData.append("character1_costume", character1_costume);
-    formData.append("character2", character2);
-    formData.append("character2_costume", character2_costume);
-    formData.append("character3", character3);
-    formData.append("character3_costume", character3_costume);
-    formData.append("character4", character4);
-    formData.append("character4_costume", character4_costume);
-    formData.append("character5", character5);
-    formData.append("character5_costume", character5_costume);
-    formData.append("character6", character6);
-    formData.append("character6_costume", character6_costume);
-    formData.append("character7", character7);
-    formData.append("character7_costume", character7_costume);
-    formData.append("character8", character8);
-    formData.append("character8_costume", character8_costume);
-    formData.append("character9", character9);
-    formData.append("character9_costume", character9_costume);
-    formData.append("character10", character10);
-    formData.append("character10_costume", character10_costume);
-    formData.append("character11", character11);
-    formData.append("character11_costume", character11_costume);
-    formData.append("character12", character12);
-    formData.append("character12_costume", character12_costume);
-    formData.append("character1_number", character1_number);
-    formData.append("character2_number", character2_number);
-    formData.append("character3_number", character3_number);
-    formData.append("character4_number", character4_number);
-    formData.append("character5_number", character5_number);
-    formData.append("character6_number", character6_number);
-    formData.append("character7_number", character7_number);
-    formData.append("character8_number", character8_number);
-    formData.append("character9_number", character9_number);
-    formData.append("character10_number", character10_number);
-    formData.append("character11_number", character11_number);
-    formData.append("character12_number", character12_number);
-    formData.append("other_characters", other_characters);
-    formData.append("other_characters_costumes", other_characters_costumes);
-    formData.append("background_artists", background_artists);
-    formData.append("background_artists_costumes", background_artists_costumes);
-    if (imageInput.current.files[0]) {
-      formData.append("image", imageInput.current.files[0]);
-    }
-    if (storyboardInput.current.files[0]) {
-      formData.append("storyboard", storyboardInput.current.files[0]); 
-    }
-      
-    try {
-      const { data } = await axiosReq.post("/scenes/", formData);
-      history.push(`/scenes/${data.id}`);
-    } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
-    }
-  }
-
   const infoFields = (
     <div className="mt-3 text-center px-2">
       {/* number title act */}
@@ -540,6 +463,126 @@ function SceneCreateForm({topbox}) {
     </div>
   )
 
+  const handleChangeChar1 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character1: role,
+      character1_number: number,
+    });
+  };
+
+  const handleChangeChar2 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character2: role,
+      character2_number: number,
+    });
+  };
+
+  const handleChangeChar3 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character3: role,
+      character3_number: number,
+    });
+  };
+
+  const handleChangeChar4 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character4: role,
+      character4_number: number,
+    });
+  };
+
+  const handleChangeChar5 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character5: role,
+      character5_number: number,
+    });
+  };
+
+  const handleChangeChar6 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character6: role,
+      character6_number: number,
+    });
+  };
+
+  const handleChangeChar7 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character7: role,
+      character7_number: number,
+    });
+  };
+
+  const handleChangeChar8 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character8: role,
+      character8_number: number,
+    });
+  };
+
+  const handleChangeChar9 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character9: role,
+      character9_number: number,
+    });
+  };
+
+  const handleChangeChar10 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character10: role,
+      character10_number: number,
+    });
+  };
+
+  const handleChangeChar11 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character11: role,
+      character11_number: number,
+    });
+  };
+
+  const handleChangeChar12 = (event) => {
+    const role = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      character12: role,
+      character12_number: number,
+    });
+  };
+
 const charFields = (
   <div className="mt-3 px-5 text-center">
     {/* characters */}
@@ -551,15 +594,15 @@ const charFields = (
           name="character1"
           className={styles.InputChar}
           value={character1}
-          onChange={handleChange}
+          onChange={handleChangeChar1}
           aria-label="character1 select">
             <option  ></option>
-          {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+            {characters.results.length && (
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character1?.map((message, idx) => (
@@ -575,15 +618,15 @@ const charFields = (
           name="character2"
           className={styles.InputChar}
           value={character2}
-          onChange={handleChange}
+          onChange={handleChangeChar2}
           aria-label="character2 select">
             <option  ></option>
           {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character2?.map((message, idx) => (
@@ -599,15 +642,15 @@ const charFields = (
           name="character3"
           className={styles.InputChar}
           value={character3}
-          onChange={handleChange}
+          onChange={handleChangeChar3}
           aria-label="character3 select">
             <option  ></option>
-          {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+            {characters.results.length && (
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character3?.map((message, idx) => (
@@ -623,7 +666,7 @@ const charFields = (
           name="character4"
           className={styles.InputChar}
           value={character4}
-          onChange={handleChange}
+          onChange={handleChangeChar4}
           aria-label="character4 select">
             <option  ></option>
           {characters.results.length && (
@@ -647,15 +690,15 @@ const charFields = (
           name="character5"
           className={styles.InputChar}
           value={character5}
-          onChange={handleChange}
+          onChange={handleChangeChar5}
           aria-label="character5 select">
             <option  ></option>
-          {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+            {characters.results.length && (
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character5?.map((message, idx) => (
@@ -671,15 +714,15 @@ const charFields = (
           name="character6"
           className={styles.InputChar}
           value={character6}
-          onChange={handleChange}
+          onChange={handleChangeChar6}
           aria-label="character6 select">
             <option  ></option>
-          {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+            {characters.results.length && (
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character6?.map((message, idx) => (
@@ -698,15 +741,15 @@ const charFields = (
           name="character7"
           className={styles.InputChar}
           value={character7}
-          onChange={handleChange}
+          onChange={handleChangeChar7}
           aria-label="character7 select">
             <option  ></option>
-          {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+            {characters.results.length && (
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character7?.map((message, idx) => (
@@ -721,16 +764,16 @@ const charFields = (
         <Form.Control as="select"
           name="character8"
           className={styles.InputChar}
-          value={character8}
+          value={handleChangeChar8}
           onChange={handleChange}
           aria-label="character8 select">
             <option  ></option>
-          {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+            {characters.results.length && (
+              characters.results.map((character) => (
+                <option key={character.id} 
+                  value={`${character.role}_${character.number}`} >
+                  {character.role}</option>
+              ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character8?.map((message, idx) => (
@@ -746,7 +789,7 @@ const charFields = (
           name="character9"
           className={styles.InputChar}
           value={character9}
-          onChange={handleChange}
+          onChange={handleChangeChar9}
           aria-label="character9 select">
             <option  ></option>
           {characters.results.length && (
@@ -770,7 +813,7 @@ const charFields = (
           name="character10"
           className={styles.InputChar}
           value={character10}
-          onChange={handleChange}
+          onChange={handleChangeChar10}
           aria-label="character10 select">
             <option  ></option>
           {characters.results.length && (
@@ -794,15 +837,15 @@ const charFields = (
           name="character11"
           className={styles.InputChar}
           value={character11}
-          onChange={handleChange}
+          onChange={handleChangeChar11}
           aria-label="character11 select">
             <option  ></option>
           {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+          characters.results.map((character) => (
+            <option key={character.id} 
+              value={`${character.role}_${character.number}`} >
+              {character.role}</option>
+          ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character11?.map((message, idx) => (
@@ -818,15 +861,15 @@ const charFields = (
           name="character12"
           className={styles.InputChar}
           value={character12}
-          onChange={handleChange}
+          onChange={handleChangeChar12}
           aria-label="character12 select">
             <option  ></option>
           {characters.results.length && (
-            characters.results.map((character) => (
-              <option key={character.id} 
-                value={`${character.role}_${character.number}`} >
-                {character.role}</option>
-            ) )) }
+          characters.results.map((character) => (
+            <option key={character.id} 
+              value={`${character.role}_${character.number}`} >
+              {character.role}</option>
+          ) )) }
         </Form.Control>
     </Form.Group>
     {errors?.character12?.map((message, idx) => (
@@ -895,6 +938,83 @@ const charFields = (
       </Button>
     </div>
   );
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("number", number);
+    formData.append("title", title);
+    formData.append("act", act);
+    formData.append("int_ext", int_ext);
+    formData.append("day_night", day_night);
+    formData.append("time", time);
+    formData.append("pages", pages);
+    formData.append("dramatic_day", dramatic_day);
+    formData.append("location", location);
+    formData.append("location_detail", location_detail);
+    formData.append("filming_location", filming_location);
+    formData.append("shooting_date", shooting_date);
+    formData.append("action", action);
+    formData.append("equip_set_props", equip_set_props);
+    formData.append("department_info", department_info);
+    formData.append("character1", character1);
+    formData.append("character1_costume", character1_costume);
+    formData.append("character2", character2);
+    formData.append("character2_costume", character2_costume);
+    formData.append("character3", character3);
+    formData.append("character3_costume", character3_costume);
+    formData.append("character4", character4);
+    formData.append("character4_costume", character4_costume);
+    formData.append("character5", character5);
+    formData.append("character5_costume", character5_costume);
+    formData.append("character6", character6);
+    formData.append("character6_costume", character6_costume);
+    formData.append("character7", character7);
+    formData.append("character7_costume", character7_costume);
+    formData.append("character8", character8);
+    formData.append("character8_costume", character8_costume);
+    formData.append("character9", character9);
+    formData.append("character9_costume", character9_costume);
+    formData.append("character10", character10);
+    formData.append("character10_costume", character10_costume);
+    formData.append("character11", character11);
+    formData.append("character11_costume", character11_costume);
+    formData.append("character12", character12);
+    formData.append("character12_costume", character12_costume);
+    formData.append("character1_number", character1_number);
+    formData.append("character2_number", character2_number);
+    formData.append("character3_number", character3_number);
+    formData.append("character4_number", character4_number);
+    formData.append("character5_number", character5_number);
+    formData.append("character6_number", character6_number);
+    formData.append("character7_number", character7_number);
+    formData.append("character8_number", character8_number);
+    formData.append("character9_number", character9_number);
+    formData.append("character10_number", character10_number);
+    formData.append("character11_number", character11_number);
+    formData.append("character12_number", character12_number);
+    formData.append("other_characters", other_characters);
+    formData.append("other_characters_costumes", other_characters_costumes);
+    formData.append("background_artists", background_artists);
+    formData.append("background_artists_costumes", background_artists_costumes);
+    if (imageInput.current.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
+    if (storyboardInput.current.files[0]) {
+      formData.append("storyboard", storyboardInput.current.files[0]); 
+    }
+      
+    try {
+      const { data } = await axiosReq.post("/scenes/", formData);
+      history.push(`/scenes/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  }
 
   return (
     <div >

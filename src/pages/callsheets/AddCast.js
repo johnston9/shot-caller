@@ -25,6 +25,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     const [postData, setPostData] = useState({
         cast_number: "",
         role: "",
+        username: "",
         artist: "",
         pickup_address: "",
         make_up_time: "",
@@ -41,6 +42,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     const { 
         cast_number,
         role,
+        username,
         artist,
         pickup_address,
         make_up_time,
@@ -58,6 +60,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       setPostData({
         cast_number: character.number,
         role: character.role,
+        username: character.username,
         artist: character.actor,
         pickup_address: character.pickup_address,
         make_up_time: character.make_up_time,
@@ -78,6 +81,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       const clear = () => {
         setPostData({cast_number: "",
         role: "",
+        username: "",
         artist: "",
         pickup_address: "",
         make_up_time: "",
@@ -113,6 +117,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
       formData.append("shoot_date", dataDate);
       formData.append("cast_number", cast_number);
       formData.append("role", role);
+      formData.append("username", username);
       formData.append("artist", artist);
       formData.append("contact", contact);
       formData.append("swf", swf);
@@ -126,6 +131,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         const {data} = await axiosReq.post("/castcallsnew/", formData);
         setPostData({cast_number: "",
                       role: "",
+                      username: "",
                       artist: "",
                       pickup_address: "",
                       make_up_time: "",
@@ -157,7 +163,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
           Cancel
         </Button>
         <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Add
+          Add Cast
         </Button>
       </div>
     );

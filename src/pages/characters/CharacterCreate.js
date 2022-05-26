@@ -24,13 +24,16 @@ const CharacterCreate = ({topbox} ) => {
     const setCharacters = useSetCharactersContext();
     const scenes = useScenesContext();
     const [showImp, setShowImp] = useState(false);
+
     const [postData, setPostData] = useState({
         number: "",
         role: "",
+        username: "",
       });
 
       const { number,
               role,
+              username,
         } = postData;
 
         const cancel = () => {
@@ -49,32 +52,26 @@ const CharacterCreate = ({topbox} ) => {
       const usedNumbers = characters.results.map((char) => (
        char.number));
 
-      console.log(usedNumbers);
       const unusedNumbers = castNumbers.filter(
         number => !usedNumbers.includes(number));
-
-  // function filterNumbers(number) {
-  //   return !usedNumbers.includes(number) ;
-  //   }
-
-  // const pagenumbers = castNumbers.filter(filterNumbers);
-
-  // let unusedNumbers = castNumbers.filter(function (number) {
-  //   if (usedNumbers.includes(number) ) {
-  //     return number;
-  //   }
-  // });
-  
-    console.log(unusedNumbers);
 
     const handleChange = (event) => {
         setPostData({
           ...postData,
-          [event.target.name]: event.target.value,
+          role: event.target.value,
         });
       };
-  
 
+      const handleChange2 = (event) => {
+        const castnumber = event.target.value;
+        const usernamecast = `cast${castnumber}`;
+        setPostData({
+          ...postData,
+          number: event.target.value,
+          username: usernamecast,
+        });
+      };
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -82,10 +79,12 @@ const CharacterCreate = ({topbox} ) => {
     
         formData.append("number", number);
         formData.append("role", role);
+        formData.append("username", username);
       
         try {
           const { data } = await axiosReq.post("/characters/", formData);
           history.push(`/characters/${data.id}/`);
+          console.log(data);
         } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {
@@ -164,7 +163,7 @@ const CharacterCreate = ({topbox} ) => {
                   type="text"
                   name="number"
                   value={number}
-                  onChange={handleChange}
+                  onChange={handleChange2}
                   aria-label="character1 select">
                     <option  ></option>
                     { (unusedNumbers.map((number) => (

@@ -27,6 +27,7 @@ const CharacterEdit = () => {
     const [postData, setPostData] = useState({
         number: "",
         role: "",
+        castusername: "",
         actor: "",
         pickup_address: "",
         pickup_address_2: "",

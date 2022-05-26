@@ -18,18 +18,24 @@ const NewCharacter = () => {
     const [errors] = useState({});
     const [newCharacter, setNewCharacter] = useState("");
     const [number, setNumber] = useState("");
+    const [username, setUsername] = useState("");
 
     const handleChange1 = (event) => {
         setNewCharacter(event.target.value);
       };
 
       const handleChange2 = (event) => {
+        const castnumber = event.target.value;
+        const usernamecast = `cast${castnumber}`;
+        console.log(usernamecast);
         setNumber(event.target.value);
+        setUsername(usernamecast);
       };
 
       const cancel = () => {
         setNumber("");
         setNewCharacter("");
+        setUsername("");
       }
 
       const castNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -48,6 +54,7 @@ const NewCharacter = () => {
         const formData = new FormData();    
         formData.append("role", newCharacter);
         formData.append("number", number);
+        formData.append("username", username);
         try {
             const { data } = await axiosReq.post("/characters/", formData);
             setCharacters((prevChars) => ({
@@ -56,6 +63,8 @@ const NewCharacter = () => {
               }));
             setNewCharacter("");
             setNumber("");
+            setUsername("");
+            console.log(data);
           } catch (err) {
             console.log(err);
           }
