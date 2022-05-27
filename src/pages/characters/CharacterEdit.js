@@ -27,7 +27,7 @@ const CharacterEdit = () => {
     const [postData, setPostData] = useState({
         number: "",
         role: "",
-        castusername: "",
+        username: "",
         actor: "",
         pickup_address: "",
         pickup_address_2: "",
@@ -58,6 +58,7 @@ const CharacterEdit = () => {
 
       const { number,
         role,
+        username,
         actor,
         pickup_address,
         pickup_address_2,
@@ -105,6 +106,7 @@ const CharacterEdit = () => {
             const { number,
                 role,
                 actor,
+                username,
                 pickup_address,
                 pickup_address_2,
                 make_up_time,
@@ -133,6 +135,7 @@ const CharacterEdit = () => {
      
         setPostData({ number,
             role,
+            username,
             actor,
             pickup_address,
             pickup_address_2,
@@ -384,7 +387,7 @@ const buttons = (
                 <Col className='text-center mt-2 mb-3'>
                 <div>
                  <span className={`py-1 px-3 ${styles.SubTitle3 } `} >
-                {number ? (`USERNAME: cast${number}`) : ("") }
+                   USERNAME: {username}
                   </span>  
                  </div>
                 </Col>

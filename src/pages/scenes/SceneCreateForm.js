@@ -22,6 +22,7 @@ import NewCharacter from "./NewCharacter";
 import NewLocation from "./NewLocation";
 import { useCharactersContext, useLocationsContext, useSetCharactersContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 import Important from "./Important";
+import Info from "./Info";
 
 function SceneCreateForm({topbox}) {
   useRedirect("loggedOut");
@@ -32,6 +33,7 @@ function SceneCreateForm({topbox}) {
   const locations = useLocationsContext();
   const setLocations = useSetLocationsContext();
   const [showImp, setShowImp] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const [postData, setPostData] = useState({
       number: "",
@@ -596,7 +598,7 @@ const charFields = (
           value={character1}
           onChange={handleChangeChar1}
           aria-label="character1 select">
-            <option  ></option>
+            <option  >{character1} </option>
             {characters.results.length && (
               characters.results.map((character) => (
                 <option key={character.id} 
@@ -620,7 +622,7 @@ const charFields = (
           value={character2}
           onChange={handleChangeChar2}
           aria-label="character2 select">
-            <option  ></option>
+            <option  >{character2} </option>
           {characters.results.length && (
               characters.results.map((character) => (
                 <option key={character.id} 
@@ -644,7 +646,7 @@ const charFields = (
           value={character3}
           onChange={handleChangeChar3}
           aria-label="character3 select">
-            <option  ></option>
+            <option >{character3} </option>
             {characters.results.length && (
               characters.results.map((character) => (
                 <option key={character.id} 
@@ -1028,29 +1030,27 @@ const charFields = (
             onClick={() => history.goBack()}
         >
             Back
-        </Button>   
-        <Button
+      </Button>  
+      <Button
+      className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+      </Button> 
+      <Button
       className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
-    </Button>
+      </Button>
       {!showImp ? (
           ""
               ) : (
                 <Important  /> 
-                ) } 
+              ) } 
       <Row>
-        <Col md={{span: 8, offset: 2}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-        <h5 className={`text-center ${styles.Red }`} >INFO</h5>  
-        <p className={`text-center px-3 pt-1 ${styles.Red }`}>
-          Scene Info may be added at any time on the Scene
-          Page Edit button. New Characters and Locations must be 
-          created first on the Add Character or Add Location Pages or
-          in the Add Character or Add Location boxes below.<br/>
-          All Characters must be assigned a number. This cannot be changed.
-          If necessary the character can be deleted and given a new number.
-          </p>     
-         </div>
+        <Col>
+      {!showInfo ? (
+          ""
+              ) : (
+                <Info  /> 
+              ) } 
         </Col>
       </Row>
       <Row className="mt-3">

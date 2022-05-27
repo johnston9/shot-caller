@@ -14,6 +14,7 @@ const Character = (props) => {
     const setCharacter = useSetCharacterContext();
     const { number,
             role,
+            username,
             id,
             actor,
             pickup_address,
@@ -114,7 +115,7 @@ const Character = (props) => {
                  <Col className='text-center mb-3'>
                 <div>
                  <span className={`py-1 px-3 ${styles.SubTitle3 } `} >
-                {number ? (`USERNAME: cast${number}`) : ("") }
+                USERNAME: {username}
                   </span>  
                  </div>
                  </Col>

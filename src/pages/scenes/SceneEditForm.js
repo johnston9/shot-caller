@@ -21,6 +21,7 @@ import NewCharacter from "./NewCharacter";
 import SceneEditCostumes from "./SceneEditCostumes";
 import { useCharactersContext, useLocationsContext } from "../../contexts/Scene_chars_locs";
 import Important from "./Important";
+import Info from "./Info";
 
 const SceneEditForm = () => {
     useRedirect("loggedOut");
@@ -29,6 +30,7 @@ const SceneEditForm = () => {
     const characters = useCharactersContext();
     const locations = useLocationsContext();
     const [showImp, setShowImp] = useState(false);
+    const [showInfo, setShowInfo] = useState(false);
 
     const [postData, setPostData] = useState({
       number: "",
@@ -637,7 +639,7 @@ const SceneEditForm = () => {
             value={character1}
             onChange={handleChangeChar1}
             aria-label="character1 select">
-              <option  ></option>
+              <option  >{character1} </option>
               {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} 
@@ -661,7 +663,7 @@ const SceneEditForm = () => {
             value={character2}
             onChange={handleChangeChar2}
             aria-label="character2 select">
-              <option  ></option>
+              <option  >{character2} </option>
             {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} 
@@ -685,7 +687,7 @@ const SceneEditForm = () => {
             value={character3}
             onChange={handleChangeChar3}
             aria-label="character3 select">
-              <option  ></option>
+              <option  >{character3} </option>
               {characters.results.length && (
                 characters.results.map((character) => (
                   <option key={character.id} 
@@ -1070,6 +1072,24 @@ const SceneEditForm = () => {
       className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
     </Button>
+    <Button
+      className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+      </Button> 
+      {!showImp ? (
+          ""
+              ) : (
+                <Important  /> 
+              ) } 
+      <Row>
+        <Col>
+      {!showInfo ? (
+          ""
+              ) : (
+                <Info  /> 
+              ) } 
+        </Col>
+      </Row>
       {!showImp ? (
           ""
               ) : (

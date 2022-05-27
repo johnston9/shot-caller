@@ -53,8 +53,7 @@ const CharScheduleScene = (props) => {
                 {character9_number && <span className='mb-0'> {character9_number}, </span>} 
                 {character10_number && <span className='mb-0'>{character10_number} , </span>} 
                 {character11_number && <span className='mb-0'> {character11_number} , </span>} 
-                {character12_number && <span className='mb-0'> {character12_number} , </span>} 
-                {other_characters_numbers && <span className='mb-0'> {other_characters_numbers} </span>}   
+                {character12_number && <span className='mb-0'> {character12_number} , </span>}  
                 </Col>   
                 <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <p >{pages}</p>
