@@ -24,6 +24,7 @@ const CharacterEdit = () => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [showImp, setShowImp] = useState(false);
+
     const [postData, setPostData] = useState({
         number: "",
         role: "",
@@ -264,7 +265,8 @@ const handleSubmit = async (event) => {
 
   const formData = new FormData();
 
-  formData.append("role", role);
+  formData.append("role", role); 
+  formData.append("number", number); 
   formData.append("actor", actor);
   formData.append("pickup_address", pickup_address);
   formData.append("pickup_address_2", pickup_address_2);
@@ -414,7 +416,8 @@ const buttons = (
                   <Col xs={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="mobile" 
                   className={`${styles.Width} text-center`}  >
-                          <Form.Label className={styles.Bold} >Mobile</Form.Label>
+                          <Form.Label className={styles.Bold} >
+                            Mobile</Form.Label>
                           <Form.Control 
                           className={styles.Input}
                           type="text"
@@ -563,6 +566,7 @@ const buttons = (
                           className={styles.InputScene}
                           as="textarea"
                           rows={2}
+                          name="pickup_address"
                           value={pickup_address}
                           onChange={handleChange}
                               />
@@ -581,6 +585,7 @@ const buttons = (
                           type="text"
                           className={styles.InputScene}
                           as="textarea"
+                          name="pickup_address_2"
                           rows={2}
                           value={pickup_address_2}
                           onChange={handleChange}

@@ -26,6 +26,7 @@ import AddArt from './AddArt';
 import AddSoundTransport from './AddSoundTransport';
 import AddStunts from './AddStunts';
 import AddPostAdditional from './AddPostAdditional';
+import Information from "./Information";
 
 const CallsheetCreate = () => {
   useRedirect("loggedOut");
@@ -56,6 +57,7 @@ const CallsheetCreate = () => {
   const [showStu, setShowStu] = useState(false);
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const [postData, setPostData] = useState({
       // info
@@ -631,7 +633,7 @@ const CallsheetCreate = () => {
   const infoFields = (
     <div className={`pb-5 text-center ${styles.Back3 }`}>
       <div className={`my-3 ${styles.Bold }`} > 
-        <span className={`px-5 my-3 py-1 ${styles.SubTitle }`} >WEATHER  </span> 
+        <h5 className={`mx-5 my-3 py-1 ${styles.SubTitle }`} >INFO  </h5> 
       </div>
       <Row>
         <Col className="d-flex justify-content-center" xs={{span: 6, offset: 3}} >
@@ -655,486 +657,6 @@ const CallsheetCreate = () => {
           </div>
         </Col>
       </Row>
-      <hr/>
-      <div className={`my-3 ${styles.Bold }`} > 
-        <span className={`px-5 my-3 py-1 ${styles.SubTitle }`} >CALLS  </span> 
-      </div>
-      {/* Unit call - Talent call Shoot call */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="production_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Unit Call</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="unit_call"
-                value={unit_call}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.unit_call?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="talent_call" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Talent Call</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="talent_call"
-                value={talent_call}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.talent_call?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="shoot_call" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Shoot Call</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="shoot_call"
-                value={shoot_call}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.shoot_call?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      {/* breakfast - lunch - wrap */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="breakfast" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Breakfast</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="breakfast"
-                value={breakfast}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.breakfast?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="lunch" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Lunch</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="lunch"
-                value={lunch}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.lunch?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="wrap" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Est. Wrap</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="wrap"
-                value={wrap}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.wrap?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      <div className={`my-3 ${styles.Bold }`} > 
-        <span className={`px-5 my-3 py-1 ${styles.SubTitle }`} >LOCATIONS  </span> 
-      </div>
-      {/* basecamp name basecamp address - basecamp parking and notes */}
-      <Row>
-          <Col xs={4 } className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="basecamp_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Basecamp Name</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="basecamp_name"
-                value={basecamp_name}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.basecamp_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="basecamp_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Basecamp Address</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                name="basecamp_address"
-                value={basecamp_address}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.basecamp_address?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="basecamp_parking_n_notes" className={`${styles.Width95} `}  >
-              <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Basecamp Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Basecamp Notes</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                type="text"
-                name="basecamp_parking_n_notes"
-                value={basecamp_parking_n_notes}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.basecamp_parking_n_notes?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      {/* location 1 name location 1 address - location 1 parking and notes */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_1_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 1 Name</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="location_1_name"
-                value={location_1_name}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_1_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_1_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 1 Address</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                name="location_1_address"
-                value={location_1_address}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_1_address?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_1_parking_n_notes" className={`${styles.Width95} `}  >
-              <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 1 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 1 Notes</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                type="text"
-                name="location_1_parking_n_notes"
-                value={location_1_parking_n_notes}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_1_parking_n_notes?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      {/* location 2 name location 2 address - location 2 parking and notes */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_2_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 2 Name</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="location_2_name"
-                value={location_2_name}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_2_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_2_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 2 Address</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                name="location_2_address"
-                value={location_2_address}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_2_address?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_2_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 2 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 2 Notes</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                type="text"
-                name="location_2_parking_n_notes"
-                value={location_2_parking_n_notes}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_2_parking_n_notes?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      {/* location 3 name location 3 address - location 3 parking and notes */}
-      <Row>
-        <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_3_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 3 Name</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="location_3_name"
-                value={location_3_name}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_3_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2"> 
-          <Form.Group controlId="location_3_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 3 Address</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                name="location_3_address"
-                value={location_3_address}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_3_address?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_3_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 3 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 3 Notes</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                type="text"
-                name="location_3_parking_n_notes"
-                value={location_3_parking_n_notes}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_3_parking_n_notes?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      {/* location 4 name location 4 address - location 4 parking and notes */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_4_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 4 Name</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="location_4_name"
-                value={location_4_name}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_4_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_4_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 4 Address</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                name="location_4_address"
-                value={location_4_address}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_4_address?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_4_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 4 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 4 Notes</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                type="text"
-                name="location_4_parking_n_notes"
-                value={location_4_parking_n_notes}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_4_parking_n_notes?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      {/* location 5 name location 5 address - location 5 parking and notes */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_2_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 5 Name</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="location_5_name"
-                value={location_5_name}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_5_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_5_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 5 Address</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={2}
-                name="location_5_address"
-                value={location_5_address}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_5_address?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_5_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 5 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 5 Notes</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={2}
-                type="text"
-                name="location_5_parking_n_notes"
-                value={location_5_parking_n_notes}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_5_parking_n_notes?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <hr/>
-      <div className={`my-3 ${styles.Bold }`} > 
-        <span className={`px-5 my-3 py-1 ${styles.SubTitle }`} >INFO  </span> 
-      </div>
       {/* nearest hospital - department info */}
       <Row>
       <Col xs={6} className=" p-0 p-md-2">
@@ -1266,7 +788,6 @@ const CallsheetCreate = () => {
           </div>
           </Col>
       </Row>
-      <hr/>
       {/* transport info - important info */}
       <Row>
           <Col xs={12} className="d-flex justify-content-center p-0 p-md-2">
@@ -1289,11 +810,484 @@ const CallsheetCreate = () => {
           ))}
       </Col>
       </Row>    
-      <hr/>
+      <div className={`my-3 ${styles.Bold }`} > 
+        <h5 className={`mx-5 my-3 py-1 ${styles.SubTitle }`} > TIMES  </h5> 
+      </div>
+      {/* Unit call - Talent call Shoot call */}
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="production_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Unit Call</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="unit_call"
+                value={unit_call}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.unit_call?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="talent_call" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Talent Call</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="talent_call"
+                value={talent_call}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.talent_call?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="shoot_call" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Shoot Call</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="shoot_call"
+                value={shoot_call}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.shoot_call?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* breakfast - lunch - wrap */}
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="breakfast" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Breakfast</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="breakfast"
+                value={breakfast}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.breakfast?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="lunch" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Lunch</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="lunch"
+                value={lunch}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.lunch?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wrap" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Est. Wrap</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="wrap"
+                value={wrap}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wrap?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <div className={`my-3 ${styles.Bold }`} > 
+        <h5 className={`mx-5 my-3 py-1 ${styles.SubTitle }`} >LOCATIONS  </h5> 
+      </div>
+      {/* basecamp name basecamp address - basecamp parking and notes */}
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>BASECAMP</span>
+      <Row className="mb-3">
+          <Col xs={4 } className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="basecamp_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Basecamp Name</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="basecamp_name"
+                value={basecamp_name}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.basecamp_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="basecamp_address" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.Bold}`} >Basecamp Address</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                as="textarea"
+                rows={2}
+                name="basecamp_address"
+                value={basecamp_address}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.basecamp_address?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="basecamp_parking_n_notes" className={`${styles.Width95} `}  >
+              <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Basecamp Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.Bold}`}>Basecamp Notes</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="basecamp_parking_n_notes"
+                value={basecamp_parking_n_notes}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.basecamp_parking_n_notes?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* location 1 name location 1 address - location 1 parking and notes */}
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 1</span>
+      <Row className="mb-3">
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_1_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 1 Name</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="location_1_name"
+                value={location_1_name}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_1_address" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 1 Address</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                as="textarea"
+                rows={2}
+                name="location_1_address"
+                value={location_1_address}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_1_address?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_1_parking_n_notes" className={`${styles.Width95} `}  >
+              <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 1 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 1 Notes</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="location_1_parking_n_notes"
+                value={location_1_parking_n_notes}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_1_parking_n_notes?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 2</span>
+      {/* location 2 name location 2 address - location 2 parking and notes */}
+      <Row className="mb-3">
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_2_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 2 Name</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="location_2_name"
+                value={location_2_name}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_2_address" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 2 Address</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                as="textarea"
+                rows={2}
+                name="location_2_address"
+                value={location_2_address}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_2_address?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_2_parking_n_notes" className={`${styles.Width95} `}  >
+          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 2 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 2 Notes</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="location_2_parking_n_notes"
+                value={location_2_parking_n_notes}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_2_parking_n_notes?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 3</span>
+      {/* location 3 name location 3 address - location 3 parking and notes */}
+      <Row className="mb-3">
+        <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_3_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 3 Name</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="location_3_name"
+                value={location_3_name}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2"> 
+          <Form.Group controlId="location_3_address" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 3 Address</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                as="textarea"
+                rows={2}
+                name="location_3_address"
+                value={location_3_address}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_3_address?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_3_parking_n_notes" className={`${styles.Width95} `}  >
+          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 3 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 3 Notes</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="location_3_parking_n_notes"
+                value={location_3_parking_n_notes}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_3_parking_n_notes?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 4</span>
+      {/* location 4 name location 4 address - location 4 parking and notes */}
+      <Row className="mb-3">
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_4_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 4 Name</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="location_4_name"
+                value={location_4_name}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_4_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_4_address" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 4 Address</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                as="textarea"
+                rows={2}
+                name="location_4_address"
+                value={location_4_address}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_4_address?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_4_parking_n_notes" className={`${styles.Width95} `}  >
+          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 4 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 4 Notes</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="location_4_parking_n_notes"
+                value={location_4_parking_n_notes}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_4_parking_n_notes?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 5</span>
+      {/* location 5 name location 5 address - location 5 parking and notes */}
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_2_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 5 Name</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="location_5_name"
+                value={location_5_name}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_5_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_5_address" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.Bold}`} >Location 5 Address</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                as="textarea"
+                rows={2}
+                name="location_5_address"
+                value={location_5_address}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_5_address?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="location_5_parking_n_notes" className={`${styles.Width95} `}  >
+          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 5 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 5 Notes</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="location_5_parking_n_notes"
+                value={location_5_parking_n_notes}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_5_parking_n_notes?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
       {/* WALKIE CHANNELS */}
       <div>
         <div className={`my-3 ${styles.Bold }`} > 
-        <span className={`px-5 my-3 py-1 ${styles.SubTitle }`} >WALKIE CHANNELS  </span> 
+        <p className={`mx-5 my-3 py-1 ${styles.SubTitle }`} >WALKIE CHANNELS  </p> 
         </div>
       <Row>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
@@ -1463,26 +1457,19 @@ const buttons = (
     >
         Back
     </Button>
-    <p>The Add Cast and Add Background forms here are seperate from the main 
-      Callsheet Info and Crew Calls form below. They allow each cast member 
-      or background item to be added individually. The schedule is provided
-      to facilitate this and can also be viewed beside these forms. These forms
-      can be done here on this page before clicking the "Create" button for the 
-      main Callsheet below or from the Edit page.  </p>
+    <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+        </Button>
+          {!showInfo ? (
+              ""
+                  ) : (
+                    <Information  /> 
+                    ) }  
     {/* cast buttons */}
     <h3 className={`text-center py-1 ${styles.SubTitle }`} >ADD CAST</h3> 
-    <Row className="text-center">
-      <Col xs={10} md={{span: 8, offset: 2 }} >
-        <p>Add each cast member and BG/Stand-in item separately. 
-          This can be done on this page before the "Create" button 
-          for the Callsheet below is clicked or after the Callsheet is created 
-          from the Edit page. Each item can then be edited fron the Callsheet.
-        </p>
-      </Col>
-    </Row>
     <div className= {`mb-3`}>
       {/* schedule button */}
-    {/* schedule */}
     <Row className='text-center'>
     <Col  >
     <Button
@@ -1556,16 +1543,12 @@ const buttons = (
     ) }
     </div>
     {/* info */}
-    <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >ADD INFO AND CREW CALLS</h3> 
+    <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >CALLSHEET</h3> 
     {/* <div className={`${styles.White }`}> 
     <h4 className={` text-center mt-0 mb-0 py-1`} > INFO</h4> 
     </div>
     <h4 className={` text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > </h4>  */}
     <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
-    <Row className="text-center">
-      <Col xs={10} md={{span: 8, offset: 2 }} >
-      </Col>
-    </Row>
     {infoFields}
     <h4 className={`text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > CREW CALLS</h4> 
     <div className={`pt-2 ${styles.White }`}> 

@@ -246,6 +246,7 @@ p {
 
 .CastEntered {
   background-color: #deedfa;
+  min-height: 40px;
 }
 
 .Bold { 

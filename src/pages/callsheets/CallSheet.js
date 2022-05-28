@@ -222,12 +222,11 @@ const CallSheet = (props ) => {
       
     const actorcalldata = cast.results.filter(casttimes);
 
-    const actorcall = actorcalldata[0].call;
+    const actorcall = actorcalldata[0]?.call || "" ;
 
     console.log(actorcall);
     
     const advancedDay = parseInt(day) + 1;
-    console.log(advancedDay);
 
       useEffect(() => {
         const yourcall = ( currentUser) => {
@@ -469,7 +468,7 @@ const CallSheet = (props ) => {
                     }
             </div>
             {/* actorcall call className={`mt-3 mb-0 pb-0 px-2 ${styles.YourCallMed }`} */}
-            <h2 className='mt-3 mb-0 pb-0'>Cast Call - {actorcall} </h2>
+            <h2 className='mt-3 mb-0 pb-0'>Cast Call -  </h2>
             <div className='mt-2 mb-0 pb-0'>
             <p className={`px-3 ${styles.UnitCallMedDate }`}>{date} </p>
             </div>
@@ -479,10 +478,10 @@ const CallSheet = (props ) => {
               <p className={`px-1 mx-4 pb-0 ${styles.YourCallMed }`}>
               {yourcalltime} </p>
             ) }
-            {actorcall && (
+            {/* {actorcall && (
               <p className={`px-1 mx-4 pb-0 ${styles.YourCallMed }`}>
               {actorcall} </p>
-            ) }
+            ) } */}
             </div>
             <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border2 }`}>
             <h4 className='mt-0 mb-0 pb-0'>Unit Call</h4>
