@@ -19,6 +19,8 @@ import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
 import Storyboard from './Storyboard';
 import TopBox from '../../components/TopBox';
+import InfoScenePage from './InfoScenePage';
+import InfoWorkspace from './InfoWorkspace';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -37,6 +39,8 @@ const Scene = (props) => {
       workspace_guide, setScene } = props;
     console.log(scene)
     const history = useHistory();
+    const [showInfo, setShowInfo] = useState(false);
+    const [showWorkInfo, setShowWorkInfo] = useState(false);
 
     const handleEdit = () => {
       history.push(`/scenes/${id}/edit`);
@@ -188,6 +192,15 @@ const Scene = (props) => {
               >
               Back
           </Button>
+          <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+        </Button>
+          {!showInfo ? (
+              ""
+                  ) : (
+                    <InfoScenePage  /> 
+                    ) } 
             <div className={` ${styles.Header}`}>
               <div className='d-none d-md-block'>
                   <Row className={`${styles.ButtonLine} mt-2 mx-3`}>
@@ -302,16 +315,23 @@ const Scene = (props) => {
                       </Row>             
                     ) }
                     {/* workspace */}
-                  <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-                  <Row className='mt-2'>
-                    <Col md={{span: 8, offset: 2 }}>
-                    <p className='text-center'>
-                      Edit or Add to the scene Breakdown using the Edit 
-                      Button above. Use the Workspace Guide to indicate which
-                      Departments Workspaces will be used for this Scene.
-                      </p>   
-                    </Col>
-                  </Row>
+                  {/* <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
+                  <h5 style={{ textTransform: 'uppercase'}} 
+                  className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
+                SCENE WORKSPACE
+                {/* <span style={{ textTransform: 'none'}} setShowWorkInfo
+                className={`float-right ${styles.Close }`} 
+                onClick={() => setShowBreak(false) } >Close</span> */}
+            </h5>
+            <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowWorkInfo(showWorkInfo => !showWorkInfo)} >INFO
+        </Button>
+          {!showWorkInfo ? (
+              ""
+                  ) : (
+                    <InfoWorkspace  /> 
+                    ) } 
                   <Row className='mb-2'>
                     <Col md={1}></Col>
                     <Col className='mx-0 px-0' xs={12} md={10} >

@@ -16,6 +16,7 @@ import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TopBox from '../../components/TopBox';
 import r1 from "../../assets/r1.png"; 
+import Information from './Information';
 
 const ScenesPage = ({message, filter = "" }) => {
     useRedirect("loggedOut");
@@ -24,6 +25,7 @@ const ScenesPage = ({message, filter = "" }) => {
     const [query, setQuery] = useState("");
     const setAct = useSetActContext();
     const history = useHistory();
+    const [showInfo, setShowInfo] = useState(false);
 
     const handleClickAct1 = () => {
       setAct('one'); 
@@ -79,6 +81,15 @@ const ScenesPage = ({message, filter = "" }) => {
               >
               Back
           </Button>
+          <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+        </Button>
+          {!showInfo ? (
+              ""
+                  ) : (
+                    <Information  /> 
+                    ) } 
           {/* Add Scene */}
           <Row className='mt-0'>
             <Col className="text-center">

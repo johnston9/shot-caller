@@ -25,7 +25,7 @@ const Breakdown = (props) => {
             <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
                 Scene breakdown
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>
-                </h5>
+            </h5>
                 <h4 className='text-center'>{title} - <span>Act {act} - Dramatic Day {dramatic_day} {time} </span> </h4>
             <Row>
             <Col className='mx-0 px-0' xs={12} md={4}  >

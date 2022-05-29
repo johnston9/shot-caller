@@ -9,6 +9,9 @@ const WorkspaceInst = ({setShowInts}) => {
             <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >Instructions </h5>
             </div>
             <p className='px-3'>
+            Edit or Add to the scene Breakdown using the Edit 
+                      Button above. Use the Workspace Guide to indicate which
+                      Departments Workspaces will be used for this Scene.
                 The Universal Workspace can be used for all work on the scene or
                 in conjunction with one or a number of departments. Or all work 
                 can be done in departments. Use the Guide to indicate which.
