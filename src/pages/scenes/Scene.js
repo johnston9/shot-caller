@@ -187,13 +187,13 @@ const Scene = (props) => {
         <div>
           <TopBox title={`Scene ${number} `} />
           <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue} mt-2`}
+              className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}
               >
               Back
           </Button>
           <Button
-          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
         </Button>
           {!showInfo ? (
@@ -315,31 +315,41 @@ const Scene = (props) => {
                       </Row>             
                     ) }
                     {/* workspace */}
-                  {/* <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p> */}
-                  <h5 style={{ textTransform: 'uppercase'}} 
-                  className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
-                SCENE WORKSPACE
-                {/* <span style={{ textTransform: 'none'}} setShowWorkInfo
-                className={`float-right ${styles.Close }`} 
-                onClick={() => setShowBreak(false) } >Close</span> */}
-            </h5>
-            <Button
-          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-          onClick={() => setShowWorkInfo(showWorkInfo => !showWorkInfo)} >INFO
-        </Button>
-          {!showWorkInfo ? (
-              ""
-                  ) : (
-                    <InfoWorkspace  /> 
-                    ) } 
+                    <h5 style={{ textTransform: 'uppercase'}} 
+                        className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
+                        SCENE WORKSPACE
+                    </h5>
+                    {/* edit guide */}
+                    <Row>
+                      <Col>
+                      {workspace_guide ? (
+                      <Button 
+                      className={`px-sm-4 py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+                      onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > 
+                      Edit Guide
+                    </Button>
+                    ) : (
+                      <Button 
+                        className={` py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+                      onClick={() => setShowGuide(showGuide => !showGuide)} >
+                         Add Guide
+                    </Button>
+                    )}
+                  <Button 
+                      className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+                    onClick={() => setShowWorkInfo(showWorkInfo => !showWorkInfo)} >INSTRUCTIONS
+                  </Button>
+                      </Col>
+                    </Row>
+                  {!showWorkInfo ? (
+                    ""
+                        ) : (
+                          <InfoWorkspace 
+                          setShowWorkInfo={setShowWorkInfo} /> 
+                          ) } 
                   <Row className='mb-2'>
                     <Col md={1}></Col>
                     <Col className='mx-0 px-0' xs={12} md={10} >
-                    {!showInts ? (
-                      ""
-                    ) : (
-                      <WorkspaceInst className="my-2" setShowInts={setShowInts} />
-                    ) }
                     {!showGuide ? (
                       ""
                     ) : (
@@ -350,36 +360,20 @@ const Scene = (props) => {
                     ) : (
                       <WorkspaceGuideEdit className="my-2" id={id} number={number} setShowGuideEdit={setShowGuideEdit} setScene={setScene} />
                     ) }
-                    <div className={`mt-3 px-3 pb-0 ${styles.Guide}`}>
-                    <h4 style={{ textTransform: 'uppercase'}} className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >Workspace Guide</h4>
-                      <div className={`text-center mt-2 px-3 pb-0 ${styles.GuideBox}`}>{workspace_guide} </div>
-                      <Row>
-                        <Col xs={4} className='mx-0 px-0 text-center'>
-                          <p
-                          className={`py-0 mb-1 ${styles.Button}`}
-                          onClick={() => setShowInts(showInts => !showInts)} > Instructions
-                        </p>
-                        </Col>
-                        <Col xs={4} className='mx-0 px-0 text-center'>
-                        </Col>
-                        <Col xs={4} className='mx-0 px-0 text-center'>
-                          {workspace_guide ? (
-                            <p
-                            className={` py-0 mb-1 ${styles.Button} `}
-                            onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > Edit
-                          </p>
-                          ) : (
-                            <p
-                            className={`py-0 mb-1 ${styles.Button}`}
-                            onClick={() => setShowGuide(showGuide => !showGuide)} > Add 
-                          </p>
-                          )}
-                        </Col>                      
-                      </Row>
-                      </div>
                     </Col>
                   </Row>
-
+                  {/* guide */}
+                  <Row>
+                      <Col sm={{span: 10, offset: 1}} >
+                      <div className={`mt-3 pb-0 ${styles.Guide}`}>
+                      <p style={{ textTransform: 'uppercase'}} 
+                      className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >
+                        Workspace Guide</p>
+                        <div className={`text-center mt-2 px-3 pb-0 ${styles.GuideBox}`}>
+                          {workspace_guide} </div>
+                        </div>
+                      </Col>
+                    </Row>
                   <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                       <Col className='px-1 px-md-2' xs={4} md={4} lg={4} >

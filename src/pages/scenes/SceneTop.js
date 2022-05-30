@@ -39,8 +39,12 @@ const SceneTop = (props) => {
                     <Col className='mx-0 px-0' xs={1}>
                     </Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
+                    <Link to={`/scenes/${id}`}>
+                    <div>
                     <h5 className={` ${styles.Titlelist }`}>Scene {number} 
                     </h5>
+                    </div>
+                    </Link>
                     </Col >
                     <Col xs={1} className=' mx-0 px-0'>
                     <PostDropdown
@@ -49,13 +53,16 @@ const SceneTop = (props) => {
                         />
                     </Col>
                     </Row>
+                    <Link to={`/scenes/${id}`}>
                     <div className={` ${styles.Div25 }`}>
                     <span className={styles.Italics }>{title}</span>
                     </div>
+                    </Link>
                 </div>
                   {/* </Card.Header> */}
                   <Card.Body style={style} className="p-1" >
-                      <Link className={`${styles.SceneCardBody }`} to={`/scenes/${id}`}>
+                      <Link className={`${styles.SceneCardBody }`} 
+                        to={`/scenes/${id}`}>
                         <div className={` ${styles.Div50 }`}>
                       <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>
                       </div>

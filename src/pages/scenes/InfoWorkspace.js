@@ -3,20 +3,23 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styles from "../../styles/Callsheets.module.css";
 
-const InfoWorkspace = () => {
+const InfoWorkspace = ({setShowWorkInfo}) => {
   return (
     <div>
-        <Row className="mb-3">
-        <Col md={{span: 8, offset: 2}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-        <h5 className={`text-center `} >INFO</h5>  
-        <p>Find all scene info in the Breakdown which can be edited by the Edit 
-            button. Collaborate on the scene in the Scene Workspace. Click
-            the Info button below for the Workspace instructions. The Moodshots
-            feature can be used to upload and view image suggestions. Use the 
-            Storyboard feature to upload and view storyboards. The scene
-            shotlist can be created and viewed in the Shotlist feature which 
-            can be created side by side with the Storyboard.
+        <Row className="my-3">
+        <Col md={{span: 10, offset: 1}}>
+        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}> 
+        <div className={`mt-0 text-center pb-2 `}>
+            <span className={`float-right ${styles.Close }`} 
+            onClick={() => setShowWorkInfo(false) } >Close</span> 
+            <h5 className={`pl-5 text-center`} 
+            style={{ textTransform: 'uppercase'}} >Instructions </h5>
+            </div>
+        <p>Use the Workspace Guide to indicate which
+                Departments Workspaces will be used for this Scene.
+                The Universal Workspace can be used for all work on the scene or
+                in conjunction with one or a number of departments.
+                 Use the Guide to indicate which.
              </p>
          </div> 
         </Col>

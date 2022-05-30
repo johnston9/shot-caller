@@ -81,14 +81,13 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
         <Col md={10}>
         <div className={`px-1 mt-1 mb-3 ${styles.Guide}`}>
             {/* workspace guide */}
-            <div className={`mt-0 text-center mb-2 ${styles.SubTitle }`}>
+            <div className={`mt-0 text-center mb-0 ${styles.SubTitle }`}>
             <span className={`float-right ${styles.Close }`} onClick={() => setShowGuideEdit(false) } >Close</span> 
             <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >Edit Guide </h5>
             </div>
             <Form onSubmit={handleSubmit}>
             <Row>
-                <Col xs={1}></Col>
-              <Col xs={10}>
+              <Col xs={12}>
             <Form.Group controlId="workspace_guide" className="mb-2" >
                 <Form.Label className="p-1 d-none" >Workspace Guide</Form.Label>
                 <Form.Control 
