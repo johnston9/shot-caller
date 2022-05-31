@@ -21,7 +21,9 @@ const CharacterCreate = ({topbox} ) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const characters = useCharactersContext();
+    // eslint-disable-next-line
     const setCharacters = useSetCharactersContext();
+    // eslint-disable-next-line
     const scenes = useScenesContext();
     const [showImp, setShowImp] = useState(false);
 

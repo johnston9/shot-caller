@@ -17,6 +17,7 @@ const CharScheduleScene = (props) => {
         character4_number, character5_number, character6_number, 
         character7_number, character8_number, character9_number,
         character10_number, character11_number, character12_number,
+        // eslint-disable-next-line
         other_characters_numbers, } = props
 
     return (

@@ -82,7 +82,12 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         commute_time: commute_time,
         contact: contact,
         inst: inst,
-        diet: diet,        
+        diet: diet,   
+        swf: "",
+        pickup: "",
+        call: "",
+        hmw: "",
+        on_set: "",     
       });
     }
 
@@ -380,29 +385,3 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
 }
 
 export default AddCast
-
-{/* 
-            {characters.results.length && (
-                characters.results.map((character) => (
-                  <Dropdown.Item href="#/action-1" key={character.id} >{character.role}</Dropdown.Item>
-                ) )) }
-            <Col className="d-flex justify-content-center mx-0 "  xs={3}>
-            <Form.Group controlId="role" className={`${styles.Width} `} >
-              <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
-              <Form.Control as="select"
-                className={`${styles.Input}`} 
-                type="text"
-                name="role"
-                value={role}
-                onChange={handleChange}
-                aria-label="role select">
-                  <option  >Role</option>
-                Dropdown
-                </Form.Control>
-                </Form.Group>
-                {errors?.role?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-            </Col> */}

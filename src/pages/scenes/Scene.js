@@ -13,7 +13,6 @@ import btnStyles from "../../styles/Button.module.css";
 import { Button } from 'react-bootstrap';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import ShotlistPage from './ShotlistPage';
-import WorkspaceInst from './WorkspaceInst';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
@@ -28,7 +27,6 @@ const Scene = (props) => {
     const [showBreak, setShowBreak] = useState(false);
     const [showstory, setShowstory] = useState(false);
     const [showStoryShot, setShowStoryShot] = useState(false);
-    const [showInts, setShowInts] = useState(false);
     const [showGuide, setShowGuide] = useState(false);
     const [showGuideEdit, setShowGuideEdit] = useState(false);
     const setSceneId = useSetSceneContext();
