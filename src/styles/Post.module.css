@@ -3,8 +3,6 @@
     color: #fff;
   }
 
-  /* 0a242d */
-
 .PostTop2 {
   background-color: #58666b;
   color: #fff;
@@ -58,11 +56,20 @@ h5 {
 .Content {
   background-color: #444a4c;
   cursor: pointer;
+  color: #fff;
 }
 
 .Content:hover {
   background-color: #232d30;
   cursor: pointer;
+}
+
+.Red {
+  color: crimson;
+}
+
+.White {
+  color: #fff;
 }
 
 .ContentDep {

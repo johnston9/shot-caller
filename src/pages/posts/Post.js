@@ -43,7 +43,7 @@ const Post = (props) => {
         setPosts,
       } = props;
 
-      const currentUser = useCurrentUser()
+      const currentUser = useCurrentUser();
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
       const setSceneId = useSetSceneContext();
@@ -239,12 +239,12 @@ const Post = (props) => {
                         </Col>
                       </Row>            
                     </Col>                    
-                      <Col xs={12} lg={4} className="d-flex align-items-center justify-content-center" >
+                      <Col xs={12} lg={4} 
+                      className="d-flex align-items-center justify-content-center" >
                         <div className={`${styles.GoToScene} `} onClick={() => handleGoToScene() }>
-                      {departments && <span  >Scene {number} - <span style={{ textTransform: 'capitalize'}}>{departments }</span> <span style={{ textTransform: 'capitalize'}}>{category }</span> </span>} 
+                      {departments && <span  >
+                        Scene {number} - <span style={{ textTransform: 'capitalize'}}>{departments }</span> - <span class="text-capitalize" style={{ textTransform: 'capitalize'}} >{category }</span> </span>} 
                       </div>  
-                      </Col>
-                      <Col className='text-center' xs={12}>
                       </Col>
                       {/* <Col className="d-flex align-items-center justify-content-center" md={4}>
                       <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>

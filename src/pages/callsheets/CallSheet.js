@@ -707,7 +707,7 @@ const CallSheet = (props ) => {
         </Col>
         </Row>
         {/* loc */}
-        <Row>
+        <Row className='text-center'>
           <Col className='px-0' xs={6} >
           <div className={`mt-1 pb-0 px-2 mr-2 ${styles.Border2 }`}  >
             <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Location</span></p>
@@ -716,7 +716,7 @@ const CallSheet = (props ) => {
           </Col>
           <Col className='px-0' xs={6} >
           <div className={`mt-1 pb-0 px-2 ml-2 ${styles.Border2 }`} >
-          <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
+          <p className={`mb-0 pt-1`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
           <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
           </div >
           </Col>
