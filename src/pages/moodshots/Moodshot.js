@@ -72,9 +72,9 @@ const Moodshot = (props) => {
             </Col>
             <Col xs={12} md={6} className='mx-0 px-0 d-flex align-items-center justify-content-center'>
             <p className={`mb-0 ${styles.Titlelist }`}>
-                 {number && <span>Scene {number} - </span> } 
-                 {location && <span> {location} - </span> }
-                 {character && <span> {character} </span> }
+                 {number && <span>Scene {number} </span> } 
+                 {location && <span> - {location} </span> }
+                 {character && <span> - {character} </span> }
             </p>
             </Col>
         </Row>

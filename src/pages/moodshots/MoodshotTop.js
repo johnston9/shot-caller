@@ -39,7 +39,7 @@ const MoodshotTop = (props) => {
         };
         return (
             <div>
-                <Card className={`text-center ${styles.MoodTop}`}>
+                <Card className={ `text-center ${styles.MoodTop}`}>
                     <Link to={`/moodshots/${id}`}>
                     <Card.Body className={`py-1 ${styles.MoodTop}`}>
                         <Row className="d-flex align-items-center">
@@ -58,10 +58,10 @@ const MoodshotTop = (props) => {
                             </Col>
                             <Col xs={12} lg={6} className="px-0 mx-0 " >
                                 <Row className={`${styles.Content} py-2 mx-0`}>
-                                    <Col xs={12} md={6} className={`${styles.Content1}`} >
+                                    <Col xs={12} md={7} className={`${styles.Content1}`} >
                                     {number && <span style={{ fontWeight: '700' }}>Scene {number} </span>} {location && <span> {location} </span>} {character && <span style={{  fontWeight: '700' }}> {character} </span>}
                                     </Col>
-                                    <Col xs={12} md={6} className={`px-0 mx-0 ${styles.Content2} px-0`} >
+                                    <Col xs={12} md={5} className={`px-0 mx-0 ${styles.Content2} px-0`} >
                                     {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
                                     </Col>
                                 </Row>

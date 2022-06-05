@@ -13,6 +13,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
+import Info from "./Info";
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -24,6 +25,7 @@ import { useCharactersContext, useLocationsContext, useScenesContext } from "../
 const MoodshotEdit = () => {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
+  const [showInfo, setShowInfo] = useState(false);
 
   const scenes = useScenesContext();
   const characters = useCharactersContext();
@@ -326,14 +328,23 @@ const buttons = (
                 >
                 Back
             </Button>
+            {/* <Button
+              className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+              {!showInfo ? (
+                  ""
+                      ) : (
+                        <Info  /> 
+                        ) }  */}
             <Row>
-            <Col xs={1} md={2}></Col>
-              <Col className="text-center" xs={10} md={8}>
-                <h5>{number && <span>Scene {number} - </span> }
-              {location && <span> {location} - </span> }
-              {character && <span> {character} </span> }
+              <Col className="text-center" >
+                <h5 className={`mt-1 mb-2 py-1 ${styles.SubTitle }`}>{number && <span>Scene {number} </span> }
+              {location && <span> - {location} </span> }
+              {character && <span> - {character} </span> }
+              Moodshot
               </h5>
-              <p>{title && <span> {title} </span> }</p>
+              <p style={{ fontStyle: 'italic' }} >{title && <span> {title} </span> }</p>
               </Col>
             </Row>
             <Form className="mt-3" onSubmit={handleSubmit}>
@@ -346,7 +357,7 @@ const buttons = (
                 </Col>
                 <Col className="pt-2 p-0 p-md-2" md={6}>
                     <Container
-                    className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+                    className={`${appStyles.Content2} ${styles.Container} d-flex flex-column justify-content-center`}
                     >
                     <Form.Group className="text-center pt-3">
                         {image1 ? (
@@ -370,7 +381,7 @@ const buttons = (
                             >
                             <Asset
                                 src={Upload}
-                                message="Click or tap to upload an image"
+                                message="Upload First Image"
                             />
                             </Form.Label>
                         )}
@@ -414,14 +425,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className="my-1"
+                            className="my-1 pl-4 pl-md-2 ml-5"
                             htmlFor="image-upload2"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload second image"
+                                message="Upload Second Image"
                             />
                             </Form.Label>
                         )}
@@ -464,14 +475,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className=" my-1"
+                            className="ml-5 pl-4 pl-md-2 my-1"
                             htmlFor="image-upload3"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload third image"
+                                message="Upload Third Image"
                             />
                             </Form.Label>
                         )}
@@ -492,8 +503,8 @@ const buttons = (
                         {/* """ end image 3 """" */}
                     </Container>
                     </Col>
-                    </Row>
-                    <Row>
+                </Row>
+                <Row>
                     <Col md={6}>
                     {/* image 4 */}
                     <Container
@@ -516,14 +527,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className=" my-1"
+                            className="ml-5 pl-4 pl-md-2 my-1"
                             htmlFor="image-upload4"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload fourth image"
+                                message="Upload Fourth Image"
                             />
                             </Form.Label>
                         )}
@@ -566,14 +577,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className=" my-1"
+                            className="ml-5 pl-4 pl-md-2 my-1"
                             htmlFor="image-upload5"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload last image"
+                                message="Upload Fifth Image"
                             />
                             </Form.Label>
                         )}

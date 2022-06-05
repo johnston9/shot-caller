@@ -18,12 +18,14 @@ import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import MoodshotTop from "./MoodshotTop";
+import Info from "./Info";
 
 const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="", message, filter="" }) => {
     useRedirect("loggedOut");
   const [moodshots, setMoodshots] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
+  const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const history = useHistory();
@@ -71,6 +73,15 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
                 >
                     Back
             </Button>
+            <Button
+              className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+              {!showInfo ? (
+                  ""
+                      ) : (
+                        <Info  /> 
+                        ) } 
             {sceneId ? (
               <Row className="mb-3">
               <Col className="text-center">

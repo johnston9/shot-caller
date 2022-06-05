@@ -13,6 +13,12 @@
   border-radius: 2px;
   border: 1px solid #ffffff;
 }
+.Content2 {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #ffffff;
+  min-height: 200px;
+}
 
 .FillerImage {
   object-fit: cover;

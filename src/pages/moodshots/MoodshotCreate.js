@@ -13,6 +13,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
+import Info from "./Info";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -24,6 +25,7 @@ import { useCharactersContext, useLocationsContext, useScenesContext } from "../
 const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace="" }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
+  const [showInfo, setShowInfo] = useState(false);
   const [postData, setPostData] = useState({
     scene: sceneId,
     sceneNumber: number,
@@ -361,33 +363,39 @@ const buttons = (
                 >
                 Back
             </Button>
-            <Row>
-            <Col xs={1} md={2}></Col>
-              <Col xs={10} md={8}>
+            <Button
+              className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+              {!showInfo ? (
+                  ""
+                      ) : (
+                        <Info  /> 
+                        ) } 
                 {sceneId ? (
                   <>
-                  <h3 className="text-center">Scene {number} Moodshots</h3>
-                  <p> Add character and or location if you want the moodshot to 
-                    be on their pages too</p>
+                  <h3 className={`mt-1 mb-3 py-1 text-center ${styles.SubTitle }`}>Scene {number} Moodshots</h3>
+                  <Row>
+                  <Col xs={1} md={2}></Col>
+                    <Col xs={10} md={8}>
+                        <p> Add character and or location if you want the moodshot to 
+                          be on their pages too</p>
+                    </Col>
+                    </Row>
                     </>
                   ) : character ? (
                     <>
-                    <h3 className="text-center">{character} Moodshots</h3>
+                    <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{character} Moodshots</h3>
                       </>
                   ) : location ? (
                     <>
-                  <h3 className="text-center">{location} Moodshots</h3>
+                  <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{location} Moodshots</h3>
                     </>
                   ) : (
-                    <p>Create a Moodshot for a scene, a location or a character.
-                      It can also have a combination of these if you want it to
-                      be located in  two or all of these.
-                      If the moodshots is for a seperate element simply enter that in the title,
-                      leaving the others blank. 
-                  </p>
-                ) }
-              </Col>
-            </Row>
+                    <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>
+                      Create Moodshot
+                    </h3>
+                  ) }
             <Form className="mt-3" onSubmit={handleSubmit}>
                 <Row>
                 <Col md={6} className="p-0 p-md-2">
@@ -414,7 +422,7 @@ const buttons = (
                 </Col>
                 <Col className="pt-2 p-0 p-md-2" md={6}>
                     <Container
-                    className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+                    className={`${appStyles.Content2} ${styles.Container} d-flex flex-column justify-content-center`}
                     >
                     <Form.Group className="text-center pt-3">
                         {image1 ? (
@@ -438,7 +446,7 @@ const buttons = (
                             >
                             <Asset
                                 src={Upload}
-                                message="Click or tap to upload an image"
+                                message="Upload First Image"
                             />
                             </Form.Label>
                         )}
@@ -482,14 +490,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className="my-1"
+                            className="my-1 pl-4 pl-md-2 ml-5"
                             htmlFor="image-upload2"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload second image"
+                                message="Upload Second Image"
                             />
                             </Form.Label>
                         )}
@@ -532,14 +540,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className=" my-1"
+                            className="ml-5 pl-4 pl-md-2 my-1"
                             htmlFor="image-upload3"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload third image"
+                                message="Upload Third Image"
                             />
                             </Form.Label>
                         )}
@@ -560,8 +568,8 @@ const buttons = (
                         {/* """ end image 3 """" */}
                     </Container>
                     </Col>
-                    </Row>
-                    <Row>
+                </Row>
+                <Row>
                     <Col md={6}>
                     {/* image 4 */}
                     <Container
@@ -584,14 +592,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className=" my-1"
+                            className="ml-5 pl-4 pl-md-2 my-1"
                             htmlFor="image-upload4"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload fourth image"
+                                message="Upload Fourth Image"
                             />
                             </Form.Label>
                         )}
@@ -634,14 +642,14 @@ const buttons = (
                             </>
                         ) : (
                             <Form.Label
-                            className=" my-1"
+                            className="ml-5 pl-4 pl-md-2 my-1"
                             htmlFor="image-upload5"
                             >
                             <Asset2
                                 src={Upload}
                                 height={"20px"}
                                 width={"20px"}
-                                message="Upload last image"
+                                message="Upload Fifth Image"
                             />
                             </Form.Label>
                         )}
