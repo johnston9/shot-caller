@@ -224,7 +224,7 @@ const CallSheet = (props ) => {
         //   }
         // const actorcalldata = cast.results.filter(casttimes);
         const actorcalldata = cast.results.filter(
-          obj => obj.username == currentUser );
+          obj => obj.username === currentUser );
         console.log(actorcalldata);
         console.log(currentUser);
         const actorcall = actorcalldata[0]?.call || "" ;

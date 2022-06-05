@@ -118,9 +118,10 @@ const PostTop = (props) => {
     return (
         <div >
           <Card className={styles.PostTop} >
+          {/* d-flex align-items-center justify-content-center */}
                 <Card.Body className="py-0 px-0">
                 <Row className="d-flex align-items-center py-0 my-0">
-                    <Col xs={12} lg={7} >
+                    <Col xs={12} lg={6} >
                       <Row>
                         <Col className="d-flex align-items-center justify-content-space-between" xs={12} md={8}>
                         <Link to={`/profiles/${profile_id}`}>
@@ -212,14 +213,20 @@ const PostTop = (props) => {
                         </Col>
                       </Row>            
                     </Col>  
-                    <Col xs={12} lg={5} > 
-                    <Link  to={`/posts/${id}`} >
-                    <Row className={`${styles.Content} py-0 mx-0`}>                   
-                      <Col className={`${styles.Content1} px-0 d-flex align-items-center justify-content-center`}  xs={7}>
-                      {departments && <span className={`py-1 text-center`} style={{ textTransform: 'capitalize'}}  >S {number} - {departments} </span>} {cat && <span className={`py-1`}  style={{ textTransform: 'capitalize'}} >&nbsp; - {cat}. </span> }   
+                    <Col xs={12} lg={6} > 
+                    <Link  to={`/posts/${id}`} > 
+                    <Row className={`${styles.Content} my-2 mx-0`}>   
+                      <Col className={`${styles.Content1} py-2`} 
+                      xs={7}>
+                      {departments && 
+                          <span className={`py-1 text-center`} 
+                      style={{ textTransform: 'capitalize'}}  >
+                        S {number} - {departments} </span>} {cat && <span className={`py-1`}  
+                        style={{ textTransform: 'capitalize'}} >&nbsp; - {cat}. </span> }  
                       </Col>
-                      <Col className={`${styles.Content2} px-0 d-flex align-items-center justify-content-center`} xs={5}>
-                      {title && <span className="text-center">{title}</span>}
+                      <Col className={`${styles.Content2} py-2`} xs={5}>
+                      {title && <span className="text-center"
+                      style={{ fontStyle: 'italic' }}>" {title} " </span>}
                       </Col>
                     </Row>
                     </Link>

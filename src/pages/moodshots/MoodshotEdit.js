@@ -19,10 +19,15 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
+import { useCharactersContext, useLocationsContext, useScenesContext } from "../../contexts/Scene_chars_locs";
 
 const MoodshotEdit = () => {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
+
+  const scenes = useScenesContext();
+  const characters = useCharactersContext();
+  const locations = useLocationsContext();
   const [postData, setPostData] = useState({
     scene: "",
     number: "",
@@ -130,20 +135,93 @@ const MoodshotEdit = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const handleMount = async () => {
-  //     try {
-  //       const { data } = await axiosRes.get("characters/");
-  //       setCharacters(data);
-  //       console.log(`chars 1 ${characters.results[0].role }`)
-  //       console.log(data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
+  const handleChangeScene = (event) => {
+    const scene = event.target.value.split("_")[0];
+    const number = event.target.value.split("_")[1];
+    setPostData({
+      ...postData,
+      scene: scene,
+      sceneNumber: number,
+    });
+  };
 
-  //   handleMount();
-  // }, [])
+  const dropfields = (
+    <div>
+      <Row>
+        <Col xs={4} className="text-center" >
+          {/* scene */}
+            <Form.Group controlId="scenedrop" className="mb-2" >
+            <Form.Label className={`${styles.Bold} `} >Scene</Form.Label>
+            <Form.Control as="select"
+                name="scene"
+                className={styles.InputChar}
+                value={scene.id}
+                onChange={handleChangeScene}
+                aria-label="scene select">
+                <option  value="" >{number} </option>
+                {scenes.results.length && (
+                    scenes.results.map((scene) => (
+                    <option key={scene.id}
+                     value={`${scene.id}_${scene.number}`}  >
+                       {scene.number} - {scene.location} "{scene.title}"</option>
+                    ) )) }
+            </Form.Control>
+        </Form.Group>
+        {errors?.scene?.map((message, idx) => (
+             <Alert variant="warning" key={idx}>
+             {message}
+             </Alert>
+         ))}
+        </Col>
+        <Col xs={4} className="text-center" >
+          {/* location */}
+          <Form.Group controlId="locationdrop" className="mb-2" >
+              <Form.Label className={`${styles.Bold} `} >Location</Form.Label>
+              <Form.Control as="select"
+                  name="location"
+                  className={styles.InputChar}
+                  value={location}
+                  onChange={handleChange}
+                  aria-label="location select">
+                  <option  >{location} </option>
+                  {locations.results.length && (
+                      locations.results.map((location) => (
+                      <option key={location.id} value={location.name} >{location.name}</option>
+                      ) )) }
+              </Form.Control>
+          </Form.Group>
+          {errors?.location?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+              {message}
+              </Alert>
+          ))}
+          </Col>
+        <Col xs={4} className="text-center" >
+          {/* character */}
+          <Form.Group controlId="characterdrop" className="mb-2" >
+              <Form.Label className={`${styles.Bold} `} >Character</Form.Label>
+              <Form.Control as="select"
+                  name="character"
+                  className={styles.InputChar}
+                  value={character}
+                  onChange={handleChange}
+                  aria-label="character select">
+                  <option  >{character} </option>
+                  {characters.results.length && (
+                      characters.results.map((character) => (
+                      <option key={character.id} value={character.role} >{character.role}</option>
+                      ) )) }
+              </Form.Control>
+          </Form.Group>
+          {errors?.character?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+    </div>
+  )
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -186,145 +264,10 @@ const MoodshotEdit = () => {
     }
   }
 
-  const fields = (
-    <div>
-      <Row>
-        <Col xs={4}>
-        <Form.Group controlId="number" className="mb-2" >
-              <Form.Label className="p-1" >Scene Number</Form.Label>
-              <Form.Control 
-              type="text"
-              placeholder="Scene Number"
-              className={styles.InputScene}
-              name="number"
-              value={number}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.number?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-        </Col>
-        <Col xs={4}>
-          <Form.Group controlId="location" className="mb-2" >
-              <Form.Label className=" p-1" >Location</Form.Label>
-              <Form.Control 
-              type="text"
-              placeholder="Location"
-              className={styles.InputScene}
-              name="location"
-              value={location}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-        <Col xs={4}><Form.Group controlId="character" className="mb-2" >
-              <Form.Label className=" p-1" >Character</Form.Label>
-              <Form.Control 
-              type="text"
-              placeholder="Character"
-              className={styles.InputScene}
-              name="character"
-              value={character}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.character?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}</Col>
-      </Row>
-    </div>
-)
-
-// const dropfields = (
-//   <div>
-//     <p>Use Dropdowns or input fields</p>
-//     <p>Dropdowns</p>
-//     <Row>
-//       <Col xs={4}>
-//         {/* <Form.Group controlId="scenedrop" className="mb-2" >
-//             <Form.Label className="p-1 d-none" ></Form.Label>
-//             <Form.Control as="select"
-//                 name="scene"
-//                 className={styles.InputChar}
-//                 value={scene.id}
-//                 onChange={handleChange}
-//                 aria-label="scene select">
-//                 <option  value="" >Scene</option>
-//                 {scenes.results.length && (
-//                     scenes.results.map((scene) => (
-//                     <option key={scene.id} value={scene.id} >{scene.number} - {scene.location} "{scene.title}"</option>
-//                     ) )) }
-//             </Form.Control>
-//         </Form.Group>
-//         {errors?.scene?.map((message, idx) => (
-//             <Alert variant="warning" key={idx}>
-//             {message}
-//             </Alert>
-//         ))} */}
-//       </Col>
-//       <Col xs={4}>
-//         {/* location */}
-//         <Form.Group controlId="locationdrop" className="mb-2" >
-//             <Form.Label className="p-1 d-none" ></Form.Label>
-//             <Form.Control as="select"
-//                 name="location"
-//                 className={styles.InputChar}
-//                 value={location}
-//                 onChange={handleChange}
-//                 aria-label="location select">
-//                 <option  >Location</option>
-//                 {locations.results.length && (
-//                     locations.results.map((location) => (
-//                     <option key={location.id} value={location.name} >{location.name}</option>
-//                     ) )) }
-//             </Form.Control>
-//         </Form.Group>
-//         {errors?.location?.map((message, idx) => (
-//             <Alert variant="warning" key={idx}>
-//             {message}
-//             </Alert>
-//         ))}
-//         </Col>
-//       <Col xs={4}>
-//         {/* character */}
-//         <Form.Group controlId="characterdrop" className="mb-2" >
-//             <Form.Label className="p-1 d-none" ></Form.Label>
-//             <Form.Control as="select"
-//                 name="character"
-//                 className={styles.InputChar}
-//                 value={character}
-//                 onChange={handleChange}
-//                 aria-label="character select">
-//                 <option  >Character</option>
-//                 {characters.results.length && (
-//                     characters.results.map((character) => (
-//                     <option key={character.id} value={character.role} >{character.role}</option>
-//                     ) )) }
-//             </Form.Control>
-//         </Form.Group>
-//         {errors?.character?.map((message, idx) => (
-//           <Alert variant="warning" key={idx}>
-//             {message}
-//           </Alert>
-//         ))}</Col>
-//     </Row>
-//   </div>
-// )
-
   const textFields = (
     <div>
-        <Form.Group controlId="title" className="mb-2" >
-              <Form.Label className="d-none p-1" >Title</Form.Label>
+        <Form.Group controlId="title" className="mt-3 text-center mb-2" >
+              <Form.Label className={`${styles.Bold} `} >Title</Form.Label>
               <Form.Control 
               type="text"
               placeholder="Title"
@@ -339,8 +282,8 @@ const MoodshotEdit = () => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="content" className="mb-2" >
-              <Form.Label className="d-none p-1" >Content</Form.Label>
+          <Form.Group controlId="content" className="mt-3 mb-2 text-center" >
+              <Form.Label className={`${styles.Bold} `} >Content</Form.Label>
               <Form.Control 
                   className={styles.InputScene}
                   placeholder="Content"
@@ -359,15 +302,16 @@ const MoodshotEdit = () => {
           ))}
     </div>
 )
+
 const buttons = (
   <div className="text-center mb-3">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-5 ml-3`} type="submit">
       Edit
     </Button>
   </div>
@@ -396,7 +340,7 @@ const buttons = (
                 <Row>
                 <Col md={6} className="p-0 p-md-2">
                     <Container className= {`${appStyles.Content} ${styles.Container}`} >
-                    {fields}
+                    {dropfields}
                     {textFields}
                     </Container>
                 </Col>

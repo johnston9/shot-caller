@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
@@ -456,7 +455,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
       </Col>
     </Row>
   </Form>
-  <h5 className={`mt-3 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}></h5>
+  <p className={`mt-3 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}></p>
   </div>
   );
 }

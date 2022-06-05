@@ -243,7 +243,9 @@ const Post = (props) => {
                       className="d-flex align-items-center justify-content-center" >
                         <div className={`${styles.GoToScene} `} onClick={() => handleGoToScene() }>
                       {departments && <span  >
-                        Scene {number} - <span style={{ textTransform: 'capitalize'}}>{departments }</span> - <span class="text-capitalize" style={{ textTransform: 'capitalize'}} >{category }</span> </span>} 
+                        Scene {number} - <span style={{ textTransform: 'capitalize'}}>{departments }
+                        </span> - <span class="text-capitalize" 
+                        style={{ textTransform: 'capitalize'}} >{category }</span> </span>} 
                       </div>  
                       </Col>
                       {/* <Col className="d-flex align-items-center justify-content-center" md={4}>
@@ -253,7 +255,7 @@ const Post = (props) => {
                 </Card.Body>
                 {/* end new */}
                 <Card.Body className='py-1'  >
-                    {title && <h4 className="text-center">{title}</h4>}
+                    {title && <h4 className="mb-0 pb-0 text-center">{title}</h4>}
                     <hr />
                     {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>

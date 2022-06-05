@@ -56,7 +56,7 @@ const MoodshotTop = (props) => {
                             />
                             ) }               
                             </Col>
-                            <Col xs={12} lg={6} className="px-0 mx-0" >
+                            <Col xs={12} lg={6} className="px-0 mx-0 " >
                                 <Row className={`${styles.Content} py-2 mx-0`}>
                                     <Col xs={12} md={6} className={`${styles.Content1}`} >
                                     {number && <span style={{ fontWeight: '700' }}>Scene {number} </span>} {location && <span> {location} </span>} {character && <span style={{  fontWeight: '700' }}> {character} </span>}

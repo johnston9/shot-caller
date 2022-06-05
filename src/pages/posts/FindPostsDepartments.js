@@ -129,7 +129,7 @@ const Departments = (props) => {
                   </Col>
                   <Col className='text-center' xs={4} >
                   <Button onClick={() => history.push("/posts")}
-                    className={`${btnStyles.Button} py-0 ${btnStyles.Bright}`} >All Posts</Button>
+                    className={`${btnStyles.Button} py-0 px-5 ${btnStyles.Bright}`} >All Posts</Button>
                   </Col>
                   <Col className='text-center' xs={4} >
                   <Button onClick={() => history.push("/liked")} 

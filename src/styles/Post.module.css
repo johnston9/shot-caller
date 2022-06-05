@@ -1,11 +1,15 @@
 .PostTop {
-    background-color: #14404f;
+    /* background-color: #14404f; */
+    background-color: #205a6e;
     color: #fff;
+    border-bottom: 1px solid #fafafa;
   }
 
 .PostTop2 {
-  background-color: #58666b;
-  color: #fff;
+  /* background-color: #58666b;
+  color: #fff; */
+  background-color: #fff;
+  color: #000;
 }
 
 .Post figure,
@@ -56,13 +60,71 @@ h5 {
 .Content {
   background-color: #444a4c;
   cursor: pointer;
-  color: #fff;
+  height: 100%;
 }
 
 .Content:hover {
   background-color: #232d30;
   cursor: pointer;
 }
+
+.Content1 {
+  /* background-color: #444a4c; */
+  color: #fff;
+  cursor: pointer;
+}
+
+.Content1:hover {
+  /* background-color: #232d30; */
+  cursor: pointer;
+  color: #e9f1f1;
+}
+
+.Content2 {
+  cursor: pointer;
+  color: #79f5ef;
+}
+
+.Content2:hover {
+  cursor: pointer;
+  color: #e9f1f1;
+}
+
+/* .Content1 {
+  background-color: #444a4c;
+  cursor: pointer;
+  color: #fff;
+}
+
+.Content {
+  background-color: #fff;
+  cursor: pointer;
+  color: #000;
+}
+
+.Content:hover {
+  background-color: #95e7e9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Content:hover ~ .Content1 {
+  background-color: #95e7e9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Content1:hover + .Content{
+  background-color: #95e7e9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Content1:hover {
+  background-color: #95e7e9;
+  color: #000;
+  cursor: pointer;
+} */
 
 .Red {
   color: crimson;
