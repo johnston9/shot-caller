@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { useSetDeptGeneralContext } from '../../contexts/DeptCategoryContext';
@@ -9,10 +9,12 @@ import Camera from "../../assets/dep17s.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import TopBox from '../../components/TopBox';
+import Info from './Info';
 
 const DeptsGeneral = () => {
     useRedirect("loggedOut")
     const setDeptGeneral = useSetDeptGeneralContext();
+    const [showInfo, setShowInfo] = useState(false);
     const history = useHistory();
 
     const handleClick = (dept) => {
@@ -29,7 +31,16 @@ const DeptsGeneral = () => {
               onClick={() => history.goBack()}
               >
               Back
-              </Button>
+            </Button>
+            <Button
+              className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+              {!showInfo ? (
+                  ""
+                      ) : (
+                        <Info  /> 
+                        ) } 
             <Card className={` ${styles.Scene}`}>
                 <Card.Header className={`pt-2 pb-1 ${styles.Header }`}>
                 <h3 className={`text-center`}>Departments</h3>

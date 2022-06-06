@@ -47,7 +47,7 @@ const DeptPostTop = (props) => {
           <Card className={styles.PostTop} >
                 <Card.Body className="py-1 px-0">
                 <Row className="d-flex align-items-center">
-                    <Col xs={12} lg={7} >
+                    <Col xs={12} lg={6} >
                       <Row>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} >
                         <Link to={`/profiles/${profile_id}`}>
@@ -64,13 +64,14 @@ const DeptPostTop = (props) => {
                         </Col>
                       </Row>            
                     </Col>                      
-                    <Col xs={12} lg={5} > 
+                    <Col xs={12} lg={6} > 
                     <Link to={`/department/posts/${id}`}>
                       <Row className={`${styles.Content} mx-0`}>                   
                       <Col className={`${styles.Content1} px-0 d-flex align-items-center justify-content-center`}  xs={4}>
-                      {departments && <span className={`py-3 text-center`} style={{ textTransform: 'capitalize'}}  >{departments} </span>}  
+                      {departments && <span className={`py-2 text-center`} style={{ textTransform: 'capitalize'}}  >{departments} </span>}  
                       </Col>
-                      <Col className={`${styles.Content2} px-0 d-flex align-items-center justify-content-center`} xs={8} >
+                      <Col className={`${styles.Content2} px-0 d-flex align-items-center justify-content-center`} 
+                        style={{ fontStyle: 'italic' }} xs={8} >
                       {title && <span className="d-md-none text-center">{tit}</span>}
                       {title && <span className="d-none d-md-block text-center">{tit2}</span>}
                       </Col>

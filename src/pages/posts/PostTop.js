@@ -36,6 +36,7 @@ const PostTop = (props) => {
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
       const cat = category.substring(0, 3);
+      const title15 = title.substring(0, 15);
 
       const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
@@ -123,7 +124,8 @@ const PostTop = (props) => {
                 <Row className="d-flex align-items-center py-0 my-0">
                     <Col xs={12} lg={6} >
                       <Row>
-                        <Col className="d-flex align-items-center justify-content-space-between" xs={12} md={8}>
+                        <Col xs={12} sm={8} className="d-flex align-items-center 
+                        justify-content-space-between">
                         <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
                         </Link>
@@ -136,8 +138,8 @@ const PostTop = (props) => {
                         />
                         ) } 
                         </Col>
-                        <Col xs={12} md={4} className="d-flex align-items-center justify-content-center"> 
-                          <div className='d-none d-md-block' >
+                        <Col xs={12} sm={4} className="d-flex align-items-center justify-content-center"> 
+                          <div className='d-none d-sm-block' >
                           {/* archives */}
                           {archive_id ? (
                                 <OverlayTrigger
@@ -216,17 +218,15 @@ const PostTop = (props) => {
                     <Col xs={12} lg={6} > 
                     <Link  to={`/posts/${id}`} > 
                     <Row className={`${styles.Content} my-2 mx-0`}>   
-                      <Col className={`${styles.Content1} py-2`} 
-                      xs={7}>
+                      <Col className={`${styles.Content1} text-center py-2`} 
+                      sm={7} xs={12} >
                       {departments && 
-                          <span className={`py-1 text-center`} 
-                      style={{ textTransform: 'capitalize'}}  >
+                          <span >
                         S {number} - {departments} </span>} {cat && <span className={`py-1`}  
-                        style={{ textTransform: 'capitalize'}} >&nbsp; - {cat}. </span> }  
+                        style={{ textTransform: 'capitalize'}} >- {cat}. </span> }  
                       </Col>
-                      <Col className={`${styles.Content2} py-2`} xs={5}>
-                      {title && <span className="text-center"
-                      style={{ fontStyle: 'italic' }}>" {title} " </span>}
+                      <Col className={`${styles.Content2} py-2 text-center`} xs={12} sm={5}>
+                      {title && <span style={{ fontStyle: 'italic' }}>{title15}</span>}
                       </Col>
                     </Row>
                     </Link>

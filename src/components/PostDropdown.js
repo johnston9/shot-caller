@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
 import { useHistory } from "react-router";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Modal, OverlayTrigger, Tooltip } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
 
 const EditDeleteIcon = React.forwardRef(({ onClick }, ref) => (
   <OverlayTrigger
@@ -53,7 +54,33 @@ const EditProfileIcon = React.forwardRef(({ onClick }, ref) => (
 ));
 
 export const PostDropdown = ({ handleEdit, handleDelete }) => {
+  // Modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+  } 
+  const handleCloseDelete = () => {
+    handleDelete();
+    setShow(false);
+  } 
+  const handleShow = () => setShow(true);
+
   return (
+    <>
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Delete</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this item?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={handleCloseDelete}>
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={EditDeleteIcon} />
 
@@ -70,13 +97,14 @@ export const PostDropdown = ({ handleEdit, handleDelete }) => {
         </Dropdown.Item>
         <Dropdown.Item
           className={styles.DropdownItem}
-          onClick={handleDelete}
+          onClick={handleShow}
           aria-label="delete"
         >
           <i className="fas fa-trash-alt" />
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
+    </>
   );
 };
 
@@ -97,14 +125,14 @@ export function ProfileEditDropdown({ id }) {
           aria-label="edit-username"
         >
           <i className="far fa-id-card" />
-          change username
+          Change Username
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit/password`)}
           aria-label="edit-password"
         >
           <i className="fas fa-key" />
-          change password
+          Change Password
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
@@ -160,3 +188,36 @@ export function DeptDropdown({ handleClick, depart}) {
     </Dropdown>
   );
 }
+
+// t old delete
+// export const PostDropdown = ({ handleEdit, handleDelete }) => {
+//   // Modal
+//   const [showModal, setShowModal] = useState(false);
+//   const handleClose = () => setShowModal(false);
+//   const handleShow = () => setShowModal(true);
+//   return (
+//     <Dropdown className="ml-auto" drop="left">
+//       <Dropdown.Toggle as={EditDeleteIcon} />
+
+//       <Dropdown.Menu
+//         className="text-center"
+//         popperConfig={{ strategy: "fixed" }}
+//       >
+//         <Dropdown.Item
+//           className={styles.DropdownItem}
+//           onClick={handleEdit}
+//           aria-label="edit"
+//         >
+//           <i className="fas fa-edit" />
+//         </Dropdown.Item>
+//         <Dropdown.Item
+//           className={styles.DropdownItem}
+//           onClick={handleDelete}
+//           aria-label="delete"
+//         >
+//           <i className="fas fa-trash-alt" />
+//         </Dropdown.Item>
+//       </Dropdown.Menu>
+//     </Dropdown>
+//   );
+// };

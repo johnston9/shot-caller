@@ -255,7 +255,8 @@ const Post = (props) => {
                 </Card.Body>
                 {/* end new */}
                 <Card.Body className='py-1'  >
-                    {title && <h4 className="mb-0 pb-0 text-center">{title}</h4>}
+                    {title && <h4 style={{ fontStyle: 'italic' }}
+                    className="mb-0 pb-0 text-center">{title}</h4>}
                     <hr />
                     {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>

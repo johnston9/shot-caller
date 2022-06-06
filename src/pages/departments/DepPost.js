@@ -48,8 +48,8 @@ const DeptPost = (props) => {
 
     return (
         <div>
-            <Card  >
-                <Card.Body className={styles.PostTop}>
+            <Card >
+                <Card.Body className={`${styles.PostTop} py-1`} >
                 <Row>
                   <Col className="d-flex align-items-center justify-content-space-between" xs={12} >
                   <Link to={`/profiles/${profile_id}`}>
@@ -57,7 +57,10 @@ const DeptPost = (props) => {
                   </Link>
                   <span className='ml-1'>{name}</span>
                   <span className='ml-3'>{updated_at}</span>
-                  <span style={{ textTransform: 'capitalize'}}  className='d-none d-md-block ml-5'>{departments}</span>
+                  <span style={{ textTransform: 'capitalize'}}  
+                  className='d-none d-md-block ml-5 pl-5'>
+                    <span className={`${styles.PostTopText} py-1`}>. . . . . . . . . . . . . </span>
+                  {departments}</span>
                   {is_owner && (
                   <PostDropdown
                       handleEdit={handleEdit}
@@ -69,7 +72,8 @@ const DeptPost = (props) => {
                 </Card.Body>
                 <hr />
                 <Card.Body className="pt-1" >
-                    {title && <Card.Title className="text-center">{title}</Card.Title>}
+                    {title && <Card.Title style={{ fontStyle: 'italic' }}
+                     className="text-center">{title}</Card.Title>}
                     <hr />
                     {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>

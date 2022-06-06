@@ -68,6 +68,10 @@ h5 {
   cursor: pointer;
 }
 
+.PostTopText {
+  color: #205a6e;
+}
+
 .Content1 {
   /* background-color: #444a4c; */
   color: #fff;

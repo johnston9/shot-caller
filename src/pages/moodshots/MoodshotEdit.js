@@ -313,7 +313,7 @@ const buttons = (
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-5 ml-3`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
       Edit
     </Button>
   </div>

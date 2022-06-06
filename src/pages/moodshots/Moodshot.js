@@ -14,7 +14,8 @@ import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
 
 const Moodshot = (props) => {
-    useRedirect("loggedOut")
+    useRedirect("loggedOut");
+
     const {
         id,
         is_owner,
