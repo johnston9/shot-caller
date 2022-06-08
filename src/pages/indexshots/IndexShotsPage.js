@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
@@ -10,67 +10,44 @@ import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 import { useRedirect } from '../../hooks/Redirect';
 import appStyles from "../../App.module.css";
-import SceneTop from './SceneTop';
 import { Button } from 'react-bootstrap';
-import { useSetActContext } from '../../contexts/ActContext';
-import { useHistory } from "react-router";
 import TopBox from '../../components/TopBox';
-import r1 from "../../assets/r1.png"; 
-import Information from './Information';
+import { useHistory } from 'react-router-dom';
 
-const ScenesPage = ({message, filter = "" }) => {
+const IndexShotsPage = ({filter = "" }) => {
     useRedirect("loggedOut");
-    const [scenes, setScenes] = useState({results: [] });
+    const [indexShots, setIndexShots] = useState({results: [] });
+    // eslint-disable-next-line
+    const [error, setError] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
-    const setAct = useSetActContext();
+    const filter = "";
+    const message = "No Indexshots Added";
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
 
-    const handleClickAct1 = () => {
-      setAct('one'); 
-      history.push(`/act/scenes`);
-
-    };
-
-    const handleClickAct2a = () => {
-      setAct('two-a'); 
-      history.push(`/act/scenes`);
-
-    };
-
-    const handleClickAct2b = () => {
-      setAct('two-b'); 
-      history.push(`/act/scenes`);
-
-    };
-
-    const handleClickAct3 = () => {
-      setAct('three'); 
-      history.push(`/act/scenes`);
-
-    };
 
     useEffect(() => {
-        const fetchScenes = async () => {
-          try {
-            const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
-            setScenes(data);
-            setHasLoaded(true);
-          } catch(err) {
-            console.log(err);
+          const fetchshots = async () => {
+            try {
+              const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
+              setIndexShots(data);
+              setHasLoaded(true);
+            } catch(err) {
+              setError(err)
+              console.log(err);
+            }
           }
-        }
-        setHasLoaded(false);
-
-        const timer = setTimeout(() => {fetchScenes();
-        }, 500)
-
-        return () => {
-            clearTimeout(timer);
-          };
-    
-      }, [query, filter])
+          setHasLoaded(false);
+  
+          const timer = setTimeout(() => {fetchshots();
+          }, 500)
+  
+          return () => {
+              clearTimeout(timer);
+            };
+      
+        }, [query, filter])
 
     return (
         <div >
@@ -90,12 +67,12 @@ const ScenesPage = ({message, filter = "" }) => {
                   ) : (
                     <Information  /> 
                     ) } 
-          {/* Add Scene */}
+          {/* Add Indexshot */}
           <Row className='mt-0'>
             <Col className="text-center">
             <Button onClick={() => history.push('/scenes/create')} 
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright} `}>
-              Add Scene</Button>
+              Add Indexshot Series</Button>
             </Col>
           </Row>
           {/* search  */}
@@ -161,7 +138,7 @@ const ScenesPage = ({message, filter = "" }) => {
                 ))
              : (
               <Container className={appStyles.Content}>
-                <Asset src={NoResults } message={message} />
+                <Asset src={NoResults } message="No Results" />
               </Container>
             )}
           </>
@@ -175,4 +152,4 @@ const ScenesPage = ({message, filter = "" }) => {
     )
 }
 
-export default ScenesPage
+export default IndexShotsPage

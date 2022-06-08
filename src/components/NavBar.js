@@ -18,7 +18,7 @@ const NavBar = () => {
   const { expanded, setExpanded, ref, 
     refw, refw1, refw2, refw3, 
     reff, reff1, reff2, reff3, reff4, reff5, reff6, 
-    refm, refm1, refm2,
+    refm, refm1, refm2, refin, refin2,
     refs, refs1, refs2, refs3,
     refp, refp1, refp2 } = useDropdownClick();
 
@@ -189,6 +189,26 @@ const NavBar = () => {
           to="/moodshot/create"
         >
           <i className="far fa-plus-square"></i>Add Moodshots
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          ref={refin}
+          className={` ${styles.DropLink} noluv`}
+          activeClassName={styles.Active}
+          to="/indexcards"
+        >
+          <i className="navicon fas fa-stream"></i>Indexcards
+        </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          ref={refin2}
+          className={` ${styles.DropLink} noluv`}
+          activeClassName={styles.Active}
+          to="/indexshots"
+        >
+          <i className="navicon fas fa-stream"></i>Indexshots
         </NavLink>
         </NavDropdown.Item>
       </NavDropdown>

@@ -17,6 +17,8 @@ const useDropdownClick = () => {
     const refm = useRef(null)
     const refm1 = useRef(null)
     const refm2 = useRef(null)
+    const refin = useRef(null)
+    const refin2 = useRef(null)
     const refs = useRef(null)
     const refs1 = useRef(null)
     const refs2 = useRef(null)
@@ -81,6 +83,14 @@ const useDropdownClick = () => {
                 setExpanded(false);
                 console.log("refm2");
             }
+            if ( refin.current && refin.current.contains(event.target)) {
+                setExpanded(false);
+                console.log("refin");
+            }
+            if ( refin2.current && refin2.current.contains(event.target)) {
+                setExpanded(false);
+                console.log("refin2");
+            } 
             if (refm.current && refm.current.contains(event.target)) {
                 console.log("refm");
                 return;
@@ -129,7 +139,7 @@ const useDropdownClick = () => {
         return { expanded, setExpanded, 
             ref, refw, refw1, refw2, refw3, 
             reff, reff1, reff2, reff3, reff4, reff5, reff6, 
-            refm, refm1, refm2, 
+            refm, refm1, refm2, refin, refin2,
             refs, refs1, refs2, refs3,
             refp, refp1, refp2
             };

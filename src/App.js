@@ -55,6 +55,8 @@ import CallSheetPage from './pages/callsheets/CallSheetPage';
 import CallsheetEditPage from './pages/callsheets/CallsheetEditPage';
 import CrewInfo from './pages/callsheets/CrewInfo';
 import CrewLogo from './pages/callsheets/CrewLogo';
+import IndexCardsPage from './pages/indexcards/IndexCardsPage';
+import IndexShotsPage from './pages/indexshots/IndexShotsPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -160,7 +162,25 @@ function App() {
              />
              )} />
         <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
-        {/* MOODS*/}
+        {/* INDEXCARDS*/}
+        <Route
+            exact
+            path="/indexcards"
+            render={() => (
+              <IndexCardsPage
+               message="No results found" />
+            )}
+          />
+        {/* INDEXSHOTS*/}
+        <Route
+            exact
+            path="/indexshots"
+            render={() => (
+              <IndexShotsPage
+               message="No results found" />
+            )}
+          />
+        {/* MOODSHOTS*/}
         {/* all moodshots */}
         <Route exact path="/moodshot/create" render={() => <MoodshotCreate />} />
         <Route exact path="/moodshots/:id/edit" render={() => <MoodshotEdit />} />
