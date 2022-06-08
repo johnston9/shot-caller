@@ -57,6 +57,8 @@ import CrewInfo from './pages/callsheets/CrewInfo';
 import CrewLogo from './pages/callsheets/CrewLogo';
 import IndexCardsPage from './pages/indexcards/IndexCardsPage';
 import IndexShotsPage from './pages/indexshots/IndexShotsPage';
+import SeriesCreateForm from './pages/indexshots/SeriesCreateForm';
+import SeriesEditForm from './pages/indexshots/SeriesEditForm';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -171,7 +173,9 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* INDEXSHOTS*/}
+        {/* INDEXSHOTS */}
+        <Route exact path="/series/create" render={() => <SeriesCreateForm />} />
+        <Route exact path="/series/edit/:id" render={() => <SeriesEditForm />} />
         <Route
             exact
             path="/indexshots"

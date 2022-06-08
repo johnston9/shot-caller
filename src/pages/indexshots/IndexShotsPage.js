@@ -13,6 +13,7 @@ import appStyles from "../../App.module.css";
 import { Button } from 'react-bootstrap';
 import TopBox from '../../components/TopBox';
 import { useHistory } from 'react-router-dom';
+import Info from "./Info";
 
 const IndexShotsPage = ({filter = "" }) => {
     useRedirect("loggedOut");
@@ -22,7 +23,7 @@ const IndexShotsPage = ({filter = "" }) => {
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
     const filter = "";
-    const message = "No Indexshots Added";
+    const message = "No Series Added";
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
 
@@ -51,7 +52,7 @@ const IndexShotsPage = ({filter = "" }) => {
 
     return (
         <div >
-          <TopBox title="Scenes" />
+          <TopBox title="Index Shots" />
           <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} mt-2`}
               onClick={() => history.goBack()}
@@ -65,14 +66,14 @@ const IndexShotsPage = ({filter = "" }) => {
           {!showInfo ? (
               ""
                   ) : (
-                    <Information  /> 
+                    <Info  /> 
                     ) } 
-          {/* Add Indexshot */}
+          {/* Add Index Shot */}
           <Row className='mt-0'>
             <Col className="text-center">
-            <Button onClick={() => history.push('/scenes/create')} 
+            <Button onClick={() => history.push('/series/create')} 
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright} `}>
-              Add Indexshot Series</Button>
+              Add Index Shot Series</Button>
             </Col>
           </Row>
           {/* search  */}
