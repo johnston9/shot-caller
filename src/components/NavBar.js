@@ -198,7 +198,7 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/indexcards"
         >
-          <i className="navicon fas fa-stream"></i>Indexcards
+          <i className="navicon fas fa-stream"></i>Index Cards
         </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item >
@@ -206,9 +206,9 @@ const NavBar = () => {
           ref={refin2}
           className={` ${styles.DropLink} noluv`}
           activeClassName={styles.Active}
-          to="/indexshots"
+          to="/series"
         >
-          <i className="navicon fas fa-stream"></i>Indexshots
+          <i className="navicon fas fa-stream"></i>Index Shots
         </NavLink>
         </NavDropdown.Item>
       </NavDropdown>

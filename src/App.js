@@ -59,6 +59,7 @@ import IndexCardsPage from './pages/indexcards/IndexCardsPage';
 import IndexShotsPage from './pages/indexshots/IndexShotsPage';
 import SeriesCreateForm from './pages/indexshots/SeriesCreateForm';
 import SeriesEditForm from './pages/indexshots/SeriesEditForm';
+import SeriesPage from './pages/indexshots/SeriesPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -92,7 +93,7 @@ function App() {
             path="/days"
             render={() => (
               <ScheduleDays
-               message="No results found. Please add a scene" />
+               message="No results found. Please add a day" />
             )}
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
@@ -120,14 +121,6 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* <Route
-            exact
-            path="/callsheets/:id/"
-            render={() => (
-              <CallSheet 
-               message="No results found" />
-            )}
-          /> */}
         {/* LOCATIONS */}
         <Route exact path="/locations/create" render={() => <LocationsCreate />} />
         <Route 
@@ -178,12 +171,20 @@ function App() {
         <Route exact path="/series/edit/:id" render={() => <SeriesEditForm />} />
         <Route
             exact
+            path="/series"
+            render={() => (
+              <SeriesPage
+               message="No results found" />
+            )}
+          />
+        {/* <Route
+            exact
             path="/indexshots"
             render={() => (
               <IndexShotsPage
                message="No results found" />
             )}
-          />
+          /> */}
         {/* MOODSHOTS*/}
         {/* all moodshots */}
         <Route exact path="/moodshot/create" render={() => <MoodshotCreate />} />

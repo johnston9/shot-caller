@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -15,25 +13,16 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-
-const SeriesCreateForm = ({topbox, setShow} ) => {
+const SeriesCreateForm = ({topbox} ) => {
     useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
-  const [startDate, setStartDate] = useState("");
 
   const [postData, setPostData] = useState({
-    day: ""});
-  const { day } = postData;
+    name: "",
+    content: "", });
+  const { name, content } = postData;
 
   const history = useHistory();
-
-  const handleDate = (date) => {
-    const newdate = date.toLocaleDateString('en-GB', {
-      day: 'numeric', month: 'short', year: 'numeric'
-    })
-    setStartDate(newdate);
-    console.log(`start ${startDate}`)
-  }
 
   const handleChange = (event) => {
     setPostData({
@@ -46,11 +35,11 @@ const SeriesCreateForm = ({topbox, setShow} ) => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("day", day);
-    formData.append("date", startDate);
+    formData.append("name", name);
+    formData.append("content", content);
       
     try {
-      await axiosReq.post("/days/", formData);
+      await axiosReq.post("/series/", formData);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -63,12 +52,12 @@ const SeriesCreateForm = ({topbox, setShow} ) => {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pr-3 `}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pl-3`} type="submit">
         Create
       </Button>
     </div>
@@ -79,7 +68,7 @@ const SeriesCreateForm = ({topbox, setShow} ) => {
       {topbox ? (
         ""
       ) : (
-        <TopBox title="Create Day" />
+        <TopBox title="Create Series" />
       ) }
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
@@ -88,36 +77,44 @@ const SeriesCreateForm = ({topbox, setShow} ) => {
       Back
     </Button>
     <Form className={`${styles.Back} mt-4`} onSubmit={handleSubmit}>
-      <h4 className="text-center mt-3">Create Day</h4>
+      <h4 className="text-center mt-3">Create Series</h4>
       <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
     <Row className="text-center">
-    <Col xs={6} className="p-0 p-md-2 d-flex justify-content-center ">
-        <Form.Group controlId="day" className={`${styles.Width} `} >
-            <Form.Label className={`${styles.Bold}`} >Day</Form.Label>
+      <Col xs={12} md={{span: 6, offset: 3 }} 
+        className="p-0 p-md-2 d-flex justify-content-center ">
+        <Form.Group controlId="name" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.Bold}`} >Series Name</Form.Label>
             <Form.Control 
             type="text"
-            name="day"
-            value={day}
+            name="name"
+            value={name}
             className={`${styles.Input}`}
             onChange={handleChange}
                 />
         </Form.Group>
-        {errors?.day?.map((message, idx) => (
+        {errors?.name?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
             {message}
             </Alert>
         ))}
       </Col> 
-      <Col className="p-0 p-md-2 d-flex justify-content-center" xs={6}>
-      <Form.Group controlId="date" className={`${styles.Width} `} >
-                <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
-                <DatePicker 
-                  className={`${styles.Input}`}
-                   value={startDate}
-                  onChange={(date) => handleDate(date) }
-                  />
+    </Row>
+    <Row>
+      <Col xs={12} md={{span: 8, offset: 2 }} 
+      className="p-0 p-md-2 d-flex justify-content-center">
+      <Form.Group controlId="content" className={`${styles.Width2} `} >
+                <Form.Label className={`${styles.Bold}`} >Series Content</Form.Label>
+                <Form.Control 
+                type="text"
+                className={styles.InputScene}
+                as="textarea"
+                name="content"
+                rows={2}
+                value={content}
+                onChange={handleChange}
+                    />
             </Form.Group>
-            {errors?.date?.map((message, idx) => (
+            {errors?.content?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

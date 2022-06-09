@@ -15,7 +15,7 @@ import TopBox from '../../components/TopBox';
 import { useHistory } from 'react-router-dom';
 import Info from "./Info";
 
-const IndexShotsPage = ({filter = "" }) => {
+const IndexShotsPage = () => {
     useRedirect("loggedOut");
     const [indexShots, setIndexShots] = useState({results: [] });
     // eslint-disable-next-line
@@ -23,13 +23,13 @@ const IndexShotsPage = ({filter = "" }) => {
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
     const filter = "";
-    const message = "No Series Added";
+    const message = "No xx Added";
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
 
 
     useEffect(() => {
-          const fetchshots = async () => {
+          const fetchseries = async () => {
             try {
               const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
               setIndexShots(data);
@@ -41,7 +41,7 @@ const IndexShotsPage = ({filter = "" }) => {
           }
           setHasLoaded(false);
   
-          const timer = setTimeout(() => {fetchshots();
+          const timer = setTimeout(() => {fetchseries();
           }, 500)
   
           return () => {
@@ -88,43 +88,17 @@ const IndexShotsPage = ({filter = "" }) => {
                     onChange={(event) => setQuery(event.target.value)}
                     type="text"
                     className="mr-sm-2"
-                    placeholder="Search by scene number, title or location"
+                    placeholder="Search by Series Name"
                 />
                 </Form>
             </Col>
           </Row>
-          <Row className='mt-1' >
-              <Col className='text-center' xs={6} md={3}>
-              <Button
-                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                  onClick={handleClickAct1} >Act One
-              </Button>
-              </Col>
-              <Col className='text-center' xs={6} md={3}>
-                <Button
-                    className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                    onClick={handleClickAct2a} >Act Two A
-                </Button>
-              </Col>
-              <Col className='text-center' xs={6} md={3}>
-              <Button
-                  className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                  onClick={handleClickAct2b} >Act Two B
-              </Button> 
-              </Col>
-              <Col className='text-center' xs={6} md={3}>
-                <Button
-                    className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Blue}`}
-                    onClick={handleClickAct3} >Act Three
-                </Button>
-              </Col>
-            </Row>
             <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-            <Row className="h-100 mt-3">
+            {/* <Row className="h-100 mt-3">
             {hasLoaded ? (
           <>
-            {scenes.results.length ? (
-                scenes.results.map((scene, index) => {
+            {indexShots.results.length ? (
+                indexShots.results.map((scene, index) => {
                   return (
                     <Col xs={4} sm={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
                       <SceneTop 
@@ -148,7 +122,7 @@ const IndexShotsPage = ({filter = "" }) => {
             <Asset spinner />
           </Container>
         )}
-            </Row>           
+            </Row>            */}
         </div>
     )
 }

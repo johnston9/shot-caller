@@ -28,6 +28,7 @@ const IndexCardsPage = () => {
   const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
+  const filter = "";
  
   const [query, setQuery] = useState("");
 
