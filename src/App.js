@@ -60,6 +60,7 @@ import IndexShotsPage from './pages/indexshots/IndexShotsPage';
 import SeriesCreateForm from './pages/indexshots/SeriesCreateForm';
 import SeriesEditForm from './pages/indexshots/SeriesEditForm';
 import SeriesPage from './pages/indexshots/SeriesPage';
+import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -157,7 +158,9 @@ function App() {
              />
              )} />
         <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
-        {/* INDEXCARDS*/}
+        {/* INDEXCARDS indexcards/create*/}
+        <Route exact path="/indexcards/create" render={() => <SeriesCreateForm />} />
+        <Route exact path="/indexcards/edit/:id" render={() => <SeriesEditForm />} />
         <Route
             exact
             path="/indexcards"
@@ -177,15 +180,21 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* <Route
-            exact
-            path="/indexshots"
+          <Route 
+            exact 
+            path="/indexshots/:id" 
             render={() => (
-              <IndexShotsPage
-               message="No results found" />
-            )}
-          /> */}
-        {/* MOODSHOTS*/}
+            <IndexShotsPage
+             />
+             )} />
+          <Route 
+            exact 
+            path="/indexshots/fullsize/:id" 
+            render={() => (
+            <IndexShotsFullSize
+             />
+             )} />
+        {/* MOODSHOTS */}
         {/* all moodshots */}
         <Route exact path="/moodshot/create" render={() => <MoodshotCreate />} />
         <Route exact path="/moodshots/:id/edit" render={() => <MoodshotEdit />} />

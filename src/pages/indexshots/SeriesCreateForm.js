@@ -13,7 +13,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const SeriesCreateForm = ({topbox} ) => {
+const SeriesCreateForm = () => {
     useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
 
@@ -65,11 +65,7 @@ const SeriesCreateForm = ({topbox} ) => {
 
   return (
     <div>
-      {topbox ? (
-        ""
-      ) : (
-        <TopBox title="Create Series" />
-      ) }
+      <TopBox title="Create Series" />
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
       onClick={() => history.goBack()}

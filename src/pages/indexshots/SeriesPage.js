@@ -71,25 +71,18 @@ const SeriesPage = () => {
                         ) : (
                             <Info  /> 
                             ) } 
-            <Row className='mb-3'>
-              <Col className='text-center' md={{span: 10, offset: 1}}>
-                <p>
-                  First create a Series.
-                </p>
-              </Col>
-            </Row>
-            <Row className='mb-3'>
+            <Row className='my-3'>
               <Col className='text-center'>
               <Button onClick={() => history.push('/series/create')}
                 className= {`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                     Create Series</Button>
                 </Col>
             </Row>
-            {/* calender */}
-            <div className={`mx-1 mt-5 mb-3 ${styles.SubTitle }`} >
-            <h3 className='text-center' >Index Shots Series</h3>
+            {/* Series */}
+            <div className={`mx-1 mt-3 mb-3 `} >
+            <h5 className={`text-center mt-3 ${styles.SubTitle }`} >Index Shots Series</h5>
             <Row >
-                <Col className="mt-1" xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }} >
+                <Col className="my-3" xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={styles.SearchBar}
                     onSubmit={(event) => event.preventDefault()}
@@ -106,26 +99,26 @@ const SeriesPage = () => {
             </Row>            
             {/* series */}
             <Row className="py-2 d-flex justify-content-center">
-          {hasLoaded ? (
-          <>
-            {series.results.length ? (
-                series.results.map((seri) => (
-                  <Col xs={10}  md={6} lg={4} className="py-2">
-                  <SeriesTop key={seri.id} 
-                   {...seri} setSeries={setSeries} />
-                  </Col>
-                ))) 
-             : (
+              {hasLoaded ? (
+              <>
+                {series.results.length ? (
+                    series.results.map((seri) => (
+                      <Col xs={10}  md={6} lg={4} className="py-2">
+                      <SeriesTop key={seri.id} 
+                      {...seri} setSeries={setSeries} />
+                      </Col>
+                    ))) 
+                : (
+                  <Container className={appStyles.Content}>
+                    <Asset src={NoResults } message={message} />
+                  </Container>
+                )}
+              </>
+            ) : (
               <Container className={appStyles.Content}>
-                <Asset src={NoResults } message={message} />
+                <Asset spinner />
               </Container>
             )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
             </Row>  
             </div>
         </div>

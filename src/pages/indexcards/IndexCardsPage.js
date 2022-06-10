@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -7,7 +6,6 @@ import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Moodshots.module.css";
-import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import btnStyles from "../../styles/Button.module.css";
@@ -19,6 +17,7 @@ import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import IndexCard from "./IndexCard";
 import Info from "./Info";
+import IndexCardCreate from "./IndexCardCreate";
 
 const IndexCardsPage = () => {
     useRedirect("loggedOut");
@@ -27,10 +26,12 @@ const IndexCardsPage = () => {
   const [error, setErrors] = useState({});
   const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [show, setShow] = useState(false);
   const history = useHistory();
   const filter = "";
  
   const [query, setQuery] = useState("");
+  const [hasOrder, setHasOrder] = useState(false);
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -55,7 +56,7 @@ const IndexCardsPage = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query])
+  }, [hasOrder, query])
 
     return (
         <div>
@@ -77,15 +78,25 @@ const IndexCardsPage = () => {
                         <Info  /> 
                         ) } 
             {/* add */}
-            <Row className="mb-3">
+            {/* <Row className="mb-3">
               <Col className="text-center">
               <>
-              <Button onClick={() => history.push(`/scene/moodshot/create`) }
+              <Button onClick={() => history.push(`/indexcards/create`) }
               className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
               Add Indexcard </Button>
               </>
               </Col>
-              </Row >
+              </Row > */}
+              <Row className='mt-0'>
+              <Col className="text-center">
+              <Button onClick={() => setShow(show => !show)} 
+              className={`${btnStyles.Button} ${btnStyles.Wide2} 
+              ${btnStyles.Bright} `}>
+              Add Index Card</Button>
+            </Col>
+          </Row>
+          {!show ?("") : (<IndexCardCreate setShow={setShow} setHasOrder={setHasOrder} /> ) }
+          {/* search  */}
               <Row>
               <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
               <Form
