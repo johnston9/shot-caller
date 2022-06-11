@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,38 +9,34 @@ import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
+import InfoCreateShot from "./InfoCreateShot";
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
+const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-//   const [showInfo, setShowInfo] = useState(false);
+  const { id } = useParams();
+  const [showInfo, setShowInfo] = useState(false);
   const [postData, setPostData] = useState({
+    series_id: "",
+    series_name: "",
     number: "",
-    story: "",
-    style: "",
+    content: "",
+    image: "",
   });
 
-  const { number, story, style } = postData;
+  const {
+    series_id,
+    series_name,
+    number,
+    content,
+    image, } = postData;
 
   const history = useHistory();
-  const { id } = useParams();
-
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const { data } = await axiosReq.get(`/indexcards/${id}/`);
-        setPostData(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-  
-    handleMount();
-  }, [id]);
 
   const handleChange = (event) => {
     setPostData({
@@ -54,15 +50,16 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
     event.preventDefault();
     const formData = new FormData();
 
+    formData.append("series_id", series_id);
+    formData.append("series_name", series_name);
     formData.append("number", number);
-    formData.append("story", story);
-    formData.append("style", style);
+    formData.append("content", content);
+    formData.append("image", image);
   
     try {
-      await axiosReq.put(`/indexcards/${id}/`, formData);
+      await axiosReq.post("/indexshots/", formData);
+      setHasOrder(true);
       setShowEdit(false);
-      setHasOrder(false);
-      history.goBack();
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -80,19 +77,35 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
         Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`} type="submit">
-        Edit Card
+        Create
       </Button>
     </div>
   );
 
   return (
     <div className="mt-3">
+        <TopBox title="Create Index Shot" />
+        <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
+        onClick={() => history.goBack()}
+        >
+        Back
+        </Button>
+        <Button
+                className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+                onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+        </Button>
+        {!showInfo ? (
+            ""
+                ) : (
+                    <InfoCreateShot  /> 
+                    ) } 
     <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-0" onSubmit={handleSubmit}>
       <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Edit Index Card</h5>
+             style={{ textTransform: 'uppercase'}}>Create Index Shot</h5>
       <Row>
-          <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
+          <Col xs={{span: 6, offsset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
                   <Form.Label className={`${styles.Bold} `} >Number</Form.Label>
                   <Form.Control 
@@ -113,19 +126,19 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
         <Row>
         <Col xs={12} md={6} 
             className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="story" className={`${styles.Width2} `} >
-                        <Form.Label className={`${styles.Bold}`} >Story</Form.Label>
+            <Form.Group controlId="content" className={`${styles.Width2} `} >
+                        <Form.Label className={`${styles.Bold}`} >Content</Form.Label>
                         <Form.Control 
                         type="text"
                         className={styles.InputScene}
                         as="textarea"
-                        name="story"
+                        name="content"
                         rows={2}
-                        value={story}
+                        value={content}
                         onChange={handleChange}
                             />
                     </Form.Group>
-                    {errors?.story?.map((message, idx) => (
+                    {errors?.content?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                         {message}
                     </Alert>
@@ -133,7 +146,7 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
         </Col> 
         <Col xs={12} md={6} 
             className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="style" className={`${styles.Width2} `} >
+            <Form.Group controlId="image" className={`${styles.Width2} `} >
                         <Form.Label className={`${styles.Bold}`} >Style</Form.Label>
                         <Form.Control 
                         type="text"
@@ -141,11 +154,11 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
                         as="textarea"
                         name="style"
                         rows={2}
-                        value={style}
+                        value={image}
                         onChange={handleChange}
                             />
                     </Form.Group>
-                    {errors?.style?.map((message, idx) => (
+                    {errors?.image?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                         {message}
                     </Alert>
@@ -163,4 +176,4 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
   )
 }
 
-export default IndexCardEdit
+export default IndexShotEdit

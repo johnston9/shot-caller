@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/Indexes.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
@@ -16,7 +16,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const IndexCardCreate = ({setShow} ) => {
+const IndexCardCreate = ({setShow, setHasOrder} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [showInfo, setShowInfo] = useState(false);
@@ -73,8 +73,8 @@ const IndexCardCreate = ({setShow} ) => {
 
   return (
     <div className="mt-3">
-        <TopBox title="Create Index Card" />
-        <Button
+        {/* <TopBox title="Create Index Card" /> */}
+        {/* <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
         onClick={() => history.goBack()}
         >
@@ -88,13 +88,12 @@ const IndexCardCreate = ({setShow} ) => {
             ""
                 ) : (
                     <Info  /> 
-                    ) } 
-    <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-0" onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+                    ) }  */}
+      <Form className={`text-center mb-4 mx-5 ${styles.Back }`} onSubmit={handleSubmit}>
+      <h5 className={`text-center mb-4 pl-3 py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Create Index Card</h5>
       <Row>
-          <Col xs={{span: 6, offsset: 3}} className="d-flex justify-content-center" >
+          <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
                   <Form.Label className={`${styles.Bold} `} >Number</Form.Label>
                   <Form.Control 
@@ -160,7 +159,6 @@ const IndexCardCreate = ({setShow} ) => {
         </Col>
       </Row>
     </Form>
-    </Container>
     </div>
   )
 }

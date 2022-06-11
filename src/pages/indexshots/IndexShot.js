@@ -16,17 +16,19 @@ const IndexShot = (props) => {
         number,
         content,
         image,
+        setHasOrder,
+        setShowEdit,
     } = props;
     const history = useHistory();
 
     const handleEdit = () => {
-        history.push(`/indexshots/edit/${id}/`);
+        setShowEdit(true);
         };
     
     const handleDelete = async () => {
     try {
         await axiosReq.delete(`/indexshots/${id}/`);
-        history.push(`/home/`);
+        setHasOrder(false);
     } catch (err) {
     }
     };

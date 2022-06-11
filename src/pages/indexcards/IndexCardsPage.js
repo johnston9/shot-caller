@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/Moodshots.module.css";
+import styles from "../../styles/Indexes.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import btnStyles from "../../styles/Button.module.css";
@@ -18,6 +18,9 @@ import TopBox from "../../components/TopBox";
 import IndexCard from "./IndexCard";
 import Info from "./Info";
 import IndexCardCreate from "./IndexCardCreate";
+import IndexCardEdit from "./IndexCardEdit"; 
+import IndexCards from "./IndexCards"; 
+
 
 const IndexCardsPage = () => {
     useRedirect("loggedOut");
@@ -27,6 +30,7 @@ const IndexCardsPage = () => {
   const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [show, setShow] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
   const history = useHistory();
   const filter = "";
  
@@ -40,6 +44,7 @@ const IndexCardsPage = () => {
         console.log(data)
         setIndexCards(data);
         setHasLoaded(true);
+        setHasOrder(false);
       } catch(err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -60,7 +65,7 @@ const IndexCardsPage = () => {
 
     return (
         <div>
-            <TopBox work="IndexCards"
+            <TopBox work="Index Cards"
               />
             <Button
                     className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
@@ -95,8 +100,11 @@ const IndexCardsPage = () => {
               Add Index Card</Button>
             </Col>
           </Row>
-          {!show ?("") : (<IndexCardCreate setShow={setShow} setHasOrder={setHasOrder} /> ) }
-          {/* search  */}
+          {!show ?("") : (<IndexCardCreate 
+            setShow={setShow} setHasOrder={setHasOrder} /> ) }
+          {!showEdit ?("") : (<IndexCardEdit
+            setShow={setShowEdit} setHasOrder={setHasOrder} /> ) }
+          {/* search setShowEdit  */}
               <Row>
               <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
               <Form
@@ -113,23 +121,28 @@ const IndexCardsPage = () => {
               </Form>
               </Col>
               </Row>
-            {hasLoaded ? (
-          <>
-            {indexCards.results.length ? (
-                indexCards.results.map((card) => (
-                  <IndexCard key={card.id} {...card} />
-                ))) 
-             : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults } message="No Results" />
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}            
+              <Row className="py-3">
+              <Col>
+              {hasLoaded ? (
+              <>
+                {indexCards.results.length ? (
+                     <IndexCards 
+                     setShowEdit={setShowEdit} setHasOrder={setHasOrder}
+                     indexCards={indexCards} />
+                     ) 
+                : (
+                  <Container className={appStyles.Content}>
+                    <Asset src={NoResults } message="No Results" />
+                  </Container>
+                )}
+              </>
+              ) : (
+                <Container className={appStyles.Content}>
+                  <Asset spinner />
+                </Container>
+              )}  
+              </Col>
+              </Row>
         </div>
     )
 }

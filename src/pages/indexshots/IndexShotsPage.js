@@ -16,13 +16,13 @@ import { useParams, useHistory } from 'react-router-dom';
 import Info2 from './Info2';
 import IndexShotCreate from './IndexShotCreate';
 import IndexShot from './IndexShot';
+import IndexShotEdit from './IndexShotEdit';
 
 const IndexShotsPage = () => {
     useRedirect("loggedOut");
     const [indexShots, setIndexShots] = useState({results: [] });
     // eslint-disable-next-line
     const [error, setError] = useState({});
-    const [show, setShow] = useState(false);
     const { id } = useParams();
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
@@ -30,6 +30,8 @@ const IndexShotsPage = () => {
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
     const [hasOrder, setHasOrder] = useState(false);
+    const [show, setShow] = useState(false);
+    const [showEdit, setShowEdit] = useState(false);
 
 
     useEffect(() => {
@@ -38,6 +40,7 @@ const IndexShotsPage = () => {
               const { data } = await axiosReq.get(`/indexshots/?series_id=${id}&search=${query}`);
               setIndexShots(data);
               setHasLoaded(true);
+              setHasOrder(false);
             } catch(err) {
               setError(err)
               console.log(err);
@@ -80,7 +83,10 @@ const IndexShotsPage = () => {
               Add Index Shot</Button>
             </Col>
           </Row>
-          {!show ?("") : (<IndexShotCreate setShow={setShow} setHasOrder={setHasOrder} /> ) }
+          {!show ?("") : (<IndexShotCreate 
+          setShow={setShow} setHasOrder={setHasOrder} /> ) }
+          {!showEdit ?("") : (<IndexShotEdit
+          setShowEdit={setShowEdit} setHasOrder={setHasOrder} /> ) }
           {/* search  */}
           <Row>
             <Col className="mt-2" xs={12} sm={{ span: 6, offset: 3 }} >

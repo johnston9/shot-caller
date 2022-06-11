@@ -17,20 +17,10 @@ const IndexShotsFullSize = (props) => {
         number,
         content,
         image,
+        handleEdit,
+        handleDelete,
     } = props;
     const history = useHistory();
-
-    const handleEdit = () => {
-        history.push(`/indexshots/edit/${id}/`);
-        };
-    
-    const handleDelete = async () => {
-    try {
-        await axiosReq.delete(`/indexshots/${id}/`);
-        history.push(`/home/`);
-    } catch (err) {
-    }
-    };
 
     return (
         <div>

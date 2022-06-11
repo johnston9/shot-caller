@@ -58,7 +58,8 @@ const IndexShotCreate = ({setShow, setHasOrder} ) => {
   
     try {
       await axiosReq.post("/indexshots/", formData);
-      history.goBack();
+      setHasOrder(true);
+      setShow(false);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
