@@ -14,7 +14,7 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
+const IndexCardEdit = ({setShowEdit, setIndexCards, card, id,} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 //   const [showInfo, setShowInfo] = useState(false);
@@ -27,20 +27,31 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
   const { number, story, style } = postData;
 
   const history = useHistory();
-  const { id } = useParams();
 
   useEffect(() => {
     const handleMount = async () => {
-      try {
-        const { data } = await axiosReq.get(`/indexcards/${id}/`);
-        setPostData(data);
-      } catch (err) {
-        console.log(err);
-      }
+      const { number, story, style } = card;
+      setPostData({ number, story, style})
     };
   
     handleMount();
   }, [id]);
+
+
+  // useEffect(() => {
+  //   const handleMount = async () => {
+  //     try {
+  //       const { data } = await axiosReq.get(`/indexcards/${id}/`);
+  //       console.log(data);
+  //       const { number, story, style } = data;
+  //       setPostData({ number, story, style  });
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  
+  //   handleMount();
+  // }, [id]);
 
   const handleChange = (event) => {
     setPostData({
@@ -59,10 +70,22 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
     formData.append("style", style);
   
     try {
-      await axiosReq.put(`/indexcards/${id}/`, formData);
+      const {data} = await axiosReq.put(`/indexcards/${id}/`, formData);
+      const {number, story, style} = data;
+      setIndexCards((prevCards) => ({
+        ...prevCards,
+        results: prevCards.results.map((card) => {
+          return card.id === id
+            ? {
+                ...card,
+                number: number,
+                story: story,
+                style: style,
+              }
+            : card;
+        }),
+      }));
       setShowEdit(false);
-      setHasOrder(false);
-      history.goBack();
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -74,23 +97,23 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} `}
         onClick={() => setShowEdit(false)}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`} type="submit">
-        Edit Card
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
+        Edit 
       </Button>
     </div>
   );
 
   return (
-    <div className="mt-3">
-    <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
+    <div className="mt-1">
+    <Container className= {`text-center mt-3 ${appStyles.Content} ${styles.Container}`} >
       <Form className="mt-0" onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Edit Index Card</h5>
+      <h5 className={`text-center mb-0 pl-3 py-0 mx-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Edit Index Card {number} </h5>
       <Row>
           <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
@@ -111,9 +134,9 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
           </Col>
         </Row>
         <Row>
-        <Col xs={12} md={6} 
-            className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="story" className={`${styles.Width2} `} >
+        <Col xs={12} 
+            className="p-0 d-flex justify-content-center">
+            <Form.Group controlId="story" className={`${styles.Width95} `} >
                         <Form.Label className={`${styles.Bold}`} >Story</Form.Label>
                         <Form.Control 
                         type="text"
@@ -131,9 +154,9 @@ const IndexCardEdit = ({setShowEdit, setHasOrder} ) => {
                     </Alert>
                     ))}
         </Col> 
-        <Col xs={12} md={6} 
-            className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="style" className={`${styles.Width2} `} >
+        <Col xs={12} 
+            className="p-0 d-flex justify-content-center">
+            <Form.Group controlId="style" className={`${styles.Width95} `} >
                         <Form.Label className={`${styles.Bold}`} >Style</Form.Label>
                         <Form.Control 
                         type="text"

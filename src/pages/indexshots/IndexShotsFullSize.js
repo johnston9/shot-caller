@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
-import { Link, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Days.module.css";
+import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-const IndexShotsFullSize = (props) => {
-    useRedirect("loggedOut")
+const IndexShotsFullSize = () => {
+    useRedirect("loggedOut");
+    const [shot, setShot] = useState({results: [] });
+    const [error, setError] = useState({});
+    const { id } = useParams();
     const {
-        id,
-        series_id,
-        series_name,
         number,
         content,
         image,
-        handleEdit,
-        handleDelete,
-    } = props;
+    } = shot;
     const history = useHistory();
+
+    useEffect(() => {
+        const fetchshot = async () => {
+          try {
+            const { data } = await axiosReq.get(`/indexshots/${id}`);
+            setShot(data);
+          } catch(err) {
+            setError(err)
+            console.log(err);
+          }
+        }
+        fetchshot();   
+      }, [])
 
     return (
         <div>
@@ -34,17 +44,15 @@ const IndexShotsFullSize = (props) => {
                 <Card.Header className={`pt-2 pb-1 ${styles.Top }`}>
                   <Row >
                     <Col className='mx-0 px-0' xs={1}></Col>
-                    <Link to={`/indexshots/fullsize/${id}`}>
                     <Col xs={10} className='mx-0 px-0 text-center'>
                     <h5 className={` ${styles.Titlelist }`}>{number}
                     </h5>
                     </Col >
-                    </Link>
                     <Col xs={1} className='text-center mx-0 px-0'>
-                    <PostDropdown
+                    {/* <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
-                        />
+                        /> */}
                     </Col>
                   </Row>
                   </Card.Header>
@@ -53,8 +61,8 @@ const IndexShotsFullSize = (props) => {
                     <Col className='text-center mt-2' xs={12}>
                     {image && <> 
                     <div className='px-1 mb-3'>
-                        <Image className={styles.Images} 
-                        src={image} alt="image" height="200"  />
+                        <Image className={styles.ImagesFull} 
+                        src={image} alt="image" height="500"  />
                         </div>
                         </>
                     }

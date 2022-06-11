@@ -16,7 +16,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const IndexCardCreate = ({setShow, setHasOrder} ) => {
+const IndexCardCreate = ({setShow, setHasOrder, setIndexCards} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [showInfo, setShowInfo] = useState(false);
@@ -47,8 +47,9 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
     formData.append("style", style);
   
     try {
-      await axiosReq.post("/indexcards/", formData);
-      history.goBack();
+      const {data} = await axiosReq.post("/indexcards/", formData);
+      setHasOrder(true);
+      setShow(false);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -73,23 +74,9 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
 
   return (
     <div className="mt-3">
-        {/* <TopBox title="Create Index Card" /> */}
-        {/* <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
-        onClick={() => history.goBack()}
-        >
-        Back
-        </Button>
-        <Button
-                className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-                onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-        </Button>
-        {!showInfo ? (
-            ""
-                ) : (
-                    <Info  /> 
-                    ) }  */}
-      <Form className={`text-center mb-4 mx-5 ${styles.Back }`} onSubmit={handleSubmit}>
+      <Row>
+        <Col xs={12} md={{span: 8, offset: 2}}>
+        <Form className={`text-center mb-4 px-3 ${styles.Back }`} onSubmit={handleSubmit}>
       <h5 className={`text-center mb-4 pl-3 py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Create Index Card</h5>
       <Row>
@@ -114,7 +101,7 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
         <Row>
         <Col xs={12} md={6} 
             className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="story" className={`${styles.Width2} `} >
+            <Form.Group controlId="story" className={`${styles.Width95} `} >
                         <Form.Label className={`${styles.Bold}`} >Story</Form.Label>
                         <Form.Control 
                         type="text"
@@ -134,7 +121,7 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
         </Col> 
         <Col xs={12} md={6} 
             className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="style" className={`${styles.Width2} `} >
+            <Form.Group controlId="style" className={`${styles.Width95} `} >
                         <Form.Label className={`${styles.Bold}`} >Style</Form.Label>
                         <Form.Control 
                         type="text"
@@ -151,14 +138,16 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
                         {message}
                     </Alert>
                     ))}
-        </Col> 
-      </Row>
-      <Row>
-        <Col>
-          <div className= {` my-3`} >{buttons} </div>
+                </Col> 
+              </Row>
+              <Row>
+                <Col>
+                  <div className= {` my-3`} >{buttons} </div>
+                </Col>
+              </Row>
+          </Form>
         </Col>
-      </Row>
-    </Form>
+        </Row>
     </div>
   )
 }

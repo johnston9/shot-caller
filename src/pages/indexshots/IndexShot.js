@@ -28,7 +28,7 @@ const IndexShot = (props) => {
     const handleDelete = async () => {
     try {
         await axiosReq.delete(`/indexshots/${id}/`);
-        setHasOrder(false);
+        setHasOrder(true);
     } catch (err) {
     }
     };

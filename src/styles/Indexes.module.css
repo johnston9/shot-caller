@@ -30,6 +30,12 @@ color: #fff;
     width: 100%;
 }
 
+.ImagesFull {
+    object-fit: cover;
+    height: 500px;
+    width: 100%;
+}
+
 .Header {
     background-color: #fff;
   }

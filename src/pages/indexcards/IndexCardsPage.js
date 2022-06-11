@@ -15,10 +15,8 @@ import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
-import IndexCard from "./IndexCard";
 import Info from "./Info";
-import IndexCardCreate from "./IndexCardCreate";
-import IndexCardEdit from "./IndexCardEdit"; 
+import IndexCardCreate from "./IndexCardCreate"; 
 import IndexCards from "./IndexCards"; 
 
 
@@ -30,7 +28,7 @@ const IndexCardsPage = () => {
   const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [show, setShow] = useState(false);
-  const [showEdit, setShowEdit] = useState(false);
+  const [show2, setShow2] = useState(false);
   const history = useHistory();
   const filter = "";
  
@@ -83,27 +81,19 @@ const IndexCardsPage = () => {
                         <Info  /> 
                         ) } 
             {/* add */}
-            {/* <Row className="mb-3">
-              <Col className="text-center">
-              <>
-              <Button onClick={() => history.push(`/indexcards/create`) }
-              className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
-              Add Indexcard </Button>
-              </>
-              </Col>
-              </Row > */}
-              <Row className='mt-0'>
-              <Col className="text-center">
+          <Row className='mt-0'>
+            <Col className="text-center">
               <Button onClick={() => setShow(show => !show)} 
-              className={`${btnStyles.Button} ${btnStyles.Wide2} 
-              ${btnStyles.Bright} `}>
-              Add Index Card</Button>
+                className={`${btnStyles.Button} ${btnStyles.Wide2} 
+                ${btnStyles.Bright} `}>
+                Add Index Card
+              </Button>
             </Col>
           </Row>
           {!show ?("") : (<IndexCardCreate 
-            setShow={setShow} setHasOrder={setHasOrder} /> ) }
-          {!showEdit ?("") : (<IndexCardEdit
-            setShow={setShowEdit} setHasOrder={setHasOrder} /> ) }
+            setShow={setShow} 
+            setIndexCards={setIndexCards}
+            setHasOrder={setHasOrder} /> ) }
           {/* search setShowEdit  */}
               <Row>
               <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
@@ -126,9 +116,26 @@ const IndexCardsPage = () => {
               {hasLoaded ? (
               <>
                 {indexCards.results.length ? (
+                  <>
                      <IndexCards 
-                     setShowEdit={setShowEdit} setHasOrder={setHasOrder}
+                     setIndexCards={setIndexCards}
+                     setHasOrder={setHasOrder}
                      indexCards={indexCards} />
+                     {/* add */}
+                    <Row className='mt-0'>
+                      <Col className="text-center">
+                        <Button onClick={() => setShow2(show2 => !show2)} 
+                          className={`${btnStyles.Button}  
+                          ${btnStyles.Bright} `}>
+                          Add Card
+                        </Button>
+                      </Col>
+                    </Row>
+                    {!show2 ?("") : (<IndexCardCreate 
+                      setShow2={setShow2} 
+                      setIndexCards={setIndexCards}
+                      setHasOrder={setHasOrder} /> ) }
+                  </>
                      ) 
                 : (
                   <Container className={appStyles.Content}>

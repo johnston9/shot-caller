@@ -93,7 +93,8 @@ const Characters = ({message}) => {
                     <>
                     {characters.results.length ? (
                         characters.results.map((character) => (
-                        <Col xs={6} sm={4} md={2} lg={2} className="py-2 p-0 mx-0">
+                        <Col xs={6} sm={4} md={2} lg={2} 
+                        className="py-2 p-0 mx-0">
                         <CharacterTop key={character.id} {...character} />
                         </Col>
                         ))) 
