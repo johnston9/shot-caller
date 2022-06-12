@@ -1,28 +1,37 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Days.module.css";
+import styles from "../../styles/Indexes.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import Content from './Content'; 
+import SeriesEditForm from './SeriesEditForm';
 
 const SeriesTop = (props) => {
-    useRedirect("loggedOut")
+    useRedirect("loggedOut");
+    const [showEdit, setShowEdit] = useState(false);
+    const [showContent, setShowContent] = useState(false);
     const {
         id,
         name,
+        content,
+        seri,
+        setHasOrder,
+        setSeries,
     } = props;
     const history = useHistory();
 
     const handleEdit = () => {
-        history.push(`/series/edit/${id}/`);
+        setShowEdit(true);
         };
     
     const handleDelete = async () => {
     try {
         await axiosReq.delete(`/series/${id}/`);
-        history.push(`/home/`);
+        setHasOrder(true);
     } catch (err) {
     }
     };
@@ -31,14 +40,21 @@ const SeriesTop = (props) => {
         <div>
             <Card className={`text-center `}  >
                 <Card.Header className={`pt-2 pb-1 ${styles.Top }`}>
-                  <Row >
-                    <Col className='mx-0 px-0' xs={1}></Col>
+                  <Row className='d-flex align-items-center'>
+                    <Col className='mx-0 px-0' xs={1}>
+                    <Button
+                    className={`float-right py-0  ${btnStyles.Order} ${btnStyles.Button}`}
+                    onClick={() => setShowContent(showContent => !showContent)} >I
+                    </Button>
+                    </Col>
+                    <Col xs={10} className='mx-0 text-center'>
                     <Link to={`/indexshots/${id}`}>
-                    <Col xs={10} className='mx-0 px-0 text-center'>
+                    <div>
                     <h5 className={` ${styles.Titlelist }`}>{name}
                     </h5>
-                    </Col >
+                    </div>
                     </Link>
+                    </Col >
                     <Col xs={1} className='text-center mx-0 px-0'>
                     <PostDropdown
                             handleEdit={handleEdit}
@@ -46,8 +62,25 @@ const SeriesTop = (props) => {
                         />
                     </Col>
                   </Row>
+                  <Row>
+                      <Col className='px-0'>
+                      {!showContent ? (
+                        ""
+                            ) : (
+                                <Content content={content}  /> 
+                                ) } 
+                      </Col>
+                  </Row>
                   </Card.Header>
             </Card>
+                  {!showEdit ?("") : (
+                    <SeriesEditForm
+                            setSeries= {setSeries}
+                            seri={seri}
+                            name1={name}
+                            id={id}
+                            setShowEdit={setShowEdit} 
+                            setHasOrder={setHasOrder} /> ) }
         </div>
     )
 }

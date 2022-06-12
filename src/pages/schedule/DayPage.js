@@ -89,7 +89,8 @@ const DayPage = () => {
                     </Col>
                     )}
                 </Row>
-                {!show ?("") : (<SceneScheduleCreate xday={dataDay} setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
+                {!show ?("") : (<SceneScheduleCreate xday={dataDay} 
+                setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
                 <Pages scenes={dayScenes.results}/>
                 {/* titles*/}
                 <div className='d-none d-md-block'>

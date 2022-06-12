@@ -130,9 +130,6 @@ const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace=
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setPostData({
-      ...postData
-    });
     const formData = new FormData();
 
     formData.append("scene", scene);
@@ -167,8 +164,6 @@ const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace=
       }
     }
   }
-
-
 
 const dropfields = (
   <div>
@@ -421,7 +416,7 @@ const buttons = (
                     </Container>
                 </Col>
                 <Col className="pt-2 p-0 p-md-2" md={6}>
-                    <Container
+                <Container
                     className={`${appStyles.Content2} ${styles.Container} d-flex flex-column justify-content-center`}
                     >
                     <Form.Group className="text-center pt-3">
@@ -464,7 +459,7 @@ const buttons = (
                             {message}
                         </Alert>
                         ))}
-                        </Container>
+                </Container>
                 </Col>
                 </Row>
                 <Row>
@@ -477,7 +472,8 @@ const buttons = (
                         {image2 ? (
                             <>
                             <figure>
-                                <Image className={appStyles.Image} src={image2} rounded />
+                                <Image className={appStyles.Image} 
+                                src={image2} rounded />
                             </figure>
                             <div>
                                 <Form.Label

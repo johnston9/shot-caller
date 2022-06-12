@@ -47,7 +47,7 @@ const IndexCardCreate = ({setShow, setHasOrder, setIndexCards} ) => {
     formData.append("style", style);
   
     try {
-      const {data} = await axiosReq.post("/indexcards/", formData);
+      await axiosReq.post("/indexcards/", formData);
       setHasOrder(true);
       setShow(false);
     } catch (err) {

@@ -31,7 +31,6 @@ const IndexCardsPage = () => {
   const [show2, setShow2] = useState(false);
   const history = useHistory();
   const filter = "";
- 
   const [query, setQuery] = useState("");
   const [hasOrder, setHasOrder] = useState(false);
 
@@ -122,7 +121,7 @@ const IndexCardsPage = () => {
                      setHasOrder={setHasOrder}
                      indexCards={indexCards} />
                      {/* add */}
-                    <Row className='mt-0'>
+                    <Row className='mt-3'>
                       <Col className="text-center">
                         <Button onClick={() => setShow2(show2 => !show2)} 
                           className={`${btnStyles.Button}  

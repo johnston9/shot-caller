@@ -5,34 +5,30 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
+import appStyles from "../../App.module.css";
 import { useRedirect } from "../../hooks/Redirect";
+import Container from "react-bootstrap/Container";
 
-const SeriesEditForm = ({topbox} ) => {
+const SeriesEditForm = (props ) => {
   useRedirect("loggedOut")
 const [errors, setErrors] = useState({});
-
+const {seri, setSeries, id, setShowEdit, setHasOrder, name1 } = props;
 const [postData, setPostData] = useState({
   name: "",
   content: "", });
 const { name, content } = postData;
 
 const history = useHistory();
-const { id } = useParams();
 
 useEffect(() => {
   const handleMount = async () => {
-    try {
-      const { data } = await axiosReq.get(`/series/${id}/`);
-      setPostData(data);
-    } catch (err) {
-      console.log(err);
-    }
+    const { name, content} = seri;
+    setPostData({ name, content})
   };
 
   handleMount();
@@ -53,8 +49,21 @@ const handleSubmit = async (event) => {
   formData.append("content", content);
     
   try {
-    await axiosReq.put(`/series/${id}/`, formData);
-    history.goBack();
+    const {data} = await axiosReq.put(`/series/${id}/`, formData);
+    const {name, content} = data;
+    setSeries((series) => ({
+      ...series,
+      results: series.results.map((seri) => {
+        return seri.id === id
+          ? {
+              ...seri,
+              name: name,
+              content: content,
+            }
+          : seri;
+      }),
+    }));
+    setShowEdit(false);
   } catch (err) {
     console.log(err);
     if (err.response?.status !== 401) {
@@ -79,24 +88,15 @@ const buttons = (
 
 return (
   <div>
-    {topbox ? (
-      ""
-    ) : (
-      <TopBox title="Edit Series" />
-    ) }
-  <Button
-    className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
-    onClick={() => history.goBack()}
-    >
-    Back
-  </Button>
-  <Form className={`${styles.Back} mt-4`} onSubmit={handleSubmit}>
-    <h4 className="text-center mt-3">Edit Series Name and Content</h4>
-    <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+  <Container className= {`text-center mt-0 ${appStyles.Content} ${styles.Container}`} >
+  <Form className={` mt-0`} onSubmit={handleSubmit}>
+  <h5 className={`text-center mb-0 pl-3 py-0 ${styles.SubTitle }`}
+   style={{ textTransform: 'uppercase'}}>Edit Series
+  </h5>
   <Row className="text-center">
-    <Col xs={12} md={{span: 6, offset: 3 }} 
-      className="p-0 p-md-2 d-flex justify-content-center ">
-      <Form.Group controlId="name" className={`${styles.Width2} `} >
+    <Col xs={12} 
+      className="p-0  d-flex justify-content-center ">
+      <Form.Group controlId="name" className={`${styles.Width95} `} >
           <Form.Label className={`${styles.Bold}`} >Series Name</Form.Label>
           <Form.Control 
           type="text"
@@ -114,9 +114,9 @@ return (
     </Col> 
   </Row>
   <Row>
-    <Col xs={12} md={{span: 8, offset: 2 }} 
-    className="p-0 p-md-2 d-flex justify-content-center">
-    <Form.Group controlId="content" className={`${styles.Width2} `} >
+    <Col xs={12}
+    className="p-0 d-flex justify-content-center">
+    <Form.Group controlId="content" className={`${styles.Width95} `} >
               <Form.Label className={`${styles.Bold}`} >Series Content</Form.Label>
               <Form.Control 
               type="text"
@@ -142,6 +142,7 @@ return (
       </Col>
   </Row>
 </Form>
+</Container>
 </div>
 );
 }

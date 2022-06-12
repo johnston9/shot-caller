@@ -15,6 +15,7 @@ import TopBox from '../../components/TopBox';
 import { useHistory } from 'react-router-dom';
 import Info from './Info';
 import SeriesTop from './SeriesTop';
+import SeriesCreateForm from './SeriesCreateForm'; 
 
 const SeriesPage = () => {
     useRedirect("loggedOut");
@@ -27,7 +28,8 @@ const SeriesPage = () => {
     const message = "No Series Added";
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
-    console.log(query);
+    const [show, setShow] = useState(false);
+    const [hasOrder, setHasOrder] = useState(false);
 
     useEffect(() => {
           const fetchseries = async () => {
@@ -36,6 +38,7 @@ const SeriesPage = () => {
               setSeries(data);
               console.log(data);
               setHasLoaded(true);
+              setHasOrder(true);
             } catch(err) {
               setError(err)
               console.log(err);
@@ -71,13 +74,18 @@ const SeriesPage = () => {
                         ) : (
                             <Info  /> 
                             ) } 
+            {/* Create setHasOrder={setHasOrder}*/}
             <Row className='my-3'>
               <Col className='text-center'>
-              <Button onClick={() => history.push('/series/create')}
+              <Button onClick={() => setShow(show => !show)} 
                 className= {`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                    Create Series</Button>
+                    Create Series</Button> 
                 </Col>
             </Row>
+            {!show ?("") : (<SeriesCreateForm
+            setShow={setShow} 
+            setSeries={setSeries}
+             /> ) }
             {/* Series */}
             <div className={`mx-1 mt-3 mb-3 `} >
             <h5 className={`text-center mt-3 ${styles.SubTitle }`} >Index Shots Series</h5>
@@ -97,15 +105,19 @@ const SeriesPage = () => {
                     </Form>
                 </Col>
             </Row>            
-            {/* series */}
-            <Row className="py-2 d-flex justify-content-center">
+            {/* series d-flex justify-content-center*/}
+            <Row className="py-2">
               {hasLoaded ? (
               <>
                 {series.results.length ? (
                     series.results.map((seri) => (
-                      <Col xs={10}  md={6} lg={4} className="py-2">
-                      <SeriesTop key={seri.id} 
-                      {...seri} setSeries={setSeries} />
+                      <Col xs={12} sm={6} md={4} lg={4} className="py-2">
+                      <SeriesTop 
+                      seri={seri}
+                      key={seri.id} 
+                      setHasOrder={setHasOrder}
+                      {...seri} 
+                      setSeries={setSeries} />
                       </Col>
                     ))) 
                 : (

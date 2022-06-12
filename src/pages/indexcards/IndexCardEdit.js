@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/Indexes.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
@@ -109,17 +109,18 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id,} ) => {
   );
 
   return (
-    <div className="mt-1">
-    <Container className= {`text-center mt-3 ${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-0" onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-0 pl-3 py-0 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Edit Index Card {number} </h5>
+    <div className="mt-0">
+    <Container className= {`text-center mt-0 ${appStyles.Content} ${styles.Container}`} >
+      <Form className="mt-0 mx-0 px-0" onSubmit={handleSubmit}>
+      <h5 className={`text-center mb-0 pl-3 py-0 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Edit Index Card {number}
+       </h5>
       <Row>
           <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
-                  <Form.Label className={`${styles.Bold} `} >Number</Form.Label>
+                  <Form.Label className={`pb-0 mb-0 ${styles.Bold} `} >Number</Form.Label>
                   <Form.Control 
-                  className={styles.Input}
+                  className={` ${styles.Input}`}
                   type="text"
                   name="number"
                   value={number}
@@ -136,11 +137,11 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id,} ) => {
         <Row>
         <Col xs={12} 
             className="p-0 d-flex justify-content-center">
-            <Form.Group controlId="story" className={`${styles.Width95} `} >
-                        <Form.Label className={`${styles.Bold}`} >Story</Form.Label>
+            <Form.Group controlId="story" className={`${styles.Width100}  `} >
+                        <Form.Label className={`pb-0 mb-0 ${styles.Bold}`} >Story</Form.Label>
                         <Form.Control 
                         type="text"
-                        className={styles.InputScene}
+                        className={`${styles.InputScene}`}
                         as="textarea"
                         name="story"
                         rows={2}
@@ -156,8 +157,8 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id,} ) => {
         </Col> 
         <Col xs={12} 
             className="p-0 d-flex justify-content-center">
-            <Form.Group controlId="style" className={`${styles.Width95} `} >
-                        <Form.Label className={`${styles.Bold}`} >Style</Form.Label>
+            <Form.Group controlId="style" className={`${styles.Width100} `} >
+                        <Form.Label className={`pb-0 mb-0 ${styles.Bold}`} >Style</Form.Label>
                         <Form.Control 
                         type="text"
                         className={styles.InputScene}

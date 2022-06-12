@@ -19,7 +19,6 @@ import { useRedirect } from "../../hooks/Redirect";
 const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const { id } = useParams();
   const [showInfo, setShowInfo] = useState(false);
   const [postData, setPostData] = useState({
     series_id: "",

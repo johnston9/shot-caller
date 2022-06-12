@@ -83,7 +83,7 @@ const IndexCard = (props ) => {
       </Card>
       {!showEdit ?("") : (
       <IndexCardEdit
-            setIndexCards= {setIndexCards}
+            setIndexCards={setIndexCards}
             card={card}
             number={number}
             id={id}

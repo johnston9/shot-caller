@@ -1,6 +1,7 @@
 .Container {
     min-height: 100px;
-  }
+}
+
 .Container2 {
     min-height: 10px;
 }
@@ -22,6 +23,16 @@ color: #fff;
 
 .Bottom:hover .Titledetail {
 color: #fff;
+}
+
+.Titlelist {
+    color: #fff;
+}
+
+.Content {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
 }
 
 .Images {
@@ -48,17 +59,12 @@ background-color: aliceblue;
 font-weight: 700;
 }
 
-.Width {
-width: 50%;
-}
-
 .SubTitle {
 background-color: #e8f0f1;
 font-weight: 700;
 }
 
 .SubTitle2 {
-/* background-color: #e0fafe; */
 background-color: #d6fcff;;
 font-weight: 700;
 }
@@ -84,6 +90,9 @@ width: 80%;
 width: 95%;
 }
 
+.Width100 {
+    width: 100%;
+    }
 .Input {
 background: #ffffff;
 border: 1px solid #f0f1f9;

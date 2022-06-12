@@ -13,7 +13,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const SeriesCreateForm = () => {
+const SeriesCreateForm = ({setSeries, setShow}) => {
     useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
 
@@ -39,8 +39,13 @@ const SeriesCreateForm = () => {
     formData.append("content", content);
       
     try {
-      await axiosReq.post("/series/", formData);
-      history.goBack();
+      const {data} = await axiosReq.post("/series/", formData);
+      console.log(data);
+      setSeries((prevSeries) => ({
+        ...prevSeries,
+        results: [data, ...prevSeries.results],
+      }));
+      setShow(false);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -65,16 +70,8 @@ const SeriesCreateForm = () => {
 
   return (
     <div>
-      <TopBox title="Create Series" />
-    <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
-      onClick={() => history.goBack()}
-      >
-      Back
-    </Button>
-    <Form className={`${styles.Back} mt-4`} onSubmit={handleSubmit}>
-      <h4 className="text-center mt-3">Create Series</h4>
-      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+    <Form className={`${styles.Back} mt-4 mx-5`} onSubmit={handleSubmit}>
+    <h5 className={`text-center mt-0 ${styles.SubTitle }`} >Create Series</h5>
     <Row className="text-center">
       <Col xs={12} md={{span: 6, offset: 3 }} 
         className="p-0 p-md-2 d-flex justify-content-center ">
@@ -95,7 +92,7 @@ const SeriesCreateForm = () => {
         ))}
       </Col> 
     </Row>
-    <Row>
+    <Row className="text-center">
       <Col xs={12} md={{span: 8, offset: 2 }} 
       className="p-0 p-md-2 d-flex justify-content-center">
       <Form.Group controlId="content" className={`${styles.Width2} `} >
