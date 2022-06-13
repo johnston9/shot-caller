@@ -73,7 +73,7 @@ width: 100%;
 /* mobile */
 
 .HomeboxXsXs {
-    height: 120px;
+    height: 110px;
     background-color: #112533;
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
@@ -140,8 +140,8 @@ width: 100%;
     }
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     .Homebox {
         height: 127px;
     }
-}
+} */

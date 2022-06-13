@@ -159,8 +159,6 @@ function App() {
              )} />
         <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
         {/* INDEXCARDS */}
-        {/* <Route exact path="/indexcards/create" render={() => <SeriesCreateForm />} />
-        <Route exact path="/indexcards/edit/:id" render={() => <SeriesEditForm />} /> */}
         <Route
             exact
             path="/indexcards"
@@ -170,8 +168,6 @@ function App() {
             )}
           />
         {/* INDEXSHOTS */}
-        {/* <Route exact path="/series/create" render={() => <SeriesCreateForm />} />
-        <Route exact path="/series/edit/:id" render={() => <SeriesEditForm />} /> */}
         <Route
             exact
             path="/series"

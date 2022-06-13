@@ -29,7 +29,8 @@ const Home = () => {
         />
       </Col>
       <Col className="my-3" xs={10} md={10}>
-          <div className="d-none d-md-block">
+          {/* large */}
+          <div className="d-none d-lg-block">
             <Row className="text-center">
               <Col md={1}></Col>
                 <Col lg={10} >
@@ -38,9 +39,10 @@ const Home = () => {
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Primary Scenes Workspace </h5>
                     <div className={`${styles.Inner}`}>
                     <p className="mt-2 mb-0">
-                      Create Scene breakdowns. Colloborate on them 
-                      in their department workspaces. Create and view storyboards
-                      and shotlists.
+                      Create Scene Breakdowns. Colloborate  
+                      in Scene Department Workspaces. <br/>
+                      Create and view Storyboards
+                      and Shotlists.
                     </p>
                     </div>
                     </div>
@@ -60,8 +62,10 @@ const Home = () => {
             </Row>
             <Row className="mt-3 text-center">
             <Col lg={1} ></Col>
+            <Col lg={10}>
+            <Row>
                 {/* Moodshots */}
-                <Col md={6} lg={5} >
+                <Col md={6} lg={4} >
                   <Link to={`/moodshots`} >
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
@@ -74,20 +78,34 @@ const Home = () => {
                   </Link>
                 </Col>   
                 {/* Profiles */}
-                <Col md={6} lg={5} >
+                <Col md={6} lg={4} >
                   <Link to={`/profiles`} >
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
                     <div className={`${styles.Inner}`}>
-                    <p className="mt-2">Follow Profiles to Create Feed</p>
+                    <p className="mt-2">Profiles and Feed</p>
                     </div>
                     </div>
                   </Link>
                 </Col> 
+                <Col xs={6} lg={4} >
+                  <Link to={`/crewinfo`} >
+                    <div className={`py-1 ${styles.HomeboxSmEr}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
+                    <div className={`${styles.Inner} `}>
+                    <p className="mt-2"> Crew Info Details</p>
+                    </div>
+                    </div>
+                  </Link>
+                </Col>
+              </Row>
+            </Col>
             </Row>
             <Row className="mt-3 text-center">
             <Col lg={1}></Col>
-                <Col md={6} lg={5}  >
+            <Col lg={10}>
+            <Row>
+                <Col md={6} lg={4}  >
                 <Link to={`/days`} >
                   <div className={` py-1  ${styles.HomeboxSmEr}`}>
                         <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
@@ -102,7 +120,164 @@ const Home = () => {
                   </Link>
                 </Col>
                 {/* Callsheets */}
-                <Col md={6} lg={5} >
+                <Col md={6} lg={4} >
+                  <Link to={`/callsheets`} >
+                    <div className={`py-1 ${styles.HomeboxSmEr}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
+                    <div className={`${styles.Inner}`}>
+                    <p className="mt-2">Callsheets for Shoot Days</p>
+                    </div>
+                    </div>
+                  </Link>
+                </Col> 
+                {/* cards  */}
+                <Col xs={6} lg={4} >
+                  <Link to={`/indexcards`} >
+                    <div className={`py-1 ${styles.HomeboxSmEr}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Index Cards</h5>
+                    <div className={`${styles.Inner} `}>
+                    <p className="mt-2"> Index Cards for Scenes</p>
+                    </div>
+                    </div>
+                  </Link>
+                </Col>
+              </Row>
+              </Col>
+            </Row>
+            <Row className="mt-3 text-center">
+            <Col lg={1} ></Col>
+            <Col lg={10}>
+            <Row>
+                <Col xs={6} lg={4} >
+                  <Link to={`/characters`} >
+                    <div className={`py-1 ${styles.HomeboxSmEr}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Characters</h5>
+                    <div className={`${styles.Inner}`}>
+                    <p className="mt-2">Character Details</p>
+                    </div>
+                    </div>
+                  </Link>
+                </Col>
+                <Col xs={6} lg={4} >
+                <Link to={`/locations`} >
+                  <div className={`py-1  ${styles.HomeboxSmEr}`}>
+                        <h5 className={`text-center pt-2 ${styles.Title}`}>Locations</h5>
+                        <div className={`${styles.Inner}`}>
+                        <p className="mt-2">Addresses and Images</p>
+                        </div>
+                    </div>
+                  </Link>
+                </Col>
+                {/* Index Shots*/}
+                <Col xs={6} lg={4} > 
+                <Link to={`/series`} >
+                  <div className={`py-1  ${styles.HomeboxSmEr}`}>
+                        <h5 className={`text-center pt-2 ${styles.Title}`}>Index Shots</h5>
+                        <div className={`${styles.Inner}`}>
+                        <p className="mb-0 pt-1">Create Index Shots Series  </p>
+                        </div>
+                    </div>
+                  </Link>
+                </Col>
+            </Row>
+            </Col>
+            </Row>
+            {/* info depts*/}
+            <Row className="text-center mt-3">
+                {/* Crew Info */}
+                <Col lg={1} ></Col>
+                <Col lg={10}>
+                <Row>
+                <Col lg={3}></Col>
+                {/* depts general */}
+                <Col xs={6} lg={6} > 
+                <Link to={`/depts/general`} >
+                  <div className={`py-1  ${styles.HomeboxSmEr}`}>
+                        <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
+                        <div className={`${styles.Inner}`}>
+                        <p className="mb-0 pt-1">Departments Posting Area  </p>
+                        </div>
+                    </div>
+                  </Link>
+                </Col>
+              </Row>
+              </Col>
+            </Row>
+          </div>
+          {/* medium */}
+          <div className="d-none d-md-block d-lg-none">
+            <Row className="text-center">
+              <Col md={1}></Col>
+                <Col md={10} >
+                  <Link to={`/scenes`} >
+                    <div className={`pt-1  ${styles.Homebox}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Primary Scenes Workspace </h5>
+                    <div className={`${styles.Inner}`}>
+                    <p className="mt-2 mb-0">
+                      Colloborate on Scenes
+                      in Department Workspaces.
+                    </p>
+                    </div>
+                    </div>
+                  </Link>
+                </Col>
+            </Row>
+            <Row className="mt-0 text-center">
+            <Col md={1} ></Col>
+              <Col md={10} >
+                  <Link to={`/findposts/departments`} >
+                  <div className={`px-3 py-1  ${styles.HomeboxFind}`}>
+                    <h5 className={`text-center pt-0 `}>Quick Find Posts</h5>
+                    <p className="mt-2">All - Archived - Liked - Feed - Posts by Department </p>
+                    </div>
+                  </Link>
+              </Col>
+            </Row>
+            <Row className="mt-3 text-center">
+            <Col md={1} ></Col>
+                {/* Moodshots */}
+                <Col md={5} lg={5} >
+                  <Link to={`/moodshots`} >
+                    <div className={`py-1 ${styles.HomeboxSmEr}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
+                    <div className={`${styles.Inner}`}>
+                    <p className="mt-2">Add and View Moodshots</p>
+                    {/* <p className="mt-2">Moodshots for scenes, locations, characters
+                    and themes</p> */}
+                    </div>
+                    </div>
+                  </Link>
+                </Col>   
+                {/* Profiles */}
+                <Col md={5} lg={5} >
+                  <Link to={`/profiles`} >
+                    <div className={`py-1 ${styles.HomeboxSmEr}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
+                    <div className={`${styles.Inner}`}>
+                    <p className="mt-2">Profiles and Feed</p>
+                    </div>
+                    </div>
+                  </Link>
+                </Col> 
+            </Row>
+            <Row className="mt-3 text-center">
+            <Col md={1}></Col>
+                <Col md={5} lg={5}  >
+                <Link to={`/days`} >
+                  <div className={` py-1  ${styles.HomeboxSmEr}`}>
+                        <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
+                        <div className={`${styles.Inner}`}>
+                        {admin ? (
+                              <p className="mt-2"> Create / View schedule </p>
+                            ) : (
+                              <p className="mt-2"> View schedule </p>
+                            )}
+                        </div>
+                    </div>
+                  </Link>
+                </Col>
+                {/* Callsheets */}
+                <Col md={5} lg={5} >
                   <Link to={`/callsheets`} >
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
@@ -114,33 +289,33 @@ const Home = () => {
                 </Col>  
             </Row>
             <Row className="mt-3 text-center">
-            <Col lg={1} ></Col>
-                <Col xs={6} lg={5} >
+            <Col md={1} ></Col>
+                <Col md={5} lg={5} >
                   <Link to={`/characters`} >
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Characters</h5>
                     <div className={`${styles.Inner}`}>
-                    <p className="mt-2">All Characters Details</p>
+                    <p className="mt-2">Character Details</p>
                     </div>
                     </div>
                   </Link>
                 </Col>
-                <Col xs={6} lg={5} >
+                <Col xs={5} lg={5} >
                 <Link to={`/locations`} >
                   <div className={`py-1  ${styles.HomeboxSmEr}`}>
                         <h5 className={`text-center pt-2 ${styles.Title}`}>Locations</h5>
                         <div className={`${styles.Inner}`}>
-                        <p className="mt-2">Filming Addresses and Images</p>
+                        <p className="mt-2">Addresses and Images</p>
                         </div>
                     </div>
                   </Link>
                 </Col>
             </Row>
-            {/* info */}
+            {/* info depts*/}
             <Row className="text-center mt-3">
                 {/* Crew Info */}
-                <Col lg={1} ></Col>
-                <Col xs={6} lg={5} >
+                <Col md={1} ></Col>
+                <Col md={5} lg={5} >
                   <Link to={`/crewinfo`} >
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
@@ -151,7 +326,7 @@ const Home = () => {
                   </Link>
                 </Col>
                 {/* depts general */}
-                <Col xs={6} lg={5} > 
+                <Col md={5} lg={5} > 
                 <Link to={`/depts/general`} >
                   <div className={`py-1  ${styles.HomeboxSmEr}`}>
                         <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
@@ -162,135 +337,186 @@ const Home = () => {
                   </Link>
                 </Col>
             </Row>
+            {/* Index */}
+            <Row className="text-center mt-3">
+                {/* Index Cards */}
+                <Col md={1} ></Col>
+                <Col md={5} lg={5} >
+                  <Link to={`/indexcards`} >
+                    <div className={`py-1 ${styles.HomeboxSmEr}`}>
+                    <h5 className={`text-center pt-2 ${styles.Title}`}>Index Cards</h5>
+                    <div className={`${styles.Inner} `}>
+                    <p className="mb-0 pt-1"> Index Cards for Scenes</p>
+                    </div>
+                    </div>
+                  </Link>
+                </Col>
+                {/* Index Shots*/}
+                <Col md={5} lg={5} > 
+                <Link to={`/depts/general`} >
+                  <div className={`py-1  ${styles.HomeboxSmEr}`}>
+                        <h5 className={`text-center pt-2 ${styles.Title}`}>Index Shots</h5>
+                        <div className={`${styles.Inner}`}>
+                        <p className="mb-0 pt-1">Create Index Shots Series  </p>
+                        </div>
+                    </div>
+                  </Link>
+                </Col>
+            </Row>
           </div>
           {/* mobile view */}
           <div className=" d-md-none mb-5">
-            <Row className="text-center">
-                <Col>
-                  <Link to={`/scenes`} >
-                    <div className={`py-2  ${styles.HomeboxXsXs}`}>
-                    <h5 className={`text-center ${styles.Title}`}>Scenes Workspace </h5>
-                    <div className={`${styles.Inner} mt-2 pb-1`}>
-                    <p className="pt-1 mb-0">
-                      Collaborate on scenes by department. View storyboards and shotlists. 
-                    </p>
-                    </div>
-                    </div>
-                  </Link>
-                </Col>
-            </Row>
-            <Row className="text-center mt-0">
-              <Col >
-              <Link to={`/findposts/departments`} >
-                  <div className={`py-1 px-2  ${styles.HomeboxFind}`}>
-                    <h5 className={`text-center pt-1`}>Find Posts</h5>
-                    <p className="pt-1 mb-0">Posts by Department</p>
-                    </div>
-                  </Link>
-                </Col>
-            </Row>
-            <Row className="text-center mt-3">
-                {/* Moodshots */}
-                <Col xs={6} >
-                <Link to={`/moodshots`} >
-                    <div className={`py-1 ${styles.HomeboxXs}`}>
-                    <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
-                    <div className={`${styles.Inner} mt-2 pb-1`}>
-                    <p className="mb-0 pt-1">Add / View Moodshots</p>
-                    </div>
-                    </div>
-                  </Link>
-                </Col>  
-                {/* Profiles */}
-                <Col xs={6} >
-                  <Link to={`/profiles`} >
-                    <div className={`py-1 ${styles.HomeboxXs}`}>
-                    <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
-                    <div className={`${styles.Inner} mt-2 pb-1`}>
-                    <p className="mb-0 pt-1">Create / View Feed</p>
-                    </div>
-                    </div>
-                  </Link>
-                </Col>
-            </Row>
-            <Row className="text-center mt-2">
-                {/* Schedule */}
-                <Col xs={6} >
-                <Link to={`/days`} >
-                  <div className={`py-1  ${styles.HomeboxXs}`}>
-                        <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
-                        <div className={`${styles.Inner} mt-2 pb-1`}>
-                        {admin ? (
+              <Row className="text-center">
+                  <Col>
+                    <Link to={`/scenes`} >
+                      <div className={`py-2  ${styles.HomeboxXsXs}`}>
+                      <h5 className={`text-center ${styles.Title}`}>Scenes Workspace </h5>
+                      <div className={`${styles.Inner} mt-2 pb-1`}>
+                      <p className="pt-1 mb-0">
+                        Collaborate on scenes by department.
+                      </p>
+                      </div>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
+              <Row className="text-center mt-0">
+                <Col >
+                <Link to={`/findposts/departments`} >
+                    <div className={`py-1 px-2  ${styles.HomeboxFind}`}>
+                      <h5 className={`text-center pt-1`}>Find Posts</h5>
+                      <p className="pt-1 mb-0">Posts by Department</p>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
+              <Row className="text-center mt-3">
+                  {/* Moodshots */}
+                  <Col xs={6} >
+                  <Link to={`/moodshots`} >
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
+                      <div className={`${styles.Inner} mt-2 pb-2`}>
+                      <p className="mb-0 pt-1">Add / View Moodshots</p>
+                      </div>
+                      </div>
+                    </Link>
+                  </Col>  
+                  {/* Profiles */}
+                  <Col xs={6} >
+                    <Link to={`/profiles`} >
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
+                      <div className={`${styles.Inner} mt-2 pb-2`}>
+                      <p className="mb-0 pt-1">Create / View Feed</p>
+                      </div>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
+              <Row className="text-center mt-2">
+                  {/* Schedule */}
+                  <Col xs={6} >
+                  <Link to={`/days`} >
+                    <div className={`py-1  ${styles.HomeboxXs}`}>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
+                          <div className={`${styles.Inner} mt-2 pb-2`}>
+                          {admin ? (
                               <p className="mt-2"> Create / View schedule </p>
                             ) : (
                               <p className="mt-2"> View schedule </p>
                             )}
-                        </div>
-                    </div>
-                  </Link>
-                </Col>
-                {/* Callsheets   */}
-                <Col xs={6} >
-                <Link to={`/callsheets`} >
-                    <div className={`py-1 ${styles.HomeboxXs}`}>
-                    <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
-                    <div className={`${styles.Inner} mt-2 pb-1`}>
-                    <p className="mb-0 pt-1">Add / View Callsheets</p>
-                    </div>
-                    </div>
-                  </Link>
-                </Col> 
-            </Row>
-            <Row className="text-center mt-2">
-                {/* Characters */}
-                <Col xs={6} >
-                  <Link to={`/characters`} >
-                    <div className={`py-1 ${styles.HomeboxXs}`}>
-                    <h5 className={`text-center pt-1 ${styles.Title}`}>Characters</h5>
-                    <div className={`${styles.Inner} mt-2 pb-2`}>
-                    <p className="mb-0 pt-1"> Character Details</p>
-                    </div>
-                    </div>
-                  </Link>
-                </Col>
-                {/* Locations */}
-                <Col xs={6} >
-                <Link to={`/locations`} >
-                  <div className={`py-1  ${styles.HomeboxXs}`}>
-                        <h5 className={`text-center pt-1 ${styles.Title}`}>Locations</h5>
-                        <div className={`${styles.Inner} mt-2 pb-2`}>
-                        <p className="mb-0 pt-1">Addresses and Images </p>
-                        </div>
-                    </div>
-                  </Link>
-                </Col>
-            </Row>
-            {/* info */}
-            <Row className="text-center mt-2">
-                {/* Crew Info */}
-                <Col xs={6} >
-                  <Link to={`/crewinfo`} >
-                    <div className={`py-1 ${styles.HomeboxXs}`}>
-                    <h5 className={`text-center pt-1 ${styles.Title}`}>Crew Info</h5>
-                    <div className={`${styles.Inner} mt-2 pb-2`}>
-                    <p className="mb-0 pt-1"> Crew Info Details</p>
-                    </div>
-                    </div>
-                  </Link>
-                </Col>
-                {/* depts general */}
-                <Col xs={6} >
-                <Link to={`/depts/general`} >
-                  <div className={`py-1  ${styles.HomeboxXs}`}>
-                        <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
-                        <div className={`${styles.Inner} mt-2 pb-1`}>
-                        <p className="mb-0 pt-1">Departments Posting Area  </p>
-                        </div>
-                    </div>
-                  </Link>
-                </Col>
-            </Row>
-          </div>
+                          </div>
+                      </div>
+                    </Link>
+                  </Col>
+                  {/* Callsheets   */}
+                  <Col xs={6} >
+                  <Link to={`/callsheets`} >
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
+                      <div className={`${styles.Inner} mt-2 pb-2`}>
+                      <p className="mb-0 pt-1">Add / View Callsheets</p>
+                      </div>
+                      </div>
+                    </Link>
+                  </Col> 
+              </Row>
+              <Row className="text-center mt-2">
+                  {/* Characters */}
+                  <Col xs={6} >
+                    <Link to={`/characters`} >
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Characters</h5>
+                      <div className={`${styles.Inner} mt-2 pb-2`}>
+                      <p className="mb-0 pt-1"> Character Details</p>
+                      </div>
+                      </div>
+                    </Link>
+                  </Col>
+                  {/* Locations */}
+                  <Col xs={6} >
+                  <Link to={`/locations`} >
+                    <div className={`py-1  ${styles.HomeboxXs}`}>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Locations</h5>
+                          <div className={`${styles.Inner} mt-2 pb-2`}>
+                          <p className="mb-0 pt-1">Addresses and Images </p>
+                          </div>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
+              {/* info */}
+              <Row className="text-center mt-2">
+                  {/* Crew Info */}
+                  <Col xs={6} >
+                    <Link to={`/crewinfo`} >
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
+                      <div className={`${styles.Inner} mt-2 pb-2`}>
+                      <p className="mb-0 pt-1"> Crew Info Details</p>
+                      </div>
+                      </div>
+                    </Link>
+                  </Col>
+                  {/* depts general */}
+                  <Col xs={6} >
+                  <Link to={`/depts/general`} >
+                    <div className={`py-1  ${styles.HomeboxXs}`}>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
+                          <div className={`${styles.Inner} mt-2 pb-2`}>
+                          <p className="mb-0 pt-1">Departments Posting Area  </p>
+                          </div>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
+              {/* Indexes */}
+              <Row className="text-center mt-2">
+                  {/* Index cards */}
+                  <Col xs={6} >
+                    <Link to={`/indexcards`} >
+                      <div className={`py-1 ${styles.HomeboxXs}`}>
+                      <h5 className={`text-center pt-2 ${styles.Title}`}>Index Cards</h5>
+                      <div className={`${styles.Inner} mt-2 pb-2`}>
+                      <p className="mb-0 pt-1"> Scene Index Cards</p>
+                      </div>
+                      </div>
+                    </Link>
+                  </Col>
+                  {/* Index Shots */}
+                  <Col xs={6} >
+                  <Link to={`/series`} >
+                    <div className={`py-1  ${styles.HomeboxXs}`}>
+                          <h5 className={`text-center pt-2 ${styles.Title}`}>Index Shots</h5>
+                          <div className={`${styles.Inner} mt-2 pb-2`}>
+                          <p className="mb-0 pt-1">Index Shots Series </p>
+                          </div>
+                      </div>
+                    </Link>
+                  </Col>
+              </Row>
+            </div>
       </Col>
       <Col className={`my-3 pl-0 pr-3 pr-md-4`}
         xs={1} >
