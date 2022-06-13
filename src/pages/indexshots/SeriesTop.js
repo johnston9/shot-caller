@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
@@ -22,7 +22,6 @@ const SeriesTop = (props) => {
         setHasOrder,
         setSeries,
     } = props;
-    const history = useHistory();
 
     const handleEdit = () => {
         setShowEdit(true);

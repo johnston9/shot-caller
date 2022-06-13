@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { Link, useHistory } from 'react-router-dom';
@@ -6,9 +6,11 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Indexes.module.css";
+import IndexShotEdit from './IndexShotEdit';
 
 const IndexShot = (props) => {
-    useRedirect("loggedOut")
+    useRedirect("loggedOut");
+    const [showEdit, setShowEdit] = useState(false);
     const {
         id,
         series_id,
@@ -16,10 +18,10 @@ const IndexShot = (props) => {
         number,
         content,
         image,
+        shot,
         setHasOrder,
-        setShowEdit,
+        setIndexShots,
     } = props;
-    const history = useHistory();
 
     const handleEdit = () => {
         setShowEdit(true);
@@ -72,6 +74,13 @@ const IndexShot = (props) => {
                 </Card.Body>
                 </Link>
             </Card>
+            {!showEdit ?("") : (
+            <IndexShotEdit
+                setIndexShots={setIndexShots}
+                shot={shot}
+                id={id}
+                setShowEdit={setShowEdit} 
+                setHasOrder={setHasOrder} /> ) }
         </div>
     )
 }

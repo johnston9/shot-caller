@@ -8,7 +8,8 @@ const Info2 = () => {
     <div>
         <Row className='mb-3'>
             <Col className={`text-center px-3 pt-1 ${styles.SubTitle2 }`} md={{span: 10, offset: 1 }}>
-            <p>Create Index Shot Series for.
+            <p>Add shots to a series from the top or botton "Add Shot"
+              buttons. Each shot can be edited from it's edit button.
            </p>
             </Col>
         </Row>

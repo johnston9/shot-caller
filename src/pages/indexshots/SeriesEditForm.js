@@ -76,7 +76,7 @@ const buttons = (
   <div className="text-center">    
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pr-3 `}
-      onClick={() => history.goBack()}
+      onClick={() => setShowEdit(false)}
     >
       Cancel
     </Button>

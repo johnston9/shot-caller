@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/Indexes.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Upload from "../../assets/upload.png";
 import Alert from "react-bootstrap/Alert";
-import InfoCreateShot from "./InfoCreateShot";
+import Asset from "../../components/Asset";
 
-import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
+import { Image } from "react-bootstrap";
 
-const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
+const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const [showInfo, setShowInfo] = useState(false);
   const [postData, setPostData] = useState({
     series_id: "",
     series_name: "",
@@ -29,13 +28,20 @@ const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
   });
 
   const {
-    series_id,
-    series_name,
     number,
     content,
     image, } = postData;
 
-  const history = useHistory();
+  useEffect(() => {
+    const handleMount = async () => {
+      const { number, content, image } = shot;
+      setPostData({ number, content, image})
+    };
+  
+    handleMount();
+  }, [id]);
+
+  const imageInput = useRef(null);
 
   const handleChange = (event) => {
     setPostData({
@@ -44,20 +50,45 @@ const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
     });
     console.log(event.target.value)
   };
-  
+
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+      console.log(`image ${image}`)
+    }
+  };
+   
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("series_id", series_id);
-    formData.append("series_name", series_name);
+    formData.append("series_id", id);
     formData.append("number", number);
     formData.append("content", content);
-    formData.append("image", image);
+    if(imageInput.current.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
   
     try {
-      await axiosReq.post("/indexshots/", formData);
-      setHasOrder(true);
+      const {data} = await axiosReq.put(`/indexshots/${id}/`, formData);
+      const {number, content, image} = data;
+      setIndexShots((prevShots) => ({
+        ...prevShots,
+        results: prevShots.results.map((shot) => {
+          return shot.id === id
+            ? {
+                ...shot,
+                number: number,
+                content: content,
+                image: image,
+              }
+            : image;
+        }),
+      }));
       setShowEdit(false);
     } catch (err) {
       console.log(err);
@@ -70,43 +101,78 @@ const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} mr-2`}
         onClick={() => setShowEdit(false)}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`} type="submit">
-        Create
+      <Button 
+      className={`${btnStyles.Button} ${btnStyles.Blue} mr-2 px-4`} 
+      type="submit">
+        Edit
       </Button>
     </div>
   );
 
   return (
-    <div className="mt-3">
-        <TopBox title="Create Index Shot" />
-        <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
-        onClick={() => history.goBack()}
-        >
-        Back
-        </Button>
-        <Button
-                className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-                onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-        </Button>
-        {!showInfo ? (
-            ""
-                ) : (
-                    <InfoCreateShot  /> 
-                    ) } 
-    <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-0" onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Create Index Shot</h5>
+    <div className="mt-0">
+    <Container className= {`mt-0 text-center ${appStyles.Content} ${styles.Container}`} >
+    <Form className="mt-0 mx-0 px-0" onSubmit={handleSubmit}>
+      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Edit Shot</h5>
       <Row>
-          <Col xs={{span: 6, offsset: 3}} className="d-flex justify-content-center" >
+      <Col xs={12} className="p-0 d-flex justify-content-center">
+        <Container
+          className={`${appStyles.Content2} ${styles.Container} 
+          d-flex flex-column justify-content-center`}>
+          <Form.Group className="text-center p-0 m-0">
+              {image ? (
+                  <>
+                  <figure>
+                      <Image className={appStyles.Image} 
+                        src={image} rounded />
+                  </figure>
+                  <div>
+                      <Form.Label
+                      className={`px-3 m-0 ${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      htmlFor="image-upload"
+                      >
+                      Change the image
+                      </Form.Label>
+                  </div>
+                  </>
+              ) : (
+                  <Form.Label
+                  className="d-flex justify-content-center"
+                  htmlFor="image-upload"
+                  >
+                  <Asset
+                      src={Upload}
+                      message="Upload Image"
+                  />
+                  </Form.Label>
+              )}
+
+              <Form.Control
+                  type="file"
+                  id="image-upload"
+                  accept="image/*"
+                  onChange={handleChangeImage}
+                  ref={imageInput}
+              />
+              </Form.Group>
+              {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                  {message}
+              </Alert>
+              ))}
+      </Container>
+      </Col> 
+      </Row>
+      <Row>
+          <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
-                  <Form.Label className={`${styles.Bold} `} >Number</Form.Label>
+                  <Form.Label className={`pb-0 mb-0 ${styles.Bold} `} >Number</Form.Label>
                   <Form.Control 
                   className={styles.Input}
                   type="text"
@@ -123,9 +189,8 @@ const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
           </Col>
         </Row>
         <Row>
-        <Col xs={12} md={6} 
-            className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="content" className={`${styles.Width2} `} >
+        <Col xs={12} className="p-0 d-flex justify-content-center">
+            <Form.Group controlId="content" className={`${styles.Width100} `} >
                         <Form.Label className={`${styles.Bold}`} >Content</Form.Label>
                         <Form.Control 
                         type="text"
@@ -143,30 +208,10 @@ const IndexShotEdit = ({setShowEdit, setHasOrder} ) => {
                     </Alert>
                     ))}
         </Col> 
-        <Col xs={12} md={6} 
-            className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="image" className={`${styles.Width2} `} >
-                        <Form.Label className={`${styles.Bold}`} >Style</Form.Label>
-                        <Form.Control 
-                        type="text"
-                        className={styles.InputScene}
-                        as="textarea"
-                        name="style"
-                        rows={2}
-                        value={image}
-                        onChange={handleChange}
-                            />
-                    </Form.Group>
-                    {errors?.image?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                    ))}
-        </Col> 
       </Row>
       <Row>
         <Col>
-          <div className= {` my-3`} >{buttons} </div>
+          <div className= {` my-0`} >{buttons} </div>
         </Col>
       </Row>
     </Form>

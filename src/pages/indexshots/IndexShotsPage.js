@@ -34,7 +34,6 @@ const IndexShotsPage = () => {
     const [hasOrder, setHasOrder] = useState(false);
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
-    const [showEdit, setShowEdit] = useState(false);
 
 
     useEffect(() => {
@@ -45,7 +44,6 @@ const IndexShotsPage = () => {
                 axiosReq.get(`/indexshots/?series_id=${id}&search=${query}`)
               ])
               setSeries({ results: [seriesGet] });
-              console.log(seriesGet);
               setIndexShots(shotsGet);
               setSeriesName(seriesGet.name);
               setHasLoaded(true);
@@ -96,8 +94,6 @@ const IndexShotsPage = () => {
                            seriesName={seriesName}
                            setShow={setShow} 
                            setHasOrder={setHasOrder} /> ) }
-          {!showEdit ?("") : (<IndexShotEdit
-          setShowEdit={setShowEdit} setHasOrder={setHasOrder} /> ) }
           {/* search  */}
           <Row>
             <Col className="mt-3" xs={12} sm={{ span: 6, offset: 3 }} >
@@ -124,8 +120,12 @@ const IndexShotsPage = () => {
                 {indexShots.results.length ? (
                     indexShots.results.map((shot) => (
                       <Col xs={12}  md={6} lg={4} className="py-2">
-                      <IndexShot key={shot.id} 
-                      {...shot} setIndexShots={setIndexShots} />
+                      <IndexShot 
+                      key={shot.id} 
+                      setHasOrder={setHasOrder}
+                      {...shot} 
+                      shot={shot}
+                      setIndexShots={setIndexShots} />
                       </Col>
                     ))
                     ) 
@@ -143,18 +143,18 @@ const IndexShotsPage = () => {
             </Row> 
             {/* add */}
             <Row className='my-3'>
-                      <Col className="text-center">
-                        <Button onClick={() => setShow2(show2 => !show2)} 
-                          className={`${btnStyles.Button}  
-                          ${btnStyles.Bright} `}>
-                          Add Card
-                        </Button>
-                      </Col>
-                    </Row>
-                    {!show2 ?("") : (<IndexShotCreate 
-                           seriesName={seriesName}
-                           setShow={setShow} 
-                           setHasOrder={setHasOrder} /> ) }
+              <Col className="text-center">
+                <Button onClick={() => setShow2(show2 => !show2)} 
+                  className={`${btnStyles.Button}  
+                  ${btnStyles.Bright} `}>
+                  Add Card
+                </Button>
+              </Col>
+            </Row>
+            {!show2 ?("") : (<IndexShotCreate 
+                    seriesName={seriesName}
+                    setShow={setShow} 
+                    setHasOrder={setHasOrder} /> ) }
         </div>
     )
 }

@@ -11,7 +11,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Upload from "../../assets/upload.png";
 import Alert from "react-bootstrap/Alert";
 import Asset from "../../components/Asset";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import { Image } from "react-bootstrap";
@@ -20,7 +20,6 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
-  const [showInfo, setShowInfo] = useState(false);
   const [postData, setPostData] = useState({
     number: "",
     content: "",
@@ -32,7 +31,6 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
     content,
     image, } = postData;
 
-  const history = useHistory();
   const imageInput = useRef(null);
 
   const handleChange = (event) => {

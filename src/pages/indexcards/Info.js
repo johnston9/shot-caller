@@ -8,7 +8,9 @@ const Info = () => {
     <div>
         <Row className='mb-3'>
             <Col className={`text-center px-3 pt-1 ${styles.SubTitle2 }`} md={{span: 10, offset: 1 }}>
-            <p>Index Cards.
+            <p>Create an Index Card for each scene. Add it's action
+              and place in the story ark in the "Story" section and
+              it's style details in "Style".
            </p>
             </Col>
         </Row>

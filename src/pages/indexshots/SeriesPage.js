@@ -36,7 +36,6 @@ const SeriesPage = () => {
             try {
               const { data } = await axiosReq.get(`/series/?${filter}&search=${query}`);
               setSeries(data);
-              console.log(data);
               setHasLoaded(true);
               setHasOrder(true);
             } catch(err) {

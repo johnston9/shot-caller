@@ -14,10 +14,9 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const IndexCardEdit = ({setShowEdit, setIndexCards, card, id,} ) => {
+const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-//   const [showInfo, setShowInfo] = useState(false);
   const [postData, setPostData] = useState({
     number: "",
     story: "",
@@ -25,8 +24,6 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id,} ) => {
   });
 
   const { number, story, style } = postData;
-
-  const history = useHistory();
 
   useEffect(() => {
     const handleMount = async () => {
@@ -36,22 +33,6 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id,} ) => {
   
     handleMount();
   }, [id]);
-
-
-  // useEffect(() => {
-  //   const handleMount = async () => {
-  //     try {
-  //       const { data } = await axiosReq.get(`/indexcards/${id}/`);
-  //       console.log(data);
-  //       const { number, story, style } = data;
-  //       setPostData({ number, story, style  });
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  
-  //   handleMount();
-  // }, [id]);
 
   const handleChange = (event) => {
     setPostData({
