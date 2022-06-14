@@ -13,7 +13,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const Landing = () => {
   const currentUser = useCurrentUser();
-  const admin = true;
+  const admin = false;
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title="SHOT CALLER" />
@@ -30,7 +30,7 @@ const Landing = () => {
           { currentUser ? (
             <Col className="my-3" xs={10} >
             {/* large */}
-          <div className="d-none d-lg-block">
+            <div className="d-none d-lg-block">
             <Row className="text-center">
               <Col md={1}></Col>
                 <Col lg={10} >
@@ -70,9 +70,11 @@ const Landing = () => {
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
                     <div className={`${styles.Inner}`}>
-                    <p className="mt-2">Add and View Moodshots</p>
-                    {/* <p className="mt-2">Moodshots for scenes, locations, characters
-                    and themes</p> */}
+                    {admin ? (
+                              <p className="mt-2"> Create / View Moodshots </p>
+                            ) : (
+                              <p className="mt-2"> View Moodshots </p>
+                            )}
                     </div>
                     </div>
                   </Link>
@@ -125,7 +127,11 @@ const Landing = () => {
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
                     <div className={`${styles.Inner}`}>
-                    <p className="mt-2">Callsheets for Shoot Days</p>
+                    {admin ? (
+                              <p className="mt-2"> Create / View Callsheets </p>
+                            ) : (
+                              <p className="mt-2"> View Callsheets </p>
+                            )}
                     </div>
                     </div>
                   </Link>
@@ -203,9 +209,9 @@ const Landing = () => {
               </Row>
               </Col>
             </Row>
-          </div>
-          {/* medium */}
-          <div className="d-none d-md-block d-lg-none">
+            </div>
+            {/* medium */}
+            <div className="d-none d-md-block d-lg-none">
             <Row className="text-center">
               <Col md={1}></Col>
                 <Col md={10} >
@@ -241,9 +247,11 @@ const Landing = () => {
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
                     <div className={`${styles.Inner}`}>
-                    <p className="mt-2">Add and View Moodshots</p>
-                    {/* <p className="mt-2">Moodshots for scenes, locations, characters
-                    and themes</p> */}
+                    {admin ? (
+                              <p className="mt-2"> Create / View Moodshots </p>
+                            ) : (
+                              <p className="mt-2"> View Moodshots </p>
+                            )}
                     </div>
                     </div>
                   </Link>
@@ -282,7 +290,11 @@ const Landing = () => {
                     <div className={`py-1 ${styles.HomeboxSmEr}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
                     <div className={`${styles.Inner}`}>
-                    <p className="mt-2">Callsheets for Shoot Days</p>
+                    {admin ? (
+                              <p className="mt-2"> Create / View Callsheets </p>
+                            ) : (
+                              <p className="mt-2"> View Callsheets </p>
+                            )}
                     </div>
                     </div>
                   </Link>
@@ -363,7 +375,7 @@ const Landing = () => {
                   </Link>
                 </Col>
             </Row>
-          </div>
+            </div>
             {/* mobile view */}
             <div className=" d-md-none mb-5">
               <Row className="text-center">
@@ -397,7 +409,11 @@ const Landing = () => {
                       <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
-                      <p className="mb-0 pt-1">Add / View Moodshots</p>
+                      {admin ? (
+                              <p className="mt-2"> Create / View Moodshots </p>
+                            ) : (
+                              <p className="mt-2"> View Moodshots </p>
+                            )}
                       </div>
                       </div>
                     </Link>
@@ -408,7 +424,7 @@ const Landing = () => {
                       <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
-                      <p className="mb-0 pt-1">Create / View Feed</p>
+                      <p className="mb-0 pt-1">Profiles and Feed</p>
                       </div>
                       </div>
                     </Link>
@@ -422,9 +438,9 @@ const Landing = () => {
                           <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                           <div className={`${styles.Inner} mt-2 pb-2`}>
                           {admin ? (
-                              <p className="mt-2"> Create / View schedule </p>
+                              <p className="mt-2"> Create / View Schedule </p>
                             ) : (
-                              <p className="mt-2"> View schedule </p>
+                              <p className="mt-2"> View Schedule </p>
                             )}
                           </div>
                       </div>
@@ -436,7 +452,11 @@ const Landing = () => {
                       <div className={`py-1 ${styles.HomeboxXs}`}>
                       <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
                       <div className={`${styles.Inner} mt-2 pb-2`}>
-                      <p className="mb-0 pt-1">Add / View Callsheets</p>
+                      {admin ? (
+                              <p className="mt-2"> Add / View Callsheets </p>
+                            ) : (
+                              <p className="mt-2"> View Callsheets </p>
+                            )}
                       </div>
                       </div>
                     </Link>
