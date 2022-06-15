@@ -29,6 +29,7 @@ const SeriesPage = () => {
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
     const [show, setShow] = useState(false);
+    // eslint-disable-next-line
     const [hasOrder, setHasOrder] = useState(false);
 
     useEffect(() => {

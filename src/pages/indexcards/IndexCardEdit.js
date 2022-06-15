@@ -9,8 +9,6 @@ import styles from "../../styles/Indexes.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-
-import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
@@ -32,7 +30,7 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
     };
   
     handleMount();
-  }, [id]);
+  }, [card]);
 
   const handleChange = (event) => {
     setPostData({

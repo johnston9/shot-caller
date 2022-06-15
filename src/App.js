@@ -57,8 +57,6 @@ import CrewInfo from './pages/callsheets/CrewInfo';
 import CrewLogo from './pages/callsheets/CrewLogo';
 import IndexCardsPage from './pages/indexcards/IndexCardsPage';
 import IndexShotsPage from './pages/indexshots/IndexShotsPage';
-import SeriesCreateForm from './pages/indexshots/SeriesCreateForm';
-import SeriesEditForm from './pages/indexshots/SeriesEditForm';
 import SeriesPage from './pages/indexshots/SeriesPage';
 import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 
@@ -79,11 +77,12 @@ function App() {
       <NavBar />
       <div className={styles.Main}>
         <Switch>
-        {/* <Routes> */}
+        {/* AUTH / HOME */}
         <Route exact path="/" render={() => <Landing />} />
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
+        {/* CALLSHEETS APP*/}
         {/* CREWINFO */}
         <Route exact path="/crewinfo" render={() => <CrewInfo />} />
         {/* SCHEDULE*/}
@@ -116,13 +115,12 @@ function App() {
         <Route
             exact
             path="/callsheets/:id/"
-            // filter={`day_id=${id}`}
             render={() => (
               <CallSheetPage
                message="No results found" />
             )}
           />
-        {/* LOCATIONS */}
+        {/* LOCATIONS APP*/}
         <Route exact path="/locations/create" render={() => <LocationsCreate />} />
         <Route 
             exact 
@@ -140,7 +138,7 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* CHARACTERS */}
+        {/* CHARACTERS APP*/}
         <Route
             exact
             path="/characters"
@@ -158,7 +156,7 @@ function App() {
              />
              )} />
         <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
-        {/* INDEXCARDS */}
+        {/* INDEXCARDS APP*/}
         <Route
             exact
             path="/indexcards"
@@ -167,7 +165,7 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* INDEXSHOTS */}
+        {/* INDEXSHOTS APP*/}
         <Route
             exact
             path="/series"
@@ -256,7 +254,7 @@ function App() {
               />
             )}
           />
-        {/* SCENES*/}
+        {/* SCENES APP*/}
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route
             exact
@@ -367,7 +365,7 @@ function App() {
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         {/* Post page*/}
         <Route exact path="/posts/:id" render={() => <PostPage />} />
-        {/* DEPARTMENTS*/}
+        {/* DEPARTMENTS APP*/}
         <Route exact path="/depts/general" render={() => <DeptsGeneral />} />
         <Route exact path="/department/posts/create" render={() => <DeptPostCreate />} />
         <Route exact path="/department/posts" 
@@ -378,7 +376,7 @@ function App() {
             />)} />
         <Route exact path="/department/posts/:id/edit" render={() => <DeptPostEdit />} />
         <Route exact path="/department/posts/:id" render={() => <DeptPostPage />} />
-        {/* Profiles*/}
+        {/* Profiles APP*/}
         <Route exact path="/profiles" render={() => <ProfilesPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
         <Route
@@ -397,7 +395,6 @@ function App() {
             render={() => <ProfileEditForm />}
           />
         <Route render={() => <PageNotFound />} />
-        {/* </Routes> */}
         </Switch>
       </div>
     </div>

@@ -23,6 +23,7 @@ import IndexCards from "./IndexCards";
 const IndexCardsPage = () => {
     useRedirect("loggedOut");
   const [indexCards, setIndexCards] = useState({ results: [] });
+  const [indexCardsAll, setIndexCardsAll] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [showInfo, setShowInfo] = useState(false);
@@ -38,8 +39,9 @@ const IndexCardsPage = () => {
     const fetchCards = async () => {
       try {
         const { data } = await axiosReq.get(`/indexcards/?${filter}&search=${query}`);
-        console.log(data)
+        console.log(data);
         setIndexCards(data);
+        setIndexCardsAll(data);
         setHasLoaded(true);
         setHasOrder(false);
       } catch(err) {
@@ -59,6 +61,34 @@ const IndexCardsPage = () => {
       clearTimeout(timer);
     };
   }, [hasOrder, query])
+
+  const handleClick1 = () => { 
+    var thirty = indexCardsAll.filter(function(card) {
+      return (card.number > 0 && card.number < 31);
+    });
+    setIndexCards(thirty);
+  };
+
+  const handleClick2 = () => { 
+    var sixty = indexCardsAll.filter(function(card) {
+      return (card.number > 30 && card.number < 61);
+    });
+    setIndexCards(sixty);
+  };
+
+  const handleClick3 = () => { 
+    var ninety = indexCardsAll.filter(function(card) {
+      return (card.number > 60 && card.number < 91);
+    });
+    setIndexCards(ninety);
+  };
+
+  const handleClick4 = () => { 
+    var end = indexCardsAll.filter(function(card) {
+      return (card.number > 91);
+    });
+    setIndexCards(end);
+  };
 
     return (
         <div>
@@ -110,6 +140,34 @@ const IndexCardsPage = () => {
               </Form>
               </Col>
               </Row>
+              {/* filter */}
+              <Row className='mt-1' >
+              <Col className='text-center' xs={6} md={3}>
+              <Button
+                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                  onClick={handleClick1} >Cards 1 - 30
+              </Button>
+              </Col>
+              <Col className='text-center' xs={6} md={3}>
+                <Button
+                    className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                    onClick={handleClick2} >Cards 31 - 60
+                </Button>
+              </Col>
+              <Col className='text-center' xs={6} md={3}>
+              <Button
+                  className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                  onClick={handleClick3} >Cards 61 -90
+              </Button> 
+              </Col>
+              <Col className='text-center' xs={6} md={3}>
+                <Button
+                    className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Blue}`}
+                    onClick={handleClick4} >Cards 91 - end
+                </Button>
+              </Col>
+            </Row>
+              {/* cards */}
               <Row className="py-3">
               <Col>
               {hasLoaded ? (

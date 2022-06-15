@@ -4,22 +4,15 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import styles from "../../styles/Indexes.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-import Info from "./Info";
-
-import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
-const IndexCardCreate = ({setShow, setHasOrder, setIndexCards} ) => {
+const IndexCardCreate = ({setShow, setHasOrder} ) => {
     useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const [showInfo, setShowInfo] = useState(false);
   const [postData, setPostData] = useState({
     number: "",
     story: "",
@@ -27,8 +20,6 @@ const IndexCardCreate = ({setShow, setHasOrder, setIndexCards} ) => {
   });
 
   const { number, story, style } = postData;
-
-  const history = useHistory();
 
   const handleChange = (event) => {
     setPostData({

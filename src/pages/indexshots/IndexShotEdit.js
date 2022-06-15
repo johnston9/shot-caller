@@ -39,7 +39,7 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
     };
   
     handleMount();
-  }, [id]);
+  }, [shot]);
 
   const imageInput = useRef(null);
 

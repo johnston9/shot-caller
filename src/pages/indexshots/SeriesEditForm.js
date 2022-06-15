@@ -8,7 +8,6 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
-import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
 import { useRedirect } from "../../hooks/Redirect";
@@ -17,13 +16,11 @@ import Container from "react-bootstrap/Container";
 const SeriesEditForm = (props ) => {
   useRedirect("loggedOut")
 const [errors, setErrors] = useState({});
-const {seri, setSeries, id, setShowEdit, setHasOrder, name1 } = props;
+const {seri, setSeries, id, setShowEdit } = props;
 const [postData, setPostData] = useState({
   name: "",
   content: "", });
 const { name, content } = postData;
-
-const history = useHistory();
 
 useEffect(() => {
   const handleMount = async () => {
@@ -32,7 +29,7 @@ useEffect(() => {
   };
 
   handleMount();
-}, [id]);
+}, [seri]);
 
 const handleChange = (event) => {
   setPostData({

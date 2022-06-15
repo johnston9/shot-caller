@@ -16,11 +16,11 @@ import { useParams, useHistory } from 'react-router-dom';
 import Info2 from './Info2';
 import IndexShotCreate from './IndexShotCreate';
 import IndexShot from './IndexShot';
-import IndexShotEdit from './IndexShotEdit';
 
 const IndexShotsPage = () => {
     useRedirect("loggedOut");
     const [indexShots, setIndexShots] = useState({results: [] });
+    // eslint-disable-next-line
     const [series, setSeries] = useState({ results: [] });
     const [seriesName, setSeriesName] = useState("");
     // eslint-disable-next-line
@@ -61,7 +61,8 @@ const IndexShotsPage = () => {
           return () => {
               clearTimeout(timer);
             };
-      
+        
+      // eslint-disable-next-line
         }, [query, hasOrder])
 
     return (

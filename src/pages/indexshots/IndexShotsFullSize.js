@@ -10,6 +10,7 @@ import btnStyles from "../../styles/Button.module.css";
 const IndexShotsFullSize = () => {
     useRedirect("loggedOut");
     const [shot, setShot] = useState({results: [] });
+    // eslint-disable-next-line
     const [error, setError] = useState({});
     const { id } = useParams();
     const {
@@ -30,7 +31,7 @@ const IndexShotsFullSize = () => {
           }
         }
         fetchshot();   
-      }, [])
+      }, [id])
 
     return (
         <div>

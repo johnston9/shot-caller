@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
@@ -13,8 +13,6 @@ const IndexShot = (props) => {
     const [showEdit, setShowEdit] = useState(false);
     const {
         id,
-        series_id,
-        series_name,
         number,
         content,
         image,

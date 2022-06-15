@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Col, Image, Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
-import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
