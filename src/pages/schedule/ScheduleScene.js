@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { useRedirect } from '../../hooks/Redirect';
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { PostDropdown } from '../../components/PostDropdown';

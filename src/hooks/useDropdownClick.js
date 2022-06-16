@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react';
 
 const useDropdownClick = () => {
     const [expanded, setExpanded] = useState(false);

@@ -13,7 +13,7 @@ import appStyles from "../../App.module.css";
 import SceneTop from './SceneTop';
 import { Button } from 'react-bootstrap';
 import { useSetActContext } from '../../contexts/ActContext';
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import TopBox from '../../components/TopBox';
 import r1 from "../../assets/r1.png"; 
 import Information from './Information';

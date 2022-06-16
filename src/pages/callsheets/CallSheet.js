@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import { useCrewInfoContext } from '../../contexts/BaseCallContext';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { PostDropdown } from '../../components/PostDropdown';
 import TalentPage from './TalentPage';
 import BgPage from './BgPage';
@@ -218,11 +218,6 @@ const CallSheet = (props ) => {
     console.log(currentUser)
     
       useEffect(() => {
-        // function casttimes(ca) {
-        //   if(currentUser != ca.username);
-        //   return true;
-        //   }
-        // const actorcalldata = cast.results.filter(casttimes);
         const actorcalldata = cast.results.filter(
           obj => obj.username === currentUser );
         console.log(actorcalldata);

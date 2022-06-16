@@ -8,7 +8,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { PostDropdown } from '../../components/PostDropdown';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import BackgroundInfo from './BackgroundInfo';
 import EditBack from './EditBack';
 import BgInfoMob from './BgInfoMob';

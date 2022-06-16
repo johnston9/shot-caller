@@ -3,7 +3,7 @@ import { useRedirect } from '../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../styles/Callsheets.module.css";
 import { PostDropdown } from '../../components/PostDropdown';
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { axiosReq } from '../../api/axiosDefaults';
 
 const CallCastInfoMob = (props) => {

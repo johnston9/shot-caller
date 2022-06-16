@@ -11,7 +11,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Upload from "../../assets/upload.png";
 import Alert from "react-bootstrap/Alert";
 import Asset from "../../components/Asset";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import { Image } from "react-bootstrap";

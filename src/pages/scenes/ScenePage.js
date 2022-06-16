@@ -4,7 +4,7 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Scene from './Scene';
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 const ScenePage = () => {
     useRedirect("loggedOut");

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/DayPage.module.css";
 import Col from 'react-bootstrap/Col';

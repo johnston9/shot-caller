@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { Modal, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 

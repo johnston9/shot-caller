@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import Act1List from "./Act1List";

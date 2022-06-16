@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 import CallCastInfo from './CallCastInfo';
 import { PostDropdown } from '../../components/PostDropdown';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import EditCast from './EditCast';
 import CallCastInfoMob from './CallCastInfoMob';
 

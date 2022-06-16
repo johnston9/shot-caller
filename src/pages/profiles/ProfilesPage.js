@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import { useRedirect } from '../../hooks/Redirect';
 import TopBox from '../../components/TopBox';
 import btnStyles from "../../styles/Button.module.css";
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";

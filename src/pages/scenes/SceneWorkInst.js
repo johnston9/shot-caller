@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Image from 'react-bootstrap/Image'
 import { Button, Card } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
