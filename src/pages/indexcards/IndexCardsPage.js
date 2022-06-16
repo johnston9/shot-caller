@@ -36,6 +36,7 @@ const IndexCardsPage = () => {
   const [hasOrder, setHasOrder] = useState(false);
 
   useEffect(() => {
+    console.log("useeffect")
     const fetchCards = async () => {
       try {
         const { data } = await axiosReq.get(`/indexcards/?${filter}&search=${query}`);
@@ -60,34 +61,54 @@ const IndexCardsPage = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [hasOrder, query])
+  }, [hasOrder, query]) 
+
+  const handleClickAll = () => { 
+    setIndexCards(indexCardsAll);
+  };
 
   const handleClick1 = () => { 
-    var thirty = indexCardsAll.filter(function(card) {
-      return (card.number > 0 && card.number < 31);
-    });
-    setIndexCards(thirty);
+    const thirty = indexCardsAll.results.filter(
+      card => card.number > 0 && card.number < 31 );
+    console.log("thirty");
+    console.log(thirty);
+    setIndexCards({results: thirty});
+    // var thirty = indexCardsAll.filter(function(card) {
+    //   return (card.number > 0 && card.number < 31);
+    // });
+    // console.log("thirty");
+    // console.log(thirty);
+    // setIndexCards(thirty);
+    // var thirty = indexCardsAll.filter(function(card) {
+    //   return (card.number > 0 && card.number < 31);
+    // });
+    // console.log("thirty");
+    // console.log(thirty);
+    // setIndexCards(thirty);
   };
 
   const handleClick2 = () => { 
-    var sixty = indexCardsAll.filter(function(card) {
-      return (card.number > 30 && card.number < 61);
-    });
-    setIndexCards(sixty);
+    const sixty = indexCardsAll.results.filter(
+      card => card.number > 30 && card.number < 61 );
+    console.log("sixty");
+    console.log(sixty);
+    setIndexCards({results: sixty});
   };
 
   const handleClick3 = () => { 
-    var ninety = indexCardsAll.filter(function(card) {
-      return (card.number > 60 && card.number < 91);
-    });
-    setIndexCards(ninety);
+    const ninety = indexCardsAll.results.filter(
+      card => card.number > 60 && card.number < 91 );
+    console.log("ninety");
+    console.log(ninety);
+    setIndexCards({results: ninety});
   };
 
   const handleClick4 = () => { 
-    var end = indexCardsAll.filter(function(card) {
-      return (card.number > 91);
-    });
-    setIndexCards(end);
+    const end = indexCardsAll.results.filter(
+      card => card.number > 90);
+    console.log("end");
+    console.log(end);
+    setIndexCards({results: end});
   };
 
     return (
@@ -142,16 +163,24 @@ const IndexCardsPage = () => {
               </Row>
               {/* filter */}
               <Row className='mt-1' >
+              <Col className='text-center' xs={{span: 6, offset: 3}}>
+              <Button
+                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue} px-5`}
+                  onClick={() => handleClickAll()} >All Cards
+              </Button>
+              </Col>
+              </Row>
+              <Row className='mt-3' >
               <Col className='text-center' xs={6} md={3}>
               <Button
                   className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                  onClick={handleClick1} >Cards 1 - 30
+                  onClick={() => handleClick1()} >Cards 1 - 30
               </Button>
               </Col>
               <Col className='text-center' xs={6} md={3}>
                 <Button
                     className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
-                    onClick={handleClick2} >Cards 31 - 60
+                    onClick={() => handleClick2()} >Cards 31 - 60
                 </Button>
               </Col>
               <Col className='text-center' xs={6} md={3}>
@@ -166,7 +195,7 @@ const IndexCardsPage = () => {
                     onClick={handleClick4} >Cards 91 - end
                 </Button>
               </Col>
-            </Row>
+              </Row>
               {/* cards */}
               <Row className="py-3">
               <Col>

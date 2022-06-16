@@ -20,6 +20,7 @@ import IndexShot from './IndexShot';
 const IndexShotsPage = () => {
     useRedirect("loggedOut");
     const [indexShots, setIndexShots] = useState({results: [] });
+    const [indexShotsAll, setIndexShotsAll] = useState({ results: [] });
     // eslint-disable-next-line
     const [series, setSeries] = useState({ results: [] });
     const [seriesName, setSeriesName] = useState("");
@@ -45,6 +46,7 @@ const IndexShotsPage = () => {
               ])
               setSeries({ results: [seriesGet] });
               setIndexShots(shotsGet);
+              setIndexShotsAll(shotsGet);
               setSeriesName(seriesGet.name);
               setHasLoaded(true);
               setHasOrder(false);
@@ -64,6 +66,54 @@ const IndexShotsPage = () => {
         
       // eslint-disable-next-line
         }, [query, hasOrder])
+      
+        const handleClickAll = () => { 
+          setIndexShots(indexShotsAll);
+        };
+      
+        const handleClick1 = () => { 
+          const thirty = indexShotsAll.results.filter(
+            shot => shot.number > 0 && shot.number < 31 );
+          console.log("thirty");
+          console.log(thirty);
+          setIndexShots({results: thirty});
+          // var thirty = indexCardsAll.filter(function(card) {
+          //   return (card.number > 0 && card.number < 31);
+          // });
+          // console.log("thirty");
+          // console.log(thirty);
+          // setIndexCards(thirty);
+          // var thirty = indexCardsAll.filter(function(card) {
+          //   return (card.number > 0 && card.number < 31);
+          // });
+          // console.log("thirty");
+          // console.log(thirty);
+          // setIndexCards(thirty);
+        };
+      
+        const handleClick2 = () => { 
+          const sixty = indexShotsAll.results.filter(
+            shot => shot.number > 30 && shot.number < 61 );
+          console.log("sixty");
+          console.log(sixty);
+          setIndexShots({results: sixty});
+        };
+      
+        const handleClick3 = () => { 
+          const ninety = indexShotsAll.results.filter(
+            shot => shot.number > 60 && shot.number < 91 );
+          console.log("ninety");
+          console.log(ninety);
+          setIndexShots({results: ninety});
+        };
+      
+        const handleClick4 = () => { 
+          const end = indexShotsAll.results.filter(
+            shot => shot.number > 90);
+          console.log("end");
+          console.log(end);
+          setIndexShots({results: end});
+        };
 
     return (
         <div >
@@ -111,6 +161,41 @@ const IndexShotsPage = () => {
                 />
                 </Form>
             </Col>
+          </Row>
+          {/* filter */}
+          <Row className='mt-1' >
+              <Col className='text-center' xs={{span: 6, offset: 3}}>
+              <Button
+                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue} px-5`}
+                  onClick={() => handleClickAll()} >All Shots
+              </Button>
+              </Col>
+          </Row>
+          <Row className='mt-3' >
+          <Col className='text-center' xs={6} md={3}>
+          <Button
+              className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+              onClick={() => handleClick1()} >Shots 1 - 30
+          </Button>
+          </Col>
+          <Col className='text-center' xs={6} md={3}>
+            <Button
+                className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                onClick={() => handleClick2()} >Shots 31 - 60
+            </Button>
+          </Col>
+          <Col className='text-center' xs={6} md={3}>
+          <Button
+              className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+              onClick={handleClick3} >Shots 61 -90
+          </Button> 
+          </Col>
+          <Col className='text-center' xs={6} md={3}>
+            <Button
+                className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Blue}`}
+                onClick={handleClick4} >Shots 91 - end
+            </Button>
+          </Col>
           </Row>
             <p style={{ textTransform: 'uppercase'}} 
             className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>

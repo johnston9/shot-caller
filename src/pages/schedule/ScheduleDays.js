@@ -16,6 +16,8 @@ import DayTop from './DayTop';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useHistory } from 'react-router-dom';
+import Info from './Info';
+
 
 const SchedulePages = () => {
     useRedirect("loggedOut");
@@ -31,6 +33,7 @@ const SchedulePages = () => {
     const filter = "";
     const message = "No Days Added";
     const history = useHistory();
+    const [showInfo, setShowInfo] = useState(false);
 
 
     useEffect(() => {
@@ -77,14 +80,15 @@ const SchedulePages = () => {
               >
               Back
             </Button>
-            <Row className='mb-3'>
-              <Col className='text-center' md={{span: 10, offset: 1}}>
-                <p>
-                  First create a Day, then add scenes in it. Find created Days below.
-                </p>
-              </Col>
-            </Row>
-
+            <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+        </Button>
+          {!showInfo ? (
+              ""
+                  ) : (
+                    <Info  /> 
+                    ) } 
             <Row className='mb-3'>
               <Col className='text-center'>
               <Button onClick={() => history.push('/days/create')}
@@ -93,9 +97,10 @@ const SchedulePages = () => {
                 </Col>
             </Row>
             {/* calender */}
-            <Row className={`mx-1 py-2 ${styles.SubTitle }`} >
+            <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
+              Shoot Days Calendar</h5>
+            <Row className={`mx-1 py-3`} >
                 <Col>
-                <h3 className='mb-3 text-center'>Shoot Days Calendar</h3>
                    <div>
                        <Row >
                          <Col className='d-flex justify-content-center '  xs={12}  md={6} >
@@ -106,7 +111,9 @@ const SchedulePages = () => {
                          <Col className='p-1'  xs={12} md={6}>
                           <Row className='text-center'>
                             <Col>
-                            <p>Click to find Shooting Day</p>
+                            <p>Click Calendar days. If it contains a Shooting Day
+                              that will be retreived. If not nothing will show.
+                            </p>
                             </Col>
                           </Row>
                           <Row className='mt-3'>
@@ -123,10 +130,12 @@ const SchedulePages = () => {
                    </div>
                 </Col>
             </Row>
-            <div className={`mx-1 mt-5 mb-3 ${styles.SubTitle }`} >
-            <h3 className='text-center' >All Shoot Days</h3>
+            <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
+            All Shoot Days</h5>
+            <div className={`mx-1 my-3`}>
             <Row >
-                <Col className="mt-1" xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }} >
+                <Col className="mt-1" xs={{ span: 10, offset: 1 }} 
+                md={{ span: 6, offset: 3 }} >
                 <Form
                     className={styles.SearchBar}
                     onSubmit={(event) => event.preventDefault()}
@@ -142,27 +151,27 @@ const SchedulePages = () => {
                 </Col>
             </Row>            
             {/* days */}
-            <Row className="py-2 d-flex justify-content-center">
-          {hasLoaded ? (
-          <>
-            {days.results.length ? (
-                days.results.map((day) => (
-                  <Col xs={10}  md={6} lg={4} className="py-2">
-                  <DayTop daysScenes={daysScenes} key={day.id} 
-                   {...day} setDays={setDays} />
-                  </Col>
-                ))) 
-             : (
+            <Row className="py-2">
+              {hasLoaded ? (
+              <>
+                {days.results.length ? (
+                    days.results.map((day) => (
+                      <Col xs={10}  md={6} lg={4} className="py-2">
+                      <DayTop daysScenes={daysScenes} key={day.id} 
+                      {...day} setDays={setDays} />
+                      </Col>
+                    ))) 
+                : (
+                  <Container className={appStyles.Content}>
+                    <Asset src={NoResults } message={message} />
+                  </Container>
+                )}
+              </>
+            ) : (
               <Container className={appStyles.Content}>
-                <Asset src={NoResults } message={message} />
+                <Asset spinner />
               </Container>
             )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
             </Row>  
             </div>
         </div>

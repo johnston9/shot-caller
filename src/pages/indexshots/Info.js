@@ -8,8 +8,8 @@ const Info = () => {
     <div>
         <Row className='mb-3'>
             <Col className={`text-center px-3 pt-1 ${styles.SubTitle2 }`} md={{span: 10, offset: 1 }}>
-            <p>First create an Index Shot Series then on it's page add the
-              shot series. This can be used to preview the style, look 
+            <p>Create an Index Shot Series. Add shots on it's page.
+              This can be used to preview the style, look 
               and colour choices for each scene. It can also be used to 
               storyboard a sequence in more detail or show the angles and shooting
               style of one scene.
