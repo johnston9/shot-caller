@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { useSetDeptGeneralContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
