@@ -15,12 +15,13 @@ import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 import Profile from './Profile';
 import { useProfileData, useSetQueryContext } from '../../contexts/ProfileDataContext';
+import Info from './Info';
 
 const ProfilesPage = () => {
     useRedirect("loggedOut");
     const history = useHistory();
     const { profiles } = useProfileData();
-
+    const [showInfo, setShowInfo] = useState(false);
     const setQuery = useSetQueryContext();
  
     const [name, setName] = useState("");
@@ -50,6 +51,15 @@ const ProfilesPage = () => {
               >
                   Back
               </Button>
+              <Button
+              className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+              {!showInfo ? (
+                  ""
+                      ) : (
+                        <Info  /> 
+                        ) } 
               {/* feed */}
               <Row >
                   <Col className='text-center' >
@@ -78,15 +88,17 @@ const ProfilesPage = () => {
                 </Form>
                 </Col>
               </Row>
-              <Container 
-                className={`mt-2 ${appStyles.Content}`}
+              <div className={`mt-3 mx-md-3`}
                 >
                 {/* {hasLoaded ? ( 
                     <> */}
+                <Row>
                 {profiles.results.length ? (
                     <>
                     {profiles.results.map((profile) => (
+                    <Col xs={6} sm={6} md={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
                     <Profile key={profile.id} profile={profile}/>
+                    </Col>
                     ))}
                     </>
                     ) : (
@@ -95,7 +107,9 @@ const ProfilesPage = () => {
                         </Container>
                     )
                      }
-                </Container>
+
+                </Row>
+                </div>
         </div>
     )
 }
