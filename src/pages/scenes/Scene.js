@@ -322,19 +322,19 @@ const Scene = (props) => {
                       <Col>
                       {workspace_guide ? (
                       <Button 
-                      className={`px-sm-4 py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+                      className={`px-sm-4 py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
                       onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > 
                       Edit Guide
                     </Button>
                     ) : (
                       <Button 
-                        className={` py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+                        className={` py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
                       onClick={() => setShowGuide(showGuide => !showGuide)} >
                          Add Guide
                     </Button>
                     )}
                   <Button 
-                      className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+                      className={`float-right py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
                     onClick={() => setShowWorkInfo(showWorkInfo => !showWorkInfo)} >INSTRUCTIONS
                   </Button>
                       </Col>
@@ -363,7 +363,7 @@ const Scene = (props) => {
                   {/* guide */}
                   <Row>
                       <Col sm={{span: 10, offset: 1}} >
-                      <div className={`mt-3 pb-0 ${styles.Guide}`}>
+                      <div className={`my-3 pb-0 ${styles.Guide}`}>
                       <p style={{ textTransform: 'uppercase'}} 
                       className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >
                         Workspace Guide</p>

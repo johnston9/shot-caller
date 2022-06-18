@@ -49,13 +49,33 @@
     color: #fff;
   }
 
-  .Black {
-    background-color: #000;
+  .Grey:hover {
+    background-color: #58666b;
     color: #fff;
   }
 
-  .Order {
+  .GreyDark {
+    background-color: #43606a;
+    color: #fff;
+  }
+
+  .GreyDark:hover {
+    background-color: #58666b;
+    color: #fff;
+  }
+
+  /* .Black {
     background-color: #000;
+    color: #fff;
+  } */
+
+  .Black {
+	background-color: #3b444b;
+  color: #fff;
+  }
+
+  .Order {
+    background-color: #3b444b;
     color: #fff;
   }
 
@@ -75,7 +95,7 @@
   }
 
   .Blue {
-    background-color: #227a7f;
+    background-color: #33e6e0;
     /* background-color: #32c0e4; */
     color: #ffffff;
   }
@@ -96,7 +116,7 @@
   }
 
   .Back {
-    background-color: aqua;
+    background-color: rgb(33, 205, 239);
   }
 
   .Back:hover {

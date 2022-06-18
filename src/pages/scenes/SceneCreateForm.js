@@ -111,39 +111,39 @@ function SceneCreateForm({topbox}) {
     dramatic_day, equip_set_props, department_info,
     pages, action, storyboard, image, location_detail } = postData;
 
-      const imageInput = useRef(null)
-      const storyboardInput = useRef(null)
+    const imageInput = useRef(null)
+    const storyboardInput = useRef(null)
 
-      const history = useHistory()
-    
-      const handleChange = (event) => {
+    const history = useHistory()
+  
+    const handleChange = (event) => {
+      setPostData({
+        ...postData,
+        [event.target.name]: event.target.value,
+      });
+    };
+
+    const handleChangeImage = (event) => {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(image);
         setPostData({
           ...postData,
-          [event.target.name]: event.target.value,
+          image: URL.createObjectURL(event.target.files[0]),
         });
-      };
+        console.log(`image ${image}`)
+      }
+    };
 
-      const handleChangeImage = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(image);
-          setPostData({
-            ...postData,
-            image: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`image ${image}`)
-        }
-      };
-
-      const handleChangeStoryboard = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(storyboard);
-          setPostData({
-            ...postData,
-            storyboard: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`storyboard ${storyboard}`)
-        }
-      };
+    const handleChangeStoryboard = (event) => {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(storyboard);
+        setPostData({
+          ...postData,
+          storyboard: URL.createObjectURL(event.target.files[0]),
+        });
+        console.log(`storyboard ${storyboard}`)
+      }
+    };
 
   const infoFields = (
     <div className="mt-3 text-center px-2">
@@ -203,7 +203,6 @@ function SceneCreateForm({topbox}) {
           ))}
           </Col>
       </Row>
-      <hr/>
       {/* Int-Ext Day/Night Dramatic-day  */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >         
@@ -271,7 +270,6 @@ function SceneCreateForm({topbox}) {
           ))}
         </Col>
       </Row  >
-      <hr/>
       {/* shooting-date time pages*/}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
@@ -329,7 +327,6 @@ function SceneCreateForm({topbox}) {
       ))}
       </Col>
       </Row >
-      <hr/>
       {/* location location-detail  */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
@@ -373,7 +370,6 @@ function SceneCreateForm({topbox}) {
           ))}
       </Col>
       </Row>
-      <hr/>
       {/* Filming Location - Action */}
       <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
@@ -417,7 +413,6 @@ function SceneCreateForm({topbox}) {
         ))}
         </Col>
       </Row>
-      <hr/>
       {/* department-info equip_set_props  */}
       <Row>
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
@@ -460,8 +455,7 @@ function SceneCreateForm({topbox}) {
         </Alert>
       ))}
       </Col>
-      </Row>  
-      <hr/>      
+      </Row>       
     </div>
   )
 
@@ -734,8 +728,7 @@ const charFields = (
     ))}
     </Col>
     </Row>
-    <hr/>
-    <Row>
+    <Row className="mt-3">
     <Col xs={6} md={4} lg={2}>
     <Form.Group controlId="character7" className="mb-2" >
         <Form.Label className={`${styles.Bold}`} >Character 7</Form.Label>
@@ -881,8 +874,7 @@ const charFields = (
     ))}
     </Col>
     </Row>
-    <hr/>
-    <Row>
+    <Row className="mt-3">
       <Col xs={6}>
     <Form.Group controlId="other_characters" className="mb-2" >
         <Form.Label className={`${styles.Bold}`}>Other Characters</Form.Label>
@@ -922,13 +914,12 @@ const charFields = (
     ))}
     </Col>
     </Row>
-    <hr/>
     {/* end characters */}          
   </div>
 )
 
   const buttons = (
-    <div className={`text-center mt-3 mb-3 pt-5 pb-2 ${styles.White }`} >    
+    <div className={`text-center pt-3 mb-3 pb-2 ${styles.White }`} >    
       <Button
         className={`mr-3 px-5 py-1 ${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
@@ -1055,13 +1046,12 @@ const charFields = (
       </Row>
       <Row className="mt-3">
         <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 0}}>
-        <h5 className="mt-3 text-center">New Characters</h5>
-        <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+        <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
+          New Characters</h5>
           <NewCharacter setCharacters={setCharacters} />
         </Col>
       <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 0}}>
-        <h5 className="mt-3 text-center">New Locations</h5>
-        <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+        <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>New Locations</h5>
           <NewLocation setLocations={setLocations} />
         </Col>
       </Row>

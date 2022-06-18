@@ -151,7 +151,7 @@
 .GuideBox {
   /* background-color: rgb(229 224 201); */
   background-color: aliceblue;
-  border-bottom: 1px solid #999 ;
+  /* border-bottom: 1px solid #999 ; */
 }
 
 .Button {
@@ -308,6 +308,9 @@
   width: 80%;
 }
 
+.Drop {
+  color: #000;
+}
 @media screen and (max-width: 600px) {
   .Title {
     font-size: .75em;

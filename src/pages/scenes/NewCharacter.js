@@ -73,12 +73,12 @@ const NewCharacter = () => {
     const buttons = (
         <div className="text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            className={`${btnStyles.Button} ${btnStyles.Back} mr-3`}
             onClick={cancel}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          <Button className={`${btnStyles.Button} ${btnStyles.Back} ml-3`} type="submit">
             Create
           </Button>
         </div>
@@ -86,9 +86,8 @@ const NewCharacter = () => {
 
     return (
         <div className= {` ${styles.Back}`}>
-            <p className="mt-3 text-center">Add new Characters here first to enable the dropdown selection. </p>
             <Form onSubmit={handleSubmit}>
-            <Row className="mt-3">
+            <Row className="mt-0">
                 <Col className="d-flex justify-content-center pb-1" xs={6}>
                     <Form.Group controlId="newCharacter" 
                     className={`${styles.Width2} text-center`} >
@@ -108,7 +107,7 @@ const NewCharacter = () => {
                 ))}
                 </Col>
                 <Col xs={6} className="d-flex justify-content-center" >
-          <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
+                <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
                   <Form.Label className={` ${styles.Bold} `} >Number</Form.Label>
                   <Form.Control as="select"
                   className={styles.InputChar}
@@ -130,7 +129,7 @@ const NewCharacter = () => {
                 </Alert>
               ))}
                 </Col>
-                <Col className="mt-2" xs={12}>
+                <Col className="mt-2 pb-2" xs={12}>
                     {buttons}
                 </Col>
             </Row>

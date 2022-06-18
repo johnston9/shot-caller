@@ -46,7 +46,7 @@ const SceneTop = (props) => {
                     </div>
                     </Link>
                     </Col >
-                    <Col xs={1} className=' mx-0 px-0'>
+                    <Col xs={1} className={`mx-0 px-0 ${styles.Drop }`}>
                     <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
@@ -61,12 +61,14 @@ const SceneTop = (props) => {
                 </div>
                   {/* </Card.Header> */}
                   <Card.Body style={style} className="p-1" >
-                      <Link className={`${styles.SceneCardBody }`} 
-                        to={`/scenes/${id}`}>
+                      <Link to={`/scenes/${id}`}>
                         <div className={` ${styles.Div50 }`}>
-                      <Card.Text style={{ fontWeight: '700' }} className="mb-1">{location}</Card.Text>
+                        {/* <span className={styles.Italics }>{title}</span> */}
+                      <Card.Text style={{ fontWeight: '700' }} 
+                      className="mb-1">{location}</Card.Text>
                       </div>
-                      <div className={` ${styles.Div50 }`}><p>{action}</p></div>
+                      <div className={` ${styles.Div50 }`}>
+                        <p>{action}</p></div>
                       </Link>
                   </Card.Body>
             </Card>

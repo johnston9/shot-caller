@@ -27,6 +27,7 @@ function TopBox(props) {
                         className={styles.SmallPanel}
                         src={door}
                         alt="door"
+                        height="120"
                     />
                 </Col>
                 <Col xs={10} className={`d-flex align-items-center justify-content-center ${styles.Alignme}`} >

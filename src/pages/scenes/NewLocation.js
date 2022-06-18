@@ -37,12 +37,12 @@ const NewLocation = ({setLocations}) => {
     const buttons = (
         <div className="text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            className={`${btnStyles.Button} ${btnStyles.Back} mr-3`}
             onClick={() => setNewLocation("")}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          <Button className={`${btnStyles.Button} ${btnStyles.Back} ml-3`} type="submit">
             Create
           </Button>
         </div>
@@ -50,9 +50,8 @@ const NewLocation = ({setLocations}) => {
 
     return (
         <div className= {` ${styles.Back}`}>
-            <p className="mt-3 text-center">Add new Locations here first to enable the dropdown selection. </p>
             <Form onSubmit={handleSubmit}>
-            <Row className="mt-3">
+            <Row className="mt-0">
                 <Col className="d-flex justify-content-center pb-1" xs={12}>
                     <Form.Group controlId="newLocation" 
                     className={`${styles.Width2} text-center`} >
@@ -71,7 +70,7 @@ const NewLocation = ({setLocations}) => {
                 </Alert>
                 ))}
                 </Col>
-                <Col className="mt-2" xs={12}>
+                <Col className="mt-2 pb-2" xs={12}>
                     {buttons}
                 </Col>
             </Row>

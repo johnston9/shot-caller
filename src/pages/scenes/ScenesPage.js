@@ -118,25 +118,25 @@ const ScenesPage = ({message, filter = "" }) => {
           <Row className='mt-1' >
               <Col className='text-center' xs={6} md={3}>
               <Button
-                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                  className={`py-0 ${btnStyles.Button} ${btnStyles.Back}`}
                   onClick={handleClickAct1} >Act One
               </Button>
               </Col>
               <Col className='text-center' xs={6} md={3}>
                 <Button
-                    className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                    className={`py-0 ${btnStyles.Button} ${btnStyles.Back}`}
                     onClick={handleClickAct2a} >Act Two A
                 </Button>
               </Col>
               <Col className='text-center' xs={6} md={3}>
               <Button
-                  className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                  className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Back}`}
                   onClick={handleClickAct2b} >Act Two B
               </Button> 
               </Col>
               <Col className='text-center' xs={6} md={3}>
                 <Button
-                    className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Blue}`}
+                    className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Back}`}
                     onClick={handleClickAct3} >Act Three
                 </Button>
               </Col>
