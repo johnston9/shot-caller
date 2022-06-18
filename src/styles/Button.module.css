@@ -75,13 +75,13 @@
   }
 
   .Blue {
-    /* background-color: #14404f; */
-    background-color: #32c0e4;
+    background-color: #227a7f;
+    /* background-color: #32c0e4; */
     color: #ffffff;
   }
 
   .Blue:hover {
-    background-color: #0077a7;
+    background-color: #40c0c7;
     color: #ffffff;
   }
   

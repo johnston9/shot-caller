@@ -60,9 +60,9 @@ function ProfilePage() {
 
   const mainProfile = (
     <Card>
-      <Card.Body className={`${styles.Back1} py-0`} >
+      <Card.Body className={`${styles.Back2} py-0`} >
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-      <Row noGutters className="text-center">
+      <Row className="text-center">
       <Col lg={3} className="text-lg-left">
           <Image
             className={styles.ProfileImage}
@@ -87,12 +87,12 @@ function ProfilePage() {
             </Col>
           </Row>
         </Col>
-        <Col lg={3} className="mt-2 text-lg-right">
+        <Col lg={3} className="mt-2 text-lg-right ">
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.Grey}`}
+                className={`${btnStyles.Button} ${btnStyles.Black}`}
                 onClick={() => handleUnfollow(profile)}
               >
                 unfollow

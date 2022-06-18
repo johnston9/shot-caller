@@ -26,6 +26,7 @@ function TopBox(props) {
                     <Image
                         className={styles.SmallPanel}
                         src={door}
+                        alt="door"
                     />
                 </Col>
                 <Col xs={10} className={`d-flex align-items-center justify-content-center ${styles.Alignme}`} >
