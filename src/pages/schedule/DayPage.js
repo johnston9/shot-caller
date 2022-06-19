@@ -66,7 +66,6 @@ const DayPage = () => {
             </Button>
             {hasLoaded ? (
                 <>
-                {/* <DayPageTop dayScenes={dayScenes} {...dayData.results[0]} /> */}
                 {/* add scene */}
                 <Row className='my-4'>
                     <Col xs={6} className="text-center">

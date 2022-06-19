@@ -22,15 +22,20 @@
 }
 
 .Top {
-  /* background-color: #14404f; */
-  background-color: #31a7ae;
+  background-color: #1ea7ae;
+  /* background-color: #31a7ae; */
   color: #fff;
   border: 1px solid #fff
 }
 
 .Top:hover {
   /* background-color: #3076ac; */
-  background-color: #5fc7cd;
+  background-color: #22b9c1;
+  color: #fff;
+}
+
+.Top i:hover {
+  /* background-color: #3076ac; */
   color: #fff;
 }
 

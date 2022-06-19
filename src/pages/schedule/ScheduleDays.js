@@ -63,17 +63,17 @@ const SchedulePages = () => {
       
         }, [query, filter])
 
-        const handleDate = (date) => {
-          const formatdate = date.toLocaleDateString('en-GB', {
-            day: 'numeric', month: 'short', year: 'numeric'
-          })
-          setNewdate(formatdate);
-        }
+    const handleDate = (date) => {
+      const formatdate = date.toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'short', year: 'numeric'
+      })
+      setNewdate(formatdate);
+    }
 
     return (
         <div >
             <TopBox title="Schedule" />
-            {/* add day */}
+            {/* back info */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
               onClick={() => history.goBack()}
@@ -81,14 +81,15 @@ const SchedulePages = () => {
               Back
             </Button>
             <Button
-          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-          onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-        </Button>
-          {!showInfo ? (
-              ""
-                  ) : (
-                    <Info  /> 
-                    ) } 
+              className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+              {!showInfo ? (
+                  ""
+                      ) : (
+                        <Info  /> 
+                        ) } 
+            {/* add day */}
             <Row className='mb-3'>
               <Col className='text-center'>
               <Button onClick={() => history.push('/days/create')}
@@ -96,9 +97,10 @@ const SchedulePages = () => {
                     Create Day</Button>
                 </Col>
             </Row>
-            {/* calender */}
+            {/* calender className={`${styles.White }`} */}
             <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
               Shoot Days Calendar</h5>
+            <div >
             <Row className={`mx-1 py-3`} >
                 <Col>
                    <div>
@@ -130,11 +132,12 @@ const SchedulePages = () => {
                    </div>
                 </Col>
             </Row>
-            <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
+            </div>
+            <h5 className={`mt-3 text-center py-1 mb-0 ${styles.SubTitle }`}>
             All Shoot Days</h5>
-            <div className={`mx-1 my-3`}>
+            <div >
             <Row >
-                <Col className="mt-1" xs={{ span: 10, offset: 1 }} 
+                <Col className="mt-3" xs={{ span: 10, offset: 1 }} 
                 md={{ span: 6, offset: 3 }} >
                 <Form
                     className={styles.SearchBar}

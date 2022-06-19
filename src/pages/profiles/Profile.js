@@ -26,7 +26,7 @@ const Profile = (props) => {
         {/* mobile */}
         <div className='mt-1 text-center'>
             <Card className={styles.Back}>
-                <Card.Header className={`px-0 ${styles.CardHead}`} >
+                <Card.Body className={`px-0 ${styles.CardHead}`} >
                 <Link to={`/profiles/${id}`}>
                 {/* Avatar */}
                 <Row>
@@ -52,16 +52,16 @@ const Profile = (props) => {
                     </Col>
                 </Row>
                 </Link>
-                </Card.Header>
-                <Card.Body className="my-0 py-0 px-0"> 
+                </Card.Body>
+                <Card.Header className="my-0 py-1 px-0"> 
                 <Row>
                     <Col xs={12}>
-                    <div className="mt-2" >
+                    <div className="mt-1" >
                     {currentUser &&
                     !is_owner &&
                     (following_id ? (
                         <Button
-                        className={` py-0 ${btnStyles.Button} ${btnStyles.GreyDark}`}
+                        className={` py-0 ${btnStyles.Button} ${btnStyles.White}`}
                         onClick={() => handleUnfollow(profile)}
                         >
                         unfollow
@@ -77,7 +77,7 @@ const Profile = (props) => {
                     </div>
                     </Col>
                 </Row>
-                </Card.Body>
+                </Card.Header>
             </Card>
         </div>
         {/* small */}

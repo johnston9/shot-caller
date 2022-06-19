@@ -2,7 +2,7 @@ import React from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from "../../styles/Callsheets.module.css";
+import styles from "../../styles/ScheduleCreate.module.css";
 
 const Pages = ({scenes}) => {
     useRedirect("loggedOut");
