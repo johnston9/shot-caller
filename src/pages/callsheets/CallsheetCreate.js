@@ -633,7 +633,7 @@ const CallsheetCreate = () => {
   const infoFields = (
     <div className={`pb-5 text-center ${styles.Back3 }`}>
       <div className={`my-3 ${styles.Bold }`} > 
-        <h5 className={`mx-5 my-3 py-1 ${styles.SubTitle }`} >INFO  </h5> 
+        <h5 className={`mx-5 py-1 ${styles.SubTitle }`} >INFO  </h5> 
       </div>
       <Row>
         <Col className="d-flex justify-content-center" xs={{span: 6, offset: 3}} >
@@ -1436,12 +1436,12 @@ const CallsheetCreate = () => {
 const buttons = (
   <div className={`text-center py-4 mb-3 mt-4 ${styles.White }`} >    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>
-    <Button className={`ml-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+    <Button className={`ml-3 ${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
       Create
     </Button>
   </div>
@@ -1467,7 +1467,7 @@ const buttons = (
                     <Information  /> 
                     ) }  
     {/* cast buttons */}
-    <h3 className={`text-center py-1 ${styles.SubTitle }`} >ADD CAST</h3> 
+    <h3 className={`text-center mt-2 py-1 ${styles.SubTitle }`} >ADD CAST / BG</h3> 
     <div className= {`mb-3`}>
       {/* schedule button */}
     <Row className='text-center'>

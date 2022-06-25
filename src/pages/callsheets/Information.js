@@ -10,12 +10,12 @@ const Information = () => {
         <Col md={{span: 8, offset: 2}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>The Add Cast and Add Background forms here are seperate from the main 
-        Callsheet Info and Crew Calls form below. They allow each cast member 
-        or background item to be added individually. The schedule is provided
-        to facilitate this and can also be viewed beside these forms. These forms
-        can be done here on this page before clicking the "Create" button for the 
-        main Callsheet below or from the Edit page.  </p>
+        <p>The Add Cast and Add Background forms are seperate from the
+        Callsheet form below and may be used here before submitting the
+        Callsheet form or from the Edit page.
+        Each item is added individually using the 
+        schedule as reference. The "Side By Side" view allows both to be
+        viewed together.  </p>
          </div> 
         </Col>
       </Row>
