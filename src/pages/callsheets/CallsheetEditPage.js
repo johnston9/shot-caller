@@ -27,6 +27,7 @@ import AddSoundTransport from './AddSoundTransport';
 import AddStunts from './AddStunts';
 import AddPostAdditional from './AddPostAdditional';
 import InformationEdit from "./InformationEdit";
+import InfoCrewCalls from "./InfoCrewCalls";
 
 const CallsheetEditPage = () => {
   useRedirect("loggedOut");
@@ -60,6 +61,7 @@ const CallsheetEditPage = () => {
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const [showInfoCrew, setShowInfoCrew] = useState(false);
 
   const [postData, setPostData] = useState({
     // info
@@ -977,7 +979,10 @@ const CallsheetEditPage = () => {
   const infoFields = (
     <div className={`pb-5 text-center ${styles.Back3 }`}>
       <div className={`my-3 ${styles.Bold }`} > 
-        <h5 className={`mx-5 my-3 py-1 ${styles.SubTitle }`} >INFO  </h5> 
+        <h5 className={`py-1 ${styles.SubTitle }`} >
+          <span className="float-left ml-3">Part 1 </span>
+          <span className="mr-5 pr-4">INFO </span>
+        </h5> 
       </div>
       <Row>
         <Col className="d-flex justify-content-center" xs={{span: 6, offset: 3}} >
@@ -1155,7 +1160,10 @@ const CallsheetEditPage = () => {
       </Col>
       </Row>    
       <div className={`my-3 ${styles.Bold }`} > 
-        <h5 className={`mx-5 my-3 py-1 ${styles.SubTitle }`} > TIMES  </h5> 
+      <h5 className={`py-1 ${styles.SubTitle }`} >
+          <span className="float-left ml-3">Part 2</span>
+          <span className="mr-5 pr-4">TIMES </span>
+        </h5> 
       </div>
       {/* Unit call - Talent call Shoot call */}
       <Row>
@@ -1266,8 +1274,12 @@ const CallsheetEditPage = () => {
           </Col>
       </Row>
       <div className={`my-3 ${styles.Bold }`} > 
-        <h5 className={`mx-5 my-3 py-1 ${styles.SubTitle }`} >LOCATIONS  </h5> 
+      <h5 className={`py-1 ${styles.SubTitle }`} >
+          <span className="float-left ml-3">Part 3 </span>
+          <span className="mr-5 pr-4">LOCATIONS </span>
+        </h5> 
       </div>
+      <div className="pr-3">
       {/* basecamp name basecamp address - basecamp parking and notes */}
       <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>BASECAMP</span>
       <Row className="mb-3">
@@ -1628,10 +1640,14 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
+      </div>
       {/* WALKIE CHANNELS */}
       <div>
         <div className={`my-3 ${styles.Bold }`} > 
-        <p className={`mx-5 my-3 py-1 ${styles.SubTitle }`} >WALKIE CHANNELS  </p> 
+        <h5 className={`py-1 ${styles.SubTitle }`} >
+          <span className="float-left ml-3">Part 4 </span>
+          <span className="mr-5 pr-4">WALKIES CHANNELS </span>
+        </h5> 
         </div>
       <Row>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
@@ -1778,14 +1794,14 @@ const CallsheetEditPage = () => {
   )
 
   const buttons = (
-    <div className="text-center mt-4">    
+    <div className={`text-center py-4 mb-3 mt-4 ${styles.White }`} >    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`ml-3 ${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
         Create
       </Button>
     </div>
@@ -1900,14 +1916,15 @@ const CallsheetEditPage = () => {
       </div>
       {/* info */}
       <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >EDIT CALLSHEET</h3> 
-      {/* <div className={`${styles.White }`}> 
-      <h4 className={` text-center mt-0 mb-0 py-1`} > INFO</h4> 
-      </div>
-      <h4 className={` text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > </h4>  */}
-      <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
+      <Form className= {`mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
       {infoFields}
       {/* crew */}
-      <h4 className={`text-center mt-0 mb-0 py-1 ${styles.SubTitle }`} > CREW CALLS</h4> 
+      <div className={`my-3 text-center ${styles.Bold }`} > 
+      <h5 className={`py-1 ${styles.SubTitle }`} >
+          <span className="float-left ml-3">Part 5 </span>
+          <span className="mr-5 pr-4">CREW CALLS </span>
+        </h5> 
+      </div>
       <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
         <Col xs={4} md={2} className='text-center'>
@@ -1985,9 +2002,22 @@ const CallsheetEditPage = () => {
           </p>
         </Col>
       </Row>  
-      <p className={`mt-1 pl-3 mb-3 pt-1 ${styles.SubTitle }`}></p>
+      <p className={`mt-1 pl-3 mb-1 pt-1 ${styles.SubTitle }`}></p>
       </div>
       <div className={`mt-0 ${styles.Crew }`}>
+      <Row>
+      <Col >
+      <Button
+            className={`float-right py-0 mt-0 ${btnStyles.Order} ${btnStyles.Button}`}
+            onClick={() => setShowInfoCrew(showInfoCrew => !showInfoCrew)} >INFO
+      </Button>
+      </Col>
+      </Row>
+      {!showInfoCrew ? (
+          ""
+              ) : (
+                <InfoCrewCalls  /> 
+              ) } 
         {/* Add Production */}
         {!showPro ? (
           ""
@@ -2072,15 +2102,6 @@ const CallsheetEditPage = () => {
                 <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
-        <Row>
-          <Col className={`mt-3 ${styles.White} `} xs={12} md={{span: 8, offset:2 }}>
-          <p className="py-2 text-center"> Add all crew members to the Crew Info page located
-          on the Callsheets main page first to enable automatic "Call Time" input boxes being
-          generated for each member.
-          Click on each department to fill in the call times for each crew member. 
-          Complete all departments before clicking Create.</p>
-          </Col>
-          </Row>
         </div>
       {buttons}
       </Form>

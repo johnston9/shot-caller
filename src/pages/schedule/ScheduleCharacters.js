@@ -15,11 +15,6 @@ const ScheduleCharacters = (props) => {
         character10_costume, character11, character11_costume, character12,
         character12_costume, other_characters, other_characters_costumes,
         background_artists, background_artists_costumes,
-        character1_number, character2_number, character3_number,
-        character4_number, character5_number, character6_number, 
-        character7_number, character8_number, character9_number,
-        character10_number, character11_number, character12_number,
-        other_characters_numbers,
     } = props
 
     return (
