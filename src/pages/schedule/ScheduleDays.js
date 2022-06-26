@@ -113,8 +113,8 @@ const SchedulePages = () => {
                          <Col className='p-1'  xs={12} md={6}>
                           <Row className='text-center'>
                             <Col>
-                            <p>Click Calendar days. If it contains a Shooting Day
-                              that will be retreived. If not nothing will show.
+                            <p>Click Calendar dates to find Shoot Days. Dates with a Shooting Day
+                              will display. If not nothing will show.
                             </p>
                             </Col>
                           </Row>

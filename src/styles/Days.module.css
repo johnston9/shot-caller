@@ -1,5 +1,6 @@
 .Top {
-  background-color: #14404f;
+  /* background-color: #14404f; */
+  background-color: #1a959c;
   color: #fff;
 }
 
@@ -9,7 +10,7 @@
 }
 
 .Bottom:hover {
-  background-color: #112533;
+  background-color: #1a959c;
   color: #fff;
 }
 
