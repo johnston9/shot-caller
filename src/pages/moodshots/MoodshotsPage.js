@@ -27,7 +27,6 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
   const [error, setErrors] = useState({});
   const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
-  const { pathname } = useLocation();
   const history = useHistory();
   console.log(locationPlace);
   console.log(characterRole);
@@ -58,7 +57,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname])
+  }, [filter, query])
 
     return (
         <div>

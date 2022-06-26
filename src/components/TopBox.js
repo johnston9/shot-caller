@@ -8,11 +8,9 @@ function TopBox(props) {
     return (
         <div className={styles.RegBox}>
         <Row className={styles.Row}>
-        <Col
-            xs={{ span: 1, offset: 1 }} lg={{ span: 1, offset: 3 }}
+        <Col xs={{ span: 1, offset: 1 }} lg={{ span: 1, offset: 3 }}
             md={{ span: 1, offset: 2 }}
-            className={`text-center ${styles.Longboxl}`}
-        >    
+            className={`text-center ${styles.Longboxl}`}>    
         <p>S</p> 
         <p>H</p>
         <p>O</p>
@@ -43,9 +41,7 @@ function TopBox(props) {
             </Row>
             </div>
             </Col>
-
-            <Col
-            xs={{ span: 1, offset: 0 }} lg={{ span: 1, offset: 1 }}
+        <Col xs={{ span: 1, offset: 0 }} lg={{ span: 1, offset: 1 }}
             md={{ span: 1, offset: 0 }}
             className={`text-center px-0 mx-0 ${styles.Longboxr}`}
         >    

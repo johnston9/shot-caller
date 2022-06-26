@@ -410,7 +410,7 @@ const Home = () => {
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
                 <div className={`${styles.Inner} mt-2 pb-2`}>
                 {admin ? (
-                        <p className="mt-2"> Create / View Moodshots </p>
+                        <p className="mt-2"> Add / View <br/> Moodshots </p>
                       ) : (
                         <p className="mt-2"> View Moodshots </p>
                       )}
@@ -424,7 +424,7 @@ const Home = () => {
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
                 <div className={`${styles.Inner} mt-2 pb-2`}>
-                <p className="mb-0 pt-1">Profiles and Feed</p>
+                <p className="mb-0 pt-1">Profiles <br/> and Feed</p>
                 </div>
                 </div>
               </Link>
@@ -438,9 +438,9 @@ const Home = () => {
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
                     <div className={`${styles.Inner} mt-2 pb-2`}>
                     {admin ? (
-                        <p className="mt-2"> Create / View Schedule </p>
+                        <p className="mt-2"> Add / View <br/> Schedule </p>
                       ) : (
-                        <p className="mt-2"> View Schedule </p>
+                        <p className="mt-2"> View <br/> Schedule </p>
                       )}
                     </div>
                 </div>
@@ -453,9 +453,9 @@ const Home = () => {
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
                 <div className={`${styles.Inner} mt-2 pb-2`}>
                 {admin ? (
-                        <p className="mt-2"> Add / View Callsheets </p>
+                        <p className="mt-2"> Add / View <br/> Callsheets </p>
                       ) : (
-                        <p className="mt-2"> View Callsheets </p>
+                        <p className="mt-2"> View <br/> Callsheets </p>
                       )}
                 </div>
                 </div>
@@ -469,7 +469,7 @@ const Home = () => {
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Characters</h5>
                 <div className={`${styles.Inner} mt-2 pb-2`}>
-                <p className="mb-0 pt-1"> Character Details</p>
+                <p className="mb-0 pt-1"> Character <br/> Details</p>
                 </div>
                 </div>
               </Link>
@@ -480,7 +480,7 @@ const Home = () => {
               <div className={`py-1  ${styles.HomeboxXs}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Locations</h5>
                     <div className={`${styles.Inner} mt-2 pb-2`}>
-                    <p className="mb-0 pt-1">Addresses and Images </p>
+                    <p className="mb-0 pt-1">Addresses <br/> and Images </p>
                     </div>
                 </div>
               </Link>
@@ -494,7 +494,7 @@ const Home = () => {
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
                 <div className={`${styles.Inner} mt-2 pb-2`}>
-                <p className="mb-0 pt-1"> Crew Info Details</p>
+                <p className="mb-0 pt-1"> Crew Info <br/> Details</p>
                 </div>
                 </div>
               </Link>
@@ -505,7 +505,7 @@ const Home = () => {
               <div className={`py-1  ${styles.HomeboxXs}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
                     <div className={`${styles.Inner} mt-2 pb-2`}>
-                    <p className="mb-0 pt-1">Departments Posting Area  </p>
+                    <p className="mb-0 pt-1">Departments <br/> Posting Area  </p>
                     </div>
                 </div>
               </Link>

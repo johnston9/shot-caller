@@ -17,19 +17,16 @@
 .Longboxr {
     color: rgb(255, 6, 6);
     margin-top: 10px;
-    font-size: 8px;
 }
 
 .Longboxl p {
     color: rgb(255, 6, 6);
     margin-bottom: 0;
-    font-size: 8px;
 }
 
 .Longboxr p {
     color: rgb(255, 6, 6);
     margin-bottom: 0;
-    font-size: .75 rem;
 }
 
 .Titlebox {
@@ -97,6 +94,6 @@
 
 @media screen and (max-width: 360px) {
     .Longboxl {
-        margin-left: 15px;
+        margin-left: 25px;
     }
 }
