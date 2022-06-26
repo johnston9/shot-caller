@@ -1,9 +1,12 @@
 .PostTop {
-    /* background-color: #14404f; */
-    background-color: #205a6e;
+    background-color: #1ea7ae;
+    /* background-color: #205a6e; */
     color: #fff;
     border-bottom: 1px solid #fafafa;
   }
+.PostTop i {
+  color: #fff;
+}
 
 .PostTop2 {
   /* background-color: #58666b;
@@ -38,13 +41,13 @@ h5 {
 }
 
 .GoToScene {
-  color: #79f5ef;
+  color: #fff;
   font-weight: 700;
   font-size: .75em;
   cursor: pointer;
 }
 .GoToScene:hover {
-  color: #e9f1f1;
+  color: #000;
 }
 
 .GoToScene a {
@@ -58,13 +61,14 @@ h5 {
 }
 
 .Content {
-  background-color: #444a4c;
+  background-color: #fff;
   cursor: pointer;
   height: 100%;
 }
 
 .Content:hover {
   background-color: #232d30;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -72,62 +76,24 @@ h5 {
   color: #205a6e;
 }
 
-.Content1 {
-  /* background-color: #444a4c; */
-  color: #fff;
+/* .Content1 {
+  color: #79f5ef;
   cursor: pointer;
-}
-
-.Content1:hover {
-  /* background-color: #232d30; */
-  cursor: pointer;
-  color: #e9f1f1;
 }
 
 .Content2 {
   cursor: pointer;
-  color: #79f5ef;
+  color: #000;
+}
+
+.Content1:hover {
+  color: #fff;
+  cursor: pointer;
 }
 
 .Content2:hover {
   cursor: pointer;
-  color: #e9f1f1;
-}
-
-/* .Content1 {
-  background-color: #444a4c;
-  cursor: pointer;
   color: #fff;
-}
-
-.Content {
-  background-color: #fff;
-  cursor: pointer;
-  color: #000;
-}
-
-.Content:hover {
-  background-color: #95e7e9;
-  color: #fff;
-  cursor: pointer;
-}
-
-.Content:hover ~ .Content1 {
-  background-color: #95e7e9;
-  color: #fff;
-  cursor: pointer;
-}
-
-.Content1:hover + .Content{
-  background-color: #95e7e9;
-  color: #fff;
-  cursor: pointer;
-}
-
-.Content1:hover {
-  background-color: #95e7e9;
-  color: #000;
-  cursor: pointer;
 } */
 
 .Red {
@@ -148,28 +114,4 @@ h5 {
   background-color: #232d30;
   color: #fff;
   cursor: pointer;
-}
-
-.Content1 {
-  /* background-color: #444a4c; */
-  color: #fff;
-  cursor: pointer;
-}
-
-.Content1:hover {
-  /* background-color: #232d30; */
-  cursor: pointer;
-  color: #e9f1f1;
-}
-
-.Content2 {
-  /* background-color: #444a4c; */
-  cursor: pointer;
-  color: #79f5ef;
-}
-
-.Content2:hover {
-  /* background-color: #232d30; */
-  cursor: pointer;
-  color: #e9f1f1;
 }

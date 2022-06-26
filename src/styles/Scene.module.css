@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+i:hover {
+  color: #fff;
+}
+
 .Images {
   object-fit: cover;
   height: 200px;
@@ -183,6 +187,17 @@
 
 .CardBox {
   border: 1px solid #fff;
+  transition-timing-function: ease;
+  transition: border .5s, background-color .5s, transform .5s;
+}
+
+.CardBox:hover {
+  border: 1px solid rgb(255, 255, 255);
+  /* animation: bounce 1s; */
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); 
+  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
 }
 
 .CostumeLink {

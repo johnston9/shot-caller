@@ -251,7 +251,7 @@ const Post = (props) => {
                       {/* <Col className="d-flex align-items-center justify-content-center" md={4}>
                       <Button className="py-0" onClick={() => handleGoToScene() }>Go to Scene</Button>
                       </Col> */}
-                  </Row>
+                </Row>
                 </Card.Body>
                 {/* end new */}
                 <Card.Body className='py-1'  >

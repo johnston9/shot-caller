@@ -7,7 +7,6 @@ import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import btnStyles from "../../styles/Button.module.css";
@@ -29,9 +28,8 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
-  const { pathname } = useLocation();
   const history = useHistory();
- 
+  console.log("postpage")
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -61,7 +59,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
       clearTimeout(timer);
     };
     // eslint-disable-next-line
-  }, [filter, query, pathname])
+  }, [filter, query])
   
   return (
     <div>      

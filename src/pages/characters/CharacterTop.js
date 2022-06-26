@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/PostsPage.module.css";
+import styles from "../../styles/Characters.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
