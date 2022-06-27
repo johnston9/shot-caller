@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
 
 const CharacterTop = (props) => {
-    useRedirect("loggedOut")
+    // useRedirect("loggedOut")
     const {
         id,
         role,

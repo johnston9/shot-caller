@@ -35,7 +35,6 @@ const Scene = (props) => {
     const setCategory = useSetCategoryContext();
     const { id, number, storyboard, scene,
       workspace_guide, setScene } = props;
-    console.log(scene)
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
     const [showWorkInfo, setShowWorkInfo] = useState(false);

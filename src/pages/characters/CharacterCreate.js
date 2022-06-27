@@ -18,7 +18,7 @@ import Important from "./Important";
 import { useCharactersContext, useScenesContext, useSetCharactersContext } from "../../contexts/Scene_chars_locs";
 
 const CharacterCreate = ({topbox} ) => {
-    useRedirect("loggedOut")
+    // useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const characters = useCharactersContext();
     // eslint-disable-next-line

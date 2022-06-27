@@ -8,9 +8,10 @@ export const useRedirect = (userAuthStatus) => {
 
   useEffect(() => {
     const handleMount = () => {
-      if(!currentUser) {
-        history.push("/");
-      }
+      // if(!currentUser) {
+      //   history.push("/");
+      // }
+      console.log("REDIRECT")
     };
 
     handleMount();

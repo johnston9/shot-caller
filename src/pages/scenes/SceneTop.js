@@ -60,14 +60,14 @@ const SceneTop = (props) => {
                     </Link>
                 </div>
                   {/* </Card.Header> */}
-                  <Card.Body style={style} className="p-1" >
+                  <Card.Body style={style} className="py-1 px-0" >
                       <Link to={`/scenes/${id}`}>
-                        <div className={` ${styles.Div50 }`}>
+                        <div className={` ${styles.Div50 } px-0`}>
                         {/* <span className={styles.Italics }>{title}</span> */}
                       <Card.Text style={{ fontWeight: '700' }} 
-                      className="mb-1">{location}</Card.Text>
+                      className="mb-1 px-0">{location}</Card.Text>
                       </div>
-                      <div className={` ${styles.Div50 }`}>
+                      <div className={`px-0 ${styles.Div50 }`}>
                         <p>{action}</p></div>
                       </Link>
                   </Card.Body>

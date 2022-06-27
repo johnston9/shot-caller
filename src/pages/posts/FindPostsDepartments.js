@@ -125,15 +125,18 @@ const Departments = (props) => {
               <Row className='mb-4 mt-3'>
                   <Col className='text-center' xs={4} >
                   <Button onClick={() => history.push("/archived")} 
-                    className={`${btnStyles.Button} py-0 ${btnStyles.Bright}`} >Archived Posts</Button>
+                    className={`${btnStyles.Button} py-0 px-2 ${btnStyles.Bright}`} >Archived
+                       </Button>
                   </Col>
-                  <Col className='text-center' xs={4} >
+                  <Col className='text-center px-0' xs={4} >
                   <Button onClick={() => history.push("/posts")}
-                    className={`${btnStyles.Button} py-0 px-5 ${btnStyles.Bright}`} >All Posts</Button>
+                    className={`${btnStyles.Button} py-0 px-3 ${btnStyles.Bright}`} >All Posts
+                     </Button>
                   </Col>
                   <Col className='text-center' xs={4} >
                   <Button onClick={() => history.push("/liked")} 
-                    className={`${btnStyles.Button} py-0 ${btnStyles.Bright}`}>Liked Posts</Button>
+                    className={`${btnStyles.Button} py-0 px-3 ${btnStyles.Bright}`}>Liked
+                    </Button>
                   </Col>
               </Row>
               <Row className='mt-1'>
@@ -148,18 +151,17 @@ const Departments = (props) => {
               </Container>
             <Card className={` ${styles.Scene}`}>
                   <Card.Body>
-                  <h3 className={`text-center mt-4`}>Posts by Department</h3>
+                  <h3 className={`text-center mt-3`}>Posts by Department</h3>
               <p className='text-center'>Requirements and Finals post are ordered by scene number</p>
                   <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
-                      <Col className='px-1 px-md-2' xs={4} md={4} lg={4} >
+                      <Col className='px-0' xs={4} md={4} lg={4} >
                         <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
                         <Card.Img className={`text-center ${styles.UniImg}`} src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
                         </Card>
                       </Col>
                   </Row>
-                  <hr/>
                     <Row>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card>
