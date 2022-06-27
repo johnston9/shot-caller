@@ -188,36 +188,3 @@ export function DeptDropdown({ handleClick, depart}) {
     </Dropdown>
   );
 }
-
-// t old delete
-// export const PostDropdown = ({ handleEdit, handleDelete }) => {
-//   // Modal
-//   const [showModal, setShowModal] = useState(false);
-//   const handleClose = () => setShowModal(false);
-//   const handleShow = () => setShowModal(true);
-//   return (
-//     <Dropdown className="ml-auto" drop="left">
-//       <Dropdown.Toggle as={EditDeleteIcon} />
-
-//       <Dropdown.Menu
-//         className="text-center"
-//         popperConfig={{ strategy: "fixed" }}
-//       >
-//         <Dropdown.Item
-//           className={styles.DropdownItem}
-//           onClick={handleEdit}
-//           aria-label="edit"
-//         >
-//           <i className="fas fa-edit" />
-//         </Dropdown.Item>
-//         <Dropdown.Item
-//           className={styles.DropdownItem}
-//           onClick={handleDelete}
-//           aria-label="delete"
-//         >
-//           <i className="fas fa-trash-alt" />
-//         </Dropdown.Item>
-//       </Dropdown.Menu>
-//     </Dropdown>
-//   );
-// };

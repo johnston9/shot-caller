@@ -1,25 +1,15 @@
-import axios from "axios";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 export const useRedirect = (userAuthStatus) => {
+  const currentUser = useCurrentUser();
   const history = useHistory();
 
   useEffect(() => {
-    const handleMount = async () => {
-      try {
-        await axios.post("/dj-rest-auth/token/refresh/");
-        // if user is logged in
-        if (userAuthStatus === "loggedIn") {
-          history.push("/");
-          console.log(userAuthStatus);
-        }
-      } catch (err) {
-        // if user is not logged in
-        if (userAuthStatus === "loggedOut") {
-          history.push("/");
-          console.log(userAuthStatus);
-        }
+    const handleMount = () => {
+      if(!currentUser) {
+        history.push("/");
       }
     };
 
