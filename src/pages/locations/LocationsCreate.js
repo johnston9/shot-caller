@@ -252,8 +252,8 @@ const LocationsCreate = ({topbox} ) => {
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           <Form className="mt-3" onSubmit={handleSubmit}>
           <h3 className="text-center">Name</h3>
-          <p className="text-center">Quick add name for scene dropdown.
-            Location extra details can be add in the scene also. </p>
+          <p className="text-center">Quick Add Name for scene dropdown.<br/>
+            Location extra details only added on the Scene Page. </p>
           <Row>
           <Col md={3} ></Col>
               <Col md={6} >
@@ -283,8 +283,8 @@ const LocationsCreate = ({topbox} ) => {
           <h3 className="text-center my-3">Details</h3>
           {/*  details */}
           <Row className="text-center">
-              <Col xs={6} >
-              <Form.Group controlId="description" className="mb-2" >
+              <Col xs={6} className="px-0"  >
+              <Form.Group controlId="description" className="mb-2 px-2" >
                       <Form.Label className={styles.Bold} >Description</Form.Label>
                       <Form.Control 
                       type="text"
@@ -302,11 +302,10 @@ const LocationsCreate = ({topbox} ) => {
                     </Alert>
                   ))}
               </Col>
-              <Col xs={6} >
-              <Form.Group controlId="filming_address_primary" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Primary Filming Address</Form.Label>
+              <Col xs={6} className="px-0"  >
+              <Form.Group controlId="filming_address_primary" className="px-2 mb-2" >
+                      <Form.Label className={styles.Bold} >Filming Address 1</Form.Label>
                       <Form.Control 
-                      placeholder="Primary Filming Address"
                       as="textarea"
                       rows={3}
                       type="text"
@@ -324,11 +323,10 @@ const LocationsCreate = ({topbox} ) => {
           </Row>
           <hr/>
           <Row className="text-center">
-              <Col xs={6} >
-              <Form.Group controlId="filming_address2" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Second Filming Address</Form.Label>
+              <Col xs={6} className="px-0"  >
+              <Form.Group controlId="filming_address2" className="mb-2 px-2" >
+                      <Form.Label className={styles.Bold} >Filming Address 2</Form.Label>
                       <Form.Control 
-                      placeholder="Second Filming Address"
                       as="textarea"
                       rows={2}
                       type="text"
@@ -343,11 +341,10 @@ const LocationsCreate = ({topbox} ) => {
                     </Alert>
                   ))}
               </Col>
-              <Col xs={6}  >
-              <Form.Group controlId="filming_address3" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Third Filming Address</Form.Label>
+              <Col xs={6} className="px-0"  >
+              <Form.Group controlId="filming_address3" className="mb-2 px-2" >
+                      <Form.Label className={styles.Bold} >Filming Address 3</Form.Label>
                       <Form.Control 
-                      placeholder="Third Filming Address"
                       type="text"
                       as="textarea"
                       rows={2}
