@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useRef } from 'react'
+import { useRef } from 'react';
+
+// NODE_OPTIONS --max_old_space_size=460
 
 const Shotlist = () => {
     const canvasRef = useRef(null);
@@ -42,7 +44,7 @@ const Shotlist = () => {
         contextRef.current.stroke();
     }
   return (
-    <div>Shotlist1
+    <div>Shotlist12
         <canvas 
         onMouseDown={startDraw}
         onMouseUp={endDraw}
