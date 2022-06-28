@@ -9,6 +9,10 @@
   color: #000;
 }
 
+.Top i {
+  color: #fff;
+}
+
 .Bottom:hover {
   background-color: #1a959c;
   color: #fff;

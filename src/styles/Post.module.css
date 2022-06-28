@@ -1,16 +1,13 @@
 .PostTop {
     background-color: #1ea7ae;
-    /* background-color: #205a6e; */
     color: #fff;
-    border-bottom: 1px solid #fafafa;
+    border-bottom: 2px solid #fafafa;
   }
 .PostTop i {
   color: #fff;
 }
 
 .PostTop2 {
-  /* background-color: #58666b;
-  color: #fff; */
   background-color: #fff;
   color: #000;
 }
@@ -76,10 +73,10 @@ h5 {
   color: #205a6e;
 }
 
-/* .Content1 {
-  color: #79f5ef;
+.Content1 {
+  color: #1ea7ae;
   cursor: pointer;
-}
+} 
 
 .Content2 {
   cursor: pointer;
@@ -94,7 +91,7 @@ h5 {
 .Content2:hover {
   cursor: pointer;
   color: #fff;
-} */
+} 
 
 .Red {
   color: crimson;

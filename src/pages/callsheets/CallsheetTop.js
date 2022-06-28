@@ -34,16 +34,16 @@ const CallsheetTop = (props) => {
 
   return (
     <div>
-        <Card className={`mx-1 text-center ${styles.Top}`}>
+        <Card className={`mx-2 text-center ${styles.Top}`}>
         <Link to={`/callsheets/${day_id}`}>
-            <Card.Header className={`pt-2 pb-1 px-0 ${styles.Top }`}>
+            <Card.Header className={`pt-2 pb-0 px-0 ${styles.Top }`}>
                 <Row>
                 <Col xs={{span: 10, offset: 1}} className=' px-0'>
                 <h5 className={` ${styles.Titlelist }`}>Day {day}
                 </h5>
                 <div className={`${styles.Inner} mt-2 px-0 mx-0`}>
-                <h5 className={`py-1 ${styles.Titlelist }`}> {date}
-                </h5>
+                <p className={`py-1 ${styles.Titlelist }`}> {date}
+                </p>
                 </div>
                 </Col >
                 </Row>

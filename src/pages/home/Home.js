@@ -412,7 +412,7 @@ const Home = () => {
                 {admin ? (
                         <p className="mt-2"> Add / View <br/> Moodshots </p>
                       ) : (
-                        <p className="mt-2"> View Moodshots </p>
+                        <p className="mt-2"> View <br/> Moodshots </p>
                       )}
                 </div>
                 </div>

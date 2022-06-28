@@ -88,7 +88,7 @@ const ProfilesPage = () => {
                 </Form>
                 </Col>
               </Row>
-              <div className={`mt-3 mx-md-3`}
+              <div className={`mt-3 mx-3`}
                 >
                 {/* {hasLoaded ? ( 
                     <> */}
@@ -96,7 +96,7 @@ const ProfilesPage = () => {
                 {profiles.results.length ? (
                     <>
                     {profiles.results.map((profile) => (
-                    <Col xs={6} sm={6} md={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
+                    <Col xs={6} sm={4} md={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
                     <Profile key={profile.id} profile={profile}/>
                     </Col>
                     ))}

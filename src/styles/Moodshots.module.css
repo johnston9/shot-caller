@@ -1,43 +1,70 @@
 .MoodTop {
-    background-color: #14404f;
-    color: #fff !important;
+  background-color: #1ea7ae;
+  color: #fff;
+  /* border-bottom: 2px solid #fafafa; */
 }
 
+.MoodTop i {
+color: #fff;
+}
 
+.MoodTop i:hover {
+  color: #fff;
+  }
+  
 .MoodTop2 {
-background-color: #14404f;
-color: #fafafa;
+background-color: #fff;
+color: #000;
 }
 
 .Content {
-    background-color: #444a4c;
-    cursor: pointer;
-    height: 100%;
-  }
+  background-color: #fff;
+  cursor: pointer;
+  height: 100%;
+}
 
-  .Content:hover {
-    background-color: #232d30;
-    cursor: pointer;
-  }
+.Content:hover span {
+  color: #fff;
+  cursor: pointer;
+}
 
-  .Content1 {
-    /* background-color: #444a4c; */
-    color: #fff;
-    cursor: pointer;
-  }
+.Content:hover {
+  background-color: #232d30;
+  color: #fff;
+  cursor: pointer;
+}
 
-  .Content1:hover {
-    /* background-color: #232d30; */
-    cursor: pointer;
-    color: #e9f1f1;
-  }
+.Content:hover i {
+  color: #fff;
+  cursor: pointer;
+}
 
-  .Content2 {
-    cursor: pointer;
-    color: #79f5ef;
-  }
+.Content1 {
+  color: #1ea7ae;
+  cursor: pointer;
+} 
 
-  .Content2:hover {
-    cursor: pointer;
-    color: #e9f1f1;
-  }
+.Content2 {
+  cursor: pointer;
+  color: #000;
+}
+
+/* .Content1:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.Content2:hover {
+  cursor: pointer;
+  color: #fff;
+} 
+
+.Content1:hover .Content2{
+  color: #fff;
+  cursor: pointer;
+}
+
+.Content2:hover .Content1 {
+  cursor: pointer;
+  color: #fff;
+}  */

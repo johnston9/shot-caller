@@ -58,7 +58,7 @@ function ProfilePage() {
     fetchData();
   }, [id, setProfileData]);
 
-  const mainProfile = (
+  const topProfile = (
     <Card>
       <Card.Body className={`${styles.Back2} py-0`} >
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
@@ -71,23 +71,24 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={6}>
-          <h2 style={{ textTransform: 'capitalize'}} className="pt-2" >  {profile?.position}</h2>
+          <h2 style={{ textTransform: 'capitalize'}} className="pt-0 mb-0" >
+            {profile?.position}</h2>
           <Row className={`${styles.Likes} mx-0 `} >
-            <Col xs={4} className="my-2 mx-0 px-0">
+            <Col xs={4} className="my-0 mx-0 px-0">
               <div>{profile?.posts_count}</div>
               <div>Posts</div>
             </Col>
-            <Col xs={4} className="my-2 mx-0 px-0">
+            <Col xs={4} className="my-0 mx-0 px-0">
               <div>{profile?.followers_count}</div>
               <div>Followers</div>
             </Col>
-            <Col xs={4} className="mx-0 px-0 my-2">
+            <Col xs={4} className="mx-0 px-0 my-0">
               <div>{profile?.following_count}</div>
               <div>Following</div>
             </Col>
           </Row>
         </Col>
-        <Col lg={3} className="mt-2 text-lg-right ">
+        <Col lg={3} className="mt-1 pb-1 text-lg-right ">
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
@@ -112,7 +113,7 @@ function ProfilePage() {
     </Card>
   );
 
-  const mainProfilePosts = (
+  const posts = (
     <>
       <h2 style={{ textTransform: 'capitalize'}} className="my-3 text-center"> Posts</h2>
       {profilePosts.results.length ? (
@@ -128,7 +129,7 @@ function ProfilePage() {
       ) : (
         <Asset
           src={NoResults}
-          message={`No results found, ${profile?.owner} hasn't posted yet.`}
+          message={`${profile?.owner.toUpperCase()} hasn't posted yet.`}
         />
       )}
     </>
@@ -147,8 +148,8 @@ function ProfilePage() {
         <div className={appStyles.Content}>
           {hasLoaded ? (
             <>
-              {mainProfile}
-              {mainProfilePosts}
+              {topProfile}
+              {posts}
             </>
           ) : (
             <Asset spinner />

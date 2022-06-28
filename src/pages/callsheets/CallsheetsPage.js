@@ -84,7 +84,7 @@ const CallsheetsPage = ({ filter="" }) => {
         </Col>
         </Row>
         {/* callsheets */}
-        <Row className="h-100 mt-3 mb-5">
+        <Row className="h-100 mt-3 mb-5 mx-2">
         {hasLoaded ? (
             <>
         {callsheets.results.length ? (

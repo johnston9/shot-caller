@@ -121,7 +121,7 @@ const PostTop = (props) => {
           <Card className={styles.PostTop} >
           {/* d-flex align-items-center justify-content-center */}
                 <Card.Body className="py-0 px-0">
-                <Row className="d-flex align-items-center py-0 my-0">
+                <Row className="d-flex align-items-center pt-0 pb-0 my-0">
                     <Col xs={12} lg={6} >
                       <Row>
                         <Col xs={12} sm={8} className="d-flex align-items-center 
@@ -217,15 +217,15 @@ const PostTop = (props) => {
                     </Col>  
                     <Col xs={12} lg={6} > 
                     <Link  to={`/posts/${id}`} > 
-                    <Row className={`${styles.Content} my-2 ml-0 mr-3`}>   
-                      <Col className={`text-center py-2`} 
+                    <Row className={`${styles.Content} my-2 ml-0 mx-2`}>   
+                      <Col className={`${styles.Content1} py-sm-2 text-center`}
                       sm={7} xs={12} >
                       {departments && 
                           <span style={{ textTransform: 'capitalize'}} >S {number} - {departments} </span>} 
                           {cat && <span className={`py-1`}  
                         style={{ textTransform: 'capitalize'}} >- {cat}. </span> }  
                       </Col>
-                      <Col className={`${styles.Content2} py-2 text-center`} xs={12} sm={5}>
+                      <Col className={`${styles.Content2} py-sm-2 text-center`} xs={12} sm={5}>
                       {title && <span style={{ fontStyle: 'italic' }}>{title15}</span>}
                       </Col>
                     </Row>

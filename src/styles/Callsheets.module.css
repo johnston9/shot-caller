@@ -9,22 +9,23 @@ p {
 /* CallsheetTop */
 
 .Top {
-  background-color: #112533;
+  background-color: #1ea7ae;
   color: #fff;
 }
 
 .Top:hover {
-  background-color: #405766;
+  background-color: #27c6cf;
   color: #fff;
 }
 
 .Inner {
-  background-color: #0b3d63;
-  color: #fafafa;
+  background-color: #fafafa;
+  color: #000;
 }
 
 .Top:hover .Inner {
-  background-color: #112533;
+  background-color: #27c6cf;
+  color: fff;
 }
 
 .BodyColor {
