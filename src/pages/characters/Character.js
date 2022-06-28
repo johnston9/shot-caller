@@ -10,7 +10,7 @@ import { PostDropdown } from '../../components/PostDropdown';
 import { useSetCharacterContext } from '../../contexts/CharLocatContex';
 
 const Character = (props) => {
-    // useRedirect("loggedOut");
+    useRedirect("loggedOut");
     const setCharacter = useSetCharacterContext();
     const { number,
             role,

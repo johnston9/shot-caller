@@ -8,7 +8,7 @@ import Character from './Character';
 import TopBox from '../../components/TopBox';
 
 const CharacterPage = () => {
-    // useRedirect("loggedOut");
+    useRedirect("loggedOut");
     const { id } = useParams();
     const [character, setCharacter] = useState({ results: [] });
     const history = useHistory();

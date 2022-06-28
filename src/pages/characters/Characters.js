@@ -20,7 +20,7 @@ import TopBox from "../../components/TopBox";
 import CharacterTop from "./CharacterTop";
 
 const Characters = ({message}) => {
-    // useRedirect("loggedOut");
+    useRedirect("loggedOut");
   const [characters, setCharacters] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
