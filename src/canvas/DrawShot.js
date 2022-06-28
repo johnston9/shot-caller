@@ -44,7 +44,7 @@ const Shotlist = () => {
         contextRef.current.stroke();
     }
   return (
-    <div>Shotlist12
+    <div>Shotlist123
         <canvas 
         onMouseDown={startDraw}
         onMouseUp={endDraw}
