@@ -25,6 +25,7 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
         try {
           const { data } = await axiosReq.get(`/scenes/`);
           setScenes(data);
+          console.log("Scenes");
         } catch(err) {
           console.log(err);
         }

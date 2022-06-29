@@ -13,6 +13,7 @@ export const useSetLocationContext = () => useContext(SetLocationContext);
 export const CharacterLocationProvider = ({ children }) => {
     const [character, setCharacter] = useState("");
     const [location, setLocation] = useState("");
+    console.log("CharLoc");
   
     return (
       <CharacterContext.Provider value={character}>

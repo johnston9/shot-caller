@@ -9,7 +9,8 @@ export const RedirectSign = (userAuthStatus) => {
     const handleMount = async () => {
       try {
         const data = await axios.post("/dj-rest-auth/token/refresh/");
-        console.log(data)
+        console.log(data);
+        console.log("RedirectSign");
         // if user is logged in
         if (userAuthStatus === "loggedIn") {
           history.push("/");

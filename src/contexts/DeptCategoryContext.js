@@ -31,6 +31,7 @@ export const DeptCategoryProvider = ({ children }) => {
   const [dept, setDept] = useState("");
   const [category, setCategory] = useState("");
   const [deptGeneral, setDeptGeneral] = useState("");
+  console.log("DeptCat");
 
   return (
     <SceneContext.Provider value={sceneId}>
