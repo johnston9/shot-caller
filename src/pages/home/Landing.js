@@ -22,7 +22,7 @@ const Landing = () => {
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER `} />
           {currentUser ? (<p className={`${styles.White}`}>
-           {currentUser.name}
+           {currentUser.username}
           </p>) : ("") }
           {crew ? (<p className={`${styles.White}`}>
            {crew.production_company}
