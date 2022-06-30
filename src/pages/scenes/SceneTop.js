@@ -41,7 +41,11 @@ const SceneTop = (props) => {
                     <Col xs={10} className='mx-0 px-0 text-center'>
                     <Link to={`/scenes/${id}`}>
                     <div>
-                    <h5 className={` ${styles.Titlelist }`}>Scene {number} 
+                    <h5 className={`d-none d-md-block ${styles.Titlelist }`}>
+                      Scene {number} 
+                    </h5>
+                    <h5 className={`d-md-none  ${styles.Titlelist }`}>
+                      {number} 
                     </h5>
                     </div>
                     </Link>

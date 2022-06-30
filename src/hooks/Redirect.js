@@ -16,5 +16,5 @@ export const useRedirect = (userAuthStatus) => {
     };
 
     handleMount();
-  }, [currentUser]);
+  }, [currentUser, userAuthStatus]);
 };
