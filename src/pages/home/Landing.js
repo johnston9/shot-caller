@@ -10,13 +10,23 @@ import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const Landing = () => {
   const currentUser = useCurrentUser();
+  const crewInfoOne = useCrewInfoContext();
+    const crew = crewInfoOne.results[0];
+  console.log(currentUser)
   const admin = false;
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
-          <TopBox title="SHOT CALLER" />
+          <TopBox title={`SHOT CALLER `} />
+          {currentUser ? (<p className={`${styles.White}`}>
+           {currentUser.name}
+          </p>) : ("") }
+          {crew ? (<p className={`${styles.White}`}>
+           {crew.production_company}
+          </p>) : ("") }
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
               xs={1} md={1}

@@ -18,6 +18,7 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { useRedirect } from "../../hooks/Redirect";
+import TopBox from "../../components/TopBox";
 
 const ProfileEditForm = () => {
   useRedirect("loggedOut")
@@ -133,20 +134,26 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      <Row>
+        <Col className="mt-3">
+        <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-3`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 px-3`} type="submit">
+        Submit
       </Button>
+        </Col>
+      </Row>
     </>
   );
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Container>
+    <TopBox title="Profile"/>
+    <Form className="mt-3" onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
@@ -192,6 +199,7 @@ const ProfileEditForm = () => {
         </Col>
       </Row>
     </Form>
+    </Container>
   )
 }
 
