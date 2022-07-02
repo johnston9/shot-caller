@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import { useCurrentUser, useToken } from "../../contexts/CurrentUserContext";
+import { useCurrentUser, useRedirect, useToken } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import {shouldRefreshToken } from "../../utils/utils";
 import { useHistory } from "react-router-dom";
@@ -22,19 +22,23 @@ const Landing = () => {
   const history = useHistory();
   const token = useToken();
   console.log(token);
+  const redirect = useRedirect();
 
   const admin = false;
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER`} />
           {token ? (<p className={`${styles.White}`}>
-           {token.access}mmm
+           {token.access}ttttt
           </p>) : ("") }
           {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
           </p>) : ("") }
           {crew ? (<p className={`${styles.White}`}>
            {crew.production_company}
+          </p>) : ("") }
+          {redirect ? (<p className={`${styles.White}`}>
+           {redirect.access}rrrrr
           </p>) : ("") }
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"

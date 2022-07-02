@@ -16,13 +16,13 @@ import { Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
-import { useRedirect } from "../../hooks/Redirect";
 import SceneCreateCostumes from "./SceneCreateCostumes";
 import NewCharacter from "./NewCharacter";
 import NewLocation from "./NewLocation";
 import { useCharactersContext, useLocationsContext, useSetCharactersContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 import Important from "./Important";
 import Info from "./Info";
+import useRedirect from "../../hooks/Redirect";
 
 function SceneCreateForm({topbox}) {
   useRedirect("loggedOut");

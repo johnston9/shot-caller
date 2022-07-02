@@ -63,11 +63,7 @@ function ProfilePage() {
       <Card.Body className={`${styles.Back2} py-0`} >
         {currentUser?.username}
         <p>{profile?.owner} </p>
-        {profile?.is_owner && <p>profile is owner</p> }
-        {profile?.owner && <p>profile owner</p> }
-      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       {is_owner && <ProfileEditDropdown id={profile?.id} />}
-      {is_owner && <p>is owner</p> }
       <Row className="text-center">
       <Col lg={3} className="text-lg-left">
           <Image

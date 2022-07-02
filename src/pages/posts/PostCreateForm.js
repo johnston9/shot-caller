@@ -15,8 +15,8 @@ import Alert from "react-bootstrap/Alert";
 
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
+import useRedirect from "../../hooks/Redirect";
 
 function PostCreateForm({sceneId, number, dept, category, setShow }) {
   useRedirect("loggedOut")

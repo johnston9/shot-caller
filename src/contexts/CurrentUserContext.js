@@ -4,6 +4,11 @@ import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
 import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
+export const RedirectContext = createContext();
+export const SetRedirectContext = createContext();
+export const useRedirect = () => useContext(RedirectContext);
+export const useSetRedirect = () => useContext(SetRedirectContext);
+
 export const TokenContext = createContext();
 export const SetTokenContext = createContext();
 export const useToken = () => useContext(TokenContext);
@@ -22,6 +27,7 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [token, setToken] = useState(null);
+  const [redirect, setRedirect] = useState(null);
   const history = useHistory();
 
   const handleMount = async () => {
@@ -135,7 +141,11 @@ export const CurrentUserProvider = ({ children }) => {
       <SetCurrentUserContext.Provider value={setCurrentUser}>
       <TokenContext.Provider value={token}>
       <SetTokenContext.Provider value={setToken}>
+      <RedirectContext.Provider value={redirect}>
+      <SetRedirectContext.Provider value={setRedirect}>
         {children}
+        </SetRedirectContext.Provider>
+      </RedirectContext.Provider>
       </SetTokenContext.Provider>
     </TokenContext.Provider>
     </SetCurrentUserContext.Provider>
