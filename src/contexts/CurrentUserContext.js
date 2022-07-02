@@ -26,6 +26,13 @@ export const CurrentUserProvider = ({ children }) => {
     handleMount();
   }, []);
 
+  useMemo(() => {
+        if (shouldRefreshToken()) {
+            console.log("token here")
+          } 
+      }
+, [history]);
+
   // useMemo(() => {
   //   axiosReq.interceptors.request.use(
   //     async (config) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
@@ -12,19 +12,34 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
+import { getRefreshToken, shouldRefreshToken } from "../../utils/utils";
+import { useHistory } from "react-router-dom";
 
 
 const Home = () => {
     useRedirect("loggedOut");
+    const token = getRefreshToken();
+    console.log(token);
     const admin = true;
     const currentUser = useCurrentUser();
     const crewInfoOne = useCrewInfoContext();
     const crew = crewInfoOne.results[0];
     console.log(currentUser)
+    const history = useHistory();
+
+    useMemo(() => {
+      if (shouldRefreshToken()) {
+          console.log("token here")
+        } 
+    }
+  , [history]);
 
     return (
       <Container className={`px-2  ${styles.Background}`}>
       <TopBox title="SHOT CALLER" />
+      {token ? (<p className={`${styles.White}`}>
+           {token}
+          </p>) : ("") }
       {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
           </p>) : ("") }

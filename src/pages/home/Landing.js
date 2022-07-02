@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
@@ -11,16 +11,37 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
+import { getRefreshToken, gettoken, shouldRefreshToken } from "../../utils/utils";
+import { useHistory } from "react-router-dom";
 
 const Landing = () => {
+  const token = getRefreshToken();
+    console.log(token);
+    const tokenreal = gettoken();
+    console.log(tokenreal);
   const currentUser = useCurrentUser();
   const crewInfoOne = useCrewInfoContext();
     const crew = crewInfoOne.results[0];
-  console.log(currentUser)
+  console.log(currentUser);
+  const history = useHistory();
+
+  useMemo(() => {
+    if (shouldRefreshToken()) {
+        console.log("token here")
+      } 
+  }
+, [history]);
+
   const admin = false;
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
-          <TopBox title={`SHOT CALLER `} />
+          <TopBox title={`SHOT CALLER 2 `} />
+          {tokenreal ? (<p className={`${styles.White}`}>
+           {tokenreal}
+          </p>) : ("") }
+          {token ? (<p className={`${styles.White}`}>
+           {token}
+          </p>) : ("") }
           {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
           </p>) : ("") }

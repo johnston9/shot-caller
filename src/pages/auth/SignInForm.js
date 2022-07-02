@@ -17,11 +17,13 @@ import TopBox from "../../components/TopBox";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { RedirectSign } from "../../hooks/RedirectSign";
-import { setTokenTimestamp } from "../../utils/utils";
+import { getRefreshToken, setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
   RedirectSign("loggedIn");
+  const token = getRefreshToken();
+  console.log(token);
 
   const [signInData, setSignInData] = useState({
     username: "",
