@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { axiosRes } from "../api/axiosDefaults";
 import { useSetRedirect } from "../contexts/CurrentUserContext";
 
 export const useRedirect = (userAuthStatus) => {
