@@ -17,9 +17,9 @@ export const RedirectSign = (userAuthStatus) => {
         }
       } catch (err) {
         // if user is not logged in
-        if (userAuthStatus === "loggedOut") {
-          history.push("/");
-        }
+        // if (userAuthStatus === "loggedOut") {
+        //   history.push("/");
+        // }
       }
     };
 

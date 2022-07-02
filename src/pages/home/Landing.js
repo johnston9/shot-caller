@@ -38,7 +38,7 @@ const Landing = () => {
            {crew.production_company}
           </p>) : ("") }
           {redirect ? (<p className={`${styles.White}`}>
-           {redirect.access}rrrrr
+           {redirect.username}rrrrr
           </p>) : ("") }
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
