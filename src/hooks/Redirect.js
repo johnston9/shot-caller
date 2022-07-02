@@ -12,7 +12,7 @@ export const useRedirect = (userAuthStatus) => {
     const handleMount = async () => {
       try {
         // const {data} = await axios.post("/dj-rest-auth/token/refresh/");
-        const { data } = await axiosRes.get("dj-rest-auth/user/");
+        const { data } = await axios.get("dj-rest-auth/user/");
         setRedirect(data);
         console.log(data);
         console.log("Redirect");
