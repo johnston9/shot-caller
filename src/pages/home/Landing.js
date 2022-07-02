@@ -21,13 +21,7 @@ const Landing = () => {
   console.log(currentUser);
   const history = useHistory();
   const token = useToken();
-
-  useMemo(() => {
-    if (shouldRefreshToken()) {
-        console.log("token here")
-      } 
-  }
-, [history]);
+  console.log(token);
 
   const admin = false;
     return (

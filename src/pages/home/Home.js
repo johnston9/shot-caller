@@ -27,12 +27,12 @@ const Home = () => {
     console.log(currentUser)
     const history = useHistory();
 
-    useMemo(() => {
-      if (shouldRefreshToken()) {
-          console.log("token here")
-        } 
-    }
-  , [history]);
+  //   useMemo(() => {
+  //     if (shouldRefreshToken()) {
+  //         console.log("token here")
+  //       } 
+  //   }
+  // , [history]);
 
     return (
       <Container className={`px-2  ${styles.Background}`}>
