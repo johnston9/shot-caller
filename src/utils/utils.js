@@ -49,10 +49,8 @@ export const unfollowHelper = (profile, clickedProfile) => {
 export const setTokenTimestamp = (data) => {
   const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
   const refreshtoken = jwtDecode(data?.refresh_token);
-  localStorage.setItem("refreshtoken", refreshtoken);
   localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
   console.log(`timestamp set ${refreshTokenTimestamp} ` )
-  console.log(refreshtoken)
 };
 
 export const shouldRefreshToken = () => {
@@ -63,9 +61,6 @@ export const getRefreshToken = () => {
   return localStorage.getItem("refreshTokenTimestamp");
 };
 
-export const gettoken = () => {
-  return localStorage.getItem("gettoken");
-};
 
 export const removeTokenTimestamp = () => {
   localStorage.removeItem("refreshTokenTimestamp");

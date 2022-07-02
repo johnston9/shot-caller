@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser, useToken } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import { getRefreshToken, shouldRefreshToken } from "../../utils/utils";
 import { useHistory } from "react-router-dom";
@@ -18,7 +18,7 @@ import { useHistory } from "react-router-dom";
 
 const Home = () => {
     useRedirect("loggedOut");
-    const token = getRefreshToken();
+    const token = useToken();
     console.log(token);
     const admin = true;
     const currentUser = useCurrentUser();
@@ -38,7 +38,7 @@ const Home = () => {
       <Container className={`px-2  ${styles.Background}`}>
       <TopBox title="SHOT CALLER" />
       {token ? (<p className={`${styles.White}`}>
-           {token}
+           {token.access}mmm
           </p>) : ("") }
       {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
