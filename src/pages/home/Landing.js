@@ -22,15 +22,15 @@ const Landing = () => {
   console.log(token);
   const redirect = useRedirect();
   const signintoken = getRefreshToken();
-  // const signindata = useSignin();
+  const signindata = useSignin();
 
   const admin = false;
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER`} />
-          {/* {signindata ? (<p className={`${styles.White}`}>
-           {signindata.access_token}signindata
-           </p>) : ("") } */}
+          {signindata ? (<p className={`${styles.White}`}>
+           {signindata} inter 
+           </p>) : ("") }
           {signintoken ? (<p className={`${styles.White}`}>
            {signintoken}signintoken
            </p>) : ("") }

@@ -137,9 +137,10 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
       history.push(`/posts/${data.id}`);
     } catch (err) {
       console.log(err);
-      if (err.response?.status !== 401) {
         setErrors(err.response?.data);
-      }
+      // if (err.response?.status !== 401) {
+      //   setErrors(err.response?.data);
+      // }
     }
   }
 
@@ -203,6 +204,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
     <Form className="mt-3 px-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="">
+        {errors}
         {/* <p style={{textTransform: 'capitalize'}}>Scene {number} - {dept} Dept {category} </p>
         <p>SceneId {sceneId}</p> */}
           {textFields}
