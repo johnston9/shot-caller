@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
@@ -12,8 +12,6 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { useCurrentUser, useToken } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
-import { getRefreshToken, shouldRefreshToken } from "../../utils/utils";
-import { useHistory } from "react-router-dom";
 
 
 const Home = () => {
@@ -25,7 +23,6 @@ const Home = () => {
     const crewInfoOne = useCrewInfoContext();
     const crew = crewInfoOne.results[0];
     console.log(currentUser)
-    const history = useHistory();
 
   //   useMemo(() => {
   //     if (shouldRefreshToken()) {

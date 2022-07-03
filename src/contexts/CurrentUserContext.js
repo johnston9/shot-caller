@@ -49,9 +49,12 @@ export const CurrentUserProvider = ({ children }) => {
         if (shouldRefreshToken()) {
           try {
             const {data} = await axios.post("/dj-rest-auth/token/refresh/");
-            setToken(data);
+            // setToken(data);
+            setToken("used redirect");
             console.log(data);
+            console.log("used redirect")
           } catch (err) {
+            setRedirect(err);
             console.log(err);
               }
         }        

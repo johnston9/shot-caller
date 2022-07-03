@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
@@ -11,15 +11,12 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { useCurrentUser, useRedirect, useToken } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
-import {shouldRefreshToken } from "../../utils/utils";
-import { useHistory } from "react-router-dom";
 
 const Landing = () => {
   const currentUser = useCurrentUser();
   const crewInfoOne = useCrewInfoContext();
     const crew = crewInfoOne.results[0];
   console.log(currentUser);
-  const history = useHistory();
   const token = useToken();
   console.log(token);
   const redirect = useRedirect();
@@ -38,7 +35,7 @@ const Landing = () => {
            {crew.production_company}
           </p>) : ("") }
           {redirect ? (<p className={`${styles.White}`}>
-           {redirect.username}rrrrr
+           {redirect}rrrrr
           </p>) : ("") }
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
