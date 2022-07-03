@@ -26,7 +26,7 @@ const Landing = () => {
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER`} />
           {token ? (<p className={`${styles.White}`}>
-           {token.access}ttttt
+           {token}ttttt
           </p>) : ("") }
           {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}

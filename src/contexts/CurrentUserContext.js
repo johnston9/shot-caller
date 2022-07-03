@@ -26,7 +26,7 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState("");
   const [redirect, setRedirect] = useState(null);
   const history = useHistory();
 
@@ -50,9 +50,9 @@ export const CurrentUserProvider = ({ children }) => {
           try {
             const {data} = await axios.post("/dj-rest-auth/token/refresh/");
             // setToken(data);
-            setToken("used redirect");
+            setToken("used inter redirect");
             console.log(data);
-            console.log("used redirect")
+            console.log("used inter redirect")
           } catch (err) {
             setRedirect(err);
             console.log(err);
