@@ -204,7 +204,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
     <Form className="mt-3 px-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="">
-    {errors?.title?.map((message, idx) => (
+    {errors?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
