@@ -49,19 +49,13 @@ export const CurrentUserProvider = ({ children }) => {
         if (shouldRefreshToken()) {
           try {
             const {data} = await axios.post("/dj-rest-auth/token/refresh/");
-            // setToken(data);
-            setToken("used inter");
-            console.log(data);
-            console.log("used inter")
           } catch (err) {
-            setToken("inter err");
             console.log(err);
               }
         }        
         return config;
       },
       (err) => {
-        setRedirect(`inter req 3 error `);
         console.log(`inter req 3 error `);
         return Promise.reject(err);
       }
@@ -74,15 +68,13 @@ export const CurrentUserProvider = ({ children }) => {
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
-            setRedirect(`inter res 2 error `);
-              console.log(`inter res 2 error `);
-            // setCurrentUser((prevCurrentUser) => {
-            //   if (prevCurrentUser) {
-            //     history.push("/signin");
-            //   }
-            //   return null;
-            // });
-            // removeTokenTimestamp();
+            setCurrentUser((prevCurrentUser) => {
+              if (prevCurrentUser) {
+                history.push("/signin");
+              }
+              return null;
+            });
+            removeTokenTimestamp();
           }
           return axios(err.config);
         }

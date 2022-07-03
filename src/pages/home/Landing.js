@@ -25,7 +25,7 @@ const Landing = () => {
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER`} />
-          {token ? (<p className={`${styles.White}`}>
+          {/* {token ? (<p className={`${styles.White}`}>
            {token}ttttt
           </p>) : ("") }
           {currentUser ? (<p className={`${styles.White}`}>
@@ -36,7 +36,7 @@ const Landing = () => {
           </p>) : ("") }
           {redirect ? (
             {redirect}
-          ) : ("") }
+          ) : ("") } */}
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
               xs={1} md={1}
