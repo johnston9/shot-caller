@@ -9,8 +9,9 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import { useCurrentUser, useRedirect, useToken } from "../../contexts/CurrentUserContext";
+import { useCurrentUser, useRedirect, useSignin, useToken } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
+import { getRefreshToken } from "../../utils/utils";
 
 const Landing = () => {
   const currentUser = useCurrentUser();
@@ -20,13 +21,21 @@ const Landing = () => {
   const token = useToken();
   console.log(token);
   const redirect = useRedirect();
+  const signintoken = getRefreshToken();
+  // const signindata = useSignin();
 
   const admin = false;
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER`} />
-          {/* {token ? (<p className={`${styles.White}`}>
-           {token}ttttt
+          {/* {signindata ? (<p className={`${styles.White}`}>
+           {signindata.access_token}signindata
+           </p>) : ("") } */}
+          {signintoken ? (<p className={`${styles.White}`}>
+           {signintoken}signintoken
+           </p>) : ("") }
+          {token ? (<p className={`${styles.White}`}>
+           {token.access}inter-refresh
           </p>) : ("") }
           {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
@@ -36,7 +45,7 @@ const Landing = () => {
           </p>) : ("") }
           {redirect ? (
             {redirect}
-          ) : ("") } */}
+          ) : ("") }
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
               xs={1} md={1}

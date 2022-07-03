@@ -4,6 +4,11 @@ import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
 import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
+// export const SigninContext = createContext();
+// export const SetSigninContext = createContext();
+// export const useSignin = () => useContext(SigninContext);
+// export const useSetSignin = () => useContext(SetSigninContext);
+
 export const RedirectContext = createContext();
 export const SetRedirectContext = createContext();
 export const useRedirect = () => useContext(RedirectContext);
@@ -26,8 +31,9 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [token, setToken] = useState("");
-  const [redirect, setRedirect] = useState("");
+  const [token, setToken] = useState(null);
+  const [redirect, setRedirect] = useState(null);
+  // const [signin, setSignin] = useState(null);
   const history = useHistory();
 
   const handleMount = async () => {
@@ -49,6 +55,8 @@ export const CurrentUserProvider = ({ children }) => {
         if (shouldRefreshToken()) {
           try {
             const {data} = await axios.post("/dj-rest-auth/token/refresh/");
+            setToken(data);
+            console.log(data);
           } catch (err) {
             console.log(err);
               }
@@ -140,7 +148,11 @@ export const CurrentUserProvider = ({ children }) => {
       <SetTokenContext.Provider value={setToken}>
       <RedirectContext.Provider value={redirect}>
       <SetRedirectContext.Provider value={setRedirect}>
+      {/* <SigninContext.Provider value={signin}>
+      <SetSigninContext.Provider value={setSignin}> */}
         {children}
+      {/* </SetSigninContext.Provider>
+      </SigninContext.Provider> */}
         </SetRedirectContext.Provider>
       </RedirectContext.Provider>
       </SetTokenContext.Provider>

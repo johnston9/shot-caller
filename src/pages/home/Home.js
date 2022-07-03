@@ -12,6 +12,7 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { useCurrentUser, useToken } from "../../contexts/CurrentUserContext";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
+import { getRefreshToken } from "../../utils/utils";
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
     const crewInfoOne = useCrewInfoContext();
     const crew = crewInfoOne.results[0];
     console.log(currentUser)
+    const signintoken = getRefreshToken();
 
   //   useMemo(() => {
   //     if (shouldRefreshToken()) {
@@ -34,15 +36,18 @@ const Home = () => {
     return (
       <Container className={`px-2  ${styles.Background}`}>
       <TopBox title="SHOT CALLER" />
-      {/* {token ? (<p className={`${styles.White}`}>
-           {token}mmm
+        {signintoken ? (<p className={`${styles.White}`}>
+           {signintoken}signintoken
+           </p>) : ("") }
+        {token ? (<p className={`${styles.White}`}>
+           {token.access}inter-refresh
           </p>) : ("") }
-      {currentUser ? (<p className={`${styles.White}`}>
+        {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
           </p>) : ("") }
-          {crew ? (<p className={`${styles.White}`}>
+        {crew ? (<p className={`${styles.White}`}>
            {crew.production_company}
-          </p>) : ("") } */}
+          </p>) : ("") }
         <Row className={`my-3 ${styles.Row}`}>
         <Col className="my-3 pr-0 pl-3 pl-md-4"
           xs={1} md={1}

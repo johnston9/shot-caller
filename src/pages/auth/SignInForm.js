@@ -22,8 +22,7 @@ import { getRefreshToken, setTokenTimestamp } from "../../utils/utils";
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
   useRedirectSign("loggedIn");
-  const token = getRefreshToken();
-  console.log(token);
+  // const setSignin = useSetSignin();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -46,9 +45,11 @@ const SignInForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const {data} = await axios.post("/dj-rest-auth/login/", signInData)
+      const {data} = await axios.post("/dj-rest-auth/login/", signInData);
+      console.log(data);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
+      // setSignin(data);
       history.push("/home");
     } catch (err) {
       setErrors(err.response?.data);
