@@ -9,7 +9,6 @@ export const useRedirect = (userAuthStatus) => {
 
   useEffect(() => {
     const handleMount = async () => {
-      setRedirect(user.username);
       console.log(user.username);
       console.log(userAuthStatus);
       if (!user) {
