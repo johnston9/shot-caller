@@ -204,11 +204,6 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
     <Form className="mt-3 px-3" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="">
-    {errors?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
         {/* <p style={{textTransform: 'capitalize'}}>Scene {number} - {dept} Dept {category} </p>
         <p>SceneId {sceneId}</p> */}
           {textFields}
