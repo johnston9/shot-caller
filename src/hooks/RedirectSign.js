@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-export const RedirectSign = (userAuthStatus) => {
+export const useRedirectSign = (userAuthStatus) => {
   const history = useHistory();
 
   useEffect(() => {
@@ -27,4 +27,4 @@ export const RedirectSign = (userAuthStatus) => {
   }, [history, userAuthStatus]);
 };
 
-export default RedirectSign
+export default useRedirectSign

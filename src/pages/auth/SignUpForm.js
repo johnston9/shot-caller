@@ -15,10 +15,10 @@ import Container from "react-bootstrap/Container";
 
 import TopBox from "../../components/TopBox";
 import axios from "axios";
-import { RedirectSign } from "../../hooks/RedirectSign";
+import { useRedirectSign } from "../../hooks/RedirectSign";
 
 const SignUpForm = () => { 
-  RedirectSign("loggedIn");
+  useRedirectSign("loggedIn");
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",

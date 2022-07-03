@@ -35,7 +35,7 @@ const Home = () => {
       <Container className={`px-2  ${styles.Background}`}>
       <TopBox title="SHOT CALLER" />
       {token ? (<p className={`${styles.White}`}>
-           {token.access}mmm
+           {token}mmm
           </p>) : ("") }
       {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}

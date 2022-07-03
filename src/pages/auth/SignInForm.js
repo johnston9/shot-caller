@@ -16,12 +16,12 @@ import Container from "react-bootstrap/Container";
 import TopBox from "../../components/TopBox";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-import { RedirectSign } from "../../hooks/RedirectSign";
+import { useRedirectSign } from "../../hooks/RedirectSign";
 import { getRefreshToken, setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
-  RedirectSign("loggedIn");
+  useRedirectSign("loggedIn");
   const token = getRefreshToken();
   console.log(token);
 

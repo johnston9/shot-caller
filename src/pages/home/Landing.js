@@ -19,13 +19,13 @@ const Landing = () => {
   console.log(currentUser);
   const token = useToken();
   console.log(token);
-  // const redirect = useRedirect();
+  const redirect = useRedirect();
 
   const admin = false;
     return (
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER`} />
-          {/* {token ? (<p className={`${styles.White}`}>
+          {token ? (<p className={`${styles.White}`}>
            {token}ttttt
           </p>) : ("") }
           {currentUser ? (<p className={`${styles.White}`}>
@@ -34,9 +34,9 @@ const Landing = () => {
           {crew ? (<p className={`${styles.White}`}>
            {crew.production_company}
           </p>) : ("") }
-          {redirect ? (<p className={`${styles.White}`}>
-           {redirect}rrrrr
-          </p>) : ("") } */}
+          {redirect ? (
+            {redirect}
+          ) : ("") }
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
               xs={1} md={1}
