@@ -1,16 +1,13 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { useCurrentUser, useSetRedirect } from "../contexts/CurrentUserContext";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 export const useRedirect = (userAuthStatus) => {
   const history = useHistory();
-  const setRedirect = useSetRedirect();
   const user = useCurrentUser();
 
   useEffect(() => {
     const handleMount = async () => {
-      console.log(user.username);
-      console.log(userAuthStatus);
       if (!user) {
         history.push("/");
       }

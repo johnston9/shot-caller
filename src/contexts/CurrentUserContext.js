@@ -43,52 +43,52 @@ export const CurrentUserProvider = ({ children }) => {
     handleMount();
   }, []);
 
-  useMemo(() => {
-    axiosReq.interceptors.request.use(
-      async (config) => {
-        if (shouldRefreshToken()) {
-          try {
-            const {data} = await axios.post("/dj-rest-auth/token/refresh/");
-            // setToken(data);
-            setToken("used inter");
-            console.log(data);
-            console.log("used inter")
-          } catch (err) {
-            setToken("inter err");
-            setRedirect(err);
-            console.log(err);
-              }
-        }        
-        return config;
-      },
-      (err) => {
-        console.log(`inter req 3 error `);
-        return Promise.reject(err);
-      }
-    );
+  // useMemo(() => {
+  //   axiosReq.interceptors.request.use(
+  //     async (config) => {
+  //       if (shouldRefreshToken()) {
+  //         try {
+  //           const {data} = await axios.post("/dj-rest-auth/token/refresh/");
+  //           // setToken(data);
+  //           setToken("used inter");
+  //           console.log(data);
+  //           console.log("used inter")
+  //         } catch (err) {
+  //           setToken("inter err");
+  //           setRedirect(err);
+  //           console.log(err);
+  //             }
+  //       }        
+  //       return config;
+  //     },
+  //     (err) => {
+  //       console.log(`inter req 3 error `);
+  //       return Promise.reject(err);
+  //     }
+  //   );
 
-    axiosRes.interceptors.response.use(
-      (response) => response,
-      async (err) => {
-        if (err.response?.status === 401) {
-          try {
-            await axios.post("/dj-rest-auth/token/refresh/");
-          } catch (err) {
-            setCurrentUser((prevCurrentUser) => {
-              if (prevCurrentUser) {
-                history.push("/signin");
-              }
-              console.log(`inter res 2 error `);
-              return null;
-            });
-            removeTokenTimestamp();
-          }
-          return axios(err.config);
-        }
-        return Promise.reject(err);
-      }
-    );
-  }, [history]);
+  //   axiosRes.interceptors.response.use(
+  //     (response) => response,
+  //     async (err) => {
+  //       if (err.response?.status === 401) {
+  //         try {
+  //           await axios.post("/dj-rest-auth/token/refresh/");
+  //         } catch (err) {
+  //           setCurrentUser((prevCurrentUser) => {
+  //             if (prevCurrentUser) {
+  //               history.push("/signin");
+  //             }
+  //             console.log(`inter res 2 error `);
+  //             return null;
+  //           });
+  //           removeTokenTimestamp();
+  //         }
+  //         return axios(err.config);
+  //       }
+  //       return Promise.reject(err);
+  //     }
+  //   );
+  // }, [history]);
 
   // useMemo(() => {
   //   axiosReq.interceptors.request.use(
