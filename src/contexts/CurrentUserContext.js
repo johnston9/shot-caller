@@ -27,6 +27,7 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 // npm install -g heroku heroku login -i
 // davejohnston9@gmail.com
 // Chasing9%
+// heroku logs --tail
 // git push heroku main
 
 export const CurrentUserProvider = ({ children }) => {

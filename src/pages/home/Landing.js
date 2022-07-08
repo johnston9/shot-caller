@@ -29,13 +29,13 @@ const Landing = () => {
         <Container className={`px-2 ${styles.Background} px-0`}>
           <TopBox title={`SHOT CALLER`} />
           {signindata ? (<p className={`${styles.White}`}>
-           {signindata} inter 
+           {signindata} intercept works 
            </p>) : ("") }
           {signintoken ? (<p className={`${styles.White}`}>
-           {signintoken}signintoken
+           {signintoken} signin token
            </p>) : ("") }
           {token ? (<p className={`${styles.White}`}>
-           {token.access}inter-refresh
+           {token.access} inter-refresh
           </p>) : ("") }
           {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
