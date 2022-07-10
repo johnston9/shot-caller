@@ -59,6 +59,7 @@ import IndexCardsPage from './pages/indexcards/IndexCardsPage';
 import IndexShotsPage from './pages/indexshots/IndexShotsPage';
 import SeriesPage from './pages/indexshots/SeriesPage';
 import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
+import Map from './components/Map';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -77,6 +78,8 @@ function App() {
       <NavBar />
       <div className={styles.Main}>
         <Switch>
+        {/* map */}
+        <Route exact path="/map" render={() => <Map />} />
         {/* AUTH / HOME */}
         <Route exact path="/" render={() => <Landing />} />
         <Route exact path="/signin" render={() => <SignInForm />} />

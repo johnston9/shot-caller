@@ -14,6 +14,7 @@ import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import { getRefreshToken } from "../../utils/utils";
 
 const Landing = () => {
+  const mapKey = process.env.REACT_APP_MAP_KEY;
   const currentUser = useCurrentUser();
   const crewInfoOne = useCrewInfoContext();
     const crew = crewInfoOne.results[0];
@@ -26,8 +27,11 @@ const Landing = () => {
 
   const admin = false;
     return (
-        <Container className={`px-2 ${styles.Background} px-0`}>
+        <Container className={`px-2 ${styles.Background}`}>
           <TopBox title={`SHOT CALLER`} />
+          {mapKey ? (<p className={`${styles.White}`}>
+           {mapKey} map key
+           </p>) : ("") }
           {signindata ? (<p className={`${styles.White}`}>
            {signindata} intercept works 
            </p>) : ("") }

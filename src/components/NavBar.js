@@ -41,6 +41,13 @@ const NavBar = () => {
         >
           <i className="navicon fas fa-play"></i>Home
       </NavLink>
+      <NavLink
+          className={`mt-2 pt-2 ${styles.NavLink} `}
+          activeClassName={styles.Active}
+          to="/map"
+        >
+          <i className="navicon fas fa-play"></i>Map
+      </NavLink>
       {/*  workspace */}
       <NavDropdown 
           title={
