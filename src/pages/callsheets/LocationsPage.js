@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import { Image } from 'react-bootstrap';
-import logo from "../../assets/logo2.png";
+import goo_map from "../../assets/goo-map.png";
 import { useState } from 'react';
 import Map from '../../components/Map';
 
@@ -56,11 +56,12 @@ const LocationsPage = ({callsheet, setShow}) => {
             <p className={`mb-0 ${styles.Bold}`} >{basecamp_name}</p>
             <p className='mb-0'>{basecamp_address}</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={4} md={5} >
             <p className='mb-0'>{basecamp_parking_n_notes}</p>
             </Col>
-            <Col className={`mx-0 ${styles.Border}`} xs={1} >
-            <Image src={logo} alt="logo" height="30"
+            <Col className={`mx-0 ${styles.Border}`} xs={2} md={1} >
+            <Image src={goo_map} alt="google maps" height="50"
+            className={` ${styles.Map}`}
              onClick={() => setShowMapBase(showMapBase => !showMapBase)} ></Image>
             </Col>
             </Row>

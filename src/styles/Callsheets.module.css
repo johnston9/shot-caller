@@ -28,6 +28,9 @@ p {
   color: fff;
 }
 
+.Map {
+  cursor: pointer;
+}
 .BodyColor {
   background-color: #f8f8f8;
   height: 40px;
