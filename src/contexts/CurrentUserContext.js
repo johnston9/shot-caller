@@ -29,6 +29,8 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 // Chasing9%
 // heroku logs --tail
 // git push heroku main
+// git rm .env --cached
+// git commit -m "Stopped tracking .env File"
 
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
