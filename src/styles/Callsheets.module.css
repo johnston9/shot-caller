@@ -31,6 +31,7 @@ p {
 .Map {
   cursor: pointer;
 }
+
 .BodyColor {
   background-color: #f8f8f8;
   height: 40px;
@@ -69,7 +70,7 @@ p {
 
 .Close {
   color: rgb(28, 131, 131);
-  padding-right: 30px;
+  padding-right: 5px;
 }
 
 #dropdown-basic-button {

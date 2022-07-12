@@ -46,7 +46,6 @@ function MapPage({address}) {
   const { isLoaded} = useLoadScript({googleMapsApiKey: mapKey,
   libraries: ["places"],
   })
-  const address = "72 Grafton Street, Dublin 1, Ireland"
 
   return (
     <div>

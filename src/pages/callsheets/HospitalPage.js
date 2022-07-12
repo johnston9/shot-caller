@@ -3,31 +3,52 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
+import Map from '../../components/Map';
+import goo_map from "../../assets/goo-map.png";
+import { Image } from 'react-bootstrap';
+import { useState } from 'react';
 
 const HospitalPage = ({callsheet, setShow}) => {
     useRedirect("loggedOut");
+    const [showHosMap, setShowHosMap] = useState(false);
     const {nearest_hospital, hospital_address_line_1,
         hospital_address_line_2, hospital_address_line_3, 
         hospital_address_line_4,} = callsheet;
+    const hospital_address = `${nearest_hospital}, ${hospital_address_line_1}, ${hospital_address_line_2}`;
+    console.log(hospital_address);
 
   return (
     <div>
-        <div className={`mb-3 text-center ${styles.SubTitle }`}>
+        <div className={`mb-3 ${styles.SubTitle }`}>
         <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-        <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >Nearest Hospital </h5>
+        <h5 className={`pl-0 text-center`} style={{ textTransform: 'uppercase'}} >Nearest Hospital </h5>
         </div>
         <div >
             <Row className='mb-1'>
-              <Col xs={{span: 10, offset: 0}}>
+              <Col xs={9}>
+              {hospital_address}
               <p className={`mb-0 ${styles.Bold} `} >Nearest Hospital: </p>
               <h5 className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{nearest_hospital} </h5>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_1} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_2} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_3} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_4} </p>
-              {/* <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>Phone {company_phone} </p>
-              <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>Email {company_email} </p> */}
               </Col>
+              <Col className={`mx-0 d-flex justify-content-center`} xs={3} >
+              <p className={`mb-0 ${styles.Bold} `} >Map: </p>
+              <Image src={goo_map} alt="google maps" height="50"
+              className={`mt-5 ${styles.Map}`}
+              onClick={() => setShowHosMap(showHosMap => !showHosMap)} ></Image>
+              </Col>
+            </Row>
+            <Row>
+            <Col>
+            {!showHosMap ? (
+              ""
+                  ) : (
+                    <Map address={hospital_address}  /> 
+                    ) }
+            </Col>
             </Row>
             </div>
     </div>

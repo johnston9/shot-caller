@@ -9,8 +9,13 @@ import { useState } from 'react';
 import Map from '../../components/Map';
 
 const LocationsPage = ({callsheet, setShow}) => {
-    useRedirect("loggedOut");
+    useRedirect("loggedOut"); 
     const [showMapBase, setShowMapBase] = useState(false);
+    const [showMapLoc1, setShowMapLoc1] = useState(false);
+    const [showMapLoc2, setShowMapLoc2] = useState(false);
+    const [showMapLoc3, setShowMapLoc3] = useState(false);
+    const [showMapLoc4, setShowMapLoc4] = useState(false);
+    const [showMapLoc5, setShowMapLoc5] = useState(false);
     const { basecamp_name, basecamp_address, basecamp_parking_n_notes,
             location_1_name, location_1_address, location_1_parking_n_notes,
             location_2_name, location_2_address, location_2_parking_n_notes,
@@ -39,10 +44,10 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={5}>
             <p className='my-0 py-0'><span className='d-none d-sm-inline-block'>Name -</span> Address</p>
             </Col>
-            <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={5}>
+            <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={4} md={5} >
             <p className='my-0 py-0'><span className='d-none d-sm-inline-block'>Crew Parking and </span> Notes</p>
             </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} >Map</Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={1} >Map</Col>
         </Row>
         {basecamp_address ? (
             <Row 
@@ -59,9 +64,9 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={4} md={5} >
             <p className='mb-0'>{basecamp_parking_n_notes}</p>
             </Col>
-            <Col className={`mx-0 ${styles.Border}`} xs={2} md={1} >
+            <Col className={`mx-0 ${styles.Border} d-flex justify-content-center`} xs={2} md={1} >
             <Image src={goo_map} alt="google maps" height="50"
-            className={` ${styles.Map}`}
+            className={` ${styles.Map}`} 
              onClick={() => setShowMapBase(showMapBase => !showMapBase)} ></Image>
             </Col>
             </Row>
@@ -72,7 +77,7 @@ const LocationsPage = ({callsheet, setShow}) => {
               ""
                   ) : (
                     <Map address={basecamp_address}  /> 
-                    ) } 
+                    ) }
         {location_1_address ? (
             <Row 
             style={{ backgroundColor: 'rgb(246 254 245)'}}
@@ -84,13 +89,23 @@ const LocationsPage = ({callsheet, setShow}) => {
             <p className={`mb-0 ${styles.Bold}`} >{location_1_name}</p>
             <p className='mb-0'>{location_1_address}</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={4} md={5}>
             <p className={`mb-0 py-1`}>{location_1_parking_n_notes}</p>
+            </Col>
+            <Col className={`mx-0 ${styles.Border} d-flex justify-content-center`} xs={2} md={1} >
+            <Image src={goo_map} alt="google maps" height="50"
+            className={` ${styles.Map}`}
+             onClick={() => setShowMapLoc1(showMapLoc1 => !showMapLoc1)} ></Image>
             </Col>
             </Row>
         ) : (
             ""
         )}
+        {!showMapLoc1 ? (
+              ""
+                  ) : (
+                    <Map address={location_1_address}  /> 
+                    ) }
         {location_2_address ? (
             <Row 
             style={{ backgroundColor: '#f6fffe'}}
@@ -102,13 +117,23 @@ const LocationsPage = ({callsheet, setShow}) => {
             <p className={`mb-0 ${styles.Bold}`} >{location_2_name}</p>
             <p className='mb-0'>{location_2_address}</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={4} md={5}>
             <p className={`mb-0`}>{location_2_parking_n_notes}</p>
+            </Col>
+            <Col className={`mx-0 ${styles.Border} d-flex justify-content-center`} xs={2} md={1} >
+            <Image src={goo_map} alt="google maps" height="50"
+            className={` ${styles.Map}`}
+             onClick={() => setShowMapLoc2(showMapLoc2 => !showMapLoc2)} ></Image>
             </Col>
             </Row>
         ) : (
             ""
         )}
+        {!showMapLoc2 ? (
+              ""
+                  ) : (
+                    <Map address={location_2_address}  /> 
+                    ) }
         {location_3_address ? (
             <Row
             style={{ backgroundColor: 'rgb(246 254 245)'}} 
@@ -120,13 +145,23 @@ const LocationsPage = ({callsheet, setShow}) => {
             <p className={`mb-0 ${styles.Bold}`} >{location_3_name}</p>
             <p className='mb-0'>{location_3_address}</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={4} md={5}>
             <p className={`mb-0`}>{location_3_parking_n_notes}</p>
+            </Col>
+            <Col className={`mx-0 ${styles.Border} d-flex justify-content-center`} xs={2} md={1} >
+            <Image src={goo_map} alt="google maps" height="50"
+            className={` ${styles.Map}`}
+             onClick={() => setShowMapLoc3(showMapLoc3 => !showMapLoc3)} ></Image>
             </Col>
             </Row>
         ) : (
             ""
         )}
+        {!showMapLoc3 ? (
+              ""
+                  ) : (
+                    <Map address={location_3_address}  /> 
+                    ) }
         {location_4_address ? (
             <Row 
             style={{ backgroundColor: '#f6fffe'}}
@@ -138,13 +173,23 @@ const LocationsPage = ({callsheet, setShow}) => {
             <p className={`mb-0 ${styles.Bold}`} >{location_4_name}</p>
             <p className='mb-0'>{location_4_address}</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={4} md={5}>
             <p className={`mb-0`}>{location_4_parking_n_notes}</p>
+            </Col>
+            <Col className={`mx-0 ${styles.Border} d-flex justify-content-center`} xs={2} md={1} >
+            <Image src={goo_map} alt="google maps" height="50"
+            className={` ${styles.Map}`}
+             onClick={() => setShowMapLoc4(showMapLoc4 => !showMapLoc4)} ></Image>
             </Col>
             </Row>
         ) : (
             ""
         )}
+        {!showMapLoc4 ? (
+              ""
+                  ) : (
+                    <Map address={location_4_address}  /> 
+                    ) }
         {location_5_address ? (
             <Row 
             style={{ backgroundColor: 'rgb(246 254 245)'}}
@@ -156,13 +201,23 @@ const LocationsPage = ({callsheet, setShow}) => {
             <p className={`mb-0 ${styles.Bold}`} >{location_5_name}</p>
             <p className='mb-0'>{location_5_address}</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={4} md={5} >
             <p className={`mb-0`}>{location_5_parking_n_notes}</p>
+            </Col>
+            <Col className={`mx-0 ${styles.Border} d-flex justify-content-center`} xs={2} md={1} >
+            <Image src={goo_map} alt="google maps" height="50"
+            className={` ${styles.Map}`}
+             onClick={() => setShowMapLoc5(showMapLoc5 => !showMapLoc5)} ></Image>
             </Col>
             </Row>
         ) : (
             ""
         )}
+        {!showMapLoc5 ? (
+              ""
+                  ) : (
+                    <Map address={location_5_address}  /> 
+                    ) }
         {/* {nearest_hospital ? (
             <Row 
             style={{ backgroundColor: 'rgb(254 249 254)' }}
