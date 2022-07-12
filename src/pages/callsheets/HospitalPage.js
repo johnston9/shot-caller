@@ -26,16 +26,15 @@ const HospitalPage = ({callsheet, setShow}) => {
         <div >
             <Row className='mb-1'>
               <Col xs={9}>
-              {hospital_address}
-              <p className={`mb-0 ${styles.Bold} `} >Nearest Hospital: </p>
+              <p className={`mb-0 ${styles.Bold} text-center `} >Address: </p>
               <h5 className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{nearest_hospital} </h5>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_1} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_2} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_3} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAqua}`}>{hospital_address_line_4} </p>
               </Col>
-              <Col className={`mx-0 d-flex justify-content-center`} xs={3} >
-              <p className={`mb-0 ${styles.Bold} `} >Map: </p>
+              <Col className={`mx-0 `} xs={3} >
+              <p className={`mb-0 ${styles.Bold} text-center `} >Map: </p>
               <Image src={goo_map} alt="google maps" height="50"
               className={`mt-5 ${styles.Map}`}
               onClick={() => setShowHosMap(showHosMap => !showHosMap)} ></Image>

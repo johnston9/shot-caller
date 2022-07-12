@@ -41,7 +41,7 @@ function MapPage({address}) {
   )
 }
 
-  const Map = () => {
+  const Map = ({address}) => {
   const mapKey = process.env.REACT_APP_MAP_KEY;
   const { isLoaded} = useLoadScript({googleMapsApiKey: mapKey,
   libraries: ["places"],
@@ -49,7 +49,7 @@ function MapPage({address}) {
 
   return (
     <div>
-      {isLoaded ? (<MapPage address={address}  />) : ("") }
+      {isLoaded ? (<MapPage address={address} />) : ("") }
     </div>
   )
 }
