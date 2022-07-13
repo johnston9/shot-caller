@@ -936,6 +936,15 @@ const CallsheetCreate = () => {
         </h5> 
       </div>
       <div className="pr-3">
+      <div>
+        <Row>
+        <Col ms={{span: 10, offset: 1 }} >
+        <p>
+        Please add addresses on one line seperated by a comma and a space and 
+        include the name if appropiate for Google Maps.</p>
+        </Col>
+        </Row>
+      </div>
       {/* basecamp name basecamp address - basecamp parking and notes */}
       <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>BASECAMP</span>
       <Row className="mb-3">

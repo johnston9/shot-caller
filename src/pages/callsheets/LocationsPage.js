@@ -23,6 +23,7 @@ const LocationsPage = ({callsheet, setShow}) => {
             location_4_name, location_4_address, location_4_parking_n_notes,
             location_5_name, location_5_address, location_5_parking_n_notes,
            } = callsheet;
+    // const loc1_map_address = `${location_1_name}, ${location_1_address}`;
   return (
     <div>
         <div className='mt-3'>

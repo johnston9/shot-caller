@@ -461,7 +461,6 @@ const CallSheet = (props ) => {
                     </>
                     }
             </div>
-            {/* actorcall call className={`mt-3 mb-0 pb-0 px-2 ${styles.YourCallMed }`} */}
             <h2 className='mt-3 mb-0 pb-0'> </h2>
             <div className='mt-2 mb-0 pb-0'>
             <p className={`px-0 ${styles.UnitCallMedDate }`}>{date} </p>
@@ -470,7 +469,7 @@ const CallSheet = (props ) => {
             <h2 className={` mb-0 pb-0 `} >Your Call</h2>
             {yourcalltime && (
               <p className={`px-1 mx-4 pb-0 ${styles.YourCallMed }`}>
-              Crew {yourcalltime} </p>
+              {yourcalltime} </p>
             ) }
             {yourCastcalltime && (
               <>
@@ -478,24 +477,11 @@ const CallSheet = (props ) => {
                {yourCastcalltime} </p>
               </>
             ) }
-            {/* {actorcall && (
-              <p className={`px-1 mx-4 pb-0 ${styles.YourCallMed }`}>
-              {actorcall} </p>
-            ) } */}
             </div>
             <div className={`mt-3 mx-3 pb-0 px-2 ${styles.Border2 }`}>
             <h4 className='mt-0 mb-0 pb-0'>Unit Call</h4>
             <p className={`mx-4 ${styles.UnitCallMed }`}>{unit_call} </p>
             </div>
-            {/* logo */}
-            {/* <div className={`mt-0`}>
-            {company_logo && <> 
-                <div className='px-3'>
-                    <Image className={styles.Logo} src={company_logo} alt="logo image" height="200"  />
-                    </div>
-                    </>
-                    }
-            </div> */}
             </Col>
             <Col className='pl-5' md={4}>
             <Row>
@@ -563,13 +549,13 @@ const CallSheet = (props ) => {
             </div>
             {yourCastUser ? (
               <>
-              <p className={`mb-0 mt-2`} >
+              <p className={`mb-0 mt-2 ${styles.WhiteAqua}`} >
                 <span className={`${styles.Bold}`}>
                   Username: </span >{yourCastUser} {currentUser} </p>
               </>
             ) : (
               <>
-              <p className={`mb-0 mt-2`} >
+              <p className={`mb-0 mt-2 ${styles.WhiteAqua}`} >
                 <span className={`${styles.Bold}`}>
                 Username: </span >{currentUser} </p>
               </>
@@ -632,10 +618,10 @@ const CallSheet = (props ) => {
               <p className={`${styles.WhiteAqua} mb-0`} >{lunch}  </p>
           </div>
           {/* 1st Loc */}
-          <div className={`mt-1 pb-0`}  >
+          {/* <div className={`mt-1 pb-0`}  >
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st Locat</span></p>
             <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
-          </div>
+          </div> */}
         </Col>
         {/* logo calls */}
         <Col xs={6} className='px-0 mx-0 text-center' >
@@ -654,8 +640,8 @@ const CallSheet = (props ) => {
             <div className={` mx-3 pb-0 px-2 ${styles.Border2 }`} >
             <h2 className='mb-0 pb-0'>Your Call</h2>
             {yourcalltime && (
-              <p className={`px-1 mx-4 pb-0 ${styles.YourCallMob }`}>
-              Crew {yourcalltime} </p>
+              <p className={`px-1 pb-0 ${styles.YourCallMob }`}>
+              {yourcalltime} </p>
             ) }
             {yourCastcalltime && (
               <>
@@ -664,19 +650,19 @@ const CallSheet = (props ) => {
               </>
             ) }
             </div>
-            <div className={`mt-1 mx-3 pb-0 px-2 ${styles.Border2 }`} >
+            <div className={`mt-1 mx-3 pb-0 px-2 `} >
             <h5 className='mb-0 pb-0'>Unit Call</h5>
-            <p className={`px-1 mx-2 ${styles.UnitCallMob }`}>{unit_call} </p>
+            <p className={`px-1 pb-0 mb-0 mx-2 ${styles.UnitCallMob }`}>{unit_call} </p>
             </div>
-            {/* loc */}
-            {/* <div className={`mt-1 mx-3 pb-0 px-2 ${styles.Border }`}  >
-            <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Location</span></p>
+            {/* loc ${styles.Border } ${styles.Border2 }*/}
+            <div className={`mt-0 mx-0 pb-0 px-0`}  >
+            <p className={`mb-0 pt-0`} ><span className={`text-center ${styles.Bold}`}>1st Location</span></p>
             <Row>
             <Col xs={12} >
             <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
             </Col>
             </Row>
-            </div> */}
+            </div>
         </Col>
         {/* calls */}
         <Col xs={3} className={`px-0`}>
@@ -689,31 +675,20 @@ const CallSheet = (props ) => {
             <p className={`${styles.WhiteAqua}`}>{wrap}</p>
         </div>
         <div className='mt-2 pt-3'>
-            <p className={`${styles.UnitCallMobDay }`}>Day {day} of {total_shoot_days} </p>
+            <p className={`${styles.UnitCallMobDay }`}>D {day} of {total_shoot_days} </p>
         </div>
-        {yourCastUser && (
+        {yourCastUser ? (
               <>
-              <p className={`mb-0 mt-2`} >
-                <span className={`${styles.Bold}`}>Username:</span > </p>
-            <p className={`${styles.WhiteAqua}`}>{yourCastUser}</p>
+              <p className={`${styles.Bold} mb-0 mt-2`} >Username:</p>
+              <p className={`${styles.WhiteAqua}`}>{yourCastUser} {currentUser}</p>
+              </>
+            ) : (
+              <>
+              <p className={`${styles.Bold} mb-0 mt-2`} >Username:</p>
+              <p className={`${styles.WhiteAqua}`}> {currentUser}</p>
               </>
             ) }
         </Col>
-        </Row>
-        {/* loc */}
-        <Row className='text-center'>
-          {/* <Col className='px-0' xs={4} >
-          <div className={`mt-1 pb-0 px-2 mr-2 ${styles.Border2 }`}  >
-            <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Locat</span></p>
-            <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
-          </div>
-          </Col> */}
-          {/* <Col className='px-0' xs={6} >
-          <div className={`mt-1 pb-0 px-2 ml-2 ${styles.Border2 }`} >
-          <p className={`mb-0 pt-1`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
-          <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
-          </div >
-          </Col> */}
         </Row>
         </div>
         <p className={`mt-2 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
