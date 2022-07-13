@@ -631,7 +631,12 @@ const CallSheet = (props ) => {
               <p className={` mb-0`} ><span className={`${styles.Bold}`}>Lunch:</span > </p>
               <p className={`${styles.WhiteAqua} mb-0`} >{lunch}  </p>
           </div>
-          </Col>
+          {/* 1st Loc */}
+          <div className={`mt-1 pb-0`}  >
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>1st Locat</span></p>
+            <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
+          </div>
+        </Col>
         {/* logo calls */}
         <Col xs={6} className='px-0 mx-0 text-center' >
         <h5 className={`my-1 pl-0 ${styles.WhiteAquaPro}`}>{production_company} </h5>
@@ -673,20 +678,14 @@ const CallSheet = (props ) => {
             </Row>
             </div> */}
         </Col>
-        {/* Hospital Meals */}
-        <Col xs={3} className={`px-0`}>
-        {/* <div >
-        <p className={`mb-0`} ><span className={`${styles.Bold}`}>Nearest</span></p>
-        <p className={`mb-0`} ><span className={`${styles.Bold}`}>Hospital:</span></p>
-        <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
-        </div > */}
         {/* calls */}
+        <Col xs={3} className={`px-0`}>
         <div className={` mt-0`}>
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Cast Call:</span > </p>
             <p className={`${styles.WhiteAqua}`}>{talent_call}  </p>
-            <p className={`mb-0 mt-4`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
             <p className={`${styles.WhiteAqua}`}>{shoot_call}</p>
-            <p className={`mb-0 mt-4`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
+            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
             <p className={`${styles.WhiteAqua}`}>{wrap}</p>
         </div>
         <div className='mt-2 pt-3'>
@@ -703,18 +702,18 @@ const CallSheet = (props ) => {
         </Row>
         {/* loc */}
         <Row className='text-center'>
-          <Col className='px-0' xs={6} >
+          {/* <Col className='px-0' xs={4} >
           <div className={`mt-1 pb-0 px-2 mr-2 ${styles.Border2 }`}  >
-            <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Location</span></p>
+            <p className={`mb-0 pt-1`} ><span className={`text-center ${styles.Bold}`}>1st Locat</span></p>
             <p className={`mb-1 ${styles.WhiteAqua}`}>{location_1_name} </p>
           </div>
-          </Col>
-          <Col className='px-0' xs={6} >
+          </Col> */}
+          {/* <Col className='px-0' xs={6} >
           <div className={`mt-1 pb-0 px-2 ml-2 ${styles.Border2 }`} >
           <p className={`mb-0 pt-1`} ><span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
           <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
           </div >
-          </Col>
+          </Col> */}
         </Row>
         </div>
         <p className={`mt-2 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
