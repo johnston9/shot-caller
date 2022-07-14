@@ -10,6 +10,7 @@ import Map from '../../components/Map';
 
 const LocationsPage = ({callsheet, setShow}) => {
     useRedirect("loggedOut"); 
+    const [showMapHos, setShowMapHos] = useState(false);
     const [showMapBase, setShowMapBase] = useState(false);
     const [showMapLoc1, setShowMapLoc1] = useState(false);
     const [showMapLoc2, setShowMapLoc2] = useState(false);
@@ -22,8 +23,10 @@ const LocationsPage = ({callsheet, setShow}) => {
             location_3_name, location_3_address, location_3_parking_n_notes,
             location_4_name, location_4_address, location_4_parking_n_notes,
             location_5_name, location_5_address, location_5_parking_n_notes,
+            nearest_hospital, hospital_address_line_1, hospital_address_line_2, 
+            hospital_address_line_3, hospital_address_line_4
            } = callsheet;
-    // const loc1_map_address = `${location_1_name}, ${location_1_address}`;
+    const hospital_address = `${nearest_hospital}, ${hospital_address_line_1}, ${hospital_address_line_2}`;   
   return (
     <div>
         <div className='mt-3'>
@@ -50,6 +53,38 @@ const LocationsPage = ({callsheet, setShow}) => {
             </Col>
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={1} >Map</Col>
         </Row>
+        <div className='d-none d-md-block ' >
+        {hospital_address_line_1 ? (
+            <Row 
+            style={{ backgroundColor: '#f6fffe' }}
+            className='px-3 '>
+            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={1} >
+            <p></p>
+            </Col>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={10}>
+            <p className={`mb-0 ${styles.Bold}`} >{nearest_hospital}</p>
+            <p className='mb-0'>
+            {hospital_address_line_1  && <span>{hospital_address_line_1},</span>}
+            {hospital_address_line_2  && <span> {hospital_address_line_2},</span>}
+            {hospital_address_line_3  && <span> {hospital_address_line_3},</span>}
+            {hospital_address_line_4  && <span> {hospital_address_line_4}</span>}
+            </p>
+            </Col>
+            <Col className={`mx-0 ${styles.Border} d-flex justify-content-center`} xs={2} md={1} >
+            <Image src={goo_map} alt="google maps" height="50"
+            className={` ${styles.Map}`} 
+             onClick={() => setShowMapHos(showMapHos => !showMapHos)} ></Image>
+            </Col>
+            </Row>
+        ) : (
+            ""
+        )}
+        {!showMapHos ? (
+              ""
+                  ) : (
+                    <Map address={hospital_address}  /> 
+                    ) }
+        </div>
         {basecamp_address ? (
             <Row 
             style={{ backgroundColor: 'rgb(254 249 254)' }}

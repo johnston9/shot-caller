@@ -13,9 +13,8 @@ const HospitalPage = ({callsheet, setShow}) => {
     const [showHosMap, setShowHosMap] = useState(false);
     const {nearest_hospital, hospital_address_line_1,
         hospital_address_line_2, hospital_address_line_3, 
-        hospital_address_line_4,} = callsheet;
+        hospital_address_line_4} = callsheet;
     const hospital_address = `${nearest_hospital}, ${hospital_address_line_1}, ${hospital_address_line_2}`;
-    console.log(hospital_address);
 
   return (
     <div>

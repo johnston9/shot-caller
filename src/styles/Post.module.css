@@ -5,11 +5,16 @@
   }
 .PostTop i {
   color: #fff;
+  font-size: .75rem;
 }
 
 .PostTop2 {
   background-color: #fff;
   color: #000;
+}
+
+.Icons {
+  font-size: .75rem;
 }
 
 .Post figure,
@@ -19,6 +24,7 @@ h5 {
 
 .Heart {
   color: #f85032;
+  font-size: .75rem;
 }
 
 .Edit {
@@ -31,6 +37,11 @@ h5 {
 
 .Heart:hover {
   color: #2142b2;
+}
+
+.HeartOutline {
+  color: #f85032;
+  font-size: .75rem;
 }
 
 .HeartOutline:hover {
@@ -61,6 +72,11 @@ h5 {
   background-color: #fff;
   cursor: pointer;
   height: 100%;
+}
+
+.Content:hover span {
+  color: #fff;
+  cursor: pointer;
 }
 
 .Content:hover {

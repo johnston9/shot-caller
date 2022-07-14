@@ -674,17 +674,18 @@ const CallSheet = (props ) => {
             <p className={`mb-0`} ><span className={`${styles.Bold}`}>Est. Wrap:</span > </p>
             <p className={`${styles.WhiteAqua}`}>{wrap}</p>
         </div>
-        <div className='mt-2 pt-3'>
-            <p className={`${styles.UnitCallMobDay }`}>D {day} of {total_shoot_days} </p>
+        <div className='mt-3'>
+        <p className={`mb-0`} ><span className={`${styles.Bold}`}>Day:</span > </p>
+            <p className={`${styles.WhiteAqua}`}>{day} of {total_shoot_days}</p>
         </div>
         {yourCastUser ? (
               <>
-              <p className={`${styles.Bold} mb-0 mt-2`} >Username:</p>
+              <p className={`${styles.Bold} mb-0`} >User:</p>
               <p className={`${styles.WhiteAqua}`}>{yourCastUser} {currentUser}</p>
               </>
             ) : (
               <>
-              <p className={`${styles.Bold} mb-0 mt-2`} >Username:</p>
+              <p className={`${styles.Bold} mb-0`} >User:</p>
               <p className={`${styles.WhiteAqua}`}> {currentUser}</p>
               </>
             ) }

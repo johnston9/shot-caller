@@ -18,6 +18,7 @@ const PostTop = (props) => {
         id,
         owner,
         name,
+        position,
         profile_id,
         profile_image,
         comments_count,
@@ -119,18 +120,39 @@ const PostTop = (props) => {
     return (
         <div >
           <Card className={styles.PostTop} >
-          {/* d-flex align-items-center justify-content-center */}
+          {/* d-flex align-items-center justify-content-center
+          className="d-flex align-items-center 
+                        justify-content-space-between" */}
                 <Card.Body className="py-0 px-0">
-                <Row className="d-flex align-items-center pt-0 pb-0 my-0">
+                <Row className="d-flex align-items-center pt-1 pt-md-0 pb-0 my-0">
                     <Col xs={12} lg={6} >
+                      <div className='d-none d-sm-block'>
                       <Row>
-                        <Col xs={12} sm={8} className="d-flex align-items-center 
-                        justify-content-space-between">
+                        <Col xs={2} sm={2}  >
                         <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
                         </Link>
-                        <span className='ml-1 ml-md-3'>{name}</span>
-                        <span className='ml-3 ml-md-3'>{updated_at}</span>
+                        </Col>
+                        <Col xs={6} sm={4} 
+                        className="" >
+                        <p>
+                        <span className=''>{name} - {position}</span>
+                        </p>
+                        <div>
+                        <p>
+                        <span className='ml-0 '>{name} - {position}</span>
+                        </p>
+                        </div>
+                        {/* <p className='text-center'>{position} </p> */}
+                        </Col>
+                        <Col xs={2} sm={2}
+                        className="d-flex align-items-center"  >
+                        <p>
+                        <span className='float-right'>{updated_at}</span>
+                        </p>
+                        </Col>
+                        <Col xs={2} sm={1}
+                        className="d-flex align-items-center" >
                         {is_owner && (
                         <PostDropdown
                             handleEdit={handleEdit}
@@ -138,9 +160,10 @@ const PostTop = (props) => {
                         />
                         ) } 
                         </Col>
-                        <Col xs={12} sm={4} className="d-flex align-items-center justify-content-center"> 
+                        <Col xs={12} sm={3} 
+                          className="px-0 d-flex align-items-center justify-content-center"> 
                           <div className='d-none d-sm-block' >
-                          {/* archives */}
+                          {/* archives className='d-none d-sm-block' */}
                           {archive_id ? (
                                 <OverlayTrigger
                                 placement="top"
@@ -201,7 +224,7 @@ const PostTop = (props) => {
                                 <i className="far fa-heart" />
                                 </OverlayTrigger>
                             )}
-                            {likes_count}
+                            <span className='pt-2'>{likes_count}</span>
                             <OverlayTrigger
                                 placement="top"
                                 overlay={<Tooltip>Comments</Tooltip>}
@@ -210,11 +233,117 @@ const PostTop = (props) => {
                                 <i className="far fa-comments" />
                             </Link>
                             </OverlayTrigger>
-                            {comments_count}
+                            <span className='pt-2'>{comments_count}</span>
                         </div>
                         </Col>
-                      </Row>            
-                    </Col>  
+                      </Row>   
+                      </div>     
+                      {/* mobile */}
+                      <div className='d-sm-none'>
+                      <Row>
+                        <Col xs={2}>
+                        <Link to={`/profiles/${profile_id}`}>
+                        <Avatar src={profile_image} height={45}  />
+                        </Link>
+                        </Col>
+                        <Col xs={8} className="" >
+                        <p>
+                        <span className=''>{name} - {position}</span>
+                        <span className='ml-0 float-right '>{updated_at}</span>
+                        </p>
+                        <p className='text-center'>
+                        {name} - {position}
+                        </p>
+                        {/* <p className='text-center'>{position} </p> */}
+                        </Col>
+                        <Col xs={2} 
+                        className="d-flex align-items-center" >
+                        {is_owner && (
+                        <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                        ) } 
+                        </Col>
+                        <Col xs={12} sm={3} 
+                          className="px-0 d-flex align-items-center justify-content-center"> 
+                          <div className='d-none d-sm-block' >
+                          {/* archives className='d-none d-sm-block' */}
+                          {archive_id ? (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Unarchive</Tooltip>}
+                                >
+                                <span onClick={handleUnarchive} >
+                                <i className={`fas fa-folder ${styles.Heart}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : currentUser ? (
+                              <OverlayTrigger
+                              placement="top"
+                              overlay={<Tooltip>Archive</Tooltip>}
+                              >
+                                <span onClick={handleArchive}>
+                                <i className={`far fa-folder-open ${styles.HeartOutline}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Log in please</Tooltip>}
+                                >
+                                <i className="far fa-folder-open" />
+                                </OverlayTrigger>
+                            )}
+                            {/* like */}
+                            {is_owner ? (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                                >
+                                <i className="far fa-heart" />
+                                </OverlayTrigger>
+                            ) : like_id ? (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Unlike</Tooltip>}
+                                >
+                                <span onClick={handleUnlike} >
+                                <i className={`fas fa-heart ${styles.Heart}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : currentUser ? (
+                                <OverlayTrigger
+                                  placement="top"
+                                  overlay={<Tooltip>Like</Tooltip>}
+                                  >
+                                <span onClick={handleLike}>
+                                <i className={`far fa-heart ${styles.HeartOutline}`} />
+                                </span>
+                                </OverlayTrigger>
+                            ) : (
+                                <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Log in please</Tooltip>}
+                                >
+                                <i className="far fa-heart" />
+                                </OverlayTrigger>
+                            )}
+                            <span className='pt-2'>{likes_count}</span>
+                            <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Comments</Tooltip>}
+                                >
+                            <Link to={`/posts/${id}`}>
+                                <i className="far fa-comments" />
+                            </Link>
+                            </OverlayTrigger>
+                            <span className='pt-2'>{comments_count}</span>
+                        </div>
+                        </Col>
+                      </Row>   
+                      </div> 
+                    </Col> 
                     <Col xs={12} lg={6} > 
                     <Link  to={`/posts/${id}`} > 
                     <Row className={`${styles.Content} my-2 ml-0 mx-2`}>   
@@ -239,3 +368,95 @@ const PostTop = (props) => {
 }
 
 export default PostTop
+
+{/* <Col xs={12} lg={6} >
+<Row>
+  <Col xs={12} sm={8} className="d-flex align-items-center 
+  justify-content-space-between">
+  <Link to={`/profiles/${profile_id}`}>
+  <Avatar src={profile_image} height={45}  />
+  </Link>
+  <span className='ml-1 ml-md-3'>{name}</span>
+  <span className='ml-3 ml-md-3'>{updated_at}</span>
+  {is_owner && (
+  <PostDropdown
+      handleEdit={handleEdit}
+      handleDelete={handleDelete}
+  />
+  ) } 
+  </Col>
+  <Col xs={12} sm={4} className="d-flex align-items-center justify-content-center"> 
+    <div className={`${styles.Icons} mb-0 d-none d-sm-block`} >
+    {archive_id ? (
+          <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Unarchive</Tooltip>}
+          >
+          <span onClick={handleUnarchive} >
+          <i className={`fas fa-folder ${styles.Heart}`} />
+          </span>
+          </OverlayTrigger>
+      ) : currentUser ? (
+        <OverlayTrigger
+        placement="top"
+        overlay={<Tooltip>Archive</Tooltip>}
+        >
+          <span onClick={handleArchive}>
+          <i className={`far fa-folder-open ${styles.HeartOutline}`} />
+          </span>
+          </OverlayTrigger>
+      ) : (
+          <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Log in please</Tooltip>}
+          >
+          <i className="far fa-folder-open" />
+          </OverlayTrigger>
+      )}
+      {is_owner ? (
+          <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>You can't like your own post!</Tooltip>}
+          >
+          <i className="far fa-heart" />
+          </OverlayTrigger>
+      ) : like_id ? (
+          <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Unlike</Tooltip>}
+          >
+          <span onClick={handleUnlike} >
+          <i className={`fas fa-heart ${styles.Heart}`} />
+          </span>
+          </OverlayTrigger>
+      ) : currentUser ? (
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>Like</Tooltip>}
+            >
+          <span onClick={handleLike}>
+          <i className={`far fa-heart ${styles.HeartOutline}`} />
+          </span>
+          </OverlayTrigger>
+      ) : (
+          <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Log in please</Tooltip>}
+          >
+          <i className="far fa-heart" />
+          </OverlayTrigger>
+      )}
+      {likes_count}
+      <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Comments</Tooltip>}
+          >
+      <Link to={`/posts/${id}`}>
+          <i className="far fa-comments" />
+      </Link>
+      </OverlayTrigger>
+      {comments_count}
+  </div>
+  </Col>
+</Row>            
+</Col> */}
