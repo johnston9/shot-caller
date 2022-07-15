@@ -15,6 +15,7 @@ const MoodshotTop = (props) => {
     const {
         id,
         is_owner,
+        position,
         updated_at,
         name,
         profile_id,
@@ -43,19 +44,76 @@ const MoodshotTop = (props) => {
                     <Link to={`/moodshots/${id}`}>
                     <Card.Body className={`py-0 px-0 ${styles.MoodTop}`}>
                         <Row className="d-flex align-items-center pt-0 pb-0 my-0">
-                            <Col xs={12} lg={6} className="d-flex align-items-center justify-content-between">
-                                <Link to={`/profiles/${profile_id}`}>
-                                <Avatar src={profile_image} height={45}  />
-                            </Link>
-                            <span style={{ fontWeight: '700' }} className='ml-1 ml-md-3'>{name}</span>
-                            <span className='ml-5'>{updated_at}</span>
-                            {is_owner && (
-                            <PostDropdown
-                                handleEdit={handleEdit}
-                                handleDelete={handleDelete}
-                            />
-                            ) }               
-                            </Col>
+                        <Col xs={12} lg={6} >
+                      <div className='d-none d-sm-block'>
+                      <Row>
+                        <Col xs={2} sm={2}  >
+                        <Link to={`/profiles/${profile_id}`}>
+                        <Avatar src={profile_image} height={45}  />
+                        </Link>
+                        </Col>
+                        <Col sm={5} 
+                        className="" >
+                        <p>
+                        <span className=''>{name} - {position}</span>
+                        </p>
+                        <div>
+                        <p>
+                        <span className='ml-0 '>{name} - {position}</span>
+                        </p>
+                        </div>
+                        {/* <p className='text-center'>{position} </p> */}
+                        </Col>
+                        <Col sm={3}
+                        className="d-flex align-items-center"  >
+                        <p>
+                        <span className='float-right'>{updated_at}</span>
+                        </p>
+                        </Col>
+                        <Col xs={2} sm={1}
+                        className="d-flex align-items-center" >
+                        {is_owner && (
+                        <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                        ) } 
+                        </Col>
+                      </Row>   
+                      </div>     
+                      {/* mobile */}
+                      <div className='d-sm-none'>
+                      <Row>
+                        <Col className='d-flex align-items-center' xs={2}>
+                        <Link to={`/profiles/${profile_id}`}>
+                        <Avatar src={profile_image} height={45}  />
+                        </Link>
+                        </Col>
+                        <Col xs={8} className="text-center" >
+                        <p className=''>{updated_at}</p>
+                        <p>
+                        <span className=''>{name} - {position}</span>
+                        </p>
+                        <p className=''>
+                        {name} - {position}
+                        </p>
+                        {/* <p className='text-center'>{position} </p> */}
+                        </Col>
+                        <Col xs={2} 
+                        className="d-flex align-items-center" >
+                        {is_owner && (
+                        <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                        ) } 
+                        </Col>
+                        <Col xs={12} sm={3} 
+                          className="px-0 d-flex align-items-center justify-content-center"> 
+                        </Col>
+                      </Row>   
+                      </div> 
+                    </Col> 
                             <Col xs={12} lg={6} className="my-2" >
                                 <Row className={`${styles.Content} ml-2 mr-2 `}>
                                     <Col xs={12} sm={7} className={`${styles.Content1} py-sm-2`} >

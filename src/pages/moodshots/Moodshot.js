@@ -69,10 +69,10 @@ const Moodshot = (props) => {
             <Col xs={6} >
             <p style={{ fontWeight: '700', textTransform: 'capitalize'}}
                 className=''>
-                {name} <span className='d-none d-sm-block' >{position} </span></p>
+                {name} <span className='d-none d-sm-inline-block' >{position} </span></p>
             <p className='d-sm-none' >{position} </p>
             </Col>
-            <Col xs={4} >
+            <Col className='d-flex align-items-center' xs={4} >
             <span className=''>{updated_at}</span>
                 {is_owner && (
                 <PostDropdown
