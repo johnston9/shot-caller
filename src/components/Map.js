@@ -24,14 +24,14 @@ function MapPage({address}) {
     <div>
     <Row className="my-3">
     <Col md={{span: 10, offset:1 }}>
-    <GoogleMap 
+    {selected && <GoogleMap 
     zoom={10}
-    center={{lat: 53.3498, lng: -6.2603 }}
+    center={selected}
     mapContainerClassName={` ${styles.Map}`}
      >
     {selected && <Marker 
      position={selected} /> }
-     </GoogleMap>
+     </GoogleMap> }
     </Col>
     </Row>
     </div>
