@@ -22,6 +22,7 @@ const Post = (props) => {
         id,
         owner,
         name,
+        position,
         profile_id,
         profile_image,
         comments_count,
@@ -153,7 +154,8 @@ const Post = (props) => {
                         <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
                         </Link>
-                        <span style={{ fontWeight: '700', textTransform: 'capitalize'}} className='ml-1 ml-md-3'>{name}</span>
+                        <span style={{ fontWeight: '700', textTransform: 'capitalize'}} 
+                        className='ml-1 ml-md-3'>{name} {position} <span className='d-none d-sm-inline-block' > {name} {position} </span>  </span>
                         <span className='ml-3'>{updated_at}</span>
                         {is_owner && (
                         <PostDropdown
@@ -161,6 +163,9 @@ const Post = (props) => {
                             handleDelete={handleDelete}
                         />
                         ) } 
+                        </Col>
+                        <Col xs={12} className='d-sm-none text-center'>
+                        <p  >{name} {position}</p>
                         </Col>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
                         <div className={` ${styles.PostBar}`} >
@@ -244,7 +249,7 @@ const Post = (props) => {
                         <div className={`${styles.GoToScene} `} onClick={() => handleGoToScene() }>
                       {departments && <span  >
                         Scene {number} - <span style={{ textTransform: 'capitalize'}}>{departments }
-                        </span> - <span class="text-capitalize" 
+                        </span> <span class="text-capitalize" 
                         style={{ textTransform: 'capitalize'}} >{category }</span> </span>} 
                       </div>  
                       </Col>

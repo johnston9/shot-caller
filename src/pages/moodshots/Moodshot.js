@@ -57,13 +57,23 @@ const Moodshot = (props) => {
         >
             Back
         </Button>     
-        <Row className={`${styles.MoodTop2} pt-2 mx-2`}>
-            <Col className="d-flex align-items-center justify-content-center" xs={12} md={6} >
-                <Link to={`/profiles/${profile_id}`}>
+        <Row className={`${styles.MoodTop} pt-2 mx-2 `}>
+            <Col xs={12} md={7} 
+            className="" >
+            <Row className='d-flex align-items-center'>
+            <Col xs={2} className="px-0" >
+            <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}  />
                 </Link>
-                <span style={{ fontWeight: '700', textTransform: 'capitalize'}} className='ml-1 ml-md-3'>{name} - {position} </span>
-                <span className='ml-1 ml-md-3 d-none d-md-block'>{updated_at}</span>
+            </Col>
+            <Col xs={6} >
+            <p style={{ fontWeight: '700', textTransform: 'capitalize'}}
+                className=''>
+                {name} <span className='d-none d-sm-block' >{position} </span></p>
+            <p className='d-sm-none' >{position} </p>
+            </Col>
+            <Col xs={4} >
+            <span className=''>{updated_at}</span>
                 {is_owner && (
                 <PostDropdown
                     handleEdit={handleEdit}
@@ -71,7 +81,9 @@ const Moodshot = (props) => {
                 />
                 ) } 
             </Col>
-            <Col xs={12} md={6} className='mx-0 px-0 d-flex align-items-center justify-content-center'>
+            </Row>
+            </Col>
+            <Col xs={12} md={5} className='mx-0 px-0 d-flex align-items-center justify-content-center'>
             <p className={`mb-0 ${styles.Titlelist }`}>
                  {number && <span>Scene {number} </span> } 
                  {location && <span> - {location} </span> }

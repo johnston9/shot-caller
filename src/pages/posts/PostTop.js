@@ -120,9 +120,6 @@ const PostTop = (props) => {
     return (
         <div >
           <Card className={styles.PostTop} >
-          {/* d-flex align-items-center justify-content-center
-          className="d-flex align-items-center 
-                        justify-content-space-between" */}
                 <Card.Body className="py-0 px-0">
                 <Row className="d-flex align-items-center pt-1 pt-md-0 pb-0 my-0">
                     <Col xs={12} lg={6} >
@@ -241,15 +238,15 @@ const PostTop = (props) => {
                       {/* mobile */}
                       <div className='d-sm-none'>
                       <Row>
-                        <Col xs={2}>
+                        <Col className='d-flex align-items-center' xs={2}>
                         <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={45}  />
                         </Link>
                         </Col>
-                        <Col xs={8} className="" >
+                        <Col xs={8} className="text-center" >
+                        <p className=''>{updated_at}</p>
                         <p>
                         <span className=''>{name} - {position}</span>
-                        <span className='ml-0 float-right '>{updated_at}</span>
                         </p>
                         <p className='text-center'>
                         {name} - {position}
@@ -368,95 +365,3 @@ const PostTop = (props) => {
 }
 
 export default PostTop
-
-{/* <Col xs={12} lg={6} >
-<Row>
-  <Col xs={12} sm={8} className="d-flex align-items-center 
-  justify-content-space-between">
-  <Link to={`/profiles/${profile_id}`}>
-  <Avatar src={profile_image} height={45}  />
-  </Link>
-  <span className='ml-1 ml-md-3'>{name}</span>
-  <span className='ml-3 ml-md-3'>{updated_at}</span>
-  {is_owner && (
-  <PostDropdown
-      handleEdit={handleEdit}
-      handleDelete={handleDelete}
-  />
-  ) } 
-  </Col>
-  <Col xs={12} sm={4} className="d-flex align-items-center justify-content-center"> 
-    <div className={`${styles.Icons} mb-0 d-none d-sm-block`} >
-    {archive_id ? (
-          <OverlayTrigger
-          placement="top"
-          overlay={<Tooltip>Unarchive</Tooltip>}
-          >
-          <span onClick={handleUnarchive} >
-          <i className={`fas fa-folder ${styles.Heart}`} />
-          </span>
-          </OverlayTrigger>
-      ) : currentUser ? (
-        <OverlayTrigger
-        placement="top"
-        overlay={<Tooltip>Archive</Tooltip>}
-        >
-          <span onClick={handleArchive}>
-          <i className={`far fa-folder-open ${styles.HeartOutline}`} />
-          </span>
-          </OverlayTrigger>
-      ) : (
-          <OverlayTrigger
-          placement="top"
-          overlay={<Tooltip>Log in please</Tooltip>}
-          >
-          <i className="far fa-folder-open" />
-          </OverlayTrigger>
-      )}
-      {is_owner ? (
-          <OverlayTrigger
-          placement="top"
-          overlay={<Tooltip>You can't like your own post!</Tooltip>}
-          >
-          <i className="far fa-heart" />
-          </OverlayTrigger>
-      ) : like_id ? (
-          <OverlayTrigger
-          placement="top"
-          overlay={<Tooltip>Unlike</Tooltip>}
-          >
-          <span onClick={handleUnlike} >
-          <i className={`fas fa-heart ${styles.Heart}`} />
-          </span>
-          </OverlayTrigger>
-      ) : currentUser ? (
-          <OverlayTrigger
-            placement="top"
-            overlay={<Tooltip>Like</Tooltip>}
-            >
-          <span onClick={handleLike}>
-          <i className={`far fa-heart ${styles.HeartOutline}`} />
-          </span>
-          </OverlayTrigger>
-      ) : (
-          <OverlayTrigger
-          placement="top"
-          overlay={<Tooltip>Log in please</Tooltip>}
-          >
-          <i className="far fa-heart" />
-          </OverlayTrigger>
-      )}
-      {likes_count}
-      <OverlayTrigger
-          placement="top"
-          overlay={<Tooltip>Comments</Tooltip>}
-          >
-      <Link to={`/posts/${id}`}>
-          <i className="far fa-comments" />
-      </Link>
-      </OverlayTrigger>
-      {comments_count}
-  </div>
-  </Col>
-</Row>            
-</Col> */}

@@ -1,18 +1,15 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import styles from "../styles/Map.module.css";
-// import TopBox from '../../components/TopBox';
-import { GoogleMap, Marker, useJsApiLoader, useLoadScript } from '@react-google-maps/api';
-import usePlacesAutocomplete, 
-{getGeocode, getLatLng } from "use-places-autocomplete";
+// useJsApiLoader usePlacesAutocomplete
+import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
+import {getGeocode, getLatLng } from "use-places-autocomplete";
 import { useState } from "react";
 import { useEffect } from "react";
 
 function MapPage({address}) {
   // const center = useMemo(() => ({lat: 53.3498, lng: 6.2603 }), []) ;
-  // center={{lat: 53.3498, lng: -6.2603 }}
-  // position={{lat: 40.7128, lng: -74.0060 }}
   const [selected, setSelected] = useState(null);
   useEffect(() => {
      const handleAddress = async () => {
@@ -22,7 +19,7 @@ function MapPage({address}) {
      setSelected({lat, lng});
          }
     handleAddress();
-  }, []);
+  }, [address]);
   return (
     <div>
     <Row className="my-3">

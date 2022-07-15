@@ -17,7 +17,7 @@ import TopBox from "../../components/TopBox";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirectSign } from "../../hooks/RedirectSign";
-import { getRefreshToken, setTokenTimestamp } from "../../utils/utils";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
