@@ -155,7 +155,7 @@ const Post = (props) => {
                         <Avatar src={profile_image} height={45}  />
                         </Link>
                         <span style={{ fontWeight: '700', textTransform: 'capitalize'}} 
-                        className='ml-1 ml-md-3'>{name} {position} <span className='d-none d-sm-inline-block' > {name} {position} </span>  </span>
+                        className='ml-1 ml-md-3'>{name} <span className='d-none d-sm-inline-block' > {position} </span>  </span>
                         <span className='ml-3'>{updated_at}</span>
                         {is_owner && (
                         <PostDropdown
@@ -165,7 +165,7 @@ const Post = (props) => {
                         ) } 
                         </Col>
                         <Col xs={12} className='d-sm-none text-center'>
-                        <p  >{name} {position}</p>
+                        <p  >{position}</p>
                         </Col>
                         <Col className="d-flex align-items-center justify-content-center" xs={12} md={4}>
                         <div className={` ${styles.PostBar}`} >

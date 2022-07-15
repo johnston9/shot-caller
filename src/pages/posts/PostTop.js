@@ -133,14 +133,13 @@ const PostTop = (props) => {
                         <Col xs={6} sm={4} 
                         className="" >
                         <p>
-                        <span className=''>{name} - {position}</span>
+                        <span className=''>{name}</span>
                         </p>
                         <div>
                         <p>
-                        <span className='ml-0 '>{name} - {position}</span>
+                        <span className='ml-0 '>{position}</span>
                         </p>
                         </div>
-                        {/* <p className='text-center'>{position} </p> */}
                         </Col>
                         <Col xs={2} sm={2}
                         className="d-flex align-items-center"  >
@@ -246,12 +245,11 @@ const PostTop = (props) => {
                         <Col xs={8} className="text-center" >
                         <p className=''>{updated_at}</p>
                         <p>
-                        <span className=''>{name} - {position}</span>
+                        <span className=''>{name}</span>
                         </p>
                         <p className=''>
-                        {name} - {position}
+                        {position}
                         </p>
-                        {/* <p className='text-center'>{position} </p> */}
                         </Col>
                         <Col xs={2} 
                         className="d-flex align-items-center" >
