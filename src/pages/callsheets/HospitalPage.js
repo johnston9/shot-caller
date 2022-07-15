@@ -35,7 +35,7 @@ const HospitalPage = ({callsheet, setShow}) => {
               <Col className={`mx-0 `} xs={3} >
               <p className={`mb-0 ${styles.Bold} text-center `} >Map: </p>
               <Image src={goo_map} alt="google maps" height="50"
-              className={`mt-5 ${styles.Map}`}
+              className={`mt-1 ${styles.Map}`}
               onClick={() => setShowHosMap(showHosMap => !showHosMap)} ></Image>
               </Col>
             </Row>

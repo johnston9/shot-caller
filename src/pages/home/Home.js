@@ -36,18 +36,6 @@ const Home = () => {
     return (
       <Container className={`px-2  ${styles.Background}`}>
       <TopBox title="SHOT CALLER" />
-        {signintoken ? (<p className={`${styles.White}`}>
-           {signintoken}signintoken
-           </p>) : ("") }
-        {token ? (<p className={`${styles.White}`}>
-           {token.access}inter-refresh
-          </p>) : ("") }
-        {currentUser ? (<p className={`${styles.White}`}>
-           {currentUser.username}
-          </p>) : ("") }
-        {crew ? (<p className={`${styles.White}`}>
-           {crew.production_company}
-          </p>) : ("") }
         <Row className={`my-3 ${styles.Row}`}>
         <Col className="my-3 pr-0 pl-3 pl-md-4"
           xs={1} md={1}

@@ -29,9 +29,6 @@ const Landing = () => {
     return (
         <Container className={`px-2 ${styles.Background}`}>
           <TopBox title={`SHOT CALLER`} />
-          {mapKey ? (<p className={`${styles.White}`}>
-           {mapKey} map key
-           </p>) : ("") }
           {signindata ? (<p className={`${styles.White}`}>
            {signindata} intercept works 
            </p>) : ("") }
