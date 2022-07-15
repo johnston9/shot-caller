@@ -10,28 +10,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import { useCurrentUser, useToken } from "../../contexts/CurrentUserContext";
-import { useCrewInfoContext } from "../../contexts/BaseCallContext";
-import { getRefreshToken } from "../../utils/utils";
-
 
 const Home = () => {
     useRedirect("loggedOut");
-    const token = useToken();
-    console.log(token);
     const admin = true;
-    const currentUser = useCurrentUser();
-    const crewInfoOne = useCrewInfoContext();
-    const crew = crewInfoOne.results[0];
-    console.log(currentUser)
-    const signintoken = getRefreshToken();
-
-  //   useMemo(() => {
-  //     if (shouldRefreshToken()) {
-  //         console.log("token here")
-  //       } 
-  //   }
-  // , [history]);
 
     return (
       <Container className={`px-2  ${styles.Background}`}>

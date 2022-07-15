@@ -73,6 +73,11 @@ p {
   padding-right: 5px;
 }
 
+.Close:hover {
+  color: rgb(60, 237, 237);
+  cursor: pointer;
+}
+
 #dropdown-basic-button {
   padding: 0.1rem 0.1rem;
   color: #000;
@@ -84,10 +89,6 @@ p {
 
 .dropdown-toggle.btn.btn-primary {
   color: #000
-}
-
-.Close:hover {
-  color: rgb(0, 8, 8);
 }
 
 .CloseIns {
