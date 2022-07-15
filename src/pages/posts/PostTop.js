@@ -248,7 +248,7 @@ const PostTop = (props) => {
                         <p>
                         <span className=''>{name} - {position}</span>
                         </p>
-                        <p className='text-center'>
+                        <p className=''>
                         {name} - {position}
                         </p>
                         {/* <p className='text-center'>{position} </p> */}
