@@ -85,7 +85,8 @@ i:hover {
 
 .BoldTitle {
   font-weight: 700;
-  background-color: rgb(209, 240, 240);
+  /* background-color: rgb(209, 240, 240); */
+  background-color: #d6fcff;
 }
 
 .Actor {
@@ -134,7 +135,7 @@ i:hover {
 }
 
 .SubTitle2   {
-  background-color: #d6fcff;;
+  background-color: #d6fcff;
   font-weight: 700;
 }
 

@@ -26,7 +26,37 @@ const Breakdown = (props) => {
                 Scene breakdown
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>
             </h5>
-                <h4 className='text-center'>{title} - <span>Act {act} - Dramatic Day {dramatic_day} {time} </span> </h4>
+            <Row>
+                <Col className='text-center' xs={{span: 10, offset: 1 }} md={{span: 6, offset: 3 }}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>TITLE</p>
+                <p>{title} </p>
+                </Col>
+            </Row>
+            <Row>
+            <Col className='text-center' xs={6}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>ACT</p>
+                <p style={{ textTransform: 'capitalize'}}>{act} </p>
+                </Col>
+                <Col className='text-center' xs={6}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>PAGES</p>
+                <p>{pages} </p>
+                </Col>
+            </Row>
+            <Row>
+            <Col className='text-center' xs={6}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>DRAMATIC DAY</p>
+                <p >{dramatic_day} </p>
+                </Col>
+                <Col className='text-center' xs={6}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>TIME</p>
+                <p>{time} </p>
+                </Col>
+            </Row>
             <Row>
             <Col className='mx-0 px-0' xs={12} md={4}  >
                 <div className={`p-3 ${styles.BreakBox }`}>
