@@ -29,11 +29,11 @@ const Breakdown = (props) => {
             <Row>
                 <Col className='text-center' xs={{span: 10, offset: 1 }} md={{span: 6, offset: 3 }}>
                 <p className={`${styles.BoldTitle} 
-                mb-2 text-center mx-1 mx-sm-5`}>TITLE</p>
+                text-center mx-1 mx-sm-5`}>TITLE</p>
                 <p>{title} </p>
                 </Col>
             </Row>
-            <Row>
+            <Row className='mt-3' >
             <Col className='text-center' xs={6}>
                 <p className={`${styles.BoldTitle} 
                 mb-2 text-center mx-1 mx-sm-5`}>ACT</p>
@@ -45,7 +45,7 @@ const Breakdown = (props) => {
                 <p>{pages} </p>
                 </Col>
             </Row>
-            <Row>
+            <Row className='mt-3'>
             <Col className='text-center' xs={6}>
                 <p className={`${styles.BoldTitle} 
                 mb-2 text-center mx-1 mx-sm-5`}>DRAMATIC DAY</p>
@@ -57,108 +57,119 @@ const Breakdown = (props) => {
                 <p>{time} </p>
                 </Col>
             </Row>
-            <Row>
-            <Col className='mx-0 px-0' xs={12} md={4}  >
-                <div className={`p-3 ${styles.BreakBox }`}>
-                <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                Action Pages Department Info
-                </h5>
-                <p>{action} </p>
-                <p>Pages: {pages} </p>
-                <p>{department_info} </p>
-                </div>
+            <Row className='mt-3'>
+            <Col className='text-center' xs={6}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>LOCATION</p>
+                <p style={{ textTransform: 'capitalize'}} >{int_ext}. {location} {location_detail} - {day_night} </p>
             </Col>
-            <Col xs={12} md={4} className='mx-0 px-0'>
-                <div className={`p-3 mx-md-3 ${styles.BreakBox }`}>
-                <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                Location Shoot
-                </h5>
-                <p style={{textTransform: 'uppercase' }}>{int_ext}. {location} {location_detail} - {day_night} </p>
-                <p>{shooting_date} </p>
-                <p>{filming_location} </p>
-                </div>
+            <Col className='text-center' xs={6}>
+            <p className={`${styles.BoldTitle} 
+            mb-2 text-center mx-1 mx-sm-5`}>ACTION</p>
+            <p>{action} </p>
             </Col>
-            <Col className='mx-0 px-0' xs={12} md={4} >
-                <div className={`p-2 ${styles.BreakBox }`}>
-                <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                Equip Set Props
-                </h5>
-                <p>{equip_set_props} </p>
-                </div>
-            </Col>
-            {/* </Row> */}
+            </Row>
             {/* characters */}
-            {/* <Row> */}
-            <Col xs={12} md={4} >
-                <div className={`p-3 mt-3 ${styles.BreakBox }`}>
-                <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                Main Characters
-                </h5>
+            <Row>
+            <Col xs={12} md={6} >
+            <Row className='mt-3'>
+            <Col className='' xs={12}>
+                <p className={`text-center ${styles.BoldTitle} 
+                mb-2 mx-1 mx-sm-5`}>CHARACTERS</p>
+            </Col>
+            </Row>
+            <Row >
+            <Col className='text-center' xs={12}>
                 <p> {character1 } {character2} {character3} {character4} {character5}
                 {character6} {character7} {character8} {character9} {character10}
-                {character11} {character12} </p>
+                {character11} {character12} {other_characters} </p>
                 <Row>
-                    <Col mx={6}></Col>
-                    <Col mx={6}>
-                    <p
-                    className={` ${styles.CostumeLink }`}
-                    onClick={() => setShowCos(showCos => !showCos)} >Costumes
+                <Col xs={6}>
+                <p
+                    className={` ${styles.CostumeLink } `}
+                    onClick={() => setShowCos(showCos => !showCos)} >Costumes 1
                 </p>
-                    </Col>
+                </Col>
+                <Col xs={6}>
+                <p
+                    className={` ${styles.CostumeLink } `}
+                    onClick={() => setShowCosOther(showCosOther => !showCosOther)} >Costumes 2
+                </p>
+                </Col>
                 </Row>
+                <div>
                 {!showCos ? (
                     ""
                 ) : (
                     <SceneCostumes scene={scene} />
                 ) }
                 </div>
+                {!showCosOther ? (
+                ""
+                ) : (
+                <SceneCosOther scene={scene} />
+                ) }
             </Col>
-            <Col xs={12} md={4} >
-                <div className={`p-3 mt-3 mx-3 ${styles.BreakBox }`}>
-                <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                Other Characters
-                </h5>
-                <p>{other_characters}</p> 
-                <Row>
-                    <Col mx={6}></Col>
-                    <Col mx={6}>
-                    <p
-                    className={` ${styles.CostumeLink }`}
-                    onClick={() => setShowCosOther(showCosOther => !showCosOther)} >Costumes
-                </p>
-                    </Col>
-                </Row>
-                <div>
-                    {!showCosOther ? (
-                    ""
-                    ) : (
-                    <SceneCosOther scene={scene} />
-                    ) }
-                </div>
-                </div>
+            </Row>
             </Col>
-            <Col xs={12} md={4}>
-                <div className={`p-3 mt-3 mx-3 ${styles.BreakBox }`}>
-                <h5 className={`my-2 text-center ${styles.BreakBoxTitle }`}>
-                Background Actors
-                </h5>
-                <p>{background_artists}</p>
-                <Row>
-                    <Col mx={6}></Col>
-                    <Col mx={6}>
-                    <p
-                    className={`${styles.CostumeLink }`}
+            <Col xs={12} md={6} >
+            <Row className='mt-3'>
+            <Col className='text-center' xs={12}>
+            <p className={`${styles.BoldTitle} 
+            mb-2 text-center mx-1 mx-sm-5`}>BG/STANDINGS</p>
+            </Col>
+            </Row>
+            <Row >
+            <Col className='text-center' xs={12}>
+            <p>{background_artists} </p>
+            <p
+                    className={`${styles.CostumeLink } `}
                     onClick={() => setShowCosBack(showCosBack => !showCosBack)} >Costumes
                 </p>
-                </Col>
-                </Row>
-                {!showCosBack ? (
-                    ""
-                    ) : (
-                    <SceneCosBack scene={scene} />
-                    ) }
-                </div>
+            {!showCosBack ? (
+                ""
+                ) : (
+                <SceneCosBack scene={scene} />
+                ) }
             </Col>
+            </Row>
+            </Col>
+            </Row>
+            {/* shoot info */}
+            <Row>
+            <Col xs={12} md={6}>
+            <Row className='mt-3'>
+                <Col className='text-center' xs={12}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>SHOOT INFO </p>
+                <p>{shooting_date} - {filming_location} </p>
+                </Col>
+            </Row>
+            </Col>
+            <Col xs={12}  md={6}>
+            <Row className='mt-3'>
+                <Col className='text-center' xs={12} >
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>EQUIPMENT SET PROPS</p>
+                </Col>
+            </Row>
+            </Col>
+            </Row>
+            <Row >
+                <Col className='text-center' xs={{span: 10, offset: 1 }}>
+                <p>{equip_set_props} </p>
+                </Col>
+            </Row>
+            <Row className='my-3'>
+                <Col className='text-center' xs={{span: 10, offset: 1 }} md={{span: 6, offset: 3 }}>
+                <p className={`${styles.BoldTitle} 
+                mb-2 text-center mx-1 mx-sm-5`}>DEPARTMENTS INFO </p>
+                </Col>
+            </Row>
+            <Row >
+                <Col className='text-center' xs={{span: 10, offset: 1 }} >
+                <p>{department_info} </p>
+                </Col>
             </Row>
         </div>
     )

@@ -20,9 +20,11 @@ import Storyboard from './Storyboard';
 import TopBox from '../../components/TopBox';
 import InfoScenePage from './InfoScenePage';
 import InfoWorkspace from './InfoWorkspace';
+import Script from './Script';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
+    const [showScript, setShowScript] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showBreak, setShowBreak] = useState(false);
     const [showstory, setShowstory] = useState(false);
@@ -33,7 +35,7 @@ const Scene = (props) => {
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
-    const { id, number, storyboard, scene,
+    const { id, number, storyboard, scene, image,
       workspace_guide, setScene } = props;
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
@@ -201,7 +203,12 @@ const Scene = (props) => {
             <div className={` ${styles.Header}`}>
               <div className='d-none d-md-block'>
                   <Row className={`${styles.ButtonLine} mt-2 mx-3`}>
-                  <Col md={1}></Col>
+                  <Col md={1}>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowScript(showScript => !showScript)} > Script
+                        </p>
+                  </Col>
                     <Col md={2} className='text-center'>
                         <p
                           className={`py-0 mb-0 ${styles.Button}`}
@@ -242,7 +249,6 @@ const Scene = (props) => {
               </div>
               <div className='d-md-none'>
                   <Row className={`${styles.ButtonLine} mt-2`}>
-                    <Col xs={2}></Col>
                     <Col xs={4} className='text-center'>
                         <p
                           className={`py-0 mb-0 ${styles.Button}`}
@@ -255,6 +261,12 @@ const Scene = (props) => {
                               onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
                             </p>
                         </Col>
+                        <Col xs={2} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowScript(showScript => !showScript)} > Script
+                        </p>
+                    </Col>
                     <Col className='text-center px-0 mx-0' xs={2}>
                     <PostDropdown
                             handleEdit={handleEdit}
@@ -288,7 +300,12 @@ const Scene = (props) => {
                       ""
                     ) : (
                       <Breakdown scene={scene} {...scene} setShowBreak={setShowBreak} setScene={setScene} /> 
-                      ) }             
+                      ) }    
+                      {!showScript ? (
+                      ""
+                    ) : (
+                      <Script scene={scene} script={image} setShowScript={setShowScript} setScene={setScene} /> 
+                      ) }          
                     {!showstory ? (
                       ""
                     ) : (
