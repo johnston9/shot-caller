@@ -1138,7 +1138,7 @@ const SceneEditForm = () => {
                   <Form.Control
                     type="file"
                     id="image-upload"
-                    accept="image/*"
+                    // accept="image/*"
                     onChange={handleChangeImage}
                     ref={imageInput}
                   />

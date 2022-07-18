@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -8,24 +7,23 @@ import Container from "react-bootstrap/Container";
 import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
-
 import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) => {
+const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        storyboard: "",
+        image: "",
         number: "",
     })
-    const {storyboard, number} = postData;
-    const storyboardInput = useRef(null)
+    const {image, number} = postData;
+    const scriptInput = useRef(null)
 
     const history = useHistory();
     const { id } = useParams();
@@ -34,9 +32,9 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) =
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/scenes/${id}/`);
-            const { storyboard, number } = data;
+            const { image, number } = data;
      
-        setPostData({ storyboard, number });
+        setPostData({ image, number });
           } catch (err) {
             console.log(err);
           }
@@ -45,16 +43,16 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) =
         handleMount();
       }, [id]);
 
-      const handleChangeStoryboard = (event) => {
+      const handleChangeScript = (event) => {
         if (event.target.files.length) {
-          URL.revokeObjectURL(storyboard);
+          URL.revokeObjectURL(image);
           setPostData({
             ...postData,
-            storyboard: URL.createObjectURL(event.target.files[0]),
+            image: URL.createObjectURL(event.target.files[0]),
           });
           
-          setNewStory(event.target.files[0]);
-          console.log(`storyboard ${storyboard}`);
+          // setNewScript(event.target.files[0])
+          console.log(`script ${image}`)
         }
       };
 
@@ -63,17 +61,17 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) =
         const formData = new FormData();
 
         formData.append("number", number);
-        if (storyboardInput.current.files[0]) {
-            formData.append("storyboard", storyboardInput.current.files[0]); 
+        if (scriptInput.current.files[0]) {
+            formData.append("image", scriptInput.current.files[0]); 
         }
 
         try {
             const data = await axiosReq.put(`/scenes/${id}/`, formData);
             console.log(data)
-            setAddStory(false);
+            setAddScript(false);
             setScene((prevScene) => ({
               ...prevScene,
-              storyboard: data.storyboard,
+              image: data.image,
             }));
             history.push(`/scenes/`);
         } catch (err) {
@@ -88,12 +86,13 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) =
         <div className="text-center">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
-            onClick={() => setAddStory(false)}
+            onClick={() => setAddScript(false)}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-            Apply
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} 
+            type="submit">
+            Create 
           </Button>
         </div>
       );
@@ -103,48 +102,53 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) =
       <Form onSubmit={handleSubmit}>
         <Row>
         <Col className="py-2 p-0 p-md-2" md={6}>
-            {/* storyboard */}
+            {/* script */}
             <Container
-              className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+              className={`${appStyles.Content} ${styles.Container
+            } d-flex flex-column justify-content-center`}
             >
               <Form.Group className="text-center pt-3">
-                  {storyboard ? (
+                  {image ? (
                     <>
                       <figure>
-                        <Image className={appStyles.Image} src={storyboard} />
+                        <Image className={appStyles.Image} src={image} />
                       </figure>
+                      <p>File Path <span>{image}</span> </p>
+                      <div className='text-center'>
+                          <Link to={{ pathname: image }} target="_blank" >VIEW SCRIPT</Link>
+                          </div>
                       <div>
                         <Form.Label
                           className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                          htmlFor="storyboard-upload"
+                          htmlFor="script-upload"
                         >
-                          Change the storyboard
+                          Change the Script
                         </Form.Label>
                       </div>
                     </>
                   ) : (
                     <Form.Label
                       className="d-flex justify-content-center"
-                      htmlFor="storyboard-upload"
+                      htmlFor="script-upload"
                     >
                       <Asset
                         src={Upload}
                         height={50}
                         width={50}
-                        message="Click or tap to upload a storyboard"
+                        message="Upload Script"
                       />
                     </Form.Label>
                   )}
     
                   <Form.Control
                     type="file"
-                    id="storyboard-upload"
+                    id="script-upload"
                     // accept="image/*"
-                    onChange={handleChangeStoryboard}
-                    ref={storyboardInput}
+                    onChange={handleChangeScript}
+                    ref={scriptInput}
                   />
                 </Form.Group>
-                {errors?.storyboard?.map((message, idx) => (
+                {errors?.image?.map((message, idx) => (
                   <Alert variant="warning" key={idx}>
                     {message}
                   </Alert>
@@ -162,4 +166,4 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) =
   )
 }
 
-export default StoryBoardUpload
+export default ScriptUpload

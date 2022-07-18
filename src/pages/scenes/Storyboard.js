@@ -34,14 +34,14 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
             <Row className="h-100 my-2">
             <Col xs={12} > 
                 <>
-                    {storyboard ? (
+                    {newStory ? (
                         <> 
                         <Image className={styles.Story} src={newStory} alt="storyboard"  />
                         </>
                     )
                     : (
                     <Container className={appStyles.Content}>
-                        <Asset src={NoResults } message="Add Storyboard" />
+                        <Asset src={NoResults } message="No results" />
                     </Container>
                     )}
                 </>
