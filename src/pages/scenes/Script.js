@@ -42,18 +42,18 @@ const Script = ({script, setShowScript, setScene} ) => {
             <Row className="h-100 my-2">
             <Col xs={12} > 
                 <>
-                    {script ? (
+                    {newScript ? (
                         <> 
-                        <Image className={styles.Story} src={script} 
-                          alt="Script"  />
+                        {/* <Image className={styles.Story} src={script} 
+                          alt="Script"  /> */}
                           <div className='text-center'>
-                          <Link to={{ pathname: script }} target="_blank" >VIEW SCRIPT</Link>
+                          <Link to={{ pathname: newScript }} target="_blank" >VIEW SCRIPT</Link>
                           </div>
                         </>
                     )
                     : (
                     <Container className={appStyles.Content}>
-                        <Asset src={NoResults } message="No results" />
+                        <Asset src={NoResults } message="No scene script added" />
                     </Container>
                     )}
                 </>

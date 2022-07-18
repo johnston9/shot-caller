@@ -35,7 +35,7 @@ const Scene = (props) => {
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
-    const { id, number, storyboard, scene, image,
+    const { id, number, storyboard, scene, script,
       workspace_guide, setScene } = props;
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
@@ -175,13 +175,6 @@ const Scene = (props) => {
 
     };
 
-    // const handleClickAddMoods = () => {
-    //   setSceneId(id); 
-    //   setNumber(number);
-    //   history.push(`/scene/moodshot/create`);
-
-    // };
-
     return (
         <div>
           <TopBox title={`Scene ${number} `} />
@@ -304,7 +297,7 @@ const Scene = (props) => {
                       {!showScript ? (
                       ""
                     ) : (
-                      <Script scene={scene} script={image} setShowScript={setShowScript} setScene={setScene} /> 
+                      <Script scene={scene} script={script} setShowScript={setShowScript} setScene={setScene} /> 
                       ) }          
                     {!showstory ? (
                       ""

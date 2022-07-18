@@ -19,10 +19,10 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        image: "",
+        script: "",
         number: "",
     })
-    const {image, number} = postData;
+    const {script, number} = postData;
     const scriptInput = useRef(null)
 
     const history = useHistory();
@@ -32,9 +32,9 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/scenes/${id}/`);
-            const { image, number } = data;
+            const { script, number } = data;
      
-        setPostData({ image, number });
+        setPostData({ script, number });
           } catch (err) {
             console.log(err);
           }
@@ -45,14 +45,14 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
 
       const handleChangeScript = (event) => {
         if (event.target.files.length) {
-          URL.revokeObjectURL(image);
+          URL.revokeObjectURL(script);
           setPostData({
             ...postData,
-            image: URL.createObjectURL(event.target.files[0]),
+            script: URL.createObjectURL(event.target.files[0]),
           });
           
           // setNewScript(event.target.files[0])
-          console.log(`script ${image}`)
+          console.log(`script ${script}`)
         }
       };
 
@@ -62,7 +62,7 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
 
         formData.append("number", number);
         if (scriptInput.current.files[0]) {
-            formData.append("image", scriptInput.current.files[0]); 
+            formData.append("script", scriptInput.current.files[0]); 
         }
 
         try {
@@ -71,7 +71,7 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
             setAddScript(false);
             setScene((prevScene) => ({
               ...prevScene,
-              image: data.image,
+              script: data.script,
             }));
             history.push(`/scenes/`);
         } catch (err) {
@@ -108,15 +108,16 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
             } d-flex flex-column justify-content-center`}
             >
               <Form.Group className="text-center pt-3">
-                  {image ? (
+                  {script ? (
                     <>
-                      <figure>
+                      {/* <figure>
                         <Image className={appStyles.Image} src={image} />
-                      </figure>
-                      <p>File Path <span>{image}</span> </p>
-                      <div className='text-center'>
-                          <Link to={{ pathname: image }} target="_blank" >VIEW SCRIPT</Link>
-                          </div>
+                      </figure> */}
+                      <p>File Path and Name: <span>{script}</span> </p>
+                      {/* <div className='text-center'>
+                          <Link to={{ pathname: image }} target="_blank" >
+                            VIEW SCRIPT</Link>
+                      </div> */}
                       <div>
                         <Form.Label
                           className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
@@ -143,12 +144,11 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
                   <Form.Control
                     type="file"
                     id="script-upload"
-                    // accept="image/*"
                     onChange={handleChangeScript}
                     ref={scriptInput}
                   />
                 </Form.Group>
-                {errors?.image?.map((message, idx) => (
+                {errors?.script?.map((message, idx) => (
                   <Alert variant="warning" key={idx}>
                     {message}
                   </Alert>
@@ -158,7 +158,8 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
         </Row>
         <Row>
           <Col className="text-center">
-          <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container>
+          <Container className= {`mt-3 ${styles.Container}`} >
+            {buttons}</Container>
           </Col>
         </Row>
         </Form>
