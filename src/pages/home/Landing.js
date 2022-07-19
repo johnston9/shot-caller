@@ -17,9 +17,7 @@ const Landing = () => {
   const currentUser = useCurrentUser();
   const crewInfoOne = useCrewInfoContext();
     const crew = crewInfoOne.results[0];
-  console.log(currentUser);
   const token = useToken();
-  console.log(token);
   const redirect = useRedirect();
   const signintoken = getRefreshToken();
   const signindata = useSignin();

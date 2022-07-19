@@ -7,7 +7,6 @@ export const useSetActContext = () => useContext(SetActContext);
 
 export const ActProvider = ({ children }) => {
     const [act, setAct] = useState("");
-    console.log("Act");
 
     return (
         <ActContext.Provider value={act}>

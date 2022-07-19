@@ -81,7 +81,6 @@ export const ProfileDataProvider = ({children}) => {
               profiles: data,
             }));
             setHasLoaded(true);
-            console.log("useEffect Profiles");
           } catch (err) {
             console.log(err);
           }

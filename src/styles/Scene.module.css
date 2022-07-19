@@ -106,6 +106,7 @@ i:hover {
 .Close {
   color: rgb(28, 131, 131);
   padding-right: 30px;
+  cursor: pointer;
 }
 
 .Close:hover {

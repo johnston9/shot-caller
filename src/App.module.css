@@ -32,6 +32,12 @@
   object-fit: contain;
 }
 
+.iframe {
+  height: 120px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
 * {
   box-sizing: border-box;
 }

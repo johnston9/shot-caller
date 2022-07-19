@@ -43,7 +43,6 @@ export const CurrentUserProvider = ({ children }) => {
     try {
       const { data } = await axiosRes.get("dj-rest-auth/user/");
       setCurrentUser(data);
-      console.log(data);
     } catch (err) {
     }
   };
@@ -60,7 +59,6 @@ export const CurrentUserProvider = ({ children }) => {
             const {data} = await axios.post("/dj-rest-auth/token/refresh/");
             setToken(data);
             setSignin(`inter`)
-            console.log(data);
           } catch (err) {
             setSignin(`inter error`)
             console.log(err);

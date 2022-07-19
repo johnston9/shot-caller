@@ -10,31 +10,39 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Alert } from "react-bootstrap";
+import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) => {
+const ScriptUpload = ({setAddScript }) => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
+    const [fileName, setFileName] = useState("");
     const [postData, setPostData] = useState({
         script: "",
         number: "",
     })
     const {script, number} = postData;
-    const scriptInput = useRef(null)
+    const scriptInput = useRef(null);
 
     const history = useHistory();
     const { id } = useParams();
+
+    const getFilename = (path) => {
+      const paths = path.split("/");
+      const name = paths.length - 1;
+      return paths[name];
+   };
 
     useEffect(() => {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/scenes/${id}/`);
             const { script, number } = data;
-     
-        setPostData({ script, number });
+            setPostData({ script, number });
+            const file = getFilename(data.script);       
+            setFileName(file);
           } catch (err) {
             console.log(err);
           }
@@ -50,6 +58,9 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
             ...postData,
             script: URL.createObjectURL(event.target.files[0]),
           });
+          // const file = getFilename(event.target.files[0]);    
+          console.log(event.target.files[0])   
+          setFileName(event.target.files[0].name);
           
           // setNewScript(event.target.files[0])
           console.log(`script ${script}`)
@@ -68,12 +79,12 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
         try {
             const data = await axiosReq.put(`/scenes/${id}/`, formData);
             console.log(data)
-            setAddScript(false);
-            setScene((prevScene) => ({
-              ...prevScene,
-              script: data.script,
-            }));
-            history.push(`/scenes/`);
+            // setAddScript(false);
+            // setScene((prevScene) => ({
+            //   ...prevScene,
+            //   script: data.script,
+            // }));
+            history.push(`/scenes/${id}`);
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
@@ -109,15 +120,11 @@ const ScriptUpload = ({setAddScript, setScene, setNewScript, setShowScript }) =>
             >
               <Form.Group className="text-center pt-3">
                   {script ? (
-                    <>
-                      {/* <figure>
-                        <Image className={appStyles.Image} src={image} />
-                      </figure> */}
-                      <p>File Path and Name: <span>{script}</span> </p>
-                      {/* <div className='text-center'>
-                          <Link to={{ pathname: image }} target="_blank" >
-                            VIEW SCRIPT</Link>
-                      </div> */}
+                    <>  <figure>
+                        <iframe title="Script"
+                         className={appStyles.iframe} src={script} />
+                      </figure>
+                      {fileName && <p>{fileName} </p> }
                       <div>
                         <Form.Label
                           className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
