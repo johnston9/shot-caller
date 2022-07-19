@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -10,55 +10,97 @@ import appStyles from "../../App.module.css";
 import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 import ScriptUpload from './ScriptUpload';
+import { Link, useHistory, useParams } from 'react-router-dom';
+import TopBox from '../../components/TopBox';
+import { axiosReq } from '../../api/axiosDefaults';
 
-const Script = ({script, setShowScript, setScene} ) => {
-    console.log(script);
+const Script = () => {
     useRedirect("loggedOut");
+    const history = useHistory();
+    const { id } = useParams();
     const [addScript, setAddScript] = useState(false);
-
+    const [scriptData, setScriptData] = useState({
+        script: "",
+        number: "",
+    })
+    const { script, number } = scriptData;
+    const [fileName, setFileName] = useState("");
+    const [hasLoaded, setHasLoaded] = useState(false);
     const getFilename = (path) => {
         const paths = path.split("/");
         const name = paths.length - 1;
         return paths[name];
      };
 
+    useEffect(() => {
+        const handleMount = async () => {
+          try {
+            const { data } = await axiosReq.get(`/scenes/${id}/`);
+            const { script, number } = data;
+            setScriptData({ script, number });
+            const file = getFilename(data.script);       
+            setFileName(file);
+            setHasLoaded(true);
+          } catch (err) {
+            console.log(err);
+          }
+        };
+    
+        handleMount();
+      }, [id]);
+
+
     return (
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} 
-            className={` mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
-            Script
-                <span style={{ textTransform: 'none'}} 
-                className={`float-right ${styles.Close }`} 
-                onClick={() => setShowScript(false) } >Close</span>
-            </h5>
-            <Row>
-              <Col className="text-center">
-                    <Button onClick={() => setAddScript(addScript => !addScript)} 
-                    className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
-                    Add/Update Script
+            { hasLoaded ? (
+                <>
+                {/* <TopBox title={`Script Scene ${number}`} /> */}
+                {/* <h5 className={`text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
+                {fileName}
+            </h5> */}
+            <Row className='my-1'>
+            <Col xs={6}>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              onClick={() => history.goBack()}
+              >
+              Back
+          </Button>
+            </Col>
+              <Col className="text-center" xs={6} >
+                <Button onClick={() => setAddScript(addScript => !addScript)} 
+                    className={`${btnStyles.Button}  ${btnStyles.Bright} float-right `}>
+                    Add Script
                 </Button>
-                {!addScript ?("") : (<ScriptUpload 
-                setShowScript={setShowScript} setScene={setScene}
-                 setAddScript={setAddScript} />  ) }
               </Col>
             </Row> 
-            <Row className="h-100 my-2">
+            <Row>
+            <Col className='text-center'>
+            {!addScript ?("") : (
+                <ScriptUpload 
+                 id={id}
+                 script1= {script}
+                 number1={number}
+                 fileName1={fileName}
+                 setAddScript={setAddScript} />  ) }
+            </Col>
+            </Row>
+            <Row >
             <Col xs={12} > 
                 <>
                     {script ? (
                         <> 
                         <Row>
                         <Col>
-                        <div>
-                        <iframe height={100} title="Script" 
-                         className={styles.Story} src={script} 
+                        <div className={`${styles.Frame} mt-2`}>
+                        <iframe title="Script" src={script} className={appStyles.iframeFull}
                           alt="Script"  />
                         </div>
                         </Col>
                         </Row>
-                          {/* <div className='text-center'>
-                          <Link to={{ pathname: newScript }} target="_blank" >VIEW SCRIPT</Link>
-                          </div> */}
+                          <div className='text-center'>
+                          <Link to={{ pathname: script }} target="_blank" >VIEW SCRIPT</Link>
+                          </div>
                         </>
                     )
                     : (
@@ -68,7 +110,14 @@ const Script = ({script, setShowScript, setScene} ) => {
                     )}
                 </>
             </Col>
-            </Row>            
+            </Row>  
+                </>
+            ) : (
+                <Container className={appStyles.Content}>
+            <Asset spinner />
+          </Container>
+            )
+            }          
         </div>
     )
 }

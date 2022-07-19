@@ -11,45 +11,44 @@ import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const ScriptUpload = ({setAddScript }) => {
+const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
-    const [fileName, setFileName] = useState("");
+    const [fileName, setFileName] = useState(fileName1);
     const [postData, setPostData] = useState({
-        script: "",
-        number: "",
+        script: script1,
+        number: number1,
     })
     const {script, number} = postData;
     const scriptInput = useRef(null);
 
     const history = useHistory();
-    const { id } = useParams();
 
-    const getFilename = (path) => {
-      const paths = path.split("/");
-      const name = paths.length - 1;
-      return paths[name];
-   };
+  //   const getFilename = (path) => {
+  //     const paths = path.split("/");
+  //     const name = paths.length - 1;
+  //     return paths[name];
+  //  };
 
-    useEffect(() => {
-        const handleMount = async () => {
-          try {
-            const { data } = await axiosReq.get(`/scenes/${id}/`);
-            const { script, number } = data;
-            setPostData({ script, number });
-            const file = getFilename(data.script);       
-            setFileName(file);
-          } catch (err) {
-            console.log(err);
-          }
-        };
+    // useEffect(() => {
+    //     const handleMount = async () => {
+    //       try {
+    //         const { data } = await axiosReq.get(`/scenes/${id}/`);
+    //         const { script, number } = data;
+    //         setPostData({ script, number });
+    //         const file = getFilename(data.script);       
+    //         setFileName(file);
+    //       } catch (err) {
+    //         console.log(err);
+    //       }
+    //     };
     
-        handleMount();
-      }, [id]);
+    //     handleMount();
+    //   }, [id]);
 
       const handleChangeScript = (event) => {
         if (event.target.files.length) {
@@ -112,7 +111,7 @@ const ScriptUpload = ({setAddScript }) => {
     <div>
       <Form onSubmit={handleSubmit}>
         <Row>
-        <Col className="py-2 p-0 p-md-2" md={6}>
+        <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3} } >
             {/* script */}
             <Container
               className={`${appStyles.Content} ${styles.Container
@@ -120,7 +119,8 @@ const ScriptUpload = ({setAddScript }) => {
             >
               <Form.Group className="text-center pt-3">
                   {script ? (
-                    <>  <figure>
+                    <>  
+                      <figure>
                         <iframe title="Script"
                          className={appStyles.iframe} src={script} />
                       </figure>

@@ -175,6 +175,11 @@ const Scene = (props) => {
 
     };
 
+    const clickScript = () => {
+      setSceneId(id); 
+      history.push(`/script/scene/${id}`);
+    };
+
     return (
         <div>
           <TopBox title={`Scene ${number} `} />
@@ -193,13 +198,13 @@ const Scene = (props) => {
                   ) : (
                     <InfoScenePage  /> 
                     ) } 
+{/* onClick={() => setShowScript(showScript => !showScript)} */}
             <div className={` ${styles.Header}`}>
               <div className='d-none d-md-block'>
                   <Row className={`${styles.ButtonLine} mt-2 mx-3`}>
                   <Col md={1}>
-                        <p
-                          className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => setShowScript(showScript => !showScript)} > Script
+                        <p className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => clickScript()}> Script
                         </p>
                   </Col>
                     <Col md={2} className='text-center'>
