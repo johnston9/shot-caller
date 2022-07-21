@@ -11,14 +11,16 @@ import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 import ScriptUpload from './ScriptUpload';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import TopBox from '../../components/TopBox';
 import { axiosReq } from '../../api/axiosDefaults';
+import InfoScript from './InfoScript';
 
 const Script = () => {
     useRedirect("loggedOut");
+    const admin = true;
     const history = useHistory();
     const { id } = useParams();
     const [addScript, setAddScript] = useState(false);
+    const [showInfo, setShowInfo] = useState(false);
     const [scriptData, setScriptData] = useState({
         script: "",
         number: "",
@@ -38,8 +40,10 @@ const Script = () => {
             const { data } = await axiosReq.get(`/scenes/${id}/`);
             const { script, number } = data;
             setScriptData({ script, number });
-            const file = getFilename(data.script);       
-            setFileName(file);
+            if (script) {
+              const file = getFilename(data.script);       
+              setFileName(file);
+            }
             setHasLoaded(true);
           } catch (err) {
             console.log(err);
@@ -54,26 +58,37 @@ const Script = () => {
         <div>
             { hasLoaded ? (
                 <>
-                {/* <TopBox title={`Script Scene ${number}`} /> */}
-                {/* <h5 className={`text-center mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
-                {fileName}
-            </h5> */}
             <Row className='my-1'>
-            <Col xs={6}>
+            <Col xs={4}>
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => history.goBack()}
               >
               Back
-          </Button>
+            </Button>
             </Col>
-              <Col className="text-center" xs={6} >
-                <Button onClick={() => setAddScript(addScript => !addScript)} 
-                    className={`${btnStyles.Button}  ${btnStyles.Bright} float-right `}>
-                    Add Script
-                </Button>
-              </Col>
+            {admin && (
+              <>
+              <Col className="text-center" xs={4} >
+              <Button onClick={() => setAddScript(addScript => !addScript)} 
+                  className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
+                  Add Script
+              </Button>
+            </Col>
+            <Col xs={4}>
+            <Button
+            className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+            onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+            </Col>
+            </>
+            ) }
             </Row> 
+            {!showInfo ? (
+                ""
+                    ) : (
+                      <InfoScript  /> 
+                      ) } 
             <Row>
             <Col className='text-center'>
             {!addScript ?("") : (
@@ -105,7 +120,8 @@ const Script = () => {
                     )
                     : (
                     <Container className={appStyles.Content}>
-                        <Asset src={NoResults } message="No scene script added" />
+                        <Asset src={NoResults } message="No scene script added. Please go to
+                        the Script page to view the entire script." />
                     </Container>
                     )}
                 </>

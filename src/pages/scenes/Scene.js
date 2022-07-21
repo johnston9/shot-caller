@@ -182,7 +182,9 @@ const Scene = (props) => {
 
     return (
         <div>
-          <TopBox title={`Scene ${number} `} />
+          {scene && (
+            <>
+            <TopBox title={`Scene ${number} `}/>
           <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}
@@ -198,7 +200,6 @@ const Scene = (props) => {
                   ) : (
                     <InfoScenePage  /> 
                     ) } 
-{/* onClick={() => setShowScript(showScript => !showScript)} */}
             <div className={` ${styles.Header}`}>
               <div className='d-none d-md-block'>
                   <Row className={`${styles.ButtonLine} mt-2 mx-3`}>
@@ -490,6 +491,8 @@ const Scene = (props) => {
                       </Link>
                   </Card.Body>
             </div>
+            </>
+          ) }
         </div>
     )
 }
