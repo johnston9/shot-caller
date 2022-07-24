@@ -16,7 +16,7 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref, 
-    refw, refw1, refw2, refw3, 
+    refw, refw1, refw2, refw3, refw4,
     reff, reff1, reff2, reff3, reff4, reff5, reff6, 
     refm, refm1, refm2, refin, refin2,
     refs, refs1, refs2, refs3,
@@ -82,7 +82,17 @@ const NavBar = () => {
         >
           <i className="far fa-plus-square"></i>Add scene
         </NavLink>
-      </NavDropdown.Item>
+        </NavDropdown.Item>
+        <NavDropdown.Item >
+          <NavLink
+          ref={refw4}
+          className={`${styles.DropLink} `}
+          activeClassName={styles.Active}
+          to="/script"
+        >
+          <i className="far fa-plus-square"></i>Script 
+        </NavLink>
+        </NavDropdown.Item>
       </NavDropdown>
 
       {/* characters locations departments-xtra */}

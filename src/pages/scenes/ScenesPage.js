@@ -72,19 +72,34 @@ const ScenesPage = ({message, filter = "" }) => {
     
       }, [query, filter])
 
+      const clickScript = () => {
+        history.push(`/script`);
+      };
+
     return (
         <div >
-          <TopBox title="Scenes" />
-          <Button
+          <TopBox title="Scenes Workspace" />
+          <Row className='mb-3'>
+            <Col xs={4} >
+            <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} mt-2`}
               onClick={() => history.goBack()}
               >
               Back
           </Button>
-          <Button
-          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-          onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-        </Button>
+            </Col>
+            <Col xs={4} className="text-center mt-2" >
+              <Button className={`${btnStyles.Button}  ${btnStyles.Bright}`}
+                onClick={() => clickScript()}> Script
+              </Button>
+            </Col>
+            <Col xs={4} >
+            <Button
+              className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+            </Col>
+          </Row>
           {!showInfo ? (
               ""
                   ) : (

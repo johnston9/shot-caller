@@ -61,6 +61,7 @@ import SeriesPage from './pages/indexshots/SeriesPage';
 import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 import Map from './components/Map';
 import Script from './pages/scenes/Script';
+import LatestScript from './pages/scenes/LatestScript';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -281,6 +282,7 @@ function App() {
         <Route exact path="/scenes/:id" render={() => (<ScenePage/>)} />
         <Route exact path="/scenes/:id/edit" render={() => <SceneEditForm />} />
         <Route exact path="/script/scene/:id" render={() => (<Script/>)} />
+        <Route exact path="/script" render={() => (<LatestScript />)} />
         {/* show scene post by department on postspage*/}
         <Route
             exact

@@ -15,40 +15,17 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
+const ScriptAdd = ({setAddScript }) => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
-    const [fileName, setFileName] = useState(fileName1);
+    const [fileName, setFileName] = useState("");
     const [postData, setPostData] = useState({
-        script: script1,
-        number: number1,
+        script: "",
     })
-    const {script, number} = postData;
+    const {script} = postData;
     const scriptInput = useRef(null);
 
     const history = useHistory();
-
-  //   const getFilename = (path) => {
-  //     const paths = path.split("/");
-  //     const name = paths.length - 1;
-  //     return paths[name];
-  //  };
-
-    // useEffect(() => {
-    //     const handleMount = async () => {
-    //       try {
-    //         const { data } = await axiosReq.get(`/scenes/${id}/`);
-    //         const { script, number } = data;
-    //         setPostData({ script, number });
-    //         const file = getFilename(data.script);       
-    //         setFileName(file);
-    //       } catch (err) {
-    //         console.log(err);
-    //       }
-    //     };
-    
-    //     handleMount();
-    //   }, [id]);
 
       const handleChangeScript = (event) => {
         if (event.target.files.length) {
@@ -56,7 +33,8 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
           setPostData({
             ...postData,
             script: URL.createObjectURL(event.target.files[0]),
-          });   
+          });
+          console.log(event.target.files[0])   
           setFileName(event.target.files[0].name);
           console.log(`script ${script}`)
         }
@@ -66,14 +44,14 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
         event.preventDefault();
         const formData = new FormData();
 
-        formData.append("number", number);
         if (scriptInput.current.files[0]) {
             formData.append("script", scriptInput.current.files[0]); 
         }
 
         try {
-            const data = await axiosReq.put(`/scenes/${id}/`, formData);
-            history.push(`/scenes/${id}`);
+            const data = await axiosReq.post(`/script/`, formData);
+            console.log(data)
+            history.push(`/scenes`);
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
@@ -164,4 +142,4 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
   )
 }
 
-export default ScriptUpload
+export default ScriptAdd

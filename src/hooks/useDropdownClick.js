@@ -7,6 +7,7 @@ const useDropdownClick = () => {
     const refw1 = useRef(null)
     const refw2 = useRef(null)
     const refw3 = useRef(null)
+    const refw4 = useRef(null)
     const reff = useRef(null)
     const reff1 = useRef(null)
     const reff2 = useRef(null)
@@ -31,98 +32,78 @@ const useDropdownClick = () => {
             // workspace dropdown
             if ( refw1.current && refw1.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refw1");
             }
             if ( refw2.current && refw2.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refw2");
             }
             if ( refw3.current && refw3.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refw3");
+            }
+            if ( refw4.current && refw4.current.contains(event.target)) {
+                setExpanded(false);
             }
             if (refw.current && refw.current.contains(event.target)) {
-                console.log("refw");
                 return;
             }
             // features dropdown
             if ( reff1.current && reff1.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("reff1");
             }
             if ( reff2.current && reff2.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("reff2");
             }
             if ( reff3.current && reff3.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("reff3");
             }
             if ( reff4.current && reff4.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("reff4");
             }
             if ( reff5.current && reff5.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("reff5");
             }
             if ( reff6.current && reff6.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("reff6");
             }
             if (reff.current && reff.current.contains(event.target)) {
-                console.log("reff");
                 return;
             }
             // moodshots dropdown
             if ( refm1.current && refm1.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refm1");
             }
             if ( refm2.current && refm2.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refm2");
             }
             if ( refin.current && refin.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refin");
             }
             if ( refin2.current && refin2.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refin2");
             } 
             if (refm.current && refm.current.contains(event.target)) {
-                console.log("refm");
                 return;
             }
             // schedule dropdown
             if ( refs1.current && refs1.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refs1");
             }
             if ( refs2.current && refs2.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refs2");
             }
             if ( refs3.current && refs3.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refs3");
             }
             if (refs.current && refs.current.contains(event.target)) {
-                console.log("refs");
                 return;
             }
             // Profiles dropdown
             if ( refp1.current && refp1.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refp1");
             }
             if ( refp2.current && refp2.current.contains(event.target)) {
                 setExpanded(false);
-                console.log("refp2");
             }
             if (refp.current && refp.current.contains(event.target)) {
-                console.log("refp");
                 return;
             }
             // page and toggle icon
@@ -137,7 +118,7 @@ const useDropdownClick = () => {
         }, [ref])
 
         return { expanded, setExpanded, 
-            ref, refw, refw1, refw2, refw3, 
+            ref, refw, refw1, refw2, refw3, refw4,
             reff, reff1, reff2, reff3, reff4, reff5, reff6, 
             refm, refm1, refm2, refin, refin2,
             refs, refs1, refs2, refs3,
