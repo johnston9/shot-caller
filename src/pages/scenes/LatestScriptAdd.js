@@ -15,17 +15,28 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const ScriptAdd = ({setAddScript }) => {
+const LatestScriptAdd = ({setAddScript }) => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
     const [fileName, setFileName] = useState("");
     const [postData, setPostData] = useState({
         script: "",
+        draft: "",
+        latest_changes: "",
+        notes: "",
     })
-    const {script} = postData;
+    const {draft, script, latest_changes, notes} = postData;
     const scriptInput = useRef(null);
 
     const history = useHistory();
+
+    // eslint-disable-next-line
+    const handleChange = (event) => {
+      setPostData({
+        ...postData,
+        [event.target.name]: event.target.value,
+      });
+    };
 
       const handleChangeScript = (event) => {
         if (event.target.files.length) {
@@ -44,6 +55,9 @@ const ScriptAdd = ({setAddScript }) => {
         event.preventDefault();
         const formData = new FormData();
 
+        formData.append("draft", draft);
+        formData.append("latest_changes", latest_changes);
+        formData.append("notes", notes);
         if (scriptInput.current.files[0]) {
             formData.append("script", scriptInput.current.files[0]); 
         }
@@ -142,4 +156,4 @@ const ScriptAdd = ({setAddScript }) => {
   )
 }
 
-export default ScriptAdd
+export default LatestScriptAdd

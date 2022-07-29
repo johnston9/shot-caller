@@ -72,7 +72,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
         }
 
         try {
-            const data = await axiosReq.put(`/scenes/${id}/`, formData);
+            await axiosReq.put(`/scenes/${id}/`, formData);
             history.push(`/scenes/${id}`);
         } catch (err) {
             console.log(err);

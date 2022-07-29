@@ -30,6 +30,7 @@ const LatestScriptUpload = ({script1, fileName1, setEditScript, id }) => {
 
     const history = useHistory();
 
+    // eslint-disable-next-line
     const handleChange = (event) => {
       setPostData({
         ...postData,

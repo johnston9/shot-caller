@@ -13,7 +13,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import InfoLatestScript from './InfoLatestScript';
 import LatestScriptUpload from './LatestScriptUpload';
-import ScriptAdd from './ScriptAdd';
+import LatestScriptAdd from './LatestScriptAdd';
 
 const LatestScript = () => {
     useRedirect("loggedOut");
@@ -37,6 +37,7 @@ const LatestScript = () => {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/script/`);
+            console.log(data);
             setScriptData(data);
             if (script) {
               const file = getFilename(data.script);       
@@ -109,7 +110,7 @@ const LatestScript = () => {
             <Row>
             <Col className='text-center'>
             {!addScript ?("") : (
-                <ScriptAdd
+                <LatestScriptAdd
                  setAddScript={setAddScript} />  ) }
             {!editScript ?("") : (
                 <LatestScriptUpload 
