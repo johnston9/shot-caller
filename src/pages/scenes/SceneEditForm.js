@@ -89,7 +89,7 @@ const SceneEditForm = () => {
       background_artists: "",
       background_artists_costumes: "",
       storyboard: "",
-      image: "",
+      script: "",
     });
 
   const { number, title, act, int_ext, day_night, time, location,
@@ -106,7 +106,7 @@ const SceneEditForm = () => {
     character12_costume, other_characters, other_characters_costumes,
     background_artists, background_artists_costumes, shooting_date,
     dramatic_day, equip_set_props, department_info,
-    pages, action, storyboard, image, location_detail } = postData;
+    pages, action, storyboard, script, location_detail } = postData;
     
     const imageInput = useRef(null)
     const storyboardInput = useRef(null)
@@ -132,7 +132,7 @@ const SceneEditForm = () => {
               character12_costume, other_characters, other_characters_costumes,
               background_artists, background_artists_costumes, shooting_date,
               dramatic_day, equip_set_props, department_info,
-              pages, action, storyboard, image, location_detail } = data;
+              pages, action, storyboard, script, location_detail } = data;
      
             setPostData({ number, title, act, int_ext, day_night, time, location,
               filming_location, character1, character1_costume, character2, 
@@ -148,7 +148,7 @@ const SceneEditForm = () => {
               character12_costume, other_characters, other_characters_costumes,
               background_artists, background_artists_costumes, shooting_date,
               dramatic_day, equip_set_props, department_info,
-              pages, action, storyboard, image, location_detail });
+              pages, action, storyboard, script, location_detail });
               } catch (err) {
                 console.log(err);
               }
@@ -166,12 +166,12 @@ const SceneEditForm = () => {
 
     const handleChangeImage = (event) => {
     if (event.target.files.length) {
-        URL.revokeObjectURL(image);
+        URL.revokeObjectURL(script);
         setPostData({
         ...postData,
-        image: URL.createObjectURL(event.target.files[0]),
+        script: URL.createObjectURL(event.target.files[0]),
         });
-        console.log(`image ${image}`)
+        console.log(`script ${script}`)
     }
     };
 
@@ -1033,7 +1033,7 @@ const SceneEditForm = () => {
     formData.append("background_artists", background_artists);
     formData.append("background_artists_costumes", background_artists_costumes);
     if (imageInput.current.files[0]) {
-        formData.append("image", imageInput.current.files[0]);
+        formData.append("script", imageInput.current.files[0]);
     }
     if (storyboardInput.current.files[0]) {
         formData.append("storyboard", storyboardInput.current.files[0]); 
@@ -1107,10 +1107,10 @@ const SceneEditForm = () => {
               className={`${appStyles.Content} ${styles.Width2}  ${styles.Container} d-flex flex-column justify-content-center mb-3`}
             >
               <Form.Group className="text-center pt-3">
-                  {image ? (
+                  {script ? (
                     <>
                       <figure>
-                        <Image className={appStyles.Image} src={image} />
+                        <Image className={appStyles.Image} src={script} />
                       </figure>
                       <div>
                         <Form.Label
@@ -1143,7 +1143,7 @@ const SceneEditForm = () => {
                     ref={imageInput}
                   />
                 </Form.Group>
-                {errors?.image?.map((message, idx) => (
+                {errors?.script?.map((message, idx) => (
                   <Alert variant="warning" key={idx}>
                     {message}
                   </Alert>
