@@ -23,7 +23,8 @@ const LatestScript = () => {
     const [editScript, setEditScript] = useState(false);
     const [showScriptInfo, setShowScriptInfo] = useState(false);
     const [scriptData, setScriptData] = useState({ results: [] })
-    const script = scriptData.results[0];
+    const script1 = scriptData.results[0];
+    const script = script1?.script;
     const id = scriptData.results[0]?.id;
     const [fileName, setFileName] = useState("");
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -39,8 +40,8 @@ const LatestScript = () => {
             const { data } = await axiosReq.get(`/script/`);
             console.log(data);
             setScriptData(data);
-            if (script) {
-              const file = getFilename(data.script);       
+            if (data.results[0].script) {
+              const file = getFilename(data.results[0].script);       
               setFileName(file);
             }
             setHasLoaded(true);
@@ -50,7 +51,7 @@ const LatestScript = () => {
         };
     
         handleMount();
-      }, [script]);
+      }, []);
 
 
     return (
@@ -128,6 +129,7 @@ const LatestScript = () => {
                         <Row>
                         <Col>
                         <div className={`${styles.Frame} mt-2`}>
+                        <p>{fileName} </p>
                         <iframe title="Script" src={script} className={appStyles.iframeFull}
                           alt="Script"  />
                         </div>

@@ -92,59 +92,121 @@ const LatestScriptAdd = ({setAddScript }) => {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Row>
-        <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3} } >
-            {/* script */}
-            <Container
-              className={`${appStyles.Content} ${styles.Container
-            } d-flex flex-column justify-content-center`}
-            >
-              <Form.Group className="text-center pt-3">
-                  {script ? (
-                    <>  
-                      <figure>
-                        <iframe title="Script"
-                         className={appStyles.iframe} src={script} />
-                      </figure>
-                      {fileName && <p>{fileName} </p> }
-                      <div>
-                        <Form.Label
-                          className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                          htmlFor="script-upload"
-                        >
-                          Change the Script
-                        </Form.Label>
-                      </div>
-                    </>
-                  ) : (
-                    <Form.Label
-                      className="d-flex justify-content-center"
-                      htmlFor="script-upload"
-                    >
-                      <Asset
-                        src={Upload}
-                        height={50}
-                        width={50}
-                        message="Upload Script"
-                      />
-                    </Form.Label>
-                  )}
-    
-                  <Form.Control
-                    type="file"
-                    id="script-upload"
-                    onChange={handleChangeScript}
-                    ref={scriptInput}
-                  />
-                </Form.Group>
-                {errors?.script?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-            </Container>
-          </Col>
-        </Row>
+      {/* draft */}
+      <Row>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
+        <Form.Group controlId="draft" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.Bold}`}>Draft Name</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            type="text"
+            name="draft"
+            value={draft}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.draft?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+      </Row>
+      {/* script */}
+      <Row>
+      <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3} } >
+          {/* script */}
+          <Container
+            className={`${appStyles.Content} ${styles.Container
+          } d-flex flex-column justify-content-center`}
+          >
+            <Form.Group className="text-center pt-3">
+                {script ? (
+                  <>  
+                    <figure>
+                      <iframe title="Script"
+                        className={appStyles.iframe} src={script} />
+                    </figure>
+                    {fileName && <p>{fileName} </p> }
+                    <div>
+                      <Form.Label
+                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                        htmlFor="script-upload"
+                      >
+                        Change the Script
+                      </Form.Label>
+                    </div>
+                  </>
+                ) : (
+                  <Form.Label
+                    className="d-flex justify-content-center"
+                    htmlFor="script-upload"
+                  >
+                    <Asset
+                      src={Upload}
+                      height={50}
+                      width={50}
+                      message="Upload Script"
+                    />
+                  </Form.Label>
+                )}
+  
+                <Form.Control
+                  type="file"
+                  id="script-upload"
+                  onChange={handleChangeScript}
+                  ref={scriptInput}
+                />
+              </Form.Group>
+              {errors?.script?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Container>
+        </Col>
+      </Row>
+      {/* changes notes */}
+      <Row>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+        <Form.Group controlId="latest_changes" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.Bold}`} >Latest Changes</Form.Label>
+            <Form.Control 
+                type="text"
+                className={styles.InputScene}
+                name="latest_changes"
+                as="textarea"
+                rows={2}
+                value={latest_changes}
+                onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.latest_changes?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+      <Form.Group controlId="notes" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.Bold}`} >Notes</Form.Label>
+          <Form.Control 
+              className={styles.InputScene}
+              type="text"
+              name="notes"
+              as="textarea"
+              rows={2}
+              value={notes}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.notes?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row>  
         <Row>
           <Col className="text-center">
           <Container className= {`mt-3 ${styles.Container}`} >
