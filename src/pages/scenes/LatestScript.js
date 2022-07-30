@@ -23,9 +23,12 @@ const LatestScript = () => {
     const [editScript, setEditScript] = useState(false);
     const [showScriptInfo, setShowScriptInfo] = useState(false);
     const [scriptData, setScriptData] = useState({ results: [] })
-    const script1 = scriptData.results[0];
-    const script = script1?.script;
-    const id = scriptData.results[0]?.id;
+    const script1 = scriptData.results[0] || "";
+    const draft = script1?.draft || "";
+    const script = script1?.script || "";
+    const latest_changes = script1?.latest_changes || "";
+    const notes = script1?.notes || "";
+    const id = script1?.id || "";
     const [fileName, setFileName] = useState("");
     const [hasLoaded, setHasLoaded] = useState(false);
     const getFilename = (path) => {
@@ -39,6 +42,7 @@ const LatestScript = () => {
           try {
             const { data } = await axiosReq.get(`/script/`);
             console.log(data);
+            console.log(data.results[0].script);
             setScriptData(data);
             if (data.results[0].script) {
               const file = getFilename(data.results[0].script);       
@@ -116,20 +120,44 @@ const LatestScript = () => {
             {!editScript ?("") : (
                 <LatestScriptUpload 
                  id={id}
+                 draft1={draft}
                  script1= {script}
                  fileName1={fileName}
+                 latest_changes1={latest_changes}
+                 notes1={notes}
                  setEditScript={setEditScript} />  ) }
             </Col>
             </Row>
             <Row >
             <Col xs={12} > 
                 <>
+                <h5 style={{ textTransform: 'uppercase'}} 
+                className={`mt-1 mb-3 pl-3 py-1 ${styles.SubTitle } text-center`}>
+                SCRIPT {draft} 
+                </h5>
                     {script ? (
                         <> 
                         <Row>
+                        <Col xs={6} >
+                        <p className= {`text-center ${styles.Bold}`} >
+                          Latest Changes
+                        </p>
+                        <p className= {`text-center ${styles.Back}`}>
+                        {latest_changes}
+                        </p>
+                        </Col>
+                        <Col xs={6} >
+                        <p className= {`text-center ${styles.Bold}`} >
+                          Notes
+                        </p>
+                        <p className= {`text-center ${styles.Back}`}>
+                        {notes}
+                        </p>
+                        </Col>
+                        </Row>
+                        <Row>
                         <Col>
                         <div className={`${styles.Frame} mt-2`}>
-                        <p>{fileName} </p>
                         <iframe title="Script" src={script} className={appStyles.iframeFull}
                           alt="Script"  />
                         </div>

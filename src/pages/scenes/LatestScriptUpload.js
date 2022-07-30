@@ -15,15 +15,17 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const LatestScriptUpload = ({script1, fileName1, setEditScript, id }) => {
+const LatestScriptUpload = (
+  {script1, fileName1, setEditScript, id, draft1,
+    latest_changes1, notes1  }) => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
     const [fileName, setFileName] = useState(fileName1);
     const [postData, setPostData] = useState({
         script: script1,
-        draft: "",
-        latest_changes: "",
-        notes: "",
+        draft: draft1,
+        latest_changes: latest_changes1,
+        notes: notes1,
     })
     const {draft, script, latest_changes, notes} = postData;
     const scriptInput = useRef(null);
@@ -91,10 +93,15 @@ const LatestScriptUpload = ({script1, fileName1, setEditScript, id }) => {
 
   return (
     <div>
+      <h5 style={{ textTransform: 'uppercase'}} 
+          className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
+          Add Latest Script 
+      </h5>
       <Form onSubmit={handleSubmit}>
         {/* draft */}
       <Row>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
+      <Col className="d-flex justify-content-center p-0 p-md-2" 
+        md={{span: 6, offset: 3 }}>
         <Form.Group controlId="draft" className={`${styles.Width2} `} >
             <Form.Label className={`${styles.Bold}`}>Draft Name</Form.Label>
             <Form.Control 
@@ -213,7 +220,9 @@ const LatestScriptUpload = ({script1, fileName1, setEditScript, id }) => {
             {buttons}</Container>
           </Col>
         </Row>
-        </Form>
+      </Form>
+      <p className={`my-3 mb-1 pl-3 py-2 ${styles.SubTitle } text-center`}>
+      </p>
     </div>
   )
 }

@@ -91,10 +91,15 @@ const LatestScriptAdd = ({setAddScript }) => {
 
   return (
     <div>
+      <h5 style={{ textTransform: 'uppercase'}} 
+          className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
+          Add Script 
+      </h5>
       <Form onSubmit={handleSubmit}>
       {/* draft */}
       <Row>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
+      <Col className="d-flex justify-content-center p-0 p-md-2" 
+        md={{span: 6, offset: 3 }} >
         <Form.Group controlId="draft" className={`${styles.Width2} `} >
             <Form.Label className={`${styles.Bold}`}>Draft Name</Form.Label>
             <Form.Control 
@@ -214,6 +219,8 @@ const LatestScriptAdd = ({setAddScript }) => {
           </Col>
         </Row>
         </Form>
+        <p className={`my-3 mb-1 pl-3 py-2 ${styles.SubTitle } text-center`}>
+      </p>
     </div>
   )
 }
