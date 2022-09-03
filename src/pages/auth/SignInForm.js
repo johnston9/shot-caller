@@ -26,7 +26,7 @@ const SignInForm = () => {
 
   const [signInData, setSignInData] = useState({
     username: "",
-    password2: "",
+    password: "",
   })
 
   const { username, password } = signInData;

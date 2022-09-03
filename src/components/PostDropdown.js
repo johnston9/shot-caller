@@ -81,7 +81,7 @@ export const PostDropdown = ({ handleEdit, handleDelete }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    <Dropdown className="ml-auto" drop="left">
+    <Dropdown className={`ml-auto px-3 ${styles.Absolute}`}  drop="left">
       <Dropdown.Toggle as={EditDeleteIcon} />
 
       <Dropdown.Menu
@@ -113,7 +113,10 @@ export function ProfileEditDropdown({ id }) {
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={EditProfileIcon} />
-      <Dropdown.Menu>
+      <Dropdown.Menu
+        className="text-center"
+        popperConfig={{ strategy: "fixed" }}
+      >
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit`)}
           aria-label="edit-profile"
@@ -140,11 +143,15 @@ export function ProfileEditDropdown({ id }) {
 }
 
 // department dropdown 
+// <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left"></Dropdown>
 export function DeptDropdown({ handleClick, depart}) {
   return (
-    <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
+       <Dropdown className={`ml-auto px-3`} drop="left">
       <Dropdown.Toggle as={DepartmentIcon} />
-      <Dropdown.Menu>
+      <Dropdown.Menu
+        className="text-center"
+        popperConfig={{ strategy: "fixed" }}
+      >
         {depart ? (
           <Dropdown.Item
           onClick={() => handleClick('requirements') }

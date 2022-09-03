@@ -7,8 +7,11 @@
   .Absolute {
     position: absolute;
     right: 0;
+    top: 200;
     z-index: 99;
   }
 
-  /* i {
-  } */
+  .DropdownItem i {
+    color: #000;
+  }
+    
