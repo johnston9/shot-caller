@@ -81,7 +81,8 @@ export const PostDropdown = ({ handleEdit, handleDelete }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    <Dropdown className={`ml-auto px-3 ${styles.Absolute}`}  drop="left">
+    <div className={`${styles.Rel}`} >
+    <Dropdown className={`${styles.absolute}`} >
       <Dropdown.Toggle as={EditDeleteIcon} />
 
       <Dropdown.Menu
@@ -104,6 +105,7 @@ export const PostDropdown = ({ handleEdit, handleDelete }) => {
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
+    </div>
     </>
   );
 };

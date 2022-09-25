@@ -45,7 +45,6 @@ const NewCharacter = () => {
       const usedNumbers = characters.results.map((char) => (
        char.number));
 
-      console.log(usedNumbers);
       const unusedNumbers = castNumbers.filter(
         number => !usedNumbers.includes(number));
     

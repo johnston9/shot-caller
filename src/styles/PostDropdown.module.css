@@ -6,9 +6,13 @@
   
   .Absolute {
     position: absolute;
-    right: 0;
-    top: 200;
+    right: 0; 
+    top: 200; 
     z-index: 99;
+  }
+
+  .Rel {
+    position: relative;
   }
 
   .DropdownItem i {

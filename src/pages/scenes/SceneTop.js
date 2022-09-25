@@ -50,8 +50,9 @@ const SceneTop = (props) => {
                     </div>
                     </Link>
                     </Col >
-                    <Col xs={1} className={`mx-0 px-0 ${styles.Drop }`}>
+                    <Col xs={1} className={`mx-0 px-1 ${styles.Drop }`}>
                     <PostDropdown
+                            className="float-left"
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
