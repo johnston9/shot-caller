@@ -41,10 +41,10 @@ const SceneTop = (props) => {
                     <Col xs={10} className='mx-0 px-0 text-center'>
                     <Link to={`/scenes/${id}`}>
                     <div>
-                    <h5 className={`d-none d-md-block ${styles.Titlelist }`}>
+                    <h5 className={`d-none d-md-block ${styles.Titlelist1 }`}>
                       Scene {number} 
                     </h5>
-                    <h5 className={`d-md-none  ${styles.Titlelist }`}>
+                    <h5 className={`d-md-none  ${styles.Titlelist1 }`}>
                       {number} 
                     </h5>
                     </div>
@@ -60,7 +60,8 @@ const SceneTop = (props) => {
                     </Row>
                     <Link to={`/scenes/${id}`}>
                     <div className={` ${styles.Div25 }`}>
-                    <span className={styles.Italics }>{title}</span>
+                    <span style={{color: 'grey'}}
+                    className={styles.Italics }>{title}</span>
                     </div>
                     </Link>
                 </div>

@@ -23,10 +23,19 @@ i:hover {
 }
 
 .SceneCard {
+  margin: 5px;
   border: 5px solid #fff;
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
-  color: #000;
+  color: #666;
+}
+
+.SceneCard h5 {
+  color: #333;
+}
+
+.SceneCard p {
+  color: #333;
 }
 
 .Header {
