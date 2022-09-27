@@ -4,15 +4,16 @@
     padding: 0px;
   }
 
-.Menu1 {
-    z-index: 99;
+.Menu {
+    z-index: 99 !important;
+    color: red;
 }
   
   .Absolute {
     position: absolute;
     right: 0; 
     top: 200; 
-    z-index: 99;
+    z-index: 99 !important;
   }
 
   .Rel {

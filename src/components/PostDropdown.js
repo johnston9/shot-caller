@@ -82,7 +82,7 @@ export const PostDropdown = ({ handleEdit, handleDelete }) => {
         </Modal.Footer>
       </Modal>
     <div className={`${styles.Rel}`} >
-    <Dropdown className={`${styles.absolute}`} >
+    <Dropdown className={`${styles.Absolute}`} >
       <Dropdown.Toggle as={EditDeleteIcon} />
 
       <Dropdown.Menu
@@ -144,13 +144,13 @@ export function ProfileEditDropdown({ id }) {
   );
 }
 
-// department dropdown 
-// <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left"></Dropdown>
-export function DeptDropdown({ handleClick, depart}) {
+// dept dropdown
+export function DeptDropdown({ handleClick}) {
   return (
-       <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
+       <Dropdown className={`${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={DepartmentIcon} />
       <Dropdown.Menu
+        className={` ${styles.Menu}`}
         popperConfig={{ strategy: "fixed" }}
       >
         <Dropdown.Item
