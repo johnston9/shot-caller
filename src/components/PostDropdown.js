@@ -148,46 +148,41 @@ export function ProfileEditDropdown({ id }) {
 // <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left"></Dropdown>
 export function DeptDropdown({ handleClick, depart}) {
   return (
-       <Dropdown className={`ml-auto px-3`} drop="left">
+       <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={DepartmentIcon} />
       <Dropdown.Menu
-        className="text-center"
         popperConfig={{ strategy: "fixed" }}
       >
-        {depart ? (
-          <Dropdown.Item
-          onClick={() => handleClick('requirements') }
-          aria-label="select requirements"
-        >
-          <i className="fas fa-play" /> Requirements  <br/>ordered by scene
-        </Dropdown.Item>
-        ) : (
-          <Dropdown.Item
+        <Dropdown.Item
+          className={styles.Menu1}
           onClick={() => handleClick('requirements') }
           aria-label="select requirements"
         >
           <i className="fas fa-play" /> Requirements 
         </Dropdown.Item>
-        ) }
         <Dropdown.Item
+          className={styles.Menu1}
           onClick={() => handleClick("workspace") }
           aria-label="select workspace"
         >
           <i className="fas fa-play" /> Workspace
         </Dropdown.Item>
         <Dropdown.Item
+          className={styles.Menu1}
           onClick={() => handleClick("finals") }
           aria-label="select finals"
         >
           <i className="fas fa-play" /> Finals
         </Dropdown.Item>
         <Dropdown.Item
+          className={styles.Menu1}
           onClick={() => handleClick("shooting") }
           aria-label="select shooting"
         >
           <i className="fas fa-play" /> Shooting
         </Dropdown.Item>
         <Dropdown.Item
+          className={styles.Menu1}
           onClick={() => handleClick("info") }
           aria-label="select info"
         >

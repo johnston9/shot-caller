@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
@@ -389,20 +388,18 @@ const Scene = (props) => {
                     </Row>
                   <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
-                      <Col className='px-1 px-md-2' xs={4} md={4} lg={4} >
+                      <Col className='px-1 px-md-2' xs={4} >
                         <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
                         <Card.Img className={`text-center ${styles.UniImg}`} src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
                         </Card>
                       </Col>
                   </Row>
-                  <Row>
-                    <Col md={12}>
-                    </Col>
-                  </Row>
                     <Row >
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Col className='px-1' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`} >
+                        {/* <DeptDropdown className={`${styles.CardDrop}`}
+                          handleClick={(category) => handleClickCamera(category) } /> */}
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
                         <DeptDropdown handleClick={(category) => handleClickCamera(category) } />
@@ -486,9 +483,6 @@ const Scene = (props) => {
                         </Card>
                       </Col>
                     </Row>
-                      <Link to={`/scenes/${id}`}>
-
-                      </Link>
                   </Card.Body>
             </div>
             </>

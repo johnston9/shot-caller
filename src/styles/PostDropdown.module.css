@@ -3,6 +3,10 @@
     max-width: 50%;
     padding: 0px;
   }
+
+.Menu1 {
+    z-index: 99;
+}
   
   .Absolute {
     position: absolute;
