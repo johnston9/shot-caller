@@ -35,7 +35,7 @@ const SceneTop = (props) => {
         <div>
           <Card className={`text-center ${styles.SceneCard }`} >
             <div className={`mb-0 px-2 py-1`}>
-                  <Row className='mx-0 d-flex align-items-center'>
+                  <Row className='mx-0'>
                     <Col className='mx-0 px-0' xs={1}>
                     </Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
@@ -50,9 +50,9 @@ const SceneTop = (props) => {
                     </div>
                     </Link>
                     </Col >
-                    <Col xs={1} className={`mx-0 px-1 ${styles.Drop }`}>
+                    <Col xs={1} className={`mx-0 px-0 mb-2 ${styles.Drop }`}>
                     <PostDropdown
-                            className="float-left"
+                            // className="float-left"
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />

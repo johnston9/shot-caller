@@ -396,10 +396,8 @@ const Scene = (props) => {
                       </Col>
                   </Row>
                     <Row >
-                      <Col className='px-1' xs={4} md={3} lg={2} >
+                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`} >
-                        {/* <DeptDropdown className={`${styles.CardDrop}`}
-                          handleClick={(category) => handleClickCamera(category) } /> */}
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
                         <DeptDropdown handleClick={(category) => handleClickCamera(category) } />
