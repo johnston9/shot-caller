@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Indexes.module.css";
+import styles from "../../styles/Characters.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Content from './Content'; 
 import SeriesEditForm from './SeriesEditForm';
@@ -42,14 +42,15 @@ const SeriesTop = (props) => {
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}>
                     <Button
-                    className={`float-right py-0  ${btnStyles.Order} ${btnStyles.Button}`}
+                    className={`float-right py-0  ${btnStyles.White} ${btnStyles.Button}`}
                     onClick={() => setShowContent(showContent => !showContent)} >I
                     </Button>
                     </Col>
                     <Col xs={10} className='mx-0 text-center'>
                     <Link to={`/indexshots/${id}`}>
                     <div>
-                    <h5 className={` ${styles.Titlelist }`}>{name}
+                    <h5 style={{color: "white"}}
+                    className={` ${styles.Titlelist }`}>{name}
                     </h5>
                     </div>
                     </Link>

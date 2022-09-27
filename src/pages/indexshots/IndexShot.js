@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Indexes.module.css";
+import styles from "../../styles/Characters.module.css";
 import IndexShotEdit from './IndexShotEdit';
 
 const IndexShot = (props) => {
@@ -35,7 +35,7 @@ const IndexShot = (props) => {
 
     return (
         <div>
-            <Card className={`text-center p-0 `}  >
+            <Card className={`text-center p-0 ${styles.Top}`}  >
                 <Card.Header className={`py-0 ${styles.Top }`}>
                 {/* className={` ${styles.Titledetail }`} */}
                   <Row >
