@@ -9,7 +9,8 @@ export const useRedirect = (userAuthStatus) => {
   useEffect(() => {
     const handleMount = async () => {
       if (!user) {
-        history.push("/");
+        // history.push("/");
+        console.log("redirected");
       }
     };
 

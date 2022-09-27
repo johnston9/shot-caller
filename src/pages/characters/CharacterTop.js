@@ -33,7 +33,7 @@ const CharacterTop = (props) => {
         <div className='mx-0'>
             <Card className={`mx-1 text-center ${styles.Top}`}>
                 <Link to={`/characters/${id}`}>
-                <Card.Header className={`pt-2 pb-1 ${styles.Top }`}>
+                <Card.Header className={`py-2 ${styles.Top }`}>
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='text-center px-0'>
