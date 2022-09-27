@@ -57,19 +57,13 @@ export const CurrentUserProvider = ({ children }) => {
       async (config) => {
         if (shouldRefreshToken()) {
           try {
-            await axios.post("/dj-rest-auth/token/refresh/");
+            const {data} = await axios.post("/dj-rest-auth/token/refresh/");
+            setToken(data);
+            setSignin(`inter`)
           } catch (err) {
             setSignin(`inter error`)
             console.log(err);
-            // setCurrentUser((prevCurrentUser) => {
-            //   if (prevCurrentUser) {
-            //     history.push("/signin");
               }
-              return null;
-            });
-            removeTokenTimestamp();
-            return config;
-          }
         }
         return config;
       },
@@ -77,25 +71,6 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-    // axiosReq.interceptors.request.use(
-    //   async (config) => {
-    //     if (shouldRefreshToken()) {
-    //       try {
-    //         const {data} = await axios.post("/dj-rest-auth/token/refresh/");
-    //         setToken(data);
-    //         setSignin(`inter`)
-    //       } catch (err) {
-    //         setSignin(`inter error`)
-    //         console.log(err);
-    //           }
-    //     }        
-    //     return config;
-    //   },
-    //   (err) => {
-    //     console.log(`inter req 3 error `);
-    //     return Promise.reject(err);
-    //   }
-    // );
 
     axiosRes.interceptors.response.use(
       (response) => response,
