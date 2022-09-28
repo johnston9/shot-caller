@@ -5,9 +5,11 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 export const useRedirect = (userAuthStatus) => {
   const history = useHistory();
   const user = useCurrentUser();
+  console.log(`${user} user1`)
 
   useEffect(() => {
     const handleMount = async () => {
+      console.log(`${user} user2`)
       if (!user) {
         // history.push("/");
         console.log("redirected");

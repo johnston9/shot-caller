@@ -181,7 +181,7 @@ function PostEditForm() {
             <Form.Group controlId="content" className="mb-2" >
                 <Form.Label className="p-1" >Content</Form.Label>
                 <Form.Control 
-                    className={styles.Input}
+                    className={styles.InputScene}
                     type="text"
                     name="content"
                     as="textarea"

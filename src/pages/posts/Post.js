@@ -139,14 +139,14 @@ const Post = (props) => {
     return (
         <div>
           <Button
-                  className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+                  className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 mb-2`}
                   onClick={() => history.goBack()}
                 >
                   Back
                 </Button>
             <Card  >
                 {/* new */}
-              <Card.Body className={`${styles.PostTop} py-1`} >
+              <Card.Body className={`${styles.PostTop} py-1 mx-3`} >
                 <Row className="d-flex align-items-center">
                     <Col xs={12} lg={8} >
                       <Row>
@@ -259,49 +259,59 @@ const Post = (props) => {
                 </Row>
                 </Card.Body>
                 {/* end new */}
-                <Card.Body className='py-1'  >
+                <Card.Body className='py-1 px-5 text-center'  >
                     {title && <h4 style={{ fontStyle: 'italic' }}
-                    className="mb-0 pb-0 text-center">{title}</h4>}
+                    className="mb-0 pb-0">{title}</h4>}
                     <hr />
                     {content && <Card.Text>{content}</Card.Text>}
                 </Card.Body>
                 <hr />
-                <Row className='mb-2'>
+                <Row className='mb-2 px-5'>
                   {/* image 1/2 */}
                   <Col xs={12} md={6}  >
                       {image1 && <> 
-                          <Card.Img src={image1} alt="image1" className="px-3" />
+                        <div className='px-2 px-md-4 mb-3'>
+                          <Card.Img src={image1} alt="image1" className={styles.Images} />
+                        </div>
                           </>
                           }
                   </Col>  
                   <Col xs={12} md={6}>
                   {image2 && <> 
-                          <Card.Img src={image2} alt="image2" />
+                    <div className='px-2 px-md-4 mb-3'>
+                          <Card.Img src={image2} alt="image2" className={styles.Images} />
+                        </div>
                           </>
                           }
                   </Col>
               </Row >
               {/* image 3/4 */}
-              <Row className='mb-2'>
-                  <Col xs={12} md={6}>
+              <Row className='mb-2 px-5'>
+                  <Col xs={12} md={6}  >
                       {image3 && <> 
-                          <Card.Img src={image3} alt="image3" />
+                        <div className='px-2 px-md-4 mb-3'>
+                          <Card.Img src={image3} alt="image3" className={styles.Images} />
+                        </div>
                           </>
                           }
                   </Col>  
                   <Col xs={12} md={6}>
                   {image4 && <> 
-                          <Card.Img src={image4} alt="image4" />
+                    <div className='px-2 px-md-4 mb-3'>
+                          <Card.Img src={image4} alt="image4" className={styles.Images} />
+                        </div>
                           </>
                           }
                   </Col>
-              </Row>
+              </Row >
               {/* image 5 */}
               <Row>
                   <Col className='d-none d-md-block' md={3} ></Col>
                   <Col xs={12} md={6}>
-                      {image5 && <> 
-                          <Card.Img src={image5} alt="image5" />
+                  {image5 && <> 
+                    <div className='px-2 px-md-4 mb-3'>
+                          <Card.Img src={image5} alt="image5" className={styles.Images} />
+                        </div>
                           </>
                           }
                   </Col>  
