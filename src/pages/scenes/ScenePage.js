@@ -15,6 +15,7 @@ const ScenePage = () => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq(`/scenes/${id}`);
+                console.log(data);
                 setScene({ results: [data] });
             } catch (err) {
                 console.log(err);

@@ -151,14 +151,10 @@ const Breakdown = (props) => {
                 <Col className='text-center' xs={12} >
                 <p className={`${styles.BoldTitle} 
                 mb-2 text-center mx-1 mx-sm-5`}>EQUIPMENT SET PROPS</p>
+                <p>{equip_set_props} </p>
                 </Col>
             </Row>
             </Col>
-            </Row>
-            <Row >
-                <Col className='text-center' xs={{span: 10, offset: 1 }}>
-                <p>{equip_set_props} </p>
-                </Col>
             </Row>
             <Row className='my-3'>
                 <Col className='text-center' xs={{span: 10, offset: 1 }} md={{span: 6, offset: 3 }}>

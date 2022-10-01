@@ -1073,8 +1073,9 @@ const charFields = (
               {script ? (
                 <>
                   <figure>
-                    <Image className={appStyles.Image} src={script} />
-                  </figure>
+                        <iframe title="Script"
+                         className={appStyles.iframe} src={script} />
+                      </figure>
                   <div>
                     <Form.Label
                       className={`${btnStyles.Button} ${btnStyles.Blue} btn`}

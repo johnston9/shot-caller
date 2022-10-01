@@ -108,8 +108,8 @@ const SceneEditForm = () => {
     dramatic_day, equip_set_props, department_info,
     pages, action, storyboard, script, location_detail } = postData;
     
-    const imageInput = useRef(null)
-    const storyboardInput = useRef(null)
+    const imageInput = useRef(null);
+    const storyboardInput = useRef(null);
 
     const history = useHistory();
     const { id } = useParams();
@@ -1110,7 +1110,8 @@ const SceneEditForm = () => {
                   {script ? (
                     <>
                       <figure>
-                        <Image className={appStyles.Image} src={script} />
+                        <iframe title="Script"
+                         className={appStyles.iframe} src={script} />
                       </figure>
                       <div>
                         <Form.Label
