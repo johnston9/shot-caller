@@ -1,4 +1,18 @@
 /* scene card  */
+
+.TitleBox {
+  background-color: #e8f0f1;
+  color: #333;
+}
+
+.TitleBox2 {
+  border-right : 1px solid #fafafa;
+  color: #333;
+}
+
+.InfoBack {
+  background-color: #eefefe;
+}
 .Story {
   object-fit: cover;
   height: 100%;
@@ -281,7 +295,7 @@ i:hover {
   }
 
   .ShotInfo {
-    background-color: blanchedalmond;
+    background-color: rgb(226, 250, 255);
   }
 
   .Input {

@@ -36,7 +36,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
 
     return (
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={` mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
+            <h5 style={{ textTransform: 'uppercase'}} className={`mb-3 mt-1 pl-3 py-1 ${styles.SubTitle }`}>
                 Shotlist
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowlist(false) } >Close</span>
                 </h5>
@@ -49,11 +49,12 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 {!addShot ?("") : (<ShotListCreate setAddShot={setAddShot} setShotlist={setShotlist} handleMount={handleMount} scene={scene} />  ) }
               </Col>
             </Row>
-            {/* <h5 className='text-center'>Shots</h5> */}
+            {/* className={`mx-0 px-0  ${styles.TitleBox2}`} */}
             {/* titles */}
-            <Row style={{ textTransform: 'uppercase' }} className={`mt-5 ${styles.TitleBox}`} >
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className=' mb-0'>Info</p>
+            <div className='d-none d-md-block'>
+            <Row style={{ textTransform: 'uppercase' }} className={`mt-3 ${styles.TitleBox}`} >
+                <Col className={`px-0 ${styles.TitleBox2} `} xs={1} md={1}>
+                    <p className='pl-2 mb-0'>Info</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Shot </p>
@@ -77,6 +78,33 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     <p className='mb-0'>Edit</p>
                 </Col>
             </Row>
+            </div>
+            {/* mobile */}
+            <div className='d-block d-md-none'>
+            <Row style={{ textTransform: 'uppercase' }} className={`mt-3 ${styles.TitleBox}`} >
+                <Col className={`px-0 ${styles.TitleBox2} `} xs={1} md={1}>
+                    <p className='pl-1 mb-0'>I</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'># </p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={1}>
+                    <p className='mb-0'>Sz</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                    <p className='mb-0'>Detail</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>Ang</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={1}>
+                    <p className='mb-0 pl-2'>Im</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>E</p>
+                </Col>
+            </Row>
+            </div>
             {/* shots */}
             <Row className="h-100">
             <Col className='px-0 mx-0'> 
@@ -103,7 +131,9 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     {shotlist.results.length ? (
                         shotlist.results.map((shot, index) => (
                         <Shot 
-                            style={{ backgroundColor: (index % 3 === 0) ? '#F8E5E5' : (index % 2 === 0) ? '#FAF1CF' : '#ecf0f1' }}
+                        style={{ backgroundColor: (index % 3 === 0) 
+                            ? '#dbfaf9' : (index % 2 === 0) ? 
+                            'rgb(223 254 240)' : 'rgb(248 241 249)' }}
                             key={shot.id} 
                             handleMount={handleMount} 
                             shotAll={shot} />

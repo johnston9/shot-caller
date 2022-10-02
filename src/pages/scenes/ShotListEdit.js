@@ -183,16 +183,16 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
             onClick={() => setShowEditForm((showEditForm) => !showEditForm)}
           >
-            cancel
+            Cancel
           </Button>
           <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-            create
+            Create
           </Button>
         </div>
       );
 
     return (
-        <div className={`${styles.ShotInfo}`}>
+        <div className={`${styles.ShotInfo} px-5`}>
           <h5 className="my-3 text-center">Edit Shot {shot_number} </h5>
             <Form className={`${styles.ShotEditForm}`} onSubmit={handleSubmit}>
             {/* number size act movement*/}

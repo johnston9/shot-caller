@@ -99,14 +99,12 @@ const Shot = (props) => {
 
     return (
         <div style={style}>
-            {/* titles */}   
-            <p>Id {id} 
-            Scene_id {scene_id}
-            Scene {scene_number} </p>                
+            {/* medium*/}
+            <div className='d-none d-md-block'>
             <Row  >
-                <Col className={ `${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={ `pl-2 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Bright}`}>
+                        className={`ml-3 ${btnStyles.Button} ${btnStyles.Blue}`}>
                         I
                     </Button>
                 </Col>
@@ -127,7 +125,7 @@ const Shot = (props) => {
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowImg(showImg => !showImg)} 
-                        className={`${btnStyles.Button} ${btnStyles.Bright}`}>
+                        className={`${btnStyles.Button} ${btnStyles.Blue}`}>
                         I
                     </Button>
                 </Col>
@@ -139,6 +137,43 @@ const Shot = (props) => {
                     />
                 </Col>
             </Row>
+            </div>
+            {/* mobile*/}
+            <div className='d-block d-md-none'>
+            <Row className='px-2' >
+                <Col className={ `pl-1 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`pr-2 ${btnStyles.Button} ${btnStyles.Blue}`}>
+                        I
+                    </Button>
+                </Col>
+                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0 pl-1'>{shot_number}</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={1}>
+                    <p className='mb-0'>{size}</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                    <p className='mb-0'>{description}</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>{angle} </p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Button onClick={() => setShowImg(showImg => !showImg)} 
+                        className={`${btnStyles.Button} ${btnStyles.Blue}`}>
+                        I
+                    </Button>
+                </Col>
+                {/* edit */}
+                <Col className={`text-center`} xs={1} md={1}>
+                    <PostDropdown
+                        handleEdit={() => setShowEditForm(true)}
+                        handleDelete={handleDelete}
+                    />
+                </Col>
+            </Row>
+            </div>
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       

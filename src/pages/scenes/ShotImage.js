@@ -9,7 +9,7 @@ const ShotImage = ({image} ) => {
     return (
         <div>
             <Row>
-                <Col>
+                <Col className='text-center'>
                 {image ? (<> 
                     <Image src={image} alt="costume" height="200"  />
                     </>) : (
