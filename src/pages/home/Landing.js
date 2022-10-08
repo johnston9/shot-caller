@@ -26,6 +26,7 @@ const Landing = () => {
     return (
         <Container className={`px-2 ${styles.Background}`}>
           <TopBox title={`SHOT CALLER`} />
+          <div className={`my-3 ${styles.Black} px-3`}>
           {signindata ? (<p className={`${styles.White}`}>
            {signindata} intercept works 
            </p>) : ("") }
@@ -44,6 +45,7 @@ const Landing = () => {
           {redirect ? (
             {redirect}
           ) : ("") }
+          </div>
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
               xs={1} md={1}

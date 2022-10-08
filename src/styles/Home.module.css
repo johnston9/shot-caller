@@ -6,9 +6,13 @@
   }
 
 .Background {
-background-color: #353839;
-/* background-color: #f8f8f8; */
+/* background-color: #353839; */
+background-color: #f8f8f8;
 width: 100%; 
+}
+
+.Black {
+    background-color: #353839;
 }
 
 .White {

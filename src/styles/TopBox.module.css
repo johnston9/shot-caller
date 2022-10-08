@@ -1,10 +1,12 @@
 .Container {
-    background-color: #353839;
-    margin: 0;
+    /* background-color: #353839; */
+    background-color: #fff;
+    margin: 0; 
     width: 100vh;  
 }
 .RegBox {
     background-color: #353839;
+    /* background-color: rgb(68, 214, 209); */
     margin: 0;  
     width: 100%; 
 }
@@ -31,7 +33,7 @@
 
 .Titlebox {
 	background-color: #3b444b;
-    /* background-color: #405766; */
+    /* background-color: #21998f; */
 	margin-bottom: 15px;
 	margin-top: 15px;
 }

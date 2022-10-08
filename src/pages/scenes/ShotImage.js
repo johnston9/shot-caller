@@ -1,15 +1,16 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import styles from "../../styles/Scene.module.css";
 import { useRedirect } from '../../hooks/Redirect';
 import { Image } from 'react-bootstrap';
 
 const ShotImage = ({image} ) => {
     useRedirect("loggedOut");
     return (
-        <div>
+        <div className={`${styles.InfoBack} pl-5`}>
             <Row>
-                <Col className='text-center'>
+                <Col className='text-center pt-1 pb-3'>
                 {image ? (<> 
                     <Image src={image} alt="costume" height="200"  />
                     </>) : (
