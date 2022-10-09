@@ -391,6 +391,11 @@ const buttons = (
                       Create Moodshot
                     </h3>
                   ) }
+            <h5 className={`mt-1 mb-2 py-1 text-center ${styles.SubTitle }`}>{sceneNumber && <span>Scene {sceneNumber} </span> }
+              {location && <span> - {location} </span> }
+              {character && <span> - {character} </span> }
+              Moodshot
+              </h5>
             <Form className="mt-3" onSubmit={handleSubmit}>
                 <Row>
                 <Col md={6} className="p-0 p-md-2">

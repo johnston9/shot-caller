@@ -5,7 +5,11 @@
 }
 
 .MoodTop i {
-color: #fff;
+color: rgb(174, 195, 197);
+}
+
+.Edit {
+  color: rgb(144, 158, 161);
 }
 
 .MoodTop i:hover {
@@ -47,6 +51,12 @@ color: #000;
 .Content2 {
   cursor: pointer;
   color: #000;
+}
+
+.ImagesLand {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
 }
 
 /* .Content1:hover {

@@ -57,39 +57,44 @@ const Moodshot = (props) => {
         >
             Back
         </Button>     
-        <Row className={`${styles.MoodTop} pt-2 mx-2 `}>
-            <Col xs={12} md={7} 
-            className="" >
-            <Row className='d-flex align-items-center'>
-            <Col xs={2} className="px-0" >
+        <Row className={`${styles.MoodTop} py-1 mx-2 d-flex align-items-center`}>
+        <Col xs={2} className="px-0" >
             <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}  />
                 </Link>
-            </Col>
-            <Col xs={6} >
-            <p style={{ fontWeight: '700', textTransform: 'capitalize'}}
-                className=''>
-                {name} <span className='d-none d-sm-inline-block' >{position} </span></p>
-            <p className='d-sm-none' >{position} </p>
-            </Col>
-            <Col className='d-flex align-items-center' xs={4} >
-            <span className=''>{updated_at}</span>
-                {is_owner && (
-                <PostDropdown
-                    handleEdit={handleEdit}
-                    handleDelete={handleDelete}
-                />
-                ) } 
-            </Col>
-            </Row>
-            </Col>
-            <Col xs={12} md={5} className='mx-0 px-0 d-flex align-items-center justify-content-center'>
-            <p className={`mb-0 ${styles.Titlelist }`}>
-                 {number && <span>Scene {number} </span> } 
-                 {location && <span> - {location} </span> }
-                 {character && <span> - {character} </span> }
-            </p>
-            </Col>
+        </Col>
+        <Col xs={9}>
+        <Row>
+        <Col xs={12} md={7} >
+        <Row className='d-flex align-items-center'>
+        <Col xs={6} >
+        <p style={{ fontWeight: '700', textTransform: 'capitalize'}}
+            className=''>
+            {name} <span className='d-none d-sm-inline-block' > - {position} </span></p>
+        <p className='d-sm-none' >{position} </p>
+        </Col>
+        <Col className='d-flex align-items-center' xs={4} >
+        <span className=''>{updated_at}</span>
+        </Col>
+        </Row>
+        </Col>
+        <Col xs={12} md={5} className='mx-0 px-0 d-flex align-items-center justify-content-center'>
+        <p className={`mb-0 ${styles.Titlelist }`}>
+                {number && <span>Scene {number} </span> } 
+                {location && <span> - {location} </span> }
+                {character && <span> - {character} </span> }
+        </p>
+        </Col>
+        </Row>
+        </Col>
+        <Col xs={1} className="px-0" >
+        {is_owner && (
+            <PostDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+            />
+            ) } 
+        </Col>
         </Row>
         <hr className='my-1'/>
       <Row className='p-3'>
@@ -98,46 +103,51 @@ const Moodshot = (props) => {
             </Col >
         </Row>
         <Row>
-            <Col xs={10}>
-                <p>{content} </p>
+            <Col xs={{span: 10, offset: 1}}>
+                <p className='text-center mb-3'>{content} </p>
             </Col>
         </Row>
-        <Row>
+        <Row className="mt-3" >
             {/* image 1/2 */}
             <Col xs={12} md={6} >
                 {image1 && <> 
-                    <Image src={image1} alt="image1" height="200"  />
+                    <Image src={image1} alt="image1" 
+                      className={styles.ImagesLand} />
                     </>
                     }
             </Col>  
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} className="mt-3 mt-md-0"  >
             {image2 && <> 
-                    <Image src={image2} alt="image2" />
+                    <Image src={image2} alt="image2"
+                      className={styles.ImagesLand} />
                     </>
                     }
             </Col>
         </Row>
         {/* image 3/4 */}
-        <Row>
+        <Row className="mt-3" >
             <Col xs={12} md={6}>
                 {image3 && <> 
-                    <Image src={image3} alt="image3" />
+                    <Image src={image3} alt="image3"
+                      className={styles.ImagesLand} />
                     </>
                     }
             </Col>  
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} className="mt-3 mt-md-0" >
             {image4 && <> 
-                    <Image src={image4} alt="image4" />
+                    <Image src={image4} alt="image4"
+                      className={styles.ImagesLand} />
                     </>
                     }
             </Col>
         </Row>
         {/* image 5 */}
-        <Row>
+        <Row className="mt-3" >
             <Col className='d-none d-md-block' md={3} ></Col>
             <Col xs={12} md={6}>
                 {image5 && <> 
-                    <Image src={image5} alt="image5" />
+                    <Image src={image5} alt="image5"
+                      className={styles.ImagesLand} />
                     </>
                     }
             </Col>  
