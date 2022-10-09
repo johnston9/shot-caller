@@ -13,7 +13,7 @@ import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 
-import TopBox from "../../components/TopBox";
+import TopBoxSign from "../../components/TopBoxSign";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirectSign } from "../../hooks/RedirectSign";
@@ -58,7 +58,7 @@ const SignInForm = () => {
 
   return (
       <Container className={styles.SignupBox} >
-        <TopBox title="Sign In" />
+        <TopBoxSign title="Sign In" />
         <Row className={styles.Row}>
           <Col className="my-3 pr-0 pl-3 pl-md-4"
             xs={1} md={1}>

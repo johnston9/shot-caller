@@ -30,12 +30,54 @@
   color: #fff;
 }
 
+.ImagesLand {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.Images {
+  object-fit: cover;
+  height: 500px;
+  width: 100%;
+}
+
+.Header {
+  background-color: #fff;
+}
+
+.Bold { 
+  font-weight: 700;
+}
+
+.ButtonLine {
+  background-color: #fff;
+  border-top: 3px solid #fff;
+}
+
+.BoldTitle {
+  font-weight: 700;
+  /* background-color: rgb(209, 240, 240); */
+  background-color: #d6fcff;
+  /* width: 50%; */
+}
+
+.Button {
+  color: rgb(41, 180, 180);
+  cursor: pointer;
+}
+
 .Top i:hover {
   color: #fff;
 }
 
 .Title {
   background-color: #fff;
+}
+
+.SubTitle {
+  background-color: #e8f0f1;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 600px) {

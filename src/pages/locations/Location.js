@@ -3,7 +3,7 @@ import Image from 'react-bootstrap/Image'
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/Characters.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
@@ -116,7 +116,8 @@ const Location = (props) => {
             <Col xs={12} md={6}>
                 {image1 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5 text-center mx-1 mx-sm-5`}>Image 1</p>
-                    <Image src={image1} alt="Image 1" height="200"  />
+                    <Image className={styles.ImagesLand} 
+                    src={image1} alt="Image 1" />
                     </>
                     }
                 {image1_description &&  <> 
@@ -126,7 +127,8 @@ const Location = (props) => {
             <Col xs={12} md={6}>
                 {image2 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 2</p>
-                    <Image src={image2} alt="Image 2" height="200"  />
+                    <Image src={image2} alt="Image 2" 
+                     className={styles.ImagesLand}  />
                     </>
                     }
                 {image2_description &&  <> 
@@ -140,7 +142,8 @@ const Location = (props) => {
                 <Col xs={12} md={6}>
                 {image3 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 3</p>
-                    <Image src={image3} alt="Image 3" height="200"  />
+                    <Image src={image3} alt="Image 3" 
+                      className={styles.ImagesLand} />
                     </>
                     }
                 {image3_description &&  <> 
@@ -150,7 +153,8 @@ const Location = (props) => {
                 <Col xs={12} md={6}>
                 {image4 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 4</p>
-                    <Image src={image4} alt="Image 4" height="200"  />
+                    <Image src={image4} alt="Image 4"
+                      className={styles.ImagesLand} />
                     </>
                     }
                 {image4_description &&  <> 
@@ -164,7 +168,8 @@ const Location = (props) => {
                 <Col xs={12} md={6}>
                 {image5 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 5</p>
-                    <Image src={image5} alt="Image 5" height="200"  />
+                    <Image src={image5} alt="Image 5"
+                    className={styles.ImagesLand} />
                     </>
                     }
                 {image5_description &&  <> 
@@ -174,7 +179,8 @@ const Location = (props) => {
                 <Col xs={12} md={6}>
                 {image6 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 6</p>
-                    <Image src={image6} alt="Image 6" height="200"  />
+                    <Image src={image6} alt="Image 6"
+                      className={styles.ImagesLand}  />
                     </>
                     }
                 {image6_description &&  <> 
@@ -188,7 +194,8 @@ const Location = (props) => {
                 <Col xs={12} md={6}>
                 {image7 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 7</p>
-                    <Image src={image7} alt="Image 7" height="200"  />
+                    <Image src={image7} alt="Image 7" 
+                      className={styles.ImagesLand} />
                     </>
                     }
                 {image7_description &&  <> 
@@ -198,7 +205,8 @@ const Location = (props) => {
                 <Col xs={12} md={6}>
                 {image8 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image8 </p>
-                    <Image src={image8} alt="Image 8" height="200"  />
+                    <Image src={image8} alt="Image 8"
+                      className={styles.ImagesLand} />
                     </>
                     }
                 {image8_description &&  <> 

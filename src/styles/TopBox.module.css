@@ -4,11 +4,32 @@
     margin: 0; 
     width: 100vh;  
 }
-.RegBox {
+
+.RegBoxSign {
     background-color: #353839;
     /* background-color: rgb(68, 214, 209); */
     margin: 0;  
     width: 100%; 
+}
+
+.RegBox {
+    /* background-color: #353839; */
+    /* background-color: rgb(68, 214, 209); */
+    background-color: rgb(2, 14, 16);
+    margin: 0;  
+    width: 100%; 
+}
+
+.RegBox {
+    /* background-color: #353839; */
+    /* background-color: rgb(68, 214, 209); */
+    background-color: rgb(2, 14, 16);
+    margin: 0;  
+    width: 100%; 
+}
+
+.BlueBody {
+    background-color: rgb(235, 250, 250);
 }
 
 .Longboxl {

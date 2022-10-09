@@ -38,7 +38,8 @@ width: 100%;
 
 .Homebox {
     height: 110px;
-    background-color: #112533;
+    /* background-color: #112533; */
+    background-color: rgb(62, 223, 223);
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
     border-top: 1px solid #fff;

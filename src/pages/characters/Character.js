@@ -3,7 +3,7 @@ import Image from 'react-bootstrap/Image';
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/Characters.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
@@ -180,7 +180,8 @@ const Character = (props) => {
                 <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>MAKEUP</p>
                 {makeup_image && <> 
                 <div className='px-3 mb-3'>
-                    <Image className={styles.Images} src={makeup_image} alt="makeup image" height="200"  />
+                    <Image className={styles.Images} 
+                    src={makeup_image} alt="makeup image"  />
                     </div>
                     </>
                 }
@@ -192,7 +193,8 @@ const Character = (props) => {
                 <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>COSTUME 1</p>
                 {costume1_image && <> 
                 <div className='px-1 mb-3'>
-                    <Image className={styles.Images} src={costume1_image} alt="costume 1" height="200"  />
+                    <Image className={styles.Images} 
+                    src={costume1_image} alt="costume 1" />
                     </div>
                     </>
                 }
@@ -208,7 +210,7 @@ const Character = (props) => {
                 {costume2_image && <> 
                 <div className='px-1 mb-3'>
                     <Image className={styles.Images} src={costume2_image} 
-                    alt="costume 2" height="200"  />
+                    alt="costume 2"  />
                     </div>
                     </>
                 }
@@ -221,7 +223,7 @@ const Character = (props) => {
                 {costume3_image && <> 
                 <div className='px-1 mb-3'>
                     <Image className={styles.Images} src={costume3_image} 
-                    alt="costume 3" height="200"  />
+                    alt="costume 3"/>
                     </div>
                     </>
                 }
@@ -238,7 +240,7 @@ const Character = (props) => {
                 {costume4_image && <> 
                 <div className='px-1 mb-3'>
                     <Image className={styles.Images} src={costume4_image}
-                     alt="costume 4" height="200"  />
+                     alt="costume 4" />
                     </div>
                     </>
                 }
@@ -252,7 +254,7 @@ const Character = (props) => {
                 {costume5_image && <> 
                 <div className='px-1 mb-3'>
                     <Image className={styles.Images} src={costume5_image}
-                     alt="costume 5" height="200"  />
+                     alt="costume 5" />
                     </div>
                     </>
                 }
@@ -269,7 +271,7 @@ const Character = (props) => {
                 {costume6_image && <> 
                 <div className='px-1 mb-3'>
                     <Image className={styles.Images} src={costume6_image}
-                     alt="costume 6" height="200"  />
+                     alt="costume 6"/>
                     </div>
                     </>
                 }
@@ -283,7 +285,7 @@ const Character = (props) => {
                 {costume7_image && <> 
                 <div className='px-1 mb-3'>
                     <Image className={styles.Images} src={costume7_image}
-                     alt="costume 7" height="200"  />
+                     alt="costume 7"/>
                     </div>
                     </>
                 }
