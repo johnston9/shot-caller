@@ -37,7 +37,7 @@ const DayTop = (props) => {
                     </h5>
                     </Col >
                   </Row>
-                  </Card.Header>
+                </Card.Header>
                 <Card.Body className={`p-1 ${styles.Bottom }`} >
                     <Link to={`/day/${id}`}>
                     <Col >  

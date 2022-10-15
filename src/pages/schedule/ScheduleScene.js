@@ -11,6 +11,7 @@ import { PostDropdown } from '../../components/PostDropdown';
 import ScheduleCharacters from './ScheduleCharacters';
 import SchedSceneInfo from './SchedSceneInfo';
 import SchedOrder from './SchedOrder';
+// import { getBeginNext } from 'react-calendar/dist/umd/shared/dates';
 
 const ScheduleScene = (props) => {
     useRedirect("loggedOut");
@@ -20,7 +21,8 @@ const ScheduleScene = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const {sceneAll, id, day_id, number, int_ext, start_time, end_time, admin,
         location, filming_location, day_night, action, pages, callsheetshed,
-        new_info, day_order_number, setHasOrder, style, showSideBySide } = props
+        next, day_order_number, setHasOrder, style, showSideBySide,
+        new_info } = props
         
         const handleEdit = () => {
             history.push(`/schedule/scenes/edit/${id}/`);
@@ -166,11 +168,11 @@ const ScheduleScene = (props) => {
                     ) }
                     </Col>
                 </Row>
-                {/* next */}
-                {new_info ? (
+                {/* next getBeginNext*/}
+                {next ? (
                 <Row className='px-3'>
                     <Col className={`mb-0 py-2 ${styles.Next1}`}>
-                    <p className="mb-0" >Next: {new_info} </p>
+                    <p className="mb-0" >Next: {next} </p>
                     </Col>
                 </Row> 
                 ) : ("") }     
@@ -277,10 +279,10 @@ const ScheduleScene = (props) => {
                     </Col>
                 </Row>
                 {/* next */}
-                {new_info ? (
+                {next ? (
                     <Row>
                     <Col className={`mb-0 py-2 ${styles.Next1}`}>
-                    <p className="mb-0" >Next: {new_info} </p>
+                    <p className="mb-0" >Next: {next} </p>
                     </Col>
                 </Row> 
                 ) : (

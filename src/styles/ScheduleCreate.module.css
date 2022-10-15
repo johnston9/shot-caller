@@ -64,6 +64,14 @@
   color: #666;
 }
 
+.TitleBox3 {
+  color: #666;
+}
+
+.Costume {
+  color: rgb(21, 164, 186);
+}
+
 .HSpan {
   font-size: .75rem;
   font-weight: 400;
@@ -79,7 +87,7 @@
 }
 
 .ScenesBox {
-  background-color: #eaf2fa;
+  background-color: #fff;
 }
 
 .Bold {

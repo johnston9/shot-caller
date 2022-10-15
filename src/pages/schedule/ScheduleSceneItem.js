@@ -66,9 +66,9 @@ const ScheduleSceneItem = (props) => {
     }
 
     return (
-        <div onClick={handleClick} className={`mx-5 mb-3 mx-md-1 ${styles.Item}`} >
-            <p className="d-none d-md-block py-2">Scene - {number} - {location} - {title}</p>
-            <p className="d-md-none py-2">Scene - {number} {location}</p>
+        <div onClick={handleClick} className={`mb-1 mx-md-1 ${styles.Item}`} >
+            <p className="d-none d-md-block pl-3 py-1">Scene - {number} - {location} - {title}</p>
+            <p className="d-md-none py-1 pl-3">Scene - {number} {location}</p>
         </div>
     )
 }

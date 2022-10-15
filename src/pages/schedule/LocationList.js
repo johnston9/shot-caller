@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
-
+import styles from "../../styles/ScheduleCreate.module.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -24,7 +24,11 @@ const LocationList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setSho
     return (
         <div>    
           <Container className= {`mt-4`} >
-            <h5 className="pb-2 text-center">Select scene to pre-fill form</h5>
+          <h5 className={`text-center pb-0 mb-2 ${styles.SubTitle }`}>Select Scene</h5>
+            <p className="text-center mb-2">
+            Select Scene to add Scene details to the Stripboard then 
+            add the Shooting Info in the form below
+            </p>
             <Row>
             {scenes.results.length ? (
                 scenes.results.map((scene) => (

@@ -61,7 +61,7 @@ const Breakdown = (props) => {
             <Col className='text-center' xs={6}>
                 <p className={`${styles.BoldTitle} 
                 mb-2 text-center mx-1 mx-sm-5`}>LOCATION</p>
-                <p style={{ textTransform: 'capitalize'}} >{int_ext}. {location} {location_detail} - {day_night} </p>
+                <p style={{ textTransform: 'capitalize'}} >{int_ext} {location} {location_detail} {day_night} </p>
             </Col>
             <Col className='text-center' xs={6}>
             <p className={`${styles.BoldTitle} 

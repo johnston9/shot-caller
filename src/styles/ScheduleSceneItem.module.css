@@ -1,10 +1,10 @@
 .Item {
-    background-color: #14404f;
+    background-color: #2792a3;
     color: #fff;
     cursor: pointer;
   }
   
 .Item:hover {
-    background-color: #3076ac;
+    background-color: #73cedc;
     color: #fff;
 }
