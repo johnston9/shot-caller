@@ -83,7 +83,7 @@ const DayPageTop = (props) => {
             {scene12 && <span>{scene12}, </span>}
             {xtra_scenes && <span>{xtra_scenes} </span>}
             </p>   */}
-            <h5 className={`${styles.Bold }`} className='text-center'>UNIT CALL: {crewcall} {location1}  </h5>               
+            <h5 className={`${styles.Bold }`} >UNIT CALL: {crewcall} {location1}  </h5>               
         </div>
         </div>
     )

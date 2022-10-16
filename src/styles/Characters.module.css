@@ -11,24 +11,26 @@
 
 .Top {
   background-color: #1ea7ae;
-  /* background-color: #31a7ae; */
   color: #fff;
   border: 1px solid #fff
 }
 
 .Top:hover {
-  /* background-color: #3076ac; */
   background-color: #5de6ed;
   color: #fff;
 }
 
 .Top:hover i {
-  color: #fff;
+  color: #666;
 }
 
-.Top i {
+/* .Top i {
+  color: rgb(206, 203, 203);
+} */
+
+/* .Top i:hover {
   color: #fff;
-}
+} */
 
 .ImagesLand {
   object-fit: cover;
@@ -65,10 +67,6 @@
 .Button {
   color: rgb(41, 180, 180);
   cursor: pointer;
-}
-
-.Top i:hover {
-  color: #fff;
 }
 
 .Title {

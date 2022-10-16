@@ -537,13 +537,13 @@ const Home = () => {
         </Row>
       </div>
       </Col>
-      {/* <Col className={`my-3 pl-0 pr-3 pr-md-4`}
+      <Col className={`my-3 pl-0 pr-3 pr-md-4`}
         xs={1} >
         <Image
           className={`${styles.FillerImagel}`}
           src={rightdoor}
         />
-      </Col> */}
+      </Col>
         </Row>
     </Container>
     )

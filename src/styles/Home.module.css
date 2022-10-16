@@ -6,8 +6,8 @@
   }
 
 .Background {
-/* background-color: #353839; */
-background-color: #f8f8f8;
+background-color: #353839;
+/* background-color: #f8f8f8; */
 width: 100%; 
 }
 
@@ -38,8 +38,7 @@ width: 100%;
 
 .Homebox {
     height: 110px;
-    /* background-color: #112533; */
-    background-color: rgb(62, 223, 223);
+    background-color: #112533;
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
     border-top: 1px solid #fff;

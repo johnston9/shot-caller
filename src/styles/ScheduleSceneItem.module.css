@@ -5,6 +5,10 @@
   }
   
 .Item:hover {
-    background-color: #73cedc;
-    color: #fff;
+    background-color: #3b444b;
+}
+
+.ItemNu {
+  background-color: #3b444b;
+  color: #fff;
 }

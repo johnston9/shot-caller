@@ -2,15 +2,12 @@
   /* background-color: #14404f; */
   background-color: #1a959c;
   color: #fff;
+  font-weight: bold;
 }
 
 .Titledetail {
   font-weight: 700;
-  color: #000;
-}
-
-.Top i {
-  color: #fff;
+  color: #666;
 }
 
 .Bottom:hover {

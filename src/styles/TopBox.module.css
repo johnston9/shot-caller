@@ -1,5 +1,5 @@
 .Container {
-    /* background-color: #353839; */
+    background-color: #353839;
     background-color: #fff;
     margin: 0; 
     width: 100vh;  
@@ -7,25 +7,20 @@
 
 .RegBoxSign {
     background-color: #353839;
-    /* background-color: rgb(68, 214, 209); */
     margin: 0;  
     width: 100%; 
 }
 
 .RegBox {
-    /* background-color: #353839; */
-    /* background-color: rgb(68, 214, 209); */
-    background-color: rgb(2, 14, 16);
+    background-color: #353839;
     margin: 0;  
     width: 100%; 
 }
 
-.RegBox {
-    /* background-color: #353839; */
-    /* background-color: rgb(68, 214, 209); */
-    background-color: rgb(2, 14, 16);
-    margin: 0;  
-    width: 100%; 
+.Titlebox {
+	background-color: #3b444b;
+	margin-bottom: 15px;
+	margin-top: 15px;
 }
 
 .BlueBody {
@@ -50,13 +45,6 @@
 .Longboxr p {
     color: rgb(255, 6, 6);
     margin-bottom: 0;
-}
-
-.Titlebox {
-	background-color: #3b444b;
-    /* background-color: #21998f; */
-	margin-bottom: 15px;
-	margin-top: 15px;
 }
 
 .SmallPanel {

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import styles from "../../styles/ScheduleSceneItem.module.css";
 
 const ScheduleSceneItem = (props) => {
@@ -66,9 +68,15 @@ const ScheduleSceneItem = (props) => {
     }
 
     return (
-        <div onClick={handleClick} className={`mb-1 mx-md-1 ${styles.Item}`} >
-            <p className="d-none d-md-block pl-3 py-1">Scene - {number} - {location} - {title}</p>
-            <p className="d-md-none py-1 pl-3">Scene - {number} {location}</p>
+        <div className="mx-3 mb-1" >
+        <Row>
+        <Col xs={2} className={`text-center mx-0 py-1 ${styles.ItemNu}`}>
+        <p >{number}</p>
+        </Col>
+        <Col xs={10} onClick={handleClick} className={`mx-0 py-1 ${styles.Item}`}>
+        <p>{location} - {title}</p>
+        </Col>
+        </Row>
         </div>
     )
 }

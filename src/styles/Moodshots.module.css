@@ -4,8 +4,12 @@
   /* border-bottom: 2px solid #fafafa; */
 }
 
-.MoodTop i {
+/* .MoodTop i {
 color: rgb(174, 195, 197);
+} */
+
+.MoodTop:hover i {
+  color: #666;
 }
 
 .Edit {
