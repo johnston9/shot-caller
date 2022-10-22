@@ -2,6 +2,13 @@
     min-height: 100px;
   }
 
+  .SearchBar input {
+    border-radius: 20px;
+    color: #242a3d;
+    padding-left: 40px;
+    margin-bottom: 16px;
+  }
+
 .Info {
   color: rgb(170, 27, 55);
   cursor: pointer;

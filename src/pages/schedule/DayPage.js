@@ -55,7 +55,7 @@ const DayPage = () => {
     }, [id, hasOrder])
 
     return (
-        <div>
+        <div className='mb-5'>
             <TopBox work={`Shoot Day ${dataDay}`}
                     title2={dataDate}  />
             <Button

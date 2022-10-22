@@ -6,10 +6,14 @@ import Col from "react-bootstrap/Col";
 
 import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert } from "react-bootstrap";
+import { Alert, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
+import ScheduleSceneItem from "./ScheduleSceneItem";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 import Act1List from "./Act1List";
 import ActTwoAList from "./ActTwoAList";
 import ActTwoBList from "./ActTwoBList";
@@ -20,11 +24,8 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
-  const [showOne, setShowOne] = useState(false);
-  const [showTwoA, setShowTwoA] = useState(false);
-  const [showTwoB, setShowTwoB] = useState(false);
-  const [showThree, setShowThree] = useState(false);
-  const [showLoc, setShowLoc] = useState(false);
+  const [query, setQuery] = useState("");
+  const [scenes, setScenes] = useState({results: [] });
   
   const [postData, setPostData] = useState({
       day_order_number: "",
@@ -338,8 +339,8 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
     </div>
 )
 
-const buttons = (
-  <div className={`${styles.White} py-3`}>    
+const buttons = (  
+    <div className="mt-3">
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-3`}
       onClick={() => setShow(show => !show)}
@@ -349,55 +350,79 @@ const buttons = (
     <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-5 ml-3`} type="submit">
       Add Scene
     </Button>
-  </div>
+    </div>
 );
 
-  const handleClick1 = () => {
-    setShowOne(showOne => !showOne);
-    setShowTwoA(false);
-    setShowTwoB(false);
-    setShowThree(false);
-    setShowLoc(false);
+  const fetchScenesLoc = async () => {
+    try {
+      const { data } = await axiosReq.get(`/scenes/?ordering=location&search=${query}`);
+      setScenes(data);
+    } catch(err) {
+      console.log(err);
+    }
   }
 
-  const handleClick2 = () => {
-    setShowOne(false);
-    setShowTwoA(showTwoA => !showTwoA);
-    setShowTwoB(false);
-    setShowThree(false);
-    setShowLoc(false);
+  const fetchScenesOne = async () => {
+    try {
+      const { data } = await axiosReq.get(`/scenes/?act=one&search=${query}`);
+      setScenes(data);
+    } catch(err) {
+      console.log(err);
+    }
   }
 
-  const handleClick3 = () => {
-    setShowOne(false);
-    setShowTwoA(false);
-    setShowTwoB(showTwoB => !showTwoB);
-    setShowThree(false);
-    setShowLoc(false);
+  const fetchScenesTwoA = async () => {
+    try {
+      const { data } = await axiosReq.get(`/scenes/?act=two-a&search=${query}`);
+      setScenes(data);
+    } catch(err) {
+    }
   }
 
-  const handleClick4 = () => {
-    setShowOne(false);
-    setShowTwoA(false);
-    setShowTwoB(false);
-    setShowThree(showThree => !showThree);
-    setShowLoc(false);
+  const fetchScenesTwoB = async () => {
+    try {
+      const { data } = await axiosReq.get(`/scenes/?act=two-b&search=${query}`);
+      setScenes(data);
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  const fetchScenesThree = async () => {
+    try {
+      const { data } = await axiosReq.get(`/scenes/?act=three&search=${query}`);
+      setScenes(data);
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   const handleClickLoc = () => {
-    setShowOne(false);
-    setShowTwoA(false);
-    setShowTwoB(false);
-    setShowThree(false);
-    setShowLoc(showLoc => !showLoc);
+    fetchScenesLoc();
+  }
+
+  const handleClick1 = () => {
+    fetchScenesOne();
+  }
+
+  const handleClick2 = () => {
+    fetchScenesTwoA();
+  }
+
+  const handleClick3 = () => {
+    fetchScenesTwoB();
+  }
+
+  const handleClick4 = () => {
+    fetchScenesThree();
   }
     
     return (
         <div >
-            <h4 className={`text-center mx-3 pb-0 mb-0 ${styles.SubTitle }`}>Acts and Location </h4>
-            <div className= {`px-3 mx-3 mb-4 ${styles.ScenesBox} `}>
+            <h4 className={`text-center mx-3 pb-0 mb-3 ${styles.SubTitle }`}>ADD SCENE </h4>
+            <div className= {`px-3 mx-3 pb-3 ${styles.ScenesBox} `}>
             <p className="text-center pt-2">
-            Click Act or Location to open Scene list below. 
+            FIND SCENE BY ACT LOCATION AND OR SEARCH
             </p>
             <Row className="mt-3">
               <Col xs={6} md={3} className="text-center">
@@ -425,65 +450,71 @@ const buttons = (
             <Col xs={12} className="text-center">
                 <Button onClick={handleClickLoc} 
                 className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                By Location</Button>
+                Location</Button>
               </Col>
             </Row>
-          <Row className="my-3 mx-sm-4 ">
-            <Col>
-            {!showOne ?("") : (<Act1List list="one" 
-              setShowOne={setShowOne} 
-              setShowTwoA={setShowTwoA}
-              setShowTwoB={setShowTwoB}
-              setShowThree={setShowThree}
-              setShowLoc={setShowLoc}
-              setPostData={setPostData} /> ) }
-            {!showTwoA ?("") : (<ActTwoAList list="two-a"
-              setShowOne={setShowOne} 
-              setShowTwoA={setShowTwoA}
-              setShowTwoB={setShowTwoB}
-              setShowThree={setShowThree}
-              setShowLoc={setShowLoc}
-              setPostData={setPostData} /> ) }
-            {!showTwoB ?("") : (<ActTwoBList list="two-b"
-              setShowOne={setShowOne} 
-              setShowTwoA={setShowTwoA}
-              setShowTwoB={setShowTwoB}
-              setShowThree={setShowThree}
-              setShowLoc={setShowLoc} 
-              setPostData={setPostData} /> ) }
-            {!showThree ?("") : (<ActThreeList list="three"
-              setShowOne={setShowOne} 
-              setShowTwoA={setShowTwoA}
-              setShowTwoB={setShowTwoB}
-              setShowThree={setShowThree}
-              setShowLoc={setShowLoc}
-              setPostData={setPostData} /> ) }
-            {!showLoc ?("") : (<LocationList list="loc"
-              setShowOne={setShowOne} 
-              setShowTwoA={setShowTwoA}
-              setShowTwoB={setShowTwoB}
-              setShowThree={setShowThree}
-              setShowLoc={setShowLoc}
-              setPostData={setPostData} /> ) }
+          {/* search  */}
+          <Row>
+            <Col className="mt-2" xs={12} sm={{ span: 6, offset: 3 }} >
+            <Form
+                className={styles.SearchBar}
+                onSubmit={(event) => event.preventDefault()}
+                >
+                <Form.Control
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    type="text"
+                    className="mr-sm-2"
+                    placeholder="Search by scene number, title or location"
+                />
+                </Form>
             </Col>
           </Row>
           </div>
-            <Form className={`text-center px-3 pb-3 mt-5 ${styles.FormBox} `} onSubmit={handleSubmit}>
-              <Row>
+          {/* new */}
+            {scenes.results.length ? (
+              <>
+              <div className= {`px-3 mx-3 text-center mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
+              <p className={`text-center pt-2 px-5 mb-3`}>
+                SELECT SCENE AND ADD SHOOTING INFO BELOW</p>
+              <InfiniteScroll 
+               children={scenes.results.map((scene) => {
+                return (
+                  <div 
+                    className='d-inline-flex justify-content-space-between'>
+                    <ScheduleSceneItem 
+                      setPostData={setPostData} 
+                      scene={scene} 
+                      {...scene} 
+                      key={scene.id} />
+                  </div>
+              )})}
+              dataLength={scenes.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!scenes.next}
+              next={() => fetchMoreData(scenes, setScenes )}
+              />
+              </div>
+              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
+              <Row className="mt-3" >
                 <Col>
-                  <h3>Scene {number}  </h3>
-                  <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
+                  <h4 className={`text-center px-5 mb-0 ${styles.SubTitle }`}>
+                    SCENE {number} SHOOTING INFO </h4>
                 </Col>
               </Row>
+              <Form className={`text-center px-3 ${styles.FormBox} `} onSubmit={handleSubmit}>
               <Row>
               <Col xs={12} className="p-0 p-md-2">
                   {textFields}
                   {buttons}
               </Col>
               </Row>
-            </Form>
-            <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-        </div>
+              </Form>
+              </div>
+              </>
+                ) : ("")}
+          {/* new end */}
+          </div>
     )
 }
 

@@ -162,7 +162,7 @@ const ScenesPage = ({message, filter = "" }) => {
             <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
             {/* <Row className="h-100 mt-3">
             {hasLoaded ? (
-          <>
+            <>
             {scenes.results.length ? (
               <InfiniteScroll 
                children={scenes.results.map((scene, index) => {
@@ -197,50 +197,53 @@ const ScenesPage = ({message, filter = "" }) => {
               <Container className={appStyles.Content}>
                 <Asset src={NoResults } message={message} />
               </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
-            </Row>            */}
-            {hasLoaded ? (
-          <>
-            {scenes.results.length ? (
-              <InfiniteScroll 
-               children={scenes.results.map((scene, index) => {
-                return (
-                  <div 
-                    className='d-inline-flex justify-content-space-between'>
-                    <SceneTop 
-                      key={scene.title}
-                      {...scene} 
-                      setScenes={setScenes}
-                      style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
-                        objectFit: "fill", repeat: 'no-repeat',
-                        width: "150px", color: 'beige' }}
-                      />
-                  </div>
-              )})}
-              dataLength={scenes.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!scenes.next}
-              next={() => fetchMoreData(scenes, setScenes )}
-              />
-                )
-             : (
+                  )}
+                </>
+              ) : (
+                <Container className={appStyles.Content}>
+                  <Asset spinner />
+                </Container>
+              )}
+              </Row>            */}
+            <div className='text-center'>
+                {hasLoaded ? (
+                <>
+                {scenes.results.length ? (
+                  <InfiniteScroll 
+                  children={scenes.results.map((scene, index) => {
+                    return (
+                      <div 
+                        className='d-inline-flex justify-content-space-between'>
+                        <SceneTop 
+                          key={scene.title}
+                          {...scene} 
+                          setScenes={setScenes}
+                          style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
+                            objectFit: "fill", repeat: 'no-repeat',
+                            width: "150px", color: 'beige' }}
+                          />
+                      </div>
+                  )})}
+                  dataLength={scenes.results.length}
+                  loader={<Asset spinner />}
+                  hasMore={!!scenes.next}
+                  next={() => fetchMoreData(scenes, setScenes )}
+                  />
+                    )
+                : (
+                  <Container className={appStyles.Content}>
+                    <Asset src={NoResults } message={message} />
+                  </Container>
+                )}
+              </>
+            ) : (
               <Container className={appStyles.Content}>
-                <Asset src={NoResults } message={message} />
+                <Asset spinner />
               </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )} 
-        </div>
+            )} 
+            </div>
+            </div>
+            
     )
 }
 

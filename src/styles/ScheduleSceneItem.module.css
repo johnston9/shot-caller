@@ -1,14 +1,23 @@
+.SchedItem {
+  width: 360px;
+}
+
 .Item {
-    background-color: #2792a3;
+    background-color: #1ea7ae;
     color: #fff;
     cursor: pointer;
   }
   
 .Item:hover {
     background-color: #3b444b;
-}
+} 
 
 .ItemNu {
-  background-color: #3b444b;
+  background-color: #55c8ce;
+  /* background-color: #1ea7ae; */
   color: #fff;
+} 
+
+.Italic {
+  font-style: italic;
 }

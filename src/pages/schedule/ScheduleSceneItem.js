@@ -4,9 +4,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../styles/ScheduleSceneItem.module.css";
 
 const ScheduleSceneItem = (props) => {
-    const {setPostData, scene,
-        setShowOne, setShowTwoA, setShowTwoB,
-        setShowThree, setShowLoc} = props
+    const {setPostData, scene} = props
 
     // eslint-disable-next-line
     const [newData, setNewData] = useState({
@@ -38,13 +36,7 @@ const ScheduleSceneItem = (props) => {
         other_characters, other_characters_costumes,
         background_artists, background_artists_costumes } = scene;
 
-    const handleClick = () => {
-            setShowOne(false);
-            setShowTwoA(false);
-            setShowTwoB(false);
-            setShowThree(false);
-            setShowLoc(false);
-    
+    const handleClick = () => {   
         setPostData({ number, title, act, int_ext, day_night, time,
             pages, action, dramatic_day,
             location_detail, location, filming_location,
@@ -68,13 +60,13 @@ const ScheduleSceneItem = (props) => {
     }
 
     return (
-        <div className="mx-3 mb-1" >
+        <div className={`mx-4 mb-2 ${styles.SchedItem}`} >
         <Row>
-        <Col xs={2} className={`text-center mx-0 py-1 ${styles.ItemNu}`}>
+        <Col xs={2} className={`text-center mx-0 py-2 ${styles.ItemNu}`}>
         <p >{number}</p>
         </Col>
-        <Col xs={10} onClick={handleClick} className={`mx-0 py-1 ${styles.Item}`}>
-        <p>{location} - {title}</p>
+        <Col xs={10} onClick={handleClick} className={`mx-0 py-2 ${styles.Item}`}>
+        <p><span style={{ textTransform: 'uppercase'}}>{location}</span> - <span className={`${styles.Italic}`} >{title}</span></p>
         </Col>
         </Row>
         </div>

@@ -138,7 +138,6 @@ const ScheduleScene = (props) => {
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
                     </Button>
-                    <p className='mb-0'>{id}</p>
                 </Col>
                 )}      
             </Row>

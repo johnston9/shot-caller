@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import styles from "../../styles/ScheduleCreate.module.css";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import ScheduleSceneItem from "./ScheduleSceneItem";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 const LocationList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThree, setShowLoc, list} ) => {
     useRedirect("loggedOut");
@@ -23,16 +24,18 @@ const LocationList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setSho
       }, [])
     return (
         <div>    
-          <Container className= {`mt-4`} >
+          <Container className= {`mt-4 text-center ${styles.Scroll }`} >
           <h5 className={`text-center pb-0 mb-2 ${styles.SubTitle }`}>Select Scene</h5>
             <p className="text-center mb-2">
             Select Scene to add Scene details to the Stripboard then 
             add the Shooting Info in the form below
             </p>
-            <Row>
             {scenes.results.length ? (
-                scenes.results.map((scene) => (
-                  <Col xs={12} md={6}>
+              <InfiniteScroll 
+               children={scenes.results.map((scene) => {
+                return (
+                  <div 
+                    className='d-inline-flex justify-content-space-between'>
                     <ScheduleSceneItem 
                       setShowOne={setShowOne} 
                       setShowTwoA={setShowTwoA}
@@ -44,9 +47,14 @@ const LocationList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setSho
                       scene={scene} 
                       {...scene} 
                       key={scene.id} />
-                  </Col>
-                ))) : ("")}
-            </Row>
+                  </div>
+              )})}
+              dataLength={scenes.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!scenes.next}
+              next={() => fetchMoreData(scenes, setScenes )}
+              />
+                ) : ("")}
           </Container>                       
         </div>
     )
