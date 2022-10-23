@@ -160,51 +160,7 @@ const ScenesPage = ({message, filter = "" }) => {
               </Col>
             </Row>
             <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-            {/* <Row className="h-100 mt-3">
-            {hasLoaded ? (
-            <>
-            {scenes.results.length ? (
-              <InfiniteScroll 
-               children={scenes.results.map((scene, index) => {
-                return (
-                  <Col xs={4} sm={3} lg={2} className="px-2 py-2 p-0 p-lg-2">
-                    <SceneTop 
-                      key={scene.title}
-                      {...scene} 
-                      setScenes={setScenes}
-                      style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
-                        objectFit: "fill", width: 'auto', repeat: 'no-repeat' }}
-                      />
-                    </Col>
-              )})}
-              //  children={scenes.results.map((scene, index) => ( 
-              //  <SceneTop 
-              //         key={scene.title}
-              //         {...scene} 
-              //         setScenes={setScenes}
-              //         style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
-              //           objectFit: "fill", width: 'auto', repeat: 'no-repeat',
-              //         width: "150px" }}
-              //         />
-              // ))}
-              dataLength={scenes.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!scenes.next}
-              next={() => fetchMoreData(scenes, setScenes )}
-              />
-                )
-             : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults } message={message} />
-              </Container>
-                  )}
-                </>
-              ) : (
-                <Container className={appStyles.Content}>
-                  <Asset spinner />
-                </Container>
-              )}
-              </Row>            */}
+            {/* infinite */}
             <div className='text-center'>
                 {hasLoaded ? (
                 <>
@@ -242,6 +198,36 @@ const ScenesPage = ({message, filter = "" }) => {
               </Container>
             )} 
             </div>
+            {/* old */}
+            <Row className="h-100 mt-3">
+            {hasLoaded ? (
+            <>
+            {scenes.results.length ? (
+                scenes.results.map((scene, index) => {
+                  return (
+                    <Col xs={6} sm={4} md={3} lg={2} className="p-1 ">
+                      <SceneTop 
+                        key={scene.title}
+                        {...scene} 
+                        setScenes={setScenes}
+                        style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
+                          objectFit: "fill", width: 'auto', repeat: 'no-repeat' }}
+                        />
+                      </Col>
+                )}
+                ))
+             : (
+              <Container className={appStyles.Content}>
+                <Asset src={NoResults } message={message} />
+              </Container>
+            )}
+          </>
+        ) : (
+          <Container className={appStyles.Content}>
+            <Asset spinner />
+          </Container>
+        )}
+            </Row>  
             </div>
             
     )

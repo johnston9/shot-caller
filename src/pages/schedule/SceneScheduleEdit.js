@@ -84,7 +84,7 @@ const SceneScheduleEdit = () => {
     background_artists_costumes: "",
 })
 
-const { day_order_number, number,
+const { day_id, day_order_number, number,
   act, title, int_ext, start_time, end_time, 
   day_night, time, action, pages, dramatic_day,
   location, location_detail, filming_location, location_address,
@@ -165,7 +165,7 @@ const { day_order_number, number,
       event.preventDefault();
       const formData = new FormData();
   
-      formData.append("day_id", id);
+      formData.append("day_id", day_id);
       formData.append("day_order_number", day_order_number);
       formData.append("number", number);
       formData.append("act", act);
@@ -383,13 +383,13 @@ const { day_order_number, number,
   const buttons = (
     <div className="text-center mt-4">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} mr-2`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Create
+      <Button className={`px-4 ml-2 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Edit
       </Button>
     </div>
   );

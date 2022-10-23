@@ -342,12 +342,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
 const buttons = (  
     <div className="mt-3">
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-3`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-4 px-md-5 mr-2`}
       onClick={() => setShow(show => !show)}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-5 ml-3`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-2`} type="submit">
       Add Scene
     </Button>
     </div>
@@ -471,8 +471,8 @@ const buttons = (
             </Col>
           </Row>
           </div>
-          {/* new */}
-            {scenes.results.length ? (
+          {/* infinite */}
+            {/* {scenes.results.length ? (
               <>
               <div className= {`px-3 mx-3 text-center mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
               <p className={`text-center pt-2 px-5 mb-3`}>
@@ -496,10 +496,48 @@ const buttons = (
               />
               </div>
               <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
-              <Row className="mt-3" >
+              <Row className="mt-3 pt-3" >
                 <Col>
                   <h4 className={`text-center px-5 mb-0 ${styles.SubTitle }`}>
-                    SCENE {number} SHOOTING INFO </h4>
+                    SCENE <span className={`${styles.BlueNumber} `} >{number} </span>SHOOTING INFO </h4>
+                </Col>
+              </Row>
+              <Form className={`text-center px-3 ${styles.FormBox} `} onSubmit={handleSubmit}>
+              <Row>
+              <Col xs={12} className="p-0 p-md-2">
+                  {textFields}
+                  {buttons}
+              </Col>
+              </Row>
+              </Form>
+              </div>
+              </>
+                ) : ("")} */}
+          {/* old */}
+          {scenes.results.length ? (
+              <>
+              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
+              <p className={`text-center pt-2 px-5 mb-3`}>
+                SELECT SCENE AND ADD SHOOTING INFO BELOW</p>
+              <Row>
+              {scenes.results.map((scene) => (
+                <Col xs={12} md={6}>
+                <ScheduleSceneItem 
+                      setPostData={setPostData} 
+                      scene={scene} 
+                      {...scene} 
+                      key={scene.id} />
+                </Col>
+              ))}
+              </Row>
+              </div>
+              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
+              <Row className="mt-3 pt-3" >
+                <Col>
+                <h4 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
+                    SCENE <span className={`${styles.BlueNumber} `} >{number} </span>SHOOTING INFO </h4>
+                  <h4 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
+                    SCENE <span className={`${styles.BlueNumber} `} >{number} </span></h4>
                 </Col>
               </Row>
               <Form className={`text-center px-3 ${styles.FormBox} `} onSubmit={handleSubmit}>
@@ -513,7 +551,6 @@ const buttons = (
               </div>
               </>
                 ) : ("")}
-          {/* new end */}
           </div>
     )
 }
