@@ -11,7 +11,7 @@ const InformationEdit = () => {
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
         <p>The Add Cast and Add Background forms here are seperate from the main 
-        Callsheet Info and Crew Calls form below. They allow each cast member 
+        Callsheet form below and must be used before submitting the it. They allow each cast member 
         or background item to be added individually. The schedule is provided
         to facilitate this and can also be viewed beside these forms.</p>
          </div> 

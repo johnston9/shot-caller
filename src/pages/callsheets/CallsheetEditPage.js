@@ -978,9 +978,125 @@ const CallsheetEditPage = () => {
 
   const infoFields = (
     <div className={`pb-5 text-center ${styles.Back3 }`}>
+      {/* TIMES   */}
+      <div className={`my-3 ${styles.Bold }`} > 
+      <h5 className={`py-1 ${styles.SubTitle }`} >
+          <span className="float-left ml-3">Part 1</span>
+          <span className="mr-5 pr-4">TIMES </span>
+        </h5> 
+      </div>
+      {/* Unit call - Talent call Shoot call */}
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="production_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Unit Call</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="unit_call"
+                value={unit_call}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.unit_call?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="talent_call" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Talent Call</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="talent_call"
+                value={talent_call}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.talent_call?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="shoot_call" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Shoot Call</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="shoot_call"
+                value={shoot_call}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.shoot_call?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* breakfast - lunch - wrap */}
+      <Row>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="breakfast" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Breakfast</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="breakfast"
+                value={breakfast}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.breakfast?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="lunch" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Lunch</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="lunch"
+                value={lunch}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.lunch?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="wrap" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`}>Est. Wrap</Form.Label>
+              <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="wrap"
+                value={wrap}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.wrap?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* INFO */}
       <div className={`my-3 ${styles.Bold }`} > 
         <h5 className={`py-1 ${styles.SubTitle }`} >
-          <span className="float-left ml-3">Part 1 </span>
+          <span className="float-left ml-3">Part 2 </span>
           <span className="mr-5 pr-4">INFO </span>
         </h5> 
       </div>
@@ -1158,121 +1274,7 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
       </Col>
-      </Row>    
-      <div className={`my-3 ${styles.Bold }`} > 
-      <h5 className={`py-1 ${styles.SubTitle }`} >
-          <span className="float-left ml-3">Part 2</span>
-          <span className="mr-5 pr-4">TIMES </span>
-        </h5> 
-      </div>
-      {/* Unit call - Talent call Shoot call */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="production_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Unit Call</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="unit_call"
-                value={unit_call}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.unit_call?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="talent_call" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Talent Call</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="talent_call"
-                value={talent_call}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.talent_call?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="shoot_call" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Shoot Call</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="shoot_call"
-                value={shoot_call}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.shoot_call?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      {/* breakfast - lunch - wrap */}
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="breakfast" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Breakfast</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="breakfast"
-                value={breakfast}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.breakfast?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="lunch" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Lunch</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="lunch"
-                value={lunch}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.lunch?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="wrap" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Est. Wrap</Form.Label>
-              <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                name="wrap"
-                value={wrap}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.wrap?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
+      </Row>  
       <div className={`my-3 ${styles.Bold }`} > 
       <h5 className={`py-1 ${styles.SubTitle }`} >
           <span className="float-left ml-3">Part 3 </span>
@@ -1281,11 +1283,13 @@ const CallsheetEditPage = () => {
       </div>
       <div className="pr-3">
       <div>
-        <Row>
+        <Row className="mb-2" >
         <Col ms={{span: 10, offset: 1 }} >
         <p>
-        Please add addresses on one line seperated by a comma and a space and 
-        include the name if appropiate for Google Maps.</p>
+        Please seperated each address line with a comma and a space. 
+        </p>
+        <p>
+        Include the name if appropiate for Google Maps.</p>
         </Col>
         </Row>
       </div>
@@ -1924,7 +1928,7 @@ const CallsheetEditPage = () => {
       ) }
       </div>
       {/* info */}
-      <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >EDIT CALLSHEET</h3> 
+      <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >EDIT CALLSHEET INFO</h3> 
       <Form className= {`mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
       {infoFields}
       {/* crew */}
