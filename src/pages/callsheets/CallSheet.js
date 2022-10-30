@@ -21,6 +21,7 @@ import ContactsPage from './ContactsPage';
 import WalkiesPage from './WalkiesPage';
 import { Image } from 'react-bootstrap';
 import HospitalPage from './HospitalPage';
+import Weather from '../../components/Weather';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -40,6 +41,10 @@ const CallSheet = (props ) => {
     const [showNotes, setShowNotes] = useState(false);
     const [showCrew, setShowCrew] = useState(false);
     const [showAdvanSched, setShowAdvanSched] = useState(false);
+    // const [forcast, setForcast] = useState("");
+    // const [temp, setTemp] = useState("");
+    // const [rise, setRise] = useState("");
+    // const [setsun, setSetsun] = useState("");
 
     const { production_name, production_company, company_phone, company_email,
         company_address_line_1, company_address_line_2, company_address_line_3,
@@ -562,6 +567,18 @@ const CallSheet = (props ) => {
             ) }
           </Col>
         </Row>
+        {/* weather */}
+        {/* {forcast}
+        {temp}
+        {rise}
+        {setsun} */}
+        <Weather
+         weather_location={weather_location}
+        //  setForcast={setForcast}
+        //  setTemp={setTemp}
+        //  setRise={setRise}
+        //  setSetsun={setSetsun}
+          />
         {/* Locations */}
         <LocationsPage callsheet={callsheet} />
         {/* Schedule  */}
