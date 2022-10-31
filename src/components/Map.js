@@ -25,7 +25,7 @@ function MapPage({address}) {
     <Row className="my-3">
     <Col md={{span: 10, offset:1 }}>
     {selected && <GoogleMap 
-    zoom={10}
+    zoom={15}
     center={selected}
     mapContainerClassName={` ${styles.Map}`}
      >
@@ -46,7 +46,6 @@ function MapPage({address}) {
 
   return (
     <div>
-      {mapKey}
       {isLoaded ? (<MapPage address={address} />) : ("") }
     </div>
   )

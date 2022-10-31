@@ -12,12 +12,14 @@ const Information = () => {
         <h5 className={`text-center `} >INFO</h5>  
         <p>
         The Add Cast and Add Background forms are seperate from the main 
-        Callsheet form below and must be used before submitting the it. 
-        They allow each cast member or BG item to be added individually. 
-        The schedule is provided to facilitate this and can also be viewed 
-        beside these forms. They are also available on the Edit page. The Callsheet 
-        is divided into FIVE sections: TIMES, INFO, LOCATIONS, WALKIES and 
-        CREW CALLS.  </p>
+        Callsheet form below and allow each cast member or BG item to be added individually.
+        They may be used here before submitting it or on the Edit page. 
+        <br /> 
+        The schedule is provided to facilitate this and to view other Scene 
+        information like Department Info. The Add Cast and BG forms can 
+        also be viewed beside the Schedule. <br />
+        The Callsheet is divided into FIVE sections: TIMES, INFO, 
+        LOCATIONS, WALKIES and CREW CALLS.  </p>
          </div> 
         </Col>
       </Row>

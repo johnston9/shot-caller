@@ -8,16 +8,13 @@ import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import DropdownButton from 'react-bootstrap/DropdownButton'
-
-import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import { useCharactersContext } from "../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
 
-const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
+const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
     useRedirect("loggedOut");
-    const { id } = useParams();
     const [errors, setErrors] = useState({});
     const [cast, setCast] = useState({results: [] });
     const characters = useCharactersContext();
@@ -194,7 +191,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
     
   return (
     <div className={`my-3 `}>
-      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD CHARACTER</h5> 
+      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD CAST</h5> 
       <div className={`mb-3 ${styles.Back3 }`}>
         {/* <p className="text-center">ADD CAST</p> */}
       <Form className="text-center" onSubmit={handleSubmit}>
@@ -207,7 +204,7 @@ const AddCast = ({setShowAddCast, dataDay, dataDate}) => {
         <div className={`ml-md-2 px-1 py-1 ${styles.CastEntered }`} >
           {cast.results.length ? (
               cast.results.map((ca) => (
-                <spam key={ca.id}>{ca.role}, </spam>
+                <span key={ca.id}>{ca.role}, </span>
               ))) : ("")}
           </div>
           </Col>

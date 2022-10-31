@@ -756,13 +756,13 @@ const CallsheetCreate = () => {
           <span className="mr-5 pr-4">INFO </span>
         </h5> 
       </div>
+      <p className={`${styles.Red}`}>Important: Put the city's name, comma, 2-letter country code (ISO3166). Example - London, GB or New York, US.</p>
       <Row>
         <Col className="d-flex justify-content-center" xs={{span: 6, offset: 3}} >
         {/* weather location */}
         <div className="mt-3">
           <Form.Group controlId="weather_location" className={`${styles.Width95} `}  >
               <Form.Label className={`${styles.Bold}`} >Weather Location
-              <p className={`${styles.Red}`}>Important: Put the city's name, comma, 2-letter country code (ISO3166). Example - London, GB or New York, US.</p>
               </Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
@@ -1498,7 +1498,7 @@ const buttons = (
                     <Information  /> 
                     ) }  
     {/* cast buttons */}
-    <h3 className={`text-center mt-2 py-1 ${styles.SubTitle }`} >ADD CAST / BG</h3> 
+    <h3 className={`text-center mt-2 py-1 ${styles.SubTitle }`} >ADD CAST / ADD BG</h3> 
     <div className= {`mb-3`}>
       {/* schedule button */}
     <Row className='text-center'>
@@ -1509,27 +1509,52 @@ const buttons = (
     </Button>
     </Col>
     </Row>
+    <div className="d-none d-md-block">
     <Row className='text-center'>
-    <Col className='text-center mx-0 px-0' xs={6} md={4}>
+    <Col className='text-center mx-0 px-0' md={4}>
     <Button
         className={`mt-3 px-2 px-md-5 ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Characters
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Cast
     </Button>
     </Col>
-    <Col className='text-center mx-0 px-0' xs={6} md={4}  >
-    <Button
-        className={`my-3 px-2 px-md-5  ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Add Background
-    </Button>
-    </Col>
-    <Col xs={{span: 10, offset: 1}} md={4} className='text-center mx-0 px-0'  >
+    <Col md={4} className='text-center mx-0 px-0'  >
     <Button
         className={`my-3 px-3 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowSideBySide(showSideBySide => !showSideBySide)} >
           Schedule and Cast Forms
     </Button>
     </Col>
+    <Col className='text-center mx-0 px-0'md={4}  >
+    <Button
+        className={`my-3 px-2 px-md-5  ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Add BG
+    </Button>
+    </Col>
     </Row>
+    </div>
+    <div className="d-block d-md-none">
+    <Row className='text-center'>
+    <Col className='text-center mx-0 px-0' xs={6}>
+    <Button
+        className={`my-2 px-2 px-md-5 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Cast
+    </Button>
+    </Col>
+    <Col className='text-center mx-0 px-0' xs={6}>
+    <Button
+        className={`my-2 px-3 px-md-5  ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Add BG
+    </Button>
+    </Col>
+    <Col className='text-center mx-0 px-0'  >
+    <Button
+        className={`my-0 px-3 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowSideBySide(showSideBySide => !showSideBySide)} >
+          Schedule and Cast Forms
+    </Button>
+    </Col>
+    </Row>
+    </div>
     <div className="mt-3">
     {!showSchedule ? (
       ""
@@ -1543,14 +1568,14 @@ const buttons = (
     {!showAddCast ? (
       ""
     ) : (
-      <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+      <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
     ) }
     </div> 
     <div>
     {!showAddBg ? (
       ""
     ) : (
-      <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+      <AddBackGround id={id} setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
     ) }
     </div> 
     {!showSideBySide ? (
@@ -1564,17 +1589,17 @@ const buttons = (
         </Col>
         <Col xs={6}>
           <div>
-        <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+        <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
           </div>
           <div>
-        <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+        <AddBackGround id={id} setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
           </div>
         </Col>
       </Row>             
     ) }
     </div>
     {/* info */}
-    <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >CALLSHEET INFO</h3> 
+    <h3 className={`text-center mt-3 mb-0 py-1 ${styles.SubTitle }`} >CALLSHEET INFO</h3> 
     <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
     {infoFields}
     <div className={`my-3 text-center ${styles.Bold }`} > 

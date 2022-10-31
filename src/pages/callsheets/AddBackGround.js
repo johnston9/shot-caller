@@ -8,13 +8,14 @@ import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
 const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
     useRedirect("loggedOut");
     const { id } = useParams();
+    console.log(id)
     const [errors, setErrors] = useState({});
     const [background, setBackground] = useState({results: [] });
 
@@ -116,7 +117,7 @@ return (
         <div className={`px-2 my-0 py-1 ${styles.CastEntered }`} >
         {background.results.length ? (
             background.results.map((back) => (
-                <spam key={back.id}>{back.type}, </spam>
+                <span key={back.id}>{back.type}, </span>
             ))) : ("")}
         </div>
         </Col>

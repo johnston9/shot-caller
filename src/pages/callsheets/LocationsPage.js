@@ -29,11 +29,11 @@ const LocationsPage = ({callsheet, setShow}) => {
     const hospital_address = `${nearest_hospital}, ${hospital_address_line_1}, ${hospital_address_line_2}, ${hospital_address_line_3}, ${hospital_address_line_4}`;  
     const basecamp_map_address = `${basecamp_name}, ${basecamp_address}`; 
 
-    const location_1_map_address = `${basecamp_name}, ${basecamp_address}`; 
-    const location_2_map_address = `${basecamp_name}, ${basecamp_address}`; 
-    const location_3_map_address = `${basecamp_name}, ${basecamp_address}`; 
-    const location_4_map_address = `${basecamp_name}, ${basecamp_address}`; 
-    const location_5_map_address = `${basecamp_name}, ${basecamp_address}`; 
+    const location_1_map_address = `${location_1_name}, ${location_1_address}`; 
+    const location_2_map_address = `${location_2_name}, ${location_2_address}`; 
+    const location_3_map_address = `${location_3_name}, ${location_3_address}`; 
+    const location_4_map_address = `${location_4_name}, ${location_4_address}`; 
+    const location_5_map_address = `${location_5_name}, ${location_5_address}`; 
   return (
     <div>
         <div className='mt-3'>
