@@ -489,18 +489,9 @@ const CallSheet = (props ) => {
             </div>
             </Col>
             <Col className='pl-5' md={4}>
-            <Row>
-              <Col xs={6} >
-              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Weather:</span > </p>
-              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Sunrise:</span></p>
-              <p className={`mb-1`} ><span className={`${styles.Bold}`}>Sunset:</span></p>
-              </Col>
-              <Col xs={6} >
-              <p className={`${styles.WhiteAqua} mb-1`} >{weather_location}  </p>
-              <p className={`${styles.WhiteAqua} mb-1`} >{weather_location}</p>
-              <p className={`${styles.WhiteAqua} mb-1`}>{weather_location}</p>
-              </Col>
-            </Row>
+            {/* weather */}
+            <Weather
+            weather_location={weather_location} />
             <Row>
                 <Col xs={6} >
                 <p className={`mb-1`} ><span className={`${styles.Bold}`}>Talent Call:</span > </p>
@@ -516,9 +507,9 @@ const CallSheet = (props ) => {
                 <p className={`${styles.WhiteAqua} mb-1`} >{lunch}</p>
                 <p className={`${styles.WhiteAqua} mb-1`}>{wrap}</p>
                 </Col>
-              </Row>
-              <p className={`mb-0 mt-1 `} >
-                <span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
+            </Row>
+            <p className={`mb-0 mt-1 `} >
+            <span className={`${styles.Bold}`}>Nearest Hospital:</span></p>
             <Row>
             <Col xs={12} >
             <p className={`mb-1 ${styles.WhiteAqua}`}>{nearest_hospital} </p>
@@ -567,18 +558,6 @@ const CallSheet = (props ) => {
             ) }
           </Col>
         </Row>
-        {/* weather */}
-        {/* {forcast}
-        {temp}
-        {rise}
-        {setsun} */}
-        <Weather
-         weather_location={weather_location}
-        //  setForcast={setForcast}
-        //  setTemp={setTemp}
-        //  setRise={setRise}
-        //  setSetsun={setSetsun}
-          />
         {/* Locations */}
         <LocationsPage callsheet={callsheet} />
         {/* Schedule  */}
@@ -618,15 +597,9 @@ const CallSheet = (props ) => {
         <Row >
         {/* weather/calls */}
         <Col className={`pl-0 pr-0`} xs={3}>
-          {/* Weather */}
-          <div >
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Weather:</span > </p>
-            <p className={`${styles.WhiteAqua}`} >{weather_location} </p> 
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunrise:</span></p>
-            <p className={`${styles.WhiteAqua}`}>{weather_location} </p> 
-            <p className={`mb-0`} ><span className={`${styles.Bold}`}>Sunset:</span></p>
-            <p className={`${styles.WhiteAqua}`}>{weather_location} </p> 
-          </div>
+          {/* weather */}
+          <Weather
+            weather_location={weather_location} />
           {/* meals */}
           <div className={` mt-3`}>
               <p className={`mb-0`} ><span className={`${styles.Bold}`}>Breakfast:</span></p>

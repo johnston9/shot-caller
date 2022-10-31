@@ -46,6 +46,7 @@ function MapPage({address}) {
 
   return (
     <div>
+      {mapKey}
       {isLoaded ? (<MapPage address={address} />) : ("") }
     </div>
   )

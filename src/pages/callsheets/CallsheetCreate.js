@@ -761,7 +761,9 @@ const CallsheetCreate = () => {
         {/* weather location */}
         <div className="mt-3">
           <Form.Group controlId="weather_location" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Weather Location</Form.Label>
+              <Form.Label className={`${styles.Bold}`} >Weather Location
+              <p className={`${styles.Red}`}>Important: Put the city's name, comma, 2-letter country code (ISO3166). Example - London, GB or New York, US.</p>
+              </Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"

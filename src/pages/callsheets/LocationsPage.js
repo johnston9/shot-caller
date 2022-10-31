@@ -26,7 +26,14 @@ const LocationsPage = ({callsheet, setShow}) => {
             nearest_hospital, hospital_address_line_1, hospital_address_line_2, 
             hospital_address_line_3, hospital_address_line_4
            } = callsheet;
-    const hospital_address = `${nearest_hospital}, ${hospital_address_line_1}, ${hospital_address_line_2}`;   
+    const hospital_address = `${nearest_hospital}, ${hospital_address_line_1}, ${hospital_address_line_2}, ${hospital_address_line_3}, ${hospital_address_line_4}`;  
+    const basecamp_map_address = `${basecamp_name}, ${basecamp_address}`; 
+
+    const location_1_map_address = `${basecamp_name}, ${basecamp_address}`; 
+    const location_2_map_address = `${basecamp_name}, ${basecamp_address}`; 
+    const location_3_map_address = `${basecamp_name}, ${basecamp_address}`; 
+    const location_4_map_address = `${basecamp_name}, ${basecamp_address}`; 
+    const location_5_map_address = `${basecamp_name}, ${basecamp_address}`; 
   return (
     <div>
         <div className='mt-3'>
@@ -140,7 +147,7 @@ const LocationsPage = ({callsheet, setShow}) => {
         {!showMapLoc1 ? (
               ""
                   ) : (
-                    <Map address={location_1_address}  /> 
+                    <Map address={location_1_map_address}  /> 
                     ) }
         {location_2_address ? (
             <Row 
@@ -168,7 +175,7 @@ const LocationsPage = ({callsheet, setShow}) => {
         {!showMapLoc2 ? (
               ""
                   ) : (
-                    <Map address={location_2_address}  /> 
+                    <Map address={location_2_map_address}  /> 
                     ) }
         {location_3_address ? (
             <Row
@@ -196,7 +203,7 @@ const LocationsPage = ({callsheet, setShow}) => {
         {!showMapLoc3 ? (
               ""
                   ) : (
-                    <Map address={location_3_address}  /> 
+                    <Map address={location_3_map_address}  /> 
                     ) }
         {location_4_address ? (
             <Row 
@@ -224,7 +231,7 @@ const LocationsPage = ({callsheet, setShow}) => {
         {!showMapLoc4 ? (
               ""
                   ) : (
-                    <Map address={location_4_address}  /> 
+                    <Map address={location_4_map_address}  /> 
                     ) }
         {location_5_address ? (
             <Row 
@@ -252,7 +259,7 @@ const LocationsPage = ({callsheet, setShow}) => {
         {!showMapLoc5 ? (
               ""
                   ) : (
-                    <Map address={location_5_address}  /> 
+                    <Map address={location_5_map_address}  /> 
                     ) }
         {/* {nearest_hospital ? (
             <Row 

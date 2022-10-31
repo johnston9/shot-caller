@@ -6,19 +6,11 @@ import Col from "react-bootstrap/Col";
 
 import styles from "../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert, Container } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import ScheduleSceneItem from "./ScheduleSceneItem";
-import InfiniteScroll from "react-infinite-scroll-component";
-import Asset from "../../components/Asset";
-import { fetchMoreData } from "../../utils/utils";
-import Act1List from "./Act1List";
-import ActTwoAList from "./ActTwoAList";
-import ActTwoBList from "./ActTwoBList";
-import ActThreeList from "./ActThreeList";
-import LocationList from "./LocationList";
 
 const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
   useRedirect("loggedOut");

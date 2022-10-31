@@ -261,6 +261,10 @@ p {
   min-height: 40px;
 }
 
+.Red {
+  color: red;
+}
+
 .Bold { 
   font-weight: 700;
 }
