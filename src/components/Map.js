@@ -12,6 +12,7 @@ function MapPage({address}) {
   // const center = useMemo(() => ({lat: 53.3498, lng: 6.2603 }), []) ;
   const [selected, setSelected] = useState(null);
   useEffect(() => {
+    console.log(address);
      const handleAddress = async () => {
      const result = await getGeocode({address});
      console.log(result);

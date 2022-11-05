@@ -76,6 +76,7 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
       <div className={`mt-3 text-center ${styles.Back3 }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >ADDITIONAL POSITIONS </h5>
       </div>
+      <Row>
       {/* add pos 1 */}
       {add_pos_1_calltime && 
           (<Col xs={12} md={6}>
@@ -236,10 +237,15 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
           </Row>
           </Col> )
       }
+      </Row>
       {/* All Other Additional Positions */}
+      <div className={`mt-3 text-center ${styles.Back3 }`}>
+          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >
+          All Other Additional Positions </h5>
+      </div>
+      <Row>
       {all_other_add_positions_calltimes && 
-          (<Col xs={12} md={6}>
-            <p className={`text-center my-0 py-0 `}>All Other Additional Positions</p>
+          (<Col xs={12} >
           <Row className={` mx-0 `} >
             <Col className={`mx-0 px-1  ${styles.Border}`} xs={6} md={6} >
               <p className={`my-0 py-0 `}>{all_other_add_positions} </p>
@@ -250,6 +256,7 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
           </Row>
           </Col> )
         }
+      </Row>
     </div>
   )
 }

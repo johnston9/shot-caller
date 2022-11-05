@@ -33,7 +33,8 @@ const SchedulePage = (props) => {
         <div className={`mb-3 text-center ${styles.SubTitle }`}>
         <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
         <h5 className={`pl-5 text-center`} 
-        style={{ textTransform: 'uppercase'}} >Schedule <span className={`${styles.HSpan }`} >xx Pages</span></h5>
+        style={{ textTransform: 'uppercase'}} >Schedule 
+        <span className={`${styles.HSpan }`} > {pagestotal} Pages</span></h5>
         </div>
         </div>
         {/* titles */}
@@ -54,11 +55,14 @@ const SchedulePage = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>Filming Loc</p>                        
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={1}>
                     <p className='mb-0'>Cast</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Pages</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>BG</p>
                 </Col>
             </Row>
         </div>

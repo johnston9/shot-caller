@@ -10,7 +10,7 @@ const CharSceneInfo = (props) => {
         character4_number, character5_number, character6_number, 
         character7_number, character8_number, character9_number,
         character10_number, character11_number, character12_number,
-        other_characters_numbers, } = props
+        other_characters, background_artists } = props 
   return (
     <div>
       <Row className='mt-2 text-center px-0 mx-0'>
@@ -32,9 +32,26 @@ const CharSceneInfo = (props) => {
           {character10_number && <span className='mb-0'>{character10_number} , </span>} 
           {character11_number && <span className='mb-0'> {character11_number} , </span>} 
           {character12_number && <span className='mb-0'> {character12_number} , </span>} 
-          {other_characters_numbers && <span className='mb-0'> {other_characters_numbers} </span>} 
-          </Col>               
+          </Col> 
       </Row>
+      <Row className='mt-2 text-center px-0 mx-0'>
+      <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={12}>
+          <p style={{ textTransform: 'uppercase' }} className={`${styles.TitleBox}`}>BG / Standins</p>
+          <p className='mb-0'>{background_artists}</p>                        
+          </Col>
+      </Row>
+      {other_characters && (
+        <Row className='mt-2 text-center px-0 mx-0'>
+        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={12}>
+            <p style={{ textTransform: 'uppercase' }} className={`${styles.TitleBox}`}>Other Characters</p>
+            <p className='mb-0'>{other_characters}</p>                        
+            </Col>
+            {/* <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4}>
+            <p style={{ textTransform: 'uppercase' }} className={`${styles.TitleBox}`}>INT/EXT - D/N</p>
+            <p style={{ textTransform: 'uppercase' }} className='mb-0'>{int_ext} - {day_night} </p>                     
+            </Col> */}
+        </Row>
+      ) }
     </div>
   )
 }

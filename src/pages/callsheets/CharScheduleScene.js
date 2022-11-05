@@ -6,19 +6,18 @@ import { useRedirect } from '../../hooks/Redirect';
 import CharSceneInfo from './CharSceneInfo';
 import btnStyles from "../../styles/Button.module.css";
 import { Button, } from 'react-bootstrap';
+import InfoCast from './InfoCast';
 
 const CharScheduleScene = (props) => {
     useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
-    const {scene, number, int_ext, start_time,
+    const [showInfoCast, setShowInfoCast] = useState(false);
+    const {scene, number, int_ext, start_time, style, next,
         location, filming_location, day_night, action, pages,
-        new_info, style, 
         character1_number, character2_number, character3_number,
         character4_number, character5_number, character6_number, 
         character7_number, character8_number, character9_number,
-        character10_number, character11_number, character12_number,
-        // eslint-disable-next-line
-        other_characters_numbers, } = props
+        character10_number, character11_number, character12_number} = props
 
     return (
         <div style={style} className={` ${styles.Bold}`} > 
@@ -42,7 +41,7 @@ const CharScheduleScene = (props) => {
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
                 {/* cast */}
-                <Col xs={2} md={2} className={`mx-0 px-0 ${styles.TitleBox2}`} >
+                <Col xs={2} md={1} className={`mx-0 px-0 ${styles.TitleBox2}`} >
                 {character1_number && <span className='mb-0'> {character1_number}, </span>}       
                 {character2_number && <span className='mb-0'> {character2_number}, </span>} 
                 {character3_number && <span className='mb-0'> {character3_number}, </span>} 
@@ -59,12 +58,25 @@ const CharScheduleScene = (props) => {
                 <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <p >{pages}</p>
                 </Col>
+                <Col className={`mx-0 px-0 `} xs={1} md={1}>
+                <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
+                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                    I
+                </Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    {!showInfoCast ?("") : (                       
+                    <InfoCast {...scene}/> 
+                    ) }
+                </Col>
             </Row>
             {/* next */}
-            {new_info ? (
+            {next ? (
             <Row className='px-3'>
                 <Col className={`mb-0 py-2 ${styles.NextCall}`}>
-                <p className="mb-0" >Next: {new_info} </p>
+                <p className="mb-0" >Next: {next} </p>
                 </Col>
             </Row> 
             ) : ("") }     
@@ -82,7 +94,8 @@ const CharScheduleScene = (props) => {
                 </Col>
                 <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
                 {/* <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Details</p> */}
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext} - {location} - {day_night}</p>
+                    {/* <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext} - {location} - {day_night}</p> */}
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{location}</p>
                     <p className='mb-0'>{action}</p>
                 </Col>
                 <Col className={`mx-0 px-0 `} xs={2} md={1}>
@@ -125,10 +138,10 @@ const CharScheduleScene = (props) => {
                 </Col>
             </Row>
             {/* next */}
-            {new_info ? (
+            {next ? (
                 <Row>
                 <Col className={`mb-0 py-2 ${styles.NextCall}`}>
-                <p className="mb-0" >Next: {new_info} </p>
+                <p className="mb-0" >Next: {next} </p>
                 </Col>
             </Row> 
             ) : (

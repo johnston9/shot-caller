@@ -20,7 +20,7 @@ const Breakdown = (props) => {
             character7, character8, character9, character10, 
             character11, character12, other_characters,
             background_artists, setShowBreak } = props;
-    return (
+    return ( 
         <div>
             <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
                 Scene breakdown

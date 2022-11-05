@@ -65,10 +65,11 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: '#f6fffe' }}
             className='px-3 '>
-            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} >
             <p></p>
             </Col>
             <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={10}>
+            <p className={`mb-0 ${styles.BoldBase}`} >Nearest Hospital</p>
             <p className={`mb-0 ${styles.Bold}`} >{nearest_hospital}</p>
             <p className='mb-0'>
             {hospital_address_line_1  && <span>{hospital_address_line_1},</span>}
@@ -96,11 +97,10 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: 'rgb(254 249 254)' }}
             className='px-3 '>
-            <Col className={`mx-0 px-1 px-md-3 ${styles.Border}`} xs={1} >
-            <p></p>
+            <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} >
             </Col>
             <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={5}>
-            <p className={`mb-0 ${styles.Bold}`} >Basecamp</p>
+            <p className={`mb-0 ${styles.BoldBase}`} >Basecamp</p>
             <p className={`mb-0 ${styles.Bold}`} >{basecamp_name}</p>
             <p className='mb-0'>{basecamp_address}</p>
             </Col>
@@ -119,7 +119,7 @@ const LocationsPage = ({callsheet, setShow}) => {
         {!showMapBase ? (
               ""
                   ) : (
-                    <Map address={basecamp_address}  /> 
+                    <Map address={basecamp_map_address}  /> 
                     ) }
         {location_1_address ? (
             <Row 

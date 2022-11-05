@@ -28,6 +28,7 @@ import AddStunts from './AddStunts';
 import AddPostAdditional from './AddPostAdditional';
 import Information from "./Information";
 import InfoCrewCalls from "./InfoCrewCalls";
+import InformationWeather from "./InformationWeather";
 
 const CallsheetCreate = () => {
   useRedirect("loggedOut");
@@ -59,6 +60,7 @@ const CallsheetCreate = () => {
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const [showInfoWeather, setShowInfoWeather] = useState(false);
   const [showInfoCrew, setShowInfoCrew] = useState(false);
 
   const [postData, setPostData] = useState({
@@ -750,13 +752,29 @@ const CallsheetCreate = () => {
           </Col>
       </Row>
       {/* INFO */}
-      <div className={`my-3 ${styles.Bold }`} > 
+      <div className={`mt-3 mb-2 ${styles.Bold }`} > 
         <h5 className={`py-1 ${styles.SubTitle }`} >
           <span className="float-left ml-3">Part 2 </span>
           <span className="mr-5 pr-4">INFO </span>
         </h5> 
       </div>
-      <p className={`${styles.Red}`}>Important: Put the city's name, comma, 2-letter country code (ISO3166). Example - London, GB or New York, US.</p>
+      <Row>
+      <Col>
+      <Button 
+        className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+        onClick={() => setShowInfoWeather(showInfoWeather => !showInfoWeather)} >IMPORTANT
+      </Button>
+      </Col>
+      </Row>
+      <Row>
+      <Col>
+      {!showInfoWeather ? (
+            ""
+                ) : (
+                  <InformationWeather  /> 
+                  ) } 
+      </Col>
+      </Row> 
       <Row>
         <Col className="d-flex justify-content-center" xs={{span: 6, offset: 3}} >
         {/* weather location */}

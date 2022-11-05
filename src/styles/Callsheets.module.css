@@ -7,6 +7,9 @@ p {
 }
 
 /* CallsheetTop */
+.BoldBase {
+  color: #1ea7ae;
+}
 
 .Top {
   background-color: #1ea7ae;

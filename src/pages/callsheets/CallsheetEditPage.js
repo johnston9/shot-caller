@@ -28,6 +28,7 @@ import AddStunts from './AddStunts';
 import AddPostAdditional from './AddPostAdditional';
 import InformationEdit from "./InformationEdit";
 import InfoCrewCalls from "./InfoCrewCalls";
+import InformationWeather from "./InformationWeather";
 
 const CallsheetEditPage = () => {
   useRedirect("loggedOut");
@@ -61,6 +62,7 @@ const CallsheetEditPage = () => {
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const [showInfoWeather, setShowInfoWeather] = useState(false);
   const [showInfoCrew, setShowInfoCrew] = useState(false);
 
   const [postData, setPostData] = useState({
@@ -1094,19 +1096,35 @@ const CallsheetEditPage = () => {
           </Col>
       </Row>
       {/* INFO */}
-      <div className={`my-3 ${styles.Bold }`} > 
+      <div className={`mt-3 mb-2 ${styles.Bold }`} > 
         <h5 className={`py-1 ${styles.SubTitle }`} >
           <span className="float-left ml-3">Part 2 </span>
           <span className="mr-5 pr-4">INFO </span>
         </h5> 
       </div>
       <Row>
+      <Col>
+      <Button 
+        className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+        onClick={() => setShowInfoWeather(showInfoWeather => !showInfoWeather)} >IMPORTANT
+      </Button>
+      </Col>
+      </Row>
+      <Row className="mt-2" >
+      <Col>
+      {!showInfoWeather ? (
+            ""
+                ) : (
+                  <InformationWeather  /> 
+                  ) } 
+      </Col>
+      </Row> 
+      <Row>
         <Col className="d-flex justify-content-center" xs={{span: 6, offset: 3}} >
         {/* weather location */}
         <div className="mt-3">
           <Form.Group controlId="weather_location" className={`${styles.Width95} `}  >
           <Form.Label className={`${styles.Bold}`} >Weather Location
-              <p className={`${styles.Red}`}>Important: Put the city's name, comma, 2-letter country code (ISO3166). Example - London, GB or New York, US.</p>
               </Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
