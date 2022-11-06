@@ -12,9 +12,8 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const AddBackGround = ({setShowAddBg, dataDay, dataDate}) => {
+const AddBackGround = ({id, setShowAddBg, dataDay, dataDate}) => {
     useRedirect("loggedOut");
-    const { id } = useParams();
     console.log(id)
     const [errors, setErrors] = useState({});
     const [background, setBackground] = useState({results: [] });

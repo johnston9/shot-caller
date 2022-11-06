@@ -8,7 +8,7 @@ import { Image } from 'react-bootstrap';
 const ShotImage = ({image} ) => {
     useRedirect("loggedOut");
     return (
-        <div className={`${styles.InfoBack} pl-5`}>
+        <div className={`${styles.InfoBack} mx-5 mt-1 mb-3 pt-3`}>
             <Row>
                 <Col className='text-center pt-1 pb-3'>
                 {image ? (<> 

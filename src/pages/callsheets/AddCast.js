@@ -15,6 +15,7 @@ import { Dropdown } from "react-bootstrap";
 
 const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
     useRedirect("loggedOut");
+    console.log(id)
     const [errors, setErrors] = useState({});
     const [cast, setCast] = useState({results: [] });
     const characters = useCharactersContext();
@@ -118,6 +119,7 @@ const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
           try {
               const { data } = await axiosReq.get(`/castcallsnew/?day_id=${id}`)
               setCast(data);
+              console.log(data);
           } catch (err) {
               console.log(err);
             }

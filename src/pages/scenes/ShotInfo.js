@@ -10,7 +10,7 @@ const ShotInfo = (props) => {
         script_length, script_ref, storyboard_refs, audio,
         movement } = props
     return (
-        <div className={`${styles.InfoBack} pl-5`}>
+        <div className={`${styles.InfoBack} mx-3 pt-3 pl-5`}>
             <Row>
                 <Col xs={12} md={4} className="" >
                 <p className='mb-0'><span className={`${styles.Bold}`}>Camera/Lens:</span> {camera} {lens} </p>         

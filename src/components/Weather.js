@@ -21,7 +21,6 @@ useEffect(() => {
           .then((data) => {
             const sunrisenew = new Date(data.sys?.sunrise * 1000).toLocaleTimeString([], {hour: 'numeric', minute: '2-digit', hour12: true});
             const sunsetnew = new Date(data.sys?.sunset * 1000).toLocaleTimeString([], {hour: 'numeric', minute: '2-digit', hour12: true});
-            console.log(data)
             if (data.main) {
                 setForcast(data?.weather[0]?.main)
             setTemp(Math.round(data.main?.temp));

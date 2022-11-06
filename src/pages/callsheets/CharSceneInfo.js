@@ -5,7 +5,7 @@ import styles from "../../styles/ScheduleCreate.module.css";
 
 const CharSceneInfo = (props) => {
     useRedirect("loggedOut");
-    const {filming_location,
+    const {filming_location, action,
         character1_number, character2_number, character3_number,
         character4_number, character5_number, character6_number, 
         character7_number, character8_number, character9_number,

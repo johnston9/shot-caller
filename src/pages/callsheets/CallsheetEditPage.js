@@ -1917,7 +1917,7 @@ const CallsheetEditPage = () => {
       {!showAddCast ? (
       ""
       ) : (
-      <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+      <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
       ) }
       </div> 
       {/* add bg */}
@@ -1925,7 +1925,7 @@ const CallsheetEditPage = () => {
       {!showAddBg ? (
       ""
       ) : (
-      <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+      <AddBackGround id={id} setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
       ) }
       </div> 
       {/* SideBySide */}
@@ -1938,10 +1938,10 @@ const CallsheetEditPage = () => {
         </Col>
         <Col xs={6}>
           <div>
-        <AddCast setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+        <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
           </div>
           <div>
-        <AddBackGround setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+        <AddBackGround id={id} setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
           </div>
         </Col>
       </Row>             

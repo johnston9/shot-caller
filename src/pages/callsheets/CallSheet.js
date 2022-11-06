@@ -220,13 +220,10 @@ const CallSheet = (props ) => {
           wardrobe_assistant_4_calltime,
           wardrobe_assistant_5_calltime,
       } = props;
-    console.log(currentUser)
     
       useEffect(() => {
         const actorcalldata = cast.results.filter(
           obj => obj.username === currentUser );
-        console.log(actorcalldata);
-        console.log(currentUser);
         const actorcall = actorcalldata[0]?.call || "" ;
         const actorUsername = actorcalldata[0]?.username || "" ;
         setYourCastcalltime(actorcall);

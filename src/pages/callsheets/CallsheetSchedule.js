@@ -24,11 +24,8 @@ const CallsheetSchedule = ({scenes, showSideBySide, callsheetshed}) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Details</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>D/N</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                <p className='mb-0'>Filming</p>                        
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={3}>
+                <p className='mb-0'>Filming </p>                        
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>P</p>

@@ -5,7 +5,7 @@ import styles from "../../styles/ScheduleCreate.module.css";
 
 const SchedSceneInfo = (props) => {
     useRedirect("loggedOut");
-     const { title, dramatic_day, location_address,
+     const { title, dramatic_day, location_address, day_night,
             equip_set_props, new_info, filming_location,
             department_info } = props
     return (
@@ -13,9 +13,9 @@ const SchedSceneInfo = (props) => {
         <Row className='text-center'>
             <Col className={`mx-0 px-0 mb-0 pb-1 ${styles.TitleBox2 }`} xs={6} >
             <p className={`mb-0 mx-2 ${styles.TitleBox }`} >
-                Heading - DD </p>
+                D/N - Heading - DD </p>
             <p style={{ textTransform: 'italic' }} className='mb-0'>
-                {title} - {dramatic_day} </p>
+                {day_night} - {title} - {dramatic_day} </p>
             </Col>
             <Col className={`mx-0 px-0 mb-0 pb-1 `} xs={6} >
             <p className={`mb-0 mx-2 ${styles.TitleBox }`} >
