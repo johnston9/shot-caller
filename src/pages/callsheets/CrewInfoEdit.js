@@ -583,6 +583,7 @@ const CrewInfoEdit = () => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/crewinfonew/${id}/`);
+        console.log(data);
         const { 
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
@@ -1268,7 +1269,7 @@ const CrewInfoEdit = () => {
   return (
     <div>
     <TopBox work="Crew Info"
-            title="Edit"/>
+            title="Add / Edit"/>
     <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
         onClick={() => history.goBack()}

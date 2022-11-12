@@ -176,7 +176,7 @@ const Post = (props) => {
                             overlay={<Tooltip>Unarchive</Tooltip>}
                             >
                             <span onClick={handleUnarchive} >
-                            <i className={`fas fa-folder ${styles.Heart}`} />
+                            <i className={`fas fa-folder ${styles.Heart} px-0`} />
                             </span>
                             </OverlayTrigger>
                         ) : currentUser ? (

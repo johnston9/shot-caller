@@ -51,6 +51,7 @@ const CrewInfoCreate = () => {
   const [showWar, setShowWar] = useState(false);
 
   const [postData, setPostData] = useState({
+    // company
     total_shoot_days: "",
     production_name: "",
     production_company: "",
@@ -61,6 +62,7 @@ const CrewInfoCreate = () => {
     company_address_line_3: "",
     company_address_line_4: "",
     company_logo: "",
+    // production
     director_name: "",
     director_email: "",
     director_phone: "",
@@ -99,6 +101,14 @@ const CrewInfoCreate = () => {
     oth_production_pos_5_name: "",
     oth_production_pos_5_email: "",
     oth_production_pos_5_phone: "",
+    // legal / medic
+    legal_name: "",
+    legal_email: "",
+    legal_phone: "",
+    set_medic_name: "",
+    set_medic_email: "",
+    set_medic_phone: "",
+    // ad
     ad_1_name: "",
     ad_1_email: "",
     ad_1_phone: "",
@@ -129,6 +139,7 @@ const CrewInfoCreate = () => {
     pro_assistant_5_name: "",
     pro_assistant_5_email: "",
     pro_assistant_5_phone: "",
+    // camera
     dop_name: "",
     dop_email: "",
     dop_phone: "",
@@ -162,6 +173,7 @@ const CrewInfoCreate = () => {
     oth_camera_pos_3_name: "",
     oth_camera_pos_3_email: "",
     oth_camera_pos_3_phone: "",
+    // sound
     sound_mixer_name: "",
     sound_mixer_email: "",
     sound_mixer_phone: "",
@@ -174,9 +186,11 @@ const CrewInfoCreate = () => {
     sound_assistant_2_name: "",
     sound_assistant_2_email: "",
     sound_assistant_2_phone: "",
+    // continuity
     script_supervisor_name: "",
     script_supervisor_email: "",
     script_supervisor_phone: "",
+    // makeup
     key_hairmakeup_name: "",
     key_hairmakeup_email: "",
     key_hairmakeup_phone: "",
@@ -204,6 +218,7 @@ const CrewInfoCreate = () => {
     makeup_artist_5_name: "",
     makeup_artist_5_email: "",
     makeup_artist_5_phone: "",
+    // wardrobe
     costume_designer_name: "",
     costume_designer_email: "",
     costume_designer_phone: "",
@@ -225,6 +240,7 @@ const CrewInfoCreate = () => {
     wardrobe_assistant_5_name: "",
     wardrobe_assistant_5_email: "",
     wardrobe_assistant_5_phone: "",
+    // art
     production_designer_name: "",
     production_designer_email: "",
     production_designer_phone: "",
@@ -258,6 +274,7 @@ const CrewInfoCreate = () => {
     armorer_name: "",
     armorer_email: "",
     armorer_phone: "",
+    // electric
     gaffer_name: "", 
     gaffer_email: "",
     gaffer_phone: "",
@@ -270,6 +287,7 @@ const CrewInfoCreate = () => {
     electric_4_name: "",
     electric_4_email: "",
     electric_4_phone: "",
+    // grip
     keygrip_name: "",
     keygrip_email: "",
     keygrip_phone: "",
@@ -294,6 +312,7 @@ const CrewInfoCreate = () => {
     swing_ge5_name: "",
     swing_ge5_email: "",
     swing_ge5_phone: "",
+    // stunts
     stunt_coordinator_name: "",
     stunt_coordinator_email: "",
     stunt_coordinator_phone: "",
@@ -312,27 +331,25 @@ const CrewInfoCreate = () => {
     stunts_5_name: "",
     stunts_5_email: "",
     stunts_5_phone: "",
-    legal_name: "",
-    legal_email: "",
-    legal_phone: "",
+    // post
     editor_name: "",
     editor_email: "",
     editor_phone: "",
-    writer_name: "",
-    writer_email: "",
-    writer_phone: "",
     fx_name: "", 
     fx_email: "",
     fx_phone: "",
-    set_medic_name: "",
-    set_medic_email: "",
-    set_medic_phone: "",
+    // script
+    writer_name: "",
+    writer_email: "",
+    writer_phone: "",
+    // casting
     casting_director_name: "",
     casting_director_email: "",
     casting_director_phone: "",
     extras_casting_name: "",
     extras_casting_email: "",
     extras_casting_phone: "",
+    // locations
     location_mngr_name: "",
     location_mngr_email: "",
     location_mngr_phone: "",
@@ -351,6 +368,7 @@ const CrewInfoCreate = () => {
     location_security_name: "",
     location_security_email: "",
     location_security_phone: "",
+    // transport
     transport_captain_name: "",
     transport_captain_email: "",
     transport_captain_phone: "",
@@ -381,6 +399,7 @@ const CrewInfoCreate = () => {
     truck3_name: "",
     truck3_email: "",
     truck3_phone: "",
+    // cateing
     craft_service_name: "",
     craft_service_email: "",
     craft_service_phone: "",
@@ -396,6 +415,7 @@ const CrewInfoCreate = () => {
     catering_co_3_name: "",
     catering_co_3_email: "",
     catering_co_3_phone: "",
+    // additional
     add_pos_1_job: "",
     add_pos_1_name: "",
     add_pos_1_email: "",

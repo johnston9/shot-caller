@@ -37,7 +37,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Director</h5> 
           </div>
-          <Row  >
+          <Row className='text-center' >
             <Col xs={6} md={3}  >
               <p className={`${styles.CrewInfoP} ${styles.Bold} `}>{director_name} </p>
             </Col>
@@ -59,7 +59,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Producer</h5> 
           </div>
-          <Row >
+          <Row className='text-center' >
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfoP} `}>{producer_name} </p>
             </Col>
@@ -81,7 +81,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
           <div className='d-flex justify-content-center '>
           <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Pro Coordinator</h5> 
           </div>
-          <Row >
+          <Row className='text-center' >
             <Col xs={6} md={3} >
               <p className={`${styles.CrewInfoP} `}>{pro_coordinator_name} </p>
             </Col>

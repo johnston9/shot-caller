@@ -114,14 +114,14 @@ export function ProfileEditDropdown({ id }) {
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={EditProfileIcon} />
       <Dropdown.Menu
-        className="text-center"
+        className="px-0"
         popperConfig={{ strategy: "fixed" }}
       >
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit`)}
           aria-label="edit-profile"
         >
-          <i className="fas fa-edit" /> edit profile
+          <i className="fas fa-edit" /> Edit Profile
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit/username`)}

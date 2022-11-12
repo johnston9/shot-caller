@@ -40,6 +40,7 @@ const Profile = (props) => {
                     <h5 className={`${styles.WordBreakWhite}`}
                     style={{ textTransform: 'capitalize'}}> 
                     {name} 
+                    {owner}
                     </h5>
                     </div>
                     </Col>

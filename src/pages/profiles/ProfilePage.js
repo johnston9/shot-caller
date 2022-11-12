@@ -9,20 +9,21 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData,} from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
-import {ProfileEditDropdown} from "../../components/PostDropdown";
+import {PostDropdown, ProfileEditDropdown} from "../../components/PostDropdown";
 import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 import PostTop from "../posts/PostTop";
 import { useHistory } from "react-router-dom";
 
 function ProfilePage() {
-  useRedirect("loggedOut")
+  useRedirect("loggedOut");
+  const admin = true;
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
 
@@ -35,6 +36,18 @@ function ProfilePage() {
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
   const [name, setName] = useState("");
+
+  const handleEdit = () => {
+    history.push(`/profiles/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/profiles/${id}/`);
+      history.goBack();
+    } catch (err) {
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,9 +74,6 @@ function ProfilePage() {
   const topProfile = (
     <Card>
       <Card.Body className={`${styles.Back2} py-0`} >
-        {currentUser?.username}
-        <p>{profile?.owner} </p>
-      {is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row className="text-center">
       <Col lg={3} className="text-lg-left">
           <Image
@@ -71,10 +81,16 @@ function ProfilePage() {
             roundedCircle
             src={profile?.image}
           />
+      <PostDropdown
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
+      />
         </Col>
         <Col lg={6}>
-          <h2 style={{ textTransform: 'capitalize'}} className="pt-0 mb-0" >
-            {profile?.position}</h2>
+          <h2 style={{ textTransform: 'capitalize'}} className=" pt-0 mb-0" >
+            {profile?.name}</h2>
+          <h4 style={{ textTransform: 'capitalize'}} className={`${styles.Position}`} >
+            {profile?.position}</h4>
           <Row className={`${styles.Likes} mx-0 `} >
             <Col xs={4} className="my-0 mx-0 px-0">
               <div>{profile?.posts_count}</div>
@@ -91,6 +107,7 @@ function ProfilePage() {
           </Row>
         </Col>
         <Col lg={3} className="mt-1 pb-1 text-lg-right ">
+        {is_owner && <ProfileEditDropdown id={profile?.id} />}
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
