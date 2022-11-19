@@ -403,7 +403,7 @@ const CallSheet = (props ) => {
         <div className='d-none d-md-block'>
         <Row>
             <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
-                <span className={` ${styles.MovieName}`} >{production_name} {day_id} </span>
+                <span className={` ${styles.MovieName}`} >{production_name}</span>
             </Col>
             <Col className={`text-center `} md={1}>
                 <PostDropdown
@@ -591,7 +591,7 @@ const CallSheet = (props ) => {
             </Col>
         </Row>
         {/* header */}
-        <Row >
+        <Row className='pl-3'>
         {/* weather/calls */}
         <Col className={`pl-0 pr-0`} xs={3}>
           {/* weather */}

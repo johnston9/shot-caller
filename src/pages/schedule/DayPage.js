@@ -29,7 +29,7 @@ const DayPage = () => {
     const history = useHistory();
     const [hasLoaded, setHasLoaded] = useState(false);
     const [hasOrder, setHasOrder] = useState(false);
-    const admin = false;
+    const admin = true;
 
     useEffect(() => {
         const handleMount = async () => {

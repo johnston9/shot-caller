@@ -105,7 +105,7 @@ const ScheduleScene = (props) => {
                     <p className='mb-0'>{day_night}</p>
                 </Col>
                 ) }
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={3}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>

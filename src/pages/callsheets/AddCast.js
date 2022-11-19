@@ -59,6 +59,8 @@ const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
     } = postData;
 
     const setData = (character) => {
+      console.log(character.actor);
+      console.log(character.mobile);
       const role = character.role || "";
       const number = character.number || "" ;
       const username = character.username || "" ;
@@ -151,6 +153,7 @@ const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
     
       try {
         const {data} = await axiosReq.post("/castcallsnew/", formData);
+        console.log(data);
         setPostData({cast_number: "",
                       role: "",
                       username: "",
