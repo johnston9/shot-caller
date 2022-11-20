@@ -59,8 +59,6 @@ const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
     } = postData;
 
     const setData = (character) => {
-      console.log(character.actor);
-      console.log(character.mobile);
       const role = character.role || "";
       const number = character.number || "" ;
       const username = character.username || "" ;

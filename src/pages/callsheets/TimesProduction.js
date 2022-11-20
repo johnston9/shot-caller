@@ -195,7 +195,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
           (<Col xs={12} md={6}>
           <Row className='mx-0' >
             <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{oth_production_pos_2_job}mmm </p>
+              <p className={`my-0 py-0 `}>{oth_production_pos_2_job}</p>
             </Col>
             <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
               <p className={`my-0 py-0 `}>{oth_production_pos_2_name} </p>

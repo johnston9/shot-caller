@@ -3,9 +3,9 @@ import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import SceneCostumes from './SceneCostumes';
 import SceneCosOther from './SceneCosOther';
 import SceneCosBack from './SceneCosBack';
+import CharactersCostumes from './CharactersCostumes';
 
 const Breakdown = (props) => {
     useRedirect("loggedOut");
@@ -19,7 +19,9 @@ const Breakdown = (props) => {
             character3, character4, character5, character6, 
             character7, character8, character9, character10, 
             character11, character12, other_characters,
-            background_artists, setShowBreak } = props;
+            background_artists, setShowBreak,
+            characters, setCharacters,
+            background, setBackground } = props;
     return ( 
         <div>
             <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
@@ -79,7 +81,26 @@ const Breakdown = (props) => {
                 mb-2 mx-1 mx-sm-5`}>CHARACTERS</p>
             </Col>
             </Row>
-            <Row >
+            {/* characters */}
+            <Row className="h-100">
+                    <>
+                    {characters.results.length ? (
+                        characters.results.map((character) => (
+                        <Col xs={6} md={4} lg={3} 
+                        className="py-2 p-0 mx-0">
+                        <CharactersCostumes 
+                          key={character.id} 
+                          character={character}
+                          setCharacters={setCharacters}
+                          {...character} />
+                        </Col>
+                        ))) 
+                        : (
+                        ""
+                        )}
+                    </>
+            </Row>  
+            {/* <Row >
             <Col className='text-center' xs={12}>
                 <p> {character1 } {character2} {character3} {character4} {character5}
                 {character6} {character7} {character8} {character9} {character10}
@@ -102,7 +123,7 @@ const Breakdown = (props) => {
                 {!showCos ? (
                     ""
                 ) : (
-                    <SceneCostumes scene={scene} />
+                    <CharactersCostumes scene={scene} />
                 ) }
                 </div>
                 {!showCosOther ? (
@@ -111,7 +132,7 @@ const Breakdown = (props) => {
                 <SceneCosOther scene={scene} />
                 ) }
             </Col>
-            </Row>
+            </Row> */}
             </Col>
             <Col xs={12} md={6} >
             <Row className='mt-3'>

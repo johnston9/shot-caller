@@ -23,6 +23,8 @@ import { useCharactersContext, useLocationsContext, useSetCharactersContext, use
 import Important from "./Important";
 import Info from "./Info";
 import useRedirect from "../../hooks/Redirect";
+import SceneCharacterAdd from "./SceneCharacterAdd";
+import SceneBGAdd from "./SceneBGAdd";
 
 function SceneCreateForm({topbox}) {
   useRedirect("loggedOut");
@@ -1053,6 +1055,21 @@ const charFields = (
       <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 0}}>
         <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>New Locations</h5>
           <NewLocation setLocations={setLocations} />
+        </Col>
+      </Row>
+      xx
+      <Row className="mt-3">
+        <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 0}}>
+        {/* <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
+          Add Scene Characters</h5> */}
+          <SceneCharacterAdd 
+          setCharacters={setCharacters} />
+        </Col>
+      <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 0}}>
+        {/* <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
+          BG</h5> */}
+          <SceneBGAdd 
+          setLocations={setLocations} />
         </Col>
       </Row>
       <h3 className={`text-center mt-5 mb-0 py-0 ${styles.SubTitle }`} >SCENE INFO</h3> 

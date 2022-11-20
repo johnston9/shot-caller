@@ -3,18 +3,33 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const SceneCostumes = ({scene}) => {
+const CharactersCostumes = ({id, cast_number, role, costume, characters, setCharacters}) => {
     useRedirect("loggedOut");
-    const { character1, character1_costume, character2, 
-        character2_costume, character3, character3_costume, character4, 
-        character4_costume, character5, character5_costume, character6, 
-        character6_costume, character7, character7_costume, character8,
-        character8_costume, character9, character9_costume, character10, 
-        character10_costume, character11, character11_costume, character12,
-        character12_costume, } = scene;
+    // const { character1, character1_costume, character2, 
+    //     character2_costume, character3, character3_costume, character4, 
+    //     character4_costume, character5, character5_costume, character6, 
+    //     character6_costume, character7, character7_costume, character8,
+    //     character8_costume, character9, character9_costume, character10, 
+    //     character10_costume, character11, character11_costume, character12,
+    //     character12_costume, } = scene;
+    
     return (
         <div className='pl-4'>
             <Row>
+            <Col xs={2} >
+            <p>{cast_number} </p>
+            </Col>
+            <Col xs={6} >
+            <p>{role} </p>
+            </Col>
+            <Col xs={2} >
+            <p>{costume} </p>
+            </Col>
+            <Col xs={2} >
+            <p>{costume} </p>
+            </Col>
+            </Row>
+            {/* <Row>
                 <Col xs={12}  >
                     <Row >
                         <Col className='mx-0 px-0' xs={6} >
@@ -113,9 +128,9 @@ const SceneCostumes = ({scene}) => {
                         </Col>
                     </Row>
                 </Col>
-            </Row>
+            </Row> */}
         </div>
     )
 }
 
-export default SceneCostumes
+export default CharactersCostumes

@@ -60,7 +60,6 @@ const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace=
       ...postData,
       [event.target.name]: event.target.value,
     });
-    console.log(event.target.value)
   };
 
   const handleChangeImage1 = (event) => {
@@ -71,6 +70,7 @@ const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace=
         image1: URL.createObjectURL(event.target.files[0]),
       });
       console.log(`image1 ${image1}`)
+      console.log(URL.createObjectURL(event.target.files[0]))
     }
   };
 

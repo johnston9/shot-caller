@@ -35,7 +35,9 @@ const Scene = (props) => {
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const { id, number, storyboard, scene, script,
-      workspace_guide, setScene } = props;
+      workspace_guide, setScene,
+      characters, setCharacters,
+      background, setBackground } = props;
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
     const [showWorkInfo, setShowWorkInfo] = useState(false);
@@ -297,7 +299,15 @@ const Scene = (props) => {
                       {!showBreak ? (
                       ""
                     ) : (
-                      <Breakdown scene={scene} {...scene} setShowBreak={setShowBreak} setScene={setScene} /> 
+                      <Breakdown 
+                        characters={characters}
+                        setCharacters={setCharacters}
+                        background={background}
+                        setBackground={setBackground}
+                        scene={scene} 
+                        {...scene} 
+                        setShowBreak={setShowBreak} 
+                        setScene={setScene} /> 
                       ) }    
                       {!showScript ? (
                       ""
