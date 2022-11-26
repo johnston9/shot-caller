@@ -3,31 +3,41 @@ import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import SceneCosOther from './SceneCosOther';
-import SceneCosBack from './SceneCosBack';
-import CharactersCostumes from './CharactersCostumes';
+import btnStyles from "../../styles/Button.module.css";
+import { Button } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
+import { useLocationsContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
+import { axiosReq } from '../../api/axiosDefaults';
 
 const Breakdown = (props) => {
     useRedirect("loggedOut");
-    const [showCos, setShowCos] = useState(false);
-    const [showCosOther, setShowCosOther] = useState(false);
-    const [showCosBack, setShowCosBack] = useState(false);
-    const { title, act, int_ext, day_night, time, location, location_detail,
+    const history = useHistory();
+    const handleEdit = () => {
+        history.push(`/scenes/${id}/edit`);
+      };
+    
+      const handleDelete = async () => {
+        try {
+          await axiosReq.delete(`/scenes/${id}/`);
+          history.goBack();
+        } catch (err) {
+        }
+      };
+    const { id,title, act, int_ext, day_night, time, location, location_detail,
             pages, action, scene, filming_location, shooting_date,
             dramatic_day, equip_set_props, department_info,
-            character1, character2, 
-            character3, character4, character5, character6, 
-            character7, character8, character9, character10, 
-            character11, character12, other_characters,
-            background_artists, setShowBreak,
-            characters, setCharacters,
-            background, setBackground } = props;
+            setShowBreak,} = props;
     return ( 
         <div>
             <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
                 Scene breakdown
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>
             </h5>
+            <Row className='mt-0'>
+            <Col className="text-center">
+            <p>Add / Edit info from the Scene Edit button above</p>
+            </Col>
+          </Row>
             <Row>
                 <Col className='text-center' xs={{span: 10, offset: 1 }} md={{span: 6, offset: 3 }}>
                 <p className={`${styles.BoldTitle} 
@@ -70,91 +80,6 @@ const Breakdown = (props) => {
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>ACTION</p>
             <p>{action} </p>
-            </Col>
-            </Row>
-            {/* characters */}
-            <Row>
-            <Col xs={12} md={6} >
-            <Row className='mt-3'>
-            <Col className='' xs={12}>
-                <p className={`text-center ${styles.BoldTitle} 
-                mb-2 mx-1 mx-sm-5`}>CHARACTERS</p>
-            </Col>
-            </Row>
-            {/* characters */}
-            <Row className="h-100">
-                    <>
-                    {characters.results.length ? (
-                        characters.results.map((character) => (
-                        <Col xs={6} md={4} lg={3} 
-                        className="py-2 p-0 mx-0">
-                        <CharactersCostumes 
-                          key={character.id} 
-                          character={character}
-                          setCharacters={setCharacters}
-                          {...character} />
-                        </Col>
-                        ))) 
-                        : (
-                        ""
-                        )}
-                    </>
-            </Row>  
-            {/* <Row >
-            <Col className='text-center' xs={12}>
-                <p> {character1 } {character2} {character3} {character4} {character5}
-                {character6} {character7} {character8} {character9} {character10}
-                {character11} {character12} {other_characters} </p>
-                <Row>
-                <Col xs={6}>
-                <p
-                    className={` ${styles.CostumeLink } `}
-                    onClick={() => setShowCos(showCos => !showCos)} >Costumes 1
-                </p>
-                </Col>
-                <Col xs={6}>
-                <p
-                    className={` ${styles.CostumeLink } `}
-                    onClick={() => setShowCosOther(showCosOther => !showCosOther)} >Costumes 2
-                </p>
-                </Col>
-                </Row>
-                <div>
-                {!showCos ? (
-                    ""
-                ) : (
-                    <CharactersCostumes scene={scene} />
-                ) }
-                </div>
-                {!showCosOther ? (
-                ""
-                ) : (
-                <SceneCosOther scene={scene} />
-                ) }
-            </Col>
-            </Row> */}
-            </Col>
-            <Col xs={12} md={6} >
-            <Row className='mt-3'>
-            <Col className='text-center' xs={12}>
-            <p className={`${styles.BoldTitle} 
-            mb-2 text-center mx-1 mx-sm-5`}>BG/STANDINGS</p>
-            </Col>
-            </Row>
-            <Row >
-            <Col className='text-center' xs={12}>
-            <p>{background_artists} </p>
-            <p
-                    className={`${styles.CostumeLink } `}
-                    onClick={() => setShowCosBack(showCosBack => !showCosBack)} >Costumes
-                </p>
-            {!showCosBack ? (
-                ""
-                ) : (
-                <SceneCosBack scene={scene} />
-                ) }
-            </Col>
-            </Row>
             </Col>
             </Row>
             {/* shoot info */}

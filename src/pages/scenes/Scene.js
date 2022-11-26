@@ -20,12 +20,14 @@ import TopBox from '../../components/TopBox';
 import InfoScenePage from './InfoScenePage';
 import InfoWorkspace from './InfoWorkspace';
 import Script from './Script';
+import CharactersBG from './CharactersBG';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
     const [showScript, setShowScript] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showBreak, setShowBreak] = useState(false);
+    const [showCharactersBG, setShowCharactersBG] = useState(false);
     const [showstory, setShowstory] = useState(false);
     const [showStoryShot, setShowStoryShot] = useState(false);
     const [showGuide, setShowGuide] = useState(false);
@@ -34,8 +36,9 @@ const Scene = (props) => {
     const setNumber = useSetNumberContext();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
-    const { id, number, storyboard, scene, script,
-      workspace_guide, setScene,
+    const { id, number, storyboard, script,
+      workspace_guide, 
+      scene, setScene,
       characters, setCharacters,
       background, setBackground } = props;
     const history = useHistory();
@@ -221,19 +224,25 @@ const Scene = (props) => {
                               onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
                             </p>
                         </Col>
+                    <Col md={2} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowCharactersBG(showCharactersBG => !showCharactersBG)} >Characters/BG
+                        </p>
+                    </Col>
                     <Col className='text-center' md={2}>
                       <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowstory(showstory => !showstory)} > Storyboard
                       </p>
                     </Col>
-                    <Col className='text-center' md={2}>
+                    <Col className='text-center' md={1}>
                     <p
                         className={`py-0 mb-0 ${styles.Button}`}
                         onClick={() => setShowlist(showlist => !showlist)} >Shotlist
                     </p>
                     </Col>
-                    <Col className='text-center' md={2}>
+                    <Col className='text-center' md={1}>
                       <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
@@ -249,25 +258,31 @@ const Scene = (props) => {
               </div>
               <div className='d-md-none'>
                   <Row className={`${styles.ButtonLine} mt-2`}>
-                    <Col xs={4} className='text-center'>
+                    <Col xs={3} className='text-center'>
                         <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => handleClickMoods()} > Moodshots
                         </p>
                     </Col>
-                    <Col xs={4} className='text-center'>
+                    <Col xs={3} className='text-center'>
                             <p
                               className={`py-0 mb-0 ${styles.Button}`}
                               onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
                             </p>
-                        </Col>
-                        <Col xs={2} className='text-center'>
+                    </Col>
+                    <Col md={3} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowCharactersBG(showCharactersBG => !showCharactersBG)} >Characters/BG
+                        </p>
+                    </Col>
+                    <Col xs={2} className='text-center'>
                         <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowScript(showScript => !showScript)} > Script
                         </p>
                     </Col>
-                    <Col className='text-center px-0 mx-0' xs={2}>
+                    <Col className='text-center px-0 mx-0' xs={1}>
                     <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
@@ -300,6 +315,7 @@ const Scene = (props) => {
                       ""
                     ) : (
                       <Breakdown 
+                        id={id}
                         characters={characters}
                         setCharacters={setCharacters}
                         background={background}
@@ -308,6 +324,18 @@ const Scene = (props) => {
                         {...scene} 
                         setShowBreak={setShowBreak} 
                         setScene={setScene} /> 
+                      ) }
+                      {!showCharactersBG ? (
+                      ""
+                    ) : (
+                      <CharactersBG
+                        id={id}
+                        characters={characters}
+                        setCharacters={setCharacters}
+                        background={background}
+                        setBackground={setBackground}
+                        setShowCharactersBG={showCharactersBG} 
+                        /> 
                       ) }    
                       {!showScript ? (
                       ""

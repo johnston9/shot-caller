@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../styles/Callsheets.module.css";
+import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -113,16 +113,18 @@ const SceneCharacterAdd = ({id}) => {
     );
     
   return (
-    <div className={`my-3 `}>
-      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD SCENE CHARACTER</h5> 
+    <div className={` ${styles.Back}`}>
+      <h5 className={`text-center mb-0 py-1 ${styles.SubTitle }`} >
+        ADD SCENE CHARACTER</h5> 
       <div className={`mb-3 ${styles.Back3 }`}>
-        {/* <p className="text-center">ADD CAST</p> */}
       <Form className="text-center" onSubmit={handleSubmit}>
       {/* Dropdown DropButt */}
-        <Row className="py-2">
+      <Row>
+      <Col xs={6}>
+      <Row className="py-2">
         <Col xs={12} md={6}>
         <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
-        CAST ADDED
+        CHARACTERS ADDED
         </p>
         <div className={`ml-md-2 px-1 py-1 ${styles.CastEntered }`} >
           {cast.results.length ? (
@@ -133,7 +135,7 @@ const SceneCharacterAdd = ({id}) => {
           </Col>
           <Col xs={12} md={6}>
           <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
-          SELECT ROLE
+          SELECT CHARACTER
         </p>
           <DropdownButton id="dropdown-basic-button" 
           className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
@@ -144,20 +146,28 @@ const SceneCharacterAdd = ({id}) => {
                 ) )) }
           </DropdownButton>
           </Col>
-        </Row>
-        {cast_number ? (
-          <>
-          <Row className="my-2">
-            <Col xs={7} >
-            <div className={`text-center mx-2 mt-2 py-1 ${styles.SubTitle }`}>
-            <p >
-            <span className="ml-2"> {cast_number}</span> - 
-              <span className="mr-2">{role} </span>
+      </Row>
+      </Col>
+      <Col xs={6}>
+      <Row className="my-2">
+            <Col xs={2} >
+            <p className={`text-center mb-0 ${styles.Bold }`}>
+            Number
             </p>
-            </div>
+            <p className={`mt-2 py-1 ${styles.White }`}>
+            {cast_number}
+            </p>
             </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={5} >
-            <Form.Group controlId="costume" className={`${styles.Width2} `}  >
+            <Col xs={4} >
+            <p className={`text-center mb-0 ${styles.Bold }`}>
+            Role
+            </p>
+            <p className={`mt-2 py-1 ${styles.White }`}>
+            {role}
+            </p>
+            </Col>
+            <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
+            <Form.Group controlId="costume" className={`${styles.Width} ml-2 `}  >
                   <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -174,10 +184,8 @@ const SceneCharacterAdd = ({id}) => {
               ))}
               </Col>
           </Row>
-          </>
-        ) : (
-          <p className={`text-center mb-0 py-1 ${styles.SubTitle }`}></p>
-        )}
+      </Col>
+      </Row>
         {/* buttons */}
         <Row>
           <Col className="text-center">

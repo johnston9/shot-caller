@@ -24,10 +24,12 @@ const ScenePage = () => {
                     axiosReq.get(`/scenecharacters/?scene_id=${id}`),
                     axiosReq.get(`/scenebgs/?scene_id=${id}`),
                 ])
-                console.log(data);
                 setScene({ results: [scenedata] });
                 setCharacters({ results: [castdata] });
                 setBackground({ results: [bgdata] });
+                console.log(scenedata);
+                console.log(castdata);
+                console.log(bgdata);
             } catch (err) {
                 console.log(err);
               }
@@ -43,10 +45,8 @@ const ScenePage = () => {
                   {...scene.results[0]}
                   scene={scene.results[0]} 
                   setScene={setScene}
-                  {...characters.results[0]}
                   characters={characters.results[0]} 
                   setCharacters={setCharacters}
-                  {...background.results[0]}
                   background={background.results[0]} 
                   setBackground={setBackground}
                   />
