@@ -334,7 +334,7 @@ const Scene = (props) => {
                         setCharacters={setCharacters}
                         background={background}
                         setBackground={setBackground}
-                        setShowCharactersBG={showCharactersBG} 
+                        setShowCharactersBG={setShowCharactersBG} 
                         /> 
                       ) }    
                       {!showScript ? (
@@ -366,7 +366,7 @@ const Scene = (props) => {
                     ) }
                     {/* workspace */}
                     <h5 style={{ textTransform: 'uppercase'}} 
-                        className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
+                        className={`mt-1 mb-1 pl-3 py-3 ${styles.SubTitle } text-center`}>
                         SCENE WORKSPACE
                     </h5>
                     {/* edit guide */}

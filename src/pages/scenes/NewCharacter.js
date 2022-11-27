@@ -84,12 +84,12 @@ const NewCharacter = () => {
       );
 
     return (
-        <div className= {` ${styles.Back}`}>
-          <h5 className={`text-center mb-0 py-1 ${styles.SubTitle }`} >
-        ADD NEW CHARACTER</h5> 
-        {usedNumbers}
-        <p>{unusedNumbers}</p>
-      {/* <div className={`mb-3 ${styles.Back3 }`}> */}
+        <div className= {` ${styles.b}`}>
+          <h5 className={`text-center mb-0 py-1 ${styles.FancyTop }`} >
+            ADD NEW CHARACTER</h5> 
+            {/* {usedNumbers}
+            <p>{unusedNumbers}</p> */}
+          <div className={`mb-3 ${styles.Fancyback }`}>
             <Form onSubmit={handleSubmit}>
             <Row className="mt-0">
                 <Col className="d-flex justify-content-center pb-1" xs={6}>
@@ -137,7 +137,8 @@ const NewCharacter = () => {
                     {buttons}
                 </Col>
             </Row>
-            </Form>          
+            </Form> 
+          </div>         
         </div>
     )
 }

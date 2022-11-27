@@ -38,6 +38,10 @@ i:hover {
   min-height: 30px;
 }
 
+.Crimson {
+  color: rgb(231, 64, 97);
+}
+
 .SceneCard {
   margin: 5px;
   border: 5px solid #fff;
@@ -95,10 +99,6 @@ i:hover {
   color: #000;
 }
 
-.Back {
-  background-color: #fff;
-}
-
 .AddScene {
   background-color: cornsilk;
 }
@@ -135,8 +135,9 @@ i:hover {
 
 .Close {
   color: rgb(28, 131, 131);
-  padding-right: 30px;
+  padding-right: 5px;
   cursor: pointer;
+  font-size: .75rem;
 }
 
 .Close:hover {
@@ -346,6 +347,22 @@ i:hover {
 
 .Back {
   background-color: aliceblue;
+}
+
+.Black {
+  color: #000;
+  font-weight: 700;
+}
+
+.Fancyback {
+  background-color: blueviolet;
+  color: #fff;
+  /* border: 5px solid aqua; */
+}
+
+.FancyTop {
+  background-color: #000;
+  color: #fff;
 }
 
 .CastEntered {

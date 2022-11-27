@@ -10,11 +10,10 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const SceneBGAdd = ({id}) => {
+const SceneBGAdd = ({id, background, setBackground}) => {
     useRedirect("loggedOut");
-    console.log(id)
+    console.log(background)
     const [errors, setErrors] = useState({});
-    const [background, setBackground] = useState({results: [] });
 
     const [postData, setPostData] = useState({
         quantity: "",
@@ -43,18 +42,18 @@ const SceneBGAdd = ({id}) => {
         })
         }
 
-    useEffect(() => {
-      const handleMount = async () => {
-          try {
-              const { data } = await axiosReq.get(`/scenebgs/?scene_id=${id}`)
-              setBackground(data);
-              console.log(data);
-          } catch (err) {
-              console.log(err);
-            }
-      }
-      handleMount();
-      }, [id])
+    // useEffect(() => {
+    //   const handleMount = async () => {
+    //       try {
+    //           const { data } = await axiosReq.get(`/scenebgs/?scene_id=${id}`)
+    //           setBackground(data);
+    //           console.log(data);
+    //       } catch (err) {
+    //           console.log(err);
+    //         }
+    //   }
+    //   handleMount();
+    //   }, [id])
 
     const handleSubmit = async (event) => {
       event.preventDefault();

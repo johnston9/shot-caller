@@ -13,12 +13,11 @@ import { useRedirect } from "../../hooks/Redirect";
 import { useCharactersContext } from "../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
 
-const SceneCharacterAdd = ({id}) => {
+const SceneCharacterAdd = ({id, characters, setCharacters}) => {
     useRedirect("loggedOut");
     console.log(id)
     const [errors, setErrors] = useState({});
-    const [cast, setCast] = useState({results: [] });
-    const characters = useCharactersContext();
+    const charactersContext = useCharactersContext();
 
     const [postData, setPostData] = useState({
         cast_number: "",
@@ -57,18 +56,18 @@ const SceneCharacterAdd = ({id}) => {
         })
         }
 
-    useEffect(() => {
-      const handleMount = async () => {
-          try {
-              const { data } = await axiosReq.get(`/scenecharacters/?scene_id=${id}`)
-              setCast(data);
-              console.log(data);
-          } catch (err) {
-              console.log(err);
-            }
-      }
-      handleMount();
-      }, [id])
+    // useEffect(() => {
+    //   const handleMount = async () => {
+    //       try {
+    //           const { data } = await axiosReq.get(`/scenecharacters/?scene_id=${id}`)
+    //           setCast(data);
+    //           console.log(data);
+    //       } catch (err) {
+    //           console.log(err);
+    //         }
+    //   }
+    //   handleMount();
+    //   }, [id])
 
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -87,9 +86,9 @@ const SceneCharacterAdd = ({id}) => {
                       role: "",
                       costume: "",
                     });
-        setCast((prevCast) => ({
-          ...prevCast,
-          results: [data, ...prevCast.results],
+          setCharacters((prevChars) => ({
+          ...prevChars,
+          results: [data, ...prevChars.results],
         }));
       } catch (err) {
         console.log(err);
@@ -127,8 +126,8 @@ const SceneCharacterAdd = ({id}) => {
         CHARACTERS ADDED
         </p>
         <div className={`ml-md-2 px-1 py-1 ${styles.CastEntered }`} >
-          {cast.results.length ? (
-              cast.results.map((ca) => (
+          {characters.results.length ? (
+              characters.results.map((ca) => (
                 <span key={ca.id}>{ca.role}, </span>
               ))) : ("")}
           </div>
@@ -139,8 +138,8 @@ const SceneCharacterAdd = ({id}) => {
         </p>
           <DropdownButton id="dropdown-basic-button" 
           className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
-          {characters.results.length && (
-                characters.results.map((character) => (
+          {charactersContext.results.length && (
+                charactersContext.results.map((character) => (
                   <Dropdown.Item onClick={() => setData(character) } 
                   key={character.id} >{character.role}</Dropdown.Item>
                 ) )) }

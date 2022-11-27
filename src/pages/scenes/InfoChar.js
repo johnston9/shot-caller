@@ -12,8 +12,7 @@ const InfoChar = () => {
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center`} >INFO</h5>  
         <p className={`text-center px-3 pt-1`}>
-          New Characters must be added first on the Characters Page or
-          in the Add Character box below.<br/>
+          Add New Characters first.<br/>
           All Characters must be assigned a number. This cannot be changed.
           If necessary the Character can be deleted and given a new number.
           </p>     
