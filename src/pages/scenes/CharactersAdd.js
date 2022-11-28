@@ -6,16 +6,12 @@ import Row from 'react-bootstrap/Row';
 import btnStyles from "../../styles/Button.module.css";
 import { Button } from 'react-bootstrap';
 import NewCharacter from "./NewCharacter"
-import { useHistory } from "react-router-dom";
-import { useCharactersContext, useSetCharactersContext } from "../../contexts/Scene_chars_locs";
 import InfoChar from './InfoChar';
 import SceneCharacterAdd from './SceneCharacterAdd';
-import SceneBGAdd from './SceneBGAdd';
 
 const CharactersAdd = (props) => {
     useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
-    const history = useHistory();
 
     const { id, characters, setCharacters, setShowCharactersAdd } = props;
     return ( 
@@ -24,6 +20,7 @@ const CharactersAdd = (props) => {
                 Add Characters
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersAdd(false) } >Close</span>
             </h5>
+            <div className={` ${styles.AliceBlueMild }`}>        
             {/* info */}
             <Row>
             <Col>
@@ -45,7 +42,7 @@ const CharactersAdd = (props) => {
             </Row>
             <Row className='mt-0'>
             <Col className="text-center">
-            <p className={`${styles.Black } mb-3`} >First add any new Characters to the Characters page here to 
+            <p className={`${styles.CharactersTitle2 } mb-3`} >Step 1: Add any new Characters to 
             put them in the dropdown below</p>
             </Col>
           </Row>
@@ -57,11 +54,11 @@ const CharactersAdd = (props) => {
             </Row>
             <Row className='mt-3'>
             <Col className="text-center">
-            <p className={`${styles.Black } mb-2`} >Add the Scene Characters here</p>
+            <p className={`${styles.CharactersTitle2 } mb-2`} >Step 2: Add the Scene Characters</p>
             </Col>
           </Row>
             {/* ADD SCENE CHAR */}
-            <Row className="mt-3">
+            <Row className="my-3">
                 <Col xs={{span: 10, offset: 1} } >
                 <SceneCharacterAdd
                  id={id}
@@ -69,7 +66,9 @@ const CharactersAdd = (props) => {
                  setCharacters={setCharacters} />
                 </Col>
             </Row>
+            </div>
         </div>
+        
     )
 }
 

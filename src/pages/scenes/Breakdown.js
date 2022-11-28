@@ -1,30 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import btnStyles from "../../styles/Button.module.css";
-import { Button } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
-import { useLocationsContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 import { axiosReq } from '../../api/axiosDefaults';
 
 const Breakdown = (props) => {
     useRedirect("loggedOut");
     const history = useHistory();
+    // eslint-disable-next-line
     const handleEdit = () => {
         history.push(`/scenes/${id}/edit`);
       };
-    
-      const handleDelete = async () => {
-        try {
-          await axiosReq.delete(`/scenes/${id}/`);
-          history.goBack();
-        } catch (err) {
-        }
-      };
+    // eslint-disable-next-line
+    const handleDelete = async () => {
+    try {
+        await axiosReq.delete(`/scenes/${id}/`);
+        history.goBack();
+    } catch (err) {
+    }
+    };
     const { id,title, act, int_ext, day_night, time, location, location_detail,
-            pages, action, scene, filming_location, shooting_date,
+            pages, action, filming_location, shooting_date,
             dramatic_day, equip_set_props, department_info,
             setShowBreak,} = props;
     return ( 

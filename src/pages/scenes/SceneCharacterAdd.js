@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -112,10 +112,10 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
     );
     
   return (
-    <div className={` ${styles.Back}`}>
-      <h5 className={`text-center mb-0 py-1 ${styles.SubTitle }`} >
+    <div className={` ${styles}`}>
+      <h5 className={`text-center mb-0 py-1 ${styles }`} >
         ADD SCENE CHARACTER</h5> 
-      <div className={`mb-3 ${styles.Back3 }`}>
+      <div className={`mb-3 ${styles.Back }`}>
       <Form className="text-center" onSubmit={handleSubmit}>
       {/* Dropdown DropButt */}
       <Row>

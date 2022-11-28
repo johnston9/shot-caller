@@ -13,7 +13,7 @@ const CharScheduleScene = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const [showInfoCast, setShowInfoCast] = useState(false);
     const {scene, number, int_ext, start_time, style, next,
-        location, filming_location, day_night, action, pages,
+        location, filming_location, action, pages,
         character1_number, character2_number, character3_number,
         character4_number, character5_number, character6_number, 
         character7_number, character8_number, character9_number,

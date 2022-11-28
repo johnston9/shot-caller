@@ -85,11 +85,11 @@ const NewCharacter = () => {
 
     return (
         <div className= {` ${styles.b}`}>
-          <h5 className={`text-center mb-0 py-1 ${styles.FancyTop }`} >
+          <h5 className={`text-center mb-0 py-1 ${styles}`} >
             ADD NEW CHARACTER</h5> 
             {/* {usedNumbers}
             <p>{unusedNumbers}</p> */}
-          <div className={`mb-3 ${styles.Fancyback }`}>
+          <div className={`mb-3 ${styles.Back }`}>
             <Form onSubmit={handleSubmit}>
             <Row className="mt-0">
                 <Col className="d-flex justify-content-center pb-1" xs={6}>

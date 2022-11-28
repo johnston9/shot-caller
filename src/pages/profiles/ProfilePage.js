@@ -23,7 +23,7 @@ import { useHistory } from "react-router-dom";
 
 function ProfilePage() {
   useRedirect("loggedOut");
-  const admin = true;
+  // const admin = true;
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
 

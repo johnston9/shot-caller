@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// eslint-disable-next-line
+import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -92,17 +93,17 @@ const SceneBGAdd = ({id, background, setBackground}) => {
           Cancel
         </Button>
         <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Add Cast
+          Add BG
         </Button>
       </div>
     );
     
   return (
     <div className={` ${styles.Back}`}>
-      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD SCENE BG / STANDINGS</h5> 
+      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD BG / STANDINGS</h5> 
       <div className={`mb-3 ${styles.Back3 }`}>
       <Form className="text-center" onSubmit={handleSubmit}>
-        <Row className="py-2">
+        {/* <Row className="py-2">
         <Col xs={12} md={6}>
         <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
         BG ADDED
@@ -131,9 +132,26 @@ const SceneBGAdd = ({id, background, setBackground}) => {
                 </Alert>
               ))}
               </Col>
-        </Row>
+        </Row> */}
           <Row className="my-2">
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
+          <Col className="d-flex justify-content-center mx-0 px-1" xs={2} >
+            <Form.Group controlId="quantity" className={`${styles.Width} `}  >
+                  <Form.Label className={`${styles.Bold}`} >Quantity</Form.Label>
+                  <Form.Control 
+                  className={`${styles.Input}`} 
+                  type="text"
+                  name="quantity"
+                  value={quantity}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.quantity?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
+            <Col className="d-flex justify-content-center mx-0 px-1" xs={5} >
             <Form.Group controlId="role" className={`${styles.Width2} `}  >
                   <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
                   <Form.Control 
@@ -150,7 +168,7 @@ const SceneBGAdd = ({id, background, setBackground}) => {
                 </Alert>
               ))}
               </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
+            <Col className="d-flex justify-content-center mx-0 px-1" xs={5} >
             <Form.Group controlId="costume" className={`${styles.Width2} `}  >
                   <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
                   <Form.Control 

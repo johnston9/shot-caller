@@ -8,13 +8,12 @@ import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useLocationsContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
+import { useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 
 const NewLocation = () => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [newLocation, setNewLocation] = useState("");
-    const locations = useLocationsContext();
     const setLocations = useSetLocationsContext();
 
     const handleChange = (event) => {

@@ -114,9 +114,24 @@ i:hover {
 
 .BoldTitle {
   font-weight: 700;
-  /* background-color: rgb(209, 240, 240); */
+  background-color: #d6fcff;
+}
+
+.BoldTitle2 {
+  font-weight: 700;
+  border-right : 3px solid #fafafa;
   background-color: #d6fcff;
   /* width: 50%; */
+}
+
+.CharactersTitle {
+  color: rgb(40, 189, 189);
+  font-style: italic;
+}
+
+.CharactersTitle2 {
+  color: rgb(36, 125, 125);
+  font-style: italic;
 }
 
 .Actor {
@@ -347,6 +362,10 @@ i:hover {
 
 .Back {
   background-color: aliceblue;
+}
+
+.AliceBlueMild {
+  background-color: rgb(252, 253, 253);
 }
 
 .Black {

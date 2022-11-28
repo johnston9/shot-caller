@@ -5,35 +5,53 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import btnStyles from "../../styles/Button.module.css";
 import { Button } from 'react-bootstrap';
-import NewCharacter from "./NewCharacter"
-import { useHistory } from "react-router-dom";
-import { useCharactersContext, useSetCharactersContext } from "../../contexts/Scene_chars_locs";
-import InfoChar from './InfoChar';
-import SceneCharacterAdd from './SceneCharacterAdd';
-import SceneBGAdd from './SceneBGAdd';
-import BGAdd from './BGAdd';
 import CharactersAdd from './CharactersAdd';
+import Character from './Character';
+import { useEffect } from 'react';
+import { axiosReq } from '../../api/axiosDefaults';
+import SceneBGAdd from './SceneBGAdd';
+import Background from './Background';
 
 const CharactersBG = (props) => {
     useRedirect("loggedOut");
-    const [showInfo, setShowInfo] = useState(false);
     const [showCharactersAdd, setShowCharactersAdd] = useState(false);
     const [showBGAdd, setShowBGAdd] = useState(false);
-    const history = useHistory();
+    const [characters, setCharacters] = useState({ results: [] });
+    const [background, setBackground] = useState({ results: [] });
+    const { id, setShowCharactersBG } = props;
 
-    const { id, characters, setCharacters, setShowCharactersBG,
-        background, setBackground } = props;
+    useEffect(() => {
+        const handleMount = async () => {
+            try {
+                const [{ data: castdata }, 
+                    { data: bgdata }] = await Promise.all([
+                    axiosReq.get(`/scenecharacters/?scene_id=${id}`),
+                    axiosReq.get(`/scenebgs/?scene_id=${id}`),
+                ])
+                setCharacters(castdata);
+                setBackground(bgdata);
+                console.log(castdata);
+                console.log(bgdata);
+            } catch (err) {
+                console.log(err);
+              }
+        }
+        handleMount();
+    }, [id])
+
     return ( 
         <div>
             <h5 style={{ textTransform: 'uppercase'}} className={`text-center mt-1 pl-5 py-1 ${styles.SubTitle }`}>
-                Characters / BG
+                Characters / BACKGROUND
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersBG(false) } >Close</span>
             </h5>
-            {/* add new char button*/}
-            <Row>
-            <Col className='text-center'>
+            <Row className='my-2'>
+            <Col xs={6} className=''>
+            <h5 className={`${styles.CharactersTitle }`} >CHARACTERS</h5>
+            </Col>
+            <Col xs={6} className=''>
             <Button
-                className={` py-0 my-3 ${btnStyles.Back} ${btnStyles.Button}`}
+                className={`float-right py-0  ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowCharactersAdd(showCharactersAdd => !showCharactersAdd)} >ADD CHARACTER
             </Button> 
             </Col>
@@ -53,37 +71,82 @@ const CharactersBG = (props) => {
                 </Col>
             </Row>
             {/* data */}
+            <Row >
+            {/* 1 */}
+            <Col xs={6} md={4}>
+            <div className='px-0 mx-2'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            {/* 2 */}
+            <Col xs={6} md={4}>
+            <div className='px-0 mx-3'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            {/* 3 */}
+            <Col className='d-none d-md-block' md={4}>
+            <div className='px-0 mx-3'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            </Row>
             <Row>
-            <Col>
             {characters.results.length ? (
             characters.results.map((character) => (
             <Col xs={6} md={4}
             className="py-2 p-0 mx-0">
-            <p key={character.id}>
-            {character.role} - {character.costume}
-            </p>
+                <Character 
+                key={character.id}
+                {...character} />
             </Col>
             ))) 
             : (
             ""
             )}
-            </Col>
             </Row>
-            {/* add bg */}
-            <Row>
-            <Col className='text-center'>
+            <Row className='my-2'>
+            <Col xs={6} className=' mt-2'>
+            <h5 className={`${styles.CharactersTitle }`} >BG / STANDINGS</h5>
+            </Col>
+            <Col xs={6}  className='mt-2'>
             <Button
-                className={`py-0 my-2 ${btnStyles.Back} ${btnStyles.Button}`}
+                className={`float-right py-0 ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowBGAdd(showBGAdd => !showBGAdd)} >ADD BG / STANDINGS
             </Button> 
             </Col>
             </Row>
+            {/* add back */}
             <Row>
             <Col>
             {!showBGAdd ? (
                 ""
                     ) : (
-                        <BGAdd
+                        <SceneBGAdd
                          id={id}
                          background={background}
                          setBackground={setBackground} 
@@ -91,16 +154,47 @@ const CharactersBG = (props) => {
                     ) } 
                 </Col>
             </Row>
+            {/* back titles */}
+            <Row className='mt-3' >
+            {/* 1 */}
+            <Col xs={12} md={6}>
+            <div className='px-0 mx-2'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            {/* 2 */}
+            <Col xs={12} md={6}>
+            <div className='px-0 mx-2'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            </Row>
             {/* background data */}
             <Row>
             <Col>
             {background.results.length ? (
             background.results.map((back) => (
-            <Col xs={6} md={4}
+            <Col xs={12} md={6}
             className="py-2 p-0 mx-0">
-            <p key={back.id}>
-            {back.role} - {back.costume}
-            </p>
+            <Background 
+              key={back.id}
+              {...back} />
             </Col>
             ))) 
             : (
@@ -108,7 +202,7 @@ const CharactersBG = (props) => {
             )}
             </Col>
             </Row>
-            <p className={`my-3 py-1 ${styles.SubTitle }`}></p>
+            <p className={`mt-5 mb-2 py-1 ${styles.SubTitle }`}></p>
         </div>
     )
 }

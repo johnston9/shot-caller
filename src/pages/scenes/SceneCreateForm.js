@@ -11,14 +11,13 @@ import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
-import Important from "./Important";
-import Info from "./Info";
 import useRedirect from "../../hooks/Redirect";
+import InfoCreate from "./InfoCreate";
+import ImportCreate from "./ImportCreate";
 
 function SceneCreateForm({topbox}) {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const [show, setShow] = useState(false);
   const [showImp, setShowImp] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
@@ -80,7 +79,45 @@ function SceneCreateForm({topbox}) {
             onClick={() => history.goBack()}
         >
             Back
-      </Button>  
+      </Button> 
+    {/* info */}
+    <Row>
+            <Col>
+            <Button
+                className={`float-right mr-5 py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+                onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button> 
+            </Col>
+            </Row>
+            {/* info */}
+            <Row>
+                <Col>
+            {!showInfo ? (
+                ""
+                    ) : (
+                        <InfoCreate  /> 
+                    ) } 
+                </Col>
+            </Row>
+    {/* info */}
+    <Row>
+            <Col>
+            <Button
+                className={`float-right mr-5 py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+                onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+            </Button> 
+            </Col>
+            </Row>
+            {/* IMP */}
+            <Row>
+                <Col>
+            {!showImp ? (
+                ""
+                    ) : (
+                        <ImportCreate  /> 
+                    ) } 
+                </Col>
+            </Row> 
     <p className="text-center" >First create the Scene by giving it a number</p>
     <Form className= {`mb-3 ${styles.Back}`} onSubmit={handleSubmit}>
     <Row className="text-center">

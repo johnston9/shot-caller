@@ -44,63 +44,12 @@ const SceneEditForm = () => {
       department_info: "",
       equip_set_props: "",
       dramatic_day: "",
-      character1: "",
-      character1_costume: "",
-      character2: "",
-      character2_costume: "",
-      character3: "",
-      character3_costume: "",
-      character4: "",
-      character4_costume: "",
-      character5: "",
-      character5_costume: "",
-      character6: "",
-      character6_costume: "",
-      character7: "",
-      character7_costume: "",
-      character8: "",
-      character8_costume: "",
-      character9: "",
-      character9_costume: "",
-      character10: "",
-      character10_costume: "",
-      character11: "",
-      character11_costume: "",
-      character12: "",
-      character12_costume: "",
-      character1_number: "",
-      character2_number: "",
-      character3_number: "",
-      character4_number: "",
-      character5_number: "",
-      character6_number: "",
-      character7_number: "",
-      character8_number: "",
-      character9_number: "",
-      character10_number: "",
-      character11_number: "",
-      character12_number: "",
-      other_characters: "",
-      other_characters_costumes: "",
-      background_artists: "",
-      background_artists_costumes: "",
       storyboard: "",
       script: "",
     });
 
   const { number, title, act, int_ext, day_night, time, location,
-    filming_location, character1, character1_costume, character2, 
-    character2_costume, character3, character3_costume, character4, 
-    character4_costume, character5, character5_costume, character6, 
-    character6_costume, character7, character7_costume, character8,
-    character8_costume, character9, character9_costume, character10, 
-    character10_costume, character11, character11_costume, character12,
-    character1_number, character2_number, character3_number,
-    character4_number, character5_number, character6_number, 
-    character7_number, character8_number, character9_number,
-    character10_number, character11_number, character12_number,
-    character12_costume, other_characters, other_characters_costumes,
-    background_artists, background_artists_costumes, shooting_date,
+    filming_location, shooting_date,
     dramatic_day, equip_set_props, department_info,
     pages, action, storyboard, script, location_detail } = postData;
     
@@ -149,330 +98,330 @@ const SceneEditForm = () => {
     }
     };
 
-    const handleChangeStoryboard = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(storyboard);
-          setPostData({
-            ...postData,
-            storyboard: URL.createObjectURL(event.target.files[0]),
-          });
-          console.log(`storyboard ${storyboard}`)
-        }
-      };
+  const handleChangeStoryboard = (event) => {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(storyboard);
+        setPostData({
+          ...postData,
+          storyboard: URL.createObjectURL(event.target.files[0]),
+        });
+        console.log(`storyboard ${storyboard}`)
+      }
+    };
 
-      const infoFields = (
-        <div className="mt-3 text-center px-2">
-          {/* number title act */}
-          <Row>
-            <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-            <Form.Group controlId="number" className={`${styles.Width2} `}  >
-                  <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
-                  <Form.Control 
-                  className={styles.Input}
-                  type="text"
-                  name="number"
-                  value={number}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.number?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              </Col>
-              <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
-              <Form.Group controlId="title" className={`${styles.Width2} `} >
-                  <Form.Label className={`${styles.Bold}`}>Title</Form.Label>
-                  <Form.Control 
-                  // placeholder="Title"
-                  className={styles.Input}
-                  type="text"
-                  name="title"
-                  value={title}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.title?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              </Col>
-              <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-              <Form.Group controlId="dramatic_day" className={`${styles.Width2} `} >
-                  <Form.Label className={`${styles.Bold}`} >Dramatic Day</Form.Label>
-                  <Form.Control 
-                  type="text"
-                  className={styles.Input}
-                  // placeholder="Dramatic Day"
-                  name="dramatic_day"
-                  value={dramatic_day}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.dramatic_day?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              </Col>
-          </Row>
-          {/* Int-Ext Day/Night Dramatic-day  */}
-          <Row className="mt-3">
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >         
-              <Form.Group controlId="int_ext" className={`${styles.Width2} `} >
-                  <Form.Label className={`${styles.Bold}`} >Int-Ext</Form.Label>
-                  <Form.Control as="select"
-                    className={styles.Input}
-                    // placeholder="Int-Ext"
-                    name="int_ext"
-                    value={int_ext}
-                    onChange={handleChange}
-                    aria-label="int ext select">
-                    <option></option>
-                    <option value="int">Int</option>
-                    <option value="ext">Ext</option>
-                  </Form.Control>
-              </Form.Group>
-              {errors?.int_ext?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              </Col>
+  const infoFields = (
+    <div className="mt-3 text-center px-2">
+      {/* number title act */}
+      <Row>
+        <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+        <Form.Group controlId="number" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              type="text"
+              name="number"
+              value={number}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.number?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
+          <Form.Group controlId="title" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.Bold}`}>Title</Form.Label>
+              <Form.Control 
+              // placeholder="Title"
+              className={styles.Input}
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.title?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-          <Form.Group controlId="day_night" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Day/Night</Form.Label>
+          <Form.Group controlId="dramatic_day" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.Bold}`} >Dramatic Day</Form.Label>
+              <Form.Control 
+              type="text"
+              className={styles.Input}
+              // placeholder="Dramatic Day"
+              name="dramatic_day"
+              value={dramatic_day}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dramatic_day?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* Int-Ext Day/Night Dramatic-day  */}
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >         
+          <Form.Group controlId="int_ext" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.Bold}`} >Int-Ext</Form.Label>
               <Form.Control as="select"
-                name="day_night"
                 className={styles.Input}
-                // placeholder="Day/Night"
-                value={day_night}
+                // placeholder="Int-Ext"
+                name="int_ext"
+                value={int_ext}
                 onChange={handleChange}
-                aria-label="day or night select">
+                aria-label="int ext select">
                 <option></option>
-                <option value="DAY">Day</option>
-                <option value="NIGHT">Night</option>
+                <option value="int">Int</option>
+                <option value="ext">Ext</option>
               </Form.Control>
           </Form.Group>
-          {errors?.day_night?.map((message, idx) => (
+          {errors?.int_ext?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>
           ))}
           </Col>
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
-              <Form.Group controlId="act" className={`${styles.Width2} `} >
-                  <Form.Label className={`${styles.Bold}`} >Act</Form.Label>
-                  <Form.Control as="select"
-                    className={styles.Input}
-                    name="act"
-                    value={act}
-                    onChange={handleChange}
-                    aria-label="act select">
-                    <option></option>
-                    <option value="one">One</option>
-                    <option value="two-a">Two - First Half</option>
-                    <option value="two-b">Two - Second Half</option>
-                    <option value="three">Three</option>
-                  </Form.Control>
-              </Form.Group>
-              {errors?.act?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-            </Col>
-          </Row  >
-          {/* shooting-date time pages*/}
-          <Row className="mt-3">
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
-          <Form.Group controlId="shooting_date" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Shooting Date</Form.Label>
-              <Form.Control 
-              type="text"
-              className={styles.Input}
-              // placeholder="Shooting Date"
-              name="shooting_date"
-              value={shooting_date}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.shooting_date?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-          <Form.Group controlId="time" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Scene Time</Form.Label>
-              <Form.Control 
-              type="text"
-              className={styles.Input}
-              // placeholder="Time"
-              name="time"
-              value={time}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.time?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-          <Form.Group controlId="pages" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Pages</Form.Label>
-              <Form.Control 
-              type="text"
-              className={styles.Input}
-              placeholder="Decimal only"
-              name="pages"
-              value={pages}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.pages?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          </Row >
-          {/* location location-detail  */}
-          <Row className="mt-3">
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-              <Form.Group controlId="location" className={`${styles.Width2} `} >
-                  <Form.Label className={`${styles.Bold}`} >Location</Form.Label>
-                  <Form.Control as="select"
-                    name="location"
-                    className={styles.Input}
-                    value={location}
-                    onChange={handleChange}
-                    aria-label="location select">
-                      <option  ></option>
-                    {locations.results.length && (
-                        locations.results.map((location) => (
-                          <option key={location.id} value={location.name} >{location.name}</option>
-                        ) )) }
-                  </Form.Control>
-              </Form.Group>
-              {errors?.location?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-              <Form.Group controlId="location_detail" className={`${styles.Width2} `} >
-                  <Form.Label className={`${styles.Bold}`} >Location Detail</Form.Label>
-                  <Form.Control 
-                  className={styles.Input}
-                  // placeholder="Location Detail"
-                  type="text"
-                  name="location_detail"
-                  value={location_detail}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.location_detail?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-          </Col>
-          </Row>
-          {/* Filming Location - Action */}
-          <Row className="mt-3">
-            <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-            <Form.Group controlId="filming_location" className={`${styles.Width2} `} >
-                <Form.Label className={`${styles.Bold}`} >Filming Location</Form.Label>
-                <Form.Control 
-                type="text"
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+      <Form.Group controlId="day_night" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.Bold}`} >Day/Night</Form.Label>
+          <Form.Control as="select"
+            name="day_night"
+            className={styles.Input}
+            // placeholder="Day/Night"
+            value={day_night}
+            onChange={handleChange}
+            aria-label="day or night select">
+            <option></option>
+            <option value="DAY">Day</option>
+            <option value="NIGHT">Night</option>
+          </Form.Control>
+      </Form.Group>
+      {errors?.day_night?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
+          <Form.Group controlId="act" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.Bold}`} >Act</Form.Label>
+              <Form.Control as="select"
                 className={styles.Input}
-                // placeholder="Filming Location"
-                name="filming_location"
+                name="act"
+                value={act}
+                onChange={handleChange}
+                aria-label="act select">
+                <option></option>
+                <option value="one">One</option>
+                <option value="two-a">Two - First Half</option>
+                <option value="two-b">Two - Second Half</option>
+                <option value="three">Three</option>
+              </Form.Control>
+          </Form.Group>
+          {errors?.act?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+      </Row  >
+      {/* shooting-date time pages*/}
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
+      <Form.Group controlId="shooting_date" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.Bold}`} >Shooting Date</Form.Label>
+          <Form.Control 
+          type="text"
+          className={styles.Input}
+          // placeholder="Shooting Date"
+          name="shooting_date"
+          value={shooting_date}
+          onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.shooting_date?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+      <Form.Group controlId="time" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.Bold}`} >Scene Time</Form.Label>
+          <Form.Control 
+          type="text"
+          className={styles.Input}
+          // placeholder="Time"
+          name="time"
+          value={time}
+          onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.time?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+      <Form.Group controlId="pages" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.Bold}`} >Pages</Form.Label>
+          <Form.Control 
+          type="text"
+          className={styles.Input}
+          placeholder="Decimal only"
+          name="pages"
+          value={pages}
+          onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.pages?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row >
+      {/* location location-detail  */}
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+          <Form.Group controlId="location" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.Bold}`} >Location</Form.Label>
+              <Form.Control as="select"
+                name="location"
+                className={styles.Input}
+                value={location}
+                onChange={handleChange}
+                aria-label="location select">
+                  <option  ></option>
+                {locations.results.length && (
+                    locations.results.map((location) => (
+                      <option key={location.id} value={location.name} >{location.name}</option>
+                    ) )) }
+              </Form.Control>
+          </Form.Group>
+          {errors?.location?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+          <Form.Group controlId="location_detail" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.Bold}`} >Location Detail</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              // placeholder="Location Detail"
+              type="text"
+              name="location_detail"
+              value={location_detail}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_detail?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+      </Col>
+      </Row>
+      {/* Filming Location - Action */}
+      <Row className="mt-3">
+        <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+        <Form.Group controlId="filming_location" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.Bold}`} >Filming Location</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.Input}
+            // placeholder="Filming Location"
+            name="filming_location"
+            as="textarea"
+            rows={2}
+            value={filming_location}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.filming_location?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+        <Form.Group controlId="action" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.Bold}`} >Action</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.Input}
+            // placeholder="Action"
+            name="action"
+            as="textarea"
+            rows={2}
+            value={action}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.action?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+      </Row>
+      {/* department-info equip_set_props  */}
+      <Row>
+        <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+        <Form.Group controlId="content" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.Bold}`} >Department Info</Form.Label>
+            <Form.Control 
+                type="text"
+                // placeholder="Department Info"
+                className={styles.InputScene}
+                name="department_info"
                 as="textarea"
                 rows={2}
-                value={filming_location}
+                value={department_info}
                 onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.filming_location?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-            <Form.Group controlId="action" className={`${styles.Width2} `} >
-                <Form.Label className={`${styles.Bold}`} >Action</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.Input}
-                // placeholder="Action"
-                name="action"
-                as="textarea"
-                rows={2}
-                value={action}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.action?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          {/* department-info equip_set_props  */}
-          <Row>
-            <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-            <Form.Group controlId="content" className={`${styles.Width2} `} >
-                <Form.Label className={`${styles.Bold}`} >Department Info</Form.Label>
-                <Form.Control 
-                    type="text"
-                    // placeholder="Department Info"
-                    className={styles.InputScene}
-                    name="department_info"
-                    as="textarea"
-                    rows={2}
-                    value={department_info}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.department_info?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-          </Col>
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-          <Form.Group controlId="equip_set_props" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Info/Equip/Set</Form.Label>
-              <Form.Control 
-                  className={styles.InputScene}
-                  // placeholder="Info/Equip/Set"
-                  type="text"
-                  name="equip_set_props"
-                  as="textarea"
-                  rows={2}
-                  value={equip_set_props}
-                  onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.equip_set_props?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          </Row>       
-        </div>
-      )
+                />
+        </Form.Group>
+        {errors?.department_info?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+      <Form.Group controlId="equip_set_props" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.Bold}`} >Info/Equip/Set</Form.Label>
+          <Form.Control 
+              className={styles.InputScene}
+              // placeholder="Info/Equip/Set"
+              type="text"
+              name="equip_set_props"
+              as="textarea"
+              rows={2}
+              value={equip_set_props}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.equip_set_props?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row>       
+    </div>
+  )
 
   const buttons = (
     <div className={`text-center pt-3 mt-3 mb-3 pb-2 ${styles.White }`} >    
