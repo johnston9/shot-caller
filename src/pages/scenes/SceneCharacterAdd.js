@@ -37,7 +37,8 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
     
       setPostData({
         cast_number: number,
-        role: role,  
+        role: role,
+        costume: "",  
       });
     }
 
@@ -182,7 +183,7 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
                 </Alert>
               ))}
               </Col>
-          </Row>
+      </Row>
       </Col>
       </Row>
         {/* buttons */}

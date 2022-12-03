@@ -9,10 +9,11 @@ const BgPage = (props) => {
     useRedirect("loggedOut");
     const admin = true;
     const {background, setShow} = props;
+
   return (
-    <div className='mt-3'>
+    <div className='my-5'>
         {/* MEDIUM */}
-        <div className='d-none d-md-block mt-5'>
+        <div className='d-none d-md-block'>
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
         style={{ textTransform: 'uppercase' }}>BG / STANDINS</span>
         {/* titles */}

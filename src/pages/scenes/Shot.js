@@ -204,7 +204,7 @@ const Shot = (props) => {
                         ""
                     )}
                 </Col>
-                </Row> 
+            </Row> 
         </div>
     )
 }
