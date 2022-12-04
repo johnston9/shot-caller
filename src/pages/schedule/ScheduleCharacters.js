@@ -1,53 +1,166 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from "../../styles/ScheduleCreate.module.css";
+import styles from "../../styles/ScheduleSceneItem.module.css";
 import { useRedirect } from '../../hooks/Redirect';
+import { axiosReq } from '../../api/axiosDefaults';
+import Character from './Character';
+import Background from './Background';
 
-const ScheduleCharacters = (props) => {
+const ScheduleCharacters = ({scene_id}) => {
     useRedirect("loggedOut");
 
-    const {character1, character1_costume, character2, 
-        character2_costume, character3, character3_costume, character4, 
-        character4_costume, character5, character5_costume, character6, 
-        character6_costume, character7, character7_costume, character8,
-        character8_costume, character9, character9_costume, character10,
-        character10_costume, character11, character11_costume, character12,
-        character12_costume, other_characters, other_characters_costumes,
-        background_artists, background_artists_costumes,
-    } = props
+    const [characters, setCharacters] = useState({ results: [] });
+    const [background, setBackground] = useState({ results: [] });
+
+    const handleMount = async () => {
+        try {
+            const [{ data: castdata }, 
+                { data: bgdata }] = await Promise.all([
+                axiosReq.get(`/scenecharacters/?scene_id=${scene_id}`),
+                axiosReq.get(`/scenebgs/?scene_id=${scene_id}`),
+            ])
+            setCharacters(castdata);
+            setBackground(bgdata);
+            console.log(castdata);
+            console.log(bgdata);
+        } catch (err) {
+            console.log(err);
+            }
+    }
+
+    useEffect(() => {
+        handleMount();
+    // eslint-disable-next-line
+    }, [scene_id])
 
     return (
-        <div className={`text-center py-2 mb-2 mx-2 mx-md-5 px-2 ${styles.SceneBox}`} >
-            <p className={`mb-0 ${styles.TitleBox }`}>Character <span 
-              className={`mb-0 ${styles.Costume }`}>Costume</span></p>
-            <Row className='py-2'>
-                <Col className='mx-5 px-0' >
-                {character1 && <span className='mb-0'>{character1} <span className={`mb-0 ${styles.Costume }`}>{character1_costume}</span>, </span>}       
-                {character2 && <span className='mb-0'>{character2} <span className={`mb-0 ${styles.Costume }`}>{character2_costume}</span>, </span>} 
-                {character3 && <span className='mb-0'>{character3} <span className={`mb-0 ${styles.Costume }`}>{character3_costume}</span>, </span>} 
-                {character4 && <span className='mb-0'>{character4} <span className={`mb-0 ${styles.Costume }`}>{character4_costume}</span>, </span>} 
-                {character5 && <span className='mb-0'>{character5} <span className={`mb-0 ${styles.Costume }`}>{character5_costume}</span>, </span>} 
-                {character6 && <span className='mb-0'>{character6} <span className={`mb-0 ${styles.Costume }`}>{character6_costume}</span>, </span>}
-                {character7 && <span className='mb-0'>{character7} <span className={`mb-0 ${styles.Costume }`}>{character7_costume}</span>, </span>}       
-                {character8 && <span className='mb-0'>{character8} <span className={`mb-0 ${styles.Costume }`}>{character8_costume}</span>, </span>} 
-                {character9 && <span className='mb-0'>{character9} <span className={`mb-0 ${styles.Costume }`}>{character9_costume}</span>, </span>} 
-                {character10 && <span className='mb-0'>{character10} <span className={`mb-0 ${styles.Costume }`}>{character10_costume}</span>, </span>} 
-                {character11 && <span className='mb-0'>{character11} <span className={`mb-0 ${styles.Costume }`}>{character11_costume}</span>, </span>} 
-                {character12 && <span className='mb-0'>{character12} <span className={`mb-0 ${styles.Costume }`}>{character12_costume}</span>, </span>} 
-                {other_characters && (<div>
-                    <p className='mb-0'>{other_characters}</p>
-                <p className={`mb-0 ${styles.Costume }`}> ({other_characters_costumes}) </p></div>) }        
-                </Col>
+        <div className={`text-center py-2 mb-2 mx-2 mx-md-5 px-2 ${styles.White}`} >
+            <h5 className={`${styles.CharactersTitle }`} >CHARACTERS</h5>
+            {/* char titles */}
+            <Row >
+            {/* titles */}
+            <Col xs={6} md={4}>
+            <div className='px-0 mx-2'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            {/* 2 */}
+            <Col xs={6} md={4}>
+            <div className='px-0 mx-3'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            {/* 3 */}
+            <Col className='d-none d-md-block' md={4}>
+            <div className='px-0 mx-3'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            </Row>
+            </div>
+            </Col>
+            </Row>
+            {/* chars */}
+            <Row>
+            {characters.results.length ? (
+            characters.results.map((character, index) => (
+            <Col xs={6} md={4}
+            className="py-2 p-0 mx-0">
+                <Character
+                // style={{ backgroundColor: (index % 3 === 0) 
+                //     ? '#dbfaf9' : (index % 2 === 0) ? 
+                //     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
+                style={{ backgroundColor: '#dbfaf9' }}
+                character={character}
+                key={character.id}
+                {...character} />
+            </Col>
+            ))) 
+            : (
+            ""
+            )}
             </Row>
             {/* Background Artists */}
-            <p className={`mb-0 ${styles.TitleBox }`}>Background Artists <span 
-            className={`mb-0 ${styles.Costume }`}>Costumes</span></p>
-            <Row className='mt-2'>
-                <Col className='mx-0 px-0'>
-                {background_artists && <p className='mt-2 mb-0'>{background_artists}</p>}
-                {background_artists_costumes && <p className={`mb-0 ${styles.Costume }`}> {background_artists_costumes}</p>}   
-                </Col>
+            <h5 className={`${styles.CharactersTitle }`} >BG / STANDINGS</h5>
+            {/* back titles */}
+            <Row className='mt-3' >
+            {/* 1 */}
+            <Col xs={12} md={6}>
+            <div className='px-0 mx-2'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={5}>
+            <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            <Col className='px-0 mx-0' xs={1}>
+            <p className={`${styles.BoldTitle2} text-center`}>E</p></Col>
+            </Row>
+            </div>
+            </Col>
+            {/* 2 */}
+            <Col xs={12} md={6}>
+            <div className='px-0 mx-2'>
+            <Row >
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
+            </Col>
+            <Col className='px-0 mx-0' xs={6}>
+            <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={3}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
+            <Col className='px-0 mx-0' xs={1}>
+            <p className={`${styles.BoldTitle2} text-center`}>E</p></Col>
+            </Row>
+            </div>
+            </Col>
+            </Row>
+            {/* background data */}
+            <Row>
+            <Col>
+            {background.results.length ? (
+            background.results.map((back, index) => (
+            <Col xs={12} md={6}
+            className="py-2 p-0 mx-0">
+            <Background
+              style={{ backgroundColor: (index % 3 === 0) 
+                ? '#dbfaf9' : (index % 2 === 0) ? 
+                'rgb(223 254 240)' : 'rgb(248 241 249)' }}
+              setBackground={setBackground}
+              handleMount={handleMount}
+              back={back}
+              key={back.id}
+              {...back} />
+            </Col>
+            ))) 
+            : (
+            ""
+            )}
+            </Col>
             </Row>
         </div>
         )

@@ -1,22 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-
-import Upload from "../../assets/upload.png";
 import styles from "../../styles/Scene.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
-import Asset2 from "../../components/Asset2";
 
-const BGEdit = ({handleMount, setShowEditForm, back, id}) => {
+const BGEdit = ({handleMount, setShowEditForm, id}) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({

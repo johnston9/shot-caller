@@ -165,7 +165,7 @@ const DayPage = () => {
                                     ? '#dbfaf9' : (index % 2 === 0) ? 
                                     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
                                 {...scene} 
-                                dayid={id} 
+                                day_id={id} 
                                 sceneAll={scene} 
                                 setHasOrder={setHasOrder}
                                 key={scene.id} />

@@ -20,6 +20,7 @@ const SceneScheduleEdit = () => {
   const history = useHistory();
 
   const [postData, setPostData] = useState({
+    scene_id: "",
     day_id: "",
     day_order_number: "",
     number: "",
@@ -41,110 +42,32 @@ const SceneScheduleEdit = () => {
     equip_set_props: "",
     next: "",
     new_info: "",
-    character1: "",
-    character1_costume: "",
-    character2: "",
-    character2_costume: "",
-    character3: "",
-    character3_costume: "",
-    character4: "",
-    character4_costume: "",
-    character5_: "",
-    character5_costume: "",
-    character6: "",
-    character6_costume: "",
-    character7: "",
-    character7_costume: "",
-    character8: "",
-    character8_costume: "",
-    character9: "",
-    character9_costume: "",
-    character10: "",
-    character10_costume: "",
-    character11: "",
-    character11_costume: "",
-    character12: "",
-    character12_costume: "",
-    character1_number: "",
-    character2_number: "",
-    character3_number: "",
-    character4_number: "",
-    character5_number: "",
-    character6_number: "",
-    character7_number: "",
-    character8_number: "",
-    character9_number: "",
-    character10_number: "",
-    character11_number: "",
-    character12_number: "",
-    other_characters: "",
-    other_characters_costumes: "",
-    other_characters_numbers: "",
-    background_artists: "",
-    background_artists_costumes: "",
 })
 
-const { day_id, day_order_number, number,
+const { scene_id, day_id, day_order_number, number,
   act, title, int_ext, start_time, end_time, 
   day_night, time, action, pages, dramatic_day,
   location, location_detail, filming_location, location_address,
   equip_set_props, department_info, next, new_info,
-  character1_number, character2_number, character3_number,
-  character4_number, character5_number, character6_number, 
-  character7_number, character8_number, character9_number,
-  character10_number, character11_number, character12_number,
-  character1, character1_costume, character2, 
-  character2_costume, character3, character3_costume, character4, 
-  character4_costume, character5, character5_costume, character6, 
-  character6_costume, character7, character7_costume, character8,
-  character8_costume, character9, character9_costume, character10,
-  character10_costume, character11, character11_costume, character12,
-  character12_costume, other_characters, other_characters_costumes,
-  other_characters_numbers,
-  background_artists, background_artists_costumes,} = postData;
+   } = postData;
 
     useEffect(() => {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/schedule/scenes/${id}/`);
 
-            const { day_id, day_order_number, number,
+            const { scene_id, day_id, day_order_number, number,
               act, title, int_ext, start_time, end_time, 
               day_night, time, action, pages, dramatic_day,
               location, location_detail, filming_location, location_address,
               equip_set_props, department_info, next, new_info,
-              character1_number, character2_number, character3_number,
-              character4_number, character5_number, character6_number, 
-              character7_number, character8_number, character9_number,
-              character10_number, character11_number, character12_number,
-              character1, character1_costume, character2, 
-              character2_costume, character3, character3_costume, character4, 
-              character4_costume, character5, character5_costume, character6, 
-              character6_costume, character7, character7_costume, character8,
-              character8_costume, character9, character9_costume, character10,
-              character10_costume, character11, character11_costume, character12,
-              character12_costume, other_characters, other_characters_costumes,
-              other_characters_numbers,
-              background_artists, background_artists_costumes } = data;
+               } = data;
      
-            setPostData({ day_id, day_order_number, number,
+            setPostData({ scene_id, day_id, day_order_number, number,
               act, title, int_ext, start_time, end_time, 
               day_night, time, action, pages, dramatic_day,
               location, location_detail, filming_location, location_address,
-              equip_set_props, department_info, next, new_info,
-              character1_number, character2_number, character3_number,
-              character4_number, character5_number, character6_number, 
-              character7_number, character8_number, character9_number,
-              character10_number, character11_number, character12_number,
-              character1, character1_costume, character2, 
-              character2_costume, character3, character3_costume, character4, 
-              character4_costume, character5, character5_costume, character6, 
-              character6_costume, character7, character7_costume, character8,
-              character8_costume, character9, character9_costume, character10,
-              character10_costume, character11, character11_costume, character12,
-              character12_costume, other_characters, other_characters_costumes,
-              other_characters_numbers,
-              background_artists, background_artists_costumes });
+              equip_set_props, department_info, next, new_info, });
             } catch (err) {
                 console.log(err);
             }
@@ -165,6 +88,7 @@ const { day_id, day_order_number, number,
       event.preventDefault();
       const formData = new FormData();
   
+      formData.append("scene_id", scene_id);
       formData.append("day_id", day_id);
       formData.append("day_order_number", day_order_number);
       formData.append("number", number);
@@ -186,47 +110,6 @@ const { day_id, day_order_number, number,
       formData.append("department_info", department_info);
       formData.append("next", next);
       formData.append("new_info", new_info);
-      formData.append("character1", character1);
-      formData.append("character1_costume", character1_costume);
-      formData.append("character2", character2);
-      formData.append("character2_costume", character2_costume);
-      formData.append("character3", character3);
-      formData.append("character3_costume", character3_costume);
-      formData.append("character4", character4);
-      formData.append("character4_costume", character4_costume);
-      formData.append("character5", character5);
-      formData.append("character5_costume", character5_costume);
-      formData.append("character6", character6);
-      formData.append("character6_costume", character6_costume);
-      formData.append("character7", character7);
-      formData.append("character7_costume", character7_costume);
-      formData.append("character8", character8);
-      formData.append("character8_costume", character8_costume);
-      formData.append("character9", character9);
-      formData.append("character9_costume", character9_costume);
-      formData.append("character10", character10);
-      formData.append("character10_costume", character10_costume);
-      formData.append("character11", character11);
-      formData.append("character11_costume", character11_costume);
-      formData.append("character12", character12);
-      formData.append("character12_costume", character12_costume);
-      formData.append("character1_number", character1_number);
-      formData.append("character2_number", character2_number);
-      formData.append("character3_number", character3_number);
-      formData.append("character4_number", character4_number);
-      formData.append("character5_number", character5_number);
-      formData.append("character6_number", character6_number);
-      formData.append("character7_number", character7_number);
-      formData.append("character8_number", character8_number);
-      formData.append("character9_number", character9_number);
-      formData.append("character10_number", character10_number);
-      formData.append("character11_number", character11_number);
-      formData.append("character12_number", character12_number);
-      formData.append("other_characters", other_characters);
-      formData.append("other_characters_costumes", other_characters_costumes);
-      formData.append("other_characters_numbers", other_characters_numbers);
-      formData.append("background_artists", background_artists);
-      formData.append("background_artists_costumes", background_artists_costumes); 
       try {
         await axiosReq.put(`/schedule/scenes/${id}/`, formData);
         history.goBack();

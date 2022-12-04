@@ -38,6 +38,7 @@ const CharactersBG = (props) => {
 
     useEffect(() => {
         handleMount();
+    // eslint-disable-next-line
     }, [id])
 
     return ( 

@@ -19,22 +19,22 @@ const ScheduleScene = (props) => {
     const [show, setShow] = useState(false);
     const [showOrder, setShowOrder] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
-    const {sceneAll, id, day_id, number, int_ext, start_time, end_time, admin,
+    const {sceneAll, scene_id, id, day_id, number, int_ext, start_time, end_time, admin,
         location, filming_location, day_night, action, pages, callsheetshed,
         next, day_order_number, setHasOrder, style, showSideBySide,
         new_info } = props
         
-        const handleEdit = () => {
-            history.push(`/schedule/scenes/edit/${id}/`);
-          };
-        
-          const handleDelete = async () => {
-            try {
-              await axiosReq.delete(`/schedule/scenes/${id}/`);
-              setHasOrder(true);
-            } catch (err) {
-            }
-          };
+    const handleEdit = () => {
+        history.push(`/schedule/scenes/edit/${id}/`);
+        };
+    
+    const handleDelete = async () => {
+    try {
+        await axiosReq.delete(`/schedule/scenes/${id}/`);
+        setHasOrder(true);
+    } catch (err) {
+    }
+    };
 
     return (
         <div style={style} className={` ${styles.Bold}`} > 
@@ -158,7 +158,8 @@ const ScheduleScene = (props) => {
             ) }
             {/* cast  */}
             {!show ?("") : (                       
-            <ScheduleCharacters {...sceneAll}
+            <ScheduleCharacters 
+            scene_id={scene_id}
             /> 
             ) }
             {/* info */}
@@ -268,7 +269,9 @@ const ScheduleScene = (props) => {
             ) }
             {/* cast */}
             {!show ?("") : (                       
-            <ScheduleCharacters {...sceneAll}
+            <ScheduleCharacters 
+            scene_id={scene_id}
+            {...sceneAll}
             /> 
             ) }
             {/* info */}
