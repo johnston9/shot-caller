@@ -1034,7 +1034,7 @@ const CrewInfoCreate = () => {
     <Row className="text-center">
         <Col md={{span: 8, offset: 2}}>
         <p>The "Create" Button on this page creates the "Crew Info" page one time
-          whether you add one crew member or numerius ones in 
+          whether you add one crew member or many ones in 
           different departments.
           After that the Edit button on the "Crew Info" page is used 
           to add to or edit the page at future stages. 

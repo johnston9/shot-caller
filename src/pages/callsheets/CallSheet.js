@@ -25,8 +25,7 @@ import Weather from '../../components/Weather';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
-    const crewInfo = useCrewInfoContext();
-    const crewInfoOne = crewInfo.results[0];
+    const crewInfoOne = useCrewInfoContext();
     const history = useHistory();
     const [yourcalltime, setYourcalltime] = useState("");
     const [yourCastcalltime, setYourCastcalltime] = useState("");

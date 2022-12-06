@@ -87,9 +87,6 @@ function App() {
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
-        {/* CALLSHEETS APP*/}
-        {/* CREWINFO */}
-        <Route exact path="/crewinfo" render={() => <CrewInfo />} />
         {/* SCHEDULE*/}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
         <Route exact path="/edit/days/:id/" render={() => <DayEdit />} />
@@ -103,10 +100,12 @@ function App() {
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
-        {/* CALLSHEETS  */}
+        {/* CREWINFO */}
+        <Route exact path="/crewinfo" render={() => <CrewInfo />} />
         <Route exact path="/logo/edit" render={() => <CrewLogo />} />
         <Route exact path="/crewinfo/create" render={() => <CrewInfoCreate />} />
         <Route exact path="/crewinfo/edit/:id/" render={() => <CrewInfoEdit />} />
+        {/* CALLSHEETS  */}
         <Route exact path="/callsheet/create/:id/" render={() => <CallsheetCreate />} />
         <Route exact path="/callsheet/edit/:id/" render={() => <CallsheetEditPage />} />
         <Route

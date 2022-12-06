@@ -35,8 +35,7 @@ const CallsheetCreate = () => {
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const history = useHistory();
-  const crewInfo = useCrewInfoContext();
-  const crewInfoOne = crewInfo.results[0];
+  const crewInfoOne = useCrewInfoContext();
   const [showSchedule, setShowSchedule] = useState(false);
   const [showAddCast, setShowAddCast] = useState(false);
   const [showAddBg, setShowAddBg] = useState(false);

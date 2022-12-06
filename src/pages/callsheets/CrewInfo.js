@@ -27,8 +27,8 @@ import Important from './Important';
 const CrewInfo = () => {
   useRedirect("loggedOut");
   const history = useHistory();
-  const crewInfo = useCrewInfoContext();
-  const crewInfoOne = crewInfo.results[0];
+  const crewInfoOne = useCrewInfoContext();
+  console.log(crewInfoOne);
   const [showImp, setShowImp] = useState(false);
   const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);

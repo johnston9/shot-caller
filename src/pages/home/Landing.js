@@ -16,7 +16,8 @@ import { getRefreshToken } from "../../utils/utils";
 const Landing = () => {
   const currentUser = useCurrentUser();
   const crewInfoOne = useCrewInfoContext();
-    const crew = crewInfoOne.results[0];
+  const production_company_name = crewInfoOne.production_company || "";
+  const production_name = crewInfoOne.production_name || "";
   const token = useToken();
   const redirect = useRedirect();
   const signintoken = getRefreshToken();
@@ -39,8 +40,11 @@ const Landing = () => {
           {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
           </p>) : ("") }
-          {crew ? (<p className={`${styles.White}`}>
-           {crew.production_company}
+          {production_name ? (<p className={`${styles.White}`}>
+           {production_name}
+          </p>) : ("") }
+          {production_company_name ? (<p className={`${styles.White}`}>
+           {production_company_name}
           </p>) : ("") }
           {redirect ? (
             {redirect}

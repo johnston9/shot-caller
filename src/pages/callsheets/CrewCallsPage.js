@@ -20,8 +20,7 @@ import TimesWardrobe from './TimesWardrobe';
 const CrewCallsPage = ({callsheet, setShow}) => {
   useRedirect("loggedOut");
 
-  const crewInfo = useCrewInfoContext();
-  const crewInfoOne = crewInfo.results[0];
+  const crewInfoOne = useCrewInfoContext();
   const [showPro, setShowPro] = useState(false);
   const [showCam, setShowCam] = useState(false);
   const [showSou, setShowSou] = useState(false);
