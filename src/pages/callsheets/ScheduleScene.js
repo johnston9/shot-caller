@@ -3,21 +3,19 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
 import { useRedirect } from '../../hooks/Redirect';
-import CharSceneInfo from './CharSceneInfo';
+import SchedSceneInfo from './SchedSceneInfo';
 import btnStyles from "../../styles/Button.module.css";
 import { Button, } from 'react-bootstrap';
-import InfoCast from './InfoCast';
+import ScheduleCharacters from './ScheduleCharacters';
 
-const CharScheduleScene = (props) => {
+const ScheduleScene = (props) => {
     useRedirect("loggedOut");
+    const [show, setShow] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const [showInfoCast, setShowInfoCast] = useState(false);
-    const {scene, number, int_ext, start_time, style, next,
-        location, filming_location, action, pages,
-        character1_number, character2_number, character3_number,
-        character4_number, character5_number, character6_number, 
-        character7_number, character8_number, character9_number,
-        character10_number, character11_number, character12_number} = props
+    const {scene, scene_id, style, next,
+        filming_location, action, pages,
+        start_time, number, int_ext, location } = props
 
     return (
         <div style={style} className={` ${styles.Bold}`} > 
@@ -32,7 +30,7 @@ const CharScheduleScene = (props) => {
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
-                    {/* <p className='mb-0'>{action}</p> */}
+                    <p className='mb-0'>{action}</p>
                 </Col>
                 {/* <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{day_night}</p>
@@ -40,35 +38,34 @@ const CharScheduleScene = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
-                {/* cast */}
-                <Col xs={2} md={2} className={`mx-0 px-0 ${styles.TitleBox2}`} >
-                {character1_number && <span className='mb-0'> {character1_number}, </span>}       
-                {character2_number && <span className='mb-0'> {character2_number}, </span>} 
-                {character3_number && <span className='mb-0'> {character3_number}, </span>} 
-                {character4_number && <span className='mb-0'> {character4_number}, </span>} 
-                {character5_number && <span className='mb-0'> {character5_number}, </span>} 
-                {character6_number && <span className='mb-0'> {character6_number}, </span>}
-                {character7_number && <span className='mb-0'> {character7_number}, </span>}       
-                {character8_number && <span className='mb-0'> {character8_number}, </span>} 
-                {character9_number && <span className='mb-0'> {character9_number}, </span>} 
-                {character10_number && <span className='mb-0'>{character10_number} , </span>} 
-                {character11_number && <span className='mb-0'> {character11_number} , </span>} 
-                {character12_number && <span className='mb-0'> {character12_number} , </span>}  
-                </Col>   
                 <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <p >{pages}</p>
                 </Col>
-                <Col className={`mx-0 px-0 `} xs={1} md={1}>
-                <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
+                {/* all */}
+                    <Col xs={1} md={1} className="mx-0 px-0">
+                    <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-                    I
-                </Button>
+                    Cast
+                    </Button>
+                </Col>
+                    <Col className={`mx-0 px-0 `} xs={1} md={1}>
+                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        Info
+                    </Button>
                 </Col>
             </Row>
             <Row>
                 <Col>
+                    {!showInfo ?("") : (                       
+                    <SchedSceneInfo
+                    {...scene}/> 
+                    ) }
+                    {/* cast  */}
                     {!showInfoCast ?("") : (                       
-                    <InfoCast {...scene}/> 
+                    <ScheduleCharacters 
+                    scene_id={scene_id}
+                    /> 
                     ) }
                 </Col>
             </Row>
@@ -106,34 +103,15 @@ const CharScheduleScene = (props) => {
                     </Button>
                 </Col>
             </Row>
-            {/* 2 */}
-            {/* <Row className='mt-2 text-center px-0 mx-0'>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
-                <p style={{ textTransform: 'uppercase' }} className={`${styles.TitleBox}`}>Filming Loc</p>
-                <p className='mb-0'>{filming_location}</p>                        
-                </Col>
-                <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
-                <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Cast</p>
-                {character1_number && <span className='mb-0'> {character1_number}, </span>}       
-                {character2_number && <span className='mb-0'> {character2_number}, </span>} 
-                {character3_number && <span className='mb-0'> {character3_number}, </span>} 
-                {character4_number && <span className='mb-0'> {character4_number}, </span>} 
-                {character5_number && <span className='mb-0'> {character5_number}, </span>} 
-                {character6_number && <span className='mb-0'> {character6_number}, </span>}
-                {character7_number && <span className='mb-0'> {character7_number}, </span>}       
-                {character8_number && <span className='mb-0'> {character8_number}, </span>} 
-                {character9_number && <span className='mb-0'> {character9_number}, </span>} 
-                {character10_number && <span className='mb-0'>{character10_number} , </span>} 
-                {character11_number && <span className='mb-0'> {character11_number} , </span>} 
-                {character12_number && <span className='mb-0'> {character12_number} , </span>} 
-                {other_characters_numbers && <span className='mb-0'> {other_characters_numbers} </span>} 
-                </Col>               
-            </Row> */}
             {/* info */}
             <Row>
                 <Col>
-                    {!showInfo ?("") : (                       
-                    <CharSceneInfo {...scene}/> 
+                    {/* cast  */}
+                    {!setShowInfo ?("") : (                       
+                    <ScheduleCharacters
+                    {...scene}
+                    scene_id={scene_id}
+                    /> 
                     ) }
                 </Col>
             </Row>
@@ -155,4 +133,4 @@ const CharScheduleScene = (props) => {
     )
 }
 
-export default CharScheduleScene
+export default ScheduleScene

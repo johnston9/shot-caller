@@ -3,7 +3,7 @@ import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
-import CharScheduleScene from './CharScheduleScene';
+import ScheduleScene from './ScheduleScene';
 
 const AdvancedSchedule = (props) => {
   useRedirect("loggedOut");
@@ -100,7 +100,7 @@ const AdvancedSchedule = (props) => {
         <Col >                   
         {scenes ? (
             scenes.map((scene, index) => (
-                <CharScheduleScene
+                <ScheduleScene
                 style={{ backgroundColor: (index % 3 === 0) 
                     ? '#dbfaf9' : (index % 2 === 0) ? 
                     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
