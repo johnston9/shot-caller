@@ -23,26 +23,21 @@ const ScheduleScene = (props) => {
             <Row className='pt-2 text-center mx-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{start_time}</p>
-                    {/* <p className='mb-0'>{end_time}</p> */}
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{number}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
-                    <p className='mb-0'>{action}</p>
                 </Col>
-                {/* <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>{day_night}</p>
-                </Col> */}
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
-                <Col className={`mx-0 px-0 `} xs={1} md={1}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`}xs={1} md={1}>
                     <p >{pages}</p>
                 </Col>
                 {/* all */}
-                    <Col xs={1} md={1} className="mx-0 px-0">
+                    <Col xs={1} md={1} className={`mx-0 px-0 pb-1 ${styles.TitleBox2}`}>
                     <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     Cast

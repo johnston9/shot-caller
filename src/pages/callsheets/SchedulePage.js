@@ -21,7 +21,7 @@ const SchedulePage = (props) => {
     const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
   return (
-    <div className='mt-5'>
+    <div className='mt-3'>
         <div className='d-none d-md-block'>
         <h4 className={`mt-3 pl-3 py-0 ${styles.SubTitleSpan }`} 
         style={{ textTransform: 'uppercase' }}>
@@ -52,17 +52,17 @@ const SchedulePage = (props) => {
                 {/* <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>D/N</p>
                 </Col> */}
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                 <p className='mb-0'>Filming Loc</p>                        
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>Cast</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Pages</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>BG</p>
+                    <p className='mb-0'>Cast</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Info</p>
                 </Col>
             </Row>
         </div>

@@ -65,10 +65,10 @@ const AdvancedSchedule = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Details</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={3}>
                 <p className='mb-0'>Filming Loc</p>                        
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={1}>
                     <p className='mb-0'>Cast</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>

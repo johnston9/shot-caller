@@ -10,6 +10,7 @@ const ScenePage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [scene, setScene] = useState({ results: [] });
+    const admin = true;
 
     useEffect(() => {
         const handleMount = async () => {
@@ -31,6 +32,7 @@ const ScenePage = () => {
                   {...scene.results[0]}
                   scene={scene.results[0]} 
                   setScene={setScene}
+                  admin={admin}
                   />
                 </Col>
             </Row>

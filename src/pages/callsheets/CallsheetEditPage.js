@@ -12,7 +12,7 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import AddCast from "./AddCast";
-import CallsheetSchedule from "./CallsheetSchedule";
+import SchedulePage from "./SchedulePage";
 import AddBackGround from "./AddBackGround";
 import AddProduction from './AddProduction';
 import AddCamera from './AddCamera';
@@ -1907,7 +1907,11 @@ const CallsheetEditPage = () => {
       ""
       ) : (
       <>
-      <CallsheetSchedule scenes={scenes} callsheetshed={callsheetshed} setShowSchedule={setShowSchedule} />
+      {/* <CallsheetSchedule scenes={scenes} 
+      callsheetshed={callsheetshed} 
+      setShowSchedule={setShowSchedule} /> */}
+      <SchedulePage
+      scenes={scenes} />
       </>
       ) }
       </div>
@@ -1933,7 +1937,11 @@ const CallsheetEditPage = () => {
       ) : (                      
       <Row className="mx-0">
         <Col className="px-1" xs={6}>
-        <CallsheetSchedule showSideBySide={showSideBySide} callsheetshed={callsheetshed} scenes={scenes} setShowSchedule={setShowSchedule} />
+        {/* <CallsheetSchedule showSideBySide={showSideBySide} 
+        callsheetshed={callsheetshed} scenes={scenes} 
+        setShowSchedule={setShowSchedule} /> */}
+        <SchedulePage
+        scenes={scenes}  />
         </Col>
         <Col xs={6}>
           <div>

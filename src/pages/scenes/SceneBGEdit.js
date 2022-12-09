@@ -96,11 +96,11 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
       );
 
     return (
-        <div className={`${styles.ShotInfo} px-5`}>
-            <Form className={`${styles.ShotEditForm}`} onSubmit={handleSubmit}>
+        <div className={`${styles.ShotInfo}`}>
+            <Form className={`${styles.ShotEditForm} px-2`} onSubmit={handleSubmit}>
             <Row className="py-2">
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={2} >
-            <Form.Group controlId="quantity" className={`${styles.Width} `}  >
+          <Col className="d-flex justify-content-center mx-0 pr-0 pl-0" xs={2} >
+            <Form.Group controlId="quantity" className={`${styles.Width2} `}  >
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -115,8 +115,8 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
                 </Alert>
               ))}
           </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={5} >
-            <Form.Group controlId="role" className={`${styles.Width2} `}  >
+            <Col className="d-flex justify-content-center mx-0 px-0" xs={5} >
+            <Form.Group controlId="role" >
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -131,8 +131,8 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
                 </Alert>
               ))}
               </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={5} >
-            <Form.Group controlId="costume" className={`${styles.Width2} `}  >
+            <Col className="d-flex justify-content-center mx-0 px-2" xs={5} >
+            <Form.Group controlId="costume"  >
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"

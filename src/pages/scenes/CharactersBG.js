@@ -18,7 +18,7 @@ const CharactersBG = (props) => {
     const [showBGAdd, setShowBGAdd] = useState(false);
     const [characters, setCharacters] = useState({ results: [] });
     const [background, setBackground] = useState({ results: [] });
-    const { id, setShowCharactersBG } = props;
+    const { id, setShowCharactersBG, admin } = props;
 
     const handleMount = async () => {
         try {
@@ -47,13 +47,15 @@ const CharactersBG = (props) => {
                 Characters / BACKGROUND
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersBG(false) } >Close</span>
             </h5>
-            <Row className='my-3'>
-            <Col xs={6} className=''>
+            <Row className='mt-3'>
+            <Col className='text-center'>
             <h5 className={`${styles.CharactersTitle }`} >CHARACTERS</h5>
             </Col>
-            <Col xs={6} className=''>
+            </Row>
+            <Row>
+            <Col className='mb-1'>
             <Button
-                className={`float-right py-0  ${btnStyles.Back} ${btnStyles.Button}`}
+                className={` py-0  ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowCharactersAdd(showCharactersAdd => !showCharactersAdd)} >ADD CHARACTER
             </Button> 
             </Col>
@@ -76,17 +78,28 @@ const CharactersBG = (props) => {
             <Row >
             {/* titles */}
             <Col xs={6} md={4}>
-            <div className='px-0 mx-2'>
+            <div className='px-0 mx-3'>
             <Row >
-            <Col className='px-0 mx-0' xs={2}>
-            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            <Col className={`${styles.BoldTitle2} text-center px-0 mx-0` }  xs={2}>
+            <p >#</p>
             </Col>
             <Col className='px-0 mx-0' xs={6}>
-            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={3}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
-            <Col className='px-0 mx-0' xs={1}>
-            <p className={`${styles.BoldTitle2} text-center`}>E</p></Col>
+            <p className={`${styles.BoldTitle2} text-center` }>Character</p>
+            </Col>
+            {admin ? (
+                <>
+                <Col className='px-0 mx-0' xs={3}>
+                <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+                </Col>
+                <Col className='px-0 mx-0' xs={1}>
+                <p className={`${styles.BoldTitle2} text-center`}>E</p>
+                </Col>
+                </>
+            ) : (
+                <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            </Col>
+            )}
             </Row>
             </div>
             </Col>
@@ -99,10 +112,20 @@ const CharactersBG = (props) => {
             </Col>
             <Col className='px-0 mx-0' xs={6}>
             <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={3}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
-            <Col className='px-0 mx-0' xs={1}>
-            <p className={`${styles.BoldTitle2} text-center`}>E</p></Col>
+            {admin ? (
+                <>
+                <Col className='px-0 mx-0' xs={3}>
+                <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+                </Col>
+                <Col className='px-0 mx-0' xs={1}>
+                <p className={`${styles.BoldTitle2} text-center`}>E</p>
+                </Col>
+                </>
+            ) : (
+                <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            </Col>
+            )}
             </Row>
             </div>
             </Col>
@@ -115,10 +138,20 @@ const CharactersBG = (props) => {
             </Col>
             <Col className='px-0 mx-0' xs={6}>
             <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={3}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
-            <Col className='px-0 mx-0' xs={1}>
-            <p className={`${styles.BoldTitle2} text-center`}>E</p></Col>
+            {admin ? (
+                <>
+                <Col className='px-0 mx-0' xs={3}>
+                <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+                </Col>
+                <Col className='px-0 mx-0' xs={1}>
+                <p className={`${styles.BoldTitle2} text-center`}>E</p>
+                </Col>
+                </>
+            ) : (
+                <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            </Col>
+            )}
             </Row>
             </div>
             </Col>
@@ -127,17 +160,14 @@ const CharactersBG = (props) => {
             {characters.results.length ? (
             characters.results.map((character, index) => (
             <Col xs={6} md={4}
-            className="py-2 p-0 mx-0">
+            className="px-0 mx-0">
                 <Character 
-                // style={{ backgroundColor: (index % 3 === 0) 
-                //     ? '#dbfaf9' : (index % 2 === 0) ? 
-                //     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
-                style={{ backgroundColor: '#dbfaf9' }}
                 setCharacters={setCharacters}
                 handleMount={handleMount}
                 character={character}
                 key={character.id}
-                {...character} />
+                {...character}
+                admin={admin} />
             </Col>
             ))) 
             : (
@@ -174,44 +204,63 @@ const CharactersBG = (props) => {
             <Row className='mt-3' >
             {/* 1 */}
             <Col xs={12} md={6}>
-            <div className='px-0 mx-2'>
+            <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
             <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
             </Col>
             <Col className='px-0 mx-0' xs={5}>
             <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
-            <Col className='px-0 mx-0' xs={4}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
-            <Col className='px-0 mx-0' xs={1}>
-            <p className={`${styles.BoldTitle2} text-center`}>E</p></Col>
+            {admin ? (
+                <>
+                <Col className='px-0 mx-0' xs={4}>
+                <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+                </Col>
+                <Col className='px-0 mx-0' xs={1}>
+                <p className={`${styles.BoldTitle2} text-center`}>E</p>
+                </Col>
+                </>
+            ) : (
+                <Col className='px-0 mx-0' xs={5}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            </Col>
+            )}
             </Row>
             </div>
             </Col>
             {/* 2 */}
-            <Col xs={12} md={6}>
-            <div className='px-0 mx-2'>
+            <Col className='d-none d-md-block' xs={12} md={6}>
+            <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
             <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
             </Col>
             <Col className='px-0 mx-0' xs={6}>
             <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
-            <Col className='px-0 mx-0' xs={3}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p></Col>
-            <Col className='px-0 mx-0' xs={1}>
-            <p className={`${styles.BoldTitle2} text-center`}>E</p></Col>
+            {admin ? (
+                <>
+                <Col className='px-0 mx-0' xs={3}>
+                <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+                </Col>
+                <Col className='px-0 mx-0' xs={1}>
+                <p className={`${styles.BoldTitle2} text-center`}>E</p>
+                </Col>
+                </>
+            ) : (
+                <Col className='px-0 mx-0' xs={4}>
+            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            </Col>
+            )}
             </Row>
             </div>
             </Col>
             </Row>
             {/* background data */}
             <Row>
-            <Col>
             {background.results.length ? (
             background.results.map((back, index) => (
             <Col xs={12} md={6}
-            className="py-2 p-0 mx-0">
+            className="p-0 mx-0">
             <Background 
               style={{ backgroundColor: (index % 3 === 0) 
                 ? '#dbfaf9' : (index % 2 === 0) ? 
@@ -219,6 +268,7 @@ const CharactersBG = (props) => {
               setBackground={setBackground}
               handleMount={handleMount}
               back={back}
+              admin={admin} 
               key={back.id}
               {...back} />
             </Col>
@@ -226,7 +276,6 @@ const CharactersBG = (props) => {
             : (
             ""
             )}
-            </Col>
             </Row>
             <p className={`mt-5 mb-2 py-1 ${styles.SubTitle }`}></p>
         </div>

@@ -10,6 +10,13 @@
   color: #333;
 }
 
+.TitleBox3 {
+  border-left : 1px solid #72dbe2;
+  border-right : 1px solid #72dbe2;
+  border-bottom : 1px solid #72dbe2;
+  color: #333;
+}
+
 .InfoBack {
   background-color: #eefefe;
 }

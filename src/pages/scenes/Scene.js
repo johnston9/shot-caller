@@ -37,7 +37,7 @@ const Scene = (props) => {
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const { id, number, storyboard, script,
-      workspace_guide, 
+      workspace_guide, admin,
       scene, setScene } = props;
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
@@ -325,6 +325,7 @@ const Scene = (props) => {
                       <CharactersBG
                         id={id}
                         setShowCharactersBG={setShowCharactersBG} 
+                        admin={admin}
                         /> 
                       ) }    
                       {!showScript ? (

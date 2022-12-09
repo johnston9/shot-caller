@@ -41,6 +41,7 @@ const DayPage = () => {
                 ])
                 setDayData({ results: [dayGet] });
                 setDayScenes(scenes);
+                console.log(scenes);
                 setCallsheet(callsheetdata);
                 // setDayContext(dayGet.day);
                 setDataDay(dayGet.day);
