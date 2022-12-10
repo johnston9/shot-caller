@@ -10,10 +10,9 @@ import ScheduleCharacters from './ScheduleCharacters';
 
 const ScheduleScene = (props) => {
     useRedirect("loggedOut");
-    const [show, setShow] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const [showInfoCast, setShowInfoCast] = useState(false);
-    const {scene, scene_id, style, next,
+    const {showSideBySide, scene, scene_id, style, next,
         filming_location, action, pages,
         start_time, number, int_ext, location } = props
 
@@ -33,32 +32,53 @@ const ScheduleScene = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`}xs={1} md={1}>
+                {showSideBySide ? (
+                    <>
+                    <Col xs={2} md={2} className={`mx-0 px-0 pb-1 ${styles.TitleBox2}`}>
+                    <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
+                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                    Cast
+                    </Button>
+                    </Col>
+                    <Col className={`mx-0 px-0 `} xs={1} md={1}>
+                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        I
+                    </Button>
+                    </Col>
+                    </>
+                ) : (
+                    <>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`}xs={1} md={1}>
                     <p >{pages}</p>
-                </Col>
-                {/* all */}
+                    </Col>
                     <Col xs={1} md={1} className={`mx-0 px-0 pb-1 ${styles.TitleBox2}`}>
                     <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     Cast
                     </Button>
-                </Col>
+                    </Col>
                     <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
                     </Button>
-                </Col>
+                    </Col>
+                    </>
+                ) }
             </Row>
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
                     <SchedSceneInfo
+                    style={style}
                     {...scene}/> 
                     ) }
                     {/* cast  */}
                     {!showInfoCast ?("") : (                       
                     <ScheduleCharacters 
+                    style={style}
+                    showSideBySide={showSideBySide}
                     scene_id={scene_id}
                     /> 
                     ) }

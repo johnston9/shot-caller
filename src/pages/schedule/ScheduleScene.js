@@ -42,20 +42,6 @@ const ScheduleScene = (props) => {
             <Row className='pt-2 text-center mx-0' >
                 {admin ? (
                     <>
-                {callsheetshed ? (
-                    <>
-                    <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>{start_time}</p>
-                    </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>{number}</p>
-                    </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
-                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
-                    </Col>
-                    </>
-                ) : (
-                    <>
                     <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <OverlayTrigger
                         placement="top"
@@ -83,8 +69,7 @@ const ScheduleScene = (props) => {
                         <p className='mb-0'>{action}</p>
                     </Col>
                     </>
-                )}
-                </>) : (
+                ) : (
                     <>
                     <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{start_time}</p>
@@ -98,13 +83,9 @@ const ScheduleScene = (props) => {
                     </Col>
                     </>
                 ) }
-                {callsheetshed ? (
-                    ""
-                ) : (
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>{day_night}</p>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>{day_night}</p>
                 </Col>
-                ) }
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
@@ -113,7 +94,7 @@ const ScheduleScene = (props) => {
                 </Col>
                 {/* cast */}
                 {showSideBySide ? (
-                    <Col xs={1} md={1} className="mx-0 px-0">
+                <Col xs={1} md={1} className="mx-0 px-0">
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     C
@@ -161,13 +142,16 @@ const ScheduleScene = (props) => {
             <ScheduleCharacters 
             scene_id={scene_id}
             admin={admin}
+            style={style}
             /> 
             ) }
             {/* info */}
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <SchedSceneInfo {...sceneAll}/> 
+                    <SchedSceneInfo 
+                    style={style}
+                    {...sceneAll}/> 
                     ) }
                     </Col>
                 </Row>

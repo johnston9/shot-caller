@@ -29,6 +29,7 @@ import AddPostAdditional from './AddPostAdditional';
 import Information from "./Information";
 import InfoCrewCalls from "./InfoCrewCalls";
 import InformationWeather from "./InformationWeather";
+import SchedulePage from "./SchedulePage";
 
 const CallsheetCreate = () => {
   useRedirect("loggedOut");
@@ -40,7 +41,6 @@ const CallsheetCreate = () => {
   const [showAddCast, setShowAddCast] = useState(false);
   const [showAddBg, setShowAddBg] = useState(false);
   const [showSideBySide, setShowSideBySide] = useState(false);
-  const callsheetshed = true;
   // eslint-disable-next-line
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
@@ -1577,7 +1577,9 @@ const buttons = (
       ""
     ) : (
       <>
-      <CallsheetSchedule scenes={scenes} callsheetshed={callsheetshed} setShowSchedule={setShowSchedule} />
+      <SchedulePage
+      scenes={scenes} 
+      setShow={setShowSchedule} />
       </>
     ) }
     </div>
@@ -1600,16 +1602,21 @@ const buttons = (
     ) : (                      
       <Row className="mx-0">
         <Col className="px-1" xs={6}>
-        <CallsheetSchedule showSideBySide={showSideBySide} 
-        scenes={scenes} callsheetshed={callsheetshed}
-        setShowSchedule={setShowSchedule} />
+        <SchedulePage
+        showSideBySide={showSideBySide} 
+        scenes={scenes} 
+        setShow={setShowSchedule} />
         </Col>
         <Col xs={6}>
           <div>
-        <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+        <AddCast id={id} 
+        setShow={setShowSideBySide}
+        dataDay={dataDay} dataDate={dataDate} />
           </div>
           <div>
-        <AddBackGround id={id} setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+        <AddBackGround id={id} 
+        setShowAddBg={setShowAddBg} 
+        dataDay={dataDay} dataDate={dataDate} />
           </div>
         </Col>
       </Row>             

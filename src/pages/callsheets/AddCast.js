@@ -13,7 +13,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import { useCharactersContext } from "../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
 
-const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
+const AddCast = ({id, setShow, dataDay, dataDate}) => {
     useRedirect("loggedOut");
     console.log(id)
     const [errors, setErrors] = useState({});
@@ -194,7 +194,10 @@ const AddCast = ({id, setShowAddCast, dataDay, dataDate}) => {
     
   return (
     <div className={`my-3 `}>
-      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD CAST</h5> 
+        <h4 className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} 
+        style={{ textTransform: 'uppercase' }}>
+            ADD CAST<span className={`pt-1 float-right ${styles.Close }`} 
+        onClick={() => setShow(false) } >Close</span>  </h4>
       <div className={`mb-3 ${styles.Back3 }`}>
         {/* <p className="text-center">ADD CAST</p> */}
       <Form className="text-center" onSubmit={handleSubmit}>

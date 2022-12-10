@@ -65,6 +65,17 @@
   font-weight: 700;
 }
 
+.Infobox {
+  background-color: #000;
+}
+
+.BoldTitle2 {
+  font-weight: 700;
+  border-right : 3px solid #fafafa;
+  background-color: #d6fcff;
+  /* width: 50%; */
+}
+
 .TitleBox {
   background-color: #e8f0f1;
   color: #666;

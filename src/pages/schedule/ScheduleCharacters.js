@@ -7,7 +7,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import Character from './Character';
 import Background from './Background';
 
-const ScheduleCharacters = ({admin, scene_id}) => {
+const ScheduleCharacters = ({admin, scene_id, style}) => {
     useRedirect("loggedOut");
 
     const [characters, setCharacters] = useState({ results: [] });
@@ -43,12 +43,12 @@ const ScheduleCharacters = ({admin, scene_id}) => {
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
-            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={6}>
-            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={4}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            <Col className='px-0 mx-0' xs={8}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
             </div>
@@ -58,27 +58,27 @@ const ScheduleCharacters = ({admin, scene_id}) => {
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
-            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={6}>
-            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={4}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            <Col className='px-0 mx-0' xs={8}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
             </div>
             </Col>
             {/* 3 */}
-            <Col className='d-none d-md-block' md={4}>
+            <Col xs={6} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
-            <p className={`${styles.BoldTitle2} text-center` }>#</p>
+            <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={6}>
-            <p className={`${styles.BoldTitle2} text-center` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={4}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            <Col className='px-0 mx-0' xs={8}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
+            <Col className='px-0 mx-0' xs={2}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
             </div>
@@ -91,10 +91,6 @@ const ScheduleCharacters = ({admin, scene_id}) => {
             <Col xs={6} md={4}
             className="px-0 mx-0">
                 <Character
-                style={{ backgroundColor: (index % 3 === 0) 
-                    ? '#dbfaf9' : (index % 2 === 0) ? 
-                    'rgb(223 254 240)' : 'rgb(248 241 249)' }}
-                // style={{ backgroundColor: '#dbfaf9' }}
                 character={character}
                 key={character.id}
                 {...character} />
@@ -113,12 +109,12 @@ const ScheduleCharacters = ({admin, scene_id}) => {
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
-            <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
+            <p className={`text-center ${styles.BoldTitle2}` }>Q</p>
             </Col>
             <Col className='px-0 mx-0' xs={5}>
-            <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
+            <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>
             <Col className='px-0 mx-0' xs={5}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            <p className={`text-center ${styles.BoldTitle2}` }>Costume</p>
             </Col>
             </Row>
             </div>
@@ -128,12 +124,12 @@ const ScheduleCharacters = ({admin, scene_id}) => {
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
-            <p className={`${styles.BoldTitle2} text-center` }>Quantity</p>
+            <p className={`text-center ${styles.BoldTitle2}` }>Q</p>
             </Col>
             <Col className='px-0 mx-0' xs={5}>
-            <p className={`${styles.BoldTitle2} text-center` }>Role</p></Col>
+            <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>
             <Col className='px-0 mx-0' xs={5}>
-            <p className={`${styles.BoldTitle2} text-center`}>Costume</p>
+            <p className={`text-center ${styles.BoldTitle2}` }>Costume</p>
             </Col>
             </Row>
             </div>

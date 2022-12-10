@@ -11,7 +11,7 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const AddBackGround = ({id, setShowAddBg, dataDay, dataDate}) => {
+const AddBackGround = ({id, setShow, showSideBySide, dataDay, dataDate}) => {
     useRedirect("loggedOut");
     console.log(id)
     const [errors, setErrors] = useState({});
@@ -107,10 +107,20 @@ const AddBackGround = ({id, setShowAddBg, dataDay, dataDate}) => {
 
 return (
     <div className={`my-3 `}>
-    <h5 className={`text-center mb-0 py-0   ${styles.SubTitle }`} >ADD BACKGROUND/STAND-INS</h5> 
+    {showSideBySide ? (
+        <h4 className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} 
+        style={{ textTransform: 'uppercase' }}>
+        ADD BG / Standins </h4>
+    ) : (
+        <h4 className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} 
+        style={{ textTransform: 'uppercase' }}>
+        ADD BG / Standins
+        <span className={`pt-1 float-right ${styles.Close }`} 
+        onClick={() => setShow(false) } >Close</span>  </h4>
+    ) }
     <div className={`mb-3 ${styles.Back3 }`}>
     <Row className="mt-2 pt-0">
-        <Col sm={{span: 8, offset: 2} }>
+        <Col sm={{span: 10, offset: 1} }>
         <p className="text-center mb-0">BACKGROUND ADDED</p>
         <div className={`px-2 my-0 py-1 ${styles.CastEntered }`} >
         {background.results.length ? (

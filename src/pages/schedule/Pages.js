@@ -21,7 +21,7 @@ const Pages = ({scenes}) => {
     <div>
       <Row>
         <Col>
-        <h5 className={`mb-3  ${styles.SubTitle }`}>
+        <h5 className={`mb-3 pl-2 ${styles.SubTitle }`}>
           Schedule <span className={`${styles.HSpan }`}>{pagestotal} Pages </span> 
         </h5>
         </Col>

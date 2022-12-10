@@ -41,7 +41,6 @@ const CallsheetEditPage = () => {
   const [showAddBg, setShowAddBg] = useState(false);
   const [showSideBySide, setShowSideBySide] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
-  const callsheetshed = true;
   // eslint-disable-next-line
   const [dayData, setDayData] = useState({ results: [] });
   const [scenes, setScenes] = useState({ results: [] });
@@ -1881,23 +1880,28 @@ const CallsheetEditPage = () => {
       </Row>
       {/* cast buttons */}
       <Row className='text-center'>
-      <Col className='text-center mx-0 px-0' xs={6} md={4}>
+      {/* cast */}
+      <Col className='text-center mx-0 px-0' xs={6} sm={4}>
       <Button
-        className={`mt-3 px-2 px-md-5 ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Characters
+        className={`mt-3 px-5 px-md-5 ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddCast(showAddCast => !showAddCast)} >Add Cast
       </Button>
       </Col>
-      <Col className='text-center mx-0 px-0' xs={6} md={4}  >
-      <Button
-        className={`my-3 px-2 px-md-5  ${btnStyles.Button} ${btnStyles.Bright}`}
-        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >Add Background
-      </Button>
-      </Col>
-      <Col xs={{span: 10, offset: 1}} md={4} className='text-center mx-0 px-0'  >
+      {/* Schedule and Cast Forms */}
+      <Col xs={{span: 12, order: 12}} sm={{span: 4, order: 1}} 
+      className='text-center mx-0 px-0'  >
       <Button
         className={`my-3 px-3 ${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => setShowSideBySide(showSideBySide => !showSideBySide)} >
           Schedule and Cast Forms
+      </Button>
+      </Col>
+      {/* BG */}
+      <Col className='text-center mx-0 px-0' xs={{order: 1}} sm={{order: 12}}  >
+      <Button
+        className={`my-3 px-5  ${btnStyles.Button} ${btnStyles.Bright}`}
+        onClick={() => setShowAddBg(showAddBg => !showAddBg)} >
+          Add BG
       </Button>
       </Col>
       </Row>
@@ -1907,10 +1911,8 @@ const CallsheetEditPage = () => {
       ""
       ) : (
       <>
-      {/* <CallsheetSchedule scenes={scenes} 
-      callsheetshed={callsheetshed} 
-      setShowSchedule={setShowSchedule} /> */}
       <SchedulePage
+      setShow={setShowSchedule}
       scenes={scenes} />
       </>
       ) }
@@ -1920,7 +1922,8 @@ const CallsheetEditPage = () => {
       {!showAddCast ? (
       ""
       ) : (
-      <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+      <AddCast id={id} setShow={setShowAddCast} 
+      dataDay={dataDay} dataDate={dataDate} />
       ) }
       </div> 
       {/* add bg */}
@@ -1928,7 +1931,10 @@ const CallsheetEditPage = () => {
       {!showAddBg ? (
       ""
       ) : (
-      <AddBackGround id={id} setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+      <AddBackGround 
+      id={id} 
+      setShow={setShowAddBg} 
+      dataDay={dataDay} dataDate={dataDate} />
       ) }
       </div> 
       {/* SideBySide */}
@@ -1937,18 +1943,23 @@ const CallsheetEditPage = () => {
       ) : (                      
       <Row className="mx-0">
         <Col className="px-1" xs={6}>
-        {/* <CallsheetSchedule showSideBySide={showSideBySide} 
-        callsheetshed={callsheetshed} scenes={scenes} 
-        setShowSchedule={setShowSchedule} /> */}
         <SchedulePage
+        showSideBySide={showSideBySide}
+        setShow={setShowSideBySide}
         scenes={scenes}  />
         </Col>
         <Col xs={6}>
           <div>
-        <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+        <AddCast 
+        id={id} 
+        setShow={setShowSideBySide} 
+        dataDay={dataDay} dataDate={dataDate} />
           </div>
           <div>
-        <AddBackGround id={id} setShowAddBg={setShowAddBg} dataDay={dataDay} dataDate={dataDate} />
+        <AddBackGround 
+        showSideBySide={showSideBySide}
+        id={id} 
+        dataDay={dataDay} dataDate={dataDate} />
           </div>
         </Col>
       </Row>             

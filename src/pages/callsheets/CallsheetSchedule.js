@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import ScheduleScene from '../schedule/ScheduleScene';
 import styles from "../../styles/DayPage.module.css";
 
-const CallsheetSchedule = ({scenes, showSideBySide, callsheetshed}) => {
+const CallsheetSchedule = ({scenes, showSideBySide, callsheetshed, setShowSchedule}) => {
     useRedirect("loggedOut");    
     
   return (

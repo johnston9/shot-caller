@@ -74,6 +74,8 @@ p {
 .Close {
   color: rgb(28, 131, 131);
   padding-right: 5px;
+  cursor: pointer;
+  font-size: .75rem;
 }
 
 .Close:hover {
