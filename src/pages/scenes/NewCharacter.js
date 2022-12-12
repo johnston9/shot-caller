@@ -11,7 +11,7 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCharactersContext, useSetCharactersContext } from "../../contexts/Scene_chars_locs";
 
-const NewCharacter = () => {
+const NewCharacter = ({setShowAdd} ) => {
     useRedirect("loggedOut");
     const characters = useCharactersContext();
     const setCharacters = useSetCharactersContext();
@@ -36,14 +36,14 @@ const NewCharacter = () => {
         setNumber("");
         setNewCharacter("");
         setUsername("");
+        setShowAdd(false);
       }
 
-      const castNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-      "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
-      "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
+      const castNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 
+      15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 
       const usedNumbers = characters.results.map((char) => (
-       char.number));
+      char.number));
 
       const unusedNumbers = castNumbers.filter(
         number => !usedNumbers.includes(number));
@@ -70,26 +70,25 @@ const NewCharacter = () => {
     }
     
     const buttons = (
-        <div className="text-center">    
-          <Button
-            className={`${btnStyles.Button} ${btnStyles.Back} mr-3`}
-            onClick={cancel}
-          >
-            Cancel
-          </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Back} ml-3`} type="submit">
-            Create
-          </Button>
-        </div>
-      );
+      <div className="mb-2 text-center">    
+        <Button
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
+          onClick={cancel}
+        >
+          Cancel
+        </Button>
+        <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          Create
+        </Button>
+      </div>
+    );
 
     return (
-        <div className= {` ${styles.b}`}>
-          <h5 className={`text-center mb-0 py-1 ${styles}`} >
+          <div >
+          <Row >
+          <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
+          <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
             ADD NEW CHARACTER</h5> 
-            {/* {usedNumbers}
-            <p>{unusedNumbers}</p> */}
-          <div className={`mb-3 ${styles.Back }`}>
             <Form onSubmit={handleSubmit}>
             <Row className="mt-0">
                 <Col className="d-flex justify-content-center pb-1" xs={6}>
@@ -138,8 +137,9 @@ const NewCharacter = () => {
                 </Col>
             </Row>
             </Form> 
+          </Col>
+          </Row>
           </div>         
-        </div>
     )
 }
 

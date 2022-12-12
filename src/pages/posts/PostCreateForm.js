@@ -134,6 +134,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
   
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      console.log(data)
       history.push(`/posts/${data.id}`);
     } catch (err) {
       console.log(err);

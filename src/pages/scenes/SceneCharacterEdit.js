@@ -96,9 +96,9 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
       );
 
     return (
-        <div className={`${styles.ShotInfo} px-5`}>
-        <Form className={`${styles.ShotEditForm}`} onSubmit={handleSubmit}>
-        <Row className="my-2 py-2">
+        <div className={`${styles.Back} mx-0 px-0 mt-2 mb-3 pt-2`}>
+        <Form onSubmit={handleSubmit}>
+        <Row className="">
         <Col className="px-0" xs={6} >
         <p className={`text-center mb-0 ${styles.Bold }`}>
          Edit Costume
@@ -128,7 +128,6 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
           </Col>
         </Row>
         </Form>
-        <hr className={styles.Blackish}/>
         </div>
     )
 }

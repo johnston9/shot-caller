@@ -51,8 +51,6 @@ const Character = ({id, admin, cast_number, role, costume,
         )}
         </Row>
         {/* edit */}
-        <Row>
-        <Col>
             {showEditForm ? (
                 <SceneCharacterEdit
                     character={character}
@@ -64,9 +62,6 @@ const Character = ({id, admin, cast_number, role, costume,
             ) : (
                 ""
             )}
-        </Col>
-        </Row> 
-        <hr className='py-0 my-0' />
         </div>
     )
 }

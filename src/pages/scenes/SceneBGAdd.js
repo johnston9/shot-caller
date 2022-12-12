@@ -11,7 +11,7 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
-const SceneBGAdd = ({id, background, setBackground}) => {
+const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
     useRedirect("loggedOut");
     console.log(background)
     const [errors, setErrors] = useState({});
@@ -41,6 +41,7 @@ const SceneBGAdd = ({id, background, setBackground}) => {
     role: "",
     costume: ""
         })
+    setShowBGAdd(false);
         }
 
     // useEffect(() => {
@@ -99,9 +100,12 @@ const SceneBGAdd = ({id, background, setBackground}) => {
     );
     
   return (
-    <div className={` ${styles.Back}`}>
-      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >ADD BG / STANDINGS</h5> 
+    <div >
       <div className={`mb-3 ${styles.Back3 }`}>
+      <Row >
+      <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
+      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
+        ADD BG / STANDINGS</h5> 
       <Form className="text-center" onSubmit={handleSubmit}>
         {/* <Row className="py-2">
         <Col xs={12} md={6}>
@@ -192,8 +196,10 @@ const SceneBGAdd = ({id, background, setBackground}) => {
           <div className= {`mt-3 `} >{buttons}</div>
           </Col>
         </Row>
-        </Form>
-        </div>
+      </Form>
+      </Col>
+      </Row>
+      </div>
     </div>
   )
 }

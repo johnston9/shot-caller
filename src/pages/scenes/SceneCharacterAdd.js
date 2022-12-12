@@ -107,32 +107,77 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
           Cancel
         </Button>
         <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Add Cast
+          Create
         </Button>
       </div>
     );
     
   return (
-    <div className={` ${styles}`}>
-      <h5 className={`text-center mb-0 py-1 ${styles }`} >
-        ADD SCENE CHARACTER</h5> 
-      <div className={`mb-3 ${styles.Back }`}>
-      <Form className="text-center" onSubmit={handleSubmit}>
+    <div className={` ${styles}`}> 
+      <div>
       {/* Dropdown DropButt */}
+      <Row >
+      <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
+      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
+        ADD SCENE CHARACTER</h5> 
+      <Form className="text-center" onSubmit={handleSubmit}>
       <Row>
-      <Col xs={6}>
-      <Row className="py-2">
-        <Col xs={12} md={6}>
-        <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
-        CHARACTERS ADDED
+      <Col xs={4}>
+          <p className={`text-center mb-0 ${styles.Bold }`}>
+          SELECT CHARACTER
         </p>
-        <div className={`ml-md-2 px-1 py-1 ${styles.CastEntered }`} >
-          {characters.results.length ? (
-              characters.results.map((ca) => (
-                <span key={ca.id}>{ca.role}, </span>
-              ))) : ("")}
-          </div>
-          </Col>
+          <DropdownButton id="dropdown-basic-button" 
+          className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
+          {charactersContext.results.length && (
+                charactersContext.results.map((character) => (
+                  <Dropdown.Item onClick={() => setData(character) } 
+                  key={character.id} >{character.role}</Dropdown.Item>
+                ) )) }
+          </DropdownButton>
+      </Col>
+      <Col xs={2} >
+      <p className={`text-center mb-0 ${styles.Bold }`}>
+      Number
+      </p>
+      <p className={`mt-2 py-1 ${styles.White }`}>
+      {cast_number}
+      </p>
+      </Col>
+      <Col xs={4} >
+      <p className={`text-center mb-0 ${styles.Bold }`}>
+      Role
+      </p>
+      <p className={`mt-2 py-1 ${styles.White }`}>
+      {role}
+      </p>
+      </Col>
+      <Col xs={2} className="d-flex justify-content-center mx-0 px-1" >
+      <Form.Group controlId="costume" className={`${styles.Width2} ml-2 `}  >
+            <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
+            <Form.Control 
+            className={`${styles.Input}`} 
+            type="text"
+            name="costume"
+            value={costume}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.costume?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+      </Col>
+
+      </Row>
+      {/* buttons */}
+      <Row>
+        <Col className="text-center">
+        <div className= {`mt-3 `} >{buttons}</div>
+        </Col>
+      </Row>
+      </Form>
+      {/* <Row className="py-2">
           <Col xs={12} md={6}>
           <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
           SELECT CHARACTER
@@ -146,53 +191,9 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
                 ) )) }
           </DropdownButton>
           </Col>
-      </Row>
-      </Col>
-      <Col xs={6}>
-      <Row className="my-2">
-            <Col xs={2} >
-            <p className={`text-center mb-0 ${styles.Bold }`}>
-            Number
-            </p>
-            <p className={`mt-2 py-1 ${styles.White }`}>
-            {cast_number}
-            </p>
-            </Col>
-            <Col xs={4} >
-            <p className={`text-center mb-0 ${styles.Bold }`}>
-            Role
-            </p>
-            <p className={`mt-2 py-1 ${styles.White }`}>
-            {role}
-            </p>
-            </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
-            <Form.Group controlId="costume" className={`${styles.Width} ml-2 `}  >
-                  <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
-                  <Form.Control 
-                  className={`${styles.Input}`} 
-                  type="text"
-                  name="costume"
-                  value={costume}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.costume?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              </Col>
-      </Row>
+      </Row> */}
       </Col>
       </Row>
-        {/* buttons */}
-        <Row>
-          <Col className="text-center">
-          <div className= {`mt-3 `} >{buttons}</div>
-          </Col>
-        </Row>
-        </Form>
         </div>
     </div>
   )

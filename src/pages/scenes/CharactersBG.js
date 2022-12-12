@@ -47,13 +47,13 @@ const CharactersBG = (props) => {
                 Characters / BACKGROUND
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersBG(false) } >Close</span>
             </h5>
-            <Row className='mt-3'>
+            {/* <Row className='mt-3'>
             <Col className='text-center'>
             <h5 className={`${styles.CharactersTitle }`} >CHARACTERS</h5>
             </Col>
-            </Row>
+            </Row> */}
             <Row>
-            <Col className='mb-1'>
+            <Col className='text-center py-3'>
             <Button
                 className={` py-0  ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowCharactersAdd(showCharactersAdd => !showCharactersAdd)} >ADD CHARACTER
@@ -158,7 +158,7 @@ const CharactersBG = (props) => {
             </Row>
             <Row>
             {characters.results.length ? (
-            characters.results.map((character, index) => (
+            characters.results.map((character) => (
             <Col xs={6} md={4}
             className="px-0 mx-0">
                 <Character 
@@ -175,13 +175,15 @@ const CharactersBG = (props) => {
             )}
             </Row>
             {/* BG / STANDINGS */}
-            <Row className='mt-5'>
-            <Col xs={6} className=''>
+            {/* <Row className='mt-3'>
+            <Col xs={12} className='text-center'>
             <h5 className={`${styles.CharactersTitle }`} >BG / STANDINGS</h5>
             </Col>
-            <Col xs={6}  className=''>
+            </Row> */}
+            <Row>
+            <Col xs={12} className='text-center py-3' >
             <Button
-                className={`float-right py-0 ${btnStyles.Back} ${btnStyles.Button}`}
+                className={`py-0 ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowBGAdd(showBGAdd => !showBGAdd)} >ADD BG / STANDINGS
             </Button> 
             </Col>

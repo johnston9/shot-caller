@@ -96,9 +96,9 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
       );
 
     return (
-        <div className={`${styles.ShotInfo}`}>
-            <Form className={`${styles.ShotEditForm} px-2`} onSubmit={handleSubmit}>
-            <Row className="py-2">
+        <div className={`${styles.Back} mt-2 px-2`}>
+            <Form onSubmit={handleSubmit}>
+            <Row className="pt-2">
           <Col className="d-flex justify-content-center mx-0 pr-0 pl-0" xs={2} >
             <Form.Group controlId="quantity" className={`${styles.Width2} `}  >
                   <Form.Control 
@@ -154,7 +154,6 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
           </Col>
         </Row>
         </Form>
-        <hr className={styles.Blackish}/>
         </div>
     )
 }

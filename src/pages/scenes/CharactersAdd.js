@@ -12,6 +12,7 @@ import SceneCharacterAdd from './SceneCharacterAdd';
 const CharactersAdd = (props) => {
     useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
+    const [showAdd, setShowAdd] = useState(false);
 
     const { id, characters, setCharacters, setShowCharactersAdd } = props;
     return ( 
@@ -23,10 +24,14 @@ const CharactersAdd = (props) => {
             <div className={` ${styles.AliceBlueMild }`}>        
             {/* info */}
             <Row>
-            <Col>
+            <Col className='my-3'>
             <Button
-                className={`float-right mr-5 py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
-                onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+                className={`ml-5 py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
+                onClick={() => setShowAdd(showAdd => !showAdd)} >ADD NEW CHARACTERS
+            </Button> 
+            <Button
+                className={`px-5 float-right mr-5 py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
+                onClick={() => setShowInfo(showInfo => !showInfo)} >IMPORTANT
             </Button> 
             </Col>
             </Row>
@@ -40,32 +45,22 @@ const CharactersAdd = (props) => {
                     ) } 
                 </Col>
             </Row>
-            <Row className='mt-0'>
-            <Col className="text-center">
-            <p className={`${styles.CharactersTitle2 } mb-3`} >Step 1: Add any new Characters to 
-            put them in the dropdown below</p>
-            </Col>
-          </Row>
-          {/* new chars */}
-            <Row className="mt-2">
-                <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 3}}>
-                <NewCharacter />
+            {/* add new Characters */}
+            <Row>
+                <Col>
+            {!showAdd ? (
+                ""
+                    ) : (
+                        <NewCharacter
+                        setShowAdd={setShowAdd} /> 
+                    ) } 
                 </Col>
             </Row>
-            <Row className='mt-3'>
-            <Col className="text-center">
-            <p className={`${styles.CharactersTitle2 } mb-2`} >Step 2: Add the Scene Characters</p>
-            </Col>
-          </Row>
             {/* ADD SCENE CHAR */}
-            <Row className="my-3">
-                <Col xs={{span: 10, offset: 1} } >
                 <SceneCharacterAdd
                  id={id}
                  characters={characters}
                  setCharacters={setCharacters} />
-                </Col>
-            </Row>
             </div>
         </div>
         
