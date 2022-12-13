@@ -162,6 +162,14 @@ i:hover {
   font-size: .75rem;
 }
 
+.Crimson {
+  color: crimson;
+}
+
+.Blue {
+  color: rgb(50, 204, 204);
+}
+
 .Close:hover {
   color: rgb(0, 8, 8);
 }

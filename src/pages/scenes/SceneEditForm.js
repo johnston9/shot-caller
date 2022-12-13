@@ -23,10 +23,12 @@ import Info from "./Info";
 const SceneEditForm = () => {
     useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
+    const [showAddLoc, setShowAddLoc] = useState(false);
     const locations = useLocationsContext();
     const setLocations = useSetLocationsContext();
     const [showImp, setShowImp] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
+    const [sceneNumber, setSceneNumber] = useState("");
 
     const [postData, setPostData] = useState({
       number: "",
@@ -72,6 +74,7 @@ const SceneEditForm = () => {
               filming_location, shooting_date,
               dramatic_day, equip_set_props, department_info,
               pages, action, storyboard, script, location_detail });
+              setSceneNumber(number);
               } catch (err) {
                 console.log(err);
               }
@@ -476,21 +479,39 @@ const SceneEditForm = () => {
 
     return (
         <div>
-        <TopBox title="Add / Edit Breakdown" />
+        <TopBox work={`Add / Edit`}
+                title={`Scene ${number} `}
+                title2="Breakdown"/>
+        <Row>
+        <Col xs={6}>
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-2`}
             onClick={() => history.goBack()}
         >
             Back
-        </Button>   
+        </Button>
+        </Col>
+        <Col xs={6}>
         <Button
-          className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
+          className={`float-right py-0 mt-2 ${btnStyles.Blue} ${btnStyles.Button}`}
           onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
         </Button>
+        </Col>
+        </Row>
+        <Row>
+        <Col className="text-center" xs={6}>
         <Button
-          className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
+          className={`py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowAddLoc(showAddLoc => !showAddLoc)} >ADD NEW LOCATION
+        </Button> 
+        </Col>
+        <Col className="text-center" xs={6}>
+        <Button
+          className={`px-5 py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
         </Button>
+        </Col>
+        </Row>
       {!showImp ? (
           ""
               ) : (
@@ -505,18 +526,19 @@ const SceneEditForm = () => {
               ) } 
         </Col>
       </Row>
-      {!showImp ? (
+      {!showAddLoc ? (
           ""
               ) : (
-                <Important  /> 
+                <NewLocation 
+                setShowAddLoc={setShowAddLoc}
+                setLocations={setLocations}  /> 
                 ) } 
-        <Row>
-        <Col xs={{span: 10, offset: 1} } md={{span: 6, offset: 3}}>
-        <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>New Locations</h5>
-          <NewLocation setLocations={setLocations} />
-        </Col>
-        </Row>
-        <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
+        <h5 style={{ textTransform: 'uppercase'}}
+         className={`text-center mt-3 mb-0 py-1 ${styles.SubTitle }`}>
+          ADD / EDIT SCENE <span className={`${styles.Blue }`}>
+            {number}</span> BREAKDOWN, SCRIPT AND STORYBOARD
+        </h5>
+        <Form className= {`mb-3 ${styles.Back}`} onSubmit={handleSubmit}>
         <Row>
         <Col xs={12} className="p-0 p-md-2">
             {infoFields}

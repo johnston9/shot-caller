@@ -113,7 +113,7 @@ const ScenesPage = ({message, filter = "" }) => {
             <Col className="text-center">
             <Button onClick={() => history.push('/scenes/create')} 
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright} `}>
-              Add Scene</Button>
+              Create Scene</Button>
             </Col>
           </Row>
           {/* search  */}

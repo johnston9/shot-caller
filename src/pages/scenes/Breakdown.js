@@ -1,13 +1,17 @@
 import React from 'react'
 import { useRedirect } from '../../hooks/Redirect';
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import styles from "../../styles/Scene.module.css";
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from '../../api/axiosDefaults';
+import { useState } from 'react';
 
 const Breakdown = (props) => {
     useRedirect("loggedOut");
+    const [showAdd, setShowAdd] = useState(false);
     const history = useHistory();
     // eslint-disable-next-line
     const handleEdit = () => {
@@ -31,15 +35,14 @@ const Breakdown = (props) => {
                 Scene breakdown
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>
             </h5>
-            <Row className='mt-0 mb-3'>
-            <Col className="text-center">
-            <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-            <p className={`text-center px-3 pt-1`}>
-            Add / Edit info from the Scene Edit button above
-            </p>     
-            </div>
+            <Row>
+            <Col className='text-center py-3'>
+            <Button
+                className={` py-0  ${btnStyles.Back} ${btnStyles.Button}`}
+                onClick={handleEdit } >ADD / EDIT
+            </Button> 
             </Col>
-          </Row>
+            </Row>
             <Row>
                 <Col className='text-center' xs={{span: 10, offset: 1 }} md={{span: 6, offset: 3 }}>
                 <p className={`${styles.BoldTitle} 

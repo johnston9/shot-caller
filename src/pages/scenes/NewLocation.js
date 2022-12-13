@@ -10,7 +10,7 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 
-const NewLocation = () => {
+const NewLocation = ({setShowAddLoc} ) => {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [newLocation, setNewLocation] = useState("");
@@ -31,6 +31,7 @@ const NewLocation = () => {
                 results: [data, ...prevLocs.results],
               }));
               setNewLocation("");
+              setShowAddLoc(false);
           } catch (err) {
             setErrors(err);
           }
@@ -40,7 +41,7 @@ const NewLocation = () => {
         <div className="text-center">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Back} mr-3`}
-            onClick={() => setNewLocation("")}
+            onClick={() => setShowAddLoc(false)}
           >
             Cancel
           </Button>
@@ -54,7 +55,8 @@ const NewLocation = () => {
         <div className= {` ${styles.Back}`}>
             <Form onSubmit={handleSubmit}>
             <Row className="mt-0">
-                <Col className="d-flex justify-content-center pb-1" xs={12}>
+                <Col className="d-flex justify-content-center pb-1" 
+                xs={12} md={{span: 6, offset: 3}} >
                     <Form.Group controlId="newLocation" 
                     className={`${styles.Width2} text-center`} >
                     <Form.Label className={` ${styles.Bold} `} >New Location</Form.Label>

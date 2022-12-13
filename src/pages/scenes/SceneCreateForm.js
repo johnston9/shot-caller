@@ -74,51 +74,52 @@ function SceneCreateForm({topbox}) {
       ) : (
         <TopBox title="Create Scene" />
       ) }
+      <Row>
+      {/* back bit */}
+      <Col xs={4} >
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-2`}
             onClick={() => history.goBack()}
         >
             Back
       </Button> 
-    {/* info */}
-    <Row>
-            <Col>
-            <Button
-                className={`float-right mr-5 py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
-                onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-            </Button> 
-            </Col>
-            </Row>
-            {/* info */}
-            <Row>
-                <Col>
-            {!showInfo ? (
-                ""
-                    ) : (
-                        <InfoCreate  /> 
-                    ) } 
-                </Col>
-            </Row>
-    {/* info */}
-    <Row>
-            <Col>
-            <Button
-                className={`float-right mr-5 py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
-                onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
-            </Button> 
-            </Col>
-            </Row>
-            {/* IMP */}
-            <Row>
-                <Col>
-            {!showImp ? (
-                ""
-                    ) : (
-                        <ImportCreate  /> 
-                    ) } 
-                </Col>
-            </Row> 
-    <p className="text-center" >First create the Scene by giving it a number</p>
+      </Col>
+      {/* imp but */}
+      <Col xs={4}  className="text-center" >
+      <Button
+          className={`py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
+          onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+      </Button> 
+    </Col>
+      {/* info but */}
+      <Col className="float-right" xs={4}>
+      <Button
+          className={`float-right py-0 my-2 ${btnStyles.Blue} ${btnStyles.Button}`}
+          onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+      </Button> 
+      </Col>
+      </Row>
+      {/* showInfo */}
+      <Row>
+          <Col>
+          {!showInfo ? (
+              ""
+                  ) : (
+                      <InfoCreate  /> 
+                  ) } 
+          </Col>
+      </Row>
+      {/* showImp */}
+      <Row>
+      <Col>
+      {!showImp ? (
+          ""
+              ) : (
+                  <ImportCreate  /> 
+              ) } 
+      </Col>
+      </Row>
+    <h3 className="text-center" >Create Scene</h3>
     <Form className= {`mb-3 ${styles.Back}`} onSubmit={handleSubmit}>
     <Row className="text-center">
     <Col className="d-flex justify-content-center p-0 p-md-2" xs={{span: 4, offset: 4}} >
