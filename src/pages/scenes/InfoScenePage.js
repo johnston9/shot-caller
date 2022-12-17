@@ -10,14 +10,12 @@ const InfoScenePage = () => {
         <Col md={{span: 10, offset: 1}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>Collaborate on the scene in the Scene Workspace. Click
-            the Instructions button below for instructions.
-            Find all scene info in the Breakdown which can be edited by the Edit 
-            button. The Moodshots
-            feature can be used to upload and view image suggestions. Use the 
-            Storyboard feature to upload and view storyboards. The scene
-            shotlist can be created and viewed in the Shotlist feature which 
-            can be created side by side with the Storyboard.
+        <p>Collaborate on the scene in the Scene Workspace.<br/>
+            Add and view Scene info in the Breakdown and 
+            Characters/BG sections.<br/> Add and view the Scene Script
+            and Storyboard.<br/>
+            Create and view the Shotlist. <br/>
+            Add and view Moodshots to explore visual themes.
              </p>
          </div> 
         </Col>

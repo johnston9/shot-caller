@@ -319,7 +319,7 @@ const buttons = (
 
     return (
         <div>
-          <TopBox title="Edit Moodshot"/>
+          <TopBox title="Edit Moodboard"/>
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
                 onClick={() => history.goBack()}

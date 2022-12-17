@@ -60,9 +60,8 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
 
     return (
         <div>
-            <TopBox work="Moodshots"
-              scene={number} 
-              title={characterRole}
+            <TopBox work="Moodboards"
+              title={query}
               title4={locationPlace}
               />
             <Button
@@ -86,7 +85,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
               <>
               <Button onClick={() => history.push(`/scene/moodshot/create`) }
               className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
-              Add Scene {number} Moodshot</Button>
+              Add Scene {number} Moodboard</Button>
               </>
               </Col>
               </Row >
@@ -96,7 +95,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
               <>
               <Button onClick={() => history.push(`/character/moodshot/create`) }
               className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
-              Add {characterRole} Moodshot</Button>
+              Add {characterRole} Moodboard</Button>
               </>
               </Col>
               </Row>
@@ -106,7 +105,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
               <>
               <Button onClick={() => history.push(`/location/moodshot/create`) }
               className={`px-5 py-1 ${btnStyles.Button} ${btnStyles.Bright}`}>
-              Add {locationPlace} Moodshot</Button>
+              Add {locationPlace} Moodboard</Button>
               </>
               </Col>
               </Row>
@@ -116,7 +115,7 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
               <Col className="text-center">
                 <Button onClick={() => history.push(`/moodshot/create`) }
                   className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                  Add Moodshot</Button>
+                  Add Moodboard</Button>
                 </Col>
               </Row>
               <Row>

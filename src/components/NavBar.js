@@ -173,7 +173,7 @@ const NavBar = () => {
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
-              <i activeClassName={styles.Active} className="luv navicon fas fa-stream"></i>Moodshots
+              <i activeClassName={styles.Active} className="luv navicon fas fa-stream"></i>Moodboards
             </span>
           }
           ref={refm}
@@ -188,7 +188,7 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/moodshots"
         >
-          <i className="navicon fas fa-stream"></i>Moodshots
+          <i className="navicon fas fa-stream"></i>Moodboards
         </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item >
@@ -198,7 +198,7 @@ const NavBar = () => {
           activeClassName={styles.Active}
           to="/moodshot/create"
         >
-          <i className="far fa-plus-square"></i>Add Moodshots
+          <i className="far fa-plus-square"></i>Add Moodboard
         </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item >

@@ -50,7 +50,7 @@ const Moodshot = (props) => {
 };
   return (
     <div>
-        <TopBox title="Moodshot" />   
+        <TopBox title="Moodboard" />   
         <Button
             className={`${btnStyles.Button} ${btnStyles.Back} my-2`}
             onClick={() => history.goBack()}

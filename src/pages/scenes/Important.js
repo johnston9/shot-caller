@@ -11,7 +11,7 @@ const Important = () => {
       <Col xs={12} md={8} >
       <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}> 
       <h5 className={`text-center px-3 pt-1 ${styles.Crimson }`}>
-        USE DECIMAL FOR PAGES NOT EIGHTS
+        USE DECIMAL FOR PAGES INPUT FIELD, INSTEAD OF EIGHTS
         </h5>     
         <p className={`${styles.Bold}`}>Converter</p>
         <hr/>
