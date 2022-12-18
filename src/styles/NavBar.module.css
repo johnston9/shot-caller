@@ -9,13 +9,29 @@
   font-size: 12px;
 }
 
+.NavLink:active p {
+  color: red;
+}
+
+.nav a.active {
+  color: #fff;
+  background: #7600dc;
+}
+.nav a.inactive {
+  font-style: italic;
+}
+
+/* .NavLink:active i {
+  color: red;
+}
+
+.NavLink:active {
+  color: red;
+} */
+
 .DropLink {
   color: black;
 }
-
-/* .basic-navbar-nav {
-  color: #000;
-} */
 
 .Active i {
   color: #2142b2;
@@ -28,14 +44,6 @@
 Title {
   color: #000;
 }
-
-/* a #nav-dropdown2.dropdown-toggle.nav-link {
-  color: #000;
-}
-
-.basic-navbar-nav a {
-  color: #000;
-} */
 
 i {
   font-size: .5em !important;

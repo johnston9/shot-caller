@@ -7,11 +7,9 @@ import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from '../../api/axiosDefaults';
-import { useState } from 'react';
 
 const Breakdown = (props) => {
     useRedirect("loggedOut");
-    const [showAdd, setShowAdd] = useState(false);
     const history = useHistory();
     // eslint-disable-next-line
     const handleEdit = () => {

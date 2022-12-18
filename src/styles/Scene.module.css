@@ -156,7 +156,8 @@ i:hover {
 }
 
 .Close {
-  color: rgb(28, 131, 131);
+  /* color: rgb(28, 131, 131); */
+  color: rgb(32, 201, 201);
   padding-right: 5px;
   cursor: pointer;
   font-size: .75rem;

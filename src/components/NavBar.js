@@ -35,29 +35,33 @@ const NavBar = () => {
     <>
       {/*  home */}
       <NavLink
-          className={`mt-2 pt-2 ${styles.NavLink} `}
-          activeClassName={styles.Active}
+          className={`mt-1 pt-2  ${styles.NavLink} `}
+          // style={isActive => ({
+          //   color: isActive ? "blue" : ""
+          // })}
           to="/home"
         >
-          <i className="navicon fas fa-play"></i>Home
+          <i 
+          className="navicon fas fa-play"></i>Home
       </NavLink>
       {/*  workspace */}
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
-              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Workspace
+              <i 
+              className="navicon fas fa-stream"></i>Workspace
             </span>
           }
           ref={refw}
           id="nav-dropdown"
-          activeClassName={styles.Active}
+          // activeClassName={styles.Active}
+          // activeclassname={styles.Active}  
           className={`mt-1 ${styles.NavLink} luv `}
           >
         <NavDropdown.Item >
           <NavLink
           ref={refw1}
           className={`noluv ${styles.DropLink} `}
-          activeClassName={styles.Active}
           to="/scenes"
         >
           <i className="navicon fas fa-stream"></i>Scenes
@@ -67,7 +71,6 @@ const NavBar = () => {
           <NavLink
           ref={refw2}
           className={`noluv ${styles.DropLink} `}
-          activeClassName={styles.Active}
           to="/findposts/departments"
         >
           <i className="navicon fas fa-stream"></i>Find Posts
@@ -77,7 +80,6 @@ const NavBar = () => {
           <NavLink
           ref={refw3}
           className={`${styles.DropLink} `}
-          activeClassName={styles.Active}
           to="/scenes/create"
         >
           <i className="far fa-plus-square"></i>Add scene
@@ -87,7 +89,6 @@ const NavBar = () => {
           <NavLink
           ref={refw4}
           className={`${styles.DropLink} `}
-          activeClassName={styles.Active}
           to="/script"
         >
           <i className="far fa-plus-square"></i>Script 
@@ -98,20 +99,21 @@ const NavBar = () => {
       {/* characters locations departments-xtra */}
       <NavDropdown 
           title={
-            <span style={{ color: '#555555'}} className={` ${styles.Title} `}>
-              <i activeClassName={styles.Active} className="navicon fas fa-stream"></i>Features
+            <span 
+            style={{ color: '#555555'}} 
+            className={` ${styles.Title} `}>
+              <i              
+              className="navicon fas fa-stream"></i>Features
             </span>
           }
           ref={reff}
           id="nav-dropdown2"
-          activeClassName={styles.Active}
-          className={`mt-1 pt-1 luv ${styles.NavLink} `}
+          className={`mt-1 luv ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
           ref={reff1}
           className={`noluv ${styles.NavLink} noluv`}
-          activeClassName={styles.Active}
           to="/characters"
         >
           <i className="navicon fas fa-stream"></i>Characters
@@ -121,7 +123,6 @@ const NavBar = () => {
         <NavLink
         ref={reff2}
           className={`noluv mt-2 ${styles.NavLink} noluv`}
-          activeClassName={styles.Active}
           to="/characters/create"
         >
           <i className="far fa-plus-square"></i>Add Character 
@@ -131,7 +132,6 @@ const NavBar = () => {
         <NavLink
         ref={reff3}
           className={`mt-2 ${styles.NavLink} noluv`}
-          activeClassName={styles.Active}
           to="/locations"
         >
           <i className="navicon fas fa-stream"></i>Locations
@@ -141,7 +141,6 @@ const NavBar = () => {
         <NavLink
           ref={reff4}
           className={`mt-2 ${styles.NavLink} noluv `}
-          activeClassName={styles.Active}
           to="/locations/create"
         >
           <i className="far fa-plus-square"></i>Add Locations
@@ -151,7 +150,6 @@ const NavBar = () => {
           <NavLink
           ref={reff5}
           className={` ${styles.NavLink} noluv`}
-          activeClassName={styles.Active}
           to="/depts/general"
         >
           <i className="navicon fas fa-stream"></i>Depts-Xtra
@@ -161,7 +159,6 @@ const NavBar = () => {
         <NavLink
          ref={reff6}
           className={`mt-2 ${styles.NavLink} noluv`}
-          activeClassName={styles.Active}
           to="/department/posts/create"
         >
           <i className="far fa-plus-square"></i>Add Depts-Xtra 
@@ -173,19 +170,20 @@ const NavBar = () => {
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
-              <i activeClassName={styles.Active} className="luv navicon fas fa-stream"></i>Moodboards
+              <i 
+              className="luv navicon fas fa-stream"></i>Moodboards
             </span>
           }
           ref={refm}
           id="nav-dropdown3"
-          activeClassName={styles.Active}
+          // activeClassName={styles.Active}
+          // activeclassname={styles.Active} 
           className={`mt-1 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
           ref={refm1}
           className={` ${styles.DropLink} noluv`}
-          activeClassName={styles.Active}
           to="/moodshots"
         >
           <i className="navicon fas fa-stream"></i>Moodboards
@@ -195,7 +193,6 @@ const NavBar = () => {
           <NavLink
           ref={refm2}
           className={`${styles.DropLink} noluv`}
-          activeClassName={styles.Active}
           to="/moodshot/create"
         >
           <i className="far fa-plus-square"></i>Add Moodboard
@@ -205,7 +202,6 @@ const NavBar = () => {
           <NavLink
           ref={refin}
           className={` ${styles.DropLink} noluv`}
-          activeClassName={styles.Active}
           to="/indexcards"
         >
           <i className="navicon fas fa-stream"></i>Index Cards
@@ -215,7 +211,6 @@ const NavBar = () => {
           <NavLink
           ref={refin2}
           className={` ${styles.DropLink} noluv`}
-          activeClassName={styles.Active}
           to="/series"
         >
           <i className="navicon fas fa-stream"></i>Index Shots
@@ -227,19 +222,20 @@ const NavBar = () => {
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
-              <i activeClassName={styles.Active} className="luv navicon fas fa-stream"></i>Production
+              <i 
+              className="luv navicon fas fa-stream"></i>Production
             </span>
           }
           ref={refs}
           id="nav-dropdown4"
-          activeClassName={styles.Active}
+          // activeClassName={styles.Active}
+          // activeclassname={styles.Active} 
           className={`mt-1 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
           ref={refs1}
           className={`${styles.DropLink} noluv`}
-          activeClassName={styles.Active}
           to="/crewinfo"
         >
           <i className="navicon fas fa-stream"></i>Crew Info
@@ -249,7 +245,6 @@ const NavBar = () => {
           <NavLink
           ref={refs2}
           className={` ${styles.DropLink} noluv`}
-          activeClassName={styles.Active}
           to="/days"
         >
           <i className="navicon fas fa-stream"></i>Schedule
@@ -259,7 +254,6 @@ const NavBar = () => {
           <NavLink
           ref={refs3}
           className={`${styles.DropLink} noluv`}
-          activeClassName={styles.Active}
           to="/callsheets"
         >
           <i className="navicon fas fa-stream"></i>Callsheets
@@ -267,34 +261,7 @@ const NavBar = () => {
         </NavDropdown.Item>
       </NavDropdown>
 
-      {/* Schedule */}
-      {/* <NavLink
-          className={`mt-2 pt-2 ${styles.NavLink} `}
-          activeClassName={styles.Active}
-          to="/days"
-        >
-          <i className="navicon fas fa-play"></i>Schedule
-      </NavLink> */}
-
-      {/* Callsheets */}
-      {/* <NavLink
-          className={`mt-2 pt-2 ${styles.NavLink} `}
-          activeClassName={styles.Active}
-          to="/callsheets"
-        >
-          <i className="navicon fas fa-play"></i>Calls
-      </NavLink> */}
-
-      {/* old profiles
-      <NavLink
-        className={`mt-2 pt-2 ${styles.NavLink} `}
-        activeClassName={styles.Active}
-        to="/profiles"
-      >
-        <i className="navicon far fa-plus-square"></i>Profiles
-      </NavLink> */}
-
-      <NavLink className={`mt-2 pt-2 ${styles.NavLink} `} 
+      <NavLink className={`mt-2 pt-1 ${styles.NavLink} `} 
         to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
@@ -309,12 +276,12 @@ const NavBar = () => {
           ref={refp}
           id="nav-dropdown5"
           // activeClassName={styles.Active}
+          // activeclassname={styles.Active} 
           className={`py-0 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
           className={` ${styles.DropLink} `}
-          activeClassName={styles.Active}
           ref={refp1}
           to="/profiles"
         >
@@ -324,7 +291,6 @@ const NavBar = () => {
         <NavDropdown.Item >
         <NavLink
           className={`mt-2 ${styles.NavLink} `}
-          activeClassName={styles.Active}
           ref={refp2}
           to={`/profiles/${currentUser?.profile_id}`}
         >
@@ -339,14 +305,16 @@ const NavBar = () => {
     <>
       <NavLink
           className={styles.NavLink}
-          activeClassName={styles.Active}
+          // activeClassName={styles.Active}
+          // activeclassname={styles.Active} 
           to="/signin"
         >
           <i className="fas fa-play"></i>Sign in
         </NavLink>
         <NavLink
           className={styles.NavLink}
-          activeClassName={styles.Active}         
+          // activeClassName={styles.Active}  
+          // activeclassname={styles.Active}        
           to="/signup"
         >
           <i className="fas fa-play"></i>Sign up

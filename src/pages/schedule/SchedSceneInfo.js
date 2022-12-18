@@ -6,7 +6,7 @@ import styles from "../../styles/ScheduleCreate.module.css";
 const SchedSceneInfo = (props) => {
     useRedirect("loggedOut");
      const { title, dramatic_day, location_address, day_night,
-            equip_set_props, new_info, filming_location, style,
+            equip_set_props, new_info, style,
             department_info } = props
     return (
         <div className={`text-center py-2 mb-2 mx-2 px-2 ${styles.SceneBox}`}>

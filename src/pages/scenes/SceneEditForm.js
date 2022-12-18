@@ -28,6 +28,7 @@ const SceneEditForm = () => {
     const setLocations = useSetLocationsContext();
     const [showImp, setShowImp] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
+    // eslint-disable-next-line
     const [sceneNumber, setSceneNumber] = useState("");
 
     const [postData, setPostData] = useState({
