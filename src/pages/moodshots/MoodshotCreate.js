@@ -367,34 +367,36 @@ const buttons = (
                       ) : (
                         <Info  /> 
                         ) } 
+            {/* <div>
                 {sceneId ? (
                   <>
-                  <h3 className={`mt-1 mb-3 py-1 text-center ${styles.SubTitle }`}>Scene {number} Moodshots</h3>
+                  <h3 className={`mt-1 mb-3 py-1 text-center ${styles.SubTitle }`}>Scene {number} Moodboards</h3>
                   <Row>
                   <Col xs={1} md={2}></Col>
                     <Col xs={10} md={8}>
-                        <p> Add character and or location if you want the moodshot to 
-                          be on their pages too</p>
+                        <p> Add Character and or Location to add the Moodboard 
+                          to their pages too</p>
                     </Col>
                     </Row>
                     </>
                   ) : character ? (
                     <>
-                    <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{character} Moodshots</h3>
+                    <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{character} Moodboards</h3>
                       </>
                   ) : location ? (
                     <>
-                  <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{location} Moodshots</h3>
+                  <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{location} Moodboards</h3>
                     </>
                   ) : (
                     <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>
-                      Create Moodshot
+                      Create Moodboard
                     </h3>
                   ) }
-            <h5 className={`mt-1 mb-2 py-1 text-center ${styles.SubTitle }`}>{sceneNumber && <span>Scene {sceneNumber} </span> }
-              {location && <span> - {location} </span> }
-              {character && <span> - {character} </span> }
-              Moodshot
+            </div> */}
+            <h5 className={`mt-1 mb-2 py-1 text-center ${styles.SubTitle }`}>
+              {sceneNumber && <span>Scene {sceneNumber} </span> }
+              {location && <span> {location} </span> }
+              {character && <span> {character} </span> }
               </h5>
             <Form className="mt-3" onSubmit={handleSubmit}>
                 <Row>

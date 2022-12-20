@@ -213,7 +213,7 @@ const Scene = (props) => {
                     <Col md={2} className='text-center'>
                         <p
                           className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => handleClickMoods()} > Moodshots
+                          onClick={() => handleClickMoods()} > Moodboards
                         </p>
                     </Col>
                     <Col md={2} className='text-center'>
@@ -259,7 +259,7 @@ const Scene = (props) => {
                     <Col xs={3} className='text-center'>
                         <p
                           className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => handleClickMoods()} > Moodshots
+                          onClick={() => handleClickMoods()} > Moodboards
                         </p>
                     </Col>
                     <Col xs={3} className='text-center'>

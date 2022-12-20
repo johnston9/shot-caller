@@ -69,13 +69,13 @@ const Location = (props) => {
                 <Col xs={4} className='text-center mx-0 px-0'>
                     <h5
                         className={`py-0 mb-0 ${styles.Button}`}
-                        onClick={() => handleClickMoods()} > Moodshots
+                        onClick={() => handleClickMoods()} > Moodboards
                     </h5>
                 </Col>
                 <Col xs={5} md={4} className='text-center mx-0 px-0'>
                     <h5
                         className={`py-0 mb-0 ${styles.Button}`}
-                        onClick={() => handleClickAddMoods()} > Add Moodshot
+                        onClick={() => handleClickAddMoods()} > Add Moodboard
                     </h5>
                     </Col>
                 <Col className='text-center px-0 mx-0' xs={2}>

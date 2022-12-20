@@ -61,8 +61,10 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
     return (
         <div>
             <TopBox work="Moodboards"
+              scene={number}
               title={query}
               title4={locationPlace}
+              title3={characterRole}
               />
             <Button
                     className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
