@@ -28,7 +28,7 @@ const Breakdown = (props) => {
             dramatic_day, equip_set_props, department_info,
             setShowBreak,} = props;
     return ( 
-        <div>
+        <div className='pb-5'>
             <h5 style={{ textTransform: 'uppercase'}} className={`mt-1 mb-2 pl-3 py-1 ${styles.SubTitle }`}>
                 Scene breakdown
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowBreak(false) } >Close</span>

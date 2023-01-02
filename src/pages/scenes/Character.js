@@ -36,7 +36,7 @@ const Character = ({id, admin, cast_number, role, costume,
             <Col xs={3} className={`${styles.TitleBox3} text-center px-0 mx-0`}>
             {costume ? (<p >{costume} </p>) : ("") }
             </Col>
-            <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={1}>
+            <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={1}>
                 <PostDropdown
                     className="pb-2"
                     handleEdit={() => setShowEditForm(true)}

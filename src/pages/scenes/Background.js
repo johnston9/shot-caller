@@ -35,7 +35,7 @@ const Background = ({id, quantity, role, costume, handleMount,
             <Col xs={4} className={`${styles.TitleBox3} text-center px-0 mx-0`}>
             {costume ? (<p >{costume} </p>) : ("") }
             </Col>
-            <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={1}>
+            <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={1}>
                 <PostDropdown
                     className="pb-2"
                     handleEdit={() => setShowEditForm(true)}
@@ -44,7 +44,7 @@ const Background = ({id, quantity, role, costume, handleMount,
             </Col>
             </>
         ) : (
-            <Col xs={5} className={`${styles.TitleBox3} text-center px-0 mx-0`}>
+            <Col xs={5} className={`${styles.TitleBox4} text-center px-0 mx-0`}>
             {costume ? (<p >{costume} </p>) : ("") }
             </Col>
         )}

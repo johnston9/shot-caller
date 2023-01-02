@@ -81,10 +81,6 @@ function ProfilePage() {
             roundedCircle
             src={profile?.image}
           />
-      <PostDropdown
-          handleEdit={handleEdit}
-          handleDelete={handleDelete}
-      />
         </Col>
         <Col lg={6}>
           <h2 style={{ textTransform: 'capitalize'}} className=" pt-0 mb-0" >
