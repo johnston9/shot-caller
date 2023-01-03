@@ -105,11 +105,12 @@ const Departments = (props) => {
     };
 
     const handleClickUniversal = () => {
-      setSceneId(id); 
-      setNumber(number);
+      // setSceneId(id); 
+      // setNumber(number);
       setDept("universal");
       setCategory("");
-      history.push(`/dept/category`);
+      history.push(`/departments`);
+      // history.push(`/dept/category`);
     };
 
     return (

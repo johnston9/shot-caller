@@ -27,13 +27,13 @@ const Background = ({id, quantity, role, costume, handleMount,
         <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={2} >
         <p className={` text-center` } >{quantity} </p>
         </Col>
-        <Col xs={5} className={`${styles.TitleBox5} text-center px-0 mx-0`}>
-        <p className={`${styles.v} text-center` } >{role} </p>
+        <Col xs={5} className={`${styles.TitleBox5} px-0 mx-0`}>
+        <p className={`${styles.v}` } >{role} </p>
         </Col>
         {admin ? (
             <>
-            <Col xs={4} className={`${styles.TitleBox5} text-center px-0 mx-0`}>
-            {costume ? (<p >{costume} </p>) : ("") }
+            <Col xs={4} className={`${styles.TitleBox5} px-0 mx-0`}>
+            {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
             <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={1}>
                 <PostDropdown
@@ -44,8 +44,8 @@ const Background = ({id, quantity, role, costume, handleMount,
             </Col>
             </>
         ) : (
-            <Col xs={5} className={`${styles.TitleBox4} text-center px-0 mx-0`}>
-            {costume ? (<p >{costume} </p>) : ("") }
+            <Col xs={5} className={`${styles.TitleBox4} px-0 mx-0`}>
+            {costume ? (<p className='pl-2' >{costume} </p>) : ("") }
             </Col>
         )}
         </Row>

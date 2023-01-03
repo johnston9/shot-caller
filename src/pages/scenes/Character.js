@@ -23,18 +23,18 @@ const Character = ({id, admin, cast_number, role, costume,
         };
 
     return ( 
-        <div className={`${styles.n} mx-4 px-2` }>
+        <div className={` mx-4 px-2` }>
         <Row >
         <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={2} >
         <p >{cast_number} </p>
         </Col>
-        <Col className={`${styles.TitleBox5} text-center px-0 mx-0`}>
+        <Col className={`${styles.TitleBox5} px-0 mx-0`}>
         <p >{role} </p>
         </Col>
         {admin ? (
             <>
-            <Col xs={3} className={`${styles.TitleBox5} text-center px-0 mx-0`}>
-            {costume ? (<p >{costume} </p>) : ("") }
+            <Col xs={3} className={`${styles.TitleBox5} px-0 mx-0`}>
+            {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
             <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={1}>
                 <PostDropdown
@@ -45,8 +45,8 @@ const Character = ({id, admin, cast_number, role, costume,
             </Col>
             </>
         ) : (
-            <Col xs={3} className={`${styles.TitleBox3} text-center px-0 mx-0`}>
-            {costume ? (<p >{costume} </p>) : ("") }
+            <Col xs={3} className={`${styles.TitleBox3} px-0 mx-0`}>
+            {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
         )}
         </Row>
