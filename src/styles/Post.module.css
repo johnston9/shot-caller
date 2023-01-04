@@ -1,8 +1,7 @@
 .PostTop {
-    background-color: #1ea7ae;
-    color: #fff;
-    border-bottom: 2px solid #fafafa;
-  }
+  background-color: #1ea7ae;
+  color: #fff;
+}
   
 .PostTop i {
   color: #fff;
@@ -13,6 +12,36 @@
   background-color: #fff;
   color: #000;
 }
+
+.Date {
+  font-size: .7rem;
+}
+
+.PostTop:hover i {
+  color: #666;
+}
+
+.Content3 {
+  background-color: #fafafa;
+  color: #1ea7ae;
+  cursor: pointer;
+}
+
+.Content3:hover {
+  background-color: #1889a5;
+  cursor: pointer;
+}
+
+/* .Content3 {
+  background-color: #343c3e;
+  color: #fafafa;
+  cursor: pointer;
+}
+
+.Content3:hover {
+  background-color: #1889a5;
+  cursor: pointer;
+} */
 
 .Images {
   object-fit: cover;

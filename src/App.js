@@ -80,14 +80,14 @@ function App() {
       <NavBar />
       <div className={styles.Main}>
         <Switch>
-        {/* map */}
+        {/* ------------------- MAP -------------- */}
         <Route exact path="/map" render={() => <Map />} />
-        {/* AUTH / HOME */}
+        {/* -----------------AUTH / HOME --------- */}
         <Route exact path="/" render={() => <Landing />} />
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
         <Route exact path="/home" render={() => <Home />} />
-        {/* SCHEDULE*/}
+        {/* -------------------SCHEDULE ----------- */}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
         <Route exact path="/edit/days/:id/" render={() => <DayEdit />} />
         <Route
@@ -100,12 +100,12 @@ function App() {
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
         <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
-        {/* CREWINFO */}
+        {/* --------------- CREWINFO -------------*/}
         <Route exact path="/crewinfo" render={() => <CrewInfo />} />
         <Route exact path="/logo/edit" render={() => <CrewLogo />} />
         <Route exact path="/crewinfo/create" render={() => <CrewInfoCreate />} />
         <Route exact path="/crewinfo/edit/:id/" render={() => <CrewInfoEdit />} />
-        {/* CALLSHEETS  */}
+        {/* ---------------- CALLSHEETS --------- */}
         <Route exact path="/callsheet/create/:id/" render={() => <CallsheetCreate />} />
         <Route exact path="/callsheet/edit/:id/" render={() => <CallsheetEditPage />} />
         <Route
@@ -124,7 +124,7 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* LOCATIONS APP*/}
+        {/* ------------- LOCATIONS APP -----------------*/}
         <Route exact path="/locations/create" render={() => <LocationsCreate />} />
         <Route 
             exact 
@@ -142,7 +142,7 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* CHARACTERS APP*/}
+        {/* --------------- CHARACTERS APP --------------*/}
         <Route
             exact
             path="/characters"
@@ -160,7 +160,7 @@ function App() {
              />
              )} />
         <Route exact path="/characters/:id/edit" render={() => <CharacterEdit />} />
-        {/* INDEXCARDS APP*/}
+        {/* ----------------- INDEXCARDS APP ---------------*/}
         <Route
             exact
             path="/indexcards"
@@ -169,7 +169,7 @@ function App() {
                message="No results found" />
             )}
           />
-        {/* INDEXSHOTS APP*/}
+        {/* -------------------- INDEXSHOTS APP ---------------*/}
         <Route
             exact
             path="/series"
@@ -192,10 +192,10 @@ function App() {
             <IndexShotsFullSize
              />
              )} />
-        {/* MOODSHOTS */}
-        {/* all moodshots */}
+        {/* ----------------- MOODSHOTS ------------------*/}
         <Route exact path="/moodshot/create" render={() => <MoodshotCreate />} />
         <Route exact path="/moodshots/:id/edit" render={() => <MoodshotEdit />} />
+        {/* all moodshots */}
         <Route
             exact
             path="/moodshots"
@@ -258,7 +258,7 @@ function App() {
               />
             )}
           />
-        {/* SCENES APP*/}
+        {/* ------------------- SCENES APP --------------------*/}
         <Route exact path="/scenes/create" render={() => <SceneCreateForm />} />
         <Route
             exact
@@ -282,21 +282,10 @@ function App() {
         <Route exact path="/scenes/:id/edit" render={() => <SceneEditForm />} />
         <Route exact path="/script/scene/:id" render={() => (<Script/>)} />
         <Route exact path="/script" render={() => (<LatestScript />)} />
-        {/* show scene post by department on postspage*/}
-        <Route
-            exact
-            path="/departments"
-            render={() => (
-              <PostsPage
-                message="No results found."
-                filter={`departments=${dept}&category=${category}`}
-                dept={dept}
-                category={category}
-              />
-            )}
-        />
-        {/* POSTS*/}
+        {/* ------------------------ SCENES WORKSPACE POSTS -------------------*/}
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        {/* Find posts by department page*/}
+        <Route exact path="/findposts/departments" render={() => <FindPostsDepartments />} />
         {/* All posts*/}
         <Route
             exact
@@ -308,7 +297,7 @@ function App() {
               />
             )}
           />
-        {/* Posts for scene by dept and category*/}
+        {/* Posts by dept and category on the Scene page */}
         <Route
             exact
             path="/dept/category"
@@ -322,50 +311,61 @@ function App() {
                 category={category}
               />
             )}
-          />
-          {/* all posts and by department */}
-          <Route exact path="/findposts/departments" render={() => <FindPostsDepartments />} />
-          {/* Feed posts*/}
-          <Route
+        />
+        {/* Feed posts*/}
+        <Route
+          exact
+          path="/feed"
+          render={() => (
+            <PostsPage
+              message="No results found. Adjust the search keyword or follow a user."
+              filter={`owner__followed__owner__profile=${profile_id}&`}
+              feed
+            />
+          )}
+        />
+        {/* Archived posts*/}
+        <Route
+          exact
+          path="/archived"
+          render={() => (
+            <PostsPage
+              message="No results found. Please archive a post."
+              filter={`archives__owner__profile=${profile_id}&ordering=-archives__created_at&`}
+              archived
+            />
+          )}
+        />
+        {/* Liked posts*/}
+        <Route
+          exact
+          path="/liked"
+          render={() => (
+            <PostsPage
+              message="No results found. Please like a post."
+              filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+              liked
+            />
+          )}
+        />
+        {/* Posts by department */}
+        <Route
             exact
-            path="/feed"
+            path="/departments"
             render={() => (
               <PostsPage
-                message="No results found. Adjust the search keyword or follow a user."
-                filter={`owner__followed__owner__profile=${profile_id}&`}
-                feed
+                message="No results found."
+                filter={`departments=${dept}&category=${category}`}
+                dept={dept}
+                category={category}
               />
             )}
-          />
-          {/* Archived posts*/}
-          <Route
-            exact
-            path="/archived"
-            render={() => (
-              <PostsPage
-                message="No results found. Please archive a post."
-                filter={`archives__owner__profile=${profile_id}&ordering=-archives__created_at&`}
-                archived
-              />
-            )}
-          />
-          {/* Liked posts*/}
-          <Route
-            exact
-            path="/liked"
-            render={() => (
-              <PostsPage
-                message="No results found. Please like a post."
-                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-                liked
-              />
-            )}
-          />
+        />
         {/* Edit posts*/}
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         {/* Post page*/}
         <Route exact path="/posts/:id" render={() => <PostPage />} />
-        {/* DEPARTMENTS APP*/}
+        {/* ------------- DEPARTMENTS APP ---------------*/}
         <Route exact path="/depts/general" render={() => <DeptsGeneral />} />
         <Route exact path="/department/posts/create" render={() => <DeptPostCreate />} />
         <Route exact path="/department/posts" 
@@ -376,7 +376,7 @@ function App() {
             />)} />
         <Route exact path="/department/posts/:id/edit" render={() => <DeptPostEdit />} />
         <Route exact path="/department/posts/:id" render={() => <DeptPostPage />} />
-        {/* Profiles APP*/}
+        {/* -------------------- PROFILES APP ---------------*/}
         <Route exact path="/profiles" render={() => <ProfilesPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
         <Route

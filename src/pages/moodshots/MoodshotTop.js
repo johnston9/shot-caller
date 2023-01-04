@@ -41,11 +41,12 @@ const MoodshotTop = (props) => {
         return (
             <div>
             {/* card */}
-            <Card className={ `mt-1 mb-0 ${styles.MoodTop}`}>
+            <Card className={ `py-0 mt-1 mb-0 ${styles.MoodTop}`}>
             <Link to={`/moodshots/${id}`}>
             <Card.Body className={`py-0 px-0 ${styles.MoodTop}`}>
             <Row className={`d-flex align-items-center pt-0 pb-0 my-0 pl-3`}>
-            <Col xs={12} sm={3} className="my-1 " >
+            <Col xs={12} sm={3} className="my-0" >
+                {/* small */}
                 <div className='d-none d-sm-block'>
                 <Row >
                 <Col xs={3} className="pl-0 pr-0" >
@@ -98,7 +99,7 @@ const MoodshotTop = (props) => {
                 </Row>   
                 </div> 
             </Col> 
-            <Col xs={12} sm={6} className="my-0 my-sm-2" >
+            <Col xs={12} sm={6} className="my-1" >
             <Row className={`${styles.Content3} pt-1 my-0 pt-1-0 pl-2 mr-2 `}>
                 <Col xs={12} 
                 className={` ${styles.Content4} text-center`} >
@@ -131,6 +132,7 @@ const MoodshotTop = (props) => {
                     </Col>
             </Row> */}
             </Col>
+            {/* edit and date small */}
             <Col xs={12} sm={3} className="my-2 " >
             <div className='d-none d-sm-block'>
             <Row >
