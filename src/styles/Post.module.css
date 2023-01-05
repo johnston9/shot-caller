@@ -2,6 +2,11 @@
   background-color: #1ea7ae;
   color: #fff;
 }
+
+.PostTopA {
+  background-color: #126064;
+  color: #fff;
+}
   
 .PostTop i {
   color: #fff;
@@ -17,10 +22,6 @@
   font-size: .7rem;
 }
 
-.PostTop:hover i {
-  color: #666;
-}
-
 .Content3 {
   background-color: #fafafa;
   color: #1ea7ae;
@@ -28,20 +29,10 @@
 }
 
 .Content3:hover {
-  background-color: #1889a5;
+  background-color: #000;
+  color: #fff;
   cursor: pointer;
 }
-
-/* .Content3 {
-  background-color: #343c3e;
-  color: #fafafa;
-  cursor: pointer;
-}
-
-.Content3:hover {
-  background-color: #1889a5;
-  cursor: pointer;
-} */
 
 .Images {
   object-fit: cover;
@@ -58,11 +49,6 @@ h5 {
   margin: 0 0;
 }
 
-.Heart {
-  color: #f85032;
-  font-size: .75rem;
-}
-
 .Edit {
   color: #fff;
 }
@@ -71,17 +57,23 @@ h5 {
   color: #fff;
 }
 
-.Heart:hover {
-  color: #2142b2;
-}
-
-.HeartOutline {
+.Heart {
   color: #f85032;
   font-size: .75rem;
 }
 
-.HeartOutline:hover {
-  color: #f85032;
+i:hover {
+  color: #2142b2;
+}
+
+.Archive i {
+  color: #32f898;
+  font-size: .75rem;
+}
+
+.Comment {
+  color: #9532f8;
+  font-size: .75rem;
 }
 
 .GoToScene {
@@ -102,23 +94,6 @@ h5 {
 }
 .GoToScene a:hover {
   color: #e9f1f1;
-}
-
-.Content {
-  background-color: #fff;
-  cursor: pointer;
-  height: 100%;
-}
-
-.Content:hover span {
-  color: #fff;
-  cursor: pointer;
-}
-
-.Content:hover {
-  background-color: #232d30;
-  color: #fff;
-  cursor: pointer;
 }
 
 .PostTopText {
