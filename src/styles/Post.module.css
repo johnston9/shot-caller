@@ -8,10 +8,10 @@
   color: #fff;
 }
   
-.PostTop i {
+/* .PostTop i {
   color: #fff;
   font-size: .75rem;
-}
+} */
 
 .PostTop2 {
   background-color: #fff;
@@ -57,26 +57,26 @@ h5 {
   color: #fff;
 }
 
-.Heart {
-  color: #f85032;
-  font-size: .75rem;
-}
-
 i:hover {
   color: #2142b2;
 }
 
-.Archive i {
+.Archive {
   color: #32f898;
   font-size: .75rem;
 }
 
-.Comment {
-  color: #9532f8;
+.Heart {
+  color: crimson;
   font-size: .75rem;
 }
 
-.GoToScene {
+.Comment {
+  color: #f832f5;
+  font-size: .75rem;
+}
+
+/* .GoToScene {
   color: #fff;
   font-weight: 700;
   font-size: .75em;
@@ -94,13 +94,13 @@ i:hover {
 }
 .GoToScene a:hover {
   color: #e9f1f1;
-}
+} */
 
 .PostTopText {
   color: #205a6e;
 }
 
-.Content1 {
+/* .Content1 {
   color: #1ea7ae;
   cursor: pointer;
 } 
@@ -118,7 +118,7 @@ i:hover {
 .Content2:hover {
   cursor: pointer;
   color: #fff;
-} 
+}  */
 
 .Red {
   color: crimson;
