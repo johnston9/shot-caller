@@ -25,7 +25,7 @@ const DeptsGeneral = () => {
 
     return (
         <div>
-            <TopBox title="Depts Xtra"/>
+            <TopBox title="Departments"/>
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}
@@ -41,83 +41,121 @@ const DeptsGeneral = () => {
                       ) : (
                         <Info  /> 
                         ) } 
-            <Card className={` ${styles.Scene}`}>
-                <Card.Header className={`pt-2 pb-1 ${styles.Header }`}>
-                <h3 className={`text-center`}>Departments</h3>
+            <Card className={` ${styles.Scene} p-0`}>
+                <Card.Header className={`${styles.Header } p-0`}>
+                <h5 style={{ textTransform: 'uppercase'}} 
+                className={`text-center pl-5 py-1 ${styles.SubTitle }`}>
+                Depts Xtra</h5>
                   </Card.Header>
                   <Card.Body>
                     <Row>
-                      <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('camera') } >
+                      <Col xs={4} lg={3}>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                      <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('camera') } >
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                        </Card>
+                      </Card>
+                      </div>
                       </Col>
-                      <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('sound') }>
+                      <Col xs={4} lg={3}>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('sound') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('location') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('location') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('script') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('script') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('art') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('art') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('make-up') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('make-up') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Hair Makeup</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('wardrobe') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('wardrobe') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('casting') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('casting') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('post') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('post') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('production') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('production') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('stunts') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('stunts') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                       <Col xs={4} lg={3} className='px-1 px-sm-3'>
-                        <Card onClick={() => handleClick('electric') }>
+                      <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
+                        <Card className={`${styles.Dept }`}
+                          onClick={() => handleClick('electric') }>
                         <Card.Img src={Camera} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
                         </Card>
+                      </div>
                       </Col>
                     </Row>
                   </Card.Body>

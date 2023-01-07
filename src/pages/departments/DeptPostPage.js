@@ -41,7 +41,7 @@ function DeptPostPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" >
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} mb-2`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 mb-2`}
         onClick={() => history.goBack()}
       >
         Back
