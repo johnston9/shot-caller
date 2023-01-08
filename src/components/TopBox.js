@@ -30,7 +30,7 @@ function TopBox(props) {
                 </Col>
                 <Col xs={10} className={`d-flex align-items-center justify-content-center ${styles.Alignme}`} >
                     <div >
-                    {work && <h2 className={` text-center ${styles.Title}`}>{work} </h2>}
+                    {work && <h2 style={{ textTransform: 'capitalize'}} className={` text-center ${styles.Title}`}>{work} </h2>}
                     {title && <h2 className={` text-center ${styles.Title2}`}>{title} </h2>}
                     {title4 && <h2 className={` text-center ${styles.Title2}`}>{title4} </h2>}
                     {scene && <h2 className={` text-center ${styles.Title2}`}>Scene {scene} </h2>}

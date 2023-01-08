@@ -18,17 +18,18 @@ import { fetchMoreData } from "../../utils/utils";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
-import DeptPostCreate from "./DeptPostCreate";
-import DeptPostTop from "./DeptPostTop";
+import LatestTop from "./LatestTop";
+import LatestCreate from "./LatestCreate";
+// import DeptPostCreate from "./DeptPostCreate";
+// import DeptPostTop from "./DeptPostTop";
 
-function DeptPostsPage({ deptGeneral, filter = "" }) {
+function Latest() {
   useRedirect("loggedOut");
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
-  // const { pathname } = useLocation();
   const history = useHistory();
  
   const [query, setQuery] = useState("");
@@ -36,8 +37,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // const { data } = await axiosReq.get(`/department/posts/?${filter}`);
-        const { data } = await axiosReq.get(`/department/posts/?${filter}&search=${query}`);
+        const { data } = await axiosReq.get(`/department/posts/?departments=latest&search=${query}`);
         setPosts(data);
         setHasLoaded(true);
       } catch(err) {
@@ -56,12 +56,11 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query])
+  }, [query])
   
   return (
     <div>
-      <TopBox work={deptGeneral}
-        title2="Department" />
+      <TopBox work="Latest Buzz"/>
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
             onClick={() => history.goBack()}
@@ -72,10 +71,8 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
           <Col className="text-center">
             <Button onClick={() => setShow(show => !show)} 
             className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-            Add Post</Button>
-        {!show ?("") : (<DeptPostCreate 
-        setShow={setShow}
-         deptGeneral={deptGeneral} /> ) }
+            Add Latest Buzz</Button>
+        {!show ?("") : (<LatestCreate setShow={setShow} /> ) }
           </Col>
         </Row>
         <Row>
@@ -101,7 +98,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
             {posts.results.length ? (
               <InfiniteScroll
               children={posts.results.map((post) => (
-                <DeptPostTop key={post.id} {...post} setPosts={setPosts} />
+                <LatestTop key={post.id} {...post} setPosts={setPosts} />
               ))}
               dataLength={posts.results.length}
               loader={<Asset spinner />}
@@ -125,4 +122,4 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   );
 }
 
-export default DeptPostsPage;
+export default Latest

@@ -20,7 +20,7 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
-function DeptPostCreate({deptGeneral="" } ) {
+function DeptPostCreate({deptGeneral="", setShow } ) {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -208,13 +208,13 @@ function DeptPostCreate({deptGeneral="" } ) {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+        onClick={() => setShow(false)}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
+        Create
       </Button>
     </div>
   );
@@ -224,16 +224,20 @@ function DeptPostCreate({deptGeneral="" } ) {
       {deptGeneral ? (
         ""
       ) : (
-        <TopBox title="Departments Create Post" />
+        <TopBox work="Departments"
+          title="Create Post" />
       ) }
-    <Form className="mt-3" onSubmit={handleSubmit}>
+    <h5 style={{ textTransform: 'uppercase'}} 
+    className={`text-center mb-3 pb-0 mt-3 py-1 ${styles.SubTitle }`}>
+    Create Post</h5>
+    <Form className="mt-0 px-0" onSubmit={handleSubmit}>
     <Row>
-    <Col md={6} className="p-0 p-md-2">
+    <Col md={6} className="">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           {textFields}
           </Container>
       </Col>
-      <Col className="pt-2 p-0 p-md-2" md={6}>
+      <Col className="" md={6}>
         <Container
           className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
         >
@@ -299,7 +303,7 @@ function DeptPostCreate({deptGeneral="" } ) {
                 </>
               ) : (
                 <Form.Label
-                  className="my-1"
+                  className="my-1 ml-3"
                   htmlFor="image-upload2"
                 >
                   <Asset2
@@ -347,7 +351,7 @@ function DeptPostCreate({deptGeneral="" } ) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
+                  className=" my-1 ml-3"
                   htmlFor="image-upload3"
                 >
                   <Asset2
@@ -395,7 +399,7 @@ function DeptPostCreate({deptGeneral="" } ) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
+                  className=" my-1 ml-3"
                   htmlFor="image-upload4"
                 >
                   <Asset2
@@ -443,14 +447,14 @@ function DeptPostCreate({deptGeneral="" } ) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
+                  className=" my-1 ml-3"
                   htmlFor="image-upload5"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload last image"
+                    message="Upload fifth image"
                   />
                 </Form.Label>
               )}
@@ -477,9 +481,9 @@ function DeptPostCreate({deptGeneral="" } ) {
         <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
       </Col>
     </Row>
-  </Form>
-  </div>
-  );
+    </Form>
+    </div>
+    );
 }
 
 export default DeptPostCreate;

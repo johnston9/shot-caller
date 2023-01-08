@@ -62,6 +62,10 @@ import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 import Map from './components/Map';
 import Script from './pages/scenes/Script';
 import LatestScript from './pages/scenes/LatestScript';
+import Latest from './pages/home/Latest';
+import LatestCreate from './pages/home/LatestCreate';
+import LatestPage from './pages/home/LatestPage';
+import LatestEdit from './pages/home/LatestEdit';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -376,6 +380,11 @@ function App() {
             />)} />
         <Route exact path="/department/posts/:id/edit" render={() => <DeptPostEdit />} />
         <Route exact path="/department/posts/:id" render={() => <DeptPostPage />} />
+        {/* -------------------- Latest -------------------- */}
+        <Route exact path="/latest/create" render={() => <LatestCreate />} />
+        <Route exact path="/latest" render={() => <Latest />} />
+        <Route exact path="/latest/post/:id" render={() => <LatestPage />} />
+        <Route exact path="/latest/post/:id/edit" render={() => <LatestEdit />} />
         {/* -------------------- PROFILES APP ---------------*/}
         <Route exact path="/profiles" render={() => <ProfilesPage />} />
         <Route exact path="/profiles/:id" render={() => <ProfilePage />} />

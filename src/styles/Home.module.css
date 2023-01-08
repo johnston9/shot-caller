@@ -83,7 +83,7 @@ width: 100%;
 /* mobile */
 
 .HomeboxXsXs {
-    height: 110px;
+    height: 80px;
     background-color: #112533;
     color: #F5F5F5;
     border-bottom: 1px solid #fff;
@@ -100,7 +100,7 @@ width: 100%;
 }
 
 .HomeboxXs {
-    height: 105px;
+    height: 60px;
     background-color: #112533;
     color: #F5F5F5;
 }
