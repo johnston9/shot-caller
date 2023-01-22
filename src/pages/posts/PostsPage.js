@@ -42,6 +42,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
         }
         setPosts(data);
         setHasLoaded(true);
+        console.log(data);
       } catch(err) {
         console.log(err);
         if (err.response?.status !== 401) {

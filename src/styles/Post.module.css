@@ -2,11 +2,6 @@
   background-color: #1ea7ae;
   color: #fff;
 }
-
-.PostTopA {
-  background-color: #126064;
-  color: #fff;
-}
   
 /* .PostTop i {
   color: #fff;
@@ -22,16 +17,47 @@
   font-size: .7rem;
 }
 
-.Content3 {
+.ContentUnOpen {
+  background-color: #2a2f34;
+  /* background-color: #0f3d4c; */
+  color: #fafafa;
+  cursor: pointer;
+}
+
+.ContentTitleUnOpen {
+  color: #40d6de;
+}
+
+.ContentUnOpen:hover {
+  /* background-color: #0f3d4c;
+  color: #fafafa; */
+  background-color: #fafafa;
+  color: rgb(157, 21, 48);
+  cursor: pointer;
+}
+
+.ContentUnOpen:hover .ContentTitleUnOpen {
+  color: rgb(157, 21, 48);
+}
+
+.ContentOpened {
   background-color: #fafafa;
   color: #1ea7ae;
   cursor: pointer;
 }
 
-.Content3:hover {
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
+.ContentTitleOpened {
+  color: #1f6370;
+}
+
+.ContentOpened:hover {
+  /* background-color: #0f3d4c; */
+  color: rgb(157, 21, 48);
+  /* cursor: pointer; */
+}
+
+.ContentOpened:hover .ContentTitleOpened {
+  color: rgb(157, 21, 48);
 }
 
 .Images {
@@ -61,8 +87,8 @@ i:hover {
   color: #2142b2;
 }
 
-.Archive {
-  color: #32f898;
+.Star {
+  color: gold;
   font-size: .75rem;
 }
 

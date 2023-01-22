@@ -27,8 +27,6 @@ const DeptPostTop = (props) => {
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
       const history = useHistory();
-      const tit = title.substring(0, 12);
-      const tit2 = title.substring(0, 20);
 
       const handleEdit = () => {
         history.push(`/department/posts/${id}/edit`);

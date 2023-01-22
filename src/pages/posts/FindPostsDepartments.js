@@ -126,7 +126,7 @@ const Departments = (props) => {
               <Row className='mb-4 mt-3'>
                   <Col className='text-center' xs={4} >
                   <Button onClick={() => history.push("/archived")} 
-                    className={`${btnStyles.Button} py-0 px-2 ${btnStyles.Bright}`} >Archived
+                    className={`${btnStyles.Button} py-0 px-2 ${btnStyles.Bright}`} >Starred
                        </Button>
                   </Col>
                   <Col className='text-center px-0' xs={4} >

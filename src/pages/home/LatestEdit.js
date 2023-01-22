@@ -18,7 +18,6 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import Asset2 from "../../components/Asset2";
 import { useParams } from "react-router-dom";
 
 function LatestEdit() {
