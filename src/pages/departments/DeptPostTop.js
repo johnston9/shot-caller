@@ -181,13 +181,13 @@ const DeptPostTop = (props) => {
                 className={` text-center`} >
                 <Row>
                 <Col className='px-0 mx-0' xs={12}>
-                  {departments && <p style={{ textTransform: 'capitalize'}}>
+                  {departments && <p style={{ textTransform: 'capitalize', color: '#fafafa' }}>
                     {departments}</p>}
                 </Col>
                 </Row>
                 <Row>
                 <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
-                {title && <span style={{ fontStyle: 'italic', color: '#375292' }}> {title}</span>}
+                {title && <span style={{ fontStyle: 'italic', color: 'rgb(157, 21, 48' }}> {title}</span>}
                 </Col>
                 </Row>
                 </Col>
