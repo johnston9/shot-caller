@@ -9,13 +9,13 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData,} from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
-import {PostDropdown, ProfileEditDropdown} from "../../components/PostDropdown";
+import { ProfileEditDropdown} from "../../components/PostDropdown";
 import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 import PostTop from "../posts/PostTop";
@@ -37,17 +37,17 @@ function ProfilePage() {
   const is_owner = currentUser?.username === profile?.owner;
   const [name, setName] = useState("");
 
-  const handleEdit = () => {
-    history.push(`/profiles/${id}/edit`);
-  };
+  // const handleEdit = () => {
+  //   history.push(`/profiles/${id}/edit`);
+  // };
 
-  const handleDelete = async () => {
-    try {
-      await axiosRes.delete(`/profiles/${id}/`);
-      history.goBack();
-    } catch (err) {
-    }
-  };
+  // const handleDelete = async () => {
+  //   try {
+  //     await axiosRes.delete(`/profiles/${id}/`);
+  //     history.goBack();
+  //   } catch (err) {
+  //   }
+  // };
 
   useEffect(() => {
     const fetchData = async () => {

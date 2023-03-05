@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Card, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { useSetCategoryContext, useSetDeptContext } from '../../contexts/DeptCategoryContext';
+// import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -15,9 +16,9 @@ const Departments = (props) => {
     useRedirect("loggedOut")
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
-    const setSceneId = useSetSceneContext();
-    const setNumber = useSetNumberContext();
-    const { id, number } = props;
+    // const setSceneId = useSetSceneContext();
+    // const setNumber = useSetNumberContext();
+    // const { id, number } = props;
     const history = useHistory();
 
     const handleClickCamera = (category) => {

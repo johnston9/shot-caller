@@ -73,21 +73,21 @@ const Post = (props) => {
         }
       };
 
-      const handleOpened = async () => {
-        try {
-          const { data } = await axiosRes.post("/opened/", { post: id });
-          setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-              return post.id === id
-                ? { ...post, opened_id: data.id }
-                : post;
-            }),
-          }));
-        } catch (err) {
-          console.log(err);
-        }
-      };
+      // const handleOpened = async () => {
+      //   try {
+      //     const { data } = await axiosRes.post("/opened/", { post: id });
+      //     setPosts((prevPosts) => ({
+      //       ...prevPosts,
+      //       results: prevPosts.results.map((post) => {
+      //         return post.id === id
+      //           ? { ...post, opened_id: data.id }
+      //           : post;
+      //       }),
+      //     }));
+      //   } catch (err) {
+      //     console.log(err);
+      //   }
+      // };
 
       const handleStar = async () => {
         try {

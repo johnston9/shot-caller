@@ -19,9 +19,11 @@ const LatestTop = (props) => {
         profile_id,
         profile_image,
         position,
+        opened_id,
         title,
         departments,
         updated_at,
+        setPosts,
       } = props;
 
       const currentUser = useCurrentUser()
@@ -41,12 +43,29 @@ const LatestTop = (props) => {
         }
       };
 
+      const handleDeptOpened = async () => {
+        console.log("openeddeptlatest")
+        try {
+          const { data } = await axiosRes.post("/openedDept/", { post: id });
+          setPosts((prevPosts) => ({
+            ...prevPosts,
+            results: prevPosts.results.map((post) => {
+              return post.id === id
+                ? { ...post, opened_id: data.id }
+                : post;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
     return (
         <div>
           <Card className={ `py-0 mt-1 mb-0`}>
           <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
-          <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
-          <Col xs={12} sm={3} className="my-0" >
+            <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
+            <Col xs={12} sm={3} className="my-0" >
                 {/* small */}
                 <div className='d-none d-sm-block'>
                 <Row >
@@ -56,7 +75,7 @@ const LatestTop = (props) => {
                 </Link>
                 </Col>
                 <Col xs={9} className="pl-2 pr-0" >
-                <div className={`${styles.Content4} pl-2 ml-3`}>
+                <div className={`${styles.Content4} pl-2 ml-2`}>
                 <p>
                 <span className=''>{name} </span>
                 </p>
@@ -97,32 +116,128 @@ const LatestTop = (props) => {
                 </Row> 
                 <Row>
                 <Col xs={12}>
+                {/* icons  */}
+                {/* star uses archive_id from drf */}
+                {/* <div className='px-0 py-0 d-flex align-items-center justify-content-center' >
+                {archive_id ? (
+                      <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>UnStar</Tooltip>}
+                      >
+                      <span onClick={handleUnStar} >
+                      <i className={`fas fa-star ${styles.Star}`} />
+                      </span>
+                      </OverlayTrigger>
+                  ) : currentUser ? (
+                    <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Star</Tooltip>}
+                    >
+                      <span onClick={handleStar}>
+                      <i className={`far fa-star ${styles.Star}`} />
+                      </span>
+                      </OverlayTrigger>
+                  ) : (
+                      <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Log in please</Tooltip>}
+                      >
+                      <i className={`far fa-star ${styles.Star}`} />
+                      </OverlayTrigger>
+                  )}
+                  {is_owner ? (
+                      <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                      >
+                      <i className={`far fa-heart ${styles.Heart}`} />
+                      </OverlayTrigger>
+                  ) : like_id ? (
+                      <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Unlike</Tooltip>}
+                      >
+                      <span onClick={handleUnlike} >
+                      <i className={`fas fa-heart ${styles.Heart}`} />
+                      </span>
+                      </OverlayTrigger>
+                  ) : currentUser ? (
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Like</Tooltip>}
+                        >
+                      <span onClick={handleLike}>
+                      <i className={`far fa-heart ${styles.Heart}`} />
+                      </span>
+                      </OverlayTrigger>
+                  ) : (
+                      <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Log in please</Tooltip>}
+                      >
+                      <i className={`far fa-heart ${styles.Heart}`} />
+                      </OverlayTrigger>
+                  )}
+                  <span className='pt-0'>{likes_count}</span>
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Comments</Tooltip>}
+                      >
+                  <Link to={`/posts/${id}`}>
+                  <i className={`far fa-comments ${styles.Comment}`} />
+                  </Link>
+                  </OverlayTrigger>
+                  <span className='pt-0'>{comments_count}</span>
+                  <span className='ml-5'> {updated_at}</span>
+                </div> */}
                 </Col>
                 </Row>  
                 </div> 
-          </Col>    
-          <Col xs={12} sm={6} className="my-1" >
-          <Link to={`/latest/post/${id}`}>
-            <Row className={`${styles.Content3} pt-1 my-0 mr-1 ml-1`}>
+            </Col> 
+            <Col xs={12} sm={6} className="my-1" >
+            <Link to={`/department/posts/${id}`}>
+            {opened_id ? (
+              <Row className={`${styles.ContentOpened} pt-1 my-0 mr-1 ml-1`}>
+              <Col xs={12} 
+              className={` text-center`} >
+              <Row>
+              <Col className='px-0 mx-0' xs={12}>
+                  {departments && <p style={{ textTransform: 'capitalize' }}>
+                    {departments}</p>}
+                </Col>
+              </Row>
+              <Row>
+              <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
+              {title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleOpened}`}
+                 style={{ fontStyle: 'italic' }}> {title}</span>}
+              </Col>
+              </Row>
+              </Col>
+              </Row>
+            ) : (
+              <Row onClick={handleDeptOpened}
+                 className={`${styles.ContentUnOpen} pt-1 my-0 mr-1 ml-1`}>
                 <Col xs={12} 
                 className={` text-center`} >
                 <Row>
                 <Col className='px-0 mx-0' xs={12}>
-                  {departments && <p style={{ textTransform: 'capitalize'}}>
+                  {departments && <p style={{ textTransform: 'capitalize', color: '#fafafa' }}>
                     {departments}</p>}
                 </Col>
                 </Row>
                 <Row>
                 <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
-                {title && <span style={{ fontStyle: 'italic', color: '#375292' }}> {title}</span>}
+                {title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`}
+                 style={{ fontStyle: 'italic' }}> {title}</span>}
                 </Col>
                 </Row>
                 </Col>
-            </Row>
+                </Row>
+            )}
             </Link>
-          </Col> 
-          {/* edit and date small */}
-          <Col xs={12} sm={3} className="my-0 " >
+            </Col>
+            {/* edit and date small */}
+            <Col xs={12} sm={3} className="my-0 " >
             <div className='d-none d-sm-block'>
             <Row >
             <Col sm={3}
@@ -137,11 +252,13 @@ const LatestTop = (props) => {
             <Col className="pl-0 pr-0" sm={9} >
             <p className={ `text-center  ${styles.Date}`}>{updated_at}
             </p>
+            {/* icons */}
+            {/* star uses archive_id from drf */}
             </Col>
             </Row>   
             </div>     
-            </Col>                
-          </Row>
+            </Col>
+            </Row>
           </Card.Body>
           </Card>
         </div>

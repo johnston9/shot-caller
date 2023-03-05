@@ -296,7 +296,8 @@ const PostTop = (props) => {
               </Col>
               </Row>
             ) : (
-              <Row className={`${styles.ContentUnOpen} pt-1 my-0 mr-1 ml-1`}>
+              <Row onClick={handleOpened}
+                 className={`${styles.ContentUnOpen} pt-1 my-0 mr-1 ml-1`}>
                 <Col xs={12} 
                 className={` text-center`} >
                 <Row>
