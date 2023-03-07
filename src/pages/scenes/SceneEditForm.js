@@ -17,8 +17,8 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import NewLocation from "./NewLocation";
 import { useLocationsContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
-import Important from "./Important";
-import Info from "./Info";
+import Important from "./info/Important";
+import Info from "./info/Info";
 
 const SceneEditForm = () => {
     useRedirect("loggedOut");

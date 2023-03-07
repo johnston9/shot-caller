@@ -16,9 +16,9 @@ import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from "react-router-dom";
 import TopBox from '../../components/TopBox';
 import r1 from "../../assets/r1.png"; 
-import Information from './Information';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import { fetchMoreData } from '../../utils/utils';
+import Information from './info/Information';
+// import InfiniteScroll from 'react-infinite-scroll-component';
+// import { fetchMoreData } from '../../utils/utils';
 
 const ScenesPage = ({message, filter = "" }) => {
     useRedirect("loggedOut");
@@ -59,7 +59,6 @@ const ScenesPage = ({message, filter = "" }) => {
             const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
             setScenes(data);
             setHasLoaded(true);
-            console.log(data);
           } catch(err) {
             console.log(err);
           }
@@ -161,7 +160,7 @@ const ScenesPage = ({message, filter = "" }) => {
             </Row>
             <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
             {/* infinite */}
-            <div className='text-center'>
+            {/* <div className='text-center'>
                 {hasLoaded ? (
                 <>
                 {scenes.results.length ? (
@@ -197,9 +196,9 @@ const ScenesPage = ({message, filter = "" }) => {
                 <Asset spinner />
               </Container>
             )} 
-            </div>
+            </div> */}
             {/* old */}
-            <Row className="h-100 mt-3">
+            <Row className="h-100 mt-3 px-2">
             {hasLoaded ? (
             <>
             {scenes.results.length ? (

@@ -12,8 +12,8 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import useRedirect from "../../hooks/Redirect";
-import InfoCreate from "./InfoCreate";
-import ImportCreate from "./ImportCreate";
+import InfoCreate from "./info/InfoCreate";
+import ImportCreate from "./info/ImportCreate";
 
 function SceneCreateForm({topbox}) {
   useRedirect("loggedOut");

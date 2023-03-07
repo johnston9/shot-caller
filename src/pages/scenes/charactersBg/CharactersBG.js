@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
+import { useRedirect } from '../../../hooks/Redirect';
+import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { Button } from 'react-bootstrap';
 import CharactersAdd from './CharactersAdd';
 import Character from './Character';
 import { useEffect } from 'react';
-import { axiosReq } from '../../api/axiosDefaults';
+import { axiosReq } from '../../../api/axiosDefaults';
 import SceneBGAdd from './SceneBGAdd';
 import Background from './Background';
 

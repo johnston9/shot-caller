@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
-import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
+import React from 'react'
+import { useRedirect } from '../../../hooks/Redirect';
+import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { axiosReq } from '../../api/axiosDefaults';
-import { PostDropdown } from '../../components/PostDropdown';
-import SceneBGEdit from './SceneBGEdit';
+import { axiosReq } from '../../../api/axiosDefaults';
+import { useState } from 'react';
+import { PostDropdown } from '../../../components/PostDropdown';
+import SceneCharacterEdit from './SceneCharacterEdit'
 
-const Background = ({id, quantity, role, costume, handleMount, 
-    setBackground, back, admin }) => {
+const Character = ({id, admin, cast_number, role, costume, 
+    character, setCharacters, handleMount}) => {
     useRedirect("loggedOut");
     const [showEditForm, setShowEditForm] = useState(false);
 
     const handleDelete = async () => {
         try {
-            await axiosReq.delete(`/scenebgs/${id}/`);
+            await axiosReq.delete(`/scenecharacters/${id}/`);
             handleMount();
         } catch (err) {
             // console.log(err);
@@ -22,17 +23,17 @@ const Background = ({id, quantity, role, costume, handleMount,
         };
 
     return ( 
-        <div className='mx-4 px-2'>
+        <div className={` mx-4 px-2` }>
         <Row >
         <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={2} >
-        <p className={` text-center` } >{quantity} </p>
+        <p >{cast_number} </p>
         </Col>
-        <Col xs={5} className={`${styles.TitleBox5} px-0 mx-0`}>
-        <p className={`${styles.v}` } >{role} </p>
+        <Col className={`${styles.TitleBox5} px-0 mx-0`}>
+        <p >{role} </p>
         </Col>
         {admin ? (
             <>
-            <Col xs={4} className={`${styles.TitleBox5} px-0 mx-0`}>
+            <Col xs={3} className={`${styles.TitleBox5} px-0 mx-0`}>
             {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
             <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={1}>
@@ -44,30 +45,25 @@ const Background = ({id, quantity, role, costume, handleMount,
             </Col>
             </>
         ) : (
-            <Col xs={5} className={`${styles.TitleBox4} px-0 mx-0`}>
-            {costume ? (<p className='pl-2' >{costume} </p>) : ("") }
+            <Col xs={3} className={`${styles.TitleBox3} px-0 mx-0`}>
+            {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
         )}
         </Row>
         {/* edit */}
-        <Row>
-        <Col>
             {showEditForm ? (
-                <SceneBGEdit
-                    back={back}
+                <SceneCharacterEdit
+                    character={character}
                     id={id}
                     handleMount={handleMount}
+                    setCharacters={setCharacters}
                     setShowEditForm={setShowEditForm}
-                    setBackground={setBackground}
                 />
             ) : (
                 ""
             )}
-        </Col>
-        </Row> 
-        <hr className='py-0 my-0'/>
         </div>
     )
 }
 
-export default Background
+export default Character

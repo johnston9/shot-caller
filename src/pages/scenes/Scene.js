@@ -17,10 +17,10 @@ import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
 import Storyboard from './Storyboard';
 import TopBox from '../../components/TopBox';
-import InfoScenePage from './InfoScenePage';
-import InfoWorkspace from './InfoWorkspace';
-import Script from './Script';
-import CharactersBG from './CharactersBG';
+import InfoScenePage from './info/InfoScenePage';
+import InfoWorkspace from './info/InfoWorkspace';
+import Script from './ScriptScene';
+import CharactersBG from './charactersBg/CharactersBG';
 
 const Scene = (props) => {
     useRedirect("loggedOut");
@@ -256,38 +256,42 @@ const Scene = (props) => {
               </div>
               <div className='d-md-none'>
                   <Row className={`${styles.ButtonLine} mt-2`}>
-                    <Col xs={3} className='text-center'>
-                        <p
-                          className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => handleClickMoods()} > Moodboards
-                        </p>
-                    </Col>
-                    <Col xs={3} className='text-center'>
+                    <Col xs={2}></Col>
+                    <Col xs={4} className='text-center'>
                             <p
                               className={`py-0 mb-0 ${styles.Button}`}
                               onClick={() => setShowBreak(showBreak => !showBreak)} > Breakdown
                             </p>
                     </Col>
-                    <Col md={3} className='text-center'>
-                        <p
-                          className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => setShowCharactersBG(showCharactersBG => !showCharactersBG)} >Characters/BG
-                        </p>
-                    </Col>
-                    <Col xs={2} className='text-center'>
+                    <Col xs={4} className='text-center'>
                         <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowScript(showScript => !showScript)} > Script
                         </p>
                     </Col>
-                    <Col className='text-center px-0 mx-0' xs={1}>
+                    <Col className='text-center' xs={2}>
                     <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
                         />
                     </Col>
-                    </Row>
-                    <Row>
+                  </Row>
+                  <Row>
+                    <Col xs={1}></Col>
+                    <Col xs={5} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => handleClickMoods()} > Moodboards
+                        </p>
+                    </Col>
+                    <Col xs={4} className='text-center'>
+                        <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => setShowCharactersBG(showCharactersBG => !showCharactersBG)} >Characters/BG
+                        </p>
+                    </Col>
+                  </Row>
+                  <Row>
                     <Col className='text-center' xs={4}>
                       <p
                           className={`py-0 mb-0 ${styles.Button}`}
@@ -357,7 +361,7 @@ const Scene = (props) => {
                     ) }
                     {/* workspace */}
                     <h5 style={{ textTransform: 'uppercase'}} 
-                        className={`mt-1 mb-1 pl-3 py-3 ${styles.SubTitle } text-center`}>
+                        className={`mt-1 mb-1 pl-3 py-2 ${styles.SubTitle } text-center`}>
                         SCENE WORKSPACE
                     </h5>
                     {/* edit guide */}
@@ -424,7 +428,7 @@ const Scene = (props) => {
                         </Card>
                       </Col>
                   </Row>
-                    <Row >
+                    <Row className='px-2' >
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`} >
                         <Card.Img src={Camera} alt="Card image" />

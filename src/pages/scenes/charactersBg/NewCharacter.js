@@ -1,15 +1,15 @@
 import React, {useState } from "react";
-import { useRedirect } from "../../hooks/Redirect";
+import { useRedirect } from "../../../hooks/Redirect";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import styles from "../../../styles/Scene.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
-import { axiosReq } from "../../api/axiosDefaults";
-import { useCharactersContext, useSetCharactersContext } from "../../contexts/Scene_chars_locs";
+import { axiosReq } from "../../../api/axiosDefaults";
+import { useCharactersContext, useSetCharactersContext } from "../../../contexts/Scene_chars_locs";
 
 const NewCharacter = ({setShowAdd} ) => {
     useRedirect("loggedOut");

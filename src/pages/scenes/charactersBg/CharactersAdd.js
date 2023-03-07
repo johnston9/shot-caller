@@ -1,12 +1,13 @@
+// Page to contain the Add New Character and Add scene Character forms
 import React, { useState } from 'react'
-import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
+import { useRedirect } from '../../../hooks/Redirect';
+import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { Button } from 'react-bootstrap';
 import NewCharacter from "./NewCharacter"
-import InfoChar from './InfoChar';
+import InfoChar from '../info/InfoChar';
 import SceneCharacterAdd from './SceneCharacterAdd';
 
 const CharactersAdd = (props) => {

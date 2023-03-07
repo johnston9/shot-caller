@@ -122,7 +122,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
         </Col>
         </Row>
         {/* posts */}
-        <Row className="mb-3 mt-2">
+        <Row className="mb-3 mt-2 px-2">
           <Col>
         {hasLoaded ? (
           <>

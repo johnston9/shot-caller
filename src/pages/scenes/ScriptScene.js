@@ -1,3 +1,4 @@
+// Scene Script page
 import React, { useEffect, useState } from 'react'
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -9,10 +10,10 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
-import ScriptUpload from './ScriptUpload';
+import ScriptUpload from './ScriptSceneUpload';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import InfoScript from './InfoScript';
+import InfoScriptScene from './info/InfoScriptScene';
 
 const Script = () => {
     useRedirect("loggedOut");
@@ -87,7 +88,7 @@ const Script = () => {
             {!showInfo ? (
                 ""
                     ) : (
-                      <InfoScript  /> 
+                      <InfoScriptScene  /> 
                       ) } 
             <Row>
             <Col className='text-center'>

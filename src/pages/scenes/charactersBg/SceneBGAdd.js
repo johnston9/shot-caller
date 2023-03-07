@@ -5,11 +5,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import styles from "../../../styles/Scene.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
+import { useRedirect } from "../../../hooks/Redirect";
 
 const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
     useRedirect("loggedOut");

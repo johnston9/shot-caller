@@ -1,3 +1,4 @@
+// The Latest entire Script
 import React, { useEffect, useState } from 'react'
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -11,7 +12,7 @@ import Asset from '../../components/Asset';
 import NoResults from "../../assets/no-results.png";
 import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import InfoLatestScript from './InfoLatestScript';
+import InfoLatestScript from './info/InfoLatestScript';
 import LatestScriptUpload from './LatestScriptUpload';
 import LatestScriptAdd from './LatestScriptAdd';
 

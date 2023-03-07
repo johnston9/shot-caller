@@ -60,7 +60,7 @@ import IndexShotsPage from './pages/indexshots/IndexShotsPage';
 import SeriesPage from './pages/indexshots/SeriesPage';
 import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 import Map from './components/Map';
-import Script from './pages/scenes/Script';
+import Script from './pages/scenes/ScriptScene';
 import LatestScript from './pages/scenes/LatestScript';
 import Latest from './pages/home/Latest';
 import LatestCreate from './pages/home/LatestCreate';
