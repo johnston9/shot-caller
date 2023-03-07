@@ -11,24 +11,24 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
-import AddCast from "./AddCast";
-import AddBackGround from "./AddBackGround";
-import AddProduction from './AddProduction';
-import AddCamera from './AddCamera';
-import AddCastingAD from './AddCastingAD';
-import AddLocations from './AddLocations';
-import AddWardrobe from './AddWardrobe';
-import AddScriptCater from "./AddScriptCater";
-import AddElectricGrip from './AddElectricGrip';
-import AddMakeup from './AddMakeup';
-import AddArt from './AddArt';
-import AddSoundTransport from './AddSoundTransport';
-import AddStunts from './AddStunts';
-import AddPostAdditional from './AddPostAdditional';
-import Information from "./Information";
-import InfoCrewCalls from "./InfoCrewCalls";
-import InformationWeather from "./InformationWeather";
-import SchedulePage from "./SchedulePage";
+import AddCast from "./CallsheetAddCast";
+import AddBackGround from "./CallsheetAddBackGround";
+import AddProduction from './callsheetAddCrewTimes/AddProduction';
+import AddCamera from './callsheetAddCrewTimes/AddCamera';
+import AddCastingAD from './callsheetAddCrewTimes/AddCastingAD';
+import AddLocations from './callsheetAddCrewTimes/AddLocations';
+import AddWardrobe from './callsheetAddCrewTimes/AddWardrobe';
+import AddScriptCater from "./callsheetAddCrewTimes/AddScriptCater";
+import AddElectricGrip from './callsheetAddCrewTimes/AddElectricGrip';
+import AddMakeup from './callsheetAddCrewTimes/AddMakeup';
+import AddArt from './callsheetAddCrewTimes/AddArt';
+import AddSoundTransport from './callsheetAddCrewTimes/AddSoundTransport';
+import AddStunts from './callsheetAddCrewTimes/AddStunts';
+import AddPostAdditional from './callsheetAddCrewTimes/AddPostAdditional';
+import InformationCallsheet from "./info/InformationCallsheet";
+import InfoCrewCalls from "./info/InfoCrewCalls";
+import InformationWeather from "./info/InformationWeather";
+import SchedulePage from "./callsheetSchedule/SchedulePage";
 
 const CallsheetCreate = () => {
   useRedirect("loggedOut");
@@ -1507,12 +1507,12 @@ const buttons = (
     <Button
           className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-        </Button>
+    </Button>
           {!showInfo ? (
               ""
-                  ) : (
-                    <Information  /> 
-                    ) }  
+          ) : (
+            <InformationCallsheet  /> 
+            ) }  
     {/* cast buttons */}
     <h3 className={`text-center mt-2 py-1 ${styles.SubTitle }`} >ADD CAST / ADD BG</h3> 
     <div className= {`mb-3`}>

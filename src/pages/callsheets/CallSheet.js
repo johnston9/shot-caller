@@ -10,17 +10,17 @@ import { useCrewInfoContext } from '../../contexts/BaseCallContext';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useHistory } from "react-router-dom";
 import { PostDropdown } from '../../components/PostDropdown';
-import TalentPage from './TalentPage';
-import BgPage from './BgPage';
-import SchedulePage from './SchedulePage';
-import LocationsPage from './LocationsPage';
-import NotesPage from './NotesPage';
-import CrewCallsPage from './CrewCallsPage';
-import AdvancedSchedPage from './AdvancedSchedPage';
-import ContactsPage from './ContactsPage';
-import WalkiesPage from './WalkiesPage';
+import TalentPage from './callsheetSections/TalentPage';
+import BgPage from './callsheetSections/BgPage';
+import SchedulePage from './callsheetSchedule/SchedulePage';
+import LocationsPage from './callsheetSections/LocationsPage';
+import NotesPage from './callsheetSections/NotesPage';
+import CrewCallsPage from './callsheetSections/CrewCallsPage';
+import AdvancedSchedPage from './callsheetSchedule/AdvancedSchedPage';
+import ContactsPage from './callsheetSections/MobileViewContactsPage';
+import WalkiesPage from './callsheetSections/WalkiesPage';
 import { Image } from 'react-bootstrap';
-import HospitalPage from './HospitalPage';
+import HospitalPage from './callsheetSections/HospitalPage';
 import Weather from '../../components/Weather';
 
 const CallSheet = (props ) => {
