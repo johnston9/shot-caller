@@ -38,15 +38,14 @@ import Characters from './pages/characters/Characters';
 import CharacterPage from './pages/characters/CharacterPage';
 import CharacterCreate from './pages/characters/CharacterCreate';
 import CharacterEdit from './pages/characters/CharacterEdit';
-import MoodshotCreate from './pages/moodshots/MoodshotCreate';
-import MoodshotsPage from './pages/moodshots/MoodshotsPage';
+import MoodboardsPage from './pages/moodboards/MoodboardsPage';
 import LocationsPage from './pages/locations/LocationsPage';
 import LocationsEdit from './pages/locations/LocationsEdit';
 import LocationsCreate from './pages/locations/LocationsCreate';
 import LocationPage from './pages/locations/LocationPage';
 import { useCharacterContext, useLocationContext } from './contexts/CharLocatContex';
-import MoodshotEdit from './pages/moodshots/MoodshotEdit';
-import MoodshotPage from './pages/moodshots/MoodshotPage';
+import MoodboardEdit from './pages/moodboards/MoodboardEdit';
+import MoodboardPage from './pages/moodboards/MoodboardPage';
 import CrewInfoCreate from './pages/callsheets/crewInfo/CrewInfoCreate';
 import CallsheetsPage from './pages/callsheets/CallsheetsPage';
 import CrewInfoEdit from './pages/callsheets/crewInfo/CrewInfoEdit';
@@ -60,12 +59,13 @@ import IndexShotsPage from './pages/indexshots/IndexShotsPage';
 import SeriesPage from './pages/indexshots/SeriesPage';
 import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 import Map from './components/Map';
-import Script from './pages/scenes/ScriptScene';
-import LatestScript from './pages/scenes/LatestScript';
+import Script from './pages/scenes/scriptAndSceneScript/ScriptScene';
+import LatestScript from './pages/scenes/scriptAndSceneScript/LatestScript';
 import Latest from './pages/home/Latest';
 import LatestCreate from './pages/home/LatestCreate';
 import LatestPage from './pages/home/LatestPage';
 import LatestEdit from './pages/home/LatestEdit';
+import MoodboardCreate from './pages/moodboards/MoodboardCreate';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -196,15 +196,16 @@ function App() {
             <IndexShotsFullSize
              />
              )} />
-        {/* ----------------- MOODSHOTS ------------------*/}
-        <Route exact path="/moodshot/create" render={() => <MoodshotCreate />} />
-        <Route exact path="/moodshots/:id/edit" render={() => <MoodshotEdit />} />
-        {/* all moodshots */}
+        {/* ----------------- MOODBOARDS ------------------*/}
+        {/* The word moodshot is used through the app in the urls for moodboard */}
+        <Route exact path="/moodshot/create" render={() => <MoodboardCreate />} />
+        <Route exact path="/moodshots/:id/edit" render={() => <MoodboardEdit />} />
+        {/* all moodboards */}
         <Route
             exact
             path="/moodshots"
             render={() => (
-              <MoodshotsPage 
+              <MoodboardsPage 
                message="No results found. Please add a shot" />
             )}
           />
@@ -212,19 +213,19 @@ function App() {
             exact 
             path="/moodshots/:id" 
             render={() => (
-            <MoodshotPage
+            <MoodboardPage
              />
              )} />
         {/* Moodshots for scenes */}
         <Route exact path="/scene/moodshot/create" render={() => (
-          <MoodshotCreate
+          <MoodboardCreate
           sceneId={sceneId}
           number={number} />) } />
         <Route
             exact
             path="/scene/moodshots"
             render={() => (
-              <MoodshotsPage
+              <MoodboardsPage
                 message="No results found."
                 filter={`scene=${sceneId}`}
                 sceneId={sceneId}
@@ -234,13 +235,13 @@ function App() {
           />
         {/* Moodshots for characters */}
         <Route exact path="/character/moodshot/create" render={() => (
-          <MoodshotCreate
+          <MoodboardCreate
           characterRole={character}/>) } />
         <Route
             exact
             path="/character/moodshots"
             render={() => (
-              <MoodshotsPage
+              <MoodboardsPage
                 message="No results found."
                 filter={`character=${character}`}
                 characterRole={character}
@@ -249,13 +250,13 @@ function App() {
           />
         {/* Moodshots for locations */}
         <Route exact path="/location/moodshot/create" render={() => (
-          <MoodshotCreate
+          <MoodboardCreate
           locationPlace={location}/>) } />
         <Route
             exact
             path="/location/moodshots"
             render={() => (
-              <MoodshotsPage
+              <MoodboardsPage
                 message="No results found."
                 filter={`location=${location}`}
                 locationPlace={location}

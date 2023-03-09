@@ -1,19 +1,19 @@
 // Scene Script page
 import React, { useEffect, useState } from 'react'
-import { useRedirect } from '../../hooks/Redirect';
+import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
-import Asset from '../../components/Asset';
-import NoResults from "../../assets/no-results.png";
+import styles from "../../../styles/Scene.module.css";
+import btnStyles from "../../../styles/Button.module.css";
+import appStyles from "../../../App.module.css";
+import Asset from '../../../components/Asset';
+import NoResults from "../../../assets/no-results.png";
 import ScriptUpload from './ScriptSceneUpload';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import { axiosReq } from '../../api/axiosDefaults';
-import InfoScriptScene from './info/InfoScriptScene';
+import { axiosReq } from '../../../api/axiosDefaults';
+import InfoScriptScene from '../info/InfoScriptScene';
 
 const Script = () => {
     useRedirect("loggedOut");

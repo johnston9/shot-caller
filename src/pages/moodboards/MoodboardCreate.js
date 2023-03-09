@@ -1,3 +1,5 @@
+// Form to create a Moodboard
+// The word moodshot is used through the app in the urls for moodboard
 import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -22,7 +24,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 import { useCharactersContext, useLocationsContext, useScenesContext } from "../../contexts/Scene_chars_locs";
 
-const MoodshotCreate = ({sceneId="", number="", characterRole="", locationPlace="" }) => {
+const MoodboardCreate = ({sceneId="", number="", characterRole="", locationPlace="" }) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [showInfo, setShowInfo] = useState(false);
@@ -684,4 +686,4 @@ const buttons = (
     )
 }
 
-export default MoodshotCreate
+export default MoodboardCreate

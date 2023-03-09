@@ -11,15 +11,15 @@ import Row from 'react-bootstrap/Row';
 import btnStyles from "../../styles/Button.module.css";
 import { Button } from 'react-bootstrap';
 import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
-import ShotlistPage from './ShotlistPage';
+import ShotlistPage from './shotlistStoryboard/ShotlistPage';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
 import Breakdown from './Breakdown';
-import Storyboard from './Storyboard';
+import Storyboard from './shotlistStoryboard/Storyboard';
 import TopBox from '../../components/TopBox';
 import InfoScenePage from './info/InfoScenePage';
 import InfoWorkspace from './info/InfoWorkspace';
-import Script from './ScriptScene';
+import Script from './scriptAndSceneScript/ScriptScene';
 import CharactersBG from './charactersBg/CharactersBG';
 
 const Scene = (props) => {

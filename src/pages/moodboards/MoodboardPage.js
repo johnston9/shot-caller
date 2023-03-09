@@ -1,12 +1,14 @@
+// Page to display a Moodboard 
+// The word moodshot is used through the app in the urls for moodboard
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Moodshot from './Moodshot';
+import Moodshot from './Moodboard';
 
-const MoodshotPage = () => {
+const MoodboardPage = () => {
     useRedirect("loggedOut");
     const { id } = useParams();
     const [moodshot, setMoodshot] = useState({ results: [] });
@@ -35,4 +37,4 @@ const MoodshotPage = () => {
     )
 }
 
-export default MoodshotPage
+export default MoodboardPage

@@ -1,8 +1,8 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from "../../styles/Scene.module.css";
-import { useRedirect } from '../../hooks/Redirect';
+import styles from "../../../styles/Scene.module.css";
+import { useRedirect } from '../../../hooks/Redirect';
 
 const ShotInfo = (props) => {
     useRedirect("loggedOut");

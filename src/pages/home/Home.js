@@ -36,7 +36,9 @@ const Home = () => {
             <Link to={`/latest`} >
             <div className={`px-3 py-1  ${styles.HomeboxFind}`}>
               <h5 className={`text-center pt-0 `}>Latest Buzz</h5>
+              <div className={`${styles.Inner}`}>
               <p className="mt-2">All the Latest News and Updates </p>
+              </div>
               </div>
             </Link>
         </Col>
@@ -63,7 +65,9 @@ const Home = () => {
             <Link to={`/findposts/departments`} >
             <div className={`px-3 py-1  ${styles.HomeboxFind}`}>
               <h5 className={`text-center pt-0 `}>Quick Find Posts</h5>
+              <div className={`${styles.Inner}`}>
               <p className="mt-2">All - Archived - Liked - Feed - Posts by Department </p>
+              </div>
               </div>
             </Link>
         </Col>
@@ -72,16 +76,16 @@ const Home = () => {
       <Col lg={1} ></Col>
       <Col lg={10}>
       <Row>
-          {/* Moodshots */}
+          {/* Moodboards */}
           <Col md={6} lg={4} >
             <Link to={`/moodshots`} >
               <div className={`py-1 ${styles.HomeboxSmEr}`}>
-              <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
+              <h5 className={`text-center pt-2 ${styles.Title}`}>Moodboards</h5>
               <div className={`${styles.Inner}`}>
               {admin ? (
-                        <p className="mt-2"> Create / View Moodshots </p>
+                        <p className="mt-2"> Create/View Moodboards </p>
                       ) : (
-                        <p className="mt-2"> View Moodshots </p>
+                        <p className="mt-2"> View Moodboards </p>
                       )}
               </div>
               </div>
@@ -188,7 +192,7 @@ const Home = () => {
             <div className={`py-1  ${styles.HomeboxSmEr}`}>
                   <h5 className={`text-center pt-2 ${styles.Title}`}>Index Shots</h5>
                   <div className={`${styles.Inner}`}>
-                  <p className="mb-0 pt-1">Create Index Shots Series  </p>
+                  <p className="mt-2">Create Index Shots Series  </p>
                   </div>
               </div>
             </Link>
@@ -209,7 +213,7 @@ const Home = () => {
             <div className={`py-1  ${styles.HomeboxSmEr}`}>
                   <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
                   <div className={`${styles.Inner}`}>
-                  <p className="mb-0 pt-1">Departments Posting Area  </p>
+                  <p className="mt-2">Collaborate by Department</p>
                   </div>
               </div>
             </Link>
@@ -226,7 +230,9 @@ const Home = () => {
             <Link to={`/latest`} >
             <div className={`px-3 py-1  ${styles.HomeboxFind}`}>
               <h5 className={`text-center pt-0 `}>Latest Buzz</h5>
+              <div className={`${styles.Inner}`}>
               <p className="mt-2">All the Latest News and Updates </p>
+              </div>
               </div>
             </Link>
         </Col>
@@ -253,23 +259,25 @@ const Home = () => {
             <Link to={`/findposts/departments`} >
             <div className={`px-3 py-1  ${styles.HomeboxFind}`}>
               <h5 className={`text-center pt-0 `}>Quick Find Posts</h5>
+              <div className={`${styles.Inner}`}>
               <p className="mt-2">All - Archived - Liked - Feed - Posts by Department </p>
+              </div>
               </div>
             </Link>
         </Col>
       </Row>
       <Row className="mt-3 text-center">
       <Col md={1} ></Col>
-          {/* Moodshots */}
+          {/* Moodboards */}
           <Col md={5} lg={5} >
             <Link to={`/moodshots`} >
               <div className={`py-1 ${styles.HomeboxSmEr}`}>
-              <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
+              <h5 className={`text-center pt-2 ${styles.Title}`}>Moodboards</h5>
               <div className={`${styles.Inner}`}>
               {admin ? (
-                        <p className="mt-2"> Create / View Moodshots </p>
+                        <p className="mt-2"> Create / View Moodboards </p>
                       ) : (
-                        <p className="mt-2"> View Moodshots </p>
+                        <p className="mt-2"> View Moodboards </p>
                       )}
               </div>
               </div>
@@ -351,7 +359,7 @@ const Home = () => {
               <div className={`py-1 ${styles.HomeboxSmEr}`}>
               <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
               <div className={`${styles.Inner} `}>
-              <p className="mb-0 pt-1"> Crew Info Details</p>
+              <p className="mt-2"> Crew Info Details</p>
               </div>
               </div>
             </Link>
@@ -362,7 +370,7 @@ const Home = () => {
             <div className={`py-1  ${styles.HomeboxSmEr}`}>
                   <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
                   <div className={`${styles.Inner}`}>
-                  <p className="mb-0 pt-1">Departments Posting Area  </p>
+                  <p className="mt-2">Collaborate by Department  </p>
                   </div>
               </div>
             </Link>
@@ -377,7 +385,7 @@ const Home = () => {
               <div className={`py-1 ${styles.HomeboxSmEr}`}>
               <h5 className={`text-center pt-2 ${styles.Title}`}>Index Cards</h5>
               <div className={`${styles.Inner} `}>
-              <p className="mb-0 pt-1"> Index Cards for Scenes</p>
+              <p className="mt-2"> Index Cards for Scenes</p>
               </div>
               </div>
             </Link>
@@ -388,7 +396,7 @@ const Home = () => {
             <div className={`py-1  ${styles.HomeboxSmEr}`}>
                   <h5 className={`text-center pt-2 ${styles.Title}`}>Index Shots</h5>
                   <div className={`${styles.Inner}`}>
-                  <p className="mb-0 pt-1">Create Index Shots Series  </p>
+                  <p className="mt-2">Create Index Shots Series  </p>
                   </div>
               </div>
             </Link>
@@ -403,7 +411,9 @@ const Home = () => {
             <Link to={`/latest`} >
             <div className={`px-0 py-1  ${styles.HomeboxFind}`}>
               <h5 className={`text-center pt-0 `}>Latest Buzz</h5>
+              <div className={`${styles.Inner}`}>
               <p className="mt-2">The Latest News </p>
+              </div>
               </div>
             </Link>
         </Col>
@@ -425,26 +435,28 @@ const Home = () => {
         <Row className="text-center mt-0">
           <Col >
           <Link to={`/findposts/departments`} >
-              <div className={`py-1 px-2  ${styles.HomeboxFind}`}>
+              <div className={`py-1 ${styles.HomeboxFind}`}>
                 <h5 className={`text-center pt-1`}>Find Posts</h5>
-                <p className="pt-1 mb-0">Posts by Department</p>
+                <div className={`${styles.Inner}`}>
+                <p className="pt-1 mb-0">Quick Find Posts</p>
+                </div>
                 </div>
               </Link>
             </Col>
         </Row>
         <Row className="text-center mt-3">
             {/* Moodshots */}
-            <Col xs={6} >
-            <Link to={`/moodshots`} >
+            <Col xs={6} className="pr-1" >
+            <Link to={`/moodboards`} >
                 <div className={`py-1 ${styles.HomeboxXs}`}>
-                <h5 className={`text-center pt-2 ${styles.Title}`}>Moodshots</h5>
+                <h5 className={`text-center pt-2 ${styles.Title}`}>Moodboards</h5>
                 <div className={`${styles.Inner} mt-2 pb-2`}>
                 </div>
                 </div>
               </Link>
             </Col>  
             {/* Profiles */}
-            <Col xs={6} >
+            <Col xs={6} className="pl-1" >
               <Link to={`/profiles`} >
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Profiles</h5>
@@ -456,7 +468,7 @@ const Home = () => {
         </Row>
         <Row className="text-center mt-2">
             {/* Schedule */}
-            <Col xs={6} >
+            <Col xs={6} className="pr-1" >
             <Link to={`/days`} >
               <div className={`py-1  ${styles.HomeboxXs}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Schedule</h5>
@@ -465,8 +477,8 @@ const Home = () => {
                 </div>
               </Link>
             </Col>
-            {/* Callsheets   */}
-            <Col xs={6} >
+            {/* Callsheets */}
+            <Col xs={6} className="pl-1" >
             <Link to={`/callsheets`} >
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Callsheets</h5>
@@ -478,7 +490,7 @@ const Home = () => {
         </Row>
         <Row className="text-center mt-2">
             {/* Characters */}
-            <Col xs={6} >
+            <Col xs={6} className="pr-1">
               <Link to={`/characters`} >
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Characters</h5>
@@ -488,7 +500,7 @@ const Home = () => {
               </Link>
             </Col>
             {/* Locations */}
-            <Col xs={6} >
+            <Col xs={6} className="pl-1">
             <Link to={`/locations`} >
               <div className={`py-1  ${styles.HomeboxXs}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Locations</h5>
@@ -501,7 +513,7 @@ const Home = () => {
         {/* info */}
         <Row className="text-center mt-2">
             {/* Crew Info */}
-            <Col xs={6} >
+            <Col xs={6} className="pr-1" >
               <Link to={`/crewinfo`} >
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Crew Info</h5>
@@ -511,7 +523,7 @@ const Home = () => {
               </Link>
             </Col>
             {/* depts general */}
-            <Col xs={6} >
+            <Col xs={6} className="pl-1" >
             <Link to={`/depts/general`} >
               <div className={`py-1  ${styles.HomeboxXs}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Depts-Xtra</h5>
@@ -524,7 +536,7 @@ const Home = () => {
         {/* Indexes */}
         <Row className="text-center mt-2">
             {/* Index cards */}
-            <Col xs={6} >
+            <Col xs={6} className="pr-1" >
               <Link to={`/indexcards`} >
                 <div className={`py-1 ${styles.HomeboxXs}`}>
                 <h5 className={`text-center pt-2 ${styles.Title}`}>Index Cards</h5>
@@ -534,7 +546,7 @@ const Home = () => {
               </Link>
             </Col>
             {/* Index Shots */}
-            <Col xs={6} >
+            <Col xs={6} className="pl-1" >
             <Link to={`/series`} >
               <div className={`py-1  ${styles.HomeboxXs}`}>
                     <h5 className={`text-center pt-2 ${styles.Title}`}>Index Shots</h5>

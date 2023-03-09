@@ -5,16 +5,16 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
+import Asset from "../../../components/Asset";
 
-import Upload from "../../assets/upload.png";
-import styles from "../../styles/Scene.module.css";
-import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import Upload from "../../../assets/upload.png";
+import styles from "../../../styles/Scene.module.css";
+import appStyles from "../../../App.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
+import { useRedirect } from "../../../hooks/Redirect";
 
 const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
     useRedirect("loggedOut");

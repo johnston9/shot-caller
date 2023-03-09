@@ -1,18 +1,18 @@
 // The Latest entire Script
 import React, { useEffect, useState } from 'react'
-import { useRedirect } from '../../hooks/Redirect';
+import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
-import Asset from '../../components/Asset';
-import NoResults from "../../assets/no-results.png";
+import styles from "../../../styles/Scene.module.css";
+import btnStyles from "../../../styles/Button.module.css";
+import appStyles from "../../../App.module.css";
+import Asset from '../../../components/Asset';
+import NoResults from "../../../assets/no-results.png";
 import { Link, useHistory } from 'react-router-dom';
-import { axiosReq } from '../../api/axiosDefaults';
-import InfoLatestScript from './info/InfoLatestScript';
+import { axiosReq } from '../../../api/axiosDefaults';
+import InfoLatestScript from '../info/InfoLatestScript';
 import LatestScriptUpload from './LatestScriptUpload';
 import LatestScriptAdd from './LatestScriptAdd';
 

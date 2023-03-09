@@ -91,7 +91,7 @@ function Latest() {
         </Form>
         </Col>
         </Row>
-        <Row className="mt-3">
+        <Row className="mt-3 px-2">
           <Col>
         {hasLoaded ? (
           <>

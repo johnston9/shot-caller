@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { useRedirect } from '../../hooks/Redirect';
+import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
-import Asset from '../../components/Asset';
-import NoResults from "../../assets/no-results.png";
+import styles from "../../../styles/Scene.module.css";
+import btnStyles from "../../../styles/Button.module.css";
+import appStyles from "../../../App.module.css";
+import Asset from '../../../components/Asset';
+import NoResults from "../../../assets/no-results.png";
 import StoryBoardUpload from './StoryBoardUpload';
 import { Image } from 'react-bootstrap';
 

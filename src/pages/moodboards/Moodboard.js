@@ -1,9 +1,11 @@
+// Page for the Moodboard
+// The word moodshot is used through the app in the urls for moodboard
 import React from 'react'
 import Image from 'react-bootstrap/Image'
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Moodshots.module.css";
+import styles from "../../styles/Moodboards.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
@@ -14,7 +16,7 @@ import Button from 'react-bootstrap/Button';
 import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
 
-const Moodshot = (props) => {
+const Moodboard = (props) => {
     useRedirect("loggedOut");
 
     const {
@@ -229,4 +231,4 @@ const Moodshot = (props) => {
 
 };
 
-export default Moodshot;
+export default Moodboard;

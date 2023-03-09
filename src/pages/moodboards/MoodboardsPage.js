@@ -1,3 +1,6 @@
+// Main Page for the Moodboard app,
+// Displaying all the Moodboard Tops, holding the Create Moodboard button
+// and the search for Moodboards function
 import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -6,7 +9,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/Moodshots.module.css";
+import styles from "../../styles/Moodboards.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import btnStyles from "../../styles/Button.module.css";
@@ -16,10 +19,10 @@ import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
-import MoodshotTop from "./MoodshotTop";
+import MoodboardTop from "./MoodboardTop";
 import Info from "./Info";
 
-const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="", message, filter="" }) => {
+const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace="", message, filter="" }) => {
     useRedirect("loggedOut");
   const [moodshots, setMoodshots] = useState({ results: [] });
   // eslint-disable-next-line
@@ -131,32 +134,37 @@ const MoodshotsPage = ({sceneId="", number="", characterRole="", locationPlace="
                   onChange={(event) => setQuery(event.target.value)}
                   type="text"
                   className="mr-sm-2"
-                  placeholder="Search by Scene-number, Location or Character"
+                  placeholder="Search by Scene Number, Location or Character"
               />
               </Form>
               </Col>
               </Row>
               </>
               ) }
-            {hasLoaded ? (
-          <>
-            {moodshots.results.length ? (
-                moodshots.results.map((shot) => (
-                  <MoodshotTop key={shot.id} {...shot} />
-                ))) 
-             : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults } message={message} />
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}            
+              <Row className="mt-3 px-2">
+              <Col>
+              {hasLoaded ? (
+                <>
+                  {moodshots.results.length ? (
+                      moodshots.results.map((shot) => (
+                        <MoodboardTop key={shot.id} {...shot} />
+                      ))) 
+                  : (
+                    <Container className={appStyles.Content}>
+                      <Asset src={NoResults } message={message} />
+                    </Container>
+                  )}
+                </>
+              ) : (
+                <Container className={appStyles.Content}>
+                  <Asset spinner />
+                </Container>
+              )}  
+              </Col>
+              </Row>
+
         </div>
     )
 }
 
-export default MoodshotsPage
+export default MoodboardsPage

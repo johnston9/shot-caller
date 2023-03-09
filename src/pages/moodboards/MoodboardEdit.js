@@ -1,3 +1,5 @@
+// Form to edit a Moodboard
+// The word moodshot is used through the app in the urls for moodboard
 import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -21,7 +23,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 import { useCharactersContext, useLocationsContext, useScenesContext } from "../../contexts/Scene_chars_locs";
 
-const MoodshotEdit = () => {
+const MoodboardEdit = () => {
   useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
 
@@ -614,4 +616,4 @@ const buttons = (
     )
 }
 
-export default MoodshotEdit
+export default MoodboardEdit

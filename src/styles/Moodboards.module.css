@@ -37,8 +37,15 @@ color: #000;
 }
 
 .Content3:hover {
-  background-color: #1889a5;
+  /* background-color: #0f3d4c;
+  color: #fafafa; */
+  background-color: #fafafa;
+  color: #40d6de;
   cursor: pointer;
+}
+
+.ContentTitleUnOpen {
+  color: #40d6de;
 }
 
 .ImagesLand {

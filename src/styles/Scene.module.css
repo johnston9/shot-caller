@@ -218,6 +218,7 @@ i:hover {
 
 .GuideBox {
   background-color: aliceblue;
+  min-height: 50px;
 }
 
 .Button {

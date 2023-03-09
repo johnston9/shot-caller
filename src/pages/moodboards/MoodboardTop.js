@@ -1,16 +1,18 @@
+// Box to hold a Moodboard's info
+// The word moodshot is used through the app in the urls for moodboard
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Moodshots.module.css";
+import styles from "../../styles/Moodboards.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
 import Avatar from '../../components/Avatar';
 
-const MoodshotTop = (props) => {  
+const MoodboardTop = (props) => {  
     useRedirect("loggedOut")
     const {
         id,
@@ -115,7 +117,7 @@ const MoodshotTop = (props) => {
                 </Col>
                 </Row>
                 <Row>
-                <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
+                <Col xs={12} className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`} >
                 {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
                 </Col>
                 </Row>
@@ -259,4 +261,4 @@ const MoodshotTop = (props) => {
         )
 };
 
-export default MoodshotTop;
+export default MoodboardTop;

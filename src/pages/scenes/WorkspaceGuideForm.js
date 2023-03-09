@@ -64,19 +64,20 @@ const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
       <Row>
         <Col md={1} className="d-none d-md-block"></Col>
         <Col md={10}>
-        <div className={`mb-3 p-3 ${styles.Guide}`}>
-        <div className={`mt-0 text-center mb-2 ${styles.SubTitle }`}>
-            <span className={`float-right ${styles.Close }`} onClick={() => setShowGuide(false) } >Close</span> 
-            <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >Create Workspace Guide </h5>
+        <div className={`mt-3 px-3 ${styles.Guide}`}>
+        <div className={`mt-0 text-center mb-0 ${styles.SubTitle }`}>
+            {/* <span className={`float-right ${styles.Close }`} 
+            onClick={() => setShowGuide(false) } >Close</span>  */}
+            <h5 className={`text-center`} style={{ textTransform: 'uppercase'}} >Add Guide </h5>
             </div>
             <Form onSubmit={handleSubmit}>
             <Row>
               <Col >
             <Form.Group controlId="workspace_guide" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Workspace Guide</Form.Label>
+                <Form.Label className="p-1 d-none" ></Form.Label>
                 <Form.Control 
                     type="text"
-                    placeholder="Workspace Guide"
+                    placeholder=""
                     className={styles.InputScene}
                     name="workspace_guide"
                     as="textarea"
