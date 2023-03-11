@@ -1,3 +1,6 @@
+// Page to fetch the Schedule Scene Characters and Background data
+// And to hold the SchedCharacter Page to display the Schedule Scene Character info
+// And to hold the SchedBackground Page to display the Schedule Scene Background info
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -35,7 +38,7 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
     }, [scene_id])
 
     return (
-        <div className={`text-center py-2 mb-2 mx-2 px-2 ${styles.White}`} >
+        <div className={`text-center mt-2 py-0 mb-2 mx-2 px-2 ${styles.White}`} >
             <h5 className={`${styles.CharactersTitle }`} >CHARACTERS</h5>
             {showSideBySide ? (
             <>
@@ -46,9 +49,9 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             <Col className='px-0 mx-0' xs={2}>
             <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={8}>
-            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={2}>
+            <Col className='px-0 mx-0' xs={7}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={3}>
             <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
@@ -60,9 +63,9 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             <Col className='px-0 mx-0' xs={2}>
             <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={8}>
-            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={2}>
+            <Col className='px-0 mx-0' xs={7}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={3}>
             <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
@@ -94,9 +97,9 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             <Col className='px-0 mx-0' xs={2}>
             <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={8}>
-            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={2}>
+            <Col className='px-0 mx-0' xs={7}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={3}>
             <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
@@ -109,9 +112,9 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             <Col className='px-0 mx-0' xs={2}>
             <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={8}>
-            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={2}>
+            <Col className='px-0 mx-0' xs={7}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={3}>
             <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
@@ -124,9 +127,9 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             <Col className='px-0 mx-0' xs={2}>
             <p className={`text-center ${styles.BoldTitle2}` }>#</p>
             </Col>
-            <Col className='px-0 mx-0' xs={8}>
-            <p className={`text-center ${styles.BoldTitle2}` }>Character</p></Col>
-            <Col className='px-0 mx-0' xs={2}>
+            <Col className='px-0 mx-0' xs={7}>
+            <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>
+            <Col className='px-0 mx-0' xs={3}>
             <p className={`text-center ${styles.BoldTitle2}` }>Cos</p>
             </Col>
             </Row>
@@ -150,8 +153,13 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             </Row>
             </>
             ) }
+            <Row className={`mt-2 ${styles.BlueBack }`} style={style}>
+            <Col xs={12}>
+            <p></p>
+            </Col>
+            </Row>
             {/* Background Artists */}
-            <h5 className={`${styles.CharactersTitle }`} >BG / STANDINGS</h5>
+            <h5 className={` ${styles.CharactersTitle }`} >BG / STANDINGS</h5>
             {/* back titles */}
             <Row className='' >
             {/* 1 */}

@@ -29,15 +29,15 @@ const WalkiesPage = (props ) => {
             </div>
             </div>
             <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
-            <Row className='px-3'>
-                <Col md={3} xs={4}>Production: {walkie_channel_production}</Col>
-                <Col md={3} xs={4}>Open: {walkie_channel_open}</Col>
-                <Col md={3} xs={4}>Rollover: {walkie_channel_rollover}</Col>
-                <Col md={3} xs={4}>Transport: {walkie_channel_transportation}</Col>
-                <Col md={3} xs={4}>Art Dept: {walkie_channel_art_dept}</Col>
-                <Col md={3} xs={4}>Camera: {walkie_channel_camera}</Col>
-                <Col md={3} xs={4}>Electric: {walkie_channel_electric}</Col>
-                <Col md={3} xs={4}>Grip: {walkie_channel_grip}</Col>
+            <Row className='px-0'>
+                <Col md={3} xs={6}>Production: {walkie_channel_production}</Col>
+                <Col md={3} xs={6}>Open: {walkie_channel_open}</Col>
+                <Col md={3} xs={6}>Rollover: {walkie_channel_rollover}</Col>
+                <Col md={3} xs={6}>Transport: {walkie_channel_transportation}</Col>
+                <Col md={3} xs={6}>Art Dept: {walkie_channel_art_dept}</Col>
+                <Col md={3} xs={6}>Camera: {walkie_channel_camera}</Col>
+                <Col md={3} xs={6}>Electric: {walkie_channel_electric}</Col>
+                <Col md={3} xs={6}>Grip: {walkie_channel_grip}</Col>
             </Row>
             <p style={{ textTransform: 'uppercase'}} className={`mb-5 pl-3 pt-1 ${styles.SubTitle }`}></p>
         </div>

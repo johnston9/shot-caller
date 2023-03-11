@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 import { useRedirect } from '../../../hooks/Redirect';
-import SchedSceneInfo from './SchedSceneInfo';
+import ScheduleInfo from './ScheduleInfo';
 import btnStyles from "../../../styles/Button.module.css";
 import { Button, } from 'react-bootstrap';
 import ScheduleCharacters from './ScheduleCharacters';
@@ -70,7 +70,7 @@ const ScheduleScene = (props) => {
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <SchedSceneInfo
+                    <ScheduleInfo
                     style={style}
                     {...scene}/> 
                     ) }
@@ -113,18 +113,28 @@ const ScheduleScene = (props) => {
                 <Col className={`mx-0 px-0 `} xs={2} md={1}>
                 {/* <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Info</p> */}
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                        className={`mt-1 ${btnStyles.Button} ${btnStyles.Shed}`}>
                         I
+                    </Button>
+                    <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
+                    className={`px-2 mt-1 ${btnStyles.Button} ${btnStyles.Shed}`}>
+                    C
                     </Button>
                 </Col>
             </Row>
-            {/* info */}
+            {/* info cast */}
             <Row>
                 <Col>
+                    {!showInfo ?("") : (                       
+                    <ScheduleInfo
+                    style={style}
+                    {...scene}/> 
+                    ) }
                     {/* cast  */}
-                    {!setShowInfo ?("") : (                       
-                    <ScheduleCharacters
-                    {...scene}
+                    {!showInfoCast ?("") : (                       
+                    <ScheduleCharacters 
+                    style={style}
+                    showSideBySide={showSideBySide}
                     scene_id={scene_id}
                     /> 
                     ) }
