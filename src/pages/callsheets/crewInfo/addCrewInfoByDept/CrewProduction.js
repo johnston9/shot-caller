@@ -33,7 +33,7 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
       <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ADD PRODUCTION DEPARTMENT </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION </h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>

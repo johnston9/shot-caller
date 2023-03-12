@@ -64,21 +64,25 @@ const Location = (props) => {
     return (
         <div>
             <div className={`mb-3 ${styles.Header}`}>
-            <Row className={`${styles.ButtonLine} mx-2 mt-2`}>
-                <Col className='text-center mx-0 px-0' xs={1} md={2} ></Col>
-                <Col xs={4} className='text-center mx-0 px-0'>
+            <Row className={`${styles.ButtonLine} mt-2 mx-3 d-flex align-items-center `}>
+                <Col className='text-center mx-0 px-0' xs={1}></Col>
+                <Col xs={5} className='text-center mx-0 px-0'>
                     <h5
                         className={`py-0 mb-0 ${styles.Button}`}
                         onClick={() => handleClickMoods()} > Moodboards
                     </h5>
                 </Col>
-                <Col xs={5} md={4} className='text-center mx-0 px-0'>
+                <Col xs={5} className='text-center mx-0 px-0'>
                     <h5
-                        className={`py-0 mb-0 ${styles.Button}`}
+                        className={`d-sm-none py-0 mb-0 ${styles.Button}`}
+                        onClick={() => handleClickAddMoods()} > Add Board
+                    </h5>
+                    <h5
+                        className={`d-none d-sm-block py-0 mb-0 ${styles.Button}`}
                         onClick={() => handleClickAddMoods()} > Add Moodboard
                     </h5>
                     </Col>
-                <Col className='text-center px-0 mx-0' xs={2}>
+                <Col className='text-center px-0 mx-0' xs={1}>
                 <PostDropdown
                         handleEdit={handleEdit}
                         handleDelete={handleDelete}

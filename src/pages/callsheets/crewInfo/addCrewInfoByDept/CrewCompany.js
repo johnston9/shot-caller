@@ -28,7 +28,10 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
     <div className="text-center pb-4">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION COMPANY </h3>
+      <h3 className={`d-none d-sm-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+        PRODUCTION COMPANY </h3>
+        <h3 className={`d-sm-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+        COMPANY </h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>

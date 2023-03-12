@@ -34,7 +34,7 @@ import ScheduleDays from './pages/schedule/ScheduleDays';
 import DayEdit from './pages/schedule/DayEdit';
 import DayPage from './pages/schedule/DayPage';
 import SceneScheduleEdit from './pages/schedule/SceneScheduleEdit';
-import Characters from './pages/characters/Characters';
+import CharactersPage from './pages/characters/CharactersPage';
 import CharacterPage from './pages/characters/CharacterPage';
 import CharacterCreate from './pages/characters/CharacterCreate';
 import CharacterEdit from './pages/characters/CharacterEdit';
@@ -151,7 +151,7 @@ function App() {
             exact
             path="/characters"
             render={() => (
-              <Characters
+              <CharactersPage
                message="No results found" />
             )}
           />

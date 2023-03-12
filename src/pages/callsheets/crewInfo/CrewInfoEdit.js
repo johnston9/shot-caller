@@ -1285,14 +1285,14 @@ const CrewInfoEdit = () => {
               ) : (
                 <Important  /> 
                 ) }   
-      <Row className="text-center">
+      {/* <Row className="text-center">
         <Col md={{span: 8, offset: 2}}>
           <p>
             Click on department links to add or edit. Use Create button below for 
             each department individually or to submit all at the one time.
           </p>
         </Col>
-      </Row>
+      </Row> */}
     <Form className= {`mt-3 mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
@@ -1304,37 +1304,37 @@ const CrewInfoEdit = () => {
           </Col>
       </Row>
       <Row className={`${styles.ButtonLine} mt-0`}>
-        <Col xs={4} md={2} className='text-center'>
+        <Col xs={6} sm={4} md={2} className='text-center'>
             <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowPro(showPro => !showPro)} > Production
             </p>
         </Col>
-        <Col xs={4} md={2} className='text-center'>
+        <Col xs={6} sm={4} md={2} className='text-center'>
                 <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowCam(showCam => !showCam)} > Camera
                 </p>
             </Col>
-        <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
+        <Col xs={6} sm={4} className='text-center' md={2}>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
           </p>
         </Col>
-        <Col xs={4} className='text-center' md={2}>
+        <Col xs={6} sm={4} className='text-center' md={2}>
         <p
             className={`py-0 mb-0 ${styles.Button}`}
             onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
         </p>
         </Col>
-        <Col xs={4} className='text-center' md={2}>
+        <Col xs={6} sm={4} className='text-center' md={2}>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
           </p>
         </Col>
-        <Col xs={4} className='mx-0 px-0 text-center' md={2}>
+        <Col xs={6} sm={4}className='mx-0 px-0 text-center' md={2}>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowScr(showScr => !showScr)} > Script/Catering
@@ -1342,37 +1342,37 @@ const CrewInfoEdit = () => {
         </Col>
       </Row>  
       <Row className={`${styles.ButtonLine} text-center mt-0`}>
-        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 py-0'>
             <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
             </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 py-0'>
                 <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowMak(showMak => !showMak)} > Makeup
                 </p>
             </Col>
-        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+        <Col xs={6} sm={4} className='mx-0 px-0 py-0' md={2}>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
           </p>
         </Col>
-        <Col xs={4} className='py-0' md={2}>
+        <Col xs={6} sm={4} className='py-0' md={2}>
         <p
             className={`py-0 mb-0 ${styles.Button}`}
             onClick={() => setShowStu(showStu => !showStu)} >Stunts
         </p>
         </Col>
-        <Col xs={4} className='text-center' md={2}>
+        <Col xs={6} sm={4} className='text-center' md={2}>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowArt(showArt => !showArt)} > Art
           </p>
         </Col>
-        <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+        <Col xs={6} sm={4} className='mx-0 px-0 py-0' md={2}>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowPos(showPos => !showPos)} > Post/Additional

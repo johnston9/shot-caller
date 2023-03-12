@@ -70,7 +70,7 @@ const LocationsPage = () => {
               </Col>
             </Row>
             {/* search */}
-            <Row>
+            <Row className="px-3" >
                 <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
                 <Form
                     className={`${styles.SearchBar} mt-3`}
@@ -86,7 +86,7 @@ const LocationsPage = () => {
                 </Form>
                 </Col>
             </Row>
-            <Row className="h-100">
+            <Row className="h-100 px-4">
                 {hasLoaded ? (
                 <>
                 {locations.results.length ? (

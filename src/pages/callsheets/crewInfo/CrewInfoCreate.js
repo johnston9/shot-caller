@@ -1031,7 +1031,7 @@ const CrewInfoCreate = () => {
               ) : (
                 <Important  /> 
                 ) } 
-    <Row className="text-center">
+    <Row className="text-center mt-3">
         <Col md={{span: 8, offset: 2}}>
         <p>The "Create" Button on this page creates the "Crew Info" page one time
           whether you add one crew member or many ones in 
