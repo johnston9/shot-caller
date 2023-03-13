@@ -29,6 +29,7 @@ import AddPostAdditional from './callsheetAddCrewTimes/AddPostAdditional';
 import InformationEdit from "./info/InformationEdit";
 import InfoCrewCalls from "./info/InfoCrewCalls";
 import InformationWeather from "./info/InformationWeather";
+import ImportantCrewCalls from "./info/ImportantCrewCalls";
 
 const CallsheetEditPage = () => {
   useRedirect("loggedOut");
@@ -61,7 +62,7 @@ const CallsheetEditPage = () => {
   const [showWar, setShowWar] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showInfoWeather, setShowInfoWeather] = useState(false);
-  const [showInfoCrew, setShowInfoCrew] = useState(false);
+  const [showImportantCrew, setShowImportantCrew] = useState(false);
 
   const [postData, setPostData] = useState({
     // info
@@ -1970,12 +1971,26 @@ const CallsheetEditPage = () => {
       <Form className= {`mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
       {infoFields}
       {/* crew */}
-      <div className={`my-3 text-center ${styles.Bold }`} > 
+      <div className={`mt-3 text-center ${styles.Bold }`} > 
       <h5 className={`py-1 ${styles.SubTitle }`} >
           <span className="float-left ml-3">Part 5 </span>
           <span className="mr-5 pr-4">CREW CALLS </span>
         </h5> 
       </div>
+      {/* important */}
+      <Row>
+      <Col className="py-2" >
+      <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowImportantCrew(showImportantCrew => !showImportantCrew)} >Important
+      </Button>
+      </Col>
+    </Row>
+      {!showImportantCrew ? (
+          ""
+              ) : (
+                <ImportantCrewCalls  /> 
+              ) } 
       <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
         <Col xs={4} md={2} className='text-center'>
@@ -2056,19 +2071,6 @@ const CallsheetEditPage = () => {
       <p className={`mt-1 pl-3 mb-1 pt-1 ${styles.SubTitle }`}></p>
       </div>
       <div className={`mt-0 ${styles.Crew }`}>
-      <Row>
-      <Col >
-      <Button
-            className={`float-right py-0 mt-0 ${btnStyles.Order} ${btnStyles.Button}`}
-            onClick={() => setShowInfoCrew(showInfoCrew => !showInfoCrew)} >INFO
-      </Button>
-      </Col>
-      </Row>
-      {!showInfoCrew ? (
-          ""
-              ) : (
-                <InfoCrewCalls  /> 
-              ) } 
         {/* Add Production */}
         {!showPro ? (
           ""

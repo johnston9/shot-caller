@@ -29,6 +29,7 @@ import InformationCallsheet from "./info/InformationCallsheet";
 import InfoCrewCalls from "./info/InfoCrewCalls";
 import InformationWeather from "./info/InformationWeather";
 import SchedulePage from "./callsheetSchedule/SchedulePage";
+import ImportantCrewCalls from "./info/ImportantCrewCalls";
 
 const CallsheetCreate = () => {
   useRedirect("loggedOut");
@@ -59,6 +60,7 @@ const CallsheetCreate = () => {
   const [showWar, setShowWar] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showInfoWeather, setShowInfoWeather] = useState(false);
+  const [showImportantCrew, setShowImportantCrew] = useState(false);
   const [showInfoCrew, setShowInfoCrew] = useState(false);
 
   const [postData, setPostData] = useState({
@@ -439,6 +441,145 @@ const CallsheetCreate = () => {
       ...postData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const setUnitCall = () => {
+    setPostData({
+      ...postData,
+      // production 
+    director_calltime: unit_call,
+    producer_calltime: unit_call,
+    pro_coordinator_calltime: unit_call,
+    travel_coordinator_calltime: unit_call,
+    upm_calltime: unit_call,
+    production_pa_calltime: unit_call,
+    script_supervisor_calltime: unit_call,
+    legal_calltime: unit_call,
+    set_medic_calltime: unit_call,
+    oth_production_pos_1_calltime: unit_call,
+    oth_production_pos_2_calltime: unit_call,
+    oth_production_pos_3_calltime: unit_call,
+    oth_production_pos_4_calltime: unit_call,
+    oth_production_pos_5_calltime: unit_call,
+    // art
+    production_designer_calltime: unit_call,
+    art_director_calltime: unit_call,
+    art_assistant_calltime: unit_call,
+    set_decorator_calltime: unit_call,
+    set_dresser_calltime: unit_call,
+    lead_man_calltime: unit_call,
+    dresser_calltime: unit_call,
+    prop_master_calltime: unit_call,
+    ass_prop_master_calltime: unit_call,
+    prop_buyer_calltime: unit_call,
+    armorer_calltime: unit_call,
+    // cam
+    dop_calltime: unit_call,
+    camera_operator_calltime: unit_call,
+    camera_ass_1_calltime: unit_call,
+    camera_ass_2_calltime: unit_call,
+    dit_calltime: unit_call,
+    steadicam_calltime: unit_call,
+    camera_pa_calltime: unit_call,
+    oth_camera_pos_1_calltime: unit_call,
+    oth_camera_pos_2_calltime: unit_call,
+    oth_camera_pos_3_calltime: unit_call,
+    // casting
+    casting_director_calltime: unit_call,
+    extras_casting_calltime: unit_call,
+    ad_1_calltime: unit_call,
+    ad_2_calltime: unit_call,
+    ad_3_calltime: unit_call,
+    ad_4_calltime: unit_call,
+    ad_5_calltime: unit_call,
+    pro_assistant_1_calltime: unit_call,
+    pro_assistant_2_calltime: unit_call,
+    pro_assistant_3_calltime: unit_call,
+    pro_assistant_4_calltime: unit_call,
+    pro_assistant_5_calltime: unit_call,
+    // elegrip
+    gaffer_calltime: unit_call,
+    best_boy_electric_calltime: unit_call,
+    electric_3_calltime: unit_call,
+    electric_4_calltime: unit_call,
+    keygrip_calltime: unit_call,
+    best_boy_grip_calltime: unit_call,
+    dolly_grip_calltime: unit_call,
+    swing_ge1_calltime: unit_call,
+    swing_ge2_calltime: unit_call,
+    swing_ge3_calltime: unit_call,
+    swing_ge4_calltime: unit_call,
+    swing_ge5_calltime: unit_call,
+    // loc
+    location_mngr_calltime: unit_call,
+    location_ass_1_calltime: unit_call,
+    location_ass_2_calltime: unit_call,
+    location_ass_3_calltime: unit_call,
+    location_ass_4_calltime: unit_call,
+    location_security_calltime: unit_call,
+    // mak
+    key_hairmakeup_calltime: unit_call,
+    key_hairstylist_calltime: unit_call,
+    sfx_makeup_calltime: unit_call,
+    sfx_makeup_assistant_calltime: unit_call,
+    makeup_artist_1_calltime: unit_call,
+    makeup_artist_2_calltime: unit_call,
+    makeup_artist_3_calltime: unit_call,
+    makeup_artist_4_calltime: unit_call,
+    makeup_artist_5_calltime: unit_call,
+    // post/add-pos
+    editor_calltime: unit_call,
+    fx_calltime: unit_call,
+    add_pos_1_calltime: unit_call,
+    add_pos_2_calltime: unit_call,
+    add_pos_3_calltime: unit_call,
+    add_pos_4_calltime: unit_call,
+    add_pos_5_calltime: unit_call,
+    add_pos_6_calltime: unit_call,
+    add_pos_7_calltime: unit_call,
+    add_pos_8_calltime: unit_call,
+    add_pos_9_calltime: unit_call,
+    add_pos_10_calltime: unit_call,
+    all_other_add_positions_calltimes: unit_call,
+    // script/cater
+    writer_calltime: unit_call,
+    catering_co_1_calltime: unit_call,
+    catering_co_2_calltime: unit_call,
+    catering_co_3_calltime: unit_call,
+    craft_service_calltime: unit_call,
+    crafty_ass_calltime: unit_call,
+    // sound/transport
+    sound_mixer_calltime: unit_call,
+    boom_operator_calltime: unit_call,
+    sound_assistant_1_calltime: unit_call,
+    sound_assistant_2_calltime: unit_call,
+    transport_captain_calltime: unit_call,
+    transport_manager_1_calltime: unit_call,
+    transport_manager_2_calltime: unit_call,
+    head_driver_calltime: unit_call,
+    car1_calltime: unit_call,
+    car2_calltime: unit_call,
+    car3_calltime: unit_call,
+    truck1_calltime: unit_call,
+    truck2_calltime: unit_call,
+    truck3_calltime: unit_call,
+    // stunts
+    stunt_coordinator_calltime: unit_call,
+    stunts_1_calltime: unit_call,
+    stunts_2_calltime: unit_call,
+    stunts_3_calltime: unit_call,
+    stunts_4_calltime: unit_call,
+    stunts_5_calltime: unit_call,
+    // wardrobe
+    costume_designer_calltime: unit_call,
+    ass_costume_designer_calltime: unit_call,
+    wardrobe_assistant_1_calltime: unit_call,
+    wardrobe_assistant_2_calltime: unit_call,
+    wardrobe_assistant_3_calltime: unit_call,
+    wardrobe_assistant_4_calltime: unit_call,
+    wardrobe_assistant_5_calltime: unit_call,
+    });
+    console.log("wwwwww")
   };
 
   const handleSubmit = async (event) => {
@@ -1625,12 +1766,38 @@ const buttons = (
     <h3 className={`text-center mt-3 mb-0 py-1 ${styles.SubTitle }`} >CALLSHEET INFO</h3> 
     <Form className= {`mb-3 ${styles.Back3}`} onSubmit={handleSubmit}>
     {infoFields}
-    <div className={`my-3 text-center ${styles.Bold }`} > 
+    <div className={`mt-3 text-center ${styles.Bold }`} > 
       <h5 className={`py-1 ${styles.SubTitle }`} >
           <span className="float-left ml-3">Part 5 </span>
           <span className="mr-5 pr-4">CREW CALLS </span>
         </h5> 
-      </div>
+    </div>
+    <div>
+    <Row className="px-3 py-2">
+    <Col xs={6} >
+      <Button
+          className={`px-4 py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowInfoCrew(showInfoCrew => !showInfoCrew)} >INFO
+      </Button>
+      </Col>
+      <Col xs={6} >
+      <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowImportantCrew(showImportantCrew => !showImportantCrew)} >IMPORTANT
+      </Button>
+      </Col>
+    </Row>
+    </div>
+    <div>
+    <Row>
+      <Col className="text-center" >
+      <Button
+          className={`py-0 my-2 px-5 ${btnStyles.Shed} ${btnStyles.Button}`}
+          onClick={setUnitCall} >SET UNIT CALL
+      </Button>
+      </Col>
+    </Row>
+    </div>
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
         <Col xs={4} md={2} className='text-center'>
@@ -1711,19 +1878,20 @@ const buttons = (
       <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
     </div>
     <div className={`mt-0 ${styles.Crew }`}>
-    <div>
     <Row>
       <Col >
-    <Button
-          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-          onClick={() => setShowInfoCrew(showInfoCrew => !showInfoCrew)} >INFO
-    </Button>
-    </Col>
+      <div className="mt-3">
+      {!showImportantCrew ? (
+        ""
+            ) : (
+              <ImportantCrewCalls  /> 
+              ) } 
+      </div>
+      </Col>
     </Row>
-    </div>
     <Row>
       <Col >
-      <div>
+      <div className="mt-3">
       {!showInfoCrew ? (
         ""
             ) : (
