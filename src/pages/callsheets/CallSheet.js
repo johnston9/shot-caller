@@ -6,7 +6,7 @@ import TopBox from '../../components/TopBox';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/Callsheets.module.css";
-import { useCrewInfoContext } from '../../contexts/BaseCallContext';
+import { useCrewEmailsContext, useCrewInfoContext } from '../../contexts/BaseCallContext';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useHistory } from "react-router-dom";
 import { PostDropdown } from '../../components/PostDropdown';
@@ -25,6 +25,8 @@ import Weather from '../../components/Weather';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
+    const crewEmailList = useCrewEmailsContext();
+    console.log(crewEmailList);
     const crewInfoOne = useCrewInfoContext();
     const history = useHistory();
     const [yourcalltime, setYourcalltime] = useState("");
@@ -400,6 +402,21 @@ const CallSheet = (props ) => {
         </Button>
         {/* MEDIUM pink fff6f6*/}
         <div className='d-none d-md-block'>
+        <Row>
+        <Col xs={{span: 10, offset: 1}} >
+        <p>
+        {crewEmailList}
+        </p>
+        </Col>
+        </Row>
+        <>
+                {crewEmailList.map((scene, index) => {
+                  return (
+                      <p 
+                        key={index}>{scene} </p>
+                )}
+                )}
+          </>
         <Row>
             <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
                 <span className={` ${styles.MovieName}`} >{production_name}</span>
