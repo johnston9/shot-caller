@@ -8,7 +8,6 @@ import { Button } from 'react-bootstrap';
 import CallCastInfo from './CallCastInfo';
 import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
-import { useHistory } from "react-router-dom";
 import EditCast from '../CallsheetEditCast';
 import CallCastInfoMob from './CallCastInfoMob';
 
@@ -20,6 +19,7 @@ const CallCast = (props) => {
     const { 
         style,
         admin,
+        handleMount,
         id,
         day_id,
         cast_number,
@@ -64,8 +64,6 @@ const CallCast = (props) => {
         on_set1,
       } = castNew;
 
-    const history = useHistory();
-
     const handleEdit = () => {
         setShowEdit(showEdit => !showEdit)
       };
@@ -73,7 +71,7 @@ const CallCast = (props) => {
     const handleDelete = async () => {
         try {
             await axiosReq.delete(`/castcallsnew/${id}/`);
-            history.goBack();
+            handleMount();
         } catch (err) {
         }
     };
@@ -176,7 +174,10 @@ const CallCast = (props) => {
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <CallCastInfoMob setShowEdit={setShowEdit} admin={admin} {...castNew}/> 
+                    <CallCastInfoMob 
+                    handleMount={handleMount}
+                    setShowEdit={setShowEdit} 
+                    admin={admin} {...castNew}/> 
                     ) }
                 </Col>
             </Row>

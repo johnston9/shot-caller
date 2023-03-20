@@ -8,7 +8,7 @@ import CallCast from './CallCast';
 const TalentPage = (props) => {
     useRedirect("loggedOut");
     const admin = true;
-    const {cast, setShow} = props;
+    const {cast, setShow, handleMount} = props;
   return (
     <div className='mt-3'>
         {/* titles */}
@@ -91,6 +91,7 @@ const TalentPage = (props) => {
                         'rgb(246 254 245)' : 'rgb(254 249 254)' }}
                         {...cast_member}
                         admin={admin}
+                        handleMount={handleMount}
                         cast_member={cast_member} 
                         key={cast_member.id} />
                 ))) : ("")}

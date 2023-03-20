@@ -15,7 +15,6 @@ import { Dropdown } from "react-bootstrap";
 
 const AddCast = ({id, setShow, dataDay, dataDate}) => {
     useRedirect("loggedOut");
-    console.log(id)
     const [errors, setErrors] = useState({});
     const [cast, setCast] = useState({results: [] });
     const characters = useCharactersContext();
@@ -30,6 +29,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         commute_time: "",
         costume: "",
         contact: "",
+        email: "",
         swf: "",
         pickup: "",
         call: "",
@@ -48,6 +48,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         make_up_time,
         commute_time,
         contact,
+        email,
         swf,
         costume,
         pickup,
@@ -67,6 +68,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       const make_up_time = character.make_up_time || "" ;
       const commute_time = character.commute_time || "" ;
       const contact = character.mobile || "" ;
+      const email = character.email || "" ;
       const inst = character.requirements || "" ;
       const diet = character.diet || "" ;
     
@@ -79,6 +81,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         make_up_time: make_up_time,
         commute_time: commute_time,
         contact: contact,
+        email: email,
         inst: inst,
         diet: diet,   
         swf: "",
@@ -105,6 +108,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         make_up_time: "",
         commute_time: "",
         contact: "",
+        email: "",
         swf: "",
         pickup: "",
         call: "",
@@ -140,6 +144,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       formData.append("username", username);
       formData.append("artist", artist);
       formData.append("contact", contact);
+      formData.append("email", email);
       formData.append("costume", costume);
       formData.append("swf", swf);
       formData.append("pickup", pickup);
@@ -161,6 +166,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
                       commute_time: "",
                       costume: "",
                       contact: "",
+                      email: "",
                       swf: "",
                       pickup: "",
                       call: "",

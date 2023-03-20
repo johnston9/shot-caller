@@ -3,14 +3,12 @@ import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
 import { PostDropdown } from '../../../components/PostDropdown';
-import { useHistory } from "react-router-dom";
 import { axiosReq } from '../../../api/axiosDefaults';
 
 const CallCastInfoMob = (props) => {
     useRedirect("loggedOut");
-    const history = useHistory;
     const { id1, contact1, swf1, inst1, pickup1,
-        hmw1, on_set1, admin, setShowEdit} = props;
+        hmw1, on_set1, admin, setShowEdit, handleMount} = props;
 
         const handleEdit = () => {
             setShowEdit(showEdit => !showEdit)
@@ -19,7 +17,7 @@ const CallCastInfoMob = (props) => {
         const handleDelete = async () => {
             try {
                 await axiosReq.delete(`/castcallsnew/${id1}/`);
-                history.goBack();
+                handleMount();
             } catch (err) {
             }
         };

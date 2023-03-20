@@ -8,7 +8,7 @@ import Background from './Background';
 const BgPage = (props) => {
     useRedirect("loggedOut");
     const admin = true;
-    const {background, setShow} = props;
+    const {background, setShow, handleMount} = props;
 
   return (
     <div className='my-5'>
@@ -94,6 +94,7 @@ const BgPage = (props) => {
                         'rgb(246 254 245)' : 'rgb(254 249 254)' }}
                         {...back}
                         admin={admin}
+                        handleMount={handleMount}
                         back={back} 
                         key={back.id} />
                     </Col>

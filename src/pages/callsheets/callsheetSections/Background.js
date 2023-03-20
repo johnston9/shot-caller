@@ -8,7 +8,6 @@ import btnStyles from "../../../styles/Button.module.css";
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
-import { useHistory } from "react-router-dom";
 import BackgroundInfo from './BackgroundInfo';
 import EditBack from '../CallsheetEditBackGround';
 import BgInfoMob from './BgInfoMob';
@@ -19,7 +18,7 @@ const Background = (props) => {
     const [showEdit, setShowEdit] = useState(false);
 
     const { id, day_id, qty, type, call, scenes, set, costumes,
-        admin, style} = props
+        admin, style, handleMount} = props
 
     const [bgNew, setBgNew] = useState({
         id1: id,
@@ -33,8 +32,6 @@ const Background = (props) => {
     });
 
     const { id1, qty1, type1, call1, } = bgNew;
-    
-    const history = useHistory();
 
     const handleEdit = () => {
         setShowEdit(showEdit => !showEdit)
@@ -43,7 +40,7 @@ const Background = (props) => {
     const handleDelete = async () => {
         try {
             await axiosReq.delete(`/backgroundcallsnew/${id1}/`);
-            history.goBack();
+            handleMount();
         } catch (err) {
         }
     };
@@ -138,7 +135,8 @@ const Background = (props) => {
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <BgInfoMob setShowEdit={setShowEdit} admin={admin} {...bgNew}/> 
+                    <BgInfoMob handleMount={handleMount}
+                    setShowEdit={setShowEdit} admin={admin} {...bgNew}/> 
                     ) }
                 </Col>
             </Row>

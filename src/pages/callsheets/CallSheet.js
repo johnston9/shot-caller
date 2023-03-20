@@ -29,6 +29,7 @@ const CallSheet = (props ) => {
     console.log(crewEmailList);
     const crewInfoOne = useCrewInfoContext();
     const history = useHistory();
+    const [castEmails, setCastEmails ] = useState({ results: [] });
     const [yourcalltime, setYourcalltime] = useState("");
     const [yourCastcalltime, setYourCastcalltime] = useState("");
     const [yourCastUser, setYourCastUser] = useState("");
@@ -64,8 +65,10 @@ const CallSheet = (props ) => {
     const { scenes,
           // eslint-disable-next-line
           admin,
+          handleMount,
           currentUser,
           cast,
+          // castEmails,
           callsheet,
           background,
           // info
@@ -221,7 +224,7 @@ const CallSheet = (props ) => {
           wardrobe_assistant_4_calltime,
           wardrobe_assistant_5_calltime,
       } = props;
-    
+
       useEffect(() => {
         const actorcalldata = cast.results.filter(
           obj => obj.username === currentUser );
@@ -405,18 +408,19 @@ const CallSheet = (props ) => {
         <Row>
         <Col xs={{span: 10, offset: 1}} >
         <p>
-        {crewEmailList}
+        {/* {crewEmailList} */}
+        {/* {castEmails} */}
         </p>
         </Col>
         </Row>
-        <>
+        {/* <>
                 {crewEmailList.map((scene, index) => {
                   return (
                       <p 
                         key={index}>{scene} </p>
                 )}
                 )}
-          </>
+        </> */}
         <Row>
             <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
                 <span className={` ${styles.MovieName}`} >{production_name}</span>
@@ -576,9 +580,11 @@ const CallSheet = (props ) => {
         {/* Schedule  */}
         <SchedulePage scenes={scenes} />
         {/* Talent  */}
-        <TalentPage cast={cast} />
+        <TalentPage 
+        handleMount={handleMount}
+        cast={cast} />
         {/* BG AND STANDINS */}
-        <BgPage background={background}  />
+        <BgPage background={background} handleMount={handleMount}  />
         {/* Notes */}
         <NotesPage
         important_info={important_info} 
@@ -798,13 +804,15 @@ const CallSheet = (props ) => {
         {!showTalent ? (
                 ""
               ) : (
-                <TalentPage cast={cast} callsheet={callsheet} setShow={setShowTalent} /> 
+                <TalentPage handleMount={handleMount}
+                cast={cast} callsheet={callsheet} setShow={setShowTalent} /> 
                 ) 
         } 
         {!showBg ? (
                 ""
               ) : (
-                <BgPage background={background} callsheet={callsheet} setShow={setShowBg} /> 
+                <BgPage handleMount={handleMount}
+                background={background} callsheet={callsheet} setShow={setShowBg} /> 
                 ) 
         }      
         {!showNotes ? (

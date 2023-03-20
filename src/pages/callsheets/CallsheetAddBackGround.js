@@ -94,13 +94,13 @@ const AddBackGround = ({id, setShow, showSideBySide, dataDay, dataDate}) => {
     const buttons = (
     <div className="mb-2 text-center">    
         <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
         onClick={clear}
         >
         Cancel
         </Button>
-        <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Add
+        <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Add BG
         </Button>
     </div>
     );

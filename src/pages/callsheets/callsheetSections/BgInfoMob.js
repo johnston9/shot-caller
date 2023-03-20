@@ -3,22 +3,20 @@ import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
 import { PostDropdown } from '../../../components/PostDropdown';
-import { useHistory } from "react-router-dom";
 import { axiosReq } from '../../../api/axiosDefaults';
 
 const BgInfoMob = (props) => {
     useRedirect("loggedOut");
-    const history = useHistory;
-    const { id1,  admin, setShowEdit, scenes1, set1, costumes1 } = props;
+    const { id1,  admin, setShowEdit, scenes1, set1, costumes1, handleMount } = props;
 
         const handleEdit = () => {
             setShowEdit(showEdit => !showEdit)
           };
-        
-        const handleDelete = async () => {
+
+          const handleDelete = async () => {
             try {
-                await axiosReq.delete(`/castcallsnew/${id1}/`);
-                history.goBack();
+                await axiosReq.delete(`/backgroundcallsnew/${id1}/`);
+                handleMount();
             } catch (err) {
             }
         };
