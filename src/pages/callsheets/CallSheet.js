@@ -26,10 +26,9 @@ import Weather from '../../components/Weather';
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
     const crewEmailList = useCrewEmailsContext();
-    console.log(crewEmailList);
+    // console.log(crewEmailList);
     const crewInfoOne = useCrewInfoContext();
     const history = useHistory();
-    const [castEmails, setCastEmails ] = useState({ results: [] });
     const [yourcalltime, setYourcalltime] = useState("");
     const [yourCastcalltime, setYourCastcalltime] = useState("");
     const [yourCastUser, setYourCastUser] = useState("");
@@ -68,7 +67,7 @@ const CallSheet = (props ) => {
           handleMount,
           currentUser,
           cast,
-          // castEmails,
+          castEmails,
           callsheet,
           background,
           // info
@@ -413,14 +412,22 @@ const CallSheet = (props ) => {
         </p>
         </Col>
         </Row>
-        {/* <>
+        <>
                 {crewEmailList.map((scene, index) => {
                   return (
                       <p 
                         key={index}>{scene} </p>
                 )}
                 )}
-        </> */}
+        </>
+        <>
+                {castEmails.map((scene, index) => {
+                  return (
+                      <p 
+                        key={index}>{scene} </p>
+                )}
+                )}
+        </>
         <Row>
             <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
                 <span className={` ${styles.MovieName}`} >{production_name}</span>

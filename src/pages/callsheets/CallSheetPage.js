@@ -11,7 +11,7 @@ const CallSheetPage = () => {
     const { id } = useParams();
     const [callsheet, setCallsheet] = useState({ results: [] });
     const [cast, setCast] = useState({ results: [] });
-    // const [castEmails, setCastEmails ] = useState({ results: [] });
+    const [castEmails, setCastEmails ] = useState({ results: [] });
     const [currentUser, setCurrentUser] = useState(null);
     const [background, setBackground] = useState({ results: [] });
     const [scenes, setScenes] = useState({ results: [] });
@@ -29,17 +29,13 @@ const CallSheetPage = () => {
                 axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                 axiosReq.get("dj-rest-auth/user/"),
             ])
-            console.log(castcalldata);
+            // console.log(castcalldata);
             setCallsheet(callsheetdata); 
             setCast(castcalldata);
-            // let emailArray = [] ;
-            // for ( const [key,value] of Object.entries(castcalldata) ) {
-            //     if (key == "email" && value.length > 0 ) {
-            //     emailArray.push(value)
-            //     }
-            // }
-            // console.log(emailArray)
-            // setCastEmails(emailArray);
+            console.log(castcalldata)
+            let emailArray = castcalldata.results.map(a => a.email);
+            setCastEmails(emailArray);
+            console.log(emailArray)
             setBackground(bgcalldata);
             setScenes(scenes);
             setCurrentUser(user.username);
@@ -65,7 +61,7 @@ const CallSheetPage = () => {
                 handleMount={handleMount}
                 scenes={scenes}
                 cast={cast}
-                // castEmails={castEmails}
+                castEmails={castEmails}
                 background={background}
                 admin={admin}
                 />
