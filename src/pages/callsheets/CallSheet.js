@@ -22,6 +22,7 @@ import WalkiesPage from './callsheetSections/WalkiesPage';
 import { Image } from 'react-bootstrap';
 import HospitalPage from './callsheetSections/HospitalPage';
 import Weather from '../../components/Weather';
+import { ContactUs } from '../../components/ContactUs';
 
 const CallSheet = (props ) => {
     useRedirect("loggedOut");
@@ -406,28 +407,35 @@ const CallSheet = (props ) => {
         <div className='d-none d-md-block'>
         <Row>
         <Col xs={{span: 10, offset: 1}} >
+        <ContactUs />  
+        </Col>
+        </Row>
+        <Row>
+        <Col xs={{span: 10, offset: 1}} >
         <p>
         {/* {crewEmailList} */}
         {/* {castEmails} */}
         </p>
         </Col>
         </Row>
-        <>
-                {crewEmailList.map((scene, index) => {
-                  return (
-                      <p 
-                        key={index}>{scene} </p>
-                )}
-                )}
-        </>
-        <>
-                {castEmails.map((scene, index) => {
-                  return (
-                      <p 
-                        key={index}>{scene} </p>
-                )}
-                )}
-        </>
+        {/* crewlist */}
+        {/* <>
+        {crewEmailList.map((scene, index) => {
+          return (
+              <p 
+                key={index}>{scene} </p>
+        )}
+        )}
+        </> */}
+        {/* castlist */}
+        {/* <>
+        {castEmails.map((scene, index) => {
+          return (
+              <p 
+                key={index}>{scene} </p>
+        )}
+        )}
+        </> */}
         <Row>
             <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
                 <span className={` ${styles.MovieName}`} >{production_name}</span>
