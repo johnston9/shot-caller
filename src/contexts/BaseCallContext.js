@@ -58,7 +58,6 @@ export const CrewInfoProvider = ({ children }) => {
             }
           }
           setEmails(emailArray);
-          console.log(data.results[0]);
           setEditCrewInfo(false);
         } catch(err) {
           console.log(err);

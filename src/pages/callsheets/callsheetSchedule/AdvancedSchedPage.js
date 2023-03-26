@@ -23,7 +23,6 @@ const AdvancedSchedPage = (props) => {
         setDayInfo(dayGet);
         setAdvancedSchedule(scenes);
         setHasLoaded(true);
-        console.log(dayGet)
       } catch(err) {
         console.log(err);
         if (err.response?.status !== 401) {
