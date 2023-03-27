@@ -407,7 +407,7 @@ const CallSheet = (props ) => {
         <div className='d-none d-md-block'>
         <Row>
         <Col xs={{span: 10, offset: 1}} >
-        <ContactUs />  
+        <ContactUs day1={day} date1={date}/>  
         </Col>
         </Row>
         <Row>
