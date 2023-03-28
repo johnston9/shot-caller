@@ -20,6 +20,11 @@ export const ContactUs = (props ) => {
 
   const day2 = props.day1;
   const date2 = props.date1;
+  const castemails1 = props.castEmails;
+  const castemails2 = castemails1.toString();
+  console.log(castemails1);
+  console.log(castemails2);
+
   console.log(day2)
 
 
@@ -35,9 +40,13 @@ export const ContactUs = (props ) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [path, setPath] = useState("");
+  const [list, setList] = useState("");
+
+  const list1 = "shotcallerproduction@gmail.com"
   
   useEffect(() => {
     const pathone = window.location.href;
+    setList(castemails2);
     setProname(production_name);
     setShootday(day2);
     setShootdate(date2);
@@ -68,6 +77,25 @@ export const ContactUs = (props ) => {
   return (
     <div className='text-center'>
     <form ref={form} onSubmit={sendEmail}>
+    {/*Email list */}
+    <Row>
+    <Col className="d-flex justify-content-center p-0 p-md-2" xs={{span: 10, offset: 1 }} >
+        <Form.Group className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email List</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              type="text"
+              name="list"
+              value={list}
+                  />
+          </Form.Group>
+          {errors?.list?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+    </Col>
+    </Row>
     <Row>
     {/* Shoot day */}
     <Col className="d-flex justify-content-center p-0 p-md-2" xs={3} >

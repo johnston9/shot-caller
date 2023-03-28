@@ -225,6 +225,8 @@ const CallSheet = (props ) => {
           wardrobe_assistant_5_calltime,
       } = props;
 
+    console.log(castEmails);
+
       useEffect(() => {
         const actorcalldata = cast.results.filter(
           obj => obj.username === currentUser );
@@ -407,7 +409,10 @@ const CallSheet = (props ) => {
         <div className='d-none d-md-block'>
         <Row>
         <Col xs={{span: 10, offset: 1}} >
-        <ContactUs day1={day} date1={date}/>  
+        <ContactUs 
+          castEmails={castEmails}
+          day1={day} 
+          date1={date}/>  
         </Col>
         </Row>
         <Row>
