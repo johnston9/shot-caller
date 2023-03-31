@@ -35,14 +35,11 @@ export const ContactUs = (props ) => {
   const [proname, setProname] = useState("");
   const [shootday, setShootday] = useState("");
   const [shootdate, setShootdate] = useState("");
-  const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [path, setPath] = useState("");
   const [list, setList] = useState("");
-
-  const list1 = "shotcallerproduction@gmail.com"
   
   useEffect(() => {
     const pathone = window.location.href;
@@ -61,7 +58,7 @@ export const ContactUs = (props ) => {
     e.preventDefault();
     setProcess("sending");
 
-    emailjs.sendForm('gmailpro', 'call_sheets', form.current, 'user_TZnl6mBgWTUOAkmv8HKrB')
+    emailjs.sendForm('service_6i2us9f', 'call_sheets', form.current, 'user_TZnl6mBgWTUOAkmv8HKrB')
       .then((result) => {
           console.log(result.text);
           setProcess("success");

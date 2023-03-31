@@ -17,6 +17,8 @@ import dep8 from "../../assets/dep8.png";
 import dep9 from "../../assets/dep9.png";
 import dep10 from "../../assets/dep10.png";
 import dep11 from "../../assets/dep11.png";
+import dep12 from "../../assets/dep12.png";
+import dep13 from "../../assets/dep13.png";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import btnStyles from "../../styles/Button.module.css";
@@ -434,7 +436,7 @@ const Scene = (props) => {
                   <Col xs={4}  ></Col>
                       <Col className='px-1 px-md-2' xs={4} >
                         <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
-                        <Card.Img height={100} className={`text-center ${styles.UniImg}`} src={dep9} alt="Card image" />
+                        <Card.Img height={100} className={`text-center ${styles.UniImg}`} src={dep8} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
                         </Card>
                       </Col>
@@ -484,7 +486,7 @@ const Scene = (props) => {
                       </Col>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep8} alt="Card image" />
+                        <Card.Img src={dep9} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
                         <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
                         </Card>
@@ -512,14 +514,14 @@ const Scene = (props) => {
                       </Col>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={Camera} alt="Card image" />
+                        <Card.Img src={dep12} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
                         <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
                         </Card>
                       </Col>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={Camera} alt="Card image" />
+                        <Card.Img src={dep13} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
                         <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
                         </Card>
