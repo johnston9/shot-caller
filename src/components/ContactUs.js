@@ -61,7 +61,7 @@ export const ContactUs = (props ) => {
     e.preventDefault();
     setProcess("sending");
 
-    emailjs.sendForm('gmail', 'call_sheets', form.current, 'user_TZnl6mBgWTUOAkmv8HKrB')
+    emailjs.sendForm('gmailpro', 'call_sheets', form.current, 'user_TZnl6mBgWTUOAkmv8HKrB')
       .then((result) => {
           console.log(result.text);
           setProcess("success");
