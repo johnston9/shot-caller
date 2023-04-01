@@ -105,11 +105,11 @@ i:hover {
   }
 } */
 
-.SceneCard a {
-  color: #000;
+.SceneCard i {
+  color: #fff;
 }
 
-.SceneCard a:hover {
+.SceneCard i:hover {
   color: #000;
 }
 

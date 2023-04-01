@@ -31,9 +31,13 @@ color: #000;
 }
 
 .Content3 {
-  background-color: #343c3e;
+  background-color: #3b444b;
   color: #fafafa;
   cursor: pointer;
+}
+
+.MoodTop i {
+  color: #fff;
 }
 
 .Content3:hover {
