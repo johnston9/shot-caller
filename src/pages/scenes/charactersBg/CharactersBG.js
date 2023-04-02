@@ -1,3 +1,5 @@
+// Page containing the Add Character and Characters components
+// and the Add Background and Background components
 import React, { useState } from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";
@@ -43,15 +45,10 @@ const CharactersBG = (props) => {
 
     return ( 
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={`text-center mt-1 pl-5 py-1 ${styles.SubTitle }`}>
-                Characters / BACKGROUND
-                <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersBG(false) } >Close</span>
+            <h5 className={`text-center mt-1 pl-5 py-1 ${styles.SubTitle }`}>
+                CHARACTERS / BG 
+                <span className={`float-right ${styles.Close }`} onClick={() => setShowCharactersBG(false) } >Close</span>
             </h5>
-            {/* <Row className='mt-3'>
-            <Col className='text-center'>
-            <h5 className={`${styles.CharactersTitle }`} >CHARACTERS</h5>
-            </Col>
-            </Row> */}
             <Row>
             <Col className='text-center py-3'>
             <Button
@@ -77,30 +74,20 @@ const CharactersBG = (props) => {
             {/* titles */}
             <Row className='mt-3'>
             {/* titles */}
-            <Col xs={6} md={4}>
+            <Col xs={12} sm={6} md={4}>
             <div className='px-0 mx-3'>
             <Row >
-            <Col className={`${styles.BoldTitle} px-0 mx-0`} xs={2} >
-            </Col>
-            <Col className='px-0 mx-0' xs={6}>
+            <Col className='px-0 mx-0 text-center' xs={8}>
             <p className={`${styles.BoldTitle2}` }>Character</p>
             </Col>
-            {admin ? (
-                <>
-                <Col className='px-0 mx-0' xs={4}>
-                <p className={`${styles.BoldTitle2} pl-2`}>Costume</p>
-                </Col>
-                </>
-            ) : (
-                <Col className='px-0 mx-0' xs={4}>
+            <Col className='px-0 mx-0 text-center' xs={4}>
             <p className={`${styles.BoldTitle2} pl-2 `}>Costume</p>
             </Col>
-            )}
             </Row>
             </div>
             </Col>
             {/* 2 */}
-            <Col xs={6} md={4}>
+            <Col className='d-none d-sm-block' xs={12} sm={6} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className={`${styles.BoldTitle} px-0 mx-0`} xs={2} >
@@ -123,7 +110,7 @@ const CharactersBG = (props) => {
             </div>
             </Col>
             {/* 3 */}
-            <Col xs={6} md={4}>
+            <Col className='d-none d-md-block' xs={12} sm={6} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className={`${styles.BoldTitle} px-0 mx-0`} xs={2} >
@@ -149,7 +136,7 @@ const CharactersBG = (props) => {
             <Row>
             {characters.results.length ? (
             characters.results.map((character) => (
-            <Col xs={6} md={4}
+            <Col xs={12} sm={6} md={4}
             className="px-0 mx-0">
                 <Character 
                 setCharacters={setCharacters}
@@ -213,7 +200,7 @@ const CharactersBG = (props) => {
             </div>
             </Col>
             {/* 2 */}
-            <Col xs={12} md={6}>
+            <Col className='d-none d-md-block' xs={12} md={6}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className={`${styles.BoldTitle} text-center` } xs={2}>

@@ -500,14 +500,14 @@ const Scene = (props) => {
                       </Col>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep10} height={100} alt="Card image" />
+                        <Card.Img src={dep10} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
                         <DeptDropdown handleClick={(category) => handleClickPost(category) } />
                         </Card>
                       </Col>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep11} height={100} alt="Card image" />
+                        <Card.Img src={dep11} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
                         <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
                         </Card>

@@ -18,7 +18,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 
 function PostPage() {
-  useRedirect("loggedOut")
+  useRedirect("loggedOut");
     const { id } = useParams()
     const [post, setPost] = useState({ results: [] });
 

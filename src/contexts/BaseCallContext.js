@@ -21,36 +21,10 @@ export const CrewInfoProvider = ({ children }) => {
     const [crewInfo, setCrewInfo] = useState({ results: [] });
     const [emails, setEmails] = useState({ results: [] });
 
-    // for ( const [key,value] of Object.entries( obj ) ) {
-    //   if (key.includes("email")) {
-    //     return value
-    //   }
-    // }
-
-  //   for (const [key, value] of Object.entries(test)) {
-  //     console.log(key, value);
-  //   }
-
-  //   const emailArray = Object.keys(obj).forEach(function (key) {
-  //     return key.includes("email");
-  //  });
-
-    // let check = [{name: 'trent'}, {name: 'jason'}]
-    // .map(item => item.name)
-    // .includes('email');
-
-    // const checkIfEmailExist = (objectName, keyName) => {
-    //   let emailExist = Object.keys(objectName).some(key => key === keyName);
-    //   return emailExist;};
-
     const fetchCrewInfo = async () => {
         try {
           const { data } = await axiosReq.get(`/crewinfonew/`);
           setCrewInfo(data.results[0]);
-          // const emailArray = Object.keys(data.results[0]).forEach(function (key) {
-          //   return key.includes("email");
-          // });
-          // console.log(emailArray);
           let emailArray = [] ;
           for ( const [key,value] of Object.entries( data.results[0] ) ) {
             if (key.includes("email") && value.length > 0 ) {

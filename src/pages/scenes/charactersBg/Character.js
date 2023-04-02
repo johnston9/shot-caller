@@ -28,12 +28,12 @@ const Character = ({id, admin, cast_number, role, costume,
         <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={2} >
         <p >{cast_number} </p>
         </Col>
-        <Col className={`${styles.TitleBox5} px-0 mx-0`}>
+        <Col className={`${styles.TitleBox5} pl-1 pr-0 mx-0`}>
         <p >{role} </p>
         </Col>
         {admin ? (
             <>
-            <Col xs={3} className={`${styles.TitleBox5} px-0 mx-0`}>
+            <Col xs={3} className={`${styles.TitleBox3} px-0 mx-0`}>
             {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
             <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={1}>
@@ -45,7 +45,7 @@ const Character = ({id, admin, cast_number, role, costume,
             </Col>
             </>
         ) : (
-            <Col xs={3} className={`${styles.TitleBox3} px-0 mx-0`}>
+            <Col xs={3} className={`${styles.TitleBox4} px-0 mx-0`}>
             {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
         )}

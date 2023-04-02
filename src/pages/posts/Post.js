@@ -17,7 +17,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const Post = (props) => {
-  useRedirect("loggedOut")
+  useRedirect("loggedOut");
     const {
         id,
         owner,

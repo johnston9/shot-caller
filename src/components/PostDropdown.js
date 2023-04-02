@@ -27,7 +27,7 @@ const DepartmentIcon = React.forwardRef(({ onClick }, ref) => (
     overlay={<Tooltip>Scene Posts by Category</Tooltip>}
     >
   <i
-    className="fas fa-ellipsis-v"
+    className="fas fa-ellipsis-v pl-5 pb-5"
     ref={ref}
     onClick={(e) => {
       e.preventDefault();

@@ -2,6 +2,12 @@
     display: inline-block;
     max-width: 50%;
     padding: 0px;
+    z-index: 99 !important;
+  }
+
+  .DropdownItem {
+    padding: 0px;
+    z-index: 99 !important;
   }
 
 .Menu {
