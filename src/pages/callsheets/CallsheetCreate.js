@@ -1649,11 +1649,11 @@ const buttons = (
           className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
     </Button>
-          {!showInfo ? (
-              ""
-          ) : (
-            <InformationCallsheet  /> 
-            ) }  
+    {!showInfo ? (
+        ""
+    ) : (
+      <InformationCallsheet  /> 
+      ) }  
     {/* cast buttons */}
     <h3 className={`text-center mt-2 py-1 ${styles.SubTitle }`} >ADD CAST / ADD BG</h3> 
     <div className= {`mb-3`}>

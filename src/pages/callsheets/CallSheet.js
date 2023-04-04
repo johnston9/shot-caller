@@ -34,6 +34,7 @@ const CallSheet = (props ) => {
     const [yourcalltime, setYourcalltime] = useState("");
     const [yourCastcalltime, setYourCastcalltime] = useState("");
     const [yourCastUser, setYourCastUser] = useState("");
+    const [showSend, setShowSend] = useState(false);
     const [showHos, setShowHos] = useState(false);
     const [showContacts, setShowContacts] = useState(false);
     const [showLoc, setShowLoc] = useState(false);
@@ -400,22 +401,32 @@ const CallSheet = (props ) => {
       <TopBox work={`Call Sheet`}
                 title={`Day ${day}`}
                 title2={date}  />
+        <Row>
+        <Col xs={6}>
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
             onClick={() => history.goBack()}
         >
             Back
         </Button>
-        {/* MEDIUM pink fff6f6*/}
-        <div className='d-none d-md-block'>
-        <Row>
-        <Col xs={{span: 10, offset: 1}} >
-        <ContactUs 
-          castEmails={castEmails}
-          day1={day} 
-          date1={date}/>  
+        </Col>
+        <Col xs={6}>
+        <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowSend(showSend => !showSend)} >SEND
+         </Button>
         </Col>
         </Row>
+        {/* MEDIUM pink fff6f6*/}
+        <div className='d-none d-md-block mt-2'>
+        {!showSend ? (
+              ""
+          ) : (
+            <ContactUs 
+              castEmails={castEmails}
+              day1={day} 
+              date1={date}/>  
+            ) } 
         <Row>
         <Col xs={{span: 10, offset: 1}} >
         <p>

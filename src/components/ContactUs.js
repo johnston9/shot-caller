@@ -10,8 +10,10 @@ import styles from "../styles/Scene.module.css";
 import { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useCrewInfoContext } from '../contexts/BaseCallContext';
+import InfoSendEmails from '../pages/callsheets/info/InfoSendEmails';
 
 export const ContactUs = (props ) => {
+  const [showInfo, setShowInfo] = useState(false);
   const crew = useCrewInfoContext();
   const production_name = crew?.production_name;
   const company = crew?.production_company;
@@ -73,7 +75,20 @@ export const ContactUs = (props ) => {
   };
 
   return (
-    <div className='text-center'>
+    <div className={`pb-2 my-3 ${styles.ContactBack} text-center`} >
+    <Row>
+    <Col xs={12}>
+    <Button
+          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowInfo(showInfo => !showInfo)} >IMPORTANT
+    </Button>
+    </Col>
+    </Row>
+    {!showInfo ? (
+        ""
+    ) : (
+      <InfoSendEmails  /> 
+      ) }  
     <form ref={form} onSubmit={sendEmail}>
     {/*Email list */}
     <Row>
@@ -200,24 +215,6 @@ export const ContactUs = (props ) => {
           ))}
     </Col>
     </Row>
-    {/* message */}
-    <Row>
-    <Col className="d-flex justify-content-center p-0 p-md-2" xs={{span: 10, offset: 1 }} >
-        <Form.Group className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Message</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="message"
-                  />
-          </Form.Group>
-          {errors?.message?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-    </Col>
-    </Row>
     {/* path */}
     <Row>
     <Col className="d-flex justify-content-center p-0 p-md-2" xs={{span: 10, offset: 1 }} >
@@ -231,6 +228,24 @@ export const ContactUs = (props ) => {
                   />
           </Form.Group>
           {errors?.path?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+    </Col>
+    </Row>
+    {/* message */}
+    <Row>
+    <Col className="d-flex justify-content-center p-0 p-md-2" xs={{span: 10, offset: 1 }} >
+        <Form.Group className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Message</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              type="text"
+              name="message"
+                  />
+          </Form.Group>
+          {errors?.message?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>
