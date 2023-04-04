@@ -47,6 +47,7 @@ const CallSheetPage = () => {
 
     useEffect(() => {
         handleMount();
+        // eslint-disable-next-line
     }, [id])
 
   return (

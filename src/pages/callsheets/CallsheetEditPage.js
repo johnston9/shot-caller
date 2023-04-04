@@ -27,7 +27,6 @@ import AddSoundTransport from './callsheetAddCrewTimes/AddSoundTransport';
 import AddStunts from './callsheetAddCrewTimes/AddStunts';
 import AddPostAdditional from './callsheetAddCrewTimes/AddPostAdditional';
 import InformationEdit from "./info/InformationEdit";
-import InfoCrewCalls from "./info/InfoCrewCalls";
 import InformationWeather from "./info/InformationWeather";
 import ImportantCrewCalls from "./info/ImportantCrewCalls";
 

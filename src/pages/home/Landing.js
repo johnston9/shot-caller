@@ -26,7 +26,11 @@ const Landing = () => {
   const admin = false;
     return (
         <Container className={`px-2 ${styles.Background}`}>
-          <TopBox title={`SHOT CALLER`} />
+          {production_name ? (
+            <TopBox work={production_name} />
+          ) : (
+            <TopBox work={`SHOT CALLER`} />
+          ) }
           <div className={`my-3 ${styles.Black} px-3`}>
           {signindata ? (<p className={`${styles.White}`}>
            {signindata} intercept works 

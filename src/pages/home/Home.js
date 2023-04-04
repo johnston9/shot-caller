@@ -10,14 +10,21 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
+import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const Home = () => {
     useRedirect("loggedOut");
+    const crewInfoOne = useCrewInfoContext();
+  const production_name = crewInfoOne.production_name || "";
     const admin = true;
 
     return (
       <Container className={`px-2  ${styles.Background}`}>
-      <TopBox title="SHOT CALLER" />
+      {production_name ? (
+            <TopBox work={production_name} />
+          ) : (
+            <TopBox work={`SHOT CALLER`} />
+          ) }
         <Row className={`my-3 ${styles.Row}`}>
         <Col className="my-3 pr-0 pl-3 pl-md-4"
           xs={1} md={1}

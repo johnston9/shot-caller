@@ -5,7 +5,6 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
-import Camera from "../../assets/dep17s.png";
 import dep1 from "../../assets/dep1.png";
 import dep2 from "../../assets/dep2.png";
 import dep3 from "../../assets/dep3.png";
@@ -446,7 +445,8 @@ const Scene = (props) => {
                         <Card className={` ${styles.CardBox}`} >
                         <Card.Img src={dep2} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickCamera(category) } />
+                        <DeptDropdown  handleClick={(category) => handleClickCamera(category) }
+                                       className={` ${styles.Drop}`} />
                         </Card>
                       </Col>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >

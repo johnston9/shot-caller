@@ -16,9 +16,13 @@ import Container from "react-bootstrap/Container";
 import TopBox from "../../components/TopBox";
 import axios from "axios";
 import { useRedirectSign } from "../../hooks/RedirectSign";
+import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const SignUpForm = () => { 
   useRedirectSign("loggedIn");
+  const crewInfoOne = useCrewInfoContext();
+  const production_name = crewInfoOne.production_name || "";
+
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -51,7 +55,13 @@ const SignUpForm = () => {
 
   return (
     <Container className={styles.SignupBox} >
-        <TopBox title="Sign Up"/>
+        {production_name ? (
+            <TopBox work={production_name}
+                        title={"Sign Up" } />
+          ) : (
+            <TopBox work={`SHOT CALLER`}
+                        title={"Sign Up" } />
+          ) }
         <Row className={styles.Row}>
           <Col className="my-3 pr-0 pl-3 pl-md-4"
             xs={1} md={1}>

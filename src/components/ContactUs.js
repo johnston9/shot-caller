@@ -52,6 +52,7 @@ export const ContactUs = (props ) => {
     setEmail(companyemail);
     setPath(pathone);
     console.log(path);
+    // eslint-disable-next-line
   },[] );
 
   const sendEmail = (e) => {

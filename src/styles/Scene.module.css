@@ -47,10 +47,6 @@
   height: 1000px;
 }
 
-i:hover {
-  color: #fff;
-}
-
 .Images {
   object-fit: cover;
   height: 200px;
@@ -270,12 +266,6 @@ i:hover {
   /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
 }
 
-/* .CardDrop {
-  position: absolute;
-  top: 0;
-  right: 0;
-} */
-
 .CostumeLink {
   color: rgb(26, 172, 172);
   text-transform: uppercase;
@@ -429,10 +419,6 @@ i:hover {
   width: 80%;
 }
 
-.Drop {
-  color: #000;
-}
-
 .Grey {
   color: rgb(54, 52, 52);
 }
@@ -446,7 +432,6 @@ i:hover {
 }
 
 .Dept:hover {
-  /* border: 5px solid #fff; */
   background-color: rgb(181, 223, 236);
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -455,6 +440,18 @@ i:hover {
 
 .DeptDiv {
   height: 50%;
+}
+
+.Card i {
+  color: #fff;
+}
+
+.Drop {
+  color: #fff;
+}
+
+.DeptDropdown {
+  color: #fff;
 }
 
 @media screen and (max-width: 600px) {

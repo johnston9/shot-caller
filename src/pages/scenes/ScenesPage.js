@@ -206,7 +206,7 @@ const ScenesPage = ({message, filter = "" }) => {
                   return (
                     <Col xs={6} sm={4} md={3} lg={2} className="p-1 ">
                       <SceneTop 
-                        key={scene.title}
+                        key={scene.id}
                         {...scene} 
                         setScenes={setScenes}
                         style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 

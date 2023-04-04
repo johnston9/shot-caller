@@ -49,7 +49,7 @@ const NavBar = () => {
           title={
             <span style={{ color: '#555555'}}>
               <i 
-              className="navicon fas fa-stream"></i>Workspace
+              className="navicon fas fa-stream pt-1"></i>Workspace
             </span>
           }
           ref={refw}
@@ -103,7 +103,7 @@ const NavBar = () => {
             style={{ color: '#555555'}} 
             className={` ${styles.Title} `}>
               <i              
-              className="navicon fas fa-stream"></i>Features
+              className="navicon fas fa-stream pt-1"></i>Features
             </span>
           }
           ref={reff}
@@ -171,7 +171,7 @@ const NavBar = () => {
           title={
             <span style={{ color: '#555555'}}>
               <i 
-              className="luv navicon fas fa-stream"></i>Moodboards
+              className="luv navicon fas fa-stream pt-1"></i>Moodboards
             </span>
           }
           ref={refm}
@@ -223,7 +223,7 @@ const NavBar = () => {
           title={
             <span style={{ color: '#555555'}}>
               <i 
-              className="luv navicon fas fa-stream"></i>Production
+              className="luv navicon fas fa-stream pt-1"></i>Production
             </span>
           }
           ref={refs}
@@ -327,7 +327,7 @@ const NavBar = () => {
        expand="lg" fixed="top">
         <NavLink to="/">
             <Navbar.Brand className='mr-1' >
-            <img src={logo} alt="logo" height="30" /> Shot Caller
+            <img src={logo} alt="logo" height="40" className='pb-1' /> Shot Caller
             </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle onClick={() => setExpanded(!expanded)}

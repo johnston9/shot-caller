@@ -6,7 +6,6 @@ import { useSetCategoryContext, useSetDeptContext } from '../../contexts/DeptCat
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Camera from "../../assets/dep17s.png";
 import dep1 from "../../assets/dep1.png";
 import dep2 from "../../assets/dep2.png";
 import dep3 from "../../assets/dep3.png";
