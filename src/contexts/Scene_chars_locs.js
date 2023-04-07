@@ -1,3 +1,5 @@
+// Context file to fetch all Scenes, Characters and all Locations
+// This is used throughout
 import { createContext, useContext,  useEffect,  useState } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 

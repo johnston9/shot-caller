@@ -1,3 +1,5 @@
+// Page that contain the Advanced Schedule which 
+// contains the ScheduleScenes
 import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

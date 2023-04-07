@@ -1,3 +1,4 @@
+// The React Calender Component 
 import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -18,23 +19,7 @@ const handleDate = (date) => {
   setNewdate(formatdate);
   console.log(`start ${formatdate}`);
   console.log(`date ${today}`);
-  // history.push(`/calendar/days`);
 }
-
-// useEffect(() => {
-//   const handleMount = (days, newdate) => {
-//     // days.results.map((day) => (
-//     //   day.date == newdate ? (
-//     //     console.log(day.id)
-//     //   ) : (
-//     //     ""
-//     //   )
-//     // ))
-//     console.log(days.results[0] )
-//   };
-
-//   handleMount();
-// }, [newdate]);
 
   return (
     <div>

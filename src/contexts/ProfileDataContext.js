@@ -1,3 +1,7 @@
+// Context file to fetch all Profiles
+// Containing the handleFollow and unhandleFollow functions
+// Which use the followHelper function in utils
+// query context is just used to reload after selection is changed
 import { createContext, useContext, useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { followHelper, unfollowHelper } from "../utils/utils";

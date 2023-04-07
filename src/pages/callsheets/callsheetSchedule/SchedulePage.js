@@ -1,3 +1,6 @@
+// Page to display the Schedule on the Callsheet and 
+// Callsheet Create pages
+// It renders a list of ScheduleScenes
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

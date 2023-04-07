@@ -1001,12 +1001,12 @@ const CrewInfoCreate = () => {
   const buttons = (
   <div className="text-center mt-4 mb-4">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
       Create
     </Button>
   </div>

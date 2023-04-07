@@ -1,11 +1,15 @@
+// FIX NEEDED
+// Weather component using Open Weather API
+// Needs to have date added but that meens an upgrade to a
+// higher price tier and the url altered to a different 
 import React, { useEffect, useState } from 'react';
 import styles from "../styles/Weather.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
  
 const Weather = ({weather_location} ) => {
-// const openkee = "d9aad82b1608c5ec1ba1ed0ced3fc168";
-// const openKey = process.env.OPEN_WEATHER_KEY;
+const openKey = process.env.REACT_APP_OPEN_WEATHER_KEY;
+console.log(openKey);
 const [forcast, setForcast] = useState("");
 const [temp, setTemp] = useState("");
 const [rise, setRise] = useState("");
@@ -14,8 +18,8 @@ const [setsun, setSetsun] = useState("");
 useEffect(() => {
     const search = () => {
         fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${weather_location}&units=metric&APPID=d9aad82b1608c5ec1ba1ed0ced3fc168`
-          // `https://api.openweathermap.org/data/2.5/forecast/daily?q=${weather_location}&units=metric&cnt=7&appid=d9aad82b1608c5ec1ba1ed0ced3fc168`
+          `https://api.openweathermap.org/data/2.5/weather?q=${weather_location}&units=metric&APPID=${openKey}`
+          // `https://api.openweathermap.org/data/2.5/forecast/daily?q=${weather_location}&units=metric&cnt=7&appid=${openKey}`
         )
           .then((response) => response.json())
           .then((data) => {
@@ -30,7 +34,7 @@ useEffect(() => {
           });
     };
     search();
-  }, [weather_location])
+  }, [weather_location, openKey])
 
 // const search = () => {
 //       fetch(

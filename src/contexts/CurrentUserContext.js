@@ -1,3 +1,14 @@
+// Fix needed - Gmail mobile browser issue
+// Context file used to fetch the current user
+// And interceptors used to keep a user loged in
+// A fix is needed for the Gmail mobile browser issue
+// as the axiosReq interceptor is not working when the 
+// App is used on mobile through Gmail
+// So it's original catch block is now commented out
+// TokenContext, RedirectContext and SigninContext are just being used here to 
+// investigate this issue
+// The issue seems to be all post requests getting 404
+// so the token refresh is being rejected
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
@@ -31,7 +42,7 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 // git push heroku main
 // git rm .env --cached
 // git commit -m "Stopped tracking .env File"
-// xxxxx
+// xxxxx setToken, setRedirect and setSignin
 
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -53,6 +64,7 @@ export const CurrentUserProvider = ({ children }) => {
   }, []);
 
   useMemo(() => {
+    // will intercept all requests and refresh the token
     axiosReq.interceptors.request.use(
       async (config) => {
         if (shouldRefreshToken()) {
@@ -64,6 +76,17 @@ export const CurrentUserProvider = ({ children }) => {
             setSignin(`inter error`)
             console.log(err);
               }
+            // original catch block - commented out for Gmail mobile issue
+            // catch (err) {
+            //   setCurrentUser((prevCurrentUser) => {
+            //     if (prevCurrentUser) {
+            //       history.push("/signin");
+            //     }
+            //     return null;
+            //   });
+            //   removeTokenTimestamp();
+            //   return config;
+            // }
         }
         return config;
       },
@@ -72,6 +95,9 @@ export const CurrentUserProvider = ({ children }) => {
       }
     );
 
+    // will intercept responses that are 401
+    // if response says access token has expired will 
+    // refresh token
     axiosRes.interceptors.response.use(
       (response) => response,
       async (err) => {

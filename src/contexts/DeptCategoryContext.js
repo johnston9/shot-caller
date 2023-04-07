@@ -1,3 +1,7 @@
+// Context file for the Scene Page to set the scene id, scene number,
+// department and category wanted 
+// Also the DeptGeneralContext to set the department wanted 
+// in the Department xtra page
 import { createContext, useContext,  useState } from "react";
 
 export const SceneContext = createContext();

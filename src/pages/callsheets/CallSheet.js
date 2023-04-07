@@ -227,8 +227,6 @@ const CallSheet = (props ) => {
           wardrobe_assistant_5_calltime,
       } = props;
 
-    console.log(castEmails);
-
       useEffect(() => {
         const actorcalldata = cast.results.filter(
           obj => obj.username === currentUser );
@@ -411,10 +409,10 @@ const CallSheet = (props ) => {
         </Button>
         </Col>
         <Col xs={6}>
-        <Button
+        {admin && <Button
           className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowSend(showSend => !showSend)} >SEND
-         </Button>
+         </Button> }
         </Col>
         </Row>
         {/* MEDIUM pink fff6f6*/}
@@ -423,6 +421,8 @@ const CallSheet = (props ) => {
               ""
           ) : (
             <ContactUs 
+              setShowSend={setShowSend}
+              crewEmailList={crewEmailList}
               castEmails={castEmails}
               day1={day} 
               date1={date}/>  

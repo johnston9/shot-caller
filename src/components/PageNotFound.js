@@ -1,3 +1,5 @@
+// Page to display if no results are found for a request
+// Contains the Asset component
 import React from 'react';
 import styles from "../styles/PageNotFound.module.css";
 import Asset from "./Asset";

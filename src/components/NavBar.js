@@ -1,3 +1,7 @@
+// The Navbar Component
+// Currently the activeClassName item is not working
+// so is commented out on each link
+// Am looking for a way to resolve this issue
 import React from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -36,9 +40,6 @@ const NavBar = () => {
       {/*  home */}
       <NavLink
           className={`mt-1 pt-2  ${styles.NavLink} `}
-          // style={isActive => ({
-          //   color: isActive ? "blue" : ""
-          // })}
           to="/home"
         >
           <i 
@@ -54,8 +55,7 @@ const NavBar = () => {
           }
           ref={refw}
           id="nav-dropdown"
-          // activeClassName={styles.Active}
-          // activeclassname={styles.Active}  
+          // activeClassName={styles.Active} 
           className={`mt-1 ${styles.NavLink} luv `}
           >
         <NavDropdown.Item >
@@ -177,7 +177,6 @@ const NavBar = () => {
           ref={refm}
           id="nav-dropdown3"
           // activeClassName={styles.Active}
-          // activeclassname={styles.Active} 
           className={`mt-1 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
@@ -228,8 +227,7 @@ const NavBar = () => {
           }
           ref={refs}
           id="nav-dropdown4"
-          // activeClassName={styles.Active}
-          // activeclassname={styles.Active} 
+          // activeClassName={styles.Active} 
           className={`mt-1 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
@@ -276,7 +274,6 @@ const NavBar = () => {
           ref={refp}
           id="nav-dropdown5"
           // activeClassName={styles.Active}
-          // activeclassname={styles.Active} 
           className={`py-0 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
@@ -306,15 +303,13 @@ const NavBar = () => {
       <NavLink
           className={styles.NavLink}
           // activeClassName={styles.Active}
-          // activeclassname={styles.Active} 
           to="/signin"
         >
           <i className="fas fa-play"></i>Sign in
         </NavLink>
         <NavLink
           className={styles.NavLink}
-          // activeClassName={styles.Active}  
-          // activeclassname={styles.Active}        
+          // activeClassName={styles.Active}        
           to="/signup"
         >
           <i className="fas fa-play"></i>Sign up

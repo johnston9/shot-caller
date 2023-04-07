@@ -1,3 +1,9 @@
+// utils.js file containing
+// fetchMoreData function for the InfiniteScroll component
+// followHelper and unfollowHelper for the follow function in ProfileDataContext
+// setTokenTimestamp on the Sign in page
+// shouldRefreshToken for the axiosReq interceptor in CurrentUserContext
+// removeTokenTimestamp for the axiosReq and axiosRes interceptors in CurrentUserContext
 import jwtDecode from "jwt-decode";
 import { axiosReq } from "../api/axiosDefaults";
 

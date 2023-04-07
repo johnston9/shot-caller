@@ -1,4 +1,4 @@
-// Email JS
+// Page to hols the Email JS form that sends the Callsheets to the crew and cast
 import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import btnStyles from "../styles/Button.module.css";
@@ -19,16 +19,19 @@ export const ContactUs = (props ) => {
   const company = crew?.production_company;
   const companyphone = crew?.company_phone;
   const companyemail = crew?.company_email;
+  const setShowSend = props.setShowSend;
 
   const day2 = props.day1;
   const date2 = props.date1;
+  const crewEmailList1 = props.crewEmailList;
   const castemails1 = props.castEmails;
+  const emailList1 = crewEmailList1.concat(castemails1);
+  // Just using Cast Email list in Development to save
+  // EmailJS credits
+  // eslint-disable-next-line
+  const emailList = emailList1.toString();
+
   const castemails2 = castemails1.toString();
-  console.log(castemails1);
-  console.log(castemails2);
-
-  console.log(day2)
-
 
   const form = useRef();
   const [process, setProcess] = useState(null);
@@ -65,6 +68,7 @@ export const ContactUs = (props ) => {
       .then((result) => {
           console.log(result.text);
           setProcess("success");
+          setShowSend(false);
       }, (error) => {
           console.log(error.text);
           setProcess("error");
@@ -100,6 +104,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="list"
               value={list}
+              readOnly
                   />
           </Form.Group>
           {errors?.list?.map((message, idx) => (
@@ -119,6 +124,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="shootday"
               value={shootday}
+              readOnly
                   />
           </Form.Group>
           {errors?.shootday?.map((message, idx) => (
@@ -136,6 +142,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="proname"
               value={proname}
+              readOnly
                   />
           </Form.Group>
           {errors?.proname?.map((message, idx) => (
@@ -153,6 +160,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="shootdate"
               value={shootdate}
+              readOnly
                   />
           </Form.Group>
           {errors?.shootdate?.map((message, idx) => (
@@ -172,6 +180,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="from_name"
               value={name}
+              readOnly
                   />
           </Form.Group>
           {errors?.name?.map((message, idx) => (
@@ -189,6 +198,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="phone"
               value={phone}
+              readOnly
                   />
           </Form.Group>
           {errors?.companyphone?.map((message, idx) => (
@@ -206,6 +216,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="email"
               value={email}
+              readOnly
                   />
           </Form.Group>
           {errors?.email?.map((message, idx) => (
@@ -225,6 +236,7 @@ export const ContactUs = (props ) => {
               type="text"
               name="path"
               value={path}
+              readOnly
                   />
           </Form.Group>
           {errors?.path?.map((message, idx) => (
@@ -254,8 +266,14 @@ export const ContactUs = (props ) => {
     </Row>
     <Row>
     <Col className='text-center' >
+    <Button
+      className={`mr-3 px-5 py-1 ${btnStyles.Button} ${btnStyles.Blue}`}
+      onClick={() => setShowSend(false)}
+    >
+      CANCEL
+    </Button>
     <Button className={`ml-3 px-5 py-1  ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Send
+        SEND EMAILS
       </Button>
     </Col>
     </Row>

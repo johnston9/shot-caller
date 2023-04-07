@@ -1,3 +1,4 @@
+// handler function for TESTING
 import { rest } from "msw";
 
 const baseURL = "https://shot-caller-api.herokuapp.com/";

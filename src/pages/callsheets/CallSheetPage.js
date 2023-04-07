@@ -32,10 +32,8 @@ const CallSheetPage = () => {
             // console.log(castcalldata);
             setCallsheet(callsheetdata); 
             setCast(castcalldata);
-            console.log(castcalldata)
             let emailArray = castcalldata.results.map(a => a.email);
             setCastEmails(emailArray);
-            console.log(emailArray)
             setBackground(bgcalldata);
             setScenes(scenes);
             setCurrentUser(user.username);

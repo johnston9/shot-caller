@@ -1,3 +1,7 @@
+// A component containing the Scene info for the Schedule
+// It contains the ScheduleInfo component that contains each scenes 
+// extra info and the ScheduleCharacters componebt that contains
+// each scene's characters and BG info
 import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -32,6 +36,8 @@ const ScheduleScene = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
+                {/* showSideBySide  used for the add castand schedule
+                   are opened side by side*/}
                 {showSideBySide ? (
                     <>
                     <Col xs={2} md={2} className={`mx-0 px-0 pb-1 ${styles.TitleBox2}`}>

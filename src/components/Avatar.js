@@ -1,3 +1,4 @@
+// Component to hold the Avatar Image for a user
 import React from "react";
 import styles from "../styles/Avatar.module.css";
 

@@ -1,4 +1,4 @@
-// Page to display the Schedule Scene X-tra info
+// Page to display the Schedule Scene extra info
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';

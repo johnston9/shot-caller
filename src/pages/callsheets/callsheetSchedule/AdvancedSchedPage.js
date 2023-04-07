@@ -1,3 +1,5 @@
+// Page to fetch the Advanced Schedule info and contain
+// the Advanced Schedule
 import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import { axiosReq } from '../../../api/axiosDefaults';
@@ -35,32 +37,11 @@ const AdvancedSchedPage = (props) => {
   // eslint-disable-next-line
   }, [])
 
-  // useEffect(() => {
-  //   const fetchAdvancedSchedule = async () => {
-  //     try {
-  //       const {data} = await axiosReq.get(`/schedule/scenes/?day=${advancedDay}`); 
-  //       // setDayInfo({ results: [dayGet] });
-  //       setAdvancedSchedule(data);
-  //       setHasLoaded(true);
-  //     } catch(err) {
-  //       console.log(err);
-  //       if (err.response?.status !== 401) {
-  //         setErrors(err.response?.data);
-  //         setHasLoaded(true);
-  //       }
-  //     }
-  //   }
-  //   fetchAdvancedSchedule();
-  // // eslint-disable-next-line
-  // }, [])
-
-
   return (
     <div>
       <AdvancedSchedule
        setShow={setShow}
        dayInfo={dayInfo.results[0]}
-      //  dayInfo={dayInfo.results[0] }
        scenes={advancedSchedule.results}/>
     </div>
   )
