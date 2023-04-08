@@ -1,6 +1,6 @@
-// Page to fetch the Schedule Scene Characters and Background data
-// And to hold the SchedCharacter Page to display the Schedule Scene Character info
-// And to hold the SchedBackground Page to display the Schedule Scene Background info
+/* Page to fetch the Schedule Scene Characters and Background data
+ * Contains the SchedCharacter component
+ * Contains the SchedBackground component */
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

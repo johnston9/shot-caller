@@ -1,5 +1,6 @@
-// Page to fetch the Advanced Schedule info and contain
-// the Advanced Schedule
+/* Page to fetch the Advanced Schedule data
+ * Contain the Advanced Schedule to which it passses the data 
+ * Note: The Advanced Schedule is the first half of the next day's schedule*/
 import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import { axiosReq } from '../../../api/axiosDefaults';
@@ -16,6 +17,7 @@ const AdvancedSchedPage = (props) => {
   const [error, setErrors] = useState({});
 
   useEffect(() => {
+    /* Fetch day data and day schedule scenes data for the advancedDay */
     const fetchAdvancedSchedule = async () => {
       try {
         const [{ data: dayGet }, { data: scenes }] = await Promise.all([

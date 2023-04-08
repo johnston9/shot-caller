@@ -1,5 +1,5 @@
-// Context file to fetch the crew data and crew emails
-// The EditCrewInfoContext is just used to refetch the data on edit
+/* Context file to fetch the crew data and crew emails
+ * The EditCrewInfoContext is used to refetch the data on edit */
 import { createContext, useContext,  useEffect,  useState } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 
@@ -24,9 +24,11 @@ export const CrewInfoProvider = ({ children }) => {
     const [emails, setEmails] = useState({ results: [] });
 
     const fetchCrewInfo = async () => {
+      /* function to fetch the crew info */
         try {
           const { data } = await axiosReq.get(`/crewinfonew/`);
           setCrewInfo(data.results[0]);
+          /* function to filter all the crew emails to new array */
           let emailArray = [] ;
           for ( const [key,value] of Object.entries( data.results[0] ) ) {
             if (key.includes("email") && value.length > 0 ) {

@@ -1,7 +1,7 @@
-// Context file to set the Character and Location for the Moodshots
-// This is read in App.js (lines 79, 80) and passed to the Moodshot
-// page (line 237-265)) as a variable
-// that is then put in to the fetch request
+/* Context file to set the Character and Location for the Moodshots
+ * This is read in App.js (lines 79, 80) and passed to the Moodshot
+   page (line 237-265)) as a variable. This is then put in the 
+   request */
 import { createContext, useContext,  useState } from "react";
 
 export const CharacterContext = createContext();

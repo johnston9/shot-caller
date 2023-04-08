@@ -13,6 +13,7 @@ const CalendarNew = (props) => {
     const {days} = props;
 
 const handleDate = (date) => {
+  /* Function to convert timestamp to new format */
   const formatdate = date.toLocaleDateString('en-GB', {
     day: 'numeric', month: 'short', year: 'numeric'
   })

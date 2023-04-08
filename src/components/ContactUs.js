@@ -1,4 +1,5 @@
-// Page to hols the Email JS form that sends the Callsheets to the crew and cast
+/* Page to hold the Email JS form that sends the Callsheet URL
+   to the crew and cast */
 import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import btnStyles from "../styles/Button.module.css";
@@ -26,8 +27,7 @@ export const ContactUs = (props ) => {
   const crewEmailList1 = props.crewEmailList;
   const castemails1 = props.castEmails;
   const emailList1 = crewEmailList1.concat(castemails1);
-  // Just using Cast Email list in Development to save
-  // EmailJS credits
+  // Just using Cast Email list in Development to save EmailJS credits
   // eslint-disable-next-line
   const emailList = emailList1.toString();
 
@@ -47,6 +47,8 @@ export const ContactUs = (props ) => {
   const [list, setList] = useState("");
   
   useEffect(() => {
+    /* Function to set the path, email list, day, date,
+       production title, company name, phone and email */
     const pathone = window.location.href;
     setList(castemails2);
     setProname(production_name);
@@ -61,7 +63,9 @@ export const ContactUs = (props ) => {
   },[] );
 
   const sendEmail = (e) => {
+    /* Function provided by EmailJS to send emails */
     e.preventDefault();
+    // Set success/failure message in "process" state variable
     setProcess("sending");
 
     emailjs.sendForm('service_6i2us9f', 'call_sheets', form.current, '4iuuxdnkw-969lFe0')

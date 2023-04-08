@@ -1,5 +1,5 @@
-// Component to contain the Axios function and create the
-// axiosReq and axiosRes
+/* page to contain the Axios base and create the
+   axiosReq and axiosRes */
 import axios from "axios";
 
 axios.defaults.baseURL = 'https://shot-caller-api.herokuapp.com/';

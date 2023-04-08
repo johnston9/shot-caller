@@ -1,3 +1,4 @@
+// Page for the Sign Up form
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";

@@ -1,5 +1,5 @@
-// Page that contain the Advanced Schedule which 
-// contains the ScheduleScenes
+/* Page for the Advanced Schedule
+ * Contains the ScheduleScenes */
 import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -16,19 +16,19 @@ const AdvancedSchedule = (props) => {
   const [date, setDate] = useState("");
 
   useEffect(() => {
+    /* Set day and date */
     setDay(dayInfo.day);
     setDate(dayInfo.date);
   }, [dayInfo])
 
+  /* Functions to get day's shoot page total
+       by adding all the scene page lengths  */
   const pages = scenes.map((scene) => (
     parseFloat(scene.pages)));
-
   function addpages(page) {
   return page > 0;
   }
-
   const pagenumbers = pages.filter(addpages);
-
   const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
 

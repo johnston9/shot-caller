@@ -1,3 +1,5 @@
+/* Component to display the Script and Catering Department Calltimes
+   on the Callsheet */
 import React from "react";
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

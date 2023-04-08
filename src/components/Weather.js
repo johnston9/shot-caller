@@ -1,7 +1,7 @@
-// FIX NEEDED
-// Weather component using Open Weather API
-// Needs to have date added but that meens an upgrade to a
-// higher price tier and the url altered to a different 
+/* FIX NEEDED
+   Weather component using Open Weather API
+   Needs to have date added but that meens an upgrade to a
+   higher price tier and the url altered */
 import React, { useEffect, useState } from 'react';
 import styles from "../styles/Weather.module.css";
 import Col from 'react-bootstrap/Col';
@@ -16,6 +16,7 @@ const [rise, setRise] = useState("");
 const [setsun, setSetsun] = useState("");
 
 useEffect(() => {
+    /* Request to OpenWeathermap API */
     const search = () => {
         fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${weather_location}&units=metric&APPID=${openKey}`
@@ -35,17 +36,6 @@ useEffect(() => {
     };
     search();
   }, [weather_location, openKey])
-
-// const search = () => {
-//       fetch(
-//         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${process.env.OPEN_WEATHER_KEY}`
-//       )
-//         .then((response) => response.json())
-//         .then((data) => {
-//           setWeatherData(data);
-//           setCity("");
-//         });
-//   };
  
   return (
     <div >

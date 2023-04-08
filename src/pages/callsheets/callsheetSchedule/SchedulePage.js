@@ -1,6 +1,6 @@
-// Page to display the Schedule on the Callsheet and 
-// Callsheet Create pages
-// It renders a list of ScheduleScenes
+/* Page to display the Schedule on the Callsheet and 
+   Callsheet Create and Edit pages
+ * Contains the ScheduleScenes component */
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -12,15 +12,14 @@ const SchedulePage = (props) => {
     useRedirect("loggedOut");
     const {scenes, setShow, showSideBySide="" } = props;
 
+    /* Functions to get day's shoot page total
+       by adding all the scene page lengths  */
     const pages = scenes.results.map((scene) => (
              parseFloat(scene.pages)));
-
     function addpages(page) {
     return page > 0;
     }
-
     const pagenumbers = pages.filter(addpages);
-
     const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
   return (

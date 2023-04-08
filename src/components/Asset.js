@@ -1,5 +1,5 @@
-// Component to hold the fetching data spinner and to display when
-// a request fetches no results
+/* Component to hold the fetching data spinner and to display when
+   a request fetches no results */
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
 import styles from "../styles/Asset.module.css";

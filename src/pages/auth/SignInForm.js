@@ -1,3 +1,4 @@
+// Page for the Sign In form
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
@@ -25,7 +26,6 @@ const SignInForm = () => {
   useRedirectSign("loggedIn");
   const crewInfoOne = useCrewInfoContext();
   const production_name = crewInfoOne.production_name || "";
-  // const setSignin = useSetSignin();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -52,7 +52,6 @@ const SignInForm = () => {
       console.log(data);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
-      // setSignin(data);
       history.push("/home");
     } catch (err) {
       setErrors(err.response?.data);

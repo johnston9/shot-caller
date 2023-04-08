@@ -1,7 +1,8 @@
-// A component containing the Scene info for the Schedule
-// It contains the ScheduleInfo component that contains each scenes 
-// extra info and the ScheduleCharacters componebt that contains
-// each scene's characters and BG info
+/* Component containing the Schedule Scene data
+ * Contains the ScheduleInfo component that contains each scenes 
+   extra data
+ * Contains the ScheduleCharacters component that contains
+   each scene's characters and BG data */
 import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

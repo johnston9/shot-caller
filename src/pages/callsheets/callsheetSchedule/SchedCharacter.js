@@ -1,4 +1,4 @@
-// Page to display the Schedule Scene Character info
+// Page to display the Schedule Scene Character items
 import React from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";

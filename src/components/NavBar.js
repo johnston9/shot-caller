@@ -1,7 +1,7 @@
-// The Navbar Component
-// Currently the activeClassName item is not working
-// so is commented out on each link
-// Am looking for a way to resolve this issue
+/* The Navbar Component
+   Currently the activeClassName item is working but is throwing an
+   error in the console so is commented out on each link
+   Am looking for a way to resolve this issue */
 import React from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -27,6 +27,7 @@ const NavBar = () => {
     refp, refp1, refp2 } = useDropdownClick();
 
   const handleSignOut = async () => {
+    /* Function to sign user out and remove the TokenTimestamp */
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);

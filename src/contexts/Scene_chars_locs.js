@@ -1,5 +1,4 @@
 // Context file to fetch all Scenes, Characters and all Locations
-// This is used throughout
 import { createContext, useContext,  useEffect,  useState } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 
@@ -24,6 +23,7 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
     const [locations, setLocations] = useState({ results: [] });
 
     const fetchScenes = async () => {
+        /* Function to fetch all scenes */
         try {
           const { data } = await axiosReq.get(`/scenes/`);
           setScenes(data);
@@ -33,6 +33,7 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
       }
 
     const fetchCharacters = async () => {
+        /* Function to fetch all characters */
         try {
           const { data } = await axiosReq.get(`/characters/`);
           setCharacters(data);
@@ -40,19 +41,20 @@ export const ScenesCharactersLocationsProvider = ({ children }) => {
         }
       };
 
-      const fetchLocations = async () => {
-        try {
-          const { data } = await axiosReq.get(`/locations/`);
-          setLocations(data);
-        } catch (err) {
-        }
+    const fetchLocations = async () => {
+      /* Function to fetch all locations */
+      try {
+        const { data } = await axiosReq.get(`/locations/`);
+        setLocations(data);
+      } catch (err) {
+      }
       };
     
-      useEffect(() => {
-        fetchScenes();
-        fetchCharacters();
-        fetchLocations();
-      }, []);
+    useEffect(() => {
+      fetchScenes();
+      fetchCharacters();
+      fetchLocations();
+    }, []);
 
     return (
         <ScenesContext.Provider value={scenes}>

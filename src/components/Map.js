@@ -12,7 +12,10 @@ import { useEffect } from "react";
 function MapPage({address}) {
   // const center = useMemo(() => ({lat: 53.3498, lng: 6.2603 }), []) ;
   const [selected, setSelected] = useState(null);
+
   useEffect(() => {
+    /* Function to get lat lng of address and set 
+       it a the selected for Maps  */
     console.log(address);
      const handleAddress = async () => {
      const result = await getGeocode({address});
@@ -22,6 +25,7 @@ function MapPage({address}) {
          }
     handleAddress();
   }, [address]);
+
   return (
     <div>
     <Row className="my-3">

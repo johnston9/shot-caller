@@ -1,12 +1,13 @@
-// Page containing all the dropdowns and their icons used to edit
-// and delete items
-// CURRENTLY IT IS NOT DISPLAYING CORRECTLY AND NEEDS FIXING
-// The EditDeleteIcon and PostDropdown which is used throughout
-// to allow edit and delete functions in posts, scenes e.t.c
-// The EditProfileIcon and ProfileEditDropdown to allow 
-// users to edit their profiles
-// The DepartmentIcon and DeptDropdown to choose which category in 
-// a department on the Scene page the user wants to open
+/* Page containing all the dropdowns and their icons used to edit
+   and delete items and select categories
+ * CURRENTLY IT IS NOT DISPLAYING CORRECTLY AND NEEDS FIXING
+ * Contains:
+ * The EditDeleteIcon and PostDropdown which is used throughout
+  to allow edit and delete functions in posts, scenes e.t.c
+ * The EditProfileIcon and ProfileEditDropdown to allow 
+   users to edit their profiles
+ * The DepartmentIcon and DeptDropdown to choose which category in 
+   a department on the Scene page the user wants to open */
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
@@ -14,8 +15,7 @@ import { useHistory } from "react-router-dom";
 import { Modal, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 
-// The EditDeleteIcon for the PostDropdown which is used throughout
-// to allow edit and delete functions in posts, scenes e.t.c
+// Icon for the PostDropdown 
 const EditDeleteIcon = React.forwardRef(({ onClick }, ref) => (
   <OverlayTrigger
     placement="top"
@@ -32,8 +32,7 @@ const EditDeleteIcon = React.forwardRef(({ onClick }, ref) => (
   </OverlayTrigger>
 ));
 
-// The DepartmentIcon for the DeptDropdown to choose which category in 
-// a department on the Scene page the user wants to open
+// Icon for the DeptDropdown 
 const DepartmentIcon = React.forwardRef(({ onClick }, ref) => (
   <OverlayTrigger
     placement="top"
@@ -50,8 +49,7 @@ const DepartmentIcon = React.forwardRef(({ onClick }, ref) => (
   </OverlayTrigger>
 ));
 
-// The EditProfileIcon for the  ProfileEditDropdown to allow 
-// users to edit their profiles
+// Icon for the ProfileEditDropdown
 const EditProfileIcon = React.forwardRef(({ onClick }, ref) => (
   <OverlayTrigger
     placement="top"
@@ -68,10 +66,10 @@ const EditProfileIcon = React.forwardRef(({ onClick }, ref) => (
   </OverlayTrigger>
 ));
 
-// The PostDropdown which is used throughout
-// to allow edit and delete functions in posts, scenes e.t.c
+/* Dropdown which is used throughout
+   to allow edit and delete functions in posts, scenes e.t.c */
 export const PostDropdown = ({ handleEdit, handleDelete }) => {
-  // Modal
+  // Modal to display to let user confirm delete
   const [show, setShow] = useState(false);
   const handleClose = () => {
     setShow(false);
@@ -125,8 +123,8 @@ export const PostDropdown = ({ handleEdit, handleDelete }) => {
   );
 };
 
-// The ProfileEditDropdown to allow 
-// users to edit their profiles
+/* Dropdown to allow 
+   users to edit their profiles */
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (
@@ -161,8 +159,8 @@ export function ProfileEditDropdown({ id }) {
   );
 }
 
-// The DeptDropdown to choose which category in 
-// a department on the Scene page the user wants to open
+/* Dropdown to allow users to choose which category in 
+   a department on the Scene page the user wants to open */
 export function DeptDropdown({ handleClick}) {
   return (
        <Dropdown className={`${styles.Absolute}`} drop="left">
