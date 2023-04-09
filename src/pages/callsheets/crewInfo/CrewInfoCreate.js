@@ -1,3 +1,11 @@
+/* Component to create the Company and Crew Info 
+ * It will be available only once to initialize the Company and Crew
+   Info dataset. After that all info will be added by the Edit page
+ * Contains the CrewCompany, CrewProduction, CrewCastingAD,
+   CrewLocations, CrewScriptCater, CrewElecGrip, CrewMakeup,
+   CrewSoundTransport, CrewStunts, CrewArt, CrewCamera,
+   CrewPostAdditional and CrewWardrobe Form components which are
+   held in the addCrewInfoByDept folder to add info by department */
 import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -25,8 +33,6 @@ import CrewCamera from "./addCrewInfoByDept/CrewCamera";
 import CrewPostAdditional from "./addCrewInfoByDept/CrewPostAdditional";
 import CrewWardrobe from "./addCrewInfoByDept/CrewWardrobe";
 import Important from "../info/Important";
-
-// other pro 5 - other cam 3 
 
 const CrewInfoCreate = () => {
   useRedirect("loggedOut");

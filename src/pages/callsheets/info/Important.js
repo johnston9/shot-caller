@@ -1,3 +1,5 @@
+/* Important Info component on the Crew Info Page
+   telling users how to registered crew */
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

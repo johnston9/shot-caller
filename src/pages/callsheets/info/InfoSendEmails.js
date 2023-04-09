@@ -1,3 +1,5 @@
+/* Info component on ContactUs, (emails sending) component on the Callsheet
+   telling users what info will be sent  */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

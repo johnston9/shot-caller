@@ -1,3 +1,5 @@
+/* Component in the CallCast component to display the Callsheet 
+   the extra cast info */
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';

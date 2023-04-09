@@ -1,3 +1,5 @@
+/* Component in the Callsheet component to display the Callsheet 
+   Walkies info */
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

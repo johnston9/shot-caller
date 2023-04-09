@@ -1,3 +1,5 @@
+/*Form component in the CrewInfoCreate and CrewInfoEdit Form
+  components to add/edit the Company Logo */
 import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -38,17 +40,6 @@ const CrewLogo = () => {
     }
   };
 
-//   const handleChangeLogo = (event) => {
-//     if (event.target.files.length) {
-//       URL.revokeObjectURL(company_logo);
-//       setPostData({
-//         ...postData,
-//         company_logo: URL.createObjectURL(event.target.files[0]),
-//       });
-//       console.log(event.target.files[0])
-//     }
-//   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -58,10 +49,10 @@ const CrewLogo = () => {
       try {
         const {data} = await axiosReq.put(`/crewinfonew/1/`, formData);
         setEditCrewInfo(true);
-        console.log(`gooooooo ${data}`)
+        console.log(`good ${data}`)
         history.goBack();
       } catch (err) {
-        console.log(`noooooo go ${err}`);
+        console.log(`bad ${err}`);
         if (err.response?.status !== 401) {
           setErrors(err.response?.data);
         }

@@ -1,3 +1,11 @@
+/* Page to display all the Callsheet data in different 
+   components. These are the, LocationsPage, TalentPage, BgPage,
+   SchedulePage, NotesPage, CrewCallsPage, AdvancedSchedPage, 
+   WalkiesPage, HospitalPage (mobile only) 
+   and ContactsPage (mobile only) Components.
+ * Contains the ContactUs component which sends an email to all crew
+   and relevent cast menbers with the Callsheet URL 
+ * Contains the 2 functions set the Crew and Cast Personal Call Times*/
 import React, { useEffect, useState } from 'react';
 import { useRedirect } from '../../hooks/Redirect';
 import Button from 'react-bootstrap/Button';
@@ -228,6 +236,8 @@ const CallSheet = (props ) => {
       } = props;
 
       useEffect(() => {
+        /* Function to set the Cast Personal Call Times in yourCall 
+           By filtering the cast array and by the current user */
         const actorcalldata = cast.results.filter(
           obj => obj.username === currentUser );
         const actorcall = actorcalldata[0]?.call || "" ;
@@ -236,10 +246,11 @@ const CallSheet = (props ) => {
         setYourCastUser(actorUsername);
         // eslint-disable-next-line
       }, [])
-    
-    const advancedDay = parseInt(day) + 1;
 
       useEffect(() => {
+        /* Function to set the Crew Personal Call Times in yourCall 
+           by using the crew currentuser name to return their
+           corrisponding Call Time */
         const yourcall = ( currentUser) => {
           switch(currentUser) {
             // production 
@@ -394,6 +405,9 @@ const CallSheet = (props ) => {
         }
       };
 
+      // Function to find the advancedDay number
+      const advancedDay = parseInt(day) + 1;
+
   return (
     <div className={`${styles.White} px-3`} >
       <TopBox work={`Call Sheet`}
@@ -427,32 +441,6 @@ const CallSheet = (props ) => {
               day1={day} 
               date1={date}/>  
             ) } 
-        <Row>
-        <Col xs={{span: 10, offset: 1}} >
-        <p>
-        {/* {crewEmailList} */}
-        {/* {castEmails} */}
-        </p>
-        </Col>
-        </Row>
-        {/* crewlist */}
-        {/* <>
-        {crewEmailList.map((scene, index) => {
-          return (
-              <p 
-                key={index}>{scene} </p>
-        )}
-        )}
-        </> */}
-        {/* castlist */}
-        {/* <>
-        {castEmails.map((scene, index) => {
-          return (
-              <p 
-                key={index}>{scene} </p>
-        )}
-        )}
-        </> */}
         <Row>
             <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
                 <span className={` ${styles.MovieName}`} >{production_name}</span>

@@ -1,3 +1,5 @@
+/* Component in the CrewInfo page to display
+   the Production Department crew info */
 import React from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

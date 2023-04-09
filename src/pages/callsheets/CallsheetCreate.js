@@ -1,3 +1,12 @@
+/* Page to create a Callsheet
+ * Contains the SchedulePage component and the AddCast and
+   AddBackGround form components to add the cast and BG call times
+   These are seperate forms to the main Callsheet form
+ * Contains the Form components to add each department crew call times:
+   AddProduction, AddCamera, AddCastingAD, AddLocations, AddWardrobe, AddScriptCater, AddElectricGrip,
+   AddMakeup, AddArt, AddSoundTransport, AddStunts and AddPostAdditional 
+ * The sidebyside value allows the schedule and the addCast components 
+   to be viewed on the same page */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -419,6 +428,8 @@ const CallsheetCreate = () => {
       } = postData;
     
   useEffect(() => {
+    /* Function to fetch the Dat data and the Day 
+       Schedule Scenes data */
     const handleMount = async () => {
         try {
           const [{ data: dayGet }, { data: scenes }] = await Promise.all([
@@ -444,6 +455,7 @@ const CallsheetCreate = () => {
   };
 
   const setUnitCall = () => {
+    /* Function to set all crew call times to the unit call time */
     setPostData({
       ...postData,
       // production 
@@ -782,7 +794,7 @@ const CallsheetCreate = () => {
           <span className="mr-5 pr-4">TIMES </span>
         </h5> 
       </div>
-      {/* Unit call - Talent call Shoot call */}
+      {/* Unit call - Talent call - Shoot call */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="production_name" className={`${styles.Width} `}  >

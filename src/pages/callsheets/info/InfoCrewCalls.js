@@ -1,3 +1,6 @@
+/* Info component on the Callsheet form
+   telling users how to set the Unit Call to all crew members
+   call times */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

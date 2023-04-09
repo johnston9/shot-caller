@@ -1,5 +1,6 @@
+/* Form component to add cast items from a select 
+   dropdown */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -60,6 +61,8 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
     } = postData;
 
     const setData = (character) => {
+      /* Function to set character values automatically
+         when a character is selected from the dropdown */
       const role = character.role || "";
       const number = character.number || "" ;
       const username = character.username || "" ;
@@ -100,6 +103,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       };
 
       const clear = () => {
+        /* Function to clear Character values */
         setPostData({cast_number: "",
         role: "",
         username: "",
@@ -119,6 +123,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
     }
 
     useEffect(() => {
+      /* function to fetch the Callsheet Cast data already added */
       const handleMount = async () => {
           try {
               const { data } = await axiosReq.get(`/castcallsnew/?day_id=${id}`)
@@ -207,7 +212,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       <div className={`mb-3 ${styles.Back3 }`}>
         {/* <p className="text-center">ADD CAST</p> */}
       <Form className="text-center" onSubmit={handleSubmit}>
-      {/* Dropdown DropButt */}
+      {/* CAST ADDED */}
         <Row className="py-2">
         <Col xs={12} md={6}>
         <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
@@ -219,20 +224,21 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
                 <span key={ca.id}>{ca.role}, </span>
               ))) : ("")}
           </div>
-          </Col>
-          <Col xs={12} md={6}>
-          <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
-          SELECT ROLE
-        </p>
-          <DropdownButton id="dropdown-basic-button" 
-          className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
-          {characters.results.length && (
-                characters.results.map((character) => (
-                  <Dropdown.Item onClick={() => setData(character) } 
-                  key={character.id} >{character.role}</Dropdown.Item>
-                ) )) }
-          </DropdownButton>
-          </Col>
+        </Col>
+        {/* SELECT DROPDOWN */}
+        <Col xs={12} md={6}>
+        <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
+        SELECT ROLE
+      </p>
+        <DropdownButton id="dropdown-basic-button" 
+        className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
+        {characters.results.length && (
+              characters.results.map((character) => (
+                <Dropdown.Item onClick={() => setData(character) } 
+                key={character.id} >{character.role}</Dropdown.Item>
+              ) )) }
+        </DropdownButton>
+        </Col>
         </Row>
         {cast_number ? (
           <>

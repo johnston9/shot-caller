@@ -1,3 +1,12 @@
+/* Page to edit a Callsheet
+ * Contains the SchedulePage component and the AddCast and
+   AddBackGround form components to add the cast and BG call times
+   These are seperate forms to the main Callsheet form
+ * Contains the Form components to add each department crew call times:
+   AddProduction, AddCamera, AddCastingAD, AddLocations, AddWardrobe, AddScriptCater, AddElectricGrip,
+   AddMakeup, AddArt, AddSoundTransport, AddStunts and AddPostAdditional 
+ * The sidebyside value allows the schedule and the addCast components 
+   to be viewed on the same page */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";

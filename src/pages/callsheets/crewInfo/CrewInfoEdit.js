@@ -1,5 +1,10 @@
+/* Component to continue to add and also edit the Company and Crew Info 
+ * Contains the CrewCompany, CrewProduction, CrewCastingAD,
+   CrewLocations, CrewScriptCater, CrewElecGrip, CrewMakeup,
+   CrewSoundTransport, CrewStunts, CrewArt, CrewCamera,
+   CrewPostAdditional and CrewWardrobe Form components which are
+   held in the addCrewInfoByDept folder to add info by department */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -580,6 +585,7 @@ const CrewInfoEdit = () => {
           all_other_add_positions } = postData;
 
   useEffect(() => {
+    /* Function to fetch and set the crew info */
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/crewinfonew/${id}/`);
@@ -1282,17 +1288,9 @@ const CrewInfoEdit = () => {
     </Button>
       {!showImp ? (
           ""
-              ) : (
-                <Important  /> 
-                ) }   
-      {/* <Row className="text-center">
-        <Col md={{span: 8, offset: 2}}>
-          <p>
-            Click on department links to add or edit. Use Create button below for 
-            each department individually or to submit all at the one time.
-          </p>
-        </Col>
-      </Row> */}
+      ) : (
+        <Important  /> 
+        ) }   
     <Form className= {`mt-3 mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>

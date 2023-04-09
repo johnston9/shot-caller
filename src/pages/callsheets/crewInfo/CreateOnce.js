@@ -1,3 +1,7 @@
+/* Component used to inform the user about creating the
+   initial Crew Info dataset 
+ * This component will display only once before the Crew
+   Info Create page has been submitted*/
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

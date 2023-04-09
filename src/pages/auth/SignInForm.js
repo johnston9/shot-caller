@@ -1,4 +1,6 @@
-// Page for the Sign In form
+/* Page to sign the user in
+ * Set the CurrentUser Context
+ * Set the TokenTimestamp */
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
@@ -46,6 +48,9 @@ const SignInForm = () => {
   };
 
   const handleSubmit = async (event) => {
+    /* Function to sign the user in
+     * Set the CurrentUser Context
+     * Set the TokenTimestamp */
     event.preventDefault();
     try {
       const {data} = await axios.post("/dj-rest-auth/login/", signInData);

@@ -1,5 +1,5 @@
-/* Function used to allowy the nav dropdown to close when
-   clicked on or outside */
+/* Function used to allow the nav dropdown to close when
+   clicked on or on the page outside of it */
 import { useEffect, useRef, useState } from 'react';
 
 const useDropdownClick = () => {

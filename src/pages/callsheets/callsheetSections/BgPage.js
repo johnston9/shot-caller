@@ -1,3 +1,6 @@
+/* Component in the Callsheet to display the Callsheet Background 
+   items passed down from the Callsheet
+ * Contains the Background component */
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

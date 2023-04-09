@@ -1,3 +1,5 @@
+/* Important Info component on the Add Crew Calls form
+   telling users that all Crew members must be registered */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

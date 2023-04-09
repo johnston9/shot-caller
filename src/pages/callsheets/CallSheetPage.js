@@ -1,3 +1,7 @@
+/* Page to fetch the data for each Callsheet, which includes
+   the Callsheet data, the Cast and BG data, and the day's 
+   Schedule data and pass the data to the CallSheet Component
+ * Includes a function to create an array of the cast's emails*/
 import React, { useEffect, useState } from 'react';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
@@ -19,6 +23,11 @@ const CallSheetPage = () => {
     const admin = true;
 
     const handleMount = async () => {
+        /* Function to fetch the, 
+         * data for each Callsheet to be passed to the Callsheet
+         * data the Cast and BG to be passed to the BgPage and the TalentPage
+         * data for the day's Schedule Scenes
+         * data for the user */
         try {
             const [{ data: callsheetdata }, { data: castcalldata }, 
                 { data: bgcalldata }, { data: scenes },
@@ -32,6 +41,7 @@ const CallSheetPage = () => {
             // console.log(castcalldata);
             setCallsheet(callsheetdata); 
             setCast(castcalldata);
+            // Function to create an array of all the cast's emails 
             let emailArray = castcalldata.results.map(a => a.email);
             setCastEmails(emailArray);
             setBackground(bgcalldata);

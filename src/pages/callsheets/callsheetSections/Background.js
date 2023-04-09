@@ -1,3 +1,9 @@
+/* Component in the BgPage component to display the Callsheet 
+   Background items 
+ * Contains the BackgroundInfo component to display 
+   the extra background info 
+ * Contains the BgInfoMob component to display 
+   the extra background info in mobile */
 import React, { useState } from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -5,7 +11,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 // eslint-disable-next-line
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
 import BackgroundInfo from './BackgroundInfo';
@@ -107,10 +113,6 @@ const Background = (props) => {
                     ) }
                 </Col>
             </Row> 
-            {/* <Row>
-            <Col className={`mb-0 pt-1 ${styles.NextCall}`}>
-            </Col>
-            </Row>    */}
         </div>
         {/* MOBILE */}
         <div className='d-block d-md-none'>
@@ -151,10 +153,6 @@ const Background = (props) => {
                     ) }
                 </Col>
             </Row>  
-            {/* <Row>
-            <Col className={`mb-0 py-1 ${styles.NextCall}`}>
-            </Col>
-            </Row>   */}
         </div>
     </div>
   )

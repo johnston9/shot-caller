@@ -1,3 +1,6 @@
+/* Component in the Callsheet component to display the Callsheet 
+   Locations
+ * Contains the Map component to display Google maps */
 import React from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

@@ -1,3 +1,6 @@
+/* Info component on the Create and Edit Callsheet forms
+   telling users to enter the City name and the ISO3166
+   2-letter country code  */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

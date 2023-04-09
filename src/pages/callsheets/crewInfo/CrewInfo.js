@@ -1,3 +1,8 @@
+/* Page to display the crew info by department
+ * Contains the InfoProduction, InfoCamera, InfoCompany, InfoCasting,
+   InfoLocations, InfoWardrobe, InfoScript, InfoElectric, InfoMakeup,
+   InfoArt, InfoSound, InfoStunts and InfoPost components which are
+   held in the crewInfoByDept folder to display the info by department */
 import React, { useState } from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -64,18 +69,17 @@ const CrewInfo = () => {
                 <Important  /> 
                 ) }  
       {id ? (
-        ""
+        <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => history.push("crewinfo/edit/1")}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Add / Edit Info</Button>
+        </Col>
+        </Row>
       ) : (
         <CreateOnce />
       )}
       {/* edit */}
-      <Row className='mt-3'>
-          <Col className='text-center'>
-          <Button onClick={() => history.push("crewinfo/edit/1")}
-            className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-            Add / Edit Info</Button>
-          </Col>
-      </Row>
       <div className={` mt-3 pt-2 ${styles.White }`}> 
         <Row className={`${styles.ButtonLine} mt-0`}>
           <Col xs={{span: 4, offset: 4}} md={{span: 4, offset: 4}} className='text-center'>

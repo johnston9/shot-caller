@@ -1,3 +1,6 @@
+/* Info component on the Edit Callsheet form
+   telling users that the Add Cast and Add Background forms are 
+   seperate from the main Callsheet form */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

@@ -1,3 +1,9 @@
+/* Component in the TalentPage component to display the Callsheet 
+   Cast items 
+ * Contains the CallCastInfo component to display 
+   the extra cast info 
+ * Contains the CallCastInfoMob component to display 
+   the extra cast info in mobile */
 import React, { useState } from 'react';
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
