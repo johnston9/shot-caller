@@ -1,3 +1,4 @@
+/* Component for Comments on the PostPage */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -21,6 +22,7 @@ const Comment = (props) => {
     const handleDelete = async () => {
         try {
           await axiosRes.delete(`/comments/${id}/`);
+          /* update the posts comment count  */
           setPost((prevPost) => ({
             results: [
               {
@@ -31,6 +33,7 @@ const Comment = (props) => {
           }));
     
           setComments((prevComments) => ({
+            /* delete the comment from the comments state */
             ...prevComments,
             results: prevComments.results.filter((comment) => comment.id !== id),
           }));

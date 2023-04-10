@@ -1,6 +1,6 @@
+/* Component to display the deptPost data */
 import React from 'react';
 import Card from "react-bootstrap/Card";
-
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from 'react-router-dom';

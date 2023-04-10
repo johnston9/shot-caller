@@ -1,3 +1,6 @@
+/* Form Page to edit a Latest Post
+ * Latest is a department choice in the Depts-Xtra app
+   So all requests are to department */
 import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -36,6 +39,8 @@ function LatestEdit() {
       const { id } = useParams();
 
       useEffect(() => {
+        /* Function to fetch the Latest post which is in the departments
+           App in the latest department choice */
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/department/posts/${id}/`);

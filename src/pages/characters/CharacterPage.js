@@ -1,3 +1,5 @@
+/* Page to fetch the data for each Character
+ * Contains the Character Component to which it passes the data */
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -15,6 +17,7 @@ const CharacterPage = () => {
     const [title, setTitle] = useState("");
 
     useEffect(() => {
+        /* Function to fetch the Character data */
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq(`/characters/${id}`);

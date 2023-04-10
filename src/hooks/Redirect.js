@@ -1,11 +1,12 @@
-/* Fix needed - Gmail mobile browser issue
+/* Fix needed - Gmail mobile browser issue and refresh issue
  * useRedirect function to direct non logged in users to the landing page
- * If the user is logged in the landing page will display the home page
-   if not it will display the go to sign in or sign up message
- * The  Gmail mobile browser issue was affecting the original code which
+ * The Gmail mobile browser issue was affecting the original code which
    used a request to see if there is a refresh token
  * It is also affecting the request in CurrentUserContext which I used
-   to replace the refresh token request so now all redirects have been commented out  */
+   to replace the refresh token request but that was also affected
+   after every refresh 
+ * The "loggedOut" parameter in all useRedirect functions which are 
+   on all components is redundent at the moment */
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
@@ -15,8 +16,9 @@ export const useRedirect = (userAuthStatus) => {
   const user = useCurrentUser();
 
   useEffect(() => {
-    /* Function to check if a user is logged in and redirect they
-      back to the landing page if not */
+    /* Function to check if a user is logged in and redirect them
+      back to the landing page if not but had to be commented out 
+      as was redirecting after a refresh page */
     const handleMount = async () => {
       if (!user) {
         // history.push("/");

@@ -1,3 +1,6 @@
+/* Component rendered on the CharactersPage to display the 
+   cover info for each Callsheet
+ * When clicked on it opens that Character's CharacterPage */
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';

@@ -1,4 +1,4 @@
-/* Component rendered on the Callsheetspage to display the 
+/* Component rendered on the CallsheetsPage to display the 
    cover info for each Callsheet
  * When clicked on it opens that Callsheet's CallSheetPage */
 import React from 'react'

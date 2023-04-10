@@ -1,3 +1,4 @@
+/* Form component to edit Comments in the Comment Component */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -21,6 +22,7 @@ function CommentEditForm(props) {
         content: formContent.trim(),
       });
       setComments((prevComments) => ({
+        /* Update the comment state */
         ...prevComments,
         results: prevComments.results.map((comment) => {
           return comment.id === id

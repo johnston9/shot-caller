@@ -1,5 +1,5 @@
-/* Page to display all the Callsheet data in different 
-   components. These are the, LocationsPage, TalentPage, BgPage,
+/* Component to display all the Callsheet data
+ * Contains the LocationsPage, TalentPage, BgPage,
    SchedulePage, NotesPage, CrewCallsPage, AdvancedSchedPage, 
    WalkiesPage, HospitalPage (mobile only) 
    and ContactsPage (mobile only) Components.

@@ -1,5 +1,5 @@
-/* Page to fetch all Callsheets and render the display info for each one
-   in a CallsheetTop component */
+/* Page to fetch all Callsheets data and render the display info
+ * Contains the CallsheetTop component */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -28,6 +28,7 @@ const CallsheetsPage = ({ filter="" }) => {
   const [query, setQuery] = useState("");
   
   useEffect(() => {
+    /* Function to fetch all the Callsheets data */
     const fetchCallsheets = async () => {
       try {
         const { data } = await axiosReq.get(`/callsheetsnew/?${filter}&search=${query}`);

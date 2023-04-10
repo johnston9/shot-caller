@@ -1,3 +1,6 @@
+/* Component rendered on the DeptPostsPage to display the 
+   cover info for each Post
+ * When clicked on it opens that Post's DeptPostPage */
 import React from 'react';
 import Card from "react-bootstrap/Card";
 import Col from 'react-bootstrap/Col';
@@ -44,10 +47,13 @@ const DeptPostTop = (props) => {
       };
 
       const handleDeptOpened = async () => {
+        /* Function to create an openedDept instance
+           for the Post */
         console.log("openeddept")
         try {
           const { data } = await axiosRes.post("/openedDept/", { post: id });
           setPosts((prevPosts) => ({
+            // Update the post in the posts state with the opened_id
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id

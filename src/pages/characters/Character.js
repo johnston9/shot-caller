@@ -1,3 +1,4 @@
+/* Component to display the Character data */
 import React from 'react'
 import Image from 'react-bootstrap/Image';
 import { useHistory } from 'react-router-dom';

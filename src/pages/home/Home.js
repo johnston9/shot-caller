@@ -1,3 +1,5 @@
+/* Hope Page containing links to all features 
+ * Contains all links in large, medium and mobile views */
 import React from "react";
 import { Link } from "react-router-dom";
 import door from "../../assets/door.png";

@@ -14,6 +14,7 @@ import axios from 'axios';
 import useDropdownClick from '../hooks/useDropdownClick';
 import { removeTokenTimestamp } from '../utils/utils';
 import { NavDropdown } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -26,12 +27,15 @@ const NavBar = () => {
     refs, refs1, refs2, refs3,
     refp, refp1, refp2 } = useDropdownClick();
 
+  const history = useHistory();
+
   const handleSignOut = async () => {
     /* Function to sign user out and remove the TokenTimestamp */
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
       removeTokenTimestamp();
+      history.push("/");
     } catch (err) {
     }
   };

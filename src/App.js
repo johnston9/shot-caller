@@ -61,7 +61,7 @@ import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 import Map from './components/Map';
 import Script from './pages/scenes/scriptAndSceneScript/ScriptScene';
 import LatestScript from './pages/scenes/scriptAndSceneScript/LatestScript';
-import Latest from './pages/home/Latest';
+import LatestsPage from './pages/home/LatestsPage';
 import LatestCreate from './pages/home/LatestCreate';
 import LatestPage from './pages/home/LatestPage';
 import LatestEdit from './pages/home/LatestEdit';
@@ -86,10 +86,11 @@ function App() {
         <Switch>
         {/* ------------------- MAP -------------- */}
         <Route exact path="/map" render={() => <Map />} />
-        {/* -----------------AUTH / HOME --------- */}
-        <Route exact path="/" render={() => <Landing />} />
+        {/* --------------------AUTH --------- */}
         <Route exact path="/signin" render={() => <SignInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
+        {/* ---------------------HOME --------- */}
+        <Route exact path="/" render={() => <Landing />} />
         <Route exact path="/home" render={() => <Home />} />
         {/* -------------------SCHEDULE ----------- */}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
@@ -353,7 +354,7 @@ function App() {
             />
           )}
         />
-        {/* Posts by department */}
+        {/* Posts by departments */}
         <Route
             exact
             path="/departments"
@@ -370,7 +371,7 @@ function App() {
         <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
         {/* Post page*/}
         <Route exact path="/posts/:id" render={() => <PostPage />} />
-        {/* ------------- DEPARTMENTS APP ---------------*/}
+        {/* ------------- DEPTS XTRA APP ---------------*/}
         <Route exact path="/depts/general" render={() => <DeptsGeneral />} />
         <Route exact path="/department/posts/create" render={() => <DeptPostCreate />} />
         <Route exact path="/department/posts" 
@@ -383,7 +384,7 @@ function App() {
         <Route exact path="/department/posts/:id" render={() => <DeptPostPage />} />
         {/* -------------------- Latest -------------------- */}
         <Route exact path="/latest/create" render={() => <LatestCreate />} />
-        <Route exact path="/latest" render={() => <Latest />} />
+        <Route exact path="/latest" render={() => <LatestsPage />} />
         <Route exact path="/latest/post/:id" render={() => <LatestPage />} />
         <Route exact path="/latest/post/:id/edit" render={() => <LatestEdit />} />
         {/* -------------------- PROFILES APP ---------------*/}

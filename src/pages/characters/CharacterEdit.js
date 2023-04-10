@@ -1,5 +1,5 @@
+/* Form Page to edit a Character */
 import React, { useRef, useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -101,6 +101,7 @@ const CharacterEdit = () => {
     const { id } = useParams();
 
     useEffect(() => {
+      /* Function to fetch the Character data */
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/characters/${id}/`);

@@ -1,7 +1,8 @@
 /* Page to fetch the data for each Callsheet, which includes
    the Callsheet data, the Cast and BG data, and the day's 
-   Schedule data and pass the data to the CallSheet Component
- * Includes a function to create an array of the cast's emails*/
+   Schedule data 
+ * Includes a function to create an array of the cast's emails
+ * Contains the CallSheet Component to which it passes the data */
 import React, { useEffect, useState } from 'react';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';

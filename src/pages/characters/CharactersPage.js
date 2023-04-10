@@ -1,18 +1,16 @@
+/* Page to fetch all Characters data and render the cover info 
+ * Contains the CallsheetTop component */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from 'react-router-dom';
-
 import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/Redirect";
 import { Button } from "react-bootstrap";
@@ -29,6 +27,7 @@ const Characters = ({message}) => {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
+    /* Function to fetch all the Characters data */
     const fetchCharacters = async () => {
       try {
         const { data } = await axiosReq.get(`/characters/?&search=${query}`);

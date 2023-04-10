@@ -1,3 +1,6 @@
+/* Component on the LatestsPage to display the post
+   cover data
+ * When clicked on it opens that Post's LatestPage */
 import React from 'react';
 import Card from "react-bootstrap/Card";
 import Col from 'react-bootstrap/Col';
@@ -35,6 +38,8 @@ const LatestTop = (props) => {
       };
 
       const handleDelete = async () => {
+        /* Direct request to DRF departments app URL so 
+           department is used  */
         try {
           await axiosRes.delete(`/department/posts/${id}/`);
           history.goBack();
@@ -44,6 +49,8 @@ const LatestTop = (props) => {
       };
 
       const handleDeptOpened = async () => {
+        /* Function to create an instance in the openedDept table
+           for the post */
         console.log("openeddeptlatest")
         try {
           const { data } = await axiosRes.post("/openedDept/", { post: id });
@@ -195,7 +202,7 @@ const LatestTop = (props) => {
                 </div> 
             </Col> 
             <Col xs={12} sm={6} className="my-1" >
-            <Link to={`/department/posts/${id}`}>
+            <Link to={`/latest/post/${id}`}>
             {opened_id ? (
               <Row className={`${styles.ContentOpened} pt-1 my-0 mr-1 ml-1`}>
               <Col xs={12} 

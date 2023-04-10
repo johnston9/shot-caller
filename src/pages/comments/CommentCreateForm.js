@@ -1,14 +1,12 @@
+/* Form component to create Comments on the PostPage */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
-
 
 function CommentCreateForm(props) {
   useRedirect("loggedOut")
@@ -27,10 +25,12 @@ function CommentCreateForm(props) {
         post,
       });
       setComments((prevComments) => ({
+        /* Update the comments state */
         ...prevComments,
         results: [data, ...prevComments.results],
       }));
       setPost((prevPost) => ({
+        /* Update the Post comment count */
         results: [
           {
             ...prevPost.results[0],

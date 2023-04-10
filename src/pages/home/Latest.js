@@ -1,125 +1,166 @@
-import React, { useEffect, useState } from "react";
+/* Component in the LatestPage to display the post's data
+ * Latest is a department choice in the Depts-Xtra app */
+import React from 'react';
+import Card from "react-bootstrap/Card";
 
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
+import styles from "../../styles/Post.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { Link, useHistory } from 'react-router-dom';
+import Avatar from "../../components/Avatar";
+import { axiosRes } from '../../api/axiosDefaults';
+import { PostDropdown } from '../../components/PostDropdown';
+import { useRedirect } from '../../hooks/Redirect';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-import appStyles from "../../App.module.css";
-import styles from "../../styles/PostsPage.module.css";
-import { axiosReq } from "../../api/axiosDefaults";
-import NoResults from "../../assets/no-results.png";
-import btnStyles from "../../styles/Button.module.css";
-import { useHistory } from 'react-router-dom';
+const Latest = (props) => {
+  useRedirect("loggedOut")
+    const {
+        id,
+        owner,
+        name,
+        profile_id,
+        profile_image,
+        departments,
+        position,
+        title,
+        content,
+        image1,
+        updated_at,
+      } = props;
 
-import Asset from "../../components/Asset";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
-import { useRedirect } from "../../hooks/Redirect";
-import { Button } from "react-bootstrap";
-import TopBox from "../../components/TopBox";
-import LatestTop from "./LatestTop";
-import LatestCreate from "./LatestCreate";
-// import DeptPostCreate from "./DeptPostCreate";
-// import DeptPostTop from "./DeptPostTop";
+      const currentUser = useCurrentUser()
+      const is_owner = currentUser?.username === owner;
+      const history = useHistory();
 
-function Latest() {
-  useRedirect("loggedOut");
-  const [show, setShow] = useState(false);
-  const [posts, setPosts] = useState({ results: [] });
-  // eslint-disable-next-line
-  const [error, setErrors] = useState({});
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const history = useHistory();
- 
-  const [query, setQuery] = useState("");
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const { data } = await axiosReq.get(`/department/posts/?departments=latest&search=${query}`);
-        setPosts(data);
-        setHasLoaded(true);
-      } catch(err) {
-        console.log(err);
-        if (err.response?.status !== 401) {
-          setErrors(err.response?.data);
-          setHasLoaded(true);
+      const handleEdit = () => {
+        history.push(`/latest/post/${id}/edit`);
+      };
+    
+      const handleDelete = async () => {
+        try {
+          await axiosRes.delete(`/department/posts/${id}/`);
+          history.goBack();
+        } catch (err) {
         }
-      }
-    }
-    setHasLoaded(false);
-    const timer = setTimeout(() => {
-      fetchPosts();
-    }, 1000);
+      };
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [query])
-  
-  return (
-    <div>
-      <TopBox work="Latest Buzz"/>
-      <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
-            onClick={() => history.goBack()}
-        >
-            Back
-        </Button>
-        <Row>
-          <Col className="text-center">
-            <Button onClick={() => setShow(show => !show)} 
-            className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-            Add Latest Buzz</Button>
-        {!show ?("") : (<LatestCreate setShow={setShow} /> ) }
-          </Col>
-        </Row>
-        <Row>
-        <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
-        <Form
-          className={`${styles.SearchBar} mt-3`}
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <Form.Control
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            type="text"
-            className="mr-sm-2"
-            placeholder="Search by username or post title"
-          />
-        </Form>
-        </Col>
-        </Row>
-        <Row className="mt-3 px-2">
-          <Col>
-        {hasLoaded ? (
-          <>
-            {posts.results.length ? (
-              <InfiniteScroll
-              children={posts.results.map((post) => (
-                <LatestTop key={post.id} {...post} setPosts={setPosts} />
-              ))}
-              dataLength={posts.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!posts.next}
-              next={() => fetchMoreData(posts, setPosts)}
+    return (
+        <div>
+            <Card className='px-3'>
+            <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
+          <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
+          <Col xs={12} sm={3} className="my-0" >
+                {/* small */}
+                <div className='d-none d-sm-block'>
+                <Row >
+                <Col xs={3} className="pl-3 pr-0" >
+                <Link to={`/profiles/${profile_id}`}>
+                <Avatar src={profile_image} height={45}/>
+                </Link>
+                </Col>
+                <Col xs={9} className="pl-2 pr-0" >
+                <div className={`${styles.Content4} pl-2 ml-3`}>
+                <p>
+                <span className=''>{name} </span>
+                </p>
+                <p>
+                <span className='ml-0 '>{position}</span>
+                </p>
+                </div>
+                <div>
+                </div>
+                </Col>
+                </Row>   
+                </div>     
+                {/* mobile */}
+                <div className='d-sm-none'>
+                <Row className='pb-0 mb-0'>
+                <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
+                <Link to={`/profiles/${profile_id}`}>
+                <Avatar src={profile_image} height={45}  />
+                </Link>
+                </Col>
+                <Col xs={8} className="text-center" >
+                <p>
+                <span className=''>{name}</span>
+                </p>
+                <p className=''>
+                {position}
+                </p>
+                </Col>
+                <Col xs={2} 
+                className="d-flex align-items-center" >
+                {is_owner && (
+                <PostDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                />
+                ) } 
+                </Col>
+                </Row> 
+                <Row>
+                <Col className='text-center' xs={12}>
+                <p> {updated_at}</p>
+                </Col>
+                </Row>  
+                </div> 
+          </Col>    
+          <Col xs={12} sm={6} className="my-1" >
+            <Row className={`${styles.Content3} pt-1 my-0 mr-1 ml-1`}>
+                <Col xs={12} 
+                className={` text-center`} >
+                <Row>
+                <Col className='px-0 mx-0 py-2' xs={12}>
+                  {departments && <p style={{ textTransform: 'capitalize'}}>
+                    {departments}</p>}
+                </Col>
+                </Row>
+                </Col>
+            </Row>
+          </Col> 
+          {/* edit and date small */}
+          <Col xs={12} sm={3} className="my-0 " >
+            <div className='d-none d-sm-block'>
+            <Row >
+            <Col sm={3}
+            className="d-flex align-items-center px-0 float-right" >
+            {is_owner && (
+            <PostDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
             />
-            ) : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults } />
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
-      </Col>
-    </Row>
-    </div>
-  );
+            ) } 
+            </Col>
+            <Col className="pl-0 pr-0" sm={9} >
+            <p className={ `text-center  ${styles.Date}`}>{updated_at}
+            </p>
+            </Col>
+            </Row>   
+            </div>     
+            </Col>                
+          </Row>
+          </Card.Body>
+                <hr />
+                <Card.Body className="pt-1" >
+                    {title && <Card.Title style={{ fontStyle: 'italic' }}
+                     className="text-center">{title}</Card.Title>}
+                    <hr />
+                    {content && <Card.Text>{content}</Card.Text>}
+                </Card.Body>
+                <hr />
+                <Row className='mb-2'>
+                  {/* image 1/2 */}
+                  <Col xs={12} md={{span: 6, offset: 3}}  >
+                      {image1 && <> 
+                          <Card.Img src={image1} alt="image1" className="px-3" />
+                          </>
+                          }
+                  </Col>  
+              </Row >
+            </Card>
+        </div>
+    )
 }
 
 export default Latest

@@ -1,5 +1,6 @@
+/* Page to fetch the data for each DeptPost
+ * Contains the DeptPost Component to which it passes the data */
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button"
@@ -19,6 +20,7 @@ function DeptPostPage() {
     const history = useHistory();
 
     useEffect(() => {
+      /* Function to fetch the deptPost data */
       const handleMount = async () => {
         try {
           const { data } = await axiosReq.get(`/department/posts/${id}`)

@@ -1,3 +1,6 @@
+/* Form Page to create a Latest Post
+ * Latest is a department choice in the Depts-Xtra app
+   So all requests are to department */
 import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -67,7 +70,7 @@ function LatestCreate({setShow} ) {
   
     try {
       const { data } = await axiosReq.post("/department/posts/", formData);
-      history.push(`/department/posts/${data.id}`);
+      history.push(`/latest/post/${data.id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

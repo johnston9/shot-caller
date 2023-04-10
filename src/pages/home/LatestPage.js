@@ -1,5 +1,6 @@
+/* Page to fetch the Latest post's data
+ * Contains the Latest component to which it passes the data */
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button"
@@ -8,7 +9,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
-import LatestPost from "./LatestPost";
+import Latest from "./Latest";
 
 function LatestPage() {
   useRedirect("loggedOut")
@@ -18,6 +19,7 @@ function LatestPage() {
     const history = useHistory();
 
     useEffect(() => {
+      /* Function to fetch the Latest post's data */
       const handleMount = async () => {
         try {
           const { data } = await axiosReq.get(`/department/posts/${id}`)
@@ -45,7 +47,7 @@ function LatestPage() {
       >
         Back
       </Button>
-        <LatestPost {...post.results[0]} setPosts={setPost}/>
+        <Latest {...post.results[0]} setPosts={setPost}/>
       </Col>
     </Row>
     </div>

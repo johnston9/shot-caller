@@ -160,3 +160,11 @@ i:hover {
   color: #fff;
   cursor: pointer;
 }
+
+.Card i {
+  color: #fff;
+}
+
+.PostTop i {
+  color: #fff;
+}
