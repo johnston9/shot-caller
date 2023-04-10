@@ -1,8 +1,6 @@
 /* Fix needed - for the gmail mobile browser issue
  * useRedirectSign function to direct a logged in user to the landing page
    when they go to the Signin or Sign up pages
- * If the user is logged in the landing page will display the home page
-   if not it will display the go to sign in or sign up message
  * The catch block throws an error because of the mobile gmail 
    browser issue not allowing posts and returned a 404
    so it is commented out */

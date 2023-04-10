@@ -33,6 +33,7 @@ const Landing = () => {
   const signintoken = getRefreshToken();
   // eslint-disable-next-line
   const signindata = useSignin();
+  const currentUser = useCurrentUser();
 
     return (
         <Container className={`px-2 ${styles.Background}`}>
@@ -66,6 +67,9 @@ const Landing = () => {
             {redirect}
           ) : ("") }
           </div> */}
+          {currentUser ? (<p className={`${styles.White}`}>
+           {currentUser.username}
+          </p>) : ("") }
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
               xs={1} md={1}>
