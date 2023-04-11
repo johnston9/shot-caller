@@ -1,13 +1,11 @@
 /* Component to display the Post Department and Additional Crew
    Calltimes on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
-  useRedirect("loggedOut");
 
   const {editor_name,
     fx_name, 

@@ -1,13 +1,11 @@
 /* Component in the Callsheet component to display the Callsheet 
    Walkies info */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const WalkiesPage = (props ) => {
-    useRedirect("loggedOut");
     const {callsheet, setShow} = props;
 
     const {walkie_channel_production,

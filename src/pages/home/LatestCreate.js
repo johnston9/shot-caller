@@ -22,7 +22,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
 
 function LatestCreate({setShow} ) {
-  useRedirect("loggedOut")
+  useRedirect();
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",

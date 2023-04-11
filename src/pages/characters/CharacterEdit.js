@@ -21,7 +21,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import ImportantEdit from "./ImportantEdit";
 
 const CharacterEdit = () => {
-    useRedirect("loggedOut")
+    useRedirect();
     const [errors, setErrors] = useState({});
     const [showImp, setShowImp] = useState(false);
 

@@ -1,13 +1,11 @@
 /* Component to display the Sound and Transport Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesSoundTransport = ({crewInfoOne, callsheet, setShowSou }) => {
-  useRedirect("loggedOut");
 
   const {sound_mixer_name,
     boom_operator_name, 

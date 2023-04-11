@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const InfoSound = ({crewInfoOne, setShowSou}) => {
-  useRedirect("loggedOut");
+  useRedirect();
 
   const {sound_mixer_name, sound_mixer_email, sound_mixer_phone,
     boom_operator_name, boom_operator_email, boom_operator_phone,

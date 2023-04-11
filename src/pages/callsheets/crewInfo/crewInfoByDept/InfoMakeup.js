@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const InfoMakeup = ({crewInfoOne, setShowMak }) => {
-  useRedirect("loggedOut");
+  useRedirect();
 
   const {key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
     key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,

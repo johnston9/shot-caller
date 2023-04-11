@@ -2,14 +2,12 @@
    items passed down from the Callsheet
  * Contains the Background component */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 import Background from './Background';
 
 const BgPage = (props) => {
-    useRedirect("loggedOut");
     const admin = true;
     const {background, setShow, handleMount} = props;
 

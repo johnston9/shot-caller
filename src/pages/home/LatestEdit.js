@@ -24,7 +24,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import { useParams } from "react-router-dom";
 
 function LatestEdit() {
-  useRedirect("loggedOut")
+  useRedirect();
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",

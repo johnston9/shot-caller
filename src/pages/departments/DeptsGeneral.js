@@ -26,7 +26,7 @@ import TopBox from '../../components/TopBox';
 import Info from './Info';
 
 const DeptsGeneral = () => {
-    useRedirect("loggedOut")
+    useRedirect();
     const setDeptGeneral = useSetDeptGeneralContext();
     const [showInfo, setShowInfo] = useState(false);
     const history = useHistory();

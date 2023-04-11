@@ -1,13 +1,11 @@
 /* Component in the Callsheet component to display the Callsheet 
    Company Contact info in mobile */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const ContactsPage = (props) => {
-    useRedirect("loggedOut");
     const {crewInfoOne, setShow} = props;
     const {production_company, company_phone, company_email,
         company_address_line_1, company_address_line_2, company_address_line_3,

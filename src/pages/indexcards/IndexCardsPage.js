@@ -1,3 +1,10 @@
+/* Page to fetch all IndexCards data
+ * Initially sets data in the state indexCardsAll
+ * Contains 3 functions to filter the 1st 90 Cards in groups
+   of 30 and one function to filter the rest
+   and set this data in indexCards 
+ * Contains component IndexCards to which it passes the data 
+ * Contains component IndexCardCreate */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -36,7 +43,8 @@ const IndexCardsPage = () => {
   const [hasOrder, setHasOrder] = useState(false);
 
   useEffect(() => {
-    console.log("useeffect")
+    /* Function to fetch all Indexcards
+     * set states indexCards and indexCardsAll to the data returned*/
     const fetchCards = async () => {
       try {
         const { data } = await axiosReq.get(`/indexcards/?${filter}&search=${query}`);
@@ -68,26 +76,14 @@ const IndexCardsPage = () => {
   };
 
   const handleClick1 = () => { 
+    /* Function to filter the 1st 30 Cards */
     const thirty = indexCardsAll.results.filter(
       card => card.number > 0 && card.number < 31 );
-    console.log("thirty");
-    console.log(thirty);
     setIndexCards({results: thirty});
-    // var thirty = indexCardsAll.filter(function(card) {
-    //   return (card.number > 0 && card.number < 31);
-    // });
-    // console.log("thirty");
-    // console.log(thirty);
-    // setIndexCards(thirty);
-    // var thirty = indexCardsAll.filter(function(card) {
-    //   return (card.number > 0 && card.number < 31);
-    // });
-    // console.log("thirty");
-    // console.log(thirty);
-    // setIndexCards(thirty);
   };
 
   const handleClick2 = () => { 
+    /* Function to filter the 1st 30 Cards */
     const sixty = indexCardsAll.results.filter(
       card => card.number > 30 && card.number < 61 );
     console.log("sixty");

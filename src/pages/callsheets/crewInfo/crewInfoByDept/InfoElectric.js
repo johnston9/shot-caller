@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const InfoElectric = ({crewInfoOne, setShowEle}) => {
-  useRedirect("loggedOut");
+  useRedirect();
 
   const {gaffer_name, gaffer_email, gaffer_phone,
     best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,

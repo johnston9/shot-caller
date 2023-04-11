@@ -1,13 +1,11 @@
 /* Component in the Callsheet component to display the Callsheet 
    Department and Important Notes */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const NotesPage = (props) => {
-    useRedirect("loggedOut");
     const {important_info, transport_info, department_info, setShow} = props;
   return (
     <div className='mt-5'>

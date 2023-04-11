@@ -1,14 +1,13 @@
+/*Component in IndexCards to display each the Card */ 
 import React, { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Indexes.module.css"; 
 import IndexCardEdit from "./IndexCardEdit"; 
 
 const IndexCard = (props ) => {
-  useRedirect("loggedOut");
   const [showEdit, setShowEdit] = useState(false);
   const { setHasOrder, card, setIndexCards} = props;
 

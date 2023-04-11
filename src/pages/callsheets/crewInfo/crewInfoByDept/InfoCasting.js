@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const InfoCasting = ({crewInfoOne, setShowCas }) => {
-  useRedirect("loggedOut");
+  useRedirect();
 
   const {casting_director_name, casting_director_email, casting_director_phone,
     extras_casting_name, extras_casting_email, extras_casting_phone,

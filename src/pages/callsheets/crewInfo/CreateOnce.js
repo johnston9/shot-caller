@@ -1,5 +1,5 @@
-/* Component used to inform the user about creating the
-   initial Crew Info dataset 
+/* Component in CrewInfo page used to inform the user about 
+   creating the initial Crew Info dataset 
  * This component will display only once before the Crew
    Info Create page has been submitted*/
 import React from 'react';
@@ -12,7 +12,7 @@ import btnStyles from "../../../styles/Button.module.css";
 import { useHistory } from 'react-router-dom';
 
 const CreateOnce = () => {
-    useRedirect("loggedOut");
+    useRedirect();
   const history = useHistory();
   return (
     <div className={`${styles.Important} py-2 mx-5 my-3`}>

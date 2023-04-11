@@ -1,7 +1,6 @@
 /* Form to add the Makeup Department Calltimes to the Callsheet
    From the Callsheet Create and Edit pages */
 import React, { useState } from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Form from "react-bootstrap/Form";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -9,7 +8,6 @@ import { Alert } from "react-bootstrap";
 import styles from "../../../styles/Callsheets.module.css";
 
 const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
-  useRedirect("loggedOut");
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 

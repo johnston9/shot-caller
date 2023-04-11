@@ -5,7 +5,6 @@
  * Contains the CallCastInfoMob component to display 
    the extra cast info in mobile */
 import React, { useState } from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
@@ -18,7 +17,6 @@ import EditCast from '../CallsheetEditCast';
 import CallCastInfoMob from './CallCastInfoMob';
 
 const CallCast = (props) => {
-    useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
 

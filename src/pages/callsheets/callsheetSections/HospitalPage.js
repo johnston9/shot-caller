@@ -2,7 +2,6 @@
    Hospital info in mobile
  * Contains the Map component to display Google maps */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
@@ -12,7 +11,6 @@ import { Image } from 'react-bootstrap';
 import { useState } from 'react';
 
 const HospitalPage = ({callsheet, setShow}) => {
-    useRedirect("loggedOut");
     const [showHosMap, setShowHosMap] = useState(false);
     const {nearest_hospital, hospital_address_line_1,
         hospital_address_line_2, hospital_address_line_3, 

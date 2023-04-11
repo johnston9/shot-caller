@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
-  useRedirect("loggedOut");
+  useRedirect();
 
   const {costume_designer_name, costume_designer_email, costume_designer_phone,
     ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,

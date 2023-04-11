@@ -12,7 +12,7 @@ import TopBox from "../../components/TopBox";
 import Latest from "./Latest";
 
 function LatestPage() {
-  useRedirect("loggedOut")
+  useRedirect();
     const { id } = useParams()
     const [post, setPost] = useState({ results: [] });
 

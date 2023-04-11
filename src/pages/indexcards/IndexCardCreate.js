@@ -1,3 +1,4 @@
+/* Component in IndexCardsPage to create an IndexCard */
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -8,10 +9,8 @@ import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 
 const IndexCardCreate = ({setShow, setHasOrder} ) => {
-    useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
     number: "",

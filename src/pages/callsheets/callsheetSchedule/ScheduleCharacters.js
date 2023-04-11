@@ -1,17 +1,15 @@
-/* Page to fetch the Schedule Scene Characters and Background data
+/* Component to fetch the Schedule Scene Characters and Background data
  * Contains the SchedCharacter component
  * Contains the SchedBackground component */
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/ScheduleSceneItem.module.css";
-import { useRedirect } from '../../../hooks/Redirect';
 import { axiosReq } from '../../../api/axiosDefaults';
 import SchedBackground from './SchedBackground';
 import SchedCharacter from './SchedCharacter';
 
 const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
-    useRedirect("loggedOut");
 
     const [characters, setCharacters] = useState({ results: [] });
     const [background, setBackground] = useState({ results: [] });

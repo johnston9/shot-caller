@@ -1,13 +1,14 @@
 /* Page containing all the dropdowns and their icons used to edit
    and delete items and select categories
- * CURRENTLY IT IS NOT DISPLAYING CORRECTLY AND NEEDS FIXING
  * Contains:
  * The EditDeleteIcon and PostDropdown which is used throughout
   to allow edit and delete functions in posts, scenes e.t.c
  * The EditProfileIcon and ProfileEditDropdown to allow 
    users to edit their profiles
  * The DepartmentIcon and DeptDropdown to choose which category in 
-   a department on the Scene page the user wants to open */
+   a department on the Scene page the user wants to open 
+ * CURRENTLY IT IS NOT DISPLAYING CORRECTLY AND NEEDS FIXING 
+   FOR X, Y AND Z POSITIONING */
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
@@ -67,7 +68,8 @@ const EditProfileIcon = React.forwardRef(({ onClick }, ref) => (
 ));
 
 /* Dropdown which is used throughout
-   to allow edit and delete functions in posts, scenes e.t.c */
+   to allow edit and delete functions in posts, scenes e.t.c
+ * IT'S INITIAL POSITION IS ALWAYS ON THE VERY TOP OF THE PAGE */
 export const PostDropdown = ({ handleEdit, handleDelete }) => {
   // Modal to display to let user confirm delete
   const [show, setShow] = useState(false);
@@ -160,7 +162,10 @@ export function ProfileEditDropdown({ id }) {
 }
 
 /* Dropdown to allow users to choose which category in 
-   a department on the Scene page the user wants to open */
+   a department on the Scene page the user wants to open
+ * IT'S INITIAL POSITION IS ALWAYS BEHIND THE THE ITEM IN
+   THE COL BESIDE IT ON MOBILE
+   */
 export function DeptDropdown({ handleClick}) {
   return (
        <Dropdown className={`${styles.Absolute}`} drop="left">

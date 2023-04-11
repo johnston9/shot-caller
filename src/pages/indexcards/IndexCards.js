@@ -1,11 +1,11 @@
+/* Component in IndexCardsPage to display all the Cards 
+ * Contains IndexCard  */  
 import React from "react";
-import { useRedirect } from "../../hooks/Redirect";
 import IndexCard from "./IndexCard";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 const IndexCards = ({indexCards, setIndexCards, setHasOrder} ) => {
-    useRedirect("loggedOut");
   return (
     <div>
         <Row>

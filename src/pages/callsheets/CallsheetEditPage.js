@@ -40,7 +40,7 @@ import InformationWeather from "./info/InformationWeather";
 import ImportantCrewCalls from "./info/ImportantCrewCalls";
 
 const CallsheetEditPage = () => {
-  useRedirect("loggedOut");
+  useRedirect();
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const history = useHistory();

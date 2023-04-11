@@ -24,8 +24,8 @@ import { setTokenTimestamp } from "../../utils/utils";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const SignInForm = () => {
+  useRedirectSign();
   const setCurrentUser = useSetCurrentUser();
-  useRedirectSign("loggedIn");
   const crewInfoOne = useCrewInfoContext();
   const production_name = crewInfoOne.production_name || "";
 

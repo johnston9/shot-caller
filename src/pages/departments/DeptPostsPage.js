@@ -26,7 +26,7 @@ import DeptPostCreate from "./DeptPostCreate";
 import DeptPostTop from "./DeptPostTop";
 
 function DeptPostsPage({ deptGeneral, filter = "" }) {
-  useRedirect("loggedOut");
+  useRedirect();
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
   // eslint-disable-next-line

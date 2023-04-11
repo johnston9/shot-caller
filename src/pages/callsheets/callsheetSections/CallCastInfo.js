@@ -1,12 +1,10 @@
 /* Component in the CallCast component to display the Callsheet 
    the extra cast info */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
 
 const CallCastInfo = (props) => {
-    useRedirect("loggedOut");
     const { contact1, inst1 } = props
   return (
     <div className='text-center px-0 my-0 py-0 '>

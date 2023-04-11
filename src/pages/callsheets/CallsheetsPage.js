@@ -19,7 +19,7 @@ import TopBox from "../../components/TopBox";
 import CallsheetTop from "./CallsheetTop";
 
 const CallsheetsPage = ({ filter="" }) => {
-  useRedirect("loggedOut");
+  useRedirect();
   const [callsheets, setCallsheets] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});

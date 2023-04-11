@@ -24,7 +24,7 @@ import LatestTop from "./LatestTop";
 import LatestCreate from "./LatestCreate";
 
 function LatestsPage() {
-  useRedirect("loggedOut");
+  useRedirect();
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
   // eslint-disable-next-line

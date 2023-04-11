@@ -23,7 +23,7 @@ import Asset2 from "../../components/Asset2";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function DeptPostEdit() {
-  useRedirect("loggedOut")
+  useRedirect();
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",

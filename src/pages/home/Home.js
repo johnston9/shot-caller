@@ -16,7 +16,7 @@ import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const Home = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const currentUser = useCurrentUser();
     const crewInfoOne = useCrewInfoContext();
   const production_name = crewInfoOne.production_name || "";

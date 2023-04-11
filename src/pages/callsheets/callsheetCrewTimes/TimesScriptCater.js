@@ -1,13 +1,11 @@
 /* Component to display the Script and Catering Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesScriptCater = ({crewInfoOne, callsheet, setShowScr }) => {
-  useRedirect("loggedOut");
 
   const {writer_name, 
     catering_co_1_name,

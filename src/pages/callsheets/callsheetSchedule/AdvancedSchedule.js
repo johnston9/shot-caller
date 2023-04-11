@@ -1,14 +1,12 @@
-/* Page for the Advanced Schedule
+/* Component for the Advanced Schedule
  * Contains the ScheduleScenes */
 import React, { useEffect, useState } from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 import ScheduleScene from './ScheduleScene';
 
 const AdvancedSchedule = (props) => {
-  useRedirect("loggedOut");
   const {setShow, scenes, dayInfo="" } = props;
   // eslint-disable-next-line
   const [error, setErrors] = useState({});

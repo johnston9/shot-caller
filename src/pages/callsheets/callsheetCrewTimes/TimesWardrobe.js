@@ -1,13 +1,11 @@
 /* Component to display the Wardrobe Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
-  useRedirect("loggedOut");
 
   const {costume_designer_name, 
     ass_costume_designer_name,

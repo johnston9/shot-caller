@@ -9,7 +9,7 @@ import { Alert } from "react-bootstrap";
 import styles from "../../../../styles/Callsheets.module.css";
 
 const CrewProduction = ({handleChange, postData, setShow}) => {
-  useRedirect("loggedOut");
+  useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
 

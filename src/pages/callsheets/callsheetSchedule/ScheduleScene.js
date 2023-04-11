@@ -7,14 +7,12 @@ import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
-import { useRedirect } from '../../../hooks/Redirect';
 import ScheduleInfo from './ScheduleInfo';
 import btnStyles from "../../../styles/Button.module.css";
 import { Button, } from 'react-bootstrap';
 import ScheduleCharacters from './ScheduleCharacters';
 
 const ScheduleScene = (props) => {
-    useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
     const [showInfoCast, setShowInfoCast] = useState(false);
     const {showSideBySide, scene, scene_id, style, next,

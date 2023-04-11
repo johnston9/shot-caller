@@ -1,13 +1,11 @@
 /* Component to display the Locations Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
-  useRedirect("loggedOut");
 
   const {location_mngr_name, 
     location_ass_1_name,

@@ -1,13 +1,11 @@
 /* Component to display the Makeup Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
-  useRedirect("loggedOut");
 
   const {key_hairmakeup_name,
     key_hairstylist_name,

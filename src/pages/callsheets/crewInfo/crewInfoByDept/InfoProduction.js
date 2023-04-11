@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const Production = ({crewInfoOne, setShowPro}) => {
-  useRedirect("loggedOut");
+  useRedirect();
 
   const {producer_name, producer_email, producer_phone,
     director_name, director_email, director_phone,

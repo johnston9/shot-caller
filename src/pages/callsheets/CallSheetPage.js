@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 import CallSheet from './CallSheet';
 
 const CallSheetPage = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const { id } = useParams();
     const [callsheet, setCallsheet] = useState({ results: [] });
     const [cast, setCast] = useState({ results: [] });

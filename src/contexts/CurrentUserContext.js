@@ -1,12 +1,12 @@
-/* Fix needed - affected by the Gmail mobile browser issue
- * Context file used to fetch the current user
+/* Context file used to fetch the current user
  * Interceptors used to keep a user loged in
+ * Fix needed - affected by the Gmail mobile browser issue
  * A fix is needed for the Gmail mobile browser issue as it is
    affecting the axiosReq interceptor 
    So it's original catch block is now commented out
  * TokenContext, RedirectContext and SigninContext are just being used here to 
  * investigate this issue
- * The Gmail mobile browser issue seems to be all post requests 
+ * The Gmail mobile browser issue seems to be all requests 
    getting 401 so the token refresh is being rejected */
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";

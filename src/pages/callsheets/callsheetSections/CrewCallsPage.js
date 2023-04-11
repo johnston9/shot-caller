@@ -5,7 +5,6 @@
    TimesScriptCater, TimesSoundTransport, TimesPostAdditional,
    TimesStunts and TimesWardrobe components to do so */
 import React, { useState } from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
@@ -24,7 +23,6 @@ import TimesStunts from '../callsheetCrewTimes/TimesStunts';
 import TimesWardrobe from '../callsheetCrewTimes/TimesWardrobe';
 
 const CrewCallsPage = ({callsheet, setShow}) => {
-  useRedirect("loggedOut");
 
   const crewInfoOne = useCrewInfoContext();
   const [showPro, setShowPro] = useState(false);

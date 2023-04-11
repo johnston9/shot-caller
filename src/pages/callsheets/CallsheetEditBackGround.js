@@ -8,10 +8,8 @@ import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 
 const EditBack = (props) => {
-    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
 
     const { setBgNew, setShowEdit,

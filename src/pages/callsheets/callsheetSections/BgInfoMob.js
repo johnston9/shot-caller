@@ -1,14 +1,12 @@
 /* Component in the Background component to display the Callsheet 
    the extra background info in mobile */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
 import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
 
 const BgInfoMob = (props) => {
-    useRedirect("loggedOut");
     const { id1,  admin, setShowEdit, scenes1, set1, costumes1, handleMount } = props;
 
         const handleEdit = () => {

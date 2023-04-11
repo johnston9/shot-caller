@@ -1,5 +1,5 @@
-/* FIX NEEDED
-   Weather component using Open Weather API
+/* Weather component using Open Weather API
+ * FIX NEEDED
    Needs to have date added but that meens an upgrade to a
    higher price tier and the url altered */
 import React, { useEffect, useState } from 'react';
@@ -9,7 +9,6 @@ import Row from 'react-bootstrap/Row';
  
 const Weather = ({weather_location} ) => {
 const openKey = process.env.REACT_APP_OPEN_WEATHER_KEY;
-console.log(openKey);
 const [forcast, setForcast] = useState("");
 const [temp, setTemp] = useState("");
 const [rise, setRise] = useState("");

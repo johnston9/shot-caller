@@ -12,7 +12,7 @@ import TopBox from "../../components/TopBox";
 import DeptPost from "./DepPost";
 
 function DeptPostPage() {
-  useRedirect("loggedOut")
+  useRedirect();
     const { id } = useParams()
     const [post, setPost] = useState({ results: [] });
     const [title, setTitle] = useState("");

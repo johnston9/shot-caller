@@ -20,7 +20,7 @@ import { useRedirectSign } from "../../hooks/RedirectSign";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 
 const SignUpForm = () => { 
-  useRedirectSign("loggedIn");
+  useRedirectSign();
   const crewInfoOne = useCrewInfoContext();
   const production_name = crewInfoOne.production_name || "";
 

@@ -12,7 +12,7 @@ import btnStyles from "../../../../styles/Button.module.css";
 import { useHistory } from 'react-router-dom';
 
 const CrewCompany = ({handleChange, postData, setShow,}) => {
-  useRedirect("loggedOut");
+  useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
   const history = useHistory();

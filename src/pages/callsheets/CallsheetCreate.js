@@ -41,7 +41,7 @@ import SchedulePage from "./callsheetSchedule/SchedulePage";
 import ImportantCrewCalls from "./info/ImportantCrewCalls";
 
 const CallsheetCreate = () => {
-  useRedirect("loggedOut");
+  useRedirect();
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const history = useHistory();

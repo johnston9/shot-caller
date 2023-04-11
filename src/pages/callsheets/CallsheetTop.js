@@ -6,13 +6,11 @@ import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Callsheets.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const CallsheetTop = (props) => {
-    useRedirect("loggedOut")
     const {
         id,
         day,

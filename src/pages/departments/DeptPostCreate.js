@@ -21,7 +21,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
 
 function DeptPostCreate({deptGeneral="", setShow } ) {
-  useRedirect("loggedOut")
+  useRedirect();
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",

@@ -1,3 +1,4 @@
+/* Component in IndexCard to edit an IndexCard */
 import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -10,10 +11,8 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 
 const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
-    useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
     number: "",

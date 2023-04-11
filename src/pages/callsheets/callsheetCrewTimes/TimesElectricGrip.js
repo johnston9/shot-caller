@@ -1,13 +1,11 @@
 /* Component to display the Elactric and Grip Departments
    Calltimes on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
-  useRedirect("loggedOut");
 
   const {gaffer_name, 
     best_boy_electric_name, 

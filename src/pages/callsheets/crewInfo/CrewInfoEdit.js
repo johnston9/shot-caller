@@ -32,7 +32,7 @@ import CrewWardrobe from "./addCrewInfoByDept/CrewWardrobe";
 import Important from "../info/Important";
 
 const CrewInfoEdit = () => {
-  useRedirect("loggedOut");
+  useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
   const history = useHistory();

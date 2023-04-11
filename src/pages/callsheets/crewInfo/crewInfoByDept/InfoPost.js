@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const InfoPost = ({crewInfoOne, setShowPos}) => {
-  useRedirect("loggedOut");
+  useRedirect();
 
   const {editor_name, editor_email, editor_phone,
     fx_name, fx_email, fx_phone,

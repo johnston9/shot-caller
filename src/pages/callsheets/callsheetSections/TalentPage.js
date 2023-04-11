@@ -2,14 +2,12 @@
    items passed down from the Callsheet
  * Contains the CallCast component */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 import CallCast from './CallCast';
 
 const TalentPage = (props) => {
-    useRedirect("loggedOut");
     const admin = true;
     const {cast, setShow, handleMount} = props;
   return (

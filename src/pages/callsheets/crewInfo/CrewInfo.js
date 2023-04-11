@@ -30,7 +30,7 @@ import TopBox from '../../../components/TopBox';
 import Important from '../info/Important';
 
 const CrewInfo = () => {
-  useRedirect("loggedOut");
+  useRedirect();
   const history = useHistory();
   const crewInfoOne = useCrewInfoContext();
   console.log(crewInfoOne);

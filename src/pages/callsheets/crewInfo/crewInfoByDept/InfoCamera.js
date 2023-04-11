@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
 const InfoCamera = ({crewInfoOne, setShowCam }) => {
-  useRedirect("loggedOut");
+  useRedirect();
   const { dop_name, dop_email, dop_phone,
     camera_operator_name, camera_operator_email, camera_operator_phone,
     camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,

@@ -9,10 +9,8 @@ import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 
 const EditCast = (props) => {
-    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
 
     const { setShowEdit, setCastNew,

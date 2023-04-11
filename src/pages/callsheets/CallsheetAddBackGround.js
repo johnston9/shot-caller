@@ -9,10 +9,8 @@ import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 
 const AddBackGround = ({id, setShow, showSideBySide, dataDay, dataDate}) => {
-    useRedirect("loggedOut");
     console.log(id)
     const [errors, setErrors] = useState({});
     const [background, setBackground] = useState({results: [] });

@@ -1,13 +1,11 @@
 /* Component to display the Art Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
-  useRedirect("loggedOut");
 
   const {production_designer_name,
     art_director_name, 

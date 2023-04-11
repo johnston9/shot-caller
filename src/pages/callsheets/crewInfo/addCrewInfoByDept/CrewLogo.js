@@ -20,7 +20,7 @@ import { useRedirect } from "../../../../hooks/Redirect";
 import { useCrewInfoContext, useSetEditCrewInfoContext } from "../../../../contexts/BaseCallContext";
 
 const CrewLogo = () => {
-    useRedirect("loggedOut");
+    useRedirect();
   const [errors, setErrors] = useState({});
   const history = useHistory();
   const setEditCrewInfo = useSetEditCrewInfoContext();

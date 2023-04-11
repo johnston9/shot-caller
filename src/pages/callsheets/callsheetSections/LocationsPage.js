@@ -2,7 +2,6 @@
    Locations
  * Contains the Map component to display Google maps */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
@@ -12,7 +11,6 @@ import { useState } from 'react';
 import Map from '../../../components/Map';
 
 const LocationsPage = ({callsheet, setShow}) => {
-    useRedirect("loggedOut"); 
     const [showMapHos, setShowMapHos] = useState(false);
     const [showMapBase, setShowMapBase] = useState(false);
     const [showMapLoc1, setShowMapLoc1] = useState(false);

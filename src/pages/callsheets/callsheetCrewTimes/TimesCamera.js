@@ -1,13 +1,11 @@
 /* Component to display the Camera Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
-  useRedirect("loggedOut");
 
   const { dop_name, 
     camera_operator_name, 

@@ -1,13 +1,11 @@
-/* Page to fetch the Advanced Schedule data
+/* Component to fetch the Advanced Schedule data
  * Contain the Advanced Schedule to which it passses the data 
  * Note: The Advanced Schedule is the first half of the next day's schedule*/
 import React, { useEffect, useState } from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import { axiosReq } from '../../../api/axiosDefaults';
 import AdvancedSchedule from './AdvancedSchedule';
 
 const AdvancedSchedPage = (props) => {
-  useRedirect("loggedOut");
   const {setShow, advancedDay} = props;
   // eslint-disable-next-line
   const [hasLoaded, setHasLoaded] = useState("");

@@ -1,13 +1,11 @@
 /* Component to display the Casting and AD Departments Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesCastingAD = ({crewInfoOne, callsheet, setShowCas }) => {
-  useRedirect("loggedOut");
 
   const {casting_director_name,
     extras_casting_name, 

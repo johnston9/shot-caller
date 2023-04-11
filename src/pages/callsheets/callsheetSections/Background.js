@@ -5,7 +5,6 @@
  * Contains the BgInfoMob component to display 
    the extra background info in mobile */
 import React, { useState } from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
@@ -19,7 +18,6 @@ import EditBack from '../CallsheetEditBackGround';
 import BgInfoMob from './BgInfoMob';
 
 const Background = (props) => {
-    useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
 

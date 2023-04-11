@@ -1,13 +1,11 @@
 /* Component to display the Stunts Department Calltimes
    on the Callsheet */
 import React from "react";
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
-  useRedirect("loggedOut");
   const {stunt_coordinator_name, 
     stunts_1_name,
     stunts_2_name,

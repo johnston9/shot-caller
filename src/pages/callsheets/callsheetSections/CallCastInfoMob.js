@@ -1,14 +1,12 @@
 /* Component in the CallCast component to display the Callsheet 
    the extra cast info in mobile */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
 import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
 
 const CallCastInfoMob = (props) => {
-    useRedirect("loggedOut");
     const { id1, contact1, swf1, inst1, pickup1,
         hmw1, on_set1, admin, setShowEdit, handleMount} = props;
 

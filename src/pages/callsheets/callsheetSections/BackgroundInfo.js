@@ -1,12 +1,10 @@
 /* Component in the Background component to display the Callsheet 
    the extra background info  */
 import React from 'react';
-import { useRedirect } from '../../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
 
 const BackgroundInfo = (props) => {
-    useRedirect("loggedOut");
     const { scenes1, set1, costumes1 } = props
   return (
     <div>
