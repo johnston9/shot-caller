@@ -1,5 +1,5 @@
-// Page for the Moodboard
-// The word moodshot is used through the app in the urls for moodboard
+/* Component in MoodboardPage to display the Moodboard data 
+ * The word moodshots is used through the app in the urls for moodboards */
 import React from 'react'
 import Image from 'react-bootstrap/Image'
 import { useHistory } from 'react-router-dom';
@@ -17,7 +17,6 @@ import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
 
 const Moodboard = (props) => {
-    useRedirect("loggedOut");
 
     const {
         id,

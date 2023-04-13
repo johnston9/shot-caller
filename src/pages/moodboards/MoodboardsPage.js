@@ -1,13 +1,14 @@
-// Main Page for the Moodboard app,
-// Displaying all the Moodboard Tops, holding the Create Moodboard button
-// and the search for Moodboards function
+/* Page to fetch all Moodboard data and render the cover info 
+ * Contains the MoodboardTop component 
+ * Contains a search for Moodboards function
+ * The word moodshots is used through the app in the urls for 
+   Moodboards as it connects with the MootShot App in 
+   Shot Caller API in DRF */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Moodboards.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -23,7 +24,7 @@ import MoodboardTop from "./MoodboardTop";
 import Info from "./Info";
 
 const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace="", message, filter="" }) => {
-    useRedirect("loggedOut");
+    useRedirect();
   const [moodshots, setMoodshots] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});

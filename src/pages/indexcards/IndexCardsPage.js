@@ -2,7 +2,6 @@
  * Initially sets data in the state indexCardsAll
  * Contains 3 functions to filter the 1st 90 Cards in groups
    of 30 and one function to filter the rest
-   and set this data in indexCards 
  * Contains component IndexCards to which it passes the data 
  * Contains component IndexCardCreate */
 import React, { useEffect, useState } from "react";
@@ -44,7 +43,7 @@ const IndexCardsPage = () => {
 
   useEffect(() => {
     /* Function to fetch all Indexcards
-     * set states indexCards and indexCardsAll to the data returned*/
+     * set states indexCards and indexCardsAll to the data returned */
     const fetchCards = async () => {
       try {
         const { data } = await axiosReq.get(`/indexcards/?${filter}&search=${query}`);

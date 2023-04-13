@@ -1,5 +1,5 @@
+/* Form Page to edit a Post */
 import React, { useEffect, useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -21,7 +21,7 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 
 function PostEditForm() {
-  useRedirect("loggedOut")
+  useRedirect();
   const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: "",
@@ -35,7 +35,10 @@ function PostEditForm() {
         image4: "",
         image5: "",
       });
-      const { title, content, scene, departments, category, image1, image2, image3, image4, image5 } = postData;
+      const { title, content, scene, departments, 
+        category, image1, image2, image3, 
+        image4, image5 } = postData;
+
       const imageInput1 = useRef(null)
       const imageInput2 = useRef(null)
       const imageInput3 = useRef(null)
@@ -46,6 +49,7 @@ function PostEditForm() {
       const { id } = useParams();
 
       useEffect(() => {
+        /* Function to fetch a post data */
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/posts/${id}/`);
@@ -53,9 +57,10 @@ function PostEditForm() {
                 category, image1, image2, image3, image4, image5,
                 is_owner } = data;
     
-            is_owner ? setPostData({ title, content, scene, departments, 
-                category, image1, image2, image3, image4, 
-                image5 }) : history.push("/");
+                /* Set postData with the data returned */
+                is_owner ? setPostData({ title, content, 
+                scene, departments, category, image1, 
+                image2, image3, image4, image5 }) : history.push("/");
           } catch (err) {
             console.log(err);
           }

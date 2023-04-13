@@ -1,3 +1,4 @@
+/* Info Component in MoodboardsPage */
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -11,12 +12,12 @@ const Info = () => {
             <p>Use Moodboards to use to explore and define visual 
               themes.<br/> 
               Create Moodboards for Scenes, Locations and Characters on the Moodboards 
-            page or on that element's page.<br/>
-            Each element may have a number of Moodshots.<br/> 
-            Each Moodboard may be solely for 
-            a Scene, Location and Character or may reference the other elements.<br/>
-            Moodboards by be used to explore other themes using the title solely. 
-           </p>
+              page or on that element's page.<br/>
+              Each element may have a number of Moodshots.<br/> 
+              Each Moodboard may be solely for 
+              a Scene, Location and Character or may reference the other elements.<br/>
+              Moodboards by be used to explore other themes using the title solely. 
+            </p>
             </Col>
         </Row>
     </div>

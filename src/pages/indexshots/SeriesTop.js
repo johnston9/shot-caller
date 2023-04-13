@@ -1,17 +1,19 @@
+/* Component rendered on the SeriesPage to display the 
+   cover info for each Series of IndexShots
+ * When clicked on it opens that Series's IndexShots page
+ * Contains the SeriesEditForm */
 import React, { useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Characters.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Content from './Content'; 
 import SeriesEditForm from './SeriesEditForm';
 
 const SeriesTop = (props) => {
-    useRedirect("loggedOut");
     const [showEdit, setShowEdit] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const {

@@ -1,3 +1,5 @@
+/* Page to display each the IndexShot full size  
+ * Contains the IndexShotEdit component */ 
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
@@ -8,7 +10,7 @@ import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 const IndexShotsFullSize = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const [shot, setShot] = useState({results: [] });
     // eslint-disable-next-line
     const [error, setError] = useState({});

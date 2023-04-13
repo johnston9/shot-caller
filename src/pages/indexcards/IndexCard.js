@@ -1,4 +1,4 @@
-/*Component in IndexCards to display each the Card */ 
+/* Component in IndexCards to display each the Card */ 
 import React, { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";

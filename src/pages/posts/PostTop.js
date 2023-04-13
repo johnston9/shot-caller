@@ -1,3 +1,6 @@
+/* Component rendered on the PostsPage to display the 
+   cover info for each Post
+ * When clicked on it opens that Post's PostPage */
 import React from 'react';
 import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -8,12 +11,10 @@ import { Link, useHistory } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const PostTop = (props) => {
-  useRedirect("loggedOut")
 
     const {
         id,
@@ -53,10 +54,12 @@ const PostTop = (props) => {
       };
 
       const handleOpened = async () => {
-        console.log("opened")
+        /* Function to create an opened instance
+           for the Post */
         try {
           const { data } = await axiosRes.post("/opened/", { post: id });
           setPosts((prevPosts) => ({
+            // Update the post in the posts state with the opened_id
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -70,9 +73,13 @@ const PostTop = (props) => {
       };
 
       const handleStar = async () => {
+        /* Function to Star a Post 
+         * Creates an archives instance for the Post as the 
+           Archives App in Shot Caller DRF is used for the Star feature */
         try {
           const { data } = await axiosRes.post("/archives/", { post: id });
           setPosts((prevPosts) => ({
+            // Update the post in the posts state with the archives_id
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -86,9 +93,13 @@ const PostTop = (props) => {
       };
 
       const handleUnStar = async () => {
+        /* Function to unStar a Post 
+         * Deletes an archives instance for the Post as the 
+           Archives App in Shot Caller DRF is used for the Star feature */
         try {
           await axiosRes.delete(`/archives/${archive_id}/`);
           setPosts((prevPosts) => ({
+            // Delete the archives_id for the post in the posts state
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -102,9 +113,11 @@ const PostTop = (props) => {
       };
 
       const handleLike = async () => {
+        /* Function to create a likes instance for a Post */
         try {
           const { data } = await axiosRes.post("/likes/", { post: id });
           setPosts((prevPosts) => ({
+            // Update the post in the posts state with the likes_id
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -118,9 +131,11 @@ const PostTop = (props) => {
       };
 
       const handleUnlike = async () => {
+        /* Function to delete a likes instance for a Post */
         try {
           await axiosRes.delete(`/likes/${like_id}/`);
           setPosts((prevPosts) => ({
+            // Delete the likes_id for the post in the posts state
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id

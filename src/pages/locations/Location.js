@@ -1,8 +1,8 @@
+/* Component in LocationPage to display the Location data */
 import React from 'react'
 import Image from 'react-bootstrap/Image'
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Characters.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -10,7 +10,6 @@ import { PostDropdown } from '../../components/PostDropdown';
 import { useSetLocationContext } from '../../contexts/CharLocatContex';
 
 const Location = (props) => {
-    useRedirect("loggedOut");
     const setLocation = useSetLocationContext();
     const { id,
         name,
@@ -51,12 +50,19 @@ const Location = (props) => {
         };
     
     const handleClickMoods = () => {
+       /* Functions take the user to the Location's Moodboards
+        * They set the Location Context
+        * This will be read on App.js page and passed
+          as a filter to the /location/moodshots Route */
         setLocation(name);
-        console.log(name);
         history.push(`/location/moodshots`);
     };
         
     const handleClickAddMoods = () => {
+        /* Functions take the user to the Location's Moodboards Create form
+        * They set the Location Context
+        * This will be read on App.js page and passed
+          as a filter to the /location/moodshots/create Route */
         setLocation(name);
         history.push(`/location/moodshot/create`);
     };

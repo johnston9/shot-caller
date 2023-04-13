@@ -1,10 +1,10 @@
+/* Page to fetch all Workspace Scene Posts data and render the cover info 
+ * Contains the PostTop component  */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -22,7 +22,7 @@ import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 
 function PostsPage({ feed, archived, allposts, liked, message, sceneId="", number="", dept, category="" , filter="" }) {
-  useRedirect("loggedOut");
+  useRedirect();
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
   // eslint-disable-next-line

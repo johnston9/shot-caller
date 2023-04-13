@@ -1,3 +1,8 @@
+/* Page to fetch all IndexShot Series data and render the cover info 
+ * An IndexShot series is a series of Images
+ * Contains the SeriesTop component
+ * Contains the IndexShotCreate component
+ * Contains the Info component */
 import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -18,7 +23,7 @@ import SeriesTop from './SeriesTop';
 import SeriesCreateForm from './SeriesCreateForm'; 
 
 const SeriesPage = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const [series, setSeries] = useState({results: [] });
     // eslint-disable-next-line
     const [error, setError] = useState({});
@@ -33,6 +38,7 @@ const SeriesPage = () => {
     const [hasOrder, setHasOrder] = useState(false);
 
     useEffect(() => {
+          /* Function to fetch the Series data */
           const fetchseries = async () => {
             try {
               const { data } = await axiosReq.get(`/series/?${filter}&search=${query}`);

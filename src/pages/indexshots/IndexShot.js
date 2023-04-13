@@ -1,15 +1,16 @@
+/* Component in IndexShots to display each the IndexShot 
+ * Contains a link to IndexShotsFullSize to view the Image full size 
+ * Contains the IndexShotEdit component */ 
 import React, { useState } from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Characters.module.css";
 import IndexShotEdit from './IndexShotEdit';
 
 const IndexShot = (props) => {
-    useRedirect("loggedOut");
     const [showEdit, setShowEdit] = useState(false);
     const {
         id,

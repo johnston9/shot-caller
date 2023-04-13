@@ -1,16 +1,17 @@
+/* Component rendered on the LocationsPage to display the 
+   cover info for each Location
+ * When clicked on it opens that Location's LocationPage */
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Characters.module.css"
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
 
 const LocationTop = (props) => {
-    useRedirect("loggedOut")
     const {
         id,
         name,

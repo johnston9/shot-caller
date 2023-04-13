@@ -1,3 +1,4 @@
+/* Component in PostPage to display the Post data */
 import React from 'react';
 import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -12,12 +13,10 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
-import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const Post = (props) => {
-  useRedirect("loggedOut");
     const {
         id,
         owner,
@@ -53,12 +52,15 @@ const Post = (props) => {
       const setNumber = useSetNumberContext();
 
       const handleGoToScene = () => {
+        /* Function to go to the post's Scene page 
+           and it's Department Category
+        *  Sets the Contexts SceneId, Number, Category 
+           ans Dept to be read in App.js*/
         setSceneId(scene);
         setNumber(number);
         setDept(departments);
         setCategory(category);
         history.push(`/dept/category`);
-        console.log('clicked');
       };
 
       const handleEdit = () => {
@@ -73,26 +75,14 @@ const Post = (props) => {
         }
       };
 
-      // const handleOpened = async () => {
-      //   try {
-      //     const { data } = await axiosRes.post("/opened/", { post: id });
-      //     setPosts((prevPosts) => ({
-      //       ...prevPosts,
-      //       results: prevPosts.results.map((post) => {
-      //         return post.id === id
-      //           ? { ...post, opened_id: data.id }
-      //           : post;
-      //       }),
-      //     }));
-      //   } catch (err) {
-      //     console.log(err);
-      //   }
-      // };
-
       const handleStar = async () => {
+        /* Function to Star a Post 
+         * Creates an archives instance for the Post as the 
+           Archives App in Shot Caller DRF is used for the Star feature */
         try {
           const { data } = await axiosRes.post("/archives/", { post: id });
           setPosts((prevPosts) => ({
+            // Update the post in the posts state with the archives_id
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -106,9 +96,13 @@ const Post = (props) => {
       };
 
       const handleUnStar = async () => {
+        /* Function to unStar a Post 
+         * Deletes an archives instance for the Post as the 
+           Archives App in Shot Caller DRF is used for the Star feature */
         try {
           await axiosRes.delete(`/archives/${archive_id}/`);
           setPosts((prevPosts) => ({
+            // Delete the archives_id for the post in the posts state
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -122,9 +116,11 @@ const Post = (props) => {
       };
 
       const handleLike = async () => {
+        /* Function to create a likes instance for a Post */
         try {
           const { data } = await axiosRes.post("/likes/", { post: id });
           setPosts((prevPosts) => ({
+            // Update the post in the posts state with the likes_id
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -133,13 +129,16 @@ const Post = (props) => {
             }),
           }));
         } catch (err) {
+          console.log(err);
         }
       };
 
       const handleUnlike = async () => {
+        /* Function to delete a likes instance for a Post */
         try {
           await axiosRes.delete(`/likes/${like_id}/`);
           setPosts((prevPosts) => ({
+            // Delete the likes_id for the post in the posts state
             ...prevPosts,
             results: prevPosts.results.map((post) => {
               return post.id === id
@@ -148,6 +147,7 @@ const Post = (props) => {
             }),
           }));
         } catch (err) {
+          console.log(err);
         }
       };
 

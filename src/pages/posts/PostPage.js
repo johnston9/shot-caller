@@ -1,5 +1,6 @@
+/* Page to fetch the data for each Post and it's Comments
+ * Contains the Post Component to which it passes the data */
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -18,7 +19,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 
 function PostPage() {
-  useRedirect("loggedOut");
+  useRedirect();
     const { id } = useParams()
     const [post, setPost] = useState({ results: [] });
 
@@ -27,14 +28,13 @@ function PostPage() {
     const [comments, setComments] = useState({ results: [] });
 
     useEffect(() => {
+      /* Function to fetch the data for each Post and it's Comments */
       const handleMount = async () => {
         try {
           const [{ data: post }, { data: comments }] = await Promise.all([
             axiosReq.get(`/posts/${id}`),
             axiosReq.get(`/comments/?post=${id}`),
           ]);
-          console.log(`/posts/${post}`);
-          console.log(`/comments/${comments}`);
           setPost({ results: [post] });
           setComments(comments);
         } catch (err) {
@@ -49,7 +49,7 @@ function PostPage() {
   return (
     <div>
       <TopBox title="Post" />
-    <Row className="h-100">
+      <Row className="h-100">
       <Col className="py-2 p-0 p-lg-1" >
         <Post {...post.results[0]} setPosts={setPost} postPage/>
         <Container className={`${appStyles.Content} mt-3 `} >

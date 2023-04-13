@@ -1,11 +1,12 @@
-// Box to hold a Moodboard's info
-// The word moodshot is used through the app in the urls for moodboard
+/* Component rendered on the MoodboardsPage to display the 
+   cover info for each Moodboard
+ * When clicked on it opens that Moodboard's MoodboardPage
+ * The word moodshot is used through the app in the urls for moodboard */
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Moodboards.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -13,7 +14,6 @@ import { PostDropdown } from '../../components/PostDropdown';
 import Avatar from '../../components/Avatar';
 
 const MoodboardTop = (props) => {  
-    useRedirect("loggedOut")
     const {
         id,
         is_owner,

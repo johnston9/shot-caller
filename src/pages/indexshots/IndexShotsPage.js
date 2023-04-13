@@ -1,3 +1,10 @@
+/* Page to fetch one series of IndexShots data
+ * Initially sets data in the state indexShotsAll
+ * Contains 3 functions to filter the 1st 90 indexShots in groups
+   of 30 and one function to filter the rest
+ * Contains component IndexShot to which it passes the data 
+ * Contains component IndexShotCreate at the top and botton of the page
+ * Contains component Info2 */
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -18,7 +25,7 @@ import IndexShotCreate from './IndexShotCreate';
 import IndexShot from './IndexShot';
 
 const IndexShotsPage = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const [indexShots, setIndexShots] = useState({results: [] });
     const [indexShotsAll, setIndexShotsAll] = useState({ results: [] });
     // eslint-disable-next-line
@@ -38,6 +45,8 @@ const IndexShotsPage = () => {
 
 
     useEffect(() => {
+          /* Function to fetch a Series And it's set of IndexShots data
+             Set states indexShots and indexShotsAll to the data returned */
           const fetchseries = async () => {
             try {
               const [{ data: seriesGet }, { data: shotsGet }] = await Promise.all([
@@ -77,18 +86,6 @@ const IndexShotsPage = () => {
           console.log("thirty");
           console.log(thirty);
           setIndexShots({results: thirty});
-          // var thirty = indexCardsAll.filter(function(card) {
-          //   return (card.number > 0 && card.number < 31);
-          // });
-          // console.log("thirty");
-          // console.log(thirty);
-          // setIndexCards(thirty);
-          // var thirty = indexCardsAll.filter(function(card) {
-          //   return (card.number > 0 && card.number < 31);
-          // });
-          // console.log("thirty");
-          // console.log(thirty);
-          // setIndexCards(thirty);
         };
       
         const handleClick2 = () => { 

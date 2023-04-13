@@ -1,3 +1,4 @@
+/* Component in IndexShot to edit an IndexShot */
 import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -13,11 +14,9 @@ import Alert from "react-bootstrap/Alert";
 import Asset from "../../components/Asset";
 
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 import { Image } from "react-bootstrap";
 
 const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
-    useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
     series_id: "",
@@ -33,6 +32,7 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
     image, } = postData;
 
   useEffect(() => {
+    /* Function to set the postData state */
     const handleMount = async () => {
       const { number, content, image } = shot;
       setPostData({ number, content, image})

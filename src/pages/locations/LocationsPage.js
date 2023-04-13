@@ -1,5 +1,6 @@
+/* Page to fetch all Locations data and render the cover info 
+ * Contains the LocationTop component */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -19,7 +20,7 @@ import TopBox from "../../components/TopBox";
 import LocationTop from "./LocationTop";
 
 const LocationsPage = () => {
-    useRedirect("loggedOut");
+    useRedirect();
   const [locations, setLocations] = useState({ results: [] });
   // eslint-disable-next-line
   const [error, setErrors] = useState({});

@@ -330,7 +330,8 @@ function App() {
             />
           )}
         />
-        {/* Archived posts*/}
+        {/* Stared posts 
+          * Uses the archived app in DRF*/}
         <Route
           exact
           path="/archived"

@@ -1,5 +1,5 @@
-// Form to edit a Moodboard
-// The word moodshot is used through the app in the urls for moodboard
+/* Form Page to edit a Moodboard 
+ * The word moodshots is used through the app in the urls for moodboards */
 import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -24,7 +24,7 @@ import Asset2 from "../../components/Asset2";
 import { useCharactersContext, useLocationsContext, useScenesContext } from "../../contexts/Scene_chars_locs";
 
 const MoodboardEdit = () => {
-  useRedirect("loggedOut")
+  useRedirect();
   const [errors, setErrors] = useState({});
 
   const scenes = useScenesContext();

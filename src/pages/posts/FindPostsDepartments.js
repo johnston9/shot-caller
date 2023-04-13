@@ -1,8 +1,9 @@
+/* Page to display the links to find Posts 
+   by Department */
 import React from 'react'
 import { Button, Card, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useSetCategoryContext, useSetDeptContext } from '../../contexts/DeptCategoryContext';
-// import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -24,15 +25,18 @@ import Row from 'react-bootstrap/Row';
 import { DeptDropdown } from '../../components/PostDropdown';
 import TopBox from '../../components/TopBox';
 
-const Departments = (props) => {
-    useRedirect("loggedOut")
+const Departments = () => {
+    useRedirect();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
-    // const setSceneId = useSetSceneContext();
-    // const setNumber = useSetNumberContext();
-    // const { id, number } = props;
+
     const history = useHistory();
 
+    /* The following 13 functions take the user to Posts
+     * in a particular Department and Category
+     * They set the Dept and Category Contexts 
+     * This will be read on App.js page and passed
+       as a filter to the /departments Route*/
     const handleClickCamera = (category) => {
       setDept("camera");
       setCategory(category);
@@ -118,12 +122,9 @@ const Departments = (props) => {
     };
 
     const handleClickUniversal = () => {
-      // setSceneId(id); 
-      // setNumber(number);
       setDept("universal");
       setCategory("");
       history.push(`/departments`);
-      // history.push(`/dept/category`);
     };
 
     return (

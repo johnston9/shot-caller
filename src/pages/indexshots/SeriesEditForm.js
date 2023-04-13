@@ -1,5 +1,5 @@
+/* Form Page to edit a Series */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -10,11 +10,9 @@ import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
-import { useRedirect } from "../../hooks/Redirect";
 import Container from "react-bootstrap/Container";
 
 const SeriesEditForm = (props ) => {
-  useRedirect("loggedOut")
 const [errors, setErrors] = useState({});
 const {seri, setSeries, id, setShowEdit } = props;
 const [postData, setPostData] = useState({

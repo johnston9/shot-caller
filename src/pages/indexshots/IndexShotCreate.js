@@ -1,3 +1,4 @@
+/* Component in IndexShotsPage to create an IndexShot */
 import React, { useState, useRef } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -13,11 +14,9 @@ import Alert from "react-bootstrap/Alert";
 import Asset from "../../components/Asset";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 import { Image } from "react-bootstrap";
 
 const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
-    useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const [postData, setPostData] = useState({

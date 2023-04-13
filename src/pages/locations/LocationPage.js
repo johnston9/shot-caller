@@ -1,3 +1,5 @@
+/* Page to fetch the data for each Location
+ * Contains the Location Component to which it passes the data */
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -8,7 +10,7 @@ import TopBox from '../../components/TopBox';
 import Location from "./Location";
 
 const LocationPage = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const { id } = useParams();
     const [location, setLocation] = useState({ results: [] });
     const history = useHistory();

@@ -56,12 +56,20 @@ const Character = (props) => {
       };
 
       const handleClickMoods = () => {
+       /* Functions take the user to the Character's Moodboards
+        * They set the Character Context
+        * This will be read on App.js page and passed
+          as a filter to the /character/moodshots Route */
         setCharacter(role);
         history.push(`/character/moodshots`);
     
       };
     
       const handleClickAddMoods = () => {
+        /* Functions take the user to the Character's Moodboards Create Form
+        * They set the Character Context
+        * This will be read on App.js page and passed
+          as a filter to the /character/moodshot/create Route  */
         setCharacter(role);
         history.push(`/character/moodshot/create`);
     
