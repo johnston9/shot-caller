@@ -1,3 +1,6 @@
+/* Page to fetch all Scenes data and render the cover info 
+ * Contains the SceneTop component to which it passes the data
+   for each Scene cover */
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -17,11 +20,9 @@ import { useHistory } from "react-router-dom";
 import TopBox from '../../components/TopBox';
 import r1 from "../../assets/r1.png"; 
 import Information from './info/Information';
-// import InfiniteScroll from 'react-infinite-scroll-component';
-// import { fetchMoreData } from '../../utils/utils';
 
 const ScenesPage = ({message, filter = "" }) => {
-    useRedirect("loggedOut");
+    useRedirect();
     const [scenes, setScenes] = useState({results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
@@ -29,6 +30,10 @@ const ScenesPage = ({message, filter = "" }) => {
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
 
+    /* The following 4 functions set the Act the useSetActContext
+       for which to fetch the Scenes
+     * This will be read in App.js and passed as a filter
+       to the /act/scenes Route */
     const handleClickAct1 = () => {
       setAct('one'); 
       history.push(`/act/scenes`);
@@ -54,6 +59,7 @@ const ScenesPage = ({message, filter = "" }) => {
     };
 
     useEffect(() => {
+        /* Function to fetch all Scenes */
         const fetchScenes = async () => {
           try {
             const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
@@ -75,6 +81,7 @@ const ScenesPage = ({message, filter = "" }) => {
       }, [query, filter])
 
       const clickScript = () => {
+        /* Function to take the user to the Script Page */
         history.push(`/script`);
       };
 
@@ -159,45 +166,7 @@ const ScenesPage = ({message, filter = "" }) => {
               </Col>
             </Row>
             <p style={{ textTransform: 'uppercase'}} className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-            {/* infinite */}
-            {/* <div className='text-center'>
-                {hasLoaded ? (
-                <>
-                {scenes.results.length ? (
-                  <InfiniteScroll 
-                  children={scenes.results.map((scene, index) => {
-                    return (
-                      <div 
-                        className='d-inline-flex justify-content-space-between'>
-                        <SceneTop 
-                          key={scene.title}
-                          {...scene} 
-                          setScenes={setScenes}
-                          style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
-                            objectFit: "fill", repeat: 'no-repeat',
-                            width: "150px", color: 'beige' }}
-                          />
-                      </div>
-                  )})}
-                  dataLength={scenes.results.length}
-                  loader={<Asset spinner />}
-                  hasMore={!!scenes.next}
-                  next={() => fetchMoreData(scenes, setScenes )}
-                  />
-                    )
-                : (
-                  <Container className={appStyles.Content}>
-                    <Asset src={NoResults } message={message} />
-                  </Container>
-                )}
-              </>
-            ) : (
-              <Container className={appStyles.Content}>
-                <Asset spinner />
-              </Container>
-            )} 
-            </div> */}
-            {/* old */}
+            {/* render scenes */}
             <Row className="h-100 mt-3 px-2">
             {hasLoaded ? (
             <>

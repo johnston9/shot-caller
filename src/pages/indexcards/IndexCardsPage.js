@@ -1,8 +1,8 @@
 /* Page to fetch all IndexCards data
+ * Contains the IndexCards component to which it passes the data 
  * Initially sets data in the state indexCardsAll
  * Contains 3 functions to filter the 1st 90 Cards in groups
    of 30 and one function to filter the rest
- * Contains component IndexCards to which it passes the data 
  * Contains component IndexCardCreate */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";

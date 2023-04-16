@@ -1,5 +1,5 @@
+/* Form Page in the scene Component to add the Scene Workspace Guide */
 import React, { useState} from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -9,10 +9,8 @@ import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 
 const WorkspaceGuideForm = ({setShowGuide, setScene, id, number }) => {
-    useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({

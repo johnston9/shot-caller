@@ -1,8 +1,10 @@
+/* Page to fetch all Profiles data and render the cover info 
+ * Contains the Profile component to which it passes the data 
+   for each profile cover */
 import React, { useEffect, useState } from 'react';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-
 import { useRedirect } from '../../hooks/Redirect';
 import TopBox from '../../components/TopBox';
 import btnStyles from "../../styles/Button.module.css";
@@ -18,13 +20,16 @@ import { useProfileData, useSetQueryContext } from '../../contexts/ProfileDataCo
 import Info from './Info';
 
 const ProfilesPage = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const history = useHistory();
+
+    // get all profiles
     const { profiles } = useProfileData();
     const [showInfo, setShowInfo] = useState(false);
     const setQuery = useSetQueryContext();
  
     const [name, setName] = useState("");
+
     const handleChange = (event) => {
         setName(event.target.value)
     }
@@ -80,7 +85,6 @@ const ProfilesPage = () => {
                 <Form.Control
                     value={name}
                     onChange={(event) => handleChange(event)}
-                    // onChange={(event) => setQuery(event.target.value)}
                     type="text"
                     className="mr-sm-2"
                     placeholder="Search by name or position"

@@ -1,5 +1,6 @@
 /* Page to fetch all Characters data and render the cover info 
- * Contains the CharactersTop component */
+ * Contains the CharactersTop component to which it passes the data 
+   for each Character cover */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";

@@ -1,6 +1,6 @@
 /* Page to fetch the Depts-Xtra posts data
- * Contains the DeptPostTop component to display the 
-   post's cover info
+ * Contains the DeptPostTop component to which it passes the data 
+   for each Post cover
  * Contains the InfiniteScroll component
  * The Depts-Xtra App is a seperate posting space
    from the Scenes Workspace for posts by department */

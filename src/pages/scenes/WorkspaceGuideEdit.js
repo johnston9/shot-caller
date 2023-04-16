@@ -1,5 +1,5 @@
+/* Form Page in the scene Component to edit the Scene Workspace Guide */
 import React, { useState, useEffect} from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -9,10 +9,8 @@ import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
 
 const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
-    useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({
@@ -21,6 +19,7 @@ const WorkspaceGuideEdit = ({setShowGuideEdit, setScene, id, number }) => {
     const { workspace_guide } = postData;
 
     useEffect(() => {
+      /* Fetch the scene data */
       const handleMount = async () => {
         try {
           const { data } = await axiosReq.get(`/scenes/${id}/`);

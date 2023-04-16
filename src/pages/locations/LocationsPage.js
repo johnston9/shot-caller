@@ -1,5 +1,6 @@
 /* Page to fetch all Locations data and render the cover info 
- * Contains the LocationTop component */
+ * Contains the LocationTop component to which it passes the data
+   for each Location cover */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";

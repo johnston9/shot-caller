@@ -1,5 +1,5 @@
+/* Form Page to edit a Profile UserName */
 import React, { useEffect, useState } from "react";
-
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -19,7 +19,7 @@ import appStyles from "../../App.module.css";
 import { useRedirect } from "../../hooks/Redirect";
 
 const UsernameForm = () => {
-  useRedirect("loggedOut")
+  useRedirect();
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});
 

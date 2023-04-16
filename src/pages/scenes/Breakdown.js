@@ -1,3 +1,4 @@
+/* Component in the Scene Component to display the Scene Breakdown */
 import React from 'react'
 import { useRedirect } from '../../hooks/Redirect';
 import Button from "react-bootstrap/Button";
@@ -9,7 +10,6 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from '../../api/axiosDefaults';
 
 const Breakdown = (props) => {
-    useRedirect("loggedOut");
     const history = useHistory();
     // eslint-disable-next-line
     const handleEdit = () => {

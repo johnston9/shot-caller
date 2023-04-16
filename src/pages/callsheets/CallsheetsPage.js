@@ -1,5 +1,6 @@
 /* Page to fetch all Callsheets data and render the display info
- * Contains the CallsheetTop component */
+ * Contains the CallsheetTop component to which it passes the data 
+   for each Callsheet cover */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";

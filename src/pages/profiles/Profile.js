@@ -1,3 +1,8 @@
+/* Component rendered on the ProfilesPage to display the 
+   cover info for each Profile
+ * When clicked on it opens that Profile's ProfilePage 
+ * Contains the handleFollow and handleUnFollow functions
+   from useSetProfileData */
 import React from 'react';
 import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -6,13 +11,11 @@ import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
 import Button from "react-bootstrap/Button";
 import { useSetProfileData } from '../../contexts/ProfileDataContext';
-import { useRedirect } from '../../hooks/Redirect';
 import Card from "react-bootstrap/Card";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const Profile = (props) => {
-    useRedirect("loggedOut")
     const { profile, imageSize="40" } = props;
     const { id, following_id, image, owner, name, position } = profile;
 

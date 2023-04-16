@@ -1,3 +1,5 @@
+/* Important Info component on the SceneCreateForm
+   telling users that Scene Numbers can never be changed */
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

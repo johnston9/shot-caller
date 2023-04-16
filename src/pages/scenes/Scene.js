@@ -1,9 +1,12 @@
+/* Component in ScenePage to display the Scene data
+ * Contains the CharactersBG, Breakdown, Script, ShotlistPage,
+   Storyboard, WorkspaceGuideForm and WorkspaceGuideEdit components 
+   each of which deals with a section of the Scene data */
 import React, { useState } from 'react'
 import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Scene.module.css";
 import dep1 from "../../assets/dep1.png";
 import dep2 from "../../assets/dep2.png";
@@ -35,7 +38,6 @@ import Script from './scriptAndSceneScript/ScriptScene';
 import CharactersBG from './charactersBg/CharactersBG';
 
 const Scene = (props) => {
-    useRedirect("loggedOut");
     const [showScript, setShowScript] = useState(false);
     const [showlist, setShowlist] = useState(false);
     const [showBreak, setShowBreak] = useState(false);
@@ -67,6 +69,13 @@ const Scene = (props) => {
       }
     };
 
+
+    /* The following 13 functions take the user to that Scenes 
+       department and category the choose by setting the 
+       useSetCategoryContext, useSetDeptContext, useSetNumberContext,
+       and useSetSceneContext 
+     * These values will be read in App.js and passed as a filter
+       to The /dept/category Route */
     const handleClickCamera = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -183,6 +192,10 @@ const Scene = (props) => {
     };
 
     const handleClickMoods = () => {
+      /* Function to open the Scene MoodBoards page
+       * Sets the SceneId and Number contexts
+         These values will be read in App.js and passed as a filter
+         to the /scene/moodshots Route */
       setSceneId(id); 
       setNumber(number);
       history.push(`/scene/moodshots`);
@@ -190,6 +203,10 @@ const Scene = (props) => {
     };
 
     const clickScript = () => {
+      /* Function to open the Scene Script page
+       * Sets the SceneId context
+         This values will be read in App.js and passed as a filter
+         to the /script/scene/${id} Route */
       setSceneId(id); 
       history.push(`/script/scene/${id}`);
     };

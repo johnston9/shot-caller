@@ -1,3 +1,5 @@
+/* Insrtuctions Component in the scene Component
+   for the Scene Workspace Guide */
 import React from 'react';
 import styles from "../../styles/Scene.module.css";
 

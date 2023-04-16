@@ -1,5 +1,6 @@
+/* Component in the BreakdownEditForm Component to create
+   a new Location  */
 import React, { useState } from "react";
-import { useRedirect } from "../../hooks/Redirect";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -11,7 +12,6 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 
 const NewLocation = ({setShowAddLoc} ) => {
-    useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [newLocation, setNewLocation] = useState("");
     const setLocations = useSetLocationsContext();

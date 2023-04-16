@@ -1,6 +1,7 @@
-/* Page to fetch all IndexShot Series data and render the cover info 
+/* Page to fetch all IndexShot Series data and render the cover info
+ * Contains the SeriesTop component to which it passes the data
+   for each Series cover
  * An IndexShot series is a series of Images
- * Contains the SeriesTop component
  * Contains the IndexShotCreate component
  * Contains the Info component */
 import React, { useEffect, useState } from 'react';

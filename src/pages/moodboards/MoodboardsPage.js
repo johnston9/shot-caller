@@ -1,5 +1,6 @@
 /* Page to fetch all Moodboard data and render the cover info 
- * Contains the MoodboardTop component 
+ * Contains the MoodboardTop component to which it passes the data
+   for each Moodboard cover
  * Contains a search for Moodboards function
  * The word moodshots is used through the app in the urls for 
    Moodboards as it connects with the MootShot App in 

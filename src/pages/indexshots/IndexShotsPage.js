@@ -1,8 +1,9 @@
 /* Page to fetch one series of IndexShots data
+ * Contains IndexShot component to which it passes the data 
+   for each IndexShot
  * Initially sets data in the state indexShotsAll
  * Contains 3 functions to filter the 1st 90 indexShots in groups
    of 30 and one function to filter the rest
- * Contains component IndexShot to which it passes the data 
  * Contains component IndexShotCreate at the top and botton of the page
  * Contains component Info2 */
 import React, { useEffect, useState } from 'react';

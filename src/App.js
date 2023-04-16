@@ -20,7 +20,7 @@ import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
 import { useCategoryContext, useDeptContext, useDeptGeneralContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
 import { useActContext } from './contexts/ActContext';
-import SceneEditForm from './pages/scenes/SceneEditForm';
+import BreakdownEditForm from './pages/scenes/BreakdownEditForm';
 import Home from './pages/home/Home';
 import ProfilesPage from './pages/profiles/ProfilesPage';
 import DeptPostCreate from './pages/departments/DeptPostCreate';
@@ -285,7 +285,7 @@ function App() {
             )}
           />
         <Route exact path="/scenes/:id" render={() => (<ScenePage/>)} />
-        <Route exact path="/scenes/:id/edit" render={() => <SceneEditForm />} />
+        <Route exact path="/scenes/:id/edit" render={() => <BreakdownEditForm />} />
         <Route exact path="/script/scene/:id" render={() => (<Script/>)} />
         <Route exact path="/script" render={() => (<LatestScript />)} />
         {/* ------------------------ SCENES WORKSPACE POSTS -------------------*/}

@@ -1,3 +1,4 @@
+/* Page to fetch and display the data and posts for each Profile */
 import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -22,7 +23,7 @@ import PostTop from "../posts/PostTop";
 import { useHistory } from "react-router-dom";
 
 function ProfilePage() {
-  useRedirect("loggedOut");
+  useRedirect();
   // const admin = true;
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
@@ -50,6 +51,9 @@ function ProfilePage() {
   // };
 
   useEffect(() => {
+    /* Function to fetch a profile's data and posts
+     * and to set the pageProfile in profileData 
+       in the ProfileDataContext to the data*/
     const fetchData = async () => {
       try {
         const [{ data: pageProfile }, { data: profilePosts }] =

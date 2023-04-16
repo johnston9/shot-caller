@@ -1,6 +1,6 @@
+/* Form Page to edit a Profile */
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
@@ -21,7 +21,7 @@ import { useRedirect } from "../../hooks/Redirect";
 import TopBox from "../../components/TopBox";
 
 const ProfileEditForm = () => {
-  useRedirect("loggedOut")
+  useRedirect();
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const { id } = useParams();
@@ -39,6 +39,8 @@ const ProfileEditForm = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    /* Function to fetch a profile and set the profileData 
+       to the data returned */
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {

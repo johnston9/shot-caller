@@ -1,5 +1,6 @@
+/* Form Page to add and edit the Scene Breakdown section
+ * The Script and Storyboard can be added or edited here as well */
 import React, { useEffect, useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -20,8 +21,8 @@ import { useLocationsContext, useSetLocationsContext } from "../../contexts/Scen
 import Important from "./info/Important";
 import Info from "./info/Info";
 
-const SceneEditForm = () => {
-    useRedirect("loggedOut");
+const BreakdownEditForm = () => {
+    useRedirect();
     const [errors, setErrors] = useState({});
     const [showAddLoc, setShowAddLoc] = useState(false);
     const locations = useLocationsContext();
@@ -657,4 +658,4 @@ const SceneEditForm = () => {
       );
 }
 
-export default SceneEditForm
+export default BreakdownEditForm
