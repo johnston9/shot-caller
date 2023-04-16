@@ -4,7 +4,6 @@ import React from 'react'
 import Image from 'react-bootstrap/Image'
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useRedirect } from '../../hooks/Redirect';
 import styles from "../../styles/Moodboards.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

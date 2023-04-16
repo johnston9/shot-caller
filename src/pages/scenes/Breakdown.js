@@ -1,6 +1,5 @@
 /* Component in the Scene Component to display the Scene Breakdown */
 import React from 'react'
-import { useRedirect } from '../../hooks/Redirect';
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

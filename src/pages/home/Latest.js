@@ -9,7 +9,6 @@ import { Link, useHistory } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 

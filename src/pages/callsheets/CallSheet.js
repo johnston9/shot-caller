@@ -7,7 +7,6 @@
    and relevent cast menbers with the Callsheet URL 
  * Contains the 2 functions set the Crew and Cast Personal Call Times*/
 import React, { useEffect, useState } from 'react';
-import { useRedirect } from '../../hooks/Redirect';
 import Button from 'react-bootstrap/Button';
 import btnStyles from "../../styles/Button.module.css";
 import TopBox from '../../components/TopBox';
