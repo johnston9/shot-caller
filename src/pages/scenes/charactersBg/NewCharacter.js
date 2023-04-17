@@ -1,3 +1,5 @@
+/* Component in the CharactersAdd Component to add new characters 
+   to the project */ 
 import React, {useState } from "react";
 import { useRedirect } from "../../../hooks/Redirect";
 import Form from "react-bootstrap/Form";

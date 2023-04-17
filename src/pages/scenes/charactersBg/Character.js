@@ -1,3 +1,6 @@
+/* Component in the CharacterBG Component to display the
+   Character info
+ * Contains the SceneCharacterEdit component */
 import React from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";

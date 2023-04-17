@@ -17,7 +17,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import NewLocation from "./NewLocation";
-import { useLocationsContext, useSetLocationsContext } from "../../contexts/Scene_chars_locs";
+import { useLocationsContext, 
+  useSetLocationsContext } from "../../contexts/Scene_chars_locs";
 import Important from "./info/Important";
 import Info from "./info/Info";
 

@@ -1,4 +1,8 @@
-// Page to contain the Add New Character and Add scene Character forms
+/* Component in the CharacterBG Component
+ * Contains the NewCharacter component to add new characters 
+   to the project
+ * Contains the SceneCharacterAdd component to add the
+   Scene characters */ 
 import React, { useState } from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";

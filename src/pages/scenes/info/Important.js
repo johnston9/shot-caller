@@ -1,3 +1,5 @@
+/* Important Info component on the BreakdownAddEditForm
+   telling users to used decimal instead of eights */
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

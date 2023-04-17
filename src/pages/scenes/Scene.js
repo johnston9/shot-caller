@@ -6,7 +6,9 @@ import React, { useState } from 'react'
 import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
+import { useSetCategoryContext, useSetDeptContext, 
+  useSetNumberContext, 
+  useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import styles from "../../styles/Scene.module.css";
 import dep1 from "../../assets/dep1.png";
 import dep2 from "../../assets/dep2.png";

@@ -1,3 +1,4 @@
+/* Info component on the LatestScript Component */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,11 +11,8 @@ const InfoLatestScript = () => {
         <Col md={{span: 10, offset: 1}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>Add a PDF file of each scene script, ideally when creating the scene 
-            and it's info. Add re-writes of the scene when needed. 
+        <p>Uploat the entire project script for each re-write here.
             Only PDF will be accepted.
-            Alternatively use the Add Script option on the Homepage to
-            uploat the entire script for each re-write.
              </p>
          </div> 
         </Col>

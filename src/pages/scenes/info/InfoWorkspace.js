@@ -1,3 +1,5 @@
+/* Info component on the Scene Component
+   for the Workspace Guide */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

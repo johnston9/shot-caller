@@ -1,5 +1,7 @@
-// Page containing the Add Character and Characters components
-// and the Add Background and Background components
+/* Component in the Scene Component to view and add the 
+   Characters and BG
+ * Contains the Character and CharactersAdd components
+ * Contains the Background and SceneBGAdd components */
 import React, { useState } from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";

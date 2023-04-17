@@ -1,5 +1,6 @@
+/* Component in the CharactersAdd Component
+   to add the Scene characters */ 
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -32,6 +33,8 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
     } = postData;
 
     const setData = (character) => {
+      /* set the postData to the Character's data 
+         from the Select form */
       const role = character.role || "";
       const number = character.number || "" ;
     
@@ -50,6 +53,7 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
       };
 
     const clear = () => {
+    // clear the postData
     setPostData({
     cast_number: "",
     role: "",
@@ -83,13 +87,15 @@ const SceneCharacterAdd = ({id, characters, setCharacters}) => {
       try {
         const {data} = await axiosReq.post("/scenecharacters/", formData);
         console.log(data);
+        // clear the postData
         setPostData({cast_number: "",
                       role: "",
                       costume: "",
                     });
-          setCharacters((prevChars) => ({
-          ...prevChars,
-          results: [data, ...prevChars.results],
+        // update character state  
+        setCharacters((prevChars) => ({
+        ...prevChars,
+        results: [data, ...prevChars.results],
         }));
       } catch (err) {
         console.log(err);

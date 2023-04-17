@@ -1,4 +1,8 @@
-// Scene Script page
+/* Component holding the Scene Script accessed from a link
+   on the Scene Component
+ * Contains the ScriptSceneUpload Component
+ * The Script Scene is a Scene's Script  
+   whereas the Latest Script is the entire Project's Script */
 import React, { useEffect, useState } from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

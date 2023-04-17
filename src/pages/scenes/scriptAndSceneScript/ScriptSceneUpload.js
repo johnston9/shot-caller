@@ -1,4 +1,4 @@
-// Form to upload the Scene Script pages
+/* Form to upload the Scene Script to Media in DRF */
 import React, { useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -28,28 +28,6 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
     const scriptInput = useRef(null);
 
     const history = useHistory();
-
-  //   const getFilename = (path) => {
-  //     const paths = path.split("/");
-  //     const name = paths.length - 1;
-  //     return paths[name];
-  //  };
-
-    // useEffect(() => {
-    //     const handleMount = async () => {
-    //       try {
-    //         const { data } = await axiosReq.get(`/scenes/${id}/`);
-    //         const { script, number } = data;
-    //         setPostData({ script, number });
-    //         const file = getFilename(data.script);       
-    //         setFileName(file);
-    //       } catch (err) {
-    //         console.log(err);
-    //       }
-    //     };
-    
-    //     handleMount();
-    //   }, [id]);
 
       const handleChangeScript = (event) => {
         if (event.target.files.length) {

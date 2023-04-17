@@ -1,3 +1,5 @@
+/* Important Info component on the BreakdownAddEditForm
+   telling users where to add new locations */
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

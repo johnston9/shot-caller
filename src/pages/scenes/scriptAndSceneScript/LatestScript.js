@@ -1,4 +1,9 @@
-// The Latest entire Script
+/* Component holding the Latest Project Script accessed from a link
+   on the ScenesPage 
+ * Contains the LatestScriptAdd Component
+ * Contains the LatestScriptUpload Component
+ * The Latest Script is the entire Project's Script  
+   whereas Script Scene is a Scene's Script */
 import React, { useEffect, useState } from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -32,7 +37,9 @@ const LatestScript = () => {
     const id = script1?.id || "";
     const [fileName, setFileName] = useState("");
     const [hasLoaded, setHasLoaded] = useState(false);
+
     const getFilename = (path) => {
+        /* Function to get the script filename */
         const paths = path.split("/");
         const name = paths.length - 1;
         return paths[name];
@@ -45,6 +52,7 @@ const LatestScript = () => {
             console.log(data);
             console.log(data.results[0].script);
             setScriptData(data);
+            /* Function to get the script filename */
             if (data.results[0].script) {
               const file = getFilename(data.results[0].script);       
               setFileName(file);

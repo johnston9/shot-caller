@@ -1,4 +1,5 @@
-/* Component in the Scene Component to display the Scene Breakdown */
+/* Component in the Scene Component to display the 
+   Scene Breakdown info */
 import React from 'react'
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -6,22 +7,14 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
-import { axiosReq } from '../../api/axiosDefaults';
 
 const Breakdown = (props) => {
     const history = useHistory();
-    // eslint-disable-next-line
+
     const handleEdit = () => {
         history.push(`/scenes/${id}/edit`);
       };
-    // eslint-disable-next-line
-    const handleDelete = async () => {
-    try {
-        await axiosReq.delete(`/scenes/${id}/`);
-        history.goBack();
-    } catch (err) {
-    }
-    };
+
     const { id,title, act, int_ext, day_night, time, location, location_detail,
             pages, action, filming_location, shooting_date,
             dramatic_day, equip_set_props, department_info,

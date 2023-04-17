@@ -1,3 +1,6 @@
+/* Component in the CharacterBG Component to display the
+   Background info
+ * Contains the SceneBGEdit component */
 import React, { useState } from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";

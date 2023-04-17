@@ -1,3 +1,4 @@
+/* Info component on the ScenesPage */
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -11,7 +12,8 @@ const Information = () => {
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
         <p>All Breakdowns, Storyboards, 
-          Shotlists and Workspaces are done by Scene. Start by adding a Scene here.
+          Shotlists and Workspaces are done by Scene. 
+          Start by adding a Scene here.
              </p>
          </div> 
         </Col>
