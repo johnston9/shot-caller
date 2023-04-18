@@ -6,21 +6,21 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
+import Asset from "../../../components/Asset";
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
+import TopBox from "../../../components/TopBox";
+import { useRedirect } from "../../../hooks/Redirect";
 import NewLocation from "./NewLocation";
 import { useLocationsContext, 
-  useSetLocationsContext } from "../../contexts/Scene_chars_locs";
-import Important from "./info/Important";
-import Info from "./info/Info";
+  useSetLocationsContext } from "../../../contexts/Scene_chars_locs";
+import Important from "../info/Important";
+import Info from "../info/Info";
 
 const BreakdownEditForm = () => {
     useRedirect();

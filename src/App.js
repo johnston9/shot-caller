@@ -20,7 +20,7 @@ import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
 import { useCategoryContext, useDeptContext, useDeptGeneralContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
 import { useActContext } from './contexts/ActContext';
-import BreakdownAddEditForm from './pages/scenes/BreakdownAddEditForm';
+import BreakdownAddEditForm from './pages/scenes/breakdown/BreakdownAddEditForm';
 import Home from './pages/home/Home';
 import ProfilesPage from './pages/profiles/ProfilesPage';
 import DeptPostCreate from './pages/departments/DeptPostCreate';

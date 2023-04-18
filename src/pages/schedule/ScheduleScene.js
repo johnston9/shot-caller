@@ -1,3 +1,7 @@
+/* Component on the DayPage to display each Schedule Scene's data
+ * Contains the SchedSceneInfo conponent to display the scenes extra info 
+ * Contains the ScheduleCharacters conponent to display the scenes Characters
+ * Contains the SchedOrder conponent to re-order the Scenes shooting position  */
 import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -11,7 +15,6 @@ import { PostDropdown } from '../../components/PostDropdown';
 import ScheduleCharacters from './ScheduleCharacters';
 import SchedSceneInfo from './SchedSceneInfo';
 import SchedOrder from './SchedOrder';
-// import { getBeginNext } from 'react-calendar/dist/umd/shared/dates';
 
 const ScheduleScene = (props) => {
     useRedirect("loggedOut");

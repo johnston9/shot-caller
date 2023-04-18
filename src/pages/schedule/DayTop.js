@@ -1,3 +1,6 @@
+/* Component in the ScheduleDays page to display each day's data
+   and the number and location of each of that day's schedule scenes
+ * When clicked on it opens that Day's DayPage */
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
@@ -52,7 +55,8 @@ const DayTop = (props) => {
                 <Card.Body className={`p-1 ${styles.Bottom }`} >
                     <Link to={`/day/${id}`}>
                     <Col >  
-                        <div className={` ${styles.SceneLoc }`}>                 
+                        <div className={` ${styles.SceneLoc }`}>  
+                        {/* filter the scenes for that day */}
                         {daysScenes.results.length ? (
                             daysScenes.results.map((scene) => (
                                 scene.day_id === id ? (

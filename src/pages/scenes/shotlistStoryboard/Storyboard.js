@@ -1,3 +1,6 @@
+/* Component in the Scene Component to fetch 
+   the StoryBoard for a Scene
+ * Contains the StoryBoardUpload component  */
 import React, { useState } from 'react'
 import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

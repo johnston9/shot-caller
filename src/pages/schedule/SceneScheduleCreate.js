@@ -1,3 +1,10 @@
+/* Form Page to create a Schedule Scene 
+   Both from prefilled data from the Scene and from a number of new inputs 
+ * Contains functions to select scenes by Act or Location Order
+ * Once a Scene is selected it passed the scene data and the postData state
+   to ScheduleSceneItem component
+ * The ScheduleSceneItem component prefills the postData state
+   with the main Scene data and uses a number of input boxes for new info */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -253,6 +260,7 @@ const buttons = (
     </div>
 );
 
+  /* The following 5 function fetch scenes by Act or Location order */
   const fetchScenesLoc = async () => {
     try {
       const { data } = await axiosReq.get(`/scenes/?ordering=location&search=${query}`);
@@ -297,6 +305,8 @@ const buttons = (
     }
   }
 
+  /* The following 5 function handle the click to the
+     above functions to fetch scenes by Act or Location order */
   const handleClickLoc = () => {
     fetchScenesLoc();
   }

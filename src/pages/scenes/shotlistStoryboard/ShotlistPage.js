@@ -1,3 +1,8 @@
+/* Component in the Scene Component to fetch 
+   all ShotList data for a Scene
+ * Contains the Shot component to which it passes the data
+   for each Shot in the Shotlist
+ * Contains the ShotListCreate component  */
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { axiosReq } from '../../../api/axiosDefaults';
@@ -49,7 +54,6 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 {!addShot ?("") : (<ShotListCreate setAddShot={setAddShot} setShotlist={setShotlist} handleMount={handleMount} scene={scene} />  ) }
               </Col>
             </Row>
-            {/* className={`mx-0 px-0  ${styles.TitleBox2}`} */}
             {/* titles */}
             <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} className={`mt-3 ${styles.TitleBox}`} >
@@ -108,42 +112,23 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             {/* shots */}
             <Row className="h-100">
             <Col className='px-0 mx-0'> 
-            {/* new */}
-            {/* {hasLoaded ? (
-                    <>
-                    {shotlist.results.length ? (
-                        shotlist.results.map((shot) => (
-                        <Shot key={shot.id} {...shot} setAddShot={setAddShot} handleMount={handleMount} shotAll={shot} />
-                        ))) 
-                        : (
-                        <Container className={appStyles.Content}>
-                            <Asset src={NoResults } message="Add Shots" />
-                        </Container>
-                        )}
-                    </>
-                    ) : (
-                    <Container className={appStyles.Content}>
-                        <Asset spinner />
-                    </Container>
-                    )} */}
-            {/* old */}
-                <>
-                    {shotlist.results.length ? (
-                        shotlist.results.map((shot, index) => (
-                        <Shot 
-                        style={{ backgroundColor: (index % 3 === 0) 
-                            ? '#dbfaf9' : (index % 2 === 0) ? 
-                            'rgb(223 254 240)' : 'rgb(248 241 249)' }}
-                            key={shot.id} 
-                            handleMount={handleMount} 
-                            shotAll={shot} />
-                        ))) 
-                    : (
-                    <Container className={appStyles.Content}>
-                        <Asset src={NoResults } message="Add Shots" />
-                    </Container>
-                    )}
-                </>
+            <>
+            {shotlist.results.length ? (
+                shotlist.results.map((shot, index) => (
+                <Shot 
+                style={{ backgroundColor: (index % 3 === 0) 
+                    ? '#dbfaf9' : (index % 2 === 0) ? 
+                    'rgb(223 254 240)' : 'rgb(248 241 249)' }}
+                    key={shot.id} 
+                    handleMount={handleMount} 
+                    shotAll={shot} />
+                ))) 
+            : (
+            <Container className={appStyles.Content}>
+                <Asset src={NoResults } message="Add Shots" />
+            </Container>
+            )}
+            </>
             </Col>
             </Row>  
             <hr/>

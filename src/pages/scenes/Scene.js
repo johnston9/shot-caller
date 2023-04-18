@@ -31,7 +31,7 @@ import { DeptDropdown, PostDropdown } from '../../components/PostDropdown';
 import ShotlistPage from './shotlistStoryboard/ShotlistPage';
 import WorkspaceGuideForm from './WorkspaceGuideForm';
 import WorkspaceGuideEdit from './WorkspaceGuideEdit';
-import Breakdown from './Breakdown';
+import Breakdown from './breakdown/Breakdown';
 import Storyboard from './shotlistStoryboard/Storyboard';
 import TopBox from '../../components/TopBox';
 import InfoScenePage from './info/InfoScenePage';

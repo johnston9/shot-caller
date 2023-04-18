@@ -1,11 +1,10 @@
+/* Form component in the ShotlistPage component to create a Shot */
 import React, { useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
 import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../../App.module.css";
@@ -119,6 +118,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
           const { data } = await axiosReq.post("/shotlists/", formData);
           setAddShot((addShot) => !addShot)
           setShotlist((prevShotlist) => ({
+          /* Update the shotLost state */
             ...prevShotlist,
             results: [data, ...prevShotlist.results],
           }));

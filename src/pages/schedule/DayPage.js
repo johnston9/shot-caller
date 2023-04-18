@@ -1,3 +1,9 @@
+/* Page to fetch the Day's data and it's schedule scenes data
+ * Contains the ScheduleScene to which it passes the 
+   schedule scenes data
+ * Also fetches the day's Callsheet data to decide whether to 
+   show an Add Callsheet or View Callsheet
+ * Contains the Pages component to calculate the days's pages length */
 import React, { useEffect, useState } from 'react';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/Redirect';
@@ -67,7 +73,7 @@ const DayPage = () => {
             </Button>
             {hasLoaded ? (
                 <>
-                {/* add scene */}
+                {/* add scene - view/add Callsheet*/}
                 <Row className='my-4'>
                     <Col xs={6} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
@@ -154,8 +160,6 @@ const DayPage = () => {
                 </Col>
                 </Row>
                 </div>
-                {/* scenes pink rgb(248 241 249)
-                grey 235 255 255 */}
                 <Row>
                     <Col >                   
                     {dayScenes.results.length ? (

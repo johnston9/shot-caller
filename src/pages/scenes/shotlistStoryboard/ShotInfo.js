@@ -1,3 +1,5 @@
+/* Component in the Shot component to display 
+   extra info for each Shot */
 import React from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

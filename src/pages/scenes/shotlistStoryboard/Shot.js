@@ -1,3 +1,6 @@
+/* Component in ShotListPage to display the data for each Shot
+ * Contains the ShotInfo and ShotImage components 
+ * Contains the ShotListEdit component */
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

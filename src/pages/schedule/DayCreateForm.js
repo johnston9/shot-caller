@@ -1,3 +1,4 @@
+/* Form Page to create a Day by giving it a number and date */
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";

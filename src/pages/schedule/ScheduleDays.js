@@ -1,3 +1,9 @@
+/* Page to fetch the Shooting Schedule Days data and all 
+   Schedule Scenes
+ * Contains DayTop component to which it passes the
+   Day's cover info and the Schedule Scenes
+ * Contains the link to the DayCreateForm component
+ * Contains the Calendar component */
 import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -38,6 +44,7 @@ const SchedulePages = () => {
 
     useEffect(() => {
           const fetchDays = async () => {
+            /* Fetch all Days and all schedule scenes */
             try {
               const [{ data: daysData }, { data: scenesData }] = await Promise.all([
                 axiosReq.get(`/days/?${filter}&search=${query}`),
@@ -64,6 +71,7 @@ const SchedulePages = () => {
         }, [query, filter])
 
     const handleDate = (date) => {
+      /* Change the Calander date format to the DRF model's format */
       const formatdate = date.toLocaleDateString('en-GB', {
         day: 'numeric', month: 'short', year: 'numeric'
       })
@@ -97,7 +105,7 @@ const SchedulePages = () => {
                     Create Day</Button>
                 </Col>
             </Row>
-            {/* calender className={`${styles.White }`} */}
+            {/* calender */}
             <h5 className={`mt-3 text-center py-1 ${styles.SubTitle }`}>
               Shoot Days Calendar</h5>
             <div >

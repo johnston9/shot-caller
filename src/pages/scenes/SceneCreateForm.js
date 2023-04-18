@@ -1,4 +1,4 @@
-/* Form Page to create a Scene by simply giving it a number */
+/* Form Page to create a Scene by giving it a number */
 import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
