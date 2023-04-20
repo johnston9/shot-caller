@@ -6,7 +6,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { axiosReq } from '../../../api/axiosDefaults';
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
@@ -20,7 +19,6 @@ import NoResults from "../../../assets/no-results.png";
 import Shot from './Shot';
 
 const ShotlistPage = ({scene, setShowlist} ) => {
-    useRedirect("loggedOut");
     const { id } = useParams();
     const [addShot, setAddShot] = useState(false);
     const [shotlist, setShotlist] =  useState({ results: [] });

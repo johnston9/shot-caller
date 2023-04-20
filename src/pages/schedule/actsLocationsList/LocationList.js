@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import styles from "../../styles/ScheduleCreate.module.css";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
+import { useRedirect } from "../../../hooks/Redirect";
 import ScheduleSceneItem from "./ScheduleSceneItem";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Asset from "../../components/Asset";
-import { fetchMoreData } from "../../utils/utils";
+import Asset from "../../../components/Asset";
+import { fetchMoreData } from "../../../utils/utils";
 
 const LocationList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThree, setShowLoc, list} ) => {
-    useRedirect("loggedOut");
     const [scenes, setScenes] = useState({results: [] });
     useEffect(() => {
         const fetchScenes = async () => {

@@ -1,11 +1,9 @@
 import React from 'react'
-import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Scene.module.css";
+import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const Character = ({cast_number, role, costume}) => {
-    useRedirect("loggedOut");
 
     return ( 
         <div className={`${styles.n} mx-4 px-2` }>

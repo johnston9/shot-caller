@@ -3,18 +3,17 @@ import Container from "react-bootstrap/Container";
 import styles from "../../styles/ScheduleCreate.module.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
+import { useRedirect } from "../../../hooks/Redirect";
 import ScheduleSceneItem from "./ScheduleSceneItem";
 
-const ActTwoBList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThree, setShowLoc, list} ) => {
-    useRedirect("loggedOut");
+const ActThreeList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThree, setShowLoc, list} ) => {
     const [scenes, setScenes] = useState({results: [] });
 
     useEffect(() => {
         const fetchScenes = async () => {
           try {
-            const { data } = await axiosReq.get(`/scenes/?act=two-b`);
+            const { data } = await axiosReq.get(`/scenes/?act=three`);
             setScenes(data);
           } catch(err) {
             console.log(err);
@@ -23,7 +22,7 @@ const ActTwoBList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShow
         fetchScenes();    
       }, [])
     return (
-        <div>  
+        <div>
           <Container className= {`mt-4`} >
           <h5 className={`text-center pb-0 mb-2 ${styles.SubTitle }`}>Select Scene</h5>
             <p className="text-center mb-2">
@@ -48,9 +47,9 @@ const ActTwoBList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShow
                   </Col>
                 ))) : ("")}
             </Row>
-          </Container>                          
+          </Container>                            
         </div>
     )
 }
 
-export default ActTwoBList
+export default ActThreeList

@@ -29,11 +29,11 @@ import DeptsGeneral from './pages/departments/DeptsGeneral';
 import DeptPostPage from './pages/departments/DeptPostPage';
 import DeptPostEdit from './pages/departments/DeptPostEdit';
 import Landing from './pages/home/Landing';
-import DayCreateForm from './pages/schedule/DayCreateForm';
+import DayCreateForm from './pages/schedule/day/DayCreateForm';
 import ScheduleDays from './pages/schedule/ScheduleDays';
-import DayEdit from './pages/schedule/DayEdit';
-import DayPage from './pages/schedule/DayPage';
-import SceneScheduleEdit from './pages/schedule/SceneScheduleEdit';
+import DayEdit from './pages/schedule/day/DayEdit';
+import DayPage from './pages/schedule/day/DayPage';
+import ScheduleSceneEdit from './pages/schedule/scheduleScene/ScheduleSceneEdit';
 import CharactersPage from './pages/characters/CharactersPage';
 import CharacterPage from './pages/characters/CharacterPage';
 import CharacterCreate from './pages/characters/CharacterCreate';
@@ -59,7 +59,7 @@ import IndexShotsPage from './pages/indexshots/IndexShotsPage';
 import SeriesPage from './pages/indexshots/SeriesPage';
 import IndexShotsFullSize from './pages/indexshots/IndexShotsFullSize';
 import Map from './components/Map';
-import Script from './pages/scenes/scriptAndSceneScript/ScriptScene';
+import ScriptScene from './pages/scenes/scriptAndSceneScript/ScriptScene';
 import LatestScript from './pages/scenes/scriptAndSceneScript/LatestScript';
 import LatestsPage from './pages/home/LatestsPage';
 import LatestCreate from './pages/home/LatestCreate';
@@ -104,7 +104,7 @@ function App() {
             )}
           />
         <Route exact path="/day/:id/" render={() => <DayPage />} />
-        <Route exact path="/schedule/scenes/edit/:id/" render={() => <SceneScheduleEdit />} />
+        <Route exact path="/schedule/scenes/edit/:id/" render={() => <ScheduleSceneEdit />} />
         {/* --------------- CREWINFO -------------*/}
         <Route exact path="/crewinfo" render={() => <CrewInfo />} />
         <Route exact path="/logo/edit" render={() => <CrewLogo />} />
@@ -286,7 +286,7 @@ function App() {
           />
         <Route exact path="/scenes/:id" render={() => (<ScenePage/>)} />
         <Route exact path="/scenes/:id/edit" render={() => <BreakdownAddEditForm />} />
-        <Route exact path="/script/scene/:id" render={() => (<Script/>)} />
+        <Route exact path="/script/scene/:id" render={() => (<ScriptScene/>)} />
         <Route exact path="/script" render={() => (<LatestScript />)} />
         {/* ------------------------ SCENES WORKSPACE POSTS -------------------*/}
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />

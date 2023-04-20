@@ -13,10 +13,8 @@ import btnStyles from "../../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
-import { useRedirect } from "../../../hooks/Redirect";
 
-const StoryBoardUpload = ({setAddStory, setScene, setNewStory, setShowstory }) => {
-    useRedirect("loggedOut");
+const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         storyboard: "",

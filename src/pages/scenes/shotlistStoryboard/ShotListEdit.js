@@ -12,11 +12,9 @@ import btnStyles from "../../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
-import { useRedirect } from "../../../hooks/Redirect";
 import Asset2 from "../../../components/Asset2";
 
 const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
-    useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         scene_id: "",

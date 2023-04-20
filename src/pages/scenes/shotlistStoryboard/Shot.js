@@ -7,7 +7,6 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import { axiosReq } from '../../../api/axiosDefaults';
-import { useRedirect } from '../../../hooks/Redirect';
 import { Button } from 'react-bootstrap';
 import { PostDropdown } from '../../../components/PostDropdown';
 import ShotInfo from './ShotInfo';
@@ -15,7 +14,6 @@ import ShotImage from './ShotImage';
 import ShotListEdit from './ShotListEdit';
 
 const Shot = (props) => {
-    useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
     const [showImg, setShowImg] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);

@@ -1,10 +1,9 @@
+/* Component in the ScheduleScene to display the extra info */
 import React from 'react';
-import { useRedirect } from '../../hooks/Redirect';
 import { Col, Row } from 'react-bootstrap';
-import styles from "../../styles/ScheduleCreate.module.css";
+import styles from "../../../styles/ScheduleCreate.module.css";
 
 const SchedSceneInfo = (props) => {
-    useRedirect("loggedOut");
      const { title, dramatic_day, location_address, day_night,
             equip_set_props, new_info, style,
             department_info } = props

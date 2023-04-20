@@ -14,11 +14,9 @@ import Alert from "react-bootstrap/Alert";
 
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
-import { useRedirect } from "../../../hooks/Redirect";
 import Asset2 from "../../../components/Asset2";
 
 const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
-    useRedirect("loggedOut");
     const { id } = useParams();
     const {number} = scene; 
     const [errors, setErrors] = useState({});

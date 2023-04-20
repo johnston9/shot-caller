@@ -4,8 +4,8 @@ import React from 'react'
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../styles/Scene.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import styles from "../../../styles/Scene.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
 
 const Breakdown = (props) => {

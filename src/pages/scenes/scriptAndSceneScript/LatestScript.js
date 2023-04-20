@@ -22,7 +22,7 @@ import LatestScriptUpload from './LatestScriptUpload';
 import LatestScriptAdd from './LatestScriptAdd';
 
 const LatestScript = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const admin = true;
     const history = useHistory();
     const [addScript, setAddScript] = useState(false);

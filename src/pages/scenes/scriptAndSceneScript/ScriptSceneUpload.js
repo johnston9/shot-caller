@@ -14,10 +14,8 @@ import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
-import { useRedirect } from "../../../hooks/Redirect";
 
 const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
-    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
     const [fileName, setFileName] = useState(fileName1);
     const [postData, setPostData] = useState({

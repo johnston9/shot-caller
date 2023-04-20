@@ -4,7 +4,6 @@
  * Contains the SceneCharacterAdd component to add the
    Scene characters */ 
 import React, { useState } from 'react'
-import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -15,7 +14,6 @@ import InfoChar from '../info/InfoChar';
 import SceneCharacterAdd from './SceneCharacterAdd';
 
 const CharactersAdd = (props) => {
-    useRedirect("loggedOut");
     const [showInfo, setShowInfo] = useState(false);
     const [showAdd, setShowAdd] = useState(false);
 
@@ -64,7 +62,6 @@ const CharactersAdd = (props) => {
             {/* ADD SCENE CHAR */}
                 <SceneCharacterAdd
                  id={id}
-                 characters={characters}
                  setCharacters={setCharacters} />
             </div>
         </div>

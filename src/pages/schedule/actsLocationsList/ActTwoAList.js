@@ -3,21 +3,19 @@ import Container from "react-bootstrap/Container";
 import styles from "../../styles/ScheduleCreate.module.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
+import { useRedirect } from "../../../hooks/Redirect";
 import ScheduleSceneItem from "./ScheduleSceneItem";
 
-const ActThreeList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThree, setShowLoc, list} ) => {
-    useRedirect("loggedOut");
+const ActTwoAList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThree, setShowLoc, list} ) => {
     const [scenes, setScenes] = useState({results: [] });
 
     useEffect(() => {
         const fetchScenes = async () => {
           try {
-            const { data } = await axiosReq.get(`/scenes/?act=three`);
+            const { data } = await axiosReq.get(`/scenes/?act=two-a`);
             setScenes(data);
           } catch(err) {
-            console.log(err);
           }
         }
         fetchScenes();    
@@ -48,9 +46,9 @@ const ActThreeList = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setSho
                   </Col>
                 ))) : ("")}
             </Row>
-          </Container>                            
+          </Container>                           
         </div>
     )
 }
 
-export default ActThreeList
+export default ActTwoAList

@@ -8,7 +8,7 @@ import styles from "../../../styles/Callsheets.module.css";
 const InfoWorkspace = ({setShowWorkInfo}) => {
   return (
     <div>
-        <Row className="my-3">
+      <Row className="my-3">
         <Col md={{span: 10, offset: 1}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}> 
         <div className={`mt-0 text-center pb-2 `}>

@@ -14,12 +14,10 @@ import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
-import { useRedirect } from "../../../hooks/Redirect";
 
 const LatestScriptUpload = (
   {script1, fileName1, setEditScript, id, draft1,
     latest_changes1, notes1  }) => {
-    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
     const [fileName, setFileName] = useState(fileName1);
     const [postData, setPostData] = useState({

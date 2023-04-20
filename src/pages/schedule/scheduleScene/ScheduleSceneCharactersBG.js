@@ -1,14 +1,13 @@
+/* Component in the ScheduleScene to display the Characters */
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from "../../styles/ScheduleSceneItem.module.css";
-import { useRedirect } from '../../hooks/Redirect';
-import { axiosReq } from '../../api/axiosDefaults';
-import Character from './Character';
-import Background from './Background';
+import styles from "../../../styles/ScheduleSceneItem.module.css";
+import { axiosReq } from '../../../api/axiosDefaults';
+import ScheduleSceneCharacter from './ScheduleSceneCharacter';
+import ScheduleSceneBackground from './ScheduleSceneBackground';
 
-const ScheduleCharacters = ({admin, scene_id, style}) => {
-    useRedirect("loggedOut");
+const ScheduleSceneCharacters = ({ scene_id }) => {
 
     const [characters, setCharacters] = useState({ results: [] });
     const [background, setBackground] = useState({ results: [] });
@@ -87,10 +86,10 @@ const ScheduleCharacters = ({admin, scene_id, style}) => {
             {/* chars */}
             <Row>
             {characters.results.length ? (
-            characters.results.map((character, index) => (
+            characters.results.map((character) => (
             <Col xs={6} md={4}
             className="px-0 mx-0">
-                <Character
+                <ScheduleSceneCharacter
                 character={character}
                 key={character.id}
                 {...character} />
@@ -141,7 +140,7 @@ const ScheduleCharacters = ({admin, scene_id, style}) => {
             background.results.map((back) => (
             <Col xs={12} md={6}
             className="p-0 mx-0">
-            <Background
+            <ScheduleSceneBackground
               setBackground={setBackground}
               handleMount={handleMount}
               back={back}
@@ -157,4 +156,4 @@ const ScheduleCharacters = ({admin, scene_id, style}) => {
         )
 }
 
-export default ScheduleCharacters
+export default ScheduleSceneCharacters

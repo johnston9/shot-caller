@@ -18,7 +18,7 @@ import { useRedirect } from '../../hooks/Redirect';
 import appStyles from "../../App.module.css";
 import { Button } from 'react-bootstrap';
 import TopBox from '../../components/TopBox';
-import DayTop from './DayTop';
+import DayTop from './day/DayTop';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useHistory } from 'react-router-dom';
@@ -26,7 +26,7 @@ import Info from './Info';
 
 
 const SchedulePages = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     // eslint-disable-next-line
     const [today, setToday] = useState(new Date());
     const [newdate, setNewdate] = useState("");

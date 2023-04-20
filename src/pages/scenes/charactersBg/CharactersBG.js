@@ -3,7 +3,6 @@
  * Contains the Character and CharactersAdd components
  * Contains the Background and SceneBGAdd components */
 import React, { useState } from 'react'
-import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -17,7 +16,6 @@ import SceneBGAdd from './SceneBGAdd';
 import Background from './Background';
 
 const CharactersBG = (props) => {
-    useRedirect("loggedOut");
     const [showCharactersAdd, setShowCharactersAdd] = useState(false);
     const [showBGAdd, setShowBGAdd] = useState(false);
     const [characters, setCharacters] = useState({ results: [] });

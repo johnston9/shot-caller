@@ -5,13 +5,11 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import { Link, useHistory } from 'react-router-dom';
-import { axiosReq } from '../../api/axiosDefaults';
-import { PostDropdown } from '../../components/PostDropdown';
-import { useRedirect } from '../../hooks/Redirect';
-import styles from "../../styles/Days.module.css";
+import { axiosReq } from '../../../api/axiosDefaults';
+import { PostDropdown } from '../../../components/PostDropdown';
+import styles from "../../../styles/Days.module.css";
 
 const DayTop = (props) => {
-    useRedirect("loggedOut");
     const {
         id,
         day,

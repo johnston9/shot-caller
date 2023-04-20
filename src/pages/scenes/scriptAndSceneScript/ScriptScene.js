@@ -4,7 +4,6 @@
  * The Script Scene is a Scene's Script  
    whereas the Latest Script is the entire Project's Script */
 import React, { useEffect, useState } from 'react'
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
@@ -14,13 +13,12 @@ import btnStyles from "../../../styles/Button.module.css";
 import appStyles from "../../../App.module.css";
 import Asset from '../../../components/Asset';
 import NoResults from "../../../assets/no-results.png";
-import ScriptUpload from './ScriptSceneUpload';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../../api/axiosDefaults';
 import InfoScriptScene from '../info/InfoScriptScene';
+import ScriptSceneUpload from './ScriptSceneUpload';
 
-const Script = () => {
-    useRedirect("loggedOut");
+const ScriptScene = () => {
     const admin = true;
     const history = useHistory();
     const { id } = useParams();
@@ -97,7 +95,7 @@ const Script = () => {
             <Row>
             <Col className='text-center'>
             {!addScript ?("") : (
-                <ScriptUpload 
+                <ScriptSceneUpload
                  id={id}
                  script1= {script}
                  number1={number}
@@ -143,4 +141,4 @@ const Script = () => {
     )
 }
 
-export default Script
+export default ScriptScene

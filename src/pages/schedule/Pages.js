@@ -1,20 +1,18 @@
+/* Component on the DayPage to calculate the day's pages total */
 import React from 'react';
-import { useRedirect } from '../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../styles/ScheduleCreate.module.css";
 
 const Pages = ({scenes}) => {
-    useRedirect("loggedOut");
+
+    /*Function to calculate the day's pages total */
     const pages = scenes.map((scene) => (
         parseFloat(scene.pages)));
-
     function addpages(page) {
     return page > 0;
     }
-
     const pagenumbers = pages.filter(addpages);
-
     const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
   return (

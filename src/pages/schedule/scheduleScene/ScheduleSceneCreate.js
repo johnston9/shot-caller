@@ -1,26 +1,24 @@
-/* Form Page to create a Schedule Scene 
-   Both from prefilled data from the Scene and from a number of new inputs 
- * Contains functions to select scenes by Act or Location Order
- * Once a Scene is selected it passed the scene data and the postData state
+/* Form Component in the DayPage to create a Schedule Scene 
+   both from prefilled data from the Scene and from a number of new inputs 
+ * Contains functions to display scenes by Act or Location Order
+ * Once a Scene is selected it passes the scene data and the postData state
    to ScheduleSceneItem component
  * The ScheduleSceneItem component prefills the postData state
-   with the main Scene data and uses a number of input boxes for new info */
+   with the main Scene data  */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import styles from "../../styles/ScheduleCreate.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import styles from "../../../styles/ScheduleCreate.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
 import ScheduleSceneItem from "./ScheduleSceneItem";
 
 const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
-  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const [query, setQuery] = useState("");
@@ -382,50 +380,7 @@ const buttons = (
             </Col>
           </Row>
           </div>
-          {/* infinite */}
-          {/* <div>
-          {scenes.results.length ? (
-              <>
-              <div className= {`px-3 mx-3 text-center mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
-              <p className={`text-center pt-2 px-5 mb-3`}>
-                SELECT SCENE AND ADD SHOOTING INFO BELOW</p>
-              <InfiniteScroll 
-               children={scenes.results.map((scene) => {
-                return (
-                  <div 
-                    className='d-inline-flex justify-content-space-between'>
-                    <ScheduleSceneItem 
-                      setPostData={setPostData} 
-                      scene={scene} 
-                      {...scene} 
-                      key={scene.id} />
-                  </div>
-              )})}
-              dataLength={scenes.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!scenes.next}
-              next={() => fetchMoreData(scenes, setScenes )}
-              />
-              </div>
-              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
-              <Row className="mt-3 pt-3" >
-                <Col>
-                  <h4 className={`text-center px-5 mb-0 ${styles.SubTitle }`}>
-                    SCENE <span className={`${styles.BlueNumber} `} >{number} </span>SHOOTING INFO </h4>
-                </Col>
-              </Row>
-              <Form className={`text-center px-3 ${styles.FormBox} `} onSubmit={handleSubmit}>
-              <Row>
-              <Col xs={12} className="p-0 p-md-2">
-                  {textFields}
-                  {buttons}
-              </Col>
-              </Row>
-              </Form>
-              </div>
-              </>
-                ) : ("")}
-          </div> */}
+          {/* scenes */}
           {scenes.results.length ? (
               <>
               <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>

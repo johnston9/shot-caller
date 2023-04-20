@@ -1,7 +1,6 @@
 /* Component in the CharactersAdd Component to add new characters 
    to the project */ 
 import React, {useState } from "react";
-import { useRedirect } from "../../../hooks/Redirect";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -14,7 +13,6 @@ import { axiosReq } from "../../../api/axiosDefaults";
 import { useCharactersContext, useSetCharactersContext } from "../../../contexts/Scene_chars_locs";
 
 const NewCharacter = ({setShowAdd} ) => {
-    useRedirect("loggedOut");
     const characters = useCharactersContext();
     const setCharacters = useSetCharactersContext();
     const [errors] = useState({});

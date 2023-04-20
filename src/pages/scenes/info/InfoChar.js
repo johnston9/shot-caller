@@ -8,7 +8,7 @@ import styles from "../../../styles/Callsheets.module.css";
 const InfoChar = () => {
   return (
     <div>
-        <Row className="mb-3">
+    <Row className="mb-3">
       <Col className="d-none d-md-block" md={1}></Col>     
       <Col xs={12} md={10} >
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>

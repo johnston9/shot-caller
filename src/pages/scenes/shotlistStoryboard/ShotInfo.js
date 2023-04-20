@@ -4,10 +4,8 @@ import React from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Scene.module.css";
-import { useRedirect } from '../../../hooks/Redirect';
 
 const ShotInfo = (props) => {
-    useRedirect("loggedOut");
      const {fx, focus_pulls, lighting, camera, lens, equipment,
         script_length, script_ref, storyboard_refs, audio,
         movement } = props

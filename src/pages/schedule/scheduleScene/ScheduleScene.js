@@ -1,23 +1,21 @@
 /* Component on the DayPage to display each Schedule Scene's data
- * Contains the SchedSceneInfo conponent to display the scenes extra info 
- * Contains the ScheduleCharacters conponent to display the scenes Characters
- * Contains the SchedOrder conponent to re-order the Scenes shooting position  */
+ * Contains the ScheduleSceneInfo conponent to display the scenes extra info 
+ * Contains the ScheduleSceneCharacters conponent to display the scenes Characters
+ * Contains the ScheduleSceneOrder conponent to re-order the Scenes shooting position  */
 import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from "../../styles/ScheduleCreate.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import { axiosReq } from '../../api/axiosDefaults';
+import styles from "../../../styles/ScheduleCreate.module.css";
+import btnStyles from "../../../styles/Button.module.css";
+import { axiosReq } from '../../../api/axiosDefaults';
 import { useHistory } from 'react-router-dom';
-import { useRedirect } from '../../hooks/Redirect';
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { PostDropdown } from '../../components/PostDropdown';
-import ScheduleCharacters from './ScheduleCharacters';
-import SchedSceneInfo from './SchedSceneInfo';
-import SchedOrder from './SchedOrder';
+import { PostDropdown } from '../../../components/PostDropdown';
+import ScheduleSceneCharactersBG from './ScheduleSceneCharactersBG';
+import ScheduleSceneInfo from './ScheduleSceneInfo';
+import ScheduleSceneOrder from './ScheduleSceneOrder';
 
 const ScheduleScene = (props) => {
-    useRedirect("loggedOut");
     const history = useHistory();
     const [show, setShow] = useState(false);
     const [showOrder, setShowOrder] = useState(false);
@@ -129,7 +127,7 @@ const ScheduleScene = (props) => {
             </Row>
             {/* Order  */}
             {!showOrder ?("") : (                       
-            <SchedOrder 
+            <ScheduleSceneOrder 
             id={id}
             day_order_number1={day_order_number}
             start_time1={start_time}
@@ -142,17 +140,15 @@ const ScheduleScene = (props) => {
             ) }
             {/* cast  */}
             {!show ?("") : (                       
-            <ScheduleCharacters 
+            <ScheduleSceneCharactersBG 
             scene_id={scene_id}
-            admin={admin}
-            style={style}
             /> 
             ) }
             {/* info */}
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <SchedSceneInfo 
+                    <ScheduleSceneInfo 
                     style={style}
                     {...sceneAll}/> 
                     ) }
@@ -218,7 +214,6 @@ const ScheduleScene = (props) => {
                 <Col className={`text-left mx-0 pr-0 pl-2 `} xs={4}>
                     <p onClick={() => setShow(show => !show)} 
                     className={`${styles.Info}`}
-                    // className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-1`}
                     >
                     CAST
                     </p>
@@ -244,7 +239,7 @@ const ScheduleScene = (props) => {
             </Row>
             {/* Order  */}
             {!showOrder ?("") : (                       
-            <SchedOrder 
+            <ScheduleSceneOrder 
             id={id}
             day_order_number1={day_order_number}
             start_time1={start_time}
@@ -257,16 +252,15 @@ const ScheduleScene = (props) => {
             ) }
             {/* cast */}
             {!show ?("") : (                       
-            <ScheduleCharacters 
+            <ScheduleSceneCharactersBG 
             scene_id={scene_id}
-            {...sceneAll}
             /> 
             ) }
             {/* info */}
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <SchedSceneInfo {...sceneAll}/> 
+                    <ScheduleSceneInfo {...sceneAll}/> 
                     ) }
                     </Col>
                 </Row>

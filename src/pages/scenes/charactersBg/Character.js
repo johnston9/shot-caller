@@ -2,7 +2,6 @@
    Character info
  * Contains the SceneCharacterEdit component */
 import React from 'react'
-import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -13,7 +12,6 @@ import SceneCharacterEdit from './SceneCharacterEdit'
 
 const Character = ({id, admin, cast_number, role, costume, 
     character, setCharacters, handleMount}) => {
-    useRedirect("loggedOut");
     const [showEditForm, setShowEditForm] = useState(false);
 
     const handleDelete = async () => {

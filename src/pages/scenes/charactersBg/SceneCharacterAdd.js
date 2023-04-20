@@ -10,13 +10,10 @@ import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import { axiosReq } from "../../../api/axiosDefaults";
-import { useRedirect } from "../../../hooks/Redirect";
 import { useCharactersContext } from "../../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
 
-const SceneCharacterAdd = ({id, characters, setCharacters}) => {
-    useRedirect("loggedOut");
-    console.log(id)
+const SceneCharacterAdd = ({id, setCharacters}) => {
     const [errors, setErrors] = useState({});
     const charactersContext = useCharactersContext();
 

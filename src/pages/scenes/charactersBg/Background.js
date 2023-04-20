@@ -2,7 +2,6 @@
    Background info
  * Contains the SceneBGEdit component */
 import React, { useState } from 'react'
-import { useRedirect } from '../../../hooks/Redirect';
 import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -12,7 +11,6 @@ import SceneBGEdit from './SceneBGEdit';
 
 const Background = ({id, quantity, role, costume, handleMount, 
     setBackground, back, admin }) => {
-    useRedirect("loggedOut");
     const [showEditForm, setShowEditForm] = useState(false);
 
     const handleDelete = async () => {

@@ -9,10 +9,8 @@ import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
-import { useRedirect } from "../../../hooks/Redirect";
 
 const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
-    useRedirect("loggedOut");
     console.log(background)
     const [errors, setErrors] = useState({});
 

@@ -1,7 +1,9 @@
+/* Component in the SceneScheduleCreate component that is passed 
+the postData state which it prefills with the Scene data */
 import React, { useState } from "react";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from "../../styles/ScheduleSceneItem.module.css";
+import styles from "../../../styles/ScheduleSceneItem.module.css";
 
 const ScheduleSceneItem = (props) => {
     const {setPostData, scene} = props
@@ -15,6 +17,7 @@ const ScheduleSceneItem = (props) => {
         new_info: "",
         next: "",
         })
+
     const { day_order_number, location_address, start_time, end_time,
         new_info, next,  } = newData;
 
@@ -23,7 +26,8 @@ const ScheduleSceneItem = (props) => {
         location_detail, location, filming_location,
         equip_set_props, department_info, } = scene;
 
-    const handleClick = () => {   
+    const handleClick = () => {
+        /* sets the postData state with the Scene data */   
         setPostData({
             scene_id: id,
             day_order_number: day_order_number,

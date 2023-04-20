@@ -5,14 +5,12 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import styles from "../../styles/ScheduleCreate.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import styles from "../../../styles/ScheduleCreate.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
 
 const SchedOrder = (props ) => {
-    useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const {setShowOrder, setHasOrder, day_id1, day_order_number1, start_time1, end_time1, new_info1, id } = props;
 

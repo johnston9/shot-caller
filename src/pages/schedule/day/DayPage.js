@@ -5,25 +5,25 @@
    show an Add Callsheet or View Callsheet
  * Contains the Pages component to calculate the days's pages length */
 import React, { useEffect, useState } from 'react';
-import { axiosReq } from '../../api/axiosDefaults';
-import { useRedirect } from '../../hooks/Redirect';
+import { axiosReq } from '../../../api/axiosDefaults';
+import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/DayPage.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
-import SceneScheduleCreate from './SceneScheduleCreate';
-import ScheduleScene from './ScheduleScene';
-import TopBox from '../../components/TopBox';
-import Asset from '../../components/Asset';
+import styles from "../../../styles/DayPage.module.css";
+import btnStyles from "../../../styles/Button.module.css";
+import appStyles from "../../../App.module.css";
+import ScheduleSceneCreate from '../scheduleScene/ScheduleSceneCreate';
+import ScheduleScene from '../scheduleScene/ScheduleScene';
+import TopBox from '../../../components/TopBox';
+import Asset from '../../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Pages from './Pages';
+import Pages from '../Pages';
 
 const DayPage = () => {
-    useRedirect("loggedOut");
+    useRedirect();
     const [show, setShow] = useState(false);
     const { id } = useParams();
     // eslint-disable-next-line
@@ -95,7 +95,7 @@ const DayPage = () => {
                     </Col>
                     )}
                 </Row>
-                {!show ?("") : (<SceneScheduleCreate xday={dataDay} 
+                {!show ?("") : (<ScheduleSceneCreate xday={dataDay} 
                 setShow={setShow} setHasOrder={setHasOrder} xdate={dataDate} /> ) }
                 <Pages scenes={dayScenes.results}/>
                 {/* titles*/}

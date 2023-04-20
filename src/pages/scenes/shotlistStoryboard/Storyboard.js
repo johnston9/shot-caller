@@ -2,7 +2,6 @@
    the StoryBoard for a Scene
  * Contains the StoryBoardUpload component  */
 import React, { useState } from 'react'
-import { useRedirect } from '../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
@@ -16,7 +15,6 @@ import StoryBoardUpload from './StoryBoardUpload';
 import { Image } from 'react-bootstrap';
 
 const Storyboard = ({storyboard, setShowstory, setScene} ) => {
-    useRedirect("loggedOut");
     const [addStory, setAddStory] = useState(false);
     const [newStory, setNewStory] = useState(storyboard);
     return (
@@ -31,7 +29,11 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
                     className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
                     Add/Update Storyboard
                 </Button>
-                {!addStory ?("") : (<StoryBoardUpload setShowstory={setShowstory} setScene={setScene} setNewStory={setNewStory} setAddStory={setAddStory} />  ) }
+                {!addStory ?("") : (
+                <StoryBoardUpload 
+                setScene={setScene} 
+                setNewStory={setNewStory} 
+                setAddStory={setAddStory} />  ) }
               </Col>
             </Row> 
             <Row className="h-100 my-2">

@@ -4,11 +4,9 @@ import React from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Scene.module.css";
-import { useRedirect } from '../../../hooks/Redirect';
 import { Image } from 'react-bootstrap';
 
 const ShotImage = ({image} ) => {
-    useRedirect("loggedOut");
     return (
         <div className={`${styles.InfoBack} mx-5 mt-1 mb-3 pt-3`}>
             <Row>

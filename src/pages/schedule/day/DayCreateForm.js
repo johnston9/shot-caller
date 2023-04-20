@@ -2,23 +2,21 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
-import styles from "../../styles/PostCreateEditForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import styles from "../../../styles/PostCreateEditForm.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
-import TopBox from "../../components/TopBox";
-import { useRedirect } from "../../hooks/Redirect";
+import { axiosReq } from "../../../api/axiosDefaults";
+import TopBox from "../../../components/TopBox";
+import { useRedirect } from "../../../hooks/Redirect";
 
 
 const DayCreateForm = ({topbox, setShow} ) => {
-    useRedirect("loggedOut")
+    useRedirect();
   const [errors, setErrors] = useState({});
   const [startDate, setStartDate] = useState("");
 
