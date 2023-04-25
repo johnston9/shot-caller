@@ -24,6 +24,7 @@ export const ProfileDataProvider = ({children}) => {
   const [hasLoaded, setHasLoaded] = useState(false);
     const[query, setQuery] = useState("");
     const [profileData, setProfileData] = useState({
+        // This is used on the Profile page
         pageProfile: { results: [] },
         profiles: { results: [] },
     })

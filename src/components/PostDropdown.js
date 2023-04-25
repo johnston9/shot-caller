@@ -1,4 +1,4 @@
-/* Page containing all the dropdowns and their icons used to edit
+/* Component containing all the dropdowns and their icons used to edit
    and delete items and select categories
  * Contains:
  * The EditDeleteIcon and PostDropdown which is used throughout

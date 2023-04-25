@@ -10,7 +10,7 @@
    to replace the refresh token request 
  * FIX NEEDED REFRESH ISSUE
    I attempted to use the useCurrenrUser instead of making continued
-   request by on REFRESH this returned null */
+   request but on REFRESH this returned null */
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { axiosRes } from "../api/axiosDefaults";

@@ -1,4 +1,4 @@
-/* page to contain the Axios base and create the
+/* File to contain the Axios base and create the
    axiosReq and axiosRes */
 import axios from "axios";
 
