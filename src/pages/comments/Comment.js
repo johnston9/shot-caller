@@ -1,4 +1,4 @@
-/* Component for Comments on the PostPage */
+/* Component to display Comments on the PostPage */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
