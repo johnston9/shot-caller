@@ -1,5 +1,10 @@
 /* Form Page to add and edit the Scene Breakdown section
- * The Script and Storyboard can be added or edited here as well */
+ * The Script and Storyboard can be added or edited here as well
+ * The ability to edit a Scene number is going to be unavailable
+   But am leaving it for now in case I inplement a function which 
+   suddenly freezes all numbers but up to that point they 
+   were editable
+   This would be availabe only for the high level user. */
 import React, { useEffect, useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -119,6 +124,7 @@ const BreakdownEditForm = () => {
     <div className="mt-3 text-center px-2">
       {/* number title act */}
       <Row>
+        {/* This may be removed */}
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
         <Form.Group controlId="number" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.Bold}`} >Number</Form.Label>

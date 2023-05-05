@@ -1,7 +1,13 @@
 /* Component in ScenePage to display the Scene data
  * Contains the CharactersBG, Breakdown, Script, ShotlistPage,
    Storyboard, WorkspaceGuideForm and WorkspaceGuideEdit components 
-   each of which deals with a section of the Scene data */
+   each of which deals with a section of the Scene data
+ * The department images will be changed to have a top half
+    and bottom half both slightly differently shaded by opacity.
+    The top one will say Requirements and the other Workspace both 
+    with links to these Post pages.
+    The deptDropdown will be removed so Finals, Shooting and Info
+    will no longer be categories */
 import React, { useState } from 'react'
 import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -459,6 +465,12 @@ const Scene = (props) => {
                         </Card>
                       </Col>
                   </Row>
+                  {/* The department images will be changed to have a top half
+                      and bottom half both slightly differently shaded by opacity.
+                      The top one will say Requirements and the other Workspace both 
+                      with links to these Post pages.
+                      The deptDropdown will be removed so Finals, Shooting and Info
+                      will no longer be categories */}
                     <Row className='px-2' >
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card className={` ${styles.CardBox}`} >

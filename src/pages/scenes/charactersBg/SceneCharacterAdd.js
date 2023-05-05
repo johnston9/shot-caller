@@ -123,9 +123,9 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
       <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
       <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
         ADD SCENE CHARACTER</h5> 
-      <Form className="text-center" onSubmit={handleSubmit}>
+      <Form className="text-center pr-3" onSubmit={handleSubmit}>
       <Row>
-      <Col xs={4}>
+      <Col xs={8} md={4}>
           <p className={`text-center mb-0 ${styles.Bold }`}>
           SELECT CHARACTER
         </p>
@@ -138,7 +138,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
                 ) )) }
           </DropdownButton>
       </Col>
-      <Col xs={2} >
+      <Col xs={4} md={2}>
       <p className={`text-center mb-0 ${styles.Bold }`}>
       Number
       </p>
@@ -146,7 +146,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
       {cast_number}
       </p>
       </Col>
-      <Col xs={4} >
+      <Col xs={8} md={4} >
       <p className={`text-center mb-0 ${styles.Bold }`}>
       Role
       </p>
@@ -154,7 +154,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
       {role}
       </p>
       </Col>
-      <Col xs={2} className="d-flex justify-content-center mx-0 px-1" >
+      <Col xs={4} md={2} className="d-flex justify-content-center mx-0 px-1" >
       <Form.Group controlId="costume" className={`${styles.Width2} ml-2 `}  >
             <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
             <Form.Control 

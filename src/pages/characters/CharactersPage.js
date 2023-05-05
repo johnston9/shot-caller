@@ -34,6 +34,7 @@ const Characters = ({message}) => {
         const { data } = await axiosReq.get(`/characters/?&search=${query}`);
         setCharacters(data);
         setHasLoaded(true);
+        console.log(data)
       } catch(err) {
         console.log(err);
         if (err.response?.status !== 401) {
