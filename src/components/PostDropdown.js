@@ -8,7 +8,8 @@
  * The DepartmentIcon and DeptDropdown to choose which category in 
    a department on the Scene page the user wants to open 
  * CURRENTLY IT IS NOT DISPLAYING CORRECTLY AND NEEDS FIXING 
-   FOR X, Y AND Z POSITIONING */
+   FOR X, Y AND Z POSITIONING
+   THIS MAY BE REPLACED BY 2 LINKS ON THE IMAGE INSTEAD */
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/PostDropdown.module.css";
@@ -40,7 +41,7 @@ const DepartmentIcon = React.forwardRef(({ onClick }, ref) => (
     overlay={<Tooltip>Scene Posts by Category</Tooltip>}
     >
   <i
-    className="fas fa-ellipsis-v pl-5 pb-5"
+    className="fas fa-ellipsis-v pl-5 pb-5 "
     ref={ref}
     onClick={(e) => {
       e.preventDefault();

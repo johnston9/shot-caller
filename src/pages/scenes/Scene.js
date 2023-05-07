@@ -2,12 +2,13 @@
  * Contains the CharactersBG, Breakdown, Script, ShotlistPage,
    Storyboard, WorkspaceGuideForm and WorkspaceGuideEdit components 
    each of which deals with a section of the Scene data
- * The department images will be changed to have a top half
+ * Potential change to the department images:
+   A/ The categories Finals, Shooting and Info will be removed
+   B/ The actual image when clicked opens the dropdowm menu
+   c/ The department images will be changed to have a top half
     and bottom half both slightly differently shaded by opacity.
     The top one will say Requirements and the other Workspace both 
-    with links to these Post pages.
-    The deptDropdown will be removed so Finals, Shooting and Info
-    will no longer be categories */
+    with links to these Post pages. */
 import React, { useState } from 'react'
 import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -84,6 +85,7 @@ const Scene = (props) => {
        and useSetSceneContext 
      * These values will be read in App.js and passed as a filter
        to The /dept/category Route */
+
     const handleClickCamera = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -222,8 +224,8 @@ const Scene = (props) => {
     return (
         <div>
           {scene && (
-            <>
-            <TopBox title={`Scene ${number} `}/>
+          <>
+          <TopBox title={`Scene ${number} `}/>
           <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}
@@ -233,7 +235,7 @@ const Scene = (props) => {
           <Button
           className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-        </Button>
+          </Button>
           {!showInfo ? (
               ""
                   ) : (
@@ -349,8 +351,11 @@ const Scene = (props) => {
                     </Col>
                   </Row>  
               </div>
-                  <Card.Body className='pt-0'>                   
-                      {!showBreak ? (
+              </div>
+              {/* Breakdown CharactersBG Script Moodboards 
+                  Storyboard Slotlist ShotStory */}
+              <div>
+              {!showBreak ? (
                       ""
                     ) : (
                       <Breakdown 
@@ -396,170 +401,284 @@ const Scene = (props) => {
                         </Col>
                       </Row>             
                     ) }
-                    {/* workspace */}
-                    <h5 style={{ textTransform: 'uppercase'}} 
-                        className={`mt-1 mb-1 pl-3 py-2 ${styles.SubTitle } text-center`}>
-                        SCENE WORKSPACE
-                    </h5>
-                    {/* edit guide */}
-                    <Row>
-                      <Col>
-                      {workspace_guide ? (
-                      <Button 
-                      className={`px-sm-4 py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
-                      onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > 
-                      Edit Guide
-                    </Button>
-                    ) : (
-                      <Button 
-                        className={` py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
-                      onClick={() => setShowGuide(showGuide => !showGuide)} >
-                         Add Guide
-                    </Button>
-                    )}
-                  <Button 
-                      className={`float-right py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
-                    onClick={() => setShowWorkInfo(showWorkInfo => !showWorkInfo)} >INSTRUCTIONS
-                  </Button>
-                      </Col>
-                    </Row>
-                  {!showWorkInfo ? (
-                    ""
-                        ) : (
-                          <InfoWorkspace 
-                          setShowWorkInfo={setShowWorkInfo} /> 
-                          ) } 
-                  <Row className='mb-2'>
-                    <Col md={1}></Col>
-                    <Col className='mx-0 px-0' xs={12} md={10} >
-                    {!showGuide ? (
-                      ""
-                    ) : (
-                      <WorkspaceGuideForm className="my-2" id={id} number={number} setShowGuide={setShowGuide} setScene={setScene} />
-                    ) }
-                    {!showGuideEdit ? (
-                      ""
-                    ) : (
-                      <WorkspaceGuideEdit className="my-2" id={id} number={number} setShowGuideEdit={setShowGuideEdit} setScene={setScene} />
-                    ) }
+              </div>
+              {/* workspace */}
+              <h5 style={{ textTransform: 'uppercase'}} 
+                  className={`mt-1 mb-1 pl-3 py-2 ${styles.SubTitle } text-center`}>
+                  SCENE WORKSPACE
+              </h5>
+              {/* Guide all */}
+              <div>
+              <Row>
+                <Col>
+                {workspace_guide ? (
+                <Button 
+                className={`px-sm-4 py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
+                onClick={() => setShowGuideEdit(showGuideEdit => !showGuideEdit)} > 
+                Edit Guide
+              </Button>
+              ) : (
+                <Button 
+                  className={` py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
+                onClick={() => setShowGuide(showGuide => !showGuide)} >
+                    Add Guide
+              </Button>
+              )}
+            <Button 
+                className={`float-right py-0 mt-1 ${btnStyles.GreyDark} ${btnStyles.Button}`}
+              onClick={() => setShowWorkInfo(showWorkInfo => !showWorkInfo)} >INSTRUCTIONS
+            </Button>
+                </Col>
+              </Row>
+              {!showWorkInfo ? (
+              ""
+                  ) : (
+                <InfoWorkspace 
+                setShowWorkInfo={setShowWorkInfo} /> 
+                ) } 
+              <Row className='mb-2'>
+                <Col md={1}></Col>
+                <Col className='mx-0 px-0' xs={12} md={10} >
+                {!showGuide ? (
+                  ""
+                ) : (
+                  <WorkspaceGuideForm className="my-2" id={id} number={number} setShowGuide={setShowGuide} setScene={setScene} />
+                ) }
+                {!showGuideEdit ? (
+                  ""
+                ) : (
+                  <WorkspaceGuideEdit className="my-2" id={id} number={number} setShowGuideEdit={setShowGuideEdit} setScene={setScene} />
+                ) }
+                </Col>
+              </Row>
+              {/* guide */}
+              <Row>
+                  <Col sm={{span: 10, offset: 1}} >
+                  <div className={`my-3 pb-0 ${styles.Guide}`}>
+                  <p style={{ textTransform: 'uppercase'}} 
+                  className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >
+                    Workspace Guide</p>
+                    <div className={`text-center mt-2 px-3 pb-0 ${styles.GuideBox}`}>
+                      {workspace_guide} </div>
+                    </div>
+                  </Col>
+              </Row>
+              </div>
+              {/* Department Image links Original */}
+              {/* Note: Potential changes see trial code below*/} 
+              <div>
+              <Row className={`mt-1`} >
+                  <Col xs={4}  ></Col>
+                  <Col className='px-1 px-md-2' xs={4} >
+                    <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
+                    <Card.Img height={100} className={`text-center ${styles.UniImg}`} src={dep8} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                    </Card>
+                  </Col>
+                  </Row>
+                  <Row className='px-2' >
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox} px-0`} >
+                      <Card.Img src={dep2} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                      <DeptDropdown  handleClick={(category) => handleClickCamera(category) }
+                                      className={` ${styles.Drop}`} />
+                      </Card> 
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep3} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickSound(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep4} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep5} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickScript(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep6} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickArt(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep7} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep9} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep1} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep10} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickPost(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep11} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep12} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep13} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
+                      </Card>
                     </Col>
                   </Row>
-                  {/* guide */}
-                  <Row>
-                      <Col sm={{span: 10, offset: 1}} >
-                      <div className={`my-3 pb-0 ${styles.Guide}`}>
-                      <p style={{ textTransform: 'uppercase'}} 
-                      className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >
-                        Workspace Guide</p>
-                        <div className={`text-center mt-2 px-3 pb-0 ${styles.GuideBox}`}>
-                          {workspace_guide} </div>
-                        </div>
-                      </Col>
-                    </Row>
-                  <Row className={`mt-1`} >
+              </div>
+              {/* Department Image links - NEW TRIAL code*/}
+              {/* Potential changes to the department images:
+                  A/ The categories Finals, Shooting and Info will be removed
+                  B/ The actual image when clicked opens the dropdowm menu
+                  C/ Or the department images will be changed to have a top half
+                    and bottom half both slightly differently shaded by opacity.
+                    The top one will say Requirements and the other Workspace both 
+                    with links to these Post pages.  */}
+              {/* <div>
+              <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
-                      <Col className='px-1 px-md-2' xs={4} >
-                        <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
-                        <Card.Img height={100} className={`text-center ${styles.UniImg}`} src={dep8} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
-                        </Card>
-                      </Col>
+                  <Col className='px-1 px-md-2' xs={4} >
+                    <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
+                    <Card.Img height={100} className={`text-center ${styles.UniImg}`} src={dep8} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                    </Card>
+                  </Col>
                   </Row>
-                  {/* The department images will be changed to have a top half
-                      and bottom half both slightly differently shaded by opacity.
-                      The top one will say Requirements and the other Workspace both 
-                      with links to these Post pages.
-                      The deptDropdown will be removed so Finals, Shooting and Info
-                      will no longer be categories */}
-                    <Row className='px-2' >
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`} >
-                        <Card.Img src={dep2} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                        <DeptDropdown  handleClick={(category) => handleClickCamera(category) }
-                                       className={` ${styles.Drop}`} />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep3} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickSound(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep4} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep5} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickScript(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep6} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickArt(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep7} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep9} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep1} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep10} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickPost(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep11} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep12} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
-                        </Card>
-                      </Col>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card className={` ${styles.CardBox}`}>
-                        <Card.Img src={dep13} alt="Card image" />
-                        <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
-                        <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
-                        </Card>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-            </div>
+                  <Row className='px-2' >
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={ `px-0`} >
+                      <Card.Img src={dep2} alt="Card image" className='px-0'/>
+                      <Card.ImgOverlay className='px-0 text-center ' >
+                      <Card.Title 
+                      className={` ${styles.DeptImageBox}  px-0`} >
+                        Requirements</Card.Title>
+                      <Card.Title 
+                      className={` ${styles.DeptImageBox} mt-4 px-0`} >
+                        Workspace</Card.Title>
+                      </Card.ImgOverlay>
+                      <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                      <DeptDropdown  handleClick={(category) => handleClickCamera(category) }
+                                      className={` ${styles.Drop}`} />
+                          
+                      </Card> 
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep3} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickSound(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep4} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep5} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickScript(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep6} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickArt(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep7} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep9} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep1} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep10} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickPost(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep11} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep12} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep13} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
+                      </Card>
+                    </Col>
+                  </Row>
+              </div> */}
             </>
           ) }
         </div>

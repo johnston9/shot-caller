@@ -1,5 +1,16 @@
 /* scene card  */
 
+.DeptImageBox {
+  background-color: #000;
+  color: #fff;
+}
+
+.DeptImageBox:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
 .TitleBox {
   background-color: #e8f0f1;
   color: #333;
