@@ -400,7 +400,7 @@ const buttons = (
               {location && <span> {location} </span> }
               {character && <span> {character} </span> }
               </h5>
-            <Form className="mt-3" onSubmit={handleSubmit}>
+            <Form className="mt-3 px-3" onSubmit={handleSubmit}>
                 <Row>
                 <Col md={6} className="p-0 p-md-2">
                     <Container className= {`${appStyles.Content} ${styles.Container}`} >

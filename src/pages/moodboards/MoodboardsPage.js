@@ -32,6 +32,7 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
   const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
+  // for testing only
   console.log(sceneId);
   console.log(locationPlace);
   console.log(characterRole);

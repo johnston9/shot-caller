@@ -104,26 +104,26 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
     const buttons = (
       <div className="mb-2 text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-4`}
           onClick={clear}
         >
           Cancel
         </Button>
-        <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        <Button className={`px-3 px-md-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
           Create
         </Button>
       </div>
     );
     
   return (
-    <div className={` ${styles}`}> 
+    <div className={` ${styles} mt-3 px-3 `}> 
       <div>
       {/* Dropdown DropButt */}
       <Row >
       <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
       <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
         ADD SCENE CHARACTER</h5> 
-      <Form className="text-center pr-3" onSubmit={handleSubmit}>
+      <Form className="text-center px-3" onSubmit={handleSubmit}>
       <Row>
       <Col xs={8} md={4}>
           <p className={`text-center mb-0 ${styles.Bold }`}>

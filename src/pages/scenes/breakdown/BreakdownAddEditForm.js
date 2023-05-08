@@ -508,13 +508,13 @@ const BreakdownEditForm = () => {
         </Col>
         </Row>
         <Row>
-        <Col className="text-center" xs={6}>
+        <Col className="text-center" xs={12} sm={6} >
         <Button
           className={`py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowAddLoc(showAddLoc => !showAddLoc)} >ADD NEW LOCATION
         </Button> 
         </Col>
-        <Col className="text-center" xs={6}>
+        <Col className="text-center" xs={12} sm={6} >
         <Button
           className={`px-5 py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
@@ -544,10 +544,10 @@ const BreakdownEditForm = () => {
                 ) } 
         <h5 style={{ textTransform: 'uppercase'}}
          className={`text-center mt-3 mb-0 py-1 ${styles.SubTitle }`}>
-          ADD / EDIT SCENE <span className={`${styles.Blue }`}>
-            {number}</span> BREAKDOWN, SCRIPT AND STORYBOARD
+         ADD / EDIT SCENE <span className={`${styles.Blue }`}>
+            {number}</span> BREAKDOWN
         </h5>
-        <Form className= {`mb-3 ${styles.Back}`} onSubmit={handleSubmit}>
+        <Form className= {`mb-3 px-3 ${styles.Back}`} onSubmit={handleSubmit}>
         <Row>
         <Col xs={12} className="p-0 p-md-2">
             {infoFields}

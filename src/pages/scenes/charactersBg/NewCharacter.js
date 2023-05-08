@@ -161,24 +161,24 @@ const NewCharacter = ({setShowAdd} ) => {
     const buttons = (
       <div className="mb-2 text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-4`}
           onClick={cancel}
         >
           Cancel
         </Button>
-        <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        <Button className={`px-3 px-md-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
           Create
         </Button>
       </div>
     );
 
     return (
-          <div >
+          <div className="px-3" >
           <Row >
           <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
           <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
             ADD NEW CHARACTER</h5> 
-            <Form className="mt-0" onSubmit={handleSubmit}>
+            <Form className="mt-0 " onSubmit={handleSubmit}>
             <Row>
                 <Col xs={{span: 6, offset: 3 }} className="d-flex justify-content-center" >
                 <Form.Group controlId="role" className={`${styles.Width2} text-center`}  >
@@ -200,7 +200,7 @@ const NewCharacter = ({setShowAdd} ) => {
             </Row>
             <Row>
                 {/* 1 - 30 */}
-                <Col xs={4} className="d-flex justify-content-center" >
+                <Col xs={6} md={4} className="px-0 d-flex justify-content-center" >
                 <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
                         <Form.Label className={` ${styles.Bold} `} >Number 1 - 30</Form.Label>
                         <Form.Control as="select"
@@ -224,7 +224,7 @@ const NewCharacter = ({setShowAdd} ) => {
                     ))}
                 </Col>
                 {/* 31 - 100 */}
-                <Col xs={4} className="d-flex justify-content-center" >
+                <Col xs={6} md={4} className="px-0 d-flex justify-content-center" >
                 <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
                         <Form.Label className={` ${styles.Bold} `} >Number 31 -100</Form.Label>
                         <Form.Control as="select"
@@ -248,7 +248,7 @@ const NewCharacter = ({setShowAdd} ) => {
                     ))}
                 </Col>
                 {/* 100 - 200 */}
-                <Col xs={4} className="d-flex justify-content-center" >
+                <Col xs={{span: 8, offset: 2 }} md={{span: 4, offset: 0 }} className="d-flex justify-content-center px-0" >
                 <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
                         <Form.Label className={` ${styles.Bold} `} >Number 101 - 200</Form.Label>
                         <Form.Control as="select"

@@ -15,7 +15,9 @@ const Info = () => {
         <h5 className={`text-center`} >INFO</h5>  
         <p className={`text-center px-3 pt-1`}>
           New Locations must be added in Add New Location form
-          or on Locations Page <br/>
+          or on Locations Page. <br/>
+          The Storyboard and Script may also be added or 
+          updated here on this page.
           </p>     
          </div>
       </Col>

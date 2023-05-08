@@ -20,21 +20,32 @@ const CharactersAdd = (props) => {
     const { id, characters, setCharacters, setShowCharactersAdd } = props;
     return ( 
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={`text-center mx-5 mt-1 pl-5 py-1 ${styles.SubTitle }`}>
+            <h5 style={{ textTransform: 'uppercase'}} className={`text-center mx-sm-5 mt-1 pl-5 py-1 ${styles.SubTitle }`}>
                 Add Characters
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersAdd(false) } >Close</span>
             </h5>
             <div className={` ${styles.AliceBlueMild }`}>        
             {/* info */}
+            {/* <Row>
+            <Col sm={{span: 10, offset: 1 }} className='text-center' >
+            <p>
+            New Characters must be added here by the Add New Characters 
+          form or on the Character's feature Add Character
+          page. This will add them to the Add Scene Character dropdown.
+            </p>
+            </Col>
+            </Row> */}
             <Row>
-            <Col className='my-3'>
+            <Col className="text-center mt-2" xs={12} sm={6}>
             <Button
-                className={`ml-5 py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
-                onClick={() => setShowAdd(showAdd => !showAdd)} >ADD NEW CHARACTERS
-            </Button> 
-            <Button
-                className={`px-5 float-right mr-5 py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
+                className={`px-5 py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
                 onClick={() => setShowInfo(showInfo => !showInfo)} >IMPORTANT
+            </Button> 
+            </Col>
+            <Col className="text-center mt-2" xs={12} sm={6}>
+            <Button
+                className={`py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
+                onClick={() => setShowAdd(showAdd => !showAdd)} >ADD NEW CHARACTERS
             </Button> 
             </Col>
             </Row>

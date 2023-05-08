@@ -86,57 +86,27 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
     const buttons = (
       <div className="mb-2 text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-4`}
           onClick={clear}
         >
           Cancel
         </Button>
-        <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        <Button className={`px-3 px-md-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
           Add BG
         </Button>
       </div>
     );
     
   return (
-    <div >
+    <div className="px-3 mt-3" >
       <div className={`mb-3 ${styles.Back3 }`}>
       <Row >
       <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
       <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
         ADD BG / STANDINGS</h5> 
       <Form className="text-center" onSubmit={handleSubmit}>
-        {/* <Row className="py-2">
-        <Col xs={12} md={6}>
-        <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
-        BG ADDED
-        </p>
-        <div className={`ml-md-2 px-1 py-1 ${styles.CastEntered }`} >
-          {background.results.length ? (
-              background.results.map((bg) => (
-                <span key={bg.id}>{bg.role}, </span>
-              ))) : ("")}
-          </div>
-          </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
-            <Form.Group controlId="quantity" className={`${styles.Width} `}  >
-                  <Form.Label className={`${styles.Bold}`} >Quantity</Form.Label>
-                  <Form.Control 
-                  className={`${styles.Input}`} 
-                  type="text"
-                  name="quantity"
-                  value={quantity}
-                  onChange={handleChange}
-                      />
-              </Form.Group>
-              {errors?.quantity?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              </Col>
-        </Row> */}
           <Row className="my-2">
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={2} >
+          <Col className="d-flex justify-content-center mx-0 px-1" xs={4} md={2} >
             <Form.Group controlId="quantity" className={`${styles.Width} `}  >
                   <Form.Label className={`${styles.Bold}`} >Quantity</Form.Label>
                   <Form.Control 
@@ -153,7 +123,7 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
                 </Alert>
               ))}
           </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={5} >
+            <Col className="d-flex justify-content-center mx-0 px-1" xs={8} md={5} >
             <Form.Group controlId="role" className={`${styles.Width2} `}  >
                   <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
                   <Form.Control 
@@ -169,8 +139,8 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
                   {message}
                 </Alert>
               ))}
-              </Col>
-            <Col className="d-flex justify-content-center mx-0 px-1" xs={5} >
+            </Col>
+            <Col className="d-flex justify-content-center mx-0 px-1" xs={12} md={{span: 5, offset: 0 }} >
             <Form.Group controlId="costume" className={`${styles.Width2} `}  >
                   <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
                   <Form.Control 
