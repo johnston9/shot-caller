@@ -66,10 +66,10 @@ const Landing = () => {
           {redirect ? (
             {redirect}
           ) : ("") }
-          </div> */}
           {currentUser ? (<p className={`${styles.White}`}>
            {currentUser.username}
           </p>) : ("") }
+          </div> */}
             <Row className={`my-3 ${styles.Row}`}>
             <Col className="my-3 pr-0 pl-3 pl-md-4"
               xs={1} md={1}>
