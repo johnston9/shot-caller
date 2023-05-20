@@ -5,13 +5,17 @@ import { useRedirect } from '../../../../hooks/Redirect';
 import Form from "react-bootstrap/Form";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from "react-bootstrap/Button";
 import { Alert } from "react-bootstrap";
 import styles from "../../../../styles/Callsheets.module.css";
+import btnStyles from "../../../../styles/Button.module.css";
+import XtraCrewCamera from "./XtraCrewCamera";
 
 const CrewCamera = ({handleChange, postData, setShow}) => {
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
+  const [showXtraCam, setShowXtraCam] = useState(false);
 
   const {dop_name, dop_email, dop_phone,
     camera_operator_name, camera_operator_email, camera_operator_phone,
@@ -23,6 +27,8 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
     oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
     oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
     oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+    oth_camera_pos_4_job, oth_camera_pos_4_name, oth_camera_pos_4_email, oth_camera_pos_4_phone,
+    oth_camera_pos_5_job, oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
   } = postData || {};
 
   return (
@@ -670,6 +676,181 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
+      {/* Additional Camera Position 4 */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 4</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam4</span> 
+      </div> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_4_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_4_job"
+              value={oth_camera_pos_4_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_4_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row className="pb-3">
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_4_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_4_name"
+              value={oth_camera_pos_4_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_4_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_4_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_4_email"
+              value={oth_camera_pos_4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_4_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_4_phone"
+              value={oth_camera_pos_4_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_4_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* Additional Camera Position 5 */}
+      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 5</h5> 
+      <div>
+      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam5</span> 
+      </div> 
+      <Row>
+          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_5_job" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_5_job"
+              value={oth_camera_pos_5_job}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_5_job?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      <Row className="pb-3">
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_5_name" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_5_name"
+              value={oth_camera_pos_5_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_5_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_5_email" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_5_email"
+              value={oth_camera_pos_5_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_5_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="oth_camera_pos_5_phone" className={`${styles.Width} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_5_phone"
+              value={oth_camera_pos_5_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_5_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* xtra camera positions button */}
+      <div className={`py-2 ${styles.White }`}>
+      <Row>
+      <Col className="text-center" >
+      <p>
+      Click to add Xtra Camera Positions if needed
+      </p>
+      <Button
+      className={`py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowXtraCam(showXtraCam => !showXtraCam)} >Xtra Camera Positions
+    </Button>
+      </Col>
+      </Row>
+      </div>
+      {/* xtra camera positions */}
+      {!showXtraCam ? (
+                ""
+              ) : (
+                <XtraCrewCamera setShow={setShowXtraCam} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
       </div>
   )
 }

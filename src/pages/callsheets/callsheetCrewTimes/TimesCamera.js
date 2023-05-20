@@ -16,8 +16,8 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
     camera_pa_name, 
     oth_camera_pos_1_job, oth_camera_pos_1_name, 
     oth_camera_pos_2_job, oth_camera_pos_2_name, 
-    oth_camera_pos_3_job, 
-    oth_camera_pos_3_name,} = crewInfoOne || {};
+    oth_camera_pos_3_job, oth_camera_pos_3_name,
+        } = crewInfoOne || {};
 
   const { dop_calltime, camera_operator_calltime, camera_ass_1_calltime,
     camera_ass_2_calltime, dit_calltime, steadicam_calltime, camera_pa_calltime,

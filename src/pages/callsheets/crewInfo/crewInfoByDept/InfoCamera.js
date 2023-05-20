@@ -17,8 +17,21 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
     camera_pa_name, camera_pa_email, camera_pa_phone,
     oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
     oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
-    oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, 
-    oth_camera_pos_3_phone,} = crewInfoOne || {};
+    oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+    oth_camera_pos_4_job, oth_camera_pos_4_name, oth_camera_pos_4_email, oth_camera_pos_4_phone,
+    oth_camera_pos_5_job, oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
+    // xtra camera positions
+    xtra_camera_pos_1_job, xtra_camera_pos_1_name, xtra_camera_pos_1_email, xtra_camera_pos_1_phone,
+    xtra_camera_pos_2_job, xtra_camera_pos_2_name, xtra_camera_pos_2_email, xtra_camera_pos_2_phone,
+    xtra_camera_pos_3_job, xtra_camera_pos_3_name, xtra_camera_pos_3_email, xtra_camera_pos_3_phone,
+    xtra_camera_pos_4_job, xtra_camera_pos_4_name, xtra_camera_pos_4_email, xtra_camera_pos_4_phone,
+    xtra_camera_pos_5_job, xtra_camera_pos_5_name, xtra_camera_pos_5_email, xtra_camera_pos_5_phone,
+    xtra_camera_pos_6_job, xtra_camera_pos_6_name, xtra_camera_pos_6_email, xtra_camera_pos_6_phone,
+    xtra_camera_pos_7_job, xtra_camera_pos_7_name, xtra_camera_pos_7_email, xtra_camera_pos_7_phone,
+    xtra_camera_pos_8_job, xtra_camera_pos_8_name, xtra_camera_pos_8_email, xtra_camera_pos_8_phone,
+    xtra_camera_pos_9_job, xtra_camera_pos_9_name, xtra_camera_pos_9_email, xtra_camera_pos_9_phone,
+    xtra_camera_pos_10_job, xtra_camera_pos_10_name, xtra_camera_pos_10_email, xtra_camera_pos_10_phone,
+        } = crewInfoOne || {};
   return (
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
@@ -248,7 +261,351 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
-        </div>
+        {/* oth camera pos 4 job */}
+        {oth_camera_pos_4_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_4_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_4_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>addcam4 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{oth_camera_pos_4_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{oth_camera_pos_4_email}</p>
+            </Col>
+          </Row>
+          </div> )
+        }
+        {/* oth camera pos 5 job */}
+        {oth_camera_pos_5_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_5_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_5_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>addcam5 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_email}</p>
+            </Col>
+          </Row>
+          </div> )
+        }
+      </div>
+      {/* XTRA CAMERA POSITIONS */}
+      {xtra_camera_pos_1_job && (
+      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <h5 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >XTRA CAMERA POSITIONS</h5>
+      </div>
+      )  }
+      <div className='px-md-5 pt-2'>
+      {/* Xtra camera pos 1 job */}
+      {xtra_camera_pos_1_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_1_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{xtra_camera_pos_1_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>xtracam1 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{xtra_camera_pos_1_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{xtra_camera_pos_1_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }
+      {/* Xtra camera pos 2 job */}
+      {xtra_camera_pos_2_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_2_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_2_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam2 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{xtra_camera_pos_2_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{xtra_camera_pos_2_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }
+      {/* Xtra camera pos 3 job */}
+      {xtra_camera_pos_3_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_3_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_3_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam3 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_3_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_3_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }
+      {/* Xtra camera pos 4 job */}
+      {xtra_camera_pos_4_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_4_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_4_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam4 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_4_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_4_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }
+      {/* Xtra camera pos 4 job */}
+      {xtra_camera_pos_4_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_4_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_4_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam4 </p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_4_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_4_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }
+      {/* Xtra camera pos 5 job */}
+      {xtra_camera_pos_5_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_5_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_5_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam5</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_5_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_5_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }
+      {/* Xtra camera pos 6 job */}
+      {xtra_camera_pos_6_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_6_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_6_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam6</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_6_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_6_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }    
+      {/* Xtra camera pos 7 job */}
+      {xtra_camera_pos_7_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_7_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_7_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam7</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_7_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_7_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }  
+      {/* Xtra camera pos 8 job */}
+      {xtra_camera_pos_8_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_8_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_8_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam8</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_8_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_8_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }    
+      {/* Xtra camera pos 9 job */}
+      {xtra_camera_pos_9_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_9_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_9_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam5</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_9_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_9_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      } 
+      {/* Xtra camera pos 10 job */}
+      {xtra_camera_pos_10_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >
+            {xtra_camera_pos_10_job} </h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_10_name}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>
+                xtracam10</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>
+              {xtra_camera_pos_10_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_10_email}</p>
+            </Col>
+          </Row>
+          </div> )
+      }
+
+      </div>
     </div>
   )
 }

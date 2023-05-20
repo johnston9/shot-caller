@@ -107,6 +107,10 @@ const CrewInfoCreate = () => {
     oth_production_pos_5_name: "",
     oth_production_pos_5_email: "",
     oth_production_pos_5_phone: "",
+    // continuity
+    script_supervisor_name: "",
+    script_supervisor_email: "",
+    script_supervisor_phone: "",
     // legal / medic
     legal_name: "",
     legal_email: "",
@@ -179,6 +183,55 @@ const CrewInfoCreate = () => {
     oth_camera_pos_3_name: "",
     oth_camera_pos_3_email: "",
     oth_camera_pos_3_phone: "",
+    oth_camera_pos_4_job: "",
+    oth_camera_pos_4_name: "",
+    oth_camera_pos_4_email: "",
+    oth_camera_pos_4_phone: "",
+    oth_camera_pos_5_job: "",
+    oth_camera_pos_5_name: "",
+    oth_camera_pos_5_email: "",
+    oth_camera_pos_5_phone: "",
+    // Xtra Camera Positions
+    xtra_camera_pos_1_job: "",
+    xtra_camera_pos_1_name: "",
+    xtra_camera_pos_1_email: "",
+    xtra_camera_pos_1_phone: "",
+    xtra_camera_pos_2_job: "",
+    xtra_camera_pos_2_name: "",
+    xtra_camera_pos_2_email: "",
+    xtra_camera_pos_2_phone: "",
+    xtra_camera_pos_3_job: "",
+    xtra_camera_pos_3_name: "",
+    xtra_camera_pos_3_email: "",
+    xtra_camera_pos_3_phone: "",
+    xtra_camera_pos_4_job: "",
+    xtra_camera_pos_4_name: "",
+    xtra_camera_pos_4_email: "",
+    xtra_camera_pos_4_phone: "",
+    xtra_camera_pos_5_job: "",
+    xtra_camera_pos_5_name: "",
+    xtra_camera_pos_5_email: "",
+    xtra_camera_pos_5_phone: "",
+    xtra_camera_pos_6_job: "",
+    xtra_camera_pos_6_name: "",
+    xtra_camera_pos_6_email: "",
+    xtra_camera_pos_6_phone: "",
+    xtra_camera_pos_7_job: "",
+    xtra_camera_pos_7_name: "",
+    xtra_camera_pos_7_email: "",
+    xtra_camera_pos_7_phone: "",
+    xtra_camera_pos_8_job: "",
+    xtra_camera_pos_8_name: "",
+    xtra_camera_pos_8_email: "",
+    xtra_camera_pos_8_phone: "",
+    xtra_camera_pos_9_job: "",
+    xtra_camera_pos_9_name: "",
+    xtra_camera_pos_9_email: "",
+    xtra_camera_pos_9_phone: "",
+    xtra_camera_pos_10_job: "",
+    xtra_camera_pos_10_name: "",
+    xtra_camera_pos_10_email: "",
+    xtra_camera_pos_10_phone: "",
     // sound
     sound_mixer_name: "",
     sound_mixer_email: "",
@@ -192,10 +245,6 @@ const CrewInfoCreate = () => {
     sound_assistant_2_name: "",
     sound_assistant_2_email: "",
     sound_assistant_2_phone: "",
-    // continuity
-    script_supervisor_name: "",
-    script_supervisor_email: "",
-    script_supervisor_phone: "",
     // makeup
     key_hairmakeup_name: "",
     key_hairmakeup_email: "",
@@ -405,7 +454,7 @@ const CrewInfoCreate = () => {
     truck3_name: "",
     truck3_email: "",
     truck3_phone: "",
-    // cateing
+    // catering
     craft_service_name: "",
     craft_service_email: "",
     craft_service_phone: "",
@@ -466,9 +515,11 @@ const CrewInfoCreate = () => {
 })
 
   const { 
+          // company
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
           company_address_line_4, total_shoot_days,
+          // production
           director_name, director_email, director_phone,
           producer_name, producer_email, producer_phone,
           pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
@@ -480,6 +531,10 @@ const CrewInfoCreate = () => {
           oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
           oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
           oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
+          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
+          legal_name, legal_email, legal_phone,
+          set_medic_name, set_medic_email, set_medic_phone,
+          // ad
           ad_1_name, ad_1_email, ad_1_phone,
           ad_2_name, ad_2_email, ad_2_phone,
           ad_3_name, ad_3_email, ad_3_phone,
@@ -490,6 +545,7 @@ const CrewInfoCreate = () => {
           pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
           pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
           pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
+          // camera
           dop_name, dop_email, dop_phone,
           camera_operator_name, camera_operator_email, camera_operator_phone,
           camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
@@ -500,11 +556,25 @@ const CrewInfoCreate = () => {
           oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
           oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
           oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
+          oth_camera_pos_4_job, oth_camera_pos_4_name, oth_camera_pos_4_email, oth_camera_pos_4_phone,
+          oth_camera_pos_5_job, oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
+          // xtra camera positions
+          xtra_camera_pos_1_job, xtra_camera_pos_1_name, xtra_camera_pos_1_email, xtra_camera_pos_1_phone,
+          xtra_camera_pos_2_job, xtra_camera_pos_2_name, xtra_camera_pos_2_email, xtra_camera_pos_2_phone,
+          xtra_camera_pos_3_job, xtra_camera_pos_3_name, xtra_camera_pos_3_email, xtra_camera_pos_3_phone,
+          xtra_camera_pos_4_job, xtra_camera_pos_4_name, xtra_camera_pos_4_email, xtra_camera_pos_4_phone,
+          xtra_camera_pos_5_job, xtra_camera_pos_5_name, xtra_camera_pos_5_email, xtra_camera_pos_5_phone,
+          xtra_camera_pos_6_job, xtra_camera_pos_6_name, xtra_camera_pos_6_email, xtra_camera_pos_6_phone,
+          xtra_camera_pos_7_job, xtra_camera_pos_7_name, xtra_camera_pos_7_email, xtra_camera_pos_7_phone,
+          xtra_camera_pos_8_job, xtra_camera_pos_8_name, xtra_camera_pos_8_email, xtra_camera_pos_8_phone,
+          xtra_camera_pos_9_job, xtra_camera_pos_9_name, xtra_camera_pos_9_email, xtra_camera_pos_9_phone,
+          xtra_camera_pos_10_job, xtra_camera_pos_10_name, xtra_camera_pos_10_email, xtra_camera_pos_10_phone,
+          // sound
           sound_mixer_name, sound_mixer_email, sound_mixer_phone,
           boom_operator_name, boom_operator_email, boom_operator_phone,
           sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
           sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
-          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
+          // hair/makeup
           key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
           key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
           sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
@@ -514,6 +584,7 @@ const CrewInfoCreate = () => {
           makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
           makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
           makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
+          // wardrobe
           costume_designer_name, costume_designer_email, costume_designer_phone,
           ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
           wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
@@ -521,6 +592,7 @@ const CrewInfoCreate = () => {
           wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
           wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
           wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,
+          // art
           production_designer_name, production_designer_email, production_designer_phone,
           art_director_name, art_director_email, art_director_phone,
           art_assistant_name, art_assistant_email, art_assistant_phone,
@@ -532,6 +604,7 @@ const CrewInfoCreate = () => {
           ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
           prop_buyer_name, prop_buyer_email, prop_buyer_phone,
           armorer_name, armorer_email, armorer_phone,
+          // electric/grip
           gaffer_name, gaffer_email, gaffer_phone,
           best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
           electric_3_name, electric_3_email, electric_3_phone,
@@ -544,25 +617,28 @@ const CrewInfoCreate = () => {
           swing_ge3_name, swing_ge3_email, swing_ge3_phone,
           swing_ge4_name, swing_ge4_email, swing_ge4_phone,
           swing_ge5_name, swing_ge5_email, swing_ge5_phone,
+          // stunts
           stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
           stunts_1_name, stunts_1_email, stunts_1_phone,
           stunts_2_name, stunts_2_email, stunts_2_phone,
           stunts_3_name, stunts_3_email, stunts_3_phone,
           stunts_4_name, stunts_4_email, stunts_4_phone,
           stunts_5_name, stunts_5_email, stunts_5_phone,
-          legal_name, legal_email, legal_phone,
+          // post/script
           editor_name, editor_email, editor_phone,
-          set_medic_name, set_medic_email, set_medic_phone,
+          fx_name, fx_email, fx_phone,
+          writer_name, writer_email, writer_phone,
+          // casting
           casting_director_name, casting_director_email, casting_director_phone,
           extras_casting_name, extras_casting_email, extras_casting_phone,
-          writer_name, writer_email, writer_phone,
-          fx_name, fx_email, fx_phone,
+          // locations
           location_mngr_name, location_mngr_email, location_mngr_phone,
           location_ass_1_name, location_ass_1_email, location_ass_1_phone,
           location_ass_2_name, location_ass_2_email, location_ass_2_phone,
           location_ass_3_name, location_ass_3_email, location_ass_3_phone,
           location_ass_4_name, location_ass_4_email, location_ass_4_phone,
           location_security_name, location_security_email, location_security_phone,
+          // transport
           transport_captain_name, transport_captain_email, transport_captain_phone,
           transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
           transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
@@ -573,11 +649,13 @@ const CrewInfoCreate = () => {
           truck1_name, truck1_email, truck1_phone,
           truck2_name, truck2_email, truck2_phone,
           truck3_name, truck3_email, truck3_phone,
+          // catering
           catering_co_1_name, catering_co_1_email, catering_co_1_phone,
           catering_co_2_name, catering_co_2_email, catering_co_2_phone,
           catering_co_3_name, catering_co_3_email, catering_co_3_phone,
           craft_service_name, craft_service_email, craft_service_phone,
           crafty_ass_name, crafty_ass_email, crafty_ass_phone,
+          // additional
           add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
           add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
           add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
@@ -712,6 +790,56 @@ const CrewInfoCreate = () => {
     formData.append("oth_camera_pos_3_name", oth_camera_pos_3_name);
     formData.append("oth_camera_pos_3_email", oth_camera_pos_3_email);
     formData.append("oth_camera_pos_3_phone", oth_camera_pos_3_phone);
+    formData.append("oth_camera_pos_4_job", oth_camera_pos_4_job);
+    formData.append("oth_camera_pos_4_name", oth_camera_pos_4_name);
+    formData.append("oth_camera_pos_4_email", oth_camera_pos_4_email);
+    formData.append("oth_camera_pos_4_phone", oth_camera_pos_4_phone);
+    formData.append("oth_camera_pos_5_job", oth_camera_pos_5_job);
+    formData.append("oth_camera_pos_5_name", oth_camera_pos_5_name);
+    formData.append("oth_camera_pos_5_email", oth_camera_pos_5_email);
+    formData.append("oth_camera_pos_5_phone", oth_camera_pos_5_phone);
+    // xtra camera
+    formData.append("xtra_camera_pos_1_job", xtra_camera_pos_1_job);
+    formData.append("xtra_camera_pos_1_name", xtra_camera_pos_1_name);
+    formData.append("xtra_camera_pos_1_email", xtra_camera_pos_1_email);
+    formData.append("xtra_camera_pos_1_phone", xtra_camera_pos_1_phone);
+    formData.append("xtra_camera_pos_2_job", xtra_camera_pos_2_job);
+    formData.append("xtra_camera_pos_2_name", xtra_camera_pos_2_name);
+    formData.append("xtra_camera_pos_2_email", xtra_camera_pos_2_email);
+    formData.append("xtra_camera_pos_2_phone", xtra_camera_pos_2_phone);
+    formData.append("xtra_camera_pos_3_job", xtra_camera_pos_3_job);
+    formData.append("xtra_camera_pos_3_name", xtra_camera_pos_3_name);
+    formData.append("xtra_camera_pos_3_email", xtra_camera_pos_3_email);
+    formData.append("xtra_camera_pos_3_phone", xtra_camera_pos_3_phone);
+    formData.append("xtra_camera_pos_4_job", xtra_camera_pos_4_job);
+    formData.append("xtra_camera_pos_4_name", xtra_camera_pos_4_name);
+    formData.append("xtra_camera_pos_4_email", xtra_camera_pos_4_email);
+    formData.append("xtra_camera_pos_4_phone", xtra_camera_pos_4_phone);
+    formData.append("xtra_camera_pos_5_job", xtra_camera_pos_5_job);
+    formData.append("xtra_camera_pos_5_name", xtra_camera_pos_5_name);
+    formData.append("xtra_camera_pos_5_email", xtra_camera_pos_5_email);
+    formData.append("xtra_camera_pos_5_phone", xtra_camera_pos_5_phone);
+    formData.append("xtra_camera_pos_6_job", xtra_camera_pos_6_job);
+    formData.append("xtra_camera_pos_6_name", xtra_camera_pos_6_name);
+    formData.append("xtra_camera_pos_6_email", xtra_camera_pos_6_email);
+    formData.append("xtra_camera_pos_6_phone", xtra_camera_pos_6_phone);
+    formData.append("xtra_camera_pos_7_job", xtra_camera_pos_7_job);
+    formData.append("xtra_camera_pos_7_name", xtra_camera_pos_7_name);
+    formData.append("xtra_camera_pos_7_email", xtra_camera_pos_7_email);
+    formData.append("xtra_camera_pos_7_phone", xtra_camera_pos_7_phone);
+    formData.append("xtra_camera_pos_8_job", xtra_camera_pos_8_job);
+    formData.append("xtra_camera_pos_8_name", xtra_camera_pos_8_name);
+    formData.append("xtra_camera_pos_8_email", xtra_camera_pos_8_email);
+    formData.append("xtra_camera_pos_8_phone", xtra_camera_pos_8_phone);
+    formData.append("xtra_camera_pos_9_job", xtra_camera_pos_9_job);
+    formData.append("xtra_camera_pos_9_name", xtra_camera_pos_9_name);
+    formData.append("xtra_camera_pos_9_email", xtra_camera_pos_9_email);
+    formData.append("xtra_camera_pos_9_phone", xtra_camera_pos_9_phone);
+    formData.append("xtra_camera_pos_10_job", xtra_camera_pos_10_job);
+    formData.append("xtra_camera_pos_10_name", xtra_camera_pos_10_name);
+    formData.append("xtra_camera_pos_10_email", xtra_camera_pos_10_email);
+    formData.append("xtra_camera_pos_10_phone", xtra_camera_pos_10_phone);
+    // sound
     formData.append("sound_mixer_name", sound_mixer_name);
     formData.append("sound_mixer_email", sound_mixer_email);
     formData.append("sound_mixer_phone", sound_mixer_phone);
