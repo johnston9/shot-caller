@@ -136,6 +136,19 @@ const CallSheet = (props ) => {
           oth_camera_pos_1_calltime,
           oth_camera_pos_2_calltime,
           oth_camera_pos_3_calltime,
+          oth_camera_pos_4_calltime,
+          oth_camera_pos_5_calltime,
+          // xtra camera
+          xtra_camera_pos_1_calltime, 
+          xtra_camera_pos_2_calltime,
+          xtra_camera_pos_3_calltime, 
+          xtra_camera_pos_4_calltime,
+          xtra_camera_pos_5_calltime, 
+          xtra_camera_pos_6_calltime,
+          xtra_camera_pos_7_calltime, 
+          xtra_camera_pos_8_calltime,
+          xtra_camera_pos_9_calltime, 
+          xtra_camera_pos_10_calltime,
           // casting
           casting_director_calltime,
           extras_casting_calltime,
@@ -291,6 +304,19 @@ const CallSheet = (props ) => {
             case "addcam1": return oth_camera_pos_1_calltime;
             case "addcam2": return oth_camera_pos_2_calltime;
             case "addcam3": return oth_camera_pos_3_calltime;
+            case "addcam4": return oth_camera_pos_4_calltime;
+            case "addcam5": return oth_camera_pos_5_calltime;
+            // xtra camera
+            case "xtracam1": return xtra_camera_pos_1_calltime;
+            case "xtracam2": return xtra_camera_pos_2_calltime;
+            case "xtracam3": return xtra_camera_pos_3_calltime;
+            case "xtracam4": return xtra_camera_pos_4_calltime;
+            case "xtracam5": return xtra_camera_pos_5_calltime;
+            case "xtracam6": return xtra_camera_pos_6_calltime;
+            case "xtracam7": return xtra_camera_pos_7_calltime;
+            case "xtracam8": return xtra_camera_pos_8_calltime;
+            case "xtracam9": return xtra_camera_pos_9_calltime;
+            case "xtracam10": return xtra_camera_pos_10_calltime;
             // sound transport
             case "soundmix": return sound_mixer_calltime;
             case "boomop": return boom_operator_calltime;
@@ -299,7 +325,6 @@ const CallSheet = (props ) => {
             case "trancap": return transport_captain_calltime;
             case "transpo1": return transport_manager_1_calltime;
             case "transpo2": return transport_manager_2_calltime;
-            // to here
             case "headrive": return head_driver_calltime;
             case "truck1": return truck1_calltime;
             case "truck2": return truck2_calltime;

@@ -154,6 +154,19 @@ const CallsheetCreate = () => {
       oth_camera_pos_1_calltime: "",
       oth_camera_pos_2_calltime: "",
       oth_camera_pos_3_calltime: "",
+      oth_camera_pos_4_calltime: "",
+      oth_camera_pos_5_calltime: "",
+      // xtra camera positions calltimes
+      xtra_camera_pos_1_calltime: "",
+      xtra_camera_pos_2_calltime: "",
+      xtra_camera_pos_3_calltime: "",
+      xtra_camera_pos_4_calltime: "",
+      xtra_camera_pos_5_calltime: "",
+      xtra_camera_pos_6_calltime: "",
+      xtra_camera_pos_7_calltime: "",
+      xtra_camera_pos_8_calltime: "",
+      xtra_camera_pos_9_calltime: "",
+      xtra_camera_pos_10_calltime: "",
       // casting
       casting_director_calltime: "",
       extras_casting_calltime: "",
@@ -331,6 +344,19 @@ const CallsheetCreate = () => {
         oth_camera_pos_1_calltime,
         oth_camera_pos_2_calltime,
         oth_camera_pos_3_calltime,
+        oth_camera_pos_4_calltime,
+        oth_camera_pos_5_calltime,
+        // xtra camera positions calltimes
+        xtra_camera_pos_1_calltime,
+        xtra_camera_pos_2_calltime,
+        xtra_camera_pos_3_calltime,
+        xtra_camera_pos_4_calltime,
+        xtra_camera_pos_5_calltime,
+        xtra_camera_pos_6_calltime,
+        xtra_camera_pos_7_calltime,
+        xtra_camera_pos_8_calltime,
+        xtra_camera_pos_9_calltime,
+        xtra_camera_pos_10_calltime,
         // casting
         casting_director_calltime,
         extras_casting_calltime,
@@ -496,6 +522,19 @@ const CallsheetCreate = () => {
     oth_camera_pos_1_calltime: unit_call,
     oth_camera_pos_2_calltime: unit_call,
     oth_camera_pos_3_calltime: unit_call,
+    oth_camera_pos_4_calltime: unit_call,
+    oth_camera_pos_5_calltime: unit_call,
+    // xtra camera
+    xtra_camera_pos_1_calltime: unit_call,
+    xtra_camera_pos_2_calltime: unit_call,
+    xtra_camera_pos_3_calltime: unit_call,
+    xtra_camera_pos_4_calltime: unit_call,
+    xtra_camera_pos_5_calltime: unit_call,
+    xtra_camera_pos_6_calltime: unit_call,
+    xtra_camera_pos_7_calltime: unit_call,
+    xtra_camera_pos_8_calltime: unit_call,
+    xtra_camera_pos_9_calltime: unit_call,
+    xtra_camera_pos_10_calltime: unit_call,
     // casting
     casting_director_calltime: unit_call,
     extras_casting_calltime: unit_call,
@@ -680,6 +719,19 @@ const CallsheetCreate = () => {
     formData.append("oth_camera_pos_1_calltime", oth_camera_pos_1_calltime);
     formData.append("oth_camera_pos_2_calltime", oth_camera_pos_2_calltime);
     formData.append("oth_camera_pos_3_calltime", oth_camera_pos_3_calltime);
+    formData.append("oth_camera_pos_4_calltime", oth_camera_pos_4_calltime);
+    formData.append("oth_camera_pos_5_calltime", oth_camera_pos_5_calltime);
+    // xtra camera
+    formData.append("xtra_camera_pos_1_calltime", xtra_camera_pos_1_calltime);
+    formData.append("xtra_camera_pos_2_calltime", xtra_camera_pos_2_calltime);
+    formData.append("xtra_camera_pos_3_calltime", xtra_camera_pos_3_calltime);
+    formData.append("xtra_camera_pos_4_calltime", xtra_camera_pos_4_calltime);
+    formData.append("xtra_camera_pos_5_calltime", xtra_camera_pos_5_calltime);
+    formData.append("xtra_camera_pos_6_calltime", xtra_camera_pos_6_calltime);
+    formData.append("xtra_camera_pos_7_calltime", xtra_camera_pos_7_calltime);
+    formData.append("xtra_camera_pos_8_calltime", xtra_camera_pos_8_calltime);
+    formData.append("xtra_camera_pos_9_calltime", xtra_camera_pos_9_calltime);
+    formData.append("xtra_camera_pos_10_calltime", xtra_camera_pos_10_calltime);
     // casting
     formData.append("casting_director_calltime", casting_director_calltime);
     formData.append("extras_casting_calltime", extras_casting_calltime);

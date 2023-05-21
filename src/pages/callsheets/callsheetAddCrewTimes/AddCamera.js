@@ -20,13 +20,32 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
     camera_pa_name, 
     oth_camera_pos_1_job, oth_camera_pos_1_name, 
     oth_camera_pos_2_job, oth_camera_pos_2_name, 
-    oth_camera_pos_3_job, 
-    oth_camera_pos_3_name,} = crewInfoOne || {};
+    oth_camera_pos_3_job, oth_camera_pos_3_name,
+    oth_camera_pos_4_job, oth_camera_pos_4_name, 
+    oth_camera_pos_5_job, oth_camera_pos_5_name,
+    // xtra camera
+    xtra_camera_pos_1_job, xtra_camera_pos_1_name, 
+    xtra_camera_pos_2_job, xtra_camera_pos_2_name, 
+    xtra_camera_pos_3_job, xtra_camera_pos_3_name,
+    xtra_camera_pos_4_job, xtra_camera_pos_4_name, 
+    xtra_camera_pos_5_job, xtra_camera_pos_5_name,
+    xtra_camera_pos_6_job, xtra_camera_pos_6_name, 
+    xtra_camera_pos_7_job, xtra_camera_pos_7_name, 
+    xtra_camera_pos_8_job, xtra_camera_pos_8_name,
+    xtra_camera_pos_9_job, xtra_camera_pos_9_name, 
+    xtra_camera_pos_10_job, xtra_camera_pos_10_name,
+     } = crewInfoOne || {};
 
   const { dop_calltime, camera_operator_calltime, camera_ass_1_calltime,
     camera_ass_2_calltime, dit_calltime, steadicam_calltime, camera_pa_calltime,
-    oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, 
-    oth_camera_pos_3_calltime,} = postData || {};
+    oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, oth_camera_pos_3_calltime,
+    oth_camera_pos_4_calltime, oth_camera_pos_5_calltime,
+    xtra_camera_pos_1_calltime, xtra_camera_pos_2_calltime,
+    xtra_camera_pos_3_calltime, xtra_camera_pos_4_calltime,
+    xtra_camera_pos_5_calltime, xtra_camera_pos_6_calltime,
+    xtra_camera_pos_7_calltime, xtra_camera_pos_8_calltime,
+    xtra_camera_pos_9_calltime, xtra_camera_pos_10_calltime,
+      } = postData || {};
 
   return (
     <div>
@@ -51,7 +70,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="dop_calltime"
                 value={dop_calltime}
                 onChange={handleChange}
@@ -82,7 +101,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="camera_operator_calltime"
                 value={camera_operator_calltime}
                 onChange={handleChange}
@@ -113,7 +132,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="camera_ass_1_calltime"
                 value={camera_ass_1_calltime}
                 onChange={handleChange}
@@ -144,7 +163,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="camera_ass_2_calltime"
                 value={camera_ass_2_calltime}
                 onChange={handleChange}
@@ -175,7 +194,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="dit_calltime"
                 value={dit_calltime}
                 onChange={handleChange}
@@ -206,7 +225,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="steadicam_calltime"
                 value={steadicam_calltime}
                 onChange={handleChange}
@@ -237,7 +256,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="camera_pa_calltime"
                 value={camera_pa_calltime}
                 onChange={handleChange}
@@ -268,7 +287,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="oth_camera_pos_1_calltime"
                 value={oth_camera_pos_1_calltime}
                 onChange={handleChange}
@@ -299,7 +318,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="oth_camera_pos_2_calltime"
                 value={oth_camera_pos_2_calltime}
                 onChange={handleChange}
@@ -330,13 +349,410 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
-                placeholder="Call"
+                placeholder=""
                 name="oth_camera_pos_3_calltime"
                 value={oth_camera_pos_3_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
             {errors?.oth_camera_pos_3_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* oth camera pos 4 */}
+         {oth_camera_pos_4_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {oth_camera_pos_4_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {oth_camera_pos_4_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="oth_camera_pos_4_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="oth_camera_pos_4_calltime"
+                value={oth_camera_pos_4_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.oth_camera_pos_4_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* oth camera pos 5 */}
+         {oth_camera_pos_5_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {oth_camera_pos_5_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {oth_camera_pos_5_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="oth_camera_pos_5_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="oth_camera_pos_5_calltime"
+                value={oth_camera_pos_5_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.oth_camera_pos_5_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera positions calltimes */}
+         {/* xtra camera pos 1 */}
+         {xtra_camera_pos_1_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_1_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_1_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_1_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_1_calltime"
+                value={xtra_camera_pos_1_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_1_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 2 */}
+         {xtra_camera_pos_2_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_2_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_2_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_2_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_2_calltime"
+                value={xtra_camera_pos_2_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_2_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 3 */}
+         {xtra_camera_pos_3_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_3_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_3_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_3_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_3_calltime"
+                value={xtra_camera_pos_3_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_3_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 4 */}
+         {xtra_camera_pos_4_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_4_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_4_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_4_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_4_calltime"
+                value={xtra_camera_pos_4_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_4_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 5 */}
+         {xtra_camera_pos_5_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_5_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_5_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_5_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_5_calltime"
+                value={xtra_camera_pos_5_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_5_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 6 */}
+         {xtra_camera_pos_6_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_6_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_6_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_6_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_6_calltime"
+                value={xtra_camera_pos_6_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_6_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 7 */}
+         {xtra_camera_pos_7_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_7_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_7_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_7_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_7_calltime"
+                value={xtra_camera_pos_7_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_7_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 8 */}
+         {xtra_camera_pos_8_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_8_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_8_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_8_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_8_calltime"
+                value={xtra_camera_pos_8_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_8_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 9 */}
+         {xtra_camera_pos_9_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_9_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_9_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_9_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_9_calltime"
+                value={xtra_camera_pos_9_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_9_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* xtra camera pos 10 */}
+         {xtra_camera_pos_10_job && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfoP} `}>
+                {xtra_camera_pos_10_job} </p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>
+                {xtra_camera_pos_10_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="xtra_camera_pos_10_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder=""
+                name="xtra_camera_pos_10_calltime"
+                value={xtra_camera_pos_10_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.xtra_camera_pos_10_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
