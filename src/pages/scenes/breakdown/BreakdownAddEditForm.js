@@ -3,7 +3,7 @@
  * The ability to edit a Scene number is going to be unavailable
    But am leaving it for now in case I inplement a function which 
    suddenly freezes all numbers but up to that point they 
-   were editable
+   were editable (I have just added a starter version of this)
    This would be availabe only for the high level user. */
 import React, { useEffect, useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
@@ -26,9 +26,11 @@ import { useLocationsContext,
   useSetLocationsContext } from "../../../contexts/Scene_chars_locs";
 import Important from "../info/Important";
 import Info from "../info/Info";
+import { useFreezeScenesContext } from "../../../contexts/ActContext";
 
 const BreakdownEditForm = () => {
     useRedirect();
+    const freeze = useFreezeScenesContext();
     const [errors, setErrors] = useState({});
     const [showAddLoc, setShowAddLoc] = useState(false);
     const locations = useLocationsContext();
@@ -125,6 +127,27 @@ const BreakdownEditForm = () => {
       {/* number title act */}
       <Row>
         {/* This may be removed */}
+        {freeze ? (
+           {number}
+        ) : (
+          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+        <Form.Group controlId="number" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              type="text"
+              name="number"
+              value={number}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.number?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        ) }
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
         <Form.Group controlId="number" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.Bold}`} >Number</Form.Label>

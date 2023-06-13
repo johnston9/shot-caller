@@ -8,13 +8,23 @@ export const SetActContext = createContext();
 export const useActContext = () => useContext(ActContext);
 export const useSetActContext = () => useContext(SetActContext);
 
+export const FreezeScenesContext = createContext();
+export const SetFreezeScenesContext = createContext();
+export const useFreezeScenesContext = () => useContext(ActContext);
+export const useSetFreezeScenesContext = () => useContext(SetActContext);
+
 export const ActProvider = ({ children }) => {
     const [act, setAct] = useState("");
+    const [freeze, setFreeze] = useState(false);
 
     return (
         <ActContext.Provider value={act}>
           <SetActContext.Provider value={setAct}>
+          <FreezeScenesContext.Provider value={freeze}>
+          <SetFreezeScenesContext.Provider value={setFreeze}>
             {children}
+            </SetFreezeScenesContext.Provider>
+            </FreezeScenesContext.Provider>
           </SetActContext.Provider>
         </ActContext.Provider>
     )
