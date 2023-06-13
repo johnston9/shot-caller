@@ -115,6 +115,15 @@ const ScenesPage = ({message, filter = "" }) => {
                     <Information  /> 
                     ) } 
           {/* Add Scene */}
+          <Row>
+          <Col>
+          <p>
+          The ability to change Scene numbers is available till a 
+          certain point. Of course doing so will result in all
+          work ending up in a different scene.
+          </p>
+          </Col>
+          </Row>
           <Row className='mt-0'>
             <Col className="text-center">
             <Button onClick={() => history.push('/scenes/create')} 
