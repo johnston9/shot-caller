@@ -26,11 +26,12 @@ import { useLocationsContext,
   useSetLocationsContext } from "../../../contexts/Scene_chars_locs";
 import Important from "../info/Important";
 import Info from "../info/Info";
-import { useFreezeScenesContext } from "../../../contexts/ActContext";
+import { useCrewInfoContext } from "../../../contexts/BaseCallContext";
 
 const BreakdownEditForm = () => {
     useRedirect();
-    const freeze = useFreezeScenesContext();
+    const crewInfoOne = useCrewInfoContext();
+    const freeze = crewInfoOne.freeze || "";
     const [errors, setErrors] = useState({});
     const [showAddLoc, setShowAddLoc] = useState(false);
     const locations = useLocationsContext();
@@ -126,9 +127,12 @@ const BreakdownEditForm = () => {
     <div className="mt-3 text-center px-2">
       {/* number title act */}
       <Row>
-        {/* This may be removed */}
+        {/* Freeze - This may be removed */}
         {freeze ? (
-           {number}
+          <Col className=" p-0 p-md-2" xs={4} >
+          <p>Number</p>
+          <p>{number}</p>
+          </Col>
         ) : (
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
         <Form.Group controlId="number" className={`${styles.Width2} `}  >
@@ -148,23 +152,6 @@ const BreakdownEditForm = () => {
           ))}
           </Col>
         ) }
-        <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-        <Form.Group controlId="number" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="number"
-              value={number}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.number?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
           <Form.Group controlId="title" className={`${styles.Width2} `} >
               <Form.Label className={`${styles.Bold}`}>Title</Form.Label>

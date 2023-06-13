@@ -1121,9 +1121,8 @@ const CrewInfoCreate = () => {
     try {
       const {data} = await axiosReq.post("/crewinfonew/", formData);
       setEditCrewInfo(true);
-      console.log(data);
       history.push(`/callsheets/`);
-      console.log(data)
+      console.log(data);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

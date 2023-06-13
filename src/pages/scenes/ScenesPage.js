@@ -15,15 +15,23 @@ import { useRedirect } from '../../hooks/Redirect';
 import appStyles from "../../App.module.css";
 import SceneTop from './SceneTop';
 import { Button } from 'react-bootstrap';
-import { useSetActContext, useSetFreezeScenesContext } from '../../contexts/ActContext';
+import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from "react-router-dom";
 import TopBox from '../../components/TopBox';
 import r1 from "../../assets/r1.png"; 
 import Information from './info/Information';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import Freeze from './Freeze';
+import { useCrewInfoContext } from '../../contexts/BaseCallContext';
 
 const ScenesPage = ({message, filter = "" }) => {
     useRedirect();
-    const setfreeze = useSetFreezeScenesContext();
+    const crewInfoOne = useCrewInfoContext();
+    const freeze = crewInfoOne.freeze || "";
+    // const freeze = true;
+    const currentUser = useCurrentUser();
+    const superAdmin = currentUser?.username === "superAdmin";
+    // const superAdmin = true;
     const [scenes, setScenes] = useState({results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
@@ -57,10 +65,6 @@ const ScenesPage = ({message, filter = "" }) => {
       setAct('three'); 
       history.push(`/act/scenes`);
 
-    };
-
-    const handleFreeze = () => {
-      setfreeze(true); 
     };
 
     useEffect(() => {
@@ -119,25 +123,22 @@ const ScenesPage = ({message, filter = "" }) => {
                   ) : (
                     <Information  /> 
                     ) } 
-          {/* Freeze Scene numbers - only to be sceen by the super admin */}
-          <Row>
-          <Col>
-          <p>
-          The ability to change Scene numbers is available till a 
-          certain point. You choose when and freeze it. Of course 
-          doing so will result in all
-          work ending up in a different scene's page so it can be 
-          frozen from the beginning if necessary.
-          </p>
-          </Col>
-          </Row>
-          <Row className='mb-3'>
-            <Col className="text-center mt-2" >
-              <Button className={`${btnStyles.Button}  ${btnStyles.Bright}`}
-                onClick={() => handleFreeze()}> Freeze Scene Numbers
-              </Button>
+          {/* Freeze component for the Super Admin only */}
+          { freeze ? (
+            ""
+          ) : (
+            <Row className='my-3'>
+            <Col className="text-center" md={{span: 10, offset: 1 }} >
+            <p>
+            Scene Numbers may be changed up to a certain point in production.
+            </p>
+            <p>
+            The production team will freeze the numbers at that point.
+            </p>
             </Col>
           </Row>
+          ) }
+          { superAdmin && <Freeze /> }
           {/* Add Scene */}
           <Row className='mt-0'>
             <Col className="text-center">

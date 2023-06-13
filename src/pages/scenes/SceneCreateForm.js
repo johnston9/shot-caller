@@ -27,14 +27,14 @@ function SceneCreateForm({topbox}) {
 
   const { number } = postData;
 
-    const history = useHistory()
-  
-    const handleChange = (event) => {
-      setPostData({
-        ...postData,
-        [event.target.name]: event.target.value,
-      });
-    };
+  const history = useHistory()
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const buttons = (
     <div className={`text-center pt-3 mb-3 pb-2 ${styles.White }`} >    
