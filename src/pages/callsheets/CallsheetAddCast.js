@@ -98,26 +98,26 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
           ...postData,
           [event.target.name]: event.target.value,
         });
-      };
+    };
 
-      const clear = () => {
-        /* Function to clear Character values */
-        setPostData({cast_number: "",
-        role: "",
-        username: "",
-        artist: "",
-        pickup_address: "",
-        make_up_time: "",
-        commute_time: "",
-        contact: "",
-        email: "",
-        swf: "",
-        pickup: "",
-        call: "",
-        hmw: "",
-        on_set: "",
-        diet: "",
-        inst: "",})
+    const clear = () => {
+      /* Function to clear Character values */
+      setPostData({cast_number: "",
+      role: "",
+      username: "",
+      artist: "",
+      pickup_address: "",
+      make_up_time: "",
+      commute_time: "",
+      contact: "",
+      email: "",
+      swf: "",
+      pickup: "",
+      call: "",
+      hmw: "",
+      on_set: "",
+      diet: "",
+      inst: "",})
     }
 
     useEffect(() => {
@@ -187,6 +187,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         }
       }
     }
+    
     const buttons = (
       <div className="mb-2 text-center">    
         <Button
