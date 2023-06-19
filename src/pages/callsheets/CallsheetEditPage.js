@@ -156,17 +156,6 @@ const CallsheetEditPage = () => {
     oth_camera_pos_3_calltime: "",
     oth_camera_pos_4_calltime: "",
     oth_camera_pos_5_calltime: "",
-    // xtra camera positions calltimes
-    xtra_camera_pos_1_calltime: "",
-    xtra_camera_pos_2_calltime: "",
-    xtra_camera_pos_3_calltime: "",
-    xtra_camera_pos_4_calltime: "",
-    xtra_camera_pos_5_calltime: "",
-    xtra_camera_pos_6_calltime: "",
-    xtra_camera_pos_7_calltime: "",
-    xtra_camera_pos_8_calltime: "",
-    xtra_camera_pos_9_calltime: "",
-    xtra_camera_pos_10_calltime: "",
     // casting
     casting_director_calltime: "",
     extras_casting_calltime: "",
@@ -223,7 +212,16 @@ const CallsheetEditPage = () => {
     add_pos_8_calltime: "",
     add_pos_9_calltime: "",
     add_pos_10_calltime: "",
-    all_other_add_positions_calltimes: "",
+    add_pos_11_calltime: "",
+    add_pos_12_calltime: "",
+    add_pos_13_calltime: "",
+    add_pos_14_calltime: "",
+    add_pos_15_calltime: "",
+    add_pos_16_calltime: "",
+    add_pos_17_calltime: "",
+    add_pos_18_calltime: "",
+    add_pos_19_calltime: "",
+    add_pos_20_calltime: "",
     // script/cater
     writer_calltime: "",
     catering_co_1_calltime: "",
@@ -346,17 +344,6 @@ const CallsheetEditPage = () => {
       oth_camera_pos_3_calltime,
       oth_camera_pos_4_calltime,
       oth_camera_pos_5_calltime,
-      // xtra camera positions calltimes
-      xtra_camera_pos_1_calltime,
-      xtra_camera_pos_2_calltime,
-      xtra_camera_pos_3_calltime,
-      xtra_camera_pos_4_calltime,
-      xtra_camera_pos_5_calltime,
-      xtra_camera_pos_6_calltime,
-      xtra_camera_pos_7_calltime,
-      xtra_camera_pos_8_calltime,
-      xtra_camera_pos_9_calltime,
-      xtra_camera_pos_10_calltime,
       // casting
       casting_director_calltime,
       extras_casting_calltime,
@@ -413,7 +400,17 @@ const CallsheetEditPage = () => {
       add_pos_8_calltime,
       add_pos_9_calltime,
       add_pos_10_calltime,
-      all_other_add_positions_calltimes,
+      // add-pos 2
+      add_pos_11_calltime,
+      add_pos_12_calltime,
+      add_pos_13_calltime,
+      add_pos_14_calltime,
+      add_pos_15_calltime,
+      add_pos_16_calltime,
+      add_pos_17_calltime,
+      add_pos_18_calltime,
+      add_pos_19_calltime,
+      add_pos_20_calltime,
       // script/cater
       writer_calltime,
       catering_co_1_calltime,
@@ -539,16 +536,6 @@ const CallsheetEditPage = () => {
           oth_camera_pos_3_calltime,
           oth_camera_pos_4_calltime,
           oth_camera_pos_5_calltime,
-          xtra_camera_pos_1_calltime,
-          xtra_camera_pos_2_calltime,
-          xtra_camera_pos_3_calltime,
-          xtra_camera_pos_4_calltime,
-          xtra_camera_pos_5_calltime,
-          xtra_camera_pos_6_calltime,
-          xtra_camera_pos_7_calltime,
-          xtra_camera_pos_8_calltime,
-          xtra_camera_pos_9_calltime,
-          xtra_camera_pos_10_calltime,
           casting_director_calltime,
           extras_casting_calltime,
           ad_1_calltime,
@@ -600,7 +587,16 @@ const CallsheetEditPage = () => {
           add_pos_8_calltime,
           add_pos_9_calltime,
           add_pos_10_calltime,
-          all_other_add_positions_calltimes,
+          add_pos_11_calltime,
+          add_pos_12_calltime,
+          add_pos_13_calltime,
+          add_pos_14_calltime,
+          add_pos_15_calltime,
+          add_pos_16_calltime,
+          add_pos_17_calltime,
+          add_pos_18_calltime,
+          add_pos_19_calltime,
+          add_pos_20_calltime,
           writer_calltime,
           catering_co_1_calltime,
           catering_co_2_calltime,
@@ -717,17 +713,6 @@ const CallsheetEditPage = () => {
           oth_camera_pos_3_calltime,
           oth_camera_pos_4_calltime,
           oth_camera_pos_5_calltime,
-          // xtra camera
-          xtra_camera_pos_1_calltime,
-          xtra_camera_pos_2_calltime,
-          xtra_camera_pos_3_calltime,
-          xtra_camera_pos_4_calltime,
-          xtra_camera_pos_5_calltime,
-          xtra_camera_pos_6_calltime,
-          xtra_camera_pos_7_calltime,
-          xtra_camera_pos_8_calltime,
-          xtra_camera_pos_9_calltime,
-          xtra_camera_pos_10_calltime,
           // casting
           casting_director_calltime,
           extras_casting_calltime,
@@ -784,7 +769,16 @@ const CallsheetEditPage = () => {
           add_pos_8_calltime,
           add_pos_9_calltime,
           add_pos_10_calltime,
-          all_other_add_positions_calltimes,
+          add_pos_11_calltime,
+          add_pos_12_calltime,
+          add_pos_13_calltime,
+          add_pos_14_calltime,
+          add_pos_15_calltime,
+          add_pos_16_calltime,
+          add_pos_17_calltime,
+          add_pos_18_calltime,
+          add_pos_19_calltime,
+          add_pos_20_calltime,
           // script/cater
           writer_calltime,
           catering_co_1_calltime,
@@ -931,17 +925,6 @@ const CallsheetEditPage = () => {
     formData.append("oth_camera_pos_3_calltime", oth_camera_pos_3_calltime);
     formData.append("oth_camera_pos_4_calltime", oth_camera_pos_4_calltime);
     formData.append("oth_camera_pos_5_calltime", oth_camera_pos_5_calltime);
-    // xtra camera
-    formData.append("xtra_camera_pos_1_calltime", xtra_camera_pos_1_calltime);
-    formData.append("xtra_camera_pos_2_calltime", xtra_camera_pos_2_calltime);
-    formData.append("xtra_camera_pos_3_calltime", xtra_camera_pos_3_calltime);
-    formData.append("xtra_camera_pos_4_calltime", xtra_camera_pos_4_calltime);
-    formData.append("xtra_camera_pos_5_calltime", xtra_camera_pos_5_calltime);
-    formData.append("xtra_camera_pos_6_calltime", xtra_camera_pos_6_calltime);
-    formData.append("xtra_camera_pos_7_calltime", xtra_camera_pos_7_calltime);
-    formData.append("xtra_camera_pos_8_calltime", xtra_camera_pos_8_calltime);
-    formData.append("xtra_camera_pos_9_calltime", xtra_camera_pos_9_calltime);
-    formData.append("xtra_camera_pos_10_calltime", xtra_camera_pos_10_calltime);
     // casting
     formData.append("casting_director_calltime", casting_director_calltime);
     formData.append("extras_casting_calltime", extras_casting_calltime);
@@ -998,7 +981,17 @@ const CallsheetEditPage = () => {
     formData.append("add_pos_8_calltime", add_pos_8_calltime);
     formData.append("add_pos_9_calltime", add_pos_9_calltime);
     formData.append("add_pos_10_calltime", add_pos_10_calltime);
-    formData.append("all_other_add_positions_calltimes", all_other_add_positions_calltimes);
+    // add 2
+    formData.append("add_pos_11_calltime", add_pos_11_calltime);
+    formData.append("add_pos_12_calltime", add_pos_12_calltime);
+    formData.append("add_pos_13_calltime", add_pos_13_calltime);
+    formData.append("add_pos_14_calltime", add_pos_14_calltime);
+    formData.append("add_pos_15_calltime", add_pos_15_calltime);
+    formData.append("add_pos_16_calltime", add_pos_16_calltime);
+    formData.append("add_pos_17_calltime", add_pos_17_calltime);
+    formData.append("add_pos_18_calltime", add_pos_18_calltime);
+    formData.append("add_pos_19_calltime", add_pos_19_calltime);
+    formData.append("add_pos_20_calltime", add_pos_20_calltime);
     // script/cater
     formData.append("writer_calltime", writer_calltime);
     formData.append("catering_co_1_calltime", catering_co_1_calltime);

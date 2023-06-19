@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
 
-const InfoPost = ({crewInfoOne, setShowPos}) => {
+const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
   useRedirect();
 
   const {editor_name, editor_email, editor_phone,
@@ -21,7 +21,17 @@ const InfoPost = ({crewInfoOne, setShowPos}) => {
     add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
     add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
     add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
-    all_other_add_positions } = crewInfoOne || {};
+    add_pos_11_job, add_pos_11_name, add_pos_11_email, add_pos_11_phone,
+    add_pos_12_job, add_pos_12_name, add_pos_12_email, add_pos_12_phone,
+    add_pos_13_job, add_pos_13_name, add_pos_13_email, add_pos_13_phone,
+    add_pos_14_job, add_pos_14_name, add_pos_14_email, add_pos_14_phone,
+    add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone,
+    add_pos_16_job, add_pos_16_name, add_pos_16_email, add_pos_16_phone,
+    add_pos_17_job, add_pos_17_name, add_pos_17_email, add_pos_17_phone,
+    add_pos_18_job, add_pos_18_name, add_pos_18_email, add_pos_18_phone,
+    add_pos_19_job, add_pos_19_name, add_pos_19_email, add_pos_19_phone,
+    add_pos_20_job, add_pos_20_name, add_pos_20_email, add_pos_20_phone,
+     } = crewInfoOne || {};
 
   return (
     <div>
@@ -89,6 +99,7 @@ const InfoPost = ({crewInfoOne, setShowPos}) => {
         </div>
         <div className={`py-2 ${styles.White }`}>
         </div>
+        {/* Position 1-10 */}
         <div className='px-md-5 pt-2'>
          {/* add pos 1 */}
          {add_pos_1_job && 
@@ -346,8 +357,251 @@ const InfoPost = ({crewInfoOne, setShowPos}) => {
           </div> )
          }
         </div>
+        {/* Position 11-20 */}
+        <div className='px-md-5 pt-2'>
+         {/* add pos 11 */}
+         {add_pos_11_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_11_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_11_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew11</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_11_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_11_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 12 */}
+         {add_pos_12_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_12_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_12_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew12</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_12_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_12_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 13 */}
+         {add_pos_13_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_13_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_13_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew13</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_13_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_13_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 14 */}
+         {add_pos_14_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_14_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_14_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew14</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_14_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_14_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 15 */}
+         {add_pos_15_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_15_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_15_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew15</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_15_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_15_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 16 */}
+         {add_pos_16_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_16_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_16_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew16</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_16_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_16_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 17 */}
+         {add_pos_17_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_17_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_17_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew17</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_17_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_17_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 18 */}
+         {add_pos_18_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_18_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_18_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew18</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_18_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_18_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 19 */}
+         {add_pos_19_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_19_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_19_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew19</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_19_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_19_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+         {/* add pos 20 */}
+         {add_pos_20_job && 
+          (<div className={`${styles.CrewInfoRow}mt-1 pb-3`}>
+          <div className='d-flex justify-content-center '>
+          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
+            ${styles.SubTitle2 }`} >{add_pos_20_job}</h5> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_20_name}  </p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p style={{fontStyle: 'italic'}} 
+                className={`${styles.CrewInfop} `}>addcrew20</p>
+            </Col>
+            <Col xs={6} md={3} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_20_phone}</p>
+            </Col>
+            <Col xs={6} md={3} >
+              <p className={`${styles.CrewInfop} `}>{add_pos_20_email}</p>
+            </Col>
+          </Row>
+          </div> )
+         }
+        </div>
     </div>
   )
 }
 
-export default InfoPost
+export default InfoPostAdditional

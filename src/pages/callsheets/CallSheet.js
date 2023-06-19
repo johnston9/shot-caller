@@ -138,17 +138,6 @@ const CallSheet = (props ) => {
           oth_camera_pos_3_calltime,
           oth_camera_pos_4_calltime,
           oth_camera_pos_5_calltime,
-          // xtra camera
-          xtra_camera_pos_1_calltime, 
-          xtra_camera_pos_2_calltime,
-          xtra_camera_pos_3_calltime, 
-          xtra_camera_pos_4_calltime,
-          xtra_camera_pos_5_calltime, 
-          xtra_camera_pos_6_calltime,
-          xtra_camera_pos_7_calltime, 
-          xtra_camera_pos_8_calltime,
-          xtra_camera_pos_9_calltime, 
-          xtra_camera_pos_10_calltime,
           // casting
           casting_director_calltime,
           extras_casting_calltime,
@@ -205,8 +194,17 @@ const CallSheet = (props ) => {
           add_pos_8_calltime,
           add_pos_9_calltime,
           add_pos_10_calltime,
-          // eslint-disable-next-line
-          all_other_add_positions_calltimes,
+          // add pos 11-20
+          add_pos_11_calltime,
+          add_pos_12_calltime,
+          add_pos_13_calltime,
+          add_pos_14_calltime,
+          add_pos_15_calltime,
+          add_pos_16_calltime,
+          add_pos_17_calltime,
+          add_pos_18_calltime,
+          add_pos_19_calltime,
+          add_pos_20_calltime,
           // script/cater
           writer_calltime,
           catering_co_1_calltime,
@@ -306,17 +304,6 @@ const CallSheet = (props ) => {
             case "addcam3": return oth_camera_pos_3_calltime;
             case "addcam4": return oth_camera_pos_4_calltime;
             case "addcam5": return oth_camera_pos_5_calltime;
-            // xtra camera
-            case "xtracam1": return xtra_camera_pos_1_calltime;
-            case "xtracam2": return xtra_camera_pos_2_calltime;
-            case "xtracam3": return xtra_camera_pos_3_calltime;
-            case "xtracam4": return xtra_camera_pos_4_calltime;
-            case "xtracam5": return xtra_camera_pos_5_calltime;
-            case "xtracam6": return xtra_camera_pos_6_calltime;
-            case "xtracam7": return xtra_camera_pos_7_calltime;
-            case "xtracam8": return xtra_camera_pos_8_calltime;
-            case "xtracam9": return xtra_camera_pos_9_calltime;
-            case "xtracam10": return xtra_camera_pos_10_calltime;
             // sound transport
             case "soundmix": return sound_mixer_calltime;
             case "boomop": return boom_operator_calltime;
@@ -395,6 +382,17 @@ const CallSheet = (props ) => {
             case "addcrew8": return add_pos_8_calltime;
             case "addcrew9": return add_pos_9_calltime;
             case "addcrew10": return add_pos_10_calltime;
+            // additional 11- 20
+            case "addcrew11": return add_pos_11_calltime;
+            case "addcrew12": return add_pos_12_calltime;
+            case "addcrew13": return add_pos_13_calltime;
+            case "addcrew14": return add_pos_14_calltime;
+            case "addcrew15": return add_pos_15_calltime;
+            case "addcrew16": return add_pos_16_calltime;
+            case "addcrew17": return add_pos_17_calltime;
+            case "addcrew18": return add_pos_18_calltime;
+            case "addcrew19": return add_pos_19_calltime;
+            case "addcrew20": return add_pos_20_calltime;
             // script /catering
             case "writer": return writer_calltime;
             case "cater1": return catering_co_1_calltime;

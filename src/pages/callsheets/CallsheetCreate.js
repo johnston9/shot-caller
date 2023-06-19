@@ -156,17 +156,6 @@ const CallsheetCreate = () => {
       oth_camera_pos_3_calltime: "",
       oth_camera_pos_4_calltime: "",
       oth_camera_pos_5_calltime: "",
-      // xtra camera positions calltimes
-      xtra_camera_pos_1_calltime: "",
-      xtra_camera_pos_2_calltime: "",
-      xtra_camera_pos_3_calltime: "",
-      xtra_camera_pos_4_calltime: "",
-      xtra_camera_pos_5_calltime: "",
-      xtra_camera_pos_6_calltime: "",
-      xtra_camera_pos_7_calltime: "",
-      xtra_camera_pos_8_calltime: "",
-      xtra_camera_pos_9_calltime: "",
-      xtra_camera_pos_10_calltime: "",
       // casting
       casting_director_calltime: "",
       extras_casting_calltime: "",
@@ -223,7 +212,16 @@ const CallsheetCreate = () => {
       add_pos_8_calltime: "",
       add_pos_9_calltime: "",
       add_pos_10_calltime: "",
-      all_other_add_positions_calltimes: "",
+      add_pos_11_calltime: "",
+      add_pos_12_calltime: "",
+      add_pos_13_calltime: "",
+      add_pos_14_calltime: "",
+      add_pos_15_calltime: "",
+      add_pos_16_calltime: "",
+      add_pos_17_calltime: "",
+      add_pos_18_calltime: "",
+      add_pos_19_calltime: "",
+      add_pos_20_calltime: "",
       // script/cater
       writer_calltime: "",
       catering_co_1_calltime: "",
@@ -346,17 +344,6 @@ const CallsheetCreate = () => {
         oth_camera_pos_3_calltime,
         oth_camera_pos_4_calltime,
         oth_camera_pos_5_calltime,
-        // xtra camera positions calltimes
-        xtra_camera_pos_1_calltime,
-        xtra_camera_pos_2_calltime,
-        xtra_camera_pos_3_calltime,
-        xtra_camera_pos_4_calltime,
-        xtra_camera_pos_5_calltime,
-        xtra_camera_pos_6_calltime,
-        xtra_camera_pos_7_calltime,
-        xtra_camera_pos_8_calltime,
-        xtra_camera_pos_9_calltime,
-        xtra_camera_pos_10_calltime,
         // casting
         casting_director_calltime,
         extras_casting_calltime,
@@ -413,7 +400,17 @@ const CallsheetCreate = () => {
         add_pos_8_calltime,
         add_pos_9_calltime,
         add_pos_10_calltime,
-        all_other_add_positions_calltimes,
+        // add-pos 2
+        add_pos_11_calltime,
+        add_pos_12_calltime,
+        add_pos_13_calltime,
+        add_pos_14_calltime,
+        add_pos_15_calltime,
+        add_pos_16_calltime,
+        add_pos_17_calltime,
+        add_pos_18_calltime,
+        add_pos_19_calltime,
+        add_pos_20_calltime,
         // script/cater
         writer_calltime,
         catering_co_1_calltime,
@@ -454,7 +451,7 @@ const CallsheetCreate = () => {
       } = postData;
     
   useEffect(() => {
-    /* Function to fetch the Dat data and the Day 
+    /* Function to fetch the Day data and the Day 
        Schedule Scenes data */
     const handleMount = async () => {
         try {
@@ -524,17 +521,6 @@ const CallsheetCreate = () => {
     oth_camera_pos_3_calltime: unit_call,
     oth_camera_pos_4_calltime: unit_call,
     oth_camera_pos_5_calltime: unit_call,
-    // xtra camera
-    xtra_camera_pos_1_calltime: unit_call,
-    xtra_camera_pos_2_calltime: unit_call,
-    xtra_camera_pos_3_calltime: unit_call,
-    xtra_camera_pos_4_calltime: unit_call,
-    xtra_camera_pos_5_calltime: unit_call,
-    xtra_camera_pos_6_calltime: unit_call,
-    xtra_camera_pos_7_calltime: unit_call,
-    xtra_camera_pos_8_calltime: unit_call,
-    xtra_camera_pos_9_calltime: unit_call,
-    xtra_camera_pos_10_calltime: unit_call,
     // casting
     casting_director_calltime: unit_call,
     extras_casting_calltime: unit_call,
@@ -591,7 +577,16 @@ const CallsheetCreate = () => {
     add_pos_8_calltime: unit_call,
     add_pos_9_calltime: unit_call,
     add_pos_10_calltime: unit_call,
-    all_other_add_positions_calltimes: unit_call,
+    add_pos_11_calltime: unit_call,
+    add_pos_12_calltime: unit_call,
+    add_pos_13_calltime: unit_call,
+    add_pos_14_calltime: unit_call,
+    add_pos_15_calltime: unit_call,
+    add_pos_16_calltime: unit_call,
+    add_pos_17_calltime: unit_call,
+    add_pos_18_calltime: unit_call,
+    add_pos_19_calltime: unit_call,
+    add_pos_20_calltime: unit_call,
     // script/cater
     writer_calltime: unit_call,
     catering_co_1_calltime: unit_call,
@@ -721,17 +716,6 @@ const CallsheetCreate = () => {
     formData.append("oth_camera_pos_3_calltime", oth_camera_pos_3_calltime);
     formData.append("oth_camera_pos_4_calltime", oth_camera_pos_4_calltime);
     formData.append("oth_camera_pos_5_calltime", oth_camera_pos_5_calltime);
-    // xtra camera
-    formData.append("xtra_camera_pos_1_calltime", xtra_camera_pos_1_calltime);
-    formData.append("xtra_camera_pos_2_calltime", xtra_camera_pos_2_calltime);
-    formData.append("xtra_camera_pos_3_calltime", xtra_camera_pos_3_calltime);
-    formData.append("xtra_camera_pos_4_calltime", xtra_camera_pos_4_calltime);
-    formData.append("xtra_camera_pos_5_calltime", xtra_camera_pos_5_calltime);
-    formData.append("xtra_camera_pos_6_calltime", xtra_camera_pos_6_calltime);
-    formData.append("xtra_camera_pos_7_calltime", xtra_camera_pos_7_calltime);
-    formData.append("xtra_camera_pos_8_calltime", xtra_camera_pos_8_calltime);
-    formData.append("xtra_camera_pos_9_calltime", xtra_camera_pos_9_calltime);
-    formData.append("xtra_camera_pos_10_calltime", xtra_camera_pos_10_calltime);
     // casting
     formData.append("casting_director_calltime", casting_director_calltime);
     formData.append("extras_casting_calltime", extras_casting_calltime);
@@ -788,7 +772,17 @@ const CallsheetCreate = () => {
     formData.append("add_pos_8_calltime", add_pos_8_calltime);
     formData.append("add_pos_9_calltime", add_pos_9_calltime);
     formData.append("add_pos_10_calltime", add_pos_10_calltime);
-    formData.append("all_other_add_positions_calltimes", all_other_add_positions_calltimes);
+    // add 2
+    formData.append("add_pos_11_calltime", add_pos_11_calltime);
+    formData.append("add_pos_12_calltime", add_pos_12_calltime);
+    formData.append("add_pos_13_calltime", add_pos_13_calltime);
+    formData.append("add_pos_14_calltime", add_pos_14_calltime);
+    formData.append("add_pos_15_calltime", add_pos_15_calltime);
+    formData.append("add_pos_16_calltime", add_pos_16_calltime);
+    formData.append("add_pos_17_calltime", add_pos_17_calltime);
+    formData.append("add_pos_18_calltime", add_pos_18_calltime);
+    formData.append("add_pos_19_calltime", add_pos_19_calltime);
+    formData.append("add_pos_20_calltime", add_pos_20_calltime);
     // script/cater
     formData.append("writer_calltime", writer_calltime);
     formData.append("catering_co_1_calltime", catering_co_1_calltime);

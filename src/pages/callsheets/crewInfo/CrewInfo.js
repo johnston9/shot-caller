@@ -25,7 +25,7 @@ import InfoMakeup from './crewInfoByDept/InfoMakeup';
 import InfoArt from './crewInfoByDept/InfoArt';
 import InfoSound from './crewInfoByDept/InfoSound';
 import InfoStunts from './crewInfoByDept/InfoStunts';
-import InfoPost from './crewInfoByDept/InfoPost';
+import InfoPostAdditional from './crewInfoByDept/InfoPostAdditional';
 import TopBox from '../../../components/TopBox';
 import Important from '../info/Important';
 
@@ -68,6 +68,22 @@ const CrewInfo = () => {
               ) : (
                 <Important  /> 
                 ) }  
+      <Row>
+      <Col>
+      <p>
+      The main Crew members are to be added in their Departments below.
+      </p>
+      <p>
+      They will all automatially be displayed on each Callsheet Create
+      form with an input for their Calltime and will be in the Callsheet 
+      with their personal call times displaying on top for each user.
+      </p>
+      <p>
+      Additional Crew members may be added individually in the ExtraCrewInfo
+      form below. These will not appear on the Callsheet nor have personal call times.
+      </p>
+      </Col>
+      </Row>
       {id ? (
         <Row className='mt-3'>
         <Col className='text-center'>
@@ -240,7 +256,7 @@ const CrewInfo = () => {
       {!showPos ? (
               ""
             ) : (
-              <InfoPost crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
+              <InfoPostAdditional crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
               ) } 
       {/* Info Wardrobe  */}
       {!showWar ? (

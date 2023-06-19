@@ -8,11 +8,14 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../../../styles/Callsheets.module.css";
+import btnStyles from "../../../styles/Button.module.css";
+import AdditionalPositions2 from "./AdditionalPositions2";
 
 const CrewPostAdditional = ({handleChange, postData, setShow}) => {
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
+  const [showAddPos2, setShowAddPos2] = useState(false);
 
   const {fx_name, fx_email, fx_phone,
     editor_name, editor_email, editor_phone,
@@ -26,7 +29,6 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
     add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
     add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
     add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
-    all_other_add_positions
   } = postData || {};
 
   return (
@@ -166,7 +168,7 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
-      {/* ADDITIONAL CREW POSITIONS */}
+      {/* ADDITIONAL CREW POSITIONS 1-10 */}
       <div className="pb-3">
       <h3 className={` mb-0 py-1 ${styles.SubTitle }`} >ADDITIONAL CREW POSITIONS </h3> 
       <div className={`py-2 ${styles.White }`}>
@@ -941,30 +943,28 @@ const CrewPostAdditional = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      {/* All Other Additional Crew Positions className={`${styles.Width} `} */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >All Other Additional Crew Positions</h5> 
+      </div>
+      {/* ADDITIONAL CREW POSITIONS 11-20 BUTTON */}
+      <div className={`py-2 ${styles.White }`}>
       <Row>
-          <Col xs={{span: 10, offset: 1 }} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="all_other_add_positions" className={`${styles.Width95} `} >
-              <Form.Label className={`${styles.Bold} `} >Enter: Position - Name - Email - Phone for each.</Form.Label>
-              <Form.Control 
-              className={`${styles.InputScene}`}
-              type="text"
-              as="textarea"
-              rows={3}
-              name="all_other_add_positions"
-              value={all_other_add_positions}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.all_other_add_positions?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
+      <Col className="text-center" >
+      <p>
+      Click to add Additional Crew Positions 11 - 20  if needed
+      </p>
+      <Button
+      className={`py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowAddPos2(showAddPos2 => !showAddPos2)} >Additional Positions 11 - 20
+    </Button>
+      </Col>
       </Row>
       </div>
+      {/* ADDITIONAL CREW POSITIONS 11-20 */}
+      {!showAddPos2 ? (
+                ""
+              ) : (
+                <AdditionalPositions2 setShow={setShowAddPos2} 
+                postData={postData} handleChange={handleChange}/> 
+                ) }
     </div>
   )
 }

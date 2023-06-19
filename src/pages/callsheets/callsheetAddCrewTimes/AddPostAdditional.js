@@ -23,7 +23,17 @@ const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowPos }) =
     add_pos_8_job, add_pos_8_name,
     add_pos_9_job, add_pos_9_name,
     add_pos_10_job, add_pos_10_name,
-    all_other_add_positions } = crewInfoOne || {};
+    add_pos_11_job, add_pos_11_name,
+    add_pos_12_job, add_pos_12_name,
+    add_pos_13_job, add_pos_13_name,
+    add_pos_14_job, add_pos_14_name,
+    add_pos_15_job, add_pos_15_name,
+    add_pos_16_job, add_pos_16_name,
+    add_pos_17_job, add_pos_17_name,
+    add_pos_18_job, add_pos_18_name,
+    add_pos_19_job, add_pos_19_name,
+    add_pos_20_job, add_pos_20_name,
+     } = crewInfoOne || {};
 
   const { editor_calltime, fx_calltime,
     add_pos_1_calltime,
@@ -36,7 +46,16 @@ const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowPos }) =
     add_pos_8_calltime,
     add_pos_9_calltime,
     add_pos_10_calltime,
-    all_other_add_positions_calltimes,
+    add_pos_11_calltime,
+    add_pos_12_calltime,
+    add_pos_13_calltime,
+    add_pos_14_calltime,
+    add_pos_15_calltime,
+    add_pos_16_calltime,
+    add_pos_17_calltime,
+    add_pos_18_calltime,
+    add_pos_19_calltime,
+    add_pos_20_calltime,
     } = postData || {};
 
   return (
@@ -421,27 +440,309 @@ const AddPostAdditional = ({crewInfoOne, handleChange, postData, setShowPos }) =
         </Row>
         </div> )
         }
-        {/*All Other Additional Positions */}
-        {all_other_add_positions && 
+        {/* Additional Posiitions 11-20 */}
+        {/* add pos 11 */}
+        {add_pos_11_job && 
         (<div className={`${styles.CrewInfoRow}`}>
-          <p className={`${styles.Bold} text-center`}>All Other Additional Positions</p>
         <Row className='text-center d-flex align-items-center' >
-          <Col xs={12} md={6} >
-            <p className={`${styles.CrewInfoP} `}>{all_other_add_positions} </p>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_11_job} </p>
           </Col>
-          <Col className="d-flex justify-content-center" xs={12} md={6} >
-          <Form.Group controlId="all_other_add_positions_calltimes" className={`my-1 ${styles.Width} `}>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_11_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_11_calltime" className={`my-1 ${styles.Width} `}>
               <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
               placeholder="Call"
-              name="all_other_add_positions_calltimes"
-              value={all_other_add_positions_calltimes}
+              name="add_pos_11_calltime"
+              value={add_pos_11_calltime}
               onChange={handleChange}
                   />
           </Form.Group>
-          {errors?.all_other_add_positions_calltimes?.map((message, idx) => (
+          {errors?.add_pos_11_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 12 */}
+        {add_pos_12_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_12_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_12_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_12_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_12_calltime"
+              value={add_pos_12_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_12_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 13 */}
+        {add_pos_13_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_13_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_13_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_13_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_13_calltime"
+              value={add_pos_13_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_13_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 14 */}
+        {add_pos_14_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_14_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_14_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_14_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_14_calltime"
+              value={add_pos_14_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_14_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 15 */}
+        {add_pos_15_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_15_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_15_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_5_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_15_calltime"
+              value={add_pos_15_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_15_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 16 */}
+        {add_pos_16_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_16_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_16_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_16_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_16_calltime"
+              value={add_pos_16_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_16_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 17 */}
+        {add_pos_17_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_17_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_17_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_17_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_17_calltime"
+              value={add_pos_17_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_17_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 18 */}
+        {add_pos_18_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_18_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_18_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_18_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_18_calltime"
+              value={add_pos_18_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_18_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 19*/}
+        {add_pos_19_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_19_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_19_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_19_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_19_calltime"
+              value={add_pos_19_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_19_calltime?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+        </Row>
+        </div> )
+        }
+        {/* add pos 20 */}
+        {add_pos_20_job && 
+        (<div className={`${styles.CrewInfoRow}`}>
+        <Row className='text-center d-flex align-items-center' >
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_20_job} </p>
+          </Col>
+          <Col xs={6} md={4} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_20_name} </p>
+          </Col>
+          <Col className="d-flex justify-content-center" xs={12} md={4} >
+          <Form.Group controlId="add_pos_20_calltime" className={`my-1 ${styles.Width} `}>
+              <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              placeholder="Call"
+              name="add_pos_20_calltime"
+              value={add_pos_20_calltime}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.add_pos_20_calltime?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>
