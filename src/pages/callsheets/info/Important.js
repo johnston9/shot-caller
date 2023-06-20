@@ -38,11 +38,16 @@ const Important = () => {
       members section from crew who will appear on the Callsheet.</p>
       <p>
       Extra Crew members may be added individually in the ExtraCrewInfo
-      forms. These will not appear on the Callsheet
-      and so will also not have personal call times. This form may be used for
+      forms on each Department Info page. These will not appear on the Callsheet
+      and so will also not have personal call times. </p>
+      <p>This form may be used for
       main crew members like producers, writers amd the accountants and payroll
       people. It is also for all the extra crew members that would traditionally
-      get call times from ther department heads.
+      get call times from ther department heads. 
+      </p>
+      <p>
+        You can choose to register them or not and give them any username
+        you wish then the follow the process outlined above.
       </p>
       <p>
       Crew members not accociated with a department may be added in the
