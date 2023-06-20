@@ -111,7 +111,7 @@ const ExtraCrewInfo = (props) => {
     <div className={`my-3 `}>
     <h4 className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} 
         style={{ textTransform: 'uppercase' }}>
-            EXTRA ${dept} POSITIONS <span className={`pt-1 float-right ${styles.Close }`} 
+            EXTRA {dept} POSITIONS <span className={`pt-1 float-right ${styles.Close }`} 
         onClick={() => setShow(false) } >Close</span>  </h4>
       {/* Form */}
       <div className={`mb-3 ${styles.Back3 }`}>
