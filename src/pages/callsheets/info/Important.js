@@ -36,12 +36,13 @@ const Important = () => {
       <p>Some of the links below contain two departments due to size.
         The Post/Additional link holds the Additional crew 
       members section from crew who will appear on the Callsheet.</p>
+      <p className="text-center">EXTRA CREW MEMBERS</p>
       <p>
       Extra Crew members may be added individually in the ExtraCrewInfo
       forms on each Department Info page. These will not appear on the Callsheet
       and so will also not have personal call times. </p>
       <p>This form may be used for
-      main crew members like producers, writers amd the accountants and payroll
+      main crew members like producers, writers and the accountants and payroll
       people. It is also for all the extra crew members that would traditionally
       get call times from ther department heads. 
       </p>
