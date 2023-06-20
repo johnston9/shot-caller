@@ -1,13 +1,17 @@
 /* Component in the CrewInfo page to display
    the Stunts Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoStunts = ({crewInfoOne, setShowStu}) => {
   useRedirect();
+  const [show, setShow] = useState(false);
 
   const {stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
     stunts_1_name, stunts_1_email, stunts_1_phone,
@@ -137,7 +141,22 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
           </Row>
           </div> )
          }
-        </div>
+      </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Stunt Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="stunt"
+                setShow={setShow}  /> 
+       ) } 
     </div>
   )
 }

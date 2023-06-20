@@ -1,13 +1,18 @@
 /* Component in the CrewInfo page to display
    the Art Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
 import styles from "../../../../styles/Callsheets.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoArt = ({crewInfoOne, setShowArt}) => {
   useRedirect();
+
+  const [show, setShow] = useState(false);
 
   const {production_designer_name, production_designer_email, production_designer_phone,
     art_director_name, art_director_email, art_director_phone,
@@ -290,7 +295,22 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Row>
       </div> )
       }
-        </div>
+      </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Art Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="art"
+                setShow={setShow}  /> 
+       ) }      
     </div>
   )
 }

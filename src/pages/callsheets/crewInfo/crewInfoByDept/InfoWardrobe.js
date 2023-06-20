@@ -1,13 +1,17 @@
 /* Component in the CrewInfo page to display
    the Wardrobe Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
   useRedirect();
+  const [show, setShow] = useState(false);
 
   const {costume_designer_name, costume_designer_email, costume_designer_phone,
     ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
@@ -184,7 +188,22 @@ const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
           </Row>
           </div> )
          }
-        </div>
+      </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Wardrobe Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="wardrobe"
+                setShow={setShow}  /> 
+       ) } 
     </div>
   )
 }

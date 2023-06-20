@@ -1,13 +1,17 @@
 /* Component in the CrewInfo page to display
    the Production Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const Production = ({crewInfoOne, setShowPro}) => {
   useRedirect();
+  const [show, setShow] = useState(false);
 
   const {producer_name, producer_email, producer_phone,
     director_name, director_email, director_phone,
@@ -371,6 +375,21 @@ const Production = ({crewInfoOne, setShowPro}) => {
       }
       </div>
       </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Production Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="production"
+                setShow={setShow}  /> 
+       ) } 
   </div>
   )
 }

@@ -1,13 +1,17 @@
 /* Component in the CrewInfo page to display
    the Camera Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
 import styles from "../../../../styles/Callsheets.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoCamera = ({crewInfoOne, setShowCam }) => {
   useRedirect();
+  const [show, setShow] = useState(false);
   const { dop_name, dop_email, dop_phone,
     camera_operator_name, camera_operator_email, camera_operator_phone,
     camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
@@ -295,6 +299,21 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </div> )
         }
       </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Camera Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="camera"
+                setShow={setShow}  /> 
+       ) } 
     </div>
   )
 }

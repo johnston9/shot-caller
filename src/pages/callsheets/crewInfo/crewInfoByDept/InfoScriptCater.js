@@ -1,13 +1,19 @@
 /* Component in the CrewInfo page to display
    the Script Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoSsript = ({crewInfoOne, setShowScr }) => {
   useRedirect();
+  const [show, setShow] = useState(false);
+  const [showCat, setShowCat] = useState(false);
+  const [showCraft, setShowCraft] = useState(false);
 
   const {writer_name, writer_email, writer_phone,
     catering_co_1_name, catering_co_1_email, catering_co_1_phone,
@@ -51,6 +57,21 @@ const InfoSsript = ({crewInfoOne, setShowScr }) => {
           </div> )
          }
       </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Script Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="script"
+                setShow={setShow}  /> 
+       ) } 
       {/* CATERING  */}
       <div className={`py-2 ${styles.White }`}>
       </div>
@@ -134,6 +155,21 @@ const InfoSsript = ({crewInfoOne, setShowScr }) => {
         </div> )
         }
       </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShowCat(showCat => !showCat)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Catering Dept Positions </Button>
+        </Col>
+      </Row>
+      {!showCat ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="catering"
+                setShow={setShowCat}  /> 
+       ) } 
       {/* CRAFT SERVICES */}
       <div className={`py-2 ${styles.White }`}>
       </div>
@@ -193,6 +229,21 @@ const InfoSsript = ({crewInfoOne, setShowScr }) => {
         </div> )
         }
       </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShowCraft(showCraft => !showCraft)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Craft Dept Positions </Button>
+        </Col>
+      </Row>
+      {!showCraft ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="craft"
+                setShow={setShowCraft}  /> 
+       ) } 
     </div>
   )
 }

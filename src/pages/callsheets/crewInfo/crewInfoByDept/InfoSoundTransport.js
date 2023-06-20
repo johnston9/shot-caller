@@ -1,13 +1,19 @@
 /* Component in the CrewInfo page to display
    the Sound Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoSound = ({crewInfoOne, setShowSou}) => {
   useRedirect();
+  const [show, setShow] = useState(false);
+  const [showTport, setShowTport] = useState(false);
+  const [showVeh, setShowVeh] = useState(false);
 
   const {sound_mixer_name, sound_mixer_email, sound_mixer_phone,
     boom_operator_name, boom_operator_email, boom_operator_phone,
@@ -131,7 +137,22 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
           </Row>
           </div> )
          }
-         </div>
+      </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Sound Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="sound"
+                setShow={setShow}  /> 
+       ) } 
          {/* TRANSPORT  */}
          <div className={`py-2 ${styles.White }`}>
         </div>
@@ -239,6 +260,21 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
           </div> )
          }
          </div>
+         {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShowTport(showTport => !showTport)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Transport Dept Positions </Button>
+        </Col>
+      </Row>
+      {!showTport ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="transport"
+                setShow={setShowTport}  /> 
+       ) } 
          {/* VEHICLES  */}
          <div className={`py-2 ${styles.White }`}>
         </div>
@@ -394,6 +430,21 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
           </div> )
          }
         </div>
+        {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShowVeh(showVeh => !showVeh)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Vehicles </Button>
+        </Col>
+      </Row>
+      {!showVeh ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="vehicles"
+                setShow={setShowVeh}  /> 
+       ) } 
     </div>
   )
 }

@@ -1,13 +1,18 @@
 /* Component in the CrewInfo page to display
    the Post Department and Additional Crew Positions crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
   useRedirect();
+  const [show, setShow] = useState(false);
+  const [showAddit, setShowAddit] = useState(false);
 
   const {editor_name, editor_email, editor_phone,
     fx_name, fx_email, fx_phone,
@@ -90,7 +95,22 @@ const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
           </Row>
           </div> )
          }
-        </div>
+      </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Post Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="post"
+                setShow={setShow}  /> 
+       ) } 
         <div className={`py-2 ${styles.White }`}>
         </div>
         <div className={`mt-0 text-center ${styles.SubTitle }`}>
@@ -341,21 +361,6 @@ const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
           </Row>
           </div> )
          }
-         
-         {/* all_other_add_positions */}
-         {all_other_add_positions && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-4 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >All Other Additional Positions</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={{span: 10, offset: 1}} >
-              <p className={`${styles.CrewInfoP} `}>{all_other_add_positions} </p>
-            </Col>
-          </Row>
-          </div> )
-         }
         </div>
         {/* Position 11-20 */}
         <div className='px-md-5 pt-2'>
@@ -600,6 +605,28 @@ const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
           </div> )
          }
         </div>
+        {/* Extra Positions Button */}
+      <Row>
+      <Col md={{span: 10, offset: 1}} >
+      <p>
+      Add all non Callsheet positions that do not fit in to any other Department here 
+      </p>
+      </Col>
+      </Row>
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShowAddit(showAddit => !showAddit)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Other Departments Positions </Button>
+        </Col>
+      </Row>
+      {!showAddit ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="other"
+                setShow={setShowAddit}  /> 
+       ) } 
     </div>
   )
 }

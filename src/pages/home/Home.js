@@ -17,6 +17,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const Home = () => {
     useRedirect();
+    // eslint-disable-next-line
     const currentUser = useCurrentUser();
     const crewInfoOne = useCrewInfoContext();
   const production_name = crewInfoOne.production_name || "";

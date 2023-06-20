@@ -1,13 +1,17 @@
 /* Component in the CrewInfo page to display
    the Makeup Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoMakeup = ({crewInfoOne, setShowMak }) => {
   useRedirect();
+  const [show, setShow] = useState(false);
 
   const {key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
     key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
@@ -235,7 +239,22 @@ const InfoMakeup = ({crewInfoOne, setShowMak }) => {
           </Row>
           </div> )
          }
-        </div>
+      </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Art Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="make-up"
+                setShow={setShow}  /> 
+       ) } 
     </div>
   )
 }

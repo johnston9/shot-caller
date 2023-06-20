@@ -1,13 +1,18 @@
 /* Component in the CrewInfo page to display
    the Electric Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoElectric = ({crewInfoOne, setShowEle}) => {
   useRedirect();
+  const [show, setShow] = useState(false);
+  const [showGrip, setShowGrip] = useState(false);
 
   const {gaffer_name, gaffer_email, gaffer_phone,
     best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
@@ -125,7 +130,22 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
           </Row>
           </div> )
          }
-        </div>
+      </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Electric Dept Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="electric"
+                setShow={setShow}  /> 
+       ) } 
         <div className={`py-2 ${styles.White }`}>
         </div>
         <div className={`mt-0 text-center ${styles.SubTitle }`}>
@@ -327,6 +347,21 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
           </div> )
         }
         </div>
+        {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShowGrip(showGrip => !showGrip)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Grip Positions </Button>
+        </Col>
+      </Row>
+      {!showGrip ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="grip"
+                setShow={setShowGrip}  /> 
+       ) } 
     </div>
   )
 }

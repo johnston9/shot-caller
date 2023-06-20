@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 
 import styles from "../../styles/Scene.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCrewInfoContext, useSetEditCrewInfoContext } from "../../contexts/BaseCallContext";

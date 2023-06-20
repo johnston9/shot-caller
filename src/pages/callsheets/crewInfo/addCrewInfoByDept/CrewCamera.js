@@ -12,7 +12,6 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
-  const [showXtraCam, setShowXtraCam] = useState(false);
 
   const {dop_name, dop_email, dop_phone,
     camera_operator_name, camera_operator_email, camera_operator_phone,

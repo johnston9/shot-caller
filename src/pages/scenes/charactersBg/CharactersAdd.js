@@ -17,7 +17,7 @@ const CharactersAdd = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const [showAdd, setShowAdd] = useState(false);
 
-    const { id, characters, setCharacters, setShowCharactersAdd } = props;
+    const { id, setCharacters, setShowCharactersAdd } = props;
     return ( 
         <div>
             <h5 style={{ textTransform: 'uppercase'}} className={`text-center mx-sm-5 mt-1 pl-5 py-1 ${styles.SubTitle }`}>

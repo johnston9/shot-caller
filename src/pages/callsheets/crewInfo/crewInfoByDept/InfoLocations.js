@@ -1,13 +1,17 @@
 /* Component in the CrewInfo page to display
    the Locations Department crew info */
-import React from 'react';
+import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../../styles/Callsheets.module.css";
+import Button from 'react-bootstrap/Button';
+import btnStyles from "../../../../styles/Button.module.css";
+import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoLocations = ({crewInfoOne, setShowLoc}) => {
   useRedirect();
+  const [show, setShow] = useState(false);
   
   const {location_mngr_name, location_mngr_email, location_mngr_phone,
     location_ass_1_name, location_ass_1_email, location_ass_1_phone,
@@ -158,6 +162,21 @@ const InfoLocations = ({crewInfoOne, setShowLoc}) => {
           </div> )
         }
       </div>
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra Locations Department Positions </Button>
+        </Col>
+      </Row>
+      {!show ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="location"
+                setShow={setShow}  /> 
+       ) } 
     </div>
   )
 }
