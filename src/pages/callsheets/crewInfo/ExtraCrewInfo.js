@@ -113,7 +113,9 @@ const ExtraCrewInfo = (props) => {
         style={{ textTransform: 'uppercase' }}>
             EXTRA {dept} POSITIONS <span className={`pt-1 float-right ${styles.Close }`} 
         onClick={() => setShow(false) } >Close</span>  </h4>
+      <h4 className="my-3 text center">These will not be on the Callsheet</h4>
       {/* Form */}
+      <p className="my-3 text center">Add Position</p>
       <div className={`mb-3 ${styles.Back3 }`}>
       <Form className="text-center" onSubmit={handleSubmit}>
       {/* position  */}
