@@ -606,19 +606,19 @@ const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
          }
         </div>
         {/* Extra Positions Button */}
-      <Row>
-      <Col md={{span: 10, offset: 1}} >
-      <p>
-      Add all non Callsheet positions that do not fit in to any other Department here 
-      </p>
-      </Col>
-      </Row>
       <Row className='mt-3'>
         <Col className='text-center'>
         <Button onClick={() => setShowAddit(showAddit => !showAddit)}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
           Extra Other Departments Positions </Button>
         </Col>
+      </Row>
+      <Row>
+      <Col className='text-center my-3' >
+      <p>
+      Add all non Callsheet positions that do not fit in to any other Department here 
+      </p>
+      </Col>
       </Row>
       {!showAddit ? (
           ""

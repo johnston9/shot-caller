@@ -54,10 +54,6 @@ const CallCast = (props) => {
     });
 
     const { 
-        // eslint-disable-next-line
-        id1,
-        // eslint-disable-next-line
-        day_id1,
         cast_number1,
         role1,
         artist1,

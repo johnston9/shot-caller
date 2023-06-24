@@ -73,7 +73,7 @@ const CrewInfo = () => {
         <Col className='text-center'>
         <Button onClick={() => history.push("crewinfo/edit/1")}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Add / Edit Info</Button>
+          Add / Edit Crew Members Info</Button>
         </Col>
         </Row>
       ) : (

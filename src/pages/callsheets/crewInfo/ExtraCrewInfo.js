@@ -7,13 +7,18 @@
    import Col from "react-bootstrap/Col";
    import styles from "../../../styles/Callsheets.module.css";
    import btnStyles from "../../../styles/Button.module.css";
+   import ExtraCrewMember from "./ExtraCrewMember"
    import Alert from "react-bootstrap/Alert";
    import { axiosReq } from "../../../api/axiosDefaults";
+   import { useCurrentUser } from "../../../contexts/CurrentUserContext";
 
 const ExtraCrewInfo = (props) => {
     const [errors, setErrors] = useState({});
     const [crew, setCrew] = useState({results: [] });
     const {setShow, dept} = props;
+    const currentUser = useCurrentUser();
+    const admin = currentUser?.username === "admin" ;
+    // const admin = true;
 
     const [postData, setPostData] = useState({
         name: "",
@@ -46,18 +51,20 @@ const ExtraCrewInfo = (props) => {
       })
       }
 
+      /* function to fetch the extra crew */
+      const handleMount = async () => {
+        try {
+            const { data } = await axiosReq.get(`/extracrewinfo/?departments=${dept}`)
+            setCrew(data);
+            console.log(data);
+        } catch (err) {
+            console.log(err);
+          }
+    }
+
       useEffect(() => {
-        /* function to fetch the extra crew */
-        const handleMount = async () => {
-            try {
-                const { data } = await axiosReq.get(`/extracrewinfo/?departments=${dept}`)
-                setCrew(data);
-                console.log(data);
-            } catch (err) {
-                console.log(err);
-              }
-        }
         handleMount();
+        // eslint-disable-next-line
         }, [dept])
     
       const handleSubmit = async (event) => {
@@ -94,7 +101,7 @@ const ExtraCrewInfo = (props) => {
       }
 
       const buttons = (
-        <div className="mb-2 text-center">    
+        <div className="mb-5 pb-3 text-center">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
             onClick={clear}
@@ -108,17 +115,16 @@ const ExtraCrewInfo = (props) => {
       );
 
   return (
-    <div className={`my-3 `}>
-    <h4 className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} 
+    <div className={`my-5 `}>
+    <h4 className={`mt-3 pl-5 py-0 text-center ${styles.SubTitle }`} 
         style={{ textTransform: 'uppercase' }}>
             EXTRA {dept} POSITIONS <span className={`pt-1 float-right ${styles.Close }`} 
         onClick={() => setShow(false) } >Close</span>  </h4>
-        <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
-      <h5 className={`text-center px-3 pt-1 ${styles.Red }`}>
-        These will not be on the Callsheet</h5>
+      <h5 className={`text-center px-3 py-3 ${styles.Red }`}>
+      Important: These Crew Members will not be on the Callsheet</h5>
       {/* Form */}
-      <p className="my-3 text-center">ADD NEW POSITION</p>
-      <div className={`mb-3 ${styles.Back3 }`}>
+      <div className={`mb-3 ${styles.Back3 } mx-3`}>
+      <p className={`my-3 text-center ${styles.SubTitle }`}>ADD NEW POSITION</p>
       <Form className="text-center" onSubmit={handleSubmit}>
       {/* position  */}
       <Row className="mx-0 my-3">
@@ -156,23 +162,6 @@ const ExtraCrewInfo = (props) => {
               </Alert>
             ))}
             </Col>
-          <Col className=" d-flex justify-content-centermx-0 px-1" xs={6} md={3}>
-          <Form.Group controlId="phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`} 
-              type="text"
-              name="phone"
-              value={phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
           <Col className="d-flex justify-content-center mx-0 px-1" xs={6} md={3}>
           <Form.Group controlId="email" className={`${styles.Width2} `} >
           <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
@@ -190,30 +179,42 @@ const ExtraCrewInfo = (props) => {
             </Alert>
           ))}
           </Col>
-        </Row>
+          <Col className=" d-flex justify-content-center mx-0 px-1" xs={6} md={3}>
+          <Form.Group controlId="phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`} 
+              type="text"
+              name="phone"
+              value={phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
         {buttons}
       </Form>
       </div>
       {/* crew */}
-      {/* CAST ADDED */}
+      <div className="text-center">
+      <span className={`my-3 text-center py-1 px-5 ${styles.SubTitle }`}>
+        POSITIONS</span>
+      </div>
       <Row className="py-2">
         <Col xs={12}>
           {crew.results.length ? (
-              crew.results.map((cr) => (
-                <Row key={cr.id} className='text-center' >
-                <Col xs={6} md={3} >
-                  <p className={`${styles.CrewInfoP} `}>{cr.position}</p>
-                </Col>
-                <Col xs={6} md={3} >
-                  <p className={`${styles.CrewInfop} `}>{cr.name} </p>
-                </Col>
-                <Col xs={6} md={3} >
-                <p className={`${styles.CrewInfop} `}>{cr.phone}</p>
-                </Col>
-                <Col xs={6} md={3} >
-                  <p className={`${styles.CrewInfop} `}>{cr.email}</p>
-                </Col>
-              </Row>
+              crew.results.map((crewone) => (
+              <ExtraCrewMember
+              key={crewone.id }
+              {...crewone }
+              handleMount={handleMount}
+              crewone={crewone}
+              admin={admin} />
               ))) : ("")}
         </Col>
         </Row>
