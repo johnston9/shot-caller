@@ -23,6 +23,7 @@ const RegisterUsers = () => {
   useRedirect();
   const crewInfoOne = useCrewInfoContext();
   const production_name = crewInfoOne.production_name || "";
+  const [showInfo, setShowInfo] = useState(false);
 
   const [signUpData, setSignUpData] = useState({
     username: "",
@@ -35,7 +36,7 @@ const RegisterUsers = () => {
 
   const [errors, setErrors] = useState({});
 
-  const history = useHistory()
+  const history = useHistory();
 
   const handleChange = (event) => {
     setSignUpData({
@@ -58,11 +59,20 @@ const RegisterUsers = () => {
     <Container className={styles.SignupBox} >
         {production_name ? (
             <TopBox work={production_name}
-                        title={"Sign Up" } />
+                        title={"Register Users" } />
           ) : (
             <TopBox work={`SHOT CALLER`}
-                        title={"Sign Up" } />
+                        title={"Register Users" } />
           ) }
+        {/* info */}
+        <Row className='mb-3'>
+            <Col xs={12} className='text-center' >           
+            <Button
+              className={`px-5 py-0 mt-1 ${btnStyles.Blue} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+            </Col>
+          </Row>
         <Row className={styles.Row}>
           <Col className="my-3 pr-0 pl-3 pl-md-4"
             xs={1} md={1}>
@@ -76,7 +86,7 @@ const RegisterUsers = () => {
             <Col md= {3} className="d-nome d-md-block"></Col>
             <Col xs={12} md={6} >
               <Container >
-                <h1 className={styles.Header}>sign up</h1>
+                <h1 className={styles.Header}>Register New Users</h1>
                 <Form onSubmit={handleSubmit} className={styles.Form} >
                 <Form.Group controlId="username" className="mb-2" >
                     <Form.Label className="d-none" >Username</Form.Label>
@@ -147,7 +157,7 @@ const RegisterUsers = () => {
                   className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}
                   type="submit"
                 >
-                  Sign up
+                  Register
                 </Button>
                 </div>
                 {errors.non_field_errors?.map((message, idx) => (
@@ -159,11 +169,6 @@ const RegisterUsers = () => {
               </Container>
             </Col>
             </Row>
-            <Container className="mt-3" >
-              <Link className={styles.Link} to="/signin">
-                Already have an account? <span>Sign in</span>
-              </Link>
-            </Container>
           </Col>
           <Col className={`my-3 pl-0 pr-3 pr-md-4`}
             xs={1} md={1} >
