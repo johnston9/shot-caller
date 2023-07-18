@@ -97,13 +97,6 @@ const Landing = () => {
                       </h5>
                   </div>
                   </Link>
-                  <Link to={`/signup`} >
-                  <div className={`px-2 mt-3 ${styles.Landingbox}`}>
-                      <h5 className="py-3 text-center">
-                        Sign up
-                      </h5>
-                  </div>
-                  </Link>
                 </Col>
               </Row>
             </Col>

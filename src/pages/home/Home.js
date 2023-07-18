@@ -42,6 +42,22 @@ const Home = () => {
       <Col className="my-3" xs={10} >
       {/* large */}
       <div className="d-none d-lg-block">
+      {/* register users for admin */}
+      {admin && (
+      <Row className="mt-0 mb-3 text-center">
+      <Col lg={2} ></Col>
+        <Col lg={8} >
+            <Link to={`/registerusers`} >
+            <div className={`px-3 py-1  ${styles.AdminBox}`}>
+            <h5 className={`text-center pt-0 `}>ADMIN</h5>
+              <div className={`${styles.Inner}`}>
+              <p className="mt-2">Register New Users </p>
+              </div>
+              </div>
+            </Link>
+        </Col>
+      </Row>
+      ) }
       <Row className="mt-0 mb-3 text-center">
       <Col lg={2} ></Col>
         <Col lg={8} >
@@ -236,6 +252,21 @@ const Home = () => {
       </div>
       {/* medium */}
       <div className="d-none d-md-block d-lg-none">
+      {admin && (
+      <Row className="mt-0 mb-3 text-center">
+      <Col md={2} ></Col>
+        <Col md={8} >
+            <Link to={`/registerusers`} >
+            <div className={`px-3 py-1  ${styles.AdminBox}`}>
+            <h5 className={`text-center pt-0 `}>ADMIN</h5>
+              <div className={`${styles.Inner}`}>
+              <p className="mt-2">Register New Users </p>
+              </div>
+              </div>
+            </Link>
+        </Col>
+      </Row>
+      ) }
       <Row className="mt-0 mb-3 text-center">
       <Col md={2} ></Col>
         <Col md={8} >
@@ -417,6 +448,21 @@ const Home = () => {
       </div>
       {/* mobile view */}
       <div className=" d-md-none mb-5 px-2">
+      {admin && (
+      <Row className="mt-0 mb-3 text-center">
+      <Col xs={2} ></Col>
+        <Col xs={8} >
+            <Link to={`/registerusers`} >
+            <div className={`px-3 py-1  ${styles.AdminBox}`}>
+            <h5 className={`text-center pt-0 `}>ADMIN</h5>
+              <div className={`${styles.Inner}`}>
+              <p className="mt-2">Register New Users </p>
+              </div>
+              </div>
+            </Link>
+        </Col>
+      </Row>
+      ) }
       <Row className="mt-0 mb-3 text-center">
       <Col xs={2} ></Col>
         <Col xs={8} >

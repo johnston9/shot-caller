@@ -1,4 +1,4 @@
-// Page for the Sign Up form
+// Page for admin to register new users
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
@@ -16,11 +16,11 @@ import Container from "react-bootstrap/Container";
 
 import TopBox from "../../components/TopBox";
 import axios from "axios";
-import { useRedirectSign } from "../../hooks/RedirectSign";
 import { useCrewInfoContext } from "../../contexts/BaseCallContext";
+import useRedirect from "../../hooks/Redirect";
 
-const SignUpForm = () => { 
-  useRedirectSign();
+const RegisterUsers = () => { 
+  useRedirect();
   const crewInfoOne = useCrewInfoContext();
   const production_name = crewInfoOne.production_name || "";
 
@@ -176,4 +176,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default RegisterUsers;

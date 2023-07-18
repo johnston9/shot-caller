@@ -137,11 +137,6 @@ const SignInForm = () => {
                   ))}
                 </Form>
               </Container>
-              <Container className="mt-3" >
-                <Link className={styles.Link} to="/signup">
-                  Register <span>Here</span>
-                </Link>
-              </Container>
                </Col>
              </Row>
           </Col>

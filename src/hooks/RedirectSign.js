@@ -1,6 +1,6 @@
 /* Fix needed - for the gmail mobile browser issue
- * useRedirectSign function to direct a logged in user to the landing page
-   when they go to the Signin or Sign up pages
+ * useRedirectSign function to direct a logged in user to the Home page
+   when they go to the Signin page
  * The catch block throws an error because of the mobile gmail 
    browser issue not allowing posts and returned a 404
    so it is commented out */
@@ -13,7 +13,7 @@ export const useRedirectSign = (userAuthStatus) => {
 
   useEffect(() => {
     /* Function to check if a user is logged in and redirect they
-      back to the landing page if so */
+      to the Home page if so */
     const handleMount = async () => {
       try {
         const data = await axios.post("/dj-rest-auth/token/refresh/");

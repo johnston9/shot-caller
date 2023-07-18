@@ -4,7 +4,6 @@ import PageNotFound from './components/PageNotFound';
 import "./api/axiosDefaults";
 import { Route, Switch } from "react-router-dom";
 import SignInForm from './pages/auth/SignInForm';
-import SignUpForm from './pages/auth/SignUpForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import SceneCreateForm from './pages/scenes/SceneCreateForm';
 import PostPage from './pages/posts/PostPage';
@@ -66,6 +65,7 @@ import LatestCreate from './pages/home/LatestCreate';
 import LatestPage from './pages/home/LatestPage';
 import LatestEdit from './pages/home/LatestEdit';
 import MoodboardCreate from './pages/moodboards/MoodboardCreate';
+import RegisterUsers from './pages/auth/RegisterUsers';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -87,10 +87,10 @@ function App() {
         {/* ------------------- MAP -------------- */}
         <Route exact path="/map" render={() => <Map />} />
         {/* --------------------AUTH --------- */}
-        <Route exact path="/signin" render={() => <SignInForm />} />
-        <Route exact path="/signup" render={() => <SignUpForm />} />
+        <Route exact path="/" render={() => <SignInForm />} />
+        <Route exact path="/registerusers" render={() => <RegisterUsers />} />
         {/* ---------------------HOME --------- */}
-        <Route exact path="/" render={() => <Landing />} />
+        {/* <Route exact path="/" render={() => <Landing />} /> */}
         <Route exact path="/home" render={() => <Home />} />
         {/* -------------------SCHEDULE ----------- */}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />

@@ -58,6 +58,15 @@ width: 100%;
     border-bottom: 1px solid #fff;
 }
 
+/* ADMIN LARGE */
+.AdminBox {
+    height: 66px;
+    background-color: #000;
+    color: #fafafa;
+}
+
+
+
 .HomeboxFind:hover {
     background-color: #d6ebf6;
     color: #000;
