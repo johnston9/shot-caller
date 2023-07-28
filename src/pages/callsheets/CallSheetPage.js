@@ -39,7 +39,7 @@ const CallSheetPage = () => {
                 axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                 axiosReq.get("dj-rest-auth/user/"),
             ])
-            // console.log(castcalldata);
+            console.log(user);
             setCallsheet(callsheetdata); 
             setCast(castcalldata);
             // Function to create an array of all the cast's emails 

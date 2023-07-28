@@ -266,7 +266,7 @@ const CallSheet = (props ) => {
             case "director": return director_calltime;
             case "producer": return producer_calltime;
             case "procoord": return pro_coordinator_calltime;
-            case "davey": return gaffer_calltime;
+            case "gaffer": return gaffer_calltime;
             case "unitpm": return upm_calltime;
             case "travelco": return travel_coordinator_calltime;
             case "produpa": return production_pa_calltime;
