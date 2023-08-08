@@ -23,8 +23,7 @@ const EditDeleteIcon = React.forwardRef(({ onClick }, ref) => (
     placement="top"
     overlay={<Tooltip>Edit/delete</Tooltip>}
     >
-  <i
-    className="fas fa-ellipsis-v"
+  <i className={`fas fa-ellipsis-v ${styles.Dots}`}
     ref={ref}
     onClick={(e) => {
       e.preventDefault();
