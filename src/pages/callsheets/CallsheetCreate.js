@@ -843,7 +843,7 @@ const CallsheetCreate = () => {
       {/* Unit call - Talent call - Shoot call */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="production_name" className={`${styles.Width} `}  >
+          <Form.Group controlId="unit_call" className={`${styles.Width} `}  >
               <Form.Label className={`${styles.Bold}`} >Unit Call</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
@@ -1830,9 +1830,10 @@ const buttons = (
           <span className="mr-5 pr-4">CREW CALLS </span>
         </h5> 
     </div>
+    {/* info buttons */}
     <div>
     <Row className="px-3 py-2">
-    <Col xs={6} >
+      <Col xs={6} >
       <Button
           className={`px-4 py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowInfoCrew(showInfoCrew => !showInfoCrew)} >INFO
@@ -1846,6 +1847,7 @@ const buttons = (
       </Col>
     </Row>
     </div>
+    {/* unit call button */}
     <div>
     <Row>
       <Col className="text-center" >
@@ -1856,6 +1858,32 @@ const buttons = (
       </Col>
     </Row>
     </div>
+    {/* info components */}
+    <div>
+    <Row>
+      <Col >
+      <div className="mt-3">
+      {!showImportantCrew ? (
+        ""
+            ) : (
+              <ImportantCrewCalls  /> 
+              ) } 
+      </div>
+      </Col>
+    </Row>
+    <Row>
+      <Col >
+      <div className="mt-3">
+      {!showInfoCrew ? (
+        ""
+            ) : (
+              <InfoCrewCalls  /> 
+              ) } 
+      </div>
+      </Col>
+    </Row>
+    </div>
+    {/* department buttons */}
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
         <Col xs={4} md={2} className='text-center'>
@@ -1872,7 +1900,7 @@ const buttons = (
             </Col>
         <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
           <p
-              className={`py-0 mb-0 ${styles.Button}`}
+              className={`py-0 mb-0 pl-5 ${styles.Button}`}
               onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
           </p>
         </Col>
@@ -1935,29 +1963,8 @@ const buttons = (
       </Row>  
       <p className={`mt-1 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
     </div>
+    {/* department components */}
     <div className={`mt-0 ${styles.Crew }`}>
-    <Row>
-      <Col >
-      <div className="mt-3">
-      {!showImportantCrew ? (
-        ""
-            ) : (
-              <ImportantCrewCalls  /> 
-              ) } 
-      </div>
-      </Col>
-    </Row>
-    <Row>
-      <Col >
-      <div className="mt-3">
-      {!showInfoCrew ? (
-        ""
-            ) : (
-              <InfoCrewCalls  /> 
-              ) } 
-      </div>
-      </Col>
-    </Row>
         {/* Add Production */}
         {!showPro ? (
           ""
@@ -2042,7 +2049,7 @@ const buttons = (
                 <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar}
                 postData={postData} handleChange={handleChange} /> 
                 ) } 
-        </div>
+    </div>
     {buttons}
     </Form>
     </div>

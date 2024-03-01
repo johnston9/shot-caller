@@ -1,4 +1,4 @@
-/* Form component to edit Cast items */
+/* Form component to edit the Cast items */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";

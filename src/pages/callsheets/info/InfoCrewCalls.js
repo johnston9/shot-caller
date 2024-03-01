@@ -14,9 +14,8 @@ const InfoCrewCalls = () => {
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
           <p>Clicking the SET UNIT CALL button will give every Crew member a call time
-            set to the Unit Call. This can then be changed individually for each Crew member </p>
-            <p> After clicking the Create button below the Crew Call Times can then be added or edited
-          on the Edit page.</p>
+            set to the Unit Call. This can then be changed individually for each 
+            Crew member on both the Create and Edit pages.</p>
          </div> 
         </Col>
       </Row>
