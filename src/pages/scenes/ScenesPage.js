@@ -19,6 +19,10 @@ import { useSetActContext } from '../../contexts/ActContext';
 import { useHistory } from "react-router-dom";
 import TopBox from '../../components/TopBox';
 import r1 from "../../assets/r1.png"; 
+import jb5 from "../../assets/jb5.png"; 
+import jb7 from "../../assets/jb7.png"; 
+import scenegood from "../../assets/scenegood.png"; 
+import scenegood2 from "../../assets/scenegood2.png"; 
 import Information from './info/Information';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Freeze from './Freeze';
@@ -203,8 +207,10 @@ const ScenesPage = ({message, filter = "" }) => {
                         key={scene.id}
                         {...scene} 
                         setScenes={setScenes}
-                        style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
-                          objectFit: "fill", width: 'auto', repeat: 'no-repeat' }}
+                        style={{ backgroundImage:  (`url(${r1})`), 
+                          objectFit: "cover", width: '100%', repeat: 'no-repeat' }}
+                        // style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
+                        //   objectFit: "cover", width: '100%', repeat: 'no-repeat' }}
                         />
                       </Col>
                 )}

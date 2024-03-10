@@ -63,7 +63,7 @@ const SceneTop = (props) => {
             </Link>
             </div>
             {/* Body */}
-            <Card.Body style={style} className="py-1 px-0" >
+            <Card.Body style={style} className="py-1 px-0 mx-0" >
                 <Link to={`/scenes/${id}`}>
                   <div className={` ${styles.Div50 } px-0`}>
                   {/* <span className={styles.Italics }>{title}</span> */}

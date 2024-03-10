@@ -31,7 +31,7 @@ const Home = () => {
             <TopBox work={`SHOT CALLER`} />
           ) }
         <Row className={`my-3 ${styles.Row}`}>
-        <Col className="my-3 pr-0 pl-3 pl-md-4"
+        <Col className="my-3 text-center"
           xs={1} md={1}
       >
         <Image
@@ -616,7 +616,7 @@ const Home = () => {
         </Row>
       </div>
       </Col>
-      <Col className={`my-3 pl-0 pr-3 pr-md-4`}
+      <Col className={`my-3 text-center`}
         xs={1} >
         <Image
           className={`${styles.FillerImagel}`}
