@@ -13,7 +13,7 @@ const BgInfoMob = (props) => {
             setShowEdit(showEdit => !showEdit)
           };
 
-          const handleDelete = async () => {
+        const handleDelete = async () => {
             try {
                 await axiosReq.delete(`/backgroundcallsnew/${id1}/`);
                 handleMount();

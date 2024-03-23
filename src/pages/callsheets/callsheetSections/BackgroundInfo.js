@@ -1,5 +1,5 @@
 /* Component in the Background component to display the Callsheet 
-   the extra background info  */
+    extra background info  */
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
