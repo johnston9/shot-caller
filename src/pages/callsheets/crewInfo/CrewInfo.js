@@ -102,7 +102,7 @@ const CrewInfo = () => {
                     onClick={() => setShowCam(showCam => !showCam)} > Camera
                   </p>
               </Col>
-          <Col xs={4} className='mx-0 pl-4 py-0' md={2}>
+          <Col xs={4} className='text-center' md={2}>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
