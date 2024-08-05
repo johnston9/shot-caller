@@ -5,119 +5,164 @@
 A web application for film, TV and video production.<br>
 
 ## Purpose
-Essentially the site consists of three elements. The first to introduce the User to its two software products, an "All in One Film, TV, and Video Production Platform" and "Budgeting Software". This element aims to give them about them clear information about the products and encourage them to create an account and purchase them. The second contains the User's account page which allows them to purchase products and view their already purchased ones. The third is the actual Budgeting Software. This is available as a separate product but is also included as part of the "All in One Platform".
+The app is an "All in One Film, TV, and Video Production Platform" that holds and runs the products pruchased on the home app "Shot caller Production". Its features are divided into the two sides of Film production, the Creative and the Production side. <br> 
+The Creative contains Scene Breakdowns, Character and Locations pages, Scene Workspaces, Shotlists, Moodboards and Index Cards.<br>
+The Production side contains Scheduling, Callsheets and Cast and Crew management.
+The platform also contains "Budgeting Software" but this in held on the Home site.
 <br>
 
 ## Usage
-To use the site to gather information the User can click on any link in the Home page or Navbar to take them to that feature's information page. <br>
-To use the site to view and purchase products the User first creates an account by clicking on any of the Register links then on their Account page they can select and purchase products and view all their already purchased products.<br>
+Once a User has purchased a product on the home app "Shot caller Production" they will be given the URL for where it is contained on this app, along with a Username and Password and anautomatic designation of the permission "superadmin". They can now register other Users who will receive an email containg their Username and password. They will also be able to allocate that User a specific permission, superadmin, admin, admincreative, crew or cast. Once registered the User can use the features they have access to by clicking on the feature links in the navbar or home page and follow the usage instructions in that feature's Info section.
+<br>
+Depending on their Premission the User will has access to use different features of the app. The superadmin and Admin have access to all aspects of the app Creative and the production side, the only difference is that the SuperAdmin can delete users and has access to the "Freeze" feature which allows them to freeze Scene numbers, so the cannot be changed, at a certain moment in Production. <br>
+The admincreative has working access to only the Creative side of production but can view all the rest while the crew permission has only working access to Scenes Workspaces and Departments but still can view all the rest. The cast has only access to the Callsheets. For a full breakdown of premissions see below.[Permissions]
+<br>
 
-When a User has purchased an "All in One Platform" they will be given a URL by email to a separate application where the actual software is held along with a username and password for it. The product will also now show in their account page along with the URL to the platform and a separate link to the product's Budgeting software.<br>
+## Installation and Requirements
 
-If a User just purchases the Budgeting software they will also receive a URL by email for it along with a username and password and the product will also now show in their account page along with the URL to it. To use the "Budgeting Software" the User clicks on the link to be taken to it and there they will find information on how to use it.<br>
-
-There is no installation needed or requirements for the "All in One Platform" or the "Budgeting Software". If a User has any issues they can contacts the site through the Contact Us page.<br>
-Go to Shot Caller to view the Platform App's Readme. [Shot Caller](https://)<br>
+There is no installation needed and no requirements for the app. If a User has any issues they can contacts the site through the Contact Us page on "Shot caller Production".<br>
+Go to Shot Caller Production to view the Home App's Readme. [Shot Caller Production](https://)<br>
 
 # Table of Content
 
-## User Experience (UX)
-The business goals are to establish the app as a professional film production software platform, to create an online presence and to entice Users to register and purchase products.<br>
-
-The User goals are to find out about the software, register an account, access their Account page to create and view their projects and use the "Budgeting Software".
-
-### Strategy Plane
-
-The site aims to make an immediately impact on the User as to the nature and quality of its products through its obvious inherent professional knowledge of the film making process encouraging them to explore it's features fully, create an account and purchase products.<br>
-
-The Budgeting Software is available as an individual product as a User will more readily open to purchase this smaller but necessary tool and seeing its quality be more open to trusting the All in One Platform.
-
-#### Brand Identity
-- Brand promise: A complete film production software platform.
-- Vision: Professional Creativity.
-- Mission: To combine the creative and production sides of filmmaking in one all-encompassing platform.
-- Values: Professional, Creative and Easy to Use.
-
-### Scope Plane
-
-The Scope was what was absolutely necessary for the app to deliver its basic functionality and what is the most enticing user friendly way of building this. For the Budgeting Software the Scope was simply to build the most comprenhensive and easy to use software possible.<br>
-
-### Structure Plane
-
-The site is structured so the user can navigate easily and in an intuitive way through the different features of the products. The user is taken on a journey from finding out about the two products, to purchasing products and finially using the Budgeting Software.
-
-### Skeleton Plane
-
-The interface is aesthetically functionally all the time creating a positive reaction in the user with every click making the user feel part of an productive and creative journey. 
-
-#### Design ?????????????????
-
- - The logo:
- - Colour Scheme: The site aims to be professional...
- - Typography: Playfair Display, a serif non-formal friendly font was used as the main font for the site. It has a sophisticated classy feel. Lato was used alongside it for more matter of fact details. And Playball, a very stylish, 
- - Imagery: Images of the actual software were used to show the user how the software looks and how it works.
-
-### User Stories
-
- - #### First Time User Goals
-
-1. As a First Time User, I want to learn what the site has to offer and how to use the site quickly.
-2. As a First Time User, I want to view information on the different features of the software.
-3. As a First Time User, I want to register an account easily.
-
- - #### Returning User Goals
-
-1. As a Returning User, I want to easily login and logout.
-2. As a Returning User, I want to view or update my profile.
-3. As a Returning User, I want to see what people are saying about the app and know if it is professional and trustworthy.
-4. As a Returning User, I want purchase products easily.
-
-  - #### Frequent User Goals
-
-1. As a Frequent User, I want to view my purchased products and projects.
-2. As a Frequent User, I want to easily recover my password if I forget it.
-3. As a Frequent User, I want to view my order history and payment details.
-4. As a Frequent User, I want to use the Budgeting Software,
-
-  - #### Owner/Admin User Goals 
-
-1. As the Owner/Admin User I want to edit product prices and details.
-2. As the Owner/Admin User I want to add testimonials and reviews to the Testimonial page.
-3. As the Owner/Admin User I want add new testimonial lines and other marketing and sales items to the landing page.
-8. As the Owner/Admin User I want to post or respond to messages in the Chat feature.
-9. As the Owner/Admin User I want control over material posted on the site for legal and other purposes.
-
-All User Stories testing is covered in the Testing page. [Testing](/TESTING.md)
-
-[Back to Table of Content](#table-of-content)
-
 ## Features
 
-### Budgeting Software
-- Create professional standard budgets easily, includes Globals.
+## The Production Features
 
-### Login/Register/Logout Pages and Security
-- The user can Register, Login and Logout easily and the entire software has both frontend and backend security.
+### User Management and registration
+- C.
 
-### The Home Page
-- This page primarily aims to give the User information about and sell the products. 
+### Scheduling
+- C.
 
-### The Creative, Production and Budgeting Features Explanatory Pages
-- These give brief concise overviews of each feature.
+### Callsheets
+- C.
 
-### The User's Account Page
-- This page holds all the User's projects and allows the userto create and purchase new projects.
+### Budgeting
+- C.
 
-### The Chat page
-- This is where the User can view or add Chats and Comments, it also hols all the Users Profiles.
+## The Creative Features
 
-### Stripe ????????????????????
-- Stripe is used for the payment system.
+### Scenes Breakdown
+
+### Scenes Workspaces
+
+### Scenes Shotlists
+
+### Scenes Costumes
+
+### Scenes Script
+
+### Scenes Storyboard
+
+### Character and locations pages
+- This.
+
+### Moodboards
+- This .
+
+### Index Cards 
+- n
+
+### Index Shots 
+- n
+
+### Departments
+- n
+
+## General Features
+
+### Login/Logout Pages and Security
+- The user can Login and Logout easily and the entire software has both frontend and backend security.
 
 ### Responsive Design
 - The site is responsive to all screen sizes and the images respond in proportion. 
 
-For the complete coverage of the Features Testing go to the Testing page. [Testing](/TESTING.md)
+All Features testing is covered in the Testing page. [Testing](/TESTING.md)
+
+[Back to Table of Content](#table-of-content)
+
+## Permission Types
+1: superadmin <br>
+2: admin<br>
+3: admincreative<br>
+4: crew<br>
+5: cast<br>
+
+- superadmin<br>
+
+Full access to all including registering and deleting users and deleting posts <br>
+Creating and editing/deleting own and other’s Posts in the Scenes workspaces<br>
+Creating and editing/deleting own and other’s Comments in the Scenes workspaces<br> 
+Access to the Freeze feature<br>
+Creating and editing/deleting Latest Buzz<br>
+Creating and editing/deleting Callsheets	<br>
+Creating and editing/ deleting Schedules<br>
+Creating and editing/ deleting Characters<br>
+Creating and editing/ deleting IndexCards<br>
+Creating and editing/ deleting IndexShots<br>
+Creating and editing/deleting Locations<br>
+Creating and editing/deleting Moodboads<br>
+Creating and editing/deleting Profiles<br>
+Creating and editing/deleting own and other’s Posts in the Departments<br>
+Creating and editing/deleting Scenes, which includes:<br>
+a/ Creating and editing Breakdowns, Character and Background<br>
+b/ Creating and editing costumes for Character<br>
+c/ Uploading Scripts and Storyboards<br>
+d/ Creating and editing Shotlists<br>
+
+- admin<br>
+
+Full access to all including registering users and deleting any posts but excluding deleting users<br>
+Creating and editing/deleting own and other’s Posts in the Scenes workspaces<br>
+Creating and editing/ deleting own and other’s Comments<br>
+Creating and editing/deleting Latest Buzz<br>
+Creating and editing/deleting Callsheets	<br>
+Creating and editing/ deleting Schedules<br>
+Creating and editing/ deleting Characters<br>
+Creating and editing/deleting IndexCards<br>
+Creating and editing/deleting IndexShots<br>
+Creating and editing/deleting Locations<br>
+Creating and editing/deleting Moodboads<br>
+Creating and editing/deleting Profiles<br>
+Creating and editing/deleting own and other’s Posts in the Departments<br>
+Creating and editing/deleting Scenes, which includes:<br>
+a/ Creating and editing Breakdowns, Character and Background<br>
+b/ Creating and editing costumes for Character<br>
+c/ Uploading Scripts and Storyboards<br>
+d/ Creating and editing Shotlists<br>
+	
+- admincreative<br>
+
+Limited access:<br>
+Creating and editing/deleting own Posts in the Scenes workspaces <br>
+Creating and editing/deleting own Comments<br>
+Creating and editing/deleting Latest Buzz<br>
+Creating and editing/deleting Characters<br>
+Creating and editing/deleting IndexCards<br>
+Creating and editing/deleting IndexShots<br>
+Creating and editing/deleting Locations<br>
+Creating and editing/deleting Moodboads<br>
+Creating and editing/deleting own and other’s Posts in the Departments<br>
+Creating and editing/deleting Scenes, which includes:<br>
+a/ Creating and editing Breakdowns, Character and Background<br>
+b/ Creating and editing costumes for Character<br>
+c/ Uploading Scripts and Storyboards<br>
+d/ Creating and editing Shotlists<br>
+Examples of crew who should have this are Director, DOP Designer, Costume Designer and crew whom the above wish to have it.<br>
+
+- crew<br>
+
+Limited access:<br>
+Creating and editing/ deleting own Posts in the Scenes workspaces <br>
+Creating and editing/ deleting own Comments in the Scenes workspaces <br>
+Creating and editing/deleting own and other’s Posts in the Departments<br>
+Ability to view all the rest<br>
+
+- cast<br>
+
+Limited access.<br> 
+Only access to Callsheets<br>
 
 ## Information Architecture ??????????????
 
@@ -231,7 +276,7 @@ A number of imports were used in Django Rest Frameworks and an inventory of thes
 [Back to Table of Content](#table-of-content)
 
 ## Testing
-- For the complete coverage of Features, User Stories and Lighthouse testing go to the Testing page.
+- For the complete coverage of Features and Lighthouse testing go to the Testing page.
 [Testing](/TESTING.md)
 
 All functionality was tested as it was being built to ensure there were no errors, that it did what it was meant to do and that all database errors were handled correctly. 
@@ -308,7 +353,7 @@ sqlparse==0.4.2 <br>
 ### Code
 
 - [Code Institute](https://codeinstitute.net/)
-  The code for the basic React/DRF set-up for the app from Code Institute. This includes the Requests, the Current User Context, the Profiles and the Posts, Likes and Followers in the Front End and the Models, Views and Serializers for all apps in the Back End.
+  The code for the basic React/DRF set-up for the app is from Code Institute. This includes the Requests, the Current User Context, the Profiles and the Posts, Likes and Followers in the Front End and the Models, Views and Serializers for all apps in the Back End.
 - [Django Rest Framework](https://www.django-rest-framework.org/)
   I referred to these throughout the project.
 - [stackoverflow.com]()
@@ -333,5 +378,75 @@ The photos used for the images in the site were obtained from:
 ### Acknowledgements
    
 - I would like to thank ...
+
+[Back to Table of Content](#table-of-content)
+
+## User Experience (UX)
+The business goals are to establish the app as a professional film production software platform, to create an online presence and to entice Users to register and purchase products.<br>
+
+The User goals are to find out about the software, register an account, access their Account page to create and view their projects and use the "Budgeting Software".
+
+### Strategy Plane
+
+The site aims to make an immediately impact on the User as to the nature and quality of its products through its obvious inherent professional knowledge of the film making process encouraging them to explore it's features fully, create an account and purchase products.<br>
+
+The Budgeting Software is available as an individual product as a User will more readily open to purchase this smaller but necessary tool and seeing its quality be more open to trusting the All in One Platform.
+
+#### Brand Identity
+- Brand promise: A complete film production software platform.
+- Vision: Professional Creativity.
+- Mission: To combine the creative and production sides of filmmaking in one all-encompassing platform.
+- Values: Professional, Creative and Easy to Use.
+
+### Scope Plane
+
+The Scope was what was absolutely necessary for the app to deliver its basic functionality and what is the most enticing user friendly way of building this. For the Budgeting Software the Scope was simply to build the most comprenhensive and easy to use software possible.<br>
+
+### Structure Plane
+
+The site is structured so the user can navigate easily and in an intuitive way through the different features of the products. The user is taken on a journey from finding out about the two products, to purchasing products and finially using the Budgeting Software.
+
+### Skeleton Plane
+
+The interface is aesthetically functionally all the time creating a positive reaction in the user with every click making the user feel part of an productive and creative journey. 
+
+#### Design ?????????????????
+
+ - The logo:
+ - Colour Scheme: The site aims to be professional...
+ - Typography: Playfair Display, a serif non-formal friendly font was used as the main font for the site. It has a sophisticated classy feel. Lato was used alongside it for more matter of fact details. And Playball, a very stylish, 
+ - Imagery: Images of the actual software were used to show the user how the software looks and how it works.
+
+### User Stories
+
+ - #### First Time User Goals
+
+1. As a First Time User, I want to learn what the site has to offer and how to use the site quickly.
+2. As a First Time User, I want to view information on the different features of the software.
+3. As a First Time User, I want to register an account easily.
+
+ - #### Returning User Goals
+
+1. As a Returning User, I want to easily login and logout.
+2. As a Returning User, I want to view or update my profile.
+3. As a Returning User, I want to see what people are saying about the app and know if it is professional and trustworthy.
+4. As a Returning User, I want purchase products easily.
+
+  - #### Frequent User Goals
+
+1. As a Frequent User, I want to view my purchased products and projects.
+2. As a Frequent User, I want to easily recover my password if I forget it.
+3. As a Frequent User, I want to view my order history and payment details.
+4. As a Frequent User, I want to use the Budgeting Software,
+
+  - #### Owner/Admin User Goals 
+
+1. As the Owner/Admin User I want to edit product prices and details.
+2. As the Owner/Admin User I want to add testimonials and reviews to the Testimonial page.
+3. As the Owner/Admin User I want add new testimonial lines and other marketing and sales items to the landing page.
+8. As the Owner/Admin User I want to post or respond to messages in the Chat feature.
+9. As the Owner/Admin User I want control over material posted on the site for legal and other purposes.
+
+All User Stories testing is covered in the Testing page. [Testing](/TESTING.md)
 
 [Back to Table of Content](#table-of-content)
