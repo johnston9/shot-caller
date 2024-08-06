@@ -29,54 +29,104 @@ Go to Shot Caller Production to view the Home App's Readme. [Shot Caller Product
 
 ## The Production Features
 
-### User Management and registration
-- C.
+### User Management and Registration
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Scheduling
-- C.
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Callsheets
-- C.
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Budgeting
-- C.
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ## The Creative Features
 
 ### Scenes Breakdown
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Scenes Workspaces
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Scenes Shotlists
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Scenes Costumes
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Scenes Script
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Scenes Storyboard
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Character and locations pages
-- This.
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Moodboards
-- This .
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Index Cards 
-- n
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Index Shots 
-- n
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ### Departments
-- n
+- The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
 ## General Features
 
-### Login/Logout Pages and Security
-- The user can Login and Logout easily and the entire software has both frontend and backend security.
+### User Login/Logout
+Description: A User can easily Log In and out <br>
+
+- User Case: User Log In <br>
+  
+  Action: The User can Login by entering ther Username and Password.<br>
+  Result: The User is logged in and their Profile image displays in their My Account link in the Navbar if they have uploaded one.<br>
+
+- User Case: User Log Out <br>
+
+  Action: The User can Logout by clicking the Log Out tab in the navbar.<br>
+  Result: The User is logged out and they are taken to the Sign In page.<br>
+
+### User Change/Recover Password
+Description: The User can change or recover their Password<br>
+
+- User Case: Change Password <br>
+
+  Action: The User can change their Password by clicking on the three dots on their Profile page and entering a new password.<br>
+  Result: The User receives an email advising them of their new Password.<br>
+
+- User Case: Forget Password <br>
+
+  Action: The User can recover their Password if forgotten by clicking on the "Forgot Password" link on the Sign In page then entering their email and a new password.<br>
+  Result: The User receives an email advising them of their new Password.<br>
+
+### Security by both Frontend and Backend checks
+Description: Security measures by both Frontend and Backend code checks prevent unauthorised users from accessing Project URLs they don't are not registered on.<br>
+
+- User Case: Unregistered User on any Project enters a Project URL<br>
+
+  Action: The User, unregistered on any Project in the app, enters a URL for a Project <br>
+  Result: A 401 displays for the User.<br>
+
+- User Case: User registered on one Project enters URL for a different one<br>
+
+- The User enters a URL for a Project they are not registered on despite being registered on another Project in the app.<br>
+  Result: A 401 displays for the User.
 
 ### Responsive Design
-- The site is responsive to all screen sizes and the images respond in proportion. 
+Description: The site is responsive to all screen sizes and the images respond in proportion. <br>
+
+- User Case: xxx<br>
+
+  Action: xxx.<br>
+  Result: vvv<br>
+
+  Action: xxx<br>
+  Result: The User <br>
 
 All Features testing is covered in the Testing page. [Testing](/TESTING.md)
 
