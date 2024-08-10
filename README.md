@@ -30,48 +30,57 @@ Go to Shot Caller Production to view the Home App's Readme. [Shot Caller Product
 ## The Production Features
 
 ### User Management and Registration
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Register new Crew and Cast Users and change their Permissions at any time.<br>
 
 ### Scheduling
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Create and view Schedules for a Shoot Day quickly by selecting Scenes from a menu which automatically adds their breakdown info to a stripboard.<br>
 
 ### Callsheets
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Create and view Callsheets for a Shoot Day with all the necessary information sections including, Locations with Google Maps, the day's Schedule, the Advanced Schedule for the next day, Crew and Cast individual calltimes and Department shoot info.<br>
 
 ### Budgeting
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Create Budgets with easily by clicking on the links to each section which display on to of the edit page along with theat sections current total top. Use Globals to quickly populate or change the crew Weeks lenght. View the Budget Page along with its Cover and Top pages. This feature is held on the Home app "Shot Caller Production".<br>
 
 ## The Creative Features
 
-### Scenes Breakdown
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+### Scenes Pages
+- Create and view all the Scenes on the Scenes page. For the TV version also contains Series and Episodes.<br>
 
-### Scenes Workspaces
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+### Scene Page
+- On click on each Scene that Scene's Scene page opens and contains the below features.
 
-### Scenes Shotlists
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+#### Scenes Breakdown
+- Create and view Scene information including Character and Background needed.
 
-### Scenes Costumes
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+#### Scenes Workspaces
+- Collaborate in each Scene's Workspace which is broken down into 12 Departments each holding a "Requirments" section where the Director can upload Posts detailing what is needed for the Scene, a "Workspace" section where the Director and the Department Crew can collaborate, explore and design the elements of the Scene and the "Finals" section where the finals choices can be held.<br>
 
-### Scenes Script
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+#### Scenes Shotlists
+- Create and view the Shotlist for the Scene.<br>
 
-### Scenes Storyboard
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+#### Scenes Costumes
+- In the Breakdown add and view the costume number for each Character. This will correspond to images of that Costume in that Character's Character page.<br>
 
-### Character and locations pages
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+#### Scenes Script
+- Add, change and view the Script pages for the Scene.<br>
+
+#### Scenes Storyboard
+- Add, change and view the Storyboard for the Scene.<br>
+
+### Character pages
+- Create and view a page for each Character which will include the Character's actor details and the Character's Costume and Makeup details and images.<br>
+
+### Locations pages
+- Create and view a page for each Location which will include Location details and images.<br>
 
 ### Moodboards
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Create and view interrelated Moodboards for Scenes, Characters, Location and other aspects of the project.<br>
 
 ### Index Cards 
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Create and view Index Cards for each Scene to get an overview of the project.<br>
 
 ### Index Shots 
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Create and view Index Shots, a series of Images relating to an aspect of the project to get an overview of it.<br>
 
 ### Departments
 - The admin and superadmin can register new Users and change their Permissions at any time.<br>
