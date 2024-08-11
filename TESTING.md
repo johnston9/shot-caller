@@ -1,6 +1,6 @@
 ## Features - Usage and Testing
 
-<p align="center"> <strong>Find the Budget for the projects in the Platform</strong></p>
+<p align="center"> <strong>xxx</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/home6.png" width="50%">
 </h2>
@@ -58,15 +58,82 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
   1. Click on the Shoot Day from the the selection displaying on the page or from the one if returned from the Calender search or Search Bar.<br>
   2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
 
-- User Case: Add Scenes to a Shoot Day.<br>
+- User Case: Add Schedule Scenes to a Shoot Day.<br>
 
   1. Click on the Shoot Day.<br>
   2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
   3. Click the the Add Scenes tab.<br>
-  4. The date is added.<br>
-  5. Add the day value.<br>
-  6. Press submit.<br>
-  7. The Day is created and added to the page.<br>
+  4. The Add Scenes page opens.<br>
+  5. Click on the Act One tab and the Scenes from Act One display.<br>
+  6. Click on the Act Two A tab and the Scenes from Act Two A display.<br>
+  7. Click on the Act Two B tab and the Scenes from Act Two B display.<br>
+  8. Click on the Act Three tab and the Scenes from Act Three display.<br>
+  9. Click on the Location tab and the Scenes display by Location.<br>
+  10. Input a Scene number, Title or Location to the Search Bar then click one of the above tabs and the Scenes in that tab group with the search value display.<br>
+  11. Select a Scene by clicking on it and a form whith the Scene number opens below.<br>
+  12. Input the Day Order Number and other values and press Add Scene. It is up to the User to input an unused Number or there will be more that one Day Order munber with the smae number.<br>
+  13. The Schedule Scene is added to the Stripboard.<br>
+
+- User Case: Edit Schedule Scene.<br>
+
+  1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
+  2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
+  3. Make changes and click Edit.<br>
+  4. The Stripboard opens with the changes to that Schedule Scene.<br>
+
+- User Case: Add a Next row with new info below a Schedule Scene.<br>
+
+  1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
+  2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
+  3. Input the new Next info in the Next input box and click Edit.<br>
+  4. The Stripboard opens with the new next Row displaying below that Schedule Scene.<br>
+
+- User Case: Re-Order a Schedule Scene.<br>
+
+  1. Click on the Re-Order button which currently displays the Scene's current order and the re-order form opens.<br>
+  2. Input the new Order info and click Create.<br>
+  3. The Stripboard opens with the Order for the Schedule Scene.<br>
+  4. Re-order all the following Schedule Scene in a similar manner.<br>
+
+<h2 align="center">
+<img src="documentation/readme-images/schedor1.png" width="50%">
+</h2>
+
+<h2 align="center">
+<img src="documentation/readme-images/schedor2.png" width="50%">
+</h2>
+
+- User Case: Add a Next row with new info below a Schedule Scene from the re-Order form.<br>
+
+  1. Click on the Re-Order button and the re-order form opens.<br>
+  2. Input the new Next info in the Next input box and click Create.<br>
+  3. The Stripboard opens with the new next Row displaying below that Schedule Scene.<br>
+
+<h2 align="center">
+<img src="documentation/readme-images/schednext1.png" width="50%">
+</h2>
+
+<h2 align="center">
+<img src="documentation/readme-images/schednext2.png" width="50%">
+</h2>
+
+- User Case: View the Schedule Scene Cast.<br>
+
+  1. Click on the Cast button.<br>
+  2. The Cast Info displays below.<br>
+
+<h2 align="center">
+<img src="documentation/readme-images/schedcast.png" width="50%">
+</h2>
+
+- User Case: View the Schedule Scene Info.<br>
+
+  1. Click on the Info button.<br>
+  2. The Info displays below.<br>
+
+<h2 align="center">
+<img src="documentation/readme-images/schedinfo.png" width="50%">
+</h2>
 
 ### Callsheets
 Description: xxxx<br>

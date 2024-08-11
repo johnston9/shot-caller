@@ -130,9 +130,10 @@ const ScheduleScene = (props) => {
             <ScheduleSceneOrder 
             id={id}
             day_order_number1={day_order_number}
+            scene_id1={scene_id}
             start_time1={start_time}
             end_time1={end_time}
-            new_info1={new_info} 
+            next1={next} 
             day_id1={day_id}
             setShowOrder={setShowOrder}
             setHasOrder={setHasOrder}
@@ -242,9 +243,10 @@ const ScheduleScene = (props) => {
             <ScheduleSceneOrder 
             id={id}
             day_order_number1={day_order_number}
+            scene_id1={scene_id}
             start_time1={start_time}
             end_time1={end_time}
-            new_info1={new_info} 
+            next1={next} 
             day_id1={day_id}
             setShowOrder={setShowOrder}
             setHasOrder={setHasOrder}

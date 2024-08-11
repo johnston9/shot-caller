@@ -40,7 +40,7 @@
   
 .Input {
   background: #ffffff;
-  border: 1px solid #f0f1f9;
+  border: 1px solid #999;
   box-sizing: border-box;
   border-radius: 2px;
   color: #7177a1;
@@ -49,8 +49,8 @@
 }
 
 .InputScene {
-  background: #ffffff;
-  border: 1px solid #f0f1f9;
+  background: #fff;
+  border: 1px solid #999;
    box-sizing: border-box;
    border-radius: 2px;
    color: #7177a1;
@@ -135,8 +135,12 @@
   color: #333;
 }
 
-.Drop i {
+.PostDropdown i {
   color: #000;
+}
+
+.Drop i {
+  color: #000 !important;
 }
 
 i {

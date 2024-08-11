@@ -12,17 +12,20 @@ import { axiosReq } from "../../../api/axiosDefaults";
 
 const SchedOrder = (props ) => {
   const [errors, setErrors] = useState({});
-  const {setShowOrder, setHasOrder, day_id1, day_order_number1, start_time1, end_time1, new_info1, id } = props;
+  const {setShowOrder, setHasOrder, scene_id1, day_id1, day_order_number1,
+    start_time1, end_time1, next1, id } = props;
 
   const [postData, setPostData] = useState({
+    scene_id: scene_id1,
     day_order_number: day_order_number1,
     start_time: start_time1,
     end_time: end_time1,
-    new_info: new_info1,
-    day_id: day_id1
+    next: next1,
+    day_id: day_id1,
+    scene_id: scene_id1,
   })
 
-  const { day_order_number, start_time, end_time, new_info, day_id } = postData;
+  const { next, day_order_number, scene_id, start_time, end_time, day_id } = postData;
 
   const handleChange = (event) => {
     setPostData({
@@ -36,10 +39,11 @@ const SchedOrder = (props ) => {
     const formData = new FormData();
 
     formData.append("day_id", day_id);
+    formData.append("scene_id", scene_id);
     formData.append("day_order_number", day_order_number);
     formData.append("start_time", start_time);
     formData.append("end_time", end_time);      
-    formData.append("new_info", new_info);
+    formData.append("next", next);
     try {
       await axiosReq.put(`/schedule/scenes/${id}/`, formData);
       console.log(formData.day_id);
@@ -111,22 +115,22 @@ const SchedOrder = (props ) => {
         </Col>
       </Row>
       <hr className="d-none d-md-block"/>
-      {/* Next/New-info */}
+      {/* Next */}
       <Row className="text-center">
           <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 2 }}>
-            <Form.Group controlId="new_info" className="mb-2" >
-                <Form.Label  >Next Info</Form.Label>
+            <Form.Group controlId="next" className="mb-2" >
+                <Form.Label  >Next</Form.Label>
                 <Form.Control 
                     className={styles.InputScene}
                     type="text"
-                    name="new_info"
+                    name="next"
                     as="textarea"
                     rows={2}
-                    value={new_info}
+                    value={next}
                     onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.new_info?.map((message, idx) => (
+            {errors?.next?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -138,10 +142,10 @@ const SchedOrder = (props ) => {
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => setShowOrder(false)}
             >
-              cancel
+              Cancel
             </Button>
             <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-              create
+              Create
             </Button>
           </div>
           </Col>
