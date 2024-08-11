@@ -1,9 +1,5 @@
 ## Features - Usage and Testing
 
-### Budgeting Software
-
-- Find the Budget Page for the "All in One Platform" or the separate "Budgeting Software" easily on the User Account page.
-
 <p align="center"> <strong>Find the Budget for the projects in the Platform</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/home6.png" width="50%">
@@ -30,15 +26,47 @@ Description: The admin and superadmin can register new Users and change their Pe
   Result: The User receives an email advising them of their new Permission.<br>
 
 ### Scheduling
-Description: xxxx<br>
+Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Creating Days then selecting Scenes from a menu which automatically adds the Scene's breakdown info to a stripboard.<br>
 
-- User Case: xxx<br>
+- User Case: View all Shoot Days.<br>
 
-  Action: xxx.<br>
-  Result: vvv<br>
+  1. Click on the Schedules link in the Home page or from the Navbar.<br>
+  2. The Schedules page displays with all the Shoot days.<br>
 
-  Action: xxx<br>
-  Result: The User <br>
+- User Case: Create a Shoot Day.<br>
+
+  1. On the Schedules page click on the "Create Day" tab.<br>
+  2. The Create Day form displays. <br>
+  3. Select the date from the calender.<br>
+  4. The date is added.<br>
+  5. Add the day value.<br>
+  6. Press submit.<br>
+  7. The Day is created and added to the page.<br>
+
+- User Case: Find a Shoot Day in the Calender.<br>
+
+  1. Click on the desired date in the calender.<br>
+  2. The Shoot Day opens if one has been created for that date. <br>
+
+- User Case: Find a Shoot Day from the Search Bar.<br>
+
+  1. Enter the Day Number in the Search Bar and Submit.<br>
+  2. The Shoot Day opens if one has been created for that Number. <br>
+
+- User Case: View the Shoot Day and its Stripboard.<br>
+
+  1. Click on the Shoot Day from the the selection displaying on the page or from the one if returned from the Calender search or Search Bar.<br>
+  2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
+
+- User Case: Add Scenes to a Shoot Day.<br>
+
+  1. Click on the Shoot Day.<br>
+  2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
+  3. Click the the Add Scenes tab.<br>
+  4. The date is added.<br>
+  5. Add the day value.<br>
+  6. Press submit.<br>
+  7. The Day is created and added to the page.<br>
 
 ### Callsheets
 Description: xxxx<br>
@@ -51,16 +79,8 @@ Description: xxxx<br>
   Action: xxx<br>
   Result: The User <br>
 
-### Budgeting
-Description: xxxx<br>
-
-- User Case: xxx<br>
-
-  Action: xxx.<br>
-  Result: vvv<br>
-
-  Action: xxx<br>
-  Result: The User <br>
+### Budgeting 
+- As this feature is held on the "Shot Caller Production" home app the Budgeting testing is on it's Testing page. [Testing](https://github.com/johnston9/shot-caller-production/blob/main/TESTING.md)<br>
 
 ## The Creative Features
 Description: xxxx<br>
@@ -210,7 +230,7 @@ Description: A User can easily Log In and out <br>
   Result: The User is logged out and they are taken to the Sign In page.<br>
 
 ### User Change/Recover Password
-Description: The User can change or recover their Password<br>
+Description: The User can change or recover their Password.<br>
 
 - User Case: Change Password <br>
 

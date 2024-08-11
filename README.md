@@ -5,23 +5,23 @@
 A web application for film, TV and video production.<br>
 
 ## Purpose
-The app is an "All in One Film, TV, and Video Production Platform" that holds and runs the products pruchased on the home app "Shot caller Production". Its features are divided into the two sides of Film production, the Creative and the Production side. <br> 
+The app is an "All in One Film, TV, and Video Production Platform" that holds and runs the products purchased on "Shot caller Production". Its features are divided into the two sides of Film production, the Creative and the Production side. <br> 
 The Creative contains Scene Breakdowns, Character and Locations pages, Scene Workspaces, Shotlists, Moodboards and Index Cards.<br>
 The Production side contains Scheduling, Callsheets and Cast and Crew management.
 The platform also contains "Budgeting Software" but this in held on the Home site.
 <br>
 
 ## Usage
-Once a User has purchased a product on the home app "Shot caller Production" they will be given the URL for where it is contained on this app, along with a Username and Password and anautomatic designation of the permission "superadmin". They can now register other Users who will receive an email containg their Username and password. They will also be able to allocate that User a specific permission, superadmin, admin, admincreative, crew or cast. Once registered the User can use the features they have access to by clicking on the feature links in the navbar or home page and follow the usage instructions in that feature's Info section.
+Once a User has purchased a product on "Shot caller Production" they will be given the URL for where it is contained on this app, along with a Username and Password and anautomatic designation of the permission "superadmin". They can now register other Users who will receive an email containg their Username and password. They will also be able to allocate that User a specific permission, superadmin, admin, admincreative, crew or cast. Once registered the User can use the features they have access to by clicking on the feature links in the navbar or home page and follow the usage instructions in that feature's Info section.
 <br>
 Depending on their Premission the User will has access to use different features of the app. The superadmin and Admin have access to all aspects of the app Creative and the production side, the only difference is that the SuperAdmin can delete users and has access to the "Freeze" feature which allows them to freeze Scene numbers, so the cannot be changed, at a certain moment in Production. <br>
-The admincreative has working access to only the Creative side of production but can view all the rest while the crew permission has only working access to Scenes Workspaces and Departments but still can view all the rest. The cast has only access to the Callsheets. For a full breakdown of premissions see below.[Permissions]
+The admincreative has working access to only the Creative side of production but can view all the rest while the crew permission has only working access to Scenes Workspaces and Departments but still can view all the rest. The cast has only access to the Callsheets. For a full breakdown of premissions see below.[Permissions](#permission-types)
 <br>
 
 ## Installation and Requirements
 
-There is no installation needed and no requirements for the app. If a User has any issues they can contacts the site through the Contact Us page on "Shot caller Production".<br>
-Go to Shot Caller Production to view the Home App's Readme. [Shot Caller Production](https://)<br>
+There is no installation needed and no requirements for the app. If a User has any issues they can contact the site through the Contact Us page on "Shot caller Production".<br>
+View Shot Caller Production's Readme. [Shot Caller Production](https://github.com/johnston9/shot-caller-production/blob/main/README.md)<br>
 
 # Table of Content
 
@@ -39,7 +39,7 @@ Go to Shot Caller Production to view the Home App's Readme. [Shot Caller Product
 - Create and view Callsheets for a Shoot Day with all the necessary information sections including, Locations with Google Maps, the day's Schedule, the Advanced Schedule for the next day, Crew and Cast individual calltimes and Department shoot info.<br>
 
 ### Budgeting
-- Create Budgets with easily by clicking on the links to each section which display on to of the edit page along with theat sections current total top. Use Globals to quickly populate or change the crew Weeks lenght. View the Budget Page along with its Cover and Top pages. This feature is held on the Home app "Shot Caller Production".<br>
+- Create Budgets with easily by clicking on the links to each section which display on to of the edit page along with theat sections current total top. Use Globals to quickly populate or change the crew Weeks length. View the Budget Page along with its Cover and Top pages. This feature is held on the Home app "Shot Caller Production".<br>
 
 ## The Creative Features
 
@@ -47,7 +47,7 @@ Go to Shot Caller Production to view the Home App's Readme. [Shot Caller Product
 - Create and view all the Scenes on the Scenes page. For the TV version also contains Series and Episodes.<br>
 
 ### Scene Page
-- On click on each Scene that Scene's Scene page opens and contains the below features.
+- On clicking on each Scene that Scene's Scene page opens and contains the below features.
 
 #### Scenes Breakdown
 - Create and view Scene information including Character and Background needed.
@@ -83,61 +83,23 @@ Go to Shot Caller Production to view the Home App's Readme. [Shot Caller Product
 - Create and view Index Shots, a series of Images relating to an aspect of the project to get an overview of it.<br>
 
 ### Departments
-- The admin and superadmin can register new Users and change their Permissions at any time.<br>
+- Create and view Posts in each individual Department for issues not specifically related to the work in the Scenes Workspace.<br>
 
 ## General Features
 
 ### User Login/Logout
-Description: A User can easily Log In and out <br>
-
-- User Case: User Log In <br>
-  
-  Action: The User can Login by entering ther Username and Password.<br>
-  Result: The User is logged in and their Profile image displays in their My Account link in the Navbar if they have uploaded one.<br>
-
-- User Case: User Log Out <br>
-
-  Action: The User can Logout by clicking the Log Out tab in the navbar.<br>
-  Result: The User is logged out and they are taken to the Sign In page.<br>
+- Login easily on the Sign In page and Log Out easily with the Sign Out link in the Navbar.
 
 ### User Change/Recover Password
-Description: The User can change or recover their Password<br>
+- The User can change their password on their Profile page and if they have forgottin it they can recover it by a link on the Sign In page. 
 
-- User Case: Change Password <br>
-
-  Action: The User can change their Password by clicking on the three dots on their Profile page and entering a new password.<br>
-  Result: The User receives an email advising them of their new Password.<br>
-
-- User Case: Forget Password <br>
-
-  Action: The User can recover their Password if forgotten by clicking on the "Forgot Password" link on the Sign In page then entering their email and a new password.<br>
-  Result: The User receives an email advising them of their new Password.<br>
-
-### Security by both Frontend and Backend checks
-Description: Security measures by both Frontend and Backend code checks prevent unauthorised users from accessing Project URLs they don't are not registered on.<br>
-
-- User Case: Unregistered User on any Project enters a Project URL<br>
-
-  Action: The User, unregistered on any Project in the app, enters a URL for a Project <br>
-  Result: A 401 displays for the User.<br>
-
-- User Case: User registered on one Project enters URL for a different one<br>
-
-- The User enters a URL for a Project they are not registered on despite being registered on another Project in the app.<br>
-  Result: A 401 displays for the User.
+### Security
+Security measures prevent unauthorised users from accessing Project URLs they don't are not registered on.<br>
 
 ### Responsive Design
-Description: The site is responsive to all screen sizes and the images respond in proportion. <br>
+The site is responsive to all screen sizes and the images respond in proportion. <br>
 
-- User Case: xxx<br>
-
-  Action: xxx.<br>
-  Result: vvv<br>
-
-  Action: xxx<br>
-  Result: The User <br>
-
-All Features testing is covered in the Testing page. [Testing](/TESTING.md)
+All Features testing by User's stories is covered in the Testing page. [Testing](/TESTING.md)
 
 [Back to Table of Content](#table-of-content)
 
