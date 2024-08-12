@@ -91,9 +91,9 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 - User Case: Re-Order a Schedule Scene.<br>
 
   1. Click on the Re-Order button which currently displays the Scene's current order and the re-order form opens.<br>
-  2. Input the new Order info and click Create.<br>
-  3. The Stripboard opens with the Order for the Schedule Scene.<br>
-  4. Re-order all the following Schedule Scene in a similar manner.<br>
+  2. Input the new Order number and click Create.<br>
+  3. The Stripboard opens with the new Order number for the Schedule Scene.<br>
+  4. Re-order all the following Schedule Scenes in a similar manner.<br>
 
 <h2 align="center">
 <img src="documentation/readme-images/schedor1.png" width="50%">

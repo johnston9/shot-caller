@@ -21,6 +21,7 @@ import Asset from '../../../components/Asset';
 import { useParams, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Pages from '../Pages';
+import InfoStrip from '../InfoStrip';
 
 const DayPage = () => {
     useRedirect();
@@ -36,6 +37,7 @@ const DayPage = () => {
     const [hasLoaded, setHasLoaded] = useState(false);
     const [hasOrder, setHasOrder] = useState(false);
     const admin = true;
+    const [showInfo, setShowInfo] = useState(false);
 
     useEffect(() => {
         const handleMount = async () => {
@@ -71,6 +73,15 @@ const DayPage = () => {
             >
                 Back
             </Button>
+            <Button
+              className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+              {!showInfo ? (
+                  ""
+                      ) : (
+                        <InfoStrip  /> 
+                        ) } 
             {hasLoaded ? (
                 <>
                 {/* add scene - view/add Callsheet*/}
