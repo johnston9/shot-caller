@@ -278,11 +278,17 @@ const { scene_id, day_id, day_order_number, number,
     
     return (
         <div>
-            <TopBox title="Edit Schedule Scene"/>
-            <Form className= {`px-3 pb-3 mt-5 mb-4 text-center ${styles.FormBox} `} onSubmit={handleSubmit}>
+            <TopBox title={`Edit Schedule Scene ${number} `}/>
+            <Button
+                className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
+                onClick={() => history.goBack()}
+            >
+                Back
+            </Button>
+            <Form className={`px-3 pb-3 mt-5 mb-4 text-center ${styles.FormBox} `} onSubmit={handleSubmit}>
               <Row>
                 <Col>
-                  <h3>Scene {number}  </h3>
+                  <h3>Schedule Scene {number}  </h3>
                   <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
                 </Col>
               </Row>

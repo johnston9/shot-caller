@@ -20,10 +20,30 @@ Description: The admin and superadmin can register new Users and change their Pe
   Action: Register the User by selecting a Permission and enter a Username and Password for the User.<br>
   Result: The User receives an email with the Project URL along with their Username and Password.<br>
 
+<p align="center"> <strong>xxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
+
 - User Case: Change a User's Permission<br>
 
   Action: Change the User's Permission by selecting a new Permission for the User.<br>
   Result: The User receives an email advising them of their new Permission.<br>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
 
 ### Scheduling
 Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Creating Days then selecting Scenes from a menu which automatically adds the Scene's breakdown info to a stripboard.<br>
@@ -32,6 +52,16 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 
   1. Click on the Schedules link in the Home page or from the Navbar.<br>
   2. The Schedules page displays with all the Shoot days.<br>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>xxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
 
 - User Case: Create a Shoot Day.<br>
 
@@ -43,36 +73,106 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
   6. Press submit.<br>
   7. The Day is created and added to the page.<br>
 
+<p align="center"> <strong>xxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
+
 - User Case: Find a Shoot Day in the Calender.<br>
 
   1. Click on the desired date in the calender.<br>
   2. The Shoot Day opens if one has been created for that date. <br>
+
+<p align="center"> <strong>xxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
 
 - User Case: Find a Shoot Day from the Search Bar.<br>
 
   1. Enter the Day Number in the Search Bar and Submit.<br>
   2. The Shoot Day opens if one has been created for that Number. <br>
 
+<p align="center"> <strong>xxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
+
 - User Case: View the Shoot Day and its Stripboard.<br>
 
   1. Click on the Shoot Day from the the selection displaying on the page or from the one if returned from the Calender search or Search Bar.<br>
   2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
 
+<p align="center"> <strong>xxxxxxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>xxxxxxxxxxxxxxxxxxxxxx</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
+
 - User Case: Add Schedule Scenes to a Shoot Day.<br>
 
   1. Click on the Shoot Day.<br>
-  2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
-  3. Click the the Add Scenes tab.<br>
-  4. The Add Scenes page opens.<br>
+  2. The Shoot Day opens with the Add Scenes tab and Stripboard. <br>
+  3. Click the the Add Scene tab.<br>
+  4. The Add Scene form opens below.<br>
   5. Click on the Act One tab and the Scenes from Act One display.<br>
   6. Click on the Act Two A tab and the Scenes from Act Two A display.<br>
   7. Click on the Act Two B tab and the Scenes from Act Two B display.<br>
   8. Click on the Act Three tab and the Scenes from Act Three display.<br>
   9. Click on the Location tab and the Scenes display by Location.<br>
   10. Input a Scene number, Title or Location to the Search Bar then click one of the above tabs and the Scenes in that tab group with the search value display.<br>
-  11. Select a Scene by clicking on it and a form whith the Scene number opens below.<br>
+  11. Select a Scene by clicking on it and the Shooting Info form opens below with the Scene numberon top.<br>
   12. Input the Day Order Number and other values and press Add Scene. It is up to the User to input an unused Number or there will be more that one Day Order munber with the smae number.<br>
-  13. The Schedule Scene is added to the Stripboard.<br>
+  13. The Schedule Scene is added to the Stripboard and the page count is updated by Scene 4's length of 1 to 3.75.<br>
+
+<p align="center"> <strong>Add Scene Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedadds1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Act One Scenes displaying after clicking the Act One tab</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedaddact1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Enter value "Jake" in Search bar</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedjake1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Act One Scenes with Location Jake display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedjake2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Enter Shooting Info with Day order Number "6" and submit form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedshoot1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Scene 4 is added to the Stripboard with Day order number "6"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedshoot2.png" width="50%">
+</h2>
 
 - User Case: Edit Schedule Scene.<br>
 
@@ -81,12 +181,32 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
   3. Make changes and click Edit.<br>
   4. The Stripboard opens with the changes to that Schedule Scene.<br>
 
-- User Case: Add a Next row with new info below a Schedule Scene.<br>
+<p align="center"> <strong>Make changes to New Info field</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Stripboard after submitting</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
+
+- User Case: Add a Next row with move or break info below a Schedule Scene.<br>
 
   1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
   2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
   3. Input the new Next info in the Next input box and click Edit.<br>
   4. The Stripboard opens with the new next Row displaying below that Schedule Scene.<br>
+
+<p align="center"> <strong>Make changes to Next field</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedednext1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Stripboard after submitting</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedednext2.png" width="50%">
+</h2>
 
 - User Case: Re-Order a Schedule Scene.<br>
 
@@ -95,33 +215,38 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
   3. The Stripboard opens with the new Order number for the Schedule Scene.<br>
   4. Re-order all the following Schedule Scenes in a similar manner.<br>
 
+<p align="center"> <strong>Make changes to Re-Order field</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/schedor1.png" width="50%">
 </h2>
 
+<p align="center"> <strong>Stripboard after submitting</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/schedor2.png" width="50%">
 </h2>
 
-- User Case: Add a Next row with new info below a Schedule Scene from the re-Order form.<br>
+- User Case: Add a Next row with new info below a Schedule Scene from the Re-Order form.<br>
 
   1. Click on the Re-Order button and the re-order form opens.<br>
   2. Input the new Next info in the Next input box and click Create.<br>
   3. The Stripboard opens with the new next Row displaying below that Schedule Scene.<br>
 
+<p align="center"> <strong>Make changes to Next field</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/schednext1.png" width="50%">
 </h2>
 
+<p align="center"> <strong>Stripboard after submitting</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/schednext2.png" width="50%">
 </h2>
 
-- User Case: View the Schedule Scene Cast.<br>
+- User Case: View the Schedule Scene Characters.<br>
 
   1. Click on the Cast button.<br>
   2. The Cast Info displays below.<br>
 
+<p align="center"> <strong>Character Info</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/schedcast.png" width="50%">
 </h2>
@@ -131,6 +256,7 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
   1. Click on the Info button.<br>
   2. The Info displays below.<br>
 
+<p align="center"> <strong>Scene Info</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/schedinfo.png" width="50%">
 </h2>

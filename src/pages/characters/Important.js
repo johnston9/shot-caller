@@ -13,7 +13,7 @@ const Important = () => {
         <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
         <p className={`text-center px-3 pt-1 ${styles.Redn }`}>
           All Characters must be assigned a number. This cannot be changed.
-          If necessary the character should be deleted and given a new number.
+          If necessary the character can be deleted and given a new number.
           </p>     
           <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
             Actor and costume details are to be added in the Edit Chatacter page
