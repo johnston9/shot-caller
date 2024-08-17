@@ -73,7 +73,7 @@ const SchedulePages = () => {
     const handleDate = (date) => {
       /* Change the Calander date format to the DRF model's format */
       const formatdate = date.toLocaleDateString('en-GB', {
-        day: 'numeric', month: 'short', year: 'numeric'
+        day: '2-digit', month: 'short', year: 'numeric'
       })
       setNewdate(formatdate);
     }
@@ -121,8 +121,11 @@ const SchedulePages = () => {
                          <Col className='p-1'  xs={12} md={6}>
                           <Row className='text-center'>
                             <Col>
-                            <p>Click Calendar dates to find Shoot Days. Dates with a Shooting Day
-                              will display. If not nothing will show.
+                            <p>Click on a date in the Calendar to find its Shoot Days if one has been
+                              created.
+                            </p>
+                            <p>
+                            If one has not been created for that date nothing will show.
                             </p>
                             </Col>
                           </Row>

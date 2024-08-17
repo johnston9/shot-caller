@@ -48,87 +48,67 @@ Description: The admin and superadmin can register new Users and change their Pe
 ### Scheduling
 Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Creating Days then selecting Scenes from a menu which automatically adds the Scene's breakdown info to a stripboard.<br>
 
-- User Case: View all Shoot Days.<br>
+- Use Case: View all Shoot Days.<br>
 
-  1. Click on the Schedules link in the Home page or from the Navbar.<br>
-  2. The Schedules page displays with all the Shoot days.<br>
+  1. Click on the Schedule link in the Home page or from the Navbar.<br>
+  2. The Schedule page displays with all the Shoot Days.<br>
 
-<p align="center"> <strong>xxxxxxxxxxxxxxx</strong></p>
+<p align="center"> <strong>The Schedule page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schededit1.png" width="50%">
+<img src="documentation/readme-images/schedsched.png" width="50%">
 </h2>
 
-<p align="center"> <strong>xxxxxxxxxxxxxx</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/schededit2.png" width="50%">
-</h2>
+- Use Case: Create a Shoot Day.<br>
 
-- User Case: Create a Shoot Day.<br>
-
-  1. On the Schedules page click on the "Create Day" tab.<br>
+  1. On the Schedule page click on the "Create Day" tab.<br>
   2. The Create Day form displays. <br>
-  3. Select the date from the calender.<br>
-  4. The date is added.<br>
-  5. Add the day value.<br>
+  3. Select the Date from the input box Calender - "08 Aug 2023".<br>
+  4. The Date is added.<br>
+  5. Add the Day number - "6".<br>
   6. Press submit.<br>
-  7. The Day is created and added to the page.<br>
+  7. The Shoot Day number "6" and Date "08 Aug 2023" is created and added to the page.<br>
 
-<p align="center"> <strong>xxxxxxxxxxxxxxx</strong></p>
+<p align="center"> <strong>Day number "6" and Date "08 Aug 2023" added to form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schededit1.png" width="50%">
+<img src="documentation/readme-images/schedcreday1.png" width="50%">
 </h2>
 
-<p align="center"> <strong>xxxxxxxxxxxxxxxxxxxxx</strong></p>
+<p align="center"> <strong>Shoot Day: Number "6"and Date "08 Aug 2023" Created</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schededit2.png" width="50%">
+<img src="documentation/readme-images/schedcreday2.png" width="50%">
 </h2>
 
-- User Case: Find a Shoot Day in the Calender.<br>
+- Use Case: Find a Shoot Day in the Calender.<br>
 
-  1. Click on the desired date in the calender.<br>
+  1. Click on the desired date in the Calender - "02 Jan 2023".<br>
   2. The Shoot Day opens if one has been created for that date. <br>
 
-<p align="center"> <strong>xxxxxxxxxxx</strong></p>
+<p align="center"> <strong>Shoot Day "02 Jan 2023"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schededit1.png" width="50%">
+<img src="documentation/readme-images/schedcal1.png" width="50%">
 </h2>
 
-<p align="center"> <strong>xxxxxxxxxxxxxxxxxx</strong></p>
+- Use Case: Find a Shoot Day from the Search Bar.<br>
+
+  1. Enter the Day Number "1" in the Search Bar and Submit.<br>
+  2. The search returns Days containing the number "1".<br>
+
+<p align="center"> <strong>The Shoot Day "1" displays.</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schededit2.png" width="50%">
+<img src="documentation/readme-images/schedsearch1.png" width="50%">
 </h2>
 
-- User Case: Find a Shoot Day from the Search Bar.<br>
-
-  1. Enter the Day Number in the Search Bar and Submit.<br>
-  2. The Shoot Day opens if one has been created for that Number. <br>
-
-<p align="center"> <strong>xxxxxxxxxxxxxxxxx</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/schededit1.png" width="50%">
-</h2>
-
-<p align="center"> <strong>xxxxxxxxxxxxxxxxx</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/schededit2.png" width="50%">
-</h2>
-
-- User Case: View the Shoot Day and its Stripboard.<br>
+- Use Case: View the Shoot Day and its Stripboard.<br>
 
   1. Click on the Shoot Day from the the selection displaying on the page or from the one if returned from the Calender search or Search Bar.<br>
   2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
 
-<p align="center"> <strong>xxxxxxxxxxxxxxxxxxxxx</strong></p>
+<p align="center"> <strong>The Shoot Day with the Add Scenes tab and Stripboard</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schededit1.png" width="50%">
+<img src="documentation/readme-images/schedstripb1.png" width="50%">
 </h2>
 
-<p align="center"> <strong>xxxxxxxxxxxxxxxxxxxxxx</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/schededit2.png" width="50%">
-</h2>
-
-- User Case: Add Schedule Scenes to a Shoot Day.<br>
+- Use Case: Add Schedule Scenes to a Shoot Day.<br>
 
   1. Click on the Shoot Day.<br>
   2. The Shoot Day opens with the Add Scenes tab and Stripboard. <br>
@@ -174,7 +154,7 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 <img src="documentation/readme-images/schedshoot2.png" width="50%">
 </h2>
 
-- User Case: Edit Schedule Scene.<br>
+- Use Case: Edit Schedule Scene.<br>
 
   1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
   2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
@@ -191,7 +171,7 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 <img src="documentation/readme-images/schededit2.png" width="50%">
 </h2>
 
-- User Case: Add a Next row with move or break info below a Schedule Scene.<br>
+- Use Case: Add a Next row with move or break info below a Schedule Scene.<br>
 
   1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
   2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
@@ -208,7 +188,7 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 <img src="documentation/readme-images/schedednext2.png" width="50%">
 </h2>
 
-- User Case: Re-Order a Schedule Scene.<br>
+- Use Case: Re-Order a Schedule Scene.<br>
 
   1. Click on the Re-Order button which currently displays the Scene's current order and the re-order form opens.<br>
   2. Input the new Order number and click Create.<br>
@@ -225,7 +205,7 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 <img src="documentation/readme-images/schedor2.png" width="50%">
 </h2>
 
-- User Case: Add a Next row with new info below a Schedule Scene from the Re-Order form.<br>
+- Use Case: Add a Next row with new info below a Schedule Scene from the Re-Order form.<br>
 
   1. Click on the Re-Order button and the re-order form opens.<br>
   2. Input the new Next info in the Next input box and click Create.<br>
@@ -241,7 +221,7 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 <img src="documentation/readme-images/schednext2.png" width="50%">
 </h2>
 
-- User Case: View the Schedule Scene Characters.<br>
+- Use Case: View the Schedule Scene Characters.<br>
 
   1. Click on the Cast button.<br>
   2. The Cast Info displays below.<br>
@@ -251,7 +231,7 @@ Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Cr
 <img src="documentation/readme-images/schedcast.png" width="50%">
 </h2>
 
-- User Case: View the Schedule Scene Info.<br>
+- Use Case: View the Schedule Scene Info.<br>
 
   1. Click on the Info button.<br>
   2. The Info displays below.<br>

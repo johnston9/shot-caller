@@ -25,10 +25,11 @@ const DayCreateForm = ({topbox, setShow} ) => {
   const { day } = postData;
 
   const history = useHistory();
+  // numeric
 
   const handleDate = (date) => {
     const newdate = date.toLocaleDateString('en-GB', {
-      day: 'numeric', month: 'short', year: 'numeric'
+      day: '2-digit', month: 'short', year: 'numeric'
     })
     setStartDate(newdate);
     console.log(`start ${startDate}`)
