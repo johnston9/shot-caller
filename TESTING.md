@@ -46,7 +46,7 @@ Description: The admin and superadmin can register new Users and change their Pe
 </h2>
 
 ### Scheduling
-Description/Requirements: View Schedules for a Shoot Day. Create Schedules by Creating Days then selecting Scenes from a menu which automatically adds the Scene's breakdown info to a stripboard.<br>
+Description: View Schedules for a Shoot Day. Create Schedules by Creating Days then selecting Scenes from a menu which automatically adds the Scene's breakdown info to a stripboard.<br>
 
 - Use Case: View all Shoot Days.<br>
 
@@ -256,26 +256,134 @@ Description: xxxx<br>
 - As this feature is held on the "Shot Caller Production" home app the Budgeting testing is on it's Testing page. [Testing](https://github.com/johnston9/shot-caller-production/blob/main/TESTING.md)<br>
 
 ## The Creative Features
-Description: xxxx<br>
 
-- User Case: xxx<br>
+### Scenes Workspace
+Description: View and create Scene pages containing Breakdowns, Cast and Background, Shotlists, Storyboards, Scripts, and Workspaces.<br>
 
-  Action: xxx.<br>
-  Result: vvv<br>
+#### Scenes Page
 
-  Action: xxx<br>
-  Result: The User <br>
+- Use Case: View all the Scenes<br>
 
-### Scenes Breakdown
-Description: xxxx<br>
+  1. Click on Scenes Workspace on the Home page or Workspace in the Navbar.<br>
+  2. The Scenes Workspace page opens with all the currently created Scenes displaying on it.<br>
 
-- User Case: xxx<br>
+<p align="center"> <strong>Scenes Workspace</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesworks.png" width="50%">
+</h2>
 
-  Action: xxx.<br>
-  Result: vvv<br>
+- Use Case: Find Scenes from the Searchbar<br>
 
-  Action: xxx<br>
-  Result: The User <br>
+  1. On the Scenes Workspace start typing a Scene Number, Title or Location in the Searchbar, e.g. for Location start typing "Alligator Club".<br>
+  2. Results will display narrowing down with each charactor or digit typed.<br>
+  3. In this case by the time "alli" is typed in the results for Location "Alligaror Club" display.
+
+<p align="center"> <strong>Alligaror Club returned from Search</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenessebar.png" width="50%">
+</h2>
+
+- Use Case: Find Scenes by Act or Location List<br>
+
+  1. On the Scenes Workspace click on the "Act Three" tab..<br>
+  2. Results showing all scenes from Act Three display.<br>
+
+<p align="center"> <strong>Act Three</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesact3.png" width="50%">
+</h2>
+- Use Case: Create a Scene<br>
+
+  1. In the Scenes Workspace page click on the "Create Scene" tab to open the "Create Scene" form.<br>
+  2. Input the new Scene Number, "11", and submit.<br>
+  3. Scene "11" is added to the Scenes Workspace.
+
+<p align="center"> <strong>Input "11" in the Create Scene form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescreate.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Scene "11" added to Workspace</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescreate2.png" width="50%">
+</h2>
+
+#### Scene Breakdown
+
+- User Case: Add/Edit details in the Breakdown<br>
+
+  1. Click on the 3 Dots on the Scene page or the Add/Edit tab on the Breakdown page to open the Add/Edit Breakdown form.
+  2. Fill in the details.
+  3. If the Location is not already added to the Locations dropdown click the "Add new Location" tab on the top of the page to open the Add New Location form.
+  4. Input the new location "Train Station" and submit.
+  5. The new Location "Train Station" is now added to the Locations dropdown.
+  6. Add the Scene Script by selecting the desired PDF file "S 11 Script" from the desktop.
+  7. Add the Scene Storyboard by selecting the desired PDF file "S 11 Storyb" from the desktop.
+  8. Submit the form.
+  9. Click on Breakdown tab on the Scene page to view the new Breakdown inputs.
+
+<p align="center"> <strong>Add New Location</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebreaknewloc1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>New Location in Dropdown</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebreakloc2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Input Breakdown Fields</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebreak1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Breakdown Page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebreak2.png" width="50%">
+</h2>
+
+### Scene Script
+Description: View and Change the Scene Script<br>
+
+- Use Case: View the Scene Script<br>
+
+  1. Click on Script tab on the Scene page to view the new Script "S 11 Script" added above. If no Script has been added yet a message will display advising to go to the Scenes Workspace page and click the Script tab on top to view the entire Script.
+
+<p align="center"> <strong>Scene Script - "S 11 Script"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescript1.png" width="50%">
+</h2>
+
+- Use Case: Change the Scene Script<br>
+
+  1. Click on Script tab on the Scene page to open the new Script "S 11 Script" added above.
+  2. Click on the "Add Script" tab.
+  3. The Add/Change Script form opens with the database name of the current Script "S_11_Script_iyrt4p" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" tab will display instead.
+  4. Click the "Change Script" or "Upload Script" tab depending on which case above to open the Desktop.
+  5. Select the desired file "S 11 No 2 Script" and the desktop name of the selected file "S 11 No 2 Script.pdf" displays in place of the previous one.
+  6. Click Create.
+  7. Click Script tab to view the newly uploaded Script "S 11 No 2 Script" with the new database File name "S_11_No_2_Script_swbjdg" displaying above.
+
+<p align="center"> <strong>New Scene Script - "S 11 No 2 Script"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescriptch2.png" width="50%">
+</h2>
+
+### Scenes Storyboard
+Description: View and Change the Scene Storyboard<br>
+
+- Use Case: View the Scene Storyboard<br>
+
+  1. Click on Stroyboard tab on the Scene page to view the new Storyboard "S 11 Storyb" added above.
+
+<p align="center"> <strong>Scene Storyboard - "S 11 Storyb"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenestory1.png" width="50%">
+</h2>
+
+- Use Case: Change the Scene Storyboard<br>
+
+  1. Click on Stroyboard tab on the Scene page to view the new Storyboard "S 11 Storyb" added above.
 
 ### Scenes Workspaces
 Description: xxxx<br>
@@ -300,28 +408,6 @@ Description: xxxx<br>
   Result: The User <br>
 
 ### Scenes Costumes
-Description: xxxx<br>
-
-- User Case: xxx<br>
-
-  Action: xxx.<br>
-  Result: vvv<br>
-
-  Action: xxx<br>
-  Result: The User <br>
-
-### Scenes Script
-Description: xxxx<br>
-
-- User Case: xxx<br>
-
-  Action: xxx.<br>
-  Result: vvv<br>
-
-  Action: xxx<br>
-  Result: The User <br>
-
-### Scenes Storyboard
 Description: xxxx<br>
 
 - User Case: xxx<br>

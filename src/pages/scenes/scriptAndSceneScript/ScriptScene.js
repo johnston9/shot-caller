@@ -124,7 +124,7 @@ const ScriptScene = () => {
                     : (
                     <Container className={appStyles.Content}>
                         <Asset src={NoResults } message="No scene script added. Please go to
-                        the Script page to view the entire script." />
+                        the Scenes Workspace page and click the Script tab on top to view the entire script." />
                     </Container>
                     )}
                 </>
