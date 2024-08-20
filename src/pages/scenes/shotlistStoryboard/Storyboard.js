@@ -18,16 +18,20 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
     const [addStory, setAddStory] = useState(false);
     const [newStory, setNewStory] = useState(storyboard);
     return (
-        <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={` mt-1 mb-4 pl-3 py-1 ${styles.SubTitle }`}>
-                Storyboard
-                <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowstory(false) } >Close</span>
+        <div className='mb-5'>
+            <Row>
+            <Col xs={12} className='text-center'>
+            <h5 className={` mt-1 mb-4 pl-5 py-2 ${styles.SubTitle }`}>
+                STORYBOARD<span className={`float-right ${styles.Close } pt-1`} 
+                onClick={() => setShowstory(false) } >Close</span>
             </h5>
+            </Col>
+            </Row>
             <Row>
               <Col className="text-center">
                     <Button onClick={() => setAddStory(addStory => !addStory)} 
                     className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
-                    Add/Update Storyboard
+                    Add/Change Storyboard
                 </Button>
                 {!addStory ?("") : (
                 <StoryBoardUpload 

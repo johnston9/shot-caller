@@ -69,7 +69,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
           </Button>
           <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} 
             type="submit">
-            Create 
+            Upload 
           </Button>
         </div>
       );

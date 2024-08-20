@@ -317,7 +317,7 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
   3. If the Location is not already added to the Locations dropdown click the "Add new Location" tab on the top of the page to open the Add New Location form.
   4. Input the new location "Train Station" and submit.
   5. The new Location "Train Station" is now added to the Locations dropdown.
-  6. Add the Scene Script by selecting the desired PDF file "S 11 Script" from the desktop.
+  6. Add the Scene Script by selecting the desired PDF file "S 11 No 2 Script" from the desktop.
   7. Add the Scene Storyboard by selecting the desired PDF file "S 11 Storyb" from the desktop.
   8. Submit the form.
   9. Click on Breakdown tab on the Scene page to view the new Breakdown inputs.
@@ -343,34 +343,59 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
 </h2>
 
 ### Scene Script
-Description: View and Change the Scene Script<br>
+Description: View, Download, Print or Change the Scene Script<br>
 
 - Use Case: View the Scene Script<br>
 
-  1. Click on Script tab on the Scene page to view the new Script "S 11 Script" added above. If no Script has been added yet a message will display advising to go to the Scenes Workspace page and click the Script tab on top to view the entire Script.
+  1. Click on Script tab on the Scene page to view the new Script "S 11 No 2 Script" added above. If no Script has been added yet a message will display advising to go to the Scenes Workspace page and click the Script tab on top to view the entire Script.
 
-<p align="center"> <strong>Scene Script - "S 11 Script"</strong></p>
+<p align="center"> <strong>Scene Script - "S 11 No 2 Script"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scenescript1.png" width="50%">
+<img src="documentation/readme-images/scenescriptno2.png" width="50%">
 </h2>
+
+- Use Case: View the Scene Script in it's original PDF format<br>
+
+  1. Click on the "View Script as PDF" link at the bottom of the Script page.
+  2. The Script opens on a new tab in it's original PDF format.
+
+- Use Case: Download the Scene Script<br>
+
+  1. Click on Download icon on the Script page.
+  2. The Script is downloaded to the User's device.
+
+- Use Case: Print the Scene Script<br>
+
+  1. Click on Print icon on the Script page.
+  2. The Script is printed out on the User's printer.
 
 - Use Case: Change the Scene Script<br>
 
-  1. Click on Script tab on the Scene page to open the new Script "S 11 Script" added above.
-  2. Click on the "Add Script" tab.
-  3. The Add/Change Script form opens with the database name of the current Script "S_11_Script_iyrt4p" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" tab will display instead.
-  4. Click the "Change Script" or "Upload Script" tab depending on which case above to open the Desktop.
-  5. Select the desired file "S 11 No 2 Script" and the desktop name of the selected file "S 11 No 2 Script.pdf" displays in place of the previous one.
-  6. Click Create.
-  7. Click Script tab to view the newly uploaded Script "S 11 No 2 Script" with the new database File name "S_11_No_2_Script_swbjdg" displaying above.
+  1. Click on Script tab on the Scene page to open the new Script "S 11 No 2 Script" added above.
+  2. Click on the "Add/Change Script" tab.
+  3. The Add/Change Script form opens with the "Database" name of the current Script "S_11_No_2_Script_swbjdg" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" tab will display instead.
+  4. Click the "Change Script" or "Upload Script" tab to open the Desktop files.
+  5. Select the desired file "S 11 No 3 Script" and the "Desktop" name of the selected file "S 11 No 3 Script.pdf" displays in place of the previous "Database" one.
+  6. Click Upload.
+  7. Click Script tab to view the newly uploaded Script "S 11 No 3 Script" with the new database File name "S_11_No_3_Script_i8tapb" displaying.
 
-<p align="center"> <strong>New Scene Script - "S 11 No 2 Script"</strong></p>
+<p align="center"> <strong>The "Add/Change Script" form displaying the current "Database" file name "S_11_No_2_Script_swbjdg"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scenescriptch2.png" width="50%">
+<img src="documentation/readme-images/scenescriptf1.png" width="50%">
 </h2>
 
-### Scenes Storyboard
-Description: View and Change the Scene Storyboard<br>
+<p align="center"> <strong>The "Add/Change Script" form displaying the new "Desktop" file name "S 11 No 3 Script.pdf"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescriptf2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The "Script" page with the new Script "S 11 No 3 Script" - "Database" file name "S_11_No_3_Script_i8tapb"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescriptf1.png" width="50%">
+</h2>
+
+### Scene Storyboard
+Description: View, Download, Print or Change the Scene Storyboard<br>
 
 - Use Case: View the Scene Storyboard<br>
 
@@ -383,7 +408,18 @@ Description: View and Change the Scene Storyboard<br>
 
 - Use Case: Change the Scene Storyboard<br>
 
-  1. Click on Stroyboard tab on the Scene page to view the new Storyboard "S 11 Storyb" added above.
+  1. Click on Storyboard tab on the Scene page to open the new Storyboard added above.
+  2. Click on the "Add/Change Storyboard" tab.
+  3. The Add/Change Script form opens with the database name of the current Script "S_11_Script_iyrt4p" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" tab will display instead.
+  4. Click the "Change Script" or "Upload Script" tab depending on which case above to open the Desktop.
+  5. Select the desired file "S 11 No 2 Script" and the desktop name of the selected file "S 11 No 2 Script.pdf" displays in place of the previous one.
+  6. Click Create.
+  7. Click Script tab to view the newly uploaded Script "S 11 No 2 Script" with the new database File name "S_11_No_2_Script_swbjdg" displaying above.
+
+<p align="center"> <strong>New Scene Script - "S 11 No 2 Script"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescriptch2.png" width="50%">
+</h2>
 
 ### Scenes Workspaces
 Description: xxxx<br>

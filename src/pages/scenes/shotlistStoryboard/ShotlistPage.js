@@ -38,16 +38,20 @@ const ShotlistPage = ({scene, setShowlist} ) => {
     }, [id,])
 
     return (
-        <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={`mb-3 mt-1 pl-3 py-1 ${styles.SubTitle }`}>
-                Shotlist
-                <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowlist(false) } >Close</span>
-                </h5>
+        <div className='mb-5'>
+            <Row>
+            <Col xs={12} className='text-center'>
+            <h5 className={`mb-3 mt-1 pl-5 py-2 ${styles.SubTitle }`}>SHOTLIST
+            <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close } pt-1`} 
+            onClick={() => setShowlist(false) } >Close</span>
+            </h5>
+            </Col>
+            </Row>
             <Row>
               <Col className="text-center">
-                    <Button onClick={() => setAddShot(addShot => !addShot)} 
-                    className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                    Add Shot
+                <Button onClick={() => setAddShot(addShot => !addShot)} 
+                className={`px-5 ${btnStyles.Button} ${btnStyles.Bright}`}>
+                Add Shot
                 </Button>
                 {!addShot ?("") : (<ShotListCreate setAddShot={setAddShot} setShotlist={setShotlist} handleMount={handleMount} scene={scene} />  ) }
               </Col>

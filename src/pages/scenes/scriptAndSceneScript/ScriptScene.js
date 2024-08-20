@@ -59,6 +59,13 @@ const ScriptScene = () => {
 
     return (
         <div>
+            <Row>
+            <Col xs={12} className='text-center'>
+            <h5 className={`mb-3 py-2 ${styles.SubTitle }`}>
+                SCENE SCRIPT
+            </h5>
+            </Col>
+            </Row>
             { hasLoaded ? (
                 <>
             <Row className='my-1'>
@@ -75,7 +82,7 @@ const ScriptScene = () => {
               <Col className="text-center" xs={4} >
               <Button onClick={() => setAddScript(addScript => !addScript)} 
                   className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
-                  Add Script
+                  Add/Change Script
               </Button>
             </Col>
             <Col xs={4}>
