@@ -13,9 +13,17 @@ import Asset from '../../../components/Asset';
 import NoResults from "../../../assets/no-results.png";
 import StoryBoardUpload from './StoryBoardUpload';
 import { Image } from 'react-bootstrap';
+import StoryInfo from './StoryInfo';
+import Templates from './Templates';
+import StoryboardURL from './StoryboardURL';
+// import template1 from "../../../assets/storyboards/template1.pdf";
+// import template2 from "../../../assets/storyboards/template2.pdf";
 
 const Storyboard = ({storyboard, setShowstory, setScene} ) => {
+    const [showInfo, setShowInfo] = useState(false);
     const [addStory, setAddStory] = useState(false);
+    const [addURL, setAddURL] = useState(false);
+    const [templates, setTemplates] = useState(false);
     const [newStory, setNewStory] = useState(storyboard);
     return (
         <div className='mb-5'>
@@ -28,18 +36,53 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
             </Col>
             </Row>
             <Row>
-              <Col className="text-center">
-                    <Button onClick={() => setAddStory(addStory => !addStory)} 
-                    className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
-                    Add/Change Storyboard
-                </Button>
-                {!addStory ?("") : (
-                <StoryBoardUpload 
-                setScene={setScene} 
-                setNewStory={setNewStory} 
-                setAddStory={setAddStory} />  ) }
-              </Col>
-            </Row> 
+            <Col xs={3} className="text-center">
+            <Button onClick={() => setTemplates(templates => !templates)} 
+            className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
+            Templates
+            </Button>
+            </Col>
+            <Col xs={3} className="text-center">
+            <Button onClick={() => setAddStory(addStory => !addStory)} 
+            className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
+            Add/Change Storyboard
+            </Button>
+            </Col>
+            <Col xs={3} className="text-center">
+            <Button onClick={() => setAddURL(addURL => !addURL)} 
+            className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
+            Storyboard URL
+            </Button>
+            </Col>
+            <Col xs={3}>
+            <Button
+            className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+            onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
+            </Button>
+            </Col>
+            </Row>
+            {!showInfo ? (
+                ""
+                    ) : (
+                      <StoryInfo  /> 
+                      ) } 
+            {!addStory ?("") : (
+            <StoryBoardUpload 
+            setScene={setScene} 
+            setNewStory={setNewStory} 
+            setAddStory={setAddStory} />  ) }
+            {!templates ? (
+                ""
+                    ) : (
+                      <Templates
+                      setTemplates={setTemplates}
+                      /> 
+                      ) } 
+            {!addURL ? (
+                ""
+                    ) : (
+                      <StoryboardURL  /> 
+                      ) } 
             <Row className="h-100 my-2">
             <Col xs={12} > 
                 <>

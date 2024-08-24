@@ -22,7 +22,6 @@ const SchedOrder = (props ) => {
     end_time: end_time1,
     next: next1,
     day_id: day_id1,
-    scene_id: scene_id1,
   })
 
   const { next, day_order_number, scene_id, start_time, end_time, day_id } = postData;

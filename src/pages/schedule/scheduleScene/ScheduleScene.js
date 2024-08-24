@@ -23,7 +23,7 @@ const ScheduleScene = (props) => {
     const {sceneAll, scene_id, id, day_id, number, int_ext, start_time,
            end_time, admin, location, filming_location, day_night, 
            action, pages, callsheetshed, next, day_order_number, 
-           setHasOrder, style, showSideBySide, new_info } = props
+           setHasOrder, style, showSideBySide, } = props
         
     const handleEdit = () => {
         history.push(`/schedule/scenes/edit/${id}/`);

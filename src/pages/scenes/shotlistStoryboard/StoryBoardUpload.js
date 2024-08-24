@@ -1,4 +1,8 @@
-/* Component in the StoryBoard Component to upload the Storyboard  */
+/* Component in the StoryBoard Component to upload the Storyboard 
+<figure>
+  <Image className={appStyles.Image} src={template1} />
+</figure>
+ */
 import React, { useEffect, useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -97,6 +101,13 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
 
   return (
     <div>
+      <Row className="mt-2">
+      <Col xs={12} className='text-center'>
+      <h5 className={`mb-3 py-1 ${styles.SubTitle }`}>
+          ADD/CHANGE STORYBOARD
+      </h5>
+      </Col>
+      </Row>
       <Form onSubmit={handleSubmit}>
         <Row>
         <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3 }}>
@@ -136,7 +147,6 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
                   <Form.Control
                     type="file"
                     id="storyboard-upload"
-                    // accept="image/*"
                     onChange={handleChangeStoryboard}
                     ref={storyboardInput}
                   />
@@ -155,6 +165,12 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
           </Col>
         </Row>
         </Form>
+        <Row>
+        <Col xs={2} ></Col>
+        <Col xs={8}>
+        <hr/>
+        </Col>
+        </Row>
     </div>
   )
 }

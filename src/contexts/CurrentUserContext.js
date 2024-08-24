@@ -108,7 +108,7 @@ export const CurrentUserProvider = ({ children }) => {
             setSignin(`interRes error`)
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
-                history.push("/signin");
+                history.push("/");
               }
               return null;
             });

@@ -27,7 +27,6 @@ import DeptPostsPage from './pages/departments/DeptPostsPage';
 import DeptsGeneral from './pages/departments/DeptsGeneral';
 import DeptPostPage from './pages/departments/DeptPostPage';
 import DeptPostEdit from './pages/departments/DeptPostEdit';
-import Landing from './pages/home/Landing';
 import DayCreateForm from './pages/schedule/day/DayCreateForm';
 import ScheduleDays from './pages/schedule/ScheduleDays';
 import DayEdit from './pages/schedule/day/DayEdit';

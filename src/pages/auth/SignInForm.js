@@ -2,7 +2,7 @@
  * Set the CurrentUser Context
  * Set the TokenTimestamp */
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import door from "../../assets/door.png";
 import rightdoor from "../../assets/rightdoor.png";
 import styles from "../../styles/SignInUpForm.module.css";
