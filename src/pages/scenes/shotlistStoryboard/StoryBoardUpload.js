@@ -1,8 +1,4 @@
-/* Component in the StoryBoard Component to upload the Storyboard 
-<figure>
-  <Image className={appStyles.Image} src={template1} />
-</figure>
- */
+/* Component in the StoryBoard Component to upload the Storyboard  */
 import React, { useEffect, useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -100,11 +96,14 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
       );
 
   return (
-    <div>
-      <Row className="mt-2">
-      <Col xs={12} className='text-center'>
-      <h5 className={`mb-3 py-1 ${styles.SubTitle }`}>
-          ADD/CHANGE STORYBOARD
+    <div className='mt-3'>
+      <Row >
+      <Col md={1} className='d-none d-md-block'></Col>
+      <Col xs={12} md={10} className='text-center'>
+      <h5 className={`mb-2 py-1 pl-5 ${styles.SubTitle }`}>
+          ADD STORYBOARD
+          <span className={`float-right ${styles.Close } pt-1`} 
+                onClick={() => setAddStory(false) } >Close</span>
       </h5>
       </Col>
       </Row>
@@ -112,9 +111,8 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
         <Row>
         <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3 }}>
             {/* storyboard */}
-            <Container
-              className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-            >
+            <Container className={`${appStyles.Content} ${styles.Container} 
+              d-flex flex-column justify-content-center`}>
               <Form.Group className="text-center pt-3">
                   {storyboard ? (
                     <>

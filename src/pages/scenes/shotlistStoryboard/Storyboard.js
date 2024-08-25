@@ -1,6 +1,5 @@
 /* Component in the Scene Component to fetch 
-   the StoryBoard for a Scene
- * Contains the StoryBoardUpload component  */
+   the StoryBoard page for a Scene  */
 import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -27,36 +26,40 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
     const [newStory, setNewStory] = useState(storyboard);
     return (
         <div className='mb-5'>
-            <Row>
+            <Row >
             <Col xs={12} className='text-center'>
             <h5 className={` mt-1 mb-4 pl-5 py-2 ${styles.SubTitle }`}>
-                STORYBOARD<span className={`float-right ${styles.Close } pt-1`} 
+                STORYBOARD PAGE<span className={`float-right ${styles.Close } pt-1`} 
                 onClick={() => setShowstory(false) } >Close</span>
             </h5>
             </Col>
             </Row>
             <Row>
-            <Col xs={3} className="text-center">
+            <Col md={{span: 3, order: 1}} xs={{span: 6, order: 1}}
+            className="text-center">
             <Button onClick={() => setTemplates(templates => !templates)} 
             className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
             Templates
             </Button>
             </Col>
-            <Col xs={3} className="text-center">
+            <Col md={{span: 3, order: 2}} xs={{span: 6, order: 3}}
+            className="text-center">
             <Button onClick={() => setAddStory(addStory => !addStory)} 
             className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
-            Add/Change Storyboard
+            Add Storyboard
             </Button>
             </Col>
-            <Col xs={3} className="text-center">
+            <Col md={{span: 3, order: 3}} xs={{span: 6, order: 4}}
+            className="text-center">
             <Button onClick={() => setAddURL(addURL => !addURL)} 
             className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
             Storyboard URL
             </Button>
             </Col>
-            <Col xs={3}>
+            <Col md={{span: 3, order: 4}} xs={{span: 6, order: 2}} 
+            className="text-center">
             <Button
-            className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+            className={`py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
             onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
             </Button>
             </Col>
@@ -81,10 +84,16 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
             {!addURL ? (
                 ""
                     ) : (
-                      <StoryboardURL  /> 
+                      <StoryboardURL
+                      setAddURL={setAddURL}
+                      setScene={setScene}
+                      /> 
                       ) } 
             <Row className="h-100 my-2">
-            <Col xs={12} > 
+            <Col md={1} className='d-none d-md-block'></Col>
+            <Col xs={12} md={10} className='text-center'> 
+            <h5 className={`mb-2 py-1 ${styles.SubTitle }`}>
+             STORYBOARD</h5>
                 <>
                     {newStory ? (
                         <> 

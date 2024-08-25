@@ -3,6 +3,22 @@
 
 } */
 
+.Back {
+  background-color: #ccdbdf;
+}
+
+.Break {
+  border-top: 10px solid #d0d9db;
+}
+
+.Break1 {
+  border-top: 1px solid #d0d9db;
+}
+
+.Break2 {
+  border-top: 5px solid #d0d9db;
+}
+
 .DeptImageBox {
   background-color: #000;
   color: #fff;
