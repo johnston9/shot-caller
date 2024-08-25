@@ -1,17 +1,13 @@
 /* Component in the StoryBoard Component to
 contain and upload the Storyboard URL */
-import React, { useEffect, useRef, useState } from "react";
-import Form from "react-bootstrap/Form";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../../components/Asset";
-import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/Scene.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
 import UploadURL from "./UploadURL";
 
 const StoryboardURL = ({setAddURL, setScene}) => {
@@ -42,6 +38,12 @@ const StoryboardURL = ({setAddURL, setScene}) => {
             setScene={setScene} 
             setNewURL={setNewURL} />  ) }
     </Container>
+    </Col>
+    </Row>
+    <Row>
+    <Col xs={2} ></Col>
+    <Col xs={8}>
+    <hr className={`${styles.Break1}`}/>
     </Col>
     </Row>
     </div>

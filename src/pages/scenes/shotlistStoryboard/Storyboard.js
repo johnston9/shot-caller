@@ -11,12 +11,9 @@ import appStyles from "../../../App.module.css";
 import Asset from '../../../components/Asset';
 import NoResults from "../../../assets/no-results.png";
 import StoryBoardUpload from './StoryBoardUpload';
-import { Image } from 'react-bootstrap';
 import StoryInfo from './StoryInfo';
 import Templates from './Templates';
 import StoryboardURL from './StoryboardURL';
-// import template1 from "../../../assets/storyboards/template1.pdf";
-// import template2 from "../../../assets/storyboards/template2.pdf";
 
 const Storyboard = ({storyboard, setShowstory, setScene} ) => {
     const [showInfo, setShowInfo] = useState(false);
@@ -90,19 +87,19 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
                       /> 
                       ) } 
             <Row className="h-100 my-2">
-            <Col md={1} className='d-none d-md-block'></Col>
-            <Col xs={12} md={10} className='text-center'> 
+            <Col xs={12} className='text-center'> 
             <h5 className={`mb-2 py-1 ${styles.SubTitle }`}>
              STORYBOARD</h5>
                 <>
                     {newStory ? (
-                        <> 
-                        <Image className={styles.Story} src={newStory} alt="storyboard"  />
-                        </>
+                        <div className={`${styles.Frame} mt-2`}>
+                        <iframe title="Storyboard" src={newStory} 
+                         className={appStyles.iframeFull} alt="Storyboard"  />
+                        </div>
                     )
                     : (
                     <Container className={appStyles.Content}>
-                        <Asset src={NoResults } message="No results" />
+                        <Asset src={NoResults } message="No Storyboard Added" />
                     </Container>
                     )}
                 </>

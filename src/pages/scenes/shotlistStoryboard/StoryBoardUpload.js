@@ -10,7 +10,7 @@ import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/Scene.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 
@@ -21,7 +21,7 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
         number: "",
     })
     const {storyboard, number} = postData;
-    const storyboardInput = useRef(null)
+    const storyboardInput = useRef(null);
 
     const history = useHistory();
     const { id } = useParams();
@@ -49,7 +49,7 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
             storyboard: URL.createObjectURL(event.target.files[0]),
           });
           
-          setNewStory(event.target.files[0]);
+          // setNewStory(event.target.files[0]);
           console.log(`storyboard ${storyboard}`);
         }
       };
@@ -67,11 +67,9 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
             const data = await axiosReq.put(`/scenes/${id}/`, formData);
             console.log(data)
             setAddStory(false);
+            const storyboard = data.storyboard;
             /* Upload the scene state */
-            setScene((prevScene) => ({
-              ...prevScene,
-              storyboard: data.storyboard,
-            }));
+            setNewStory(storyboard);
             history.push(`/scenes/`);
         } catch (err) {
             console.log(err);
@@ -90,7 +88,7 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
             Cancel
           </Button>
           <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-            Apply
+            Upload
           </Button>
         </div>
       );
@@ -117,7 +115,8 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
                   {storyboard ? (
                     <>
                       <figure>
-                        <Image className={appStyles.Image} src={storyboard} />
+                      <iframe title="storyboard" alt="storyboard"
+                       className={appStyles.iframe} src={storyboard} />
                       </figure>
                       <div>
                         <Form.Label
@@ -166,7 +165,7 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
         <Row>
         <Col xs={2} ></Col>
         <Col xs={8}>
-        <hr/>
+        <hr className={`${styles.Break1}`}/>
         </Col>
         </Row>
     </div>

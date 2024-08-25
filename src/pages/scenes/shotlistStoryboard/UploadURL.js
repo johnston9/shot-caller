@@ -1,17 +1,14 @@
 /* Component in the StoryBoard Component to upload the Storyboard  */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../../components/Asset";
-import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/Scene.module.css";
-import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
-import { useHistory, useParams } from "react-router-dom";
+import { Alert } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 
 const UploadURL = ({setNewURL, setScene }) => {
@@ -21,7 +18,6 @@ const UploadURL = ({setNewURL, setScene }) => {
     })
     const {storyboard_url} = postData;
 
-    const history = useHistory();
     const { id } = useParams();
 
     useEffect(() => {
@@ -120,12 +116,6 @@ const UploadURL = ({setNewURL, setScene }) => {
           </Col>
         </Row>
         </Form>
-        <Row>
-        <Col xs={2} ></Col>
-        <Col xs={8}>
-        <hr/>
-        </Col>
-        </Row>
     </div>
   )
 }

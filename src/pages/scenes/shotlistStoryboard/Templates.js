@@ -1,4 +1,4 @@
-/* Templates Component */
+/* Templates Component  */
 import React, { useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -7,15 +7,20 @@ import styles from "../../../styles/Scene.module.css";
 import Button from 'react-bootstrap/Button';
 import btnStyles from "../../../styles/Button.module.css";
 import appStyles from "../../../App.module.css";
-import template1 from "../../../assets/storyboards/template1.pdf";
-import template2 from "../../../assets/storyboards/template2.pdf";
+import portrait6 from "../../../assets/storyboards/portrait6.pdf";
+import portrait8 from "../../../assets/storyboards/portrait8.pdf";
+import landscape6 from "../../../assets/storyboards/landscape6.pdf";
+import landscape12 from "../../../assets/storyboards/landscape12.pdf";
 import Template1 from './Template1';
 import Template2 from './Template2';
-// iframe
+import Template3 from './Template3';
+import Template4 from './Template4';
 
 const Templates = ({setTemplates}) => {
     const [open, setOpen] = useState(false);
     const [open2, setOpen2] = useState(false);
+    const [open3, setOpen3] = useState(false);
+    const [open4, setOpen4] = useState(false);
 // display: inline-block; className={`${styles.Back }`} 
   return (
     <div className='mt-3'>
@@ -34,22 +39,26 @@ const Templates = ({setTemplates}) => {
     <Container
     className={`${appStyles.Content} ${styles.Container} mt-2 `}>
     <Row>
+    {/* PORTRAIT */}
+    <Col xs={12} md={6}>
+    {/* <h5 className={`text-center ${appStyles.playball} `}>PORTRAIT</h5> */}
+    <Row>
     <Col xs={6} className='text-center'>
-    <p className={`${styles.Bold } pb-1`}>
-    TEMPLATE ONE - 6 PANEL
+    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    6 PANEL PORTRAIT
     </p>
     <figure>
-    <iframe title="Template 1"
-        className={appStyles.iframe} src={template1} />
+    <iframe title="portrait 6" alt="portrait 6"
+        className={appStyles.iframe} src={portrait6} />
     </figure>
     </Col>
     <Col xs={6} className='text-center'>
-    <p className={`${styles.Bold } pb-1`}>
-    TEMPLATE TWO - 8 PANEL
+    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    8 PANEL PORTRAIT
     </p>
     <figure>
-    <iframe title="Template 2"
-        className={appStyles.iframe} src={template2} />
+    <iframe title="portrait 8" alt="portrait 8"
+        className={appStyles.iframe} src={portrait8} />
     </figure>
     </Col>
     </Row>
@@ -67,6 +76,46 @@ const Templates = ({setTemplates}) => {
     </Button>
     </Col>
     </Row>
+    </Col>
+    {/* LANDSCAPE */}
+    <Col xs={12} md={6}>
+    {/* <h5 className={`text-center ${appStyles.playball} `}>LANDSCAPE</h5> */}
+    <Row>
+    <Col xs={6} className='text-center'>
+    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    6 PANEL LANDSCAPE
+    </p>
+    <figure>
+    <iframe title="landscape 6" alt="landscape 6"
+        className={appStyles.iframe} src={landscape6} />
+    </figure>
+    </Col>
+    <Col xs={6} className='text-center'>
+    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    12 PANEL LANDSCAPE
+    </p>
+    <figure>
+    <iframe title="landscape 12" alt="landscape 12"
+        className={appStyles.iframe} src={landscape12} />
+    </figure>
+    </Col>
+    </Row>
+    <Row>
+    <Col xs={6} className='text-center'>
+    <Button
+    className={`py-0 mt-1 ${btnStyles.Bright} ${btnStyles.Button}`}
+    onClick={() => setOpen3(open3 => !open3)} >OPEN
+    </Button>
+    </Col>
+    <Col xs={6} className='text-center'>
+    <Button
+    className={` py-0 mt-1 ${btnStyles.Bright} ${btnStyles.Button}`}
+    onClick={() => setOpen4(open4 => !open4)} >OPEN
+    </Button>
+    </Col>
+    </Row>
+    </Col>
+    </Row>
     </Container>
     </Col>
     </Row>
@@ -82,6 +131,20 @@ const Templates = ({setTemplates}) => {
         ) : (
             <Template2
             setOpen2={setOpen2}
+            /> 
+            ) } 
+    {!open3 ? (
+    ""
+        ) : (
+            <Template3  
+            setOpen3={setOpen3}
+            /> 
+            ) } 
+    {!open4 ? (
+    ""
+        ) : (
+            <Template4
+            setOpen4={setOpen4}
             /> 
             ) } 
     <Row>

@@ -382,7 +382,9 @@ const Scene = (props) => {
                     {!showstory ? (
                       ""
                     ) : (
-                      <Storyboard storyboard={storyboard} setShowstory={setShowstory} scene={scene} setScene={setScene} />
+                      <Storyboard storyboard={storyboard} 
+                      setShowstory={setShowstory} scene={scene} 
+                      setScene={setScene} />
                     ) }
                     {!showlist ? (
                       ""
