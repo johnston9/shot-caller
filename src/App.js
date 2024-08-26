@@ -65,6 +65,7 @@ import LatestPage from './pages/home/LatestPage';
 import LatestEdit from './pages/home/LatestEdit';
 import MoodboardCreate from './pages/moodboards/MoodboardCreate';
 import RegisterUsers from './pages/auth/RegisterUsers';
+import Storyboard from './pages/scenes/shotlistStoryboard/Storyboard';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -286,6 +287,7 @@ function App() {
         <Route exact path="/scenes/:id" render={() => (<ScenePage/>)} />
         <Route exact path="/scenes/:id/edit" render={() => <BreakdownAddEditForm />} />
         <Route exact path="/script/scene/:id" render={() => (<ScriptScene/>)} />
+        <Route exact path="/story/scene/:id" render={() => (<Storyboard/>)} />
         <Route exact path="/script" render={() => (<LatestScript />)} />
         {/* ------------------------ SCENES WORKSPACE POSTS -------------------*/}
         <Route exact path="/posts/create" render={() => <PostCreateForm />} />

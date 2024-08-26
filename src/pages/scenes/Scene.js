@@ -221,6 +221,15 @@ const Scene = (props) => {
       history.push(`/script/scene/${id}`);
     };
 
+    const clickStory = () => {
+      /* Function to open the Scene Script page
+       * Sets the SceneId context
+         This values will be read in App.js and passed as a filter
+         to the /script/scene/${id} Route */
+      setSceneId(id); 
+      history.push(`/story/scene/${id}`);
+    };
+
     return (
         <div>
           {scene && (
@@ -270,7 +279,7 @@ const Scene = (props) => {
                     <Col className='text-center' md={2}>
                       <p
                           className={`py-0 mb-0 ${styles.Button}`}
-                          onClick={() => setShowstory(showstory => !showstory)} > Storyboard
+                          onClick={() => clickStory()}> Storyboard
                       </p>
                     </Col>
                     <Col className='text-center' md={1}>
@@ -377,7 +386,8 @@ const Scene = (props) => {
                       {!showScript ? (
                       ""
                     ) : (
-                      <Script scene={scene} script={script} setShowScript={setShowScript} setScene={setScene} /> 
+                      <Script scene={scene} script={script} 
+                      setShowScript={setShowScript} setScene={setScene} /> 
                       ) }          
                     {!showstory ? (
                       ""

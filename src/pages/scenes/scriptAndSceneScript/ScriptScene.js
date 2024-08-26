@@ -35,7 +35,7 @@ const ScriptScene = () => {
         const paths = path.split("/");
         const name = paths.length - 1;
         return paths[name];
-     };
+    };
 
     useEffect(() => {
         const handleMount = async () => {

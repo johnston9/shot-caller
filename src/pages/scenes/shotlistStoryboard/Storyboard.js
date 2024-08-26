@@ -1,6 +1,6 @@
 /* Component in the Scene Component to fetch 
    the StoryBoard page for a Scene  */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
@@ -8,27 +8,74 @@ import Container from 'react-bootstrap/Container';
 import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import appStyles from "../../../App.module.css";
+import { Link, useHistory, useParams } from 'react-router-dom';
 import Asset from '../../../components/Asset';
 import NoResults from "../../../assets/no-results.png";
 import StoryBoardUpload from './StoryBoardUpload';
 import StoryInfo from './StoryInfo';
 import Templates from './Templates';
 import StoryboardURL from './StoryboardURL';
+import { axiosReq } from '../../../api/axiosDefaults';
 
-const Storyboard = ({storyboard, setShowstory, setScene} ) => {
+const Storyboard = () => {
     const [showInfo, setShowInfo] = useState(false);
     const [addStory, setAddStory] = useState(false);
     const [addURL, setAddURL] = useState(false);
     const [templates, setTemplates] = useState(false);
-    const [newStory, setNewStory] = useState(storyboard);
+    const [hasLoaded, setHasLoaded] = useState(false);
+
+    const history = useHistory();
+    const { id } = useParams();
+
+    const [postData, setPostData] = useState({
+        storyboard: "",
+        number: "",
+    })
+    const {storyboard, number} = postData;
+    const [fileName, setFileName] = useState("");
+
+    const getFilename = (path) => {
+        const paths = path.split("/");
+        const name = paths.length - 1;
+        return paths[name];
+    };
+
+    useEffect(() => {
+        const handleMount = async () => {
+          try {
+            const { data } = await axiosReq.get(`/scenes/${id}/`);
+            const { storyboard, number } = data;
+            setPostData({ storyboard, number });
+            if (storyboard) {
+              const file = getFilename(data.storyboard);       
+              setFileName(file);
+            }
+            setHasLoaded(true);
+          } catch (err) {
+            console.log(err);
+          }
+        };
+    
+        handleMount();
+      }, [id]);
+
     return (
         <div className='mb-5'>
             <Row >
             <Col xs={12} className='text-center'>
             <h5 className={` mt-1 mb-4 pl-5 py-2 ${styles.SubTitle }`}>
-                STORYBOARD PAGE<span className={`float-right ${styles.Close } pt-1`} 
-                onClick={() => setShowstory(false) } >Close</span>
+                STORYBOARD PAGE
             </h5>
+            </Col>
+            </Row>
+            <Row>
+            <Col xs={4}>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              onClick={() => history.goBack()}
+              >
+              Back
+            </Button>
             </Col>
             </Row>
             <Row>
@@ -68,9 +115,11 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
                       ) } 
             {!addStory ?("") : (
             <StoryBoardUpload 
-            setScene={setScene} 
-            setNewStory={setNewStory} 
-            setAddStory={setAddStory} />  ) }
+            setAddStory={setAddStory}
+            id={id}
+            storyboard1= {storyboard}
+            number1={number}
+            fileName1={fileName} />  ) }
             {!templates ? (
                 ""
                     ) : (
@@ -83,7 +132,6 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
                     ) : (
                       <StoryboardURL
                       setAddURL={setAddURL}
-                      setScene={setScene}
                       /> 
                       ) } 
             <Row className="h-100 my-2">
@@ -91,9 +139,9 @@ const Storyboard = ({storyboard, setShowstory, setScene} ) => {
             <h5 className={`mb-2 py-1 ${styles.SubTitle }`}>
              STORYBOARD</h5>
                 <>
-                    {newStory ? (
+                    {storyboard ? (
                         <div className={`${styles.Frame} mt-2`}>
-                        <iframe title="Storyboard" src={newStory} 
+                        <iframe title="Storyboard" src={storyboard} 
                          className={appStyles.iframeFull} alt="Storyboard"  />
                         </div>
                     )

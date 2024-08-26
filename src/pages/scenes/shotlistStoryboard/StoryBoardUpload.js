@@ -11,48 +11,31 @@ import styles from "../../../styles/Scene.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 
-const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
+const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) => {
     const [errors, setErrors] = useState({});
+    const [fileName, setFileName] = useState(fileName1);
     const [postData, setPostData] = useState({
-        storyboard: "",
-        number: "",
+        storyboard: storyboard1,
+        number: number1,
     })
     const {storyboard, number} = postData;
     const storyboardInput = useRef(null);
 
     const history = useHistory();
-    const { id } = useParams();
 
-    useEffect(() => {
-        const handleMount = async () => {
-          try {
-            const { data } = await axiosReq.get(`/scenes/${id}/`);
-            const { storyboard, number } = data;
-     
-        setPostData({ storyboard, number });
-          } catch (err) {
-            console.log(err);
-          }
-        };
-    
-        handleMount();
-      }, [id]);
-
-      const handleChangeStoryboard = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(storyboard);
-          setPostData({
-            ...postData,
-            storyboard: URL.createObjectURL(event.target.files[0]),
-          });
-          
-          // setNewStory(event.target.files[0]);
-          console.log(`storyboard ${storyboard}`);
-        }
-      };
+    const handleChangeStoryboard = (event) => {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(storyboard);
+        setPostData({
+          ...postData,
+          storyboard: URL.createObjectURL(event.target.files[0]),
+        });
+        setFileName(event.target.files[0].name);
+      }
+    };
 
       const handleSubmit = async (event) => {
         event.preventDefault();
@@ -66,11 +49,7 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
         try {
             const data = await axiosReq.put(`/scenes/${id}/`, formData);
             console.log(data)
-            setAddStory(false);
-            const storyboard = data.storyboard;
-            /* Upload the scene state */
-            setNewStory(storyboard);
-            history.push(`/scenes/`);
+            history.push(`/scenes/${id}`);
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
@@ -118,6 +97,7 @@ const StoryBoardUpload = ({setAddStory, setScene, setNewStory }) => {
                       <iframe title="storyboard" alt="storyboard"
                        className={appStyles.iframe} src={storyboard} />
                       </figure>
+                      {fileName && <p>{fileName} </p> }
                       <div>
                         <Form.Label
                           className={`${btnStyles.Button} ${btnStyles.Blue} btn`}

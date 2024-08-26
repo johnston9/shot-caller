@@ -196,7 +196,7 @@ const ScenesPage = ({message, filter = "" }) => {
             {hasLoaded ? (
             <>
             {scenes.results.length ? (
-                scenes.results.map((scene, index) => {
+                scenes.results.map((scene) => {
                   return (
                     <Col xs={6} sm={4} md={3} lg={2} className="p-1 ">
                       <SceneTop 
@@ -205,8 +205,6 @@ const ScenesPage = ({message, filter = "" }) => {
                         setScenes={setScenes}
                         style={{ backgroundImage:  (`url(${r1})`), 
                           objectFit: "cover", width: '100%', repeat: 'no-repeat' }}
-                        // style={{ backgroundImage: (index % 3 === 0) ? (`url(${r1})`) : (index % 2 === 0) ? (`url(${r1})`) : (`url(${r1})`) , 
-                        //   objectFit: "cover", width: '100%', repeat: 'no-repeat' }}
                         />
                       </Col>
                 )}

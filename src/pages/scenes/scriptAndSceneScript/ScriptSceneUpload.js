@@ -27,17 +27,17 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
 
     const history = useHistory();
 
-      const handleChangeScript = (event) => {
-        if (event.target.files.length) {
-          URL.revokeObjectURL(script);
-          setPostData({
-            ...postData,
-            script: URL.createObjectURL(event.target.files[0]),
-          });   
-          setFileName(event.target.files[0].name);
-          console.log(`script ${script}`)
-        }
-      };
+    const handleChangeScript = (event) => {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(script);
+        setPostData({
+          ...postData,
+          script: URL.createObjectURL(event.target.files[0]),
+        });   
+        setFileName(event.target.files[0].name);
+        console.log(`script ${script}`)
+      }
+    };
 
       const handleSubmit = async (event) => {
         event.preventDefault();
