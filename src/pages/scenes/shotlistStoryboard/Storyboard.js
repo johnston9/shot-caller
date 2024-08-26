@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import appStyles from "../../../App.module.css";
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Asset from '../../../components/Asset';
 import NoResults from "../../../assets/no-results.png";
 import StoryBoardUpload from './StoryBoardUpload';

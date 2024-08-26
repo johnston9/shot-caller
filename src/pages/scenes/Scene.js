@@ -45,6 +45,7 @@ import InfoScenePage from './info/InfoScenePage';
 import InfoWorkspace from './info/InfoWorkspace';
 import Script from './scriptAndSceneScript/ScriptScene';
 import CharactersBG from './charactersBg/CharactersBG';
+import StoryboardforSList from './shotlistStoryboard/StoryboardforSList';
 
 const Scene = (props) => {
     const [showScript, setShowScript] = useState(false);
@@ -406,10 +407,13 @@ const Scene = (props) => {
                     ) : (                      
                       <Row>
                         <Col xs={6}>
-                        <Storyboard setShowstory={setShowStoryShot} storyboard={storyboard} />
+                        <StoryboardforSList
+                        storyboard={storyboard}
+                        />
                         </Col>
                         <Col xs={6}>
-                        <ShotlistPage setShowlist={setShowStoryShot} scene={scene} />
+                        <ShotlistPage setShowlist={setShowStoryShot} 
+                        scene={scene} />
                         </Col>
                       </Row>             
                     ) }
