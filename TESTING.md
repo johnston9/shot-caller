@@ -399,16 +399,16 @@ Description: View, Download, Print or Change the Scene Storyboard<br>
 
 - Use Case: View the Scene Storyboard<br>
 
-  1. Click on Stroyboard tab on the Scene page to view the new Storyboard "S 11 Storyb" added above.
+  1. Click on Stroyboard tab on the Scene page to open the Storyboard page in which the current Storyboard displays if one has been added.
 
-<p align="center"> <strong>Scene Storyboard - "S 11 Storyb"</strong></p>
+<p align="center"> <strong>Scene Storyboard - "Portrait 6"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scenestory1.png" width="50%">
+<img src="documentation/readme-images/storyview.png" width="50%">
 </h2>
 
 - Use Case: Change the Scene Storyboard<br>
 
-  1. Click on Storyboard tab on the Scene page to open the new Storyboard added above.
+  1. Click on Storyboard tab on the Scene page to open the new Storyboard page.
   2. Click on the "Add/Change Storyboard" tab.
   3. The Add/Change Script form opens with the database name of the current Script "S_11_Script_iyrt4p" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" tab will display instead.
   4. Click the "Change Script" or "Upload Script" tab depending on which case above to open the Desktop.

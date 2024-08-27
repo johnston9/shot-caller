@@ -63,7 +63,7 @@ const Storyboard = () => {
         <div className='mb-5'>
             <Row >
             <Col xs={12} className='text-center'>
-            <h5 className={` mt-1 mb-4 pl-5 py-2 ${styles.SubTitle }`}>
+            <h5 className={` mt-1 mb-4 py-1 ${styles.SubTitle }`}>
                 STORYBOARD PAGE
             </h5>
             </Col>
@@ -152,7 +152,12 @@ const Storyboard = () => {
                     )}
                 </>
             </Col>
-            </Row>            
+            </Row> <Row>
+        <Col xs={2} ></Col>
+        <Col xs={8}>
+        <hr className={`${styles.Break1}`}/>
+        </Col>
+        </Row>         
         </div>
     )
 }

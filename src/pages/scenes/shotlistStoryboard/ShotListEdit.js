@@ -189,7 +189,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
       );
 
     return (
-        <div className={`${styles.ShotInfo} px-5`}>
+        <div className={`${styles.White} pt-1 px-5`}>
           <h5 className="my-3 text-center">Edit Shot {shot_number} </h5>
             <Form className={`${styles.ShotEditForm}`} onSubmit={handleSubmit}>
             {/* number size act movement*/}
@@ -267,6 +267,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
             ))}
             </Col>
         </Row>
+        <hr/>
         {/* description equip */}
         <Row>
         <Col xs={6}>
@@ -309,83 +310,84 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
               </Alert>
             ))}
         </Col>
-            </Row>
-           {/* camera lens screen-time script-length*/}
-           <p className="text-center">Extra Info</p>
-           <Row>
-          <Col xs={3} >
-          <Form.Group controlId="camera" className="mb-2" >
-                <Form.Label className="d-none p-1" >Camera</Form.Label>
-                <Form.Control 
-                className={styles.Input}
-                placeholder="Camera"
-                type="text"
-                name="camera"
-                value={camera}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.camera?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3}>
-            <Form.Group controlId="lens" className="mb-2" >
-                <Form.Label className="d-none p-1" >Lens</Form.Label>
-                <Form.Control 
-                className={styles.Input}
-                placeholder="Lens"
-                type="text"
-                name="lens"
-                value={lens}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.lens?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3}>
-            <Form.Group controlId="screen_time" className="mb-2" >
-                <Form.Label className="d-none p-1" >Screen Time</Form.Label>
-                <Form.Control 
-                className={styles.Input}
-                placeholder="Screen Time"
-                type="text"
-                name="screen_time"
-                value={screen_time}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.screen_time?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-            <Col xs={3}>
-            <Form.Group controlId="script_length" className="mb-2" >
-                <Form.Label className="p-1 d-none" >Pages</Form.Label>
-                <Form.Control 
-                className={styles.Input}
-                placeholder="Pages"
-                type="text"
-                name="script_length"
-                value={script_length}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.script_length?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
         </Row>
+        {/* camera lens screen-time script-length*/}
+        <hr/>
+        <Row>
+        <Col xs={3} >
+        <Form.Group controlId="camera" className="mb-2" >
+              <Form.Label className="d-none p-1" >Camera</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              placeholder="Camera"
+              type="text"
+              name="camera"
+              value={camera}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+        <Col xs={3}>
+        <Form.Group controlId="lens" className="mb-2" >
+            <Form.Label className="d-none p-1" >Lens</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            placeholder="Lens"
+            type="text"
+            name="lens"
+            value={lens}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.lens?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={3}>
+        <Form.Group controlId="screen_time" className="mb-2" >
+            <Form.Label className="d-none p-1" >Screen Time</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            placeholder="Screen Time"
+            type="text"
+            name="screen_time"
+            value={screen_time}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.screen_time?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={3}>
+        <Form.Group controlId="script_length" className="mb-2" >
+            <Form.Label className="p-1 d-none" >Pages</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            placeholder="Pages"
+            type="text"
+            name="script_length"
+            value={script_length}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.script_length?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        <hr/>
         {/* lighting focus_pulls fx audio*/}
         <Row>
         <Col xs={3}>
@@ -468,8 +470,9 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
               </Alert>
             ))}
         </Col>
-            </Row>
-            <Row>
+        </Row>
+        <hr/>
+        <Row>
           <Col xs={6} >
           <Form.Group controlId="script_ref" className="mb-2" >
                 <Form.Label className="p-1 d-none" >Script Ref</Form.Label>
@@ -487,7 +490,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
                 {message}
               </Alert>
             ))}
-
+            <hr/>
             <Form.Group controlId="storyboard_refs" className="mb-2" >
                 <Form.Label className="p-1 d-none" >Storyboard Refs</Form.Label>
                 <Form.Control 
@@ -514,7 +517,8 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
                     {image ? (
                       <>
                         <figure>
-                          <Image className={appStyles.Image} src={image} rounded />
+                          <iframe className={appStyles.iframe} src={image} rounded
+                          title="Sketch/Image" alt="Sketch/Image" />
                         </figure>
                         <div>
                           <Form.Label
@@ -542,7 +546,6 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
                     <Form.Control
                       type="file"
                       id="image-upload"
-                      accept="image/*"
                       onChange={handleChangeImage}
                       ref={imageInput}
                     />

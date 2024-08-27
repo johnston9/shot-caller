@@ -5,6 +5,15 @@
     min-height: 10px;
   }
 
+.White {
+  background-color: #fff;
+}
+
+.Whitebb {
+  background-color: #fff;
+  border-bottom: 1px solid #999;
+}
+
 .Back {
   background-color: aliceblue;
 }

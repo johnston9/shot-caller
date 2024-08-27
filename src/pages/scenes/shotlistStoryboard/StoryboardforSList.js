@@ -11,7 +11,7 @@
    
    const StoryboardforSList = ({storyboard}) => {  
     //    const [postData, setPostData] = useState({
-    //        storyboard: "",
+    //        storyboard: "", 
     //        number: "",
     //    })
     //    const {storyboard, number} = postData;
@@ -39,7 +39,7 @@
                 STORYBOARD</h5>
                    <>
                        {storyboard ? (
-                           <div className={`${styles.Frame2} mt-2`}>
+                           <div className={`${styles.Frame} mt-2`}>
                            <iframe title="Storyboard" src={storyboard} 
                             className={appStyles.iframeFull} alt="Storyboard"  />
                            </div>
@@ -51,7 +51,13 @@
                        )}
                    </>
                </Col>
-               </Row>            
+               </Row>
+               <Row>
+                <Col xs={2} ></Col>
+                <Col xs={8}>
+                <hr className={`${styles.Break1} mb-5`}/>
+                </Col>
+                </Row>           
            </div>
        )
    }   

@@ -25,7 +25,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
 
     const handleMount = async () => {
         try {
-            const { data } = await axiosReq(`/shotlists/?scene_id=${id}&ordering=day_order_number`);
+            const { data } = await axiosReq(`/shotlists/?scene_id=${id}&ordering=shot_number`);
             setShotlist(data);
         } catch (err) {
             console.log(`err ${err}`);
@@ -41,7 +41,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
         <div className='mb-5'>
             <Row>
             <Col xs={12} className='text-center'>
-            <h5 className={`mb-3 mt-1 pl-5 py-2 ${styles.SubTitle }`}>SHOTLIST
+            <h5 className={`mb-3 mt-2 pl-5 py-1 ${styles.SubTitle }`}>SHOTLIST
             <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close } pt-1`} 
             onClick={() => setShowlist(false) } >Close</span>
             </h5>
@@ -133,7 +133,12 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             </>
             </Col>
             </Row>  
-            <hr/>
+            <Row>
+            <Col xs={2} ></Col>
+            <Col xs={8}>
+            <hr className={`${styles.Break1}`}/>
+            </Col>
+            </Row>  
         </div>
     )
 }

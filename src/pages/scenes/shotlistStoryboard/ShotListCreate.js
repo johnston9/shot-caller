@@ -9,7 +9,6 @@ import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
 import { useHistory, useParams } from "react-router-dom";
@@ -116,7 +115,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
           const { data } = await axiosReq.post("/shotlists/", formData);
           setAddShot((addShot) => !addShot)
           setShotlist((prevShotlist) => ({
-          /* Update the shotLost state */
+          /* Update the shotList state */
             ...prevShotlist,
             results: [data, ...prevShotlist.results],
           }));
@@ -142,7 +141,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     );
 
     return (
-        <div className={`px-0 mb-0 ${styles.Back }`} >
+        <div className={`px-0 mb-0 ${styles.Whitebb }`} >
           <Form onSubmit={handleSubmit}>
             {/* number size act movement*/}
         <Row>
@@ -211,6 +210,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             ))}
             </Col>
         </Row>
+        <hr/>
         {/* description equip */}
         <Row>
         <Col xs={6}>
@@ -249,10 +249,10 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
         </Col>
-            </Row>
-           {/* camera lens screen-time script-length*/}
-           <p>Extra Info if necessary</p>
-           <Row>
+        </Row>
+        <hr/>
+        {/* camera lens screen-time script-length*/}
+        <Row>
           <Col xs={3} >
           <Form.Group controlId="camera" className="mb-2" >
                 <Form.Label className="p-1" >Camera</Form.Label>
@@ -318,6 +318,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             ))}
             </Col>
         </Row>
+        <hr/>
         {/* lighting focus_pulls fx audio*/}
         <Row>
         <Col xs={3}>
@@ -393,6 +394,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             ))}
         </Col>
         </Row>
+        <hr/>
         <Row>
           <Col xs={6} >
           <Form.Group controlId="script_ref" className="mb-2" >
@@ -427,10 +429,11 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             ))}
           </Col>
         </Row>
+        <hr/>
         <Row>
-        <Col className="text-center" md={{span: 10, offset: 1 } } >
+        <Col className="text-center" md={{span: 6, offset: 3 } } >
           {/* image  */}
-          <p>Image</p>
+          <p>Sketch/Image</p>
           <Container
                   className={`${appStyles.Content} mt-3 py-5 d-flex flex-column justify-content-center`}
                   >
@@ -438,7 +441,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
                 {image ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={image} rounded />
+                      <iframe className={appStyles.iframe} 
+                      title="Sketch/Image" alt="Sketch/Image" src={image} rounded />
                     </figure>
                     <div>
                       <Form.Label
@@ -466,7 +470,6 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
                 <Form.Control
                   type="file"
                   id="image-upload"
-                  accept="image/*"
                   onChange={handleChangeImage}
                   ref={imageInput}
                 />
@@ -480,9 +483,10 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
           </Container>
         </Col>
         </Row>
+        <hr/>
         <Row>
-          <Col className="text-center">
-          <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container>
+          <Col className="text-center pb-3">
+            {buttons}
           </Col>
         </Row>
         </Form>

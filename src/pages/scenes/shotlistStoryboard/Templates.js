@@ -44,7 +44,7 @@ const Templates = ({setTemplates}) => {
     {/* <h5 className={`text-center ${appStyles.playball} `}>PORTRAIT</h5> */}
     <Row>
     <Col xs={6} className='text-center'>
-    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    <p className={`${appStyles.playball} pb-1`}>
     6 PANEL PORTRAIT
     </p>
     <figure>
@@ -53,7 +53,7 @@ const Templates = ({setTemplates}) => {
     </figure>
     </Col>
     <Col xs={6} className='text-center'>
-    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    <p className={`${appStyles.playball} pb-1`}>
     8 PANEL PORTRAIT
     </p>
     <figure>
@@ -82,7 +82,7 @@ const Templates = ({setTemplates}) => {
     {/* <h5 className={`text-center ${appStyles.playball} `}>LANDSCAPE</h5> */}
     <Row>
     <Col xs={6} className='text-center'>
-    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    <p className={`${appStyles.playball} pb-1`}>
     6 PANEL LANDSCAPE
     </p>
     <figure>
@@ -91,7 +91,7 @@ const Templates = ({setTemplates}) => {
     </figure>
     </Col>
     <Col xs={6} className='text-center'>
-    <p className={`${styles.Bold } ${appStyles.playball} pb-1`}>
+    <p className={`${appStyles.playball} pb-1`}>
     12 PANEL LANDSCAPE
     </p>
     <figure>

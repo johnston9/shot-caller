@@ -1,10 +1,5 @@
-/* scene card  */
 .Frame {
   height: 1000px;
-}
-
-.Frame2 {
-  height: 400px;
 }
 
 .Back {
@@ -142,6 +137,10 @@
   font-weight: 700;
 }
 
+.Lightgrey {
+  color: rgba(0, 0, 0, .54) 
+}
+
 .ButtonLine {
   background-color: #fff;
   border-top: 3px solid #fff;
@@ -218,6 +217,16 @@
 
 .BreakBoxTitle {
   color: crimson;
+}
+
+.Titlex {
+  color: #0052cc;
+}
+
+.SubTitlex {
+  background-color: #e1ecec;
+  font-weight: 700;
+  color: rgba(0, 0, 0, .54)
 }
 
 .SubTitle {
@@ -357,10 +366,11 @@
 
   .Input {
     background: #ffffff;
-    border: 1px solid #f0f1f9;
+    /* border: 1px solid #ECEDF0; */
+    border: 1px solid #e0e3eb;
     box-sizing: border-box;
     border-radius: 2px;
-    color: #7177a1;
+    color: #172b4d;
     padding: 0px 10px;
     height: 30px !important;
     text-align: center;
@@ -368,29 +378,29 @@
 
 .InputScene {
    background: #ffffff;
-   border: 1px solid #f0f1f9;
+   border: 1px solid #e0e3eb;
    box-sizing: border-box;
    border-radius: 2px;
-   color: #7177a1;
+   color: #172b4d;
    padding: 0px 10px;
 }
 
 .InputChar {
    background: #ffffff;
-   border: 1px solid #f0f1f9;
+   border: 1px solid #e0e3eb;
    box-sizing: border-box;
    border-radius: 2px;
-   color: #7177a1;
+   color: #172b4d;
    padding: 0px 0px;
    height: 30px !important;
 }
 
 .InputArea {
   background: #ffffff;
-    border: 1px solid #f0f1f9;
+    border: 1px solid #e0e3eb;
     box-sizing: border-box;
     border-radius: 2px;
-    color: #7177a1;
+    color: #172b4d;
     padding: 0px 10px;
     height: 50px !important;
 }
