@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-import DropdownButton from 'react-bootstrap/DropdownButton'
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import { axiosReq } from "../../../api/axiosDefaults";
 import { useCharactersContext } from "../../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";

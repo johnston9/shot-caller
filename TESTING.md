@@ -292,6 +292,7 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
 <h2 align="center">
 <img src="documentation/readme-images/scenesact3.png" width="50%">
 </h2>
+
 - Use Case: Create a Scene<br>
 
   1. In the Scenes Workspace page click on the "Create Scene" tab to open the "Create Scene" form.<br>
@@ -310,7 +311,11 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
 
 #### Scene Breakdown
 
-- User Case: Add/Edit details in the Breakdown<br>
+- Use Case: View the Scene Breakdown<br>
+
+  1. Click on Breakdown tab on the Scene page to view the Scene Breakdown.
+
+- Use Case: Add/Edit details in the Breakdown<br>
 
   1. Click on the 3 Dots on the Scene page or the Add/Edit tab on the Breakdown page to open the Add/Edit Breakdown form.
   2. Fill in the details.
@@ -342,7 +347,55 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
 <img src="documentation/readme-images/scenebreak2.png" width="50%">
 </h2>
 
-### Scene Script
+#### Scene Characters/Bg
+
+- Use Case: View the Scene Characters/Bg Section<br>
+
+  1. Click on Characters/Bg tab on the Scene page to view the Scene Characters/Bg Section.
+
+<p align="center"> <strong>The Characters/Bg Section</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charbg.png" width="50%">
+</h2>
+
+- Use Case: Add New Characters to the Project<br>
+
+  1. Click on "Add Character" tab on the Characters/Bg Section to open the Add Characters form.<br>
+  2. Click on "Add New Characters" tab in the Add Characters Section to open the Add New Characters form.<br>
+  3. Enter the "Role" name - "Fritz".<br>
+  4. Select a Character number from one of the three inputs boxes.<br>
+    Clicking on "Number 1 - 30" opens a dropdown with all the current unused "1 - 30" Numbers.<br>
+    Clicking on "Number 31 - 100" opens a dropdown with all the current unused "31 - 100" Numbers.<br>
+    Clicking on "Number 101 - 200" opens a dropdown with all the current unused "101 - 200" Numbers.<br>
+    Select Number "44" from the "Number 31 - 100" dropdown then click "Create" and the Character Fritz is added to the database with a Character Number of "44".<br>
+
+<p align="center"> <strong>The Add Characters form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charadd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Click "Add New Charcaters" tab to open the "Add new characters" form and sekect Number "44" from the dropdown.</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charsel1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Character Fritz is added to the project with a Number od "44"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charbg.png" width="50%">
+</h2>
+
+- Use Case: Add Characters to the Scene<br>
+
+  1. Click on "Add Character" tab on the Characters/Bg Section to open the Add Characters form.<br>
+  2. Click on "Add New Characters" tab in the Add Characters Section to open the Add New Characters form.<br>
+  3. Enter the "Role" name - "Fritz".<br>
+
+<p align="center"> <strong>The Character Fritz is added to the project with a Number od "44"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charbg.png" width="50%">
+</h2>
+
+#### Scene Script
 Description: View, Download, Print or Change the Scene Script<br>
 
 - Use Case: View the Scene Script<br>
@@ -373,10 +426,10 @@ Description: View, Download, Print or Change the Scene Script<br>
 
   1. Click on Script tab on the Scene page to open the new Script "S 11 No 2 Script" added above.
   2. Click on the "Add/Change Script" tab.
-  3. The Add/Change Script form opens with the "Database" name of the current Script "S_11_No_2_Script_swbjdg" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" tab will display instead.
-  4. Click the "Change Script" or "Upload Script" tab to open the Desktop files.
+  3. The Add/Change Script form opens with the "Database" name of the current Script "S_11_No_2_Script_swbjdg" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" message will display instead.
+  4. Click "Change Script" or "Upload Script" to open the Desktop files.
   5. Select the desired file "S 11 No 3 Script" and the "Desktop" name of the selected file "S 11 No 3 Script.pdf" displays in place of the previous "Database" one.
-  6. Click Upload.
+  6. Click Upload and the Script is changed in the backend.
   7. Click Script tab to view the newly uploaded Script "S 11 No 3 Script" with the new database File name "S_11_No_3_Script_i8tapb" displaying.
 
 <p align="center"> <strong>The "Add/Change Script" form displaying the current "Database" file name "S_11_No_2_Script_swbjdg"</strong></p>
@@ -391,7 +444,7 @@ Description: View, Download, Print or Change the Scene Script<br>
 
 <p align="center"> <strong>The "Script" page with the new Script "S 11 No 3 Script" - "Database" file name "S_11_No_3_Script_i8tapb"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scenescriptf1.png" width="50%">
+<img src="documentation/readme-images/scenescriptno3.png" width="50%">
 </h2>
 
 ### Scene Storyboard
@@ -403,22 +456,42 @@ Description: View, Download, Print or Change the Scene Storyboard<br>
 
 <p align="center"> <strong>Scene Storyboard - "Portrait 6"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/storyview.png" width="50%">
+<img src="documentation/readme-images/storyview2.png" width="50%">
 </h2>
+
+- Use Case: Download the Scene Storyboard<br>
+
+  1. Click on Download icon on the Storyboard page.
+  2. The Storyboard is downloaded to the User's device.
+
+- Use Case: Print the Scene Storyboard<br>
+
+  1. Click on Print icon on the Storyboard page.
+  2. The Storyboard is printed out on the User's printer.
 
 - Use Case: Change the Scene Storyboard<br>
 
-  1. Click on Storyboard tab on the Scene page to open the new Storyboard page.
-  2. Click on the "Add/Change Storyboard" tab.
-  3. The Add/Change Script form opens with the database name of the current Script "S_11_Script_iyrt4p" displaying and a "Change Script" tab underneath.  If no Script has been added yet an "Upload Script" tab will display instead.
-  4. Click the "Change Script" or "Upload Script" tab depending on which case above to open the Desktop.
-  5. Select the desired file "S 11 No 2 Script" and the desktop name of the selected file "S 11 No 2 Script.pdf" displays in place of the previous one.
-  6. Click Create.
-  7. Click Script tab to view the newly uploaded Script "S 11 No 2 Script" with the new database File name "S_11_No_2_Script_swbjdg" displaying above.
+  1. Click on Storyboard tab on the Scene page to open the Storyboard page with the present Storyboard "Portrait 6" displaying.
+  2. Click on the "Add Storyboard" tab whether one has been added and is displaying or not.
+  3. The Add/Change Storyboard form opens with the database name of the current Storyboard "portrait6_zkrkp7" displaying and a "Change Storyboard" tab underneath.  If no Storyboard has been added yet an "Upload Storyboard" message will display instead.
+  4. Click "Change Storyboard" or "Upload Storyboard" to open the Desktop files.
+  5. Select the desired file "Landscape6" and the desktop name of the selected file "Landscape6.pdf" displays in place of the previous one.
+  6. Click Upload and the Storyboard is changed in the backend.
+  7. Click Storyboard tab to view the newly uploaded Storyboard "Landscape6" with the new database File name "landscape6_nqxnys" displaying above.
 
-<p align="center"> <strong>New Scene Script - "S 11 No 2 Script"</strong></p>
+<p align="center"> <strong>The "Add/Change Storyboard" form displaying the current "Database" file name "portrait6_zkrkp7"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scenescriptch2.png" width="50%">
+<img src="documentation/readme-images/storychange1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The "Add/Change Storyboard" form displaying the new "Desktop" file name "Landscape6.pdf"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescriptf2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The "Storyboard" page with the new Storyboard "Landscape6" - "Database" file name "landscape6_nqxnys"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenescriptno3.png" width="50%">
 </h2>
 
 ### Scenes Workspaces

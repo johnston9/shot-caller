@@ -1,5 +1,10 @@
 /* Component in the Scene Component to fetch 
    all ShotList data for a Scene
+    <Row>
+    <Col xs={6}>
+    <hr className={`${styles.Break1} my-0`}/>
+    </Col>
+    </Row>
  * Contains the Shot component to which it passes the data
    for each Shot in the Shotlist
  * Contains the ShotListCreate component  */

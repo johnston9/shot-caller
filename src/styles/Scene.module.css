@@ -18,6 +18,14 @@
   border-top: 5px solid #d0d9db;
 }
 
+.BorderRight {
+  border-right: 1px solid #d0d9db;
+}
+
+.ColHeight {
+  min-height: 88.8px;
+}
+
 .DeptImageBox {
   background-color: #000;
   color: #fff;
@@ -491,6 +499,18 @@
 
 .ContactBack {
   background-color: #dff3f4;
+}
+
+.dropdown-menu {
+color:red;
+height: 70px;
+overflow-y: scroll;
+}
+
+.DropButt {
+  color:red;
+  height: 400px;
+  overflow-y: scroll; 
 }
 
 @media screen and (max-width: 600px) {

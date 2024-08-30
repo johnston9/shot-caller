@@ -151,9 +151,15 @@ const CharactersBG = (props) => {
             ""
             )}
             </Row>
+            <Row className='mt-4'>
+            <Col xs={2} ></Col>
+            <Col xs={8}>
+            <hr className={`${styles.Break2}`}/>
+            </Col>
+            </Row>
             {/* BG / STANDINGS */}
             <Row>
-            <Col xs={12} className='text-center mt-5' >
+            <Col xs={12} className='text-center mt-4' >
             <Button
                 className={`py-0 ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowBGAdd(showBGAdd => !showBGAdd)} >ADD BG / STANDINGS
@@ -245,7 +251,12 @@ const CharactersBG = (props) => {
             ""
             )}
             </Row>
-            <p className={`mt-5 mb-2 py-1 ${styles.SubTitle }`}></p>
+            <Row className='mt-5'>
+            <Col xs={2} ></Col>
+            <Col xs={8}>
+            <hr className={`${styles.Break2}`}/>
+            </Col>
+            </Row>
         </div>
     )
 }

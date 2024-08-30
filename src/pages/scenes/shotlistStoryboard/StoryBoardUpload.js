@@ -103,7 +103,7 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
                           className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
                           htmlFor="storyboard-upload"
                         >
-                          Change the storyboard
+                          Change Storyboard
                         </Form.Label>
                       </div>
                     </>
@@ -116,7 +116,7 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
                         src={Upload}
                         height={50}
                         width={50}
-                        message="Click or tap to upload a storyboard"
+                        message="Upload Storyboard"
                       />
                     </Form.Label>
                   )}

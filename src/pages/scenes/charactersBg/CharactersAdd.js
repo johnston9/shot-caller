@@ -25,16 +25,6 @@ const CharactersAdd = (props) => {
                 <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersAdd(false) } >Close</span>
             </h5>
             <div className={` ${styles.AliceBlueMild }`}>        
-            {/* info */}
-            {/* <Row>
-            <Col sm={{span: 10, offset: 1 }} className='text-center' >
-            <p>
-            New Characters must be added here by the Add New Characters 
-          form or on the Character's feature Add Character
-          page. This will add them to the Add Scene Character dropdown.
-            </p>
-            </Col>
-            </Row> */}
             <Row>
             <Col className="text-center mt-2" xs={12} sm={6}>
             <Button
