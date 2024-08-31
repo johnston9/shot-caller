@@ -58,19 +58,6 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
         })
         }
 
-    // useEffect(() => {
-    //   const handleMount = async () => {
-    //       try {
-    //           const { data } = await axiosReq.get(`/scenecharacters/?scene_id=${id}`)
-    //           setCast(data);
-    //           console.log(data);
-    //       } catch (err) {
-    //           console.log(err);
-    //         }
-    //   }
-    //   handleMount();
-    //   }, [id])
-
     const handleSubmit = async (event) => {
       event.preventDefault();
 

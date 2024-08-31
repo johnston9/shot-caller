@@ -142,7 +142,7 @@ const LatestScript = () => {
                 <>
                 <h5 style={{ textTransform: 'uppercase'}} 
                 className={`mt-1 mb-3 pl-3 py-1 ${styles.SubTitle } text-center`}>
-                SCRIPT {draft} 
+                SCRIPT {draft}
                 </h5>
                     {script ? (
                         <> 

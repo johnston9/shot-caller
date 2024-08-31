@@ -502,13 +502,11 @@
 }
 
 .dropdown-menu {
-color:red;
-height: 70px;
+height: 400px;
 overflow-y: scroll;
 }
 
 .DropButt {
-  color:red;
   height: 400px;
   overflow-y: scroll; 
 }

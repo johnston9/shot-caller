@@ -376,10 +376,10 @@ sqlparse==0.4.2 <br>
 - [Code Institute](https://codeinstitute.net/)
   The code for the basic React/DRF set-up for the app is from Code Institute. This includes the Requests, the Current User Context, the Profiles and the Posts, Likes and Followers in the Front End and the Models, Views and Serializers for all apps in the Back End.
 - [Django Rest Framework](https://www.django-rest-framework.org/)
-  I referred to these throughout the project.
-- [stackoverflow.com]()
-  I referred to Stack Overflow to check out different approaches for some issues. It was here I learnt the Regex for input boxes.
-- [w3schools.com]()
+  I referred to the Django Rest Framework documents for a number of backend issues in the project.
+- [stackoverflow.com](https://stackoverflow.com/questions/45380397/scrollable-drop-down-lists-in-react-bootstrap)
+  I referred to Stack Overflow to check out different approaches for some issues including the Regex to allow only numbers and a decimal point in some Budget input boxes and how to add a scroll to a React dropdown.
+- [w3schools.com](https://www.w3schools.com/)
   I referred to W3 a number of times for Javascript code examples.
   
 ### Content

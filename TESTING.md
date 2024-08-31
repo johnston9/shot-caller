@@ -258,9 +258,10 @@ Description: xxxx<br>
 ## The Creative Features
 
 ### Scenes Workspace
-Description: View and create Scene pages containing Breakdowns, Cast and Background, Shotlists, Storyboards, Scripts, and Workspaces.<br>
+Description: View and create Scene pages containing Breakdowns, Characters and Background, Scripts, Storyboards, Shotlists, and Workspaces.<br>
 
 #### Scenes Page
+Description: This page displays all the currently added Scenes and the "Script" tab to the Script page where the whole Script can be uploaded and viewed.
 
 - Use Case: View all the Scenes<br>
 
@@ -309,7 +310,52 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
 <img src="documentation/readme-images/scenescreate2.png" width="50%">
 </h2>
 
+#### Script
+Description: This page contains the whole script. It also had "Latest Changes" and "Notes" information sections on top and an "Add Latest Script" tab where the latest draft can be uploaded.<br>
+
+- Use Case: View the Script<br>
+
+  1. Click on the "Script" tab on the Scenes page.
+  2. The Script page opens displaying the current Script with the "Latest Changes" and "Notes" information sections on top and an "Add Latest Script" tab.
+
+<p align="center"> <strong>The Script page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/script1.png" width="50%">
+</h2>
+
+- Use Case: Add the Latest Draft along with the Latest Changes and Notes inputs<br>
+
+  1. Click on the "Add Latest Script" tab on the Scenes page.
+  2. The "Add Latest Script" form opens displaying the current database Script file name, "Script_Draft_1_ny25jg" and the current draft, latest changes and notes inputs.
+  3. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, - "Script Draft 2".
+  4. The new file is added with its desktop name displaying below, - "Script Draft 2.pdf".
+  5. Input the new "Draft Name" info, - "Draft 2, 02-02-24".
+  6. Input the new "Latest Changes" info, - "Scene, 1, 2 and 3 changed.Added scene 94."
+  7. Input the new "Notes" info, - "Scene 1 is 1.5 pages longer now."
+  8. Click Create and the updates are added to the database and the Scenes page opens.
+  9. Click Script to view the changes including its new database file name "Script_Draft_2_vw2npe".
+
+
+<p align="center"> <strong>The "Add Latest Script" form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/script2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The new Script with its new info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/script5.png" width="50%">
+</h2>
+
+#### Scene Page
+Description: This page contains the Breakdown, Characters and Background, Scene Script, Storyboard, Shotlists, and Workspaces.<br>
+
+- Use Case: View the Scene Page<br>
+
+  1. Click on a Scene on the Scenes page or use any of the methods above.
+  2. The Scene page opens.
+
 #### Scene Breakdown
+Description: This section contains the Scene Breakdown.
 
 - Use Case: View the Scene Breakdown<br>
 
@@ -348,20 +394,22 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
 </h2>
 
 #### Scene Characters/Bg
+- Description: This section contains the Scene's Characters and Background information. Admin can add/edit Scene Characters and BG here. Characters are added by a dropdown containing all Characters added to the Project. Selecting a Character automatically fills it's Role and Number input.<br>
+Characters can be added to the Project on the "Add Character" form in the "Characters" feature or here in the "Add New Characters "form.
 
 - Use Case: View the Scene Characters/Bg Section<br>
 
-  1. Click on Characters/Bg tab on the Scene page to view the Scene Characters/Bg Section.
+  1. Click on Characters/Bg tab on the Scene page to view the Scene Characters/Bg Section wirh the currenly added Characters and Background.
 
 <p align="center"> <strong>The Characters/Bg Section</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/charbg.png" width="50%">
 </h2>
 
-- Use Case: Add New Characters to the Project<br>
+- Use Case: Add New Characters for the Project<br>
 
-  1. Click on "Add Character" tab on the Characters/Bg Section to open the Add Characters form.<br>
-  2. Click on "Add New Characters" tab in the Add Characters Section to open the Add New Characters form.<br>
+  1. Click on "Add Character" tab on the Characters/Bg Section to open the "Add Characters" form.<br>
+  2. Click on "Add New Characters" tab to open the Add New Characters form.<br>
   3. Enter the "Role" name - "Fritz".<br>
   4. Select a Character number from one of the three inputs boxes.<br>
     Clicking on "Number 1 - 30" opens a dropdown with all the current unused "1 - 30" Numbers.<br>
@@ -369,12 +417,12 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
     Clicking on "Number 101 - 200" opens a dropdown with all the current unused "101 - 200" Numbers.<br>
     Select Number "44" from the "Number 31 - 100" dropdown then click "Create" and the Character Fritz is added to the database with a Character Number of "44".<br>
 
-<p align="center"> <strong>The Add Characters form</strong></p>
+<p align="center"> <strong>Open the "Add New Characters" form and add Role "Fritz"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/charadd2.png" width="50%">
+<img src="documentation/readme-images/addnewchar11.png" width="50%">
 </h2>
 
-<p align="center"> <strong>Click "Add New Charcaters" tab to open the "Add new characters" form and sekect Number "44" from the dropdown.</strong></p>
+<p align="center"> <strong>Select number "44" from the "Number 31 - 100" dropdown.</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/charsel1.png" width="50%">
 </h2>
@@ -386,13 +434,35 @@ Description: View and create Scene pages containing Breakdowns, Cast and Backgro
 
 - Use Case: Add Characters to the Scene<br>
 
-  1. Click on "Add Character" tab on the Characters/Bg Section to open the Add Characters form.<br>
-  2. Click on "Add New Characters" tab in the Add Characters Section to open the Add New Characters form.<br>
-  3. Enter the "Role" name - "Fritz".<br>
+  1. Click on "Add Character" tab on the Characters/Bg Section to open the "Add Characters" form which contains the "Add Scene Character" form below the "Add New Characters" tab.<br>
+  2. Click on the "Select" button to open the scrollable Dropdown menu of currrently added Project Characters.<br>
+  3. Click on "Fritz", the Character added in the Use Case above.<br>
+  4. The Role and Number inputs are automatically filled with Fritz's info.<br>
+  4. "Fritz" is added to the Scene Charcters below and the form is cleared to allow the next Character to be added. After the page is refreshed the Character "Fritz" will be displayed in accending "Number" order like the rest of the Characters.
 
-<p align="center"> <strong>The Character Fritz is added to the project with a Number od "44"</strong></p>
+<p align="center"> <strong>The "Add Characters" form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/charbg.png" width="50%">
+<img src="documentation/readme-images/addchars1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Click on "Fritz" in the Dropdown</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/selfritz.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Role and Number Inputs are Automatically filled with Fritz's Info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/selfritz2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>"Fritz" is added to the Scene Charcters Below</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/selfritz3.png" width="50%">
+</h2>
+
+<p align="center"> <strong>"Fritz" Displaying in correct Order after Refreshing</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/selfritz4.png" width="50%">
 </h2>
 
 #### Scene Script
@@ -447,7 +517,7 @@ Description: View, Download, Print or Change the Scene Script<br>
 <img src="documentation/readme-images/scenescriptno3.png" width="50%">
 </h2>
 
-### Scene Storyboard
+#### Scene Storyboard
 Description: View, Download, Print or Change the Scene Storyboard<br>
 
 - Use Case: View the Scene Storyboard<br>
