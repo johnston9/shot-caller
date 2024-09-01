@@ -103,8 +103,8 @@ export const PostDropdown = ({ handleEdit, handleDelete }) => {
       <Dropdown.Toggle as={EditDeleteIcon} />
 
       <Dropdown.Menu
-        className="text-center"
-        popperConfig={{ strategy: "fixed" }}
+        className={`text-center ${styles.Dropmenu}`}
+        // popperConfig={{ strategy: "fixed" }}
       >
         <Dropdown.Item
           className={styles.DropdownItem}
@@ -169,12 +169,12 @@ export function ProfileEditDropdown({ id }) {
    */
 export function DeptDropdown({ handleClick}) {
   return (
-       <Dropdown className={`${styles.Absolute}`} drop="left">
-      <Dropdown.Toggle as={DepartmentIcon} />
-      <Dropdown.Menu
-        className={` ${styles.Menu}`}
-        popperConfig={{ strategy: "fixed" }}
-      >
+    <Dropdown className={`${styles.Absolute}`} drop="left">
+    <Dropdown.Toggle as={DepartmentIcon} />
+    <Dropdown.Menu
+      className={` ${styles.Menu}`}
+      popperConfig={{ strategy: "fixed" }}
+    >
         <Dropdown.Item
           className={styles.Menu1}
           onClick={() => handleClick('requirements') }

@@ -341,7 +341,7 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 <img src="documentation/readme-images/script2.png" width="50%">
 </h2>
 
-<p align="center"> <strong>The new Script with its new info</strong></p>
+<p align="center"> <strong>The new Script and the new info</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/script5.png" width="50%">
 </h2>
@@ -351,7 +351,7 @@ Description: This page contains the Breakdown, Characters and Background, Scene 
 
 - Use Case: View the Scene Page<br>
 
-  1. Click on a Scene on the Scenes page or use any of the methods above.
+  1. Click on a Scene on the Scenes page.
   2. The Scene page opens.
 
 #### Scene Breakdown
@@ -463,6 +463,45 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
 <p align="center"> <strong>"Fritz" Displaying in correct Order after Refreshing</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/selfritz4.png" width="50%">
+</h2>
+
+- Use Case: Delete Scene Characters<br>
+
+  1. Click on "3 Dots Edit/Delete" icon to open the Edit/Delete mini menu and select Delete.<br>
+  2. A pop-up displays on top of the page asking to confirm the Delete.
+  3. Click "Cancel" to cancel or "Delete" to delete.
+
+<p align="center"> <strong>The Edit/Delete mini menu</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/chardel1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Pop-up to Confirm Delete</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/chardel2.png" width="50%">
+</h2>
+
+- Use Case: Edit Scene Characters<br>
+
+  1. Scene Characters' "Role" and "Number" fileds cannot be edited but "Costume" can, - see below.<br>
+
+#### Scene Character Costume
+Description: 
+- Use Case: Edit Scene Characters' Costumes<br>
+
+  1. Click on s character's "3 Dots Edit/Delete" icon to open the Edit/Delete mini menu and select Edit, eg "Fritz".<br>
+  2. The "Add/Edit Costume" form opens.
+  3. Enter a value "1" and submit.
+  4. The value "1" is added to Fritz Costume.
+
+<p align="center"> <strong>Value "1" Entered in "Add/Edit Costume" form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/costume1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Value "1" added to "Fritz Costume"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/costume2.png" width="50%">
 </h2>
 
 #### Scene Script

@@ -10,9 +10,18 @@
     z-index: 99 !important;
   }
 
-.Menu {
+.Dropmenu {
     z-index: 99 !important;
     color: red;
+}
+
+.Menu {
+  z-index: 99 !important;
+  color: red;
+}
+
+.dropdown-menu {
+  background-color: red;
 }
   
   .Absolute {

@@ -89,7 +89,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
             Cancel
           </Button>
           <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
-            Edit
+            Submit
           </Button>
         </div>
       );
@@ -100,7 +100,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
         <Row className="">
         <Col className="px-0" xs={6} >
         <p className={`text-center mb-0 ${styles.Bold }`}>
-         Edit Costume
+         Add/Edit Costume
         </p>
         </Col>
         <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
