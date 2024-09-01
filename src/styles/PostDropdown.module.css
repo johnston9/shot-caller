@@ -9,20 +9,6 @@
     padding: 0px;
     z-index: 99 !important;
   }
-
-.Dropmenu {
-    z-index: 99 !important;
-    color: red;
-}
-
-.Menu {
-  z-index: 99 !important;
-  color: red;
-}
-
-.dropdown-menu {
-  background-color: red;
-}
   
   .Absolute {
     position: absolute;

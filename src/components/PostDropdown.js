@@ -169,7 +169,7 @@ export function ProfileEditDropdown({ id }) {
    */
 export function DeptDropdown({ handleClick}) {
   return (
-    <Dropdown className={`${styles.Absolute}`} drop="left">
+    <Dropdown className={`${styles.Absolute}`}>
     <Dropdown.Toggle as={DepartmentIcon} />
     <Dropdown.Menu
       className={` ${styles.Menu}`}

@@ -9,7 +9,6 @@ import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/Scene.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
 import Asset2 from "../../../components/Asset2";

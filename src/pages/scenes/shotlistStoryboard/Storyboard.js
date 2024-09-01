@@ -22,6 +22,7 @@ const Storyboard = () => {
     const [addStory, setAddStory] = useState(false);
     const [addURL, setAddURL] = useState(false);
     const [templates, setTemplates] = useState(false);
+    // eslint-disable-next-line
     const [hasLoaded, setHasLoaded] = useState(false);
 
     const history = useHistory();

@@ -16,7 +16,7 @@ import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/Scene.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
-import { Alert, Image } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import TopBox from "../../../components/TopBox";
@@ -635,7 +635,8 @@ const BreakdownEditForm = () => {
                   {storyboard ? (
                     <>
                       <figure>
-                        <iframe className={appStyles.iframe} src={storyboard} />
+                        <iframe className={appStyles.iframe}
+                        title="storyboard" src={storyboard} />
                       </figure>
                       <div>
                         <Form.Label

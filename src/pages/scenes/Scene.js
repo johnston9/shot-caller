@@ -487,18 +487,18 @@ const Scene = (props) => {
                   <Col xs={4}  ></Col>
                   <Col className='px-1 px-md-2' xs={4} >
                     <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
-                    <Card.Img height={100} className={`text-center ${styles.UniImg}`} src={dep8} alt="Card image" />
+                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
+                     src={dep8} alt="Card image" />
                     <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
                     </Card>
                   </Col>
                   </Row>
                   <Row className='px-2' >
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                  <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                       <Card className={` ${styles.CardBox} px-0`} >
                       <Card.Img src={dep2} alt="Card image" />
                       <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                      <DeptDropdown  handleClick={(category) => handleClickCamera(category) }
-                                      className={` ${styles.Drop}`} />
+                      <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
                       </Card> 
                     </Col>
                     <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
