@@ -14,6 +14,8 @@ import TopBox from "../../components/TopBox";
 import useRedirect from "../../hooks/Redirect";
 import InfoCreate from "./info/InfoCreate";
 import ImportCreate from "./info/ImportCreate";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SceneCreateForm({topbox}) {
   useRedirect();
@@ -58,6 +60,7 @@ function SceneCreateForm({topbox}) {
       
     try {
       const { data } = await axiosReq.post("/scenes/", formData);
+      toast(`Success - Scene ${number} Created`);
       history.push(`/scenes/${data.id}`);
     } catch (err) {
       console.log(err);
@@ -74,6 +77,18 @@ function SceneCreateForm({topbox}) {
       ) : (
         <TopBox title="Create Scene" />
       ) }
+      <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            />
       <Row>
       {/* back bit */}
       <Col xs={4} >

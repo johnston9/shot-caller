@@ -504,6 +504,11 @@ Description:
 <img src="documentation/readme-images/costume2.png" width="50%">
 </h2>
 
+<p align="center"> <strong>Success message - "Success - Fritz's Costume Updated"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/fritz22.png" width="50%">
+</h2>
+
 #### Scene Script
 Description: View, Download, Print or Change the Scene Script<br>
 
