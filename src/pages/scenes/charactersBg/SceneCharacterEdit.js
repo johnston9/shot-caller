@@ -9,8 +9,8 @@ import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
     const [errors, setErrors] = useState({});
@@ -74,7 +74,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
             results: [data, ...prevChars.results],
           }));
           // alert('Success');
-          toast(`Success ${role}'s Costume Updated`);
+          toast(`Success - ${role}'s Costume Updated`);
           setShowEditForm(false);
         } catch (err) {
           console.log(err);
@@ -100,11 +100,6 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
 
     return (
         <div className={`${styles.Back} mx-0 px-0 mt-2 mb-3 pt-2`}>
-          {/* <div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-      </div> */}
-      <ToastContainer />
         <Form onSubmit={handleSubmit}>
         <Row className="">
         <Col className="px-0" xs={6} >

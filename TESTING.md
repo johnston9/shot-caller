@@ -299,6 +299,7 @@ Description: This page displays all the currently added Scenes and the "Script" 
   1. In the Scenes Workspace page click on the "Create Scene" tab to open the "Create Scene" form.<br>
   2. Input the new Scene Number, "11", and submit.<br>
   3. Scene "11" is added to the Scenes Workspace.
+  4. A Success message displays saying "Scene 11 Created".
 
 <p align="center"> <strong>Input "11" in the Create Scene form</strong></p>
 <h2 align="center">

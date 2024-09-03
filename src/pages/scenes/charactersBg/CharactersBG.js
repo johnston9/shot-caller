@@ -14,8 +14,6 @@ import { useEffect } from 'react';
 import { axiosReq } from '../../../api/axiosDefaults';
 import SceneBGAdd from './SceneBGAdd';
 import Background from './Background';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const CharactersBG = (props) => {
     const [showCharactersAdd, setShowCharactersAdd] = useState(false);
@@ -51,18 +49,6 @@ const CharactersBG = (props) => {
                 CHARACTERS / BG 
                 <span className={`float-right ${styles.Close }`} onClick={() => setShowCharactersBG(false) } >Close</span>
             </h5>
-            <ToastContainer
-                position="top-right"
-                autoClose={2000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-                />
             <Row>
             <Col className='text-center py-3'>
             <Button

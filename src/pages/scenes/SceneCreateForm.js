@@ -77,18 +77,6 @@ function SceneCreateForm({topbox}) {
       ) : (
         <TopBox title="Create Scene" />
       ) }
-      <ToastContainer
-            position="top-right"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-            />
       <Row>
       {/* back bit */}
       <Col xs={4} >

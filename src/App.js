@@ -66,6 +66,8 @@ import LatestEdit from './pages/home/LatestEdit';
 import MoodboardCreate from './pages/moodboards/MoodboardCreate';
 import RegisterUsers from './pages/auth/RegisterUsers';
 import Storyboard from './pages/scenes/shotlistStoryboard/Storyboard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -81,6 +83,18 @@ function App() {
 
   return (
     <div className={`px-2 px-md-4 ${styles.App }`} >
+      <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            />
       <NavBar />
       <div className={styles.Main}>
         <Switch>
