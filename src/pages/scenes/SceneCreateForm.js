@@ -60,7 +60,7 @@ function SceneCreateForm({topbox}) {
       
     try {
       const { data } = await axiosReq.post("/scenes/", formData);
-      toast(`Success - Scene ${number} Created`);
+      toast(`SUCCESS - Scene "${number}" Created`);
       history.push(`/scenes/${data.id}`);
     } catch (err) {
       console.log(err);

@@ -14,6 +14,7 @@ import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
 const LatestScriptUpload = (
   {script1, fileName1, setEditScript, id, draft1,
@@ -66,6 +67,7 @@ const LatestScriptUpload = (
         try {
             const data = await axiosReq.put(`/script/${id}/`, formData);
             console.log(data)
+            toast(`SUCCESS - Script "${fileName}" Added`);
             history.push(`/scenes/`);
         } catch (err) {
             console.log(err);

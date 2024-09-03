@@ -51,7 +51,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
 
         try {
             await axiosReq.put(`/scenes/${id}/`, formData);
-            toast(`Success - Script ${fileName} Added`);
+            toast(`SUCCESS - Script "${fileName}" Added`);
             history.push(`/scenes/${id}`);
         } catch (err) {
             console.log(err);

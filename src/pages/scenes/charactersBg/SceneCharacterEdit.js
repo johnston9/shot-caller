@@ -74,7 +74,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
             results: [data, ...prevChars.results],
           }));
           // alert('Success');
-          toast(`Success - ${role}'s Costume Updated`);
+          toast(`SUCCESS - "${role}'s" Costume Updated`);
           setShowEditForm(false);
         } catch (err) {
           console.log(err);

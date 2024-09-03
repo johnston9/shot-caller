@@ -334,6 +334,7 @@ Description: This page contains the whole script. It also had "Latest Changes" a
   6. Input the new "Latest Changes" info, - "Scene, 1, 2 and 3 changed.Added scene 94."
   7. Input the new "Notes" info, - "Scene 1 is 1.5 pages longer now."
   8. Click Create and the updates are added to the database and the Scenes page opens.
+  9. A Success message displays saying ""Script Draft 2.pdf" added.
   9. Click Script to view the changes including its new database file name "Script_Draft_2_vw2npe".
 
 

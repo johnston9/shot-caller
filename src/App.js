@@ -85,7 +85,7 @@ function App() {
     <div className={`px-2 px-md-4 ${styles.App }`} >
       <ToastContainer
             position="top-right"
-            autoClose={3000}
+            autoClose={4000}
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick
