@@ -10,7 +10,6 @@ import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
 import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
 const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
     const [errors, setErrors] = useState({});
@@ -28,23 +27,23 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
         costume,
     } = postData;
 
-    useEffect(() => {
-        const handleMount = async () => {
-          try {
-            const { data } = await axiosReq.get(`/scenecharacters/${id}/`);
-            console.log(data)
-            const { scene_id, cast_number, role, costume } = data;
-     
-            setPostData({
-                scene_id,
-                cast_number,
-                role,
-                costume,});
-            } catch (err) {
-                console.log(err);
-            }
-        };
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/scenecharacters/${id}/`);
+        console.log(data)
+        const { scene_id, cast_number, role, costume } = data;
+ 
+        setPostData({
+            scene_id,
+            cast_number,
+            role,
+            costume,});
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
+    useEffect(() => {
         handleMount();
       }, [id]);
 
@@ -68,13 +67,12 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
         try {
           const { data } = await axiosReq.put(`/scenecharacters/${id}/`, formData);
           console.log(data)
-          // handleMount();
-          setCharacters((prevChars) => ({
-            ...prevChars,
-            results: [data, ...prevChars.results],
-          }));
-          // alert('Success');
-          toast(`SUCCESS - "${role}'s" Costume Updated`);
+          handleMount();
+          // setCharacters((prevChars) => ({
+          //   ...prevChars,
+          //   results: [data, ...prevChars.results],
+          // }));
+          toast.success(`"${role}'s" Costume Updated`);
           setShowEditForm(false);
         } catch (err) {
           console.log(err);
@@ -99,7 +97,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
       );
 
     return (
-        <div className={`${styles.Back} mx-0 px-0 mt-2 mb-3 pt-2`}>
+        <div className={`${styles.Back1} mx-0 px-0 mt-2 mb-3 pt-2`}>
         <Form onSubmit={handleSubmit}>
         <Row className="">
         <Col className="px-0" xs={6} >

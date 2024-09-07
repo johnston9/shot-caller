@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-
+import { toast } from 'react-toastify';
 import { axiosReq } from "../../../api/axiosDefaults";
 import { useCharactersContext, useSetCharactersContext } from "../../../contexts/Scene_chars_locs";
 
@@ -152,6 +152,7 @@ const NewCharacter = ({setShowAdd} ) => {
                 number: "",
                 username: "",
               });
+              toast.success(`Character "${role}" Added`);
             console.log(data);
           } catch (err) {
             console.log(err);

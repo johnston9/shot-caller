@@ -1,12 +1,19 @@
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+toast(`SUCCESS - Script ${number} Updated`);
 const Toast = () => {
     const role = "David";
-    const notify = () => toast(`Success - Script ${number} Updated`);
+    const notify = () => toast(`SUCCESS - Script ${number} Updated`);
     notify();
-  return (
+
+  return (<div>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/toast.png" width="50%">
+</h2>
+
     <div>
     <ToastContainer
     position="top-right"
@@ -20,6 +27,7 @@ const Toast = () => {
     pauseOnHover
     theme="light"
     />
+    </div>
     </div>
   )
 }

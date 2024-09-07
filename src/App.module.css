@@ -4,6 +4,10 @@
   min-height: 100vh;
 }
 
+.Toasttitle {
+  font-family: 'Playball', cursive;
+  color: red;
+}
 .Main {
   padding-top: 70px;
 }

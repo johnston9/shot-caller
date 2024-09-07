@@ -27,6 +27,7 @@ import { useLocationsContext,
 import Important from "../info/Important";
 import Info from "../info/Info";
 import { useCrewInfoContext } from "../../../contexts/BaseCallContext";
+import { toast } from 'react-toastify';
 
 const BreakdownEditForm = () => {
     useRedirect();
@@ -493,6 +494,7 @@ const BreakdownEditForm = () => {
         
     try {
         await axiosReq.put(`/scenes/${id}/`, formData);
+        toast.success(`Scene "${number}" Breakdown Updated`);
         history.push(`/scenes/${id}/`);
     } catch (err) {
         console.log(err);

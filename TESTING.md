@@ -12,7 +12,7 @@
 ### User Management and Registration
 Description: The admin and superadmin can register new Users and change their Permissions at any time.<br>
 
-- User Case: Register Users<br>
+- Use Case: Register Users<br>
 
   Action: Access User Registration from the Crew/Cast Management tab to find a Permissions select menu.<br>
   Result: Registration page opens with the select menu on display.<br>
@@ -30,7 +30,7 @@ Description: The admin and superadmin can register new Users and change their Pe
 <img src="documentation/readme-images/schededit2.png" width="50%">
 </h2>
 
-- User Case: Change a User's Permission<br>
+- Use Case: Change a User's Permission<br>
 
   Action: Change the User's Permission by selecting a new Permission for the User.<br>
   Result: The User receives an email advising them of their new Permission.<br>
@@ -306,6 +306,11 @@ Description: This page displays all the currently added Scenes and the "Script" 
 <img src="documentation/readme-images/scenescreate.png" width="50%">
 </h2>
 
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/toastcreate.png" width="50%">
+</h2>
+
 <p align="center"> <strong>Scene "11" added to Workspace</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/scenescreate2.png" width="50%">
@@ -328,19 +333,24 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 
   1. Click on the "Add Latest Script" tab on the Scenes page.
   2. The "Add Latest Script" form opens displaying the current database Script file name, "Script_Draft_1_ny25jg" and the current draft, latest changes and notes inputs.
-  3. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, - "Script Draft 2".
-  4. The new file is added with its desktop name displaying below, - "Script Draft 2.pdf".
+  3. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, - "Script Draft 3".
+  4. The new file is added with its desktop name displaying below, - "Script Draft 3.pdf".
   5. Input the new "Draft Name" info, - "Draft 2, 02-02-24".
   6. Input the new "Latest Changes" info, - "Scene, 1, 2 and 3 changed.Added scene 94."
   7. Input the new "Notes" info, - "Scene 1 is 1.5 pages longer now."
   8. Click Create and the updates are added to the database and the Scenes page opens.
-  9. A Success message displays saying ""Script Draft 2.pdf" added.
+  9. A Success message displays saying "Script Draft 2.pdf" added.
   9. Click Script to view the changes including its new database file name "Script_Draft_2_vw2npe".
 
 
 <p align="center"> <strong>The "Add Latest Script" form</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/script2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/drafttoast.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The new Script and the new info</strong></p>
@@ -373,7 +383,8 @@ Description: This section contains the Scene Breakdown.
   6. Add the Scene Script by selecting the desired PDF file "S 11 No 2 Script" from the desktop.
   7. Add the Scene Storyboard by selecting the desired PDF file "S 11 Storyb" from the desktop.
   8. Submit the form.
-  9. Click on Breakdown tab on the Scene page to view the new Breakdown inputs.
+  9. A Success message displays saying "Scene "11" Breakdown Updated".
+  10. Click on Breakdown tab on the Scene page to view the new Breakdown inputs.
 
 <p align="center"> <strong>Add New Location</strong></p>
 <h2 align="center">
@@ -388,6 +399,11 @@ Description: This section contains the Scene Breakdown.
 <p align="center"> <strong>Input Breakdown Fields</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/scenebreak1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/breaktoast.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The Breakdown Page</strong></p>
@@ -417,7 +433,10 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
     Clicking on "Number 1 - 30" opens a dropdown with all the current unused "1 - 30" Numbers.<br>
     Clicking on "Number 31 - 100" opens a dropdown with all the current unused "31 - 100" Numbers.<br>
     Clicking on "Number 101 - 200" opens a dropdown with all the current unused "101 - 200" Numbers.<br>
-    Select Number "44" from the "Number 31 - 100" dropdown then click "Create" and the Character Fritz is added to the database with a Character Number of "44".<br>
+    Select Number "44" from the "Number 31 - 100" dropdown.<br>
+  5. Click "Create" and the Character Fritz is added to the database with a Character Number of "44" and the form is cleared.<br>
+  6. A success message displays saying "Character Fritz Aded".<br>
+
 
 <p align="center"> <strong>Open the "Add New Characters" form and add Role "Fritz"</strong></p>
 <h2 align="center">
@@ -429,7 +448,12 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
 <img src="documentation/readme-images/charsel1.png" width="50%">
 </h2>
 
-<p align="center"> <strong>The Character Fritz is added to the project with a Number od "44"</strong></p>
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/toastchar.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Character Fritz is added to the project with a Number of "44"</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/charbg.png" width="50%">
 </h2>
@@ -440,7 +464,9 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
   2. Click on the "Select" button to open the scrollable Dropdown menu of currrently added Project Characters.<br>
   3. Click on "Fritz", the Character added in the Use Case above.<br>
   4. The Role and Number inputs are automatically filled with Fritz's info.<br>
-  4. "Fritz" is added to the Scene Charcters below and the form is cleared to allow the next Character to be added. After the page is refreshed the Character "Fritz" will be displayed in accending "Number" order like the rest of the Characters.
+  4. "Fritz" is added to the Scene Charcters below and the form is cleared to allow the next Character to be added.<br>
+  5. A success message displays saying "Character Fritz Aded".<br>
+  6. After the page is refreshed the Character "Fritz" will be displayed in accending "Number" order like the rest of the Characters.<br>
 
 <p align="center"> <strong>The "Add Characters" form</strong></p>
 <h2 align="center">
@@ -455,6 +481,11 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
 <p align="center"> <strong>The Role and Number Inputs are Automatically filled with Fritz's Info</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/selfritz2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/toastchar2.png" width="50%">
 </h2>
 
 <p align="center"> <strong>"Fritz" is added to the Scene Charcters Below</strong></p>
@@ -491,10 +522,11 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
 Description: 
 - Use Case: Edit Scene Characters' Costumes<br>
 
-  1. Click on s character's "3 Dots Edit/Delete" icon to open the Edit/Delete mini menu and select Edit, eg "Fritz".<br>
+  1. Click on a character's, "3 Dots Edit/Delete" icon to open the Edit/Delete mini menu and select Edit, eg "Fritz".<br>
   2. The "Add/Edit Costume" form opens.
   3. Enter a value "1" and submit.
   4. The value "1" is added to Fritz Costume.
+  5. A success message displays saying - "Fritz's Costume Updated".<br>
 
 <p align="center"> <strong>Value "1" Entered in "Add/Edit Costume" form</strong></p>
 <h2 align="center">
@@ -506,7 +538,7 @@ Description:
 <img src="documentation/readme-images/costume2.png" width="50%">
 </h2>
 
-<p align="center"> <strong>Success message - "Success - Fritz's Costume Updated"</strong></p>
+<p align="center"> <strong>Success Message</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/fritz22.png" width="50%">
 </h2>

@@ -67,7 +67,7 @@ const LatestScriptUpload = (
         try {
             const data = await axiosReq.put(`/script/${id}/`, formData);
             console.log(data)
-            toast(`SUCCESS - Script "${fileName}" Added`);
+            toast.success(`Script "${fileName}" Added`);
             history.push(`/scenes/`);
         } catch (err) {
             console.log(err);

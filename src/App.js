@@ -66,7 +66,7 @@ import LatestEdit from './pages/home/LatestEdit';
 import MoodboardCreate from './pages/moodboards/MoodboardCreate';
 import RegisterUsers from './pages/auth/RegisterUsers';
 import Storyboard from './pages/scenes/shotlistStoryboard/Storyboard';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {

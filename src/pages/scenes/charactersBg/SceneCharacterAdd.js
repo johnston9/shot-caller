@@ -12,6 +12,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { axiosReq } from "../../../api/axiosDefaults";
 import { useCharactersContext } from "../../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
+import { toast } from 'react-toastify';
 
 const SceneCharacterAdd = ({id, setCharacters}) => {
     const [errors, setErrors] = useState({});
@@ -81,6 +82,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
         ...prevChars,
         results: [data, ...prevChars.results],
         }));
+        toast.success(`Character "${role}" Added`);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
