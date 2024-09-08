@@ -1,7 +1,7 @@
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
-toast(`SUCCESS - Script ${number} Updated`);
+toast.success(`Script "${fileName}" Added`);
 const Toast = () => {
     const role = "David";
     const notify = () => toast(`SUCCESS - Script ${number} Updated`);

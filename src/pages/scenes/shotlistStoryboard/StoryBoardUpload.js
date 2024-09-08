@@ -13,6 +13,7 @@ import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
 const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) => {
     const [errors, setErrors] = useState({});
@@ -49,6 +50,7 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
         try {
             const data = await axiosReq.put(`/scenes/${id}/`, formData);
             console.log(data)
+            toast.success(`Storyboard "${fileName}" Added`);
             history.push(`/scenes/${id}`);
         } catch (err) {
             console.log(err);
@@ -61,12 +63,12 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
       const buttons = (
         <div className="text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
             onClick={() => setAddStory(false)}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
             Upload
           </Button>
         </div>

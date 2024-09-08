@@ -321,13 +321,26 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 
 - Use Case: View the Script<br>
 
-  1. Click on the "Script" tab on the Scenes page.
+  1. Click on the "Script" tab on the Scenes page.<br>
   2. The Script page opens displaying the current Script with the "Latest Changes" and "Notes" information sections on top and an "Add Latest Script" tab.
 
 <p align="center"> <strong>The Script page</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/script1.png" width="50%">
 </h2>
+
+- Use Case: Add the first Script Draft along with Notes<br>
+
+  1. Click on the "Add Script" tab on the Scenes page. This will display is a Script has not been previously been added, if it has an "Add Latest Script" tab will display.
+  2. The "Add Script" form opens.
+  3. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded.
+  4. The new file is added with its desktop name displaying below.
+  5. Input the "Draft Name" info.
+  6. Input the "Latest Changes" info if desired."
+  7. Input the "Notes" info."
+  8. Click Create and the updates are added to the database and the Scenes page opens.
+  9. A Success message displays.
+  9. Click Script to view the Script.
 
 - Use Case: Add the Latest Draft along with the Latest Changes and Notes inputs<br>
 
@@ -516,16 +529,16 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
 
 - Use Case: Edit Scene Characters<br>
 
-  1. Scene Characters' "Role" and "Number" fileds cannot be edited but "Costume" can, - see below.<br>
+  1. Scene Characters' "Role" and "Number" fields cannot be edited but "Costume" can. See Scene Character Costume below.<br>
 
 #### Scene Character Costume
 Description: 
 - Use Case: Edit Scene Characters' Costumes<br>
 
   1. Click on a character's, "3 Dots Edit/Delete" icon to open the Edit/Delete mini menu and select Edit, eg "Fritz".<br>
-  2. The "Add/Edit Costume" form opens.
-  3. Enter a value "1" and submit.
-  4. The value "1" is added to Fritz Costume.
+  2. The "Add/Edit Costume" form opens.<br>
+  3. Enter a value "1" and submit.<br>
+  4. The value "1" is added to Fritz Costume.<br>
   5. A success message displays saying - "Fritz's Costume Updated".<br>
 
 <p align="center"> <strong>Value "1" Entered in "Add/Edit Costume" form</strong></p>
@@ -570,7 +583,7 @@ Description: View, Download, Print or Change the Scene Script<br>
   1. Click on Print icon on the Script page.
   2. The Script is printed out on the User's printer.
 
-- Use Case: Change the Scene Script<br>
+- Use Case: Add/Change the Scene Script<br>
 
   1. Click on Script tab on the Scene page to open the new Script "S 11 No 2 Script" added above.
   2. Click on the "Add/Change Script" tab.
@@ -578,7 +591,8 @@ Description: View, Download, Print or Change the Scene Script<br>
   4. Click "Change Script" or "Upload Script" to open the Desktop files.
   5. Select the desired file "S 11 No 3 Script" and the "Desktop" name of the selected file "S 11 No 3 Script.pdf" displays in place of the previous "Database" one.
   6. Click Upload and the Script is changed in the backend.
-  7. Click Script tab to view the newly uploaded Script "S 11 No 3 Script" with the new database File name "S_11_No_3_Script_i8tapb" displaying.
+  7. A success message displays saying - "S 11 No 3 Script Added".<br>
+  8. Click Script tab to view the newly uploaded Script "S 11 No 3 Script" with the new database File name "S_11_No_3_Script_i8tapb" displaying.
 
 <p align="center"> <strong>The "Add/Change Script" form displaying the current "Database" file name "S_11_No_2_Script_swbjdg"</strong></p>
 <h2 align="center">
@@ -588,6 +602,11 @@ Description: View, Download, Print or Change the Scene Script<br>
 <p align="center"> <strong>The "Add/Change Script" form displaying the new "Desktop" file name "S 11 No 3 Script.pdf"</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/scenescriptf2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/sscript11.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The "Script" page with the new Script "S 11 No 3 Script" - "Database" file name "S_11_No_3_Script_i8tapb"</strong></p>
@@ -619,13 +638,14 @@ Description: View, Download, Print or Change the Scene Storyboard<br>
 
 - Use Case: Change the Scene Storyboard<br>
 
-  1. Click on Storyboard tab on the Scene page to open the Storyboard page with the present Storyboard "Portrait 6" displaying.
+  1. Click on Storyboard tab on the Scene page to open the Storyboard page with the present Storyboard "Portrait6" displaying.
   2. Click on the "Add Storyboard" tab whether one has been added and is displaying or not.
   3. The Add/Change Storyboard form opens with the database name of the current Storyboard "portrait6_zkrkp7" displaying and a "Change Storyboard" tab underneath.  If no Storyboard has been added yet an "Upload Storyboard" message will display instead.
   4. Click "Change Storyboard" or "Upload Storyboard" to open the Desktop files.
   5. Select the desired file "Landscape6" and the desktop name of the selected file "Landscape6.pdf" displays in place of the previous one.
   6. Click Upload and the Storyboard is changed in the backend.
-  7. Click Storyboard tab to view the newly uploaded Storyboard "Landscape6" with the new database File name "landscape6_nqxnys" displaying above.
+  7. A success message displays saying - "Storyboard Landscape6.pdf Added".<br>
+  8. Click Storyboard tab to view the newly uploaded Storyboard "Landscape6" with the new database File name "landscape6_nqxnys" displaying above.
 
 <p align="center"> <strong>The "Add/Change Storyboard" form displaying the current "Database" file name "portrait6_zkrkp7"</strong></p>
 <h2 align="center">
@@ -634,37 +654,32 @@ Description: View, Download, Print or Change the Scene Storyboard<br>
 
 <p align="center"> <strong>The "Add/Change Storyboard" form displaying the new "Desktop" file name "Landscape6.pdf"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scenescriptf2.png" width="50%">
+<img src="documentation/readme-images/storychange2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/toaststory2.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The "Storyboard" page with the new Storyboard "Landscape6" - "Database" file name "landscape6_nqxnys"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scenescriptno3.png" width="50%">
+<img src="documentation/readme-images/storychange3.png" width="50%">
+</h2>
+
+#### Scene Shotlist
+Description: View and Add the Shotlist<br>
+
+- Use Case: View the Scene Shotlist<br>
+
+  1. Click on Stroyboard tab on the Scene page to open the Storyboard page in which the current Storyboard displays if one has been added.
+
+<p align="center"> <strong>Scene Storyboard - "Portrait 6"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/storyview2.png" width="50%">
 </h2>
 
 ### Scenes Workspaces
-Description: xxxx<br>
-
-- User Case: xxx<br>
-
-  Action: xxx.<br>
-  Result: vvv<br>
-
-  Action: xxx<br>
-  Result: The User <br>
-
-### Scenes Shotlists
-Description: xxxx<br>
-
-- User Case: xxx<br>
-
-  Action: xxx.<br>
-  Result: vvv<br>
-
-  Action: xxx<br>
-  Result: The User <br>
-
-### Scenes Costumes
 Description: xxxx<br>
 
 - User Case: xxx<br>

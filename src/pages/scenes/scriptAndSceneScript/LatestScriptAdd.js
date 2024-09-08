@@ -13,6 +13,7 @@ import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
 const LatestScriptAdd = ({setAddScript }) => {
     const [errors, setErrors] = useState({});
@@ -62,7 +63,8 @@ const LatestScriptAdd = ({setAddScript }) => {
 
         try {
             const data = await axiosReq.post(`/script/`, formData);
-            console.log(data)
+            console.log(data);
+            toast.success(`Script "${fileName}" Added`);
             history.push(`/scenes`);
         } catch (err) {
             console.log(err);

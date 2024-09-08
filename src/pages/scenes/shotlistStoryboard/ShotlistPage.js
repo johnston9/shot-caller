@@ -1,10 +1,5 @@
 /* Component in the Scene Component to fetch 
    all ShotList data for a Scene
-    <Row>
-    <Col xs={6}>
-    <hr className={`${styles.Break1} my-0`}/>
-    </Col>
-    </Row>
  * Contains the Shot component to which it passes the data
    for each Shot in the Shotlist
  * Contains the ShotListCreate component  */
@@ -68,7 +63,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     <p className='pl-2 mb-0'>Info</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Shot </p>
+                    <p className='mb-0'>Shot #</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Size</p>
@@ -131,7 +126,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     shotAll={shot} />
                 ))) 
             : (
-            <Container className={appStyles.Content}>
+            <Container className={`pt-4 ${appStyles.Content}`}>
                 <Asset src={NoResults } message="Add Shots" />
             </Container>
             )}

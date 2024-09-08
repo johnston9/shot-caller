@@ -51,7 +51,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
 
         try {
             await axiosReq.put(`/scenes/${id}/`, formData);
-            toast(`SUCCESS - Script "${fileName}" Added`);
+            toast.success(`"${fileName}" Added`);
             history.push(`/scenes/${id}`);
         } catch (err) {
             console.log(err);
@@ -64,12 +64,12 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
       const buttons = (
         <div className="text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
             onClick={() => setAddScript(false)}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} 
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} 
             type="submit">
             Upload 
           </Button>
