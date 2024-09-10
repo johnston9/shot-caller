@@ -58,9 +58,10 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             </Row>
             {/* titles */}
             <div className='d-none d-md-block'>
-            <Row style={{ textTransform: 'uppercase' }} className={`mt-3 ${styles.TitleBox}`} >
+            <Row style={{ textTransform: 'uppercase' }} 
+            className={`mt-3 ${styles.TitleBox} text-center mx-0`} >
                 <Col className={`px-0 ${styles.TitleBox2} `} xs={1} md={1}>
-                    <p className='pl-2 mb-0'>Info</p>
+                    <p className='mb-0'>Info</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Shot #</p>
@@ -68,10 +69,10 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Size</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Description</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Angle</p>
                 </Col>
                 <Col className={`px-0  ${styles.TitleBox2}`} xs={2} md={2}>
@@ -87,9 +88,10 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             </div>
             {/* mobile */}
             <div className='d-block d-md-none'>
-            <Row style={{ textTransform: 'uppercase' }} className={`mt-3 ${styles.TitleBox}`} >
+            <Row style={{ textTransform: 'uppercase' }} 
+            className={`mt-3 ${styles.TitleBox} text-center mx-0`} >
                 <Col className={`px-0 ${styles.TitleBox2} `} xs={1} md={1}>
-                    <p className='pl-1 mb-0'>I</p>
+                    <p className='pl-1 mb-0'>In</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'># </p>
@@ -97,23 +99,23 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={1}>
                     <p className='mb-0'>Sz</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Detail</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>Ang</p>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                    <p className='mb-0'>Ag/Mv</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={1}>
+                {/* <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0 pl-2'>Im</p>
-                </Col>
+                </Col> */}
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>E</p>
                 </Col>
             </Row>
             </div>
             {/* shots */}
-            <Row className="h-100">
-            <Col className='px-0 mx-0'> 
+            <Row >
+            <Col > 
             <>
             {shotlist.results.length ? (
                 shotlist.results.map((shot, index) => (

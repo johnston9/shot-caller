@@ -2,17 +2,17 @@
 // import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 toast.success(`Script "${fileName}" Added`);
-const Toast = () => {
-    const role = "David";
-    const notify = () => toast(`SUCCESS - Script ${number} Updated`);
-    notify();
-
+const Toast = () => {  
   return (<div>
+
+{/* 
 
 <p align="center"> <strong>Success Message</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/toast.png" width="50%">
-</h2>
+</h2> 
+
+*/}
 
     <div>
     <ToastContainer

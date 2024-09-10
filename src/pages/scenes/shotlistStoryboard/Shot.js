@@ -1,5 +1,5 @@
 /* Component in ShotListPage to display the data for each Shot
- * Contains the ShotInfo and ShotImage components 
+ * Contains the ShotInfo and ShotImage components
  * Contains the ShotListEdit component */
 import React, { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col';
@@ -10,11 +10,11 @@ import { axiosReq } from '../../../api/axiosDefaults';
 import { Button } from 'react-bootstrap';
 import { PostDropdown } from '../../../components/PostDropdown';
 import ShotInfo from './ShotInfo';
-import ShotImage from './ShotImage';
 import ShotListEdit from './ShotListEdit';
 
 const Shot = (props) => {
     const [showInfo, setShowInfo] = useState(false);
+    // eslint-disable-next-line
     const [showImg, setShowImg] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);
     
@@ -99,14 +99,14 @@ const Shot = (props) => {
     };
 
     return (
-        <div style={style}>
+        <div style={style} className={`${styles.Bold}`} >
             {/* medium*/}
             <div className='d-none d-md-block'>
-            <Row  >
-                <Col className={ `pl-2 ${styles.TitleBox2}`} xs={1} md={1}>
+            <Row className='py-2 text-center mx-0'>
+            <Col className={ `pl-2 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`ml-3 ${btnStyles.Button} ${btnStyles.Blue}`}>
-                        I
+                        className={`${btnStyles.Button} ${btnStyles.Blue}`}>
+                        Info
                     </Button>
                 </Col>
                 <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
@@ -115,10 +115,10 @@ const Shot = (props) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{size}</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>{description}</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{angle} </p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
@@ -127,7 +127,7 @@ const Shot = (props) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowImg(showImg => !showImg)} 
                         className={`${btnStyles.Button} ${btnStyles.Blue}`}>
-                        I
+                        Image
                     </Button>
                 </Col>
                 {/* edit */}
@@ -141,33 +141,34 @@ const Shot = (props) => {
             </div>
             {/* mobile*/}
             <div className='d-block d-md-none'>
-            <Row className='px-2' >
-                <Col className={ `pl-1 ${styles.TitleBox2}`} xs={1} md={1}>
+            <Row className='py-2 text-center mx-0' >
+            <Col className={ `px-0 mx-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`pr-2 ${btnStyles.Button} ${btnStyles.Blue}`}>
-                        I
-                    </Button>
-                </Col>
-                <Col className={`${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0 pl-1'>{shot_number}</p>
-                </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>{size}</p>
-                </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                    <p className='mb-0'>{description}</p>
-                </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>{angle} </p>
-                </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <Button onClick={() => setShowImg(showImg => !showImg)} 
                         className={`${btnStyles.Button} ${btnStyles.Blue}`}>
                         I
                     </Button>
                 </Col>
+                <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={1} md={1}>
+                    <p className='mb-0 pl-1'>{shot_number}</p>
+                </Col>
+                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <p className='mb-0'>{size}</p>
+                </Col>
+                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={4} md={4}>
+                    <p className='mb-0'>{description}</p>
+                </Col>
+                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                    <p className='mb-0'>{angle} </p>
+                    <p className='mb-0'>{movement} </p>
+                </Col>
+                {/* <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                    <Button onClick={() => setShowImg(showImg => !showImg)} 
+                        className={`${btnStyles.Button} ${btnStyles.Blue}`}>
+                        I
+                    </Button>
+                </Col> */}
                 {/* edit */}
-                <Col className={`text-center`} xs={1} md={1}>
+                <Col className={`px-0 mx-0`} xs={1} md={1}>
                     <PostDropdown
                         handleEdit={() => setShowEditForm(true)}
                         handleDelete={handleDelete}
@@ -182,13 +183,13 @@ const Shot = (props) => {
                     ) }
                 </Col>
             </Row>
-            <Row>
+            {/* <Row>
                 <Col>
                     {!showImg ?("") : (                       
                     <ShotImage image={image} /> 
                     ) }
                 </Col>
-            </Row>
+            </Row> */}
             <Row>
                 <Col>
                     {showEditForm ? (

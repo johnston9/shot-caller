@@ -111,7 +111,8 @@ const DayPage = () => {
                 <Pages scenes={dayScenes.results}/>
                 {/* titles*/}
                 <div className='d-none d-md-block'>
-                <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
+                <Row style={{ textTransform: 'uppercase' }} 
+                className={`text-center mx-0  ${styles.TitleBox}`} >
                     {admin ? (
                         <>
                         <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>

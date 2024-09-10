@@ -1,7 +1,7 @@
 /* Component on the DayPage to display each Schedule Scene's data
- * Contains the ScheduleSceneInfo conponent to display the scenes extra info 
- * Contains the ScheduleSceneCharacters conponent to display the scenes Characters
- * Contains the ScheduleSceneOrder conponent to re-order the Scenes shooting position  */
+ * Contains the ScheduleSceneInfo component to display the scenes extra info 
+ * Contains the ScheduleSceneCharacters component to display the scenes Characters
+ * Contains the ScheduleSceneOrder component to re-order the Scenes shooting position  */
 import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
