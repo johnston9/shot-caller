@@ -1,6 +1,18 @@
 .Container {
     min-height: 100px;
-  }
+}
+
+.Break1 {
+  border-top: 1px solid #d0d9db;
+}
+
+.Break2 {
+  border-top: 5px solid #d0d9db;
+}
+
+.BorderRight {
+  border-right: 1px solid #d0d9db;
+}
 
 .SearchBar input {
   border-radius: 20px;
@@ -108,10 +120,6 @@
   font-weight: 700;
 }
 
-.ScenesBox {
-  background-color: #fff;
-}
-
 .Bold {
   font-weight: 700;
 }
@@ -150,10 +158,8 @@ i {
 /* info */
 
 .SceneBox {
-  /* border: 5px solid #f0f1f9; */
   border: 1px solid #fafafa;
   background-color: #fff;
-  font-weight: 700;
 }
 
 .SubTitle {

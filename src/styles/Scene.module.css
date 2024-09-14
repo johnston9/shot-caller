@@ -55,20 +55,22 @@
   border-left : 1px solid #72dbe2;
   border-bottom : 1px solid #72dbe2;
   color: #333;
+  font-weight: 700;
 }
 
 .TitleBox4 {
   border-left : 1px solid #72dbe2;
-  border-right : 1px solid #fafafa;
-  border-bottom : 1px solid #72dbe2;
-  color: #333;
-}
-
-.TitleBox4 {
   border-right : 1px solid #72dbe2;
   border-bottom : 1px solid #72dbe2;
   color: #333;
+  font-weight: 700;
 }
+
+/* .TitleBox4 {
+  border-right : 1px solid #72dbe2;
+  border-bottom : 1px solid #72dbe2;
+  color: #333;
+} */
 
 .TitleBox5 {
   border-bottom : 1px solid #72dbe2;

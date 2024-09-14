@@ -228,7 +228,7 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 
 <p align="center"> <strong>Character Info</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schedcast.png" width="50%">
+<img src="documentation/readme-images/charssched.png" width="50%">
 </h2>
 
 - Use Case: View the Schedule Scene Info.<br>
@@ -238,7 +238,7 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 
 <p align="center"> <strong>Scene Info</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schedinfo.png" width="50%">
+<img src="documentation/readme-images/infosched.png" width="50%">
 </h2>
 
 ### Callsheets

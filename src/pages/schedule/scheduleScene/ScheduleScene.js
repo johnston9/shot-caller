@@ -38,9 +38,9 @@ const ScheduleScene = (props) => {
     };
 
     return (
-        <div style={style} className={` ${styles.Bold}`} > 
+        <div style={style}> 
         <div className='d-none d-md-block'>
-            <Row className='pt-2 text-center mx-0' >
+            <Row className={`${styles.Bold} pt-2 text-center mx-0`}>
                 {admin ? (
                     <>
                     <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>

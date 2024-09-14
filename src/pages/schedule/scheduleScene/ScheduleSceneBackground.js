@@ -14,11 +14,10 @@ const Background = ({quantity, role, costume}) => {
         <Col xs={5} className={`${styles.TitleBox3} text-center px-0 mx-0`}>
         <p >{role} </p>
         </Col>
-        <Col xs={5} className={`${styles.TitleBox3} text-center px-0 mx-0`}>
+        <Col xs={5} className={`${styles.TitleBox4} text-center px-0 mx-0`}>
         <p >{costume} </p>
         </Col>
         </Row>
-        <hr className='py-0 my-0'/>
         </div>
     )
 }

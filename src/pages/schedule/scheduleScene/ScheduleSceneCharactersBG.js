@@ -35,10 +35,10 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
 
     return (
         <div className={`text-center py-2 mb-2 mx-2 mx-md-5 px-2 ${styles.White}`} >
-            <h5 className={`${styles.CharactersTitle } mb-1`} >CHARACTERS</h5>
+            <h5 className={`${styles.CharactersTitle } mt-2 mb-1`} >CHARACTERS</h5>
             {/* char titles */}
             <Row >
-            <Col xs={6} md={4}>
+            <Col xs={12} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
@@ -53,7 +53,7 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
             </div>
             </Col>
             {/* 2 */}
-            <Col xs={6} md={4}>
+            <Col className='d-none d-md-block' xs={12} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
@@ -68,7 +68,7 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
             </div>
             </Col>
             {/* 3 */}
-            <Col xs={6} md={4}>
+            <Col className='d-none d-md-block' xs={12} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
@@ -87,7 +87,7 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
             <Row>
             {characters.results.length ? (
             characters.results.map((character) => (
-            <Col xs={6} md={4}
+            <Col xs={12} md={4}
             className="px-0 mx-0">
                 <ScheduleSceneCharacter
                 character={character}
@@ -99,10 +99,15 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
             ""
             )}
             </Row>
+            <Row>
+            <Col xs={12}>
+            <hr className={`${styles.Break1} mt-4 mb-0`}/>
+            </Col>
+            </Row>
             {/* Background Artists */}
-            <h5 className={`${styles.CharactersTitle } my-2`} >BG / STANDINGS</h5>
+            <h5 className={`${styles.CharactersTitle } mt-3 mb-1`} >BG / STANDINGS</h5>
             {/* back titles */}
-            <Row className='' >
+            <Row >
             {/* 1 */}
             <Col xs={12} md={6}>
             <div className='px-0 mx-3'>
@@ -135,7 +140,7 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
             </Col>
             </Row>
             {/* background data */}
-            <Row>
+            <Row className='mb-2'>
             {background.results.length ? (
             background.results.map((back) => (
             <Col xs={12} md={6}
