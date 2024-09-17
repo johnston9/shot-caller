@@ -2,6 +2,7 @@
  * Contains the ScheduleSceneInfo component to display the scenes extra info 
  * Contains the ScheduleSceneCharacters component to display the scenes Characters
  * Contains the ScheduleSceneOrder component to re-order the Scenes shooting position  */
+
 import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -38,7 +39,7 @@ const ScheduleScene = (props) => {
     };
 
     return (
-        <div style={style}> 
+        <div style={style}>
         <div className='d-none d-md-block'>
             <Row className={`${styles.Bold} pt-2 text-center mx-0`}>
                 {admin ? (

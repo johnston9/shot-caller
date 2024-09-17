@@ -52,20 +52,20 @@
   
 .Input {
   background: #ffffff;
-  border: 1px solid #999;
+  border: 1px solid #e0e3eb;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #7177a1;
+  color: #374661;
   padding: 0px 10px;
-  height: 35px !important;
+  height: 30px !important;
 }
 
 .InputScene {
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid #e0e3eb;
    box-sizing: border-box;
    border-radius: 2px;
-   color: #7177a1;
+   color: #374661;
    padding: 0px 10px;
 }
 
@@ -178,7 +178,8 @@ i {
 /* Order d4e9f5 */
 
 .OrderBox {
-  background-color: rgb(209, 240, 240);
+  /* background-color: rgb(209, 240, 240); */
+  background-color: aliceblue;
 }
 
 @media screen and (max-width: 600px) {

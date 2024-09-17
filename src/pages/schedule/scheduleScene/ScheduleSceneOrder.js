@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+/* Re-order component in ScheduleScene */
 
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
 import styles from "../../../styles/ScheduleCreate.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
@@ -24,7 +24,8 @@ const SchedOrder = (props ) => {
     day_id: day_id1,
   })
 
-  const { next, day_order_number, scene_id, start_time, end_time, day_id } = postData;
+  const { next, day_order_number, scene_id, 
+    start_time, end_time, day_id } = postData;
 
   const handleChange = (event) => {
     setPostData({
@@ -61,9 +62,9 @@ const SchedOrder = (props ) => {
     <div>
       {/* order start end */}
       <Row className="text-center pt-2" >
-        <Col className="d-flex justify-content-center" xs={12} md={4} >
+        <Col className={`d-flex justify-content-center`} xs={12} md={4} >
         <Form.Group controlId="day_order_number" className="mb-2" >
-              <Form.Label  >Day Order Number</Form.Label>
+              <Form.Label className={`${styles.Bold}`} >Day Order Number</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -78,9 +79,9 @@ const SchedOrder = (props ) => {
             </Alert>
           ))}
         </Col>
-        <Col className="d-flex justify-content-center" md={4} xs={6}>
+        <Col className={`d-flex justify-content-center`} md={4} xs={6}>
           <Form.Group controlId="start_time" className="mb-2" >
-              <Form.Label  >Start Time</Form.Label>
+              <Form.Label className={`${styles.Bold}`} >Start Time</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -97,7 +98,7 @@ const SchedOrder = (props ) => {
         </Col>
         <Col className="d-flex justify-content-center" md={4} xs={6}>
           <Form.Group controlId="end_time" className="mb-2" >
-              <Form.Label  >End Time</Form.Label>
+              <Form.Label className={`${styles.Bold}`} >End Time</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -118,7 +119,7 @@ const SchedOrder = (props ) => {
       <Row className="text-center">
           <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 2 }}>
             <Form.Group controlId="next" className="mb-2" >
-                <Form.Label  >Next</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >Next</Form.Label>
                 <Form.Control 
                     className={styles.InputScene}
                     type="text"
@@ -138,13 +139,13 @@ const SchedOrder = (props ) => {
           <Col md={4}>
           <div className="text-center pb-2 mt-1 mt-md-5">    
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`}
               onClick={() => setShowOrder(false)}
             >
               Cancel
             </Button>
-            <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-              Create
+            <Button className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 px-4`} type="submit">
+              Update
             </Button>
           </div>
           </Col>
@@ -154,6 +155,8 @@ const SchedOrder = (props ) => {
 
   return (
     <div className={` ${styles.OrderBox}`}>
+      {/* <h4 className={`text-center pb-0 mb-1 ${styles.SubTitle }`}>
+        Re-order Scene </h4> */}
       <Form onSubmit={handleSubmit}>
           {textFields}
       </Form>
