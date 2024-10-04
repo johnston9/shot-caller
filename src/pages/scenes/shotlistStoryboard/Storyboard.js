@@ -31,8 +31,9 @@ const Storyboard = () => {
     const [postData, setPostData] = useState({
         storyboard: "",
         number: "",
+        storyboard_url: "",
     })
-    const {storyboard, number} = postData;
+    const {storyboard, number, storyboard_url} = postData;
     const [fileName, setFileName] = useState("");
 
     const getFilename = (path) => {
@@ -45,8 +46,8 @@ const Storyboard = () => {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/scenes/${id}/`);
-            const { storyboard, number } = data;
-            setPostData({ storyboard, number });
+            const { storyboard, number, storyboard_url } = data;
+            setPostData({ storyboard, number, storyboard_url });
             if (storyboard) {
               const file = getFilename(data.storyboard);       
               setFileName(file);
@@ -79,6 +80,7 @@ const Storyboard = () => {
             </Button>
             </Col>
             </Row>
+            {/* tabs */}
             <Row>
             <Col md={{span: 3, order: 1}} xs={{span: 6, order: 1}}
             className="text-center">
@@ -118,7 +120,7 @@ const Storyboard = () => {
             <StoryBoardUpload 
             setAddStory={setAddStory}
             id={id}
-            storyboard1= {storyboard}
+            storyboard1={storyboard}
             number1={number}
             fileName1={fileName} />  ) }
             {!templates ? (
@@ -133,6 +135,9 @@ const Storyboard = () => {
                     ) : (
                       <StoryboardURL
                       setAddURL={setAddURL}
+                      id={id}
+                      storyboard_url={storyboard_url}
+                      number={number}
                       /> 
                       ) } 
             <Row className="h-100 my-2">

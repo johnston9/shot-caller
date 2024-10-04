@@ -58,7 +58,8 @@ const DayTop = (props) => {
                         {daysScenes.results.length ? (
                             daysScenes.results.map((scene) => (
                                 scene.day_id === id ? (
-                                    <span className={` ${styles.Titledetail }`}>{scene.number} - {scene.location}, </span>
+                                    <span className={` ${styles.Titledetail }`}>
+                                        {scene.number} - {scene.location}, </span>
                                 )  : ("")
                             ))) : ("")}
                         </div>

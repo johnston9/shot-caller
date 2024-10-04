@@ -10,23 +10,23 @@ const Act1List = ({setPostData, setShowOne, setShowTwoA, setShowTwoB, setShowThr
     const [scenes, setScenes] = useState({results: [] });
     // const [hasLoaded, setHasLoaded] = useState(false);
 
-    useEffect(() => {
-        const fetchScenes = async () => {
-          try {
-            const { data } = await axiosReq.get(`/scenes/?act=one`);
-            setScenes(data);
-          } catch(err) {
-            console.log(err);
-          }
-        }
-        fetchScenes();    
-      }, [])
+    // useEffect(() => {
+    //     const fetchScenes = async () => {
+    //       try {
+    //         const { data } = await axiosReq.get(`/scenes/?act=one`);
+    //         setScenes(data);
+    //       } catch(err) {
+    //         console.log(err);
+    //       }
+    //     }
+    //     fetchScenes();    
+    //   }, [])
 
     return (
         <div>
           <div className= {`mt-4`} >
             <h5 className={`text-center pb-0 mb-2 ${styles.SubTitle }`}>Select Scene</h5>
-            <p className="text-center mb-2">
+            <p className="text-center mb-2">bbbbbbbbbb
             Select Scene to add Scene details to the Stripboard then 
             add the Shooting Info in the form below
             </p>

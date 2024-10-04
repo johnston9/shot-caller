@@ -7,33 +7,35 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
+import appStyles from "../../../App.module.css";
 import { Alert } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
-const UploadURL = ({setNewURL, setScene }) => {
+const UploadURL = ({setNewURL, id, number1, storyboard_url1}) => {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        storyboard_url: "",
+        storyboard_url: storyboard_url1,
+        number: number1,
     })
-    const {storyboard_url} = postData;
+    const {storyboard_url, number} = postData;
+    const history = useHistory();
 
-    const { id } = useParams();
-
-    useEffect(() => {
-        const handleMount = async () => {
-          try {
-            const { data } = await axiosReq.get(`/scenes/${id}/`);
-            const { storyboard_url } = data;
+    // useEffect(() => {
+    //     const handleMount = async () => {
+    //       try {
+    //         const { data } = await axiosReq.get(`/scenes/${id}/`);
+    //         const { storyboard_url } = data;
      
-        setPostData({ storyboard_url });
-          } catch (err) {
-            console.log(err);
-          }
-        };
+    //     setPostData({ storyboard_url });
+    //       } catch (err) {
+    //         console.log(err);
+    //       }
+    //     };
     
-        handleMount();
-    }, [id]);
+    //     handleMount();
+    // }, [id]);
 
     const handleChange = (event) => {
         setPostData({
@@ -46,17 +48,15 @@ const UploadURL = ({setNewURL, setScene }) => {
         event.preventDefault();
         const formData = new FormData();
 
+        formData.append("number", number);
         formData.append("storyboard_url", storyboard_url);
 
         try {
             const data = await axiosReq.put(`/scenes/${id}/`, formData);
             console.log(data)
             setNewURL(false);
-            /* Upload the scene state */
-            setScene((prevScene) => ({
-              ...prevScene,
-              storyboard_url: data.storyboard_url,
-            }));
+            toast.success(`Storyboard URL Added`);
+            history.push(`/scenes/${id}`);
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
@@ -80,22 +80,22 @@ const UploadURL = ({setNewURL, setScene }) => {
       );
 
   return (
-    <div className='mt-3'>
+    <div className='my-3'>
       <Row >
-      <Col md={1} className='d-none d-md-block'></Col>
-      <Col xs={12} md={10} className='text-center'>
-      <h5 className={`mb-2 py-1 pl-5 ${styles.SubTitle }`}>
+      <Col xs={12} className='text-center'>
+      <h5 className={`mb-2 py-0 pl-5 ${styles.SubTitle }`}>
           ADD/CHANGE STORYBOARD URL
           <span className={`float-right ${styles.Close } pt-1`} 
                 onClick={() => setNewURL(false) } >Close</span>
       </h5>
       </Col>
       </Row>
+      <Container className={`${appStyles.Content} ${styles.Container} `}>
       <Form onSubmit={handleSubmit}>
         <Row>
         <Col className="py-2 p-0 p-md-2" >
           <Form.Group controlId="storyboard_url" className="mb-2" >
-                <Form.Label className="p-1" >StoryBoard URL</Form.Label>
+                <Form.Label className={`${styles.Bold}`} >StoryBoard URL</Form.Label>
                 <Form.Control 
                 type="text"
                 name="storyboard_url"
@@ -116,6 +116,13 @@ const UploadURL = ({setNewURL, setScene }) => {
           </Col>
         </Row>
         </Form>
+        </Container>
+        <Row>
+        <Col xs={2} ></Col>
+        <Col xs={8}>
+        <hr className={`${styles.Break1}`}/>
+        </Col>
+        </Row>
     </div>
   )
 }
