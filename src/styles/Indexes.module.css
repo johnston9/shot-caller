@@ -6,8 +6,27 @@
     min-height: 10px;
 }
 
+.Title {
+    color: #4f649f;
+    font-weight: 700;
+}
+
+.Italic {
+    font-style: italic;
+}
+
+.DivSize {
+    height: 100px;
+    overflow: hidden;
+}
+
+.Card {
+    border: 1px solid #263d7b;
+}
+
 .Top {
-background-color: #14404f;
+/* background-color: #14404f; */
+background-color: #263d7b;
 color: #fff;
 }
       
@@ -95,7 +114,7 @@ width: 95%;
     }
 .Input {
 background: #ffffff;
-border: 1px solid #f0f1f9;
+border: 1px solid #e0e3eb;
 box-sizing: border-box;
 border-radius: 2px;
 color: #7177a1;
@@ -106,7 +125,7 @@ text-align: center;
 
 .InputScene {
 background: #ffffff;
-border: 1px solid #f0f1f9;
+border: 1px solid #e0e3eb;
 box-sizing: border-box;
 border-radius: 2px;
 color: #7177a1;

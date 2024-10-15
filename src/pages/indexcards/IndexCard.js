@@ -26,7 +26,7 @@ const IndexCard = (props ) => {
   };
   return (
     <div>
-      <Card className={`text-center `}  >
+      <Card className={`${styles.Card} text-center mr-1`}  >
         <Card.Header className={`pt-2 pb-0 ${styles.Top }`}>
           <Row >
             <Col className='mx-0 px-0' xs={1}></Col>
@@ -43,22 +43,19 @@ const IndexCard = (props ) => {
           </Row>
         </Card.Header>
         <Card.Body className='p-0' >
-            <Row>
-            <Col className='text-center mt-0' xs={12}>
-            {story && 
-            <div className='text-center px-1 mb-1'>
-              <p>STORY</p>
-              <p>{story} </p>
-                </div>
-            }
-            {style && 
-            <div className='text-center px-1 mb-1'>
-              <p>STYLE</p>
-              <p>{style} </p>
-                </div>
-            }
+        <Row>
+        <Col className='text-center mt-0' xs={12}>
+            <div className={`${styles.DivSize } text-center px-1`}>
+              <p className={`${styles.Title } mb-0 pb-0`}>STORY</p>
+              <p className={`mb-0 pb-0`}>{story} </p>
+            </div>
+            <hr className='my-0 py-0' />
+            <div className={`${styles.DivSize } text-center px-1`}>
+              <p className={`${styles.Title }`}>STYLE</p>
+              <p className={`${styles.Italic } mb-0 pb-0`}>{style} </p>
+            </div>
         </Col>
-            </Row>
+        </Row>
         </Card.Body>
       </Card>
       {!showEdit ?("") : (

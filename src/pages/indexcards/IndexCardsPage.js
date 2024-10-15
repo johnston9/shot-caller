@@ -192,7 +192,7 @@ const IndexCardsPage = () => {
               </Col>
               </Row>
               {/* cards */}
-              <Row className="py-3">
+              <Row className="py-3 px-3 px-md-3">
               <Col>
               {hasLoaded ? (
               <>
