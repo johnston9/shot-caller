@@ -13,8 +13,8 @@
   background-color: #1ea7ae;
   color: #fff;
   border: 1px solid #fff;
-  transition-timing-function: ease;
-  transition: border .5s, background-color .5s, transform .5s;
+  /* transition-timing-function: ease;
+  transition: border .5s, background-color .5s, transform .5s; */
 }
 
 .Top i {
@@ -24,9 +24,9 @@
 .Top:hover {
   background-color: #5de6ed;
   color: #000;
-  -webkit-transform: scale(1.05);
+  /* -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
-  transform: scale(1.05); 
+  transform: scale(1.05);  */
 }
 
 .Top:hover i {

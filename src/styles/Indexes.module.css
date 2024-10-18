@@ -1,9 +1,9 @@
-.Container {
-    min-height: 100px;
+.Editbox {
+    border: 1px solid #999;
 }
 
-.Container2 {
-    min-height: 10px;
+.Width90 {
+    width: 90%;
 }
 
 .Title {
@@ -105,13 +105,10 @@ width: 80%;
 width: 80%;
 }
 
-.Width95 {
-width: 95%;
-}
-
 .Width100 {
     width: 100%;
-    }
+}
+
 .Input {
 background: #ffffff;
 border: 1px solid #e0e3eb;

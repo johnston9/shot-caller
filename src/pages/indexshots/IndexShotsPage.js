@@ -54,6 +54,9 @@ const IndexShotsPage = () => {
                 axiosReq.get(`/series/${id}`),
                 axiosReq.get(`/indexshots/?series_id=${id}&search=${query}`)
               ])
+              console.log(shotsGet);
+              console.log(seriesGet);
+              console.log(id);
               setSeries({ results: [seriesGet] });
               setIndexShots(shotsGet);
               setIndexShotsAll(shotsGet);

@@ -836,16 +836,23 @@ Description: A series of Cards for each Scene containing Story and Style info<br
 
   1. Click the 3 dots icon to open the Edit/Delete mini menu then click the Edit icon.<br>
   2. The "Edit Index Card" form opens.<br>
-  3. xxxxxxxx and submit.<br>
+  3. Make changes and submit.<br>
+   e.g. Number - "8" to "9", Story - "bus" to "train", Style - "Handheld" to "Steadicam".<br>
+  4. The Index Card now displays with the changes.
 
 <p align="center"> <strong>Edit Index Card form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/indexadd1.png" width="50%">
+<img src="documentation/readme-images/indexedit1.png" width="50%">
 </h2>
 
-<p align="center"> <strong>Index Card xxxxxx Added"</strong></p>
+<p align="center"> <strong>Edit Form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/indexadd1.png" width="50%">
+<img src="documentation/readme-images/indexedit2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Index Card with Changes</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/indexedit3.png" width="50%">
 </h2>
 
 ### Character and locations page

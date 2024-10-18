@@ -1,6 +1,5 @@
 /* Component in IndexCard to edit an IndexCard */
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -88,12 +87,12 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
 
   return (
     <div className="mt-0">
-    <Container className= {`text-center mt-0 ${appStyles.Content} ${styles.Container}`} >
+    <div className= {`text-center mt-0 ${styles.Editbox}`} >
       <Form className="mt-0 mx-0 px-0" onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-0 pl-3 py-0 ${styles.SubTitle }`}
+      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Edit Index Card {number}
        </h5>
-      <Row>
+      <Row className="mt-1">
           <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
                   <Form.Label className={`pb-0 mb-0 ${styles.Bold} `} >Number</Form.Label>
@@ -111,11 +110,11 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
                 </Alert>
               ))}
           </Col>
-        </Row>
-        <Row>
+      </Row>
+      <Row className="mt-1">
         <Col xs={12} 
             className="p-0 d-flex justify-content-center">
-            <Form.Group controlId="story" className={`${styles.Width100}  `} >
+            <Form.Group controlId="story" className={`${styles.Width90}  `} >
                         <Form.Label className={`pb-0 mb-0 ${styles.Bold}`} >Story</Form.Label>
                         <Form.Control 
                         type="text"
@@ -133,9 +132,11 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
                     </Alert>
                     ))}
         </Col> 
+      </Row>
+      <Row className="mt-1">
         <Col xs={12} 
             className="p-0 d-flex justify-content-center">
-            <Form.Group controlId="style" className={`${styles.Width100} `} >
+            <Form.Group controlId="style" className={`${styles.Width90} `} >
                         <Form.Label className={`pb-0 mb-0 ${styles.Bold}`} >Style</Form.Label>
                         <Form.Control 
                         type="text"
@@ -160,7 +161,7 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
         </Col>
       </Row>
     </Form>
-    </Container>
+    </div>
     </div>
   )
 }
