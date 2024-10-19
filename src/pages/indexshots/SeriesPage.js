@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import styles from "../../styles/Scene.module.css";
+import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from '../../api/axiosDefaults';
 import NoResults from "../../assets/no-results.png";
@@ -38,19 +38,20 @@ const SeriesPage = () => {
     // eslint-disable-next-line
     const [hasOrder, setHasOrder] = useState(false);
 
+    /* Function to fetch the Series data */
+    const fetchseries = async () => {
+      try {
+        const { data } = await axiosReq.get(`/series/?${filter}&search=${query}`);
+        setSeries(data);
+        setHasLoaded(true);
+        setHasOrder(true);
+      } catch(err) {
+        setError(err)
+        console.log(err);
+      }
+    }
+
     useEffect(() => {
-          /* Function to fetch the Series data */
-          const fetchseries = async () => {
-            try {
-              const { data } = await axiosReq.get(`/series/?${filter}&search=${query}`);
-              setSeries(data);
-              setHasLoaded(true);
-              setHasOrder(true);
-            } catch(err) {
-              setError(err)
-              console.log(err);
-            }
-          }
           setHasLoaded(false);
   
           const timer = setTimeout(() => {fetchseries();
@@ -123,6 +124,7 @@ const SeriesPage = () => {
                       seri={seri}
                       key={seri.id} 
                       setHasOrder={setHasOrder}
+                      fetchseries={fetchseries}
                       {...seri} 
                       setSeries={setSeries} />
                       </Col>

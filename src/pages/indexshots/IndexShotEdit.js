@@ -116,7 +116,7 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
 
   return (
     <div className="mt-0">
-    <Container className= {`mt-0 text-center ${appStyles.Content} ${styles.Container}`} >
+    <div className= {`text-center mt-0 ${styles.Editbox}`} >
     <Form className="mt-0 mx-0 px-0" onSubmit={handleSubmit}>
       <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Edit Shot</h5>
@@ -215,7 +215,7 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
         </Col>
       </Row>
     </Form>
-    </Container>
+    </div>
     </div>
   )
 }

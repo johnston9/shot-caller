@@ -9,8 +9,6 @@ import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
-import appStyles from "../../App.module.css";
-import Container from "react-bootstrap/Container";
 
 const SeriesEditForm = (props ) => {
 const [errors, setErrors] = useState({});
@@ -70,12 +68,12 @@ const handleSubmit = async (event) => {
 const buttons = (
   <div className="text-center">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pr-3 `}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-2 mr-3`}
       onClick={() => setShowEdit(false)}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pl-3`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
       Edit
     </Button>
   </div>
@@ -83,16 +81,16 @@ const buttons = (
 
 return (
   <div>
-  <Container className= {`text-center mt-0 ${appStyles.Content} ${styles.Container}`} >
+  <div className= {`text-center mt-0 ${styles.Editbox} mx-0`} >
   <Form className={` mt-0`} onSubmit={handleSubmit}>
-  <h5 className={`text-center mb-0 pl-3 py-0 ${styles.SubTitle }`}
+  <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`}
    style={{ textTransform: 'uppercase'}}>Edit Series
   </h5>
-  <Row className="text-center">
+  <Row className="text-center mt-1">
     <Col xs={12} 
       className="p-0  d-flex justify-content-center ">
-      <Form.Group controlId="name" className={`${styles.Width95} `} >
-          <Form.Label className={`${styles.Bold}`} >Series Name</Form.Label>
+      <Form.Group controlId="name" className={`${styles.Width} `} >
+          <Form.Label className={`${styles.Bold}`} >Name</Form.Label>
           <Form.Control 
           type="text"
           name="name"
@@ -108,11 +106,11 @@ return (
       ))}
     </Col> 
   </Row>
-  <Row>
+  <Row className="text-center mt-1">
     <Col xs={12}
     className="p-0 d-flex justify-content-center">
-    <Form.Group controlId="content" className={`${styles.Width95} `} >
-              <Form.Label className={`${styles.Bold}`} >Series Content</Form.Label>
+    <Form.Group controlId="content" className={`${styles.Width90} `} >
+              <Form.Label className={`${styles.Bold}`} >Content</Form.Label>
               <Form.Control 
               type="text"
               className={styles.InputScene}
@@ -137,7 +135,7 @@ return (
       </Col>
   </Row>
 </Form>
-</Container>
+</div>
 </div>
 );
 }

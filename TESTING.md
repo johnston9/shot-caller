@@ -711,7 +711,7 @@ Description: Collorate on Scenes by department through Posts with images<br>
 <img src="documentation/readme-images/nnnnnn.png" width="50%">
 </h2>
 
-### Character and locations page
+### Characters
 Description: xxxx<br>
 
 - Use Case: nnnn<br>
@@ -724,7 +724,7 @@ Description: xxxx<br>
 <img src="documentation/readme-images/nnnnnn.png" width="50%">
 </h2>
 
-### Locations page
+### Locations
 Description: xxxx<br>
 
 - Use Case: nnnn<br>
@@ -738,9 +738,6 @@ Description: xxxx<br>
 </h2>
 
 ### Moodboards
-Description: xxxx<br>
-
-### Character and locations page
 Description: xxxx<br>
 
 - Use Case: nnnn<br>
@@ -855,33 +852,98 @@ Description: A series of Cards for each Scene containing Story and Style info<br
 <img src="documentation/readme-images/indexedit3.png" width="50%">
 </h2>
 
-### Character and locations page
-Description: xxxx<br>
+### Index Shots 
+Description: Create any number of Series each containing a display of succesive images relating to a particular theme.<br>
 
-- Use Case: nnnn<br>
+- Use Case: View the Index Shot's Series<br>
 
-  1. nnnn.
-  2. nnn.
+  1. Click Index Shots in the Home page menu.<br>
+  2. The Index Shots page opens with the "Create Series" tab on top and all created Series displaying in Rows.<br>
 
-<p align="center"> <strong>nnnnnnnn</strong></p>
+<p align="center"> <strong>Index Shots page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/nnnnnn.png" width="50%">
+<img src="documentation/readme-images/seriesview.png" width="50%">
 </h2>
 
-### Index Shots 
-Description: xxxx<br>
+- Use Case: Find a Series in the Search bar by it's name<br>
 
-### Character and locations page
-Description: xxxx<br>
+  1. Input a name in the Search Bar, eg costumes.<br>
+  2. All series with word costumes are returned, e.g. "Costume Matches".<br>
 
-- Use Case: nnnn<br>
-
-  1. nnnn.
-  2. nnn.
-
-<p align="center"> <strong>nnnnnnnn</strong></p>
+<p align="center"> <strong>Series "Costume Matches"</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/nnnnnn.png" width="50%">
+<img src="documentation/readme-images/seriessearch.png" width="50%">
+</h2>
+
+- Use Case: View a Series description<br>
+
+  1. Click on the "I" icon.<br>
+  2. The description of the Series's Content displays.<br>
+
+<p align="center"> <strong>Series "Costume Matches"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriescon.png" width="50%">
+</h2>
+
+- Use Case: Create a Series<br>
+
+  1. Click the "Create Series" tab.<br>
+  2. The "Create Series" form opens.<br>
+  3. Input the Name, e.g. "Angles Scene 1" and Content fields and submit.<br>
+  4. The new Series "Angles Scene 1" is added.<br>
+
+<p align="center"> <strong>Create Index Shot Series form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Series "Angles Scene 1" Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesadd2.png" width="50%">
+</h2>
+
+- Use Case: Edit a Series<br>
+
+  1. Click the "3 Dots on the Series" tab.<br>
+  2. The "Edit Series" form opens.<br>
+  3. Input new Name, e.g. "Angles Scene 2" and Content fields and submit.<br>
+  4. The Series is updated.<br>
+
+<p align="center"> <strong>Edit Series form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Make Changes</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesedit2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Changes display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesedit3.png" width="50%">
+</h2>
+
+- Use Case: Delete a Series<br>
+
+  1. Click the "3 Dots on the Series" tab and click the delete icon.<br>
+  2. A dropdown opens asking to confirm delete.<br>
+  3. Select Yes and the Series is deleted<br>
+  4. The Series is updated.<br>
+
+<p align="center"> <strong>Click the delete icon</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesdel1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Confirm dropdown</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesdel2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Series Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesdel3.png" width="50%">
 </h2>
 
 ### Departments

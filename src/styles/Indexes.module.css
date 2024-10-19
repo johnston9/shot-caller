@@ -1,5 +1,6 @@
 .Editbox {
-    border: 1px solid #999;
+    border: 1px solid #d2d0d0;
+    background-color: #fff;
 }
 
 .Width90 {
@@ -25,10 +26,41 @@
 }
 
 .Top {
-/* background-color: #14404f; */
 background-color: #263d7b;
 color: #fff;
 }
+
+.TopSeries {
+    background-color: #1ea7ae;
+    color: #fff;
+    border: 1px solid #fff;
+    /* transition-timing-function: ease;
+    transition: border .5s, background-color .5s, transform .5s; */
+  }
+  
+  .TopSeries i {
+    color: #fff;
+  }
+
+  .TopSeries h5 {
+    color: #fff;
+  }
+
+  .TopSeries h5:hover {
+    color: #000;
+  }
+  
+  .TopSeries:hover {
+    background-color: #5de6ed;
+    color: #000;
+    /* -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);  */
+  }
+  
+  .TopSeries:hover i {
+    color: #000;
+  }
       
 .Titledetail {
 font-weight: 700;
@@ -44,9 +76,9 @@ color: #fff;
 color: #fff;
 }
 
-.Titlelist {
+/* .Titlelist {
     color: #fff;
-}
+} */
 
 .Content {
     color: #000;
@@ -72,6 +104,7 @@ color: #fff;
 
 .Back {
 background-color: aliceblue;
+border: 1px solid #ebe6e6;
 }
 
 .Bold {
@@ -127,6 +160,7 @@ box-sizing: border-box;
 border-radius: 2px;
 color: #7177a1;
 padding: 0px 10px;
+text-align: center;
 }
 
 .InputChar {
@@ -137,6 +171,7 @@ border-radius: 2px;
 color: #7177a1;
 padding: 0px 0px;
 height: 30px !important;
+text-align: center;
 }
 
 .BoldTitle {
@@ -164,6 +199,10 @@ h1 {
 h2 {
     font-size: 1.5rem;
 }
+
+.Titlelist {
+    font-size: .75rem ;
+  }
 }
 
 @media screen and (max-width: 780px) {

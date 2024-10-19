@@ -4,7 +4,7 @@ import styles from "../../styles/Indexes.module.css";
 const Content = ({content}) => {
   return (
     <div className={` ${styles.Content }`}>
-        {content}
+      <p>{content}</p>
     </div>
   )
 }

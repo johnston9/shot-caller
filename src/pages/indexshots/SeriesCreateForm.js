@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
 import { useHistory } from "react-router-dom";
@@ -57,7 +57,7 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
     <div className="text-center">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pr-3 `}
-        onClick={() => history.goBack()}
+        onClick={() => setShow(false)}
       >
         Cancel
       </Button>
@@ -69,7 +69,9 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
 
   return (
     <div>
-    <Form className={`${styles.Back} mt-4 mx-5`} onSubmit={handleSubmit}>
+    <Row>
+    <Col className={`${styles.Back} px-0`} xs={12} md={{span: 8, offset: 2 }} >
+    <Form onSubmit={handleSubmit}>
     <h5 className={`text-center mt-0 ${styles.SubTitle }`} >Create Series</h5>
     <Row className="text-center">
       <Col xs={12} md={{span: 6, offset: 3 }} 
@@ -119,7 +121,9 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
         <div className= {` my-3`} >{buttons} </div>
         </Col>
     </Row>
-  </Form>
+    </Form>
+    </Col>
+    </Row>
   </div>
   );
 }
