@@ -818,10 +818,15 @@ Description: A series of Cards for each Scene containing Story and Style info<br
   1. Click the "Add Index Card" tab.<br>
   2. The "Create Index Card" form opens.<br>
   3. Input the Card Number, eg "8" along with the Story and Style fields and submit.<br>
+  4. A success message displays saying - "Index Card "8" Added"<br>
 
 <p align="center"> <strong>Create Index Card form</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/indexadd1.png" width="50%">
+</h2>
+<p align="center"> <strong>Success message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/indextoastadd.png" width="50%">
 </h2>
 
 <p align="center"> <strong>Index Card "8" Added"</strong></p>
@@ -835,7 +840,8 @@ Description: A series of Cards for each Scene containing Story and Style info<br
   2. The "Edit Index Card" form opens.<br>
   3. Make changes and submit.<br>
    e.g. Number - "8" to "9", Story - "bus" to "train", Style - "Handheld" to "Steadicam".<br>
-  4. The Index Card now displays with the changes.
+  4. A success message displays saying - "Index Card "8" Updated"<br>
+  5. The Index Card now displays with the changes.
 
 <p align="center"> <strong>Edit Index Card form</strong></p>
 <h2 align="center">
@@ -890,11 +896,17 @@ Description: Create any number of Series each containing a display of succesive 
   1. Click the "Create Series" tab.<br>
   2. The "Create Series" form opens.<br>
   3. Input the Name, e.g. "Angles Scene 1" and Content fields and submit.<br>
-  4. The new Series "Angles Scene 1" is added.<br>
+  4. A success message displays saying - "Series "Angles Scene 1" Added"<br>
+  5. The new Series "Angles Scene 1" is added.<br>
 
 <p align="center"> <strong>Create Index Shot Series form</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/seriesadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriestoastadd.png" width="50%">
 </h2>
 
 <p align="center"> <strong>Series "Angles Scene 1" Added</strong></p>
@@ -907,7 +919,8 @@ Description: Create any number of Series each containing a display of succesive 
   1. Click the "3 Dots on the Series" tab.<br>
   2. The "Edit Series" form opens.<br>
   3. Input new Name, e.g. "Angles Scene 2" and Content fields and submit.<br>
-  4. The Series is updated.<br>
+  4. A success message displays saying - "Series "Angles Scene 1" Updated"<br>
+  5. The Series is updated.<br>
 
 <p align="center"> <strong>Edit Series form</strong></p>
 <h2 align="center">
@@ -917,6 +930,11 @@ Description: Create any number of Series each containing a display of succesive 
 <p align="center"> <strong>Make Changes</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/seriesedit2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriestoastedit.png" width="50%">
 </h2>
 
 <p align="center"> <strong>Changes display</strong></p>

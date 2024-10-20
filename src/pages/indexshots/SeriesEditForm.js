@@ -9,6 +9,7 @@ import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
 const SeriesEditForm = (props ) => {
 const [errors, setErrors] = useState({});
@@ -56,6 +57,7 @@ const handleSubmit = async (event) => {
           : seri;
       }),
     }));
+    toast.success(`Series "${name}" Updated`);
     setShowEdit(false);
   } catch (err) {
     console.log(err);

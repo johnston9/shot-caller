@@ -9,6 +9,7 @@ import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
 const IndexCardCreate = ({setShow, setHasOrder} ) => {
   const [errors, setErrors] = useState({});
@@ -39,6 +40,7 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
     try {
       await axiosReq.post("/indexcards/", formData);
       setHasOrder(true);
+      toast.success(`Index Card "${number}" Added`);
       setShow(false);
     } catch (err) {
       console.log(err);

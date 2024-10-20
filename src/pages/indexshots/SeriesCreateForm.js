@@ -12,6 +12,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
 const SeriesCreateForm = ({setSeries, setShow}) => {
   const [errors, setErrors] = useState({});
@@ -45,6 +46,7 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
         results: [data, ...prevSeries.results],
       }));
       setShow(false);
+      toast.success(`Series "${name}" Added`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

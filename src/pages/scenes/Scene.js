@@ -214,20 +214,22 @@ const Scene = (props) => {
     };
 
     const clickScript = () => {
-      /* Function to open the Scene Script page
+      /* POSSIBLY DON'T NEED IT
+      Function to open the Scene Script page 
        * Sets the SceneId context
          This values will be read in App.js and passed as a filter
          to the /script/scene/${id} Route */
-      setSceneId(id); 
+      // setSceneId(id); 
       history.push(`/script/scene/${id}`);
     };
 
     const clickStory = () => {
-      /* Function to open the Scene Script page
+      /* POSSIBLY DON'T NEED IT
+      Function to open the Scene Script page
        * Sets the SceneId context
          This values will be read in App.js and passed as a filter
          to the /script/scene/${id} Route */
-      setSceneId(id); 
+      // setSceneId(id); 
       history.push(`/story/scene/${id}`);
     };
 
