@@ -68,10 +68,11 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
     <div className="mt-3">
       <Row>
         <Col xs={12} md={{span: 8, offset: 2}}>
-        <Form className={`text-center mb-4 px-3 ${styles.Back }`} onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-4 pl-3 py-1 ${styles.SubTitle }`}
+      <h5 className={`text-center ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Create Index Card</h5>
-      <Row>
+      <Form className={`text-center mb-4 px-3 ${styles.Back }`} 
+        onSubmit={handleSubmit}>
+      <Row className="mt-2">
           <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
                   <Form.Label className={`${styles.Bold} `} >Number</Form.Label>
@@ -93,7 +94,7 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
         <Row>
         <Col xs={12} md={6} 
             className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="story" className={`${styles.Width95} `} >
+            <Form.Group controlId="story" className={`${styles.Width90} `} >
                         <Form.Label className={`${styles.Bold}`} >Story</Form.Label>
                         <Form.Control 
                         type="text"
@@ -113,7 +114,7 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
         </Col> 
         <Col xs={12} md={6} 
             className="p-0 p-md-2 d-flex justify-content-center">
-            <Form.Group controlId="style" className={`${styles.Width95} `} >
+            <Form.Group controlId="style" className={`${styles.Width90} `} >
                         <Form.Label className={`${styles.Bold}`} >Style</Form.Label>
                         <Form.Control 
                         type="text"

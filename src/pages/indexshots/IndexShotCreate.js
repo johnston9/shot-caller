@@ -15,6 +15,7 @@ import Asset from "../../components/Asset";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Image } from "react-bootstrap";
+import { toast } from 'react-toastify';
 
 const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
   const [errors, setErrors] = useState({});
@@ -66,6 +67,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
       await axiosReq.post("/indexshots/", formData);
       console.log(formData);
       setHasOrder(true);
+      toast.success(`Index Shot "${number}" Added`);
       setShow(false);
     } catch (err) {
       console.log(err);
@@ -91,10 +93,12 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
 
   return (
     <div className="mt-3">
-    <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-0" onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
+    <Row>
+    <Col xs={12} md={{span: 8, offset: 2}}>
+    <h5 className={`text-center ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Create Index Shot</h5>
+      <Form className={`text-center mb-4 px-3 ${styles.Back }`} 
+      onSubmit={handleSubmit}>
       <Row>
           <Col xs={12} md={6}  >
           <div className="d-flex justify-content-center">
@@ -115,7 +119,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
               ))}
           </div>
           <div className="d-flex justify-content-center">
-          <Form.Group controlId="content" className={`${styles.Width95}  text-center`} >
+          <Form.Group controlId="content" className={`${styles.Width90}  text-center`} >
                         <Form.Label className={`${styles.Bold}`} >Content</Form.Label>
                         <Form.Control 
                         type="text"
@@ -137,7 +141,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
         <Col xs={12} md={6} >
         <Container
           className={`${appStyles.Content2} ${styles.Container} 
-          d-flex flex-column justify-content-center`}>
+          d-flex flex-column justify-content-center mt-2`}>
           <Form.Group className="text-center pt-3">
               {image ? (
                   <>
@@ -188,7 +192,8 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
         </Col>
       </Row>
     </Form>
-    </Container>
+    </Col>
+    </Row>
     </div>
   )
 }

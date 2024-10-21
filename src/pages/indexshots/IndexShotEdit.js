@@ -15,6 +15,7 @@ import Asset from "../../components/Asset";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import { Image } from "react-bootstrap";
+import { toast } from 'react-toastify';
 
 const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
   const [errors, setErrors] = useState({});
@@ -89,6 +90,7 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
             : image;
         }),
       }));
+      toast.success(`Index Shot "${number}" Updated`);
       setShowEdit(false);
     } catch (err) {
       console.log(err);

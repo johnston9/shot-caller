@@ -964,6 +964,16 @@ Description: Create any number of Series each containing a display of succesive 
 <img src="documentation/readme-images/seriesdel3.png" width="50%">
 </h2>
 
+- Use Case: View a Series's Index Shots<br>
+
+  1. Click Index Shots in the Home page menu.<br>
+  2. The Index Shots page opens with the "Create Series" tab on top and all created Series displaying in Rows.<br>
+
+<p align="center"> <strong>Index Shots page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesview.png" width="50%">
+</h2>
+
 ### Departments
 Description: xxxx<br>
 
