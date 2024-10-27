@@ -691,9 +691,9 @@ Description: View and Add the Shotlist<br>
 
 - Use Case: View the Scene Shotlist<br>
 
-  1. Click on Stroyboard tab on the Scene page to open the Storyboard page in which the current Storyboard displays if one has been added.
+  1. Click on Shotlist tab on the Scene page to open the Shotlist page with the "Add Shot" tab on top and displaying all the currently added shots.
 
-<p align="center"> <strong>Scene Storyboard - "Portrait 6"</strong></p>
+<p align="center"> <strong>Shotlist Page</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/storyview2.png" width="50%">
 </h2>
@@ -966,12 +966,88 @@ Description: Create any number of Series each containing a display of succesive 
 
 - Use Case: View a Series's Index Shots<br>
 
-  1. Click Index Shots in the Home page menu.<br>
-  2. The Index Shots page opens with the "Create Series" tab on top and all created Series displaying in Rows.<br>
+  1. Click on a Series.<br>
+  2. The Index Shots for that Series display in Rows in Desktop.<br>
+  2. The Index Shots for that Series display in a Column in Mobile.<br>
 
-<p align="center"> <strong>Index Shots page</strong></p>
+<p align="center"> <strong>Index Shots Desktop view</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/seriesview.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Index Shots Mobile View</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesview.png" width="50%">
+</h2>
+
+- Use Case: Find an Index Shot in the Search bar by it's number,e.g "1"<br>
+
+  1. Input a Shot number in the Search Bar, eg 1.<br>
+  2. Shot 1 is returned.<br>
+
+<p align="center"> <strong>Index Shot 1</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/inshotsearch.png" width="50%">
+</h2>
+
+- Use Case: View the Index Shots from 1 - 30<br>
+
+  1. Click Shots 1 - 30 tab.<br>
+  2. The Index Shots in this group are returned.<br>
+
+- Use Case: View the Index Shots from 31 - 60<br>
+
+  1. Click Shots 31 - 60 tab.<br>
+  2. The Index Shots in this group are returned.<br>
+
+- Use Case: View the Index Shots from 61 - 90<br>
+
+  1. Click Shots 61 - 90 tab.<br>
+  2. The Index Shots in this group are returned.<br>
+
+- Use Case: View the Index Shots from 91 - end<br>
+
+  1. Click Shots 91 - end tab.<br>
+  2. The Index Shots in this group are returned.<br>
+
+<p align="center"> <strong>Index Shot 99</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/inshot99.png" width="50%">
+</h2>
+
+- Use Case: Add an Index Shot<br>
+
+  1. Click the "Add Index Shot" tab.<br>
+  2. The "Create Index Shot" form opens.<br>
+  3. Input the Shot Number, eg "99" along with the Content and submit.<br>
+  4. A success message displays saying - "Index Shot "99" Added"<br>
+
+<p align="center"> <strong>Create Index Card form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/inshotadd1.png" width="50%">
+</h2>
+<p align="center"> <strong>Success message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/inshotadd2.png" width="50%">
+</h2>
+
+- Use Case: Edit an Index Shot<br>
+
+  1. Click the 3 dots icon to open the Edit/Delete mini menu then click the Edit icon.<br>
+  2. The "Edit Index Shot" form opens.<br>
+  3. Make changes and submit.<br>
+   e.g. Number - "99" to "4" and change the image<br>
+  4. A success message displays saying - "Index Shot "4" Updated"<br>
+  5. The Index Shot now displays with the changes and it's new number,.
+
+<p align="center"> <strong>Edit Index Shot form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/inshotedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Index Card with Changes and success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/inshotedit2.png" width="50%">
 </h2>
 
 ### Departments

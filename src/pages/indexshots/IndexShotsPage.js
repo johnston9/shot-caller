@@ -208,6 +208,7 @@ const IndexShotsPage = () => {
                     indexShots.results.map((shot) => (
                       <Col xs={12}  md={6} lg={4} className="py-2">
                       <IndexShot 
+                      ser_id={id}
                       key={shot.id} 
                       setHasOrder={setHasOrder}
                       {...shot} 

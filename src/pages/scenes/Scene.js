@@ -81,7 +81,7 @@ const Scene = (props) => {
 
 
     /* The following 13 functions take the user to that Scenes 
-       department and category the choose by setting the 
+       department and category they choose by setting the 
        useSetCategoryContext, useSetDeptContext, useSetNumberContext,
        and useSetSceneContext 
      * These values will be read in App.js and passed as a filter

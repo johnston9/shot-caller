@@ -17,11 +17,12 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Image } from "react-bootstrap";
 import { toast } from 'react-toastify';
 
-const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
+const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id, ser_id} ) => {
   const [errors, setErrors] = useState({});
+
   const [postData, setPostData] = useState({
-    series_id: "",
-    series_name: "",
+    // series_id: "",
+    // series_name: "",
     number: "",
     content: "",
     image: "",
@@ -67,7 +68,7 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("series_id", id);
+    formData.append("series_id", ser_id);
     formData.append("number", number);
     formData.append("content", content);
     if(imageInput.current.files[0]) {
@@ -87,7 +88,7 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id} ) => {
                 content: content,
                 image: image,
               }
-            : image;
+            : shot;
         }),
       }));
       toast.success(`Index Shot "${number}" Updated`);

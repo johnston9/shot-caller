@@ -7,12 +7,13 @@ import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
-import styles from "../../styles/Characters.module.css";
+import styles from "../../styles/Indexes.module.css";
 import IndexShotEdit from './IndexShotEdit';
 
 const IndexShot = (props) => {
     const [showEdit, setShowEdit] = useState(false);
     const {
+        ser_id,
         id,
         number,
         content,
@@ -36,9 +37,8 @@ const IndexShot = (props) => {
 
     return (
         <div>
-            <Card className={`text-center p-0 ${styles.Top}`}  >
-                <Card.Header className={`py-0 ${styles.Top }`}>
-                {/* className={` ${styles.Titledetail }`} */}
+            <Card className={`text-center p-0`}>
+                <Card.Header className={`py-0 ${styles.Topn }`}>
                   <Row >
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 
@@ -60,8 +60,8 @@ const IndexShot = (props) => {
                     <Col className='text-center mt-0' xs={12}>
                     {image && <> 
                     <div className='px-0 mb-0'>
-                        <Image className={styles.Images} 
-                        src={image} alt="image" height="200"  />
+                        <Image className={styles.ImagesIndex} 
+                        src={image} alt="image" height="250"  />
                         </div>
                         </>
                     }
@@ -75,6 +75,7 @@ const IndexShot = (props) => {
             </Card>
             {!showEdit ?("") : (
             <IndexShotEdit
+                ser_id={ser_id}
                 setIndexShots={setIndexShots}
                 shot={shot}
                 id={id}

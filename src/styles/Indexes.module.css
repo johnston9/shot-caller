@@ -92,6 +92,12 @@ color: #fff;
     width: 100%;
 }
 
+.ImagesIndex {
+    object-fit: contain;
+    height: 235px;
+    width: 100%; 
+}
+
 .ImagesFull {
     object-fit: cover;
     height: 500px;
