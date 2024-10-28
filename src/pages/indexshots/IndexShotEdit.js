@@ -119,16 +119,17 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id, ser_id} ) => {
 
   return (
     <div className="mt-0">
-    <div className= {`text-center mt-0 ${styles.Editbox}`} >
+    <div className= {`text-center mt-0 pb-2 ${styles.Editbox}`} >
     <Form className="mt-0 mx-0 px-0" onSubmit={handleSubmit}>
       <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Edit Shot</h5>
+             style={{ textTransform: 'uppercase'}}>Edit Shot {number} </h5>
       <Row>
       <Col xs={12} className="p-0 d-flex justify-content-center">
-        <Container
+        {/* <Container
           className={`${appStyles.Content2} ${styles.Container} 
-          d-flex flex-column justify-content-center`}>
-          <Form.Group className="text-center p-0 m-0">
+          d-flex flex-column justify-content-center`}> */}
+          <div className={`d-flex flex-column justify-content-center`}>
+          <Form.Group className="text-center p-0 mt-2">
               {image ? (
                   <>
                   <figure>
@@ -169,10 +170,10 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id, ser_id} ) => {
                   {message}
               </Alert>
               ))}
-      </Container>
+      </div>
       </Col> 
       </Row>
-      <Row>
+      <Row className="mt-2">
           <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
                   <Form.Label className={`pb-0 mb-0 ${styles.Bold} `} >Number</Form.Label>
@@ -190,11 +191,11 @@ const IndexShotEdit = ({setShowEdit, shot, setIndexShots, id, ser_id} ) => {
                 </Alert>
               ))}
           </Col>
-        </Row>
-        <Row>
+      </Row>
+      <Row className="mt-2">
         <Col xs={12} className="p-0 d-flex justify-content-center">
-            <Form.Group controlId="content" className={`${styles.Width100} `} >
-                        <Form.Label className={`${styles.Bold}`} >Content</Form.Label>
+            <Form.Group controlId="content" className={`${styles.Width90} `} >
+                        <Form.Label className={`pb-0 mb-0 ${styles.Bold}`} >Content</Form.Label>
                         <Form.Control 
                         type="text"
                         className={styles.InputScene}

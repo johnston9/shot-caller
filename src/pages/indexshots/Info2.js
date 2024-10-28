@@ -10,9 +10,9 @@ const Info2 = () => {
         <Row className='mb-3'>
             <Col className={`text-center px-3 pt-1 ${styles.SubTitle2 }`} md={{span: 8, offset: 2 }}>
             <p>Add shots to the series from the "Add Shot"
-              buttons on the top and botton of the page. 
-              Edit shots from it's edit button.
-           </p>
+              buttons on the top and botton of the page.</p>
+              <p>Click on a Shot to view it Full Size</p>
+            <p>Edit shots from it's edit button.</p>
             </Col>
         </Row>
     </div>

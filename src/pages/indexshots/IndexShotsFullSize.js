@@ -44,7 +44,7 @@ const IndexShotsFullSize = () => {
                 Back
             </Button>
             <Card className={`text-center `}  >
-                <Card.Header className={`pt-2 pb-1 ${styles.Top }`}>
+                <Card.Header className={`pt-2 pb-1`}>
                   <Row >
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>
