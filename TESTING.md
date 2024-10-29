@@ -861,7 +861,7 @@ Description: A series of Cards for each Scene containing Story and Style info<br
 ### Index Shots 
 Description: Create any number of Series each containing a display of succesive images relating to a particular theme.<br>
 
-- Use Case: View the Index Shot's Series<br>
+- Use Case: View the Index Shot Series<br>
 
   1. Click Index Shots in the Home page menu.<br>
   2. The Index Shots page opens with the "Create Series" tab on top and all created Series displaying in Rows.<br>
@@ -1051,7 +1051,60 @@ Description: Create any number of Series each containing a display of succesive 
 </h2>
 
 ### Departments
-Description: xxxx<br>
+Description: View and Create Post within each Department outsid and separate to the posts in the scene workspace.<br>
+
+- Use Case: View a Department's Posts<br>
+
+  1. Click Depts-Xtra in the Home page menu.<br>
+  2. Click on a Department, e.g. "Camera" and that Department's Posts page opens with the "Add Post" tab on top and tge Posts displaying below.<br>
+
+<p align="center"> <strong>Camera Dept Posts page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesview.png" width="50%">
+</h2>
+
+- Use Case: Find a Post in the Search bar by it's name<br>
+
+  1. Input a name in the Search Bar, eg costumes.<br>
+  2. All series with word costumes are returned, e.g. "Costume Matches".<br>
+
+<p align="center"> <strong>Series "Costume Matches"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriessearch.png" width="50%">
+</h2>
+
+- Use Case: View a Series description<br>
+
+  1. Click on the "I" icon.<br>
+  2. The description of the Series's Content displays.<br>
+
+<p align="center"> <strong>Series "Costume Matches"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriescon.png" width="50%">
+</h2>
+
+- Use Case: Create a Series<br>
+
+  1. Click the "Create Series" tab.<br>
+  2. The "Create Series" form opens.<br>
+  3. Input the Name, e.g. "Angles Scene 1" and Content fields and submit.<br>
+  4. A success message displays saying - "Series "Angles Scene 1" Added"<br>
+  5. The new Series "Angles Scene 1" is added.<br>
+
+<p align="center"> <strong>bb</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>nn</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriestoastadd.png" width="50%">
+</h2>
+
+<p align="center"> <strong>bb</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/seriesadd2.png" width="50%">
+</h2>
 
 ### Character and locations page
 Description: xxxx<br>

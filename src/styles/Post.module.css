@@ -23,35 +23,36 @@
 }
 
 .ContentUnOpen:hover {
-  /* background-color: #0f3d4c;
-  color: #fafafa; */
   background-color: #fafafa;
-  color: rgb(157, 21, 48);
-  cursor: pointer;
+  color: #000;
+  font-weight: 700;
 }
 
 .ContentUnOpen:hover .ContentTitleUnOpen {
-  color: rgb(157, 21, 48);
+  color: #000;
+  font-weight: 400;
 }
 
 .ContentOpened {
   background-color: #fafafa;
   color: #1ea7ae;
   cursor: pointer;
+  /* font-weight: 700; */
 }
 
 .ContentTitleOpened {
   color: #1f6370;
+  font-weight: 400;
 }
 
 .ContentOpened:hover {
-  /* background-color: #0f3d4c; */
-  color: rgb(157, 21, 48);
-  /* cursor: pointer; */
+  color: #000;
+  font-weight: 700;
 }
 
 .ContentOpened:hover .ContentTitleOpened {
-  color: rgb(157, 21, 48);
+  color: #000;
+  font-weight: 400;
 }
 
 .Images {
