@@ -78,6 +78,26 @@
  padding: 0px 10px;
 }
 
+.InputDept {
+  background: #ffffff;
+  border: 1px solid #f0f1f9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #7177a1;
+  padding: 0px 10px;
+  height: 30px !important;
+  /* text-align: center; */
+}
+
+.InputSceneDept {
+ background: #ffffff;
+ border: 1px solid #f0f1f9;
+ box-sizing: border-box;
+ border-radius: 2px;
+ color: #7177a1;
+ padding: 0px 10px;
+}
+
 .InputChar {
  background: #ffffff;
  border: 1px solid #f0f1f9;

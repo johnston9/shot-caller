@@ -5,8 +5,6 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
-
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
@@ -144,12 +142,14 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     }
   }
 
-  const textFields = (
+  const textFields = ( 
       <div>
-          <Form.Group controlId="departments" className="mb-2" >
-                <Form.Label className="p-1" >Departments</Form.Label>
+          <p className="text-center mt-3">Department</p>
+          <Form.Group controlId="departments" className="mb-2 mt-0 pt-0" >
+                {/* <Form.Label className="mt-0 pt-0"></Form.Label> */}
                 <Form.Control as="select"
                   name="departments"
+                  className={styles.InputDept}
                   value={departments}
                   onChange={handleChange}
                   aria-label="act select">
@@ -159,8 +159,8 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                   <option value="casting">Casting</option>
                   <option value="electric">Electric/Grip</option>
                   <option value="location">Location</option>
-                  <option value="make-up">Hair/Make-up</option>
-                  <option value="post">Post/VSF</option>
+                  <option value="make-up">Hair/Makeup</option>
+                  <option value="post">Post/VFX</option>
                   <option value="production">Production</option>
                   <option value="script">Script</option>
                   <option value="sound">Sound</option>
@@ -174,9 +174,11 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 {message}
               </Alert>
             ))}
+          <p className="text-center mt-3">Title</p>
           <Form.Group controlId="title" className="mb-2" >
-                <Form.Label className="p-1" >Title</Form.Label>
+                {/* <Form.Label className="p-1" >Title</Form.Label> */}
                 <Form.Control 
+                className={styles.InputDept}
                 type="text"
                 name="title"
                 value={title}
@@ -188,14 +190,15 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 {message}
               </Alert>
             ))}
+            <p className="text-center mt-3">Content</p>
             <Form.Group controlId="content" className="mb-2" >
-                <Form.Label className="p-1" >Content</Form.Label>
+                {/* <Form.Label className="text-center">Content</Form.Label> */}
                 <Form.Control 
-                    className={styles.Input}
+                    className={styles.InputSceneDept}
                     type="text"
                     name="content"
                     as="textarea"
-                    rows={6}
+                    rows={4}
                     value={content}
                     onChange={handleChange}
                     />
@@ -209,12 +212,19 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
   )
   const buttons = (
     <div className="text-center">    
+    {deptGeneral ? (
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
-        onClick={() => setShow(false)}
-      >
-        Cancel
-      </Button>
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+      onClick={() => setShow(false)}
+    >
+      Cancel
+    </Button>
+    ) : (<Button
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+      onClick={() => history.goBack()}
+    >
+      Cancel
+    </Button>)}
       <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
         Create
       </Button>
@@ -227,23 +237,30 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
         ""
       ) : (
         <TopBox work="Departments"
-          title="Create Post" />
+          title={`Create Post`} />
       ) }
+      {deptGeneral ? ("") : (
+        <Button className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
+        onClick={() => history.goBack()}>Back
+     </Button>
+      )}
     <h5 style={{ textTransform: 'uppercase'}} 
-    className={`text-center mb-3 pb-0 mt-3 py-1 ${styles.SubTitle }`}>
-    Create Post</h5>
+    className={`text-center mt-2 pb-0 py-1 ${styles.SubTitle }`}>
+    Create {deptGeneral} Post</h5>
     <Form className="mt-0 px-0" onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="">
+    {/* {textFields} */}
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           {textFields}
           </Container>
       </Col>
       <Col className="" md={6}>
         <Container
-          className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+          className={`mt-3 ${appStyles.Content} ${styles.Container2} 
+          d-flex flex-column justify-content-center`}
         >
-          <Form.Group className="text-center pt-3">
+          <Form.Group className="text-center">
               {image1 ? (
                 <>
                   <figure>
@@ -260,12 +277,13 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
                   htmlFor="image-upload"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
-                    message="Click or tap to upload an image"
+                    height={"20px"}
+                    width={"20px"}
+                    message="Upload Image 1"
                   />
                 </Form.Label>
               )}
@@ -286,9 +304,9 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
             </Container>
                 {/* image 2 */}
             <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group >
+            <Form.Group className="text-center" >
               {image2 ? (
                 <>
                   <figure>
@@ -296,7 +314,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      className={`${btnStyles.Button} ${btnStyles.Blue}`}
                       htmlFor="image-upload2"
                     >
                       Change the image
@@ -305,14 +323,14 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 </>
               ) : (
                 <Form.Label
-                  className="my-1 ml-3"
+                  // className="my-1 ml-3"
                   htmlFor="image-upload2"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload second image"
+                    message="Upload Image 2"
                   />
                 </Form.Label>
               )}
@@ -334,9 +352,9 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
         </Container>
         {/* image 3 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group>
+            <Form.Group className="text-center" >
               {image3 ? (
                 <>
                   <figure>
@@ -353,14 +371,13 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1 ml-3"
                   htmlFor="image-upload3"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload third image"
+                    message="Upload Image 3"
                   />
                 </Form.Label>
               )}
@@ -382,9 +399,9 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
         </Container>
         {/* image 4 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group>
+            <Form.Group className="text-center">
               {image4 ? (
                 <>
                   <figure>
@@ -401,14 +418,13 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1 ml-3"
                   htmlFor="image-upload4"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload fourth image"
+                    message="Upload Image 4"
                   />
                 </Form.Label>
               )}
@@ -430,9 +446,9 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
         </Container>
         {/* image 5 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group>
+            <Form.Group className="text-center">
               {image5 ? (
                 <>
                   <figure>
@@ -449,14 +465,13 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1 ml-3"
                   htmlFor="image-upload5"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload fifth image"
+                    message="Upload Image 5"
                   />
                 </Form.Label>
               )}

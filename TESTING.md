@@ -1066,9 +1066,9 @@ Description: View and Create Post within each Department outside and separate to
 - Use Case: Find a Post in the Search bar by it's title or the owner's name<br>
 
   1. Input a title in the Search Bar, eg "bar".<br>
-  2. All Posts with the word are returned.<br>
+  2. All Posts with the word "bar" are returned.<br>
 
-<p align="center"> <strong>"Bar" returns</strong></p>
+<p align="center"> <strong>"Bar" Posts Returned</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/deptssearch.png" width="50%">
 </h2>
@@ -1079,14 +1079,14 @@ Description: View and Create Post within each Department outside and separate to
   2. The "Create Post" form opens.<br>
   3. Input the details an upload up to 5 Images and submit.<br>
   4. A success message displays saying - "Post Added"<br>
-  5. The new Post is added and it displayed opened with the Title, Content and all 5 images.<br>
+  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
 
-<p align="center"> <strong>Creat Form</strong></p>
+<p align="center"> <strong>Create Form</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/deptadd2.png" width="50%">
 </h2>
 
-<p align="center"> <strong>nn</strong></p>
+<p align="center"> <strong>The New Post Displays</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/deptaddd3.png" width="50%">
 </h2>
@@ -1100,6 +1100,24 @@ Description: View and Create Post within each Department outside and separate to
 <p align="center"> <strong>Opened Post</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/deptopen.png" width="50%">
+</h2>
+
+- Use Case: Edit a Post<br>
+
+  1. Click the "Add Post" tab.<br>
+  2. The "Create Post" form opens.<br>
+  3. Input the details an upload up to 5 Images and submit.<br>
+  4. A success message displays saying - "Post Added"<br>
+  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+
+<p align="center"> <strong>Create Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptadd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The New Post Displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptaddd3.png" width="50%">
 </h2>
 
 ### Character and locations page

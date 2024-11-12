@@ -64,8 +64,12 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
   
   return (
     <div>
-      <TopBox work={deptGeneral}
+      {deptGeneral ? (
+        <TopBox work={deptGeneral}
         title2="Department" />
+      ) : (
+        <TopBox work="Departments" />
+      ) }
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
             onClick={() => history.goBack()}
@@ -74,9 +78,11 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
         </Button>
         <Row>
           <Col className="text-center">
+          {deptGeneral ? (
             <Button onClick={() => setShow(show => !show)} 
             className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
             Add Post</Button>
+          ) : ("") }
         {!show ?("") : (<DeptPostCreate 
         setShow={setShow}
          deptGeneral={deptGeneral} /> ) }
