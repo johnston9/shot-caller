@@ -312,12 +312,14 @@ const DeptPostTop = (props) => {
               </Col>
               <Col xs={2} 
               className="d-flex align-items-center" >
+              <div className={`${styles.Icon}`} >
               {is_owner && (
               <PostDropdown
                   handleEdit={handleEdit}
                   handleDelete={handleDelete}
               />
               ) } 
+              </div>
               </Col>
               </Row> 
               <Row>
@@ -446,20 +448,20 @@ const DeptPostTop = (props) => {
           <Col xs={12} sm={3} className="my-0 " >
           <div className='d-none d-sm-block'>
           <Row >
-          <Col sm={3}
+          <Col className="pl-0 pr-0" sm={10} >
+          <p className={ `text-center  ${styles.Date}`}>{updated_at}
+          </p>
+          </Col>
+          <Col sm={2}
           className="d-flex align-items-center px-0 float-right" >
+          <div className={`${styles.Icon}`} >
           {is_owner && (
           <PostDropdown
               handleEdit={handleEdit}
               handleDelete={handleDelete}
           />
           ) } 
-          </Col>
-          <Col className="pl-0 pr-0" sm={9} >
-          <p className={ `text-center  ${styles.Date}`}>{updated_at}
-          </p>
-          {/* icons */}
-          {/* star uses archive_id from drf */}
+          </div>
           </Col>
           </Row>   
           </div>     

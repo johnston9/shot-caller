@@ -1051,59 +1051,55 @@ Description: Create any number of Series each containing a display of succesive 
 </h2>
 
 ### Departments
-Description: View and Create Post within each Department outsid and separate to the posts in the scene workspace.<br>
+Description: View and Create Post within each Department outside and separate to the posts in the scene workspace.<br>
 
 - Use Case: View a Department's Posts<br>
 
-  1. Click Depts-Xtra in the Home page menu.<br>
-  2. Click on a Department, e.g. "Camera" and that Department's Posts page opens with the "Add Post" tab on top and tge Posts displaying below.<br>
+  1. Click Depts-Xtra in the Home page menu to open the Department page.<br>
+  2. Click on a Department, e.g. "Sound" and that Department's Posts page opens with the "Add Post" tab on top and the Posts displaying below.<br>
 
-<p align="center"> <strong>Camera Dept Posts page</strong></p>
+<p align="center"> <strong>Sound Dept Posts page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/seriesview.png" width="50%">
+<img src="documentation/readme-images/deptsview.png" width="50%">
 </h2>
 
-- Use Case: Find a Post in the Search bar by it's name<br>
+- Use Case: Find a Post in the Search bar by it's title or the owner's name<br>
 
-  1. Input a name in the Search Bar, eg costumes.<br>
-  2. All series with word costumes are returned, e.g. "Costume Matches".<br>
+  1. Input a title in the Search Bar, eg "bar".<br>
+  2. All Posts with the word are returned.<br>
 
-<p align="center"> <strong>Series "Costume Matches"</strong></p>
+<p align="center"> <strong>"Bar" returns</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/seriessearch.png" width="50%">
+<img src="documentation/readme-images/deptssearch.png" width="50%">
 </h2>
 
-- Use Case: View a Series description<br>
+- Use Case: Create a Post<br>
 
-  1. Click on the "I" icon.<br>
-  2. The description of the Series's Content displays.<br>
+  1. Click the "Add Post" tab.<br>
+  2. The "Create Post" form opens.<br>
+  3. Input the details an upload up to 5 Images and submit.<br>
+  4. A success message displays saying - "Post Added"<br>
+  5. The new Post is added and it displayed opened with the Title, Content and all 5 images.<br>
 
-<p align="center"> <strong>Series "Costume Matches"</strong></p>
+<p align="center"> <strong>Creat Form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/seriescon.png" width="50%">
-</h2>
-
-- Use Case: Create a Series<br>
-
-  1. Click the "Create Series" tab.<br>
-  2. The "Create Series" form opens.<br>
-  3. Input the Name, e.g. "Angles Scene 1" and Content fields and submit.<br>
-  4. A success message displays saying - "Series "Angles Scene 1" Added"<br>
-  5. The new Series "Angles Scene 1" is added.<br>
-
-<p align="center"> <strong>bb</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/seriesadd1.png" width="50%">
+<img src="documentation/readme-images/deptadd2.png" width="50%">
 </h2>
 
 <p align="center"> <strong>nn</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/seriestoastadd.png" width="50%">
+<img src="documentation/readme-images/deptaddd3.png" width="50%">
 </h2>
 
-<p align="center"> <strong>bb</strong></p>
+- Use Case: Open an Unopend Post to view its details and change its background and text colours to indicate it has been opened.<br>
+
+  1. Click on an unopened Post, with background Black and text White and Blue.<br>
+  2. The Post opens.<br>
+  3. Returning to the Posts page the background is now White and the text Blue.<br>
+
+<p align="center"> <strong>Opened Post</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/seriesadd2.png" width="50%">
+<img src="documentation/readme-images/deptopen.png" width="50%">
 </h2>
 
 ### Character and locations page

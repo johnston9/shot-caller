@@ -19,6 +19,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Asset2 from "../../components/Asset2";
+import { toast } from 'react-toastify';
 
 function DeptPostCreate({deptGeneral="", setShow } ) {
   useRedirect();
@@ -133,6 +134,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
   
     try {
       const { data } = await axiosReq.post("/department/posts/", formData);
+      toast.success(`Post Added`);
       history.push(`/department/posts/${data.id}`);
     } catch (err) {
       console.log(err);

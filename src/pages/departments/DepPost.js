@@ -47,7 +47,7 @@ const DeptPost = (props) => {
 
     return (
         <div>
-            <Card className='px-3'>
+            <Card className='mx-3'>
             <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
           <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
           <Col xs={12} sm={3} className="my-0" >

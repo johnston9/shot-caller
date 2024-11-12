@@ -3,6 +3,14 @@
   color: #fff;
 }
 
+.Icon i {
+  color: #fff;
+}
+
+.Icon i:hover {
+  color: #2142b2;
+}
+
 .PostTop2 {
   background-color: #fff;
   color: #000;
