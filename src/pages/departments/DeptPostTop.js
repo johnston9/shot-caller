@@ -272,145 +272,75 @@ const DeptPostTop = (props) => {
         <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
           <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
           <Col xs={12} sm={3} className="my-0" >
-              {/* small */}
-              <div className='d-none d-sm-block'>
-              <Row >
-              <Col xs={3} className="pl-3 pr-0" >
-              <Link to={`/profiles/${profile_id}`}>
-              <Avatar src={profile_image} height={45}/>
-              </Link>
-              </Col>
-              <Col xs={9} className="pl-2 pr-0" >
-              <div className={`${styles.Content4} pl-2 ml-2`}>
-              <p>
-              <span className=''>{name} </span>
-              </p>
-              <p>
-              <span className='ml-0 '>{position}</span>
-              </p>
-              </div>
-              <div>
-              </div>
-              </Col>
-              </Row>   
-              </div>     
-              {/* mobile */}
-              <div className='d-sm-none'>
-              <Row className='pb-0 mb-0'>
-              <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
-              <Link to={`/profiles/${profile_id}`}>
-              <Avatar src={profile_image} height={45}  />
-              </Link>
-              </Col>
-              <Col xs={8} className="text-center" >
-              <p>
-              <span className=''>{name}</span>
-              </p>
-              <p className=''>
-              {position}
-              </p>
-              </Col>
-              <Col xs={2} 
-              className="d-flex align-items-center" >
-              <div className={`${styles.Icon}`} >
-              {is_owner && (
-              <PostDropdown
-                  handleEdit={handleEdit}
-                  handleDelete={handleDelete}
-              />
-              ) } 
-              </div>
-              </Col>
-              </Row> 
-              <Row>
-              <Col xs={12}>
-              {/* icons  */}
-              {/* star uses archive_id from drf */}
-              {/* <div className='px-0 py-0 d-flex align-items-center justify-content-center' >
-              {archive_id ? (
-                    <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>UnStar</Tooltip>}
-                    >
-                    <span onClick={handleUnStar} >
-                    <i className={`fas fa-star ${styles.Star}`} />
-                    </span>
-                    </OverlayTrigger>
-                ) : currentUser ? (
-                  <OverlayTrigger
-                  placement="top"
-                  overlay={<Tooltip>Star</Tooltip>}
-                  >
-                    <span onClick={handleStar}>
-                    <i className={`far fa-star ${styles.Star}`} />
-                    </span>
-                    </OverlayTrigger>
-                ) : (
-                    <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Log in please</Tooltip>}
-                    >
-                    <i className={`far fa-star ${styles.Star}`} />
-                    </OverlayTrigger>
-                )}
-                {is_owner ? (
-                    <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>You can't like your own post!</Tooltip>}
-                    >
-                    <i className={`far fa-heart ${styles.Heart}`} />
-                    </OverlayTrigger>
-                ) : like_id ? (
-                    <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Unlike</Tooltip>}
-                    >
-                    <span onClick={handleUnlike} >
-                    <i className={`fas fa-heart ${styles.Heart}`} />
-                    </span>
-                    </OverlayTrigger>
-                ) : currentUser ? (
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Like</Tooltip>}
-                      >
-                    <span onClick={handleLike}>
-                    <i className={`far fa-heart ${styles.Heart}`} />
-                    </span>
-                    </OverlayTrigger>
-                ) : (
-                    <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Log in please</Tooltip>}
-                    >
-                    <i className={`far fa-heart ${styles.Heart}`} />
-                    </OverlayTrigger>
-                )}
-                <span className='pt-0'>{likes_count}</span>
-                <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Comments</Tooltip>}
-                    >
-                <Link to={`/posts/${id}`}>
-                <i className={`far fa-comments ${styles.Comment}`} />
-                </Link>
-                </OverlayTrigger>
-                <span className='pt-0'>{comments_count}</span>
-                <span className='ml-5'> {updated_at}</span>
-              </div> */}
-              </Col>
-              </Row>  
-              </div> 
+          {/* small */}
+          <div className='d-none d-sm-block'>
+          <Row >
+          <Col xs={3} className="pl-3 pr-0" >
+          <Link to={`/profiles/${profile_id}`}>
+          <Avatar src={profile_image} height={45}/>
+          </Link>
+          </Col>
+          <Col xs={9} className="pl-2 pr-0" >
+          <div className={`${styles.Content4} pl-2 ml-2`}>
+          <p>
+          <span className={`${styles.Italic}`}>{name} </span>
+          </p>
+          <p>
+          <span className='ml-0 '>{position}</span>
+          </p>
+          </div>
+          <div>
+          </div>
+          </Col>
+          </Row>   
+          </div>     
+          {/* mobile */}
+          <div className='d-sm-none'>
+          <Row className='pb-0 mb-0'>
+          <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
+          <Link to={`/profiles/${profile_id}`}>
+          <Avatar src={profile_image} height={45}  />
+          </Link>
+          </Col>
+          <Col xs={8} className="text-center" >
+          <p><span className={`${styles.Italic}`}>{name} </span>
+          </p>
+          <p className=''>
+          {position}
+          </p>
+          <p className={ `text-center  ${styles.Date}`}>{updated_at}
+          </p>
+          </Col>
+          <Col xs={2} className="d-flex align-items-center" >
+          <Row>
+          <Col>
+          <div className={`${styles.Icon}`} >
+          {is_owner && (
+          <PostDropdown
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+          />
+          ) } 
+          </div>
+          </Col>
+          <Col>
+          </Col>
+          </Row>
+          </Col>
+          </Row>  
+          </div> 
           </Col> 
+          {/* Dept and Title small and mobile */}
           <Col xs={12} sm={6} className="my-0" >
           <Link to={`/department/posts/${id}`}>
           {opened_id ? (
-            <Row className={`${styles.ContentOpened} pt-0 my-0 mr-1 ml-1`}>
+            <Row className={`${styles.ContentOpened} pt-0 my-0 mb-1 mb-sm-0 mr-1 ml-1`}>
             <Col xs={12} 
             className={` text-center`} >
             <Row>
             <Col className='px-0 mx-0' xs={12}>
-                {departments && <p style={{ textTransform: 'capitalize' }}>
+                {departments && <p 
+                style={{ textTransform: 'capitalize' }}>
                   {departments}</p>}
               </Col>
             </Row>
@@ -429,7 +359,8 @@ const DeptPostTop = (props) => {
               className={` text-center`} >
               <Row>
               <Col className='px-0 mx-0' xs={12}>
-                {departments && <p style={{ textTransform: 'capitalize'}}>
+                {departments && <p 
+                style={{ textTransform: 'capitalize'}}>
                   {departments}</p>}
               </Col>
               </Row>
