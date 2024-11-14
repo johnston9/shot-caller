@@ -1099,7 +1099,7 @@ Description: View and Create Post within each Department outside and separate to
 
 <p align="center"> <strong>Opened Post</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptopen.png" width="50%">
+<img src="documentation/readme-images/deptnew1.png" width="50%">
 </h2>
 
 - Use Case: Edit a Post<br>
