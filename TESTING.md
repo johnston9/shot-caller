@@ -62,20 +62,42 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 
   1. On the Schedule page click on the "Create Day" tab.<br>
   2. The Create Day form displays. <br>
-  3. Select the Date from the input box Calender - "08 Aug 2023".<br>
-  4. The Date is added.<br>
-  5. Add the Day number - "6".<br>
+  3. Add the Day number - "6".<br>
+  4. Select the Date from the input box Calender - "20 Nov 2024".<br>
+  5. The Date is added.<br>
   6. Press submit.<br>
-  7. The Shoot Day number "6" and Date "08 Aug 2023" is created and added to the page.<br>
+  7. A success message displays.<br>
+  8. The Shoot Day number "6" and Date "20 Nov 2024" is created and added to the page.<br>
 
-<p align="center"> <strong>Day number "6" and Date "08 Aug 2023" added to form</strong></p>
+<p align="center"> <strong>Shoot Day: Number "6" Created</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schedcreday1.png" width="50%">
+<img src="documentation/readme-images/scheddaycre.png" width="50%">
 </h2>
 
-<p align="center"> <strong>Shoot Day: Number "6"and Date "08 Aug 2023" Created</strong></p>
+- Use Case: Edit a Shoot Day.<br>
+
+  1. On the Edit/Delete icon and click the Edit icon.<br>
+  2. The Edit Day form displays. <br>
+  3. Input the new details, i.e. change the date to - "27 Nov 2024".<br>
+  6. Press submit.<br>
+  7. A success message displays.<br>
+  8. The Shoot Day number "6" displays with the new Date "27 Nov 2024".<br>
+
+<p align="center"> <strong>Success Message and Day with changes</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schedcreday2.png" width="50%">
+<img src="documentation/readme-images/scheddayedit.png" width="50%">
+</h2>
+
+- Use Case: Delete a Shoot Day.<br>
+
+  1. On the Edit/Delete icon and click the Delete icon.<br>
+  2. A Modal displays asking to Confirm Delete or Cancel<br>
+  3. Click "Delete".<br>
+  6. A success message displays and the Day is deleted.<br>
+
+<p align="center"> <strong>Success Message and Day Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scheddaydel.png" width="50%">
 </h2>
 
 - Use Case: Find a Shoot Day in the Calender.<br>
@@ -1104,18 +1126,18 @@ Description: View and Create Post within each Department outside and separate to
 
 - Use Case: Edit a Post<br>
 
-  1. Click the "Add Post" tab.<br>
-  2. The "Create Post" form opens.<br>
-  3. Input the details an upload up to 5 Images and submit.<br>
-  4. A success message displays saying - "Post Added"<br>
-  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+  1. Click on the "Edit/Delete" icon.<br>
+  2. The "Edit Post" form opens.<br>
+  3. Input the changes including the 5 Images and submit.<br>
+  4. A success message displays saying - "Post Edited"<br>
+  5. The new Post displays with the changes and all new 5 images.<br>
 
-<p align="center"> <strong>Create Form</strong></p>
+<p align="center"> <strong>Edit Form</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/deptadd2.png" width="50%">
 </h2>
 
-<p align="center"> <strong>The New Post Displays</strong></p>
+<p align="center"> <strong>The Edited Post</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/deptaddd3.png" width="50%">
 </h2>

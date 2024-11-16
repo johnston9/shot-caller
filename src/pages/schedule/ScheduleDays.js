@@ -41,24 +41,24 @@ const SchedulePages = () => {
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
 
+    const fetchDays = async () => {
+      /* Fetch all Days and all schedule scenes */
+      try {
+        const [{ data: daysData }, { data: scenesData }] = await Promise.all([
+          axiosReq.get(`/days/?${filter}&search=${query}`),
+          axiosReq.get(`/schedule/scenes`),
+      ])
+        // const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
+        setDays(daysData);
+        setDaysScenes(scenesData);
+        setHasLoaded(true);
+      } catch(err) {
+        setError(err)
+        console.log(err);
+      }
+    }
 
     useEffect(() => {
-          const fetchDays = async () => {
-            /* Fetch all Days and all schedule scenes */
-            try {
-              const [{ data: daysData }, { data: scenesData }] = await Promise.all([
-                axiosReq.get(`/days/?${filter}&search=${query}`),
-                axiosReq.get(`/schedule/scenes`),
-            ])
-              // const { data } = await axiosReq.get(`/days/?${filter}&search=${query}`);
-              setDays(daysData);
-              setDaysScenes(scenesData);
-              setHasLoaded(true);
-            } catch(err) {
-              setError(err)
-              console.log(err);
-            }
-          }
           setHasLoaded(false);
   
           const timer = setTimeout(() => {fetchDays();
@@ -133,7 +133,9 @@ const SchedulePages = () => {
                             <Col xs={{span: 10, offset: 1}}  md={{span: 8, offset: 2}} className='mt-3 text-center' >
                             {days.results.map((day) => (
                                 day.date === newdate ? (
-                                  <DayTop daysScenes={daysScenes} {...day} />
+                                  <DayTop
+                                  fetchDays={fetchDays}
+                                   daysScenes={daysScenes} {...day} />
                                 ) : ("")
                               )) }
                             </Col>
@@ -173,7 +175,9 @@ const SchedulePages = () => {
                       <Col xs={{ span: 10, offset: 1 }}
                            sm={{ span: 6, offset: 0 }}
                        md={{ span: 4, offset: 0 }} lg={3} className="py-2">
-                      <DayTop daysScenes={daysScenes} key={day.id} 
+                      <DayTop 
+                      fetchDays={fetchDays}
+                      daysScenes={daysScenes} key={day.id} 
                       {...day} setDays={setDays} />
                       </Col>
                     ))) 

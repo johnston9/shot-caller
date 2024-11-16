@@ -1,4 +1,5 @@
-/* Form Page to create a Day by giving it a number and date */
+/* Form Page to create a Day by giving it a number and date
+npm install -D @types/react  */
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -13,9 +14,9 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import TopBox from "../../../components/TopBox";
 import { useRedirect } from "../../../hooks/Redirect";
+import { toast } from 'react-toastify';
 
-
-const DayCreateForm = ({topbox, setShow} ) => {
+const DayCreateForm = () => {
     useRedirect();
   const [errors, setErrors] = useState({});
   const [startDate, setStartDate] = useState("");
@@ -51,6 +52,7 @@ const DayCreateForm = ({topbox, setShow} ) => {
       
     try {
       await axiosReq.post("/days/", formData);
+      toast.success(`Day "${day}" Created`);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -61,7 +63,7 @@ const DayCreateForm = ({topbox, setShow} ) => {
   }
 
   const buttons = (
-    <div className="text-center">    
+    <div className="text-center mt-5">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
@@ -76,23 +78,19 @@ const DayCreateForm = ({topbox, setShow} ) => {
 
   return (
     <div>
-      {topbox ? (
-        ""
-      ) : (
-        <TopBox title="Create Day" />
-      ) }
+    <TopBox title="Create Day" />
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
       onClick={() => history.goBack()}
       >
       Back
     </Button>
-    <Form className={`${styles.Back} mt-4`} onSubmit={handleSubmit}>
-      <h4 className="text-center mt-3">Create Day</h4>
-      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-    <Row className="text-center">
+    <h5 className={`mt-1 text-center py-1 mb-0 ${styles.SubTitle }`}>
+    Create Day</h5>
+    <Form className={`${styles.White}`} onSubmit={handleSubmit}>
+    <Row className="text-center mt-3">
     <Col xs={6} className="p-0 p-md-2 d-flex justify-content-center ">
-        <Form.Group controlId="day" className={`${styles.Width} `} >
+        <Form.Group controlId="day" >
             <Form.Label className={`${styles.Bold}`} >Day</Form.Label>
             <Form.Control 
             type="text"
@@ -109,7 +107,7 @@ const DayCreateForm = ({topbox, setShow} ) => {
         ))}
       </Col> 
       <Col className="p-0 p-md-2 d-flex justify-content-center" xs={6}>
-      <Form.Group controlId="date" className={`${styles.Width} `} >
+      <Form.Group controlId="date" >
                 <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
                 <DatePicker 
                   className={`${styles.Input}`}
@@ -127,11 +125,18 @@ const DayCreateForm = ({topbox, setShow} ) => {
     {/* buttons */}
     <Row>
         <Col>
-        <div className= {` my-3`} >{buttons} </div>
+        <div className="my-3" >{buttons} </div>
         </Col>
     </Row>
-  </Form>
-  </div>
+    </Form>
+    <Row>
+    <Col sm={2}className="d-none d-sm-block" >
+    </Col> 
+    <Col xs={12} sm={8} >
+    <hr/>
+    </Col>
+    </Row>
+    </div>
   );
 }
 

@@ -13,6 +13,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import TopBox from "../../../components/TopBox";
 import { useRedirect } from "../../../hooks/Redirect";
+import { toast } from 'react-toastify';
 
 const DayEdit = () => {
     useRedirect();
@@ -64,6 +65,7 @@ const DayEdit = () => {
     formData.append("date", startDate);
     try {
       await axiosReq.put(`/days/${id}/`, formData);
+      toast.success(`Day "${day}" Updated`);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -74,7 +76,7 @@ const DayEdit = () => {
   }
 
   const buttons = (
-    <div className="text-center">    
+    <div className="text-center mt-5">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
@@ -82,25 +84,23 @@ const DayEdit = () => {
         Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Edit
+        Submit
       </Button>
     </div>
   );
 
   return (
     <div>
-        <TopBox title="Edit Day" />
-        <Button onClick={() => history.goBack()}
-          className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
-      >
-          Back
-      </Button>
-        <Form className={`${styles.Back} mt-4 mb-3 text-center`} onSubmit={handleSubmit}>
-      <h3 className="text-center mt-3">Edit Day</h3>
-      <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-    <Row>
+    <TopBox title="Edit Day" />
+    <Button onClick={() => history.goBack()}
+      className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}>Back
+    </Button>
+    <h5 className={`mt-1 text-center py-1 mb-0 ${styles.SubTitle }`}>
+    Edit Day {day}</h5>
+    <Form className={`${styles.White}`} onSubmit={handleSubmit}>
+    <Row className="text-center mt-3">
     <Col xs={6} className="p-0 p-md-2 d-flex justify-content-center ">
-        <Form.Group controlId="day" className={`${styles.Width} `} >
+        <Form.Group controlId="day">
             <Form.Label className={`${styles.Bold}`} >Day</Form.Label>
             <Form.Control 
             type="text"
@@ -115,30 +115,37 @@ const DayEdit = () => {
             {message}
             </Alert>
         ))}
-      </Col> 
-      <Col className="p-0 p-md-2" xs={6}>
-      <Form.Group controlId="date"  >
-                <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
-                <DatePicker 
-                  className={`${styles.Input}`}
-                   value={startDate}
-                  onChange={(date) => handleDate(date) }
-                  />
-            </Form.Group>
-            {errors?.date?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </Col> 
+    </Col> 
+    <Col className="p-0 p-md-2" xs={6}>
+    <Form.Group controlId="date">
+              <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
+              <DatePicker 
+                className={`${styles.Input}`}
+                  value={startDate}
+                onChange={(date) => handleDate(date) }
+                />
+          </Form.Group>
+          {errors?.date?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+    </Col> 
     </Row>
     {/* buttons */}
     <Row>
         <Col>
-        <div className= {` my-3`} >{buttons} </div>
+        <div className="my-3">{buttons} </div>
         </Col>
     </Row>
   </Form>
+  <Row>
+  <Col sm={2}className="d-none d-sm-block" >
+  </Col> 
+  <Col xs={12} sm={8} >
+  <hr/>
+  </Col>
+  </Row>
   </div>
   );
 }

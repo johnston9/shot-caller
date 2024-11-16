@@ -8,6 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../../api/axiosDefaults';
 import { PostDropdown } from '../../../components/PostDropdown';
 import styles from "../../../styles/Days.module.css";
+import { toast } from 'react-toastify';
 
 const DayTop = (props) => {
     const {
@@ -15,6 +16,7 @@ const DayTop = (props) => {
         day,
         date,
         daysScenes,
+        fetchDays,
     } = props;
 
     const history = useHistory();
@@ -26,7 +28,8 @@ const DayTop = (props) => {
     const handleDelete = async () => {
     try {
         await axiosReq.delete(`/days/${id}/`);
-        history.push(`/days/`);
+        toast.success(`Day Deleted`);
+        fetchDays();
     } catch (err) {
     }
     };
@@ -34,36 +37,35 @@ const DayTop = (props) => {
     return (
         <div>
             <Card className={`text-center `}  >
-                <Card.Header className={`pt-2 pb-1 ${styles.Top }`}>
-                  <Row >
+                <Card.Header className={`py-1 ${styles.Top }`}>
+                  <Row className='d-flex align-items-center justify-content-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
-                    <Col xs={10} className='mx-0 px-0 text-center d-flex align-items-center justify-content-center'>
+                    <Col xs={10} className='mx-0 px-0'>
                     <p className={` ${styles.Titlelist }`}>
                         Day {day} - {date}
                     </p>
                     </Col >
-                    <Col xs={1} className='text-center mx-0 px-0'>
+                    <Col xs={1} className={`mx-0 px-0`}>
+                    <div className={`${styles.Icon}`} >
                         <PostDropdown
                                 handleEdit={handleEdit}
                                 handleDelete={handleDelete}
                             />
+                    </div>
                     </Col>
                   </Row>
                 </Card.Header>
                 <Card.Body className={`p-1 ${styles.Bottom }`} >
                     <Link to={`/day/${id}`}>
-                    <Col >  
                         <div className={` ${styles.SceneLoc }`}>  
                         {/* filter the scenes for that day */}
                         {daysScenes.results.length ? (
                             daysScenes.results.map((scene) => (
                                 scene.day_id === id ? (
-                                    <span className={` ${styles.Titledetail }`}>
-                                        {scene.number} - {scene.location}, </span>
+                                    <span className={` ${styles.Titledetail }`}> {scene.number} - {scene.location},</span>
                                 )  : ("")
                             ))) : ("")}
                         </div>
-                        </Col>
                     </Link>
                 </Card.Body>
             </Card>
