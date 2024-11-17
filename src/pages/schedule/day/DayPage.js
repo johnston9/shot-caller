@@ -51,7 +51,6 @@ const DayPage = () => {
                 setDayScenes(scenes);
                 console.log(scenes);
                 setCallsheet(callsheetdata);
-                // setDayContext(dayGet.day);
                 setDataDay(dayGet.day);
                 setDataDate(dayGet.date);
                 setHasLoaded(true);

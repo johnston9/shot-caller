@@ -46,6 +46,7 @@ import InfoWorkspace from './info/InfoWorkspace';
 import Script from './scriptAndSceneScript/ScriptScene';
 import CharactersBG from './charactersBg/CharactersBG';
 import StoryboardforSList from './shotlistStoryboard/StoryboardforSList';
+import { toast } from 'react-toastify';
 
 const Scene = (props) => {
     const [showScript, setShowScript] = useState(false);
@@ -74,6 +75,7 @@ const Scene = (props) => {
     const handleDelete = async () => {
       try {
         await axiosReq.delete(`/scenes/${id}/`);
+        toast.success(`Scene Deleted`);
         history.goBack();
       } catch (err) {
       }

@@ -67,17 +67,18 @@ const ScenesPage = ({message, filter = "" }) => {
 
     };
 
+    /* Function to fetch all Scenes */
+    const fetchScenes = async () => {
+      try {
+        const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
+        setScenes(data);
+        setHasLoaded(true);
+      } catch(err) {
+        console.log(err);
+      }
+    }
+
     useEffect(() => {
-        /* Function to fetch all Scenes */
-        const fetchScenes = async () => {
-          try {
-            const { data } = await axiosReq.get(`/scenes/?${filter}&search=${query}`);
-            setScenes(data);
-            setHasLoaded(true);
-          } catch(err) {
-            console.log(err);
-          }
-        }
         setHasLoaded(false);
 
         const timer = setTimeout(() => {fetchScenes();
@@ -200,6 +201,7 @@ const ScenesPage = ({message, filter = "" }) => {
                   return (
                     <Col xs={6} sm={4} md={3} lg={2} className="p-1 ">
                       <SceneTop 
+                        fetchScenes={fetchScenes}
                         key={scene.id}
                         {...scene} 
                         setScenes={setScenes}

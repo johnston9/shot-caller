@@ -11,6 +11,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import TopBox from "../../../components/TopBox";
 import { useRedirect } from "../../../hooks/Redirect";
+import { toast } from 'react-toastify';
 
 const SceneScheduleEdit = () => {
   useRedirect();
@@ -111,6 +112,7 @@ const { scene_id, day_id, day_order_number, number,
       formData.append("new_info", new_info);
       try {
         await axiosReq.put(`/schedule/scenes/${id}/`, formData);
+        toast.success(`Schedule Scene ${day_order_number} Updated`);
         history.goBack();
       } catch (err) {
         console.log(err);

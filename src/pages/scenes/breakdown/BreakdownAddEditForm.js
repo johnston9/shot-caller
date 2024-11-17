@@ -131,13 +131,13 @@ const BreakdownEditForm = () => {
         {/* Freeze - This may be removed */}
         {freeze ? (
           <Col className=" p-0 p-md-2" xs={4} >
-          <p>Number</p>
+          <p className={`${styles.BoldScene}`}>Number</p>
           <p>{number}</p>
           </Col>
         ) : (
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
         <Form.Group controlId="number" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Number</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -155,9 +155,8 @@ const BreakdownEditForm = () => {
         ) }
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
           <Form.Group controlId="title" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`}>Title</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`}>Title</Form.Label>
               <Form.Control 
-              // placeholder="Title"
               className={styles.Input}
               type="text"
               name="title"
@@ -173,11 +172,10 @@ const BreakdownEditForm = () => {
           </Col>
           <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
           <Form.Group controlId="dramatic_day" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Dramatic Day</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Dramatic Day</Form.Label>
               <Form.Control 
               type="text"
               className={styles.Input}
-              // placeholder="Dramatic Day"
               name="dramatic_day"
               value={dramatic_day}
               onChange={handleChange}
@@ -190,15 +188,19 @@ const BreakdownEditForm = () => {
           ))}
           </Col>
       </Row>
-      <hr/>
+      {/* hr */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-5 mb-0`}/>
+      </Col>
+      </Row>
       {/* Int-Ext Day/Night Dramatic-day  */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >         
           <Form.Group controlId="int_ext" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Int-Ext</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Int-Ext</Form.Label>
               <Form.Control as="select"
                 className={styles.Input}
-                // placeholder="Int-Ext"
                 name="int_ext"
                 value={int_ext}
                 onChange={handleChange}
@@ -216,11 +218,10 @@ const BreakdownEditForm = () => {
           </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
       <Form.Group controlId="day_night" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Day/Night</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Day/Night</Form.Label>
           <Form.Control as="select"
             name="day_night"
             className={styles.Input}
-            // placeholder="Day/Night"
             value={day_night}
             onChange={handleChange}
             aria-label="day or night select">
@@ -237,7 +238,7 @@ const BreakdownEditForm = () => {
       </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
           <Form.Group controlId="act" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Act</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Act</Form.Label>
               <Form.Control as="select"
                 className={styles.Input}
                 name="act"
@@ -258,16 +259,20 @@ const BreakdownEditForm = () => {
           ))}
         </Col>
       </Row  >
-      <hr/>
+      {/* hr */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-5 mb-0`}/>
+      </Col>
+      </Row>
       {/* shooting-date time pages*/}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
       <Form.Group controlId="shooting_date" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Shooting Date</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Shooting Date</Form.Label>
           <Form.Control 
           type="text"
           className={styles.Input}
-          // placeholder="Shooting Date"
           name="shooting_date"
           value={shooting_date}
           onChange={handleChange}
@@ -281,11 +286,10 @@ const BreakdownEditForm = () => {
       </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
       <Form.Group controlId="time" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Scene Time</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Scene Time</Form.Label>
           <Form.Control 
           type="text"
           className={styles.Input}
-          // placeholder="Time"
           name="time"
           value={time}
           onChange={handleChange}
@@ -299,7 +303,7 @@ const BreakdownEditForm = () => {
       </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
       <Form.Group controlId="pages" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Pages</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Pages</Form.Label>
           <Form.Control 
           type="text"
           className={styles.Input}
@@ -316,12 +320,17 @@ const BreakdownEditForm = () => {
       ))}
       </Col>
       </Row >
-      <hr/>
+      {/* hr */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-5 mb-0`}/>
+      </Col>
+      </Row>
       {/* location location-detail  */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
           <Form.Group controlId="location" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Location</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
               <Form.Control as="select"
                 name="location"
                 className={styles.Input}
@@ -343,10 +352,9 @@ const BreakdownEditForm = () => {
       </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
           <Form.Group controlId="location_detail" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.Bold}`} >Location Detail</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location Detail</Form.Label>
               <Form.Control 
               className={styles.Input}
-              // placeholder="Location Detail"
               type="text"
               name="location_detail"
               value={location_detail}
@@ -360,16 +368,20 @@ const BreakdownEditForm = () => {
           ))}
       </Col>
       </Row>
-      <hr/>
+      {/* hr */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-5 mb-0`}/>
+      </Col>
+      </Row>
       {/* Filming Location - Action */}
       <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
         <Form.Group controlId="filming_location" className={`${styles.Width2} `} >
-            <Form.Label className={`${styles.Bold}`} >Filming Location</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
             type="text"
             className={styles.Input}
-            // placeholder="Filming Location"
             name="filming_location"
             as="textarea"
             rows={2}
@@ -385,11 +397,10 @@ const BreakdownEditForm = () => {
         </Col>
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
         <Form.Group controlId="action" className={`${styles.Width2} `} >
-            <Form.Label className={`${styles.Bold}`} >Action</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Action</Form.Label>
             <Form.Control 
             type="text"
             className={styles.Input}
-            // placeholder="Action"
             name="action"
             as="textarea"
             rows={2}
@@ -404,15 +415,19 @@ const BreakdownEditForm = () => {
         ))}
         </Col>
       </Row>
-      <hr/>
-      {/* department-info equip_set_props  */}
+      {/* hr */}
       <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-5 mb-0`}/>
+      </Col>
+      </Row>
+      {/* department-info equip_set_props  */}
+      <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
         <Form.Group controlId="content" className={`${styles.Width2} `} >
-            <Form.Label className={`${styles.Bold}`} >Department Info</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Department Info</Form.Label>
             <Form.Control 
                 type="text"
-                // placeholder="Department Info"
                 className={styles.InputScene}
                 name="department_info"
                 as="textarea"
@@ -429,10 +444,9 @@ const BreakdownEditForm = () => {
       </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
       <Form.Group controlId="equip_set_props" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Info/Equip/Set</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Info/Equip/Set</Form.Label>
           <Form.Control 
               className={styles.InputScene}
-              // placeholder="Info/Equip/Set"
               type="text"
               name="equip_set_props"
               as="textarea"
@@ -448,7 +462,12 @@ const BreakdownEditForm = () => {
       ))}
       </Col>
       </Row>    
-      <hr/>   
+      {/* hr */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-5 mb-0`}/>
+      </Col>
+      </Row>
     </div>
   )
 
@@ -578,7 +597,7 @@ const BreakdownEditForm = () => {
           </Row>
           <Row>
           <Col className="py-2 p-0 p-md-2" md={6}>
-            <p className={`${styles.Bold} text-center mb-1`}>Script</p>
+            <p className={`${styles.BoldScene} text-center mb-1`}>Script</p>
             <Container
               className={`${appStyles.Content} ${styles.Width2}  ${styles.Container} d-flex flex-column justify-content-center mb-3`}
             >
@@ -628,7 +647,7 @@ const BreakdownEditForm = () => {
             </Container>
             </Col>
             <Col className="py-2 p-0 p-md-2" md={6}>
-            <p className={`${styles.Bold} text-center mb-1`}>Storyboard</p>
+            <p className={`${styles.BoldScene} text-center mb-1`}>Storyboard</p>
             {/* storyboard */}
             <Container
               className={`${appStyles.Content} ${styles.Width2} ${styles.Container} d-flex flex-column justify-content-center`}

@@ -17,14 +17,15 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const Home = () => {
     useRedirect();
+    // Container
     // eslint-disable-next-line
     const currentUser = useCurrentUser();
     const crewInfoOne = useCrewInfoContext();
-  const production_name = crewInfoOne.production_name || "";
+    const production_name = crewInfoOne.production_name || "";
     const admin = true;
 
     return (
-      <Container className={`px-2  ${styles.Background}`}>
+      <div className={`px-2  ${styles.Background}`}>
       {production_name ? (
             <TopBox work={production_name} />
           ) : (
@@ -624,7 +625,7 @@ const Home = () => {
         />
       </Col>
         </Row>
-    </Container>
+    </div>
     )
 }
 

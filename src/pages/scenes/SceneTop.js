@@ -8,6 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import styles from "../../styles/Scene.module.css";
+import { toast } from 'react-toastify';
 
 const SceneTop = (props) => {
     const {
@@ -17,6 +18,7 @@ const SceneTop = (props) => {
         action,
         location,
         style,
+        fetchScenes,
     } = props;
     const history = useHistory();
 
@@ -27,7 +29,8 @@ const SceneTop = (props) => {
       const handleDelete = async () => {
         try {
           await axiosReq.delete(`/scenes/${id}/`);
-          history.goBack();
+          toast.success(`Scene Deleted`);
+          fetchScenes();
         } catch (err) {
         }
       };
@@ -58,7 +61,7 @@ const SceneTop = (props) => {
             </Row>
             <Link to={`/scenes/${id}`}>
             <div className={` ${styles.Div25 }`}>
-            <span className={styles.Italics }>{title}</span>
+            <span className={styles.Italics}>{title}</span>
             </div>
             </Link>
             </div>
@@ -68,7 +71,7 @@ const SceneTop = (props) => {
                   <div className={` ${styles.Div50 } px-0`}>
                   {/* <span className={styles.Italics }>{title}</span> */}
                 <Card.Text style={{ fontWeight: '700' }} 
-                className={` ${styles.Grey } px-0`}>{location}</Card.Text>
+                className={`${styles.Grey } px-0`}>{location}</Card.Text>
                 </div>
                 <div className={`px-0 ${styles.Div50 }`}>
                   <p className={` ${styles.Grey }`}>{action}</p></div>

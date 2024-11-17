@@ -143,8 +143,10 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
   9. Click on the Location tab and the Scenes display by Location.<br>
   10. Input a Scene number, Title or Location to the Search Bar then click one of the above tabs and the Scenes in that tab group with the search value display.<br>
   11. Select a Scene by clicking on it and the Shooting Info form opens below with the Scene numberon top.<br>
-  12. Input the Day Order Number and other values and press Add Scene. It is up to the User to input an unused Number or there will be more that one Day Order munber with the smae number.<br>
-  13. The Schedule Scene is added to the Stripboard and the page count is updated by Scene 4's length of 1 to 3.75.<br>
+  12. Input the Day Order Number and other values and press Add Scene. It is up to the User to input an
+   unused Day Order Number not used in another Scene.<br>
+  13. A success message displays.
+  14. The Schedule Scene is added to the Stripboard and the page count is updated by Scene 4's length of 1 to 3.75.<br>
 
 <p align="center"> <strong>Add Scene Form</strong></p>
 <h2 align="center">
@@ -338,6 +340,26 @@ Description: This page displays all the currently added Scenes and the "Script" 
 <img src="documentation/readme-images/scenescreate2.png" width="50%">
 </h2>
 
+- Use Case: Delete a Scene on the Scenes page.<br>
+
+  1. On the Scenes page click the Edit/Delete icon then click the Delete icon
+  on the Scene Top.<br>
+  2. A Modal displays asking to Confirm Delete or Cancel<br>
+  3. Click "Delete".<br>
+  6. A success message displays and the Scene is deleted.<br>
+
+<p align="center"> <strong>Success Message and Day Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenedel.png" width="50%">
+</h2>
+
+- Use Case: Delete a Scene on it's Scene page.<br>
+
+  1. On the Scene click the Edit/Delete icon then click the Delete icon.<br>
+  2. A Modal displays asking to Confirm Delete or Cancel<br>
+  3. Click "Delete".<br>
+  6. A success message displays and the Scene is deleted.<br>
+
 #### Script
 Description: This page contains the whole script. It also had "Latest Changes" and "Notes" information sections on top and an "Add Latest Script" tab where the latest draft can be uploaded.<br>
 
@@ -445,6 +467,12 @@ Description: This section contains the Scene Breakdown.
 <h2 align="center">
 <img src="documentation/readme-images/scenebreak2.png" width="50%">
 </h2>
+
+- Use Case: Add/Edit details in the Breakdown from the Scenes page<br>
+
+  1. Click on the 3 Dots on the Scene Top on the Scenes page to open the Add/Edit Breakdown form.
+  2. Fill in the details and submit.
+  3. A success message displays and the Scene it updated with the new details.
 
 #### Scene Characters/Bg
 - Description: This section contains the Scene's Characters and Background information. Admin can add/edit Scene Characters and BG here. Characters are added by a dropdown containing all Characters added to the Project. Selecting a Character automatically fills it's Role and Number input.<br>

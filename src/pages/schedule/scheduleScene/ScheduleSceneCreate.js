@@ -17,6 +17,7 @@ import { Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import ScheduleSceneItem from "./ScheduleSceneItem";
+import { toast } from 'react-toastify';
 
 const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
   const [errors, setErrors] = useState({});
@@ -92,6 +93,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
     formData.append("new_info", new_info);    
     try {
       await axiosReq.post("/schedule/scenes/", formData);
+      toast.success(`Schedule Scene ${day_order_number} Created`);
       setShow(false);
       setHasOrder(true);
     } catch (err) {
@@ -401,10 +403,10 @@ const buttons = (
               <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
               <Row className="mt-3 pt-3" >
                 <Col>
-                <h4 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
-                    SCENE <span className={`${styles.BlueNumber} `} >{number} </span>SHOOTING INFO </h4>
-                  <h4 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
-                    SCENE <span className={`${styles.BlueNumber} `} >{number} </span></h4>
+                <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
+                    SCENE {number} SHOOTING INFO </h5>
+                  <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
+                    SCENE {number} </h5>
                 </Col>
               </Row>
               <Form className={`text-center px-3 ${styles.FormBox} `} onSubmit={handleSubmit}>
