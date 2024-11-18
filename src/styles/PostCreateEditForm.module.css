@@ -1,6 +1,40 @@
+.goldbright {
+  color: rgb(255,215,0);
+}
+
+.golddark {
+  font-weight: 700;
+  color: rgb(140, 111, 25, 99%);
+}
+
+.gmailblue {
+  background-color: #f2f6fc;
+}
+
+.BlueLight {
+  background-color: #e2ecfa;
+}
+
+.JiraBody {
+  color: #172b4d;
+}
+
+.JiraLight {
+  color: #808080;
+}
+
+.JiraLight {
+  color: #f6f7f9;
+}
+
+.JiraLightBlue {
+  color: #ebedf0;
+}
+
 .Container {
   min-height: 100px;
 }
+
 .Container2 {
     min-height: 10px;
   }

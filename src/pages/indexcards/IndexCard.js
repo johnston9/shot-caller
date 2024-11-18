@@ -46,12 +46,24 @@ const IndexCard = (props ) => {
         <Row>
         <Col className='text-center mt-0' xs={12}>
             <div className={`${styles.DivSize } text-center px-1`}>
-              <p className={`${styles.Title } mb-0 pb-0`}>STORY</p>
+              {/* <Row>
+              <Col xs={1} >
+              <p className={`${styles.Title } mb-0 pb-0`}>S</p>
+              <p className={`${styles.Title } mb-0 pb-0`}>t</p>
+              <p className={`${styles.Title } mb-0 pb-0`}>o</p>
+              <p className={`${styles.Title } mb-0 pb-0`}>r</p>
+              <p className={`${styles.Title } mb-0 pb-0`}>y</p>
+              </Col>
+              <Col xs={11}>
+              <p className={`mb-0 pb-0`}>{story} </p>
+              </Col>
+              </Row> */}
+              <p className={`${styles.Title } mb-0 pb-0`}>Story</p>
               <p className={`mb-0 pb-0`}>{story} </p>
             </div>
             <hr className='my-0 py-0' />
             <div className={`${styles.DivSize } text-center px-1`}>
-              <p className={`${styles.Title }`}>STYLE</p>
+              <p className={`${styles.Title }`}>Style</p>
               <p className={`${styles.Italic } mb-0 pb-0`}>{style} </p>
             </div>
         </Col>

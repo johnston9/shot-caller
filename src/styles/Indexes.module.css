@@ -7,10 +7,22 @@
     width: 90%;
 }
 
-.Title {
+/* .Title {
     color: #4f649f;
     font-weight: 700;
+} */
+
+.Title {
+    color: #6f8fe6;
+    color: rgb(140, 111, 25, 99%);
+    font-style: italic;
+    /* font-weight: 700; */
 }
+
+.golddark {
+    font-weight: 700;
+    color: rgb(140, 111, 25, 99%);
+  }
 
 .Italic {
     font-style: italic;
@@ -22,12 +34,12 @@
 }
 
 .Card {
-    border: 1px solid #263d7b;
+    border: 1px solid #1ea7ae;
 }
 
 .Top {
-background-color: #263d7b;
-color: #fff;
+   background-color: #1ea7ae;
+   color: #fff;
 }
 
 .TopSeries {

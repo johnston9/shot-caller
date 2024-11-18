@@ -257,7 +257,7 @@ const Scene = (props) => {
                     ) } 
             <div className={` ${styles.Header}`}>
               <div className='d-none d-md-block'>
-                  <Row className={`${styles.ButtonLine} mt-2 mx-3`}>
+                  <Row className={`${styles.ButtonLine} mt-2 mx-0`}>
                   <Col md={1}>
                         <p className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => clickScript()}> Script
@@ -299,7 +299,7 @@ const Scene = (props) => {
                           onClick={() => setShowStoryShot(showStoryShot => !showStoryShot)} > Story/Shot
                       </p>
                     </Col>
-                    <Col className='text-center' md={1}>
+                    <Col className='text-center pl-4' md={1}>
                     <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
@@ -476,9 +476,9 @@ const Scene = (props) => {
                   <Col sm={{span: 10, offset: 1}} >
                   <div className={`my-3 pb-0 ${styles.Guide}`}>
                   <p style={{ textTransform: 'uppercase'}} 
-                  className={`pb-0 mb-1 text-center ${styles.GuideTitle}`}  >
+                  className={`pb-0 mb-0 text-center ${styles.GuideTitle}`}  >
                     Workspace Guide</p>
-                    <div className={`text-center mt-2 px-3 pb-0 ${styles.GuideBox}`}>
+                    <div className={`text-center px-3 pt-2`}>
                       {workspace_guide} </div>
                     </div>
                   </Col>

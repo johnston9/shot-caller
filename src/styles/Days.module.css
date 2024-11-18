@@ -12,6 +12,10 @@
   color:#000;
 }
 
+.PostDropdown .DropdownItem i {
+  color: #666;
+}
+
 .Titledetail {
   color: #000;
   font-size: .8rem;

@@ -49,6 +49,14 @@
   background-color: #fff;
 }
 
+.Header i {
+  color: #666;
+}
+
+/* i {
+  color: rgb(41, 180, 180);
+} */
+
 .Bold { 
   font-weight: 700;
 }
@@ -68,9 +76,9 @@
   cursor: pointer;
 }
 
-i {
+/* i {
   color: rgb(41, 180, 180);
-}
+} */
 
 .Title {
   background-color: #fff;

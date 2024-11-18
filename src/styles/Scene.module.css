@@ -162,6 +162,10 @@ background: #ffffff;
   background-color: #fff;
 }
 
+.Header i {
+  color: #666;
+}
+
 .SceneCard {
   margin: 5px;
   border: 5px solid #fff;
@@ -319,12 +323,13 @@ background: #ffffff;
 
 .Guide {
   background-color: aliceblue;
+  min-height: 120px;
+  border-bottom: 1px solid #d6d4d4;
 }
 
-.GuideBox {
+/* .GuideBox {
   background-color: aliceblue;
-  min-height: 50px;
-}
+} */
 
 .Button {
   color: rgb(10, 173, 173);

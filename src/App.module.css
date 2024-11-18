@@ -18,6 +18,7 @@
   border-radius: 2px;
   border: 1px solid #ffffff;
 }
+
 .Content2 {
   background-color: #ffffff;
   border-radius: 2px;
@@ -72,8 +73,8 @@ input[type="file"] {
 }
 
 i {
-  color: #cfced3;
-  font-size: 1.6rem;
+  /* color: #cfced3;
+  font-size: 1.6rem; */
   padding: 7px;
   vertical-align: middle;
 }
@@ -161,6 +162,10 @@ hr.grey100 {
 .golddark {
   font-weight: 700;
   color: rgb(140, 111, 25, 99%);
+}
+
+.gmailblue {
+  background-color: #f2f6fc;
 }
 
 .light-blue {

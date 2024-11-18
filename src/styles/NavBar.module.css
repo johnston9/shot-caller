@@ -45,7 +45,7 @@ Title {
   color: #000;
 }
 
-i {
+.NavLink i {
   color: rgb(41, 180, 180);
-  font-size: .5em !important;
+  /* font-size: 1.5em !important; */
 }
