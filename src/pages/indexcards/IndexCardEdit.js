@@ -74,19 +74,19 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} `}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3 `}
         onClick={() => setShowEdit(false)}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
-        Edit 
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} pl-3 px-3`} type="submit">
+        Submit 
       </Button>
     </div>
   );
 
   return (
-    <div className="mt-0">
+    <div className="mt-2">
     <div className= {`text-center mt-0 ${styles.Editbox}`} >
       <Form className="mt-0 mx-0 px-0" onSubmit={handleSubmit}>
       <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`}
@@ -95,7 +95,7 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
       <Row className="mt-1">
           <Col xs={{span: 6, offset: 3}} className="d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`}  >
-                  <Form.Label className={`pb-0 mb-0 ${styles.Bold} `} >Number</Form.Label>
+                  <Form.Label className={`mt-1 ${styles.BoldScene }`}>Number</Form.Label>
                   <Form.Control 
                   className={` ${styles.Input}`}
                   type="text"
@@ -115,7 +115,7 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
         <Col xs={12} 
             className="p-0 d-flex justify-content-center">
             <Form.Group controlId="story" className={`${styles.Width90}  `} >
-                        <Form.Label className={`pb-0 mb-0 ${styles.Bold}`} >Story</Form.Label>
+                        <Form.Label className={`mt-3 ${styles.BoldScene }`} >Story</Form.Label>
                         <Form.Control 
                         type="text"
                         className={`${styles.InputScene}`}
@@ -137,7 +137,7 @@ const IndexCardEdit = ({setShowEdit, setIndexCards, card, id} ) => {
         <Col xs={12} 
             className="p-0 d-flex justify-content-center">
             <Form.Group controlId="style" className={`${styles.Width90} `} >
-                        <Form.Label className={`pb-0 mb-0 ${styles.Bold}`} >Style</Form.Label>
+                        <Form.Label className={`mt-3 ${styles.BoldScene }`}>Style</Form.Label>
                         <Form.Control 
                         type="text"
                         className={styles.InputScene}

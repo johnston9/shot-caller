@@ -144,7 +144,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
 
   const textFields = ( 
       <div>
-          <p className="text-center mt-3">Department</p>
+          <p className={`mt-3 text-center ${styles.BoldScene }`}>Department</p>
           <Form.Group controlId="departments" className="mb-2 mt-0 pt-0" >
                 {/* <Form.Label className="mt-0 pt-0"></Form.Label> */}
                 <Form.Control as="select"
@@ -174,7 +174,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 {message}
               </Alert>
             ))}
-          <p className="text-center mt-3">Title</p>
+          <p className={`mt-3 text-center ${styles.BoldScene }`}>Title</p>
           <Form.Group controlId="title" className="mb-2" >
                 {/* <Form.Label className="p-1" >Title</Form.Label> */}
                 <Form.Control 
@@ -190,7 +190,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 {message}
               </Alert>
             ))}
-            <p className="text-center mt-3">Content</p>
+            <p className={`mt-3 text-center ${styles.BoldScene }`}>Content</p>
             <Form.Group controlId="content" className="mb-2" >
                 {/* <Form.Label className="text-center">Content</Form.Label> */}
                 <Form.Control 

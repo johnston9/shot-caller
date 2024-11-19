@@ -3,6 +3,14 @@
     background-color: #fff;
 }
 
+.Break1 {
+    border-top: 1px solid #d0d9db;
+  }
+  
+.Break2 {
+border-top: 5px solid #d0d9db;
+}
+
 .Width90 {
     width: 90%;
 }
@@ -38,6 +46,8 @@
 }
 
 .Top {
+   background-color: #1d979e;
+   background-color: #17a2b8;
    background-color: #1ea7ae;
    color: #fff;
 }
@@ -121,8 +131,8 @@ color: #fff;
   }
 
 .Back {
-background-color: aliceblue;
-border: 1px solid #ebe6e6;
+background-color: #fff;
+border-bottom: 1px solid #cfcfcf;
 }
 
 .Bold {
@@ -160,12 +170,16 @@ width: 80%;
     width: 100%;
 }
 
+.BoldScene {
+    color: rgb(140, 111, 25, 99%);
+}  
+
 .Input {
 background: #ffffff;
 border: 1px solid #e0e3eb;
 box-sizing: border-box;
 border-radius: 2px;
-color: #7177a1;
+color: #747686;
 padding: 0px 10px;
 height: 30px !important;
 text-align: center;
@@ -176,7 +190,7 @@ background: #ffffff;
 border: 1px solid #e0e3eb;
 box-sizing: border-box;
 border-radius: 2px;
-color: #7177a1;
+color: #747686;
 padding: 0px 10px;
 text-align: center;
 }
@@ -186,7 +200,7 @@ background: #ffffff;
 border: 1px solid #f0f1f9;
 box-sizing: border-box;
 border-radius: 2px;
-color: #7177a1;
+color: #747686;
 padding: 0px 0px;
 height: 30px !important;
 text-align: center;

@@ -96,12 +96,16 @@
   width: 95%;
 }
 
+.BoldScene {
+  color: rgb(140, 111, 25, 99%);
+}
+
 .Input {
   background: #ffffff;
   border: 1px solid #dee1f7;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #7177a1;
+  color: #747686;
   padding: 0px 10px;
   height: 30px !important;
   text-align: center;
@@ -112,7 +116,7 @@
  border: 1px solid #dee1f7;
  box-sizing: border-box;
  border-radius: 2px;
- color: #7177a1;
+ color: #747686;
  padding: 0px 10px;
 }
 
@@ -121,7 +125,7 @@
   border: 1px solid #dee1f7;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #7177a1;
+  color: #747686;
   padding: 0px 10px;
   height: 30px !important;
   /* text-align: center; */
@@ -132,7 +136,7 @@
  border: 1px solid #dee1f7;
  box-sizing: border-box;
  border-radius: 2px;
- color: #7177a1;
+ color: #747686;
  padding: 0px 10px;
 }
 

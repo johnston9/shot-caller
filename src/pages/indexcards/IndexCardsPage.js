@@ -160,7 +160,7 @@ const IndexCardsPage = () => {
               <Row className='mt-1' >
               <Col className='text-center' xs={{span: 6, offset: 3}}>
               <Button
-                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue} px-5`}
+                  className={`py-0 ${btnStyles.Button} ${btnStyles.Shed} px-5`}
                   onClick={() => handleClickAll()} >All Cards
               </Button>
               </Col>
@@ -168,25 +168,25 @@ const IndexCardsPage = () => {
               <Row className='mt-3' >
               <Col className='text-center' xs={6} md={3}>
               <Button
-                  className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                  className={`py-0 ${btnStyles.Button} ${btnStyles.Shed}`}
                   onClick={() => handleClick1()} >Cards 1 - 30
               </Button>
               </Col>
               <Col className='text-center' xs={6} md={3}>
                 <Button
-                    className={`py-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                    className={`py-0 ${btnStyles.Button} ${btnStyles.Shed}`}
                     onClick={() => handleClick2()} >Cards 31 - 60
                 </Button>
               </Col>
               <Col className='text-center' xs={6} md={3}>
               <Button
-                  className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Blue}`}
+                  className={`py-0 mt-2 mt-md-0 ${btnStyles.Button} ${btnStyles.Shed}`}
                   onClick={handleClick3} >Cards 61 -90
               </Button> 
               </Col>
               <Col className='text-center' xs={6} md={3}>
                 <Button
-                    className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Blue}`}
+                    className={`py-0 mt-2 mt-md-0  ${btnStyles.Button} ${btnStyles.Shed}`}
                     onClick={handleClick4} >Cards 91 - end
                 </Button>
               </Col>
