@@ -26,10 +26,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         size: "",
         angle: "",
         movement: "",
-        screen_time: "",
         camera: "",
         lens: "",
-        script_length: "",
         description: "",
         equipment: "",
         script_ref: "",
@@ -39,6 +37,12 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         lighting: "",
         audio: "",
         image: "",
+        framing: "",
+        int_ext: "",
+        frame_rate: "",
+        location: "",
+        actors: "",
+        notes: "",
     });
 
     const { 
@@ -47,10 +51,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         size,
         angle,
         movement,
-        screen_time,
         camera,
         lens,
-        script_length,
         script_ref,
         storyboard_refs,
         description,
@@ -60,6 +62,12 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         lighting,
         audio,
         image,
+        framing,
+        int_ext,
+        frame_rate,
+        location,
+        actors,
+        notes,
     } = postData;
 
     const imageInput = useRef(null);
@@ -87,8 +95,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const formData = new FormData();
-    
+        const formData = new FormData();    
         formData.append("scene_id", id);
         formData.append("scene_number", scene_number);
         formData.append("shot_number", shot_number);
@@ -97,16 +104,20 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         formData.append("angle", angle);
         formData.append("equipment", equipment);
         formData.append("movement", movement);
-        formData.append("screen_time", screen_time);
         formData.append("fx", fx);
         formData.append("focus_pulls", focus_pulls);
         formData.append("lighting", lighting);
         formData.append("camera", camera);
         formData.append("lens", lens);
-        formData.append("script_length", script_length);
         formData.append("script_ref", script_ref);
         formData.append("storyboard_refs", storyboard_refs);
         formData.append("audio", audio);
+        formData.append("framing", framing);
+        formData.append("int_ext", int_ext);
+        formData.append("frame_rate", frame_rate);
+        formData.append("location", location);
+        formData.append("actors", actors);
+        formData.append("notes", notes);
         if(imageInput.current.files[0]) {
           formData.append("image", imageInput.current.files[0]);
         }
@@ -142,8 +153,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
 
     return (
         <div className={`px-0 mb-0 ${styles.Whitebb }`} >
-          <Form onSubmit={handleSubmit}>
-            {/* number size act movement*/}
+        <Form onSubmit={handleSubmit}>
+        {/* number size angle movement*/}
         <Row>
           <Col xs={3} >
           <Form.Group controlId="shot_number" className="mb-2" >
@@ -211,47 +222,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             </Col>
         </Row>
         <hr/>
-        {/* description equip */}
-        <Row>
-        <Col xs={6}>
-            <Form.Group controlId="description" className="mb-2" >
-                <Form.Label className="p-1" >Description</Form.Label>
-                <Form.Control 
-                type="text"
-                as="textarea"
-                rows={2}
-                name="description"
-                value={description}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.description?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-        <Col xs={6}>
-            <Form.Group controlId="equipment" className="mb-2" >
-                <Form.Label className="p-1" >Equipment</Form.Label>
-                <Form.Control 
-                type="text"
-                as="textarea"
-                rows={2}
-                name="equipment"
-                value={equipment}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.equipment?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-        </Row>
-        <hr/>
-        {/* camera lens screen-time script-length*/}
+        {/* camera lens Int/Ext Frame Rate*/}
         <Row>
           <Col xs={3} >
           <Form.Group controlId="camera" className="mb-2" >
@@ -286,32 +257,32 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             ))}
             </Col>
             <Col xs={3}>
-            <Form.Group controlId="screen_time" className="mb-2" >
-                <Form.Label className="p-1" >Screen Time</Form.Label>
+            <Form.Group controlId="int_ext" className="mb-2" >
+                <Form.Label className="p-1" >Int/Ext</Form.Label>
                 <Form.Control 
                 type="text"
-                name="screen_time"
-                value={screen_time}
+                name="int_ext"
+                value={int_ext}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.screen_time?.map((message, idx) => (
+            {errors?.int_ext?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
             ))}
             </Col>
             <Col xs={3}>
-            <Form.Group controlId="script_length" className="mb-2" >
-                <Form.Label className="p-1" >Pages</Form.Label>
+            <Form.Group controlId="frame_rate" className="mb-2" >
+                <Form.Label className="p-1" >Frame Rate</Form.Label>
                 <Form.Control 
                 type="text"
-                name="script_length"
-                value={script_length}
+                name="frame_rate"
+                value={frame_rate}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.script_length?.map((message, idx) => (
+            {errors?.frame_rate?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -395,8 +366,41 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         <hr/>
+        {/* location framing script ref story ref */}
         <Row>
-          <Col xs={6} >
+          <Col xs={3} >
+          <Form.Group controlId="location" className="mb-2" >
+                <Form.Label className="p-1" >Location</Form.Label>
+                <Form.Control 
+                type="text"
+                name="location"
+                value={location}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.location?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+          </Col>
+          <Col xs={3} >
+          <Form.Group controlId="framing" className="mb-2" >
+                <Form.Label className="p-1" >Framing</Form.Label>
+                <Form.Control 
+                type="text"
+                name="framing"
+                value={framing}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.framing?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+          </Col>
+          <Col xs={3} >
           <Form.Group controlId="script_ref" className="mb-2" >
                 <Form.Label className="p-1" >Script Ref</Form.Label>
                 <Form.Control 
@@ -412,9 +416,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
           </Col>
-          <Col xs={6} >
+          <Col xs={3} >
             <Form.Group controlId="storyboard_refs" className="mb-2" >
-                <Form.Label className="p-1" >Storyboard Refs</Form.Label>
+                <Form.Label className="p-1" >Storyboard Ref</Form.Label>
                 <Form.Control 
                 type="text"
                 name="storyboard_refs"
@@ -430,9 +434,49 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
           </Col>
         </Row>
         <hr/>
+        {/* actors notes */}
+        <Row>
+        <Col xs={6}>
+            <Form.Group controlId="actors" className="mb-2" >
+                <Form.Label className="p-1" >Actors</Form.Label>
+                <Form.Control 
+                type="text"
+                as="textarea"
+                rows={2}
+                name="actors"
+                value={actors}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.actors?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        <Col xs={6}>
+            <Form.Group controlId="notes" className="mb-2" >
+                <Form.Label className="p-1" >Notes</Form.Label>
+                <Form.Control 
+                type="text"
+                as="textarea"
+                rows={2}
+                name="notes"
+                value={notes}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.notes?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        </Row>
+        <hr/>
+        {/* image */}
         <Row>
         <Col className="text-center" md={{span: 6, offset: 3 } } >
-          {/* image  */}
           <p>Sketch/Image</p>
           <Container
                   className={`${appStyles.Content} mt-3 py-5 d-flex flex-column justify-content-center`}
@@ -485,9 +529,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         <hr/>
         <Row>
-          <Col className="text-center pb-3">
-            {buttons}
-          </Col>
+        <Col className="text-center pb-3">
+          {buttons}
+        </Col>
         </Row>
         </Form>
         </div>
