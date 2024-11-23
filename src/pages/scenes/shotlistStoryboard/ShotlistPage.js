@@ -69,14 +69,17 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Size</p>
                 </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Frame</p>
+                </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Description</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Angle</p>
                 </Col>
-                <Col className={`px-0  ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>Movement</p>
+                <Col className={`px-0  ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Move</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Image</p>
@@ -96,20 +99,14 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'># </p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>Sz</p>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                    <p className='mb-0'>Sz/Fr</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Detail</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                    <p className='mb-0'>Ag/Mv</p>
-                </Col>
-                {/* <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0 pl-2'>Im</p>
-                </Col> */}
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>E</p>
+                    <p className='mb-0'>Ang/Mv</p>
                 </Col>
             </Row>
             </div>

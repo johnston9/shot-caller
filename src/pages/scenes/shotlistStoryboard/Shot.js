@@ -26,10 +26,8 @@ const Shot = (props) => {
         size: "",
         angle: "",
         movement: "",
-        screen_time: "",
         camera: "",
         lens: "",
-        script_length: "",
         description: "",
         equipment: "",
         script_ref: "",
@@ -39,29 +37,41 @@ const Shot = (props) => {
         lighting: "",
         audio: "",
         image: "",
+        framing: "",
+        int_ext: "",
+        frame_rate: "",
+        location: "",
+        actors: "",
+        notes: "",
     });
 
-    const {shotAll, handleMount, setAddShot, style } = props
+    const {shotAll, handleMount, setAddShot, style } = props;
+
     const { id,
-            scene_id,
-            scene_number,
-            shot_number,
-            size,
-            angle,
-            movement,
-            screen_time,
-            camera,
-            lens,
-            script_length,
-            script_ref,
-            storyboard_refs,
-            description,
-            equipment,
-            fx,
-            focus_pulls,
-            lighting,
-            audio,
-            image, } = shotAll
+        scene_id,
+        scene_number,
+        shot_number,
+        size,
+        angle,
+        movement,
+        camera,
+        lens,
+        script_ref,
+        storyboard_refs,
+        description,
+        equipment,
+        fx,
+        focus_pulls,
+        lighting,
+        audio,
+        image,
+        framing,
+        int_ext,
+        frame_rate,
+        location,
+        actors,
+        notes,
+    } = shotAll;
 
     useEffect(() => {
         setShotNew({
@@ -72,10 +82,8 @@ const Shot = (props) => {
             size,
             angle,
             movement,
-            screen_time,
             camera,
             lens,
-            script_length,
             script_ref,
             storyboard_refs,
             description,
@@ -85,9 +93,14 @@ const Shot = (props) => {
             lighting,
             audio,
             image,
+            framing,
+            int_ext,
+            frame_rate,
+            location,
+            actors,
+            notes,
             })
-            // eslint-disable-next-line
-        }, [])
+        }, [id]);
 
     const handleDelete = async () => {
     try {
@@ -115,13 +128,16 @@ const Shot = (props) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{size}</p>
                 </Col>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>{framing}</p>
+                </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>{description}</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>{angle} </p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p >{movement}</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
@@ -143,36 +159,32 @@ const Shot = (props) => {
             <div className='d-block d-md-none'>
             <Row className='py-2 text-center mx-0' >
             <Col className={ `px-0 mx-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Blue}`}>
-                        I
-                    </Button>
+            <div>
+            <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                className={`${btnStyles.Button} ${btnStyles.Blue}`}>
+                I
+            </Button>
+            </div>
+            <div>
+            <PostDropdown
+                handleEdit={() => setShowEditForm(true)}
+                handleDelete={handleDelete}
+            />
+            </div>
                 </Col>
                 <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={1} md={1}>
                     <p className='mb-0 pl-1'>{shot_number}</p>
                 </Col>
-                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>{size}</p>
+                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={3} md={2}>
+                    <p className={`${styles.Para2}`} >{size}</p>
+                    <p >{framing}</p>
                 </Col>
                 <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={4} md={4}>
-                    <p className='mb-0'>{description}</p>
+                    <p >{description}</p>
                 </Col>
                 <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                    <p className='mb-0'>{angle} </p>
-                    <p className='mb-0'>{movement} </p>
-                </Col>
-                {/* <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <Button onClick={() => setShowImg(showImg => !showImg)} 
-                        className={`${btnStyles.Button} ${btnStyles.Blue}`}>
-                        I
-                    </Button>
-                </Col> */}
-                {/* edit */}
-                <Col className={`px-0 mx-0`} xs={1} md={1}>
-                    <PostDropdown
-                        handleEdit={() => setShowEditForm(true)}
-                        handleDelete={handleDelete}
-                    />
+                    <p  >{angle} </p>
+                    <p  >{movement} </p>
                 </Col>
             </Row>
             </div>
