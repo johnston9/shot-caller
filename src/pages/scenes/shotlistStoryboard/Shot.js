@@ -11,6 +11,7 @@ import { Button } from 'react-bootstrap';
 import { PostDropdown } from '../../../components/PostDropdown';
 import ShotInfo from './ShotInfo';
 import ShotListEdit from './ShotListEdit';
+import ShotImage from './ShotImage';
 
 const Shot = (props) => {
     const [showInfo, setShowInfo] = useState(false);
@@ -39,6 +40,7 @@ const Shot = (props) => {
         image: "",
         framing: "",
         int_ext: "",
+        day_night: "",
         frame_rate: "",
         location: "",
         actors: "",
@@ -67,6 +69,7 @@ const Shot = (props) => {
         image,
         framing,
         int_ext,
+        day_night,
         frame_rate,
         location,
         actors,
@@ -95,6 +98,7 @@ const Shot = (props) => {
             image,
             framing,
             int_ext,
+            day_night,
             frame_rate,
             location,
             actors,
@@ -195,13 +199,13 @@ const Shot = (props) => {
                     ) }
                 </Col>
             </Row>
-            {/* <Row>
+            <Row>
                 <Col>
                     {!showImg ?("") : (                       
                     <ShotImage image={image} /> 
                     ) }
                 </Col>
-            </Row> */}
+            </Row>
             <Row>
                 <Col>
                     {showEditForm ? (

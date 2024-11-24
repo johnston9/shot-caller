@@ -215,7 +215,7 @@ const BreakdownEditForm = () => {
               {message}
             </Alert>
           ))}
-          </Col>
+      </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
       <Form.Group controlId="day_night" className={`${styles.Width2} `} >
           <Form.Label className={`${styles.BoldScene}`} >Day/Night</Form.Label>

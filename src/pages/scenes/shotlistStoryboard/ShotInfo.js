@@ -11,7 +11,7 @@ import ShotImage from './ShotImage';
 const ShotInfo = (props) => {
      const {fx, focus_pulls, lighting, camera, lens, equipment,
         script_ref, storyboard_refs, audio, image, int_ext,
-        frame_rate, location, actors, notes,
+        frame_rate, location, actors, notes, day_night,
         } = props;
 
         const [showImg, setShowImg] = useState(false);
@@ -76,7 +76,7 @@ const ShotInfo = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
-            {/* lighting focus pulls special effects*/}
+            {/* lighting focus pulls FX/VFX*/}
             <Row className='mt-3' >
             <Col className={`${styles.BorderRight} text-center`} xs={12} md={4} >
             <p className={`${styles.BoldTitle} 
@@ -94,7 +94,7 @@ const ShotInfo = (props) => {
             </Col>
             <Col className={`text-center`} xs={12} md={4}>
             <p className={`${styles.BoldTitle} 
-            mb-2 text-center mx-1 mx-sm-5`}>SPECIAL EFFECTS</p>
+            mb-2 text-center mx-1 mx-sm-5`}>FX/VFX</p>
             <div className={`${styles.Para}`}>
             <p>{fx} </p>
             </div>
@@ -105,13 +105,13 @@ const ShotInfo = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
-            {/* location/int-ext actors */}
+            {/* int-ext. location - Day/Night Equipment actors */}
             <Row className='mt-3' >
             <Col className={`${styles.BorderRight} text-center`} xs={12} md={4} >
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>LOCATION</p>
             <div className={`${styles.Para}`}>
-            <p >{int_ext} - {location} </p>
+            <p >{int_ext}. {location} - {day_night} </p>
             </div>
             </Col>
             <Col className={`${styles.BorderRight} text-center`} xs={12} md={4} >

@@ -35,6 +35,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
         image: "",
         framing: "",
         int_ext: "",
+        day_night: "",
         frame_rate: "",
         location: "",
         actors: "",
@@ -61,6 +62,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
         image,
         framing,
         int_ext,
+        day_night,
         frame_rate,
         location,
         actors,
@@ -93,6 +95,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
               image,
               framing,
               int_ext,
+              day_night,
               frame_rate,
               location,
               actors,
@@ -118,6 +121,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
                 image,
                 framing,
                 int_ext,
+                day_night,
                 frame_rate,
                 location,
                 actors,
@@ -171,6 +175,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
         formData.append("audio", audio);
         formData.append("framing", framing);
         formData.append("int_ext", int_ext);
+        formData.append("day_night", day_night);
         formData.append("frame_rate", frame_rate);
         formData.append("location", location);
         formData.append("actors", actors);
@@ -211,9 +216,9 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
         <div className={`${styles.White} pt-1 px-5`}>
         <h5 className="my-3 text-center">Edit Shot {shot_number} </h5>
         <Form className={`${styles.ShotEditForm}`} onSubmit={handleSubmit}>
-        {/* number size angle movement*/}
+        {/* number */}
         <Row>
-          <Col xs={3} >
+          <Col xs={{span: 4, offset: 4 }} >
           <Form.Group controlId="shot_number" className="mb-2" >
                 <Form.Label className="p-1" >Number</Form.Label>
                 <Form.Control 
@@ -229,6 +234,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
               </Alert>
             ))}
             </Col>
+        </Row>
+        <hr/>
+        {/* size angle movement frame_rate */}
+        <Row>
             <Col xs={3}>
             <Form.Group controlId="size" className="mb-2" >
                 <Form.Label className="p-1" >Size</Form.Label>
@@ -277,12 +286,28 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
               </Alert>
             ))}
             </Col>
+            <Col xs={3}>
+            <Form.Group controlId="frame_rate" className="mb-2" >
+                <Form.Label className="p-1" >Frame Rate</Form.Label>
+                <Form.Control 
+                type="text"
+                name="frame_rate"
+                value={frame_rate}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.frame_rate?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
         </Row>
         <hr/>
-        {/* camera lens Int/Ext Frame Rate*/}
+        {/* camera lens Int/Ext Day/Night*/}
         <Row>
-          <Col xs={3} >
-          <Form.Group controlId="camera" className="mb-2" >
+            <Col xs={3} >
+            <Form.Group controlId="camera" className="mb-2" >
                 <Form.Label className="p-1" >Camera</Form.Label>
                 <Form.Control 
                 type="text"
@@ -313,15 +338,19 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3}>
+            <Col xs={3} >         
             <Form.Group controlId="int_ext" className="mb-2" >
-                <Form.Label className="p-1" >Int/Ext</Form.Label>
-                <Form.Control 
-                type="text"
-                name="int_ext"
-                value={int_ext}
-                onChange={handleChange}
-                    />
+                <Form.Label >Int-Ext</Form.Label>
+                <Form.Control as="select"
+                  className={styles.Input}
+                  name="int_ext"
+                  value={int_ext}
+                  onChange={handleChange}
+                  aria-label="int ext select">
+                  <option></option>
+                  <option value="int">Int</option>
+                  <option value="ext">Ext</option>
+                </Form.Control>
             </Form.Group>
             {errors?.int_ext?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
@@ -329,17 +358,21 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3}>
-            <Form.Group controlId="frame_rate" className="mb-2" >
-                <Form.Label className="p-1" >Frame Rate</Form.Label>
-                <Form.Control 
-                type="text"
-                name="frame_rate"
-                value={frame_rate}
-                onChange={handleChange}
-                    />
+            <Col xs={3} >
+            <Form.Group controlId="day_night" className="mb-2" >
+                <Form.Label >Day/Night</Form.Label>
+                <Form.Control as="select"
+                  name="day_night"
+                  className={styles.Input}
+                  value={day_night}
+                  onChange={handleChange}
+                  aria-label="day or night select">
+                  <option></option>
+                  <option value="DAY">Day</option>
+                  <option value="NIGHT">Night</option>
+                </Form.Control>
             </Form.Group>
-            {errors?.frame_rate?.map((message, idx) => (
+            {errors?.day_night?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
