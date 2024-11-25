@@ -206,8 +206,8 @@ const BreakdownEditForm = () => {
                 onChange={handleChange}
                 aria-label="int ext select">
                 <option></option>
-                <option value="int">Int</option>
-                <option value="ext">Ext</option>
+                <option value="int.">Int</option>
+                <option value="ext.">Ext</option>
               </Form.Control>
           </Form.Group>
           {errors?.int_ext?.map((message, idx) => (

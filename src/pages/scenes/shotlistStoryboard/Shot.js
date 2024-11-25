@@ -162,33 +162,35 @@ const Shot = (props) => {
             {/* mobile*/}
             <div className='d-block d-md-none'>
             <Row className='py-2 text-center mx-0' >
-            <Col className={ `px-0 mx-0 ${styles.TitleBox2}`} xs={1} md={1}>
-            <div>
-            <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                className={`${btnStyles.Button} ${btnStyles.Blue}`}>
-                I
-            </Button>
-            </div>
-            <div>
-            <PostDropdown
-                handleEdit={() => setShowEditForm(true)}
-                handleDelete={handleDelete}
-            />
-            </div>
+                <Col className={ `px-0 mx-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <div>
+                <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                    className={`${btnStyles.Button} ${btnStyles.Blue} px-2`}>
+                    I
+                </Button>
+                </div>
                 </Col>
                 <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={1} md={1}>
-                    <p className='mb-0 pl-1'>{shot_number}</p>
+                    <p className={`${styles.Para2}`}>{shot_number}</p>
                 </Col>
-                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={3} md={2}>
+                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className={`${styles.Para2}`} >{size}</p>
-                    <p >{framing}</p>
+                    <p className={`${styles.Para2}`}>{framing}</p>
                 </Col>
                 <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={4} md={4}>
-                    <p >{description}</p>
+                    <p className={`${styles.Para2}`}>{description}</p>
                 </Col>
                 <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                    <p  >{angle} </p>
-                    <p  >{movement} </p>
+                    <p className={`${styles.Para2}`} >{angle} </p>
+                    <p className={`${styles.Para2}`} >{movement} </p>
+                </Col>
+                <Col className={ `px-0 mx-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <div>
+                <PostDropdown
+                    handleEdit={() => setShowEditForm(true)}
+                    handleDelete={handleDelete}
+                />
+                </div>
                 </Col>
             </Row>
             </div>

@@ -99,7 +99,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'># </p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                <Col className={`px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Sz/Fr</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
@@ -107,6 +107,9 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p className='mb-0'>Ang/Mv</p>
+                </Col>
+                <Col className={`px-0 ${styles.TitleBox2} `} xs={1} md={1}>
+                    <p className='pl-1 mb-0'></p>
                 </Col>
             </Row>
             </div>

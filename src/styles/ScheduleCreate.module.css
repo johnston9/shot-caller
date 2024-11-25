@@ -2,6 +2,11 @@
     min-height: 100px;
 }
 
+.Para2 {
+  font-size: .75rem !important;
+  /* font-weight: 400; */
+}
+
 .White {
   background-color: #fff;
 }
