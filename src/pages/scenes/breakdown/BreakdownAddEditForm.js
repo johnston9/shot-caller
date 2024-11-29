@@ -126,17 +126,17 @@ const BreakdownEditForm = () => {
 
   const infoFields = (
     <div className="mt-3 text-center px-2">
-      {/* number title act */}
+      {/* number title Dramatic-day */}
       <Row>
         {/* Freeze - This may be removed */}
         {freeze ? (
-          <Col className=" p-0 p-md-2" xs={4} >
+          <Col className=" p-0 p-md-2" xs={{ span: 6, order: 1 }} md={{ span: 4, order: 1 }}>
           <p className={`${styles.BoldScene}`}>Number</p>
           <p>{number}</p>
           </Col>
         ) : (
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-        <Form.Group controlId="number" className={`${styles.Width2} `}  >
+          <Col className="d-flex justify-content-center p-0 p-md-2" xs={{ span: 6, order: 1 }} md={{ span: 4, order: 1 }} >
+          <Form.Group controlId="number" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.BoldScene}`} >Number</Form.Label>
               <Form.Control 
               className={styles.Input}
@@ -153,7 +153,7 @@ const BreakdownEditForm = () => {
           ))}
           </Col>
         ) }
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
+          <Col className="d-flex justify-content-center p-0 p-md-2" xs={{ span: 8, order: 12, offset: 2 }} md={{ span: 4, order: 2, offset: 0 }}>
           <Form.Group controlId="title" className={`${styles.Width2} `} >
               <Form.Label className={`${styles.BoldScene}`}>Title</Form.Label>
               <Form.Control 
@@ -170,22 +170,27 @@ const BreakdownEditForm = () => {
             </Alert>
           ))}
           </Col>
-          <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
-          <Form.Group controlId="dramatic_day" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.BoldScene}`} >Dramatic Day</Form.Label>
-              <Form.Control 
-              type="text"
-              className={styles.Input}
-              name="dramatic_day"
-              value={dramatic_day}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.dramatic_day?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
+          <Col className="d-flex justify-content-center p-0 p-md-2" xs={{ span: 6, order: 2 }} md={{ span: 4, order: 12 }}>
+          <Form.Group controlId="act" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.BoldScene}`} >Act</Form.Label>
+              <Form.Control as="select"
+                className={styles.InputEx}
+                name="act"
+                value={act}
+                onChange={handleChange}
+                aria-label="act select">
+                <option></option>
+                <option value="one">One</option>
+                <option value="two-a">Two - First Half</option>
+                <option value="two-b">Two - Second Half</option>
+                <option value="three">Three</option>
+              </Form.Control>
+              </Form.Group>
+              {errors?.act?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
           </Col>
       </Row>
       {/* hr */}
@@ -194,13 +199,13 @@ const BreakdownEditForm = () => {
       <hr className={`${styles.Break1} mt-5 mb-0`}/>
       </Col>
       </Row>
-      {/* Int-Ext Day/Night Dramatic-day  */}
+      {/* Int-Ext D Day Day/Night */}
       <Row className="mt-3">
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >         
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6} md={4} >         
           <Form.Group controlId="int_ext" className={`${styles.Width2} `} >
               <Form.Label className={`${styles.BoldScene}`} >Int-Ext</Form.Label>
               <Form.Control as="select"
-                className={styles.Input}
+                className={styles.InputEx}
                 name="int_ext"
                 value={int_ext}
                 onChange={handleChange}
@@ -216,12 +221,30 @@ const BreakdownEditForm = () => {
             </Alert>
           ))}
       </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6} md={4}  >
+          <Form.Group controlId="dramatic_day" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.BoldScene} d-block d-md-none `} >D. Day</Form.Label>
+              <Form.Label className={`${styles.BoldScene} d-none d-md-block `} >Dramatic Day</Form.Label>
+              <Form.Control 
+              type="text"
+              className={styles.Input}
+              name="dramatic_day"
+              value={dramatic_day}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dramatic_day?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      <Col className="d-flex justify-content-center pt-2 p-md-2" xs={{ span: 8, offset: 2 }} md={{ span: 4, offset: 0 }}  >
       <Form.Group controlId="day_night" className={`${styles.Width2} `} >
           <Form.Label className={`${styles.BoldScene}`} >Day/Night</Form.Label>
           <Form.Control as="select"
             name="day_night"
-            className={styles.Input}
+            className={styles.InputEx}
             value={day_night}
             onChange={handleChange}
             aria-label="day or night select">
@@ -236,28 +259,6 @@ const BreakdownEditForm = () => {
         </Alert>
       ))}
       </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
-          <Form.Group controlId="act" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.BoldScene}`} >Act</Form.Label>
-              <Form.Control as="select"
-                className={styles.Input}
-                name="act"
-                value={act}
-                onChange={handleChange}
-                aria-label="act select">
-                <option></option>
-                <option value="one">One</option>
-                <option value="two-a">Two - First Half</option>
-                <option value="two-b">Two - Second Half</option>
-                <option value="three">Three</option>
-              </Form.Control>
-          </Form.Group>
-          {errors?.act?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-        </Col>
       </Row  >
       {/* hr */}
       <Row>
@@ -267,24 +268,7 @@ const BreakdownEditForm = () => {
       </Row>
       {/* shooting-date time pages*/}
       <Row className="mt-3">
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4}>
-      <Form.Group controlId="shooting_date" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.BoldScene}`} >Shooting Date</Form.Label>
-          <Form.Control 
-          type="text"
-          className={styles.Input}
-          name="shooting_date"
-          value={shooting_date}
-          onChange={handleChange}
-              />
-      </Form.Group>
-      {errors?.shooting_date?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-      </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6} md={4} >
       <Form.Group controlId="time" className={`${styles.Width2} `} >
           <Form.Label className={`${styles.BoldScene}`} >Scene Time</Form.Label>
           <Form.Control 
@@ -301,7 +285,7 @@ const BreakdownEditForm = () => {
         </Alert>
       ))}
       </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={4} >
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6} md={4}>
       <Form.Group controlId="pages" className={`${styles.Width2} `} >
           <Form.Label className={`${styles.BoldScene}`} >Pages</Form.Label>
           <Form.Control 
@@ -319,6 +303,23 @@ const BreakdownEditForm = () => {
         </Alert>
       ))}
       </Col>
+      <Col className="d-flex justify-content-center p-2 p-md-2" xs={{ span: 8, offset: 2 }} md={{ span: 4, offset: 0 }}>
+      <Form.Group controlId="shooting_date" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.BoldScene}`} >Shooting Date</Form.Label>
+          <Form.Control 
+          type="text"
+          className={styles.Input}
+          name="shooting_date"
+          value={shooting_date}
+          onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.shooting_date?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
       </Row >
       {/* hr */}
       <Row>
@@ -328,7 +329,7 @@ const BreakdownEditForm = () => {
       </Row>
       {/* location location-detail  */}
       <Row className="mt-3">
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={12}md={6} >
           <Form.Group controlId="location" className={`${styles.Width2} `} >
               <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
               <Form.Control as="select"
@@ -350,7 +351,7 @@ const BreakdownEditForm = () => {
             </Alert>
           ))}
       </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+      <Col className="d-flex justify-content-center p-2 p-md-2" xs={12}md={6}>
           <Form.Group controlId="location_detail" className={`${styles.Width2} `} >
               <Form.Label className={`${styles.BoldScene}`} >Location Detail</Form.Label>
               <Form.Control 
@@ -376,7 +377,7 @@ const BreakdownEditForm = () => {
       </Row>
       {/* Filming Location - Action */}
       <Row className="mt-3">
-        <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+        <Col className="d-flex justify-content-center p-0 p-md-2" xs={12}md={6}>
         <Form.Group controlId="filming_location" className={`${styles.Width2} `} >
             <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
@@ -395,7 +396,7 @@ const BreakdownEditForm = () => {
           </Alert>
         ))}
         </Col>
-        <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+        <Col className="d-flex justify-content-center p-2 p-md-2" xs={12}md={6}>
         <Form.Group controlId="action" className={`${styles.Width2} `} >
             <Form.Label className={`${styles.BoldScene}`} >Action</Form.Label>
             <Form.Control 
@@ -423,7 +424,26 @@ const BreakdownEditForm = () => {
       </Row>
       {/* department-info equip_set_props  */}
       <Row className="mt-3">
-        <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={12}md={6}>
+      <Form.Group controlId="equip_set_props" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.BoldScene}`} >Equipment/Set</Form.Label>
+          <Form.Control 
+              className={styles.InputScene}
+              type="text"
+              name="equip_set_props"
+              as="textarea"
+              rows={2}
+              value={equip_set_props}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.equip_set_props?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-2 p-md-2" xs={12}md={6}>
         <Form.Group controlId="content" className={`${styles.Width2} `} >
             <Form.Label className={`${styles.BoldScene}`} >Department Info</Form.Label>
             <Form.Control 
@@ -442,25 +462,6 @@ const BreakdownEditForm = () => {
           </Alert>
         ))}
       </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-      <Form.Group controlId="equip_set_props" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.BoldScene}`} >Info/Equip/Set</Form.Label>
-          <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              name="equip_set_props"
-              as="textarea"
-              rows={2}
-              value={equip_set_props}
-              onChange={handleChange}
-              />
-      </Form.Group>
-      {errors?.equip_set_props?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-      </Col>
       </Row>    
       {/* hr */}
       <Row>
@@ -474,12 +475,12 @@ const BreakdownEditForm = () => {
   const buttons = (
     <div className={`text-center pt-3 mt-3 mb-3 pb-2 ${styles.White }`} >    
       <Button
-        className={`mr-3 px-5 py-1 ${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`mr-3 px-md-5 py-1 ${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`ml-3 px-5 py-1  ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`ml-3 px-md-5 py-1  ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         Submit
       </Button>
     </div>

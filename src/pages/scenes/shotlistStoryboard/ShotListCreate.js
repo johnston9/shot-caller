@@ -143,19 +143,19 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     const buttons = (
       <div className="text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => history.goBack()}
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 mr-3`}
+          onClick={() => setAddShot(false)}
         >
           Cancel
         </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 ml-3`} type="submit">
           Create
         </Button>
       </div>
     );
 
     return (
-        <div className={`px-0 mb-0 mt-3 ${styles.White }`} >
+        <div className={`px-3 mb-0 mt-3 ${styles.White }`} >
         <Form onSubmit={handleSubmit}>
         {/* number */}
         <Row>
@@ -185,7 +185,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         {/* size angle movement frame_rate */}
         <Row className="mt-3">
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="size" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Size</Form.Label>
                 <Form.Control 
@@ -202,7 +202,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="angle" className={`${styles.Width2} `} >
                 <Form.Label className={`${styles.BoldScene}`} >Angle</Form.Label>
                 <Form.Control 
@@ -219,7 +219,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="movement" className={`${styles.Width2} `}>
                 <Form.Label className={`${styles.BoldScene}`} >Movement</Form.Label>
                 <Form.Control 
@@ -236,7 +236,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="frame_rate" className={`${styles.Width2} `}>
                 <Form.Label className={`${styles.BoldScene}`}>Frame Rate</Form.Label>
                 <Form.Control 
@@ -262,7 +262,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         {/* camera lens Int/Ext Day/Night*/}
         <Row className="mt-3">
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="camera" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Camera</Form.Label>
                 <Form.Control 
@@ -279,7 +279,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Col xs={6} md={3}className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="lens" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Lens</Form.Label>
                 <Form.Control 
@@ -296,11 +296,11 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">         
+            <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">         
             <Form.Group controlId="int_ext" className={`${styles.Width2}`}>
                 <Form.Label className={`${styles.BoldScene}`}>Int-Ext</Form.Label>
                 <Form.Control as="select"
-                  className={styles.Input}
+                  className={styles.InputEx}
                   name="int_ext"
                   value={int_ext}
                   onChange={handleChange}
@@ -316,12 +316,12 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
             </Col>
-            <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="day_night" className={`${styles.Width2}`}>
                 <Form.Label className={`${styles.BoldScene}`}>Day/Night</Form.Label>
                 <Form.Control as="select"
                   name="day_night"
-                  className={styles.Input}
+                  className={styles.InputEx}
                   value={day_night}
                   onChange={handleChange}
                   aria-label="day or night select">
@@ -345,7 +345,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         {/* location framing script ref story ref */}
         <Row className="mt-3">
-          <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
                 <Form.Control 
@@ -362,8 +362,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
           </Col>
-          <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="framing" className="mb-2" >
+          <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="framing" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Framing</Form.Label>
                 <Form.Control 
                 className={styles.Input}
@@ -379,8 +379,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
           </Col>
-          <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="script_ref" className="mb-2" >
+          <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="script_ref" className={`${styles.Width2}`}>
                 <Form.Label className={`${styles.BoldScene}`} >Script Ref</Form.Label>
                 <Form.Control 
                 className={styles.Input}
@@ -396,9 +396,10 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
           </Col>
-          <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
-            <Form.Group controlId="storyboard_refs" className="mb-2" >
-                <Form.Label className={`${styles.BoldScene}`} >Storyboard Ref</Form.Label>
+          <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="storyboard_refs" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene} d-block d-sm-none `} >StoryB. Ref</Form.Label>
+                <Form.Label className={`${styles.BoldScene} d-none d-sm-block `} >Storyboard Ref</Form.Label>
                 <Form.Control 
                 className={styles.Input}
                 type="text"
@@ -422,7 +423,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         {/* lighting focus_pulls fx audio*/}
         <Row className="mt-3">
-        <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} md={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="lighting" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Lighting</Form.Label>
                 <Form.Control 
@@ -441,7 +442,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
         </Col>
-        <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} md={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="focus_pulls" className={`${styles.Width2}`}>
                 <Form.Label className={`${styles.BoldScene}`} >Focus Pulls</Form.Label>
                 <Form.Control 
@@ -460,7 +461,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
         </Col>
-        <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} md={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="fx" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >FX/VFX</Form.Label>
                 <Form.Control 
@@ -479,7 +480,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
         </Col>
-        <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} md={6} lg={3}className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="audio" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Audio</Form.Label>
                 <Form.Control 
@@ -507,7 +508,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         {/* description actors notes */}
         <Row className="mt-3">
-        <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} lg={4} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="description" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Description</Form.Label>
                 <Form.Control 
@@ -526,7 +527,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
         </Col>
-        <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} lg={4} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="actors" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`}>Actors</Form.Label>
                 <Form.Control 
@@ -545,7 +546,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
         </Col>
-        <Col xs={4}className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} lg={4}className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="notes" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Notes</Form.Label>
                 <Form.Control 
@@ -573,10 +574,10 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         {/* image */}
         <Row className="mt-3">
-        <Col className="text-center" md={{span: 6, offset: 3 } } >
+        <Col className="text-center px-0" xs={12} md={{span: 6, offset: 3 } } >
           <p className={`${styles.BoldScene}`}>Sketch/Image</p>
           <Container
-                  className={`${appStyles.Content} mt-1 py-5 d-flex flex-column justify-content-center`}
+                  className={`${appStyles.Content} px-0 mt-1 py-5 d-flex flex-column justify-content-center`}
                   >
               <Form.Group>
                 {image ? (

@@ -15,18 +15,34 @@
   color: rgb(140, 111, 25, 99%);
 }
 
+.BoldScene {
+  color: rgba(129, 102, 21, 0.99);
+}
+
 /* .BoldScene {
   color: rgba(110, 83, 3, 0.99);
 } */
 
 .Input {
   background: #ffffff;
-  /* border: 1px solid #ECEDF0; */
   border: 1px solid #e0e3eb;
   box-sizing: border-box;
   border-radius: 2px;
   color: #747686;
   padding: 0px 10px;
+  height: 30px !important;
+  text-align: center;
+}
+
+.InputEx {
+  background: #ffffff;
+  border: 1px solid #dee1f7;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 30px;
   height: 30px !important;
   text-align: center;
 }
