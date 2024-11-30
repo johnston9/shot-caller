@@ -18,7 +18,7 @@ import Asset from '../../../components/Asset';
 import NoResults from "../../../assets/no-results.png";
 import Shot from './Shot';
 
-const ShotlistPage = ({scene, setShowlist} ) => {
+const ShotlistPage = ({scene, setShowlist, shotstory} ) => {
     const { id } = useParams();
     const [addShot, setAddShot] = useState(false);
     const [shotlist, setShotlist] =  useState({ results: [] });
@@ -47,15 +47,15 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             </h5>
             </Col>
             </Row>
-            <Row>
-              <Col className="text-center">
-                <Button onClick={() => setAddShot(addShot => !addShot)} 
-                className={`px-5 ${btnStyles.Button} ${btnStyles.Bright}`}>
-                Add Shot
-                </Button>
-                {!addShot ?("") : (<ShotListCreate setAddShot={setAddShot} setShotlist={setShotlist} handleMount={handleMount} scene={scene} />  ) }
-              </Col>
-            </Row>
+                <Row>
+                <Col className="text-center">
+                  <Button onClick={() => setAddShot(addShot => !addShot)} 
+                  className={`px-5 ${btnStyles.Button} ${btnStyles.Bright}`}>
+                  Add Shot
+                  </Button>
+                  {!addShot ?("") : (<ShotListCreate setAddShot={setAddShot} setShotlist={setShotlist} handleMount={handleMount} scene={scene} />  ) }
+                </Col>
+              </Row>
             {/* titles */}
             <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} 
@@ -81,7 +81,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 <Col className={`px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Move</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Image</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
@@ -105,7 +105,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className='mb-0'>Detail</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                    <Col className={`px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p className='mb-0'>Ang/Mv</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2} `} xs={1} md={1}>
@@ -125,7 +125,8 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
                     key={shot.id} 
                     handleMount={handleMount} 
-                    shotAll={shot} />
+                    shotAll={shot}
+                    shotstory={shotstory}  />
                 ))) 
             : (
             <Container className={`pt-4 ${appStyles.Content}`}>

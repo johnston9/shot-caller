@@ -745,7 +745,7 @@ Description: View and Add the Shotlist<br>
 
 <p align="center"> <strong>Shotlist Page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/storyview2.png" width="50%">
+<img src="documentation/readme-images/nnnnn.png" width="50%">
 </h2>
 
 #### Scenes Workspaces

@@ -38,13 +38,8 @@ const ShotInfo = (props) => {
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>LOCATION</p>
             <div className={`${styles.Para}`}>
-            <p >{int_ext} {location} - {day_night} </p>
+            <p style={{ textTransform: 'uppercase'}} >{int_ext} {location} - {day_night} </p>
             </div>
-            </Col>
-            </Row>
-            <Row>
-            <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-0`}/>
             </Col>
             </Row>
             <Row>
@@ -81,7 +76,7 @@ const ShotInfo = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
-            {/* Equipment actors FX/VFX */}
+            {/* Equipment frame rate subject  */}
             <Row className='mt-3' >
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4} >
             <p className={`${styles.BoldTitle} 
@@ -90,18 +85,18 @@ const ShotInfo = (props) => {
             <p >{equipment} </p>
             </div>
             </Col>
-            <Col className={`${styles.BorderRight} text-center`} xs={6} md={4}>
+            <Col className={`${styles.BorderRight} text-center`} xs={6} md={4} >
             <p className={`${styles.BoldTitle} 
-            mb-2 text-center mx-1 mx-sm-5`}>ACTORS</p>
+            mb-2 text-center mx-1 mx-sm-5`}>FRAME RATE</p>
             <div className={`${styles.Para}`}>
-            <p>{actors} </p>
+            <p >{frame_rate} </p>
             </div>
             </Col>
             <Col className={`text-center`} xs={12} md={4}>
             <p className={`${styles.BoldTitle} 
-            mb-2 text-center mx-1 mx-sm-5`}>FX/VFX</p>
+            mb-2 text-center mx-1 mx-sm-5`}>SUBJECT</p>
             <div className={`${styles.Para}`}>
-            <p>{fx} </p>
+            <p>{actors} </p>
             </div>
             </Col>
             </Row>
@@ -110,7 +105,7 @@ const ShotInfo = (props) => {
             <hr className={`${styles.Break1} mt-0 mb-0`}/>
             </Col>
             </Row>
-            {/* script ref story ref frame rate */}
+            {/* script ref story ref FX/VFX */}
             <Row className='mt-3' >
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4}>
             <p className={`${styles.BoldTitle} 
@@ -128,11 +123,11 @@ const ShotInfo = (props) => {
             <p>{storyboard_refs} </p>
             </div>
             </Col>
-            <Col className={`text-center`} xs={12} md={4} >
+            <Col className={`text-center`} xs={12} md={4}>
             <p className={`${styles.BoldTitle} 
-            mb-2 text-center mx-1 mx-sm-5`}>FRAME RATE</p>
+            mb-2 text-center mx-1 mx-sm-5`}>FX/VFX</p>
             <div className={`${styles.Para}`}>
-            <p >{frame_rate} </p>
+            <p>{fx} </p>
             </div>
             </Col>
             </Row>

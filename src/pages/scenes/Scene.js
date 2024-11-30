@@ -417,7 +417,7 @@ const Scene = (props) => {
                         </Col>
                         <Col xs={6}>
                         <ShotlistPage setShowlist={setShowStoryShot} 
-                        scene={scene} />
+                        scene={scene} shotstory="shotstory" />
                         </Col>
                       </Row>             
                     ) }

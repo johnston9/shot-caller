@@ -306,8 +306,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
                   onChange={handleChange}
                   aria-label="int ext select">
                   <option></option>
-                  <option value="int">Int</option>
-                  <option value="ext">Ext</option>
+                  <option value="INT.">Int</option>
+                  <option value="EXT.">Ext</option>
                 </Form.Control>
             </Form.Group>
             {errors?.int_ext?.map((message, idx) => (
@@ -506,7 +506,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         <hr className={`${styles.Break1} mt-4 mb-0`}/>
         </Col>
         </Row>
-        {/* description actors notes */}
+        {/* description Subject notes */}
         <Row className="mt-3">
         <Col xs={12} lg={4} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="description" className={`${styles.Width2}`} >
@@ -529,7 +529,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         <Col xs={12} lg={4} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="actors" className={`${styles.Width2}`} >
-                <Form.Label className={`${styles.BoldScene}`}>Actors</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`}>Subject</Form.Label>
                 <Form.Control 
                 className={styles.InputScene}
                 type="text"

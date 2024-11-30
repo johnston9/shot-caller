@@ -50,6 +50,7 @@ const Breakdown = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
+            {/* act pages */}
             <Row className='mt-3' >
             <Col className={`${styles.BorderRight} text-center`} xs={6}>
             <p className={`${styles.BoldTitle} 
@@ -67,6 +68,7 @@ const Breakdown = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
+            {/* d day time */}
             <Row className='mt-3'>
             <Col className={`${styles.BorderRight} text-center`} xs={6}>
             <p className={`${styles.BoldTitle} d-none d-md-block
@@ -86,6 +88,7 @@ const Breakdown = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
+            {/* location action */}
             <Row className='mt-3'>
             <Col className={`${styles.BorderRight} text-center`} xs={6}>
                 <p className={`${styles.BoldTitle} 
@@ -104,7 +107,7 @@ const Breakdown = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
-            {/* shoot info */}
+            {/* shoot info Equipment*/}
             <Row className='mt-3'>
                 <Col className={`${styles.BorderRight} text-center`} xs={12} md={6}>
                 <p className={`${styles.BoldTitle} 
@@ -123,6 +126,7 @@ const Breakdown = (props) => {
             <hr className={`${styles.Break1} mb-0`}/>
             </Col>
             </Row>
+            {/* depts info */}
             <Row className='my-3'>
                 <Col className='text-center' xs={{span: 10, offset: 1 }} 
                 md={{span: 8, offset: 2 }}>

@@ -47,7 +47,9 @@ const Shot = (props) => {
         notes: "",
     });
 
-    const {shotAll, handleMount, setAddShot, style } = props;
+    const {shotAll, handleMount, setAddShot, style, shotstory } = props;
+
+    console.log(shotstory);
 
     const { id,
         scene_id,
@@ -144,7 +146,7 @@ const Shot = (props) => {
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p >{movement}</p>
                 </Col>
-                <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <Button onClick={() => setShowImg(showImg => !showImg)} 
                         className={`${btnStyles.Button} ${btnStyles.Blue}`}>
                         Image
@@ -180,7 +182,7 @@ const Shot = (props) => {
                 <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={4} md={4}>
                     <p className={`${styles.Para2}`}>{description}</p>
                 </Col>
-                <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                    <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={3} md={3}>
                     <p className={`${styles.Para2}`} >{angle} </p>
                     <p className={`${styles.Para2}`} >{movement} </p>
                 </Col>
