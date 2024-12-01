@@ -7,6 +7,15 @@
   color: rgb(140, 111, 25, 99%);
 }
 
+.Break1 {
+  border-top: 1px solid #d0d9db;
+  /* border-top: 1px solid rgb(140, 111, 25, 99%); */
+}
+
+.Break2 {
+  border-top: 5px solid #d0d9db;
+}
+
 .gmailblue {
   background-color: #f2f6fc;
 }

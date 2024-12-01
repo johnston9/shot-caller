@@ -47,9 +47,7 @@ const Shot = (props) => {
         notes: "",
     });
 
-    const {shotAll, handleMount, setAddShot, style, shotstory } = props;
-
-    console.log(shotstory);
+    const {shotAll, handleMount, setAddShot, style } = props;
 
     const { id,
         scene_id,

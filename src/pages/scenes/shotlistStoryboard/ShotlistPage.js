@@ -18,7 +18,7 @@ import Asset from '../../../components/Asset';
 import NoResults from "../../../assets/no-results.png";
 import Shot from './Shot';
 
-const ShotlistPage = ({scene, setShowlist, shotstory} ) => {
+const ShotlistPage = ({scene, setShowlist} ) => {
     const { id } = useParams();
     const [addShot, setAddShot] = useState(false);
     const [shotlist, setShotlist] =  useState({ results: [] });
@@ -125,8 +125,7 @@ const ShotlistPage = ({scene, setShowlist, shotstory} ) => {
                     'rgb(223 254 240)' : 'rgb(248 241 249)' }}
                     key={shot.id} 
                     handleMount={handleMount} 
-                    shotAll={shot}
-                    shotstory={shotstory}  />
+                    shotAll={shot} />
                 ))) 
             : (
             <Container className={`pt-4 ${appStyles.Content}`}>

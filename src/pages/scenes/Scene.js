@@ -410,14 +410,14 @@ const Scene = (props) => {
                       ""
                     ) : (                      
                       <Row>
-                        <Col xs={6}>
+                        <Col xs={12} lg={6} >
                         <StoryboardforSList
                         storyboard={storyboard}
                         />
                         </Col>
-                        <Col xs={6}>
+                        <Col xs={12} lg={6} >
                         <ShotlistPage setShowlist={setShowStoryShot} 
-                        scene={scene} shotstory="shotstory" />
+                        scene={scene} />
                         </Col>
                       </Row>             
                     ) }

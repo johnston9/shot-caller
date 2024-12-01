@@ -33,7 +33,6 @@ const DayCreateForm = () => {
       day: '2-digit', month: 'short', year: 'numeric'
     })
     setStartDate(newdate);
-    console.log(`start ${startDate}`)
   }
 
   const handleChange = (event) => {

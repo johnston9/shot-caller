@@ -44,10 +44,9 @@ const DayEdit = () => {
 
       const handleDate = (date) => {
         const newdate = date.toLocaleDateString('en-GB', {
-          day: 'numeric', month: 'short', year: 'numeric'
+          day: '2-digit', month: 'short', year: 'numeric'
         })
         setStartDate(newdate);
-        console.log(`start ${startDate}`)
       }
     
       const handleChange = (event) => {
@@ -78,12 +77,12 @@ const DayEdit = () => {
   const buttons = (
     <div className="text-center mt-5">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 mr-3`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 ml-3`} type="submit">
         Submit
       </Button>
     </div>
@@ -95,13 +94,15 @@ const DayEdit = () => {
     <Button onClick={() => history.goBack()}
       className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}>Back
     </Button>
+    <Row className="px-3">
+    <Col xs={12} md={{span: 8, offset: 2 }} >
     <h5 className={`mt-1 text-center py-1 mb-0 ${styles.SubTitle }`}>
     Edit Day {day}</h5>
     <Form className={`${styles.White}`} onSubmit={handleSubmit}>
-    <Row className="text-center mt-3">
-    <Col xs={6} className="p-0 p-md-2 d-flex justify-content-center ">
-        <Form.Group controlId="day">
-            <Form.Label className={`${styles.Bold}`} >Day</Form.Label>
+    <Row className="text-center">
+    <Col xs={6} className="px-0 pt-2 p-md-2 d-flex justify-content-center ">
+        <Form.Group controlId="day" className={`${styles.Width2}`}>
+            <Form.Label className={`${styles.BoldScene}`} >Day</Form.Label>
             <Form.Control 
             type="text"
             name="day"
@@ -116,11 +117,11 @@ const DayEdit = () => {
             </Alert>
         ))}
     </Col> 
-    <Col className="p-0 p-md-2" xs={6}>
-    <Form.Group controlId="date">
-              <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
+    <Col className="px-0 pt-2 p-md-2 d-flex justify-content-center" xs={6}>
+    <Form.Group controlId="date" className={`${styles.Width2}`}>
+              <Form.Label className={`${styles.BoldScene}`} >Date</Form.Label>
               <DatePicker 
-                className={`${styles.Input}`}
+                className={`${styles.InputD}`}
                   value={startDate}
                 onChange={(date) => handleDate(date) }
                 />
@@ -144,6 +145,8 @@ const DayEdit = () => {
   </Col> 
   <Col xs={12} sm={8} >
   <hr/>
+  </Col>
+  </Row>
   </Col>
   </Row>
   </div>

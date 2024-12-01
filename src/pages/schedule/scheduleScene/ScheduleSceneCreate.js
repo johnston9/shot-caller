@@ -110,7 +110,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       <Row>
         <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="day_order_number" className={`${styles.Width2} `}  >
-              <Form.Label className="p-1" >
+              <Form.Label className={`${styles.BoldScene}`} >
                 <span className= "d-md-none">Order Number</span>
                 <span className="d-none d-md-block">Day Order Number</span>
                 </Form.Label>
@@ -127,10 +127,10 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
               {message}
             </Alert>
           ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
+        </Col>
+        <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="start_time" className={`${styles.Width2} `}  >
-              <Form.Label className="p-1" >Start Time</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Start Time</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -144,10 +144,10 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
               {message}
             </Alert>
           ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
+        </Col>
+        <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="end_time" className={`${styles.Width2} `}  >
-              <Form.Label className="p-1" >End Time</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >End Time</Form.Label>
               <Form.Control
               className={`${styles.Input}`} 
               type="text"
@@ -163,11 +163,17 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
           ))}
         </Col>
       </Row>
+      {/* hr */}
+      <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
       {/* Filming Location - Location Address */}
       <Row>
-        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
-            <Form.Label className="p-1" >Filming Location</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
             className={`${styles.Input}`}
             type="text"
@@ -184,7 +190,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       </Col>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
-              <Form.Label className="p-1" >Location Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location Address</Form.Label>
               <Form.Control 
               className={`${styles.InputScene}`}
               type="text"
@@ -202,11 +208,17 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
           ))}
       </Col> 
       </Row>
+      {/* hr */}
+      <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
       {/* Next new info */}
       <Row>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
       <Form.Group controlId="next" className={`${styles.Width2} `}  >
-          <Form.Label className="p-1" >Next</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Next</Form.Label>
           <Form.Control 
               className={`${styles.InputScene}`}
               type="text"
@@ -225,7 +237,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       </Col>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
       <Form.Group controlId="new_info" className={`${styles.Width2} `}  >
-          <Form.Label className="p-1" >New Info</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`}>New Info</Form.Label>
           <Form.Control 
               className={`${styles.InputScene}`}
               type="text"
@@ -243,19 +255,25 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
           ))}
       </Col>
       </Row>
+      {/* hr */}
+      <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
     </div>
 )
 
 const buttons = (  
     <div className="mt-3">
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-4 px-md-5 mr-2`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 mr-3`}
       onClick={() => setShow(show => !show)}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-2`} type="submit">
-      Add Scene
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-3`} type="submit">
+      Submit
     </Button>
     </div>
 );
@@ -400,7 +418,7 @@ const buttons = (
               ))}
               </Row>
               </div>
-              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
+              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3`}>
               <Row className="mt-3 pt-3" >
                 <Col>
                 <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
@@ -409,11 +427,18 @@ const buttons = (
                     SCENE {number} </h5>
                 </Col>
               </Row>
-              <Form className={`text-center px-3 ${styles.FormBox} `} onSubmit={handleSubmit}>
+              <Form className={`text-center px-3 ${styles.White }`} onSubmit={handleSubmit}>
               <Row>
               <Col xs={12} className="p-0 p-md-2">
                   {textFields}
                   {buttons}
+                {/* hr */}
+              <Row>
+                <Col className="d-none d-sm-block" sm={2}></Col>
+                <Col xs={8}>
+                <hr className={`${styles.Break2} mt-5 mb-3`}/>
+                </Col>
+              </Row>
               </Col>
               </Row>
               </Form>
