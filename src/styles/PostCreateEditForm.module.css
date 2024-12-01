@@ -115,6 +115,29 @@
   text-align: center;
 }
 
+.InputD {
+  background: #ffffff;
+  border: 1px solid #dee1f7;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  height: 30px !important;
+  text-align: center;
+  width: 90%;
+}
+
+.InputSceneDept {
+  background: #ffffff;
+  border: 1px solid #dee1f7;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  height: 30px !important;
+  text-align: center;
+}
+
 .InputEx {
   background: #ffffff;
   border: 1px solid #dee1f7;

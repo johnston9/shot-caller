@@ -65,19 +65,19 @@ const DayCreateForm = () => {
   const buttons = (
     <div className="text-center mt-5">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 mr-3`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 ml-3`} type="submit">
         Create
       </Button>
     </div>
   );
 
   return (
-    <div>
+    <div >
     <TopBox title="Create Day" />
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
@@ -85,13 +85,15 @@ const DayCreateForm = () => {
       >
       Back
     </Button>
+    <Row className="px-3">
+    <Col xs={12} md={{span: 8, offset: 2 }} >
     <h5 className={`mt-1 text-center py-1 mb-0 ${styles.SubTitle }`}>
     Create Day</h5>
-    <Form className={`${styles.White}`} onSubmit={handleSubmit}>
-    <Row className="text-center mt-3">
-    <Col xs={6} className="p-0 p-md-2 d-flex justify-content-center ">
-        <Form.Group controlId="day" >
-            <Form.Label className={`${styles.Bold}`} >Day</Form.Label>
+    <Form className={`${styles.White} px-3`} onSubmit={handleSubmit}>
+    <Row className="text-center">
+    <Col xs={6} className="pt-2 p-md-2 d-flex justify-content-center ">
+        <Form.Group controlId="day" className={`${styles.Width2}`}>
+            <Form.Label className={`${styles.BoldScene}`} >Day</Form.Label>
             <Form.Control 
             type="text"
             name="day"
@@ -106,21 +108,21 @@ const DayCreateForm = () => {
             </Alert>
         ))}
       </Col> 
-      <Col className="p-0 p-md-2 d-flex justify-content-center" xs={6}>
-      <Form.Group controlId="date" >
-                <Form.Label className={`${styles.Bold}`} >Date</Form.Label>
-                <DatePicker 
-                  className={`${styles.Input}`}
-                   value={startDate}
-                  onChange={(date) => handleDate(date) }
-                  />
-            </Form.Group>
-            {errors?.date?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </Col> 
+    <Col xs={6} className="pt-2 p-md-2 d-flex justify-content-center">
+    <Form.Group controlId="date" className={`${styles.Width2} text-center`} >
+              <Form.Label className={`${styles.BoldScene}`}>Date</Form.Label>
+              <DatePicker 
+                className={`${styles.InputD}`}
+                  value={startDate}
+                onChange={(date) => handleDate(date) }
+                />
+          </Form.Group>
+          {errors?.date?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+    </Col> 
     </Row>
     {/* buttons */}
     <Row>
@@ -130,10 +132,12 @@ const DayCreateForm = () => {
     </Row>
     </Form>
     <Row>
-    <Col sm={2}className="d-none d-sm-block" >
+    <Col sm={2} className="d-none d-sm-block" >
     </Col> 
     <Col xs={12} sm={8} >
     <hr/>
+    </Col>
+    </Row>
     </Col>
     </Row>
     </div>
