@@ -62,9 +62,12 @@ const SchedOrder = (props ) => {
     <div>
       {/* order start end */}
       <Row className="text-center pt-2" >
-        <Col className={`d-flex justify-content-center`} xs={12} md={4} >
-        <Form.Group controlId="day_order_number" className="mb-2" >
-              <Form.Label className={`${styles.Bold}`} >Day Order Number</Form.Label>
+        <Col className={`d-flex justify-content-center`} xs={6} md={3} >
+        <Form.Group controlId="day_order_number" className={`${styles.Width2} `} >
+              <Form.Label className={`${styles.BoldScene} d-none d-lg-block `} >
+                Day Order Number</Form.Label>
+                <Form.Label className={`${styles.BoldScene} d-block d-lg-none `} >
+                  Order</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -79,9 +82,9 @@ const SchedOrder = (props ) => {
             </Alert>
           ))}
         </Col>
-        <Col className={`d-flex justify-content-center`} md={4} xs={6}>
-          <Form.Group controlId="start_time" className="mb-2" >
-              <Form.Label className={`${styles.Bold}`} >Start Time</Form.Label>
+        <Col className={`d-flex justify-content-center`} md={3} xs={6}>
+          <Form.Group controlId="start_time" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Start Time</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -96,30 +99,9 @@ const SchedOrder = (props ) => {
             </Alert>
           ))}
         </Col>
-        <Col className="d-flex justify-content-center" md={4} xs={6}>
-          <Form.Group controlId="end_time" className="mb-2" >
-              <Form.Label className={`${styles.Bold}`} >End Time</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="end_time"
-              value={end_time}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.end_time?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-        </Col>
-      </Row>
-      <hr className="d-none d-md-block"/>
-      {/* Next */}
-      <Row className="text-center">
-          <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 2 }}>
-            <Form.Group controlId="next" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >Next</Form.Label>
+        <Col xs={12} md={6} className={`d-flex justify-content-center px-0`}>
+            <Form.Group controlId="next" className={`${styles.Width2} `} >
+                <Form.Label className={`${styles.BoldScene}`}>Next</Form.Label>
                 <Form.Control 
                     className={styles.InputScene}
                     type="text"
@@ -136,8 +118,11 @@ const SchedOrder = (props ) => {
               </Alert>
             ))}
             </Col>
-          <Col md={4}>
-          <div className="text-center pb-2 mt-1 mt-md-5">    
+      </Row>
+      {/* buttons */}
+      <Row className="text-center">
+          <Col xs={12}>
+          <div className="text-center pb-2 mt-3 mt-md-5">    
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`}
               onClick={() => setShowOrder(false)}
@@ -145,19 +130,20 @@ const SchedOrder = (props ) => {
               Cancel
             </Button>
             <Button className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 px-4`} type="submit">
-              Update
+              Reorder
             </Button>
           </div>
           </Col>
         </Row>
+        <hr/>
     </div>
   )
 
   return (
-    <div className={` ${styles.OrderBox}`}>
-      {/* <h4 className={`text-center pb-0 mb-1 ${styles.SubTitle }`}>
-        Re-order Scene </h4> */}
-      <Form onSubmit={handleSubmit}>
+    <div >
+      <h5 className={`text-center pb-0 ${styles.SubTitle }`}>
+        Reorder Scene </h5>
+      <Form onSubmit={handleSubmit} className={`px-3 ${styles.White}`}>
           {textFields}
       </Form>
     </div>

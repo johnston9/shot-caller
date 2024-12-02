@@ -106,7 +106,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
 
   const textFields = (
     <div>
-      {/* order start end */}
+      {/* order start est */}
       <Row>
         <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="day_order_number" className={`${styles.Width2} `}  >

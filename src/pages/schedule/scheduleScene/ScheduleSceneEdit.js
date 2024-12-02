@@ -187,11 +187,10 @@ const { scene_id, day_id, day_order_number, number,
         <hr className={`${styles.Break1} mt-4 mb-3`}/>
         </Col>
       </Row>
-      {/* Location Address New info */}
       <Row>
-        {/* <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <Col xs={{span: 6, offset: 3 } }className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
-            <Form.Label className="p-1" >Filming Location</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
             className={`${styles.Input}`}
             type="text"
@@ -205,7 +204,10 @@ const { scene_id, day_id, day_order_number, number,
             {message}
           </Alert>
         ))}
-        </Col> */}
+        </Col>
+      </Row>
+      {/* Location Address New info */}
+      <Row>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.BoldScene}`}>Location Address</Form.Label>

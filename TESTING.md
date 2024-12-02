@@ -212,14 +212,14 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 <img src="documentation/readme-images/schedednext2.png" width="50%">
 </h2>
 
-- Use Case: Re-Order a Schedule Scene.<br>
+- Use Case: Reorder a Schedule Scene.<br>
 
-  1. Click on the Re-Order button which currently displays the Scene's current order and the re-order form opens.<br>
-  2. Input the new Order number and click Create.<br>
+  1. Click on the Reorder button which currently displays the Scene's current order and the reorder form opens.<br>
+  2. Input the new Order number and click Reorder.<br>
   3. The Stripboard opens with the new Order number for the Schedule Scene.<br>
   4. Re-order all the following Schedule Scenes in a similar manner.<br>
 
-<p align="center"> <strong>Make changes to Re-Order field</strong></p>
+<p align="center"> <strong>Make changes to Reorder field</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/schedor1.png" width="50%">
 </h2>
@@ -229,9 +229,9 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 <img src="documentation/readme-images/schedor2.png" width="50%">
 </h2>
 
-- Use Case: Add a Next row with new info below a Schedule Scene from the Re-Order form.<br>
+- Use Case: Add a Next row with new info below a Schedule Scene from the Reorder form.<br>
 
-  1. Click on the Re-Order button and the re-order form opens.<br>
+  1. Click on the Reorder button and the reorder form opens.<br>
   2. Input the new Next info in the Next input box and click Create.<br>
   3. The Stripboard opens with the new next Row displaying below that Schedule Scene.<br>
 

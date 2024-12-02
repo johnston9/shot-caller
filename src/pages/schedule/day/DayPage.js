@@ -118,7 +118,7 @@ const DayPage = () => {
                         <p className='mb-0 pl-2'>Edit</p>
                         </Col>
                         <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                            <p className='mb-0'>Time</p>
+                            <p className='mb-0'>Times</p>
                         </Col>
                         <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                             <p className='mb-0'>Scene</p>
@@ -164,7 +164,7 @@ const DayPage = () => {
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Time</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Sc.</p>
                 </Col>
                 <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Details</p>

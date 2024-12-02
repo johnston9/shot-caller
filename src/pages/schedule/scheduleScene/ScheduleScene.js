@@ -40,6 +40,7 @@ const ScheduleScene = (props) => {
 
     return (
         <div style={style}>
+            {/* desktop */}
         <div className='d-none d-md-block'>
             <Row className={`${styles.Bold} pt-2 text-center mx-0`}>
                 {admin ? (
@@ -47,7 +48,7 @@ const ScheduleScene = (props) => {
                     <Col className={`mx-0 px-0 mt-0 pt-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <OverlayTrigger
                         placement="top"
-                        overlay={<Tooltip>Re-Order</Tooltip>}
+                        overlay={<Tooltip>Reorder</Tooltip>}
                         >
                         <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
                             className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-3`}>
@@ -62,6 +63,7 @@ const ScheduleScene = (props) => {
                     </Col>
                     <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{start_time}</p>
+                         <p className='mb-0'>{end_time}</p>
                     </Col>
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{number}</p>
@@ -75,6 +77,7 @@ const ScheduleScene = (props) => {
                     <>
                     <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{start_time}</p>
+                        <p className='mb-0'>{end_time}</p>
                     </Col>
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{number}</p>
@@ -171,6 +174,7 @@ const ScheduleScene = (props) => {
             <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                     <p className={`mb-0  ${styles.TitleBox2}`}>{start_time}</p>
+                    <p className={`mb-0  ${styles.TitleBox2}`}>{end_time}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
                     <p className='mb-0'>{number}</p>
@@ -191,10 +195,15 @@ const ScheduleScene = (props) => {
                 ) : (
                     <>
                     <Col className={`mx-0 px-0 mt-0 pt-0`} xs={2} >
+                    <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Reorder</Tooltip>}
+                        >
                         <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
                             className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-3`}>
                             {day_order_number}
                         </Button>
+                        </OverlayTrigger>
                     </Col> 
                     </>
                 )}
