@@ -59,6 +59,12 @@
   color: rgba(129, 102, 21, 0.99);
 }
 
+.BoldSceneNext {
+  color: rgba(108, 84, 15, 0.99);
+  /* color: #747686; */
+  font-style: italic;
+}
+
 .Input {
   background: #ffffff;
   border: 1px solid #dee1f7;
@@ -70,42 +76,6 @@
   text-align: center;
 }
 
-.InputD {
-  background: #ffffff;
-  border: 1px solid #dee1f7;
-  box-sizing: border-box;
-  border-radius: 2px;
-  color: #747686;
-  padding: 0px 10px;
-  height: 30px !important;
-  text-align: center;
-  width: 90%;
-}
-
-.InputSceneDept {
-  background: #ffffff;
-  border: 1px solid #dee1f7;
-  box-sizing: border-box;
-  border-radius: 2px;
-  color: #747686;
-  padding: 0px 10px;
-  height: 30px !important;
-  text-align: center;
-}
-
-.InputEx {
-  background: #ffffff;
-  border: 1px solid #dee1f7;
-  box-sizing: border-box;
-  border-radius: 2px;
-  color: #747686;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 30px;
-  height: 30px !important;
-  text-align: center;
-}
-
 .InputScene {
  background: #ffffff;
  border: 1px solid #dee1f7;
@@ -113,7 +83,18 @@
  border-radius: 2px;
  color: #747686;
  padding: 0px 10px;
+ text-align: center;
 }
+
+.InputSceneNext {
+  background: #ffffff;
+  border: 1px solid rgba(228, 202, 121, 0.99);
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  text-align: center;
+ }
 
 .Number {
   border-right: 1px solid #eaf2fa;

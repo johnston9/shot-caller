@@ -169,9 +169,9 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
         <hr className={`${styles.Break1} mt-4 mb-3`}/>
         </Col>
       </Row>
-      {/* Filming Location - Location Address */}
+      {/* Location Address new info */}
       <Row>
-      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      {/* <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
             <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
@@ -187,7 +187,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
             {message}
           </Alert>
         ))}
-      </Col>
+      </Col> */}
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.BoldScene}`} >Location Address</Form.Label>
@@ -207,34 +207,6 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
             </Alert>
           ))}
       </Col> 
-      </Row>
-      {/* hr */}
-      <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
-        </Col>
-      </Row>
-      {/* Next new info */}
-      <Row>
-      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
-      <Form.Group controlId="next" className={`${styles.Width2} `}  >
-          <Form.Label className={`${styles.BoldScene}`} >Next</Form.Label>
-          <Form.Control 
-              className={`${styles.InputScene}`}
-              type="text"
-              name="next"
-              as="textarea"
-              rows={2}
-              value={next}
-              onChange={handleChange}
-              />
-      </Form.Group>
-      {errors?.next?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-      </Col>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
       <Form.Group controlId="new_info" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.BoldScene}`}>New Info</Form.Label>
@@ -253,6 +225,37 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
               {message}
             </Alert>
           ))}
+      </Col>
+      </Row>
+      {/* hr */}
+      <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
+      {/* Next  */}
+      <Row>
+      <Col xs={{span: 8, offset: 2 } } className="d-flex justify-content-center p-0 p-md-2">
+      <Form.Group controlId="next" className={`${styles.Width2} `}  >
+          <Form.Label >
+            <p className={`${styles.BoldScene}`}>Next</p>
+            <p className={`${styles.BoldSceneNext}`}>Add breaks, moves and meals here</p>
+            </Form.Label>
+          <Form.Control 
+              className={`${styles.InputSceneNext}`}
+              type="text"
+              name="next"
+              as="textarea"
+              rows={2}
+              value={next}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.next?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       </Col>
       </Row>
       {/* hr */}
@@ -347,7 +350,7 @@ const buttons = (
     
     return (
         <div >
-            <h4 className={`text-center mx-3 pb-0 mb-3 ${styles.SubTitle }`}>ADD SCENE </h4>
+            <h4 className={`text-center mx-3 pb-0 mb-3 ${styles.SubTitle }`}>ADD SCHEDULE SCENE </h4>
             <div className= {`px-3 mx-3 pb-3 ${styles.ScenesBox} `}>
             <p className="text-center pt-2">
             FIND SCENE BY ACT LOCATION AND OR SEARCH
@@ -422,7 +425,7 @@ const buttons = (
               <Row className="mt-3 pt-3" >
                 <Col>
                 <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
-                    SCENE {number} SHOOTING INFO </h5>
+                    SCHEDULE SCENE {number} SHOOTING INFO </h5>
                   <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
                     SCENE {number} </h5>
                 </Col>

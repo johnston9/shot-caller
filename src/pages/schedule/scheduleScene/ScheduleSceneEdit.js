@@ -128,7 +128,7 @@ const { scene_id, day_id, day_order_number, number,
       <Row>
         <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="day_order_number" className={`${styles.Width3} `}  >
-              <Form.Label className="p-1" >
+              <Form.Label className={`${styles.BoldScene}`} >
                 <span className= "d-md-none">Order Number</span>
                 <span className="d-none d-md-block">Day Order Number</span>
                 </Form.Label>
@@ -148,7 +148,7 @@ const { scene_id, day_id, day_order_number, number,
           </Col>
           <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="start_time" className={`${styles.Width2} `}  >
-              <Form.Label className="p-1" >Start Time</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`}>Start Time</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -165,7 +165,7 @@ const { scene_id, day_id, day_order_number, number,
           </Col>
           <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="end_time" className={`${styles.Width2} `}  >
-              <Form.Label className="p-1" >End Time</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Est. Time</Form.Label>
               <Form.Control
               className={`${styles.Input}`} 
               type="text"
@@ -181,9 +181,15 @@ const { scene_id, day_id, day_order_number, number,
           ))}
         </Col>
       </Row>
-      {/* Filming Location - Location Address */}
+      {/* hr */}
       <Row>
-        <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
+      {/* Location Address New info */}
+      <Row>
+        {/* <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
             <Form.Label className="p-1" >Filming Location</Form.Label>
             <Form.Control 
@@ -199,10 +205,10 @@ const { scene_id, day_id, day_order_number, number,
             {message}
           </Alert>
         ))}
-      </Col>
+        </Col> */}
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
-              <Form.Label className="p-1" >Location Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`}>Location Address</Form.Label>
               <Form.Control 
               className={`${styles.InputScene}`}
               type="text"
@@ -219,31 +225,9 @@ const { scene_id, day_id, day_order_number, number,
             </Alert>
           ))}
       </Col> 
-      </Row>
-      {/* Next new info */}
-      <Row>
-      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
-      <Form.Group controlId="next" className={`${styles.Width2} `}  >
-          <Form.Label className="p-1" >Next</Form.Label>
-          <Form.Control 
-              className={`${styles.InputScene}`}
-              type="text"
-              name="next"
-              as="textarea"
-              rows={2}
-              value={next}
-              onChange={handleChange}
-              />
-      </Form.Group>
-      {errors?.next?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-      </Col>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
       <Form.Group controlId="new_info" className={`${styles.Width2} `}  >
-          <Form.Label className="p-1" >New Info</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >New Info</Form.Label>
           <Form.Control 
               className={`${styles.InputScene}`}
               type="text"
@@ -261,45 +245,80 @@ const { scene_id, day_id, day_order_number, number,
           ))}
       </Col>
       </Row>
+      {/* hr */}
+      <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
+      {/* next */}
+      <Row>
+      <Col xs={{span: 8, offset: 2 } } className="d-flex justify-content-center p-0 p-md-2">
+      <Form.Group controlId="next" className={`${styles.Width2} `}  >
+          <Form.Label >
+            <p className={`${styles.BoldScene}`}>Next</p>
+            <p className={`${styles.BoldSceneNext}`}>Add breaks, moves and meals here</p>
+            </Form.Label>
+          <Form.Control 
+              className={`${styles.InputSceneNext}`}
+              type="text"
+              name="next"
+              as="textarea"
+              rows={2}
+              value={next}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.next?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row>
+      {/* hr */}
+      <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
       </div>
   )
 
   const buttons = (
     <div className="text-center mt-4">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} mr-2`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-md-5`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`px-4 ml-2 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Edit
+      <Button className={`ml-3 px-md-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Submit
       </Button>
     </div>
   );
     
     return (
         <div>
-            <TopBox title={`Edit Schedule Scene ${number} `}/>
+            <TopBox title={`Edit Schedule Scene`}/>
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue} mt-1`}
                 onClick={() => history.goBack()}
             >
                 Back
             </Button>
-            <Form className={`px-3 pb-3 mt-5 mb-4 text-center ${styles.FormBox} `} onSubmit={handleSubmit}>
-              <Row>
-                <Col>
-                  <h3>Schedule Scene {number}  </h3>
-                  <p className={` mb-0 py-1 ${styles.SubTitle }`}></p>
-                </Col>
-              </Row>
-              <Row>
-              <Col xs={12} className="p-0 p-md-2">
+            <Form className={`pb-3 mt-5 mb-4 text-center `} onSubmit={handleSubmit}>
+            <h5 className={`text-center mb-0 pb-0 ${styles.SubTitle }`}>
+              EDIT SCHEDULE SCENE {number} </h5>
+            <div className={`px-3 ${styles.FormBox} `}>
+            <Row>
+              <Col xs={12}>
                   {textFields}
                   {buttons}
               </Col>
               </Row>
+            </div>
             </Form>
         </div>
     )
