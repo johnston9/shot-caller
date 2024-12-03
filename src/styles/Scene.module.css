@@ -17,11 +17,8 @@
 
 .BoldScene {
   color: rgba(129, 102, 21, 0.99);
+  font-weight: 600;
 }
-
-/* .BoldScene {
-  color: rgba(110, 83, 3, 0.99);
-} */
 
 .Input {
   background: #ffffff;
@@ -93,7 +90,7 @@ background: #ffffff;
 }
 
 .Back {
-  background-color: #ccdbdf;
+  background-color: #fff;
 }
 
 .Back1 {
@@ -469,10 +466,6 @@ background: #ffffff;
 
 .ShotEditForm {
   border-bottom: 1px solid rgb(46, 46, 46);
-}
-
-.Back {
-  background-color: aliceblue;
 }
 
 .AliceBlueMild {

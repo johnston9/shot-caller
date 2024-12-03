@@ -104,6 +104,7 @@ const Shot = (props) => {
             actors,
             notes,
             })
+        // eslint-disable-next-line
         }, [id]);
 
     const handleDelete = async () => {

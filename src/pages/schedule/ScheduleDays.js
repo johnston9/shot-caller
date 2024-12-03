@@ -68,6 +68,7 @@ const SchedulePages = () => {
               clearTimeout(timer);
             };
       
+        // eslint-disable-next-line
         }, [query, filter])
 
     const handleDate = (date) => {

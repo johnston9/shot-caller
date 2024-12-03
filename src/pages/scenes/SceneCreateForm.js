@@ -17,7 +17,7 @@ import ImportCreate from "./info/ImportCreate";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function SceneCreateForm({topbox}) {
+function SceneCreateForm() {
   useRedirect();
   const [errors, setErrors] = useState({});
   const [showImp, setShowImp] = useState(false);
@@ -41,12 +41,12 @@ function SceneCreateForm({topbox}) {
   const buttons = (
     <div className={`text-center pt-3 mb-3 pb-2 ${styles.White }`} >    
       <Button
-        className={`mr-3 px-5 py-1 ${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`mr-3 px-5 ${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`ml-3 px-5 py-1  ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`ml-3 px-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         Create
       </Button>
     </div>
@@ -72,13 +72,9 @@ function SceneCreateForm({topbox}) {
 
   return (
     <div >
-      {topbox ? (
-        ""
-      ) : (
-        <TopBox title="Create Scene" />
-      ) }
+      <TopBox title="Create Scene" />
+      {/* back */}
       <Row>
-      {/* back bit */}
       <Col xs={4} >
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-2`}
@@ -122,12 +118,14 @@ function SceneCreateForm({topbox}) {
               ) } 
       </Col>
       </Row>
-    <h3 className="text-center" >Create Scene</h3>
+    <Row>
+    <Col xs={12} md={{span: 8, offset: 2 }}>
+    <h5 className={`text-center pb-0 mt-3 py-1 ${styles.SubTitle }`}>CREATE SCENE</h5>
     <Form className= {`mb-3 ${styles.Back}`} onSubmit={handleSubmit}>
     <Row className="text-center">
-    <Col className="d-flex justify-content-center p-0 p-md-2" xs={{span: 4, offset: 4}} >
+    <Col className="d-flex justify-content-center p-0 p-md-2" md={{span: 6, offset: 3 }} >
         <Form.Group controlId="number" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Number</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Number</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -148,8 +146,18 @@ function SceneCreateForm({topbox}) {
       <div className= {`mt-3 ${styles.Container}`} >{buttons}</div>
       </Col>
     </Row>
-  </Form>
-  </div>
+    </Form>
+    {/* hr */}
+    <Row>
+    <Col sm={2} className="d-none d-sm-block" >
+    </Col> 
+    <Col xs={12} sm={8} >
+    <hr/>
+    </Col>
+    </Row>
+    </Col>
+    </Row>
+    </div>
   );
 }
 

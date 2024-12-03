@@ -44,7 +44,13 @@ const Freeze = () => {
         setPostData({
             freeze: "freeze",
           });
-      };
+    };
+
+    const handleUnFreeze = () => { 
+      setPostData({
+          freeze: "",
+        });
+    };
 
       const handleSubmit = async (event) => {
         event.preventDefault();
@@ -79,11 +85,8 @@ const Freeze = () => {
         <Row>
         <Col className="text-center" >
         <p>
-        The ability to change Scene numbers is available till a 
-        certain point. You choose when and freeze it. Of course 
-        doing so will result in all previous Scene Posts
-        ending up in a different scene's page so it can be 
-        frozen from the beginning if necessary.
+        The ability to change Scene numbers is initially available. 
+        You choose when and freeze it. 
         </p>
         <p>
         Click the Set Freeze Scenes Button below when you decide 
@@ -100,9 +103,15 @@ const Freeze = () => {
         <Form className= {`mt-3 mb-5 ${styles.Back}`} onSubmit={handleSubmit}>
         <Row className='mb-3'>
         <Col className="text-center mt-2" >
-            <Button className={` px-5 py-1 ${btnStyles.Button}  ${btnStyles.Order}`}
-            onClick={() => handleFreeze()}> Set Freeze Scene Numbers
+            {freeze ? (
+              <Button className={` px-5 py-1 ${btnStyles.Button}  ${btnStyles.Order}`}
+              onClick={() => handleUnFreeze()}> Unfreeze
+              </Button>
+            ) : (
+              <Button className={` px-5 py-1 ${btnStyles.Button}  ${btnStyles.Red}`}
+            onClick={() => handleFreeze()}> Freeze Scene Numbers
             </Button>
+            ) }
         </Col>
         </Row>
         {buttons}

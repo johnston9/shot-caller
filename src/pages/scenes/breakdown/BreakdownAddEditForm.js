@@ -475,12 +475,12 @@ const BreakdownEditForm = () => {
   const buttons = (
     <div className={`text-center pt-3 mt-3 mb-3 pb-2 ${styles.White }`} >    
       <Button
-        className={`mr-3 px-md-5 py-1 ${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`mr-3 px-md-5 ${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`ml-3 px-md-5 py-1  ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`ml-3 px-md-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         Submit
       </Button>
     </div>
@@ -699,10 +699,16 @@ const BreakdownEditForm = () => {
                 </Container>
           </Col>   
         </Row> 
-            <Row>
-          <Col className="text-center">
-          <div className= {`mt-3 ${styles.Container}`} >{buttons}</div>
-          </Col>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-5 mb-0`}/>
+        </Col>
+        </Row>
+        <Row>
+        <Col className="text-center">
+        <div className= {`mt-3 ${styles.Container}`} >{buttons}</div>
+        </Col>
         </Row>
           </Form>
       </div>

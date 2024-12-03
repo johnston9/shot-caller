@@ -169,9 +169,9 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
         <hr className={`${styles.Break1} mt-4 mb-3`}/>
         </Col>
       </Row>
-      {/* Location Address new info */}
+      {/* filming location */}
       <Row>
-      {/* <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <Col xs={{span: 6, offset: 3 } }className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
             <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
@@ -187,7 +187,16 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
             {message}
           </Alert>
         ))}
-      </Col> */}
+        </Col>
+      </Row>
+      {/* hr */}
+      <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        </Col>
+      </Row>
+      {/* Location Address new info */}
+      <Row>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.BoldScene}`} >Location Address</Form.Label>

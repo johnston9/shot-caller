@@ -85,6 +85,16 @@
     color: #fff;
   }
 
+  .Red {
+    background-color: crimson;
+    color: #fff;
+  }
+
+  .Red:hover {
+    background-color: #3b444b;
+    color: #fff;
+  }
+
   .Black {
     background-color: #3b444b;
     color: #fff;

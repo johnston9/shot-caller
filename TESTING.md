@@ -178,7 +178,7 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 <img src="documentation/readme-images/schedshoot2.png" width="50%">
 </h2>
 
-- Use Case: Edit Schedule Scene.<br>
+- Use Case: Edit Schedule Scene<br>
 
   1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
   2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
@@ -268,16 +268,10 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 ### Callsheets
 Description: xxxx<br>
 
-- User Case: xxx<br>
-
-  Action: xxx.<br>
-  Result: vvv<br>
-
-  Action: xxx<br>
-  Result: The User <br>
-
 ### Budgeting 
 - As this feature is held on the "Shot Caller Production" home app the Budgeting testing is on it's Testing page. [Testing](https://github.com/johnston9/shot-caller-production/blob/main/TESTING.md)<br>
+
+
 
 ## The Creative Features
 

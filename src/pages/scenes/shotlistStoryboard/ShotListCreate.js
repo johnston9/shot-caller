@@ -10,8 +10,7 @@ import styles from "../../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import Asset2 from "../../../components/Asset2";
 
@@ -73,8 +72,6 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     } = postData;
 
     const imageInput = useRef(null);
-
-    const history = useHistory();
 
     const handleChange = (event) => {
         setPostData({

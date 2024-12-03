@@ -45,6 +45,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
 
     useEffect(() => {
         handleMount();
+      // eslint-disable-next-line
       }, [id]);
 
     const handleChange = (event) => {

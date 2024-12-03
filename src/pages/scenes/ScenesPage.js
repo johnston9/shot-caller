@@ -30,8 +30,8 @@ const ScenesPage = ({message, filter = "" }) => {
     const freeze = crewInfoOne.freeze || "";
     // const freeze = true;
     const currentUser = useCurrentUser();
-    const superAdmin = currentUser?.username === "superAdmin";
-    // const superAdmin = true;
+    // const superAdmin = currentUser?.username === "superAdmin";
+    const superAdmin = false;
     const [scenes, setScenes] = useState({results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
@@ -76,7 +76,7 @@ const ScenesPage = ({message, filter = "" }) => {
       } catch(err) {
         console.log(err);
       }
-    }
+    };
 
     useEffect(() => {
         setHasLoaded(false);
@@ -88,7 +88,8 @@ const ScenesPage = ({message, filter = "" }) => {
             clearTimeout(timer);
           };
     
-      }, [query, filter])
+      // eslint-disable-next-line
+      }, [query, filter]);
 
       const clickScript = () => {
         /* Function to take the user to the Script Page */
