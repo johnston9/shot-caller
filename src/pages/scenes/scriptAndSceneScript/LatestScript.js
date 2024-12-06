@@ -146,12 +146,12 @@ const LatestScript = () => {
                 </h5>
                     {script ? (
                         <> 
-                        <Row>
+                        <Row className='mb-3'>
                         <Col xs={6} >
                         <p className= {`text-center ${styles.Bold}`} >
                           Latest Changes
                         </p>
-                        <p className= {`text-center ${styles.Back}`}>
+                        <p className= {`text-center ${styles.Back} pb-3`}>
                         {latest_changes}
                         </p>
                         </Col>
@@ -159,7 +159,7 @@ const LatestScript = () => {
                         <p className= {`text-center ${styles.Bold}`} >
                           Notes
                         </p>
-                        <p className= {`text-center ${styles.Back}`}>
+                        <p className= {`text-center ${styles.Back} pb-3`}>
                         {notes}
                         </p>
                         </Col>

@@ -336,13 +336,12 @@ Description: This page displays all the currently added Scenes and the "Script" 
 
 - Use Case: Delete a Scene on the Scenes page.<br>
 
-  1. On the Scenes page click the Edit/Delete icon then click the Delete icon
-  on the Scene Top.<br>
+  1. On the Scenes page click the Edit/Delete icon on the Scene Top then click the Delete icon.<br>
   2. A Modal displays asking to Confirm Delete or Cancel<br>
   3. Click "Delete".<br>
   6. A success message displays and the Scene is deleted.<br>
 
-<p align="center"> <strong>Success Message and Day Deleted</strong></p>
+<p align="center"> <strong>Success Message and Scene Deleted</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/scenedel.png" width="50%">
 </h2>
@@ -371,12 +370,12 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 
   1. Click on the "Add Script" tab on the Scenes page. This will display is a Script has not been previously been added, if it has an "Add Latest Script" tab will display.
   2. The "Add Script" form opens.
-  3. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded.
-  4. The new file is added with its desktop name displaying below.
-  5. Input the "Draft Name" info.
-  6. Input the "Latest Changes" info if desired."
-  7. Input the "Notes" info."
-  8. Click Create and the updates are added to the database and the Scenes page opens.
+  3. Input the "Draft Name" info.
+  4. Input the "Latest Changes" info if desired."
+  5. Input the "Notes" info."
+  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded.
+  7. The new file is added with its desktop name displaying below.
+  8. Click Upload and the updates are added to the database and the Scenes page opens.
   9. A Success message displays.
   9. Click Script to view the Script.
 
@@ -384,29 +383,29 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 
   1. Click on the "Add Latest Script" tab on the Scenes page.
   2. The "Add Latest Script" form opens displaying the current database Script file name, "Script_Draft_1_ny25jg" and the current draft, latest changes and notes inputs.
-  3. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, - "Script Draft 3".
-  4. The new file is added with its desktop name displaying below, - "Script Draft 3.pdf".
-  5. Input the new "Draft Name" info, - "Draft 2, 02-02-24".
-  6. Input the new "Latest Changes" info, - "Scene, 1, 2 and 3 changed.Added scene 94."
-  7. Input the new "Notes" info, - "Scene 1 is 1.5 pages longer now."
-  8. Click Create and the updates are added to the database and the Scenes page opens.
-  9. A Success message displays saying "Script Draft 2.pdf" added.
-  9. Click Script to view the changes including its new database file name "Script_Draft_2_vw2npe".
+  3. Input the new "Draft Name" info, - "Draft 4, 02-04-24".
+  4. Input the new "Latest Changes" info, - "Scene, 1, 2 and 3 changed. Added scene 94."
+  5. Input the new "Notes" info, - "Scene 1 is 1.5 pages longer now."
+  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, - "Script Draft 4".
+  7. The new file is added with its desktop name displaying below, - "Script Draft 4.pdf".
+  8. Click Upload and the updates are added to the database and the Scenes page opens.
+  9. A Success message displays saying "Script Draft 4.pdf" added.
+  9. Click Script to view the changes including its new database file name "Script_Draft_4_v5omzy".
 
 
-<p align="center"> <strong>The "Add Latest Script" form</strong></p>
+<p align="center"> <strong>The "Add Latest Script" Form with the Changes</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/script2.png" width="50%">
+<img src="documentation/readme-images/scriptchange1.png" width="50%">
 </h2>
 
 <p align="center"> <strong>Success Message</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/drafttoast.png" width="50%">
+<img src="documentation/readme-images/scriptchange2.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The new Script and the new info</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/script5.png" width="50%">
+<img src="documentation/readme-images/scriptchange3.png" width="50%">
 </h2>
 
 #### Scene Page

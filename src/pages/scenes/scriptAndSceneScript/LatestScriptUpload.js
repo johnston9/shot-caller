@@ -80,14 +80,14 @@ const LatestScriptUpload = (
       const buttons = (
         <div className="text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 mr-3`}
             onClick={() => setEditScript(false)}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} 
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-3`} 
             type="submit">
-            Create 
+            Upload 
           </Button>
         </div>
       );
@@ -95,16 +95,16 @@ const LatestScriptUpload = (
   return (
     <div>
       <h5 style={{ textTransform: 'uppercase'}} 
-          className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
+          className={`mt-1 mb-1 pl-3 ${styles.SubTitle } text-center`}>
           Add Latest Script 
       </h5>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className={`${styles.Back} `}>
         {/* draft */}
-      <Row>
+      <Row >
       <Col className="d-flex justify-content-center p-0 p-md-2" 
         md={{span: 6, offset: 3 }}>
         <Form.Group controlId="draft" className={`${styles.Width2} `} >
-            <Form.Label className={`${styles.Bold}`}>Draft Name</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`}>DRAFT NAME</Form.Label>
             <Form.Control 
             className={styles.Input}
             type="text"
@@ -120,25 +120,75 @@ const LatestScriptUpload = (
         ))}
         </Col>
       </Row>
+      {/* hr */}
+      {/* <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-3 mb-3 mb-0`}/>
+      </Col>
+      </Row> */}
+      {/* changes notes */}
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={12} md={6}>
+        <Form.Group controlId="latest_changes" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.BoldScene}`} >LATEST CHANGES</Form.Label>
+            <Form.Control 
+                type="text"
+                className={styles.InputScene}
+                name="latest_changes"
+                as="textarea"
+                rows={2}
+                value={latest_changes}
+                onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.latest_changes?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+      </Col>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={12} md={6}>
+      <Form.Group controlId="notes" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.BoldScene}`} >NOTES</Form.Label>
+          <Form.Control 
+              className={styles.InputScene}
+              type="text"
+              name="notes"
+              as="textarea"
+              rows={2}
+              value={notes}
+              onChange={handleChange}
+              />
+      </Form.Group>
+      {errors?.notes?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row> 
+      {/* hr */}
+      {/* <Row>
+      <Col xs={12}>
+      <hr className={`${styles.Break1} mt-3 mb-3 mb-0`}/>
+      </Col>
+      </Row> */}
       {/* script */}
-      <Row>
-      <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3} } >
-          {/* script */}
-          <Container
-            className={`${appStyles.Content} ${styles.Container
-          } d-flex flex-column justify-content-center`}
-          >
-            <Form.Group className="text-center pt-3">
+      <Row className="mt-3">
+      <Col md={{span: 6, offset: 3} } >
+      <p className={`${styles.BoldScene}`}>SCRIPT</p>
+          <div className={` d-flex flex-column justify-content-center`} >
+            <Form.Group className="text-center pt-2">
                 {script ? (
                   <>  
                     <figure>
                       <iframe title="Script"
                         className={appStyles.iframe} src={script} />
                     </figure>
-                    {fileName && <p>{fileName} </p> }
-                    <div>
+                    {fileName && <p className={`${styles.Italic}`} >File name: {fileName} </p> }
+                    <div className="mt-3" >
                       <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                        className={`${btnStyles.Button} ${btnStyles.Blue} btn px-5`}
                         htmlFor="script-upload"
                       >
                         Change the Script
@@ -171,59 +221,22 @@ const LatestScriptUpload = (
                   {message}
                 </Alert>
               ))}
-          </Container>
+          </div>
         </Col>
-      </Row>
-      {/* changes notes */}
-      <Row>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-        <Form.Group controlId="latest_changes" className={`${styles.Width2} `} >
-            <Form.Label className={`${styles.Bold}`} >Latest Changes</Form.Label>
-            <Form.Control 
-                type="text"
-                className={styles.InputScene}
-                name="latest_changes"
-                as="textarea"
-                rows={2}
-                value={latest_changes}
-                onChange={handleChange}
-                />
-        </Form.Group>
-        {errors?.latest_changes?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
-      </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
-      <Form.Group controlId="notes" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Notes</Form.Label>
-          <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              name="notes"
-              as="textarea"
-              rows={2}
-              value={notes}
-              onChange={handleChange}
-              />
-      </Form.Group>
-      {errors?.notes?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-      </Col>
-      </Row>  
+      </Row >
         <Row>
-          <Col className="text-center">
-          <Container className= {`mt-3 ${styles.Container}`} >
-            {buttons}</Container>
+          <Col className="text-center mt-5">
+            {buttons}
           </Col>
         </Row>
       </Form>
-      <p className={`my-3 mb-1 pl-3 py-2 ${styles.SubTitle } text-center`}>
-      </p>
+      {/* hr */}
+      <Row>
+      <Col className="d-none d-md-block" md={2} ></Col>
+      <Col xs={12} md={8}>
+      <hr className={`${styles.Break2} mt-5 mb-3 mb-0`}/>
+      </Col>
+      </Row>
     </div>
   )
 }

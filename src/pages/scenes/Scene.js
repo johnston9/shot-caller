@@ -71,16 +71,15 @@ const Scene = (props) => {
     const handleEdit = () => {
       history.push(`/scenes/${id}/edit`);
     };
-  
+
     const handleDelete = async () => {
       try {
         await axiosReq.delete(`/scenes/${id}/`);
         toast.success(`Scene Deleted`);
-        history.goBack();
+        history.push(`/scenes`);
       } catch (err) {
       }
     };
-
 
     /* The following 13 functions take the user to that Scenes 
        department and category they choose by setting the 
