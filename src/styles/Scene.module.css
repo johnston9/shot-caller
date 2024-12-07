@@ -6,6 +6,16 @@
   font-style: italic;
 }
 
+.ViewScript {
+  color: rgb(31, 203, 203);
+  font-style: italic;
+}
+
+.ViewScript:hover {
+  color: #228087;
+  cursor: pointer;
+}
+
 .Para {
   min-height: 35px;
 }

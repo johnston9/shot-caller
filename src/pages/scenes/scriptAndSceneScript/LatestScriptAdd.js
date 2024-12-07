@@ -119,7 +119,7 @@ const LatestScriptAdd = ({setAddScript }) => {
       </Row>
       {/* changes notes */}
       <Row className="mt-3">
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={12} md={6}>
         <Form.Group controlId="latest_changes" className={`${styles.Width2} `} >
             <Form.Label className={`${styles.BoldScene}`} >LATEST CHANGES</Form.Label>
             <Form.Control 
@@ -138,7 +138,7 @@ const LatestScriptAdd = ({setAddScript }) => {
           </Alert>
         ))}
       </Col>
-      <Col className="d-flex justify-content-center p-0 p-md-2" xs={6}>
+      <Col className="d-flex justify-content-center p-0 p-md-2" xs={12} md={6}>
       <Form.Group controlId="notes" className={`${styles.Width2} `} >
           <Form.Label className={`${styles.Bold}`} >NOTES</Form.Label>
           <Form.Control 

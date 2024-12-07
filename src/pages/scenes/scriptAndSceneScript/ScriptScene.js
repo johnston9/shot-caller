@@ -110,6 +110,11 @@ const ScriptScene = () => {
                  setAddScript={setAddScript} />  ) }
             </Col>
             </Row>
+            <div className={` text-center`} >
+            <Link to={{ pathname: script }} target="_blank" 
+            className={`${styles.ViewScript } text-center`} >
+            Click here to View the Original Script File </Link>
+            </div>
             <Row >
             <Col xs={12} > 
                 <>
@@ -123,9 +128,6 @@ const ScriptScene = () => {
                         </div>
                         </Col>
                         </Row>
-                          <div className='text-center'>
-                          <Link to={{ pathname: script }} target="_blank" >VIEW SCRIPT</Link>
-                          </div>
                         </>
                     )
                     : (

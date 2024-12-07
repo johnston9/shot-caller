@@ -62,7 +62,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
       }
 
       const buttons = (
-        <div className="text-center">    
+        <div className="text-center mt-3">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
             onClick={() => setAddScript(false)}
@@ -77,68 +77,67 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
       );
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
+    <div className="mb-3">
         <Row>
         <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3} } >
-            {/* script */}
-            <Container
-              className={`${appStyles.Content} ${styles.Container
-            } d-flex flex-column justify-content-center`}
-            >
-              <Form.Group className="text-center pt-3">
-                  {script ? (
-                    <>  
-                      <figure>
-                        <iframe title="Script"
-                         className={appStyles.iframe} src={script} />
-                      </figure>
-                      {fileName && <p>{fileName} </p> }
-                      <div>
-                        <Form.Label
-                          className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                          htmlFor="script-upload"
-                        >
-                          Change the Script
-                        </Form.Label>
-                      </div>
-                    </>
-                  ) : (
+        <h5 style={{ textTransform: 'uppercase'}} 
+          className={`mt-1 mb-1 pl-3 ${styles.SubTitle } text-center`}>
+          Add Latest Script 
+        </h5>
+        <Form className={`${styles.Back} `} onSubmit={handleSubmit}>
+        {/* script */}
+        <div
+          className={` d-flex flex-column justify-content-center`}
+        >
+          <Form.Group className="text-center pt-3">
+              {script ? (
+                <>  
+                  <figure>
+                    <iframe title="Script"
+                      className={appStyles.iframe} src={script} />
+                  </figure>
+                  {fileName && <p className={`${styles.Italic}`} >File name: {fileName} </p> }
+                  <div>
                     <Form.Label
-                      className="d-flex justify-content-center"
+                      className={`${btnStyles.Button} ${btnStyles.Blue} btn mt-3`}
                       htmlFor="script-upload"
                     >
-                      <Asset
-                        src={Upload}
-                        height={50}
-                        width={50}
-                        message="Upload Script"
-                      />
+                      Click Here to Select Latest Script File
                     </Form.Label>
-                  )}
-    
-                  <Form.Control
-                    type="file"
-                    id="script-upload"
-                    onChange={handleChangeScript}
-                    ref={scriptInput}
+                  </div>
+                </>
+              ) : (
+                <Form.Label
+                  className="d-flex justify-content-center"
+                  htmlFor="script-upload"
+                >
+                  <Asset
+                    src={Upload}
+                    height={50}
+                    width={50}
+                    message="Upload Script"
                   />
-                </Form.Group>
-                {errors?.script?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-            </Container>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="text-center">
-          <Container className= {`mt-3 ${styles.Container}`} >
-            {buttons}</Container>
-          </Col>
-        </Row>
+                </Form.Label>
+              )}
+
+              <Form.Control
+                type="file"
+                id="script-upload"
+                onChange={handleChangeScript}
+                ref={scriptInput}
+              />
+            </Form.Group>
+            {errors?.script?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </div>
+        {buttons}
         </Form>
+        <hr/>
+        </Col>
+        </Row>
     </div>
   )
 }

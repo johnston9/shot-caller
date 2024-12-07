@@ -11,8 +11,8 @@ const InfoLatestScript = () => {
         <Col md={{span: 10, offset: 1}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>Uploat the entire project script for each re-write here.
-            Only PDF will be accepted.
+        <p>Uploat the latest script here.
+            Only PDF files will be accepted.
              </p>
          </div> 
         </Col>

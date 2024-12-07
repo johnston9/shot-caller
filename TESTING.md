@@ -408,6 +408,22 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 <img src="documentation/readme-images/scriptchange3.png" width="50%">
 </h2>
 
+- Use Case: View the Script in it's original format<br>
+
+  1. Click on the "Click here to View the Original Script file" link on the Script page.<br>
+  2. The Script opens on a new page in its original PDF format.
+
+  - Use Case: Download the Script<br>
+
+  1. Click on the "Download" icon on the Script.<br>
+  2. The Script is downloaded.<br>
+
+ - Use Case: Print the Script<br>
+
+  1. Click on the "Print" icon on the Script.<br>
+  2. The Print menu opens. 
+  3. Click Print and the Script is printed out.<br>
+
 #### Scene Page
 Description: This page contains the Breakdown, Characters and Background, Scene Script, Storyboard, Shotlists, and Workspaces.<br>
 
@@ -613,8 +629,8 @@ Description: View, Download, Print or Change the Scene Script<br>
 
 - Use Case: View the Scene Script in it's original PDF format<br>
 
-  1. Click on the "View Script as PDF" link at the bottom of the Script page.
-  2. The Script opens on a new tab in it's original PDF format.
+  1. Click on the "Click here to View the original Script file" link on the Script page.
+  2. The Script opens in a new tab in it's original PDF format.
 
 - Use Case: Download the Scene Script<br>
 

@@ -71,6 +71,10 @@ const LatestScript = () => {
         <div>
             { hasLoaded ? (
                 <>
+                <h5 style={{ textTransform: 'uppercase'}} 
+                className={`mt-1 mb-3 pl-3 py-1 ${styles.SubTitle } text-center`}>
+                SCRIPT - {draft}
+                </h5>
             <Row className='my-1'>
             <Col xs={4}>
             <Button
@@ -84,10 +88,10 @@ const LatestScript = () => {
               <>
               {script ? (
               <>
-              <Col className="text-center" xs={4} >
+              <Col className="text-center px-0" xs={4} >
               <Button onClick={() => setEditScript(editScript => !editScript)} 
-                  className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
-                  Add Latest Script
+                  className={`${btnStyles.Button}  ${btnStyles.Bright} px-md-5`}>
+                  Add Script
               </Button>
             </Col>
             <Col xs={4}>
@@ -140,14 +144,15 @@ const LatestScript = () => {
             <Row >
             <Col xs={12} > 
                 <>
-                <h5 style={{ textTransform: 'uppercase'}} 
-                className={`mt-1 mb-3 pl-3 py-1 ${styles.SubTitle } text-center`}>
-                SCRIPT {draft}
-                </h5>
                     {script ? (
                         <> 
+                        <div className={` text-center`} >
+                          <Link to={{ pathname: script }} target="_blank" 
+                          className={`${styles.ViewScript } text-center`} >
+                          Click here to View the Original Script File </Link>
+                          </div>
                         <Row className='mb-3'>
-                        <Col xs={6} >
+                        <Col xs={12} md={6} >
                         <p className= {`text-center ${styles.Bold}`} >
                           Latest Changes
                         </p>
@@ -155,7 +160,7 @@ const LatestScript = () => {
                         {latest_changes}
                         </p>
                         </Col>
-                        <Col xs={6} >
+                        <Col xs={12} md={6} >
                         <p className= {`text-center ${styles.Bold}`} >
                           Notes
                         </p>
@@ -172,9 +177,9 @@ const LatestScript = () => {
                         </div>
                         </Col>
                         </Row>
-                          <div className='text-center'>
+                          {/* <div className='text-center'>
                           <Link to={{ pathname: script }} target="_blank" >VIEW SCRIPT</Link>
-                          </div>
+                          </div> */}
                         </>
                     )
                     : (
