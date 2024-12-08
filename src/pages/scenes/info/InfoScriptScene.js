@@ -11,8 +11,8 @@ const InfoScriptScene = () => {
         <Col md={{span: 10, offset: 1}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 } pb-2`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>Upload the Scene script pages here.
-          Only PDF will be accepted.
+        <p>Upload the Scene Script Pages here.
+          Only PDF files will be accepted.
         </p>
          </div> 
         </Col>

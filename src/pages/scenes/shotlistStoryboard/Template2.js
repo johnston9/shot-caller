@@ -8,16 +8,16 @@ import portrait8 from "../../../assets/storyboards/portrait8.pdf";
 const Template2 = ({setOpen2}) => {
   return (
     <div>
-    <Row className="mt-2">
+    <Row className="mt-3">
     <Col xs={12} className='text-center'>
-    <h5 className={`mb-3 py-1 ${styles.SubTitle }`}>
+    <h5 className={`${styles.SubTitle }`}>
     8 PANEL PORTRAIT
     <span className={`float-right ${styles.Close } pt-1`} 
                 onClick={() => setOpen2(false) } >Close</span>
     </h5>
     </Col>
     </Row>
-    <div className={`${styles.Frame} mt-2`}>
+    <div className={`${styles.Frame}`}>
     <iframe title="Storyboard Template 2" src={portrait8} 
     className={appStyles.iframeFull} alt="Storyboard Template 2"  />
     </div>

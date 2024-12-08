@@ -62,55 +62,73 @@ const Storyboard = () => {
       }, [id]);
 
     return (
-        <div className='mb-5'>
+        <div className='mb-5 px-3'>
             <Row >
             <Col xs={12} className='text-center'>
-            <h5 className={` mt-1 mb-4 py-1 ${styles.SubTitle }`}>
+            <h5 className={`py-1 ${styles.SubTitle }`}>
                 STORYBOARD PAGE
             </h5>
             </Col>
             </Row>
-            <Row>
-            <Col xs={4}>
+            <Row className='my-2'>
+            <Col xs={12}>
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
-              onClick={() => history.goBack()}
-              >
-              Back
+              onClick={() => history.goBack()}>Back
+            </Button>
+            <Button
+            className={`float-right ${btnStyles.Order} ${btnStyles.Button}`}
+            onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
             </Button>
             </Col>
             </Row>
             {/* tabs */}
+            <div className='d-block d-md-none' >
             <Row>
-            <Col md={{span: 3, order: 1}} xs={{span: 6, order: 1}}
-            className="text-center">
+            <Col xs={6} className="text-center px-0">
             <Button onClick={() => setTemplates(templates => !templates)} 
-            className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
+            className={`${btnStyles.Button}  ${btnStyles.Bright} px-3`}>
             Templates
             </Button>
             </Col>
-            <Col md={{span: 3, order: 2}} xs={{span: 6, order: 3}}
-            className="text-center">
+            <Col xs={6} className="text-center px-0">
+            <Button onClick={() => setAddURL(addURL => !addURL)} 
+            className={`${btnStyles.Button}  ${btnStyles.Bright} `}>
+            Storyboard URL
+            </Button>
+            </Col>
+            </Row>
+            <Row>
+            <Col xs={{span: 8, offset: 2}} className="text-center px-0">
             <Button onClick={() => setAddStory(addStory => !addStory)} 
             className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
             Add Storyboard
             </Button>
             </Col>
-            <Col md={{span: 3, order: 3}} xs={{span: 6, order: 4}}
-            className="text-center">
-            <Button onClick={() => setAddURL(addURL => !addURL)} 
+            </Row>
+            </div>
+            <div className='d-none d-md-block'>
+            <Row>
+            <Col xs={4} className="text-center px-0">
+            <Button onClick={() => setTemplates(templates => !templates)} 
+            className={`${btnStyles.Button}  ${btnStyles.Bright} px-3`}>
+            Templates
+            </Button>
+            </Col>
+            <Col xs={4} className="text-center px-0">
+            <Button onClick={() => setAddStory(addStory => !addStory)} 
             className={`${btnStyles.Button}  ${btnStyles.Bright}`}>
+            Add Storyboard
+            </Button>
+            </Col>
+            <Col xs={4} className="text-center px-0">
+            <Button onClick={() => setAddURL(addURL => !addURL)} 
+            className={`${btnStyles.Button}  ${btnStyles.Bright} `}>
             Storyboard URL
             </Button>
             </Col>
-            <Col md={{span: 3, order: 4}} xs={{span: 6, order: 2}} 
-            className="text-center">
-            <Button
-            className={`py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-            onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-            </Button>
-            </Col>
-            </Row>
+            </Row> 
+            </div>
             {!showInfo ? (
                 ""
                     ) : (
@@ -140,13 +158,13 @@ const Storyboard = () => {
                       number={number}
                       /> 
                       ) } 
-            <Row className="h-100 my-2">
+            <Row className='mt-3'>
             <Col xs={12} className='text-center'> 
-            <h5 className={`mb-2 py-1 ${styles.SubTitle }`}>
+            <h5 className={`py-0 ${styles.SubTitle }`}>
              STORYBOARD</h5>
                 <>
                     {storyboard ? (
-                        <div className={`${styles.Frame} mt-2`}>
+                        <div className={`${styles.Frame}`}>
                         <iframe title="Storyboard" src={storyboard} 
                          className={appStyles.iframeFull} alt="Storyboard"  />
                         </div>

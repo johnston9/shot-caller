@@ -23,28 +23,23 @@ const Templates = ({setTemplates}) => {
     const [open4, setOpen4] = useState(false);
 // display: inline-block; className={`${styles.Back }`} 
   return (
-    <div className='mt-3'>
-    <Row>
-    <Col md={1} className='d-none d-md-block'></Col>
-    <Col xs={12} md={10} >
+    <div className='my-5'>
     <Row >
     <Col xs={12} className='text-center'>
-    <h5 className={`mb-3 py-1 pl-5 ${styles.SubTitle }`} >
+    <h5 className={` py-0 pl-5 ${styles.SubTitle }`} >
      TEMPLATES
     <span className={`float-right ${styles.Close } pt-1`} 
                 onClick={() => setTemplates(false) } >Close</span>
     </h5>
     </Col>
     </Row>
-    <Container
-    className={`${appStyles.Content} ${styles.Container} mt-2 `}>
+    <div className={` ${styles.Back} pt-4 pb-5`}>
     <Row>
     {/* PORTRAIT */}
     <Col xs={12} md={6}>
-    {/* <h5 className={`text-center ${appStyles.playball} `}>PORTRAIT</h5> */}
     <Row>
     <Col xs={6} className='text-center'>
-    <p className={`${appStyles.playball} pb-1`}>
+    <p className={`${styles.BoldSceneI} pb-1`}>
     6 PANEL PORTRAIT
     </p>
     <figure>
@@ -53,7 +48,7 @@ const Templates = ({setTemplates}) => {
     </figure>
     </Col>
     <Col xs={6} className='text-center'>
-    <p className={`${appStyles.playball} pb-1`}>
+    <p className={`${styles.BoldSceneI} pb-1`}>
     8 PANEL PORTRAIT
     </p>
     <figure>
@@ -65,13 +60,13 @@ const Templates = ({setTemplates}) => {
     <Row>
     <Col xs={6} className='text-center'>
     <Button
-    className={`py-0 mt-1 ${btnStyles.Bright} ${btnStyles.Button}`}
+    className={`py-0 mt-1 ${btnStyles.Grey} ${btnStyles.Button}`}
     onClick={() => setOpen(open => !open)} >OPEN
     </Button>
     </Col>
     <Col xs={6} className='text-center'>
     <Button
-    className={` py-0 mt-1 ${btnStyles.Bright} ${btnStyles.Button}`}
+    className={` py-0 mt-1 ${btnStyles.Grey} ${btnStyles.Button}`}
     onClick={() => setOpen2(open2 => !open2)} >OPEN
     </Button>
     </Col>
@@ -79,10 +74,9 @@ const Templates = ({setTemplates}) => {
     </Col>
     {/* LANDSCAPE */}
     <Col xs={12} md={6}>
-    {/* <h5 className={`text-center ${appStyles.playball} `}>LANDSCAPE</h5> */}
     <Row>
-    <Col xs={6} className='text-center'>
-    <p className={`${appStyles.playball} pb-1`}>
+    <Col xs={6} className='text-center mt-3 mt-md-0'>
+    <p className={`${styles.BoldSceneI} pb-1`}>
     6 PANEL LANDSCAPE
     </p>
     <figure>
@@ -90,8 +84,8 @@ const Templates = ({setTemplates}) => {
         className={appStyles.iframe} src={landscape6} />
     </figure>
     </Col>
-    <Col xs={6} className='text-center'>
-    <p className={`${appStyles.playball} pb-1`}>
+    <Col xs={6} className='text-center mt-3 mt-md-0'>
+    <p className={`${styles.BoldSceneI} pb-1`}>
     12 PANEL LANDSCAPE
     </p>
     <figure>
@@ -103,22 +97,20 @@ const Templates = ({setTemplates}) => {
     <Row>
     <Col xs={6} className='text-center'>
     <Button
-    className={`py-0 mt-1 ${btnStyles.Bright} ${btnStyles.Button}`}
+    className={`py-0 mt-1 ${btnStyles.Grey} ${btnStyles.Button}`}
     onClick={() => setOpen3(open3 => !open3)} >OPEN
     </Button>
     </Col>
     <Col xs={6} className='text-center'>
     <Button
-    className={` py-0 mt-1 ${btnStyles.Bright} ${btnStyles.Button}`}
+    className={` py-0 mt-1 ${btnStyles.Grey} ${btnStyles.Button}`}
     onClick={() => setOpen4(open4 => !open4)} >OPEN
     </Button>
     </Col>
     </Row>
     </Col>
     </Row>
-    </Container>
-    </Col>
-    </Row>
+    </div>
     {!open ? (
     ""
         ) : (
@@ -150,7 +142,7 @@ const Templates = ({setTemplates}) => {
     <Row>
     <Col md={2}></Col>
     <Col md={8} >
-    <hr className={`${styles.Break1}`}/>
+    <hr className={`${styles.Break2}`}/>
     </Col>
     </Row>
     </div>

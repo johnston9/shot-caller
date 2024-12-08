@@ -8,16 +8,16 @@ import landscape6 from "../../../assets/storyboards/landscape6.pdf";
 const Template3 = ({setOpen3}) => {
   return (
     <div>
-    <Row className="mt-2">
+    <Row className="mt-3">
     <Col xs={12} className='text-center'>
-    <h5 className={`mb-3 py-1 ${styles.SubTitle }`}>
+    <h5 className={` ${styles.SubTitle }`}>
     6 PANEL LANDSCAPE
     <span className={`float-right ${styles.Close } pt-1`} 
                 onClick={() => setOpen3(false) } >Close</span>
     </h5>
     </Col>
     </Row>
-    <div className={`${styles.Frame} mt-2`}>
+    <div className={`${styles.Frame}`}>
     <iframe title="Storyboard Template 3" src={landscape6} 
     className={appStyles.iframeFull} alt="Storyboard Template 3"  />
     </div>

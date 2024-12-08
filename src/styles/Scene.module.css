@@ -34,6 +34,12 @@
   font-weight: 600;
 }
 
+.BoldSceneI {
+  color: rgba(129, 102, 21, 0.99);
+  font-weight: 600;
+  font-style: italic;
+}
+
 .Input {
   background: #ffffff;
   border: 1px solid #e0e3eb;
