@@ -82,7 +82,7 @@ function App() {
   const location = useLocationContext();
 
   return (
-    <div className={`px-2 px-md-4 ${styles.App }`} >
+    <div className={`pl-3 ${styles.App }`} >
       <ToastContainer
             position="top-right"
             autoClose={4000}

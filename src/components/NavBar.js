@@ -316,7 +316,7 @@ const NavBar = () => {
   );
 
     return (
-    <Navbar expanded={expanded} className={`my-0 py-0 ${styles.NavBar} `}
+    <Navbar expanded={expanded} className={`my-0 py-0 ml-3 ${styles.NavBar} `}
        expand="lg" fixed="top">
         <NavLink to="/">
             <Navbar.Brand className='mr-1' >

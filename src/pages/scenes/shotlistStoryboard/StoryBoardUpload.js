@@ -61,7 +61,7 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
       }
 
       const buttons = (
-        <div className="text-center">    
+        <div className="text-center mt-3 pb-3">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
             onClick={() => setAddStory(false)}
@@ -77,77 +77,68 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
   return (
     <div className='mt-3'>
       <Row >
-      <Col md={1} className='d-none d-md-block'></Col>
-      <Col xs={12} md={10} className='text-center'>
-      <h5 className={`mb-2 py-1 pl-5 ${styles.SubTitle }`}>
+      <Col className="py-2 p-0 p-md-2 text-center" md={{span: 10, offset: 1} }>
+      <h5 className={` pl-5 ${styles.SubTitle }`}>
           ADD STORYBOARD
           <span className={`float-right ${styles.Close } pt-1`} 
                 onClick={() => setAddStory(false) } >Close</span>
       </h5>
+      <Form onSubmit={handleSubmit}>
+      {/* storyboard */}
+      <div className={` ${styles.Back} 
+        d-flex flex-column justify-content-center`}>
+        <Form.Group className="text-center pt-3">
+            {storyboard ? (
+              <>
+                <figure>
+                <iframe title="storyboard" alt="storyboard"
+                  className={appStyles.iframe} src={storyboard} />
+                </figure>
+                {fileName && <p className={`${styles.Italic}`} >File name: {fileName} </p> }
+                <div>
+                  <Form.Label
+                    className={`${btnStyles.Button} ${btnStyles.Blue} btn mt-3`}
+                    htmlFor="storyboard-upload"
+                  >
+                    Click Here to Select Latest StoryBoard File
+                  </Form.Label>
+                </div>
+              </>
+            ) : (
+              <Form.Label
+                className="d-flex justify-content-center"
+                htmlFor="storyboard-upload"
+              >
+                <Asset
+                  src={Upload}
+                  height={50}
+                  width={50}
+                  message="Upload Storyboard"
+                />
+              </Form.Label>
+            )}
+
+            <Form.Control
+              type="file"
+              id="storyboard-upload"
+              onChange={handleChangeStoryboard}
+              ref={storyboardInput}
+            />
+          </Form.Group>
+          {errors?.storyboard?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+      {buttons} 
+      </div>
+      </Form>
       </Col>
       </Row>
-      <Form onSubmit={handleSubmit}>
-        <Row>
-        <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3 }}>
-            {/* storyboard */}
-            <Container className={`${appStyles.Content} ${styles.Container} 
-              d-flex flex-column justify-content-center`}>
-              <Form.Group className="text-center pt-3">
-                  {storyboard ? (
-                    <>
-                      <figure>
-                      <iframe title="storyboard" alt="storyboard"
-                       className={appStyles.iframe} src={storyboard} />
-                      </figure>
-                      {fileName && <p>{fileName} </p> }
-                      <div>
-                        <Form.Label
-                          className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                          htmlFor="storyboard-upload"
-                        >
-                          Change Storyboard
-                        </Form.Label>
-                      </div>
-                    </>
-                  ) : (
-                    <Form.Label
-                      className="d-flex justify-content-center"
-                      htmlFor="storyboard-upload"
-                    >
-                      <Asset
-                        src={Upload}
-                        height={50}
-                        width={50}
-                        message="Upload Storyboard"
-                      />
-                    </Form.Label>
-                  )}
-    
-                  <Form.Control
-                    type="file"
-                    id="storyboard-upload"
-                    onChange={handleChangeStoryboard}
-                    ref={storyboardInput}
-                  />
-                </Form.Group>
-                {errors?.storyboard?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-                </Container>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="text-center">
-          <Container className= {`mt-3 ${styles.Container}`} >{buttons}</Container>
-          </Col>
-        </Row>
-        </Form>
-        <Row>
+        <Row className="mt-3">
         <Col xs={2} ></Col>
         <Col xs={8}>
-        <hr className={`${styles.Break1}`}/>
+        <hr className={`${styles.Break}`}/>
         </Col>
         </Row>
     </div>

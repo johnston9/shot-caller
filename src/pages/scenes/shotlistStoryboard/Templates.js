@@ -139,10 +139,10 @@ const Templates = ({setTemplates}) => {
             setOpen4={setOpen4}
             /> 
             ) } 
-    <Row>
+    <Row className='mt-5'>
     <Col md={2}></Col>
     <Col md={8} >
-    <hr className={`${styles.Break2}`}/>
+    <hr className={`${styles.Break}`}/>
     </Col>
     </Row>
     </div>

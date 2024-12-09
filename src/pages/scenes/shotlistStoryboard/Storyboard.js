@@ -62,7 +62,7 @@ const Storyboard = () => {
       }, [id]);
 
     return (
-        <div className='mb-5 px-3'>
+        <div className='mb-5'>
             <Row >
             <Col xs={12} className='text-center'>
             <h5 className={`py-1 ${styles.SubTitle }`}>
