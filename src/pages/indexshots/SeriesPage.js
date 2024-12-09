@@ -60,7 +60,7 @@ const SeriesPage = () => {
           return () => {
               clearTimeout(timer);
             };
-      
+        // eslint-disable-next-line
         }, [query, filter])
 
     return (

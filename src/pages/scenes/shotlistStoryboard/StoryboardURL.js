@@ -17,10 +17,10 @@ const StoryboardURL = ({setAddURL, id, storyboard_url, number}) => {
   // const storyboard_url1 = "https://player.vimeo.com/video/403530213"
 
   return (
-    <div>
-    <Row className="mt-2">
-    <Col xs={12} className='text-center'>
-    <h5 className={`mb-3 py-1 pl-5 ${styles.SubTitle }`}>STORYBOARD URL
+    <div className='mt-4 mb-5'>
+    <Row >
+    <Col className="py-2 p-md-2 text-center" md={{span: 10, offset: 1} }>
+    <h5 className={`mb-3 pl-5 ${styles.SubTitle }`}>STORYBOARD URL
     <span className={`float-right ${styles.Close } pt-1`} onClick={() => setAddURL(false) } >Close</span>
     </h5>
     </Col>
@@ -52,10 +52,10 @@ const StoryboardURL = ({setAddURL, id, storyboard_url, number}) => {
           <Asset src={NoResults } message="No Storyboard Added" />
       </Container>
       )}
-    <Row>
+    <Row className="mt-3">
     <Col xs={2} ></Col>
     <Col xs={8}>
-    <hr className={`${styles.Break1}`}/>
+    <hr className={`${styles.Break}`}/>
     </Col>
     </Row>
     </div>

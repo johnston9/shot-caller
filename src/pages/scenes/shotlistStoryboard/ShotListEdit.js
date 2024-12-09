@@ -12,6 +12,7 @@ import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
 import Asset2 from "../../../components/Asset2";
+import { toast } from 'react-toastify';
 
 const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
     const [errors, setErrors] = useState({});
@@ -186,7 +187,8 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
       
         try {
           const { data } = await axiosReq.put(`/shotlists/${id}/`, formData);
-          setShowEditForm(false)
+          setShowEditForm(false);
+          toast.success(`"${shot_number}" Updated`);
           setShotNew(data);
           console.log(data)
           handleMount();

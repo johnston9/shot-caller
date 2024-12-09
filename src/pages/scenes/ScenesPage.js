@@ -20,7 +20,6 @@ import { useHistory } from "react-router-dom";
 import TopBox from '../../components/TopBox';
 import r1 from "../../assets/r1.png"; 
 import Information from './info/Information';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Freeze from './Freeze';
 import { useCrewInfoContext } from '../../contexts/BaseCallContext';
 
@@ -29,8 +28,6 @@ const ScenesPage = ({message, filter = "" }) => {
     const crewInfoOne = useCrewInfoContext();
     const freeze = crewInfoOne.freeze || "";
     // const freeze = true;
-    const currentUser = useCurrentUser();
-    // const superAdmin = currentUser?.username === "superAdmin";
     const superAdmin = false;
     const [scenes, setScenes] = useState({results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);

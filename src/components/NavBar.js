@@ -273,13 +273,13 @@ const NavBar = () => {
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}} className={styles.Title}>
-              <Avatar src={currentUser?.profile_image} text="" height={40} />Profiles
+              <Avatar src={currentUser?.profile_image} text="" height={35} />Profiles
             </span>
           }
           ref={refp}
           id="nav-dropdown5"
           // activeClassName={styles.Active}
-          className={`py-0 ${styles.NavLink} `}
+          className={`pt-0 ${styles.NavLink} `}
           >
         <NavDropdown.Item >
           <NavLink
@@ -316,7 +316,7 @@ const NavBar = () => {
   );
 
     return (
-    <Navbar expanded={expanded} className={`my-0 py-0 ml-3 ${styles.NavBar} `}
+    <Navbar expanded={expanded} className={`my-0 pb-0 ${styles.NavBar} `}
        expand="lg" fixed="top">
         <NavLink to="/">
             <Navbar.Brand className='mr-1' >

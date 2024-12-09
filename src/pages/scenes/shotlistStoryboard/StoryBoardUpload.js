@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Asset from "../../../components/Asset";
 import Upload from "../../../assets/upload.png";
 import styles from "../../../styles/Scene.module.css";
@@ -75,9 +74,9 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
       );
 
   return (
-    <div className='mt-3'>
+    <div className='mt-4 mb-5'>
       <Row >
-      <Col className="py-2 p-0 p-md-2 text-center" md={{span: 10, offset: 1} }>
+      <Col className="py-2 p-md-2 text-center" md={{span: 10, offset: 1} }>
       <h5 className={` pl-5 ${styles.SubTitle }`}>
           ADD STORYBOARD
           <span className={`float-right ${styles.Close } pt-1`} 

@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Container from "react-bootstrap/Container";
 import styles from "../../../styles/Scene.module.css";
 import Button from 'react-bootstrap/Button';
 import btnStyles from "../../../styles/Button.module.css";
@@ -21,9 +20,9 @@ const Templates = ({setTemplates}) => {
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
     const [open4, setOpen4] = useState(false);
-// display: inline-block; className={`${styles.Back }`} 
+
   return (
-    <div className='my-5'>
+    <div className='mb-5 mt-4'>
     <Row >
     <Col xs={12} className='text-center'>
     <h5 className={` py-0 pl-5 ${styles.SubTitle }`} >

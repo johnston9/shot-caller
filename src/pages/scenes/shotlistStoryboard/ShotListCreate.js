@@ -13,6 +13,7 @@ import Alert from "react-bootstrap/Alert";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import Asset2 from "../../../components/Asset2";
+import { toast } from 'react-toastify';
 
 const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
     const { id } = useParams();
@@ -124,7 +125,8 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
       
         try {
           const { data } = await axiosReq.post("/shotlists/", formData);
-          setAddShot((addShot) => !addShot)
+          setAddShot((addShot) => !addShot);
+          toast.success(`"${shot_number}" Added`);
           setShotlist((prevShotlist) => ({
           /* Update the shotList state */
             ...prevShotlist,

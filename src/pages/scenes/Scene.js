@@ -215,22 +215,10 @@ const Scene = (props) => {
     };
 
     const clickScript = () => {
-      /* POSSIBLY DON'T NEED IT
-      Function to open the Scene Script page 
-       * Sets the SceneId context
-         This values will be read in App.js and passed as a filter
-         to the /script/scene/${id} Route */
-      // setSceneId(id); 
       history.push(`/script/scene/${id}`);
     };
 
     const clickStory = () => {
-      /* POSSIBLY DON'T NEED IT
-      Function to open the Scene Script page
-       * Sets the SceneId context
-         This values will be read in App.js and passed as a filter
-         to the /script/scene/${id} Route */
-      // setSceneId(id); 
       history.push(`/story/scene/${id}`);
     };
 
@@ -306,7 +294,7 @@ const Scene = (props) => {
                     </Col>
                   </Row>  
               </div>
-              <div className='d-md-none'>
+              <div className='d-block d-md-none'>
                   <Row className={`${styles.ButtonLine} mt-2`}>
                     <Col xs={2}></Col>
                     <Col xs={4} className='text-center'>
@@ -316,9 +304,12 @@ const Scene = (props) => {
                             </p>
                     </Col>
                     <Col xs={4} className='text-center'>
-                        <p
+                        {/* <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowScript(showScript => !showScript)} > Script
+                        </p> */}
+                        <p className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => clickScript()}> Script
                         </p>
                     </Col>
                     <Col className='text-center' xs={2}>
@@ -345,9 +336,13 @@ const Scene = (props) => {
                   </Row>
                   <Row>
                     <Col className='text-center' xs={4}>
-                      <p
+                      {/* <p
                           className={`py-0 mb-0 ${styles.Button}`}
                           onClick={() => setShowstory(showstory => !showstory)} > Storyboard
+                      </p> */}
+                      <p
+                          className={`py-0 mb-0 ${styles.Button}`}
+                          onClick={() => clickStory()}> Storyboard
                       </p>
                     </Col>
                     <Col className='text-center' xs={4} >

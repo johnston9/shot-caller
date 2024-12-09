@@ -22,21 +22,6 @@ const UploadURL = ({setNewURL, id, number1, storyboard_url1}) => {
     const {storyboard_url, number} = postData;
     const history = useHistory();
 
-    // useEffect(() => {
-    //     const handleMount = async () => {
-    //       try {
-    //         const { data } = await axiosReq.get(`/scenes/${id}/`);
-    //         const { storyboard_url } = data;
-     
-    //     setPostData({ storyboard_url });
-    //       } catch (err) {
-    //         console.log(err);
-    //       }
-    //     };
-    
-    //     handleMount();
-    // }, [id]);
-
     const handleChange = (event) => {
         setPostData({
           ...postData,
@@ -68,12 +53,12 @@ const UploadURL = ({setNewURL, id, number1, storyboard_url1}) => {
       const buttons = (
         <div className="text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 mr-3`}
             onClick={() => setNewURL(false)}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-3`} type="submit">
             Upload
           </Button>
         </div>
@@ -95,9 +80,10 @@ const UploadURL = ({setNewURL, id, number1, storyboard_url1}) => {
         <Row>
         <Col className="py-2 p-0 p-md-2" >
           <Form.Group controlId="storyboard_url" className="mb-2" >
-                <Form.Label className={`${styles.Bold}`} >StoryBoard URL</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >StoryBoard URL</Form.Label>
                 <Form.Control 
                 type="text"
+                className={styles.Input}
                 name="storyboard_url"
                 value={storyboard_url}
                 onChange={handleChange}

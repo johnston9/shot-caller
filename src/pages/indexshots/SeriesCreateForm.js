@@ -10,7 +10,6 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Indexes.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Alert} from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { toast } from 'react-toastify';
 
@@ -21,8 +20,6 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
     name: "",
     content: "", });
   const { name, content } = postData;
-
-  const history = useHistory();
 
   const handleChange = (event) => {
     setPostData({

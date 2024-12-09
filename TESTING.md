@@ -750,7 +750,16 @@ Description: View and Add the Shotlist<br>
 
 - Use Case: View the Scene Shotlist<br>
 
-  1. Click on Shotlist tab on the Scene page to open the Shotlist page with the "Add Shot" tab on top and displaying all the currently added shots.
+  1. Click on Shotlist tab on the Scene page to open the Shotlist page with the "Add Shot" tab on top and displaying all the currently added shots.<br>
+
+<p align="center"> <strong>Shotlist Page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/nnnnn.png" width="50%">
+</h2>
+
+- Use Case: Add a Shot<br>
+
+  1. Click on the "Add Shot" tab tab on the Shotlist page and the "Add Shot" form opens.<br>
 
 <p align="center"> <strong>Shotlist Page</strong></p>
 <h2 align="center">
