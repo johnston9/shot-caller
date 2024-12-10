@@ -7,6 +7,10 @@
   color: rgb(140, 111, 25, 99%);
 }
 
+.Break {
+  border-top: 10px solid #d0d9db;
+}
+
 .Break1 {
   border-top: 1px solid #d0d9db;
   /* border-top: 1px solid rgb(140, 111, 25, 99%); */
@@ -14,6 +18,14 @@
 
 .Break2 {
   border-top: 5px solid #d0d9db;
+}
+
+.Close {
+  /* color: rgb(28, 131, 131); */
+  color: rgb(32, 201, 201);
+  padding-right: 5px;
+  cursor: pointer;
+  font-size: .75rem;
 }
 
 .gmailblue {
@@ -164,6 +176,8 @@
  border-radius: 2px;
  color: #747686;
  padding: 0px 10px;
+ min-height: 30px !important;
+ text-align: center;
 }
 
 .InputDept {

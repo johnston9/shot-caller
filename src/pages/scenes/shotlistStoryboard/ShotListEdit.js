@@ -188,7 +188,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
         try {
           const { data } = await axiosReq.put(`/shotlists/${id}/`, formData);
           setShowEditForm(false);
-          toast.success(`"${shot_number}" Updated`);
+          toast.success(`"Shot ${shot_number}" Updated`);
           setShotNew(data);
           console.log(data)
           handleMount();

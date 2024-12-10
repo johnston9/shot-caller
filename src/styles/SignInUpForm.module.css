@@ -4,11 +4,11 @@
     height: 600px;
 }
 
-.Image {
-    max-height: 40vh;
-    max-width: 400px;
-    object-fit: contain;
-}
+.FillerImagel {
+  object-fit: cover;
+  height: 400px;
+  width: 50%;
+} 
 
 .Inner {
   background-color: #0b3d63;
@@ -18,21 +18,6 @@
 .Guest {
   color: #fafafa;
 }
-
-.FillerImagel {
-  object-fit: cover;
-  height: 400px;
-  width: 50%;
-}
-
-  .FillerImager {
-    object-fit: contain;
-    height: 400px;
-    width: 50px;
-    margin-top: 30px;
-    background-repeat: no-repeat;
-    margin: 0 auto;
-  }
 
 .Form {
   background-color: #3b444b;

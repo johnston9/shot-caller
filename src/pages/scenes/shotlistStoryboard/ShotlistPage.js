@@ -41,8 +41,9 @@ const ShotlistPage = ({scene, setShowlist} ) => {
         <div className='mb-5'>
             <Row>
             <Col xs={12} className='text-center'>
-            <h5 className={`mb-3 mt-2 pl-5 py-1 ${styles.SubTitle }`}>SHOTLIST
-            <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close } pt-1`} 
+            <h5 className={`mb-3 pl-5 py-1 ${styles.SubTitle }`}>SHOTLIST
+            <span style={{ textTransform: 'none'}} 
+            className={`float-right ${styles.Close } pt-1`} 
             onClick={() => setShowlist(false) } >Close</span>
             </h5>
             </Col>
@@ -53,7 +54,11 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                   className={`px-5 ${btnStyles.Button} ${btnStyles.Bright}`}>
                   Add Shot
                   </Button>
-                  {!addShot ?("") : (<ShotListCreate setAddShot={setAddShot} setShotlist={setShotlist} handleMount={handleMount} scene={scene} />  ) }
+                  {!addShot ?("") : (<ShotListCreate 
+                  setAddShot={setAddShot} 
+                  setShotlist={setShotlist} 
+                  handleMount={handleMount} 
+                  scene={scene} />  ) }
                 </Col>
               </Row>
             {/* titles */}
@@ -135,10 +140,10 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             </>
             </Col>
             </Row>  
-            <Row>
+            <Row className='mt-5'>
             <Col xs={2} ></Col>
             <Col xs={8}>
-            <hr className={`${styles.Break1}`}/>
+            <hr className={`${styles.Break}`}/>
             </Col>
             </Row>  
         </div>

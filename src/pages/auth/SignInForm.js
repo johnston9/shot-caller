@@ -64,7 +64,7 @@ const SignInForm = () => {
   }
 
   return (
-      <Container className={styles.SignupBox} >
+    <div className={`${styles.SignupBox} px-2`}>
         {production_name ? (
             <TopBoxSign work={production_name}
                         title={"Sign In" } />
@@ -72,8 +72,8 @@ const SignInForm = () => {
             <TopBoxSign work={`SHOT CALLER`}
                         title={"Sign In" } />
           ) }
-        <Row className={styles.Row}>
-          <Col className="my-3 text-center"
+        <Row >
+          <Col className="my-3 text-center pr-0 pr-md-3"
             xs={1} md={1}>
             <Image
                 className={`${styles.FillerImagel}`}
@@ -140,7 +140,7 @@ const SignInForm = () => {
                </Col>
              </Row>
           </Col>
-          <Col className={`my-3 text-center`}
+          <Col className={`my-3 text-center pl-0 pl-md-3`}
             xs={1} md={1}>
             <Image
               className={`${styles.FillerImagel}`}
@@ -148,7 +148,7 @@ const SignInForm = () => {
             />
           </Col>
         </Row>
-    </Container>
+    </div>
   );
 };
 

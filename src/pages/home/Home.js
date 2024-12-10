@@ -16,7 +16,6 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const Home = () => {
     useRedirect();
-    // Container
     // eslint-disable-next-line
     const currentUser = useCurrentUser();
     const crewInfoOne = useCrewInfoContext();
@@ -30,8 +29,8 @@ const Home = () => {
           ) : (
             <TopBox work={`SHOT CALLER`} />
           ) }
-        <Row className={`my-3 ${styles.Row}`}>
-        <Col className="my-3 text-center"
+        <Row >
+        <Col className="my-3 text-center pr-0 pr-md-3"
           xs={1} md={1}
       >
         <Image
@@ -616,7 +615,7 @@ const Home = () => {
         </Row>
       </div>
       </Col>
-      <Col className={`my-3 text-center`}
+      <Col className={`my-3 text-center pl-0 pl-md-3`}
         xs={1} >
         <Image
           className={`${styles.FillerImagel}`}

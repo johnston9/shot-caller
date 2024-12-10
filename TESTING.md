@@ -760,10 +760,22 @@ Description: View and Add the Shotlist<br>
 - Use Case: Add a Shot<br>
 
   1. Click on the "Add Shot" tab tab on the Shotlist page and the "Add Shot" form opens.<br>
+  2. Input the fiels and add an sketch or image and submit. <br>
+  3. A Success |message displays and the Shot is added.
+  4. Refresh the page and the Shot is ordered correctly and all the imputs display.<br>
 
-<p align="center"> <strong>Shotlist Page</strong></p>
+<p align="center"> <strong>Add the Inputs</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/nnnnn.png" width="50%">
+<img src="documentation/readme-images/shotadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message and Shot Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/shotadd1.png" width="50%">
+</h2>
+<p align="center"> <strong>Add the Inputs</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/shotadd1.png" width="50%">
 </h2>
 
 #### Scenes Workspaces
