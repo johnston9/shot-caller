@@ -217,213 +217,100 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
     return (
       <div className={`mb-0 mt-3 ${styles.White }`} >
       <h5 className={`my-3 text-center ${styles.SubTitle }`}>Edit Shot {shot_number} </h5>
-      <Form className={`${styles.ShotEditForm} text-center px-3`} onSubmit={handleSubmit}>
-      {/* number */}
-      <Row>
-        <Col xs={{span: 4, offset: 4}} className="d-flex justify-content-center p-0 p-md-2">
-        <Form.Group controlId="shot_number" className="mb-2" >
-              <Form.Label className={`${styles.BoldScene}`} >Number</Form.Label>
-              <Form.Control 
-              type="text"
-              className={styles.Input}
-              name="shot_number"
-              value={shot_number}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.shot_number?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-        </Col>
-      </Row>
-      {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-3 mb-0`}/>
-      </Col>
-      </Row>
-      {/* size angle movement frame_rate */}
-      <Row className="mt-3">
-          <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="size" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Size</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="size"
-              value={size}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.size?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="angle" className={`${styles.Width2} `} >
-              <Form.Label className={`${styles.BoldScene}`} >Angle</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="angle"
-              value={angle}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.angle?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="movement" className={`${styles.Width2} `}>
-              <Form.Label className={`${styles.BoldScene}`} >Movement</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="movement"
-              value={movement}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.movement?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="frame_rate" className={`${styles.Width2} `}>
-              <Form.Label className={`${styles.BoldScene}`}>Frame Rate</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="frame_rate"
-              value={frame_rate}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.frame_rate?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
-      {/* camera lens Int/Ext Day/Night*/}
-      <Row className="mt-3">
-          <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Camera</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="camera"
-              value={camera}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.camera?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={3}className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="lens" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Lens</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="lens"
-              value={lens}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.lens?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">         
-          <Form.Group controlId="int_ext" className={`${styles.Width2}`}>
-              <Form.Label className={`${styles.BoldScene}`}>Int-Ext</Form.Label>
-              <Form.Control as="select"
-                className={styles.InputEx}
-                name="int_ext"
-                value={int_ext}
+      <Form onSubmit={handleSubmit} className="text-center" >
+        {/* number */}
+        <Row>
+          <Col xs={{span: 4, offset: 4}} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="shot_number" className="mb-2" >
+                <Form.Label className={`${styles.BoldScene}`} >Number</Form.Label>
+                <Form.Control 
+                type="text"
+                className={styles.Input}
+                name="shot_number"
+                value={shot_number}
                 onChange={handleChange}
-                aria-label="int ext select">
-                <option></option>
-                <option value="INT.">Int</option>
-                <option value="EXT.">Ext</option>
-              </Form.Control>
-          </Form.Group>
-          {errors?.int_ext?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
+                    />
+            </Form.Group>
+            {errors?.shot_number?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
           </Col>
-          <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="day_night" className={`${styles.Width2}`}>
-              <Form.Label className={`${styles.BoldScene}`}>Day/Night</Form.Label>
-              <Form.Control as="select"
-                name="day_night"
-                className={styles.InputEx}
-                value={day_night}
-                onChange={handleChange}
-                aria-label="day or night select">
-                <option></option>
-                <option value="DAY">Day</option>
-                <option value="NIGHT">Night</option>
-              </Form.Control>
-          </Form.Group>
-          {errors?.day_night?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
-      {/* location framing script ref story ref */}
-      <Row className="mt-3">
-        <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
-        <Form.Group controlId="location" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
-              <Form.Control 
-              className={styles.Input}
-              type="text"
-              name="location"
-              value={location}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
+        </Row>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-3 mb-0`}/>
         </Col>
-        <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
+        </Row>
+        {/* description Subject */}
+        <Row className="mt-3">
+        <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="description" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >Description</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                as="textarea"
+                rows={1}
+                name="description"
+                value={description}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.description?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="actors" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`}>Subject</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                as="textarea"
+                rows={1}
+                name="actors"
+                value={actors}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.actors?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        </Row>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-5 mb-0`}/>
+        </Col>
+        </Row>
+        {/* size framing movement audio */}
+        <Row className="mt-3">
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="size" className={`${styles.Width2}`} >
+            <Form.Label className={`${styles.BoldScene}`} >Size</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            type="text"
+            name="size"
+            value={size}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.size?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="framing" className={`${styles.Width2}`} >
               <Form.Label className={`${styles.BoldScene}`} >Framing</Form.Label>
               <Form.Control 
@@ -440,7 +327,167 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
             </Alert>
           ))}
         </Col>
-        <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="angle" className={`${styles.Width2} `} >
+            <Form.Label className={`${styles.BoldScene}`} >Angle</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            type="text"
+            name="angle"
+            value={angle}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.angle?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="movement" className={`${styles.Width2} `}>
+            <Form.Label className={`${styles.BoldScene}`} >Movement</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            type="text"
+            name="movement"
+            value={movement}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.movement?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-5 mb-0`}/>
+        </Col>
+        </Row>
+        {/* location Int/Ext Day/Night Audio*/}
+        <Row className="mt-3">
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="location" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
+                <Form.Control 
+                className={styles.Input}
+                type="text"
+                name="location"
+                value={location}
+                onChange={handleChange}
+                    />
+          </Form.Group>
+          {errors?.location?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">         
+        <Form.Group controlId="int_ext" className={`${styles.Width2}`}>
+            <Form.Label className={`${styles.BoldScene}`}>Int-Ext</Form.Label>
+            <Form.Control as="select"
+              className={styles.InputEx}
+              name="int_ext"
+              value={int_ext}
+              onChange={handleChange}
+              aria-label="int ext select">
+              <option></option>
+              <option value="INT.">Int</option>
+              <option value="EXT.">Ext</option>
+            </Form.Control>
+        </Form.Group>
+        {errors?.int_ext?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="day_night" className={`${styles.Width2}`}>
+            <Form.Label className={`${styles.BoldScene}`}>Day/Night</Form.Label>
+            <Form.Control as="select"
+              name="day_night"
+              className={styles.InputEx}
+              value={day_night}
+              onChange={handleChange}
+              aria-label="day or night select">
+              <option></option>
+              <option value="DAY">Day</option>
+              <option value="NIGHT">Night</option>
+            </Form.Control>
+        </Form.Group>
+        {errors?.day_night?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="audio" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >Audio</Form.Label>
+                <Form.Control 
+                className={styles.Input}
+                type="text"
+                name="audio"
+                value={audio}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.audio?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        </Row>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-5 mb-0`}/>
+        </Col>
+        </Row>
+        {/* camera lens script ref story ref */}
+        <Row className="mt-3">
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="camera" className={`${styles.Width2}`} >
+              <Form.Label className={`${styles.BoldScene}`} >Camera</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              type="text"
+              name="camera"
+              value={camera}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+        <Col xs={6} md={3}className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="lens" className={`${styles.Width2}`} >
+            <Form.Label className={`${styles.BoldScene}`} >Lens</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            type="text"
+            name="lens"
+            value={lens}
+            onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.lens?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="script_ref" className={`${styles.Width2}`}>
               <Form.Label className={`${styles.BoldScene}`} >Script Ref</Form.Label>
               <Form.Control 
@@ -457,7 +504,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
             </Alert>
           ))}
         </Col>
-        <Col xs={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="storyboard_refs" className={`${styles.Width2}`} >
               <Form.Label className={`${styles.BoldScene} d-block d-sm-none `} >StoryB. Ref</Form.Label>
               <Form.Label className={`${styles.BoldScene} d-none d-sm-block `} >Storyboard Ref</Form.Label>
@@ -475,223 +522,183 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
             </Alert>
           ))}
         </Col>
-      </Row>
-      {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
-      {/* lighting focus_pulls fx audio*/}
-      <Row className="mt-3">
-      <Col xs={12} md={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="lighting" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Lighting</Form.Label>
-              <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              as="textarea"
-              rows={2}
-              name="lighting"
-              value={lighting}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.lighting?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      <Col xs={12} md={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="focus_pulls" className={`${styles.Width2}`}>
-              <Form.Label className={`${styles.BoldScene}`} >Focus Pulls</Form.Label>
-              <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              as="textarea"
-              rows={2}
-              name="focus_pulls"
-              value={focus_pulls}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.focus_pulls?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      <Col xs={12} md={6} lg={3} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="fx" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >FX/VFX</Form.Label>
-              <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              as="textarea"
-              rows={2}
-              name="fx"
-              value={fx}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.fx?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      <Col xs={12} md={6} lg={3}className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="audio" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Audio</Form.Label>
-              <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              as="textarea"
-              rows={2}
-              name="audio"
-              value={audio}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.audio?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      </Row>
-      {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-4 mb-0`}/>
-      </Col>
-      </Row>
-      {/* description Subject notes */}
-      <Row className="mt-3">
-      <Col xs={12} lg={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="description" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Description</Form.Label>
-              <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              as="textarea"
-              rows={2}
-              name="description"
-              value={description}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.description?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      <Col xs={12} lg={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="actors" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`}>Subject</Form.Label>
-              <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              as="textarea"
-              rows={2}
-              name="actors"
-              value={actors}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.actors?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      <Col xs={12} lg={4}className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="notes" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene}`} >Notes</Form.Label>
-              <Form.Control 
-              className={styles.InputScene}
-              type="text"
-              as="textarea"
-              rows={2}
-              name="notes"
-              value={notes}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.notes?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      </Row>
-      {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
-      {/* image */}
-      <Row className="mt-3">
-      <Col className="text-center px-0" xs={12} md={{span: 6, offset: 3 } } >
-        <p className={`${styles.BoldScene}`}>Sketch/Image</p>
-        <Container
-                className={`${appStyles.Content} px-0 mt-1 py-5 d-flex flex-column justify-content-center`}
-                >
-            <Form.Group>
-              {image ? (
-                <>
-                  <figure>
-                    <iframe className={appStyles.iframe} 
-                    title="Sketch/Image" alt="Sketch/Image" src={image} rounded />
-                  </figure>
-                  <div>
-                    <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                      htmlFor="image-upload"
-                    >
-                      Change the image
-                    </Form.Label>
-                  </div>
-                </>
-              ) : (
-                <Form.Label
-                  className=" my-1"
-                  htmlFor="image-upload"
-                >
-                  <Asset2
-                    src={Upload}
-                    height={"50px"}
-                    width={"50px"}
-                    message="Upload Image"
-                  />
-                </Form.Label>
-              )}
-
-              <Form.Control
-                type="file"
-                id="image-upload"
-                onChange={handleChangeImage}
-                ref={imageInput}
-              />
+        </Row>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-5 mb-0`}/>
+        </Col>
+        </Row>
+        {/* lighting focus_pulls fx frame rate*/}
+        <Row className="mt-3">
+        <Col xs={12} md={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="lighting" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >Lighting</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                as="textarea"
+                rows={1}
+                name="lighting"
+                value={lighting}
+                onChange={handleChange}
+                    />
             </Form.Group>
-            {errors?.image?.map((message, idx) => (
+            {errors?.lighting?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
             ))}
-            {/* """ end image """" */}
-        </Container>
-      </Col>
-      </Row>
-      <hr/>
-      <Row>
-      <Col className="text-center pb-3">
-        {buttons}
-      </Col>
-      </Row>
+        </Col>
+        <Col xs={12} md={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="focus_pulls" className={`${styles.Width2}`}>
+                <Form.Label className={`${styles.BoldScene}`} >Focus Pulls</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                as="textarea"
+                rows={1}
+                name="focus_pulls"
+                value={focus_pulls}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.focus_pulls?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        <Col xs={12} md={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="fx" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >FX/VFX</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                as="textarea"
+                rows={1}
+                name="fx"
+                value={fx}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.fx?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        <Col xs={12} md={3} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="frame_rate" className={`${styles.Width2} `}>
+                <Form.Label className={`${styles.BoldScene}`}>Frame Rate</Form.Label>
+                <Form.Control 
+                className={styles.Input}
+                type="text"
+                name="frame_rate"
+                value={frame_rate}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.frame_rate?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+        </Row>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-4 mb-0`}/>
+        </Col>
+        </Row>
+        {/* notes */}
+        <Row className="mt-3">
+        <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="notes" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >Notes</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                as="textarea"
+                rows={1}
+                name="notes"
+                value={notes}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.notes?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        </Row>
+        {/* hr */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`${styles.Break1} mt-5 mb-0`}/>
+        </Col>
+        </Row>
+        {/* image */}
+        <Row className="mt-3">
+        <Col className="text-center px-0" xs={12} md={{span: 6, offset: 3 } } >
+          <p className={`${styles.BoldScene}`}>Sketch/Image</p>
+          <Container
+                  className={`${appStyles.Content} px-0 mt-1 py-5 d-flex flex-column justify-content-center`}
+                  >
+              <Form.Group>
+                {image ? (
+                  <>
+                    <figure>
+                      <iframe className={appStyles.iframe} 
+                      title="Sketch/Image" alt="Sketch/Image" src={image} rounded />
+                    </figure>
+                    <div>
+                      <Form.Label
+                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                        htmlFor="image-upload"
+                      >
+                        Change the image
+                      </Form.Label>
+                    </div>
+                  </>
+                ) : (
+                  <Form.Label
+                    className=" my-1"
+                    htmlFor="image-upload"
+                  >
+                    <Asset2
+                      src={Upload}
+                      height={"50px"}
+                      width={"50px"}
+                      message="Upload Image"
+                    />
+                  </Form.Label>
+                )}
+  
+                <Form.Control
+                  type="file"
+                  id="image-upload"
+                  onChange={handleChangeImage}
+                  ref={imageInput}
+                />
+              </Form.Group>
+              {errors?.image?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              {/* """ end image """" */}
+          </Container>
+        </Col>
+        </Row>
+        <hr className="mt-0"/>
+        <Row>
+        <Col className="text-center mt-3 pb-3">
+          {buttons}
+        </Col>
+        </Row>
       </Form>
       </div>
     )

@@ -759,10 +759,10 @@ Description: View and Add the Shotlist<br>
 
 - Use Case: Add a Shot<br>
 
-  1. Click on the "Add Shot" tab tab on the Shotlist page and the "Add Shot" form opens.<br>
-  2. Input the fiels and add an sketch or image and submit. <br>
-  3. A Success |message displays and the Shot is added.
-  4. Refresh the page and the Shot is ordered correctly and all the imputs display.<br>
+  1. Click on the "Add Shot" tab on the Shotlist page and the "Add Shot" form opens.<br>
+  2. Input the fields e.g. "Subject = Jack" and add a sketch or image, e.g. "shotsketch" then submit. <br>
+  3. A Success message displays and the Shot is added.
+  4. Refresh the page and the Shot is ordered correctly and all the imputs display and the image "shotsketch" is added.<br>
 
 <p align="center"> <strong>Add the Inputs</strong></p>
 <h2 align="center">
@@ -771,11 +771,41 @@ Description: View and Add the Shotlist<br>
 
 <p align="center"> <strong>Success Message and Shot Added</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/shotadd1.png" width="50%">
+<img src="documentation/readme-images/shotadd2.png" width="50%">
 </h2>
+
+- Use Case: View the Extra Info<br>
+
+  1. Click on the "Info" tab and the "Extra Info" component opens with all the imputted info.<br>
+
+<p align="center"> <strong>Extra Info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxxxxx.png" width="50%">
+</h2>
+
+- Use Case: View the Sketch/Image<br>
+
+  1. Click on the "Image" tab and the "Image" component opens displaying the Image.<br>
+
+<p align="center"> <strong>Image</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxxxxx.png" width="50%">
+</h2>
+
+- Use Case: Edit a Shot<br>
+
+  1. Click on the "3 Dots Edit/Delete menu" tab and select Edit on the Shot and the "Edit Shot" form opens.<br>
+  2. Input the new fields, e.g. "Subject = Jack -e" and add a new sketch or image then submit. <br>
+  3. A Success message displays and the Shot is updated including the new image "shotsketch -2" is added.<br>
+
 <p align="center"> <strong>Add the Inputs</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/shotadd1.png" width="50%">
+<img src="documentation/readme-images/shotedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message and Shot Updated</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/shotedit2.png" width="50%">
 </h2>
 
 #### Scenes Workspaces

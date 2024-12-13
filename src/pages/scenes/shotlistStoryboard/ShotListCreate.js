@@ -160,7 +160,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
           <span className={`float-right ${styles.Close } pt-1`} 
                 onClick={() => setAddShot(false) } >Close</span>
         </h5>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}className="text-center" >
         {/* number */}
         <Row>
           <Col xs={{span: 4, offset: 4}} className="d-flex justify-content-center p-0 p-md-2">
