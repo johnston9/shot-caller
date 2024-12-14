@@ -187,9 +187,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         <hr className={`${styles.Break1} mt-3 mb-0`}/>
         </Col>
         </Row>
-        {/* description Subject */}
+        {/* description Subject equipment */}
         <Row className="mt-3">
-        <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="description" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Description</Form.Label>
                 <Form.Control 
@@ -208,7 +208,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
               </Alert>
             ))}
         </Col>
-        <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="actors" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`}>Subject</Form.Label>
                 <Form.Control 
@@ -222,6 +222,25 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
                     />
             </Form.Group>
             {errors?.actors?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+        </Col>
+        <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
+            <Form.Group controlId="equipment" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >Equipment</Form.Label>
+                <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                as="textarea"
+                rows={1}
+                name="equipment"
+                value={equipment}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.equipment?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

@@ -760,7 +760,7 @@ Description: View and Add the Shotlist<br>
 - Use Case: Add a Shot<br>
 
   1. Click on the "Add Shot" tab on the Shotlist page and the "Add Shot" form opens.<br>
-  2. Input the fields e.g. "Subject = Jack" and add a sketch or image, e.g. "shotsketch" then submit. <br>
+  2. Input the fields, e.g. - Description - "Jack looks on" and add a sketch or image, e.g. "shotsketch" then submit. <br>
   3. A Success message displays and the Shot is added.
   4. Refresh the page and the Shot is ordered correctly and all the imputs display and the image "shotsketch" is added.<br>
 
@@ -769,7 +769,7 @@ Description: View and Add the Shotlist<br>
 <img src="documentation/readme-images/shotadd1.png" width="50%">
 </h2>
 
-<p align="center"> <strong>Success Message and Shot Added</strong></p>
+<p align="center"> <strong>Success Message and Shot "6" is Added</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/shotadd2.png" width="50%">
 </h2>
@@ -780,7 +780,7 @@ Description: View and Add the Shotlist<br>
 
 <p align="center"> <strong>Extra Info</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxxxxx.png" width="50%">
+<img src="documentation/readme-images/shotinfo.png" width="50%">
 </h2>
 
 - Use Case: View the Sketch/Image<br>
@@ -789,14 +789,23 @@ Description: View and Add the Shotlist<br>
 
 <p align="center"> <strong>Image</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxxxxx.png" width="50%">
+<img src="documentation/readme-images/shotimage.png" width="50%">
+</h2>
+
+- Use Case: View the Shot and Info in Mobile view<br>
+
+  1. Click on the "Info" tab in Mobile view and the "Info" component opens displaying the Info.<br>
+
+<p align="center"> <strong>Mobile view</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/shotmo.png" width="50%">
 </h2>
 
 - Use Case: Edit a Shot<br>
 
   1. Click on the "3 Dots Edit/Delete menu" tab and select Edit on the Shot and the "Edit Shot" form opens.<br>
-  2. Input the new fields, e.g. "Subject = Jack -e" and add a new sketch or image then submit. <br>
-  3. A Success message displays and the Shot is updated including the new image "shotsketch -2" is added.<br>
+  2. Input the new changes, e.g. - Description - "Jack looks on smiling" and add a new sketch or image then submit. <br>
+  3. A Success message displays and the Shot is updated including the new image "shotsketch -2".<br>
 
 <p align="center"> <strong>Add the Inputs</strong></p>
 <h2 align="center">
@@ -806,6 +815,22 @@ Description: View and Add the Shotlist<br>
 <p align="center"> <strong>Success Message and Shot Updated</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/shotedit2.png" width="50%">
+</h2>
+
+- Use Case: Delete a Shot<br>
+
+  1. Click on the "3 Dots Edit/Delete menu" tab on Shot "6" and select Delete. <br>
+  2. A Modal opens asking to confirm Delete or Cancel.
+  3. Click "Cancel" and the Shot is not deleted and the Edit/Delete menu disappears. <br>
+  4. Click "Delete" and the Shot is deleted.<br>
+
+<p align="center"> <strong>Modal</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/shotdel1.png" width="50%">
+</h2>
+#<p align="center"> <strong>Shot "6" Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/shotdel2.png" width="50%">
 </h2>
 
 #### Scenes Workspaces
