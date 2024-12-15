@@ -557,12 +557,12 @@ background: #ffffff;
 }
 
 .dropdown-menu {
-height: 400px;
+/* height: 400px; */
 overflow-y: scroll;
 }
 
 .DropButt {
-  height: 400px;
+  height: 200px;
   overflow-y: scroll; 
 }
 

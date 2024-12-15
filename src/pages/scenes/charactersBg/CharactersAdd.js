@@ -20,11 +20,7 @@ const CharactersAdd = (props) => {
     const { id, setCharacters, setShowCharactersAdd } = props;
     return ( 
         <div>
-            <h5 style={{ textTransform: 'uppercase'}} className={`text-center mx-sm-5 mt-1 pl-5 py-1 ${styles.SubTitle }`}>
-                Add Characters
-                <span style={{ textTransform: 'none'}} className={`float-right ${styles.Close }`} onClick={() => setShowCharactersAdd(false) } >Close</span>
-            </h5>
-            <div className={` ${styles.AliceBlueMild }`}>        
+            {/* info and add new buttons       */}
             <Row>
             <Col className="text-center mt-2" xs={12} sm={6}>
             <Button
@@ -41,30 +37,38 @@ const CharactersAdd = (props) => {
             </Row>
             {/* info */}
             <Row>
-                <Col>
+            <Col>
             {!showInfo ? (
                 ""
                     ) : (
                         <InfoChar  /> 
                     ) } 
-                </Col>
+            </Col>
             </Row>
             {/* add new Characters */}
             <Row>
-                <Col>
+            <Col>
             {!showAdd ? (
                 ""
                     ) : (
                         <NewCharacter
                         setShowAdd={setShowAdd} /> 
                     ) } 
-                </Col>
+            </Col>
+            </Row>
+            <Row>
+            <Col md={{span: 8, offset: 2 }}>
+            <h5 style={{ textTransform: 'uppercase'}} 
+            className={`text-center mt-1 pl-5 ${styles.SubTitle }`}>
+                Add Characters
+                <span style={{ textTransform: 'none'}} className={`pt-1 float-right ${styles.Close }`} onClick={() => setShowCharactersAdd(false) } >Close</span>
+            </h5>
+            </Col>
             </Row>
             {/* ADD SCENE CHAR */}
                 <SceneCharacterAdd
                  id={id}
                  setCharacters={setCharacters} />
-            </div>
         </div>
         
     )

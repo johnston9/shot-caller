@@ -47,7 +47,7 @@ const CharactersBG = (props) => {
         <div>
             <h5 className={`text-center mt-1 pl-5 py-1 ${styles.SubTitle }`}>
                 CHARACTERS / BG 
-                <span className={`float-right ${styles.Close }`} onClick={() => setShowCharactersBG(false) } >Close</span>
+                <span className={`float-right ${styles.Close } pt-1`} onClick={() => setShowCharactersBG(false) } >Close</span>
             </h5>
             <Row>
             <Col className='text-center py-3'>

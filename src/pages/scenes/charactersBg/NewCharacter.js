@@ -174,9 +174,9 @@ const NewCharacter = ({setShowAdd} ) => {
     );
 
     return (
-          <div className="px-3" >
+          <div className="px-3 mb-4" >
           <Row >
-          <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
+          <Col className={`px-0 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
           <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
             ADD NEW CHARACTER</h5> 
             <Form className="mt-0 " onSubmit={handleSubmit}>
@@ -279,6 +279,12 @@ const NewCharacter = ({setShowAdd} ) => {
               </Col>
             </Row>
           </Form>
+          </Col>
+          </Row>
+          <Row className=''>
+          <Col xs={2} ></Col>
+          <Col xs={8}>
+          <hr className={`${styles.Break1}`}/>
           </Col>
           </Row>
           </div>         

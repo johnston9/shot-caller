@@ -105,17 +105,15 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
     );
     
   return (
-    <div className={` ${styles} mt-3 px-3 `}> 
+    <div className={` ${styles} px-3 `}> 
       <div>
       {/* Dropdown DropButt */}
-      <Row >
-      <Col className={`px-0 mb-3 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
-      <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >
-        ADD SCENE CHARACTER</h5> 
+      <Row>
+      <Col className={`px-0 mb-3 pt-2 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
       <Form className="text-center px-3" onSubmit={handleSubmit}>
       <Row>
       <Col xs={8} md={4}>
-          <p className={`text-center mb-0 ${styles.Bold }`}>
+          <p className={`text-center mb-0 ${styles.BoldScene }`}>
           SELECT CHARACTER
         </p>
           <DropdownButton id="dropdown-basic-button" 
@@ -128,7 +126,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
           </DropdownButton>
       </Col>
       <Col xs={4} md={2}>
-      <p className={`text-center mb-0 ${styles.Bold }`}>
+      <p className={`text-center mb-0 ${styles.BoldScene }`}>
       Number
       </p>
       <p className={`mt-2 py-1 ${styles.White }`}>
@@ -136,7 +134,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
       </p>
       </Col>
       <Col xs={8} md={4} >
-      <p className={`text-center mb-0 ${styles.Bold }`}>
+      <p className={`text-center mb-0 ${styles.BoldScene }`}>
       Role
       </p>
       <p className={`mt-2 py-1 ${styles.White }`}>
@@ -145,7 +143,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
       </Col>
       <Col xs={4} md={2} className="d-flex justify-content-center mx-0 px-1" >
       <Form.Group controlId="costume" className={`${styles.Width2} ml-2 `}  >
-            <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Costume</Form.Label>
             <Form.Control 
             className={`${styles.Input}`} 
             type="text"
@@ -160,32 +158,24 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
           </Alert>
         ))}
       </Col>
-
       </Row>
       {/* buttons */}
       <Row>
         <Col className="text-center">
-        <div className= {`mt-3 `} >{buttons}</div>
+        <div className= {`mt-3 `} >
+          <hr/>
+          {buttons}</div>
         </Col>
       </Row>
       </Form>
-      {/* <Row className="py-2">
-          <Col xs={12} md={6}>
-          <p className={`text-center ml-md-2 pt-2 mb-0 ${styles.Bold }`}>
-          SELECT CHARACTER
-        </p>
-          <DropdownButton id="dropdown-basic-button" 
-          className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
-          {charactersContext.results.length && (
-                charactersContext.results.map((character) => (
-                  <Dropdown.Item onClick={() => setData(character) } 
-                  key={character.id} >{character.role}</Dropdown.Item>
-                ) )) }
-          </DropdownButton>
-          </Col>
-      </Row> */}
       </Col>
       </Row>
+      <Row className='mt-3'>
+        <Col xs={2} ></Col>
+        <Col xs={8}>
+        <hr className={`${styles.Break}`}/>
+        </Col>
+        </Row>  
         </div>
     </div>
   )

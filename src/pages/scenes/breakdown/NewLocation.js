@@ -59,7 +59,7 @@ const NewLocation = ({setShowAddLoc} ) => {
                 xs={12} md={{span: 6, offset: 3}} >
                     <Form.Group controlId="newLocation" 
                     className={`${styles.Width2} text-center`} >
-                    <Form.Label className={` ${styles.Bold} `} >New Location</Form.Label>
+                    <Form.Label className={` ${styles.BoldScene} `} >New Location</Form.Label>
                     <Form.Control 
                         className={styles.Input}
                         type="text"
