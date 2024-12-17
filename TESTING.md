@@ -489,7 +489,7 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
 
 - Use Case: View the Scene Characters/Bg Section<br>
 
-  1. Click on Characters/Bg tab on the Scene page to view the Scene Characters/Bg Section wirh the currenly added Characters and Background.
+  1. Click on Characters/Bg tab on the Scene page to view the Scene Characters/Bg Section with the currenly added Characters and Background.
 
 <p align="center"> <strong>The Characters/Bg Section</strong></p>
 <h2 align="center">
@@ -613,6 +613,57 @@ Description:
 <p align="center"> <strong>Success Message</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/fritz22.png" width="50%">
+</h2>
+
+- Use Case: Add BG/Standings to the Scene<br>
+
+  1. Click on "Add BG/Standings" tab on the Characters/Bg Section to open the "Add BG/Standings" form .<br>
+  2. Input the item, e.g. "7 Bar Drinkers" and submit.
+  4. "7 Bar Drinkers" is added to the Scene BG/Standings below and the form is cleared to allow the next BG item to be added.<br>
+  5. A success message displays saying "BG Bar Drinkers Added".<br>
+
+<p align="center"> <strong>The "Add BG/Standings" form with inputs</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebgadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message and "Bar Drinkers" added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebgadd2.png" width="50%">
+</h2>
+
+- Use Case: Edit BG/Standings<br>
+
+  1. Click on "3 Dots Edit" tab on a Characters/Bg item to open the Edit BG/Standings form .<br>
+  2. Update the item, e.g. "8 Bar Drinkers" and submit.
+  4. "7 Bar Drinkers" is updated to "8"<br>
+  5. A success message displays saying "BG Bar Drinkers Updated".<br>
+
+<p align="center"> <strong>The Changes</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebgedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message and "Bar Drinkers" Updated</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebgedit2.png" width="50%">
+</h2>
+
+- Use Case: Delete Scene BG/Standings<br>
+
+  1. Click on the item "Bar Drinkers" "3 Dots Edit/Delete" icon to open the Edit/Delete mini menu and select Delete.<br>
+  2. A pop-up displays on top of the page asking to confirm the Delete.
+  3. Click "Cancel" to cancel or "Delete" to delete.
+  4. The item "Bar Drinkers" is deleted.
+
+<p align="center"> <strong>The Pop-up to Confirm Delete</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebgdel1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Bar Drinkers Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenebgdel2.png" width="50%">
 </h2>
 
 #### Scene Script

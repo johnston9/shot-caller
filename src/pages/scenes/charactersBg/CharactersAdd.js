@@ -59,7 +59,13 @@ const CharactersAdd = (props) => {
             <Row>
             <Col md={{span: 8, offset: 2 }}>
             <h5 style={{ textTransform: 'uppercase'}} 
-            className={`text-center mt-1 pl-5 ${styles.SubTitle }`}>
+            className={`text-center mt-1 pl-5 d-block d-md-none ${styles.SubTitle }`}>
+                Add Chars
+                <span style={{ textTransform: 'none'}} 
+                className={`pt-1 float-right ${styles.Close }`} onClick={() => setShowCharactersAdd(false) } >Close</span>
+            </h5>
+            <h5 style={{ textTransform: 'uppercase'}} 
+            className={`text-center mt-1 pl-5 d-none d-md-block ${styles.SubTitle }`}>
                 Add Characters
                 <span style={{ textTransform: 'none'}} className={`pt-1 float-right ${styles.Close }`} onClick={() => setShowCharactersAdd(false) } >Close</span>
             </h5>

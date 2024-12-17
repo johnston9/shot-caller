@@ -183,7 +183,7 @@ const NewCharacter = ({setShowAdd} ) => {
             <Row>
                 <Col xs={{span: 6, offset: 3 }} className="d-flex justify-content-center" >
                 <Form.Group controlId="role" className={`${styles.Width2} text-center`}  >
-                        <Form.Label className={`${styles.Bold} `} >Role</Form.Label>
+                        <Form.Label className={`${styles.BoldScene} `} >Role</Form.Label>
                         <Form.Control 
                         className={styles.Input}
                         type="text"
@@ -203,7 +203,7 @@ const NewCharacter = ({setShowAdd} ) => {
                 {/* 1 - 30 */}
                 <Col xs={6} md={4} className="px-0 d-flex justify-content-center" >
                 <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
-                        <Form.Label className={` ${styles.Bold} `} >Number 1 - 30</Form.Label>
+                        <Form.Label className={` ${styles.BoldScene} `} >Number 1 - 30</Form.Label>
                         <Form.Control as="select"
                         className={styles.InputChar}
                         type="text"
@@ -227,7 +227,7 @@ const NewCharacter = ({setShowAdd} ) => {
                 {/* 31 - 100 */}
                 <Col xs={6} md={4} className="px-0 d-flex justify-content-center" >
                 <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
-                        <Form.Label className={` ${styles.Bold} `} >Number 31 -100</Form.Label>
+                        <Form.Label className={` ${styles.BoldScene} `} >Number 31 -100</Form.Label>
                         <Form.Control as="select"
                         className={styles.InputChar}
                         type="text"
@@ -251,7 +251,7 @@ const NewCharacter = ({setShowAdd} ) => {
                 {/* 100 - 200 */}
                 <Col xs={{span: 8, offset: 2 }} md={{span: 4, offset: 0 }} className="d-flex justify-content-center px-0" >
                 <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
-                        <Form.Label className={` ${styles.Bold} `} >Number 101 - 200</Form.Label>
+                        <Form.Label className={` ${styles.BoldScene} `} >Number 101 - 200</Form.Label>
                         <Form.Control as="select"
                         className={styles.InputChar}
                         type="text"
@@ -275,7 +275,7 @@ const NewCharacter = ({setShowAdd} ) => {
             </Row>
             <Row>
               <Col>
-                <div className= {` my-3`} >{buttons} </div>
+                <div className= {`px-0 my-3`} >{buttons} </div>
               </Col>
             </Row>
           </Form>

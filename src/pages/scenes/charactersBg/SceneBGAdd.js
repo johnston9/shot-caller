@@ -9,6 +9,7 @@ import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
+import { toast } from 'react-toastify';
 
 const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
     console.log(background)
@@ -76,6 +77,7 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
           ...prevBackground,
           results: [data, ...prevBackground.results],
         }));
+        toast.success(`BG "${role}" Added`);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
@@ -92,7 +94,7 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
           Cancel
         </Button>
         <Button className={`px-3 px-md-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Add BG
+          Submit
         </Button>
       </div>
     );
@@ -108,7 +110,7 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
           <Row className="my-2">
           <Col className="d-flex justify-content-center mx-0 px-1" xs={4} md={2} >
             <Form.Group controlId="quantity" className={`${styles.Width} `}  >
-                  <Form.Label className={`${styles.Bold}`} >Quantity</Form.Label>
+                  <Form.Label className={`${styles.BoldScene}`} >Quantity</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -125,7 +127,7 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
           </Col>
             <Col className="d-flex justify-content-center mx-0 px-1" xs={8} md={5} >
             <Form.Group controlId="role" className={`${styles.Width2} `}  >
-                  <Form.Label className={`${styles.Bold}`} >Role</Form.Label>
+                  <Form.Label className={`${styles.BoldScene}`} >Role</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -142,7 +144,7 @@ const SceneBGAdd = ({id, background, setBackground, setShowBGAdd}) => {
             </Col>
             <Col className="d-flex justify-content-center mx-0 px-1" xs={12} md={{span: 5, offset: 0 }} >
             <Form.Group controlId="costume" className={`${styles.Width2} `}  >
-                  <Form.Label className={`${styles.Bold}`} >Costume</Form.Label>
+                  <Form.Label className={`${styles.BoldScene}`} >Costume</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"

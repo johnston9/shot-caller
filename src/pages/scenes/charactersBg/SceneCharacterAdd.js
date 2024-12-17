@@ -161,7 +161,7 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
       </Row>
       {/* buttons */}
       <Row>
-        <Col className="text-center">
+        <Col className="text-center px-0">
         <div className= {`mt-3 `} >
           <hr/>
           {buttons}</div>
@@ -170,12 +170,6 @@ const SceneCharacterAdd = ({id, setCharacters}) => {
       </Form>
       </Col>
       </Row>
-      <Row className='mt-3'>
-        <Col xs={2} ></Col>
-        <Col xs={8}>
-        <hr className={`${styles.Break}`}/>
-        </Col>
-        </Row>  
         </div>
     </div>
   )

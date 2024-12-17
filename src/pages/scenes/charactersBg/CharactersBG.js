@@ -46,7 +46,7 @@ const CharactersBG = (props) => {
     return ( 
         <div>
             <h5 className={`text-center mt-1 pl-5 py-1 ${styles.SubTitle }`}>
-                CHARACTERS / BG 
+                CHARACTERS/BG 
                 <span className={`float-right ${styles.Close } pt-1`} onClick={() => setShowCharactersBG(false) } >Close</span>
             </h5>
             <Row>
@@ -254,7 +254,7 @@ const CharactersBG = (props) => {
             <Row className='mt-5'>
             <Col xs={2} ></Col>
             <Col xs={8}>
-            <hr className={`${styles.Break2}`}/>
+            <hr className={`${styles.Break}`}/>
             </Col>
             </Row>
         </div>

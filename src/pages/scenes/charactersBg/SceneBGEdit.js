@@ -9,6 +9,8 @@ import styles from "../../../styles/Scene.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
+import { toast } from 'react-toastify';
+
 
 const BGEdit = ({handleMount, setShowEditForm, id}) => {
     const [errors, setErrors] = useState({});
@@ -27,7 +29,7 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
     } = postData;
 
     useEffect(() => {
-        const handleMount = async () => {
+        const handleMount2 = async () => {
           try {
             const { data } = await axiosReq.get(`/scenebgs/${id}/`);
             console.log(data)
@@ -47,7 +49,7 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
             }
         };
 
-        handleMount();
+        handleMount2();
       }, [id]);
 
     const handleChange = (event) => {
@@ -69,7 +71,8 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
       
         try {
           const { data } = await axiosReq.put(`/scenebgs/${id}/`, formData);
-          setShowEditForm(false)
+          setShowEditForm(false);
+          toast.success(`BG "${role}" Updated`);
           console.log(data)
           handleMount();
         } catch (err) {
@@ -88,14 +91,14 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
-            Edit
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+            Submit
           </Button>
         </div>
       );
 
     return (
-        <div className={`${styles.Back} mt-2 px-2`}>
+        <div className={`${styles.Back1} mt-2 px-2`}>
             <Form onSubmit={handleSubmit}>
             <Row className="pt-2">
           <Col className="d-flex justify-content-center mx-0 pr-0 pl-0" xs={2} >

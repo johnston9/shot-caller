@@ -11,7 +11,7 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
 import { toast } from 'react-toastify';
 
-const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
+const CharacterEdit = ({ setShowEditForm, handleMount, id}) => {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         scene_id: "",
@@ -27,7 +27,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
         costume,
     } = postData;
 
-    const handleMount = async () => {
+    const handleMount2 = async () => {
       try {
         const { data } = await axiosReq.get(`/scenecharacters/${id}/`);
         console.log(data)
@@ -44,7 +44,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
     };
 
     useEffect(() => {
-        handleMount();
+        handleMount2();
       // eslint-disable-next-line
       }, [id]);
 
@@ -69,10 +69,6 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
           const { data } = await axiosReq.put(`/scenecharacters/${id}/`, formData);
           console.log(data)
           handleMount();
-          // setCharacters((prevChars) => ({
-          //   ...prevChars,
-          //   results: [data, ...prevChars.results],
-          // }));
           toast.success(`"${role}'s" Costume Updated`);
           setShowEditForm(false);
         } catch (err) {
@@ -102,7 +98,7 @@ const CharacterEdit = ({ setShowEditForm, setCharacters, id}) => {
         <Form onSubmit={handleSubmit}>
         <Row className="">
         <Col className="px-0" xs={6} >
-        <p className={`text-center mb-0 ${styles.Bold }`}>
+        <p className={`text-center mb-0 ${styles.Bold}`}>
          Add/Edit Costume
         </p>
         </Col>
