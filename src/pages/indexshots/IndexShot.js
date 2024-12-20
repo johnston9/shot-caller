@@ -36,15 +36,15 @@ const IndexShot = (props) => {
     };
 
     return (
-        <div>
+        <div className='mt-3'>
             <Card className={`text-center p-0`}>
-                <Card.Header className={`py-0 ${styles.Topn }`}>
+                <Card.Header className={`py-0 ${styles.TopCard }`}>
                   <Row >
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 
                     d-flex align-items-center justify-content-center'>
-                    <h5 className={` ${styles.Titlelist }`}>{number}
-                    </h5>
+                    <p className={` ${styles.Titlelist }`}>{number}
+                    </p>
                     </Col >
                     <Col xs={1} className='text-center mx-0 px-0 py-0'>
                     <PostDropdown
@@ -66,7 +66,7 @@ const IndexShot = (props) => {
                         </>
                     }
                     {content &&  <> 
-                    <p>{content} </p>
+                    <p className={`pt-2 ${styles.GoldP }`} >{content} </p>
                     </>}
                 </Col>
                     </Row>

@@ -3,6 +3,15 @@
     background-color: #fff;
 }
 
+.TopCard {
+   border: 1px solid #fff;
+   color: rgb(140, 111, 25, 99%);
+}
+
+.GoldP {
+    color: rgb(140, 111, 25, 99%);
+}
+
 .Break1 {
     border-top: 1px solid #d0d9db;
   }
@@ -68,16 +77,17 @@ border-top: 5px solid #d0d9db;
     color: #fff;
   }
 
-  .TopSeries h5:hover {
+  /* .TopSeries h5:hover {
     color: #000;
-  }
+  } */
   
   .TopSeries:hover {
     background-color: #5de6ed;
     color: #000;
-    /* -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);  */
+  }
+
+  .TopSeries:hover h5 {
+    color: #000;
   }
   
   .TopSeries:hover i {
@@ -103,9 +113,8 @@ color: #fff;
 } */
 
 .Content {
-    color: #000;
+    color: rgb(140, 111, 25, 99%);
     background-color: #fff;
-    border: 1px solid #000;
 }
 
 .Images {

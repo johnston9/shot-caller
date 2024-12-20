@@ -146,25 +146,8 @@ const IndexShotsPage = () => {
                            seriesName={seriesName}
                            setShow={setShow} 
                            setHasOrder={setHasOrder} /> ) }
-          {/* search  */}
-          <Row>
-            <Col className="mt-3" xs={12} sm={{ span: 6, offset: 3 }} >
-            <Form
-                className={styles.SearchBar}
-                onSubmit={(event) => event.preventDefault()}
-                >
-                <Form.Control
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    type="text"
-                    className="mr-sm-2"
-                    placeholder="Search by Number"
-                />
-                </Form>
-            </Col>
-          </Row>
           {/* filter */}
-          <Row className='mt-1' >
+          <Row className='mt-3' >
               <Col className='text-center' xs={{span: 6, offset: 3}}>
               <Button
                   className={`py-0 ${btnStyles.Button} ${btnStyles.Blue} px-5`}
@@ -198,8 +181,23 @@ const IndexShotsPage = () => {
             </Button>
           </Col>
           </Row>
-            <p style={{ textTransform: 'uppercase'}} 
-            className={`mt-2 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+          {/* search  */}
+          <Row>
+            <Col className="mt-3" xs={12} sm={{ span: 6, offset: 3 }} >
+            <Form
+                className={styles.SearchBar}
+                onSubmit={(event) => event.preventDefault()}
+                >
+                <Form.Control
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    type="text"
+                    className="mr-sm-2"
+                    placeholder="Search by Number"
+                />
+                </Form>
+            </Col>
+          </Row>
             {/* series */}
             <Row className="py-2 ">
               {hasLoaded ? (

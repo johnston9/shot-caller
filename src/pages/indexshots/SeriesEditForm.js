@@ -70,49 +70,46 @@ const handleSubmit = async (event) => {
 const buttons = (
   <div className="text-center">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-2 mr-3`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
       onClick={() => setShowEdit(false)}
     >
       Cancel
     </Button>
     <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
-      Edit
+      Update
     </Button>
   </div>
 );
 
 return (
-  <div>
-  <div className= {`text-center mt-0 ${styles.Editbox} mx-0`} >
+<div className= {`text-center mt-0 ${styles.Back} mx-0`} >
   <Form className={` mt-0`} onSubmit={handleSubmit}>
   <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`}
    style={{ textTransform: 'uppercase'}}>Edit Series
   </h5>
   <Row className="text-center mt-1">
-    <Col xs={12} 
-      className="p-0  d-flex justify-content-center ">
-      <Form.Group controlId="name" className={`${styles.Width} `} >
-          <Form.Label className={`${styles.Bold}`} >Name</Form.Label>
-          <Form.Control 
-          type="text"
-          name="name"
-          value={name}
-          className={`${styles.Input}`}
-          onChange={handleChange}
-              />
-      </Form.Group>
-      {errors?.name?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-          {message}
-          </Alert>
-      ))}
-    </Col> 
+  <Col xs={12} className="p-1 d-flex justify-content-center ">
+    <Form.Group controlId="name" className={`${styles.Width} `} >
+        <Form.Label className={`${styles.BoldScene}`} >Name</Form.Label>
+        <Form.Control 
+        type="text"
+        name="name"
+        value={name}
+        className={`${styles.Input}`}
+        onChange={handleChange}
+            />
+    </Form.Group>
+    {errors?.name?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+        {message}
+        </Alert>
+    ))}
+  </Col> 
   </Row>
   <Row className="text-center mt-1">
-    <Col xs={12}
-    className="p-0 d-flex justify-content-center">
+    <Col xs={12} className="p-1 d-flex justify-content-center">
     <Form.Group controlId="content" className={`${styles.Width90} `} >
-              <Form.Label className={`${styles.Bold}`} >Content</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Content</Form.Label>
               <Form.Control 
               type="text"
               className={styles.InputScene}
@@ -137,7 +134,6 @@ return (
       </Col>
   </Row>
 </Form>
-</div>
 </div>
 );
 }

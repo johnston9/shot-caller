@@ -538,7 +538,7 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
   4. The Role and Number inputs are automatically filled with Fritz's info.<br>
   4. "Fritz" is added to the Scene Charcters below and the form is cleared to allow the next Character to be added.<br>
   5. A success message displays saying "Character Fritz Aded".<br>
-  6. After the page is refreshed the Character "Fritz" will be displayed in accending "Number" order like the rest of the Characters.<br>
+  6. After the page is refreshed the Character "Fritz" will be displayed in ascending "Number" order like the rest of the Characters.<br>
 
 <p align="center"> <strong>The "Add Characters" form</strong></p>
 <h2 align="center">

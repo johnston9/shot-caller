@@ -55,12 +55,12 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pr-3 `}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 mr-3 `}
         onClick={() => setShow(false)}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 pl-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-3`} type="submit">
         Create
       </Button>
     </div>
@@ -69,14 +69,14 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
   return (
     <div>
     <Row>
-    <Col className={`${styles.Back} px-0`} xs={12} md={{span: 8, offset: 2 }} >
+    <Col className={`${styles.Back} px-3`} xs={12} md={{span: 8, offset: 2 }} >
     <Form onSubmit={handleSubmit}>
-    <h5 className={`text-center mt-0 ${styles.SubTitle }`} >Create Series</h5>
+    <h5 className={`text-center mt-0 ${styles.SubTitle }`} >CREATE SERIES</h5>
     <Row className="text-center">
       <Col xs={12} md={{span: 6, offset: 3 }} 
-        className="p-0 p-md-2 d-flex justify-content-center ">
+        className="p-2 d-flex justify-content-center ">
         <Form.Group controlId="name" className={`${styles.Width2} `} >
-            <Form.Label className={`${styles.Bold}`} >Series Name</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Series Name</Form.Label>
             <Form.Control 
             type="text"
             name="name"
@@ -94,9 +94,9 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
     </Row>
     <Row className="text-center">
       <Col xs={12} md={{span: 8, offset: 2 }} 
-      className="p-0 p-md-2 d-flex justify-content-center">
+      className="p-2 d-flex justify-content-center">
       <Form.Group controlId="content" className={`${styles.Width2} `} >
-                <Form.Label className={`${styles.Bold}`} >Series Content</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Series Content</Form.Label>
                 <Form.Control 
                 type="text"
                 className={styles.InputScene}

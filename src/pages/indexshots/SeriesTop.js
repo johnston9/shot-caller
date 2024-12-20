@@ -50,7 +50,7 @@ const SeriesTop = (props) => {
                     onClick={() => setShowContent(showContent => !showContent)} >I
                     </Button>
                     </Col>
-                    <Col xs={10} className='mx-0 text-center'>
+                    <Col xs={10} className='mx-0 text-center px-0'>
                     <Link to={`/indexshots/${id}`}>
                     <div>
                     <h5 className={` ${styles.Titlelist }`}>{name}
