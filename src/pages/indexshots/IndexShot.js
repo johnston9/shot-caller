@@ -40,7 +40,7 @@ const IndexShot = (props) => {
             <Card className={`text-center p-0`}>
                 <Card.Header className={`py-0 ${styles.TopCard }`}>
                   <Row >
-                    <Col className='mx-0 px-0' xs={1}></Col>
+                    <Col className='mx-0 px-0 text-center' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 
                     d-flex align-items-center justify-content-center'>
                     <p className={` ${styles.Titlelist }`}>{number}
@@ -63,13 +63,16 @@ const IndexShot = (props) => {
                         <Image className={styles.ImagesIndex} 
                         src={image} alt="image" height="250"  />
                         </div>
-                        </>
-                    }
-                    {content &&  <> 
-                    <p className={`pt-2 ${styles.GoldP }`} >{content} </p>
                     </>}
                 </Col>
-                    </Row>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                <p className={` ${styles.Titlelist }`}>{content}</p>
+                </div>
+                </Col >
+                </Row>
                 </Card.Body>
                 </Link>
             </Card>

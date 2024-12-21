@@ -231,8 +231,8 @@ const IndexShotsPage = () => {
             <Row className='my-3'>
               <Col className="text-center">
                 <Button onClick={() => setShow2(show2 => !show2)} 
-                  className={`${btnStyles.Button}  
-                  ${btnStyles.Bright} `}>
+                  className={`${btnStyles.Button} ${btnStyles.Wide2} 
+                  ${btnStyles.Bright} px-5`}>
                   Add Card
                 </Button>
               </Col>

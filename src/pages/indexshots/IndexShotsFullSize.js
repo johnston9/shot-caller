@@ -38,13 +38,13 @@ const IndexShotsFullSize = () => {
     return (
         <div>
             <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
+                className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
                 onClick={() => history.goBack()}
                 >
                 Back
             </Button>
-            <Card className={`text-center `}  >
-                <Card.Header className={`pt-2 pb-1`}>
+            <Card className={`text-center mb-5 mx-md-3`}  >
+                <Card.Header className={`pt-2 pb-1 ${styles.TopCard }`}>
                   <Row >
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='mx-0 px-0 text-center'>

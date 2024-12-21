@@ -85,7 +85,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 px-4`} type="submit">
         Create
       </Button>
     </div>
@@ -103,7 +103,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
           <Col xs={12} md={6}  >
           <div className="d-flex justify-content-center">
           <Form.Group controlId="number" className={`${styles.Width} text-center`}  >
-                  <Form.Label className={`${styles.Bold} `} >Number</Form.Label>
+                  <Form.Label className={`${styles.BoldScene} `} >Number</Form.Label>
                   <Form.Control 
                   className={styles.Input}
                   type="text"
@@ -120,7 +120,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
           </div>
           <div className="d-flex justify-content-center">
           <Form.Group controlId="content" className={`${styles.Width90}  text-center`} >
-                        <Form.Label className={`${styles.Bold}`} >Content</Form.Label>
+                        <Form.Label className={`${styles.BoldScene}`} >Content</Form.Label>
                         <Form.Control 
                         type="text"
                         className={styles.InputScene}
