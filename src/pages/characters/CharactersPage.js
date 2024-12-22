@@ -27,22 +27,23 @@ const Characters = ({message}) => {
   const history = useHistory();
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    /* Function to fetch all the Characters data */
-    const fetchCharacters = async () => {
-      try {
-        const { data } = await axiosReq.get(`/characters/?&search=${query}`);
-        setCharacters(data);
+  /* Function to fetch all the Characters data */
+  const fetchCharacters = async () => {
+    try {
+      const { data } = await axiosReq.get(`/characters/?&search=${query}`);
+      setCharacters(data);
+      setHasLoaded(true);
+      console.log(data)
+      console.log("fetch")
+    } catch(err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
         setHasLoaded(true);
-        console.log(data)
-      } catch(err) {
-        console.log(err);
-        if (err.response?.status !== 401) {
-          setErrors(err.response?.data);
-          setHasLoaded(true);
-        }
       }
-    }
+    }}
+
+  useEffect(() => {
     setHasLoaded(false);
     const timer = setTimeout(() => {
         fetchCharacters();
@@ -95,7 +96,9 @@ const Characters = ({message}) => {
                         characters.results.map((character) => (
                         <Col xs={6} sm={4} md={2} lg={2} 
                         className="py-2 p-0 mx-0">
-                        <CharacterTop key={character.id} {...character} />
+                        <CharacterTop 
+                        fetchCharacters={fetchCharacters}
+                        key={character.id} {...character} />
                         </Col>
                         ))) 
                         : (

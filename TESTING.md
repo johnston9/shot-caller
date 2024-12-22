@@ -898,29 +898,85 @@ Description: Collorate on Scenes by department through Posts with images<br>
 </h2>
 
 ### Characters
-Description: xxxx<br>
+Description: View and Create Characters.<br>
 
-- Use Case: nnnn<br>
+- Use Case: View all Characters<br>
 
-  1. nnnn.
-  2. nnn.
+  1. Click .<br>
+  2. Click .<br>
 
-<p align="center"> <strong>nnnnnnnn</strong></p>
+<p align="center"> <strong>Sxxxx</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/nnnnnn.png" width="50%">
+<img src="documentation/readme-images/xxxx.png" width="50%">
+</h2>
+
+- Use Case: Find a xxx<br>
+
+  1. Input a xxxx in the Search Bar, eg "bar".<br>
+  2. All ccc with the word "xx" are returned.<br>
+
+<p align="center"> <strong>"xxx" Posts Returned</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+- Use Case: Create a Character<br>
+
+  1. Click the "Add xxx" tab.<br>
+  2. The "Create xxx" form opens.<br>
+  3. Input the details an xxxxs and submit.<br>
+  4. A success message displays saying - "Post Added"<br>
+  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+
+<p align="center"> <strong>Create Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptadd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The xxx Displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
 
 ### Locations
-Description: xxxx<br>
+Description: View and Create Characters.<br>
 
-- Use Case: nnnn<br>
+- Use Case: View all Characters<br>
 
-  1. nnnn.
-  2. nnn.
+  1. Click .<br>
+  2. Click .<br>
 
-<p align="center"> <strong>nnnnnnnn</strong></p>
+<p align="center"> <strong>Sxxxx</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/nnnnnn.png" width="50%">
+<img src="documentation/readme-images/xxxx.png" width="50%">
+</h2>
+
+- Use Case: Find a xxx<br>
+
+  1. Input a xxxx in the Search Bar, eg "bar".<br>
+  2. All ccc with the word "xx" are returned.<br>
+
+<p align="center"> <strong>"xxx" Posts Returned</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+- Use Case: Create a Character<br>
+
+  1. Click the "Add xxx" tab.<br>
+  2. The "Create xxx" form opens.<br>
+  3. Input the details an xxxxs and submit.<br>
+  4. A success message displays saying - "Post Added"<br>
+  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+
+<p align="center"> <strong>Create Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptadd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The xxx Displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
 
 ### Moodboards

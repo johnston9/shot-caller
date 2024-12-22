@@ -50,7 +50,7 @@ const Character = (props) => {
       const handleDelete = async () => {
         try {
           await axiosReq.delete(`/characters/${id}/`);
-          history.goBack();
+          history.push(`/characters`);
         } catch (err) {
         }
       };

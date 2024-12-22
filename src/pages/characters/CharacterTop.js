@@ -15,7 +15,9 @@ const CharacterTop = (props) => {
     const {
         id,
         role,
+        fetchCharacters,
     } = props;
+
     const history = useHistory();
 
     const handleEdit = () => { 
@@ -25,21 +27,23 @@ const CharacterTop = (props) => {
     const handleDelete = async () => {
         try {
             await axiosReq.delete(`/characters/${id}/`);
-            history.push(`/home/`);
+            // history.push(`/home`);
+            history.push(`/characters`);
+            // fetchCharacters();
         } catch (err) {
         }
         };
 
     return (
         <div className='mx-0'>
-            <Card className={`mx-1 text-center ${styles.Top}`}>
+            <Card className={`mx-1 text-center py-0 ${styles.Top}`}>
                 <Link to={`/characters/${id}`}>
-                <Card.Header className={`py-2 ${styles.Top }`}>
+                <Card.Header className={`py-1 ${styles.Top }`}>
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='text-center px-0'>
-                    <h5 className={` ${styles.Titlelist }`}> {role}
-                    </h5>
+                    <p className={` ${styles.Titlelist }`}> {role}
+                    </p>
                     </Col >
                     <Col xs={1} className='text-center mx-0 px-0'>
                     <PostDropdown
