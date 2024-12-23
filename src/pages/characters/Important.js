@@ -15,7 +15,7 @@ const Important = () => {
           All Characters must be assigned a number.
           </p>     
           <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
-            Actor and costume details are to be added in the Edit Chatacter page
+            Actor and their Costume details are added on the Edit Chatacter page
             which is accessible from the Edit button on the Character's Page.
           </p>
          </div> 

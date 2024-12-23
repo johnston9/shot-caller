@@ -924,18 +924,26 @@ Description: View and Create Characters.<br>
 
   1. Click the "Add Character" tab.<br>
   2. The "Create Character" form opens.<br>
-  3. Input the details an xxxxs and submit.<br>
-  4. A success message displays saying - "Post Added"<br>
-  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+  3. Input the Role, e.g. "Nic" then select the Character Number, e.g. "30" and submit.<br>
+  4. A success message displays saying - "Character Nic Added".<br>
+  5. The new Character Nic's page opens with Character Number - "30" and
+  CallName - "cast30" which was automatically created.
+  6. This CallName will be used by the admin when they register the User playing that Character and in turn it will be used to display their "Personal Call Time".<br>
+  7. On going to the "Create Character" page the Number "30" will no longer be available.
 
-<p align="center"> <strong>Create Form</strong></p>
+<p align="center"> <strong>Create Form with Role "Nic" and Number "30" Selected</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd2.png" width="50%">
+<img src="documentation/readme-images/charfetadd1.png" width="50%">
 </h2>
 
-<p align="center"> <strong>The xxx Displays</strong></p>
+<p align="center"> <strong>Success Message and Nic's Page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/charfetadd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Number "30" Unavailable Now</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charfetadd3.png" width="50%">
 </h2>
 
 ### Locations

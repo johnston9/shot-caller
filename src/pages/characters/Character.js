@@ -80,22 +80,16 @@ const Character = (props) => {
         <div className={`mb-3 ${styles.Header}`}>
             <Row className={`${styles.ButtonLine} mt-2 mx-3 d-flex align-items-center `}>
                 <Col className='text-center mx-0 px-0' xs={1}></Col>
-                <Col xs={5} className='text-center mx-0 px-0'>
-                    <h5
-                        className={`py-0 mb-0 ${styles.Button}`}
+                <Col xs={10} sm={5} className='text-center mx-0 px-0'>
+                    <p className={`py-0 mb-0 ${styles.Button}`}
                         onClick={() => handleClickMoods()} > Moodboards
-                    </h5>
+                    </p>
                 </Col>
-                <Col xs={5} className='text-center mx-0 px-0'>
-                    <h5
-                        className={`d-sm-none py-0 mb-0 ${styles.Button}`}
-                        onClick={() => handleClickAddMoods()} > Add Board
-                    </h5>
-                    <h5
-                        className={`d-none d-sm-block py-0 mb-0 ${styles.Button}`}
+                <Col xs={5} className='d-none d-sm-block text-center mx-0 px-0'>
+                    <p className={`py-0 mb-0 ${styles.Button}`}
                         onClick={() => handleClickAddMoods()} > Add Moodboard
-                    </h5>
-                    </Col>
+                    </p>
+                </Col>
                 <Col className='text-center px-0 mx-0' xs={1}>
                 <PostDropdown
                         handleEdit={handleEdit}
@@ -126,7 +120,7 @@ const Character = (props) => {
                  <Col className='text-center mb-3'>
                 <div>
                  <span className={`py-1 px-3 ${styles.SubTitle3 } `} >
-                USERNAME: {username}
+                CALLNAME: {username}
                   </span>  
                  </div>
                  </Col>

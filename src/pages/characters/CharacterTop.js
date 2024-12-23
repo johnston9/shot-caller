@@ -28,8 +28,8 @@ const CharacterTop = (props) => {
         try {
             await axiosReq.delete(`/characters/${id}/`);
             // history.push(`/home`);
+            fetchCharacters();
             history.push(`/characters`);
-            // fetchCharacters();
         } catch (err) {
         }
         };

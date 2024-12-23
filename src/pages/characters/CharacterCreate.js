@@ -153,6 +153,10 @@ const CharacterCreate = () => {
       
         try {
           const { data } = await axiosReq.post("/characters/", formData);
+          setCharacters((prevChars) => ({
+            ...prevChars,
+            results: [data, ...prevChars.results],
+          }));
           history.push(`/characters/${data.id}/`);
           toast.success(`Character "${role}" Added`);
           console.log(data);
