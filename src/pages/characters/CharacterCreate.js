@@ -4,9 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import styles from "../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 
@@ -16,8 +14,9 @@ import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import Important from "./Important";
 import { useCharactersContext, useScenesContext, useSetCharactersContext } from "../../contexts/Scene_chars_locs";
+import { toast } from 'react-toastify';
 
-const CharacterCreate = ({topbox} ) => {
+const CharacterCreate = () => {
     useRedirect();
     const [errors, setErrors] = useState({});
     const characters = useCharactersContext();
@@ -155,6 +154,7 @@ const CharacterCreate = ({topbox} ) => {
         try {
           const { data } = await axiosReq.post("/characters/", formData);
           history.push(`/characters/${data.id}/`);
+          toast.success(`Character "${role}" Added`);
           console.log(data);
         } catch (err) {
           console.log(err);
@@ -165,14 +165,14 @@ const CharacterCreate = ({topbox} ) => {
       }
 
     const buttons = (
-      <div className="text-center">    
+      <div className="text-center mt-5">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-md-5`}
           onClick={cancel}
         >
           Cancel
         </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`} type="submit">
+        <Button className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 px-md-5`} type="submit">
           Create
         </Button>
       </div>
@@ -180,36 +180,31 @@ const CharacterCreate = ({topbox} ) => {
   
     return (
       <div className="mt-3">
-      {topbox ? (
-        ""
-      ) : (
-        <div>
-        <TopBox title="Create Character" />
-        <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} my-1`}
-        onClick={() => history.goBack()}
-        >
-        Back
-        </Button>
-        <Button
-          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-          onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
-        </Button>
-          {!showImp ? (
-              ""
-                  ) : (
-                    <Important  /> 
-                    ) }   
-            </div>
-          ) }
-      <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
-      <Form className="mt-0" onSubmit={handleSubmit}>
-      <h5 className={`text-center mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Character Info</h5>
+      <TopBox title="Create Character" />
+      <Button
+      className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
+      onClick={() => history.goBack()}
+      >
+      Back
+      </Button>
+      <Button
+        className={`float-right my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+        onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+      </Button>
+      {!showImp ? (
+          ""
+              ) : (
+                <Important  /> 
+      ) }   
+      <Row>
+      <Col xs={12} md={{span: 8, offset: 2}}>
+      <h5 className={`text-center py-1 mt-3 ${styles.SubTitle }`}>
+       CREATE CHARACTER</h5>
+      <Form className={`pt-3 px-3 ${styles.White }`} onSubmit={handleSubmit}>
       <Row>
           <Col xs={{span: 6, offset: 3 }} className="d-flex justify-content-center" >
           <Form.Group controlId="role" className={`${styles.Width2} text-center`}  >
-                  <Form.Label className={`${styles.Bold} `} >Role</Form.Label>
+                  <Form.Label className={`${styles.BoldScene} `} >Role</Form.Label>
                   <Form.Control 
                   className={styles.Input}
                   type="text"
@@ -225,11 +220,11 @@ const CharacterCreate = ({topbox} ) => {
               ))}
           </Col>
       </Row>
-      <Row>
+      <Row className="mt-3">
           {/* 1 - 30 */}
-          <Col xs={4} className="d-flex justify-content-center" >
+          <Col xs={12} md={4} className="px-0 mx-0 d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
-                  <Form.Label className={` ${styles.Bold} `} >Number 1 - 30</Form.Label>
+                  <Form.Label className={` ${styles.BoldScene} `} >Number 1 - 30</Form.Label>
                   <Form.Control as="select"
                   className={styles.InputChar}
                   type="text"
@@ -251,9 +246,9 @@ const CharacterCreate = ({topbox} ) => {
               ))}
           </Col>
           {/* 31 - 100 */}
-          <Col xs={4} className="d-flex justify-content-center" >
+          <Col xs={12} md={4} className="px-0 mx-0 d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
-                  <Form.Label className={` ${styles.Bold} `} >Number 31 -100</Form.Label>
+                  <Form.Label className={` ${styles.BoldScene} `} >Number 31 - 100</Form.Label>
                   <Form.Control as="select"
                   className={styles.InputChar}
                   type="text"
@@ -275,9 +270,9 @@ const CharacterCreate = ({topbox} ) => {
               ))}
           </Col>
           {/* 100 - 200 */}
-          <Col xs={4} className="d-flex justify-content-center" >
+          <Col xs={12} md={4} className="px-0 mx-0 d-flex justify-content-center" >
           <Form.Group controlId="number" className={`${styles.Width2} text-center`} >
-                  <Form.Label className={` ${styles.Bold} `} >Number 101 - 200</Form.Label>
+                  <Form.Label className={` ${styles.BoldScene} `} >Number 101 - 200</Form.Label>
                   <Form.Control as="select"
                   className={styles.InputChar}
                   type="text"
@@ -304,10 +299,11 @@ const CharacterCreate = ({topbox} ) => {
           <div className= {` my-3`} >{buttons} </div>
         </Col>
       </Row>
-    </Form>
-    </Container>
-    </div>
-    );
+      </Form>
+      </Col>
+      </Row>
+      </div>
+      );
 }
 
 export default CharacterCreate

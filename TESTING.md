@@ -902,28 +902,28 @@ Description: View and Create Characters.<br>
 
 - Use Case: View all Characters<br>
 
-  1. Click .<br>
-  2. Click .<br>
+  1. Click Characters on the Home page menu or from the Features navlink.<br>
+  2. The Characters page opens with all the Characters displaying and the "Add Character" tab on top.<br>
 
 <p align="center"> <strong>Sxxxx</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/xxxx.png" width="50%">
 </h2>
 
-- Use Case: Find a xxx<br>
+- Use Case: Find a Characters in the Search Bar.<br>
 
-  1. Input a xxxx in the Search Bar, eg "bar".<br>
-  2. All ccc with the word "xx" are returned.<br>
+  1. Input a Character name, e.g. "Benny" in the Search Bar.<br>
+  2. All Characters with the word "Benny" are returned.<br>
 
-<p align="center"> <strong>"xxx" Posts Returned</strong></p>
+<p align="center"> <strong>"Benny" Returned</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
 
 - Use Case: Create a Character<br>
 
-  1. Click the "Add xxx" tab.<br>
-  2. The "Create xxx" form opens.<br>
+  1. Click the "Add Character" tab.<br>
+  2. The "Create Character" form opens.<br>
   3. Input the details an xxxxs and submit.<br>
   4. A success message displays saying - "Post Added"<br>
   5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>

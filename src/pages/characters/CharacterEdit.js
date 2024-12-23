@@ -13,6 +13,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
+import { toast } from 'react-toastify';
 
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -314,6 +315,8 @@ const handleSubmit = async (event) => {
   try {
     await axiosReq.put(`/characters/${id}/`, formData);
     history.push(`/characters/${id}/`);
+    toast.success(`Character "${role}" Updated`);
+
   } catch (err) {
     console.log(err);
     if (err.response?.status !== 401) {
