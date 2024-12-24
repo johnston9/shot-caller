@@ -71,6 +71,13 @@
   background-color: #d6fcff;
 }
 
+.BoldTitleCall {
+  font-weight: 700;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid red;
+}
+
 .Button {
   color: rgb(41, 180, 180);
   cursor: pointer;

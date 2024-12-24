@@ -76,7 +76,6 @@ const Character = (props) => {
       };
 
     return (
-        <div>
         <div className={`mb-3 ${styles.Header}`}>
             <Row className={`${styles.ButtonLine} mt-2 mx-3 d-flex align-items-center `}>
                 <Col className='text-center mx-0 px-0' xs={1}></Col>
@@ -97,10 +96,9 @@ const Character = (props) => {
                     />
                 </Col>
             </Row>
-            <p style={{ textTransform: 'uppercase'}} 
-            className={` pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-            <h5 className={`text-center my-3 pl-3 py-1 mx-1 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Character Info</h5>
+            <div className='px-3'>
+            <p className={`text-center mx-md-5 mb-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Character Info</p>
             <Row>
                 <Col className='text-center' xs={6}>
                 <p className={`${styles.BoldTitle} 
@@ -113,18 +111,17 @@ const Character = (props) => {
                 <p>{number} </p>
                 </Col>
             </Row>
-            <div className=''>
-            <h5 className={`text-center mt-4 mx-1 mb-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Actor Info</h5>
-             <Row>
-                 <Col className='text-center mb-3'>
-                <div>
-                 <span className={`py-1 px-3 ${styles.SubTitle3 } `} >
-                CALLNAME: {username}
-                  </span>  
-                 </div>
-                 </Col>
-             </Row>
+            <p className={`text-center mt-4 mx-md-5 mb-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Actor Info</p>
+            <Row>
+            <Col className='text-center mb-3'>
+            <div className='mb-3'>
+            <span className={`py-1 px-5 ${styles.BoldTitleCall } `} >
+            CALLNAME: {username}
+            </span>  
+            </div>
+            </Col>
+            </Row>
             <Row className='mb-3 text-center'>
                 <Col xs={6} md={4} >
                 <p className={`${styles.BoldTitle} 
@@ -154,9 +151,9 @@ const Character = (props) => {
                 <p>{requirements} </p>
                 </Col>
             </Row>
-            </div>
             <h5 className={`text-center mt-4 mb-4 pl-3 mx-1 py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Callsheet Info</h5>
+            <div>
             <Row>
                 <Col className='text-center' xs={6}>
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>MAKE UP TIME</p>
@@ -299,7 +296,8 @@ const Character = (props) => {
                 </>}
                 </Col>          
             </Row>
-        </div>
+            </div>
+            </div>
         </div>
     )
 }
