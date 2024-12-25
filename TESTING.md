@@ -941,9 +941,44 @@ Description: View and Create Characters.<br>
 <img src="documentation/readme-images/charfetadd2.png" width="50%">
 </h2>
 
-<p align="center"> <strong>Number "30" Unavailable Now</strong></p>
+<p align="center"> <strong>Number "30" is Unavailable Now</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/charfetadd3.png" width="50%">
+</h2>
+
+- Use Case: Edit a Character from the Character Top on the Characters page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Character" form opens.<br>
+
+- Use Case: Delete a Character from the Character Top on the Characters page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon, e.g. Character "Nicky" and select Delete.<br>
+  2. The "Cancel/Delete" Modal opens.<br>
+  3. Click Cancel and the Modal closes.
+  4. Click Delete and a Success message displays and the Character is deleted.
+
+<p align="center"> <strong>Nicky Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charfetdeltop.png" width="50%">
+</h2>
+
+- Use Case: Edit a Character from the Character page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Character" form opens.<br>
+
+- Use Case: Delete a Character from the Character page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon on the Character "Nic" page and select Delete.<br>
+  2. The "Cancel/Delete" Modal opens.<br>
+  3. Click Cancel and the Modal closes.<br>
+  4. Click Delete and a Success message displays and the Character "Nic" is deleted.<br>
+  5. Back on the Create Character page the Number "30" is now available again.<br>
+
+<p align="center"> <strong>Number "30" is Unavailable Now</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxxxx.png" width="50%">
 </h2>
 
 ### Locations

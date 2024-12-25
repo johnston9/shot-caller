@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useSetCharacterContext } from '../../contexts/CharLocatContex';
+import { toast } from 'react-toastify';
 
 const Character = (props) => {
     const setCharacter = useSetCharacterContext();
@@ -50,6 +51,7 @@ const Character = (props) => {
       const handleDelete = async () => {
         try {
           await axiosReq.delete(`/characters/${id}/`);
+          toast.success(`Character "${role}" Deleted`);
           history.push(`/characters`);
         } catch (err) {
         }
@@ -77,6 +79,7 @@ const Character = (props) => {
 
     return (
         <div className={`mb-3 ${styles.Header}`}>
+            {/* Moodboard */}
             <Row className={`${styles.ButtonLine} mt-2 mx-3 d-flex align-items-center `}>
                 <Col className='text-center mx-0 px-0' xs={1}></Col>
                 <Col xs={10} sm={5} className='text-center mx-0 px-0'>

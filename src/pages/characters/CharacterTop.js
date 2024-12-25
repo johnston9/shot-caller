@@ -10,6 +10,7 @@ import styles from "../../styles/Characters.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
+import { toast } from 'react-toastify';
 
 const CharacterTop = (props) => {
     const {
@@ -27,9 +28,10 @@ const CharacterTop = (props) => {
     const handleDelete = async () => {
         try {
             await axiosReq.delete(`/characters/${id}/`);
-            // history.push(`/home`);
-            fetchCharacters();
+            toast.success(`Character "${role}" Deleted`);
             history.push(`/characters`);
+            // history.push(`/home`);
+            // fetchCharacters();
         } catch (err) {
         }
         };

@@ -328,12 +328,12 @@ const handleSubmit = async (event) => {
 const buttons = (
 <div className="text-center">    
   <Button
-    className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+    className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 mr-3`}
     onClick={() => history.goBack()}
   >
     Cancel
   </Button>
-  <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
+  <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-3`} type="submit">
     Create
   </Button>
 </div>
@@ -360,17 +360,14 @@ const buttons = (
                         <ImportantEdit  /> 
               ) }  
             </div> 
-            <Container className= {`mt-3 ${appStyles.Content} ${styles.Container}`} >
+            <Container className= {`mt-3 px-0 ${appStyles.Content} ${styles.Container}`} >
               <Form className="mt-0" onSubmit={handleSubmit}>
-              <h5 className={`text-center mt-0 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Character Info</h5>
+              <h5 className={`text-center mt-0 mb-4 py-0 ${styles.SubTitle }`}>
+                CHARACTER INFO</h5>
              <Row>
-             <Col xs={6} className="d-flex justify-content-center align-items-center" >
-              <h5 className="mt-3 text-center">Number {number} </h5>
-              </Col>
-              <Col xs={6} className="d-flex justify-content-center" >
+              <Col xs={12} sm={6} className="d-flex justify-content-center" >
               <Form.Group controlId="role" className={`${styles.Width} text-center`}  >
-                      <Form.Label className={`${styles.Bold} `} >Role</Form.Label>
+                      <Form.Label className={`${styles.BoldScene} `} >Role</Form.Label>
                       <Form.Control 
                       className={styles.Input}
                       type="text"
@@ -385,24 +382,28 @@ const buttons = (
                     </Alert>
                   ))}
               </Col>
+              <Col xs={12} sm={6} className="text-center" >
+              <p className={`${styles.BoldScene} `} >Number</p>
+              <p className={`${styles.Number} `} >{number} </p>
+              </Col>
              </Row>
               {/* actor details */}
-              <h5 className={`text-center mx-3 mt-5 mb-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Actor Info</h5>
+              <h5 className={`text-center mt-5 mb-3 mb-0 py-0 ${styles.SubTitle }`}>
+                ACTOR INFO</h5>
              <Row>
                 <Col className='text-center mt-2 mb-3'>
-                <div>
-                 <span className={`py-1 px-3 ${styles.SubTitle3 } `} >
-                   USERNAME: {username}
-                  </span>  
-                 </div>
+                <div className='mb-3'>
+                <span className={`py-1 px-1 px-md-5 ${styles.BoldTitleCall } `} >
+                CALLNAME: {username}
+                </span>  
+                </div>
                 </Col>
              </Row>
               <Row className="text-center mb-3">
-                  <Col className="d-flex justify-content-center" xs={6}  >
+                  <Col xs={12} sm={6} className="d-flex justify-content-center"  >
                   <Form.Group controlId="actor" 
-                    className={`${styles.Width} text-center`}  >
-                          <Form.Label className={styles.Bold} >Actor</Form.Label>
+                    className={`${styles.Width2} text-center`}  >
+                          <Form.Label className={styles.BoldScene} >Actor</Form.Label>
                           <Form.Control 
                           type="text"
                           className={styles.Input}
@@ -417,10 +418,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={6} className="d-flex justify-content-center" >
+                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="mobile" 
-                  className={`${styles.Width} text-center`}  >
-                          <Form.Label className={styles.Bold} >
+                  className={`${styles.Width2} text-center`}  >
+                          <Form.Label className={styles.BoldScene} >
                             Mobile</Form.Label>
                           <Form.Control 
                           className={styles.Input}
@@ -437,11 +438,12 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
+              <hr/>
               <Row>
-                  <Col xs={6}  className="d-flex justify-content-center" >
+                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="email"
                   className={`${styles.Width2} text-center`} >
-                          <Form.Label className={styles.Bold} >Email</Form.Label>
+                          <Form.Label className={styles.BoldScene} >Email</Form.Label>
                           <Form.Control 
                           className={styles.Input}
                           type="text"
@@ -456,10 +458,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={6} className="d-flex justify-content-center">
+                  <Col xs={12} sm={6} className="d-flex justify-content-center">
                   <Form.Group controlId="agent" 
-                   className={`${styles.Width} text-center`}  >
-                          <Form.Label className={styles.Bold} >Agent</Form.Label>
+                   className={`${styles.Width2} text-center`}  >
+                          <Form.Label className={styles.BoldScene} >Agent</Form.Label>
                           <Form.Control 
                           className={styles.Input}
                           type="text"
@@ -475,18 +477,19 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
+              <hr/>
               {/* Requirements */}
               <Row className="text-center" >
-                  <Col xs={6} className="d-flex justify-content-center" >
+                  <Col xs={12} md={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="requirements" 
                     className={`${styles.Width2} text-center`} >
-                          <Form.Label className={styles.Bold} >Requirements</Form.Label>
+                          <Form.Label className={styles.BoldScene} >Requirements</Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
                           name="requirements"
                           as="textarea"
-                          rows={2}
+                          rows={1}
                           value={requirements}
                           onChange={handleChange}
                               />
@@ -497,16 +500,16 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={6} className="d-flex justify-content-center">
+                  <Col xs={12} md={6} className="d-flex justify-content-center">
                   <Form.Group controlId="diet" 
                     className={`${styles.Width2} text-center`}>
-                          <Form.Label className={styles.Bold} >Diet</Form.Label>
+                          <Form.Label className={styles.BoldScene} >Diet</Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
                           name="diet"
                           as="textarea"
-                          rows={2}
+                          rows={1}
                           value={diet}
                           onChange={handleChange}
                               />
@@ -518,14 +521,14 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Callsheet Info</h5>
-              {/* times agent */}
+              <h5 className={`text-center mt-5 mb-4 py-0 ${styles.SubTitle }`}>
+                CALLSHEET INFO</h5>
+              {/* times */}
               <Row className="text-center">
-                  <Col xs={6} className="d-flex justify-content-center" >
+                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="make_up_time" 
                     className={`${styles.Width}`} >
-                          <Form.Label className={styles.Bold} >Makeup Time</Form.Label>
+                          <Form.Label className={styles.BoldScene} >Makeup Time</Form.Label>
                           <Form.Control 
                           className={styles.Input}
                           type="text"
@@ -540,10 +543,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={6} className="d-flex justify-content-center" >
+                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="commute_time" 
                     className={`${styles.Width}`} >
-                          <Form.Label className={styles.Bold} >Commute Time</Form.Label>
+                          <Form.Label className={styles.BoldScene} >Commute Time</Form.Label>
                           <Form.Control 
                           className={styles.Input}
                           type="text"
@@ -559,12 +562,13 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
+              <hr/>
              {/* pickups */}
              <Row className="text-center">
-                  <Col xs={6} className="d-flex justify-content-center" >
+                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="pickup_address" 
                     className={`${styles.Width2}`}>
-                          <Form.Label className={styles.Bold} >Pickup Address</Form.Label>
+                          <Form.Label className={styles.BoldScene} >Pickup Address</Form.Label>
                           <Form.Control 
                           type="text"
                           className={styles.InputScene}
@@ -581,10 +585,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={6} className="d-flex justify-content-center">
+                  <Col xs={12} sm={6} className="d-flex justify-content-center">
                   <Form.Group controlId="pickup_address_2" 
                     className={`${styles.Width2}`} >
-                          <Form.Label className={styles.Bold} >Pickup Address 2</Form.Label>
+                          <Form.Label className={styles.BoldScene} >Pickup Address 2</Form.Label>
                           <Form.Control 
                           type="text"
                           className={styles.InputScene}
@@ -602,34 +606,14 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <h5 className={`text-center mt-5 mb-4 pl-3 py-1 mx-3 ${styles.SubTitle }`}
-                style={{ textTransform: 'uppercase'}}>Makeup / Costumes</h5>
-                {/* makeup/costume 1 mx-1 mx-sm-5 */}
-              <Row className="mb-3 text-center">
-                  <Col xs={12} md={6}  >
-                  <p className={`${styles.BoldTitle} 
+              <h5 className={`text-center mt-5 mb-4 py-0 ${styles.SubTitle }`}>
+                MAKEUP / COSTUMES</h5>
+                {/* makeup/costume 1  */}
+              <Row className="mt-3 text-center">
+                {/* image 8 is  makeup image*/}
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
                   mb-0 text-center mx-3`} >MAKEUP</p>
-                  <div className="d-flex justify-content-center">
-                  <Form.Group controlId="makeup" 
-                    className={`${styles.Width2}`} >
-                          <Form.Label className={styles.Bold} ></Form.Label>
-                          <Form.Control 
-                          className={styles.InputScene}
-                          type="text"
-                          name="makeup"
-                          as="textarea"
-                          rows={2}
-                          value={makeup}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.makeup?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                    </div>
-                  {/* image 8 is  makeup image*/}
                   <Container
                           className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                           >
@@ -675,32 +659,33 @@ const buttons = (
                       ))}
                       {/* """ end image 8 """" */}
                   </Container>
-                  </Col>
-                  <Col xs={12} md={6} >
-                  <p className={`${styles.BoldTitle} 
-                  mb-0 text-center mx-3`} >COSTUME 1</p>
                   <div className="d-flex justify-content-center">
-                  <Form.Group controlId="costume1" 
+                  <Form.Group controlId="makeup" 
                     className={`${styles.Width2}`} >
-                          <Form.Label className={styles.Bold} ></Form.Label>
+                          <Form.Label className={styles.BoldScene} ></Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
-                          name="costume1"
+                          name="makeup"
                           as="textarea"
-                          rows={2}
-                          value={costume1}
+                          rows={1}
+                          value={makeup}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.costume1?.map((message, idx) => (
+                      {errors?.makeup?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
                       ))}
-                    </div>
-                      {/* image1 */}
-                      <Container
+                  </div>
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  </Col>
+                  {/* image1 */}
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >COSTUME 1</p>
+                  <Container
                     className={`${appStyles.Content} d-flex flex-column justify-content-center`}
                   >
                     <Form.Group className="text-center pt-3">
@@ -743,36 +728,37 @@ const buttons = (
                           {message}
                         </Alert>
                       ))}
-                      </Container>
-                  </Col>
-              </Row>
-              {/* costume 2/3 */}
-              <Row className="text-center mt-4 mb-3">
-                  <Col xs={12} md={6} >
-                  <p className={`${styles.BoldTitle} 
-                  mb-0 text-center mx-3`} >COSTUME 2</p>
+                  </Container>
                   <div className="d-flex justify-content-center">
-                  <Form.Group controlId="costume2" 
+                  <Form.Group controlId="costume1" 
                     className={`${styles.Width2}`} >
-                          <Form.Label className={styles.Bold} ></Form.Label>
+                          <Form.Label className={styles.BoldScene} ></Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
-                          name="costume2"
+                          name="costume1"
                           as="textarea"
-                          rows={2}
-                          value={costume2}
+                          rows={1}
+                          value={costume1}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.costume2?.map((message, idx) => (
+                      {errors?.costume1?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
                       ))}
                   </div>
-                      {/* image 2 */}
-                      <Container
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  </Col>
+              </Row>
+              {/* costume 2/3 */}
+              <Row className="text-center">
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
+                  mb-0 text-center`} >COSTUME 2</p>
+                  {/* image 2 */}
+                  <Container
                           className={`${appStyles.Content} mt-3 p-0 d-flex flex-column justify-content-center`}
                           >
                       <Form.Group >
@@ -817,30 +803,31 @@ const buttons = (
                       ))}
                       {/* """ end image 2 """" */}
                   </Container>
-                  </Col>
-                  <Col xs={12} md={6}  >
-                  <p className={`${styles.BoldTitle} 
-                  mb-0 text-center mx-3`} >COSTUME 3</p>
                   <div className="d-flex justify-content-center">
-                  <Form.Group controlId="costume3" 
+                  <Form.Group controlId="costume2" 
                     className={`${styles.Width2}`} >
                           <Form.Label className={styles.Bold} ></Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
-                          name="costume3"
+                          name="costume2"
                           as="textarea"
-                          rows={2}
-                          value={costume3}
+                          rows={1}
+                          value={costume2}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.costume3?.map((message, idx) => (
+                      {errors?.costume2?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
                       ))}
                   </div>
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  </Col>
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
+                  mb-0 text-center`} >COSTUME 3</p>
                   {/* image 3 */}
                   <Container
                           className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
@@ -887,34 +874,35 @@ const buttons = (
                       ))}
                       {/* """ end image 3 """" */}
                   </Container>
-                  </Col>
-              </Row>
-              {/* costume 4/5  */}
-              <Row className="mb-3 mt-4 text-center">          
-                  <Col xs={12} md={6} >
-                  <p className={`${styles.BoldTitle} 
-                  mb-0 text-center mx-3`} >COSTUME 4</p>
                   <div className="d-flex justify-content-center">
-                  <Form.Group controlId="costume4" 
+                  <Form.Group controlId="costume3" 
                     className={`${styles.Width2}`} >
                           <Form.Label className={styles.Bold} ></Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
-                          name="costume4"
+                          name="costume3"
                           as="textarea"
-                          rows={2}
-                          value={costume4}
+                          rows={1}
+                          value={costume3}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.costume4?.map((message, idx) => (
+                      {errors?.costume3?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
                       ))}
                   </div>
-                      {/* image 4 */}
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  </Col>
+              </Row>
+              {/* costume 4/5  */}
+              <Row className="text-center">          
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
+                  mb-0 text-center`} >COSTUME 4</p>
+                  {/* image 4 */}
                   <Container
                           className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                           >
@@ -960,31 +948,32 @@ const buttons = (
                       ))}
                       {/* """ end image 4 """" */}
                   </Container>
-                  </Col>
-                  <Col xs={12} md={6} >
-                  <p className={`${styles.BoldTitle} 
-                  mb-0 text-center mx-3`} >COSTUME 5</p>
                   <div className="d-flex justify-content-center">
-                  <Form.Group controlId="costume5" 
+                  <Form.Group controlId="costume4" 
                     className={`${styles.Width2}`} >
                           <Form.Label className={styles.Bold} ></Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
-                          name="costume5"
+                          name="costume4"
                           as="textarea"
-                          rows={2}
-                          value={costume5}
+                          rows={1}
+                          value={costume4}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.costume5?.map((message, idx) => (
+                      {errors?.costume4?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
                       ))}
                   </div>
-                      {/* image 5 */}
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  </Col>
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >COSTUME 5</p>
+                  {/* image 5 */}
                   <Container
                           className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                           >
@@ -1030,33 +1019,34 @@ const buttons = (
                       ))}
                       {/* """ end image 5 """" */}
                   </Container>
-                  </Col>
-              </Row>
-              {/* costume 6/7  */}
-              <Row className="text-center mb-3">
-                  <Col xs={12} md={6} >
-                  <p className={`${styles.BoldTitle} 
-                  mb-0 text-center mx-3`} >COSTUME 6</p>
                   <div className="d-flex justify-content-center">
-                  <Form.Group controlId="costume6" 
+                  <Form.Group controlId="costume5" 
                     className={`${styles.Width2}`} >
-                          <Form.Label className={styles.Bold} ></Form.Label>
+                          <Form.Label className={styles.BoldScene} ></Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
-                          name="costume6"
+                          name="costume5"
                           as="textarea"
-                          rows={2}
-                          value={costume6}
+                          rows={1}
+                          value={costume5}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.costume6?.map((message, idx) => (
+                      {errors?.costume5?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
                       ))}
                   </div>
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  </Col>
+              </Row>
+              {/* costume 6/7  */}
+              <Row className="text-center">
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >COSTUME 6</p>
                   {/* image 6 */}
                   <Container
                           className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
@@ -1103,30 +1093,31 @@ const buttons = (
                       ))}
                       {/* """ end image 6 """" */}
                   </Container>
-                  </Col>
-                  <Col xs={12} md={6} >
-                  <p className={`${styles.BoldTitle} 
-                  mb-0 text-center mx-3`} >COSTUME 7</p>
                   <div className="d-flex justify-content-center">
-                  <Form.Group controlId="costume7" 
+                  <Form.Group controlId="costume6" 
                     className={`${styles.Width2}`} >
                           <Form.Label className={styles.Bold} ></Form.Label>
                           <Form.Control 
                           className={styles.InputScene}
                           type="text"
-                          name="costume7"
+                          name="costume6"
                           as="textarea"
-                          rows={2}
-                          value={costume7}
+                          rows={1}
+                          value={costume6}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.costume7?.map((message, idx) => (
+                      {errors?.costume6?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>
                       ))}
                   </div>
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  </Col>
+                  <Col xs={12} md={6} >
+                  <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >COSTUME 7</p>
                   {/* image 7 */}
                   <Container
                           className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
@@ -1173,8 +1164,30 @@ const buttons = (
                       ))}
                       {/* """ end image 7 """" */}
                   </Container>
+                  <div className="d-flex justify-content-center">
+                  <Form.Group controlId="costume7" 
+                    className={`${styles.Width2}`} >
+                          <Form.Label className={styles.Bold} ></Form.Label>
+                          <Form.Control 
+                          className={styles.InputScene}
+                          type="text"
+                          name="costume7"
+                          as="textarea"
+                          rows={1}
+                          value={costume7}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.costume7?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </div>
+                  <hr className={`${styles.Break1Cos} mt-4`}/>
                   </Col>
               </Row>
+              <hr/>
               <Row>
                 <Col>
                   <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>

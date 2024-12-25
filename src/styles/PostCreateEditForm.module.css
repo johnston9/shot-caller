@@ -7,6 +7,21 @@
   color: rgb(140, 111, 25, 99%);
 }
 
+.BoldTitleCall {
+  font-weight: 700;
+  color: #F5F5F5;
+  background-color: #000;
+  /* background-color: #3b444b; */
+}
+
+.Break1Cos {
+  border-top: 1px solid rgba(177, 146, 51, 0.99);
+}
+
+.Number {
+  color: #747686;
+}
+
 .Break {
   border-top: 10px solid #d0d9db;
 }
