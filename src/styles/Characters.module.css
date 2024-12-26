@@ -5,6 +5,22 @@
     margin-bottom: 16px;
   }
 
+.Break1 {
+    border-top: 1px solid #d0d9db;
+}
+
+.Para {
+  min-height: 35px;
+}
+
+.BorderRight {
+  border-right: 1px solid #d0d9db;
+}
+
+.Role {
+  color: #747686;
+}
+
 .Info {
   color: #000;
 }
