@@ -458,48 +458,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} sm={6} className="d-flex justify-content-center">
-                  <Form.Group controlId="agent" 
-                   className={`${styles.Width2} text-center`}  >
-                          <Form.Label className={styles.BoldScene} >Agent</Form.Label>
-                          <Form.Control 
-                          className={styles.Input}
-                          type="text"
-                          name="agent"
-                          value={agent}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.agent?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                  </Col>
-              </Row>
-              <hr/>
-              {/* Requirements */}
-              <Row className="text-center" >
-                  <Col xs={12} md={6} className="d-flex justify-content-center" >
-                  <Form.Group controlId="requirements" 
-                    className={`${styles.Width2} text-center`} >
-                          <Form.Label className={styles.BoldScene} >Requirements</Form.Label>
-                          <Form.Control 
-                          className={styles.InputScene}
-                          type="text"
-                          name="requirements"
-                          as="textarea"
-                          rows={1}
-                          value={requirements}
-                          onChange={handleChange}
-                              />
-                      </Form.Group>
-                      {errors?.requirements?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                  </Col>
+                  {/* Diet */}
                   <Col xs={12} md={6} className="d-flex justify-content-center">
                   <Form.Group controlId="diet" 
                     className={`${styles.Width2} text-center`}>
@@ -521,8 +480,48 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <h5 className={`text-center mt-5 mb-4 py-0 ${styles.SubTitle }`}>
-                CALLSHEET INFO</h5>
+              <hr/>
+              <Row>
+                  {/* Agent - Agent email (using pickup_address_2 for this*/}
+                  <Col xs={12} sm={6} className="d-flex justify-content-center">
+                  <Form.Group controlId="agent" 
+                   className={`${styles.Width2} text-center`}  >
+                          <Form.Label className={styles.BoldScene} >
+                            Agent - Agent Phone</Form.Label>
+                          <Form.Control 
+                          className={styles.Input}
+                          type="text"
+                          name="agent"
+                          value={agent}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.agent?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+                  <Col xs={12} sm={6} className="d-flex justify-content-center">
+                  <Form.Group controlId="pickup_address_2" 
+                    className={`${styles.Width2} text-center`} >
+                          <Form.Label className={styles.BoldScene} >Agent Email</Form.Label>
+                          <Form.Control 
+                          type="text"
+                          className={styles.Input}
+                          name="pickup_address_2"
+                          value={pickup_address_2}
+                          onChange={handleChange}
+                              />
+                      </Form.Group>
+                      {errors?.pickup_address_2?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                      ))}
+                  </Col>
+              </Row>
+              <hr/>
               {/* times */}
               <Row className="text-center">
                   <Col xs={12} sm={6} className="d-flex justify-content-center" >
@@ -563,7 +562,7 @@ const buttons = (
                   </Col>
               </Row>
               <hr/>
-             {/* pickups */}
+             {/* Requirements/Notes */}
              <Row className="text-center">
                   <Col xs={12} sm={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="pickup_address" 
@@ -585,21 +584,22 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} sm={6} className="d-flex justify-content-center">
-                  <Form.Group controlId="pickup_address_2" 
-                    className={`${styles.Width2}`} >
-                          <Form.Label className={styles.BoldScene} >Pickup Address 2</Form.Label>
+                  <Col xs={12} md={6} className="d-flex justify-content-center" >
+                  <Form.Group controlId="requirements" 
+                    className={`${styles.Width2} text-center`} >
+                          <Form.Label className={styles.BoldScene} >
+                            Requirements/Notes</Form.Label>
                           <Form.Control 
-                          type="text"
                           className={styles.InputScene}
+                          type="text"
+                          name="requirements"
                           as="textarea"
-                          name="pickup_address_2"
                           rows={2}
-                          value={pickup_address_2}
+                          value={requirements}
                           onChange={handleChange}
                               />
                       </Form.Group>
-                      {errors?.pickup_address_2?.map((message, idx) => (
+                      {errors?.requirements?.map((message, idx) => (
                         <Alert variant="warning" key={idx}>
                           {message}
                         </Alert>

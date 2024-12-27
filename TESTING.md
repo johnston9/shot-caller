@@ -967,18 +967,40 @@ Description: View and Create Characters.<br>
 
   1. Click the "3 Dots Edit/Delete" icon and select Edit.<br>
   2. The "Edit Character" form opens.<br>
+  3. Enter the inputs including the 8 images and submit. <br>
+  4. A succcess message displays and the inputs and images all display on the Character page. <br>
+
+<p align="center"> <strong>Enter Inputs and Images</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charfetedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Inputs Display Correctly</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charfetedit2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Images Display Correctly</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charfetedit3.png" width="50%">
+</h2>
 
 - Use Case: Delete a Character from the Character page<br>
 
-  1. Click the "3 Dots Edit/Delete" icon on the Character "Nic" page and select Delete.<br>
+  1. Click the "3 Dots Edit/Delete" icon on the Character "Clara" - Number "111" page and select Delete.<br>
   2. The "Cancel/Delete" Modal opens.<br>
   3. Click Cancel and the Modal closes.<br>
-  4. Click Delete and a Success message displays and the Character "Nic" is deleted.<br>
-  5. Back on the Create Character page the Number "30" is now available again.<br>
+  4. Click Delete and a Success message displays and the Character "Clara" is deleted.<br>
+  5. Refresh the page and back on the Create Character page the Number "111" is now available again.<br>
 
-<p align="center"> <strong>Number "30" is Unavailable Now</strong></p>
+  <p align="center"> <strong>Number "111" is Unavailable</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxxxx.png" width="50%">
+<img src="documentation/readme-images/charfetdel1a.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Number "111" is Available Now after Deleting Clara</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charfetdel2b.png" width="50%">
 </h2>
 
 ### Locations
