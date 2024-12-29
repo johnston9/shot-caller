@@ -1004,9 +1004,9 @@ Description: View and Create Characters.<br>
 </h2>
 
 ### Locations
-Description: View and Create Characters.<br>
+Description: View and Create Locations.<br>
 
-- Use Case: View all Characters<br>
+- Use Case: View all Locations<br>
 
   1. Click .<br>
   2. Click .<br>

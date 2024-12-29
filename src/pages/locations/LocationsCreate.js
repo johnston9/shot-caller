@@ -225,12 +225,12 @@ const LocationsCreate = ({topbox} ) => {
     const buttons = (
       <div className="text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
           onClick={() => history.goBack()}
         >
           Cancel
         </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
           Create
         </Button>
       </div>
@@ -238,30 +238,27 @@ const LocationsCreate = ({topbox} ) => {
   
     return (
       <div>
-      {topbox ? (
-        ""
-      ) : (
         <TopBox title="Create Location" />
-      ) }
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} text-left my-2`}
         onClick={() => history.goBack()}
         >
         Back
         </Button>
-        <Container className= {`${appStyles.Content} ${styles.Container}`} >
-          <Form className="mt-3" onSubmit={handleSubmit}>
-          <h3 className="text-center">Name</h3>
-          <p className="text-center">Quick Add Name for scene dropdown.<br/>
-            Location extra details only added on the Scene Page. </p>
+        <Container className= {`px-0 ${appStyles.Content} ${styles.Container}`} >
+          <Form className="mt-0" onSubmit={handleSubmit}>
+          <h5 className={`text-center mt-0 mb-4 py-0 ${styles.SubTitle }`}>
+                NAME</h5>
+          <p className="text-center">Use the Create button here to quickly add a 
+            Location Name for the Scene Location Dropdown.</p> <br/>
           <Row>
           <Col md={3} ></Col>
-              <Col md={6} >
-              <Form.Group controlId="name" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Name</Form.Label>
+              <Col md={6} className="d-flex justify-content-center">
+              <Form.Group controlId="name" className={`${styles.Width} text-center`} >
+                      <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
                       <Form.Control 
                       type="text"
-                      placeholder="Name"
+                      className={styles.Input}
                       name="name"
                       value={name}
                       onChange={handleChange}
@@ -276,21 +273,25 @@ const LocationsCreate = ({topbox} ) => {
           </Row>
           <Row>
             <Col>
-              <div className= {`mb-4 mt-3 `} >{buttons} </div>
+              <div className= {`text-center mb-4 mt-3 `} >
+              <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
+                Create
+              </Button>  
+              </div>
             </Col>
           </Row>
-          <p style={{ textTransform: 'uppercase'}} className={`mt-3 mb-2  pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-          <h3 className="text-center my-3">Details</h3>
+          <h5 className={`text-center mt-0 mb-4 py-0 ${styles.SubTitle }`}>
+                DETAILS</h5>
           {/*  details */}
           <Row className="text-center">
-              <Col xs={6} className="px-0"  >
-              <Form.Group controlId="description" className="mb-2 px-2" >
-                      <Form.Label className={styles.Bold} >Description</Form.Label>
+              <Col xs={12} sm={6} className="d-flex justify-content-center" >
+              <Form.Group controlId="description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.BoldScene} >Description</Form.Label>
                       <Form.Control 
                       type="text"
+                      className={styles.InputScene}
                       as="textarea"
-                      rows={3}
-                      placeholder="Description"
+                      rows={2}
                       name="description"
                       value={description}
                       onChange={handleChange}
@@ -302,13 +303,14 @@ const LocationsCreate = ({topbox} ) => {
                     </Alert>
                   ))}
               </Col>
-              <Col xs={6} className="px-0"  >
-              <Form.Group controlId="filming_address_primary" className="px-2 mb-2" >
-                      <Form.Label className={styles.Bold} >Filming Address 1</Form.Label>
+              <Col xs={12} sm={6} className="d-flex justify-content-center"  >
+              <Form.Group controlId="filming_address_primary" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.BoldScene} >Filming Address 1</Form.Label>
                       <Form.Control 
                       as="textarea"
-                      rows={3}
+                      rows={2}
                       type="text"
+                      className={styles.InputScene}
                       name="filming_address_primary"
                       value={filming_address_primary}
                       onChange={handleChange}
@@ -323,7 +325,7 @@ const LocationsCreate = ({topbox} ) => {
           </Row>
           <hr/>
           <Row className="text-center">
-              <Col xs={6} className="px-0"  >
+              <Col xs={6} sm={6} className="px-0"  >
               <Form.Group controlId="filming_address2" className="mb-2 px-2" >
                       <Form.Label className={styles.Bold} >Filming Address 2</Form.Label>
                       <Form.Control 
@@ -341,7 +343,7 @@ const LocationsCreate = ({topbox} ) => {
                     </Alert>
                   ))}
               </Col>
-              <Col xs={6} className="px-0"  >
+              <Col xs={6} sm={6} className="px-0"  >
               <Form.Group controlId="filming_address3" className="mb-2 px-2" >
                       <Form.Label className={styles.Bold} >Filming Address 3</Form.Label>
                       <Form.Control 

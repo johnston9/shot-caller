@@ -87,20 +87,20 @@ const DayPage = () => {
                 <Row className='my-4'>
                     <Col xs={6} className="text-center">
                         <Button onClick={() => setShow(show => !show)} 
-                        className={`px-4 px-sm-5 ${btnStyles.Button} ${btnStyles.Bright}`} >
+                        className={`px-2 px-sm-5 ${btnStyles.Button} ${btnStyles.Bright}`} >
                         Add Scene</Button>
                     </Col>
                     {callsheet.results.length ? (
                         <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheets/${id}`}>
-                            <Button className={`px-2 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} > 
+                            <Button className={`px-1 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} > 
                             View Callsheet</Button>
                         </Link>
                     </Col>
                     ) : (
                         <Col xs={6} className="text-center">
                         <Link className={`p-1`} to={`/callsheet/create/${id}`}>
-                            <Button className={`px-2 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} >Create Callsheet</Button>
+                            <Button className={`px-1 px-sm-4 ${btnStyles.Button} ${btnStyles.Bright}`} >Create Callsheet</Button>
                         </Link>
                     </Col>
                     )}

@@ -565,8 +565,7 @@ const buttons = (
              {/* Requirements/Notes */}
              <Row className="text-center">
                   <Col xs={12} sm={6} className="d-flex justify-content-center" >
-                  <Form.Group controlId="pickup_address" 
-                    className={`${styles.Width2}`}>
+                  <Form.Group controlId="pickup_address" className={`${styles.Width2}`}>
                           <Form.Label className={styles.BoldScene} >Pickup Address</Form.Label>
                           <Form.Control 
                           type="text"

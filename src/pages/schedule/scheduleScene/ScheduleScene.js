@@ -97,37 +97,18 @@ const ScheduleScene = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p >{pages}</p>
                 </Col>
-                {/* cast */}
-                {showSideBySide ? (
-                <Col xs={1} md={1} className="mx-0 px-0">
-                    <Button onClick={() => setShow(show => !show)} 
-                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-                    C
-                    </Button>
-                </Col>
-                ) : (
                     <Col xs={1} md={1} className="mx-0 px-0">
                     <Button onClick={() => setShow(show => !show)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     Cast
                     </Button>
-                </Col>
-                )}
-                {showSideBySide ? (
-                    <Col className={`mx-0 px-0 `} xs={1} md={1}>
-                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-                        I
-                    </Button>
-                </Col>
-                ) : (
+                    </Col>
                     <Col className={`mx-0 px-0 `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
                     </Button>
                 </Col>
-                )}      
             </Row>
             {/* Order  */}
             {!showOrder ?("") : (                       
@@ -171,7 +152,7 @@ const ScheduleScene = (props) => {
         {/* mobile */}
         <div className='d-block d-md-none'>
             {/* schedule */}
-            <Row className='text-center mx-0 px-0' >
+            <Row className={`${styles.Bold} text-center mx-0`} >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                     <p className={`mb-0  ${styles.TitleBox2}`}>{start_time}</p>
                     <p className={`mb-0  ${styles.TitleBox2}`}>{end_time}</p>
@@ -272,7 +253,9 @@ const ScheduleScene = (props) => {
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <ScheduleSceneInfo {...sceneAll}/> 
+                    <ScheduleSceneInfo 
+                    style={style}
+                    {...sceneAll}/> 
                     ) }
                     </Col>
                 </Row>

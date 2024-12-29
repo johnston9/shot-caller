@@ -20,7 +20,7 @@ const ScheduleScene = (props) => {
         start_time, number, int_ext, location } = props
 
     return (
-        <div style={style} className={` ${styles.Bold}`} > 
+        <div style={style} className={` ${styles.Boldn}`} > 
         <div className='d-none d-md-block'>
             <Row className='pt-2 text-center mx-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
