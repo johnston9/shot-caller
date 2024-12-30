@@ -614,7 +614,7 @@ const buttons = (
                   <p className={`${styles.BoldScene} 
                   mb-0 text-center mx-3`} >MAKEUP</p>
                   <Container
-                          className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                          className={`${appStyles.Content} ${styles.Container2} mt-3 d-flex flex-column justify-content-center`}
                           >
                       <Form.Group>
                         {makeup_image ? (

@@ -408,30 +408,15 @@ const LocationsEdit = () => {
               </Col>
           </Row>
           {/* images */}
-          <p style={{ textTransform: 'uppercase'}} className={`mt-3 mb-2  pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-          <h3 className="text-center my-3">Images</h3>
+          <h5 className={`text-center mt-5 mb-3 mb-0 py-0 ${styles.SubTitle }`}>
+               IMAGES</h5>
           {/* location 1/2 */}
-          <Row className="mb-3 text-center">
+          <Row className="text-center">
               <Col xs={12} md={6} >
-              <Form.Group controlId="image1_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} > Image1 </Form.Label>
-                      <Form.Control 
-                      placeholder="Image 1 description"
-                      type="text"
-                      name="image1_description"
-                      as="textarea"
-                      rows={3}
-                      value={image1_description}
-                      onChange={handleChange}
-                          />
-                  </Form.Group>
-                  {errors?.image1_description?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                      {message}
-                    </Alert>
-                  ))}
-                  {/* image1 */}
-                  <Container
+              <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >IMAGE 1</p>
+              {/* image1 */}
+              <Container
                 className={`${appStyles.Content} d-flex flex-column justify-content-center`}
               >
                 <Form.Group className="text-center pt-3">
@@ -474,28 +459,33 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-                  </Container>
-              </Col>
-              <Col xs={12} md={6}>
-              <Form.Group controlId="image2_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Image2 </Form.Label>
+              </Container>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image1_description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.Bold} ></Form.Label>
                       <Form.Control 
-                      placeholder="Image2 description"
+                      className={styles.InputScene}
                       type="text"
-                      name="image2_description"
+                      name="image1_description"
                       as="textarea"
-                      rows={3}
-                      value={image2_description}
+                      rows={1}
+                      value={image1_description}
                       onChange={handleChange}
                           />
-                  </Form.Group>
-                  {errors?.image2_description?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                      {message}
-                    </Alert>
-                  ))}
-                  {/* image 2 */}
-                  <Container
+              </Form.Group>
+              {errors?.image1_description?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
+              </Col>
+              <Col xs={12} md={6}>
+              <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >IMAGE 2</p>
+              {/* image 2 */}
+              <Container
                       className={`${appStyles.Content} mt-3 p-0 d-flex flex-column justify-content-center`}
                       >
                   <Form.Group >
@@ -540,29 +530,33 @@ const LocationsEdit = () => {
                   ))}
                   {/* """ end image 2 """" */}
               </Container>
-              </Col>
-          </Row>
-          <hr/>
-          {/* location 3/4  */}
-          <Row className="mt-5 mb-3 text-center">
-              <Col xs={12} md={6} >
-              <Form.Group controlId="image3_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Image3</Form.Label>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image2_description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.Bold} ></Form.Label>
                       <Form.Control 
-                      placeholder="Image3 description"
+                      className={styles.InputScene}
                       type="text"
-                      name="image3_description"
+                      name="image2_description"
                       as="textarea"
-                      rows={2}
-                      value={image3_description}
+                      rows={1}
+                      value={image2_description}
                       onChange={handleChange}
                           />
                   </Form.Group>
-                  {errors?.image3_description?.map((message, idx) => (
+                  {errors?.image2_description?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                       {message}
                     </Alert>
                   ))}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
+              </Col>
+          </Row>
+          {/* location 3/4  */}
+          <Row className="text-center">
+              <Col xs={12} md={6} >
+              <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >IMAGE 3</p>
               {/* image 3 */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
@@ -607,28 +601,32 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-                  {/* """ end image 3 """" */}
               </Container>
-              </Col>
-              <Col xs={12} md={6} >
-              <Form.Group controlId="image4_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Image4</Form.Label>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image3_description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.Bold} ></Form.Label>
                       <Form.Control 
-                      placeholder="image4 description"
+                      className={styles.InputScene}
                       type="text"
-                      name="image4_description"
+                      name="image3_description"
                       as="textarea"
-                      rows={2}
-                      value={image4_description}
+                      rows={1}
+                      value={image3_description}
                       onChange={handleChange}
                           />
                   </Form.Group>
-                  {errors?.image4_description?.map((message, idx) => (
+                  {errors?.image3_description?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                       {message}
                     </Alert>
                   ))}
-                  {/* image 4 */}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
+              </Col>
+              <Col xs={12} md={6} >
+              <p className={`${styles.BoldScene} 
+              mb-0 text-center mx-3`} >IMAGE 4</p>
+              {/* image 4 */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                       >
@@ -672,32 +670,35 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-                  {/* """ end image 4 """" */}
               </Container>
-              </Col>
-          </Row >
-          <hr/>
-          {/* location 5/6 */}
-          <Row className="mt-5 mb-3 text-center">
-              <Col xs={12} md={6} >
-              <Form.Group controlId="image5_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Image5</Form.Label>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image4_description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.Bold} ></Form.Label>
                       <Form.Control 
-                      placeholder="image5 description"
+                      className={styles.InputScene}
                       type="text"
-                      name="image5_description"
+                      name="image4_description"
                       as="textarea"
-                      rows={2}
-                      value={image5_description}
+                      rows={1}
+                      value={image4_description}
                       onChange={handleChange}
                           />
                   </Form.Group>
-                  {errors?.image5_description?.map((message, idx) => (
+                  {errors?.image4_description?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                       {message}
                     </Alert>
                   ))}
-                  {/* image 5 */}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
+              </Col>
+          </Row >
+          {/* location 5/6 */}
+          <Row className="text-center">
+              <Col xs={12} md={6} >
+              <p className={`${styles.BoldScene} 
+              mb-0 text-center mx-3`} >IMAGE 5</p>
+              {/* image 5 */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
                       >
@@ -741,27 +742,31 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-                  {/* """ end image 5  """" */}
               </Container>
-              </Col>
-              <Col xs={12} md={6}>
-              <Form.Group controlId="image6_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Image6 </Form.Label>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image5_description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.Bold} ></Form.Label>
                       <Form.Control 
-                      placeholder="image6 description"
+                      className={styles.InputScene}
                       type="text"
-                      name="image6_description"
+                      name="image5_description"
                       as="textarea"
-                      rows={2}
-                      value={image6_description}
+                      rows={1}
+                      value={image5_description}
                       onChange={handleChange}
                           />
                   </Form.Group>
-                  {errors?.image6_description?.map((message, idx) => (
+                  {errors?.image5_description?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                       {message}
                     </Alert>
                   ))}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
+              </Col>
+              <Col xs={12} md={6}>
+              <p className={`${styles.BoldScene} 
+              mb-0 text-center mx-3`} >IMAGE 6</p>
               {/* image 6 */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
@@ -806,31 +811,34 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-                  {/* """ end image 6 """" */}
               </Container>
-              </Col>
-          </Row>
-          <hr/>
-          {/* location 7/8 */}
-          <Row className="mt-5 mb-3 text-center">
-              <Col xs={12} md={6} >
-              <Form.Group controlId="image7_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Image7</Form.Label>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image6_description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.Bold} ></Form.Label>
                       <Form.Control 
-                      placeholder="image7 description"
+                      className={styles.InputScene}
                       type="text"
-                      name="image7_description"
+                      name="image6_description"
                       as="textarea"
-                      rows={2}
-                      value={image7_description}
+                      rows={1}
+                      value={image6_description}
                       onChange={handleChange}
                           />
                   </Form.Group>
-                  {errors?.image7_description?.map((message, idx) => (
+                  {errors?.image6_description?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                       {message}
                     </Alert>
                   ))}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
+              </Col>
+          </Row>
+          {/* location 7/8 */}
+          <Row className="text-center">
+              <Col xs={12} md={6} >
+              <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >IMAGE 7</p>
               {/* image 7 */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
@@ -875,27 +883,31 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-                  {/* """ end image 7 """" */}
               </Container>
-              </Col>
-              <Col xs={12} md={6}>
-              <Form.Group controlId="image8_description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Image8</Form.Label>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image7_description" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.Bold} ></Form.Label>
                       <Form.Control 
-                      placeholder="Image8 description"
+                      className={styles.InputScene}
                       type="text"
-                      name="image8_description"
+                      name="image7_description"
                       as="textarea"
-                      rows={2}
-                      value={image8_description}
+                      rows={1}
+                      value={image7_description}
                       onChange={handleChange}
                           />
                   </Form.Group>
-                  {errors?.image8_description?.map((message, idx) => (
+                  {errors?.image7_description?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                       {message}
                     </Alert>
                   ))}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
+              </Col>
+              <Col xs={12} md={6}>
+              <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >IMAGE 8</p>
               {/* image 8 */}
               <Container
                       className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
@@ -940,8 +952,27 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-                  {/* """ end image 8 """" */}
               </Container>
+              <div className="d-flex justify-content-center">
+              <Form.Group controlId="image8_description" className={`${styles.Width2}`}>
+                      <Form.Label className={styles.Bold} ></Form.Label>
+                      <Form.Control 
+                      className={styles.InputScene}
+                      type="text"
+                      name="image8_description"
+                      as="textarea"
+                      rows={1}
+                      value={image8_description}
+                      onChange={handleChange}
+                          />
+                  </Form.Group>
+                  {errors?.image8_description?.map((message, idx) => (
+                    <Alert variant="warning" key={idx}>
+                      {message}
+                    </Alert>
+                  ))}
+              </div>
+              <hr className={`${styles.Break1Cos} mt-4`}/>
               </Col>
           </Row>
           <Row>

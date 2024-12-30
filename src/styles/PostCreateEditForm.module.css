@@ -7,6 +7,10 @@
   color: rgb(140, 111, 25, 99%);
 }
 
+.Red {
+  color: crimson;
+}
+
 .BoldTitleCall {
   font-weight: 700;
   color: #F5F5F5;
@@ -103,8 +107,7 @@
 }
 
 .SubTitle2 {
-  /* background-color: #e0fafe; */
-  background-color: #d6fcff;;
+  background-color: #d6fcff;
   font-weight: 700;
 }
 

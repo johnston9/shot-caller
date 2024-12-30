@@ -15,10 +15,12 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { toast } from 'react-toastify';
+import Important from "./Important";
 
 const LocationsCreate = () => {
     useRedirect();
     const [errors, setErrors] = useState({});
+    const [showImp, setShowImp] = useState(false); 
     const [postData, setPostData] = useState({
         name: "",
         description: "",
@@ -80,10 +82,19 @@ const LocationsCreate = () => {
         >
         Back
         </Button>
+        <Button
+        className={`float-right my-2 ${btnStyles.Order} ${btnStyles.Button}`}
+        onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
+       </Button>
+       {!showImp ? (
+            ""
+                ) : (
+                  <Important  /> 
+        ) } 
         <Container className= {`px-0 ${appStyles.Content} ${styles.Container} mb-0 pb-0`} >
           <Form className="mt-0 mb-0 pb-0" onSubmit={handleSubmit}>
           <h5 className={`text-center mt-0 mb-4 py-0 ${styles.SubTitle }`}>
-                CREATE LOCATION</h5>
+          CREATE LOCATION</h5>
           <Row>
           <Col md={3} ></Col>
               <Col md={6} className="d-flex justify-content-center">
