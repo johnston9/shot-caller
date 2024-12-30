@@ -13,13 +13,13 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
-import { toast } from 'react-toastify';
 
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import ImportantEdit from "./ImportantEdit";
+import { toast } from 'react-toastify';
 
 const CharacterEdit = () => {
     useRedirect();

@@ -1008,40 +1008,35 @@ Description: View and Create Locations.<br>
 
 - Use Case: View all Locations<br>
 
-  1. Click .<br>
-  2. Click .<br>
+  1. Click on Locations on the Home page of from the NavB Bar.<br>
+  2. the Locations page opens .<br>
 
 <p align="center"> <strong>Sxxxx</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxxx.png" width="50%">
+<img src="documentation/readme-images/locsview.png" width="50%">
 </h2>
 
-- Use Case: Find a xxx<br>
+- Use Case: Find a Location<br>
 
-  1. Input a xxxx in the Search Bar, eg "bar".<br>
-  2. All ccc with the word "xx" are returned.<br>
+  1. Input text in the Search Bar, e.g. "d".<br>
+  2. All item related display.<br>
 
-<p align="center"> <strong>"xxx" Posts Returned</strong></p>
+<p align="center"> <strong>"d"  Returned</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/locssearch.png" width="50%">
 </h2>
 
-- Use Case: Create a Character<br>
+- Use Case: Create a Location<br>
 
-  1. Click the "Add xxx" tab.<br>
-  2. The "Create xxx" form opens.<br>
-  3. Input the details an xxxxs and submit.<br>
-  4. A success message displays saying - "Post Added"<br>
-  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+  1. Click the "Add Location" tab.<br>
+  2. The "Create Location" form opens.<br>
+  3. Input the details, e.g "Donzy's Room" and and submit.<br>
+  4. A success message displays saying - "Location "Donzy's Room" Added"<br>
+  5. The new Location is added and is displayed.<br>
 
-<p align="center"> <strong>Create Form</strong></p>
+<p align="center"> <strong>Donzy's Room</p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd2.png" width="50%">
-</h2>
-
-<p align="center"> <strong>The xxx Displays</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/locsadd1.png" width="50%">
 </h2>
 
 ### Moodboards

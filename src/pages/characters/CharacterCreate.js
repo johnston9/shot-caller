@@ -158,7 +158,7 @@ const CharacterCreate = () => {
             results: [data, ...prevChars.results],
           }));
           history.push(`/characters/${data.id}/`);
-          toast.success(`Character "${role}" Added`);
+          toast.success(`Character "${role}" Created`);
           console.log(data);
         } catch (err) {
           console.log(err);

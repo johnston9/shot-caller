@@ -6,7 +6,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Asset from "../../components/Asset";
-
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
@@ -18,11 +17,11 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
+import { toast } from 'react-toastify';
 
 const LocationsEdit = () => {
     useRedirect();
     const [errors, setErrors] = useState({});
-    const topbox = false
     const [postData, setPostData] = useState({
         name: "",
         description: "",
@@ -270,7 +269,7 @@ const LocationsEdit = () => {
         try {
           await axiosReq.put(`/locations/${id}/`, formData);
           history.push(`/locations/`);
-        //   history.push(`/locations/${data.id}/`);
+          toast.success(`Location "${name}" Updated`);
         } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {
@@ -279,94 +278,82 @@ const LocationsEdit = () => {
         }
       }
 
-    const buttons = (
-      <div className="text-center">    
-        <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => history.goBack()}
-        >
-          Cancel
-        </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Create
-        </Button>
-      </div>
-    );
+      const buttons = (
+        <div className="text-center mt-5">    
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
+            onClick={() => history.goBack()}
+          >
+            Cancel
+          </Button>
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
+            Update
+          </Button>
+        </div>
+      );
 
     return (
         <div>
-            {topbox ? (
-                ""
-            ) : (
-                <TopBox title="Edit Location" />
-            ) }
-            <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue} text-left my-2`}
-                onClick={() => history.goBack()}
-                >
-                Back
-            </Button>
-            <Container className= {`${appStyles.Content} ${styles.Container}`} >
+          <TopBox title={`Edit ${name}`} />
+          <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue} text-left my-2`}
+              onClick={() => history.goBack()}
+              >
+              Back
+          </Button>
+          <Container className= {`px-0 ${appStyles.Content} ${styles.Container}`} >
           <Form className="mt-3" onSubmit={handleSubmit}>
-          <h3 className="text-center">Name</h3>
-          <p className="text-center">Quick add name for scene dropdown.
-            Location extra details can be add in the scene also. </p>
+          <h5 className={`text-center mt-0 mb-4 py-0 ${styles.SubTitle }`}
+          style={{ textTransform: 'uppercase'}}>EDIT LOCATION - {name}</h5>
           <Row>
           <Col md={3} ></Col>
-              <Col md={6} >
-              <Form.Group controlId="name" className="mb-2" >
-                      <Form.Label className="d-none p-1" >Name</Form.Label>
-                      <Form.Control 
-                      type="text"
-                      placeholder="Name"
-                      name="name"
-                      value={name}
-                      onChange={handleChange}
-                          />
-                  </Form.Group>
-                  {errors?.name?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                      {message}
-                    </Alert>
-                  ))}
-              </Col>
+          <Col md={6} className="d-flex justify-content-center">
+          <Form.Group controlId="name" className={`${styles.Width} text-center`} >
+                  <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className={styles.Input}
+                  name="name"
+                  value={name}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
           </Row>
-          <Row>
-            <Col>
-              <div className= {`mb-4 mt-3 `} >{buttons} </div>
-            </Col>
-          </Row>
-          <p style={{ textTransform: 'uppercase'}} className={`mt-3 mb-2  pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-          <h3 className="text-center my-3">Details</h3>
-          {/*  details */}
-          <Row className="text-center">
-              <Col xs={6} >
-              <Form.Group controlId="description" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Description</Form.Label>
+          <hr/>
+          <Row className="text-center mt-3">
+          <Col xs={12} md={6} className="d-flex justify-content-center" >
+          <Form.Group controlId="description" className={`${styles.Width2}`} >
+                  <Form.Label className={styles.BoldScene} >Description</Form.Label>
+                  <Form.Control 
+                  type="text"
+                  className={styles.InputScene}
+                  as="textarea"
+                  rows={2}
+                  name="description"
+                  value={description}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.description?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+          </Col>
+          <Col xs={12} sm={6} className="d-flex justify-content-center"  >
+              <Form.Group controlId="filming_address_primary" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.BoldScene} >Primary Filming Address</Form.Label>
                       <Form.Control 
-                      type="text"
                       as="textarea"
-                      rows={3}
-                      placeholder="Description"
-                      name="description"
-                      value={description}
-                      onChange={handleChange}
-                          />
-                  </Form.Group>
-                  {errors?.description?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                      {message}
-                    </Alert>
-                  ))}
-              </Col>
-              <Col xs={6} >
-              <Form.Group controlId="filming_address_primary" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Primary Filming Address</Form.Label>
-                      <Form.Control 
-                      placeholder="Primary Filming Address"
-                      as="textarea"
-                      rows={3}
+                      rows={2}
                       type="text"
+                      className={styles.InputScene}
                       name="filming_address_primary"
                       value={filming_address_primary}
                       onChange={handleChange}
@@ -377,15 +364,15 @@ const LocationsEdit = () => {
                       {message}
                     </Alert>
                   ))}
-              </Col>
+          </Col>
           </Row>
           <hr/>
           <Row className="text-center">
-              <Col xs={6} >
-              <Form.Group controlId="filming_address2" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Second Filming Address</Form.Label>
+              <Col xs={12} md={6} className="d-flex justify-content-center"  >
+              <Form.Group controlId="filming_address2" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.BoldScene} >Filming Address 2</Form.Label>
                       <Form.Control 
-                      placeholder="Second Filming Address"
+                      className={styles.InputScene}
                       as="textarea"
                       rows={2}
                       type="text"
@@ -400,11 +387,11 @@ const LocationsEdit = () => {
                     </Alert>
                   ))}
               </Col>
-              <Col xs={6}  >
-              <Form.Group controlId="filming_address3" className="mb-2" >
-                      <Form.Label className={styles.Bold} >Third Filming Address</Form.Label>
+              <Col xs={12} md={6} className="d-flex justify-content-center"  >
+              <Form.Group controlId="filming_address3" className={`${styles.Width2}`} >
+                      <Form.Label className={styles.BoldScene} >Filming Address 3</Form.Label>
                       <Form.Control 
-                      placeholder="Third Filming Address"
+                      className={styles.InputScene}
                       type="text"
                       as="textarea"
                       rows={2}
