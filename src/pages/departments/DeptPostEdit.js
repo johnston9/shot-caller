@@ -229,13 +229,13 @@ function DeptPostEdit() {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Edit
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
+        Update
       </Button>
     </div>
   );
@@ -256,11 +256,12 @@ function DeptPostEdit() {
           {textFields}
           </Container>
       </Col>
-      <Col className="pt-2 p-0 p-md-2" md={6}>
+      <Col className="" md={6}>
         <Container
-          className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+          className={`mt-3 ${appStyles.Content} ${styles.Container2} 
+          d-flex flex-column justify-content-center`}
         >
-          <Form.Group className="text-center pt-3">
+          <Form.Group className="text-center">
               {image1 ? (
                 <>
                   <figure>
@@ -277,12 +278,13 @@ function DeptPostEdit() {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
                   htmlFor="image-upload"
                 >
-                  <Asset
+                  <Asset2
                     src={Upload}
-                    message="Click or tap to upload an image"
+                    height={"20px"}
+                    width={"20px"}
+                    message="Upload Image 1"
                   />
                 </Form.Label>
               )}
@@ -303,9 +305,9 @@ function DeptPostEdit() {
             </Container>
                 {/* image 2 */}
             <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group >
+            <Form.Group className="text-center" >
               {image2 ? (
                 <>
                   <figure>
@@ -313,7 +315,7 @@ function DeptPostEdit() {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      className={`${btnStyles.Button} ${btnStyles.Blue}`}
                       htmlFor="image-upload2"
                     >
                       Change the image
@@ -322,14 +324,14 @@ function DeptPostEdit() {
                 </>
               ) : (
                 <Form.Label
-                  className="my-1"
+                  // className="my-1 ml-3"
                   htmlFor="image-upload2"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload second image"
+                    message="Upload Image 2"
                   />
                 </Form.Label>
               )}
@@ -351,9 +353,9 @@ function DeptPostEdit() {
         </Container>
         {/* image 3 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group>
+            <Form.Group className="text-center" >
               {image3 ? (
                 <>
                   <figure>
@@ -370,14 +372,13 @@ function DeptPostEdit() {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
                   htmlFor="image-upload3"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload third image"
+                    message="Upload Image 3"
                   />
                 </Form.Label>
               )}
@@ -399,9 +400,9 @@ function DeptPostEdit() {
         </Container>
         {/* image 4 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group>
+            <Form.Group className="text-center">
               {image4 ? (
                 <>
                   <figure>
@@ -418,14 +419,13 @@ function DeptPostEdit() {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
                   htmlFor="image-upload4"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload fourth image"
+                    message="Upload Image 4"
                   />
                 </Form.Label>
               )}
@@ -447,9 +447,9 @@ function DeptPostEdit() {
         </Container>
         {/* image 5 */}
         <Container
-                className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
+                className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
-            <Form.Group>
+            <Form.Group className="text-center">
               {image5 ? (
                 <>
                   <figure>
@@ -466,14 +466,13 @@ function DeptPostEdit() {
                 </>
               ) : (
                 <Form.Label
-                  className=" my-1"
                   htmlFor="image-upload5"
                 >
                   <Asset2
                     src={Upload}
                     height={"20px"}
                     width={"20px"}
-                    message="Upload last image"
+                    message="Upload Image 5"
                   />
                 </Form.Label>
               )}

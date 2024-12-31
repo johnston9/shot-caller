@@ -3,6 +3,11 @@
   color: #fff;
 }
 
+/* .PostCard {
+  border: 1px solid rgb(140, 111, 25, 99%);
+  border-bottom: 1px solid rgb(255,215,0);
+} */
+
 .Italic {
   font-style: italic;
 }
@@ -54,21 +59,23 @@
 .ContentOpened {
   background-color: #fafafa;
   /* color: #1ea7ae; */
-  color: #F5F5F5;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1.0);
+  color: rgba(129, 102, 21, 0.99);
+  /* color: #F5F5F5;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1.0); */
   cursor: pointer;
-  /* font-weight: 700; */
+  font-weight: 700;
 }
 
 .ContentTitleOpened {
   color: #1f6370;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0);
+  color: #747686;
+  /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0); */
   font-weight: 400;
 }
 
 .ContentOpened:hover {
   color: #000;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0);
+  /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0); */
   font-weight: 700;
 }
 

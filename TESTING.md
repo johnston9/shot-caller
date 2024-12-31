@@ -993,7 +993,7 @@ Description: View and Create Characters.<br>
   4. Click Delete and a Success message displays and the Character "Clara" is deleted.<br>
   5. Refresh the page and back on the Create Character page the Number "111" is now available again.<br>
 
-  <p align="center"> <strong>Number "111" is Unavailable</strong></p>
+<p align="center"> <strong>Number "111" is Unavailable</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/charfetdel1a.png" width="50%">
 </h2>
@@ -1008,20 +1008,20 @@ Description: View and Create Locations.<br>
 
 - Use Case: View all Locations<br>
 
-  1. Click on Locations on the Home page of from the NavB Bar.<br>
-  2. the Locations page opens .<br>
+  1. Click on Locations on the Home page or from the NavBar.<br>
+  2. The Locations page opens.<br>
 
-<p align="center"> <strong>Sxxxx</strong></p>
+<p align="center"> <strong>Locations Page</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/locsview.png" width="50%">
 </h2>
 
-- Use Case: Find a Location<br>
+- Use Case: Find a Location from the Search Bar<br>
 
   1. Input text in the Search Bar, e.g. "d".<br>
   2. All item related display.<br>
 
-<p align="center"> <strong>"d"  Returned</strong></p>
+<p align="center"> <strong>"d" Related Items Returned</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/locssearch.png" width="50%">
 </h2>
@@ -1037,6 +1037,47 @@ Description: View and Create Locations.<br>
 <p align="center"> <strong>Donzy's Room</p>
 <h2 align="center">
 <img src="documentation/readme-images/locsadd1.png" width="50%">
+</h2>
+
+- Use Case: Edit a Location from the Location Top on the Locations page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Location" form opens.<br>
+
+- Use Case: Delete a Location from the Location Top on the Locations page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select Delete.<br>
+  2. The "Cancel/Delete" Modal opens.<br>
+  3. Click Cancel and the Modal closes.
+  4. Click Delete and a Success message displays and the Location is deleted.
+
+- Use Case: Edit a Location from the Location page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Location" form opens.<br>
+  3. Enter the inputs including the 8 images and submit. <br>
+  4. A succcess message displays and the inputs and images all display on the Location page. <br>
+
+<p align="center"> <strong>Enter Inputs and Images</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/locsedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message and Images Display Correctly</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/locsedit2.png" width="50%">
+</h2>
+
+- Use Case: Delete a Location from the Location page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon on the Location "Train Station" page and select Delete.<br>
+  2. The "Cancel/Delete" Modal opens.<br>
+  3. Click Cancel and the Modal closes.<br>
+  4. Click Delete and a Success message displays and the Location "Train Station" is deleted.<br>
+
+<p align="center"> <strong>"Train Station" is Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/locsdel1.png" width="50%">
 </h2>
 
 ### Moodboards

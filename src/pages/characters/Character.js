@@ -246,7 +246,7 @@ const Character = (props) => {
                 text-center px-0 mx-0`}>
                 <p className={`${styles.BoldTitle} mb-3 mx-3 mx-sm-5`}>MAKEUP</p>
                 {makeup_image && <> 
-                <div className='px-3 mb-1'>
+                <div className='px-1 mb-3'>
                     <Image className={styles.Images} 
                     src={makeup_image} alt="makeup image"  />
                     </div>

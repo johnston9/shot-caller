@@ -67,13 +67,13 @@ const LatestTop = (props) => {
 
     return (
         <div>
-          <Card className={ `py-0 mt-1 mb-0`}>
-          <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
+          <Card className={ `py-0 my-0 mb-0`}>
+          <Card.Body className={`py-0 my-0 px-0 ${styles.PostTop}`}>
             <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
             <Col xs={12} sm={3} className="my-0" >
                 {/* small */}
                 <div className='d-none d-sm-block'>
-                <Row >
+                <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
                 <Col xs={3} className="pl-3 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}/>
@@ -199,10 +199,10 @@ const LatestTop = (props) => {
                 </Row>  
                 </div> 
             </Col> 
-            <Col xs={12} sm={6} className="my-1" >
+            <Col xs={12} sm={6} className="py-1" >
             <Link to={`/latest/post/${id}`}>
             {opened_id ? (
-              <Row className={`${styles.ContentOpened} pt-1 my-0 mr-1 ml-1`}>
+              <Row className={`${styles.ContentOpened} py-0 my-0 mr-1 ml-1`}>
               <Col xs={12} 
               className={` text-center`} >
               <Row>
@@ -221,7 +221,7 @@ const LatestTop = (props) => {
               </Row>
             ) : (
               <Row onClick={handleDeptOpened}
-                 className={`${styles.ContentUnOpen} pt-1 my-0 mr-1 ml-1`}>
+                 className={`${styles.ContentUnOpen} py-0 my-0 mr-1 ml-1`}>
                 <Col xs={12} 
                 className={` text-center`} >
                 <Row>
@@ -244,21 +244,18 @@ const LatestTop = (props) => {
             {/* edit and date small */}
             <Col xs={12} sm={3} className="my-0 " >
             <div className='d-none d-sm-block'>
-            <Row >
-            <Col sm={3}
-            className="d-flex align-items-center px-0 float-right" >
+            <Row className="d-flex align-items-center px-0">
+            <Col className="pl-0 pr-0" sm={10} >
+            <p className={ `text-center  ${styles.Date}`}>{updated_at}
+            </p>
+            </Col>
+            <Col sm={2} className="d-flex align-items-center px-0 float-right" >
             {is_owner && (
             <PostDropdown
                 handleEdit={handleEdit}
                 handleDelete={handleDelete}
             />
             ) } 
-            </Col>
-            <Col className="pl-0 pr-0" sm={9} >
-            <p className={ `text-center  ${styles.Date}`}>{updated_at}
-            </p>
-            {/* icons */}
-            {/* star uses archive_id from drf */}
             </Col>
             </Row>   
             </div>     

@@ -62,8 +62,8 @@ const Latest = (props) => {
                 <p>
                 <span className=''>{name} </span>
                 </p>
-                <p>
-                <span className='ml-0 '>{position}</span>
+                <p className='pb-0 mb-0'>
+                <span className='ml-0 pb-0 mb-0'>{position}</span>
                 </p>
                 </div>
                 <div>

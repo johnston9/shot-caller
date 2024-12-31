@@ -268,7 +268,7 @@ const LocationsEdit = () => {
       
         try {
           await axiosReq.put(`/locations/${id}/`, formData);
-          history.push(`/locations/`);
+          history.push(`/locations/${id}/`);
           toast.success(`Location "${name}" Updated`);
         } catch (err) {
           console.log(err);

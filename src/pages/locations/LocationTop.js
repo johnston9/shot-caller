@@ -10,6 +10,7 @@ import styles from "../../styles/Characters.module.css"
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
+import { toast } from 'react-toastify';
 
 const LocationTop = (props) => {
     const {
@@ -25,6 +26,7 @@ const LocationTop = (props) => {
     const handleDelete = async () => {
         try {
             await axiosReq.delete(`/locations/${id}/`);
+            toast.success(`Location "${name}" Deleted`); 
             history.push(`/locations/`);
         } catch (err) {
         }
