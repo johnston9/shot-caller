@@ -95,41 +95,57 @@ const Location = (props) => {
                     />
                 </Col>
             </Row>
-            <p className={` pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
+            <h5 className={`text-center py-1 mb-3 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>LOCATION - {name} </h5>
             <div className='px-3'>
-            <h5 className='my-3 text-center' style={{ textTransform: 'uppercase'}}>INFO</h5>
-            {/* <h3 className='my-3 text-center'>Info</h3> */}
             <Row className='mb-3 text-center'>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className={`${styles.BorderRight} 
+                text-center px-0 mx-0`} >
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>DESCRIPTION</p>
+                <div className={`${styles.Para}`}>
                 <p>{description} </p>
+                </div>
                 </Col>
                 <Col xs={12} md={6}>
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>PRIMARY FILMING ADDRESS</p>
+                <div className={`${styles.Para}`}>
                 <p>{filming_address_primary} </p>
+                </div>
                 </Col>
+            </Row>
+            {/* break */}
+            <Row>
+            <Col xs={12}>
+            <hr className={`${styles.Break1} mt-0 mb-3`}/>
+            </Col>
             </Row>
             <Row className='mb-3 text-center'>
-                <Col xs={12} md={6}>
-                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>SECOND FILMING ADDRESS</p>
+                <Col xs={12} md={6} className={`${styles.BorderRight} 
+                text-center px-0 mx-0`}>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>FILMING ADDRESS 2</p>
+                <div className={`${styles.Para}`}>
                 <p>{filming_address2} </p>
+                </div>
                 </Col>
                 <Col xs={12} md={6}>
-                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5 `}>THIRD FILMING ADDRESS</p>
+                <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5 `}>FILMING ADDRESS 3</p>
+                <div className={`${styles.Para}`}>
                 <p>{filming_address3} </p>
+                </div>
                 </Col>
             </Row>
-            <p style={{ textTransform: 'uppercase'}} className={`mt-3 pl-3 mb-0 py-1 ${styles.SubTitle }`}></p>
-            <h5 className='my-3 text-center' style={{ textTransform: 'uppercase'}}>images</h5>
+            </div>
+            <h5 className={`text-center mt-4 mb-4 py-1 ${styles.SubTitle }`}
+             style={{ textTransform: 'uppercase'}}>Images</h5>
+            <div className='px-3'>
             {/* IMAGE 1/2 */}
             <Row className='text-center mb-5'>
-            <Col xs={12} md={6}>
-                {image1 && <> 
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5 text-center mx-1 mx-sm-5`}>Image 1</p>
-                    <Image className={styles.ImagesLand} 
+            <Col xs={12} md={6} className={`${styles.BorderRight} 
+                text-center px-0 mx-0`}>
+                    <p className={`${styles.BoldScene} 
+                    mb-3 text-center mx-1 mx-sm-5`}>Image 1</p>
+                    <Image className={styles.Images} 
                     src={image1} alt="Image 1" />
-                    </>
-                    }
                 {image1_description &&  <> 
                 <p className='mt-2'>{image1_description} </p>
                 </>}
@@ -149,7 +165,8 @@ const Location = (props) => {
             <hr/>
             {/* image 3/4 */}
             <Row className='text-center mb-5'>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className={`${styles.BorderRight} 
+                text-center px-0 mx-0`}>
                 {image3 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 3</p>
                     <Image src={image3} alt="Image 3" 
@@ -175,7 +192,8 @@ const Location = (props) => {
             <hr/>
             {/* IMAGE 5/6 */}
             <Row className='text-center mb-5'>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className={`${styles.BorderRight} 
+                text-center px-0 mx-0`}>
                 {image5 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 5</p>
                     <Image src={image5} alt="Image 5"
@@ -201,7 +219,8 @@ const Location = (props) => {
             <hr/>
             {/* IMAGE 7/8 */}
             <Row className='text-center mb-5'>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className={`${styles.BorderRight} 
+                text-center px-0 mx-0`}>
                 {image7 && <> 
                     <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>Image 7</p>
                     <Image src={image7} alt="Image 7" 

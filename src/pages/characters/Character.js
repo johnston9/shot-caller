@@ -263,7 +263,7 @@ const Character = (props) => {
                 <div className='px-1 mb-3'>
                     <Image className={styles.Images} 
                     src={costume1_image} alt="costume 1" />
-                    </div>
+                </div>
                     </>
                 }
                 {costume1 &&  <> 
