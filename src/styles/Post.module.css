@@ -3,6 +3,23 @@
   color: #fff;
 }
 
+.GoldDark {
+  color: rgba(129, 102, 21, 0.99);
+}
+
+.BorderRight {
+  border-right: 1px solid #d0d9db;
+}
+
+.Role {
+  color: #747686;
+}
+
+.BoldTitle {
+  font-weight: 700;
+  background-color: #d6fcff;
+}
+
 /* .PostCard {
   border: 1px solid rgb(140, 111, 25, 99%);
   border-bottom: 1px solid rgb(255,215,0);
@@ -42,7 +59,6 @@
 
 .ContentTitleUnOpen {
   color: #5fe9f0;
-  /* font-weight: 700; */
 }
 
 .ContentUnOpen:hover {
@@ -58,24 +74,18 @@
 
 .ContentOpened {
   background-color: #fafafa;
-  /* color: #1ea7ae; */
   color: rgba(129, 102, 21, 0.99);
-  /* color: #F5F5F5;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1.0); */
   cursor: pointer;
   font-weight: 700;
 }
 
 .ContentTitleOpened {
-  color: #1f6370;
   color: #747686;
-  /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0); */
   font-weight: 400;
 }
 
 .ContentOpened:hover {
   color: #000;
-  /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0); */
   font-weight: 700;
 }
 
@@ -149,26 +159,6 @@ i:hover {
 .PostTopText {
   color: #205a6e;
 }
-
-/* .Content1 {
-  color: #1ea7ae;
-  cursor: pointer;
-} 
-
-.Content2 {
-  cursor: pointer;
-  color: #000;
-}
-
-.Content1:hover {
-  color: #fff;
-  cursor: pointer;
-}
-
-.Content2:hover {
-  cursor: pointer;
-  color: #fff;
-}  */
 
 .Red {
   color: crimson;

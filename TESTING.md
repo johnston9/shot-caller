@@ -291,7 +291,7 @@ Description: This page displays all the currently added Scenes and the "Script" 
 <img src="documentation/readme-images/scenesworks.png" width="50%">
 </h2>
 
-- Use Case: Find Scenes from the Searchbar<br>
+- Use Case: Find Scenes from the Search Bar<br>
 
   1. On the Scenes Workspace start typing a Scene Number, Title or Location in the Searchbar, e.g. for Location start typing "Alligator Club".<br>
   2. Results will display narrowing down with each charactor or digit typed.<br>
@@ -403,7 +403,7 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 <img src="documentation/readme-images/scriptchange2.png" width="50%">
 </h2>
 
-<p align="center"> <strong>The new Script and the new info</strong></p>
+<p align="center"> <strong>The New Script and the New Info</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/scriptchange3.png" width="50%">
 </h2>
@@ -483,7 +483,7 @@ Description: This section contains the Scene Breakdown.
   2. Fill in the details and submit.
   3. A success message displays and the Scene it updated with the new details.
 
-#### Scene Characters/Bg
+#### Scene Characters/BG
 - Description: This section contains the Scene's Characters and Background information. Admin can add/edit Scene Characters and BG here. Characters are added by a dropdown containing all Characters added to the Project. Selecting a Character automatically fills it's Role and Number input.<br>
 Characters can be added to the Project on the "Add Character" form in the "Characters" feature or here in the "Add New Characters "form.
 
@@ -540,7 +540,7 @@ Characters can be added to the Project on the "Add Character" form in the "Chara
   5. A success message displays saying "Character Fritz Aded".<br>
   6. After the page is refreshed the Character "Fritz" will be displayed in ascending "Number" order like the rest of the Characters.<br>
 
-<p align="center"> <strong>The "Add Characters" form</strong></p>
+<p align="center"> <strong>The "Add Characters" Form</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/addchars1.png" width="50%">
 </h2>
@@ -890,7 +890,7 @@ Description: Collorate on Scenes by department through Posts with images<br>
 - Use Case: View the Scenes Workspace<br>
 
   1. Click on the "Primary Scenes Worksace" tab on the Home page or in the Navbar to Open the page.
-  2. Wiew the "Workspace Guide" on top and the departments below.
+  2. View the "Workspace Guide" on top and the departments below.
 
 <p align="center"> <strong>nnnnnnnn</strong></p>
 <h2 align="center">
@@ -919,6 +919,11 @@ Description: View and Create Characters.<br>
 <h2 align="center">
 <img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
+
+- Use Case: View a Character.<br>
+
+  1. Click on a Character.<br>
+  2. The Character page displays.<br>
 
 - Use Case: Create a Character<br>
 
@@ -1025,6 +1030,11 @@ Description: View and Create Locations.<br>
 <h2 align="center">
 <img src="documentation/readme-images/locssearch.png" width="50%">
 </h2>
+
+- Use Case: View a Location.<br>
+
+  1. Click on a Location.<br>
+  2. The Location page displays.<br>
 
 - Use Case: Create a Location<br>
 
@@ -1455,12 +1465,12 @@ Description: View and Create Post within each Department outside and separate to
 
 <p align="center"> <strong>Edit Form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd2.png" width="50%">
+<img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The Edited Post</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptaddd3.png" width="50%">
+<img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
 
 ### Character and locations page

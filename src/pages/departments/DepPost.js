@@ -62,7 +62,7 @@ const DeptPost = (props) => {
           <Col xs={9} className="pl-2 pr-0" >
           <div className={`${styles.Content4} pl-2 ml-3`}>
           <p>
-          <span className={`${styles.Italic}`}>{name} </span>
+          <span >{name} </span>
           </p>
           <p>
           <span className='ml-0 '>{position}</span>
@@ -83,7 +83,7 @@ const DeptPost = (props) => {
           </Col>
           <Col xs={8} className="text-center mb-0 pb-0" >
           <p>
-          <span className={`${styles.Italic}`}>{name}</span>
+          <span >{name}</span>
           </p>
           <p className='mb-0 pb-0'>
           {position}
@@ -140,45 +140,54 @@ const DeptPost = (props) => {
                     {title && <Card.Title style={{ fontStyle: 'italic' }}
                      className="text-center">{title}</Card.Title>}
                     <hr />
-                    {content && <Card.Text>{content}</Card.Text>}
+                    {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
                 </Card.Body>
                 <hr className="mt-0"/>
                 <Row className='mb-2'>
-                  {/* image 1/2 */}
-                  <Col className='mt-3' xs={12} md={6}  >
+                {/* image 1/2 */}
+                <Col  xs={12} md={6} className={`${styles.BorderRight} 
+                mt-3 text-center px-0 mx-0`} >
                       {image1 && <> 
-                          <Card.Img src={image1} alt="image1" className="px-3" />
+                        <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>IMAGE 1</p>
+                          <Card.Img src={image1} alt="image1" className="px-3 mt-3" />
                           </>
                           }
                   </Col>  
-                  <Col className='mt-3' xs={12} md={6}>
+                  <Col  xs={12} md={6} className={`mt-3 text-center px-0 mx-0`} >
                   {image2 && <> 
-                          <Card.Img src={image2} alt="image2" className="px-3"/>
+                    <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>IMAGE 2</p>
+                          <Card.Img src={image2} alt="image2" className="px-3 mt-3"/>
                           </>
                           }
                   </Col>
               </Row >
-              {/* image 3/4 */}
+              <hr/>
+              {/* image 3/4  */}
               <Row className='mb-2'>
-                  <Col className='mt-3' xs={12} md={6}>
+              <Col xs={12} md={6} className={`${styles.BorderRight} 
+                mt-3 text-center px-0 mx-0`} >
                       {image3 && <> 
-                          <Card.Img src={image3} alt="image3" className="px-3"/>
+                        <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>IMAGE 3</p>
+                          <Card.Img src={image3} alt="image3" className="px-3 mt-3"/>
                           </>
                           }
                   </Col>  
-                  <Col className='mt-3' xs={12} md={6}>
+                  <Col xs={12} md={6} className={`mt-3 text-center px-0 mx-0`} >
                   {image4 && <> 
+                    <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>IMAGE 4</p>
                           <Card.Img src={image4} alt="image4" className="px-3"/>
                           </>
                           }
                   </Col>
               </Row>
+              <hr/>
               {/* image 5 */}
               <Row>
                   <Col className='d-none d-md-block' md={3} ></Col>
                   <Col className='mt-3' xs={12} md={6}>
                       {image5 && <> 
-                          <Card.Img src={image5} alt="image5" className="px-3"/>
+                        <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>IMAGE 5</p>
+                          <Card.Img src={image5} alt="image5" className="px-3 mt-3"/>
                           </>
                           }
                   </Col>  
