@@ -2,7 +2,6 @@
  * Latest is a department choice in the Depts-Xtra app
    So all requests are to department */
 import React, { useEffect, useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -22,6 +21,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 function LatestEdit() {
   useRedirect();
@@ -88,6 +88,7 @@ function LatestEdit() {
   
     try {
       await axiosReq.put( `/department/posts/${id}`, formData);
+      toast.success(`Post Edited`); 
       history.push(`/latest/post/${id}`);
     } catch (err) {
       console.log(err);
@@ -98,50 +99,60 @@ function LatestEdit() {
   }
 
   const textFields = (
-      <div>
-          <Form.Group controlId="title" className="mb-2" >
-                <Form.Label className="p-1" >Title</Form.Label>
-                <Form.Control 
-                type="text"
-                name="title"
-                value={title}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            <Form.Group controlId="content" className="mb-2" >
-                <Form.Label className="p-1" >Content</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={6}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </div>
+    <div>
+    <Row className="mt-3">
+    <Col className="d-flex justify-content-center">
+    <Form.Group controlId="title" className={`${styles.Width2} text-center`}>
+              <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleChange}
+                  />
+    </Form.Group>
+    {errors?.title?.map((message, idx) => (
+      <Alert variant="warning" key={idx}>
+        {message}
+      </Alert>
+    ))}
+    </Col>
+    </Row>
+    <Row className="mt-3">
+    <Col className="d-flex justify-content-center">
+    <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+    <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+    <Form.Control 
+        className={styles.Input}
+        type="text"
+        name="content"
+        as="textarea"
+        rows={6}
+        value={content}
+        onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+    </Col>
+    </Row>
+    </div>
   )
+
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-4 ml-3`} type="submit">
-        Edit
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
+        Update
       </Button>
     </div>
   );

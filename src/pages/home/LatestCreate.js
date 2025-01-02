@@ -20,6 +20,7 @@ import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/Redirect";
+import { toast } from 'react-toastify';
 
 function LatestCreate({setShow} ) {
   useRedirect();
@@ -71,6 +72,7 @@ function LatestCreate({setShow} ) {
     try {
       const { data } = await axiosReq.post("/department/posts/", formData);
       history.push(`/latest/post/${data.id}`);
+      toast.success(`Post Added`); 
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -81,48 +83,58 @@ function LatestCreate({setShow} ) {
 
   const textFields = (
       <div>
-          <Form.Group controlId="title" className="mb-2" >
-                <Form.Label className="p-1" >Title</Form.Label>
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center">
+      <Form.Group controlId="title" className={`${styles.Width2} text-center`}>
+                <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
                 <Form.Control 
+                className={styles.Input}
                 type="text"
                 name="title"
                 value={title}
                 onChange={handleChange}
                     />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            <Form.Group controlId="content" className="mb-2" >
-                <Form.Label className="p-1" >Content</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={6}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row>
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center">
+      <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+      <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+      <Form.Control 
+          className={styles.Input}
+          type="text"
+          name="content"
+          as="textarea"
+          rows={6}
+          value={content}
+          onChange={handleChange}
+          />
+        </Form.Group>
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+      </Col>
+      </Row>
       </div>
   )
+
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => setShow(false)}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
         Create
       </Button>
     </div>
@@ -131,16 +143,18 @@ function LatestCreate({setShow} ) {
   return (
     <div>
     <h5 style={{ textTransform: 'uppercase'}} 
-    className={`text-center mb-3 pb-0 mt-3 py-1 ${styles.SubTitle }`}>
+    className={`text-center mt-3 py-1 ${styles.SubTitle }`}>
     Create Post</h5>
-    <Form className="mt-0 px-0" onSubmit={handleSubmit}>
+    <Form className={` ${styles.White }`} onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           {textFields}
           </Container>
       </Col>
-      <Col className="" md={6}>
+      <Col className="text-center" md={6}>
+      <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >IMAGE</p>
         <Container
           className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
         >
@@ -155,7 +169,7 @@ function LatestCreate({setShow} ) {
                       className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
                       htmlFor="image-upload"
                     >
-                      Change the image
+                      Change the Image
                     </Form.Label>
                   </div>
                 </>
@@ -166,7 +180,7 @@ function LatestCreate({setShow} ) {
                 >
                   <Asset
                     src={Upload}
-                    message="Click or tap to upload an image"
+                    message="Upload Image"
                   />
                 </Form.Label>
               )}
@@ -187,12 +201,18 @@ function LatestCreate({setShow} ) {
         </Container>
       </Col>   
     </Row>
-    <Row>
+    <Row className="mt-4">
       <Col>
-        <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>
+      {buttons}
       </Col>
     </Row>
     </Form>
+    <Row className=''>
+    <Col xs={2} ></Col>
+    <Col xs={8}>
+    <hr className={`${styles.Break} mt-4`}/>
+    </Col>
+    </Row>
     </div>
     );
 }

@@ -163,69 +163,84 @@ function DeptPostEdit() {
     }
   }
 
-  const textFields = (
-      <div>
-          <Form.Group controlId="departments" className="mb-2" >
-                <Form.Label className="p-1" >Departments</Form.Label>
-                <Form.Control as="select"
-                  name="departments"
-                  value={departments}
-                  onChange={handleChange}
-                  aria-label="act select">
-                  <option>Select</option>
-                  <option value="art">Art</option>
-                  <option value="camera">Camera</option>
-                  <option value="casting">Casting</option>
-                  <option value="electric">Electric/Grip</option>
-                  <option value="location">Location</option>
-                  <option value="make-up">Hair/Make-up</option>
-                  <option value="post">Post/VSF</option>
-                  <option value="production">Production</option>
-                  <option value="script">Script</option>
-                  <option value="sound">Sound</option>
-                  <option value="stunts">Stunts</option>
-                  <option value="wardrobe">Wardrobe</option> 
-                  
-                </Form.Control>
-            </Form.Group>
-            {errors?.departments?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-          <Form.Group controlId="title" className="mb-2" >
-                <Form.Label className="p-1" >Title</Form.Label>
-                <Form.Control 
-                type="text"
-                name="title"
-                value={title}
+  const textFields = ( 
+    <div>
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center">
+        <Form.Group controlId="departments" className={`${styles.Width2} text-center`} >
+        <Form.Label className={`${styles.BoldScene} `} >Department</Form.Label>
+              <Form.Control as="select"
+                name="departments"
+                className={styles.InputDept}
+                value={departments}
                 onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            <Form.Group controlId="content" className="mb-2" >
-                <Form.Label className="p-1" >Content</Form.Label>
-                <Form.Control 
-                    className={styles.Input}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={6}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </div>
+                aria-label="act select">
+                <option>Select</option>
+                <option value="art">Art</option>
+                <option value="camera">Camera</option>
+                <option value="casting">Casting</option>
+                <option value="electric">Electric/Grip</option>
+                <option value="location">Location</option>
+                <option value="make-up">Hair/Makeup</option>
+                <option value="post">Post/VFX</option>
+                <option value="production">Production</option>
+                <option value="script">Script</option>
+                <option value="sound">Sound</option>
+                <option value="stunts">Stunts</option>
+                <option value="wardrobe">Wardrobe</option> 
+                
+              </Form.Control>
+          </Form.Group>
+          {errors?.departments?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+      ))}
+      </Col>
+      </Row>
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center">
+      <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
+      <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            type="text"
+            name="title"
+            value={title}
+            onChange={handleChange}
+                />
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row>
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center">
+        <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+        <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+            <Form.Control 
+                className={styles.InputSceneDept}
+                type="text"
+                name="content"
+                as="textarea"
+                rows={4}
+                value={content}
+                onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+      </Col>
+      </Row>
+    </div>
   )
+
   const buttons = (
     <div className="text-center">    
       <Button
@@ -242,21 +257,27 @@ function DeptPostEdit() {
 
   return (
     <div>
-        <TopBox title="Departments Edit Post" />
+        <TopBox work="Departments"
+        title="Edit Post" />
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
       onClick={() => history.goBack()}
       >
       Back
-      </Button>
-    <Form className="mt-3" onSubmit={handleSubmit}>
+    </Button>
+    <h5 style={{ textTransform: 'uppercase'}} 
+    className={`text-center mt-3 py-1 ${styles.SubTitle }`}>
+    Edit Post</h5>
+    <Form className={` ${styles.White }`}  onSubmit={handleSubmit}>
     <Row>
     <Col md={6} className="p-0 p-md-2">
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           {textFields}
           </Container>
       </Col>
-      <Col className="" md={6}>
+      <Col className="text-center mt-3" md={6}>
+      <p className={`${styles.BoldScene} 
+                  mb-0 text-center mx-3`} >IMAGE 1</p>
         <Container
           className={`mt-3 ${appStyles.Content} ${styles.Container2} 
           d-flex flex-column justify-content-center`}
@@ -302,9 +323,9 @@ function DeptPostEdit() {
                 {message}
               </Alert>
             ))}
-            </Container>
-                {/* image 2 */}
-            <Container
+        </Container>
+        {/* image 2 */}
+        <Container
                 className={`${appStyles.Content} ${styles.Container2} mt-4 p-0 d-flex flex-column justify-content-center`}
                 >
             <Form.Group className="text-center" >
@@ -492,7 +513,7 @@ function DeptPostEdit() {
             ))}
             {/* """ end image 5 """" */}
         </Container>
-      </Col>   
+      </Col> 
     </Row>
     <Row>
       <Col>
