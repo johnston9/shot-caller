@@ -144,9 +144,10 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
 
   const textFields = ( 
       <div>
-          <p className={`mt-3 text-center ${styles.BoldScene }`}>Department</p>
-          <Form.Group controlId="departments" className="mb-2 mt-0 pt-0" >
-                {/* <Form.Label className="mt-0 pt-0"></Form.Label> */}
+        <Row className="mt-3">
+        <Col className="d-flex justify-content-center">
+          <Form.Group controlId="departments" className={`${styles.Width2} text-center`} >
+          <Form.Label className={`${styles.BoldScene} `} >Department</Form.Label>
                 <Form.Control as="select"
                   name="departments"
                   className={styles.InputDept}
@@ -173,59 +174,68 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
-            ))}
-          <p className={`mt-3 text-center ${styles.BoldScene }`}>Title</p>
-          <Form.Group controlId="title" className="mb-2" >
-                {/* <Form.Label className="p-1" >Title</Form.Label> */}
-                <Form.Control 
-                className={styles.InputDept}
-                type="text"
-                name="title"
-                value={title}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            <p className={`mt-3 text-center ${styles.BoldScene }`}>Content</p>
-            <Form.Group controlId="content" className="mb-2" >
-                {/* <Form.Label className="text-center">Content</Form.Label> */}
-                <Form.Control 
-                    className={styles.InputSceneDept}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={4}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
+        ))}
+        </Col>
+        </Row>
+        <Row className="mt-3">
+        <Col className="d-flex justify-content-center">
+        <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
+        <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
+              <Form.Control 
+              className={styles.Input}
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleChange}
+                  />
+        </Form.Group>
+        {errors?.title?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+        </Col>
+        </Row>
+        <Row className="mt-3">
+        <Col className="d-flex justify-content-center">
+          <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+          <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+              <Form.Control 
+                  className={styles.InputSceneDept}
+                  type="text"
+                  name="content"
+                  as="textarea"
+                  rows={4}
+                  value={content}
+                  onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.content?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+        </Row>
       </div>
   )
+  
   const buttons = (
     <div className="text-center">    
     {deptGeneral ? (
       <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
       onClick={() => setShow(false)}
     >
       Cancel
     </Button>
     ) : (<Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>)}
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
         Create
       </Button>
     </div>
@@ -249,8 +259,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     Create {deptGeneral} Post</h5>
     <Form className="mt-0 px-0" onSubmit={handleSubmit}>
     <Row>
-    <Col md={6} className="">
-    {/* {textFields} */}
+    <Col md={6} >
         <Container className= {`${appStyles.Content} ${styles.Container}`} >
           {textFields}
           </Container>

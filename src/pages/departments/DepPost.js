@@ -136,15 +136,15 @@ const DeptPost = (props) => {
             </Col>                
           </Row>
           </Card.Body>
-                <Card.Body className="pt-3" >
+              <Card.Body className="pt-3" >
                     {title && <Card.Title style={{ fontStyle: 'italic' }}
                      className="text-center">{title}</Card.Title>}
                     <hr />
                     {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
-                </Card.Body>
-                <hr className="mt-0"/>
-                <Row className='mb-2'>
-                {/* image 1/2 */}
+              </Card.Body>
+              <hr className="mt-0"/>
+              {/* image 1/2 */}
+              <Row className='mb-2'>
                 <Col  xs={12} md={6} className={`${styles.BorderRight} 
                 mt-3 text-center px-0 mx-0`} >
                       {image1 && <> 

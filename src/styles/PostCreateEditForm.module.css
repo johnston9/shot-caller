@@ -210,9 +210,11 @@
   box-sizing: border-box;
   border-radius: 2px;
   color: #747686;
-  padding: 0px 10px;
+  padding-left: 35px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   height: 30px !important;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .InputSceneDept {

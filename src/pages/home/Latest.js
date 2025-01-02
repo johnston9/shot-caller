@@ -45,8 +45,8 @@ const Latest = (props) => {
 
     return (
         <div>
-            <Card className='px-3'>
-            <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
+          <Card className='px-3'>
+          <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
           <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
           <Col xs={12} sm={3} className="my-0" >
                 {/* small */}
@@ -99,21 +99,16 @@ const Latest = (props) => {
                 </Row> 
                 <Row>
                 <Col className='text-center' xs={12}>
-                <p> {updated_at}</p>
+                <p className={ `text-center  ${styles.Date}`}>{updated_at}</p>
                 </Col>
                 </Row>  
                 </div> 
           </Col>    
           <Col xs={12} sm={6} className="my-1" >
             <Row className={`${styles.Content3} pt-1 my-0 mr-1 ml-1`}>
-                <Col xs={12} 
-                className={` text-center`} >
-                <Row>
                 <Col className='px-0 mx-0 py-2' xs={12}>
                   {departments && <p style={{ textTransform: 'capitalize'}}>
                     {departments}</p>}
-                </Col>
-                </Row>
                 </Col>
             </Row>
           </Col> 
@@ -121,42 +116,43 @@ const Latest = (props) => {
           <Col xs={12} sm={3} className="my-0 " >
             <div className='d-none d-sm-block'>
             <Row >
+            <Col className="d-flex align-items-center" sm={9} >
+            <p className={ `text-center  ${styles.Date}`}>{updated_at}
+            </p>
+            </Col>
             <Col sm={3}
             className="d-flex align-items-center px-0 float-right" >
+              <div className={`${styles.Icon}`} >
             {is_owner && (
             <PostDropdown
                 handleEdit={handleEdit}
                 handleDelete={handleDelete}
             />
             ) } 
-            </Col>
-            <Col className="pl-0 pr-0" sm={9} >
-            <p className={ `text-center  ${styles.Date}`}>{updated_at}
-            </p>
+            </div>
             </Col>
             </Row>   
             </div>     
             </Col>                
           </Row>
           </Card.Body>
-                <hr />
-                <Card.Body className="pt-1" >
-                    {title && <Card.Title style={{ fontStyle: 'italic' }}
-                     className="text-center">{title}</Card.Title>}
-                    <hr />
-                    {content && <Card.Text>{content}</Card.Text>}
-                </Card.Body>
-                <hr />
-                <Row className='mb-2'>
-                  {/* image 1/2 */}
-                  <Col xs={12} md={{span: 6, offset: 3}}  >
-                      {image1 && <> 
-                          <Card.Img src={image1} alt="image1" className="px-3" />
-                          </>
-                          }
-                  </Col>  
-              </Row >
-            </Card>
+          <Card.Body className="pt-3" >
+              {title && <Card.Title style={{ fontStyle: 'italic' }}
+                className="text-center">{title}</Card.Title>}
+              <hr />
+              {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
+          </Card.Body>
+          {/* image 1 */}
+          <Row className='mb-2'>
+            <Col xs={12} md={{span: 6, offset: 3}} className='mt-3' >
+                {image1 && <> 
+                  <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>IMAGE</p>
+                    <Card.Img src={image1} alt="image1" className="px-3 mt-3" />
+                    </>
+                    }
+            </Col>  
+          </Row >
+          </Card>
         </div>
     )
 }
