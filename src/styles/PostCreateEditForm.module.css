@@ -15,11 +15,19 @@
   border: 1px solid #dee1f7;
 }
 
+.ImageBox {
+  border: 2px solid #fff;
+}
+
 .BoldTitleCall {
   font-weight: 700;
   color: #F5F5F5;
   background-color: #000;
   /* background-color: #3b444b; */
+}
+
+.BreakCos1 {
+  border-top: 2px solid rgba(177, 146, 51, 0.99);
 }
 
 .Break1Cos {
@@ -246,6 +254,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .ImageBox {
+    border: 2px solid #d0d9db;
+  } 
   .Width {
     width: 90%;
   }

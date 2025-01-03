@@ -20,6 +20,10 @@
   background-color: #d6fcff;
 }
 
+.ImageBox {
+  border: 2px solid #fff;
+}
+
 /* .PostCard {
   border: 1px solid rgb(140, 111, 25, 99%);
   border-bottom: 1px solid rgb(255,215,0);
@@ -95,8 +99,8 @@
 }
 
 .Images {
-  object-fit: cover;
-  height: 200px;
+  object-fit: contain;
+  height: 500px;
   width: 100%;
 }
 

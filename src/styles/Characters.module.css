@@ -9,6 +9,14 @@
     border-top: 1px solid #d0d9db;
 }
 
+.BreakCos1 {
+  border-top: 1px solid #d0d9db;
+}
+
+.ImageBox {
+  border: 2px solid #fff;
+}
+
 .Para {
   min-height: 35px;
 }
@@ -122,5 +130,9 @@
 @media screen and (max-width: 600px) {
   .Titlelist {
     font-size: .75rem ;
+  }
+
+  .ImageBox {
+    border: 2px solid #d0d9db;
   }
 }

@@ -104,9 +104,9 @@ const Latest = (props) => {
                 </Row>  
                 </div> 
           </Col>    
-          <Col xs={12} sm={6} className="my-1" >
-            <Row className={`${styles.Content3} pt-1 my-0 mr-1 ml-1`}>
-                <Col className='px-0 mx-0 py-2' xs={12}>
+          <Col xs={12} sm={6} className="text-center" >
+            <Row className={`${styles.Content3} my-0 mr-1 ml-1`}>
+                <Col className='px-0 mx-0' xs={12}>
                   {departments && <p style={{ textTransform: 'capitalize'}}>
                     {departments}</p>}
                 </Col>
@@ -144,10 +144,10 @@ const Latest = (props) => {
           </Card.Body>
           {/* image 1 */}
           <Row className='mb-2'>
-            <Col xs={12} md={{span: 6, offset: 3}} className='mt-3' >
+            <Col xs={12} md={{span: 6, offset: 3}} className='mt-3 text-center' >
                 {image1 && <> 
-                  <p className={`${styles.BoldTitle} mb-3 mx-1 mx-sm-5`}>IMAGE</p>
-                    <Card.Img src={image1} alt="image1" className="px-3 mt-3" />
+                  <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE</p>
+                    <Card.Img src={image1} alt="image1" className={`${styles.Images}`}/>
                     </>
                     }
             </Col>  

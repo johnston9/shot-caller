@@ -1472,6 +1472,7 @@ Description: View and Create Post within each Department outside and separate to
 <h2 align="center">
 <img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
+.......
 
 ### Character and locations page
 Description: xxxx<br>
