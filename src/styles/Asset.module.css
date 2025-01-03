@@ -13,10 +13,22 @@
     color: rgba(129, 102, 21, 0.99);
   }
 
+  .Asset3 {
+    align-items: center;
+    min-height: 20px;
+    color: #747686;
+    font-style: italic;
+  }
+
   .Asset:hover {
     cursor: pointer;
   }
 
   .Asset2:hover {
     cursor: pointer;
+  }
+
+  .Asset3:hover {
+    cursor: pointer;
+    color: #000;
   }

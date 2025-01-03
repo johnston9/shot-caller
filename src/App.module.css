@@ -5,6 +5,10 @@
   min-height: 100vh;
 }
 
+.ContainerImage {
+  border: 1px solid #333;
+}
+
 .Toasttitle {
   font-family: 'Playball', cursive;
   color: red;

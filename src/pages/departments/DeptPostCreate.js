@@ -16,8 +16,9 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import Asset2 from "../../components/Asset2";
 import Asset from "../../components/Asset";
+import Asset2 from "../../components/Asset2";
+import Asset3 from "../../components/Asset3";
 import { toast } from 'react-toastify';
 
 function DeptPostCreate({deptGeneral="", setShow } ) {
@@ -143,9 +144,55 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     }
   }
 
+  const textFieldsDep = ( 
+    <div>
+      <Row className="mt-3">
+      <Col className="d-flex justify-content-center" md={{span: 6, offset: 3}} >
+      <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
+      <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
+            <Form.Control 
+            className={styles.Input}
+            type="text"
+            name="title"
+            value={title}
+            onChange={handleChange}
+                />
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      </Col>
+      </Row>
+      <Row className="mt-3 mb-3">
+      <Col className="d-flex justify-content-center" md={{span: 8, offset: 2}} >
+        <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+        <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+            <Form.Control 
+                className={styles.InputSceneDept}
+                type="text"
+                name="content"
+                as="textarea"
+                rows={4}
+                value={content}
+                onChange={handleChange}
+                />
+        </Form.Group>
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+      </Col>
+      </Row>
+      {/* <hr/> */}
+    </div>
+)
+
   const textFields = ( 
       <div>
-        <Row className="mt-3">
+          <Row className="mt-3">
         <Col className="d-flex justify-content-center" md={6}>
           <Form.Group controlId="departments" className={`${styles.Width2} text-center`} >
           <Form.Label className={`${styles.BoldScene} `} >Department</Form.Label>
@@ -195,8 +242,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
         ))}
         </Col>
         </Row>
-        <hr/>
-        <Row className="mt-3">
+        <Row className="mt-3 mb-3">
         <Col className="d-flex justify-content-center" md={{span: 8, offset: 2}} >
           <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
           <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
@@ -217,7 +263,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
           ))}
         </Col>
         </Row>
-        <hr/>
+        {/* <hr/> */}
       </div>
   )
   
@@ -259,21 +305,30 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     className={`text-center mt-3 py-1 ${styles.SubTitle }`}>
     Create {deptGeneral} Post</h5>
     <Form className={` ${styles.White }`} onSubmit={handleSubmit}>
-    {/* text image1 */}
+    {/* text image1 textFieldsDep */}
     <Row>
     <Col >
-          {textFields}
+    {deptGeneral ? (
+      <Row>
+    <Col >
+        {textFieldsDep}
+        </Col>
+        </Row>
+      ) : (<Row>
+        <Col>
+        {textFields}
+        </Col>
+      </Row>
+      ) }
     </Col>
     </Row>
+    <hr/>
     {/* image 1/2 */}
     <Row>
-    <Col className="text-center mt-2" md={6}>
+    <Col className="text-center" md={6}>
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 1</p>
-      <Container
-        className={`mt-0 ${appStyles.Content} ${styles.Container} 
-        d-flex flex-column justify-content-center`}
-      >
+      <div className={`mt-3 p-0 d-flex flex-column justify-content-center`}>
         <Form.Group className="text-center">
             {image1 ? (
               <>
@@ -293,7 +348,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               <Form.Label
                 htmlFor="image-upload"
               >
-                <Asset
+                <Asset3
                   src={Upload}
                   height={"20px"}
                   width={"20px"}
@@ -315,14 +370,12 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               {message}
             </Alert>
           ))}
-      </Container>
+      </div>
     </Col>
-    <Col md={6} className="text-center mt-2">
+    <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 2</p>
-    <Container
-              className={`${appStyles.Content} ${styles.Container} mt-0 p-0 d-flex flex-column justify-content-center`}
-              >
+    <div className={`mt-3 p-0 d-flex flex-column justify-content-center`}>
           <Form.Group className="text-center" >
             {image2 ? (
               <>
@@ -343,7 +396,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                 // className="my-1 ml-3"
                 htmlFor="image-upload2"
               >
-                <Asset
+                <Asset3
                   src={Upload}
                   height={"20px"}
                   width={"20px"}
@@ -365,7 +418,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               {message}
             </Alert>
           ))}
-    </Container>
+    </div>
     </Col>   
     </Row>
     <hr className="mt-0 mb-0"/>
@@ -375,7 +428,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 3</p>
     <Container
-              className={`${appStyles.Content} ${styles.Container2} mt-0 p-0 d-flex flex-column justify-content-center`}
+              className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
               >
           <Form.Group className="text-center" >
             {image3 ? (
@@ -396,7 +449,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               <Form.Label
                 htmlFor="image-upload3"
               >
-                <Asset
+                <Asset3
                   src={Upload}
                   height={"20px"}
                   width={"20px"}
@@ -424,7 +477,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 4</p>
     <Container
-              className={`${appStyles.Content} ${styles.Container2} mt-0 p-0 d-flex flex-column justify-content-center`}
+              className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
               >
           <Form.Group className="text-center">
             {image4 ? (
@@ -445,7 +498,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               <Form.Label
                 htmlFor="image-upload4"
               >
-                <Asset
+                <Asset3
                   src={Upload}
                   height={"20px"}
                   width={"20px"}
@@ -470,14 +523,14 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     </Container>
     </Col>
     </Row>
-    <hr />
-    {/* image 4/5 */}
+    <hr className="mt-0 mb-0"/>
+    {/* image 5 */}
     <Row>
     <Col md={{span: 6, offset: 3}} className="text-center mt-3">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 5</p>
     <Container
-              className={`${appStyles.Content} ${styles.Container2} mt-0 p-0 d-flex flex-column justify-content-center`}
+              className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
               >
           <Form.Group className="text-center">
             {image5 ? (
@@ -498,7 +551,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               <Form.Label
                 htmlFor="image-upload5"
               >
-                <Asset
+                <Asset3
                   src={Upload}
                   height={"20px"}
                   width={"20px"}
@@ -523,9 +576,9 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
       </Container>
     </Col>
     </Row>
-    <hr />
+    <hr className="mt-0 mb-0"/>
     {/* buttons */}
-    <Row >
+    <Row className="mt-3">
       <Col>
       {buttons} 
       </Col>

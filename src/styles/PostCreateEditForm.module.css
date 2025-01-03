@@ -11,6 +11,10 @@
   color: crimson;
 }
 
+.ImageDiv {
+  border: 1px solid #dee1f7;
+}
+
 .BoldTitleCall {
   font-weight: 700;
   color: #F5F5F5;
