@@ -104,14 +104,14 @@ function LatestCreate({setShow} ) {
       </Row>
       <Row className="mt-3">
       <Col className="d-flex justify-content-center">
-      <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+      <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
       <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
       <Form.Control 
-          className={styles.Input}
+          className={styles.InputSceneDept}
           type="text"
           name="content"
           as="textarea"
-          rows={6}
+          rows={2}
           value={content}
           onChange={handleChange}
           />
@@ -142,77 +142,81 @@ function LatestCreate({setShow} ) {
 
   return (
     <div>
-    <h5 style={{ textTransform: 'uppercase'}} 
-    className={`text-center mt-3 py-1 ${styles.SubTitle }`}>
-    Create Post</h5>
-    <Form className={` ${styles.White }`} onSubmit={handleSubmit}>
-    <Row>
-    <Col md={6} className="">
-        <Container className= {`${appStyles.Content} ${styles.Container}`} >
-          {textFields}
-          </Container>
-      </Col>
-      <Col className="text-center" md={6}>
-      <p className={`${styles.BoldScene} 
-                  mb-0 text-center mx-3`} >IMAGE</p>
-        <Container
-          className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-        >
-          <Form.Group className="text-center pt-3">
-              {image1 ? (
-                <>
-                  <figure>
-                    <Image className={appStyles.Image} src={image1} rounded />
-                  </figure>
-                  <div>
+      <Row>
+      <Col md={{span: 10, offset: 1}} >
+      <h5 style={{ textTransform: 'uppercase'}} 
+        className={`text-center mt-3 py-1 ${styles.SubTitle }`}>
+        Create Post</h5>
+        <Form className={` ${styles.White }`} onSubmit={handleSubmit}>
+        <Row>
+        <Col md={6} className="">
+            <Container className= {`${appStyles.Content} ${styles.Container}`} >
+              {textFields}
+              </Container>
+          </Col>
+          <Col className="text-center mt-3" md={6}>
+          <p className={`${styles.BoldScene} 
+                      mb-0 text-center mx-3`} >Image</p>
+            <Container
+              className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+            >
+              <Form.Group className="text-center pt-3">
+                  {image1 ? (
+                    <>
+                      <figure>
+                        <Image className={appStyles.Image} src={image1} rounded />
+                      </figure>
+                      <div>
+                        <Form.Label
+                          className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                          htmlFor="image-upload"
+                        >
+                          Change the Image
+                        </Form.Label>
+                      </div>
+                    </>
+                  ) : (
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      className="d-flex justify-content-center"
                       htmlFor="image-upload"
                     >
-                      Change the Image
+                      <Asset
+                        src={Upload}
+                        message="Upload Image"
+                      />
                     </Form.Label>
-                  </div>
-                </>
-              ) : (
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset
-                    src={Upload}
-                    message="Upload Image"
-                  />
-                </Form.Label>
-              )}
+                  )}
 
-              <Form.Control
-                type="file"
-                id="image-upload"
-                accept="image/*"
-                onChange={handleChangeImage1}
-                ref={imageInput1}
-              />
-            </Form.Group>
-            {errors?.image1?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Container>
-      </Col>   
-    </Row>
-    <Row className="mt-4">
-      <Col>
-      {buttons}
+                  <Form.Control
+                    type="file"
+                    id="image-upload"
+                    accept="image/*"
+                    onChange={handleChangeImage1}
+                    ref={imageInput1}
+                  />
+                </Form.Group>
+                {errors?.image1?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
+            </Container>
+          </Col>   
+        </Row>
+        <Row className="mt-4 pb-3">
+          <Col>
+          {buttons}
+          </Col>
+        </Row>
+        </Form>
+        <Row className=''>
+        <Col xs={2} ></Col>
+        <Col xs={8}>
+        <hr className={`${styles.Break} mt-4`}/>
+        </Col>
+        </Row>
       </Col>
-    </Row>
-    </Form>
-    <Row className=''>
-    <Col xs={2} ></Col>
-    <Col xs={8}>
-    <hr className={`${styles.Break} mt-4`}/>
-    </Col>
-    </Row>
+      </Row>
     </div>
     );
 }

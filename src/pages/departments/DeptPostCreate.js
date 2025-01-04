@@ -144,55 +144,52 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     }
   }
 
-  const textFieldsDep = ( 
-    <div>
-      <Row className="mt-3">
-      <Col className="d-flex justify-content-center" md={{span: 6, offset: 3}} >
-      <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
-      <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
-            <Form.Control 
-            className={styles.Input}
-            type="text"
-            name="title"
-            value={title}
-            onChange={handleChange}
-                />
+const textFieldsDep = ( 
+  <div>
+    <Row className="mt-3">
+    <Col className="d-flex justify-content-center" xs={12} md={6} >
+    <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
+    <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
+          <Form.Control 
+          className={styles.Input}
+          type="text"
+          name="title"
+          value={title}
+          onChange={handleChange}
+              />
+    </Form.Group>
+    {errors?.title?.map((message, idx) => (
+      <Alert variant="warning" key={idx}>
+        {message}
+      </Alert>
+    ))}
+    </Col>
+    <Col className="d-flex justify-content-center" xs={12} md={6} >
+      <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+      <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+          <Form.Control 
+              className={styles.InputSceneDept}
+              type="text"
+              name="content"
+              as="textarea"
+              rows={1}
+              value={content}
+              onChange={handleChange}
+              />
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
+      {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
-      </Col>
-      </Row>
-      <Row className="mt-3 mb-3">
-      <Col className="d-flex justify-content-center" md={{span: 8, offset: 2}} >
-        <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
-        <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
-            <Form.Control 
-                className={styles.InputSceneDept}
-                type="text"
-                name="content"
-                as="textarea"
-                rows={4}
-                value={content}
-                onChange={handleChange}
-                />
-        </Form.Group>
-        {errors?.content?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
-      </Col>
-      </Row>
-      {/* <hr/> */}
-    </div>
+    </Col>
+    </Row>
+  </div>
 )
 
   const textFields = ( 
       <div>
-          <Row className="mt-3">
+        <Row className="mt-3">
         <Col className="d-flex justify-content-center" md={6}>
           <Form.Group controlId="departments" className={`${styles.Width2} text-center`} >
           <Form.Label className={`${styles.BoldScene} `} >Department</Form.Label>
@@ -251,7 +248,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
                   type="text"
                   name="content"
                   as="textarea"
-                  rows={4}
+                  rows={1}
                   value={content}
                   onChange={handleChange}
                   />
