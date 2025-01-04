@@ -46,8 +46,8 @@ const DeptPost = (props) => {
       };
 
     return (
-        <div>
-          <Card className='mx-3'>
+        <div >
+          <Card className={`${styles.PostCard}`}>
           <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
           <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
           <Col xs={12} sm={3} className="my-0" >
@@ -143,15 +143,15 @@ const DeptPost = (props) => {
                     {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
               </Card.Body>
               <hr className="mt-0"/>
+              {/* images */}
               <div className='px-3'>
               {/* image 1/2  */}
               <Row className='mb-0'>
-                <Col xs={12} md={6} className={`${styles.BorderRight} 
-                text-center px-0 mx-0 mb-5`} >
-                <div className={`${styles.ImageBox}`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 1</p>
+                <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 1</p>
                       {image1 && <> 
-                        <div className='px-1 px-md-5 mb-md-3'>
+                        <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
                           <Card.Img src={image1} alt="image1" 
                           className={`${styles.Images}`} />
                           </div>
@@ -160,10 +160,10 @@ const DeptPost = (props) => {
                 </div>
                   </Col>  
                   <Col  xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
-                  <div className={`${styles.ImageBox}`}>
-                  <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 2</p>
+                  <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                  <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 2</p>
                   {image2 && <> 
-                    <div className='px-1 px-md-5 mb-md-3'>
+                    <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
                           <Card.Img src={image2} alt="image2" className={`${styles.Images}`}/>
                     </div>
                           </>
@@ -174,17 +174,16 @@ const DeptPost = (props) => {
               {/* break */}
               <Row>
               <Col xs={12}>
-              <hr className={`${styles.Break1} d-none d-md-block`}/>
+              <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
               </Col>
               </Row>
               {/* image 3/4  */}
               <Row className='mb-2'>
-              <Col xs={12} md={6} className={`${styles.BorderRight} 
-                text-center px-0 mx-0 mb-5`} >
-                <div className={`${styles.ImageBox}`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-1 mx-sm-5`}>IMAGE 3</p>
+              <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 3</p>
                       {image3 && <> 
-                        <div className='px-1 px-md-5 mb-md-3'>
+                        <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
                           <Card.Img src={image3} alt="image3" className={`${styles.Images}`}/>
                           </div>
                           </>
@@ -192,10 +191,10 @@ const DeptPost = (props) => {
                       </div>
                   </Col>  
                   <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
-                  <div className={`${styles.ImageBox}`}>
-                  <p className={`${styles.BoldTitle} mb-md-3 mx-1 mx-sm-5`}>IMAGE 4</p>
+                  <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                  <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 4</p>
                   {image4 && <> 
-                    <div className='px-1 px-md-5 mb-md-3'>
+                    <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
                           <Card.Img src={image4} alt="image4" className={`${styles.Images}`}/>
                           </div>
                           </>
@@ -206,17 +205,17 @@ const DeptPost = (props) => {
               {/* break */}
               <Row>
               <Col xs={12}>
-              <hr className={`${styles.Break1} d-none d-md-block`}/>
+              <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
               </Col>
               </Row>
               {/* image 5 */}
               <Row>
                   <Col className='d-none d-md-block' md={3} ></Col>
                   <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
-                  <div className={`${styles.ImageBox}`}>
-                  <p className={`${styles.BoldTitle} mb-md-3 mx-1 mx-sm-5`}>IMAGE 5</p>
+                  <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                  <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 5</p>
                       {image5 && <> 
-                        <div className='px-1 px-md-5 mb-md-3'>
+                        <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
                           <Card.Img src={image5} alt="image5" className={`${styles.Images}`}/>
                           </div>
                           </>

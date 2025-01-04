@@ -39,18 +39,14 @@ function DeptPostPage() {
 
   return (
     <div>
-      <TopBox title="Dept Xtra" title2={title} />
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" >
+    <TopBox work={title} title="Department" />
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 mb-2`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
         onClick={() => history.goBack()}
       >
         Back
       </Button>
         <DeptPost {...post.results[0]} setPosts={setPost}/>
-      </Col>
-    </Row>
     </div>
   );
 }

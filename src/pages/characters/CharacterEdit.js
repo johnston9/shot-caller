@@ -607,7 +607,7 @@ const buttons = (
               </Row>
               <h5 className={`text-center mt-5 mb-4 py-0 ${styles.SubTitle }`}>
                 MAKEUP / COSTUMES</h5>
-                {/* makeup/costume 1  */}
+                {/* makeup/costume 1 */}
               <Row className="mt-3 text-center">
                 {/* image 8 is  makeup image*/}
                   <Col xs={12} md={6} >
@@ -678,14 +678,14 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
                   {/* image1 */}
                   <Col xs={12} md={6} >
                   <p className={`${styles.BoldScene} 
                   mb-0 text-center mx-3`} >COSTUME 1</p>
                   <Container
-                    className={`${appStyles.Content} d-flex flex-column justify-content-center`}
+                    className={`${appStyles.Content} mt-3 d-flex flex-column justify-content-center`}
                   >
                     <Form.Group className="text-center pt-3">
                         {costume1_image ? (
@@ -748,9 +748,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
               </Row>
+              <hr className={`${styles.Break1Cos} mt-3 mb-3 d-none d-md-block`}/>
               {/* costume 2/3 */}
               <Row className="text-center">
                   <Col xs={12} md={6} >
@@ -822,7 +823,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
                   <Col xs={12} md={6} >
                   <p className={`${styles.BoldScene} 
@@ -893,9 +894,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
               </Row>
+              <hr className={`${styles.Break1Cos} mt-3 mb-3 d-none d-md-block`}/>
               {/* costume 4/5  */}
               <Row className="text-center">          
                   <Col xs={12} md={6} >
@@ -967,7 +969,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
                   <Col xs={12} md={6} >
                   <p className={`${styles.BoldScene} 
@@ -1038,9 +1040,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
               </Row>
+              <hr className={`${styles.Break1Cos} mt-3 mb-3 d-none d-md-block`}/>
               {/* costume 6/7  */}
               <Row className="text-center">
                   <Col xs={12} md={6} >
@@ -1112,7 +1115,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
                   <Col xs={12} md={6} >
                   <p className={`${styles.BoldScene} 
@@ -1183,10 +1186,10 @@ const buttons = (
                         </Alert>
                       ))}
                   </div>
-                  <hr className={`${styles.Break1Cos} mt-4`}/>
+                  <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
               </Row>
-              <hr/>
+              <hr className={`${styles.Break1Cos} mt-3 mb-3 d-none d-md-block`}/>
               <Row>
                 <Col>
                   <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>

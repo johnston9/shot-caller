@@ -253,9 +253,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .ImageBox {
-    border: 2px solid #d0d9db;
-  } 
   .Width {
     width: 90%;
   }
@@ -280,5 +277,9 @@
 @media screen and (max-width: 780px) {
   .Width3 {
     width: 50%;
+  }
+
+  .ImageBox {
+    border: 2px solid #dee1f7;
   }
 }

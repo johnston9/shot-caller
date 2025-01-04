@@ -168,7 +168,7 @@ const textFieldsDep = (
       <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
       <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
           <Form.Control 
-              className={styles.InputSceneDept}
+              className={styles.InputScene}
               type="text"
               name="content"
               as="textarea"
@@ -244,7 +244,7 @@ const textFieldsDep = (
           <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
           <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
               <Form.Control 
-                  className={styles.InputSceneDept}
+                  className={styles.InputScene}
                   type="text"
                   name="content"
                   as="textarea"
@@ -320,6 +320,7 @@ const textFieldsDep = (
     </Col>
     </Row>
     <hr/>
+    <div>
     {/* image 1/2 */}
     <Row>
     <Col className="text-center" md={6}>
@@ -368,6 +369,7 @@ const textFieldsDep = (
             </Alert>
           ))}
       </div>
+      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
     </Col>
     <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
@@ -416,9 +418,10 @@ const textFieldsDep = (
             </Alert>
           ))}
     </div>
+      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
     </Col>   
     </Row>
-    <hr className="mt-0 mb-0"/>
+    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
     {/* image 3/4 */}
     <Row>
     <Col md={6} className="text-center mt-3">
@@ -469,6 +472,7 @@ const textFieldsDep = (
             </Alert>
           ))}
       </Container>
+      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
     </Col>
     <Col md={6} className="text-center mt-3">
     <p className={`${styles.BoldScene} 
@@ -518,9 +522,10 @@ const textFieldsDep = (
             </Alert>
           ))}
     </Container>
+    <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
     </Col>
     </Row>
-    <hr className="mt-0 mb-0"/>
+    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
     {/* image 5 */}
     <Row>
     <Col md={{span: 6, offset: 3}} className="text-center mt-3">
@@ -571,9 +576,11 @@ const textFieldsDep = (
             </Alert>
           ))}
       </Container>
+      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
     </Col>
     </Row>
-    <hr className="mt-0 mb-0"/>
+    </div>
+    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
     {/* buttons */}
     <Row className="mt-3">
       <Col>

@@ -24,10 +24,13 @@
   border: 2px solid #fff;
 }
 
-/* .PostCard {
-  border: 1px solid rgb(140, 111, 25, 99%);
-  border-bottom: 1px solid rgb(255,215,0);
-} */
+.ImageBox2 {
+  border: 1px solid #d0d9db;
+}
+
+.PostCard {
+  border: 1px solid #fff;
+}
 
 .Italic {
   font-style: italic;
@@ -100,7 +103,7 @@
 
 .Images {
   object-fit: contain;
-  height: 500px;
+  height: 400px;
   width: 100%;
 }
 
@@ -186,4 +189,14 @@ i:hover {
 
 .Card i {
   color: #fff;
+}
+
+@media screen and (max-width: 780px) {
+  .ImageBox {
+    border: 2px solid #dee1f7;
+  }
+
+  .ImageBox2 {
+    border: 2px solid #fff;
+  }
 }

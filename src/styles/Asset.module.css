@@ -5,6 +5,8 @@
     align-items: center;
     min-height: 20px;
     color: rgba(129, 102, 21, 0.99);
+    /* color: #747686; */
+    font-style: italic;
   }
 
   .Asset2 {

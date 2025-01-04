@@ -39,17 +39,13 @@ function LatestPage() {
     <div>
       <TopBox work="Latest Buzz"
         title="Post"/>
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" >
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 mb-2`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
         onClick={() => history.goBack()}
       >
         Back
       </Button>
         <Latest {...post.results[0]} setPosts={setPost}/>
-      </Col>
-    </Row>
     </div>
   );
 }

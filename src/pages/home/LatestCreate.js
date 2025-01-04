@@ -107,7 +107,7 @@ function LatestCreate({setShow} ) {
       <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
       <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
       <Form.Control 
-          className={styles.InputSceneDept}
+          className={styles.InputScene}
           type="text"
           name="content"
           as="textarea"

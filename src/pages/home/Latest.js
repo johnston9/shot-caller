@@ -45,7 +45,7 @@ const Latest = (props) => {
 
     return (
         <div>
-          <Card className='px-3'>
+          <Card className={`${styles.PostCard}`}>
           <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
           <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
           <Col xs={12} sm={3} className="my-0" >
@@ -142,12 +142,15 @@ const Latest = (props) => {
               <hr />
               {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
           </Card.Body>
+          <hr/>
           {/* image 1 */}
           <Row className='mb-2'>
             <Col xs={12} md={{span: 6, offset: 3}} className='mt-3 text-center' >
+            <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE</p>
                 {image1 && <> 
-                  <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE</p>
+                  <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
                     <Card.Img src={image1} alt="image1" className={`${styles.Images}`}/>
+                    </div>
                     </>
                     }
             </Col>  
