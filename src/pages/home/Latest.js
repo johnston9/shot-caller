@@ -11,6 +11,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { toast } from 'react-toastify';
 
 const Latest = (props) => {
     const {
@@ -38,6 +39,7 @@ const Latest = (props) => {
       const handleDelete = async () => {
         try {
           await axiosRes.delete(`/department/posts/${id}/`);
+          toast.success(`Post" Deleted`); 
           history.goBack();
         } catch (err) {
         }
@@ -146,13 +148,15 @@ const Latest = (props) => {
           {/* image 1 */}
           <Row className='mb-2'>
             <Col xs={12} md={{span: 6, offset: 3}} className='mt-3 text-center' >
+            <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
             <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE</p>
                 {image1 && <> 
-                  <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
+                  <div className={`${styles.ImageBox2} px-1 py-md-3 px-md-2 mb-md-3`}>
                     <Card.Img src={image1} alt="image1" className={`${styles.Images}`}/>
                     </div>
                     </>
                     }
+            </div>
             </Col>  
           </Row >
           </Card>

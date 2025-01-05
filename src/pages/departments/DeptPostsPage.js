@@ -37,21 +37,22 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
  
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    /* Function to fetch the Depts-Xtra posts */
-    const fetchPosts = async () => {
-      try {
-        const { data } = await axiosReq.get(`/department/posts/?${filter}&search=${query}`);
-        setPosts(data);
+  const fetchPosts = async () => {
+    try {
+      const { data } = await axiosReq.get(`/department/posts/?${filter}&search=${query}`);
+      setPosts(data);
+      setHasLoaded(true);
+    } catch(err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
         setHasLoaded(true);
-      } catch(err) {
-        console.log(err);
-        if (err.response?.status !== 401) {
-          setErrors(err.response?.data);
-          setHasLoaded(true);
-        }
       }
     }
+  }
+
+  useEffect(() => {
+    /* Function to fetch the Depts-Xtra posts */
     setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchPosts();
@@ -111,7 +112,11 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
             {posts.results.length ? (
               <InfiniteScroll
               children={posts.results.map((post) => (
-                <DeptPostTop key={post.id} {...post} setPosts={setPosts} />
+                <DeptPostTop 
+                fetchPosts={fetchPosts}
+                key={post.id} 
+                {...post} 
+                setPosts={setPosts} />
               ))}
               dataLength={posts.results.length}
               loader={<Asset spinner />}

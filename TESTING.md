@@ -1299,8 +1299,7 @@ Description: Create any number of Series each containing a display of succesive 
 
   1. Click the "3 Dots on the Series" tab and click the delete icon.<br>
   2. A dropdown opens asking to confirm delete.<br>
-  3. Select Yes and the Series is deleted<br>
-  4. The Series is updated.<br>
+  3. Select Delete and the Series is deleted.<br>
 
 <p align="center"> <strong>Click the delete icon</strong></p>
 <h2 align="center">
@@ -1455,13 +1454,27 @@ Description: View and Create Post within each Department outside and separate to
 <img src="documentation/readme-images/deptnew1.png" width="50%">
 </h2>
 
-- Use Case: Edit a Post<br>
+- Use Case: Edit a Post from the Post Top on the Posts page<br>
 
-  1. Click on the "Edit/Delete" icon.<br>
+   1. Click on the "Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Post" form opens.<br>
+  3. Input the changes and submit.<br>
+  4. A success message displays saying - "Post Edited"<br>
+  5. The Post displays with the changes.<br>
+
+- Use Case: Delete a Post from the Post Top on the Posts page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
+  2. A dropdown opens asking to confirm delete.<br>
+  3. Select Delete and the Post is deleted.<br>
+
+- Use Case: Edit a Post from the Post page<br>
+
+  1. Click on the "Edit/Delete" icon and select Edit.<br>
   2. The "Edit Post" form opens.<br>
   3. Input the changes including the 5 Images and submit.<br>
   4. A success message displays saying - "Post Edited"<br>
-  5. The new Post displays with the changes and all new 5 images.<br>
+  5. The Post displays with the changes and all new 5 images.<br>
 
 <p align="center"> <strong>Edit Form</strong></p>
 <h2 align="center">
@@ -1472,6 +1485,12 @@ Description: View and Create Post within each Department outside and separate to
 <h2 align="center">
 <img src="documentation/readme-images/xxx.png" width="50%">
 </h2>
+
+- Use Case: Delete a Post from the Post page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
+  2. A dropdown opens asking to confirm delete.<br>
+  3. Select Delete and the Post is deleted.<br>
 .......
 
 ### Character and locations page

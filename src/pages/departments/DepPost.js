@@ -9,6 +9,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { toast } from 'react-toastify';
 
 const DeptPost = (props) => {
     const {
@@ -40,6 +41,7 @@ const DeptPost = (props) => {
       const handleDelete = async () => {
         try {
           await axiosRes.delete(`/department/posts/${id}/`);
+          toast.success(`Post" Deleted`);
           history.goBack();
         } catch (err) {
         }
@@ -183,7 +185,7 @@ const DeptPost = (props) => {
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 3</p>
                       {image3 && <> 
-                        <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
                           <Card.Img src={image3} alt="image3" className={`${styles.Images}`}/>
                           </div>
                           </>

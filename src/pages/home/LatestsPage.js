@@ -34,23 +34,24 @@ function LatestsPage() {
  
   const [query, setQuery] = useState("");
 
+  const fetchPosts = async () => {
+    try {
+      const { data } = await axiosReq.get(`/department/posts/?departments=latest&search=${query}`);
+      setPosts(data);
+      setHasLoaded(true);
+    } catch(err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+        setHasLoaded(true);
+      }
+    }
+  }
+
   useEffect(() => {
     /* Page to fetch all the Latest Posts
      * Latest is a department choice in the Depts-Xtra app
        So all requests are to department */
-    const fetchPosts = async () => {
-      try {
-        const { data } = await axiosReq.get(`/department/posts/?departments=latest&search=${query}`);
-        setPosts(data);
-        setHasLoaded(true);
-      } catch(err) {
-        console.log(err);
-        if (err.response?.status !== 401) {
-          setErrors(err.response?.data);
-          setHasLoaded(true);
-        }
-      }
-    }
     setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchPosts();
@@ -101,7 +102,11 @@ function LatestsPage() {
             {posts.results.length ? (
               <InfiniteScroll
               children={posts.results.map((post) => (
-                <LatestTop key={post.id} {...post} setPosts={setPosts} />
+                <LatestTop 
+                fetchPosts={fetchPosts}
+                key={post.id} 
+                {...post} 
+                setPosts={setPosts} />
               ))}
               dataLength={posts.results.length}
               loader={<Asset spinner />}

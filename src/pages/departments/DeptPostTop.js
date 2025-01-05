@@ -11,9 +11,11 @@ import { Link, useHistory } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
+import { toast } from 'react-toastify';
 
 const DeptPostTop = (props) => {
     const {
+        fetchPosts,
         id,
         owner,
         name,
@@ -38,7 +40,8 @@ const DeptPostTop = (props) => {
       const handleDelete = async () => {
         try {
           await axiosRes.delete(`/department/posts/${id}/`);
-          history.goBack();
+          toast.success(`Post" Deleted`);
+          fetchPosts();
         } catch (err) {
           console.log(err);
         }
