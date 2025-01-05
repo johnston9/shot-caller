@@ -151,7 +151,7 @@ const Latest = (props) => {
             <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
             <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE</p>
                 {image1 && <> 
-                  <div className={`${styles.ImageBox2} px-1 py-md-3 px-md-2 mb-md-3`}>
+                  <div className={`${styles.ImageBox2} px-1 py-md-3 px-sm-2 mb-md-3`}>
                     <Card.Img src={image1} alt="image1" className={`${styles.Images}`}/>
                     </div>
                     </>

@@ -246,7 +246,7 @@ const Character = (props) => {
             <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>MAKEUP</p>
                 {makeup_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} 
                     src={makeup_image} alt="makeup image"  />
                     </div>
@@ -261,7 +261,7 @@ const Character = (props) => {
             <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>COSTUME 1</p>
                 {costume1_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} 
                     src={costume1_image} alt="costume 1" />
                 </div>
@@ -285,7 +285,7 @@ const Character = (props) => {
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 2</p>
                 {costume2_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume2_image} 
                     alt="costume 2"  />
                     </div>
@@ -300,7 +300,7 @@ const Character = (props) => {
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>COSTUME 3</p>
                 {costume3_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume3_image} 
                     alt="costume 3"/>
                     </div>
@@ -325,7 +325,7 @@ const Character = (props) => {
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
                     COSTUME 4</p>
                 {costume4_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume4_image}
                      alt="costume 4" />
                     </div>
@@ -341,7 +341,7 @@ const Character = (props) => {
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
                     COSTUME 5</p>
                 {costume5_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume5_image}
                      alt="costume 5" />
                     </div>
@@ -366,7 +366,7 @@ const Character = (props) => {
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
                     COSTUME 6</p>
                 {costume6_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume6_image}
                      alt="costume 6"/>
                     </div>
@@ -382,7 +382,7 @@ const Character = (props) => {
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
                     COSTUME 7</p>
                 {costume7_image && <> 
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume7_image}
                      alt="costume 7"/>
                     </div>

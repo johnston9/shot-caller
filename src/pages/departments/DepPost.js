@@ -153,7 +153,7 @@ const DeptPost = (props) => {
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 1</p>
                       {image1 && <> 
-                        <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image1} alt="image1" 
                           className={`${styles.Images}`} />
                           </div>
@@ -165,7 +165,7 @@ const DeptPost = (props) => {
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                   <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 2</p>
                   {image2 && <> 
-                    <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image2} alt="image2" className={`${styles.Images}`}/>
                     </div>
                           </>
@@ -185,7 +185,7 @@ const DeptPost = (props) => {
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 3</p>
                       {image3 && <> 
-                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-md-3 mb-md-3`}>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image3} alt="image3" className={`${styles.Images}`}/>
                           </div>
                           </>
@@ -196,7 +196,7 @@ const DeptPost = (props) => {
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                   <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 4</p>
                   {image4 && <> 
-                    <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image4} alt="image4" className={`${styles.Images}`}/>
                           </div>
                           </>
@@ -217,7 +217,7 @@ const DeptPost = (props) => {
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                   <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 5</p>
                       {image5 && <> 
-                        <div className={`${styles.ImageBox2} px-1 px-md-2 mb-md-3`}>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image5} alt="image5" className={`${styles.Images}`}/>
                           </div>
                           </>
