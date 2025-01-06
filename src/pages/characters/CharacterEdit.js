@@ -100,6 +100,7 @@ const CharacterEdit = () => {
 
     const history = useHistory();
     const { id } = useParams();
+    console.log(id)
 
     useEffect(() => {
       /* Function to fetch the Character data */
@@ -188,6 +189,8 @@ const CharacterEdit = () => {
     costume1_image: URL.createObjectURL(event.target.files[0]),
     });
     console.log(`costume1_image ${costume1_image}`)
+    console.log(event.target.files[0])
+    console.log(URL.createObjectURL(event.target.files[0]))
     }
     };
 

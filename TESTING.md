@@ -1431,7 +1431,7 @@ Description: View and Create Post within each Department outside and separate to
   2. The "Create Post" form opens.<br>
   3. Input the details an upload up to 5 Images and submit.<br>
   4. A success message displays saying - "Post Added"<br>
-  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+  5. The new Post is added and is displayed with the Title, Content and all 5 Images.<br>
 
 <p align="center"> <strong>Create Form</strong></p>
 <h2 align="center">
@@ -1491,7 +1491,11 @@ Description: View and Create Post within each Department outside and separate to
   1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
   2. A dropdown opens asking to confirm delete.<br>
   3. Select Delete and the Post is deleted.<br>
-.......
+
+<p align="center"> <strong>Post Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptdel1.png" width="50%">
+</h2>
 
 ### Latest Buzz
 Description: Use the Latest Buzz feature to View and Create Important Immediate Production Posts .<br>
@@ -1503,35 +1507,35 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
 
 <p align="center"> <strong>Latest Buzz Posts page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptsview.png" width="50%">
+<img src="documentation/readme-images/lateview.png" width="50%">
 </h2>
 
 - Use Case: Find a Post in the Search bar by it's title or the owner's name<br>
 
-  1. Input a title in the Search Bar, eg "bar".<br>
-  2. All Posts with the word "bar" are returned.<br>
+  1. Input a title in the Search Bar, eg "Dress".<br>
+  2. All Posts with the word "Dress" are returned.<br>
 
-<p align="center"> <strong>"Bar" Posts Returned</strong></p>
+<p align="center"> <strong>"Dress" Posts Returned</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptssearch.png" width="50%">
+<img src="documentation/readme-images/latesearch.png" width="50%">
 </h2>
 
 - Use Case: Create a Post<br>
 
   1. Click the "Add Post" tab.<br>
   2. The "Create Post" form opens.<br>
-  3. Input the details an upload up to 5 Images and submit.<br>
+  3. Input the Details and Image and submit.<br>
   4. A success message displays saying - "Post Added"<br>
-  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+  5. The new Post is added and is displayed with the Details and Images.<br>
 
 <p align="center"> <strong>Create Form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd1.png" width="50%">
+<img src="documentation/readme-images/lateadd1.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The New Post Displays</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd2.png" width="50%">
+<img src="documentation/readme-images/lateadd2.png" width="50%">
 </h2>
 
 - Use Case: Open an Unopend Post to view its details and change its background and text colours to indicate it has been opened.<br>
@@ -1539,11 +1543,6 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
   1. Click on an unopened Post, with background Black and text White and Blue.<br>
   2. The Post opens.<br>
   3. Returning to the Posts page the background is now White and the text Blue.<br>
-
-<p align="center"> <strong>Opened Post</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/deptnew1.png" width="50%">
-</h2>
 
 - Use Case: Edit a Post from the Post Top on the Posts page<br>
 
@@ -1582,7 +1581,11 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
   1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
   2. A dropdown opens asking to confirm delete.<br>
   3. Select Delete and the Post is deleted.<br>
-.......
+
+<p align="center"> <strong>Post Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/latedel1.png" width="50%">
+</h2>
 
 ### Character and locations page
 Description: xxxx<br>
