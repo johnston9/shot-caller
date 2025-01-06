@@ -1435,12 +1435,103 @@ Description: View and Create Post within each Department outside and separate to
 
 <p align="center"> <strong>Create Form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd2.png" width="50%">
+<img src="documentation/readme-images/deptadd1.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The New Post Displays</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptaddd3.png" width="50%">
+<img src="documentation/readme-images/deptadd2.png" width="50%">
+</h2>
+
+- Use Case: Open an Unopend Post to view its details and change its background and text colours to indicate it has been opened.<br>
+
+  1. Click on an unopened Post, with background Black and text White and Blue.<br>
+  2. The Post opens.<br>
+  3. Returning to the Posts page the background is now White and the text Blue.<br>
+
+<p align="center"> <strong>Opened Post</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptnew1.png" width="50%">
+</h2>
+
+- Use Case: Edit a Post from the Post Top on the Posts page<br>
+
+   1. Click on the "Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Post" form opens.<br>
+  3. Input the changes and submit.<br>
+  4. A success message displays saying - "Post Edited"<br>
+  5. The Post displays with the changes.<br>
+
+- Use Case: Delete a Post from the Post Top on the Posts page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
+  2. A dropdown opens asking to confirm delete.<br>
+  3. Select Delete and the Post is deleted.<br>
+
+- Use Case: Edit a Post from the Post page<br>
+
+  1. Click on the "Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Post" form opens.<br>
+  3. Input the changes including the 5 Images and submit.<br>
+  4. A success message displays saying - "Post Edited"<br>
+  5. The Post displays with the changes and all new 5 images.<br>
+
+<p align="center"> <strong>Edit Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Edited Post</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+- Use Case: Delete a Post from the Post page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
+  2. A dropdown opens asking to confirm delete.<br>
+  3. Select Delete and the Post is deleted.<br>
+.......
+
+### Latest Buzz
+Description: Use the Latest Buzz feature to View and Create Important Immediate Production Posts .<br>
+
+- Use Case: View the Latest Buzz Posts<br>
+
+  1. Click Latest Buzz in the Home page menu to open the Latest Buzz page.<br>
+  2. The Latest Buzz Posts page opens with the "Add Post" tab on top and the Posts displaying below.<br>
+
+<p align="center"> <strong>Latest Buzz Posts page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptsview.png" width="50%">
+</h2>
+
+- Use Case: Find a Post in the Search bar by it's title or the owner's name<br>
+
+  1. Input a title in the Search Bar, eg "bar".<br>
+  2. All Posts with the word "bar" are returned.<br>
+
+<p align="center"> <strong>"Bar" Posts Returned</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptssearch.png" width="50%">
+</h2>
+
+- Use Case: Create a Post<br>
+
+  1. Click the "Add Post" tab.<br>
+  2. The "Create Post" form opens.<br>
+  3. Input the details an upload up to 5 Images and submit.<br>
+  4. A success message displays saying - "Post Added"<br>
+  5. The new Post is added and is displayed with the Title, Content and all 5 images.<br>
+
+<p align="center"> <strong>Create Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The New Post Displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptadd2.png" width="50%">
 </h2>
 
 - Use Case: Open an Unopend Post to view its details and change its background and text colours to indicate it has been opened.<br>
