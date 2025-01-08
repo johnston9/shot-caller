@@ -3,11 +3,17 @@
     background-color: #fff;
 }
 
-.TopCard {
+/* .TopCard {
    border: 1px solid #fff;
    color: rgb(140, 111, 25, 99%);
    background-color: #fff;
-}
+} */
+
+.TopCard {
+    /* border: 1px solid #fff;    */
+    color: rgb(140, 111, 25, 99%);
+    background-color: #fff;
+ }
 
 .TopCard i {
     color: rgba(209, 174, 68, 0.99);

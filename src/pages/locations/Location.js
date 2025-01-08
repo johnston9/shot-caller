@@ -136,17 +136,16 @@ const Location = (props) => {
                 </Col>
             </Row>
             </div>
-            <h5 className={`text-center mt-4 mb-4 py-1 ${styles.SubTitle }`}
+            <h5 className={`text-center mt-4 mb-4 py-0 mx-md-4 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Images</h5>
             <div className='px-3'>
             {/* IMAGE 1/2 */}
-            <Row className='text-center mb-5'>
-            <Col xs={12} md={6} className={`${styles.BorderRight} 
-                text-center px-0 mx-0`}>
-                <p className={`${styles.BoldTitle} 
-                mb-3 text-center mx-1 mx-sm-5`}>IMAGE 1</p>
+            <Row className='text-center'>
+            <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+            <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 1</p>
                 {image1 && <> 
-                <div className='px-1 mb-3'>
+                <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                 <Image className={styles.Images} 
                 src={image1} alt="Image 1" />
                 </div>
@@ -154,11 +153,13 @@ const Location = (props) => {
                 {image1_description &&  <> 
                 <p className={`${styles.Role}`}>{image1_description} </p>
                 </>}
+            </div>
             </Col>  
-            <Col xs={12} md={6}>
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>IMAGE 2</p>
+            <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+            <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 2</p>
                     {image2 && <> 
-                    <div className='px-1 mb-3'>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image src={image2} alt="Image 2" 
                      className={styles.Images} />
                      </div>
@@ -167,16 +168,22 @@ const Location = (props) => {
                 {image2_description &&  <> 
                 <p className={`${styles.Role}`}>{image2_description} </p>
                 </>}
+            </div>
             </Col>
             </Row>
-            <hr/>
-            {/* image 3/4 */}
-            <Row className='text-center mb-5'>
-                <Col xs={12} md={6} className={`${styles.BorderRight} 
-                text-center px-0 mx-0`}>
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>IMAGE 3</p>
+            {/* break */}
+            <Row>
+            <Col xs={12}>
+            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            </Col>
+            </Row>
+            {/* image 3/4 */} 
+            <Row className='text-center'>
+                <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 3</p>
                     {image3 && <> 
-                    <div className='px-1 mb-3'>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image src={image3} alt="Image 3" 
                       className={styles.Images} />
                       </div>
@@ -185,11 +192,13 @@ const Location = (props) => {
                 {image3_description &&  <> 
                 <p className={`${styles.Role}`}>{image3_description} </p>
                 </>}
+                </div>
                 </Col>                
-                <Col xs={12} md={6}>
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>IMAGE 4</p>
+                <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 4</p>
                     {image4 && <> 
-                    <div className='px-1 mb-3'>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image src={image4} alt="Image 4"
                       className={styles.Images} />
                       </div>
@@ -198,16 +207,22 @@ const Location = (props) => {
                 {image4_description &&  <> 
                 <p className={`${styles.Role}`}>{image4_description} </p>
                 </>}
+                </div>
                 </Col>
             </Row>
-            <hr/>
+            {/* break */}
+            <Row>
+            <Col xs={12}>
+            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            </Col>
+            </Row>
             {/* IMAGE 5/6 */}
-            <Row className='text-center mb-5'>
-                <Col xs={12} md={6} className={`${styles.BorderRight} 
-                text-center px-0 mx-0`}>
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>IMAGE 5</p>
+            <Row className='text-center'>
+                <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 5</p>
                     {image5 && <>
-                    <div className='px-1 mb-3'>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image src={image5} alt="Image 5"
                     className={styles.Images} />
                     </div>
@@ -216,11 +231,13 @@ const Location = (props) => {
                 {image5_description &&  <> 
                 <p className={`${styles.Role}`}>{image5_description} </p>
                 </>}
+                </div>
                 </Col>                
-                <Col xs={12} md={6}>
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>IMAGE 6</p>
+                <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 6</p>
                     {image6 && <> 
-                    <div className='px-1 mb-3'>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image src={image6} alt="Image 6"
                       className={styles.Images} />
                       </div>
@@ -229,16 +246,22 @@ const Location = (props) => {
                 {image6_description &&  <> 
                 <p className={`${styles.Role}`}>{image6_description} </p>
                 </>}
+                </div>
                 </Col>
             </Row>
-            <hr/>
+            {/* break */}
+            <Row>
+            <Col xs={12}>
+            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            </Col>
+            </Row>
             {/* IMAGE 7/8 */}
-            <Row className='text-center mb-5'>
-                <Col xs={12} md={6} className={`${styles.BorderRight} 
-                text-center px-0 mx-0`}>
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>IMAGE 7</p>
+            <Row className='text-center'>
+                <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 7</p>
                     {image7 && <> 
-                    <div className='px-1 mb-3'>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image src={image7} alt="Image 7" 
                       className={styles.Images} />
                       </div>
@@ -247,11 +270,13 @@ const Location = (props) => {
                 {image7_description &&  <> 
                 <p className={`${styles.Role}`}>{image7_description} </p>
                 </>}
+                </div>
                 </Col>                
-                <Col xs={12} md={6}>
-                    <p className={`${styles.BoldTitle} mb-3 text-center mx-1 mx-sm-5`}>IMAGE 8 </p>
+                <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                    <p className={`${styles.BoldTitle} mb-md-3mx-sm-5`}>IMAGE 8 </p>
                     {image8 && <> 
-                    <div className='px-1 mb-3'>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image src={image8} alt="Image 8"
                       className={styles.Images} />
                       </div>
@@ -260,6 +285,7 @@ const Location = (props) => {
                 {image8_description &&  <> 
                 <p className={`${styles.Role}`}>{image8_description} </p>
                 </>}
+                </div>
                 </Col>              
             </Row>
         </div>

@@ -242,7 +242,7 @@ const Character = (props) => {
              <div className='px-3'>
             {/* makeup/costume 1 */}
             <Row className='text-center py-0'>
-            <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
+            <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`}>
             <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>MAKEUP</p>
                 {makeup_image && <> 

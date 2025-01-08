@@ -19,6 +19,7 @@
 
 .ImageBox2 {
   border: 1px solid #d0d9db;
+  background-color: #fff;
 }
 
 .Para {
@@ -135,7 +136,9 @@
   .Titlelist {
     font-size: .75rem ;
   }
+}
 
+@media screen and (max-width: 780px) {
   .ImageBox {
     border: 2px solid #d0d9db;
   }
