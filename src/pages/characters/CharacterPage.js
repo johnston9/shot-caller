@@ -21,6 +21,7 @@ const CharacterPage = () => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq(`/characters/${id}`);
+                console.log(data)
                 const role = data.role;
                 setTitle(role);
                 setCharacter({ results: [data] });

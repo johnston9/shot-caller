@@ -71,7 +71,7 @@ const MoodboardCreate = ({sceneId="", number="", characterRole="", locationPlace
         ...postData,
         image1: URL.createObjectURL(event.target.files[0]),
       });
-      console.log(`image1 ${image1}`)
+      console.log(imageInput1.current.files[0])
       console.log(URL.createObjectURL(event.target.files[0]))
     }
   };

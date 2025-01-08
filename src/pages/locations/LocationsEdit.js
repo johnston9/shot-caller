@@ -18,6 +18,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { toast } from 'react-toastify';
+import dep10 from "../../assets/dep10.png";
 
 const LocationsEdit = () => {
     useRedirect();
@@ -142,7 +143,7 @@ const LocationsEdit = () => {
           [event.target.name]: event.target.value,
         });
       };
-    
+
     const handleChangeImage1 = (event) => {
     if (event.target.files.length) {
         URL.revokeObjectURL(image1);
@@ -150,6 +151,7 @@ const LocationsEdit = () => {
         ...postData,
         image1: URL.createObjectURL(event.target.files[0]),
         });
+        console.log(imageInput1.current.files[0]);
     }
     };
 
@@ -225,7 +227,7 @@ const LocationsEdit = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+        console.log(formData); 
         const formData = new FormData();
     
         formData.append("name", name);

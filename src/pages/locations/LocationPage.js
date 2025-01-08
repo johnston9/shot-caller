@@ -22,6 +22,7 @@ const LocationPage = () => {
                 const { data } = await axiosReq(`/locations/${id}`);
                 const name = data.name;
                 console.log(name)
+                console.log(data)
                 setTitle(name);
                 setLocation({ results: [data] });
             } catch (err) {

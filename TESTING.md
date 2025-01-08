@@ -45,6 +45,28 @@ Description: The admin and superadmin can register new Users and change their Pe
 <img src="documentation/readme-images/schededit2.png" width="50%">
 </h2>
 
+### Crew Info
+Description: View, add and edit Crew Info.<br>
+
+- Use Case: xxxxxxxxxxx<br>
+
+  1. xxxxxxxxxxxxxxx.<br>
+
+<p align="center"> <strong>Sound Dept Posts page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+- Use Case: xxx<br>
+
+  1. Ixxx.<br>
+  2. xxx.<br>
+
+<p align="center"> <strong>xxx/strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
 ### Scheduling
 Description: View Schedules for a Shoot Day. Create Schedules by Creating Days then selecting Scenes from a menu which automatically adds the Scene's breakdown info to a stripboard.<br>
 
