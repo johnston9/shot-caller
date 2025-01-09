@@ -63,12 +63,15 @@ const CrewInfo = () => {
       className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
     </Button>
+    <h5 className={`text-center py-1 my-3 ${styles.SubTitle }`}>CREW INFO</h5>
       {!showImp ? (
           ""
               ) : (
                 <Important  /> 
-                ) }  
+      ) }  
+      {/* create/edit buttons */}
       {id ? (
+        <div>
         <Row className='mt-3'>
         <Col className='text-center'>
         <Button onClick={() => history.push("crewinfo/edit/1")}
@@ -76,11 +79,20 @@ const CrewInfo = () => {
           Add / Edit Crew Members Info</Button>
         </Col>
         </Row>
+        </div>
       ) : (
         <CreateOnce />
       )}
-      {/* edit */}
-      <div className={` mt-3 pt-2 ${styles.White }`}> 
+      <Row className='text-center mt-3'>
+      <Col>
+      <p style={{fontStyle: 'italic' }} >
+      Select Department below to view currently added crew members. Click tab above to 
+      add/edit new members.
+      </p>
+      </Col>
+      </Row>
+      {/* departments */}
+      <div className={`mt-3 pt-2 ${styles.White }`}> 
         <Row className={`${styles.ButtonLine} mt-0`}>
           <Col xs={{span: 4, offset: 4}} md={{span: 4, offset: 4}} className='text-center'>
               <p

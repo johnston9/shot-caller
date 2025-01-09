@@ -6,6 +6,10 @@ p {
   margin-bottom: 0;
 }
 
+.BorderRight {
+  border-right: 1px solid #d0d9db;
+}
+
 /* CallsheetTop */
 .BoldBase {
   color: #1ea7ae;

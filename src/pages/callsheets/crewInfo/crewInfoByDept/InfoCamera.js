@@ -29,25 +29,26 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA </h3>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA </h5>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
       <div className='px-md-5 pt-2'>
         {/* dop */}
         {dop_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          (<div className={`${styles.CrewInfoRow} pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >DOP</h5> 
+          <h5 className={`mb-3 mx-0 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} >DOP</h5> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{dop_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>dophoto </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{dop_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -56,6 +57,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
+        <hr className='mt-0 mb-3'/>
         {/* camera operator */}
         {camera_operator_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
