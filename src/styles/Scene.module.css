@@ -2,8 +2,20 @@
   height: 1000px;
 }
 
+.InfoBack {
+  background-color: #fff;
+}
+
+.InfoBack p {
+  font-size: .75rem;
+}
+
 .Italic {
   font-style: italic;
+}
+
+.Rolem {
+  color: #747686;
 }
 
 .ViewScript {
@@ -183,10 +195,6 @@ background: #ffffff;
 .TitleBox5 {
   border-bottom : 1px solid #72dbe2;
   color: #333;
-}
-
-.InfoBack {
-  background-color: #eefefe;
 }
 
 .Images {
@@ -566,7 +574,11 @@ overflow-y: scroll;
   overflow-y: scroll; 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 770px) {
+  .InfoBack p {
+    font-size: .75rem;
+  }
+
   .Title {
     font-size: .75em;
   }
@@ -581,9 +593,5 @@ overflow-y: scroll;
 
   .SceneTitle {
     font-size: 1.25em;
-  }
-
-  .InfoBack p {
-    font-size: .75rem;
   }
 }

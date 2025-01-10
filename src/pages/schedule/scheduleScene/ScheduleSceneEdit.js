@@ -189,7 +189,7 @@ const { scene_id, day_id, day_order_number, number,
       </Row>
       {/* filming location */}
       <Row>
-      <Col xs={{span: 6, offset: 3 } }className="d-flex justify-content-center p-0 p-md-2">
+      <Col md={{span: 6, offset: 3 } } className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
             <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
@@ -262,7 +262,7 @@ const { scene_id, day_id, day_order_number, number,
       </Row>
       {/* next */}
       <Row>
-      <Col xs={{span: 8, offset: 2 } } className="d-flex justify-content-center p-0 p-md-2">
+      <Col md={{span: 8, offset: 2 } } className="d-flex justify-content-center p-0 p-md-2">
       <Form.Group controlId="next" className={`${styles.Width2} `}  >
           <Form.Label >
             <p className={`${styles.BoldScene}`}>Next</p>

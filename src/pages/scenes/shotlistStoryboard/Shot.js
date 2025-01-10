@@ -117,8 +117,8 @@ const Shot = (props) => {
     };
 
     return (
-        <div style={style} className={`${styles.Bold}`} >
-            {/* medium*/}
+        <div style={style} className={`${styles.Bold}`}>
+            {/* small className={`${styles.Bold}`} */}
             <div className='d-none d-md-block'>
             <Row className='py-2 text-center mx-0'>
             <Col className={ `pl-2 ${styles.TitleBox2}`} xs={1} md={1}>

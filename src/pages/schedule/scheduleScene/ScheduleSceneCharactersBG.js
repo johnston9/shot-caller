@@ -34,7 +34,7 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
     }, [scene_id])
 
     return (
-        <div className={`text-center py-2 mb-2 mx-2 mx-md-5 px-2 ${styles.White}`} >
+        <div className={`text-center py-2 mb-2 mx-2 mx-md-5 px-2 ${styles.SceneBox}`} >
             <h5 className={`${styles.CharactersTitle } mt-2 mb-1`} >CHARACTERS</h5>
             {/* char titles */}
             <Row >

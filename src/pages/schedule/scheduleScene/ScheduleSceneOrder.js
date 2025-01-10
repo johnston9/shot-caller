@@ -140,7 +140,7 @@ const SchedOrder = (props ) => {
   )
 
   return (
-    <div >
+    <div className={` ${styles.OrderBox}`}>
       <h5 className={`text-center pb-0 ${styles.SubTitle }`}>
         Reorder Scene </h5>
       <Form onSubmit={handleSubmit} className={`px-3 ${styles.White}`}>

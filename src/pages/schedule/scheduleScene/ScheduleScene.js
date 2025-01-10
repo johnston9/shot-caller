@@ -39,7 +39,7 @@ const ScheduleScene = (props) => {
     };
 
     return (
-        <div style={style}>
+        <div style={style} className={`${styles.Bold}`} >
             {/* desktop */}
         <div className='d-none d-md-block'>
             <Row className={`${styles.Bold} pt-2 text-center mx-0`}>
@@ -140,34 +140,36 @@ const ScheduleScene = (props) => {
                     ) }
                     </Col>
                 </Row>
-                {/* next getBeginNext*/}
+                {/* next */}
                 {next ? (
                 <Row className='px-3'>
-                    <Col className={`mb-0 py-2 ${styles.Next1}`}>
+                    <Col>
+                    <div className={`mb-0 py-2 ${styles.Next1}`}>
                     <p className="mb-0" >Next: {next} </p>
+                    </div>
                     </Col>
                 </Row> 
                 ) : ("") }     
         </div>
-        {/* mobile */}
-        <div className='d-block d-md-none'>
+        {/* mobile */} 
+        <div className={`${styles.BottomScene} d-block d-md-none text-center mx-0`}>
             {/* schedule */}
             <Row className={`${styles.Bold} text-center mx-0`} >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
-                    <p className={`mb-0  ${styles.TitleBox2}`}>{start_time}</p>
-                    <p className={`mb-0  ${styles.TitleBox2}`}>{end_time}</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                    <p className='mb-0'>{number}</p>
+                    <p className={`mb-0  ${styles.Para2}`}>{start_time}</p>
+                    <p className={`mb-0  ${styles.Para2}`}>{end_time}</p>
                 </Col>
                 <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} {day_night}</p>
-                    <p className='mb-0'>{action}</p>
+                    <p style={{ textTransform: 'uppercase'}} className={`mb-0  ${styles.Para2}`}>{int_ext}. {location} - {day_night}</p>
+                    <p className={`mb-0  ${styles.Para2}`}>{action}</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                    <p className={`mb-0  ${styles.Para2}`}>{number}</p>
                 </Col>
             </Row>
-            <hr className=' my-1'></hr>
-            {/* sechedule */}
-            <Row className='mt-2 mx-0 px-0 text-center'>
+            <hr className={`${styles.HrSched} my-0 mx-3`}></hr>
+            {/* order - info -cast edit */}
+            <Row className='mt-1 mx-0 px-0 d-flex align-items-center '>
             {/* order */}
             {admin ? (
                     <>
@@ -181,7 +183,7 @@ const ScheduleScene = (props) => {
                         overlay={<Tooltip>Reorder</Tooltip>}
                         >
                         <Button onClick={() => setShowOrder(showOrder => !showOrder)} 
-                            className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-3`}>
+                            className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-2`}>
                             {day_order_number}
                         </Button>
                         </OverlayTrigger>
@@ -262,13 +264,15 @@ const ScheduleScene = (props) => {
                 {/* next */}
                 {next ? (
                     <Row>
-                    <Col className={`mb-0 py-2 ${styles.Next1}`}>
-                    <p className="mb-0" >Next: {next} </p>
+                    <Col className={`mb-0 py-2 text-center ${styles.Next2}`}>
+                    <p className={`mb-0  ${styles.Para2}`} >Next: {next} </p>
                     </Col>
                 </Row> 
                 ) : (
                     <Row>
-                    <Col className={`mb-0 pt-1 ${styles.Next1}`}>
+                    <Col >
+                    <div className={`mb-0 py-1 ${styles.Next2}`}>
+                    </div>
                     </Col>
                 </Row> 
                 ) }     

@@ -2,6 +2,16 @@
   height: 20px;
 }
 
+.SceneBox {
+  border: 1px solid #fafafa;
+  background-color: #fff;
+} 
+
+.SceneBox p {
+  font-size: .75rem !important;
+  font-weight: 700;
+}
+
 .White {
   background-color: #fff;
 }

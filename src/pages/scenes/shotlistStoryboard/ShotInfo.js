@@ -24,24 +24,26 @@ const ShotInfo = (props) => {
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>CAMERA</p>
             <div className={`${styles.Para}`}>
-            <p >{camera} </p>
+            <p className={`${styles.Role}`}>{camera} </p>
             </div>
             </Col>
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4}>
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>LENS</p>
             <div className={`${styles.Para}`}>
-            <p >{lens} </p>
+            <p className={`${styles.Role}`}>{lens} </p>
             </div>
             </Col>
             <Col className={`text-center`} xs={12} md={4} >
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>LOCATION</p>
             <div className={`${styles.Para}`}>
-            <p style={{ textTransform: 'uppercase'}} >{int_ext} {location} - {day_night} </p>
+            <p style={{ textTransform: 'uppercase'}}
+            className={`${styles.Role}`} >{int_ext} {location} - {day_night} </p>
             </div>
             </Col>
             </Row>
+            {/* break */}
             <Row>
             <Col xs={12}>
             <hr className={`${styles.Break1} mt-0 mb-0`}/>
@@ -53,24 +55,25 @@ const ShotInfo = (props) => {
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>AUDIO</p>
             <div className={`${styles.Para}`}>
-            <p>{audio} </p>
+            <p className={`${styles.Role}`}>{audio} </p>
             </div>
             </Col>
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4} >
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>EQUIPMENT</p>
             <div className={`${styles.Para}`}>
-            <p >{equipment} </p>
+            <p className={`${styles.Role}`}>{equipment} </p>
             </div>
             </Col>
             <Col className={`text-center`} xs={12} md={4}>
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>SUBJECT</p>
             <div className={`${styles.Para}`}>
-            <p>{actors} </p>
+            <p className={`${styles.Role}`}>{actors} </p>
             </div>
             </Col>
             </Row>
+            {/* break */}
             <Row>
             <Col xs={12}>
             <hr className={`${styles.Break1} mt-0 mb-0`}/>
@@ -82,24 +85,25 @@ const ShotInfo = (props) => {
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>FOCUS PULLS</p>
             <div className={`${styles.Para}`}>
-            <p>{focus_pulls} </p>
+            <p className={`${styles.Role}`}>{focus_pulls} </p>
             </div>
             </Col>
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4} >
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>FRAME RATE</p>
             <div className={`${styles.Para}`}>
-            <p >{frame_rate} </p>
+            <p className={`${styles.Role}`}>{frame_rate} </p>
             </div>
             </Col>
             <Col className={`text-center`} xs={12} md={4} >
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>LIGHTING</p>
             <div className={`${styles.Para}`}>
-            <p >{lighting}</p>
+            <p className={`${styles.Role}`}>{lighting}</p>
             </div>
             </Col>
             </Row>
+            {/* break */}
             <Row>
             <Col xs={12}>
             <hr className={`${styles.Break1} mt-0 mb-0`}/>
@@ -111,26 +115,27 @@ const ShotInfo = (props) => {
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>SCRIPT REF</p>
             <div className={`${styles.Para}`}>
-            <p>{script_ref} </p>
+            <p className={`${styles.Role}`}>{script_ref} </p>
             </div>
             </Col>
-            <Col className={`${styles.BorderRight} text-center`}xs={6} md={4}>
+            <Col className={`${styles.BorderRight} px-0 mx-0 text-center`} xs={6} md={4}>
             <p className={`${styles.BoldTitle} d-none d-md-block
-            mb-2 text-center mx-1 mx-sm-5`}>STORYBOARD REF</p>
+            mb-2 text-center mx-1 mx-md-5`}>STORYBOARD REF</p>
             <p className={`${styles.BoldTitle} d-block d-md-none
             mb-2 text-center mx-1 mx-sm-5`}>STORYB. REF</p>
             <div className={`${styles.Para}`}>
-            <p>{storyboard_refs} </p>
+            <p className={`${styles.Role}`}>{storyboard_refs} </p>
             </div>
             </Col>
             <Col className={`text-center`} xs={12} md={4}>
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>FX/VFX</p>
             <div className={`${styles.Para}`}>
-            <p>{fx} </p>
+            <p className={`${styles.Role}`}>{fx} </p>
             </div>
             </Col>
             </Row>
+            {/* break */}
             <Row>
             <Col xs={12}>
             <hr className={`${styles.Break1} mt-0 mb-0`}/>
@@ -142,10 +147,11 @@ const ShotInfo = (props) => {
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>NOTES</p>
             <div className={`${styles.Para}`}>
-            <p>{notes} </p>
+            <p className={`${styles.Role}`}>{notes} </p>
             </div>
             </Col>
             </Row>
+            {/* break */}
             <Row>
             <Col xs={12}>
             <hr className={`${styles.Break1} mt-0 mb-0`}/>

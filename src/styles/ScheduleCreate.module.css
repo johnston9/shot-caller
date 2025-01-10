@@ -2,13 +2,30 @@
     min-height: 100px;
 }
 
+.SceneBox p {
+  font-size: .75rem !important;
+  font-weight: 700;
+}
+
 .Para2 {
   font-size: .75rem !important;
   /* font-weight: 400; */
 }
 
+.BottomScene {
+  border-top: 1px solid #c6d0d2;
+}
+
 .White {
   background-color: #fff;
+}
+
+.HrSched {
+  border-top: 2px solid #fff;
+}
+
+.HrSchedNext {
+  border-top: 5px solid #fff;
 }
 
 .Break1 {
@@ -31,12 +48,14 @@
 }
 
 .Info {
+  font-size: .75rem !important;
+  font-weight: 700;
   color: rgb(170, 27, 55);
   cursor: pointer;
 }
 
 .Info:hover {
-  color: #e8dce0;
+  color: rgb(73, 2, 16);;
 }
 
 .White {
@@ -168,7 +187,15 @@
   /* background-color: #14404f;
   color: #fff; */
   background-color: #fffff5;
-  color: #333;
+  font-weight: 700;
+}
+
+.Next2 {
+  /* background-color: #14404f;
+  color: #fff; */
+  background-color: #fffff5;
+  font-weight: 700;
+  /* border-top: 1px solid #d0d9db; */
 }
 
 .PostDropdown i {
@@ -203,7 +230,7 @@
 
 .OrderBox {
   /* background-color: rgb(209, 240, 240); */
-  background-color: aliceblue;
+  background-color: #fff;
 }
 
 @media screen and (max-width: 600px) {
@@ -216,4 +243,27 @@
   .Width3 {
     width: 50%;
   }
+
+  .BoldScene {
+    font-size: .75rem !important;
+  }
+
+  .BoldSceneNext {
+    font-size: .75rem !important;
+  }
+
+  .Input {
+    height: 20px !important;
+    text-align: center;
+    font-size: .75rem !important;
+  }
+
+  .InputScene {
+    font-size: .75rem !important;
+   }
+
+   .InputSceneNext {
+    font-size: .75rem !important;
+   }
+  
 }

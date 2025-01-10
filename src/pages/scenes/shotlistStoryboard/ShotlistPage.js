@@ -60,7 +60,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
                   handleMount={handleMount} 
                   scene={scene} />  ) }
                 </Col>
-              </Row>
+              </Row> 
             {/* titles */}
             <div className='d-none d-md-block'>
             <Row style={{ textTransform: 'uppercase' }} 
@@ -99,7 +99,7 @@ const ShotlistPage = ({scene, setShowlist} ) => {
             <Row style={{ textTransform: 'uppercase' }} 
             className={`mt-3 ${styles.TitleBox} text-center mx-0`} >
                 <Col className={`px-0 ${styles.TitleBox2} `} xs={1} md={1}>
-                    <p className='pl-1 mb-0'>In</p>
+                    <p className={`ml-1 mb-0`}>In</p>
                 </Col>
                 <Col className={`px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'># </p>
