@@ -55,11 +55,11 @@ const ScheduleSceneItem = (props) => {
 
     return (
         <div className={`mx-4 mb-2 ${styles.SchedItem}`} >
-        <Row>
-        <Col xs={2} className={`text-center mx-0 py-2 ${styles.ItemNu}`}>
+        <Row >
+        <Col xs={2} className={`text-center mx-0 py-1 ${styles.ItemNu}`}>
         <p >{number}</p>
         </Col>
-        <Col xs={10} onClick={handleClick} className={`mx-0 py-2 ${styles.Item}`}>
+        <Col xs={10} onClick={handleClick} className={`mx-0 py-1 ${styles.Item}`}>
         <p><span style={{ textTransform: 'uppercase'}}>{location}</span> - <span className={`${styles.Italic}`} >{title}</span></p>
         </Col>
         </Row>

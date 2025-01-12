@@ -319,7 +319,7 @@ const Scene = (props) => {
                         />
                     </Col>
                   </Row>
-                  <Row>
+                  <Row >
                     <Col xs={1}></Col>
                     <Col xs={5} className='text-center'>
                         <p
@@ -334,7 +334,7 @@ const Scene = (props) => {
                         </p>
                     </Col>
                   </Row>
-                  <Row>
+                  <Row className='mt-3'>
                     <Col className='text-center' xs={4}>
                       {/* <p
                           className={`py-0 mb-0 ${styles.Button}`}

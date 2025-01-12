@@ -1,8 +1,6 @@
 /* Page to fetch the Latest post's data
  * Contains the Latest component to which it passes the data */
 import React, { useEffect, useState } from "react";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button"
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router-dom";

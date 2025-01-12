@@ -18,7 +18,6 @@ import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
 import { toast } from 'react-toastify';
-import dep10 from "../../assets/dep10.png";
 
 const LocationsEdit = () => {
     useRedirect();
@@ -227,7 +226,6 @@ const LocationsEdit = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(formData); 
         const formData = new FormData();
     
         formData.append("name", name);

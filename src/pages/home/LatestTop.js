@@ -111,6 +111,8 @@ const LatestTop = (props) => {
                 <p className=''>
                 {position}
                 </p>
+                <p className={ `text-center  ${styles.Date}`}>{updated_at}
+                </p>
                 </Col>
                 <Col xs={2} 
                 className="d-flex align-items-center" >
@@ -122,84 +124,6 @@ const LatestTop = (props) => {
                 ) } 
                 </Col>
                 </Row> 
-                <Row>
-                <Col xs={12}>
-                {/* icons  */}
-                {/* star uses archive_id from drf */}
-                {/* <div className='px-0 py-0 d-flex align-items-center justify-content-center' >
-                {archive_id ? (
-                      <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>UnStar</Tooltip>}
-                      >
-                      <span onClick={handleUnStar} >
-                      <i className={`fas fa-star ${styles.Star}`} />
-                      </span>
-                      </OverlayTrigger>
-                  ) : currentUser ? (
-                    <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Star</Tooltip>}
-                    >
-                      <span onClick={handleStar}>
-                      <i className={`far fa-star ${styles.Star}`} />
-                      </span>
-                      </OverlayTrigger>
-                  ) : (
-                      <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Log in please</Tooltip>}
-                      >
-                      <i className={`far fa-star ${styles.Star}`} />
-                      </OverlayTrigger>
-                  )}
-                  {is_owner ? (
-                      <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>You can't like your own post!</Tooltip>}
-                      >
-                      <i className={`far fa-heart ${styles.Heart}`} />
-                      </OverlayTrigger>
-                  ) : like_id ? (
-                      <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Unlike</Tooltip>}
-                      >
-                      <span onClick={handleUnlike} >
-                      <i className={`fas fa-heart ${styles.Heart}`} />
-                      </span>
-                      </OverlayTrigger>
-                  ) : currentUser ? (
-                      <OverlayTrigger
-                        placement="top"
-                        overlay={<Tooltip>Like</Tooltip>}
-                        >
-                      <span onClick={handleLike}>
-                      <i className={`far fa-heart ${styles.Heart}`} />
-                      </span>
-                      </OverlayTrigger>
-                  ) : (
-                      <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Log in please</Tooltip>}
-                      >
-                      <i className={`far fa-heart ${styles.Heart}`} />
-                      </OverlayTrigger>
-                  )}
-                  <span className='pt-0'>{likes_count}</span>
-                  <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Comments</Tooltip>}
-                      >
-                  <Link to={`/posts/${id}`}>
-                  <i className={`far fa-comments ${styles.Comment}`} />
-                  </Link>
-                  </OverlayTrigger>
-                  <span className='pt-0'>{comments_count}</span>
-                  <span className='ml-5'> {updated_at}</span>
-                </div> */}
-                </Col>
-                </Row>  
                 </div> 
             </Col> 
             <Col xs={12} sm={6} className="py-1" >
@@ -229,7 +153,7 @@ const LatestTop = (props) => {
                 className={` text-center`} >
                 <Row>
                 <Col className='px-0 mx-0' xs={12}>
-                  {departments && <p style={{ textTransform: 'capitalize', color: '#fafafa' }}>
+                  {departments && <p style={{ textTransform: 'capitalize'}}>
                     {departments}</p>}
                 </Col>
                 </Row>

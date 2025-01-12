@@ -139,8 +139,8 @@ const DeptPost = (props) => {
           </Row>
           </Card.Body>
               <Card.Body className="pt-3" >
-                    {title && <Card.Title style={{ fontStyle: 'italic' }}
-                     className="text-center">{title}</Card.Title>}
+                    {title && <h5 style={{ fontStyle: 'italic' }}
+                     className="text-center">{title}</h5>}
                     <hr />
                     {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
               </Card.Body>

@@ -41,12 +41,12 @@ function SceneCreateForm() {
   const buttons = (
     <div className={`text-center pt-3 mb-3 pb-2 ${styles.White }`} >    
       <Button
-        className={`mr-3 px-5 ${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`mr-3 px-3 px-md-5 ${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`ml-3 px-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`ml-3 px-3 px-md-5 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         Create
       </Button>
     </div>

@@ -108,6 +108,16 @@ background: #ffffff;
   text-align: center;
 }
 
+.InputBar {
+  background: #ffffff;
+  border: 1px solid #e0e3eb;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  height: 30px !important;
+} 
+
 .SceneCard i {
   color: #666;
 }
@@ -574,10 +584,37 @@ overflow-y: scroll;
   overflow-y: scroll; 
 }
 
-@media screen and (max-width: 770px) {
-  /* p {
+@media screen and (max-width: 600px) {
+  .InputBar {
+    height: 20px !important;
+    font-size: .75rem !important;
+}
+
+.Input {
+  height: 20px !important;
+  text-align: center;
+  font-size: .75rem !important;
+}
+
+.InputScene {
+  font-size: .75rem !important;
+ }
+
+ .InputEx {
+  font-size: .75rem !important;
+  height: 20px !important;
+ }
+
+.BoldScene {
+  font-size: .75rem !important;
+}
+
+p {
     font-size: .75rem;
-  } */
+  }
+}
+
+@media screen and (max-width: 770px) {
 
   h5 {
     font-size: 1rem;

@@ -24,6 +24,7 @@ const ScheduleScene = (props) => {
     const {sceneAll, scene_id, id, day_id, number, int_ext, start_time,
            end_time, admin, location, filming_location, day_night, 
            action, pages, callsheetshed, next, day_order_number, 
+           // eslint-disable-next-line
            setHasOrder, style, showSideBySide, } = props
         
     const handleEdit = () => {

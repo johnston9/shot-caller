@@ -63,7 +63,7 @@ const DeptsGeneral = () => {
                   </Card.Header>
                   <Card.Body>
                     <Row>
-                      <Col xs={4} lg={3}>
+                      <Col xs={4} lg={3} className='px-1 px-sm-3'>
                       <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
                       <Card className={`${styles.Dept }`}
                           onClick={() => handleClick('camera') } >
@@ -72,7 +72,7 @@ const DeptsGeneral = () => {
                       </Card>
                       </div>
                       </Col>
-                      <Col xs={4} lg={3}>
+                      <Col xs={4} lg={3} className='px-1 px-sm-3'>
                       <div className={`${styles.DeptDiv } px-1 px-sm-3`}>
                         <Card className={`${styles.Dept }`}
                           onClick={() => handleClick('sound') }>

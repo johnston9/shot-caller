@@ -16,8 +16,6 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import TopBox from "../../components/TopBox";
 import { useRedirect } from "../../hooks/Redirect";
-import Asset from "../../components/Asset";
-import Asset2 from "../../components/Asset2";
 import Asset3 from "../../components/Asset3";
 import { toast } from 'react-toastify';
 

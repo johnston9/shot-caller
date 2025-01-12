@@ -61,6 +61,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
+    // eslint-disable-next-line
   }, [filter, query])
   
   return (
@@ -97,9 +98,9 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
         >
           <Form.Control
             value={query}
+            className={`${styles.InputBar}`}
             onChange={(event) => setQuery(event.target.value)}
             type="text"
-            className="mr-sm-2"
             placeholder="Search by username or post title"
           />
         </Form>

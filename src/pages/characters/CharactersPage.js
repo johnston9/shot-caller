@@ -52,6 +52,7 @@ const Characters = ({message}) => {
     return () => {
       clearTimeout(timer);
     };
+    // eslint-disable-next-line
   }, [query])
 
     return (

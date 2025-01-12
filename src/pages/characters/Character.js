@@ -400,19 +400,3 @@ const Character = (props) => {
 }
 
 export default Character
-
-{/* <h5 className={`text-center mt-4 mb-4 pl-3 mx-1 py-1 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Callsheet Info</h5> */}
-{/* <p className={`text-center mt-4 mx-md-5 mb-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Actor Info</p> */}
-             {/* callname */}
-            {/* <Row>
-            <Col className='text-center mb-3'>
-            <div className='mb-3'>
-            <span className={`py-1 px-5 ${styles.BoldTitleCall } `} >
-            CALLNAME: {username}
-            </span>  
-            </div>
-            </Col>
-            </Row> */}
-            {/* break */}

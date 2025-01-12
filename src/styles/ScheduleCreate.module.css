@@ -226,14 +226,16 @@
   background-color: rgb(209, 240, 240);
 }
 
-/* Order d4e9f5 */
-
 .OrderBox {
-  /* background-color: rgb(209, 240, 240); */
   background-color: #fff;
 }
 
 @media screen and (max-width: 600px) {
+  .InputBar {
+    height: 20px !important;
+    font-size: .75rem !important;
+}
+
   .Width {
     width: 80%;
   }

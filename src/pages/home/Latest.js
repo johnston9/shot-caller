@@ -88,6 +88,7 @@ const Latest = (props) => {
                 <p className=''>
                 {position}
                 </p>
+                <p className={ `${styles.Date}`}> {updated_at}</p>
                 </Col>
                 <Col xs={2} 
                 className="d-flex align-items-center" >
@@ -99,11 +100,6 @@ const Latest = (props) => {
                 ) } 
                 </Col>
                 </Row> 
-                <Row>
-                <Col className='text-center' xs={12}>
-                <p className={ `text-center  ${styles.Date}`}>{updated_at}</p>
-                </Col>
-                </Row>  
                 </div> 
           </Col>    
           <Col xs={12} sm={6} className="text-center" >
@@ -139,8 +135,8 @@ const Latest = (props) => {
           </Row>
           </Card.Body>
           <Card.Body className="pt-3" >
-              {title && <Card.Title style={{ fontStyle: 'italic' }}
-                className="text-center">{title}</Card.Title>}
+              {title && <h5 style={{ fontStyle: 'italic' }}
+                className="text-center">{title}</h5>}
               <hr />
               {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
           </Card.Body>
