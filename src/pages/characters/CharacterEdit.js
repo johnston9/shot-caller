@@ -365,10 +365,10 @@ const buttons = (
             </div> 
             <Container className= {`mt-3 px-0 ${appStyles.Content} ${styles.Container}`} >
               <Form className="mt-0" onSubmit={handleSubmit}>
-              <h5 className={`text-center mt-0 mb-4 py-0 ${styles.SubTitle }`}>
+              <h5 className={`text-center mt-0 mb-2 py-0 ${styles.SubTitle }`}>
                 CHARACTER INFO</h5>
              <Row>
-              <Col xs={12} sm={6} className="d-flex justify-content-center" >
+              <Col xs={6} className="d-flex justify-content-center px-1 mx-0" >
               <Form.Group controlId="role" className={`${styles.Width} text-center`}  >
                       <Form.Label className={`${styles.BoldScene} `} >Role</Form.Label>
                       <Form.Control 
@@ -385,25 +385,26 @@ const buttons = (
                     </Alert>
                   ))}
               </Col>
-              <Col xs={12} sm={6} className="text-center" >
+              <Col xs={6} className="text-center " >
               <p className={`${styles.BoldScene} `} >Number</p>
-              <p className={`${styles.Number} `} >{number} </p>
+              <p className={`${styles.Number} pt-2`} >{number} </p>
               </Col>
              </Row>
               {/* actor details */}
-              <h5 className={`text-center mt-5 mb-3 mb-0 py-0 ${styles.SubTitle }`}>
+              <h5 className={`text-center mt-4 mb-3 mb-0 py-0 ${styles.SubTitle }`}>
                 ACTOR INFO</h5>
              <Row>
-                <Col className='text-center mt-2 mb-3'>
-                <div className='mb-3'>
+                <Col className='text-center mt-2'>
+                <div className='mb-2 mb-md-3'>
                 <span className={`py-1 px-1 px-md-5 ${styles.BoldTitleCall } `} >
                 CALLNAME: {username}
                 </span>  
                 </div>
                 </Col>
              </Row>
-              <Row className="text-center mb-3">
-                  <Col xs={12} sm={6} className="d-flex justify-content-center"  >
+             {/* actor mobile */}
+              <Row className="text-center">
+                  <Col xs={12} md={6} className="d-flex justify-content-center"  >
                   <Form.Group controlId="actor" 
                     className={`${styles.Width2} text-center`}  >
                           <Form.Label className={styles.BoldScene} >Actor</Form.Label>
@@ -421,7 +422,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
+                  <Col xs={12} md={6} className="mt-3 mt-md-0 d-flex justify-content-center" >
                   <Form.Group controlId="mobile" 
                   className={`${styles.Width2} text-center`}  >
                           <Form.Label className={styles.BoldScene} >
@@ -441,9 +442,15 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <hr/>
+              {/* break */}
               <Row>
-                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
+              <Col xs={12}>
+              <hr className={`d-none d-md-block mt-3 mb-3`}/>
+              </Col>
+              </Row>
+              {/* email */}
+              <Row className="mt-3 mt-md-0">
+                  <Col xs={12} md={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="email"
                   className={`${styles.Width2} text-center`} >
                           <Form.Label className={styles.BoldScene} >Email</Form.Label>
@@ -462,7 +469,7 @@ const buttons = (
                       ))}
                   </Col>
                   {/* Diet */}
-                  <Col xs={12} md={6} className="d-flex justify-content-center">
+                  <Col xs={12} md={6} className="mt-3 mt-md-0 d-flex justify-content-center">
                   <Form.Group controlId="diet" 
                     className={`${styles.Width2} text-center`}>
                           <Form.Label className={styles.BoldScene} >Diet</Form.Label>
@@ -483,10 +490,16 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <hr/>
-              <Row>
+              {/* break */}
+              <Row >
+              <Col xs={12}>
+              <hr className={`d-none d-md-block mt-3 mb-3`}/>
+              </Col>
+              </Row>
+              {/* Agent - agent email*/}
+              <Row className="mt-3 mt-md-0">
                   {/* Agent - Agent email (using pickup_address_2 for this*/}
-                  <Col xs={12} sm={6} className="d-flex justify-content-center">
+                  <Col xs={12} md={6} className="d-flex justify-content-center">
                   <Form.Group controlId="agent" 
                    className={`${styles.Width2} text-center`}  >
                           <Form.Label className={styles.BoldScene} >
@@ -505,7 +518,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} sm={6} className="d-flex justify-content-center">
+                  <Col xs={12} md={6} className="mt-3 mt-md-3 d-flex justify-content-center">
                   <Form.Group controlId="pickup_address_2" 
                     className={`${styles.Width2} text-center`} >
                           <Form.Label className={styles.BoldScene} >Agent Email</Form.Label>
@@ -524,10 +537,15 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <hr/>
+              {/* break */}
+              <Row >
+              <Col xs={12}>
+              <hr className={`d-none d-md-block mt-3 mb-3`}/>
+              </Col>
+              </Row>
               {/* times */}
               <Row className="text-center">
-                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
+                  <Col xs={12} md={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="make_up_time" 
                     className={`${styles.Width}`} >
                           <Form.Label className={styles.BoldScene} >Makeup Time</Form.Label>
@@ -545,7 +563,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
+                  <Col xs={12} md={6} className="mt-3 mt-md-3 d-flex justify-content-center" >
                   <Form.Group controlId="commute_time" 
                     className={`${styles.Width}`} >
                           <Form.Label className={styles.BoldScene} >Commute Time</Form.Label>
@@ -564,10 +582,15 @@ const buttons = (
                       ))}
                   </Col>
               </Row>
-              <hr/>
+              {/* break */}
+              <Row >
+              <Col xs={12}>
+              <hr className={`d-none d-md-block mt-3 mb-3`}/>
+              </Col>
+              </Row>
              {/* Requirements/Notes */}
-             <Row className="text-center">
-                  <Col xs={12} sm={6} className="d-flex justify-content-center" >
+             <Row className="text-center mt-3 mt-md-0">
+                  <Col xs={12} md={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="pickup_address" className={`${styles.Width2}`}>
                           <Form.Label className={styles.BoldScene} >Pickup Address</Form.Label>
                           <Form.Control 
@@ -586,7 +609,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} md={6} className="d-flex justify-content-center" >
+                  <Col xs={12} md={6} className="mt-3 mt-md-0 d-flex justify-content-center" >
                   <Form.Group controlId="requirements" 
                     className={`${styles.Width2} text-center`} >
                           <Form.Label className={styles.BoldScene} >

@@ -80,9 +80,9 @@ const LocationsPage = () => {
                     >
                 <Form.Control
                     value={query}
+                    className={`${styles.InputBar}`}
                     onChange={(event) => setQuery(event.target.value)}
                     type="text"
-                    className="mr-sm-2"
                     placeholder="Search by Location name"
                 />
                 </Form>
@@ -90,10 +90,10 @@ const LocationsPage = () => {
             </Row>
             <Row className="h-100 px-4">
                 {hasLoaded ? (
-                <>
+                <> 
                 {locations.results.length ? (
                     locations.results.map((location) => (
-                    <Col xs={6} sm={4} md={4} lg={3} className="py-2 p-0 mx-0">
+                    <Col xs={6} md={4} lg={3} className="py-2 p-0 mx-0">
                     <LocationTop key={location.id} {...location} />
                     </Col>
                     ))) 

@@ -80,9 +80,9 @@ const Characters = ({message}) => {
                     >
                 <Form.Control
                     value={query}
+                    className={`${styles.InputBar}`}
                     onChange={(event) => setQuery(event.target.value)}
                     type="text"
-                    className="mr-sm-2"
                     placeholder="Search by Role"
                 />
                 </Form>
@@ -94,7 +94,7 @@ const Characters = ({message}) => {
                     <>
                     {characters.results.length ? (
                         characters.results.map((character) => (
-                        <Col xs={6} sm={4} md={2} lg={2} 
+                        <Col xs={6} md={4} lg={3} 
                         className="py-2 p-0 mx-0">
                         <CharacterTop 
                         fetchCharacters={fetchCharacters}

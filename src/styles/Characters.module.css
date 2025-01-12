@@ -23,7 +23,7 @@
 }
 
 .Para {
-  min-height: 35px;
+  min-height: 25px;
 }
 
 .BorderRight {
@@ -104,15 +104,7 @@
   font-weight: 700;
   color: #fff;
   background-color: #000;
-  /* border: 1px solid red; */
 }
-
-/* .BoldTitleCall {
-  font-weight: 700;
-  color: #fff;
-  background-color: #000;
-  border: 1px solid red;
-} */
 
 .Button {
   color: rgb(41, 180, 180);
@@ -132,8 +124,31 @@
   font-weight: 700;
 }
 
+.InputBar {
+  background: #ffffff;
+  border: 1px solid #e0e3eb;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  height: 30px !important;
+  /* text-align: center; */
+} 
+
 @media screen and (max-width: 600px) {
+  .InputBar {
+    height: 20px !important;
+    font-size: .75rem !important;
+}
+
   .Titlelist {
+    font-size: .75rem ;
+  }
+
+  .BoldTitleCall {
+    font-weight: 700;
+    color: #fff;
+    background-color: #000;
     font-size: .75rem ;
   }
 }

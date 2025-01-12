@@ -305,7 +305,7 @@ const LocationsEdit = () => {
           </Button>
           <Container className= {`px-0 ${appStyles.Content} ${styles.Container}`} >
           <Form className="mt-3" onSubmit={handleSubmit}>
-          <h5 className={`text-center mt-0 mb-4 py-0 ${styles.SubTitle }`}
+          <h5 className={`text-center mt-0 mb-2 py-0 ${styles.SubTitle }`}
           style={{ textTransform: 'uppercase'}}>EDIT LOCATION - {name}</h5>
           <Row>
           <Col md={3} ></Col>
@@ -327,8 +327,13 @@ const LocationsEdit = () => {
               ))}
           </Col>
           </Row>
-          <hr/>
-          <Row className="text-center mt-3">
+          {/* break */}
+          <Row>
+            <Col xs={12}>
+            <hr className={`d-none d-md-block mt-3 mb-3`}/>
+            </Col>
+          </Row>
+          <Row className="text-center mt-3 mt-md-3">
           <Col xs={12} md={6} className="d-flex justify-content-center" >
           <Form.Group controlId="description" className={`${styles.Width2}`} >
                   <Form.Label className={styles.BoldScene} >Description</Form.Label>
@@ -348,7 +353,7 @@ const LocationsEdit = () => {
                 </Alert>
               ))}
           </Col>
-          <Col xs={12} sm={6} className="d-flex justify-content-center"  >
+          <Col xs={12} md={6} className="mt-3 mt-md-3 d-flex justify-content-center"  >
               <Form.Group controlId="filming_address_primary" className={`${styles.Width2}`} >
                       <Form.Label className={styles.BoldScene} >Primary Filming Address</Form.Label>
                       <Form.Control 
@@ -368,8 +373,13 @@ const LocationsEdit = () => {
                   ))}
           </Col>
           </Row>
-          <hr/>
-          <Row className="text-center">
+          {/* break */}
+          <Row>
+            <Col xs={12}>
+            <hr className={`d-none d-md-block mt-3 mb-3`}/>
+            </Col>
+          </Row>
+          <Row className="text-center pt-3 pt-md-0">
               <Col xs={12} md={6} className="d-flex justify-content-center"  >
               <Form.Group controlId="filming_address2" className={`${styles.Width2}`} >
                       <Form.Label className={styles.BoldScene} >Filming Address 2</Form.Label>
@@ -389,7 +399,7 @@ const LocationsEdit = () => {
                     </Alert>
                   ))}
               </Col>
-              <Col xs={12} md={6} className="d-flex justify-content-center"  >
+              <Col xs={12} md={6} className="mt-3 mt-md-3 d-flex justify-content-center"  >
               <Form.Group controlId="filming_address3" className={`${styles.Width2}`} >
                       <Form.Label className={styles.BoldScene} >Filming Address 3</Form.Label>
                       <Form.Control 

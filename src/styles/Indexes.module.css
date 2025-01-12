@@ -221,6 +221,17 @@ padding: 0px 10px;
 text-align: center;
 }
 
+.InputBar {
+background: #ffffff;
+border: 1px solid #e0e3eb;
+box-sizing: border-box;
+border-radius: 2px;
+color: #747686;
+padding: 0px 10px;
+height: 30px !important;
+/* text-align: center; */
+}
+
 .InputChar {
 background: #ffffff;
 border: 1px solid #f0f1f9;
@@ -238,6 +249,25 @@ background-color: rgb(209, 240, 240);
 }
 
 @media screen and (max-width: 600px) {
+.BoldScene {
+    font-size: .75rem;
+}
+
+.Input {
+height: 20px !important;
+text-align: center;
+font-size: .75rem !important;
+}
+
+.InputBar {
+    height: 20px !important;
+    font-size: .75rem !important;
+}
+
+.InputScene {
+font-size: .75rem !important;
+}
+
 .Width {
     width: 90%;
 }

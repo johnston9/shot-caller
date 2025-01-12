@@ -113,14 +113,14 @@ const Character = (props) => {
             </Col>
             </Row>
             {/* role number actor */}
-            <Row className='mb-3 text-center'>
+            <Row className='mb-md-3 text-center'>
                 <Col xs={6} md={4} className={`${styles.BorderRight} 
                 text-center px-0 mx-0`}>
                 <p className={`${styles.BoldTitle} 
                 mb-2 text-center mx-1 mx-sm-5`}>ROLE</p>
                 {/* <p className={`${styles.BoldScene} `}>Role</p> */}
                 <div className={`${styles.Para}`}>
-                <p className={`${styles.Role}`}>{role} </p>
+                <p className={`${styles.Role} pb-0`}>{role} </p>
                 </div>
                 </Col>
                 <Col xs={6} md={4} className={`${styles.BorderRight} 
@@ -128,7 +128,7 @@ const Character = (props) => {
                 <p className={`${styles.BoldTitle} 
                 mb-2 text-center mx-1 mx-sm-5`}>NUMBER</p>
                 <div className={`${styles.Para}`}>
-                <p className={`${styles.Role}`}>{number} </p>
+                <p className={`${styles.Role} pb-0`}>{number} </p>
                 </div>
                 </Col>
                 <Col xs={12} md={4} className='text-center px-0 mx-0'>
@@ -142,11 +142,11 @@ const Character = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-3`}/>
+            <hr className={`d-none d-md-block mt-0 mb-3`}/>
             </Col>
             </Row>
             {/* mobile email agent */}
-            <Row className='mb-3 text-center'>
+            <Row className='mb-md-3 text-center'>
                 <Col xs={12} md={4} className={`${styles.BorderRight} 
                 text-center px-0 mx-0`}>
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>MOBILE</p>
@@ -172,12 +172,12 @@ const Character = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-3`}/>
+            <hr className={`d-none d-md-block mt-0 mb-3`}/>
             </Col>
             </Row>
             {/* makeup - commute 
             - agent email (pickup_address_2 is being used for this) */}
-            <Row className='mb-3'>
+            <Row className='mb-md-3'>
                 <Col xs={6} md={4} className={`${styles.BorderRight} 
                 text-center px-0 mx-0`}>
                 <p className={`${styles.BoldTitle} d-none d-sm-block mb-2 text-center mx-1 mx-sm-5`}>
@@ -209,10 +209,10 @@ const Character = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-3`}/>
+            <hr className={`d-none d-md-block mt-0 mb-3`}/>
             </Col>
             </Row>
-            <Row className='mb-3'>
+            <Row className='mb-md-3'>
             <Col xs={12} md={4} className={`${styles.BorderRight} 
                 text-center px-0 mx-0`} >
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>

@@ -42,7 +42,7 @@ const SeriesTop = (props) => {
     return (
         <div>
             <Card className={`text-center `}  >
-                <Card.Header className={`pt-2 pb-1 ${styles.TopSeries}`}>
+                <Card.Header className={`py-0 ${styles.TopSeries}`}>
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}>
                     <Button

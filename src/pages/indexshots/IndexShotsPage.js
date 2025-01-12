@@ -148,7 +148,7 @@ const IndexShotsPage = () => {
                            setHasOrder={setHasOrder} /> ) }
           {/* filter */}
           <Row className='mt-3' >
-              <Col className='text-center' xs={{span: 6, offset: 3}}>
+              <Col className='text-center' xs={{span: 10, offset: 1}}>
               <Button
                   className={`py-0 ${btnStyles.Button} ${btnStyles.Blue} px-5`}
                   onClick={() => handleClickAll()} >All Shots

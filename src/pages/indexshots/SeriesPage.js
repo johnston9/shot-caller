@@ -105,9 +105,9 @@ const SeriesPage = () => {
                     >
                     <Form.Control
                         value={query}
+                        className={`${styles.InputBar}`}
                         onChange={(event) => setQuery(event.target.value)}
                         type="text"
-                        className="mr-sm-2"
                         placeholder="Search by Series Name"
                     />
                     </Form>

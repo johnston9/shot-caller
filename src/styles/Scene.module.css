@@ -575,9 +575,9 @@ overflow-y: scroll;
 }
 
 @media screen and (max-width: 770px) {
-  p {
+  /* p {
     font-size: .75rem;
-  }
+  } */
 
   h5 {
     font-size: 1rem;

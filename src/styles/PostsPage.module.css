@@ -28,7 +28,23 @@
   background-color: #fff;
 }
 
+.InputBar {
+  background: #ffffff;
+  border: 1px solid #e0e3eb;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  height: 30px !important;
+  /* text-align: center; */
+}
+
 @media screen and (max-width: 600px) {
+  .InputBar {
+    height: 20px !important;
+    font-size: .75rem !important;
+}
+
   .Titlelist {
     font-size: .75rem ;
   }

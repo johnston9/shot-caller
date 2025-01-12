@@ -16,6 +16,7 @@ const CharacterTop = (props) => {
     const {
         id,
         role,
+        // eslint-disable-next-line
         fetchCharacters,
     } = props;
 
@@ -40,11 +41,11 @@ const CharacterTop = (props) => {
         <div className='mx-0'>
             <Card className={`mx-1 text-center py-0 ${styles.Top}`}>
                 <Link to={`/characters/${id}`}>
-                <Card.Header className={`py-1 ${styles.Top }`}>
+                <Card.Header className={`py-0 ${styles.Top }`}>
                   <Row className='d-flex align-items-center'>
                     <Col className='mx-0 px-0' xs={1}></Col>
                     <Col xs={10} className='text-center px-0'>
-                    <p className={` ${styles.Titlelist }`}> {role}
+                    <p className={` ${styles.Titlelist } py-0`}> {role}
                     </p>
                     </Col >
                     <Col xs={1} className='text-center mx-0 px-0'>

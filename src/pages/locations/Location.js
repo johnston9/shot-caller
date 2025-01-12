@@ -71,7 +71,7 @@ const Location = (props) => {
     return (
         <div>
             <div className={`mb-3`}>
-            <Row className={`${styles.ButtonLine} mt-2 mx-3 d-flex align-items-center `}>
+            <Row className={`${styles.ButtonLine} mt-2 d-flex align-items-center `}>
                 <Col className='text-center mx-0 px-0' xs={1}></Col>
                 <Col xs={5} className='text-center mx-0 px-0'>
                     <h5
@@ -107,7 +107,7 @@ const Location = (props) => {
                 <p className={`${styles.Role}`}>{description} </p>
                 </div>
                 </Col>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className='pt-3 pt-md-3'>
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>PRIMARY FILMING ADDRESS</p>
                 <div className={`${styles.Para}`}>
                 <p className={`${styles.Role}`}>{filming_address_primary} </p>
@@ -117,7 +117,7 @@ const Location = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-3`}/>
+            <hr className={`d-none d-md-block mt-0 mb-3`}/>
             </Col>
             </Row>
             <Row className='mb-3 text-center'>
@@ -128,7 +128,7 @@ const Location = (props) => {
                 <p className={`${styles.Role}`}>{filming_address2} </p>
                 </div>
                 </Col>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className='pt-3 pt-md-3'>
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5 `}>FILMING ADDRESS 3</p>
                 <div className={`${styles.Para}`}>
                 <p className={`${styles.Role}`}>{filming_address3} </p>
@@ -174,7 +174,7 @@ const Location = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            <hr className={`mt-0 mb-5 d-none d-md-block`}/>
             </Col>
             </Row>
             {/* image 3/4 */} 
@@ -213,7 +213,7 @@ const Location = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            <hr className={`mt-0 mb-5 d-none d-md-block`}/>
             </Col>
             </Row>
             {/* IMAGE 5/6 */}
@@ -252,7 +252,7 @@ const Location = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            <hr className={`mt-0 mb-5 d-none d-md-block`}/>
             </Col>
             </Row>
             {/* IMAGE 7/8 */}

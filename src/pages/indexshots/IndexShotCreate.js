@@ -99,7 +99,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
              style={{ textTransform: 'uppercase'}}>Create Index Shot</h5>
       <Form className={`text-center mb-4 px-3 ${styles.Back }`} 
       onSubmit={handleSubmit}>
-      <Row>
+      <Row className="mt-3">
           <Col xs={12} md={6}  >
           <div className="d-flex justify-content-center">
           <Form.Group controlId="number" className={`${styles.Width} text-center`}  >

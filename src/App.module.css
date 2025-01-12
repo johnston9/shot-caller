@@ -253,5 +253,38 @@ hr.grey100 {
 	color: #F5F5F5;
 }
 
+@media screen and (max-width: 600px) {
+  p {
+    font-size: .75rem;
+  }
+
+  .BoldScene {
+    font-size: .75rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .InfoBack p {
+    font-size: .75rem;
+  }
+
+  .Title {
+    font-size: .75em;
+  }
+
+  .Titledetail {
+    font-size: 1.25em;
+  }
+
+  .Titlelist {
+    font-size: 1em;
+  }
+
+  .SceneTitle {
+    font-size: 1.25em;
+  }
+}
 
 /*--------------------register/login pages-----------------------*/

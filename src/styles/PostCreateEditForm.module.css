@@ -252,7 +252,27 @@
   background-color: rgb(209, 240, 240);
 }
 
+/* @media screen and (max-width: 600px) {
+  p {
+    font-size: .75rem;
+  }} */
+
+
 @media screen and (max-width: 600px) {
+  .BoldScene {
+    font-size: .75rem;
+  }
+
+  .Input {
+    height: 20px !important;
+    text-align: center;
+    font-size: .75rem !important;
+  }
+
+  .InputScene {
+    font-size: .75rem !important;
+   }
+   
   .Width {
     width: 90%;
   }
