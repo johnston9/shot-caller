@@ -29,17 +29,17 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA </h5>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA</h5>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
       <div className='px-md-5 pt-2'>
         {/* dop */}
         {dop_name && 
-          (<div className={`${styles.CrewInfoRow} pb-2`}>
+          (<div className={`${styles.CrewInfoRow}`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-0 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >DOP</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} >DOP</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
@@ -57,21 +57,21 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
-        <hr className='mt-0 mb-3'/>
         {/* camera operator */}
         {camera_operator_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-3 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Camera Operator</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} >Camera Operator</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p  className={`${styles.CrewInfoP} `}>{camera_operator_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>camerop </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_operator_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -84,16 +84,16 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         {camera_ass_1_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >1st AC</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >1st AC</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{camera_ass_1_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>astcam1 </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_ass_1_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -106,16 +106,16 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         {camera_ass_2_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >2nd AC</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >2nd AC</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{camera_ass_2_name} </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>astcam2</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_ass_2_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -128,16 +128,16 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         {dit_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >DIT</h5> 
+          <p className={`mb-3 mx-5 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >DIT</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{dit_name} </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>digitec</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{dit_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -150,16 +150,16 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         {steadicam_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Steadicam Operator</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >Steadicam Operator</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{steadicam_name}</p>
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+              <p className={`${styles.CrewInfoP}`}>{steadicam_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>steadicam </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{steadicam_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -172,16 +172,16 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         {camera_pa_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Camera PA</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >Camera PA</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{camera_pa_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>camerapa </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_pa_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -190,20 +190,20 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
-        {/* oth camera pos 1 job */}
+        {/* oth camera pos 1/3rd ass can job */}
         {oth_camera_pos_1_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_1_job} </h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >{oth_camera_pos_1_job} </p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_1_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>addcam1 </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_1_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -212,20 +212,20 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
-        {/* oth camera pos 2 job */}
+        {/* oth camera pos 2/ 4th ass cam */}
         {oth_camera_pos_2_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_2_job}</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >{oth_camera_pos_2_job}</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_2_name}  </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>addcam2</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_2_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -234,20 +234,20 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
-        {/* oth camera pos 3 job  */}
+        {/* oth camera pos 3 job/ 5th ass cam  */}
         {oth_camera_pos_3_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_3_job}</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_3_job}</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_3_name} </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>addcam3 </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_3_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -256,20 +256,20 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
-        {/* oth camera pos 4 job */}
+        {/* oth camera pos 4 job/ 6th ass cam */}
         {oth_camera_pos_4_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_4_job} </h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >{oth_camera_pos_4_job} </p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_4_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>addcam4 </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_4_phone}</p>
             </Col>
             <Col xs={6} md={3} >
@@ -278,20 +278,20 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </Row>
           </div> )
         }
-        {/* oth camera pos 5 job */}
+        {/* oth camera pos 5/ 7th ass cam */}
         {oth_camera_pos_5_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_5_job} </h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_5_job} </p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_5_name}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
               <p style={{fontStyle: 'italic'}}  className={`${styles.CrewInfop} `}>addcam5 </p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_phone}</p>
             </Col>
             <Col xs={6} md={3} >
