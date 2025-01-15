@@ -31,12 +31,10 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
       <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA</h5>
       </div>
-      <div className={`py-2 ${styles.White }`}>
-      </div>
-      <div className='px-md-5 pt-2'>
+      <div className={`px-md-5  ${styles.White }`}>
         {/* dop */}
         {dop_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
           ${styles.SubTitle2 }`} >DOP</p> 
@@ -51,7 +49,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{dop_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{dop_email}</p>
             </Col>
           </Row>
@@ -59,7 +57,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         }
         {/* camera operator */}
         {camera_operator_name && 
-          (<div className={`${styles.CrewInfoRow} mt-3 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
           ${styles.SubTitle2 }`} >Camera Operator</p> 
@@ -74,7 +72,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_operator_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{camera_operator_email}</p>
             </Col>
           </Row>
@@ -82,7 +80,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         }
         {/* 1st AC */}
         {camera_ass_1_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >1st AC</p> 
           </div>
@@ -96,7 +94,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_ass_1_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{camera_ass_1_email}</p>
             </Col>
           </Row>
@@ -104,7 +102,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         }
         {/* 2nd AC*/}
         {camera_ass_2_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >2nd AC</p> 
           </div>
@@ -118,7 +116,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_ass_2_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{camera_ass_2_email}</p>
             </Col>
           </Row>
@@ -126,9 +124,9 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         }
         {/* DIT */}
         {dit_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-5 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >DIT</p> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >DIT</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
@@ -140,7 +138,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{dit_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{dit_email}</p>
             </Col>
           </Row>
@@ -162,7 +160,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{steadicam_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{steadicam_email}</p>
             </Col>
           </Row>
@@ -184,7 +182,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{camera_pa_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{camera_pa_email}</p>
             </Col>
           </Row>
@@ -206,7 +204,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_1_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_1_email}</p>
             </Col>
           </Row>
@@ -228,7 +226,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_2_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_2_email}</p>
             </Col>
           </Row>
@@ -238,7 +236,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         {oth_camera_pos_3_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width } ${styles.SubTitle2 }`} >{oth_camera_pos_3_job}</p> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } ${styles.SubTitle2 }`} >{oth_camera_pos_3_job}</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
@@ -250,7 +248,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_3_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_3_email}</p>
             </Col>
           </Row>
@@ -272,7 +270,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_4_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_4_email}</p>
             </Col>
           </Row>
@@ -294,7 +292,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             <Col xs={6} md={3} className={`${styles.BorderRight} `}>
             <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={3} className='px-0 mx-0'>
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_email}</p>
             </Col>
           </Row>
