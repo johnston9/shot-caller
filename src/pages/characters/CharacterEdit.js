@@ -395,7 +395,7 @@ const buttons = (
              <Row>
                 <Col className='text-center mt-2'>
                 <div className='mb-2 mb-md-3'>
-                <span className={`py-1 px-1 px-md-5 ${styles.BoldTitleCall } `} >
+                <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall } `} >
                 CALLNAME: {username}
                 </span>  
                 </div>

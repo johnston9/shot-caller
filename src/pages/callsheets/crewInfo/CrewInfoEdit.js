@@ -1446,7 +1446,7 @@ const CrewInfoEdit = () => {
       ) : (
         <Important  /> 
         ) }   
-    <Form className= {`mt-3 mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
+    <Form className= {`mt-3 mb-1`} onSubmit={handleSubmit}>
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
       <Col className='text-center'>

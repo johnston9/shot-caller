@@ -31,19 +31,19 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
     <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA </h3>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA </h5>
       </div>
-      <div className={`py-2 ${styles.White }`}>
-      </div>
+      <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
       {/* Director of Photography */}
-      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Director of Photography</h5> 
+      <p className={`mb-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Director of Photography</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: dophoto</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >CALLNAME: dophoto</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="dop_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dop_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -58,26 +58,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="dop_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="dop_email"
-              value={dop_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.dop_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="dop_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dop_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -92,16 +75,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dop_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dop_email"
+              value={dop_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dop_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Camera Operator */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Camera Operator</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Camera Operator</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: camerop</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: camerop</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_operator_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_operator_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -116,26 +123,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_operator_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="camera_operator_email"
-              value={camera_operator_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.camera_operator_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_operator_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_operator_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -150,16 +140,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_operator_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_operator_email"
+              value={camera_operator_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_operator_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* 1st Assistant Camera */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >1st Assistant Camera</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      1st Assistant Camera</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astcam1</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: astcam1</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_ass_1_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_ass_1_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -174,26 +188,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_ass_1_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="camera_ass_1_email"
-              value={camera_ass_1_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.camera_ass_1_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_ass_1_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_ass_1_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -208,16 +205,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_ass_1_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_1_email"
+              value={camera_ass_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* 2nd Assistant Camera */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >2nd Assistant Camera</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      2nd Assistant Camera</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: astcam2</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: astcam2</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_ass_2_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_ass_2_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -232,26 +253,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_ass_2_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="camera_ass_2_email"
-              value={camera_ass_2_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.camera_ass_2_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_ass_2_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_ass_2_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -266,16 +270,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_ass_2_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_ass_2_email"
+              value={camera_ass_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_ass_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* DIT */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >DIT</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      DIT</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: digitec</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: digitec</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="dit_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dit_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -290,26 +318,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="dit_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="dit_email"
-              value={dit_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.dit_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="dit_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dit_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -324,16 +335,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dit_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dit_email"
+              value={dit_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dit_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Steadicam */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Steadicam Operator</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      Steadicam Operator</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: steadicam</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: steadicam</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="steadicam_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="steadicam_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -348,26 +383,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="steadicam_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="steadicam_email"
-              value={steadicam_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.steadicam_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="steadicam_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="steadicam_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -382,16 +400,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="steadicam_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="steadicam_email"
+              value={steadicam_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.steadicam_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Camera PA */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Camera PA</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      Camera PA</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: camerapa</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: camerapa</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_pa_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_pa_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -406,26 +448,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_pa_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="camera_pa_email"
-              value={camera_pa_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.camera_pa_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="camera_pa_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_pa_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -440,16 +465,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="camera_pa_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="camera_pa_email"
+              value={camera_pa_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.camera_pa_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Additional Camera Position 1 */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 1</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      Additional Camera Position 1</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam1</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: addcam1</span> 
       </div> 
-      <Row>
-          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+      <Row className="mt-2">
+          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
           <Form.Group controlId="oth_camera_pos_1_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -465,10 +514,10 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_1_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-1">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_1_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -483,26 +532,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_1_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_1_email"
-              value={oth_camera_pos_1_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_1_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_1_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_1_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -517,16 +549,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_1_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_1_email"
+              value={oth_camera_pos_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Additional Camera Position 2 */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 2</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      Additional Camera Position 2</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam2</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: addcam2</span> 
       </div> 
-      <Row>
-          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+      <Row className="mt-2">
+          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
           <Form.Group controlId="oth_camera_pos_2_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -542,10 +598,10 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_2_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-1">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_2_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -560,26 +616,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_2_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_2_email"
-              value={oth_camera_pos_2_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_2_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_2_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_2_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -594,16 +633,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_2_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_2_email"
+              value={oth_camera_pos_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Additional Camera Position 3 */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 3</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      Additional Camera Position 3</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam3</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: addcam3</span> 
       </div> 
-      <Row>
-          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+      <Row className="mt-2">
+          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
           <Form.Group controlId="oth_camera_pos_3_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -619,10 +682,10 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <Row className="pb-3">
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_3_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-1">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_3_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -637,26 +700,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_3_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_3_email"
-              value={oth_camera_pos_3_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_3_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_3_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_3_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -671,16 +717,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_3_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_3_email"
+              value={oth_camera_pos_3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Additional Camera Position 4 */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 4</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      Additional Camera Position 4</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam4</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: addcam4</span> 
       </div> 
-      <Row>
-          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+      <Row className="mt-2">
+          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
           <Form.Group controlId="oth_camera_pos_4_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -696,10 +766,10 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      <Row className="pb-3">
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_4_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-1">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_4_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -714,26 +784,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_4_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_4_email"
-              value={oth_camera_pos_4_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_4_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_4_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_4_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -748,16 +801,40 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xxs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_4_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_4_email"
+              value={oth_camera_pos_4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
       </Row>
       {/* Additional Camera Position 5 */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Additional Camera Position 5</h5> 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
+      Additional Camera Position 5</p> 
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: addcam5</span> 
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: addcam5</span> 
       </div> 
-      <Row>
-          <Col xs={{span: 4, offset: 4 }} className="d-flex justify-content-center p-0 p-md-2">
+      <Row className="mt-1">
+          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
           <Form.Group controlId="oth_camera_pos_5_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Position</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -774,9 +851,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           </Col>
       </Row>
       <Row className="pb-3">
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_5_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_5_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -791,26 +868,9 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_5_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_5_email"
-              value={oth_camera_pos_5_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_5_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="oth_camera_pos_5_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_5_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -825,7 +885,31 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
+          <Form.Group controlId="oth_camera_pos_5_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="oth_camera_pos_5_email"
+              value={oth_camera_pos_5_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.oth_camera_pos_5_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
       </Row> 
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      </div>
       </div>
   )
 }
