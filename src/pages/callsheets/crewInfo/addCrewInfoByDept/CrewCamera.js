@@ -35,6 +35,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
       </div>
       <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
       {/* Director of Photography */}
+      <div>
       <p className={`mb-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Director of Photography</p> 
       <div>
@@ -93,6 +94,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
+      </div>
       {/* break */}
       <Row>
       <Col xs={12}>
