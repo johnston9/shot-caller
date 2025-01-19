@@ -151,7 +151,6 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
           <Form.Group controlId="best_boy_electric_email" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
               <Form.Control 
-              placeholder="MUST BE FILLED IN"
               className={`${styles.Input}`}
               type="text"
               name="best_boy_electric_email"
@@ -306,7 +305,7 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
       </div>
       {/* GRIP */}
       <div>
-      <h5 className={`mt-4 mb-0 py-1 ${styles.SubTitle }`} >GRIP</h5> 
+      <h5 className={`mt-4 mb-0 py-1 ${styles.SubTitle }`} >GRIP DEPARTMENT</h5> 
       {/* Key Grip */}
       <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
@@ -362,6 +361,482 @@ const CrewElecGrip = ({handleChange, postData, setShow}) => {
                   />
           </Form.Group>
           {errors?.keygrip_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Best Boy Grip */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Best Boy Grip</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: bbgrip</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="best_boy_grip_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="best_boy_grip_name"
+              value={best_boy_grip_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.best_boy_grip_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="best_boy_grip_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="best_boy_grip_phone"
+              value={best_boy_grip_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.best_boy_grip_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="best_boy_grip_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="best_boy_grip_email"
+              value={best_boy_grip_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.best_boy_grip_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Dolly Grip */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Dolly Grip</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: dolgrip</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dolly_grip_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dolly_grip_name"
+              value={dolly_grip_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dolly_grip_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dolly_grip_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dolly_grip_phone"
+              value={dolly_grip_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dolly_grip_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="dolly_grip_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="dolly_grip_email"
+              value={dolly_grip_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.dolly_grip_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* G&E Swing 1 */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>G&E Swing 1</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: swing1</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge1_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge1_name"
+              value={swing_ge1_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge1_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge1_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge1_phone"
+              value={swing_ge1_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge1_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge1_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge1_email"
+              value={swing_ge1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* G&E Swing 2 */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>G&E Swing 2</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: swing2</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge2_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge2_name"
+              value={swing_ge2_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge2_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge2_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge2_phone"
+              value={swing_ge2_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge2_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge2_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge2_email"
+              value={swing_ge2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* G&E Swing 3 */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>G&E Swing 3</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: swing3</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge3_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge3_name"
+              value={swing_ge3_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge3_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge3_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge3_phone"
+              value={swing_ge3_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge3_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge3_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge3_email"
+              value={swing_ge3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* G&E Swing 4 */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>G&E Swing 4</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: swing4</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge4_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge4_name"
+              value={swing_ge4_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge4_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge4_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge4_phone"
+              value={swing_ge4_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge4_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge4_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge4_email"
+              value={swing_ge4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* G&E Swing 5 */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>G&E Swing 5</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: swing5</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge5_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge5_name"
+              value={swing_ge5_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge5_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge5_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge5_phone"
+              value={swing_ge5_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge5_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="swing_ge5_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="swing_ge5_email"
+              value={swing_ge5_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.swing_ge5_email?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>

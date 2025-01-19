@@ -492,6 +492,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
       </Col>
       </Row>
       {/* Additional Camera Position 1 */}
+      <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
       Additional Camera Position 1</p> 
       <div>
@@ -569,6 +570,7 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
+      </div>
       {/* break */}
       <Row>
       <Col xs={12}>

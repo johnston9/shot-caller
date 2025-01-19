@@ -22,22 +22,24 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
   } = postData || {};
 
   return (
-    <div className="text-center pb-3">
+    <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right py-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h3 className={`pl-5 ml-4 mb-0 text-center py-1 ${styles.Bold }`} >LOCATIONS </h3>
+      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >LOCATION DEPARTMENT </h5>
       </div>
-      <div className={`py-2 ${styles.White }`}>
-      </div>
-      {/* Location Mngr  */} 
-      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Location Manager</h5> 
+      <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
+      {/* Location Manager */}
       <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locmngr </span> 
+      <p className={`mb-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Location Manager</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: locmngr</span> 
       </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_mngr_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_mngr_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -52,26 +54,9 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_mngr_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="location_mngr_email"
-              value={location_mngr_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_mngr_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_mngr_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_mngr_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -86,16 +71,43 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_mngr_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="location_mngr_email"
+              value={location_mngr_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_mngr_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
       </Row>
-      {/* Location Assistant 1  */} 
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 1 </h5> 
-      <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast1  </span> 
       </div>
+      {/* break */}
       <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_1_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Location Manager/Other - (using Location Assistant 1 keys for this) */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Location Manager/Other</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: locast1</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_1_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -110,26 +122,9 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_1_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="location_ass_1_email"
-              value={location_ass_1_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_ass_1_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_1_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_1_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -144,16 +139,43 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_1_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="location_ass_1_email"
+              value={location_ass_1_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_ass_1_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
       </Row>
-      {/* Location Assistant 2  */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 2 </h5> 
-      <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast2  </span> 
       </div>
+      {/* break */}
       <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_2_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Assistant Location Manager - (using "Location Assistant 2" keys for this) */}
+      <div>
+      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Assistant Location Manager</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: locast2</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_2_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -168,26 +190,9 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_2_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="location_ass_2_email"
-              value={location_ass_2_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_ass_2_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_2_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_2_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -202,16 +207,43 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_2_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="location_ass_2_email"
+              value={location_ass_2_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_ass_2_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
       </Row>
-      {/* Location Assistant 3  */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 3 </h5> 
-      <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast3  </span> 
       </div>
+      {/* break */}
       <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_3_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Location Assistant - (using "Location Assistant 3" keys for this) */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Location Assistant</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: locast3</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_3_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -226,26 +258,9 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_3_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="location_ass_3_email"
-              value={location_ass_3_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_ass_3_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_3_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_3_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -260,16 +275,43 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_3_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="location_ass_3_email"
+              value={location_ass_3_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_ass_3_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
       </Row>
-      {/* Location Assistant 4  */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Assistant 4 </h5> 
-      <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locast4  </span> 
       </div>
+      {/* break */}
       <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_4_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Location Assistant/Other - (using "Location Assistant 4" keys for this) */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Location Assistant/Other</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: locast4</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_4_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -284,26 +326,9 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_4_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="location_ass_4_email"
-              value={location_ass_4_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_ass_4_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_ass_4_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_4_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -318,16 +343,43 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_ass_4_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="location_ass_4_email"
+              value={location_ass_4_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_ass_4_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
       </Row>
-      {/* Location Security  */}
-      <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Location Security </h5> 
-      <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >USERNAME: locsecur  </span> 
       </div>
+      {/* break */}
       <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_security_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Location Security/Other */}
+      <div>
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Location Security/Other</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: locsecur</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_security_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -342,26 +394,9 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_security_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="location_security_email"
-              value={location_security_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.location_security_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="location_security_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_security_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -376,8 +411,33 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="location_security_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="location_security_email"
+              value={location_security_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.location_security_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
       </Row>
       </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      </div>
+    </div>
   )
 }
 
