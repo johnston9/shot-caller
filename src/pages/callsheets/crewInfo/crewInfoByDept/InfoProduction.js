@@ -32,7 +32,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h5 className={`pl-4 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION </h5>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION </h5>
       </div>
       <div className={`px-md-5  ${styles.White }`}>
          {/* DIRECTOR  */} 
@@ -54,7 +54,13 @@ const Production = ({crewInfoOne, setShowPro}) => {
             </Col>
           </Row>
           </div> )
-         }
+        }
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
         {/* producer */}
         {producer_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -75,6 +81,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
          }
+         {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
          {/* pro_coordinator */}
         {pro_coordinator_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -95,6 +107,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
          }
+         {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
          {/* upm */}
         {upm_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -115,6 +133,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
          }
+         {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
          {/* travel coordinator */}
         {travel_coordinator_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -135,6 +159,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
          }
+         {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
          {/* production pa */}
         {production_pa_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -155,6 +185,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
          }
+         {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
          {/* script supervisor */}
           {script_supervisor_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -175,6 +211,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
           }
+          {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
           {/* LEGAL */}
           {legal_name && 
             (<div className={`${styles.CrewInfoRow} pb-3`}>
@@ -195,6 +237,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
             </Row>
             </div> )
             }
+            {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
           {/* Set Medic */}
           {set_medic_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -215,6 +263,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
           }
+          {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
         {/* oth production pos 1 */}
         {oth_production_pos_1_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -235,6 +289,12 @@ const Production = ({crewInfoOne, setShowPro}) => {
           </Row>
           </div> )
         }
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
         {/* oth production pos 2 */}
         {oth_production_pos_2_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>

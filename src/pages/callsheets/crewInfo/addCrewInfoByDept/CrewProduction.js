@@ -444,6 +444,210 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
       <hr className={`mt-3 mb-3`}/>
       </Col>
       </Row>
+      {/* Script Supervisor */} 
+      <div>
+      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Script Supervisor </p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: scriptsup</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="script_supervisor_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_name"
+              value={script_supervisor_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="script_supervisor_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_phone"
+              value={script_supervisor_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="script_supervisor_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="script_supervisor_email"
+              value={script_supervisor_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.script_supervisor_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Set Medic */} 
+      <div>
+      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Set Medic</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: setmedic</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="set_medic_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_medic_name"
+              value={set_medic_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_medic_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="set_medic_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_medic_phone"
+              value={set_medic_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_medic_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="set_medic_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="set_medic_email"
+              value={set_medic_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.set_medic_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
+      {/* Legal Consultant */} 
+      <div>
+      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
+      style={{ textTransform: 'uppercase'}}>Legal Consultant</p> 
+      <div>
+      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+        CALLNAME: legalcon</span> 
+      </div>
+      <Row className="mt-2">
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="legal_name" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="legal_name"
+              value={legal_name}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.legal_name?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="legal_phone" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="legal_phone"
+              value={legal_phone}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.legal_phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+          <Form.Group controlId="legal_email" className={`${styles.Width2} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`}
+              type="text"
+              name="legal_email"
+              value={legal_email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.legal_email?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+      </Row>
+      </div>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-3`}/>
+      </Col>
+      </Row>
       {/* Additional Production Position 1 */}
       <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>

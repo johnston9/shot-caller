@@ -6,6 +6,37 @@ p {
   margin-bottom: 0;
 }
 
+.SubTitle {
+  background-color: #e8f0f1;
+  font-weight: 700;
+}
+
+.SubTitle2 {
+  /* background-color: #e0fafe; */
+  background-color: #d6fcff;;
+  font-weight: 700;
+  /* background-color: #e8f0f1; */
+}
+
+.SubTitle3 {
+  background-color: #e4f2f4;
+  font-weight: 700;
+}
+
+.CrewInfoP {
+  font-weight: 700;
+  margin-bottom: 3px;
+  /* color: #616370;
+  color: rgba(100, 80, 20, 0.99); */
+}
+
+.CrewInfop {
+  margin-bottom: 3px;
+  /* color: #616370;
+  color: rgb(140, 111, 25, 99%);
+  color: rgba(100, 80, 20, 0.99); */
+}
+
 .BoldTitleCall {
   font-weight: 700;
   color: #F5F5F5;
@@ -27,6 +58,7 @@ p {
 
 .BorderRight {
   border-right: 1px solid #d0d9db;
+  /* border-right: 1px solid rgba(100, 80, 20, 0.99); */
 }
 
 /* CallsheetTop */
@@ -257,15 +289,6 @@ p {
   border-bottom: 1px solid #fff;
 }
 
-.CrewInfoP {
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.CrewInfop {
-  margin-bottom: 3px;
-}
-
 .Button {
   color: #185f70;
   font-weight: 700;
@@ -344,22 +367,6 @@ p {
   border-bottom: 2px solid #e8f0f1;
   border-left: 2px solid #e8f0f1;
   border-right: 2px solid #e8f0f1;
-}
-
-.SubTitle {
-  background-color: #e8f0f1;
-  font-weight: 700;
-}
-
-.SubTitle2 {
-  /* background-color: #e0fafe; */
-  background-color: #d6fcff;;
-  font-weight: 700;
-}
-
-.SubTitle3 {
-  background-color: #e4f2f4;
-  font-weight: 700;
 }
 
 .HSpan {
