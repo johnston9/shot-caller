@@ -19,7 +19,6 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
     upm_name, upm_email, upm_phone,
     travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
     production_pa_name, production_pa_email, production_pa_phone,
-    script_supervisor_name, script_supervisor_email, script_supervisor_phone,
     legal_name, legal_email, legal_phone,
     set_medic_name, set_medic_email, set_medic_phone,
     oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
@@ -378,7 +377,7 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
       </Row>
       {/* Production PA*/} 
       <div>
-      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Production PA</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
@@ -444,77 +443,9 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
       <hr className={`mt-3 mb-3`}/>
       </Col>
       </Row>
-      {/* Script Supervisor */} 
-      <div>
-      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>Script Supervisor </p> 
-      <div>
-      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
-        CALLNAME: scriptsup</span> 
-      </div>
-      <Row className="mt-2">
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="script_supervisor_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="script_supervisor_name"
-              value={script_supervisor_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.script_supervisor_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="script_supervisor_phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="script_supervisor_phone"
-              value={script_supervisor_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.script_supervisor_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="script_supervisor_email" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="script_supervisor_email"
-              value={script_supervisor_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.script_supervisor_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      </div>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-3`}/>
-      </Col>
-      </Row>
       {/* Set Medic */} 
       <div>
-      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Set Medic</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
@@ -582,7 +513,7 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
       </Row>
       {/* Legal Consultant */} 
       <div>
-      <p className={`mb-y py-0 mx-md-4 ${styles.SubTitle }` } 
+      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Legal Consultant</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
