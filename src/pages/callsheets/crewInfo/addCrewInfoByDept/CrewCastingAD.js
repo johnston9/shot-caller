@@ -23,7 +23,6 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
     pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
     pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
     pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
-    casting_director_name, casting_director_email, casting_director_phone,
     extras_casting_name, extras_casting_email, extras_casting_phone,
   } = postData || {};
   return (
@@ -36,64 +35,6 @@ const CrewCastingAD = ({handleChange, postData, setShow}) => {
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
-      {/* Casting Director  */} 
-      <h5 className={`mb-3 py-1 ${styles.SubTitle2 }`} >Casting Director </h5> 
-      <div>
-      <span className={`py-1 px-3 ${styles.SubTitle3 } `} >castdir </span> 
-      </div>
-      <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="casting_director_name" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="casting_director_name"
-              value={casting_director_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.casting_director_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="casting_director_email" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="casting_director_email"
-              value={casting_director_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.casting_director_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="casting_director_phone" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="casting_director_phone"
-              value={casting_director_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.casting_director_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
       {/* Extras Casting  */}
       <h5 className={`my-3 py-1 ${styles.SubTitle2 }`} >Extras Casting </h5> 
       <div>
