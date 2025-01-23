@@ -18,7 +18,6 @@ import { useRedirect } from "../../../hooks/Redirect";
 import { useSetEditCrewInfoContext } from "../../../contexts/BaseCallContext";
 import CrewCompany from "./addCrewInfoByDept/CrewCompany";
 import CrewProduction from "./addCrewInfoByDept/CrewProduction";
-import CrewCastingAD from "./addCrewInfoByDept/CrewCastingAD";
 import CrewLocations from "./addCrewInfoByDept/CrewLocations";
 import CrewElecGrip from "./addCrewInfoByDept/CrewElecGrip";
 import CrewMakeup from "./addCrewInfoByDept/CrewMakeup";
@@ -31,6 +30,8 @@ import CrewWardrobe from "./addCrewInfoByDept/CrewWardrobe";
 import Important from "../info/Important";
 import CrewScript from "./addCrewInfoByDept/CrewScript";
 import CrewCater from "./addCrewInfoByDept/CrewCater";
+import CrewCasting from "./addCrewInfoByDept/CrewCasting";
+import CrewADPA from "./addCrewInfoByDept/CrewADPA";
 
 const CrewInfoEdit = () => {
   useRedirect();
@@ -57,6 +58,7 @@ const CrewInfoEdit = () => {
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
   const [showCat, setShowCat] = useState(false);
+  const [showAD, setShowAD] = useState(false); 
 
   const [postData, setPostData] = useState({
     // company
@@ -1474,7 +1476,7 @@ const CrewInfoEdit = () => {
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
-              onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
+              onClick={() => setShowAD(showAD => !showAD)} > AD/PA
           </p>
         </Col>
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
@@ -1534,12 +1536,18 @@ const CrewInfoEdit = () => {
           </p>
         </Col>
       </Row>  
-      {/* new row - Catering */}
+      {/* new row - Catering - Casting */}
       <Row className={`${styles.ButtonLine} mt-1`}>
       <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowCat(showCat => !showCat)} > Catering/Craft
+          </p>
+      </Col>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowCas(showCas => !showCas)} > Casting
           </p>
       </Col>
       </Row>
@@ -1566,7 +1574,14 @@ const CrewInfoEdit = () => {
         {!showCas ? (
                 ""
               ) : (
-                <CrewCastingAD setShow={setShowCas} 
+                <CrewCasting setShow={setShowCas} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add AD/PA */}
+        {!showAD ? (
+                ""
+              ) : (
+                <CrewADPA setShow={setShowAD} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Locations */}
