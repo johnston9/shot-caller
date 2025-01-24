@@ -21,7 +21,6 @@ import CrewProduction from "./addCrewInfoByDept/CrewProduction";
 import CrewLocations from "./addCrewInfoByDept/CrewLocations";
 import CrewElecGrip from "./addCrewInfoByDept/CrewElecGrip";
 import CrewMakeup from "./addCrewInfoByDept/CrewMakeup";
-import CrewSoundTransport from "./addCrewInfoByDept/CrewSoundTransport";
 import CrewStunts from "./addCrewInfoByDept/CrewStunts";
 import CrewArt from "./addCrewInfoByDept/CrewArt";
 import CrewCamera from "./addCrewInfoByDept/CrewCamera";
@@ -32,6 +31,8 @@ import CrewScript from "./addCrewInfoByDept/CrewScript";
 import CrewCater from "./addCrewInfoByDept/CrewCater";
 import CrewCasting from "./addCrewInfoByDept/CrewCasting";
 import CrewADPA from "./addCrewInfoByDept/CrewADPA";
+import CrewSound from "./addCrewInfoByDept/Sound2";
+import CrewTransport from "./addCrewInfoByDept/CrewTransport";
 
 const CrewInfoEdit = () => {
   useRedirect();
@@ -59,6 +60,8 @@ const CrewInfoEdit = () => {
   const [showWar, setShowWar] = useState(false);
   const [showCat, setShowCat] = useState(false);
   const [showAD, setShowAD] = useState(false); 
+  const [showTra, setShowTra] = useState(false); 
+
 
   const [postData, setPostData] = useState({
     // company
@@ -1514,7 +1517,7 @@ const CrewInfoEdit = () => {
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
-              onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
+              onClick={() => setShowSou(showSou => !showSou)} > Sound
           </p>
         </Col>
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
@@ -1536,7 +1539,7 @@ const CrewInfoEdit = () => {
           </p>
         </Col>
       </Row>  
-      {/* new row - Catering - Casting */}
+      {/* new row - Catering - Casting - Transport */}
       <Row className={`${styles.ButtonLine} mt-1`}>
       <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
@@ -1550,6 +1553,12 @@ const CrewInfoEdit = () => {
               onClick={() => setShowCas(showCas => !showCas)} > Casting
           </p>
       </Col>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowTra(showTra => !showTra)} > Transport
+          </p>
+        </Col>
       </Row>
       <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
       <div className={`py-1 ${styles.White }`}>
@@ -1623,7 +1632,14 @@ const CrewInfoEdit = () => {
         {!showSou ? (
                 ""
               ) : (
-                <CrewSoundTransport setShow={setShowSou} 
+                <CrewSound setShow={setShowSou} 
+                postData={postData} handleChange={handleChange}/> 
+                )}
+        {/* Add Transport */}
+        {!showTra ? (
+                ""
+              ) : (
+                <CrewTransport setShow={setShowTra} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Stunts */}

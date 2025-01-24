@@ -24,7 +24,6 @@ import CrewProduction from "./addCrewInfoByDept/CrewProduction";
 import CrewLocations from "./addCrewInfoByDept/CrewLocations";
 import CrewElecGrip from "./addCrewInfoByDept/CrewElecGrip";
 import CrewMakeup from "./addCrewInfoByDept/CrewMakeup";
-import CrewSoundTransport from "./addCrewInfoByDept/CrewSoundTransport";
 import CrewStunts from "./addCrewInfoByDept/CrewStunts";
 import CrewArt from "./addCrewInfoByDept/CrewArt";
 import CrewCamera from "./addCrewInfoByDept/CrewCamera";
@@ -59,6 +58,7 @@ const CrewInfoCreate = () => {
   const [showWar, setShowWar] = useState(false);
   const [showCat, setShowCat] = useState(false); 
   const [showAD, setShowAD] = useState(false);
+  const [showTra, setShowTra] = useState(false);
 
   const [postData, setPostData] = useState({
     // company
@@ -1241,7 +1241,7 @@ const CrewInfoCreate = () => {
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
-              onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
+              onClick={() => setShowSou(showSou => !showSou)} > Sound
           </p>
         </Col>
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
@@ -1263,7 +1263,7 @@ const CrewInfoCreate = () => {
           </p>
         </Col>
       </Row>  
-      {/* new row - Catering - Casting */}
+      {/* new row - Catering - Casting - Transport */}
       <Row className={`${styles.ButtonLine} mt-1`}>
       <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
@@ -1277,6 +1277,12 @@ const CrewInfoCreate = () => {
               onClick={() => setShowCas(showCas => !showCas)} > Casting
           </p>
       </Col>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowTra(showTra => !showTra)} > Transport
+          </p>
+        </Col>
       </Row>
       <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
       <div className={`py-1 ${styles.White }`}>
@@ -1346,11 +1352,17 @@ const CrewInfoCreate = () => {
                 <CrewMakeup setShow={setShowMak} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
-        {/* Add Sound */}
         {!showSou ? (
                 ""
               ) : (
-                <CrewSoundTransport setShow={setShowSou} 
+                <CrewSound setShow={setShowSou} 
+                postData={postData} handleChange={handleChange}/> 
+                )}
+        {/* Add Transport */}
+        {!showTra ? (
+                ""
+              ) : (
+                <CrewTransport setShow={setShowTra} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Stunts */}
