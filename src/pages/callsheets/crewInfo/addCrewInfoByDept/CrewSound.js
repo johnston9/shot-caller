@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
 import styles from "../../../../styles/Callsheets.module.css";
 
-const CrewSoundTransport = ({handleChange, postData, setShow}) => {
+const CrewSound = ({handleChange, postData, setShow}) => {
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
@@ -162,7 +162,7 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
     <hr className={`mt-3 mb-3`}/>
     </Col>
     </Row>
-    {/* Boom Operator 2/UTA */} 
+    {/* Boom Operator 2/UTA - (Using Sound Assistant 1 keys) */} 
     <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Boom Operator 2/UTA</p> 
@@ -303,4 +303,4 @@ const CrewSoundTransport = ({handleChange, postData, setShow}) => {
   )
 }
 
-export default CrewSoundTransport
+export default CrewSound

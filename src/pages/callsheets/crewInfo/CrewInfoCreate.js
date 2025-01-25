@@ -27,13 +27,18 @@ import CrewMakeup from "./addCrewInfoByDept/CrewMakeup";
 import CrewStunts from "./addCrewInfoByDept/CrewStunts";
 import CrewArt from "./addCrewInfoByDept/CrewArt";
 import CrewCamera from "./addCrewInfoByDept/CrewCamera";
-import CrewPostAdditional from "./addCrewInfoByDept/CrewPostAdditional";
 import CrewWardrobe from "./addCrewInfoByDept/CrewWardrobe";
 import Important from "../info/Important";
 import CrewScript from "./addCrewInfoByDept/CrewScript";
 import CrewCater from "./addCrewInfoByDept/CrewCater";
 import CrewCasting from "./addCrewInfoByDept/CrewCasting";
 import CrewADPA from "./addCrewInfoByDept/CrewADPA";
+import CrewSound from "./addCrewInfoByDept/CrewSound";
+import CrewTransport from "./addCrewInfoByDept/CrewTransport";
+import CrewPostVFX from "./addCrewInfoByDept/CrewPostVFX";
+import CrewTVStudio from "./addCrewInfoByDept/CrewTVStudio";
+import CrewWrangling from "./addCrewInfoByDept/CrewWrangling";
+import CrewAdditional from "./addCrewInfoByDept/CrewAdditional";
 
 const CrewInfoCreate = () => {
   useRedirect();
@@ -59,6 +64,9 @@ const CrewInfoCreate = () => {
   const [showCat, setShowCat] = useState(false); 
   const [showAD, setShowAD] = useState(false);
   const [showTra, setShowTra] = useState(false);
+  const [showAdd, setShowAdd] = useState(false);
+  const [showTv, setShowTv] = useState(false);
+  const [showWra, setShowWra] = useState(false);
 
   const [postData, setPostData] = useState({
     // company
@@ -1237,7 +1245,7 @@ const CrewInfoCreate = () => {
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowMak(showMak => !showMak)} > Makeup
                 </p>
-            </Col>
+        </Col>
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
@@ -1259,11 +1267,11 @@ const CrewInfoCreate = () => {
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
-              onClick={() => setShowPos(showPos => !showPos)} > Post/Additional
+              onClick={() => setShowPos(showPos => !showPos)} > Post
           </p>
         </Col>
       </Row>  
-      {/* new row - Catering - Casting - Transport */}
+      {/* new row - Catering - Casting - Transport - Wrangling - TV Studio -Additional*/}
       <Row className={`${styles.ButtonLine} mt-1`}>
       <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
@@ -1282,7 +1290,25 @@ const CrewInfoCreate = () => {
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowTra(showTra => !showTra)} > Transport
           </p>
-        </Col>
+      </Col>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowWra(showWra => !showWra)} > Wrangling
+          </p>
+      </Col>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowTv(showTv => !showTv)} > TV Studio
+          </p>
+      </Col>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowAdd(showAdd => !showAdd)} >Additional
+          </p>
+      </Col>
       </Row>
       <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
       <div className={`py-1 ${styles.White }`}>
@@ -1317,13 +1343,6 @@ const CrewInfoCreate = () => {
                 <CrewADPA setShow={setShowAD} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
-        {/* Add Locations */}
-        {!showLoc ? (
-                ""
-              ) : (
-                <CrewLocations setShow={setShowLoc} 
-                postData={postData} handleChange={handleChange}/> 
-                ) } 
         {/* Add Script  */}
         {!showScr ? (
                 ""
@@ -1338,6 +1357,54 @@ const CrewInfoCreate = () => {
                 <CrewCater setShow={setShowCat} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
+        {!showSou ? (
+                ""
+              ) : (
+                <CrewSound setShow={setShowSou} 
+                postData={postData} handleChange={handleChange}/> 
+                )}
+        {/* Add Transport */}
+        {!showTra ? (
+                ""
+              ) : (
+                <CrewTransport setShow={setShowTra} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Post */}
+        {!showPos ? (
+                ""
+              ) : (
+                <CrewPostVFX setShow={setShowPos} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add Wrangling */}
+        {!showWra ? (
+                ""
+              ) : (
+                <CrewWrangling setShow={setShowWra} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
+        {/* Add TV */}
+        {!showTv ? (
+                ""
+              ) : (
+                <CrewTVStudio setShow={setShowTv} 
+                postData={postData} handleChange={handleChange}/> 
+                ) }    
+        {/* Add Additional */}
+        {!showAdd ? (
+                ""
+              ) : (
+                <CrewAdditional setShow={setShowAdd} 
+                postData={postData} handleChange={handleChange}/> 
+                ) }  
+        {/* Add Locations */}
+        {!showLoc ? (
+                ""
+              ) : (
+                <CrewLocations setShow={setShowLoc} 
+                postData={postData} handleChange={handleChange}/> 
+                ) } 
         {/* Add Electric */}
         {!showEle ? (
                 ""
@@ -1350,19 +1417,6 @@ const CrewInfoCreate = () => {
                 ""
               ) : (
                 <CrewMakeup setShow={setShowMak} 
-                postData={postData} handleChange={handleChange}/> 
-                ) } 
-        {!showSou ? (
-                ""
-              ) : (
-                <CrewSound setShow={setShowSou} 
-                postData={postData} handleChange={handleChange}/> 
-                )}
-        {/* Add Transport */}
-        {!showTra ? (
-                ""
-              ) : (
-                <CrewTransport setShow={setShowTra} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Stunts */}
@@ -1384,13 +1438,6 @@ const CrewInfoCreate = () => {
                 ""
               ) : (
                 <CrewCamera setShow={setShowCam} 
-                postData={postData} handleChange={handleChange}/> 
-                ) } 
-        {/* Add Post */}
-        {!showPos ? (
-                ""
-              ) : (
-                <CrewPostAdditional setShow={setShowPos} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
         {/* Add Wardrobe  */}

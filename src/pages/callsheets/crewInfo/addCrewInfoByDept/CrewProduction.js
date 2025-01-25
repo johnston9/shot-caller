@@ -19,7 +19,6 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
     upm_name, upm_email, upm_phone,
     travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
     production_pa_name, production_pa_email, production_pa_phone,
-    legal_name, legal_email, legal_phone,
     set_medic_name, set_medic_email, set_medic_phone,
     oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
     oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
@@ -498,74 +497,6 @@ const CrewProduction = ({handleChange, postData, setShow}) => {
                   />
           </Form.Group>
           {errors?.set_medic_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      </div>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-3`}/>
-      </Col>
-      </Row>
-      {/* Legal Consultant */} 
-      <div>
-      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>Legal Consultant</p> 
-      <div>
-      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
-        CALLNAME: legalcon</span> 
-      </div>
-      <Row className="mt-2">
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="legal_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="legal_name"
-              value={legal_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.legal_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="legal_phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="legal_phone"
-              value={legal_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.legal_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="legal_email" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="legal_email"
-              value={legal_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.legal_email?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>

@@ -35,7 +35,7 @@
         <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
         {/* Transport Captain */} 
         <div>
-        <p className={`m-b3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        <p className={`mb-3 py-0 mx-md-4 ${styles.SubTitle }` } 
         style={{ textTransform: 'uppercase'}}>Transport Captain</p> 
         <div>
         <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
@@ -155,7 +155,7 @@
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.transport_catransport_manager_1_emailptain_email?.map((message, idx) => (
+            {errors?.transport_manager_1_email?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                 {message}
                 </Alert>
@@ -169,7 +169,550 @@
         <hr className={`mt-3 mb-3`}/>
         </Col>
         </Row>
-
+        {/* Transport Manager 2 */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Transport Manager 2</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: transpo2</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="transport_manager_2_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="transport_manager_2_name"
+                value={transport_manager_2_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.transport_manager_2_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="transport_manager_2_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="transport_manager_2_phone"
+                value={transport_manager_2_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.transport_manager_2_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="transport_manager_2_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="transport_manager_2_email"
+                value={transport_manager_2_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.transport_manager_2_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
+        {/* Head Driver */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Head Driver</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: headrive</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="head_driver_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="head_driver_name"
+                value={head_driver_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.head_driver_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="head_driver_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="head_driver_phone"
+                value={head_driver_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.head_driver_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="head_driver_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="head_driver_email"
+                value={head_driver_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.head_driver_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
+        {/* Driver 1 */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Driver 1</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: carone</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car1_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car1_name"
+                value={car1_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car1_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car1_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car1_phone"
+                value={car1_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car1_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car1_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car1_email"
+                value={car1_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car1_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
+        {/* Driver 2 */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Driver 2</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: cartwo</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car2_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car2_name"
+                value={car2_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car2_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car2_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car2_phone"
+                value={car2_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car2_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car2_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car2_email"
+                value={car2_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car2_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
+        {/* Driver 3 */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Driver 3</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: carthree</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car3_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car3_name"
+                value={car3_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car3_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car3_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car3_phone"
+                value={car3_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car3_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="car3_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="car3_email"
+                value={car3_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.car3_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
+        {/* Driver 4 */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Driver 4</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: truck1</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck1_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck1_name"
+                value={truck1_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck1_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck1_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck1_phone"
+                value={truck1_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck1_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck1_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck1_email"
+                value={truck1_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck1_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
+        {/* Driver 5 */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Driver 5</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: truck2</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck2_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck2_name"
+                value={truck2_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck2_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck2_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck2_phone"
+                value={truck2_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck2_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck2_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck2_email"
+                value={truck2_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck2_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
+        {/* Driver 6 */} 
+        <div>
+        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+        style={{ textTransform: 'uppercase'}}>Driver 6</p> 
+        <div>
+        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
+            CALLNAME: truck3</span> 
+        </div>
+        <Row className="mt-2">
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck3_name" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck3_name"
+                value={truck3_name}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck3_name?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck3_phone" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck3_phone"
+                value={truck3_phone}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck3_phone?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+            <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
+            <Form.Group controlId="truck3_email" className={`${styles.Width2} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                name="truck3_email"
+                value={truck3_email}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.truck3_email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
+            </Col>
+        </Row>
+        </div>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-3`}/>
+        </Col>
+        </Row>
         </div>
         </div>
     )
