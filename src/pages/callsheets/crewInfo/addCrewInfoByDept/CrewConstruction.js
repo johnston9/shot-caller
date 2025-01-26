@@ -17,7 +17,7 @@ const CrewConstruction = ({handleChange, postData, setShow}) => {
             add_pos_11_name, add_pos_11_email, add_pos_11_phone,
             add_pos_12_name, add_pos_12_email, add_pos_12_phone,
             add_pos_13_name, add_pos_13_email, add_pos_13_phone,
-             add_pos_14_name, add_pos_14_email, add_pos_14_phone,
+            add_pos_14_name, add_pos_14_email, add_pos_14_phone,
               } = postData || {};
 
   return (

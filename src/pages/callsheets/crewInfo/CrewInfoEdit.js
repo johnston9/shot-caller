@@ -1568,7 +1568,7 @@ const CrewInfoEdit = () => {
       <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
-              onClick={() => setShowWra(showWra => !showWra)} > Wrangling
+              onClick={() => setShowWra(showWra => !showWra)} > Construction/Wrangling
           </p>
       </Col>
       <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>

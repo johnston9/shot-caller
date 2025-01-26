@@ -7,16 +7,13 @@
   import Col from 'react-bootstrap/Col';
   import Row from 'react-bootstrap/Row';
   import { Alert } from "react-bootstrap";
-  import Button from 'react-bootstrap/Button';
   import styles from "../../../../styles/Callsheets.module.css";
-  import btnStyles from "../../../../styles/Button.module.css";
-  import AdditionalPositions2 from "./AdditionalPositions2";
+
   
   const CrewAdditional = ({handleChange, postData, setShow}) => {
     useRedirect();
     // eslint-disable-next-line
     const [errors, setErrors] = useState({});
-    const [showAddPos2, setShowAddPos2] = useState(false);
   
     const {add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
       add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
@@ -28,16 +25,6 @@
       add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
       add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
       add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
-      add_pos_11_job, add_pos_11_name, add_pos_11_email, add_pos_11_phone,
-      add_pos_12_job, add_pos_12_name, add_pos_12_email, add_pos_12_phone,
-      add_pos_13_job, add_pos_13_name, add_pos_13_email, add_pos_13_phone,
-      add_pos_14_job, add_pos_14_name, add_pos_14_email, add_pos_14_phone,
-      add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone,
-      add_pos_16_job, add_pos_16_name, add_pos_16_email, add_pos_16_phone,
-      add_pos_17_job, add_pos_17_name, add_pos_17_email, add_pos_17_phone,
-      add_pos_18_job, add_pos_18_name, add_pos_18_email, add_pos_18_phone,
-      add_pos_19_job, add_pos_19_name, add_pos_19_email, add_pos_19_phone,
-      add_pos_20_job, add_pos_20_name, add_pos_20_email, add_pos_20_phone,
   } = postData || {};
   
     return (

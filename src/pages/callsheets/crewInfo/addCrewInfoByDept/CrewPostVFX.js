@@ -7,15 +7,12 @@ import Form from "react-bootstrap/Form";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Alert } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
 import styles from "../../../../styles/Callsheets.module.css";
-import btnStyles from "../../../../styles/Button.module.css";
 
 const CrewPostVFX = ({handleChange, postData, setShow}) => {
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
-  const [showAddPos2, setShowAddPos2] = useState(false);
 
   const {fx_name, fx_email, fx_phone,
     editor_name, editor_email, editor_phone,
