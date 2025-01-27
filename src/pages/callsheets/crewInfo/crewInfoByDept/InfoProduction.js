@@ -58,7 +58,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
         {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
         {/* producer */}
@@ -75,7 +75,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{producer_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{producer_email}</p>
             </Col>
           </Row>
@@ -84,7 +84,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
          {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
          {/* pro_coordinator */}
@@ -101,7 +101,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{pro_coordinator_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{pro_coordinator_email}</p>
             </Col>
           </Row>
@@ -110,7 +110,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
          {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
          {/* upm */}
@@ -127,7 +127,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{upm_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{upm_email}</p>
             </Col>
           </Row>
@@ -136,7 +136,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
          {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
          {/* travel coordinator */}
@@ -153,7 +153,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{travel_coordinator_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{travel_coordinator_email}</p>
             </Col>
           </Row>
@@ -162,7 +162,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
          {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
          {/* production pa */}
@@ -179,7 +179,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{production_pa_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{production_pa_email}</p>
             </Col>
           </Row>
@@ -188,7 +188,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
          {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
          {/* script supervisor */}
@@ -205,7 +205,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{script_supervisor_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{script_supervisor_email}</p>
             </Col>
           </Row>
@@ -214,7 +214,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
           {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
           {/* LEGAL */}
@@ -231,7 +231,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <Col className={`${styles.BorderRight} px-0 mx-0`} xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{legal_phone}</p>
               </Col>
-              <Col xs={12} md={4} className='px-0 mx-0'>
+              <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
                 <p className={`${styles.CrewInfop} `}>{legal_email}</p>
               </Col>
             </Row>
@@ -240,7 +240,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
           {/* Set Medic */}
@@ -254,11 +254,11 @@ const Production = ({crewInfoOne, setShowPro}) => {
           <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
               <p className={`${styles.CrewInfoP} `}>{set_medic_name} </p>
             </Col>
-            <Col xs={6} md={4} className='px-0'>
-              <p className={`${styles.CrewInfop} `}>{set_medic_email}</p>
-            </Col>
             <Col className={`${styles.BorderRight} px-0 mx-0`} xs={12} md={4} >
             <p className={`${styles.CrewInfop} `}>{set_medic_phone}</p>
+            </Col>
+            <Col xs={6} md={4} className='px-0 pt-3 pt-md-0'>
+              <p className={`${styles.CrewInfop} `}>{set_medic_email}</p>
             </Col>
           </Row>
           </div> )
@@ -266,7 +266,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
           {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
         {/* oth production pos 1 */}
@@ -283,7 +283,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{oth_production_pos_1_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_production_pos_1_email}</p>
             </Col>
           </Row>
@@ -292,7 +292,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
         {/* break */}
         <Row>
         <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
+        <hr className={`mt-1 mb-3 mx-5`}/>
         </Col>
         </Row>
         {/* oth production pos 2 */}
@@ -309,12 +309,18 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{oth_production_pos_2_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_production_pos_2_email}</p>
             </Col>
           </Row>
           </div> )
         }
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-1 mb-3 mx-5`}/>
+        </Col>
+        </Row>
         {/* oth production pos 3 */}
         {oth_production_pos_3_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -329,12 +335,18 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{oth_production_pos_3_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_production_pos_3_email}</p>
             </Col>
           </Row>
           </div> )
         }
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-1 mb-3 mx-5`}/>
+        </Col>
+        </Row>
         {/* oth production pos 4 */}
         {oth_production_pos_4_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -349,12 +361,18 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{oth_production_pos_4_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_production_pos_4_email}</p>
             </Col>
           </Row>
           </div> )
         }
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-1 mb-3 mx-5`}/>
+        </Col>
+        </Row>
         {/* oth production pos 5 */}
         {oth_production_pos_5_job && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -369,12 +387,18 @@ const Production = ({crewInfoOne, setShowPro}) => {
             <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{oth_production_pos_5_phone}</p>
             </Col>
-            <Col className='px-0 mx-0' xs={12} md={4} >
+            <Col className='px-0 mx-0 pt-3 pt-md-0' xs={12} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_production_pos_5_email}</p>
             </Col>
           </Row>
           </div> )
         }
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-1 mb-3 mx-5`}/>
+        </Col>
+        </Row>
       </div>
       {/* Extra Positions Button */}
       <Row className='mt-3'>
