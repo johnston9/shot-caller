@@ -4,7 +4,7 @@
    CrewSoundTransport, CrewStunts, CrewArt, CrewCamera,
    CrewPostAdditional and CrewWardrobe Form components which are
    held in the addCrewInfoByDept folder to add info by department */
-import React, { useEffect, useState } from "react";
+import React, {useRef, useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -68,6 +68,8 @@ const CrewInfoEdit = () => {
   const [showTv, setShowTv] = useState(false);
   const [showWra, setShowWra] = useState(false);
 
+  const imageInput1 = useRef(null);  
+  console.log(imageInput1);
 
   const [postData, setPostData] = useState({
     // company
@@ -80,6 +82,7 @@ const CrewInfoEdit = () => {
     company_address_line_2: "",
     company_address_line_3: "",
     company_address_line_4: "",
+    company_logo: "",
     // production
     director_name: "",
     director_email: "",
@@ -529,7 +532,7 @@ const CrewInfoEdit = () => {
           // company
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
-          company_address_line_4, total_shoot_days,
+          company_address_line_4, total_shoot_days, company_logo,
           // production
           director_name, director_email, director_phone,
           producer_name, producer_email, producer_phone,
@@ -972,6 +975,16 @@ const CrewInfoEdit = () => {
       [event.target.name]: event.target.value,
     });
   };
+
+  const handleChangeLogo = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(company_logo);
+      setPostData({
+        ...postData,
+        company_logo: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
     
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -985,6 +998,10 @@ const CrewInfoEdit = () => {
     formData.append("company_address_line_2", company_address_line_2);
     formData.append("company_address_line_3", company_address_line_3);
     formData.append("company_address_line_4", company_address_line_4);
+    formData.append("company_address_line_4", company_address_line_4);
+    if(imageInput1.current.files[0]) {
+      formData.append("company_logo", imageInput1.current.files[0]);
+    }
     formData.append("director_name", director_name);
     formData.append("director_email", director_email);
     formData.append("director_phone", director_phone); 
@@ -1429,12 +1446,12 @@ const CrewInfoEdit = () => {
   const buttons = (
   <div className="text-center pb-3 mb-4 mt-4">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
       Create
     </Button>
   </div>
@@ -1589,13 +1606,15 @@ const CrewInfoEdit = () => {
       </div>
     </div>
     <div className={`mt-0`}>
-        {/* Add Company */}
-        {!showCom ? (
-          ""
-              ) : (
-                <CrewCompany handleChange={handleChange} 
-                postData={postData} setShow={setShowCom} /> 
-                ) }  
+    {/* Add Company */}
+    {!showCom ? (
+      ""
+          ) : (
+            <CrewCompany handleChange={handleChange}
+            handleChangeLogo={handleChangeLogo}
+            imageInput1={imageInput1} setPostData={setPostData}
+            postData={postData} setShow={setShowCom} /> 
+            ) }  
         {/* Add Production */}
         {!showPro ? (
           ""

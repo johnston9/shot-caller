@@ -1,30 +1,56 @@
 /*Form component in the CrewInfoCreate and CrewInfoEdit Form
   components to add/edit the Company info */
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { useRedirect } from '../../../../hooks/Redirect';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
+import Asset from "../../../../components/Asset";
+import Upload from "../../../../assets/upload.png";
+import btnStyles from "../../../../styles/Button.module.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 import styles from "../../../../styles/Callsheets.module.css";
-import btnStyles from "../../../../styles/Button.module.css";
+import appStyles from "../../../../App.module.css";
 import { useHistory } from 'react-router-dom';
 
-const CrewCompany = ({handleChange, postData, setShow,}) => {
+const CrewCompany = ({handleChange, 
+  handleChangeLogo, setPostData, postData, setShow, imageInput1}) => {
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
   const history = useHistory();
 
+  // const imageInput1 = useRef(null); 
+
+  // const handleChangeLogo = (event) => {
+  //   if (event.target.files.length) {
+  //     URL.revokeObjectURL(logo);
+  //     setPostData({
+  //       ...postData,
+  //       company_logo: URL.createObjectURL(event.target.files[0]),
+  //     });
+  //     console.log(`logo ${company_logo}`)
+  //   }
+  // };
+
+  // const handleChangeLogo = (event) => {
+  //   if (event.target.files.length) {
+  //     URL.revokeObjectURL(logo);
+  //     setlogo( URL.createObjectURL(event.target.files[0]));
+  //     console.log(event.target.files[0])
+  //   }
+  // };
+
   const { production_name, production_company, company_phone, company_email,
     company_address_line_1, company_address_line_2, company_address_line_3,
-    company_address_line_4, total_shoot_days,
+    company_address_line_4, total_shoot_days, company_logo,
   } = postData || {};
 
-  const handleClick = () => {
-    history.push(`/logo/edit`);
-  };
+  // const handleClick = () => {
+  //   history.push(`/logo/edit`);
+  // };
 
   return (
     <div className="pb-3 text-center">
@@ -34,14 +60,14 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
     </div>
     <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
     {/* Company logo button*/}
-    <Row className={`my-4`}>
+    {/* <Row className={`my-4`}>
     <Col className='text-center'>
     <Button
       className={`py-0 mb-0 ${btnStyles.Blue}`}
       onClick={() => handleClick() }>Add / Change Company Logo
     </Button>
     </Col>
-    </Row>
+    </Row> */}
     {/* Production Name - Production Company */}
     <Row>
     <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-lg-2">
@@ -195,27 +221,77 @@ const CrewCompany = ({handleChange, postData, setShow,}) => {
     </Col>
     </Row>
     <hr/>
-      <Row>
-        <Col md={{span: 6, offset: 3 }} >
-        <div className="mt-3 d-flex justify-content-center text-center">
-            <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
-          <Form.Label className={`${styles.BoldScene}`} >Total Shoot Days</Form.Label>
-          <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="total_shoot_days"
-              value={total_shoot_days}
-              onChange={handleChange}
-              />
-            </Form.Group>
-            {errors?.total_shoot_days?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
+    <Row>
+      <Col md={{span: 6, offset: 3 }} >
+      <div className="mt-3 d-flex justify-content-center text-center">
+          <Form.Group controlId="total_shoot_days" className={`${styles.Width2} `}  >
+        <Form.Label className={`${styles.BoldScene}`} >Total Shoot Days</Form.Label>
+        <Form.Control 
+            className={`${styles.Input}`}
+            type="text"
+            name="total_shoot_days"
+            value={total_shoot_days}
+            onChange={handleChange}
+            />
+          </Form.Group>
+          {errors?.total_shoot_days?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </div>
+      </Col>
+    </Row>
+    {/* new logo */}
+    {/* logo */}
+    <Row>
+    <Col md={{span:6, offset:3}}>
+    <div className={` ${appStyles.Content} d-flex flex-column justify-content-center`}>
+    <p className={`text-center ${styles.Bold}`}>Add or Change the Company Logo</p>      
+    <Form.Group className="text-center pt-3">
+        {company_logo ? (
+        <>
+            <figure>
+            <Image className={styles.Logo} src={company_logo} rounded />
+            </figure>
+            <div>
+            <Form.Label
+                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                htmlFor="image-upload"
+            >
+                Change the logo
+            </Form.Label>
             </div>
-        </Col>
-      </Row>
+        </>
+        ) : (
+        <Form.Label
+            className="d-flex justify-content-center"
+            htmlFor="image-upload"
+        >
+            <Asset
+            src={Upload}
+            message="Upload Image"
+            />
+        </Form.Label>
+        )}
+
+        <Form.Control
+        type="file"
+        id="image-upload"
+        accept="image/*"
+        onChange={handleChangeLogo}
+        ref={imageInput1}
+        />
+    </Form.Group>
+    {errors?.company_logo?.map((message, idx) => (
+    <Alert variant="warning" key={idx}>
+        {message}
+    </Alert>
+    ))}
+    {/* {buttons} */}
+    </div>
+    </Col>
+</Row>  
     {/* old logo */}
     <div>
     {/* <p className={`${styles.Bold}`}>Company Logo</p>

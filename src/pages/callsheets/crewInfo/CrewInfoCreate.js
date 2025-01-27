@@ -529,7 +529,7 @@ const CrewInfoCreate = () => {
           // company
           production_name, production_company, company_phone, company_email,
           company_address_line_1, company_address_line_2, company_address_line_3,
-          company_address_line_4, total_shoot_days,
+          company_address_line_4, total_shoot_days, company_logo,
           // production
           director_name, director_email, director_phone,
           producer_name, producer_email, producer_phone,
@@ -686,6 +686,16 @@ const CrewInfoCreate = () => {
       ...postData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const handleChangeLogo = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(company_logo);
+      setPostData({
+        ...postData,
+        company_logo: URL.createObjectURL(event.target.files[0]),
+      });
+    }
   };
     
   const handleSubmit = async (event) => {
@@ -1145,12 +1155,12 @@ const CrewInfoCreate = () => {
   const buttons = (
   <div className="text-center mt-4 mb-4">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
       Create
     </Button>
   </div>
