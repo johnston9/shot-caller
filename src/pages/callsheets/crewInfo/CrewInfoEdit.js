@@ -1427,9 +1427,6 @@ const CrewInfoEdit = () => {
     formData.append("add_pos_20_name", add_pos_20_name);
     formData.append("add_pos_20_email", add_pos_20_email);
     formData.append("add_pos_20_phone", add_pos_20_phone); 
-    // if(imageInput1.current.files[0]) {
-    //   formData.append("company_logo", imageInput1.current.files[0]);
-    // }
     try {
       const {data} = await axiosReq.put(`/crewinfonew/${id}/`, formData);
       setEditCrewInfo(true);
@@ -1612,7 +1609,7 @@ const CrewInfoEdit = () => {
           ) : (
             <CrewCompany handleChange={handleChange}
             handleChangeLogo={handleChangeLogo}
-            imageInput1={imageInput1} setPostData={setPostData}
+            imageInput1={imageInput1}
             postData={postData} setShow={setShowCom} /> 
             ) }  
         {/* Add Production */}

@@ -3,7 +3,6 @@
 import React, {useState } from "react";
 import { useRedirect } from '../../../../hooks/Redirect';
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Asset from "../../../../components/Asset";
 import Upload from "../../../../assets/upload.png";
@@ -13,44 +12,18 @@ import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 import styles from "../../../../styles/Callsheets.module.css";
 import appStyles from "../../../../App.module.css";
-import { useHistory } from 'react-router-dom';
 
-const CrewCompany = ({handleChange, 
-  handleChangeLogo, setPostData, postData, setShow, imageInput1}) => {
+const CrewCompany = ({handleChange, handleChangeLogo, postData, 
+  setShow, imageInput1}) => {
+
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
-  const history = useHistory();
-
-  // const imageInput1 = useRef(null); 
-
-  // const handleChangeLogo = (event) => {
-  //   if (event.target.files.length) {
-  //     URL.revokeObjectURL(logo);
-  //     setPostData({
-  //       ...postData,
-  //       company_logo: URL.createObjectURL(event.target.files[0]),
-  //     });
-  //     console.log(`logo ${company_logo}`)
-  //   }
-  // };
-
-  // const handleChangeLogo = (event) => {
-  //   if (event.target.files.length) {
-  //     URL.revokeObjectURL(logo);
-  //     setlogo( URL.createObjectURL(event.target.files[0]));
-  //     console.log(event.target.files[0])
-  //   }
-  // };
 
   const { production_name, production_company, company_phone, company_email,
     company_address_line_1, company_address_line_2, company_address_line_3,
     company_address_line_4, total_shoot_days, company_logo,
   } = postData || {};
-
-  // const handleClick = () => {
-  //   history.push(`/logo/edit`);
-  // };
 
   return (
     <div className="pb-3 text-center">
@@ -59,7 +32,7 @@ const CrewCompany = ({handleChange,
     <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION COMPANY INFO</h5>
     </div>
     <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
-    {/* Company logo button*/}
+    {/* Company logo */}
     {/* <Row className={`my-4`}>
     <Col className='text-center'>
     <Button
@@ -68,6 +41,56 @@ const CrewCompany = ({handleChange,
     </Button>
     </Col>
     </Row> */}
+    {/* logo */}
+    <Row>
+    <Col md={{span:6, offset:3}}>
+    <div className={` ${appStyles.Content} d-flex flex-column justify-content-center`}>
+    <p className={`text-center ${styles.BoldScene}`}>Company Logo</p>      
+    <Form.Group className="text-center pt-3">
+        {company_logo ? (
+        <>
+            <figure>
+            <Image className={styles.Logo} src={company_logo} rounded />
+            </figure>
+            <div>
+            <Form.Label
+                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                htmlFor="image-upload"
+            >
+                Change the logo
+            </Form.Label>
+            </div>
+        </>
+        ) : (
+        <Form.Label
+            className="d-flex justify-content-center"
+            htmlFor="image-upload"
+        >
+            <Asset
+            src={Upload}
+            message="Upload Image"
+            />
+        </Form.Label>
+        )}
+
+        <Form.Control
+        type="file"
+        id="image-upload"
+        accept="image/*"
+        onChange={handleChangeLogo}
+        ref={imageInput1}
+        />
+    </Form.Group>
+    {errors?.company_logo?.map((message, idx) => (
+    <Alert variant="warning" key={idx}>
+        {message}
+    </Alert>
+    ))}
+    {/* {buttons} */}
+    </div>
+    </Col>
+    </Row>  
+    <hr/>
     {/* Production Name - Production Company */}
     <Row>
     <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-lg-2">
@@ -241,105 +264,7 @@ const CrewCompany = ({handleChange,
           ))}
           </div>
       </Col>
-    </Row>
-    {/* new logo */}
-    {/* logo */}
-    <Row>
-    <Col md={{span:6, offset:3}}>
-    <div className={` ${appStyles.Content} d-flex flex-column justify-content-center`}>
-    <p className={`text-center ${styles.Bold}`}>Add or Change the Company Logo</p>      
-    <Form.Group className="text-center pt-3">
-        {company_logo ? (
-        <>
-            <figure>
-            <Image className={styles.Logo} src={company_logo} rounded />
-            </figure>
-            <div>
-            <Form.Label
-                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                htmlFor="image-upload"
-            >
-                Change the logo
-            </Form.Label>
-            </div>
-        </>
-        ) : (
-        <Form.Label
-            className="d-flex justify-content-center"
-            htmlFor="image-upload"
-        >
-            <Asset
-            src={Upload}
-            message="Upload Image"
-            />
-        </Form.Label>
-        )}
-
-        <Form.Control
-        type="file"
-        id="image-upload"
-        accept="image/*"
-        onChange={handleChangeLogo}
-        ref={imageInput1}
-        />
-    </Form.Group>
-    {errors?.company_logo?.map((message, idx) => (
-    <Alert variant="warning" key={idx}>
-        {message}
-    </Alert>
-    ))}
-    {/* {buttons} */}
-    </div>
-    </Col>
-</Row>  
-    {/* old logo */}
-    <div>
-    {/* <p className={`${styles.Bold}`}>Company Logo</p>
-        <div
-            className={`mr-4 ${appStyles.Content} d-flex flex-column justify-content-center`}
-          >
-            <Form.Group className="text-center pt-3">
-                {company_logo ? (
-                  <>
-                    <figure>
-                      <Image className={styles.Logo} src={company_logo} rounded />
-                    </figure>
-                    <div>
-                      <Form.Label
-                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                        htmlFor="image-upload"
-                      >
-                        Change the logo
-                      </Form.Label>
-                    </div>
-                  </>
-                ) : (
-                  <Form.Label
-                    className="d-flex justify-content-center"
-                    htmlFor="image-upload"
-                  >
-                    <Asset
-                      src={Upload}
-                      message="Upload Image"
-                    />
-                  </Form.Label>
-                )}
-  
-                <Form.Control
-                  type="file"
-                  id="image-upload"
-                  accept="image/*"
-                  onChange={handleChangeLogo}
-                  ref={imageInput1}
-                />
-            </Form.Group>
-            {errors?.company_logo?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </div> */}
-    </div>
+    </Row>    
     </div>
     </div>
   )

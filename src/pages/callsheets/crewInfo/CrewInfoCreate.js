@@ -1142,7 +1142,7 @@ const CrewInfoCreate = () => {
     try {
       const {data} = await axiosReq.post("/crewinfonew/", formData);
       setEditCrewInfo(true);
-      history.push(`/callsheets/`);
+      history.goBack();
       console.log(data);
     } catch (err) {
       console.log(err);
@@ -1329,7 +1329,9 @@ const CrewInfoCreate = () => {
         {!showCom ? (
           ""
               ) : (
-                <CrewCompany handleChange={handleChange} 
+                <CrewCompany handleChange={handleChange}
+                handleChangeLogo={handleChangeLogo}
+                imageInput1={imageInput1}
                 postData={postData} setShow={setShowCom} /> 
                 ) }  
         {/* Add Production */}

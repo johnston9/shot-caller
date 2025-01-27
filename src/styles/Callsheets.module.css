@@ -12,11 +12,19 @@ p {
 }
 
 .SubTitle2 {
-  /* background-color: #e0fafe; */
   background-color: #d6fcff;;
   font-weight: 700;
-  /* background-color: #e8f0f1; */
 }
+
+/* .SubTitle2 {
+  background-color: #000;;
+  font-weight: 700;
+  color: #fff;
+}
+
+.SubTitle2 p {
+  color: #fff;
+} */
 
 .SubTitle3 {
   background-color: #e4f2f4;
