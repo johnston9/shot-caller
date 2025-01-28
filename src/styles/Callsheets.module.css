@@ -16,6 +16,11 @@ p {
   font-weight: 700;
 }
 
+.BoldScene {
+  color: rgba(129, 102, 21, 0.99);
+  font-weight: 600;
+}
+
 /* .SubTitle2 {
   background-color: #000;;
   font-weight: 700;
@@ -34,15 +39,12 @@ p {
 .CrewInfoP {
   font-weight: 700;
   margin-bottom: 3px;
-  /* color: #616370;
-  color: rgba(100, 80, 20, 0.99); */
+  color: #616370;
 }
 
 .CrewInfop {
   margin-bottom: 3px;
-  /* color: #616370;
-  color: rgb(140, 111, 25, 99%);
-  color: rgba(100, 80, 20, 0.99); */
+  color: #616370;
 }
 
 .BoldTitleCall {
@@ -330,11 +332,6 @@ p {
 
 .Title {
   background-color: #fff;
-}
-
-.BoldScene {
-  color: rgba(129, 102, 21, 0.99);
-  font-weight: 600;
 }
 
 .Input {
