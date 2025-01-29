@@ -36,6 +36,12 @@ import CrewWrangling from "./addCrewInfoByDept/CrewWrangling";
 import CrewTVStudio from "./addCrewInfoByDept/CrewTVStudio";
 import CrewAdditional from "./addCrewInfoByDept/CrewAdditional";
 import CrewSound from "./addCrewInfoByDept/CrewSound";
+// xx
+import Image from "react-bootstrap/Image";
+import Asset from "../../../components/Asset";
+import Upload from "../../../assets/upload.png";
+import Alert from "react-bootstrap/Alert";
+import appStyles from "../../../App.module.css";
 
 const CrewInfoEdit = () => {
   useRedirect();
@@ -1468,6 +1474,7 @@ const CrewInfoEdit = () => {
       className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
     </Button>
+    {/* logo */}
       {!showImp ? (
           ""
       ) : (
@@ -1746,6 +1753,51 @@ const CrewInfoEdit = () => {
       <div className={`py-2 ${styles.White }`}>
       </div>
     {buttons}
+    <Row>
+    <Col md={{span:6, offset:3}}>
+    <div className={`d-flex flex-column justify-content-center`}>
+    <Form.Group className="text-center pt-3">
+        {company_logo ? (
+        <>
+            <figure>
+            <Image className={styles.LogoEdit} src={company_logo} rounded />
+            </figure>
+            <div>
+            <Form.Label
+                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                htmlFor="image-upload"
+            >
+            </Form.Label>
+            </div>
+        </>
+        ) : (
+        <Form.Label
+            className="d-flex justify-content-center"
+            htmlFor="image-upload"
+        >
+            <Asset
+            src={Upload}
+            message="Upload Image"
+            />
+        </Form.Label>
+        )}
+
+        <Form.Control
+        type="file"
+        id="image-upload"
+        accept="image/*"
+        onChange={handleChangeLogo}
+        ref={imageInput1}
+        />
+    </Form.Group>
+    {errors?.company_logo?.map((message, idx) => (
+    <Alert variant="warning" key={idx}>
+        {message}
+    </Alert>
+    ))}
+    </div>
+    </Col>
+    </Row>  
     </Form>
     </div>
   )

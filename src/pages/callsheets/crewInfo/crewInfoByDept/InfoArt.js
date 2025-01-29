@@ -41,21 +41,19 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
        ${styles.SubTitle2 }`} >Production Designer</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} px-0 mx-0`}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
           <p className={`${styles.CrewInfoP} `}>{production_designer_name}</p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} px-0 mx-0`}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>prodesign </p>
-        </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} px-0 mx-0`}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
         <p className={`${styles.CrewInfop} `}>{production_designer_phone}</p>
         </Col>
-        <Col xs={6} md={3}  className='px-0 mx-0'>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{production_designer_email}</p>
         </Col>
       </Row>
       </div> )
       }
+      <hr/>
       {/* art director  */}
       {art_director_name && 
       (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -64,21 +62,19 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Art Director</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{art_director_name} </p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>artdirect</p>
-        </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfop} `}>{art_director_phone}</p>
         </Col>
-        <Col xs={6} md={3} className='px-0 mx-0'>
+        <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{art_director_email}</p>
         </Col>
       </Row>
       </div> )
       }
+      <hr/>
       {/* art assistant */}
       {art_assistant_name && 
       (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
@@ -87,24 +83,22 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Art Assistant</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{art_assistant_name}</p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>artassist </p>
-        </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfop} `}>{art_assistant_phone}</p>
         </Col>
-        <Col xs={6} md={3} className='px-0 mx-0'>
+        <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{art_assistant_email}</p>
         </Col>
       </Row>
       </div> )
       }
+      <hr/>
       </div>
       {/* SET DECORATION */}
-      <div className={`py-2 ${styles.White }`}>
+      <div className={`pb-3 ${styles.White }`}>
       </div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <h5 className={` mb-0 text-center py-1 ${styles.Bold }`} >SET DECORATION</h5>
@@ -118,16 +112,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Set Decorator</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{set_decorator_name}</p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>setdecor </p>
-        </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfop} `}>{set_decorator_phone}</p>
         </Col>
-        <Col xs={6} md={3} className='px-0 mx-0'>
+        <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{set_decorator_email}</p>
         </Col>
       </Row>
@@ -141,16 +132,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Set Dresser</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{set_dresser_name}</p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>setdress </p>
-        </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfop} `}>{set_dresser_phone}</p>
         </Col>
-        <Col xs={6} md={3} className='px-0 mx-0'>
+        <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{set_dresser_email}</p>
         </Col>
       </Row>
@@ -164,16 +152,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Lead Man</p>  
       </div>
       <Row className='text-center' >
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+      <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfoP} `}>{lead_man_name}</p>
       </Col>
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-        <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>leadman </p>
-      </Col>
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+      <Col xs={6} md={4} className={`${styles.BorderRight} `}>
       <p className={`${styles.CrewInfop} `}>{lead_man_phone}</p>
       </Col>
-      <Col xs={6} md={3} className='px-0 mx-0'>
+      <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
         <p className={`${styles.CrewInfop} `}>{lead_man_email}</p>
       </Col>
       </Row>
@@ -187,16 +172,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Dresser</p> 
       </div>
       <Row className='text-center' >
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+      <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfoP} `}>{dresser_name}</p>
       </Col>
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-        <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>dresser </p>
-      </Col>
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+      <Col xs={6} md={4} className={`${styles.BorderRight} `}>
       <p className={`${styles.CrewInfop} `}>{dresser_phone}</p>
       </Col>
-      <Col xs={6} md={3} className='px-0 mx-0'>
+      <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
         <p className={`${styles.CrewInfop} `}>{dresser_email}</p>
       </Col>
       </Row>
@@ -218,16 +200,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Prop Master</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{prop_master_name}</p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>propmast </p>
-        </Col>
-        <Col xs={6} md={3} >
+        <Col xs={6} md={4} >
         <p className={`${styles.CrewInfop} `}>{prop_master_phone}</p>
         </Col>
-        <Col xs={6} md={3} className='px-0 mx-0'>
+        <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{prop_master_email}</p>
         </Col>
       </Row>
@@ -241,16 +220,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Assistant Prop Master</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{ass_prop_master_name}</p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>propast </p>
-        </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfop} `}>{ass_prop_master_phone}</p>
         </Col>
-        <Col xs={6} md={3} className='px-0 mx-0'>
+        <Col xs={12} md={4} className='px-0 mx-0'>
           <p className={`${styles.CrewInfop} `}>{ass_prop_master_email}</p>
         </Col>
       </Row>
@@ -264,16 +240,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Prop Buyer</p> 
       </div>
       <Row className='text-center' >
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{prop_buyer_name} </p>
         </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-          <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>propbuy</p>
-        </Col>
-        <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfop} `}>{prop_buyer_phone}</p>
         </Col>
-        <Col xs={6} md={3} className='px-0 mx-0'>
+        <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{prop_buyer_email}</p>
         </Col>
       </Row>
@@ -287,16 +260,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           ${styles.SubTitle2 }`} >Armorer</p> 
       </div>
       <Row className='text-center' >
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+      <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfoP} `}>{armorer_name}</p>
       </Col>
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
-        <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>armorer </p>
-      </Col>
-      <Col xs={6} md={3} className={`${styles.BorderRight} `}>
+      <Col xs={6} md={4} className={`${styles.BorderRight} `}>
       <p className={`${styles.CrewInfop} `}>{armorer_phone}</p>
       </Col>
-      <Col xs={6} md={3} className='px-0 mx-0'>
+      <Col xs={12} md={4} className='px-0 mx-0'>
         <p className={`${styles.CrewInfop} `}>{armorer_email}</p>
       </Col>
       </Row>

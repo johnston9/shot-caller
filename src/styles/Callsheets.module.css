@@ -2,6 +2,22 @@
     min-height: 100px;
   }
 
+  .Width {
+    width: 70%;
+  }
+  
+  .Width2 {
+    width: 80%;
+  }
+  
+  .Width3 {
+    width: 80%;
+  }
+  
+  .Width95 {
+    width: 95%;
+  }
+
 p {
   margin-bottom: 0;
 }
@@ -11,15 +27,28 @@ p {
   font-weight: 700;
 }
 
+/* .SubTitle2 {
+  background-color: #d6fcff;;
+  font-weight: 700;
+} */
+
 .SubTitle2 {
   background-color: #d6fcff;;
   font-weight: 700;
+  width: 20%;
+  color: rgba(129, 102, 21, 0.99);
+  color: #000
 }
 
 .BoldScene {
   color: rgba(129, 102, 21, 0.99);
   font-weight: 600;
 }
+
+/* .SubTitle2 {
+  color: rgba(129, 102, 21, 0.99);
+  font-weight: 600;
+} */
 
 /* .SubTitle2 {
   background-color: #000;;
@@ -214,6 +243,12 @@ p {
   font-size: 1.75rem;
   background-color: #f6fffe;
   font-family: Playball;
+}
+
+.LogoEdit {
+  height: 1px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .Logo {
@@ -428,22 +463,6 @@ p {
   background-color: rgb(209, 240, 240);
 }
 
-.Width {
-  width: 70%;
-}
-
-.Width2 {
-  width: 80%;
-}
-
-.Width3 {
-  width: 80%;
-}
-
-.Width95 {
-  width: 95%;
-}
-
 @media screen and (max-width: 600px) {
   .BoldScene {
     font-size: .75rem;
@@ -463,10 +482,6 @@ p {
     width: 90%;
   }
 
-  .Width95 {
-    width: 90%;
-  }
-
   h1 {
     font-size: 1.75rem;
   }
@@ -479,5 +494,13 @@ p {
 @media screen and (max-width: 780px) {
   .Width3 {
     width: 50%;
+  }
+
+  .Width {
+    width: 90%;
+  }
+
+  .SubTitle2 {
+    width: 90%;
   }
 }
