@@ -31,31 +31,32 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >ELECTRIC </h3>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ELECTRIC </h5>
       </div>
-      <div className={`py-2 ${styles.White }`}>
-      </div>
-      <div className='px-md-5 pt-2'>
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>
         {/* gaffer */}
         {gaffer_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Gaffer</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Gaffer</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{gaffer_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>gaffer </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{gaffer_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{gaffer_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
          }
@@ -63,22 +64,25 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          {best_boy_electric_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >BB Electric</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Best Boy Electric</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{best_boy_electric_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>bbelect </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{best_boy_electric_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{best_boy_electric_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
          }
@@ -86,23 +90,25 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          {electric_3_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >3rd Electric</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>3rd Electric</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{electric_3_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>elect3 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{electric_3_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{electric_3_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
          }
@@ -110,28 +116,30 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          {electric_4_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >4TH Electric</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Electrician</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{electric_4_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>elect4 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{electric_4_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{electric_4_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
          }
       </div>
-      {/* Extra Positions Button */}
+      {/* Extra Electric Positions Button */}
       <Row className='mt-3'>
         <Col className='text-center'>
         <Button onClick={() => setShow(show => !show)}
@@ -146,35 +154,33 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
                 dept="electric"
                 setShow={setShow}  /> 
        ) } 
-        <div className={`py-2 ${styles.White }`}>
+        <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
+        <h5 className={`mb-0 text-center py-1 ${styles.Bold }`} >GRIP </h5>
         </div>
-        <div className={`mt-0 text-center ${styles.SubTitle }`}>
-        <h3 className={`mb-0 text-center py-1 ${styles.Bold }`} >GRIP </h3>
-        </div>
-        <div className={`py-2 ${styles.White }`}>
-        </div>
-        <div className='px-md-5 pt-2'>
+        <div className={`px-md-5 mx-md-5 ${styles.White }`}>
          {/* keygrip */}
         {keygrip_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Keygrip</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Keygrip</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{keygrip_name} </p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-              className={`${styles.CrewInfop} `}>keygrip</p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{keygrip_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{keygrip_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
          }
@@ -182,23 +188,25 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         {best_boy_grip_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >BB Grip</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Best Boy Grip</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{best_boy_grip_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}> bbgrip</p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
             <p className={`${styles.CrewInfop} `}>{best_boy_grip_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
               <p className={`${styles.CrewInfop} `}>{best_boy_grip_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
          }
@@ -206,47 +214,51 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         {dolly_grip_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Dolly Grip</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Dolly Grip</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{dolly_grip_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>dolgrip </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{dolly_grip_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{dolly_grip_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
          }
-        {/* swing ge 1 */}
+        {/* G&E Swing 1 */}
         {swing_ge1_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Swing G/E 1</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 1</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{swing_ge1_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>swing1 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{swing_ge1_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{swing_ge1_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
         }
@@ -254,23 +266,25 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         {swing_ge2_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Swing G/E 2</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 2</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{swing_ge2_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>swing2 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{swing_ge2_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{swing_ge2_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
         }
@@ -278,23 +292,25 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         {swing_ge3_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Swing G/E 3</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 3</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{swing_ge3_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>swing3 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{swing_ge3_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{swing_ge3_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
         }
@@ -302,23 +318,25 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         {swing_ge4_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Swing G/E 4</h5> 
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 4</p> 
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{swing_ge4_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>swing4 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{swing_ge4_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{swing_ge4_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
         }
@@ -326,28 +344,30 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         {swing_ge5_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Swing G/E 5</h5> 
-          </div>
+          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 5</p> 
+       </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{swing_ge5_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} 
-                className={`${styles.CrewInfop} `}>swing5 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{swing_ge5_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{swing_ge5_email}</p>
             </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
         }
         </div>
-        {/* Extra Positions Button */}
+        {/* Extra Grip Positions Button */}
       <Row className='mt-3'>
         <Col className='text-center'>
         <Button onClick={() => setShowGrip(showGrip => !showGrip)}

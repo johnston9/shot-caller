@@ -32,13 +32,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
       <h5 className={`pl-4 mb-0 text-center py-1 ${styles.Bold }`} >ART DEPT </h5>
       </div>
-      <div className={`px-md-5  ${styles.White }`}>
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>
       {/*  production designer */}
       {production_designer_name && 
       (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} >Production Designer</p> 
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Production Designer</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -51,15 +51,20 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           <p className={`${styles.CrewInfop} `}>{production_designer_email}</p>
         </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
-      <hr/>
       {/* art director  */}
       {art_director_name && 
-      (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Art Director</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Art Director</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -72,15 +77,20 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           <p className={`${styles.CrewInfop} `}>{art_director_email}</p>
         </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
-      <hr/>
       {/* art assistant */}
       {art_assistant_name && 
-      (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Art Assistant</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Art Assistant</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -93,23 +103,26 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           <p className={`${styles.CrewInfop} `}>{art_assistant_email}</p>
         </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
-      <hr/>
       </div>
       {/* SET DECORATION */}
-      <div className={`pb-3 ${styles.White }`}>
-      </div>
-      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
       <h5 className={` mb-0 text-center py-1 ${styles.Bold }`} >SET DECORATION</h5>
       </div>
-      <div className={`px-md-5  ${styles.White }`}>
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>
       {/* set decorator */}
       {set_decorator_name && 
       (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Set Decorator</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Set Decorator</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -122,6 +135,12 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           <p className={`${styles.CrewInfop} `}>{set_decorator_email}</p>
         </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
       {/* set dresser */}
@@ -129,7 +148,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Set Dresser</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Set Dresser</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -142,6 +161,12 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           <p className={`${styles.CrewInfop} `}>{set_dresser_email}</p>
         </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
       {/* lead man */}
@@ -149,7 +174,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Lead Man</p>  
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Lead Man</p>  
       </div>
       <Row className='text-center' >
       <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -162,6 +187,12 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
         <p className={`${styles.CrewInfop} `}>{lead_man_email}</p>
       </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
       {/* dresser */}
@@ -169,7 +200,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Dresser</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Dresser</p> 
       </div>
       <Row className='text-center' >
       <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -182,33 +213,43 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
         <p className={`${styles.CrewInfop} `}>{dresser_email}</p>
       </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
       </div>
-      {/* PROPERTY */}
-      <div className={`py-2 ${styles.White }`}>
-      </div>    
-      <div className={`mt-0 text-center ${styles.SubTitle }`}>
+      {/* PROPERTY  */}
+      <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
       <h5 className={` mb-0 text-center py-1 ${styles.Bold }`} >PROPERTY</h5>
-      </div>     
-      <div className={`px-md-5  ${styles.White }`}>
+      </div>  
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>   
       {/* prop master */}
       {prop_master_name && 
       (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Prop Master</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Prop Master</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} `}>
           <p className={`${styles.CrewInfoP} `}>{prop_master_name}</p>
         </Col>
-        <Col xs={6} md={4} >
+        <Col xs={6} md={4} className={`${styles.BorderRight} `}>
         <p className={`${styles.CrewInfop} `}>{prop_master_phone}</p>
         </Col>
         <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{prop_master_email}</p>
         </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
       </Row>
       </div> )
       }
@@ -217,7 +258,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Assistant Prop Master</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Prop Master</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -230,6 +271,12 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           <p className={`${styles.CrewInfop} `}>{ass_prop_master_email}</p>
         </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
       {/* prop buyer */}
@@ -237,7 +284,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Prop Buyer</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Prop Buyer</p> 
       </div>
       <Row className='text-center' >
         <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -250,6 +297,12 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
           <p className={`${styles.CrewInfop} `}>{prop_buyer_email}</p>
         </Col>
       </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
       </div> )
       }
       {/* armorer name */}
@@ -257,7 +310,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
       <div className='d-flex justify-content-center '>
       <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} >Armorer</p> 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Armorer</p> 
       </div>
       <Row className='text-center' >
       <Col xs={6} md={4} className={`${styles.BorderRight} `}>
@@ -268,6 +321,12 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Col>
       <Col xs={12} md={4} className='px-0 mx-0'>
         <p className={`${styles.CrewInfop} `}>{armorer_email}</p>
+      </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
       </Col>
       </Row>
       </div> )

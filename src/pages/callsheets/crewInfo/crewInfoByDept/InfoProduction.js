@@ -34,12 +34,13 @@ const Production = ({crewInfoOne, setShowPro}) => {
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
       <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION </h5>
       </div>
-      <div className={`px-md-5  ${styles.White }`}>
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>
          {/* DIRECTOR  */} 
         {director_name && 
           (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 ${styles.BoldScene }`}>DIRECTOR</p>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>DIRECTOR</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} `} >
@@ -52,20 +53,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{director_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
         }
-        {/* break */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`mt-1 mb-1 mx-5`}/>
-        </Col>
-        </Row>
         {/* producer */}
         {producer_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 px-5
-           ${styles.BoldScene }`} >PRODUCTION MANAGER</p> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>PRODUCTION MANAGER</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -78,22 +79,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{producer_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
          }
-        {/* break */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`mt-1 mb-1 mx-5`}/>
-        </Col>
-        </Row>
          {/* pro_coordinator */}
         {pro_coordinator_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          {/* <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
-           ${styles.BoldScene }`} >PRODUCTION COORDINATOR</p>  */}
-           <p className={`mb-2 mx-4 py-0 px-5
-           ${styles.BoldScene }`} >PRODUCTION COORDINATOR</p> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>PRODUCTION COORDINATOR</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -106,20 +105,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{pro_coordinator_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
          }
-         {/* break */}
-         <Row>
-        <Col xs={12}>
-        <hr className={`mt-1 mb-1 mx-5`}/>
-        </Col>
-         </Row>
          {/* upm */}
         {upm_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 px-5
-           ${styles.BoldScene }`} >UPM</p> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>UPM</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -132,20 +131,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{upm_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
          }
-         {/* break */}
-         <Row>
-        <Col xs={12}>
-        <hr className={`mt-1 mb-1 mx-5`}/>
-        </Col>
-         </Row>
          {/* travel coordinator */}
         {travel_coordinator_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 px-5
-           ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}} >Travel Coordinator</p> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Travel Coordinator</p> 
           </div>
           <Row className='text-center' >
           <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -158,20 +157,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{travel_coordinator_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
          }
-         {/* break */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`mt-1 mb-1 mx-5`}/>
-        </Col>
-        </Row>
          {/* production pa */}
         {production_pa_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 px-5
-           ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>Production PA</p> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Production PA</p> 
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -184,20 +183,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{production_pa_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
          }
-         {/* break */}
-         <Row>
-        <Col xs={12}>
-        <hr className={`mt-1 mb-1 mx-5`}/>
-        </Col>
-        </Row>
          {/* script supervisor move */}
           {script_supervisor_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-           ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>Script Supervisor</p> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Script Supervisor</p> 
           </div>
           <Row className='text-center' >
           <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -210,20 +209,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{script_supervisor_email}</p>
             </Col>
           </Row>
-          </div> )
-          }
           {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+          </div> )
+          }
           {/* LEGAL move */}
           {legal_name && 
             (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
             <div className='d-flex justify-content-center '>
-            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-             ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>Legal</p> 
+            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Legal</p> 
             </div>
             <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -236,20 +235,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
                 <p className={`${styles.CrewInfop} `}>{legal_email}</p>
               </Col>
             </Row>
-            </div> )
-            }
-          {/* break */}
+            {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+            </div> )
+            }
           {/* Set Medic */}
           {set_medic_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-           ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>Set Medic</p> 
+           ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Set Medic</p> 
           </div>
           <Row className='text-center' >
           <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -262,20 +261,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
               <p className={`${styles.CrewInfop} `}>{set_medic_email}</p>
             </Col>
           </Row>
-          </div> )
-          }
           {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+          </div> )
+          }
           {/* oth production pos 1 */}
           {oth_production_pos_1_job && 
             (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
             <div className='d-flex justify-content-center '>
             <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-            ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_1_job} </p> 
+            ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_1_job} </p> 
             </div>
             <Row className='text-center' >
               <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -288,20 +287,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
                 <p className={`${styles.CrewInfop} `}>{oth_production_pos_1_email}</p>
               </Col>
             </Row>
-            </div> )
-          }
-          {/* break */}
+            {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+            </div> )
+          }
           {/* oth production pos 2 */}
           {oth_production_pos_2_job && 
             (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
             <div className='d-flex justify-content-center '>
             <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-            ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_2_job} </p> 
+            ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_2_job} </p> 
             </div>
             <Row className='text-center' >
               <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -314,20 +313,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
                 <p className={`${styles.CrewInfop} `}>{oth_production_pos_2_email}</p>
               </Col>
             </Row>
-            </div> )
-          }
-          {/* break */}
+            {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+            </div> )
+          }
           {/* oth production pos 3 */}
           {oth_production_pos_3_job && 
             (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
             <div className='d-flex justify-content-center '>
             <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-            ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_3_job} </p> 
+            ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_3_job} </p> 
             </div>
             <Row className='text-center' >
               <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -340,20 +339,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
                 <p className={`${styles.CrewInfop} `}>{oth_production_pos_3_email}</p>
               </Col>
             </Row>
-            </div> )
-          }
-          {/* break */}
+            {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+            </div> )
+          }
           {/* oth production pos 4 */}
           {oth_production_pos_4_job && 
             (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
             <div className='d-flex justify-content-center '>
             <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-            ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_4_job} </p> 
+            ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_4_job} </p> 
             </div>
             <Row className='text-center' >
               <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
@@ -366,20 +365,20 @@ const Production = ({crewInfoOne, setShowPro}) => {
                 <p className={`${styles.CrewInfop} `}>{oth_production_pos_4_email}</p>
               </Col>
             </Row>
-            </div> )
-          }
-          {/* break */}
+            {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+            </div> )
+          }
           {/* oth production pos 5 */}
           {oth_production_pos_5_job && 
             (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
             <div className='d-flex justify-content-center '>
             <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-            ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_5_job} </p> 
+            ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{oth_production_pos_5_job} </p> 
             </div>
             <Row className='text-center' >
               <Col xs={6} md={4} >
@@ -392,14 +391,14 @@ const Production = ({crewInfoOne, setShowPro}) => {
                 <p className={`${styles.CrewInfop} `}>{oth_production_pos_5_email}</p>
               </Col>
             </Row>
-            </div> )
-          }
-          {/* break */}
+            {/* break */}
           <Row>
           <Col xs={12}>
-          <hr className={`mt-1 mb-1 mx-5`}/>
+          <hr className={`mt-3 mb-0 mx-5`}/>
           </Col>
           </Row>
+            </div> )
+          }
       </div>
       {/* Extra Positions Button */}
       <Row className='mt-3'>
