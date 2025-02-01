@@ -27,7 +27,7 @@ const InfoMakeup = ({crewInfoOne, setShowMak }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowMak(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >MAKEUP </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >MAKEUP DEPARTMENT</h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>

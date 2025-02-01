@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import btnStyles from "../../../../styles/Button.module.css";
 import ExtraCrewInfo from '../ExtraCrewInfo';
 
-const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
+const InfoPostVFX = ({crewInfoOne, setShowPos}) => {
   useRedirect();
   const [show, setShow] = useState(false);
   const [showAddit, setShowAddit] = useState(false);
@@ -42,7 +42,7 @@ const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowPos(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >POST PRODUCTION </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >POST PRODUCTION </h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
@@ -631,4 +631,4 @@ const InfoPostAdditional = ({crewInfoOne, setShowPos}) => {
   )
 }
 
-export default InfoPostAdditional
+export default InfoPostVFX

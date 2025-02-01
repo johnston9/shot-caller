@@ -29,7 +29,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA</h5>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA DEPARTMENT</h5>
       </div>
       <div className={`px-md-3 mx-md-5 ${styles.White }`}>
         {/* dop */}

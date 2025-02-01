@@ -29,7 +29,7 @@ const CrewWardrobe = ({handleChange, postData, setShow}) => {
     <div className="pb-3 text-center">
     <div className={`mt-0 text-center ${styles.SubTitle }`}>
     <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-    <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >WARDROBE DEPARTMENTS </h5>
+    <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >WARDROBE DEPARTMENT</h5>
     </div>
     <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
     {/* Costume Designer */} 
@@ -372,7 +372,7 @@ const CrewWardrobe = ({handleChange, postData, setShow}) => {
     <hr className={`mt-3 mb-3`}/>
     </Col>
     </Row>
-    {/* Set Costumer 1 */} 
+    {/* Set Costumer 1 - (Using Wardrobe Assistant 4 keys) */} 
     <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Set Costumer 1</p> 
@@ -440,7 +440,7 @@ const CrewWardrobe = ({handleChange, postData, setShow}) => {
     <hr className={`mt-3 mb-3`}/>
     </Col>
     </Row>
-    {/* Set Costumer 2 */} 
+    {/* Set Costumer 2 - (Using Wardrobe Assistant 5 keys) */} 
     <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Set Costumer 2</p> 

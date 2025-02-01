@@ -24,143 +24,165 @@ const InfoLocations = ({crewInfoOne, setShowLoc}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowLoc(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >LOCATIONS </h3>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >LOCATIONS DEPARTMENT</h5>
       </div>
-      <div className={`py-2 ${styles.White }`}>
-      </div>
-      <div className='px-md-5 pt-2'>
-        {/* location mngr */}
-        {location_mngr_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>
+      {/* Location Manager */}
+      {location_mngr_name && 
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Location Mngr</h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Manager</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{location_mngr_name} </p>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{location_mngr_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>locmngr </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{location_mngr_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{location_mngr_email}</p>
             </Col>
           </Row>
-          </div> )
-         }
-        {/* location security */}
-        {location_security_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Location Security</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{location_security_name}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>locsecur </p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{location_security_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{location_security_email}</p>
-            </Col>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
-         }
-        {/* location ass 1 */}
-        {location_ass_1_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Location Manager/Other - (using Location Assistant 1 keys for this) */}
+      {location_ass_1_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Location Assistant 1</h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Manager/Other</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}> {location_ass_1_name}</p>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{location_ass_1_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}> locast1</p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{location_ass_1_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{location_ass_1_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-        }
-        {/* location ass 2 */}
-        {location_ass_2_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Assistant Location Manager - (using "Location Assistant 2" keys for this) */}
+      {location_ass_2_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Location Assistant 2</h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Location Manager</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{location_ass_2_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}> locast2</p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{location_ass_2_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{location_ass_2_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-        }
-        {/* location ass 3 */}
-        {location_ass_3_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Location Assistant - (using "Location Assistant 3" keys for this) */}
+      {location_ass_3_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Location Assistant 3</h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Assistant</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}> {location_ass_3_name}</p>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{location_ass_3_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}> locast3</p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{location_ass_3_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{location_ass_3_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-        }
-        {/* location ass 4 */}
-        {location_ass_4_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Location Assistant - (using "Location Assistant 4" keys for this) */}
+      {location_ass_4_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Location Assistant 4</h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Assistant</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}> {location_ass_4_name}</p>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{location_ass_4_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}> locast4</p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{location_ass_4_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{location_ass_4_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-        }
+      }
+      {/* Location Security/Other */}
+      {location_security_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Security/Other</p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{location_security_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{location_security_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{location_security_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+      }
       </div>
       {/* Extra Positions Button */}
       <Row className='mt-3'>

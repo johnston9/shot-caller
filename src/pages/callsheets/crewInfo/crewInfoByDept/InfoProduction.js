@@ -32,7 +32,7 @@ const Production = ({crewInfoOne, setShowPro}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION </h5>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >PRODUCTION DEPARTMENT</h5>
       </div>
       <div className={`px-md-5 mx-md-5 ${styles.White }`}>
          {/* DIRECTOR  */} 

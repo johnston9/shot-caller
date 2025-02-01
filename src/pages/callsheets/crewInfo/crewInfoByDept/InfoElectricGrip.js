@@ -31,14 +31,14 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ELECTRIC </h5>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ELECTRIC DEPARTMENT</h5>
       </div>
       <div className={`px-md-5 mx-md-5 ${styles.White }`}>
         {/* gaffer */}
         {gaffer_name && 
-          (<div className={`${styles.CrewInfoRow} pt-3 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Gaffer</p>  
           </div>
           <Row className='text-center' >
@@ -62,9 +62,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          }
          {/* best boy electric */}
          {best_boy_electric_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Best Boy Electric</p> 
           </div>
           <Row className='text-center' >
@@ -88,9 +88,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          }
          {/* 3rd electric */}
          {electric_3_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>3rd Electric</p> 
           </div>
           <Row className='text-center' >
@@ -114,9 +114,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          }
          {/* 4th electric */}
          {electric_4_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Electrician</p>  
           </div>
           <Row className='text-center' >
@@ -155,14 +155,14 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
                 setShow={setShow}  /> 
        ) } 
         <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
-        <h5 className={`mb-0 text-center py-1 ${styles.Bold }`} >GRIP </h5>
+        <h5 className={`mb-0 text-center py-1 ${styles.Bold }`} >GRIP DEPARTMENT</h5>
         </div>
         <div className={`px-md-5 mx-md-5 ${styles.White }`}>
          {/* keygrip */}
         {keygrip_name && 
-          (<div className={`${styles.CrewInfoRow} pt-3 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Keygrip</p> 
           </div>
           <Row className='text-center' >
@@ -186,9 +186,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          }
          {/* best boy grip */}
         {best_boy_grip_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Best Boy Grip</p> 
           </div>
           <Row className='text-center' >
@@ -212,9 +212,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          }
          {/* dolly grip */}
         {dolly_grip_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Dolly Grip</p> 
           </div>
           <Row className='text-center' >
@@ -238,9 +238,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
          }
         {/* G&E Swing 1 */}
         {swing_ge1_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 1</p> 
           </div>
           <Row className='text-center' >
@@ -264,9 +264,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         }
         {/* swing ge 2 */}
         {swing_ge2_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 2</p> 
           </div>
           <Row className='text-center' >
@@ -290,9 +290,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         }
         {/* swing ge 3 */}
         {swing_ge3_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 3</p> 
           </div>
           <Row className='text-center' >
@@ -316,9 +316,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         }
         {/* swing ge 4 */}
         {swing_ge4_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 4</p> 
           </div>
           <Row className='text-center' >
@@ -342,9 +342,9 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         }
         {/* swing ge 5 */}
         {swing_ge5_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <p className={`mb-3 mx-4 py-0 text-center ${styles.Width95 }
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>G&E Swing 5</p> 
        </div>
           <Row className='text-center' >

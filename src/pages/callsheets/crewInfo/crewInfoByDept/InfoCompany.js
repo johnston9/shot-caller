@@ -18,7 +18,7 @@ const InfoCompany = ({crewInfoOne, setShowCom}) => {
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} 
         onClick={() => setShowCom(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 d-none d-md-block ${styles.Bold }`} >
+      <h3 className={`pl-5 mb-0 text-center py-1 d-none d-md-block ${styles.Bold }`} >
         PRODUCTION COMPANY </h3>
       <h3 className={`pl-4 ml-5 mb-0 text-center py-1 
        d-md-none ${styles.Bold }`} >

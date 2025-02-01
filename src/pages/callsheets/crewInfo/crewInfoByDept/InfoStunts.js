@@ -24,7 +24,7 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNTS </h5>
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNTS DEPARTMENT</h5>
       </div>
       <div className='mt-3'>
         {/* Stunt Coordinator */}

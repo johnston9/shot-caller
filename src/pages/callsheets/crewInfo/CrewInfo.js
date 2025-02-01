@@ -16,18 +16,24 @@ import CreateOnce from './CreateOnce';
 import InfoProduction from "./crewInfoByDept/InfoProduction";
 import InfoCamera from './crewInfoByDept/InfoCamera';
 import InfoCompany from './crewInfoByDept/InfoCompany';
-import InfoCasting from './crewInfoByDept/InfoCastingAD';
+import InfoCasting from './crewInfoByDept/InfoADPA';
 import InfoLocations from './crewInfoByDept/InfoLocations';
 import InfoWardrobe from './crewInfoByDept/InfoWardrobe';
 import InfoScript from "./crewInfoByDept/InfoScriptCater";
 import InfoElectric from './crewInfoByDept/InfoElectricGrip';
 import InfoMakeup from './crewInfoByDept/InfoMakeup';
 import InfoArt from './crewInfoByDept/InfoArt';
-import InfoSound from './crewInfoByDept/InfoSoundTransport';
+import InfoSound from './crewInfoByDept/InfoSound';
 import InfoStunts from './crewInfoByDept/InfoStunts';
-import InfoPostAdditional from './crewInfoByDept/InfoPostAdditional';
 import TopBox from '../../../components/TopBox';
 import Important from '../info/Important';
+import InfoADPA from './crewInfoByDept/InfoADPA';
+import InfoCater from './crewInfoByDept/InfoCater';
+import InfoTransport from './crewInfoByDept/InfoTransport';
+import InfoPostVFX from './crewInfoByDept/InfoPostVFX';
+import InfoWrangling from './crewInfoByDept/InfoWrangling';
+import InfoAdditional from './crewInfoByDept/InfoAdditional';
+import InfoTVStudio from './crewInfoByDept/InfoTVStudio';
 
 const CrewInfo = () => {
   useRedirect();
@@ -48,6 +54,12 @@ const CrewInfo = () => {
   const [showStu, setShowStu] = useState(false);
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
+  const [showCat, setShowCat] = useState(false);
+  const [showAD, setShowAD] = useState(false); 
+  const [showTra, setShowTra] = useState(false); 
+  const [showAdd, setShowAdd] = useState(false);
+  const [showTv, setShowTv] = useState(false);
+  const [showWra, setShowWra] = useState(false);
   const { id } = crewInfoOne|| {};
 
   return (
@@ -91,10 +103,10 @@ const CrewInfo = () => {
       </p>
       </Col>
       </Row>
-      {/* departments */}
+      {/* department buttons */}
       <div className={`mt-3 pt-2 ${styles.White }`}> 
         <Row className={`${styles.ButtonLine} mt-0`}>
-          <Col xs={{span: 4, offset: 4}} md={{span: 4, offset: 4}} className='text-center'>
+          <Col md={{span: 4, offset: 4}} className='text-center'>
               <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowCom(showCom => !showCom)} > Company
@@ -102,81 +114,120 @@ const CrewInfo = () => {
           </Col>
         </Row>  
         <Row className={`${styles.ButtonLine} mt-0`}>
-          <Col xs={4} md={2} className='text-center'>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowPro(showPro => !showPro)} > Production
               </p>
           </Col>
-          <Col xs={4} md={2} className='text-center'>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                   <p
                     className={`py-0 mb-0 ${styles.Button}`}
                     onClick={() => setShowCam(showCam => !showCam)} > Camera
                   </p>
               </Col>
-          <Col xs={4} className='text-center' md={2}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
-                onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
+                onClick={() => setShowCas(showCas => !showCas)} > AD/PA
             </p>
           </Col>
-          <Col xs={4} className='text-center' md={2}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
           </p>
           </Col>
-          <Col xs={4} className='text-center' md={2}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
             </p>
           </Col>
-          <Col xs={4} className='mx-0 px-0 text-center' md={2}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
-                onClick={() => setShowScr(showScr => !showScr)} > Script/Catering
+                onClick={() => setShowScr(showScr => !showScr)} > Script
             </p>
           </Col>
         </Row>  
-        <Row className={`${styles.ButtonLine} text-center mt-0`}>
-          <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+        <Row className={`${styles.ButtonLine} text-center mt-1`}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
               </p>
           </Col>
-          <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                   <p
                     className={`py-0 mb-0 ${styles.Button}`}
                     onClick={() => setShowMak(showMak => !showMak)} > Makeup
                   </p>
-              </Col>
-          <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
-                onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
+                onClick={() => setShowSou(showSou => !showSou)} > Sound
             </p>
           </Col>
-          <Col xs={4} className='py-0' md={2}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
-              onClick={() => setShowStu(showStu => !showStu)} >Stunts
+              onClick={() => setShowStu(showStu => !showStu)} >Stunts/SFX
           </p>
           </Col>
-          <Col xs={4} className='text-center' md={2}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowArt(showArt => !showArt)} > Art
             </p>
           </Col>
-          <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
-                onClick={() => setShowPos(showPos => !showPos)} > Post/Additional
+                onClick={() => setShowPos(showPos => !showPos)} > Post
             </p>
           </Col>
-        </Row>  
+        </Row> 
+        {/* new row - Catering - Casting - Transport - Wrangling - TV Studio -Additional */}
+        <Row className={`${styles.ButtonLine} mt-1`}>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowCat(showCat => !showCat)} > Catering/Craft
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowCas(showCas => !showCas)} > Casting
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowTra(showTra => !showTra)} > Transport
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowWra(showWra => !showWra)} > Construction/Wrangling
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowTv(showTv => !showTv)} > TV Studio
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowAdd(showAdd => !showAdd)} >Additional
+            </p>
+        </Col>
+        </Row> 
         <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         <div className={`py-1 ${styles.White }`}>
       </div>
@@ -199,6 +250,12 @@ const CrewInfo = () => {
               ""
             ) : (
               <InfoCasting crewInfoOne={crewInfoOne} setShowCas={setShowCas} /> 
+              ) }
+      {/* Info AD/PA */}
+      {!showAD ? (
+              ""
+            ) : (
+              <InfoADPA crewInfoOne={crewInfoOne} setShowAD={setShowAD} /> 
               ) } 
       {/* Info Locations */}
       {!showLoc ? (
@@ -211,7 +268,13 @@ const CrewInfo = () => {
               ""
             ) : (
               <InfoScript crewInfoOne={crewInfoOne} setShowScr={setShowScr} /> 
-              ) } 
+              )}
+      {/* Info Catering  */}
+      {!showCat ? (
+              ""
+            ) : (
+              <InfoCater crewInfoOne={crewInfoOne} setShowCat={setShowCat} /> 
+              ) }  
       {/* Info Electric */}
       {!showEle ? (
               ""
@@ -230,11 +293,29 @@ const CrewInfo = () => {
             ) : (
               <InfoSound crewInfoOne={crewInfoOne} setShowSou={setShowSou} /> 
               ) } 
+      {/* Info Transport */}
+      {!showTra ? (
+              ""
+            ) : (
+              <InfoTransport crewInfoOne={crewInfoOne} setShowTra={setShowTra} /> 
+              ) } 
       {/* Info Stunts */}
       {!showStu ? (
               ""
             ) : (
               <InfoStunts crewInfoOne={crewInfoOne} setShowStu={setShowStu} /> 
+              ) }
+      {/* Info Post */}
+      {!showPos ? (
+              ""
+            ) : (
+              <InfoPostVFX crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
+              ) } 
+      {/* Info Wrangling */}
+      {!showWra ? (
+              ""
+            ) : (
+              <InfoWrangling crewInfoOne={crewInfoOne} setShowWra={setShowWra} /> 
               ) } 
       {/* Info Art */}
       {!showArt ? (
@@ -248,17 +329,23 @@ const CrewInfo = () => {
             ) : (
               <InfoCamera crewInfoOne={crewInfoOne} setShowCam={setShowCam} /> 
               ) } 
-      {/* Info Post */}
-      {!showPos ? (
-              ""
-            ) : (
-              <InfoPostAdditional crewInfoOne={crewInfoOne} setShowPos={setShowPos} /> 
-              ) } 
       {/* Info Wardrobe  */}
       {!showWar ? (
               ""
             ) : (
               <InfoWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} /> 
+              ) }
+      {/* Info TV  */}
+      {!showTv ? (
+              ""
+            ) : (
+              <InfoTVStudio crewInfoOne={crewInfoOne} setShowTv={setShowTv} /> 
+              ) } 
+      {/* Info Additional  */}
+      {!showAdd ? (
+              ""
+            ) : (
+              <InfoAdditional crewInfoOne={crewInfoOne} setShowAdd={setShowAdd} /> 
               ) } 
       </div>
     </div>

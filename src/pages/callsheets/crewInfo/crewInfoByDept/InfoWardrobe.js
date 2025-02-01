@@ -15,6 +15,9 @@ const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
 
   const {costume_designer_name, costume_designer_email, costume_designer_phone,
     ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
+    casting_director_name, casting_director_email, casting_director_phone,
+    pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
+    pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
     wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
     wardrobe_assistant_2_name, wardrobe_assistant_2_email, wardrobe_assistant_2_phone,
     wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
@@ -25,169 +28,269 @@ const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowWar(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >WARDROBE </h3>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >WARDROBE DEPARTMENT</h5>
       </div>
-      <div className={`py-2 ${styles.White }`}>
-      </div>
-      <div className='px-md-5 pt-2'>
-        {/* Costume Designer */}
-        {costume_designer_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>
+      {/* Costume Designer */}
+      {costume_designer_name && 
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Costume Designer</h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Costume Designer</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{costume_designer_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>cosdesign </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{costume_designer_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{costume_designer_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-         }
-         {/* ass costume designer */}
-         {ass_costume_designer_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Assistant Costume Designer */}
+      {ass_costume_designer_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Assistant Costume Design </h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Costume Designer</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}></p>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{ass_costume_designer_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>cosdesast</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{ass_costume_designer_email}</p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{ass_costume_designer_phone}</p>
             </Col>
-          </Row>
-          </div> )
-         }
-         {/* wardrobe assistant 1 */}
-         {wardrobe_assistant_1_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } ${styles.SubTitle2 }`} >Wardrobe Assistant 1 </h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_1_name}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>wardrobe1 </p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_1_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_1_email}</p>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{ass_costume_designer_email}</p>
             </Col>
           </Row>
-          </div> )
-         }
-         {/* wardrobe assistant 2 */}
-         {wardrobe_assistant_2_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-           ${styles.SubTitle2 }`} >Wardrobe Assistant 2 </h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_2_name}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>wardrobe2 </p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_2_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_2_email}</p>
-            </Col>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
           </Row>
           </div> )
-         }
-         {/* wardrobe assistant 3 */}
-         {wardrobe_assistant_3_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Wardrobe Supervisor - (Using Casting Director keys) */}
+      {casting_director_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Wardrobe Assistant 3 </h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Wardrobe Supervisor</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_3_name}</p>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{casting_director_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>wardrobe3 </p>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{casting_director_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_3_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_3_email}</p>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{casting_director_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-         }
-         {/* wardrobe assistant 4 */}
-         {wardrobe_assistant_4_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Key Costumer - (Using Production Assistant 4 keys) */}
+      {pro_assistant_4_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Wardrobe Assistant 4 </h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Key Costumer</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{pro_assistant_4_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{pro_assistant_4_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{pro_assistant_4_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+      }
+      {/* Truck Costumer - (Using Production Assistant 5 keys) */}
+      {pro_assistant_5_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Truck Costumer</p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{pro_assistant_5_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{pro_assistant_5_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{pro_assistant_5_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+      }
+      {/* Set Costumer 1 - (Using Wardrobe Assistant 4 keys) */}
+      {wardrobe_assistant_4_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Set Costumer 1</p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_4_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>wardrobe4 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_4_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_4_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-         }
-         {/* wardrobe assistant 5 */}
-         {wardrobe_assistant_5_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
+      }
+      {/* Set Costumer 2 - (Using Wardrobe Assistant 5 keys) */}
+      {wardrobe_assistant_5_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-            ${styles.SubTitle2 }`} >Wardrobe Assistant 5 </h5> 
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Set Costumer 2</p>  
           </div>
           <Row className='text-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
               <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_5_name}</p>
             </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>wardrobe5 </p>
-            </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
             <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_5_phone}</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_5_email}</p>
             </Col>
           </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
           </div> )
-         }
+      }
+      {/* Wardrobe Assistant 1 */}
+      {wardrobe_assistant_1_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Wardrobe Assistant 1</p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_1_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_1_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_1_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+      }
+      {/* Wardrobe Assistant 2 */}
+      {wardrobe_assistant_2_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Wardrobe Assistant 2</p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_2_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_2_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_2_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+      }
+      {/* Wardrobe Assistant 3 */}
+      {wardrobe_assistant_3_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Wardrobe Assistant 3</p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{wardrobe_assistant_3_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_3_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{wardrobe_assistant_3_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+      }
       </div>
       {/* Extra Positions Button */}
       <Row className='mt-3'>

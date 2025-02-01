@@ -35,8 +35,8 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`}
        onClick={() => setShowSou(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >
-       SOUND </h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+       SOUND DEPARTMENT</h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
@@ -158,7 +158,7 @@ const InfoSound = ({crewInfoOne, setShowSou}) => {
         </div>
         <div className={`mt-0 text-center ${styles.SubTitle }`}>
         <h3 className={`mb-0 text-center py-1 ${styles.Bold }`} >
-        TRANSPORT</h3>
+        TRANSPORT DEPARTMENT</h3>
         </div>
         <div className={`py-2 ${styles.White }`}>
         </div>

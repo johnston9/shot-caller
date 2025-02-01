@@ -9,7 +9,7 @@ import styles from "../../../../styles/Callsheets.module.css";
 import btnStyles from "../../../../styles/Button.module.css";
 import ExtraCrewInfo from '../ExtraCrewInfo';
 
-const InfoCasting = ({crewInfoOne, setShowCas }) => {
+const InfoADPA = ({crewInfoOne, setShowCas }) => {
   useRedirect();
   const [show, setShow] = useState(false);
   const [showAd, setShowAd] = useState(false);
@@ -31,7 +31,7 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
-      <h3 className={`pl-4 ml-md-5 mb-0 text-center py-1 ${styles.Bold }`} >CASTING</h3>
+      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CASTING DEPARTMENT</h3>
       </div>
       <div className={`py-2 ${styles.White }`}>
       </div>
@@ -344,4 +344,4 @@ const InfoCasting = ({crewInfoOne, setShowCas }) => {
   )
 }
 
-export default InfoCasting
+export default InfoADPA
