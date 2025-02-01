@@ -19,7 +19,7 @@ import InfoCompany from './crewInfoByDept/InfoCompany';
 import InfoCasting from './crewInfoByDept/InfoADPA';
 import InfoLocations from './crewInfoByDept/InfoLocations';
 import InfoWardrobe from './crewInfoByDept/InfoWardrobe';
-import InfoScript from "./crewInfoByDept/InfoScriptCater";
+import InfoScript from "./crewInfoByDept/InfoScript";
 import InfoElectric from './crewInfoByDept/InfoElectricGrip';
 import InfoMakeup from './crewInfoByDept/InfoMakeup';
 import InfoArt from './crewInfoByDept/InfoArt';
