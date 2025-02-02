@@ -27,7 +27,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
     armorer_name, armorer_email, armorer_phone,  } = crewInfoOne || {};
 
   return (
-    <div>
+    <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-1 pt-md-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
       <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ART DEPARTMENT </h5>

@@ -27,218 +27,249 @@ const InfoMakeup = ({crewInfoOne, setShowMak }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-1 pt-md-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowMak(false) } >Close</span> 
-      <h3 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >MAKEUP DEPARTMENT</h3>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+        MAKEUP DEPARTMENT</h5>
       </div>
-      <div className={`py-2 ${styles.White }`}>
+      <div className={`px-md-5 mx-md-5 ${styles.White }`}>
+      {/* Key Hair/Makeup */}
+      {key_hairmakeup_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Key Hair/Makeup</p> 
       </div>
-      <div className='px-md-5 pt-2'>
-        {/* key hairmakeup */}
-        {key_hairmakeup_name && 
-          (<div className={`${styles.CrewInfoRow} pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Key Hair/Makeup</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{key_hairmakeup_name}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>keymake </p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{key_hairmakeup_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{key_hairmakeup_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* key hairstylist */}
-         {key_hairstylist_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Key Hairstylist</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{key_hairstylist_name}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>keyhair </p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{key_hairstylist_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{key_hairstylist_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* sfx makeup */}
-         {sfx_makeup_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >SFX Makeup</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{sfx_makeup_name}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>fxmake </p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{sfx_makeup_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{sfx_makeup_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* sfx makeup ass*/}
-         {sfx_makeup_assistant_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >SFX Makeup Assistant </h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{sfx_makeup_assistant_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>fxmakast</p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{sfx_makeup_assistant_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{sfx_makeup_assistant_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* makeup artist 1 */}
-         {makeup_artist_1_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Makeup Artist 1</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{makeup_artist_1_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>makeup1</p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{makeup_artist_1_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{makeup_artist_1_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* makeup artist 2 */}
-         {makeup_artist_2_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Makeup Artist 2</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{makeup_artist_2_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>makeup2</p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{makeup_artist_2_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{makeup_artist_2_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* makeup artist 3 */}
-         {makeup_artist_3_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Makeup Artist 3</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{makeup_artist_3_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>makeup3</p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{makeup_artist_3_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{makeup_artist_3_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* makeup artist 4 */}
-         {makeup_artist_4_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Makeup Artist 4</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{makeup_artist_4_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>makeup4</p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{makeup_artist_4_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{makeup_artist_4_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
-         {/* makeup artist 5 */}
-         {makeup_artist_5_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-3`}>
-          <div className='d-flex justify-content-center '>
-          <h5 className={`mb-3 mx-5 py-1 text-center ${styles.Width } 
-          ${styles.SubTitle2 }`} >Makeup Artist 5</h5> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>{makeup_artist_5_name} </p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p style={{fontStyle: 'italic'}} className={`${styles.CrewInfop} `}>makeup5</p>
-            </Col>
-            <Col xs={6} md={3} >
-            <p className={`${styles.CrewInfop} `}>{makeup_artist_5_phone}</p>
-            </Col>
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfop} `}>{makeup_artist_5_email}</p>
-            </Col>
-          </Row>
-          </div> )
-         }
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{key_hairmakeup_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{key_hairmakeup_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{key_hairmakeup_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* Key Hairstylist */}
+      {key_hairstylist_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Key Hairstylist</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{key_hairstylist_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{key_hairstylist_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{key_hairstylist_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* SFX Makeup */}
+      {sfx_makeup_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>SFX Makeup</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{sfx_makeup_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{sfx_makeup_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{sfx_makeup_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* SFX Makeup Assistant/Makeup Other */}
+      {sfx_makeup_assistant_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>SFX Makeup Assistant/Makeup Other</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{sfx_makeup_assistant_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{sfx_makeup_assistant_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{sfx_makeup_assistant_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* Hair/Makeup Artist 1 */}
+      {makeup_artist_1_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>
+        Hair/Makeup Artist 1</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{makeup_artist_1_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{makeup_artist_1_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{makeup_artist_1_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* Hair/Makeup Artist 2 */}
+      {makeup_artist_2_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>
+        Hair/Makeup Artist 2</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{makeup_artist_2_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{makeup_artist_2_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{makeup_artist_2_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* Hair/Makeup Artist 3 */}
+      {makeup_artist_3_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>
+        Hair/Makeup Artist 3</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{makeup_artist_3_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{makeup_artist_3_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{makeup_artist_3_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* Hair/Makeup Artist 4 */}
+      {makeup_artist_4_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>
+        Hair/Makeup Artist 4</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{makeup_artist_4_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{makeup_artist_4_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{makeup_artist_4_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* Hair/Makeup Artist 5 */}
+      {makeup_artist_5_name && 
+      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>
+        Hair/Makeup Artist 5</p> 
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+          <p className={`${styles.CrewInfoP} `}>{makeup_artist_5_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
+        <p className={`${styles.CrewInfop} `}>{makeup_artist_5_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
+          <p className={`${styles.CrewInfop} `}>{makeup_artist_5_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
       </div>
       {/* Extra Positions Button */}
       <Row className='mt-3'>

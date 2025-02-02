@@ -25,7 +25,7 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
     <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >LOCATION DEPARTMENT </h5>
+      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >LOCATIONS DEPARTMENT </h5>
       </div>
       <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
       {/* Location Manager */}

@@ -16,24 +16,24 @@ import CreateOnce from './CreateOnce';
 import InfoProduction from "./crewInfoByDept/InfoProduction";
 import InfoCamera from './crewInfoByDept/InfoCamera';
 import InfoCompany from './crewInfoByDept/InfoCompany';
-import InfoCasting from './crewInfoByDept/InfoADPA';
+import InfoCasting from './crewInfoByDept/InfoCasting';
 import InfoLocations from './crewInfoByDept/InfoLocations';
 import InfoWardrobe from './crewInfoByDept/InfoWardrobe';
 import InfoScript from "./crewInfoByDept/InfoScript";
 import InfoElectric from './crewInfoByDept/InfoElectricGrip';
-import InfoMakeup from './crewInfoByDept/InfoMakeup';
 import InfoArt from './crewInfoByDept/InfoArt';
 import InfoSound from './crewInfoByDept/InfoSound';
 import InfoStunts from './crewInfoByDept/InfoStunts';
 import TopBox from '../../../components/TopBox';
 import Important from '../info/Important';
-import InfoADPA from './crewInfoByDept/InfoADPA';
 import InfoCater from './crewInfoByDept/InfoCater';
 import InfoTransport from './crewInfoByDept/InfoTransport';
 import InfoPostVFX from './crewInfoByDept/InfoPostVFX';
 import InfoWrangling from './crewInfoByDept/InfoWrangling';
 import InfoAdditional from './crewInfoByDept/InfoAdditional';
 import InfoTVStudio from './crewInfoByDept/InfoTVStudio';
+import InfoADPA from './crewInfoByDept/InfoADPA';
+import InfoMakeup from './crewInfoByDept/InfoMakeup';
 
 const CrewInfo = () => {
   useRedirect();
@@ -129,7 +129,7 @@ const CrewInfo = () => {
           <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
-                onClick={() => setShowCas(showCas => !showCas)} > AD/PA
+                onClick={() => setShowAD(showAD => !showAD)} > AD/PA
             </p>
           </Col>
           <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
