@@ -11,13 +11,14 @@ const Important = () => {
         <Row className="mb-3">
       <Col className="d-none d-md-block" md={1}></Col>     
       <Col xs={12} md={10} >
-      <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+      {/* ${styles.SubTitle6 } */}
+      <div className={`text-center px-3 pt-1 ${styles.SubTitle6}`}>
       <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
       <p className={`text-center px-3 pt-1 ${styles.Red }`}>
         All Crew Members who you need to access the app and who are 
         to appear on the Callsheet must be registered.
         </p>     
-        <p className={`text-center px-3 py-2 ${styles.SubTitle2 }`}>
+        <p className={`text-center px-3 py-2`}>
           Register an account for each crew member 
           using their position's Username.
           Send the Shot Caller link to them with the Username 

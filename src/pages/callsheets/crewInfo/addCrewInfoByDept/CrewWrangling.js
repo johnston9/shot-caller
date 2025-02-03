@@ -356,7 +356,7 @@ const CrewWrangling = ({handleChange, postData, setShow}) => {
       </Row>
     </div>
     <h5 className={`pl-5 mt-5 mb-0 text-center py-1  ${styles.SubTitle }`} >WRANGLING DEPARTMENT </h5>
-    {/* Head Wrangler */} 
+    {/* Head Wrangler (Using legal keys) */} 
     <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Head Wrangler</p> 

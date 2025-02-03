@@ -58,7 +58,7 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
     }
     {/* Floor Manager - (Using Additional Position 17 keys) */}
     {add_pos_17_name && 
-          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Floor Manager</p>  
@@ -84,7 +84,7 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
     }
     {/* A1 - (Using Additional Position 18 keys) */}
     {add_pos_18_name && 
-          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>A1/Audio</p>  
@@ -110,7 +110,7 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
     }
     {/* Assistant Floor Manager - (Using Additional Position 19 keys) */}
     {add_pos_19_name && 
-          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Floor Manager</p>  
@@ -136,7 +136,7 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
     }
     {/* Stage Manager - (Using Additional Position 20 keys) */}
     {add_pos_20_name && 
-          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Stage Manager</p>  
@@ -162,7 +162,7 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
     }
     {/* Additional Position TV Studio 1 - (Using Additional Position 15 keys) */}
     {add_pos_15_job && 
-          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{add_pos_15_job}</p>  

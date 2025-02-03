@@ -40,6 +40,12 @@ p {
   color: #000
 }
 
+.SubTitle6 {
+  background-color: #d6fcff;;
+  font-weight: 700;
+  color: #000
+}
+
 .BoldScene {
   color: rgba(129, 102, 21, 0.99);
   font-weight: 600;
