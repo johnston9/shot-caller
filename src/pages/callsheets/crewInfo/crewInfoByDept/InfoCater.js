@@ -11,15 +11,10 @@
    
    const InfoCater = ({crewInfoOne, setShowCat }) => {
      useRedirect();
-     const [show, setShow] = useState(false);
      const [showCater, setShowCater] = useState(false);
      const [showCraft, setShowCraft] = useState(false);
    
-     const {writer_name, writer_email, writer_phone,
-       catering_co_1_name, catering_co_1_email, catering_co_1_phone,
-       catering_co_2_name, catering_co_2_email, catering_co_2_phone,
-       catering_co_3_name, catering_co_3_email, catering_co_3_phone,
-       craft_service_name, craft_service_email, craft_service_phone,
+     const {craft_service_name, craft_service_email, craft_service_phone,
        crafty_ass_name, crafty_ass_email, crafty_ass_phone,
      } = crewInfoOne || {};
    
@@ -48,7 +43,7 @@
                  ) : (
                    <ExtraCrewInfo
                    dept="catering"
-                   setShow={setShowCat}  /> 
+                   setShow={setShowCater}  /> 
           ) } 
          {/* CRAFT SERVICES */}
          <div className={`mt-4 text-center ${styles.SubTitle }`}>

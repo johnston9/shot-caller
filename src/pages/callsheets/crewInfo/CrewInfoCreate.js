@@ -1277,7 +1277,7 @@ const CrewInfoCreate = () => {
         <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
-              onClick={() => setShowPos(showPos => !showPos)} > Post
+              onClick={() => setShowPos(showPos => !showPos)} > Post/VFX
           </p>
         </Col>
       </Row>  

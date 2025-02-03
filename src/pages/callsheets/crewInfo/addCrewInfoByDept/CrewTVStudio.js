@@ -207,7 +207,7 @@ const CrewTVStudio = ({handleChange, postData, setShow}) => {
     {/* A1 - (Using Additional Position 18 keys) */} 
     <div>
         <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-        style={{ textTransform: 'uppercase'}}>A1</p> 
+        style={{ textTransform: 'uppercase'}}>A1/Audio</p> 
         <div>
         <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
             CALLNAME: addcrew18</span> 
@@ -372,7 +372,7 @@ const CrewTVStudio = ({handleChange, postData, setShow}) => {
             </Alert>
           ))}
           </Col>
-      </Row>
+        </Row>
     </div>
     {/* break */}
     <Row>

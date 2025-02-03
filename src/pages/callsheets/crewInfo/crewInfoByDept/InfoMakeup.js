@@ -276,7 +276,7 @@ const InfoMakeup = ({crewInfoOne, setShowMak }) => {
         <Col className='text-center'>
         <Button onClick={() => setShow(show => !show)}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Art Dept Positions </Button>
+          Extra Makeup Dept Positions </Button>
         </Col>
       </Row>
       {!show ? (
