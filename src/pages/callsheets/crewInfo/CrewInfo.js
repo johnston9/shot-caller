@@ -34,6 +34,7 @@ import InfoAdditional from './crewInfoByDept/InfoAdditional';
 import InfoTVStudio from './crewInfoByDept/InfoTVStudio';
 import InfoADPA from './crewInfoByDept/InfoADPA';
 import InfoMakeup from './crewInfoByDept/InfoMakeup';
+import ExtraCrew from '../info/ExtraCrew';
 
 const CrewInfo = () => {
   useRedirect();
@@ -41,6 +42,7 @@ const CrewInfo = () => {
   const crewInfoOne = useCrewInfoContext();
   console.log(crewInfoOne);
   const [showImp, setShowImp] = useState(false);
+  const [showEx, setShowEx] = useState(false);
   const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);
   const [showCam, setShowCam] = useState(false);
@@ -65,46 +67,66 @@ const CrewInfo = () => {
   return (
     <div className='mt-3 pb-5'>
       <TopBox work="Crew Info" />
+      <Row>
+      <Col>
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}
         >
             Back
-        </Button>   
-        <Button
+      </Button> 
+      <Button
       className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
     </Button>
+      </Col>
+      </Row>
+      <Row>
+      <Col className='text-center'>
+      <Button
+      className={`py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+      onClick={() => setShowEx(showEx => !showEx)} >NON-CALLSHEET/EXTRA CREW
+    </Button>
+      </Col>
+      </Row>
     <h5 className={`text-center py-1 my-3 ${styles.SubTitle }`}>CREW INFO</h5>
       {!showImp ? (
           ""
               ) : (
                 <Important  /> 
       ) }  
+      {!showEx ? (
+          ""
+              ) : (
+                <ExtraCrew  /> 
+      ) }  
+      <p className='text-center' style={{fontStyle: 'italic' }}>
+      Add Callsheet Crew here.
+      </p>
       {/* create/edit buttons */}
       {id ? (
         <div>
-        <Row className='mt-3'>
+        <Row className='mt-2'>
         <Col className='text-center'>
         <Button onClick={() => history.push("crewinfo/edit/1")}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Add / Edit Crew Members Info</Button>
+          Add Callsheet Crew</Button>
         </Col>
         </Row>
         </div>
       ) : (
         <CreateOnce />
       )}
-      <Row className='text-center mt-3'>
+      <Row className='text-center mt-4'>
       <Col>
       <p style={{fontStyle: 'italic' }} >
-      Select Department below to view currently added crew members. Click tab above to 
-      add/edit new members.
+      View Callsheet Crew here and
+        Add/View Non-Callsheet/Extra Crew in each Department.
       </p>
       </Col>
       </Row>
       {/* department buttons */}
-      <div className={`mt-3 pt-2 ${styles.White }`}> 
+      <div className={`mt-2 pt-2 ${styles.White }`}> 
         <Row className={`${styles.ButtonLine} mt-0`}>
           <Col md={{span: 4, offset: 4}} className='text-center'>
               <p

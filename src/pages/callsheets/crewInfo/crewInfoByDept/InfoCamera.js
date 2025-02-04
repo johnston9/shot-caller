@@ -344,6 +344,13 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
           </div> )
         }
       </div>
+      <Row>
+      <Col className='text-center'>
+      <p style={{fontStyle: 'italic' }} >
+      Add/View Non-CallSheet/Extra Crew here.
+      </p>
+      </Col>
+      </Row>
       {/* Extra Positions Button */}
       <Row className='mt-3'>
         <Col className='text-center'>
