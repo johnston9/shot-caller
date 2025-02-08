@@ -2,6 +2,10 @@
     min-height: 100px;
   }
 
+.SmallCrew {
+  font-size: .75rem;
+}
+
   .Width {
     width: 70%;
   }
@@ -27,11 +31,6 @@ p {
   font-weight: 700;
 }
 
-/* .SubTitle2 {
-  background-color: #d6fcff;;
-  font-weight: 700;
-} */
-
 .SubTitle2 {
   background-color: #d6fcff;;
   font-weight: 700;
@@ -54,20 +53,9 @@ p {
   font-weight: 600;
 }
 
-/* .SubTitle2 {
-  color: rgba(129, 102, 21, 0.99);
-  font-weight: 600;
-} */
-
-/* .SubTitle2 {
-  background-color: #000;;
-  font-weight: 700;
-  color: #fff;
-}
-
 .SubTitle2 p {
   color: #fff;
-} */
+} 
 
 .SubTitle3 {
   background-color: #e4f2f4;

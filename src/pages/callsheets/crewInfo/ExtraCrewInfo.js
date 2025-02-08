@@ -103,34 +103,60 @@ const ExtraCrewInfo = (props) => {
       const buttons = (
         <div className="mb-5 pb-3 text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
+            className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
             onClick={clear}
           >
             Cancel
           </Button>
-          <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-            Add Cast
+          <Button className={`px-3 px-md-5 ml-3 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+            Submit
           </Button>
         </div>
       );
 
   return (
-    <div className={`my-5 `}>
-    <h4 className={`mt-3 pl-5 py-0 text-center ${styles.SubTitle }`} 
+    <div className={`mx-md-5 ${styles.White }`}>
+    <div className="d-none d-md-block mt-4">
+    <Row>
+    <Col>
+    <h5 className={`pl-5 py-0 text-center ${styles.SubTitle }`} 
         style={{ textTransform: 'uppercase' }}>
-            EXTRA {dept} POSITIONS <span className={`pt-1 float-right ${styles.Close }`} 
-        onClick={() => setShow(false) } >Close</span>  </h4>
-      <h5 className={`text-center px-3 py-3 ${styles.Red }`}>
-      Important: These Crew Members will not be on the Callsheet</h5>
+            NON-CALLSHEET/EXTRA {dept} POSITIONS 
+    </h5>
+    </Col>
+    </Row>
+    <Row>
+    <Col>
+            <span className={`pt-1 float-right ${styles.Close }`} 
+        onClick={() => setShow(false) } >Close</span>
+    </Col>
+    </Row>
+    </div>
+    <div className="d-block d-md-none">
+    <Row>
+    <Col xs={12} >
+    <h5 className={`pl-5 py-0 text-center ${styles.SubTitle }`} 
+        style={{ textTransform: 'uppercase' }}>
+            EXTRA {dept} 
+              </h5>
+    </Col>
+    </Row>
+    <Row>
+    <Col>
+    <span className={`pt-1 float-right ${styles.Close }`} 
+        onClick={() => setShow(false) } >Close</span>
+    </Col>
+    </Row>
+    </div>
       {/* Form */}
-      <div className={`mb-3 ${styles.Back3 } mx-3`}>
+      <div className={`mb-3 ${styles.White } mx-3`}>
       <p className={`my-3 text-center ${styles.SubTitle }`}>ADD NEW POSITION</p>
       <Form className="text-center" onSubmit={handleSubmit}>
       {/* position  */}
       <Row className="mx-0 my-3">
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={6} md={3} >
-              <Form.Group controlId="position" className={`${styles.Width2} `}  >
-                  <Form.Label className={`${styles.Bold}`} >Position</Form.Label>
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
+              <Form.Group controlId="position" className={`${styles.Width95} `}  >
+                  <Form.Label className={`${styles.BoldScene}`} >Position</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -145,9 +171,9 @@ const ExtraCrewInfo = (props) => {
                 </Alert>
               ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={6} md={3} >
-          <Form.Group controlId="name" className={`${styles.Width2} `}  >
-                <Form.Label className={`${styles.Bold}`} >Name</Form.Label>
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
+          <Form.Group controlId="name" className={`${styles.Width95} `}  >
+                <Form.Label className={`${styles.BoldScene}`} >Name</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -162,9 +188,9 @@ const ExtraCrewInfo = (props) => {
               </Alert>
             ))}
             </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={6} md={3}>
-          <Form.Group controlId="email" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3}>
+          <Form.Group controlId="email" className={`${styles.Width95} `} >
+          <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
               type="text"
@@ -179,9 +205,9 @@ const ExtraCrewInfo = (props) => {
             </Alert>
           ))}
           </Col>
-          <Col className=" d-flex justify-content-center mx-0 px-1" xs={6} md={3}>
+          <Col className=" d-flex justify-content-center mx-0 px-1" xs={12} sm={6} md={3}>
           <Form.Group controlId="phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
               type="text"

@@ -11,30 +11,35 @@ const Important = () => {
         <Row className="mb-3">
       <Col className="d-none d-md-block" md={1}></Col>     
       <Col xs={12} md={10} >
-      {/* ${styles.SubTitle6 } */}
+      {/* ${styles.SubTitle6 } style={{fontStyle: 'italic'}} */}
       <div className={`px-3 py-1 ${styles.SubTitle6}`}>
       <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
-      <p className={`px-3 pt-1 ${styles.Red1 }`}>
+      <p className={`px-3 pt-1`}>
         1. All Crew Members needed to access the app must be registered
-         by clicking the Crew Management tab on the Home page.
-      </p>    
-      <p className={`px-3 pt-2 ${styles.Red1 }`}>
-        2. All Crew Members needed to be on the Callsheet, who will actually be the Main 
-        Production Crew, must:</p>
-      <p className={`px-5 pt-1 ${styles.Red1 }`}>
-      a. Have their Name and Email inputted in their Department's Crew Position
-      by clicking the "Add Callsheet Crew" tab below.
+         in the Admin section on the Home page.
+      </p>
+      <p className={`px-3 pt-2`}>
+        2. The Crew positions have been divided into Callsheet/Main and Non-Callsheet/Extra.
+      </p>
+      <p className="px-3 pt-2" >
+      3. The Callsheet/Main section contains most primary Production Crew positions 
+      and these will appear on the Callsheet.
       </p> 
-      <p className={`px-5 pt-1 ${styles.Red1 }`}>
-      b. Have their "Calltime", which displays in each Position, inputted in the Calltime 
-      field of Crew Management's Registration form in Step 1 above.
+      <p className="px-3 pt-2" >
+      4.  They can be added by clicking the "Add Callsheet/Main Crew" button below
+      and opening their department.
+      </p> 
+      <p className="px-3 pt-2" >
+      5. Their Name and Email <span className={`${styles.Red}`}>MUST</span> be inputted in their Department's Crew Position.
       </p>     
-      <p className="px-3 pt-3" style={{fontStyle: 'italic'}}>
-        For the most part most of the Main Production Crew will be contained in the Departments 
-        but because some Main positions may be Producer or Pre/Post positions and not needed on the Callsheet
-      the Crew have been divided this way, Callsheet/Main and Non-Callsheet/Extra.
-      </p> 
-
+      <p className={`px-3 pt-2`}>
+      6. Their "Calltime", which displays in their Position <span className={`${styles.Red}`}>MUST</span> be
+      inputted in the Calltime field when Registering them in Step 1 above.
+      </p>  
+      <p className="px-3 pt-2" >
+      7. They can be added by Viewed by clicking their 
+      Department below.
+      </p>     
       </div>
       </Col>
     </Row>

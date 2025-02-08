@@ -75,12 +75,14 @@ const CrewInfo = () => {
         >
             Back
       </Button> 
+      </Col>
+      </Row>
       <Row>
       <Col xs={6} className='text-center'>
       <Button
       className={`py-0 mt-1 ${btnStyles.Red} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >
-        IMPORTANT - <span style={{fontStyle: 'italic'}}>CALLSHEET CREW</span>
+        IMPORTANT - <span style={{fontStyle: 'italic'}}>CALLSHEET/MAIN CREW</span>
       </Button>
       </Col>
       <Col xs={6} className='text-center'>
@@ -89,8 +91,6 @@ const CrewInfo = () => {
       onClick={() => setShowEx(showEx => !showEx)} >
         IMPORTANT - <span style={{fontStyle: 'italic'}}>NON-CALLSHEET/EXTRA CREW</span>
       </Button>
-      </Col>
-      </Row>
       </Col>
       </Row>
       <h5 className={`text-center py-1 my-3 ${styles.SubTitle }`}>CREW INFO</h5>
@@ -104,8 +104,8 @@ const CrewInfo = () => {
               ) : (
                 <ExtraCrew  /> 
       ) }  
-      <p className='text-center' style={{fontStyle: 'italic' }}>
-      Add Callsheet Crew here.
+      <p className={`${styles.SmallCrew} text-center`} style={{fontStyle: 'italic' }}>
+      Add Callsheet/Main Crew here
       </p>
       {/* create/edit buttons */}
       {id ? (
@@ -114,7 +114,7 @@ const CrewInfo = () => {
         <Col className='text-center'>
         <Button onClick={() => history.push("crewinfo/edit/1")}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Add Callsheet Crew</Button>
+          Add Callsheet/Main Crew</Button>
         </Col>
         </Row>
         </div>
@@ -123,9 +123,9 @@ const CrewInfo = () => {
       )}
       <Row className='text-center mt-4'>
       <Col>
-      <p style={{fontStyle: 'italic' }} >
-      View Callsheet Crew here and
-        Add/View Non-Callsheet/Extra Crew in each Department.
+      <p className={`${styles.SmallCrew} text-center`} style={{fontStyle: 'italic' }} >
+      View Callsheet/Main Crew and
+        Add/View Non-Callsheet/Extra Crew by Department.
       </p>
       </Col>
       </Row>
