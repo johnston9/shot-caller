@@ -91,12 +91,13 @@
   }
 
   .Red:hover {
-    background-color: #3b444b;
+    background-color: #000;
     color: #fff;
   }
 
   .Black {
     background-color: #3b444b;
+    background-color: #40474d;
     color: #fff;
     }
 

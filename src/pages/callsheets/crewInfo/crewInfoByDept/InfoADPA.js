@@ -11,12 +11,9 @@ import ExtraCrewInfo from '../ExtraCrewInfo';
 
 const InfoADPA = ({crewInfoOne, setShowAD }) => {
   useRedirect();
-  const [show, setShow] = useState(false);
   const [showAd, setShowAd] = useState(false);
 
-  const {casting_director_name, casting_director_email, casting_director_phone,
-    extras_casting_name, extras_casting_email, extras_casting_phone,
-    ad_1_name, ad_1_email, ad_1_phone,
+  const {ad_1_name, ad_1_email, ad_1_phone,
     ad_2_name, ad_2_email, ad_2_phone,
     ad_3_name, ad_3_email, ad_3_phone,
     ad_4_name, ad_4_email, ad_4_phone,

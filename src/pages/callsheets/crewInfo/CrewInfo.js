@@ -75,21 +75,25 @@ const CrewInfo = () => {
         >
             Back
       </Button> 
-      <Button
-      className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-      onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
-    </Button>
-      </Col>
-      </Row>
       <Row>
-      <Col className='text-center'>
+      <Col xs={6} className='text-center'>
       <Button
-      className={`py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-      onClick={() => setShowEx(showEx => !showEx)} >NON-CALLSHEET/EXTRA CREW
-    </Button>
+      className={`py-0 mt-1 ${btnStyles.Red} ${btnStyles.Button}`}
+      onClick={() => setShowImp(showImp => !showImp)} >
+        IMPORTANT - <span style={{fontStyle: 'italic'}}>CALLSHEET CREW</span>
+      </Button>
+      </Col>
+      <Col xs={6} className='text-center'>
+      <Button
+      className={`py-0 mt-1 ${btnStyles.Red} ${btnStyles.Button}`}
+      onClick={() => setShowEx(showEx => !showEx)} >
+        IMPORTANT - <span style={{fontStyle: 'italic'}}>NON-CALLSHEET/EXTRA CREW</span>
+      </Button>
       </Col>
       </Row>
-    <h5 className={`text-center py-1 my-3 ${styles.SubTitle }`}>CREW INFO</h5>
+      </Col>
+      </Row>
+      <h5 className={`text-center py-1 my-3 ${styles.SubTitle }`}>CREW INFO</h5>
       {!showImp ? (
           ""
               ) : (
