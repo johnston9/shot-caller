@@ -50,35 +50,58 @@
    
        return (
            <div > 
+            {/* desktop */}
+            <div className='d-none d-lg-block'>
             <Row className='text-center' >
-                <Col xs={6} md={3} >
+                <Col xs={12} md={3} >
                   <p className={`${styles.CrewInfoP} `}>{position1}</p>
                 </Col>
                 <Col xs={6} md={3} >
                   <p className={`${styles.CrewInfop} `}>{name1} </p>
                 </Col>
+                <Col xs={6} md={2} >
+                    <p className={`${styles.CrewInfop} `}>{phone1}</p>
+                    </Col>
                 <Col xs={6} md={3} >
-                  <p className={`${styles.CrewInfop} `}>{email1}</p>
+                  <p className={`${styles.CrewInfop} text-center `}>{email1}</p>
                 </Col>
-                {admin ? (
-                    <>
-                    <Col xs={4} md={2} >
+                <Col className={`mx-0 px-0 `} md={1}>
+                <PostDropdown
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                    />
+                </Col>
+            </Row>
+            </div>
+            {/* mobile */}
+            <div className='d-block d-lg-none'>
+            <Row className='text-center' >
+                <Col xs={2} ></Col>
+                <Col xs={8} >
+                  <p className={`${styles.CrewInfoP} `}>{position1}</p>
+                </Col>
+                <Col xs={2} className='px-0 mx-0' >
+                <PostDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                />
+                </Col>
+            </Row>
+            <Row className='text-center'>
+                <Col xs={6} >
+                  <p className={`${styles.CrewInfop} `}>{name1} </p>
+                </Col>
+                <Col xs={6} >
                     <p className={`${styles.CrewInfop} `}>{phone1}</p>
-                    </Col>
-                    <Col className={`mx-0 px-0 `} xs={2} md={1}>
-                    <PostDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
-                    </Col>
-                    </>
-                ) : (
-                    <Col xs={6} md={3} >
-                    <p className={`${styles.CrewInfop} `}>{phone1}</p>
-                    </Col>
-                ) }
-              </Row>
-              {/* edit */}
+                </Col>
+            </Row>
+            <Row className='text-center'>
+                <Col xs={12} >
+                  <p className={`${styles.CrewInfop}`}>{email1}</p>
+                </Col>
+            </Row>
+            </div>
+            {/* edit */}
             <Row>
                 <Col>
                     {!showEdit ?("") : (                       
@@ -89,6 +112,7 @@
                     ) }
                 </Col>
             </Row>  
+            {/* hr */}
             <Row>
             <Col className='mx-md-5'>
             <hr/>

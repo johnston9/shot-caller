@@ -74,13 +74,13 @@ const EditExtraCrewMem = (props) => {
     const buttons = (
       <div className="mb-2 text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
           onClick={() => setShowEdit(showEdit => !showEdit)}
         >
           Cancel
         </Button>
-        <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Edit
+        <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
+          Update
         </Button>
       </div>
     );
@@ -89,13 +89,14 @@ const EditExtraCrewMem = (props) => {
     <div >
       <Row>
         <Col xs={12} className="px-3" >
-        <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT CREW MEMBER</h5> 
+        <p className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`}
+        style={{ textTransform: 'uppercase'}} >EDIT {position1} </p> 
       <Form className="text-center" onSubmit={handleSubmit}>
       {/* position  */}
       <Row className="mx-0 my-3">
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={6} md={3} >
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
               <Form.Group controlId="position" className={`${styles.Width2} `}  >
-                  <Form.Label className={`${styles.Bold}`} >Position</Form.Label>
+                  <Form.Label className={`${styles.BoldScene}`} >Position</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -110,9 +111,9 @@ const EditExtraCrewMem = (props) => {
                 </Alert>
               ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={6} md={3} >
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
           <Form.Group controlId="name" className={`${styles.Width2} `}  >
-                <Form.Label className={`${styles.Bold}`} >Name</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Name</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -126,10 +127,10 @@ const EditExtraCrewMem = (props) => {
                 {message}
               </Alert>
             ))}
-            </Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" xs={6} md={3}>
+          </Col>
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3}>
           <Form.Group controlId="email" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >Email</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
               type="text"
@@ -144,9 +145,9 @@ const EditExtraCrewMem = (props) => {
             </Alert>
           ))}
           </Col>
-          <Col className=" d-flex justify-content-center mx-0 px-1" xs={6} md={3}>
+          <Col className=" d-flex justify-content-center mx-0 px-1" xs={12} sm={6} md={3}>
           <Form.Group controlId="phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Phone</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
               type="text"
@@ -161,7 +162,7 @@ const EditExtraCrewMem = (props) => {
             </Alert>
           ))}
           </Col>
-      </Row>
+        </Row>
         {/* buttons */}
         <Row>
           <Col className="text-center">

@@ -301,21 +301,14 @@
           <Col className='text-center'>
           <Button onClick={() => setShowAddit(showAddit => !showAddit)}
             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-            Extra Other Departments Positions </Button>
+            Extra Additional Positions </Button>
           </Col>
-        </Row>
-        <Row>
-        <Col className='text-center my-3' >
-        <p>
-        Add all non Callsheet positions that do not fit in to any other Department here 
-        </p>
-        </Col>
         </Row>
         {!showAddit ? (
             ""
                 ) : (
                   <ExtraCrewInfo
-                  dept="other"
+                  dept="addit"
                   setShow={setShowAddit}  /> 
         ) } 
        </div>

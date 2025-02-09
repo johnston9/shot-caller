@@ -17,8 +17,8 @@ const ExtraCrewInfo = (props) => {
     const [crew, setCrew] = useState({results: [] });
     const {setShow, dept} = props;
     const currentUser = useCurrentUser();
-    const admin = currentUser?.username === "admin" ;
-    // const admin = true;
+    // const admin = currentUser?.username === "admin" ;
+    const admin = true;
 
     const [postData, setPostData] = useState({
         name: "",
@@ -137,7 +137,7 @@ const ExtraCrewInfo = (props) => {
     <div className="d-block d-md-none mt-3">
     <Row>
     <Col xs={12} >
-    <h5 className={`pl-5 py-0 text-center ${styles.SubTitle }`} 
+    <h5 className={`py-0 text-center ${styles.SubTitle }`} 
         style={{ textTransform: 'uppercase' }}>
             EXTRA {dept} 
               </h5>
@@ -247,7 +247,13 @@ const ExtraCrewInfo = (props) => {
       </Col>
       </Row>
       </div>
-      <p className={`text-center mx-md-4 ${styles.SubTitle }`}>POSITIONS</p>
+      <Row>
+      <Col>
+      <div className="d-flex justify-content-center">
+      <p className={`text-center mt-3 ${styles.SubTitle4 }`}>POSITIONS</p>
+      </div>
+      </Col>
+      </Row>
       <Row className="py-3">
         <Col xs={12}>
           {crew.results.length ? (
@@ -260,6 +266,12 @@ const ExtraCrewInfo = (props) => {
               admin={admin} />
               ))) : ("")}
         </Col>
+      </Row>
+      {/* Break2 */}
+      <Row>
+      <Col xs={{span: 8, offset: 2}} >
+      <hr className={`${styles.Break2 }`}/>
+      </Col>
       </Row>
     </div>
   )

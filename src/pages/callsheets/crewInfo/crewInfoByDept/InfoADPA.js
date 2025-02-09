@@ -12,6 +12,7 @@ import ExtraCrewInfo from '../ExtraCrewInfo';
 const InfoADPA = ({crewInfoOne, setShowAD }) => {
   useRedirect();
   const [showAd, setShowAd] = useState(false);
+  const [showPa, setShowPa] = useState(false);
 
   const {ad_1_name, ad_1_email, ad_1_phone,
     ad_2_name, ad_2_email, ad_2_phone,
@@ -165,6 +166,21 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
       </div> )
       }
       </div> 
+      {/* Extra Positions Button */}
+      <Row className='mt-3'>
+        <Col className='text-center'>
+        <Button onClick={() => setShowAd(showAd => !showAd)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
+          Extra AD Positions </Button>
+        </Col>
+      </Row>
+      {!showAd ? (
+          ""
+              ) : (
+                <ExtraCrewInfo
+                dept="ad"
+                setShow={setShowAd}  /> 
+       ) } 
       {/* PRODUCTION ASSISTANTS */}
       <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
       <h5 className={`d-none d-md-block mb-0 text-center py-1 ${styles.Bold }`} >
@@ -252,20 +268,20 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
       </div> )
       }
       </div>      
-        {/* Extra Positions Button */}
+      {/* Extra Positions Button */}
       <Row className='mt-3'>
         <Col className='text-center'>
-        <Button onClick={() => setShowAd(showAd => !showAd)}
+        <Button onClick={() => setShowPa(showPa => !showPa)}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra AD Positions </Button>
+          Extra PA Positions </Button>
         </Col>
       </Row>
-      {!showAd ? (
+      {!showPa ? (
           ""
               ) : (
                 <ExtraCrewInfo
-                dept="ad"
-                setShow={setShowAd}  /> 
+                dept="pa"
+                setShow={setShowPa}  /> 
        ) } 
     </div>
   )
