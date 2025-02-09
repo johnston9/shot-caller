@@ -89,6 +89,11 @@
                     ) }
                 </Col>
             </Row>  
+            <Row>
+            <Col className='mx-md-5'>
+            <hr/>
+            </Col>
+            </Row>
            </div>
        )
    }

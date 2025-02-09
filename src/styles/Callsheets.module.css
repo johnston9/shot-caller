@@ -1,6 +1,10 @@
 .Container {
     min-height: 100px;
-  }
+}
+
+.White1 {
+  border: 1px solid #999;
+}
 
 .SmallCrew {
   font-size: .75rem;
@@ -39,9 +43,23 @@ p {
   color: #000
 }
 
+.SubTitle2 p {
+  color: #fff;
+} 
+
+.SubTitle3 {
+  background-color: #e4f2f4;
+  font-weight: 700;
+  width: 20%;
+}
+
+.SubTitle4 {
+  background-color: #e4f2f4;
+  font-weight: 700;
+  width: 40%;
+}
+
 .SubTitle6 {
-  /* background-color: #c8f4f7;
-  background-color: #dcf5f6; */
   background-color: #fff;
   font-weight: 700;
   color: #000;
@@ -51,15 +69,6 @@ p {
 .BoldScene {
   color: rgba(129, 102, 21, 0.99);
   font-weight: 600;
-}
-
-.SubTitle2 p {
-  color: #fff;
-} 
-
-.SubTitle3 {
-  background-color: #e4f2f4;
-  font-weight: 700;
 }
 
 .CrewInfoP {
@@ -498,6 +507,14 @@ p {
   }
 
   .SubTitle2 {
+    width: 90%;
+  }
+
+  .SubTitle3 {
+    width: 90%;
+  }
+
+  .SubTitle4 {
     width: 90%;
   }
 }

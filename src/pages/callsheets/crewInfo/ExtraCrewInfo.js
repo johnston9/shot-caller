@@ -101,7 +101,7 @@ const ExtraCrewInfo = (props) => {
       }
 
       const buttons = (
-        <div className="mb-5 pb-3 text-center">    
+        <div className="mb-0 pb-3 text-center">    
           <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
             onClick={clear}
@@ -115,24 +115,26 @@ const ExtraCrewInfo = (props) => {
       );
 
   return (
-    <div className={`mx-md-5 ${styles.White }`}>
+    <div className={`${styles.White } mx-md-5`}>
     <div className="d-none d-md-block mt-4">
     <Row>
     <Col>
     <h5 className={`pl-5 py-0 text-center ${styles.SubTitle }`} 
         style={{ textTransform: 'uppercase' }}>
             NON-CALLSHEET/EXTRA {dept} POSITIONS 
+            <span className={`pt-1 float-right ${styles.Close }`} 
+        onClick={() => setShow(false) } >Close</span>
     </h5>
     </Col>
     </Row>
-    <Row>
+    {/* <Row>
     <Col>
             <span className={`pt-1 float-right ${styles.Close }`} 
         onClick={() => setShow(false) } >Close</span>
     </Col>
-    </Row>
+    </Row> */}
     </div>
-    <div className="d-block d-md-none">
+    <div className="d-block d-md-none mt-3">
     <Row>
     <Col xs={12} >
     <h5 className={`pl-5 py-0 text-center ${styles.SubTitle }`} 
@@ -149,13 +151,18 @@ const ExtraCrewInfo = (props) => {
     </Row>
     </div>
       {/* Form */}
-      <div className={`mb-3 ${styles.White } mx-3`}>
-      <p className={`my-3 text-center ${styles.SubTitle }`}>ADD NEW POSITION</p>
-      <Form className="text-center" onSubmit={handleSubmit}>
-      {/* position  */}
+      <div >
+      <Row>
+      <Col>
+      <div className="d-flex justify-content-center">
+      <p className={`text-center mt-3 ${styles.SubTitle3 }`}>ADD NEW POSITION</p>
+      </div>
+      </Col>
+      </Row>
+      <Form className={`text-center`} onSubmit={handleSubmit}>
       <Row className="mx-0 my-3">
           <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
-              <Form.Group controlId="position" className={`${styles.Width95} `}  >
+              <Form.Group controlId="position" className={`${styles.Width2} `}  >
                   <Form.Label className={`${styles.BoldScene}`} >Position</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -172,7 +179,7 @@ const ExtraCrewInfo = (props) => {
               ))}
           </Col>
           <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
-          <Form.Group controlId="name" className={`${styles.Width95} `}  >
+          <Form.Group controlId="name" className={`${styles.Width2} `}  >
                 <Form.Label className={`${styles.BoldScene}`} >Name</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
@@ -187,9 +194,9 @@ const ExtraCrewInfo = (props) => {
                 {message}
               </Alert>
             ))}
-            </Col>
+          </Col>
           <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3}>
-          <Form.Group controlId="email" className={`${styles.Width95} `} >
+          <Form.Group controlId="email" className={`${styles.Width2} `} >
           <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
@@ -226,12 +233,22 @@ const ExtraCrewInfo = (props) => {
         {buttons}
       </Form>
       </div>
+      {/* <Row>
+      <Col md={{span: 8, offset: 2}} >
+      <hr/>
+      </Col>
+      </Row> */}
       {/* crew */}
       <div className="text-center">
-      <span className={`my-3 text-center py-1 px-5 ${styles.SubTitle }`}>
-        POSITIONS</span>
+      <Row>
+      <Col>
+      <div className="d-flex justify-content-center">
       </div>
-      <Row className="py-2">
+      </Col>
+      </Row>
+      </div>
+      <p className={`text-center mx-md-4 ${styles.SubTitle }`}>POSITIONS</p>
+      <Row className="py-3">
         <Col xs={12}>
           {crew.results.length ? (
               crew.results.map((crewone) => (
@@ -243,7 +260,7 @@ const ExtraCrewInfo = (props) => {
               admin={admin} />
               ))) : ("")}
         </Col>
-        </Row>
+      </Row>
     </div>
   )
 }
