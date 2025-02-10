@@ -39,6 +39,7 @@ import CrewPostVFX from "./addCrewInfoByDept/CrewPostVFX";
 import CrewTVStudio from "./addCrewInfoByDept/CrewTVStudio";
 import CrewWrangling from "./addCrewInfoByDept/CrewWrangling";
 import CrewAdditional from "./addCrewInfoByDept/CrewAdditional";
+import { toast } from 'react-toastify';
 
 const CrewInfoCreate = () => {
   useRedirect();
@@ -1143,6 +1144,7 @@ const CrewInfoCreate = () => {
       const {data} = await axiosReq.post("/crewinfonew/", formData);
       setEditCrewInfo(true);
       history.goBack();
+      toast.success(`CrewInfo Created`);
       console.log(data);
     } catch (err) {
       console.log(err);

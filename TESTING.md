@@ -46,15 +46,60 @@ Description: The admin and superadmin can register new Users and change their Pe
 </h2>
 
 ### Crew Info
-Description: View, add and edit Crew Info.<br>
+Description: View, Create and Edit Crew Info.<br>
 
-- Use Case: xxxxxxxxxxx<br>
+- Use Case: Create the Crew Info<br>
 
-  1. xxxxxxxxxxxxxxx.<br>
+  1. Click on the Crew Info link in the Home page or from the Navbar.<br>
+  2. The Crew Info page displays with the "Add Callsheet/Main Crew" button on top, the Departments below and 2 Important tabs in Red explaining what is necessary and compulsory to add a member and the difference between the 2 types of crew members.<br>
+  3. Click the "Add Callsheet/Main Crew" to open the "Crew Info Add/Edit" page.<br>
+  4. Select a Department and input one or more members details, name and email are
+  compulsory and this is explained in the "Important Callsheet/Main Crew" page.
+  5. Click Submit and the data is added and a Success message displays and the 
+  main Crew Info page opens.
+  6. Here on clicking on the Department which had members added we see their details.
 
-<p align="center"> <strong>Sound Dept Posts page</strong></p>
+<p align="center"> <strong>xxxxxxxxxxs</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+- Use Case: View a specific "Callsheet/Main Crew" member's details<br>
+
+  1. Click on the Crew Info link in the Home page or from the Navbar.<br>
+  2. The Crew Info page displays with the "Add Callsheet/Main Crew" button on top and the Departments below.<br>
+  3. Click a Department, e.g. "Production" to view all it's positions with each containing the member's details.<br>
+
+<p align="center"> <strong>Production Department's Positions</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/crewview.png" width="50%">
+</h2>
+
+- Use Case: Add/Edit a "Callsheet/Main Crew" member's details<br>
+
+  1. Click on the Crew Info link in the Home page or from the Navbar.<br>
+  2. The Crew Info page displays with the "Add Callsheet/Main Crew" button on top, the Departments below and 2 Important tabs in Red explaining what is necessary and compulsory to add a member and the difference between the 2 types of crew members.<br>
+  3. Click the "Add Callsheet/Main Crew" to open the "Crew Info Add/Edit" page.<br>
+  4. Select a Department and input one or more members details, name and email are
+  compulsory and this is explained in the "Important Callsheet/Main Crew" page, e.g.
+  "Franz Kline" in "Camera".
+  5. Click Submit and the data is added and a Success message displays and the 
+  main Crew Info page opens.
+  6. Here on clicking on the Department which had members added we see their details.
+
+<p align="center"> <strong>Camera Department's Add/Edit form with "Franz Kline" Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/crewadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/crewadd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Camera Department's Info page with "Franz Kline"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/crewadd3.png" width="50%">
 </h2>
 
 - Use Case: xxx<br>

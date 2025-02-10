@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import styles from "../../../styles/Callsheets.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
+import { toast } from 'react-toastify';
 
 import { axiosReq } from "../../../api/axiosDefaults";
 
@@ -63,7 +64,8 @@ const EditExtraCrewMem = (props) => {
             phone1: phone,
             departments1: departments,            
         });
-        setShowEdit((showEdit) => !showEdit)
+        setShowEdit((showEdit) => !showEdit);
+        toast.success(`${position} Updated in CrewInfo`);
       } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {

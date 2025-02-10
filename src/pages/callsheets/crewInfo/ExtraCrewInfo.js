@@ -11,6 +11,7 @@
    import Alert from "react-bootstrap/Alert";
    import { axiosReq } from "../../../api/axiosDefaults";
    import { useCurrentUser } from "../../../contexts/CurrentUserContext";
+   import { toast } from 'react-toastify';
 
 const ExtraCrewInfo = (props) => {
     const [errors, setErrors] = useState({});
@@ -92,6 +93,7 @@ const ExtraCrewInfo = (props) => {
           ...prevCrew,
           results: [data, ...prevCrew.results],
         }));
+        toast.success(`${position} Added to CrewInfo`);
         } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {

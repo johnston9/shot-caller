@@ -42,6 +42,7 @@ import Asset from "../../../components/Asset";
 import Upload from "../../../assets/upload.png";
 import Alert from "react-bootstrap/Alert";
 import appStyles from "../../../App.module.css";
+import { toast } from 'react-toastify';
 
 const CrewInfoEdit = () => {
   useRedirect();
@@ -1438,6 +1439,7 @@ const CrewInfoEdit = () => {
       setEditCrewInfo(true);
       console.log(data)
       history.goBack();
+      toast.success(`CrewInfo Updated`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
