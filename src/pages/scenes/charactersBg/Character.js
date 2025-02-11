@@ -24,12 +24,12 @@ const Character = ({id, admin, cast_number, role, costume,
         };
 
     return ( 
-        <div className={` mx-4 px-2` }>
+        <div className={`text-center mx-4 px-2` }>
         <Row >
-        <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={2} >
+        <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={2} >
         <p >{cast_number} </p>
         </Col>
-        <Col className={`${styles.TitleBox5} pl-1 pr-0 mx-0`}>
+        <Col className={`${styles.TitleBox5} pl-1 pr-0 mx-0`} xs={6}>
         <p >{role} </p>
         </Col>
         {admin ? (
@@ -46,7 +46,7 @@ const Character = ({id, admin, cast_number, role, costume,
             </Col>
             </>
         ) : (
-            <Col xs={3} className={`${styles.TitleBox4} px-0 mx-0`}>
+            <Col xs={4} className={`${styles.TitleBox4} px-0 mx-0`}>
             {costume ? (<p className='pl-2'>{costume} </p>) : ("") }
             </Col>
         )}
@@ -56,6 +56,7 @@ const Character = ({id, admin, cast_number, role, costume,
                 <SceneCharacterEdit
                     character={character}
                     id={id}
+                    role={role}
                     handleMount={handleMount}
                     setCharacters={setCharacters}
                     setShowEditForm={setShowEditForm}

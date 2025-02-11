@@ -23,9 +23,9 @@ const Background = ({id, quantity, role, costume, handleMount,
         };
 
     return ( 
-        <div className='mx-4 px-2'>
+        <div className='mx-4 px-2 text-center'>
         <Row >
-        <Col className={`${styles.TitleBox3} text-center px-0 mx-0`} xs={2} >
+        <Col className={`${styles.TitleBox4} text-center px-0 mx-0`} xs={2} >
         <p className={` text-center` } >{quantity} </p>
         </Col>
         <Col xs={5} className={`${styles.TitleBox5} px-0 mx-0`}>

@@ -116,6 +116,17 @@ background: #ffffff;
   color: #747686;
   padding: 0px 10px;
   height: 30px !important;
+}
+
+.InputCharEdit {
+  background: #ffffff;
+  border: 1px solid #e0e3eb;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  height: 25px !important;
+  text-align: center;
 } 
 
 .SceneCard i {
@@ -195,12 +206,6 @@ background: #ffffff;
   color: #333;
   font-weight: 700;
 }
-
-/* .TitleBox4 {
-  border-right : 1px solid #72dbe2;
-  border-bottom : 1px solid #72dbe2;
-  color: #333;
-} */
 
 .TitleBox5 {
   border-bottom : 1px solid #72dbe2;

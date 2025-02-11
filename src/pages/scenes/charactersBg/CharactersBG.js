@@ -75,9 +75,11 @@ const CharactersBG = (props) => {
             <Row className='mt-3'>
             {/* titles */}
             <Col xs={12} sm={6} md={4}>
-            <div className='px-0 mx-3'>
+            <div className='px-0 mx-3 text-center'>
             <Row >
-            <Col className='px-0 mx-0 text-center' xs={8}>
+            <Col className={`${styles.BoldTitle2} px-0 mx-0`} xs={2} >#
+            </Col>
+            <Col className='px-0 mx-0 text-center' xs={6}>
             <p className={`${styles.BoldTitle2}` }>Character</p>
             </Col>
             <Col className='px-0 mx-0 text-center' xs={4}>
@@ -88,9 +90,9 @@ const CharactersBG = (props) => {
             </Col>
             {/* 2 */}
             <Col className='d-none d-sm-block' xs={12} sm={6} md={4}>
-            <div className='px-0 mx-3'>
+            <div className='px-0 mx-3 text-center'>
             <Row >
-            <Col className={`${styles.BoldTitle} px-0 mx-0`} xs={2} >
+            <Col className={`${styles.BoldTitle2} px-0 mx-0`} xs={2} >#
             </Col>
             <Col className='px-0 mx-0' xs={6}>
             <p className={`${styles.BoldTitle2}` }>Character</p>
@@ -111,9 +113,9 @@ const CharactersBG = (props) => {
             </Col>
             {/* 3 */}
             <Col className='d-none d-md-block' xs={12} sm={6} md={4}>
-            <div className='px-0 mx-3'>
+            <div className='px-0 mx-3 text-center'>
             <Row >
-            <Col className={`${styles.BoldTitle} px-0 mx-0`} xs={2} >
+            <Col className={`${styles.BoldTitle2} px-0 mx-0`} xs={2} >#
             </Col>
             <Col className='px-0 mx-0' xs={6}>
             <p className={`${styles.BoldTitle2}` }>Character</p>
@@ -184,13 +186,13 @@ const CharactersBG = (props) => {
             <Row className='mt-3' >
             {/* 1 */}
             <Col xs={12} md={6}>
-            <div className='px-0 mx-3'>
+            <div className='px-0 mx-3 text-center'>
             <Row >
-            <Col className={`${styles.BoldTitle} text-center` } xs={2}>
+            <Col className={`${styles.BoldTitle2} px-0 mx-0`} xs={2}>Qty
             </Col>
             <Col className='px-0 mx-0' xs={5}>
             <p className={`${styles.BoldTitle2}` }>
-            Quantity / Role</p></Col>
+            Role</p></Col>
             {admin ? (
                 <>
                 <Col className='px-0 mx-0' xs={5}>
@@ -207,13 +209,13 @@ const CharactersBG = (props) => {
             </Col>
             {/* 2 */}
             <Col className='d-none d-md-block' xs={12} md={6}>
-            <div className='px-0 mx-3'>
+            <div className='px-0 mx-3 text-center'>
             <Row >
-            <Col className={`${styles.BoldTitle} text-center` } xs={2}>
+            <Col className={`${styles.BoldTitle2} px-0 mx-0`} xs={2}>Qty
             </Col>
             <Col className='px-0 mx-0' xs={5}>
             <p className={`${styles.BoldTitle2}` }>
-            Quantity / Role</p></Col>
+            Role</p></Col>
             {admin ? (
                 <>
                 <Col className='px-0 mx-0' xs={5}>

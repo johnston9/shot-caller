@@ -197,23 +197,6 @@ const ExtraCrewInfo = (props) => {
               </Alert>
             ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3}>
-          <Form.Group controlId="email" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`} 
-              type="text"
-              name="email"
-              value={email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
           <Col className=" d-flex justify-content-center mx-0 px-1" xs={12} sm={6} md={3}>
           <Form.Group controlId="phone" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
@@ -226,6 +209,23 @@ const ExtraCrewInfo = (props) => {
                   />
           </Form.Group>
           {errors?.phone?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+          </Col>
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3}>
+          <Form.Group controlId="email" className={`${styles.Width2} `} >
+          <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
+              <Form.Control 
+              className={`${styles.Input}`} 
+              type="text"
+              name="email"
+              value={email}
+              onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.email?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>

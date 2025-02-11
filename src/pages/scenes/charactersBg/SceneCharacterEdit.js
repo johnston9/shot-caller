@@ -11,7 +11,7 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../../api/axiosDefaults";
 import { toast } from 'react-toastify';
 
-const CharacterEdit = ({ setShowEditForm, handleMount, id}) => {
+const CharacterEdit = ({ setShowEditForm, handleMount, id, rolename}) => {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         scene_id: "",
@@ -82,31 +82,34 @@ const CharacterEdit = ({ setShowEditForm, handleMount, id}) => {
       const buttons = (
         <div className="text-center">    
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
             onClick={() => setShowEditForm((showEditForm) => !showEditForm)}
           >
             Cancel
           </Button>
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
             Submit
           </Button>
         </div>
       );
 
     return (
-        <div className={`${styles.Back1} mx-0 px-0 mt-2 mb-3 pt-2`}>
+        <div className={`${styles.Back1} pb-1 mx-0 px-0 mt-0 mb-3`}>
         <Form onSubmit={handleSubmit}>
         <Row className="">
-        <Col className="px-0" xs={6} >
+        <Col className="px-1 pb-2" >
         <p className={`text-center mb-0 ${styles.Bold}`}>
-         Add/Edit Costume
+         Add/Edit {role}'s Costume
         </p>
         </Col>
-        <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
-        <Form.Group controlId="costume" className={`${styles.Width} ml-2 `}  >
+        </Row>
+        <Row>
+        <Col xs={4}></Col>
+        <Col className="d-flex justify-content-center mx-0 px-1" xs={4} >
+        <Form.Group controlId="costume" className={`${styles.Width2}`}  >
               {/* <Form.Label className={`${styles.Bold}`} ></Form.Label> */}
               <Form.Control 
-              className={`${styles.Input}`} 
+              className={`${styles.InputCharEdit}`} 
               type="text"
               name="costume"
               value={costume}
@@ -118,13 +121,18 @@ const CharacterEdit = ({ setShowEditForm, handleMount, id}) => {
               {message}
             </Alert>
           ))}
-          </Col>
+        </Col>
         </Row>
         <Row>
-          <Col className="my-3 text-center">
+          <Col xs={12}  className="mt-2 px-0 text-center">
           {buttons}
           </Col>
         </Row>
+        {/* <Row>
+          <Col xs={6} className="my-3 text-center">
+          {buttons}
+          </Col>
+        </Row> */}
         </Form>
         </div>
     )

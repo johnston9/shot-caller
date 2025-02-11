@@ -80,9 +80,9 @@ Description: View, Create and Edit Crew Info.<br>
   1. Click on the Crew Info link in the Home page or from the Navbar.<br>
   2. The Crew Info page displays with the "Add Callsheet/Main Crew" button on top, the Departments below and 2 Important tabs in Red explaining what is necessary and compulsory to add a member and the difference between the 2 types of crew members.<br>
   3. Click the "Add Callsheet/Main Crew" to open the "Crew Info Add/Edit" page.<br>
-  4. Select a Department and input one or more members details, name and email are
-  compulsory and this is explained in the "Important Callsheet/Main Crew" page, e.g.
-  "Franz Kline" in "Camera".
+  4. Select a Department and input one or more members details, e.g.
+  "Franz Kline" in "Camera". Name and email are
+  compulsory and this is explained in the "Important Callsheet/Main Crew" page.
   5. Click Submit and the data is added and a Success message displays and the 
   main Crew Info page opens.
   6. Here on clicking on the Department which had members added we see their details.
@@ -97,19 +97,38 @@ Description: View, Create and Edit Crew Info.<br>
 <img src="documentation/readme-images/crewadd2.png" width="50%">
 </h2>
 
-<p align="center"> <strong>Camera Department's Info page with "Franz Kline"</strong></p>
+<p align="center"> <strong>Camera Department's Info page with "Franz Kline" Inputted</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/crewadd3.png" width="50%">
 </h2>
 
-- Use Case: xxx<br>
+- Use Case: View a specific "Non-Callsheet/Extra Crew" member's details<br>
 
-  1. Ixxx.<br>
-  2. xxx.<br>
+  1. Click on the Crew Info link in the Home page or from the Navbar.<br>
+  2. The Crew Info page displays with the "Add Callsheet/Main Crew" button on top and the Departments below.<br>
+  3. Click a Department, e.g. "Camera" then click on the "Extra Camera Department Positions" button at the bottom of the page to view all it's positions with each containing the member's details.<br>
 
-<p align="center"> <strong>xxx/strong></p>
+<p align="center"> <strong>Non-Callsheet/Extra Camera Department's Positions</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/crewview.png" width="50%">
+</h2>
+
+- Use Case: Add/Edit a "Non-Callsheet/Extra Crew" member's details<br>
+
+  1. Click on the Crew Info link in the Home page or from the Navbar.<br>
+  2. The Crew Info page displays with the "Add Callsheet/Main Crew" button on top, the Departments below and 2 Important tabs in Red explaining what is necessary and compulsory to add a member and the difference between the 2 types of crew members.<br>
+  3. Click a Department, e.g. "Camera" then click on the "Extra Camera Department Positions" button at the bottom of the page to view the "Add New Position" form on top and all it's positions with each containing the member's details below.<br>
+  4. Input the new members details, e.g. "Camera PA 3", in the form and submit.
+  5. The data is added and a Success message displays and the new member's details display.
+
+<p align="center"> <strong>Camera Department's Add/Edit form with "Camera PA 3" Inputted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/crewadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Message and "Camera PA 3" displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/crewadd2.png" width="50%">
 </h2>
 
 ### Scheduling
