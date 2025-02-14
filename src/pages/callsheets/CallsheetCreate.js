@@ -39,6 +39,7 @@ import InfoCrewCalls from "./info/InfoCrewCalls";
 import InformationWeather from "./info/InformationWeather";
 import SchedulePage from "./callsheetSchedule/SchedulePage";
 import ImportantCrewCalls from "./info/ImportantCrewCalls";
+import { toast } from 'react-toastify';
 
 const CallsheetCreate = () => {
   useRedirect();
@@ -822,6 +823,7 @@ const CallsheetCreate = () => {
     formData.append("wardrobe_assistant_5_calltime", wardrobe_assistant_5_calltime);
     try {
       await axiosReq.post("/callsheetsnew/", formData);
+      toast.success(`Callsheet Day "${dataDay}" Created`);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -1713,7 +1715,7 @@ const buttons = (
       <InformationCallsheet  /> 
       ) }  
     {/* cast buttons */}
-    <h3 className={`text-center mt-2 py-1 ${styles.SubTitle }`} >ADD CAST / ADD BG</h3> 
+    <h5 className={`text-center mt-2 py-1 ${styles.SubTitle }`} >ADD CAST/BACKGROUND </h5> 
     <div className= {`mb-3`}>
       {/* schedule button */}
     <Row className='text-center'>
@@ -1785,7 +1787,8 @@ const buttons = (
     {!showAddCast ? (
       ""
     ) : (
-      <AddCast id={id} setShowAddCast={setShowAddCast} dataDay={dataDay} dataDate={dataDate} />
+      <AddCast id={id} setShow={setShowAddCast} 
+      dataDay={dataDay} dataDate={dataDate} />
     ) }
     </div> 
     <div>

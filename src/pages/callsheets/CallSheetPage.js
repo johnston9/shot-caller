@@ -40,7 +40,7 @@ const CallSheetPage = () => {
                 axiosReq.get("dj-rest-auth/user/"),
             ])
             console.log(user);
-            setCallsheet(callsheetdata); 
+            setCallsheet(callsheetdata);
             setCast(castcalldata);
             // Function to create an array of all the cast's emails 
             let emailArray = castcalldata.results.map(a => a.email);

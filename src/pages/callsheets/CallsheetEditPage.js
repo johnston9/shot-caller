@@ -39,6 +39,7 @@ import InformationEdit from "./info/InformationEdit";
 import InformationWeather from "./info/InformationWeather";
 import ImportantCrewCalls from "./info/ImportantCrewCalls";
 import InfoCrewCalls from "./info/InfoCrewCalls";
+import { toast } from 'react-toastify';
 
 const CallsheetEditPage = () => {
   useRedirect();
@@ -455,7 +456,8 @@ const CallsheetEditPage = () => {
   useEffect(() => {
     const handleMount = async () => {
         try {
-          const [{ data: dayGet }, { data: scenesdata }, { data: callsheetdata }] = await Promise.all([
+          const [{ data: dayGet }, { data: scenesdata }, { data: callsheetdata }] = 
+          await Promise.all([
             axiosReq.get(`/days/${id}`),
             axiosReq.get(`/schedule/scenes/?day_id=${id}`),
             await axiosReq.get(`/callsheetsnew/?day_id=${id}`)

@@ -160,18 +160,28 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 <img src="documentation/readme-images/scheddaycre.png" width="50%">
 </h2>
 
-- Use Case: Edit a Shoot Day.<br>
+- Use Case: Edit a Shoot Day's Day or Date and automatically change the Callsheet as well.<br>
 
   1. On the Edit/Delete icon and click the Edit icon.<br>
   2. The Edit Day form displays. <br>
-  3. Input the new details, i.e. change the date to - "27 Nov 2024".<br>
+  3. Input the new details, i.e. change the date to - "05 Jan 2026".<br>
   6. Press submit.<br>
   7. A success message displays.<br>
-  8. The Shoot Day number "6" displays with the new Date "27 Nov 2024".<br>
+  8. The Shoot Day number "1" displays with the new Date "05 Jan 2026".<br>
 
-<p align="center"> <strong>Success Message and Day with changes</strong></p>
+<p align="center"> <strong>Input the date</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scheddayedit.png" width="50%">
+<img src="documentation/readme-images/dayedit1a.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Messages for Day and Callsheet and Day with New Date</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/dayedit2a.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Callsheet with Changed Date</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/dayedit3a.png" width="50%">
 </h2>
 
 - Use Case: Delete a Shoot Day.<br>
@@ -352,7 +362,58 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 </h2>
 
 ### Callsheets
-Description: xxxx<br>
+Description: View, Create and Edit Callsheets for a Shoot Day.<br>
+
+- Use Case: View all Callsheets.<br>
+
+  1. Click on the Callsheets link in the Home page or from the Navbar.<br>
+  2. The Callsheets page displays with all Callsheets.<br>
+
+<p align="center"> <strong>The Callsheets page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedsched.png" width="50%">
+</h2>
+
+- Use Case: Create a Callsheet.<br>
+
+  1. On a Schedule page Shoot Day, e.g. Day "2 - 01 Jan 2025" click on the "Create Callsheet" tab.<br>
+  2. The Create Day form displays with the Day and date showing e.g. Day "2 - 01 Jan 2025". <br>
+  3. Input any amount of data, e.g. Unit Call 6 AM and submit".<br>
+  4. The Callsheet is created, a success message displays and the Schedule Day opens
+  now with a "View Callsheet" tab.
+  5. Click on the tab to open the Callsheet, Day "2 - 01 Jan 2025" with the correct data displaying, e.g. Unit Call 6 AM.<br>
+  6. It will also display Compan and Top crew details, the Schedule and Advanced Schedule.
+
+<p align="center"> <strong>Shoot Day: Number "6" Created</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scheddaycre.png" width="50%">
+</h2>
+
+- Use Case: Edit a Shoot Day.<br>
+
+  1. On the Edit/Delete icon and click the Edit icon.<br>
+  2. The Edit Day form displays. <br>
+  3. Input the new details, i.e. change the date to - "27 Nov 2024".<br>
+  6. Press submit.<br>
+  7. A success message displays.<br>
+  8. The Shoot Day number "6" displays with the new Date "27 Nov 2024".<br>
+
+<p align="center"> <strong>Success Message and Day with changes</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scheddayedit.png" width="50%">
+</h2>
+
+- Use Case: Delete a Shoot Day.<br>
+
+  1. On the Edit/Delete icon and click the Delete icon.<br>
+  2. A Modal displays asking to Confirm Delete or Cancel<br>
+  3. Click "Delete".<br>
+  6. A success message displays and the Day is deleted.<br>
+
+<p align="center"> <strong>Success Message and Day Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scheddaydel.png" width="50%">
+</h2>
 
 ### Budgeting 
 - As this feature is held on the "Shot Caller Production" home app the Budgeting testing is on it's Testing page. [Testing](https://github.com/johnston9/shot-caller-production/blob/main/TESTING.md)<br>

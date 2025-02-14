@@ -19,6 +19,7 @@ const DayEdit = () => {
     useRedirect();
   const [errors, setErrors] = useState({});
   const [startDate, setStartDate] = useState("");
+  const [callsheet_id, setCallsheet_id] = useState({ results: [] }); 
     const [postData, setPostData] = useState({
         day: ""});
       const { day } = postData;
@@ -29,11 +30,16 @@ const DayEdit = () => {
       useEffect(() => {
         const handleMount = async () => {
           try {
-            const { data } = await axiosReq.get(`/days/${id}/`);
-            const { day, date } = data;
-     
+            const [{ data: dayGet }, { data: callsheetdata }] = 
+                      await Promise.all([
+                        axiosReq.get(`/days/${id}`),
+                        await axiosReq.get(`/callsheetsnew/?day_id=${id}`)
+                    ])
+            const { day, date } = dayGet;     
             setPostData({ day });
             setStartDate(date);
+            console.log(dayGet);
+            setCallsheet_id(callsheetdata.results[0].id);
           } catch (err) {
             console.log(err);
           }
@@ -65,6 +71,25 @@ const DayEdit = () => {
     try {
       await axiosReq.put(`/days/${id}/`, formData);
       toast.success(`Day "${day}" Updated`);
+      handleSubmitCall(event);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  }
+
+  const handleSubmitCall = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("day", day);
+    formData.append("day_id", id);
+    formData.append("date", startDate);
+    try {
+      await axiosReq.put(`/callsheetsnew/${callsheet_id}/`, formData);
+      toast.success(`Callsheet Day "${day}" Updated`);
       history.goBack();
     } catch (err) {
       console.log(err);
