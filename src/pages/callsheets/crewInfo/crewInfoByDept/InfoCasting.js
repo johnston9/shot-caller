@@ -12,7 +12,6 @@
    const InfoCasting = ({crewInfoOne, setShowCas }) => {
      useRedirect();
      const [show, setShow] = useState(false);
-     const [showAd, setShowAd] = useState(false);
    
      const {extras_casting_name, extras_casting_email, extras_casting_phone,} = crewInfoOne || {};
    

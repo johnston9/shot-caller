@@ -65,8 +65,8 @@ const CallsheetsPage = ({ filter="" }) => {
         <h4 style={{ textTransform: 'uppercase'}} className={`mt-1 text-center mt-1 mb-2 pl-3 py-1 ${styles.SubTitle }`}>CALLSHEETS</h4>
         <Row className="text-center d-none d-md-block">
             <Col xs={12} md={{span: 8, offset: 2}} >
-            <p>Add all crew members to the Crew Info page. Create Callsheets from their 
-              scheduling page. Add to them or edit them from here or their Schedule page.
+            <p>Create Callsheets from their Scheduling Shoot Day page. 
+              Add to or edit them from here or their Schedule page.
             </p>
             </Col>
         </Row>
@@ -88,13 +88,13 @@ const CallsheetsPage = ({ filter="" }) => {
         </Col>
         </Row>
         {/* callsheets */}
-        <Row className="h-100 mt-3 mb-5 mx-2">
+        <Row className=" mb-5 mx-2">
         {hasLoaded ? (
             <>
         {callsheets.results.length ? (
             callsheets.results.map((callsheet) => {
               return (
-                <Col xs={4} sm={3} lg={2} className="p-0 p-lg-2">
+                <Col xs={6} sm={3} lg={2} className="p-0 p-lg-2">
                   <CallsheetTop
                     key={callsheet.id}
                     {...callsheet} 

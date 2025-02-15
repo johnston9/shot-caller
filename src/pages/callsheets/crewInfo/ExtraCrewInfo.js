@@ -10,14 +10,12 @@
    import ExtraCrewMember from "./ExtraCrewMember"
    import Alert from "react-bootstrap/Alert";
    import { axiosReq } from "../../../api/axiosDefaults";
-   import { useCurrentUser } from "../../../contexts/CurrentUserContext";
    import { toast } from 'react-toastify';
 
 const ExtraCrewInfo = (props) => {
     const [errors, setErrors] = useState({});
     const [crew, setCrew] = useState({results: [] });
     const {setShow, dept} = props;
-    const currentUser = useCurrentUser();
     // const admin = currentUser?.username === "admin" ;
     const admin = true;
 

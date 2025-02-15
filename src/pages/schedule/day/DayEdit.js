@@ -39,7 +39,7 @@ const DayEdit = () => {
             setPostData({ day });
             setStartDate(date);
             console.log(dayGet);
-            setCallsheet_id(callsheetdata.results[0].id);
+            setCallsheet_id(callsheetdata.results[0]?.id || "");
           } catch (err) {
             console.log(err);
           }
@@ -68,16 +68,19 @@ const DayEdit = () => {
 
     formData.append("day", day);
     formData.append("date", startDate);
-    try {
-      await axiosReq.put(`/days/${id}/`, formData);
-      toast.success(`Day "${day}" Updated`);
-      handleSubmitCall(event);
-    } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
+      try {
+        await axiosReq.put(`/days/${id}/`, formData);
+        toast.success(`Day "${day}" Updated`);
+        if (callsheet_id) {
+          handleSubmitCall(event)
+        }
+        ;
+      } catch (err) {
+        console.log(err);
+        if (err.response?.status !== 401) {
+          setErrors(err.response?.data);
+        }
       }
-    }
   }
 
   const handleSubmitCall = async (event) => {

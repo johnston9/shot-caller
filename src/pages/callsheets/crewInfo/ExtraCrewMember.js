@@ -12,7 +12,6 @@
        const [showEdit, setShowEdit] = useState(false);
    
        const { 
-        admin,
         handleMount,
         id,
         name,

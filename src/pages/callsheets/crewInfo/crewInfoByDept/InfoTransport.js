@@ -12,7 +12,6 @@
    const InfoTransport = ({crewInfoOne, setShowTra}) => {
      useRedirect();
      const [showTport, setShowTport] = useState(false);
-     const [showVeh, setShowVeh] = useState(false);
    
      const {transport_captain_name, transport_captain_email, transport_captain_phone,
        transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 

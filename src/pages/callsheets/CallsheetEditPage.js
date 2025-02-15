@@ -454,6 +454,8 @@ const CallsheetEditPage = () => {
     } = postData;
 
   useEffect(() => {
+    /* Function to fetch the Callsheet data, the Day data and the Day 
+       Schedule Scenes data */
     const handleMount = async () => {
         try {
           const [{ data: dayGet }, { data: scenesdata }, { data: callsheetdata }] = 
@@ -1185,6 +1187,7 @@ const CallsheetEditPage = () => {
     formData.append("wardrobe_assistant_5_calltime", wardrobe_assistant_5_calltime);
     try {
       const {data} = await axiosReq.put(`/callsheetsnew/${callsheet_id}/`, formData);
+      toast.success(`Callsheet Day "${dataDay}" Updated`); 
       console.log(data);
       console.log(formData);
       history.goBack();
@@ -1513,6 +1516,7 @@ const CallsheetEditPage = () => {
           ))}
       </Col>
       </Row>  
+      {/* LOCATIONS */}
       <div className={`my-3 ${styles.Bold }`} > 
       <h5 className={`py-1 ${styles.SubTitle }`} >
           <span className="float-left ml-3">Part 3 </span>

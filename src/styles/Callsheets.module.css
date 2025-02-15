@@ -66,6 +66,11 @@ p {
   border: 1px solid red;
 }
 
+.SubTitle7 {
+  background-color: #e4f2f4;
+  font-weight: 700;
+}
+
 .BoldScene {
   color: rgba(129, 102, 21, 0.99);
   font-weight: 600;

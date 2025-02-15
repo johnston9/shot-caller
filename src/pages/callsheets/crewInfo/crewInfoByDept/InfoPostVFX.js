@@ -15,26 +15,6 @@ const InfoPostVFX = ({crewInfoOne, setShowPos}) => {
 
   const {editor_name, editor_email, editor_phone,
     fx_name, fx_email, fx_phone,
-    add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
-    add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
-    add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
-    add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
-    add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
-    add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
-    add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
-    add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
-    add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
-    add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
-    add_pos_11_job, add_pos_11_name, add_pos_11_email, add_pos_11_phone,
-    add_pos_12_job, add_pos_12_name, add_pos_12_email, add_pos_12_phone,
-    add_pos_13_job, add_pos_13_name, add_pos_13_email, add_pos_13_phone,
-    add_pos_14_job, add_pos_14_name, add_pos_14_email, add_pos_14_phone,
-    add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone,
-    add_pos_16_job, add_pos_16_name, add_pos_16_email, add_pos_16_phone,
-    add_pos_17_job, add_pos_17_name, add_pos_17_email, add_pos_17_phone,
-    add_pos_18_job, add_pos_18_name, add_pos_18_email, add_pos_18_phone,
-    add_pos_19_job, add_pos_19_name, add_pos_19_email, add_pos_19_phone,
-    add_pos_20_job, add_pos_20_name, add_pos_20_email, add_pos_20_phone,
      } = crewInfoOne || {};
 
   return (

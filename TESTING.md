@@ -371,22 +371,32 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 
 <p align="center"> <strong>The Callsheets page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/schedsched.png" width="50%">
+<img src="documentation/readme-images/callview.png" width="50%">
 </h2>
 
 - Use Case: Create a Callsheet.<br>
 
-  1. On a Schedule page Shoot Day, e.g. Day "2 - 01 Jan 2025" click on the "Create Callsheet" tab.<br>
-  2. The Create Day form displays with the Day and date showing e.g. Day "2 - 01 Jan 2025". <br>
+  1. On a Schedule page Shoot Day, e.g. Day "2 - 06 Jan 2026" click on the "Create Callsheet" tab.<br>
+  2. The Create Day form displays with the Day and date showing e.g. Day "2 - 2 - 06 Jan 2026". <br>
   3. Input any amount of data, e.g. Unit Call 6 AM and submit".<br>
   4. The Callsheet is created, a success message displays and the Schedule Day opens
-  now with a "View Callsheet" tab.
-  5. Click on the tab to open the Callsheet, Day "2 - 01 Jan 2025" with the correct data displaying, e.g. Unit Call 6 AM.<br>
-  6. It will also display Compan and Top crew details, the Schedule and Advanced Schedule.
+  now with a "View Callsheet" tab instead of a "Create callsheet" one.
+  5. Click on the tab to open the Callsheet, Day "2 - 06 Jan 2026" with the correct data displaying, e.g. Unit Call 6 AM.<br>
+  6. It will also display Company/Crew details if added and the Schedule and Advanced Schedule.
 
-<p align="center"> <strong>Shoot Day: Number "6" Created</strong></p>
+<p align="center"> <strong>The Create Day form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scheddaycre.png" width="50%">
+<img src="documentation/readme-images/calladd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calladd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calladd3.png" width="50%">
 </h2>
 
 - Use Case: Edit a Shoot Day.<br>

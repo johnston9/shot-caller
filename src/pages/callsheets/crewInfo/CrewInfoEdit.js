@@ -41,7 +41,6 @@ import Image from "react-bootstrap/Image";
 import Asset from "../../../components/Asset";
 import Upload from "../../../assets/upload.png";
 import Alert from "react-bootstrap/Alert";
-import appStyles from "../../../App.module.css";
 import { toast } from 'react-toastify';
 
 const CrewInfoEdit = () => {

@@ -22,8 +22,7 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
     pro_assistant_1_name, pro_assistant_1_email, pro_assistant_1_phone,
     pro_assistant_2_name, pro_assistant_2_email, pro_assistant_2_phone,
     pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
-    pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
-    pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,} = crewInfoOne || {};
+  } = crewInfoOne || {};
 
   return (
     <div>
