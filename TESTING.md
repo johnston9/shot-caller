@@ -162,7 +162,7 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 
 - Use Case: Edit a Shoot Day's Day or Date and automatically change the Callsheet as well.<br>
 
-  1. On the Edit/Delete icon and click the Edit icon.<br>
+  1. Click on the Edit/Delete icon and click the Edit icon.<br>
   2. The Edit Day form displays. <br>
   3. Input the new details, i.e. change the date to - "05 Jan 2026".<br>
   6. Press submit.<br>
@@ -186,7 +186,7 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 
 - Use Case: Delete a Shoot Day.<br>
 
-  1. On the Edit/Delete icon and click the Delete icon.<br>
+  1. Click on the Edit/Delete icon and click the Delete icon.<br>
   2. A Modal displays asking to Confirm Delete or Cancel<br>
   3. Click "Delete".<br>
   6. A success message displays and the Day is deleted.<br>
@@ -399,10 +399,10 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/calladd3.png" width="50%">
 </h2>
 
-- Use Case: Edit a Shoot Day.<br>
+- Use Case: Add to/Edit a Callsheet by Section.<br>
 
   1. On the Edit/Delete icon and click the Edit icon.<br>
-  2. The Edit Day form displays. <br>
+  2. The Edit Callsheet form displays. <br>
   3. Input the new details, i.e. change the date to - "27 Nov 2024".<br>
   6. Press submit.<br>
   7. A success message displays.<br>

@@ -10,10 +10,10 @@ const ImportantCrewCalls = () => {
     <div>
         <Row className="mb-3">
         <Col md={{span: 10, offset: 1}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+        <div className={`text-center px-3 pt-1 ${styles.SubTitle7 }`}>
         <h5 className={`text-center `} >IMPORTANT</h5>  
-        <p className="py-2 text-center"> Add all crew members to the Crew Info page located
-          on the Callsheets main page first to create Call Time input boxes for each Crew member.</p>
+        <p className="py-2 text-center"> All crew members needed to appear on the Callsheet
+        <span className={` ${styles.Red }`}> MUST </span> be added to the Crew Info - "Callsheet/Main Crew".</p>
          </div> 
         </Col>
       </Row>

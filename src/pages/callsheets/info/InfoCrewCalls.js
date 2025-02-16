@@ -11,11 +11,11 @@ const InfoCrewCalls = () => {
     <div>
         <Row className="mb-3">
         <Col md={{span: 10, offset: 1}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+        <div className={`text-center px-3 pt-1 ${styles.SubTitle7 }`}>
         <h5 className={`text-center `} >INFO</h5>  
           <p>Clicking the SET UNIT CALL button will give every Crew member a call time
             set to the Unit Call. This can then be changed individually for each 
-            Crew member on both the Create and Edit pages.</p>
+            Crew member.</p>
          </div> 
         </Col>
       </Row>

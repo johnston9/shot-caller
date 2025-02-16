@@ -34,6 +34,12 @@ import AddMakeup from './callsheetAddCrewTimes/AddMakeup';
 import AddArt from './callsheetAddCrewTimes/AddArt';
 import AddSoundTransport from './callsheetAddCrewTimes/AddSoundTransport';
 import AddStunts from './callsheetAddCrewTimes/AddStunts';
+import AddCater from './callsheetAddCrewTimes/AddCater';
+import AddADPA from './callsheetAddCrewTimes/AddADPA';
+import AddTransport from './callsheetAddCrewTimes/AddTransport';
+import AddConWrang from './callsheetAddCrewTimes/AddConWrang';
+import AddTv from './callsheetAddCrewTimes/AddTv';
+import AddAddition from './callsheetAddCrewTimes/AddAddition';
 import AddPostAdditional from './callsheetAddCrewTimes/AddPostAdditional';
 import InformationEdit from "./info/InformationEdit";
 import InformationWeather from "./info/InformationWeather";
@@ -59,17 +65,23 @@ const CallsheetEditPage = () => {
   const [dataDay, setDataDay] = useState("");
   const [dataDate, setDataDate] = useState("");
   const [showPro, setShowPro] = useState(false);
-  const [showCam, setShowCam] = useState(false);
-  const [showSou, setShowSou] = useState(false);
-  const [showLoc, setShowLoc] = useState(false);
-  const [showMak, setShowMak] = useState(false);
-  const [showEle, setShowEle] = useState(false);
-  const [showScr, setShowScr] = useState(false);
-  const [showArt, setShowArt] = useState(false);
-  const [showCas, setShowCas] = useState(false);
-  const [showStu, setShowStu] = useState(false);
-  const [showPos, setShowPos] = useState(false);
-  const [showWar, setShowWar] = useState(false);
+    const [showCam, setShowCam] = useState(false);
+    const [showSou, setShowSou] = useState(false);
+    const [showLoc, setShowLoc] = useState(false);
+    const [showMak, setShowMak] = useState(false);
+    const [showEle, setShowEle] = useState(false);
+    const [showScr, setShowScr] = useState(false);
+    const [showArt, setShowArt] = useState(false);
+    const [showCas, setShowCas] = useState(false);
+    const [showStu, setShowStu] = useState(false);
+    const [showPos, setShowPos] = useState(false);
+    const [showWar, setShowWar] = useState(false);
+    const [showCat, setShowCat] = useState(false);
+    const [showAD, setShowAD] = useState(false); 
+    const [showTra, setShowTra] = useState(false); 
+    const [showAdd, setShowAdd] = useState(false);
+    const [showTv, setShowTv] = useState(false);
+    const [showWra, setShowWra] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showInfoWeather, setShowInfoWeather] = useState(false);
   const [showImportantCrew, setShowImportantCrew] = useState(false);
@@ -1200,19 +1212,17 @@ const CallsheetEditPage = () => {
   }
 
   const infoFields = (
-    <div className={`pb-5 text-center ${styles.Back3 }`}>
+    <div className={`pb-3 text-center ${styles.White }`}>
       {/* TIMES   */}
-      <div className={`my-3 ${styles.Bold }`} > 
-      <h5 className={`py-1 ${styles.SubTitle }`} >
-          <span className="float-left ml-3">Part 1</span>
-          <span className="mr-5 pr-4">TIMES </span>
-        </h5> 
-      </div>
+      <div>
+      <h5 className={`py-0 mb-3 ${styles.SubTitle }`} >
+      TIMES
+      </h5> 
       {/* Unit call - Talent call Shoot call */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="unit_call" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Unit Call</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Unit Call</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1229,7 +1239,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="talent_call" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Talent Call</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`}>Talent Call</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1246,7 +1256,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="shoot_call" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Shoot Call</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`}>Shoot Call</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1262,11 +1272,12 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
+      <hr className="mt-1 mb-0"/>
       {/* breakfast - lunch - wrap */}
       <Row>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="breakfast" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`} >Breakfast</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Breakfast</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1283,7 +1294,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="lunch" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Lunch</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`}>Lunch</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1300,7 +1311,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="wrap" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Est. Wrap</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`}>Est. Wrap</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1316,13 +1327,12 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
-      {/* INFO */}
-      <div className={`mt-3 mb-2 ${styles.Bold }`} > 
-        <h5 className={`py-1 ${styles.SubTitle }`} >
-          <span className="float-left ml-3">Part 2 </span>
-          <span className="mr-5 pr-4">INFO </span>
-        </h5> 
       </div>
+      {/* INFO */}
+      <div>
+      <h5 className={`py-0 mt-3 ${styles.SubTitle }`} >
+      NEAREST HOSPITAL & WEATHER INFO
+      </h5> 
       <Row>
       <Col>
       <Button 
@@ -1340,12 +1350,11 @@ const CallsheetEditPage = () => {
                   ) } 
       </Col>
       </Row> 
-      <Row>
+      {/* weather location */}
+      <Row className="pb-2">
         <Col className="d-flex justify-content-center" xs={{span: 6, offset: 3}} >
-        {/* weather location */}
-        <div className="mt-3">
           <Form.Group controlId="weather_location" className={`${styles.Width95} `}  >
-          <Form.Label className={`${styles.Bold}`} >Weather Location
+          <Form.Label className={`${styles.BoldScene}`} >Weather Location
               </Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
@@ -1360,15 +1369,15 @@ const CallsheetEditPage = () => {
               {message}
             </Alert>
           ))}
-          </div>
         </Col>
       </Row>
-      {/* nearest hospital - department info */}
+      <hr className="mt-1 mb-0"/>
+      {/* nearest hospital */}
       <Row>
-      <Col xs={6} className=" p-0 p-md-2">
+      <Col md={{span: 6, offset: 3}} className=" p-0 p-md-2">
       <div className="d-flex justify-content-center">
       <Form.Group controlId="nearest_hospital" className={`${styles.Width} `}  >
-          <Form.Label className={`${styles.Bold}`} >Nearest Hospital</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >Nearest Hospital</Form.Label>
           <Form.Control 
             className={`${styles.Input}`}
             type="text"
@@ -1383,9 +1392,14 @@ const CallsheetEditPage = () => {
         </Alert>
       ))}
       </div>
+      </Col>
+      </Row>
+      {/* line 1 & 2 */}
+      <Row className="mt-2">
+      <Col md={6}>
       <div className="d-flex justify-content-center">
-      <Form.Group controlId="hospital_address_line_1" className={`${styles.Width} `}  >
-          <Form.Label className={`${styles.Bold}`} >Hospital Address Line 1</Form.Label>
+      <Form.Group controlId="hospital_address_line_1" className={`${styles.Width95} `}  >
+          <Form.Label className={`${styles.BoldScene}`} >Hospital Address Line 1</Form.Label>
           <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1400,10 +1414,11 @@ const CallsheetEditPage = () => {
         </Alert>
       ))}
       </div>
-      {/* line 2 */}
+      </Col>
+      <Col md={6}>
       <div className="d-flex justify-content-center">
-      <Form.Group controlId="hospital_address_line_2" className={`${styles.Width} `}  >
-          <Form.Label className={`${styles.Bold}`} >Hospital Address Line 2</Form.Label>
+      <Form.Group controlId="hospital_address_line_2" className={`${styles.Width95} `}  >
+          <Form.Label className={`${styles.BoldScene}`} >Hospital Address Line 2</Form.Label>
           <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1418,10 +1433,15 @@ const CallsheetEditPage = () => {
         </Alert>
       ))}
       </div>
+      </Col>
+      </Row>
+      {/* line 3 & 4 */}
+      <Row className="mt-2">
+      <Col md={6}>
       <div className="d-flex justify-content-center">
       {/* line 3 */}
-      <Form.Group controlId="hospital_address_line_3" className={`${styles.Width} `}  >
-          <Form.Label className={`${styles.Bold}`} >Hospital Address Line 3</Form.Label>
+      <Form.Group controlId="hospital_address_line_3" className={`${styles.Width95} `}  >
+          <Form.Label className={`${styles.BoldScene}`} >Hospital Address Line 3</Form.Label>
           <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1436,10 +1456,12 @@ const CallsheetEditPage = () => {
         </Alert>
       ))}
       </div>
+      </Col>
+      <Col md={6}>
       <div className="d-flex justify-content-center">
       {/* line 4 */}
-      <Form.Group controlId="hospital_address_line_4" className={`${styles.Width} `}  >
-          <Form.Label className={`${styles.Bold}`} >Hospital Address Line 4 </Form.Label>
+      <Form.Group controlId="hospital_address_line_4" className={`${styles.Width95} `}  >
+          <Form.Label className={`${styles.BoldScene}`} >Hospital Address Line 4 </Form.Label>
           <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1455,92 +1477,32 @@ const CallsheetEditPage = () => {
       ))}
       </div>
       </Col>
-      <Col xs={6} className="p-0 p-md-2 ">
-          <Form.Group controlId="department_info" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`}>Department Info</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={5}
-                type="text"
-                name="department_info"
-                value={department_info}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.department_info?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          <div className="mt-4">
-          <Form.Group controlId="transport_info" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Transport Info</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                type="text"
-                as="textarea"
-                rows={5}
-                name="transport_info"
-                value={transport_info}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.transport_info?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </div>
-          </Col>
       </Row>
-      {/* transport info - important info */}
-      <Row>
-          <Col xs={12} className="d-flex justify-content-center p-0 p-md-2">
-          <Form.Group controlId="important_info" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold}`}>Important Info</Form.Label>
-              <Form.Control 
-                className={`${styles.InputScene}`}
-                as="textarea"
-                rows={3}
-                type="text"
-                name="important_info"
-                value={important_info}
-                onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.important_info?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-      </Col>
-      </Row>  
+      </div> 
       {/* LOCATIONS */}
-      <div className={`my-3 ${styles.Bold }`} > 
-      <h5 className={`py-1 ${styles.SubTitle }`} >
-          <span className="float-left ml-3">Part 3 </span>
-          <span className="mr-5 pr-4">LOCATIONS </span>
+      <div className="mt-4">
+      <h5 className={`py-0 mt-3 mb-2 ${styles.SubTitle }`} >
+      LOCATIONS   
       </h5> 
-      </div>
-      <div className="pr-3">
       <div>
         <Row className="mb-2" >
-        <Col ms={{span: 10, offset: 1 }} >
-        <p>
-        Please seperated each address line with a comma and a space. 
+        <Col >
+        <p className={`${styles.Bold }`}>
+        Each address line <span className={`${styles.Red }`} >MUST</span> be seperated with a comma and a space for Google Maps. Input the name if appropiate.
         </p>
-        <p>
-        Include the name if appropiate for Google Maps.</p>
         </Col>
         </Row>
       </div>
       {/* basecamp name basecamp address - basecamp parking and notes */}
-      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>BASECAMP</span>
-      <Row className="mb-3">
-          <Col xs={4 } className="d-flex justify-content-center p-0 p-md-2">
+      <Row className="mt-3">
+      <Col>
+      <span className={`px-5 py-1 ${styles.SubTitle }`}>BASECAMP</span>
+      </Col>
+      </Row>
+      <Row className="mb-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="basecamp_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Basecamp Name</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Basecamp Name</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1555,9 +1517,9 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4}  className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="basecamp_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Basecamp Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Basecamp Address</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 type="text"
@@ -1574,10 +1536,10 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4}  className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="basecamp_parking_n_notes" className={`${styles.Width95} `}  >
-              <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Basecamp Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Basecamp Notes</Form.Label>
+              <Form.Label className={`d-none d-md-block ${styles.BoldScene}`}>Basecamp Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.BoldScene}`}>Basecamp Notes</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 as="textarea"
@@ -1595,12 +1557,17 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
+      <hr className="mt-1 mb-3"/>
       {/* location 1 name location 1 address - location 1 parking and notes */}
+      <Row>
+      <Col>
       <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 1</span>
-      <Row className="mb-3">
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+      </Col>
+      </Row>
+      <Row className="mb-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_1_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 1 Name</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 1 Name</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1615,9 +1582,9 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_1_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 1 Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 1 Address</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 type="text"
@@ -1634,10 +1601,10 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_1_parking_n_notes" className={`${styles.Width95} `}  >
-              <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 1 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 1 Notes</Form.Label>
+              <Form.Label className={`d-none d-md-block ${styles.BoldScene}`}>Location 1 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.BoldScene}`}>Location 1 Notes</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 as="textarea"
@@ -1655,12 +1622,17 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
-      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 2</span>
+      <hr className="mt-1 mb-3"/>
       {/* location 2 name location 2 address - location 2 parking and notes */}
+      <Row>
+      <Col>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 2</span>
+      </Col>
+      </Row>
       <Row className="mb-3">
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_2_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 2 Name</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 2 Name</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1675,9 +1647,9 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_2_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 2 Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 2 Address</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 type="text"
@@ -1694,10 +1666,10 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_2_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 2 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 2 Notes</Form.Label>
+          <Form.Label className={`d-none d-md-block ${styles.BoldScene}`}>Location 2 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.BoldScene}`}>Location 2 Notes</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 as="textarea"
@@ -1715,12 +1687,17 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
-      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 3</span>
+      <hr className="mt-1 mb-3"/>
       {/* location 3 name location 3 address - location 3 parking and notes */}
+      <Row>
+      <Col>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 3</span>
+      </Col>
+      </Row>
       <Row className="mb-3">
-        <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+        <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_3_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 3 Name</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 3 Name</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1735,9 +1712,9 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2"> 
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2"> 
           <Form.Group controlId="location_3_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 3 Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 3 Address</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 type="text"
@@ -1754,10 +1731,10 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_3_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 3 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 3 Notes</Form.Label>
+          <Form.Label className={`d-none d-md-block ${styles.BoldScene}`}>Location 3 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.BoldScene}`}>Location 3 Notes</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 as="textarea"
@@ -1775,12 +1752,17 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
-      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 4</span>
+      <hr className="mt-1 mb-3"/>
       {/* location 4 name location 4 address - location 4 parking and notes */}
+      <Row>
+      <Col>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 4</span>
+      </Col>
+      </Row>
       <Row className="mb-3">
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_4_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 4 Name</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 4 Name</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1795,9 +1777,9 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_4_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 4 Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 4 Address</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 type="text"
@@ -1814,10 +1796,10 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_4_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 4 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 4 Notes</Form.Label>
+          <Form.Label className={`d-none d-md-block ${styles.BoldScene}`}>Location 4 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.BoldScene}`}>Location 4 Notes</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 as="textarea"
@@ -1835,12 +1817,17 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
-      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 5</span>
+      <hr className="mt-1 mb-3"/>
       {/* location 5 name location 5 address - location 5 parking and notes */}
       <Row>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+      <Col>
+      <span className={`px-5 my-3 py-1 ${styles.SubTitle }`}>LOCATION 5</span>
+      </Col>
+      </Row>
+      <Row>
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_2_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 5 Name</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 5 Name</Form.Label>
               <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
@@ -1855,9 +1842,9 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_5_address" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >Location 5 Address</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Location 5 Address</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 type="text"
@@ -1874,10 +1861,10 @@ const CallsheetEditPage = () => {
             </Alert>
           ))}
           </Col>
-          <Col xs={4} className="d-flex justify-content-center p-0 p-md-2">
+          <Col xs={12} md={4} className="d-flex justify-content-center pt-2 p-md-2">
           <Form.Group controlId="location_5_parking_n_notes" className={`${styles.Width95} `}  >
-          <Form.Label className={`d-none d-md-block ${styles.Bold}`}>Location 5 Parking and Notes</Form.Label>
-              <Form.Label className={`d-md-none ${styles.Bold}`}>Location 5 Notes</Form.Label>
+          <Form.Label className={`d-none d-md-block ${styles.BoldScene}`}>Location 5 Parking and Notes</Form.Label>
+              <Form.Label className={`d-md-none ${styles.BoldScene}`}>Location 5 Notes</Form.Label>
               <Form.Control 
                 className={`${styles.InputScene}`}
                 as="textarea"
@@ -1896,18 +1883,89 @@ const CallsheetEditPage = () => {
           </Col>
       </Row>
       </div>
-      {/* WALKIE CHANNELS */}
+      {/* DEPARTMENT & IMPORTANT INFO */}
       <div>
-        <div className={`my-3 ${styles.Bold }`} > 
-        <h5 className={`py-1 ${styles.SubTitle }`} >
-          <span className="float-left ml-3">Part 4 </span>
-          <span className="mr-5 pr-4">WALKIES CHANNELS </span>
+      <h5 className={`py-0 mt-3 ${styles.SubTitle }`} >
+      DEPARTMENT & IMPORTANT INFO
+      </h5> 
+      {/* department info */}
+      <Row className="mt-2">
+      <Col md={{span: 10, offset: 1}} className="d-flex justify-content-center p-0 p-md-2 ">
+          <Form.Group controlId="department_info" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.BoldScene}`}>Department Info</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="department_info"
+                value={department_info}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.department_info?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+      </Col>
+      </Row>
+      <hr className="mt-2 mb-2"/>
+      {/* transport info */}
+      <Row >
+      <Col md={{span: 10, offset: 1}} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="transport_info" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.BoldScene}`} >Transport Info</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                type="text"
+                as="textarea"
+                rows={2}
+                name="transport_info"
+                value={transport_info}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.transport_info?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+      </Col>
+      </Row>
+      <hr className="mt-2 mb-2"/>
+      {/* important info */}
+      <Row >
+      <Col md={{span: 10, offset: 1}} className="d-flex justify-content-center p-0 p-md-2">
+          <Form.Group controlId="important_info" className={`${styles.Width95} `}  >
+              <Form.Label className={`${styles.BoldScene}`}>Important Info</Form.Label>
+              <Form.Control 
+                className={`${styles.InputScene}`}
+                as="textarea"
+                rows={2}
+                type="text"
+                name="important_info"
+                value={important_info}
+                onChange={handleChange}
+                  />
+          </Form.Group>
+          {errors?.important_info?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+      </Col>
+      </Row> 
+      </div>
+      {/* WALKIE CHANNELS */}
+      <div className="mt-3">
+        <h5 className={`py-0 ${styles.SubTitle }`} >
+        WALKIES CHANNELS
         </h5> 
-        </div>
-      <Row>
+      <Row className="pt-2">
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_production" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Production</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Production</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1924,7 +1982,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_open" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Open</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Open</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1941,7 +1999,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_transportation" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Transportation</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Transport</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1958,7 +2016,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_art_dept" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Art Dept</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Art Dept</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1974,10 +2032,11 @@ const CallsheetEditPage = () => {
           ))}
           </Col>
       </Row>
+      <hr className="mb-1"/>
       <Row>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_rollover" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Rollover</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Rollover</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -1994,7 +2053,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_camera" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Camera</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Camera</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -2011,7 +2070,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_electric" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Electric</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Electric</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -2028,7 +2087,7 @@ const CallsheetEditPage = () => {
           </Col>
           <Col xs={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="walkie_channel_grip" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.Bold} `} >Grip</Form.Label>
+              <Form.Label className={`${styles.BoldScene} `} >Grip</Form.Label>
               <Form.Control 
               className={`${styles.Input}`}
               type="text"
@@ -2085,14 +2144,20 @@ const CallsheetEditPage = () => {
                     ) }   
       <div className="text-center d-none d-md-block ">
       </div>
-      <h3 className={`text-center py-1 mt-2 ${styles.SubTitle }`} >ADD CAST</h3> 
+      {/* cast bg */}
+      <div className= {`mb-4 ${styles.White }`}>
+      <h5 className={`text-center py-1 mt-2 ${styles.SubTitle }`} >
+      ADD CAST & BACKGROUND CALLTIMES</h5> 
       <Row className="text-center">
       <Col xs={10} md={{span: 8, offset: 2 }} >
-        <p>Edit previously added Cast and BG from the Callsheet.
+      <p className={`${styles.SmallSize } pt-2`}>
+      Add Cast and Background Calls here. These forms are seperate from the main 
+      Add/Edit Callsheet form below.
+      </p>
+        <p className={`${styles.SmallSize }`}>Edit previously added Cast and BG from the Callsheet.
         </p>
       </Col>
       </Row>
-      <div className= {`mb-3`}>
       {/* schedule button */}
       <Row className='text-center'>
       <Col  >
@@ -2189,28 +2254,33 @@ const CallsheetEditPage = () => {
       </Row>             
       ) }
       </div>
-      {/* info */}
-      <h3 className={`text-center mt-5 mb-0 py-1 ${styles.SubTitle }`} >EDIT CALLSHEET INFO</h3> 
-      <Form className= {`mb-1 ${styles.Back3}`} onSubmit={handleSubmit}>
+      <h5 className={`text-center mt-3 mb-0 py-1 ${styles.SubTitle }`} >
+      ADD/EDIT CALLSHEET INFO</h5> 
+      <Row className={`${styles.White }`}>
+      <Col md={{span: 8, offset: 2}} >
+      <p className={`${styles.SmallSize } mt-2 mb-2 text-center`}>
+      Add/Edit Callsheet Times, Locations, Crew Calls, Department Info and Walkies here.
+      </p>
+      </Col>
+      </Row>
+      {/* callsheet info */}
+      <Form className= {`mb-1 ${styles.White }`} onSubmit={handleSubmit}>
       {infoFields}
       {/* crew */}
-      <div className={`mt-3 text-center ${styles.Bold }`} > 
-      <h5 className={`py-1 ${styles.SubTitle }`} >
-          <span className="float-left ml-3">Part 5 </span>
-          <span className="mr-5 pr-4">CREW CALLS </span>
+      <h5 className={`py-0 text-center ${styles.SubTitle }`} >
+      CREW CALLTIMES
         </h5> 
-      </div>
       {/* info buttons */}
       <Row>
       <Col xs={6} >
       <Button
-          className={`px-4 py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
-          onClick={() => setShowInfoCrew(showInfoCrew => !showInfoCrew)} >INFO
+          className={`px-4 py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
+          onClick={() => setShowInfoCrew(showInfoCrew => !showInfoCrew)} >SET UNIT CALL INFO
       </Button>
       </Col>
-      <Col className="py-2" >
+      <Col xs={6} >
       <Button
-          className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
+          className={`float-right py-0 mt-2 ${btnStyles.Order} ${btnStyles.Button}`}
           onClick={() => setShowImportantCrew(showImportantCrew => !showImportantCrew)} >Important
       </Button>
       </Col>
@@ -2331,6 +2401,127 @@ const CallsheetEditPage = () => {
       </Row>  
       <p className={`mt-1 pl-3 mb-1 pt-1 ${styles.SubTitle }`}></p>
       </div>
+      {/* department buttons */}
+      <div className={`mt-2 pt-2 ${styles.White }`}> 
+        <Row className={`${styles.ButtonLine} mt-0`}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowPro(showPro => !showPro)} > Production
+              </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+                  <p
+                    className={`py-0 mb-0 ${styles.Button}`}
+                    onClick={() => setShowCam(showCam => !showCam)} > Camera
+                  </p>
+              </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowAD(showAD => !showAD)} > AD/PA
+            </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
+          </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
+            </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowScr(showScr => !showScr)} > Script
+            </p>
+          </Col>
+        </Row>  
+        <Row className={`${styles.ButtonLine} text-center mt-1`}>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
+              </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+                  <p
+                    className={`py-0 mb-0 ${styles.Button}`}
+                    onClick={() => setShowMak(showMak => !showMak)} > Makeup
+                  </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowSou(showSou => !showSou)} > Sound
+            </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowStu(showStu => !showStu)} >Stunts/SFX
+          </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowArt(showArt => !showArt)} > Art
+            </p>
+          </Col>
+          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowPos(showPos => !showPos)} > Post/VFX
+            </p>
+          </Col>
+        </Row> 
+        {/* new row - Catering - Casting - Transport - Wrangling - TV Studio -Additional */}
+        <Row className={`${styles.ButtonLine} mt-1`}>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowCat(showCat => !showCat)} > Catering/Craft
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowCas(showCas => !showCas)} > Casting
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowTra(showTra => !showTra)} > Transport
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowWra(showWra => !showWra)} > Construction/Wrangling
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowTv(showTv => !showTv)} > TV Studio
+            </p>
+        </Col>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+            <p
+                className={`py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowAdd(showAdd => !showAdd)} >Additional
+            </p>
+        </Col>
+        </Row> 
+        <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+        <div className={`py-1 ${styles.White }`}>
+      </div>
+      </div>
       {/* department components */}
       <div className={`mt-0 ${styles.Crew }`}>
         {/* Add Production */}
@@ -2339,21 +2530,35 @@ const CallsheetEditPage = () => {
               ) : (
                 <AddProduction postData={postData} handleChange={handleChange} 
                 crewInfoOne={crewInfoOne} setShowPro={setShowPro} /> 
-                ) }  
-        {/* Add Casting */}
-        {!showCas ? (
+        ) } 
+        {/* Add Camera */}
+        {!showCam ? (
                 ""
               ) : (
-                <AddCastingAD crewInfoOne={crewInfoOne} setShowCas={setShowCas}
-                postData={postData} handleChange={handleChange} /> 
-                ) } 
+                <AddCamera crewInfoOne={crewInfoOne} setShowCam={setShowCam} 
+                postData={postData} handleChange={handleChange}/> 
+        ) }  
+        {/* Add AD/PA */}
+        {!showAD ? (
+                ""
+              ) : (
+                <AddADPA crewInfoOne={crewInfoOne} setShowAD={setShowAD} 
+                postData={postData} handleChange={handleChange}/> 
+        ) }
         {/* Add Locations */}
         {!showLoc ? (
                 ""
               ) : (
                 <AddLocations crewInfoOne={crewInfoOne} setShowLoc={setShowLoc} 
                 postData={postData} handleChange={handleChange}/> 
-                ) } 
+        ) }
+        {/* Add Wardrobe  */}
+        {!showWar ? (
+                ""
+              ) : (
+                <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} 
+                postData={postData} handleChange={handleChange}/> 
+        ) } 
         {/* Add Script  */}
         {!showScr ? (
                 ""
@@ -2396,27 +2601,55 @@ const CallsheetEditPage = () => {
                 <AddArt crewInfoOne={crewInfoOne} setShowArt={setShowArt} 
                 postData={postData} handleChange={handleChange}/> 
                 ) } 
-        {/* Add Camera */}
-        {!showCam ? (
-                ""
-              ) : (
-                <AddCamera crewInfoOne={crewInfoOne} setShowCam={setShowCam} 
-                postData={postData} handleChange={handleChange}/> 
-                ) } 
         {/* Add Post */}
         {!showPos ? (
                 ""
               ) : (
                 <AddPostAdditional crewInfoOne={crewInfoOne} setShowPos={setShowPos} 
                 postData={postData} handleChange={handleChange}/> 
-                ) } 
-        {/* Add Wardrobe  */}
-        {!showWar ? (
+        ) } 
+        {/* Add Catering */}
+        {!showCat ? (
                 ""
               ) : (
-                <AddWardrobe crewInfoOne={crewInfoOne} setShowWar={setShowWar} 
-                postData={postData} handleChange={handleChange}/> 
-                ) } 
+                <AddCater crewInfoOne={crewInfoOne} setShowCat={setShowCat}
+                postData={postData} handleChange={handleChange} /> 
+        ) } 
+        {/* Add Casting */}
+        {!showCas ? (
+                ""
+              ) : (
+                <AddCastingAD crewInfoOne={crewInfoOne} setShowCas={setShowCas}
+                postData={postData} handleChange={handleChange} /> 
+        ) } 
+        {/* Add Transport */}
+        {!showTra ? (
+                ""
+              ) : (
+                <AddTransport crewInfoOne={crewInfoOne} setShowTra={setShowTra}
+                postData={postData} handleChange={handleChange} /> 
+        ) } 
+        {/* Add Construction/Wrangling */}
+        {!showWra ? (
+                ""
+              ) : (
+                <AddConWrang crewInfoOne={crewInfoOne} setShowWra={setShowWra}
+                postData={postData} handleChange={handleChange} /> 
+        ) } 
+        {/* Add TV */}
+        {!showTv ? (
+                ""
+              ) : (
+                <AddTv crewInfoOne={crewInfoOne} setShowTv={setShowTv}
+                postData={postData} handleChange={handleChange} /> 
+        ) } 
+        {/* Add TV */}
+        {!showAdd ? (
+                ""
+              ) : (
+                <AddAddition crewInfoOne={crewInfoOne} setShowAdd={setShowAdd}
+                postData={postData} handleChange={handleChange} /> 
+        ) } 
         </div>
       {buttons}
       </Form>

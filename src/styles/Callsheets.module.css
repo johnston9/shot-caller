@@ -2,6 +2,10 @@
     min-height: 100px;
 }
 
+.SmallSize {
+  font-size: .75rem;
+}
+
 .White1 {
   border: 1px solid #999;
 }
@@ -393,13 +397,14 @@ p {
 
 .InputScene {
   background: #ffffff;
-  border: 1px solid #f0f1f9;
-   box-sizing: border-box;
-   border-radius: 2px;
-   color: #7177a1;
-   padding: 0px 10px;
-}
-
+  border: 1px solid #dee1f7;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  padding: 0px 10px;
+  min-height: 30px !important;
+  text-align: center;
+ }
 
 .TitleBox {
   background-color: #e8f0f1;
@@ -481,6 +486,12 @@ p {
 
   .Input {
     height: 20px !important;
+    text-align: center;
+    font-size: .75rem !important;
+  }
+
+  .InputScene {
+    min-height: 30px !important;
     text-align: center;
     font-size: .75rem !important;
   }

@@ -11,12 +11,18 @@ const InformationEdit = () => {
     <div>
         <Row className="mb-3">
         <Col md={{span: 8, offset: 2}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+        <div className={`px-3 pt-1 ${styles.SubTitle7 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>The Add Cast and Add Background forms here are seperate from the main 
-        Callsheet form below and must be used before submitting the it. They allow each cast member 
+        <p className='pt-2'>The Callsheet Add/Edit page is divided into 2 sections:</p>
+        <p className='pt-2'>1. THE CAST & BACKGROUND CALLS FORMS<p/>
+        The Add Cast and Add Background forms are seperate from the main 
+        Callsheet form below. They allow each cast member 
         or background item to be added individually. The schedule is provided
         to facilitate this and can also be viewed beside these forms.</p>
+        <p className='pt-2'>
+        2. THE MAIN CALLSHEET FORM<br/> 
+        This is comprised of 5 sections, TIMES, INFO, 
+        LOCATIONS, WALKIES and CREW CALLS.  </p>
          </div> 
         </Col>
       </Row>

@@ -11,7 +11,7 @@ const InformationWeather = () => {
     <div>
         <Row className="mb-3">
         <Col md={{span: 10, offset: 1}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
+        <div className={`text-center px-3 pt-1 ${styles.SubTitle7 }`}>
         <h5 className={`text-center `} >IMPORTANT</h5>  
         <p className={`${styles.P}`}>
             For Weather Location please put the city's name, comma, space and 2-letter country code 
