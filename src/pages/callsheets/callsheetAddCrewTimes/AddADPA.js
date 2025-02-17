@@ -1,5 +1,5 @@
-/* Form to add the AddADPA Department Calltimes to the Callsheet
-   From the Callsheet Edit page */
+/* Form to add the Casting and AD Departments Calltimes to the Callsheet
+   From the Callsheet Create and Edit pages */
    import React, { useState } from "react";
    import Form from "react-bootstrap/Form";
    import Col from 'react-bootstrap/Col';
@@ -7,58 +7,56 @@
    import { Alert } from "react-bootstrap";
    import styles from "../../../styles/Callsheets.module.css";
    
-   const AddADPA = ({crewInfoOne, handleChange, postData, setShowArt }) => {
+   const AddADPA = ({crewInfoOne, handleChange, postData, setShowAD }) => {
      // eslint-disable-next-line
      const [errors, setErrors] = useState({});
    
-     const {production_designer_name,
-       art_director_name, 
-       art_assistant_name, 
-       set_decorator_name, 
-       set_dresser_name, 
-       lead_man_name,
-       dresser_name, 
-       prop_master_name, 
-       ass_prop_master_name, 
-       prop_buyer_name,
-       armorer_name,   } = crewInfoOne || {};
+     const {
+       ad_1_name,
+       ad_2_name,
+       ad_3_name,
+       ad_4_name,
+       ad_5_name,
+       pro_assistant_1_name,
+       pro_assistant_2_name,
+       pro_assistant_3_name,}
+        = crewInfoOne || {};
    
-     const { art_director_calltime, art_assistant_calltime, set_decorator_calltime,
-       set_dresser_calltime, lead_man_calltime, dresser_calltime, prop_master_calltime,
-       ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime, 
-       production_designer_calltime,
+     const { ad_1_calltime,
+       ad_2_calltime, ad_3_calltime, ad_4_calltime, ad_5_calltime, pro_assistant_1_calltime,
+       pro_assistant_2_calltime, pro_assistant_3_calltime,
        } = postData || {};
    
      return (
        <div>
-         <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
-         <span className={`float-right ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
-         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART </h5>
+         <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
+         <span className={`float-right ${styles.Close }`} onClick={() => setShowAD(false) } >Close</span> 
+         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >AD POSITIONS </h5>
          </div>
-         <div className='mt-3'>
-           {/* production designer */}
-           {production_designer_name && 
+         <div className='mt-3'>      
+            {/* 1st AD */}
+            {ad_1_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Production Designer</p>
+                 <p className={`${styles.CrewInfoP} `}>1st AD</p>
                </Col>
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{production_designer_name} </p>
+                 <p className={`${styles.CrewInfop} `}>{ad_1_name} </p>
                </Col>
                <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="production_designer_calltime" className={`${styles.Width} `}>
+               <Form.Group controlId="ad_1_calltime" className={`my-1 ${styles.Width} `}>
                    <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                    <Form.Control 
                    className={`${styles.Input}`}
                    type="text"
                    placeholder="Call"
-                   name="production_designer_calltime"
-                   value={production_designer_calltime}
+                   name="ad_1_calltime"
+                   value={ad_1_calltime}
                    onChange={handleChange}
                        />
                </Form.Group>
-               {errors?.production_designer_calltime?.map((message, idx) => (
+               {errors?.ad_1_calltime?.map((message, idx) => (
                  <Alert variant="warning" key={idx}>
                    {message}
                  </Alert>
@@ -67,29 +65,29 @@
              </Row>
              </div> )
             }
-           {/* art director */}
-           {art_director_name && 
+            {/* 2nd AD */}
+            {ad_2_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Art Director</p>
+                 <p className={`${styles.CrewInfoP} `}>2nd AD</p>
                </Col>
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{art_director_name} </p>
+                 <p className={`${styles.CrewInfop} `}>{ad_2_name} </p>
                </Col>
                <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="art_director_calltime" className={`${styles.Width} `}>
+               <Form.Group controlId="ad_2_calltime" className={`my-1 ${styles.Width} `}>
                    <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                    <Form.Control 
                    className={`${styles.Input}`}
                    type="text"
                    placeholder="Call"
-                   name="art_director_calltime"
-                   value={art_director_calltime}
+                   name="ad_2_calltime"
+                   value={ad_2_calltime}
                    onChange={handleChange}
                        />
                </Form.Group>
-               {errors?.art_director_calltime?.map((message, idx) => (
+               {errors?.ad_2_calltime?.map((message, idx) => (
                  <Alert variant="warning" key={idx}>
                    {message}
                  </Alert>
@@ -98,29 +96,91 @@
              </Row>
              </div> )
             }
-            {/* art assistant */}
-           {art_assistant_name && 
+            {/* 3rd AD */}
+            {ad_3_name && 
              (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center ' >
+             <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Art Assistant</p>
+                 <p className={`${styles.CrewInfoP} `}>3rd AD</p>
                </Col>
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{art_assistant_name} </p>
+                 <p className={`${styles.CrewInfop} `}>{ad_3_name} </p>
                </Col>
                <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="art_assistant_calltime" className={`my-1 ${styles.Width} `}>
+               <Form.Group controlId="ad_3_calltime" className={`my-1 ${styles.Width} `}>
                    <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                    <Form.Control 
                    className={`${styles.Input}`}
                    type="text"
                    placeholder="Call"
-                   name="art_assistant_calltime"
-                   value={art_assistant_calltime}
+                   name="ad_3_calltime"
+                   value={ad_3_calltime}
                    onChange={handleChange}
                        />
                </Form.Group>
-               {errors?.art_assistant_calltime?.map((message, idx) => (
+               {errors?.ad_3_calltime?.map((message, idx) => (
+                 <Alert variant="warning" key={idx}>
+                   {message}
+                 </Alert>
+               ))}
+               </Col>
+             </Row>
+             </div> )
+            }
+            {/* 4th AD */}
+            {ad_4_name && 
+             (<div className={`${styles.CrewInfoRow}`}>
+             <Row className='text-center d-flex align-items-center' >
+               <Col xs={6} md={4} >
+                 <p className={`${styles.CrewInfoP} `}>4th AD</p>
+               </Col>
+               <Col xs={6} md={4} >
+                 <p className={`${styles.CrewInfop} `}>{ad_4_name} </p>
+               </Col>
+               <Col className="d-flex justify-content-center" xs={12} md={4} >
+               <Form.Group controlId="ad_4_calltime" className={`my-1 ${styles.Width} `}>
+                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                   <Form.Control 
+                   className={`${styles.Input}`}
+                   type="text"
+                   placeholder="Call"
+                   name="ad_4_calltime"
+                   value={ad_4_calltime}
+                   onChange={handleChange}
+                       />
+               </Form.Group>
+               {errors?.ad_4_calltime?.map((message, idx) => (
+                 <Alert variant="warning" key={idx}>
+                   {message}
+                 </Alert>
+               ))}
+               </Col>
+             </Row>
+             </div> )
+            }
+            {/* 2nd 2nd AD */}
+            {ad_5_name && 
+             (<div className={`${styles.CrewInfoRow}`}>
+             <Row className='text-center d-flex align-items-center' >
+               <Col xs={6} md={4} >
+                 <p className={`${styles.CrewInfoP} `}>2nd 2nd AD</p>
+               </Col>
+               <Col xs={6} md={4} >
+                 <p className={`${styles.CrewInfop} `}>{ad_5_name} </p>
+               </Col>
+               <Col className="d-flex justify-content-center" xs={12} md={4} >
+               <Form.Group controlId="ad_5_calltime" className={`my-1 ${styles.Width} `}>
+                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                   <Form.Control 
+                   className={`${styles.Input}`}
+                   type="text"
+                   placeholder="Call"
+                   name="ad_5_calltime"
+                   value={ad_5_calltime}
+                   onChange={handleChange}
+                       />
+               </Form.Group>
+               {errors?.ad_5_calltime?.map((message, idx) => (
                  <Alert variant="warning" key={idx}>
                    {message}
                  </Alert>
@@ -130,31 +190,31 @@
              </div> )
             }
             <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
-             <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >SET DECORATION </h5>
+             <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PA POSITIONS </h5>
            </div>
-            {/* set decorator */}
-           {set_decorator_name && 
+            {/* pro assistant 1 */}
+            {pro_assistant_1_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Set Decorator</p>
+                 <p className={`${styles.CrewInfoP} `}>Pro Assistant 1</p>
                </Col>
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{set_decorator_name} </p>
+                 <p className={`${styles.CrewInfop} `}>{pro_assistant_1_name} </p>
                </Col>
                <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="set_decorator_calltime" className={`my-1 ${styles.Width} `}>
+               <Form.Group controlId="pro_assistant_1_calltime" className={`my-1 ${styles.Width} `}>
                    <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                    <Form.Control 
                    className={`${styles.Input}`}
                    type="text"
                    placeholder="Call"
-                   name="set_decorator_calltime"
-                   value={set_decorator_calltime}
+                   name="pro_assistant_1_calltime"
+                   value={pro_assistant_1_calltime}
                    onChange={handleChange}
                        />
                </Form.Group>
-               {errors?.set_decorator_calltime?.map((message, idx) => (
+               {errors?.pro_assistant_1_calltime?.map((message, idx) => (
                  <Alert variant="warning" key={idx}>
                    {message}
                  </Alert>
@@ -163,29 +223,29 @@
              </Row>
              </div> )
             }
-            {/* set dresser */}
-           {set_dresser_name && 
+            {/* pro assistant 2*/}
+            {pro_assistant_2_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Set Dresser</p>
+                 <p className={`${styles.CrewInfoP} `}>Pro Assistant 2</p>
                </Col>
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{set_dresser_name} </p>
+                 <p className={`${styles.CrewInfop} `}>{pro_assistant_2_name} </p>
                </Col>
                <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="set_dresser_calltime" className={`my-1 ${styles.Width} `}>
+               <Form.Group controlId="pro_assistant_2_calltime" className={`my-1 ${styles.Width} `}>
                    <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                    <Form.Control 
                    className={`${styles.Input}`}
                    type="text"
                    placeholder="Call"
-                   name="set_dresser_calltime"
-                   value={set_dresser_calltime}
+                   name="pro_assistant_2_calltime"
+                   value={pro_assistant_2_calltime}
                    onChange={handleChange}
                        />
                </Form.Group>
-               {errors?.set_dresser_calltime?.map((message, idx) => (
+               {errors?.pro_assistant_2_calltime?.map((message, idx) => (
                  <Alert variant="warning" key={idx}>
                    {message}
                  </Alert>
@@ -194,29 +254,29 @@
              </Row>
              </div> )
             }
-            {/* lead man */}
-           {lead_man_name && 
+            {/* pro assistant 3 */}
+            {pro_assistant_3_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Lead Man</p>
+                 <p className={`${styles.CrewInfoP} `}>Pro Assistant 3</p>
                </Col>
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{lead_man_name} </p>
+                 <p className={`${styles.CrewInfop} `}>{pro_assistant_3_name} </p>
                </Col>
                <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="lead_man_calltime" className={`my-1 ${styles.Width} `}>
+               <Form.Group controlId="pro_assistant_3_calltime" className={`my-1 ${styles.Width} `}>
                    <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                    <Form.Control 
                    className={`${styles.Input}`}
                    type="text"
                    placeholder="Call"
-                   name="lead_man_calltime"
-                   value={lead_man_calltime}
+                   name="pro_assistant_3_calltime"
+                   value={pro_assistant_3_calltime}
                    onChange={handleChange}
                        />
                </Form.Group>
-               {errors?.lead_man_calltime?.map((message, idx) => (
+               {errors?.pro_assistant_3_calltime?.map((message, idx) => (
                  <Alert variant="warning" key={idx}>
                    {message}
                  </Alert>
@@ -225,167 +285,9 @@
              </Row>
              </div> )
             }
-            {/* dresser */}
-            {dresser_name && 
-             (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center' >
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Dresser</p>
-               </Col>
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{dresser_name} </p>
-               </Col>
-               <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="dresser_calltime" className={`my-1 ${styles.Width} `}>
-                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                   <Form.Control 
-                   className={`${styles.Input}`}
-                   type="text"
-                   placeholder="Call"
-                   name="dresser_calltime"
-                   value={dresser_calltime}
-                   onChange={handleChange}
-                       />
-               </Form.Group>
-               {errors?.dresser_calltime?.map((message, idx) => (
-                 <Alert variant="warning" key={idx}>
-                   {message}
-                 </Alert>
-               ))}
-               </Col>
-             </Row>
-             </div> )
-            }
-            <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
-             <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
-           </div>
-            {/* prop Master */}
-            {prop_master_name && 
-             (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center' >
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Prop Master</p>
-               </Col>
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{prop_master_name} </p>
-               </Col>
-               <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="prop_master_calltime" className={`my-1 ${styles.Width} `}>
-                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                   <Form.Control 
-                   className={`${styles.Input}`}
-                   type="text"
-                   placeholder="Call"
-                   name="prop_master_calltime"
-                   value={prop_master_calltime}
-                   onChange={handleChange}
-                       />
-               </Form.Group>
-               {errors?.prop_master_calltime?.map((message, idx) => (
-                 <Alert variant="warning" key={idx}>
-                   {message}
-                 </Alert>
-               ))}
-               </Col>
-             </Row>
-             </div> )
-            }
-            {/* ass prop master */}
-            {ass_prop_master_name && 
-             (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center' >
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Assist Prop Master</p>
-               </Col>
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{ass_prop_master_name} </p>
-               </Col>
-               <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="ass_prop_master_calltime" className={`my-1 ${styles.Width} `}>
-                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                   <Form.Control 
-                   className={`${styles.Input}`}
-                   type="text"
-                   placeholder="Call"
-                   name="ass_prop_master_calltime"
-                   value={ass_prop_master_calltime}
-                   onChange={handleChange}
-                       />
-               </Form.Group>
-               {errors?.ass_prop_master_calltime?.map((message, idx) => (
-                 <Alert variant="warning" key={idx}>
-                   {message}
-                 </Alert>
-               ))}
-               </Col>
-             </Row>
-             </div> )
-            }
-            {/* prop buyer */}
-            {prop_buyer_name && 
-             (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center' >
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Prop Buyer</p>
-               </Col>
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{prop_buyer_name} </p>
-               </Col>
-               <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="prop_buyer_calltime" className={`my-1 ${styles.Width} `}>
-                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                   <Form.Control 
-                   className={`${styles.Input}`}
-                   type="text"
-                   placeholder="Call"
-                   name="prop_buyer_calltime"
-                   value={prop_buyer_calltime}
-                   onChange={handleChange}
-                       />
-               </Form.Group>
-               {errors?.prop_buyer_calltime?.map((message, idx) => (
-                 <Alert variant="warning" key={idx}>
-                   {message}
-                 </Alert>
-               ))}
-               </Col>
-             </Row>
-             </div> )
-            }
-            {/* armorer  */}
-            {armorer_name && 
-             (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center' >
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Armorer</p>
-               </Col>
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{armorer_name} </p>
-               </Col>
-               <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="armorer_calltime" className={`my-1 ${styles.Width} `}>
-                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                   <Form.Control 
-                   className={`${styles.Input}`}
-                   type="text"
-                   placeholder="Call"
-                   name="armorer_calltime"
-                   value={armorer_calltime}
-                   onChange={handleChange}
-                       />
-               </Form.Group>
-               {errors?.armorer_calltime?.map((message, idx) => (
-                 <Alert variant="warning" key={idx}>
-                   {message}
-                 </Alert>
-               ))}
-               </Col>
-             </Row>
-             </div> )
-            }
-            </div>
+          </div>
        </div>
      )
    }
-
-export default AddADPA
+   
+   export default AddADPA

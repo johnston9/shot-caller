@@ -27,9 +27,11 @@ const CrewADPA = ({handleChange, postData, setShow}) => {
     <div className="pb-3 text-center">
         <div className={`mt-0 text-center ${styles.SubTitle }`}>
         <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-        <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >AD/PA POSITIONS </h5>
+        <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >AD POSITIONS </h5>
         </div>
         <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
+        {/* AD */}
+        <div>
         {/* 1st Assistant Director */} 
         <div>
           <p className={`mb-3 py-0 mx-md-4 ${styles.SubTitle }` } 
@@ -364,12 +366,10 @@ const CrewADPA = ({handleChange, postData, setShow}) => {
               </Col>
           </Row>
         </div>
-        {/* break */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`mt-3 mb-3`}/>
-        </Col>
-        </Row>
+        </div>
+        {/* PA */}
+        <div>
+        <h5 className={`mt-4 mb-0 py-1 ${styles.SubTitle }`} >PA POSITIONS</h5> 
         {/* Production Assistant 1 */} 
         <div>
           <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
@@ -574,6 +574,8 @@ const CrewADPA = ({handleChange, postData, setShow}) => {
         <hr className={`mt-3 mb-3`}/>
         </Col>
         </Row>
+        </div>
+
         </div>
         </div>
   )
