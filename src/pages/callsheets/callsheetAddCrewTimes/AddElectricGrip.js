@@ -1,5 +1,5 @@
 /* Form to add the Electric and Grip Department Calltimes to the Callsheet
-   From the Callsheet Create and Edit pages */
+   From the Callsheet Edit page */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from 'react-bootstrap/Col';
@@ -33,8 +33,8 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ELECTRIC </h5>
+      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ELECTRIC DEPARTMENT</h5>
       </div>
       <div className='mt-3'>
         {/* gaffer */}
@@ -42,7 +42,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Gaffer</p>
+              <p className={`${styles.BoldScene} `}>Gaffer</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{gaffer_name} </p>
@@ -66,6 +66,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* best boy electric */}
@@ -73,7 +74,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>BB Electric</p>
+              <p className={`${styles.BoldScene} `}>Best Boy Electric</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{best_boy_electric_name} </p>
@@ -97,6 +98,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* 3rd electric */}
@@ -104,7 +106,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>3rd Electric</p>
+              <p className={`${styles.BoldScene} `}>3rd Electric</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{electric_3_name} </p>
@@ -128,16 +130,17 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
-         {/* 4th electric */}
+         {/* Electrician */}
          {electric_4_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
-              <p className={`${styles.CrewInfoP} `}>4th Electric</p>
+            <Col xs={6} md={4} >
+              <p className={`${styles.BoldScene} `}>Electrician</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{electric_4_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
@@ -159,17 +162,18 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
-         <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >GRIP </h5>
+         <div className={`my-3 text-center ${styles.SubTitle }`}>
+          <h5 className={`text-center`} style={{ textTransform: 'uppercase'}} >GRIP DEPARTMENT</h5>
         </div>
         {/* Keygrip */}
         {keygrip_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Keygrip</p>
+              <p className={`${styles.BoldScene} `}>Keygrip</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{keygrip_name} </p>
@@ -193,6 +197,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          {/* best boy grip */}
@@ -200,7 +205,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Best Boy Grip</p>
+              <p className={`${styles.BoldScene} `}>Best Boy Grip</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{best_boy_grip_name} </p>
@@ -224,6 +229,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          {/* dolly grip */}
@@ -231,7 +237,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Dolly Grip</p>
+              <p className={`${styles.BoldScene} `}>Dolly Grip</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{dolly_grip_name} </p>
@@ -255,14 +261,15 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
-         {/* swing ge 1 */}
+         {/* G&E Swing 1 */}
          {swing_ge1_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Swing G/E 1</p>
+              <p className={`${styles.BoldScene} `}>G&E Swing 1</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{swing_ge1_name} </p>
@@ -286,14 +293,15 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
-         {/* swing ge 2 */}
+         {/* G&E Swing 2 */}
          {swing_ge2_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Swing G/E 2</p>
+              <p className={`${styles.BoldScene} `}>G&E Swing 2</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{swing_ge2_name} </p>
@@ -317,14 +325,15 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
-         {/* swing ge 3 */}
+         {/* G&E Swing 3 */}
          {swing_ge3_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Swing G/E 3</p>
+              <p className={`${styles.BoldScene} `}>G&E Swing 3</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{swing_ge3_name} </p>
@@ -348,14 +357,15 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
-         {/* swing ge 4 */}
+         {/* G&E Swing 4 */}
          {swing_ge4_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Swing G/E 4</p>
+              <p className={`${styles.BoldScene} `}>G&E Swing 4</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{swing_ge4_name} </p>
@@ -379,14 +389,15 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
-         {/* swing ge 5 */}
+         {/* G&E Swing 5 */}
          {swing_ge5_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Swing G/E 5</p>
+              <p className={`${styles.BoldScene} `}>G&E Swing 5</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{swing_ge5_name} </p>
@@ -410,6 +421,7 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          </div>

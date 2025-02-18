@@ -30,7 +30,7 @@
      return (
        <div>
          <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-         <span className={`float-right ${styles.Close }`} onClick={() => setShowAD(false) } >Close</span> 
+         <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowAD(false) } >Close</span> 
          <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >AD POSITIONS </h5>
          </div>
          <div className='mt-3'>      
@@ -39,7 +39,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>1st AD</p>
+                 <p className={`${styles.BoldScene} `}>1st AD</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{ad_1_name} </p>
@@ -63,6 +63,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
             {/* 2nd AD */}
@@ -70,7 +71,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>2nd AD</p>
+                 <p className={`${styles.BoldScene} `}>2nd AD</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{ad_2_name} </p>
@@ -94,6 +95,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
             {/* 3rd AD */}
@@ -101,7 +103,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>3rd AD</p>
+                 <p className={`${styles.BoldScene} `}>3rd AD</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{ad_3_name} </p>
@@ -125,6 +127,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
             {/* 4th AD */}
@@ -132,7 +135,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>4th AD</p>
+                 <p className={`${styles.BoldScene} `}>4th AD</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{ad_4_name} </p>
@@ -156,6 +159,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
             {/* 2nd 2nd AD */}
@@ -163,7 +167,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>2nd 2nd AD</p>
+                 <p className={`${styles.BoldScene} `}>2nd 2nd AD</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{ad_5_name} </p>
@@ -187,9 +191,10 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
-            <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+            <div className={`my-3 mt-0 text-center ${styles.SubTitle }`}>
              <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PA POSITIONS </h5>
            </div>
             {/* pro assistant 1 */}
@@ -197,7 +202,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Pro Assistant 1</p>
+                 <p className={`${styles.BoldScene} `}>Pro Assistant 1</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{pro_assistant_1_name} </p>
@@ -221,6 +226,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
             {/* pro assistant 2*/}
@@ -228,7 +234,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Pro Assistant 2</p>
+                 <p className={`${styles.BoldScene} `}>Pro Assistant 2</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{pro_assistant_2_name} </p>
@@ -252,6 +258,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
             {/* pro assistant 3 */}
@@ -259,7 +266,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Pro Assistant 3</p>
+                 <p className={`${styles.BoldScene} `}>Pro Assistant 3</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{pro_assistant_3_name} </p>
@@ -283,6 +290,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
           </div>

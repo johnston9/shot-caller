@@ -45,15 +45,19 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowAdd(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ADDITIONAL POSITIONS </h5>
+      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowAdd(false) } >Close</span> 
+      <h5 className={`d-none d-md-block pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
+      ADDITIONAL POSITIONS </h5>
+      <h5 className={`d-block d-md-none pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
+      ADDITIONAL </h5>
       </div>
+      <div className='mt-3'>
         {/* add pos 1 */}
         {add_pos_1_job && 
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_1_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_1_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_1_name} </p>
@@ -77,6 +81,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 2 */}
@@ -84,7 +89,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_2_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_2_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_2_name} </p>
@@ -108,6 +113,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 3 */}
@@ -115,7 +121,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_3_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_3_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_3_name} </p>
@@ -139,6 +145,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 4 */}
@@ -146,7 +153,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_4_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_4_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_4_name} </p>
@@ -170,6 +177,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 5 */}
@@ -177,7 +185,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_5_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_5_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_5_name} </p>
@@ -201,6 +209,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 6 */}
@@ -208,7 +217,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_6_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_6_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_6_name} </p>
@@ -232,6 +241,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 7 */}
@@ -239,7 +249,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_7_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_7_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_7_name} </p>
@@ -263,6 +273,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 8 */}
@@ -270,7 +281,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_8_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_8_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_8_name} </p>
@@ -294,6 +305,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 9*/}
@@ -301,7 +313,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_9_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_9_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_9_name} </p>
@@ -325,6 +337,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
         {/* add pos 10 */}
@@ -332,7 +345,7 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
         (<div className={`${styles.CrewInfoRow}`}>
         <Row className='text-center d-flex align-items-center' >
           <Col xs={6} md={4} >
-            <p className={`${styles.CrewInfoP} `}>{add_pos_10_job} </p>
+            <p className={`${styles.BoldScene} `}>{add_pos_10_job} </p>
           </Col>
           <Col xs={6} md={4} >
             <p className={`${styles.CrewInfop} `}>{add_pos_10_name} </p>
@@ -356,9 +369,11 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
           ))}
           </Col>
         </Row>
+        <hr className="mt-0 mb-0"/>
         </div> )
         }
-        </div>
+      </div>
+      </div>
   )
 }
 

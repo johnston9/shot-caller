@@ -56,12 +56,12 @@ const InfoLocations = ({crewInfoOne, setShowLoc}) => {
           </Row>
           </div> )
       }
-      {/* Location Manager/Other - (using Location Assistant 1 keys for this) */}
+      {/* Location Manager 2/Other - (using Location Assistant 1 keys for this) */}
       {location_ass_1_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Manager/Other</p>  
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Manager 2/Other</p>  
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
@@ -108,12 +108,12 @@ const InfoLocations = ({crewInfoOne, setShowLoc}) => {
           </Row>
           </div> )
       }
-      {/* Location Assistant - (using "Location Assistant 3" keys for this) */}
+      {/* Location Assistant 1 - (using "Location Assistant 3" keys for this) */}
       {location_ass_3_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Assistant</p>  
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Assistant 1</p>  
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
@@ -134,12 +134,12 @@ const InfoLocations = ({crewInfoOne, setShowLoc}) => {
           </Row>
           </div> )
       }
-      {/* Location Assistant - (using "Location Assistant 4" keys for this) */}
+      {/* Location Assistant 2 - (using "Location Assistant 4" keys for this) */}
       {location_ass_4_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
           <div className='d-flex justify-content-center '>
           <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Assistant</p>  
+       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Location Assistant 2</p>  
           </div>
           <Row className='text-center' >
             <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >

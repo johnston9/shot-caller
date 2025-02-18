@@ -29,11 +29,11 @@
      return (
        <div>
          <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-         <span className={`float-right ${styles.Close }`} onClick={() => setShowCat(false) } >Close</span> 
+         <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowCat(false) } >Close</span> 
          <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CATERING </h5>
          </div>
          <Row>
-        <Col>
+        <Col className="text-center pt-2">
         <p>
         All Catering to be handled seperatly.
         </p>
@@ -41,7 +41,7 @@
          </Row>
          <div className='mt-3'>
             {/* CRAFT SERVICES */}
-            <div className={`mx-5 mt-0 text-center ${styles.SubTitle }`}>
+            <div className={`mt-0 text-center ${styles.SubTitle }`}>
             <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >CRAFT SERVICES </h5>
             </div>
             {/* craft service */}
@@ -49,7 +49,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Craft Service</p>
+                 <p className={`${styles.BoldScene} `}>Craft Service</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{craft_service_name} </p>
@@ -73,6 +73,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
             {/* crafty ass */}
@@ -80,7 +81,7 @@
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfoP} `}>Crafty Assistant</p>
+                 <p className={`${styles.BoldScene} `}>Crafty Assistant</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{crafty_ass_name} </p>
@@ -104,6 +105,7 @@
                ))}
                </Col>
              </Row>
+             <hr className="mt-0 mb-0"/>
              </div> )
             }
           </div>

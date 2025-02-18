@@ -96,10 +96,10 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       <hr className={`mt-3 mb-3`}/>
       </Col>
       </Row>
-      {/* Location Manager/Other - (using Location Assistant 1 keys for this) */}
+      {/* Location Manager 2/Other - (using Location Assistant 1 keys for this) */}
       <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>Location Manager/Other</p> 
+      style={{ textTransform: 'uppercase'}}>Location Manager 2/Other</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
         CALLNAME: locast1</span> 
@@ -232,10 +232,10 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       <hr className={`mt-3 mb-3`}/>
       </Col>
       </Row>
-      {/* Location Assistant - (using "Location Assistant 3" keys for this) */}
+      {/* Location Assistant 1 - (using "Location Assistant 3" keys for this) */}
       <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>Location Assistant</p> 
+      style={{ textTransform: 'uppercase'}}>Location Assistant 1</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
         CALLNAME: locast3</span> 
@@ -300,10 +300,10 @@ const CrewLocations = ({handleChange, postData, setShow}) => {
       <hr className={`mt-3 mb-3`}/>
       </Col>
       </Row>
-      {/* Location Assistant - (using "Location Assistant 4" keys for this) */}
+      {/* Location Assistant 2 - (using "Location Assistant 4" keys for this) */}
       <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>Location Assistant</p> 
+      style={{ textTransform: 'uppercase'}}>Location Assistant 2</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
         CALLNAME: locast4</span> 

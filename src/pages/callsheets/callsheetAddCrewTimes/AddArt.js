@@ -31,9 +31,9 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
 
   return (
     <div>
-      <div className={`mt-0 text-center pb-2 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART </h5>
+      <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
+      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART DEPARTMENT</h5>
       </div>
       <div className='mt-3'>
         {/* production designer */}
@@ -41,7 +41,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Production Designer</p>
+              <p className={`${styles.BoldScene} `}>Production Designer</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{production_designer_name} </p>
@@ -65,6 +65,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
         {/* art director */}
@@ -72,7 +73,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Art Director</p>
+              <p className={`${styles.BoldScene} `}>Art Director</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{art_director_name} </p>
@@ -96,6 +97,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          {/* art assistant */}
@@ -103,7 +105,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Art Assistant</p>
+              <p className={`${styles.BoldScene} `}>Art Assistant</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{art_assistant_name} </p>
@@ -127,9 +129,10 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
-         <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+         <div className={`my-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >SET DECORATION </h5>
         </div>
          {/* set decorator */}
@@ -137,7 +140,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Set Decorator</p>
+              <p className={`${styles.BoldScene} `}>Set Decorator</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{set_decorator_name} </p>
@@ -161,6 +164,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* set dresser */}
@@ -168,7 +172,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Set Dresser</p>
+              <p className={`${styles.BoldScene} `}>Set Dresser</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{set_dresser_name} </p>
@@ -192,6 +196,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* lead man */}
@@ -199,7 +204,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Lead Man</p>
+              <p className={`${styles.BoldScene} `}>Lead Man</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{lead_man_name} </p>
@@ -223,6 +228,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* dresser */}
@@ -230,7 +236,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Dresser</p>
+              <p className={`${styles.BoldScene} `}>Dresser</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{dresser_name} </p>
@@ -254,9 +260,10 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
-         <div className={`mt-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
+         <div className={`my-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
         </div>
          {/* prop Master */}
@@ -264,7 +271,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Prop Master</p>
+              <p className={`${styles.BoldScene} `}>Prop Master</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{prop_master_name} </p>
@@ -288,6 +295,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* ass prop master */}
@@ -295,7 +303,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Assist Prop Master</p>
+              <p className={`${styles.BoldScene} `}>Assist Prop Master</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{ass_prop_master_name} </p>
@@ -319,6 +327,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* prop buyer */}
@@ -326,7 +335,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Prop Buyer</p>
+              <p className={`${styles.BoldScene} `}>Prop Buyer</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{prop_buyer_name} </p>
@@ -350,6 +359,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* armorer  */}
@@ -357,7 +367,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Armorer</p>
+              <p className={`${styles.BoldScene} `}>Armorer</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{armorer_name} </p>
@@ -381,6 +391,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          </div>

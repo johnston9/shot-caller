@@ -238,7 +238,7 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
       {/* SFX Makeup Assistant/Makeup Other*/} 
       <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>SFX Makeup Assistant/Makeup Other</p> 
+      style={{ textTransform: 'uppercase'}}>SFX Makeup Assistant/Other</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
         CALLNAME: fxmakast</span> 

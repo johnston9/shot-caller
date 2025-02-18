@@ -30,8 +30,8 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowScr }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >SCRIPT </h5>
+      <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >SCRIPT DEPARTMENT</h5>
       </div>
       <div className='mt-3'>
         {/* writer */}

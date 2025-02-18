@@ -24,7 +24,7 @@ const AddCastingAD = ({crewInfoOne, handleChange, postData, setShowCas }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
+      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CASTING </h5>
       </div>
       <div className='mt-3'>
@@ -33,7 +33,7 @@ const AddCastingAD = ({crewInfoOne, handleChange, postData, setShowCas }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Extras Casting</p>
+              <p className={`${styles.BoldScene} `}>Extras Casting</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{extras_casting_name} </p>
@@ -57,6 +57,7 @@ const AddCastingAD = ({crewInfoOne, handleChange, postData, setShowCas }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          </div>

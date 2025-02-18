@@ -34,8 +34,8 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CAMERA </h5>
+      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CAMERA DEPARTMENT</h5>
       </div>
       <div className='mt-3'>
         {/* dop */}
@@ -43,7 +43,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>DOP</p>
+              <p className={`${styles.BoldScene} `}>DOP</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{dop_name} </p>
@@ -67,6 +67,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          {/* camera operator */}
@@ -74,7 +75,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Camera Operator</p>
+              <p className={`${styles.BoldScene} `}>Camera Operator</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{camera_operator_name} </p>
@@ -98,6 +99,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* 1st AC */}
@@ -105,7 +107,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>1st AC</p>
+              <p className={`${styles.BoldScene} `}>1st AC</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{camera_ass_1_name} </p>
@@ -129,6 +131,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* 2nd AC */}
@@ -136,7 +139,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>2nd AC</p>
+              <p className={`${styles.BoldScene} `}>2nd AC</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{camera_ass_2_name} </p>
@@ -160,6 +163,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* DIT */}
@@ -167,7 +171,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>DIT</p>
+              <p className={`${styles.BoldScene} `}>DIT</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{dit_name} </p>
@@ -191,6 +195,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* steadicam */}
@@ -198,7 +203,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Steadicam</p>
+              <p className={`${styles.BoldScene} `}>Steadicam</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{steadicam_name} </p>
@@ -222,6 +227,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* camera pa */}
@@ -229,7 +235,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>Camera PA</p>
+              <p className={`${styles.BoldScene} `}>Camera PA</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{camera_pa_name} </p>
@@ -253,6 +259,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* oth camera pos 1 */}
@@ -260,7 +267,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_1_job} </p>
+              <p className={`${styles.BoldScene} `}>{oth_camera_pos_1_job} </p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_1_name} </p>
@@ -284,6 +291,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* oth camera pos 2 */}
@@ -291,7 +299,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_2_job} </p>
+              <p className={`${styles.BoldScene} `}>{oth_camera_pos_2_job} </p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_2_name} </p>
@@ -315,6 +323,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* oth camera pos 3 */}
@@ -322,7 +331,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_3_job} </p>
+              <p className={`${styles.BoldScene} `}>{oth_camera_pos_3_job} </p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_3_name} </p>
@@ -346,6 +355,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* oth camera pos 4 */}
@@ -353,7 +363,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>
+              <p className={`${styles.BoldScene} `}>
                 {oth_camera_pos_4_job} </p>
             </Col>
             <Col xs={6} md={4} >
@@ -379,6 +389,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          {/* oth camera pos 5 */}
@@ -386,7 +397,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfoP} `}>
+              <p className={`${styles.BoldScene} `}>
                 {oth_camera_pos_5_job} </p>
             </Col>
             <Col xs={6} md={4} >
@@ -412,6 +423,7 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
             ))}
             </Col>
           </Row>
+          <hr className="mt-0 mb-0"/>
           </div> )
          }
          </div>
