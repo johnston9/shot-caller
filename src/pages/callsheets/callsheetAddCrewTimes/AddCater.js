@@ -11,18 +11,11 @@
      // eslint-disable-next-line
      const [errors, setErrors] = useState({});
    
-     const { catering_co_1_name,
-       catering_co_2_name,
-       catering_co_3_name,
-       craft_service_name,
+     const { craft_service_name,
        crafty_ass_name, 
      } = crewInfoOne || {};
    
-     const { writer_calltime,
-       catering_co_1_calltime,
-       catering_co_2_calltime,
-       catering_co_3_calltime,
-       craft_service_calltime,
+     const { craft_service_calltime,
        crafty_ass_calltime,
        } = postData || {};
    

@@ -22,13 +22,11 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
     oth_production_pos_3_job, oth_production_pos_3_name,
     oth_production_pos_4_job, oth_production_pos_4_name,
     oth_production_pos_5_job, oth_production_pos_5_name,
-    script_supervisor_name, 
-    legal_name, 
     set_medic_name, 
    } = crewInfoOne || {};
 
   const { director_calltime, producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
-    upm_calltime, production_pa_calltime, script_supervisor_calltime, legal_calltime,
+    upm_calltime, production_pa_calltime,
     set_medic_calltime, oth_production_pos_1_calltime, oth_production_pos_2_calltime,
     oth_production_pos_3_calltime, oth_production_pos_4_calltime, oth_production_pos_5_calltime, 
     } = postData || {};
@@ -232,39 +230,7 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
-         {/* script supervisor */}
-        {script_supervisor_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Script Supervisor</p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{script_supervisor_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="script_supervisor_calltime" className={`my-1 ${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call"
-                name="script_supervisor_calltime"
-                value={script_supervisor_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.script_supervisor_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          <hr className="mt-0 mb-0"/>
-          </div> )
-         }
-         {/* set medic */}
+        {/* set medic */}
         {set_medic_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
