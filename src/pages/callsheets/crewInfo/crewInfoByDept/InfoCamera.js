@@ -23,7 +23,6 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
     oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
     oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
     oth_camera_pos_4_job, oth_camera_pos_4_name, oth_camera_pos_4_email, oth_camera_pos_4_phone,
-    oth_camera_pos_5_job, oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
         } = crewInfoOne || {};
   return (
     <div>
@@ -307,32 +306,6 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
             </Col>
             <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
               <p className={`${styles.CrewInfop} `}>{oth_camera_pos_4_email}</p>
-            </Col>
-          </Row>
-          {/* break */}
-          <Row>
-          <Col xs={12}>
-          <hr className={`mt-3 mb-0 mx-5`}/>
-          </Col>
-          </Row>
-          </div> )
-        }
-        {/* oth camera pos 5 */}
-        {oth_camera_pos_5_job && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-          <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
-          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{oth_camera_pos_5_job} </p> 
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={4} className={`${styles.BorderRight} `}>
-              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_5_name}</p>
-            </Col>
-            <Col xs={6} md={4} className={`${styles.BorderRight} `}>
-            <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_phone}</p>
-            </Col>
-            <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
-              <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_email}</p>
             </Col>
           </Row>
           {/* break */}

@@ -22,13 +22,12 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
     oth_camera_pos_2_job, oth_camera_pos_2_name, 
     oth_camera_pos_3_job, oth_camera_pos_3_name,
     oth_camera_pos_4_job, oth_camera_pos_4_name, 
-    oth_camera_pos_5_job, oth_camera_pos_5_name,
      } = crewInfoOne || {};
 
   const { dop_calltime, camera_operator_calltime, camera_ass_1_calltime,
     camera_ass_2_calltime, dit_calltime, steadicam_calltime, camera_pa_calltime,
     oth_camera_pos_1_calltime, oth_camera_pos_2_calltime, oth_camera_pos_3_calltime,
-    oth_camera_pos_4_calltime, oth_camera_pos_5_calltime,
+    oth_camera_pos_4_calltime,
       } = postData || {};
 
   return (
@@ -383,40 +382,6 @@ const AddCamera = ({crewInfoOne, handleChange, postData, setShowCam }) => {
                     />
             </Form.Group>
             {errors?.oth_camera_pos_4_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          <hr className="mt-0 mb-0"/>
-          </div> )
-         }
-         {/* oth camera pos 5 */}
-         {oth_camera_pos_5_job && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>
-                {oth_camera_pos_5_job} </p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>
-                {oth_camera_pos_5_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="oth_camera_pos_5_calltime" className={`my-1 ${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder=""
-                name="oth_camera_pos_5_calltime"
-                value={oth_camera_pos_5_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.oth_camera_pos_5_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

@@ -12,13 +12,9 @@ const AddCastingAD = ({crewInfoOne, handleChange, postData, setShowCas }) => {
   const [errors, setErrors] = useState({});
 
   const {extras_casting_name,
-    pro_assistant_4_name, pro_assistant_5_name,
    } = crewInfoOne || {};
 
-  const { extras_casting_calltime, ad_1_calltime,
-    ad_2_calltime, ad_3_calltime, ad_4_calltime, ad_5_calltime, pro_assistant_1_calltime,
-    pro_assistant_2_calltime, pro_assistant_3_calltime, pro_assistant_4_calltime,
-    pro_assistant_5_calltime,
+  const { extras_casting_calltime,
     } = postData || {};
 
   return (

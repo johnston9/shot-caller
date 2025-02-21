@@ -21,12 +21,20 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
     prop_master_name, 
     ass_prop_master_name, 
     prop_buyer_name,
-    armorer_name,   } = crewInfoOne || {};
+    armorer_name, 
+    // new
+    stunts_3_name,
+    stunts_4_name,
+    stunts_5_name,
+    oth_camera_pos_5_name,
+    } = crewInfoOne || {};
 
   const { art_director_calltime, art_assistant_calltime, set_decorator_calltime,
     set_dresser_calltime, lead_man_calltime, dresser_calltime, prop_master_calltime,
     ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime, 
     production_designer_calltime,
+    // new
+    oth_camera_pos_5_calltime, stunts_3_calltime, stunts_4_calltime, stunts_5_calltime,
     } = postData || {};
 
   return (
@@ -100,6 +108,38 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-1 mb-0"/>
           </div> )
          }
+         {/* new Standby Art - (Using Stunt Performer 3 Keys ) */}
+         {stunts_3_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center ' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.BoldScene} `}>Standby Art</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{stunts_3_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="stunts_3_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="stunts_3_calltime"
+                value={stunts_3_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.stunts_3_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          <hr className="mt-0 mb-0"/>
+          </div> )
+         }
          {/* art assistant */}
         {art_assistant_name && 
           (<div className={`${styles.CrewInfoRow}`}>
@@ -158,6 +198,38 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
                     />
             </Form.Group>
             {errors?.set_decorator_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          <hr className="mt-0 mb-0"/>
+          </div> )
+         }
+         {/* new Assistant Set Decorator - (Using Stunt Performer 4 Keys) */}
+         {stunts_4_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center ' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.BoldScene} `}>Assistant Set Decorator</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{stunts_4_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="stunts_4_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="stunts_4_calltime"
+                value={stunts_4_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.stunts_4_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -263,6 +335,38 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
+         {/* Swing Gang 1 (Using Stunt Performer 5 Keys) */}
+         {stunts_5_name && 
+          (<div className={`${styles.CrewInfoRow}`}>
+          <Row className='text-center d-flex align-items-center ' >
+            <Col xs={6} md={4} >
+              <p className={`${styles.BoldScene} `}>Swing Gang 1</p>
+            </Col>
+            <Col xs={6} md={4} >
+              <p className={`${styles.CrewInfop} `}>{stunts_5_name} </p>
+            </Col>
+            <Col className="d-flex justify-content-center" xs={12} md={4} >
+            <Form.Group controlId="stunts_5_calltime" className={`my-1 ${styles.Width} `}>
+                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                <Form.Control 
+                className={`${styles.Input}`}
+                type="text"
+                placeholder="Call"
+                name="stunts_5_calltime"
+                value={stunts_5_calltime}
+                onChange={handleChange}
+                    />
+            </Form.Group>
+            {errors?.stunts_5_calltime?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            </Col>
+          </Row>
+          <hr className="mt-0 mb-0"/>
+          </div> )
+         }
          <div className={`my-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
         </div>
@@ -330,6 +434,40 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
+         {/* On Set Props Person (Using Additional Camera Position 5 Keys)*/}
+          {oth_camera_pos_5_name && 
+            (<div className={`${styles.CrewInfoRow}`}>
+            <Row className='text-center d-flex align-items-center' >
+              <Col xs={6} md={4} >
+                <p className={`${styles.BoldScene} `}>
+                On Set Props Person </p>
+              </Col>
+              <Col xs={6} md={4} >
+                <p className={`${styles.CrewInfop} `}>
+                  {oth_camera_pos_5_name} </p>
+              </Col>
+              <Col className="d-flex justify-content-center" xs={12} md={4} >
+              <Form.Group controlId="oth_camera_pos_5_calltime" className={`my-1 ${styles.Width} `}>
+                  <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                  <Form.Control 
+                  className={`${styles.Input}`}
+                  type="text"
+                  placeholder=""
+                  name="oth_camera_pos_5_calltime"
+                  value={oth_camera_pos_5_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.oth_camera_pos_5_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+            </Row>
+            <hr className="mt-0 mb-0"/>
+            </div> )
+          }
          {/* prop buyer */}
          {prop_buyer_name && 
           (<div className={`${styles.CrewInfoRow}`}>

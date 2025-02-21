@@ -17,9 +17,6 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
   const {stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
     stunts_1_name, stunts_1_email, stunts_1_phone,
     stunts_2_name, stunts_2_email, stunts_2_phone,
-    stunts_3_name, stunts_3_email, stunts_3_phone,
-    stunts_4_name, stunts_4_email, stunts_4_phone,
-    stunts_5_name, stunts_5_email, stunts_5_phone,
     catering_co_1_name, catering_co_1_email, catering_co_1_phone,
     catering_co_2_name, catering_co_2_email, catering_co_2_phone,
     catering_co_3_name, catering_co_3_email, catering_co_3_phone,} = crewInfoOne || {};
@@ -99,84 +96,6 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
             </Col>
             <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{stunts_2_email}</p>
-            </Col>
-          </Row>
-          {/* break */}
-          <Row>
-          <Col xs={12}>
-          <hr className={`mt-3 mb-0 mx-5`}/>
-          </Col>
-          </Row>
-          </div> )
-      }
-      {/* Stunt Performer 3 */}
-      {stunts_3_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-          <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Stunt Performer 3</p>  
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfoP} `}>{stunts_3_name}</p>
-            </Col>
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-            <p className={`${styles.CrewInfop} `}>{stunts_3_phone}</p>
-            </Col>
-            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-              <p className={`${styles.CrewInfop} `}>{stunts_3_email}</p>
-            </Col>
-          </Row>
-          {/* break */}
-          <Row>
-          <Col xs={12}>
-          <hr className={`mt-3 mb-0 mx-5`}/>
-          </Col>
-          </Row>
-          </div> )
-      }
-      {/* Stunt Performer 4 */}
-      {stunts_4_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-          <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Stunt Performer 4</p>  
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfoP} `}>{stunts_4_name}</p>
-            </Col>
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-            <p className={`${styles.CrewInfop} `}>{stunts_4_phone}</p>
-            </Col>
-            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-              <p className={`${styles.CrewInfop} `}>{stunts_4_email}</p>
-            </Col>
-          </Row>
-          {/* break */}
-          <Row>
-          <Col xs={12}>
-          <hr className={`mt-3 mb-0 mx-5`}/>
-          </Col>
-          </Row>
-          </div> )
-      }
-      {/* Stunt Performer 5 */}
-      {stunts_5_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-          <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Stunt Performer 5</p>  
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfoP} `}>{stunts_5_name}</p>
-            </Col>
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-            <p className={`${styles.CrewInfop} `}>{stunts_5_phone}</p>
-            </Col>
-            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-              <p className={`${styles.CrewInfop} `}>{stunts_5_email}</p>
             </Col>
           </Row>
           {/* break */}

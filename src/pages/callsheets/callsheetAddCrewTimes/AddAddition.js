@@ -34,12 +34,12 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
        add_pos_9_calltime,
        add_pos_10_calltime,
       
-      add_pos_15_calltime,
-      add_pos_16_calltime,
-      add_pos_17_calltime,
-      add_pos_18_calltime,
-      add_pos_19_calltime,
-      add_pos_20_calltime,
+      // add_pos_15_calltime,
+      // add_pos_16_calltime,
+      // add_pos_17_calltime,
+      // add_pos_18_calltime,
+      // add_pos_19_calltime,
+      // add_pos_20_calltime,
        } = postData || {};
 
   return (

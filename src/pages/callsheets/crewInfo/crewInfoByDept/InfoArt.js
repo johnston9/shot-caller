@@ -24,7 +24,13 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
     prop_master_name, prop_master_email, prop_master_phone,
     ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
     prop_buyer_name, prop_buyer_email, prop_buyer_phone,
-    armorer_name, armorer_email, armorer_phone,  } = crewInfoOne || {};
+    armorer_name, armorer_email, armorer_phone,
+    // new
+    stunts_3_name, stunts_3_email, stunts_3_phone,
+    stunts_4_name, stunts_4_email, stunts_4_phone,
+    stunts_5_name, stunts_5_email, stunts_5_phone,
+    oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
+    } = crewInfoOne || {};
 
   return (
     <div className="pb-3 text-center">
@@ -85,6 +91,32 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Row>
       </div> )
       }
+      {/* new Standby Art - (Using Stunt Performer 3 Keys ) */}
+      {stunts_3_name && 
+      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Standby Art</p>  
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfoP} `}>{stunts_3_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+        <p className={`${styles.CrewInfop} `}>{stunts_3_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+          <p className={`${styles.CrewInfop} `}>{stunts_3_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
       {/* art assistant */}
       {art_assistant_name && 
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
@@ -133,6 +165,32 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
         </Col>
         <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{set_decorator_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
+      {/* new Assistant Set Decorator - (Using Stunt Performer 4 Keys) */}
+      {stunts_4_name && 
+      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Set Decorator</p>  
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfoP} `}>{stunts_4_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+        <p className={`${styles.CrewInfop} `}>{stunts_4_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+          <p className={`${styles.CrewInfop} `}>{stunts_4_email}</p>
         </Col>
       </Row>
       {/* break */}
@@ -221,6 +279,32 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Row>
       </div> )
       }
+      {/* Swing Gang 1 (Using Stunt Performer 5 Keys) */}
+      {stunts_5_name && 
+      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+      <div className='d-flex justify-content-center '>
+      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Swing Gang 1</p>  
+      </div>
+      <Row className='text-center' >
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfoP} `}>{stunts_5_name}</p>
+        </Col>
+        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+        <p className={`${styles.CrewInfop} `}>{stunts_5_phone}</p>
+        </Col>
+        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+          <p className={`${styles.CrewInfop} `}>{stunts_5_email}</p>
+        </Col>
+      </Row>
+      {/* break */}
+      <Row>
+      <Col xs={12}>
+      <hr className={`mt-3 mb-0 mx-5`}/>
+      </Col>
+      </Row>
+      </div> )
+      }
       </div>
       {/* PROPERTY  */}
       <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
@@ -279,6 +363,32 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Row>
       </div> )
       }
+      {/* On Set Props Person (Using Additional Camera Position 5 Keys)  */}
+      {oth_camera_pos_5_name && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 } 
+          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>On Set Props Person</p> 
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} `}>
+              <p className={`${styles.CrewInfoP} `}>{oth_camera_pos_5_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} `}>
+            <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_phone}</p>
+            </Col>
+            <Col xs={12} md={4} className='px-0 mx-0 pt-3 pt-md-0'>
+              <p className={`${styles.CrewInfop} `}>{oth_camera_pos_5_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+        }
       {/* prop buyer */}
       {prop_buyer_name && 
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>

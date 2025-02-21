@@ -12,6 +12,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCharactersContext } from "../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
+// eslint-disable-next-line
 import { toast } from 'react-toastify';
 
 const AddCast = ({id, setShow, dataDay, dataDate}) => {

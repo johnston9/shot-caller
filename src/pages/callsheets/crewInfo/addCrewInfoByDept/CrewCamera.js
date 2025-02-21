@@ -24,7 +24,6 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
     oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
     oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
     oth_camera_pos_4_job, oth_camera_pos_4_name, oth_camera_pos_4_email, oth_camera_pos_4_phone,
-    oth_camera_pos_5_job, oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
   } = postData || {};
 
   return (
@@ -823,90 +822,6 @@ const CrewCamera = ({handleChange, postData, setShow}) => {
           ))}
           </Col>
       </Row>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-3`}/>
-      </Col>
-      </Row>
-      {/* Additional Camera Position 5 */}
-      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } style={{ textTransform: 'uppercase'}}>
-      Additional Camera Position 5</p> 
-      <div>
-      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >USERNAME: addcam5</span> 
-      </div> 
-      <Row className="mt-1">
-          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="oth_camera_pos_5_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_5_job"
-              value={oth_camera_pos_5_job}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_5_job?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      <Row className="pb-3">
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="oth_camera_pos_5_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_5_name"
-              value={oth_camera_pos_5_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_5_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="oth_camera_pos_5_phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_5_phone"
-              value={oth_camera_pos_5_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_5_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
-          <Form.Group controlId="oth_camera_pos_5_email" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="oth_camera_pos_5_email"
-              value={oth_camera_pos_5_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.oth_camera_pos_5_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row> 
       {/* break */}
       <Row>
       <Col xs={12}>
