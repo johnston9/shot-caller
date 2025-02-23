@@ -23,6 +23,11 @@
        add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
        add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
        add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
+       add_pos_11_job, add_pos_11_name, add_pos_11_email, add_pos_11_phone,
+      add_pos_12_job, add_pos_12_name, add_pos_12_email, add_pos_12_phone,
+      add_pos_13_job, add_pos_13_name, add_pos_13_email, add_pos_13_phone,
+      add_pos_14_job, add_pos_14_name, add_pos_14_email, add_pos_14_phone,
+      add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone, 
         } = crewInfoOne || {};
    
      return (
@@ -285,6 +290,136 @@
           </Col>
           <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
             <p className={`${styles.CrewInfop} `}>{add_pos_10_email}</p>
+          </Col>
+        </Row>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-0 mx-5`}/>
+        </Col>
+        </Row>
+        </div> )
+        }
+        {/* Additional Position 11 */}
+        {add_pos_11_job && 
+          (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{add_pos_11_job} </p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_11_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_11_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{add_pos_11_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+        }
+        {/* Additional Position 12 */}
+        {add_pos_12_job && 
+          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+          <div className='d-flex justify-content-center '>
+          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{add_pos_12_job} </p>  
+          </div>
+          <Row className='text-center' >
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfoP} `}>{add_pos_12_name}</p>
+            </Col>
+            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfop} `}>{add_pos_12_phone}</p>
+            </Col>
+            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+              <p className={`${styles.CrewInfop} `}>{add_pos_12_email}</p>
+            </Col>
+          </Row>
+          {/* break */}
+          <Row>
+          <Col xs={12}>
+          <hr className={`mt-3 mb-0 mx-5`}/>
+          </Col>
+          </Row>
+          </div> )
+        }
+        {/* Additional Position 13 */}
+        {add_pos_13_job && 
+        (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+        <div className='d-flex justify-content-center '>
+        <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{add_pos_13_job} </p>  
+        </div>
+        <Row className='text-center' >
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_13_name}</p>
+          </Col>
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfop} `}>{add_pos_13_phone}</p>
+          </Col>
+          <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+            <p className={`${styles.CrewInfop} `}>{add_pos_13_email}</p>
+          </Col>
+        </Row>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-0 mx-5`}/>
+        </Col>
+        </Row>
+        </div> )
+        }
+        {/* Additional Position 14 */}
+        {add_pos_14_job && 
+        (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+        <div className='d-flex justify-content-center '>
+        <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{add_pos_14_job} </p>  
+        </div>
+        <Row className='text-center' >
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_14_name}</p>
+          </Col>
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfop} `}>{add_pos_14_phone}</p>
+          </Col>
+          <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+            <p className={`${styles.CrewInfop} `}>{add_pos_14_email}</p>
+          </Col>
+        </Row>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-0 mx-5`}/>
+        </Col>
+        </Row>
+        </div> )
+        }
+        {/* Additional Position 15 */}
+        {add_pos_15_job && 
+        (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+        <div className='d-flex justify-content-center '>
+        <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+    ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{add_pos_15_job} </p>  
+        </div>
+        <Row className='text-center' >
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfoP} `}>{add_pos_15_name}</p>
+          </Col>
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfop} `}>{add_pos_15_phone}</p>
+          </Col>
+          <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+            <p className={`${styles.CrewInfop} `}>{add_pos_15_email}</p>
           </Col>
         </Row>
         {/* break */}

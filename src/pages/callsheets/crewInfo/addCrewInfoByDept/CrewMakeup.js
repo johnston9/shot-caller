@@ -21,7 +21,6 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
     makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
     makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
     makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
-    makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
   } = postData || {};
 
   return (
@@ -562,74 +561,6 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
                   />
           </Form.Group>
           {errors?.makeup_artist_4_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-      </div>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-3`}/>
-      </Col>
-      </Row>
-      {/* Hair/Makeup Artist 5 */} 
-      <div>
-      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>Hair/Makeup Artist 5</p> 
-      <div>
-      <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
-        CALLNAME: makeup5</span> 
-      </div>
-      <Row className="mt-2">
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="makeup_artist_5_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="makeup_artist_5_name"
-              value={makeup_artist_5_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.makeup_artist_5_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="makeup_artist_5_phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="makeup_artist_5_phone"
-              value={makeup_artist_5_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.makeup_artist_5_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="makeup_artist_5_email" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="makeup_artist_5_email"
-              value={makeup_artist_5_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.makeup_artist_5_email?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>

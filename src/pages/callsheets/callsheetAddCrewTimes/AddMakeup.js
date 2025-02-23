@@ -18,12 +18,11 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
     makeup_artist_1_name,
     makeup_artist_2_name,
     makeup_artist_3_name,
-    makeup_artist_4_name,
-    makeup_artist_5_name, } = crewInfoOne || {};
+    makeup_artist_4_name, } = crewInfoOne || {};
 
   const { key_hairmakeup_calltime, key_hairstylist_calltime, sfx_makeup_calltime,
     sfx_makeup_assistant_calltime, makeup_artist_1_calltime, makeup_artist_2_calltime,
-    makeup_artist_3_calltime, makeup_artist_4_calltime, makeup_artist_5_calltime,
+    makeup_artist_3_calltime, makeup_artist_4_calltime,
     } = postData || {};
 
   return (
@@ -280,38 +279,6 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
                     />
             </Form.Group>
             {errors?.makeup_artist_4_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          <hr className="mt-0 mb-0"/>
-          </div> )
-         }
-         {/* makeup artist 5 */}
-         {makeup_artist_5_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Hair/Makeup Artist 5</p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{makeup_artist_5_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="makeup_artist_5_calltime" className={`${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call"
-                name="makeup_artist_5_calltime"
-                value={makeup_artist_5_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.makeup_artist_5_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

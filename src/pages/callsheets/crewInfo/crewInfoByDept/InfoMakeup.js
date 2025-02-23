@@ -20,8 +20,7 @@ const InfoMakeup = ({crewInfoOne, setShowMak }) => {
     makeup_artist_1_name, makeup_artist_1_email, makeup_artist_1_phone,
     makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
     makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
-    makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
-    makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,} = crewInfoOne || {};
+    makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,} = crewInfoOne || {};
 
   return (
     <div>
@@ -233,33 +232,6 @@ const InfoMakeup = ({crewInfoOne, setShowMak }) => {
         </Col>
         <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
           <p className={`${styles.CrewInfop} `}>{makeup_artist_4_email}</p>
-        </Col>
-      </Row>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-0 mx-5`}/>
-      </Col>
-      </Row>
-      </div> )
-      }
-      {/* Hair/Makeup Artist 5 */}
-      {makeup_artist_5_name && 
-      (<div className={`${styles.CrewInfoRow} pt-3 pb-2`}>
-      <div className='d-flex justify-content-center '>
-      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-       ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>
-        Hair/Makeup Artist 5</p> 
-      </div>
-      <Row className='text-center' >
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
-          <p className={`${styles.CrewInfoP} `}>{makeup_artist_5_name}</p>
-        </Col>
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`}>
-        <p className={`${styles.CrewInfop} `}>{makeup_artist_5_phone}</p>
-        </Col>
-        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0'>
-          <p className={`${styles.CrewInfop} `}>{makeup_artist_5_email}</p>
         </Col>
       </Row>
       {/* break */}

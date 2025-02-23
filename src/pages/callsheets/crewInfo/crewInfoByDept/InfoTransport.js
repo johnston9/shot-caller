@@ -20,9 +20,7 @@
        car1_name, car1_email, car1_phone,
        car2_name, car2_email, car2_phone,
        car3_name, car3_email, car3_phone,
-       truck1_name, truck1_email, truck1_phone,
-       truck2_name, truck2_email, truck2_phone,
-       truck3_name, truck3_email, truck3_phone,} = crewInfoOne || {};
+       truck1_name, truck1_email, truck1_phone,} = crewInfoOne || {};
    
      return (
        <div>
@@ -233,58 +231,6 @@
                 </Col>
                 <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
                   <p className={`${styles.CrewInfop} `}>{truck1_email}</p>
-                </Col>
-              </Row>
-              {/* break */}
-              <Row>
-              <Col xs={12}>
-              <hr className={`mt-3 mb-0 mx-5`}/>
-              </Col>
-              </Row>
-              </div> )
-         }
-         {/* Driver 5 */}
-         {truck2_name && 
-              (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-              <div className='d-flex justify-content-center '>
-              <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Driver 5</p>  
-              </div>
-              <Row className='text-center' >
-                <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-                  <p className={`${styles.CrewInfoP} `}>{truck2_name}</p>
-                </Col>
-                <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-                <p className={`${styles.CrewInfop} `}>{truck2_phone}</p>
-                </Col>
-                <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-                  <p className={`${styles.CrewInfop} `}>{truck2_email}</p>
-                </Col>
-              </Row>
-              {/* break */}
-              <Row>
-              <Col xs={12}>
-              <hr className={`mt-3 mb-0 mx-5`}/>
-              </Col>
-              </Row>
-              </div> )
-         }
-         {/* Driver 6 */}
-         {truck3_name && 
-              (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-              <div className='d-flex justify-content-center '>
-              <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-          ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Driver 6</p>  
-              </div>
-              <Row className='text-center' >
-                <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-                  <p className={`${styles.CrewInfoP} `}>{truck3_name}</p>
-                </Col>
-                <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-                <p className={`${styles.CrewInfop} `}>{truck3_phone}</p>
-                </Col>
-                <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-                  <p className={`${styles.CrewInfop} `}>{truck3_email}</p>
                 </Col>
               </Row>
               {/* break */}

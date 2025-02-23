@@ -12,17 +12,17 @@
      const [errors, setErrors] = useState({});
    
      const { legal_name,
-      add_pos_11_name,
-      add_pos_12_name,
-      add_pos_13_name,
-      add_pos_14_name,
+      add_pos_19_name,
+      makeup_artist_5_name,
+      truck3_name,
+      truck2_name,
      } = crewInfoOne || {};
    
      const { legal_calltime,
-      add_pos_11_calltime,
-      add_pos_12_calltime,
-      add_pos_13_calltime,
-      add_pos_14_calltime,
+      add_pos_19_calltime,
+      makeup_artist_5_calltime,
+      truck3_calltime,
+      truck2_calltime,
        } = postData || {};
    
      return (
@@ -36,29 +36,93 @@
          </div>
          <div className='mt-3'>
           <div>
-          {/* Standby Carpenter (Using Additional Position 11 keys)  */}
-          {add_pos_11_name && 
+          {/* Standby Carpenter (Using truck 2 keys)  */}
+          {truck2_name && 
+            (<div className={`${styles.CrewInfoRow}`}>
+            <Row className='text-center d-flex align-items-center' >
+              <Col xs={6} md={4} >
+                <p className={`${styles.BoldScene} `}>Standby Carpenter</p>
+              </Col>
+              <Col xs={6} md={4} >
+                <p className={`${styles.CrewInfop} `}>{truck2_name} </p>
+              </Col>
+              <Col className="d-flex justify-content-center" xs={12} md={4} >
+              <Form.Group controlId="truck2_calltime" className={`my-1 ${styles.Width} `}>
+                  <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                  <Form.Control 
+                  className={`${styles.Input}`}
+                  type="text"
+                  placeholder="Call"
+                  name="truck2_calltime"
+                  value={truck2_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.truck2_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+            </Row>
+            <hr className="mt-0 mb-0"/>
+            </div> )
+          }
+          {/* Standby Painter (Using Additional Position 19 keys) */}
+          {add_pos_19_name && 
+                 (<div className={`${styles.CrewInfoRow}`}>
+                 <Row className='text-center d-flex align-items-center' >
+                   <Col xs={6} md={4} >
+                     <p className={`${styles.BoldScene} `}>Standby Painter</p>
+                   </Col>
+                   <Col xs={6} md={4} >
+                     <p className={`${styles.CrewInfop} `}>{add_pos_19_name} </p>
+                   </Col>
+                   <Col className="d-flex justify-content-center" xs={12} md={4} >
+                   <Form.Group controlId="add_pos_19_calltime" className={`my-1 ${styles.Width} `}>
+                       <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                       <Form.Control 
+                       className={`${styles.Input}`}
+                       type="text"
+                       placeholder="Call"
+                       name="add_pos_19_calltime"
+                       value={add_pos_19_calltime}
+                       onChange={handleChange}
+                           />
+                   </Form.Group>
+                   {errors?.add_pos_19_calltime?.map((message, idx) => (
+                     <Alert variant="warning" key={idx}>
+                       {message}
+                     </Alert>
+                   ))}
+                   </Col>
+                 </Row>
+                 <hr className="mt-0 mb-0"/>
+                 </div> )
+                 }
+          {/* Standby Rigger (Using makeup artist 5 keys) */}
+          {makeup_artist_5_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Standby Carpenter</p>
+              <p className={`${styles.BoldScene} `}>Standby Rigger</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{add_pos_11_name} </p>
+              <p className={`${styles.CrewInfop} `}>{makeup_artist_5_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="add_pos_11_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="makeup_artist_5_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="add_pos_11_calltime"
-                value={add_pos_11_calltime}
+                name="makeup_artist_5_calltime"
+                value={makeup_artist_5_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.add_pos_11_calltime?.map((message, idx) => (
+            {errors?.makeup_artist_5_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -68,101 +132,37 @@
           <hr className="mt-0 mb-0"/>
           </div> )
           }
-          {/* Standby Painter (Using Additional Position 12 keys) */}
-          {add_pos_12_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Standby Painter</p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{add_pos_12_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="add_pos_12_calltime" className={`my-1 ${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call"
-                name="add_pos_12_calltime"
-                value={add_pos_12_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.add_pos_12_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          <hr className="mt-0 mb-0"/>
-          </div> )
-          }
-          {/* Standby Rigger (Using Additional Position 13 keys) */}
-          {add_pos_13_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Standby Rigger </p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{add_pos_13_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="add_pos_13_calltime" className={`my-1 ${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call"
-                name="add_pos_13_calltime"
-                value={add_pos_13_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.add_pos_13_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          <hr className="mt-0 mb-0"/>
-          </div> )
-          }
-          {/* Standby Stagehand (Using Additional Position 14 keys) */}
-          {add_pos_14_name && 
-          (<div className={`${styles.CrewInfoRow}`}>
-          <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Standby Stagehand</p>
-            </Col>
-            <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{add_pos_14_name} </p>
-            </Col>
-            <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="add_pos_14_calltime" className={`my-1 ${styles.Width} `}>
-                <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`}
-                type="text"
-                placeholder="Call"
-                name="add_pos_14_calltime"
-                value={add_pos_14_calltime}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.add_pos_14_calltime?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            </Col>
-          </Row>
-          <hr className="mt-0 mb-0"/>
-          </div> )
+          {/* Standby Stagehand (Using Driver 6 keys) */}
+          {truck3_name && 
+            (<div className={`${styles.CrewInfoRow}`}>
+            <Row className='text-center d-flex align-items-center' >
+              <Col xs={6} md={4} >
+                <p className={`${styles.BoldScene} `}>Standby Stagehand</p>
+              </Col>
+              <Col xs={6} md={4} >
+                <p className={`${styles.CrewInfop} `}>{truck3_name} </p>
+              </Col>
+              <Col className="d-flex justify-content-center" xs={12} md={4} >
+              <Form.Group controlId="truck3_calltime" className={`my-1 ${styles.Width} `}>
+                  <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
+                  <Form.Control 
+                  className={`${styles.Input}`}
+                  type="text"
+                  placeholder="Call"
+                  name="truck3_calltime"
+                  value={truck3_calltime}
+                  onChange={handleChange}
+                      />
+              </Form.Group>
+              {errors?.truck3_calltime?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              </Col>
+            </Row>
+            <hr className="mt-0 mb-0"/>
+            </div> )
           }
           </div>
             {/* WRANGLING */}

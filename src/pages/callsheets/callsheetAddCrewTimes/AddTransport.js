@@ -18,14 +18,11 @@
        car1_name, 
        car2_name, 
        car3_name, 
-       truck1_name,
-       truck2_name,
-       truck3_name, } = crewInfoOne || {};
+       truck1_name, } = crewInfoOne || {};
    
      const {transport_captain_calltime, transport_manager_1_calltime,
        transport_manager_2_calltime, head_driver_calltime, car1_calltime,
-       car2_calltime, car3_calltime, truck1_calltime, truck2_calltime,
-       truck3_calltime,
+       car2_calltime, car3_calltime, truck1_calltime,
        } = postData || {};
    
      return (
@@ -282,70 +279,6 @@
                        />
                </Form.Group>
                {errors?.truck1_calltime?.map((message, idx) => (
-                 <Alert variant="warning" key={idx}>
-                   {message}
-                 </Alert>
-               ))}
-               </Col>
-             </Row>
-             <hr className="mt-0 mb-0"/>
-             </div> )
-            }
-            {/* Driver 5 */}
-            {truck2_name && 
-             (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center' >
-               <Col xs={6} md={4} >
-                 <p className={`${styles.BoldScene} `}>Driver 5</p>
-               </Col>
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{truck2_name} </p>
-               </Col>
-               <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="truck2_calltime" className={`my-1 ${styles.Width} `}>
-                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                   <Form.Control 
-                   className={`${styles.Input}`}
-                   type="text"
-                   placeholder="Call"
-                   name="truck2_calltime"
-                   value={truck2_calltime}
-                   onChange={handleChange}
-                       />
-               </Form.Group>
-               {errors?.truck2_calltime?.map((message, idx) => (
-                 <Alert variant="warning" key={idx}>
-                   {message}
-                 </Alert>
-               ))}
-               </Col>
-             </Row>
-             <hr className="mt-0 mb-0"/>
-             </div> )
-            }
-            {/* Driver 6 */}
-            {truck3_name && 
-             (<div className={`${styles.CrewInfoRow}`}>
-             <Row className='text-center d-flex align-items-center' >
-               <Col xs={6} md={4} >
-                 <p className={`${styles.BoldScene} `}>Driver 6</p>
-               </Col>
-               <Col xs={6} md={4} >
-                 <p className={`${styles.CrewInfop} `}>{truck3_name} </p>
-               </Col>
-               <Col className="d-flex justify-content-center" xs={12} md={4} >
-               <Form.Group controlId="truck3_calltime" className={`my-1 ${styles.Width} `}>
-                   <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
-                   <Form.Control 
-                   className={`${styles.Input}`}
-                   type="text"
-                   placeholder="Call"
-                   name="truck3_calltime"
-                   value={truck3_calltime}
-                   onChange={handleChange}
-                       />
-               </Form.Group>
-               {errors?.truck3_calltime?.map((message, idx) => (
                  <Alert variant="warning" key={idx}>
                    {message}
                  </Alert>

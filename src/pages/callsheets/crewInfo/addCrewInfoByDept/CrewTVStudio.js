@@ -16,9 +16,7 @@ const CrewTVStudio = ({handleChange, postData, setShow}) => {
     const {add_pos_16_name, add_pos_16_email, add_pos_16_phone,
         add_pos_17_name, add_pos_17_email, add_pos_17_phone,
         add_pos_18_name, add_pos_18_email, add_pos_18_phone,
-        add_pos_19_name, add_pos_19_email, add_pos_19_phone,
         add_pos_20_name, add_pos_20_email, add_pos_20_phone,   
-        add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone,         
     } = postData || {};
 
   return (
@@ -292,94 +290,6 @@ const CrewTVStudio = ({handleChange, postData, setShow}) => {
     <hr className={`mt-3 mb-3`}/>
     </Col>
     </Row>
-    {/* Assistant Floor Manager - (Using Additional Position 19 keys) */} 
-    <div>
-        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-        style={{ textTransform: 'uppercase'}}>Assistant Floor Manager</p> 
-        <div>
-        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
-            CALLNAME: addcrewp19</span> 
-        </div>
-        {/* Position */}
-        {/* <Row className="mt-2">
-          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="add_pos_19_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_19_job"
-              value={add_pos_19_job}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_19_job?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-        </Row> */}
-        <Row className="mt-2">
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="add_pos_19_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_19_name"
-              value={add_pos_19_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_19_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="add_pos_19_phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_19_phone"
-              value={add_pos_19_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_19_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
-          <Form.Group controlId="add_pos_19_email" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_19_email"
-              value={add_pos_19_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_19_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-        </Row>
-    </div>
-    {/* break */}
-    <Row>
-    <Col xs={12}>
-    <hr className={`mt-3 mb-3`}/>
-    </Col>
-    </Row>
     {/* Stage Manager - (Using Additional Position 20 keys) */} 
     <div>
         <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
@@ -469,103 +379,19 @@ const CrewTVStudio = ({handleChange, postData, setShow}) => {
     </Col>
     </Row>
     <Row>
-    <Col>
-    <p>Use the below section to add TV Studio Additional Position 1.
-    For all other TV Studio Additional Positions appearing on the Callsheet
+    <Col className="text-center">
+    <p>
+    For all other TV Studio Specific Positions appearing on the Callsheet
     please use the Additional Positions page.
     </p>
     </Col>
     </Row>
-    {/* Additional Position TV Studio 1 - (Using Additional Position 15 keys) */} 
-    <div>
-        <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-        style={{ textTransform: 'uppercase'}}>Additional TV Studio Position 1</p> 
-        <div>
-        <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
-            CALLNAME: addcrew15</span> 
-        </div>
-        {/* Position */}
-        <Row className="mt-2">
-          <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="add_pos_15_job" className={`${styles.Width} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Position</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_15_job"
-              value={add_pos_15_job}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_15_job?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-        </Row>
-        <Row className="mt-2">
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="add_pos_15_name" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene} `} >Name</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_15_name"
-              value={add_pos_15_name}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_15_name?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-lg-2">
-          <Form.Group controlId="add_pos_15_phone" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_15_phone"
-              value={add_pos_15_phone}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_15_phone?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-          <Col xs={12} md={4} className="d-flex justify-content-center mt-1 mt-md-0 p-0 p-lg-2">
-          <Form.Group controlId="add_pos_15_email" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
-              <Form.Control 
-              className={`${styles.Input}`}
-              type="text"
-              name="add_pos_15_email"
-              value={add_pos_15_email}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.add_pos_15_email?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          </Col>
-      </Row>
-    </div>
     {/* break */}
     <Row>
     <Col xs={12}>
     <hr className={`mt-3 mb-3`}/>
     </Col>
-    </Row>
-    
-    
+    </Row>   
     </div>
     </div>
   )

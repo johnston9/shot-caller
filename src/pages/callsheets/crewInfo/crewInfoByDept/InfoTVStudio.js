@@ -16,9 +16,7 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
       const {add_pos_16_name, add_pos_16_email, add_pos_16_phone,
         add_pos_17_name, add_pos_17_email, add_pos_17_phone,
         add_pos_18_name, add_pos_18_email, add_pos_18_phone,
-        add_pos_19_name, add_pos_19_email, add_pos_19_phone,
-        add_pos_20_name, add_pos_20_email, add_pos_20_phone,   
-        add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone,} = crewInfoOne || {};
+        add_pos_20_name, add_pos_20_email, add_pos_20_phone,  } = crewInfoOne || {};
 
   return (
     <div>
@@ -108,32 +106,6 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
           </Row>
           </div> )
     }
-    {/* Assistant Floor Manager - (Using Additional Position 19 keys) */}
-    {add_pos_19_name && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-          <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Floor Manager</p>  
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfoP} `}>{add_pos_19_name}</p>
-            </Col>
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-            <p className={`${styles.CrewInfop} `}>{add_pos_19_phone}</p>
-            </Col>
-            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-              <p className={`${styles.CrewInfop} `}>{add_pos_19_email}</p>
-            </Col>
-          </Row>
-          {/* break */}
-          <Row>
-          <Col xs={12}>
-          <hr className={`mt-3 mb-0 mx-5`}/>
-          </Col>
-          </Row>
-          </div> )
-    }
     {/* Stage Manager - (Using Additional Position 20 keys) */}
     {add_pos_20_name && 
           (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
@@ -150,32 +122,6 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
             </Col>
             <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
               <p className={`${styles.CrewInfop} `}>{add_pos_20_email}</p>
-            </Col>
-          </Row>
-          {/* break */}
-          <Row>
-          <Col xs={12}>
-          <hr className={`mt-3 mb-0 mx-5`}/>
-          </Col>
-          </Row>
-          </div> )
-    }
-    {/* Additional Position TV Studio 1 - (Using Additional Position 15 keys) */}
-    {add_pos_15_job && 
-          (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-          <div className='d-flex justify-content-center '>
-          <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>{add_pos_15_job}</p>  
-          </div>
-          <Row className='text-center' >
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfoP} `}>{add_pos_15_name}</p>
-            </Col>
-            <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-            <p className={`${styles.CrewInfop} `}>{add_pos_15_phone}</p>
-            </Col>
-            <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-              <p className={`${styles.CrewInfop} `}>{add_pos_15_email}</p>
             </Col>
           </Row>
           {/* break */}
