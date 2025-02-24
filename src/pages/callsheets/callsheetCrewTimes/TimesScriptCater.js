@@ -1,4 +1,4 @@
-/* Component to display the Script and Catering Department Calltimes
+/* Component to display the Script Department Calltimes
    on the Callsheet */
 import React from "react";
 import Col from 'react-bootstrap/Col';

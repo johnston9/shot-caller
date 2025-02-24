@@ -1,4 +1,4 @@
-/* Component to display the Post Department and Additional Crew
+/* Component to display the Post Department
    Calltimes on the Callsheet */
 import React from "react";
 import Col from 'react-bootstrap/Col';

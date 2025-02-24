@@ -1,4 +1,4 @@
-/* Component to display the Sound and Transport Department Calltimes
+/* Component to display the Sound Department Calltimes
    on the Callsheet */
 import React from "react";
 import Col from 'react-bootstrap/Col';

@@ -1,4 +1,4 @@
-/* Component to display the Casting and AD Departments Calltimes
+/* Component to display the Casting Department Calltimes
    on the Callsheet */
 import React from "react";
 import Col from 'react-bootstrap/Col';

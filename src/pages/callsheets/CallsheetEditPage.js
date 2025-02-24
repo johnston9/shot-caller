@@ -276,6 +276,8 @@ const CallsheetEditPage = () => {
     wardrobe_assistant_5_calltime: "",
 })
 
+console.log(postData)
+
   const { 
       // info
       unit_call,
@@ -2324,37 +2326,37 @@ const CallsheetEditPage = () => {
       {/* department buttons */}
       <div className={`mt-2 pt-2 ${styles.White }`}> 
         <Row className={`${styles.ButtonLine} mt-0`}>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowPro(showPro => !showPro)} > Production
               </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                   <p
                     className={`py-0 mb-0 ${styles.Button}`}
                     onClick={() => setShowCam(showCam => !showCam)} > Camera
                   </p>
               </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowAD(showAD => !showAD)} > AD/PA
             </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
           </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
             </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowScr(showScr => !showScr)} > Script
@@ -2362,37 +2364,37 @@ const CallsheetEditPage = () => {
           </Col>
         </Row>  
         <Row className={`${styles.ButtonLine} text-center mt-1`}>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
               </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                   <p
                     className={`py-0 mb-0 ${styles.Button}`}
                     onClick={() => setShowMak(showMak => !showMak)} > Makeup
                   </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowSou(showSou => !showSou)} > Sound
             </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowStu(showStu => !showStu)} >Stunts/SFX
           </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowArt(showArt => !showArt)} > Art
             </p>
           </Col>
-          <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowPos(showPos => !showPos)} > Post/VFX
@@ -2401,37 +2403,41 @@ const CallsheetEditPage = () => {
         </Row> 
         {/* new row - Catering - Casting - Transport - Wrangling - TV Studio -Additional */}
         <Row className={`${styles.ButtonLine} mt-1`}>
-        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowCat(showCat => !showCat)} > Catering/Craft
             </p>
         </Col>
-        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowCas(showCas => !showCas)} > Casting
             </p>
         </Col>
-        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowTra(showTra => !showTra)} > Transport
             </p>
         </Col>
-        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
-                className={`py-0 mb-0 ${styles.Button}`}
+                className={`d-block d-md-none py-0 mb-0 ${styles.Button}`}
+                onClick={() => setShowWra(showWra => !showWra)} > Construction/Wr
+            </p>
+            <p
+                className={`d-none d-md-block py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowWra(showWra => !showWra)} > Construction/Wrangling
             </p>
         </Col>
-        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowTv(showTv => !showTv)} > TV Studio
             </p>
         </Col>
-        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowAdd(showAdd => !showAdd)} >Additional

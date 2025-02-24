@@ -21,6 +21,12 @@ import TimesSoundTransport from '../callsheetCrewTimes/TimesSoundTransport';
 import TimesPostAdditional from '../callsheetCrewTimes/TimesPostAdditional';
 import TimesStunts from '../callsheetCrewTimes/TimesStunts';
 import TimesWardrobe from '../callsheetCrewTimes/TimesWardrobe';
+import TimesADPA from '../callsheetCrewTimes/TimesADPA';
+import TimesCater from '../callsheetCrewTimes/TimesCater';
+import TimesTransport from '../callsheetCrewTimes/TimesTransport';
+import TimesConWrang from '../callsheetCrewTimes/TimesConWrang';
+import TimesTVStudio from '../callsheetCrewTimes/TimesTVStudio';
+import TimesAdditional from '../callsheetCrewTimes/TimesAdditional';
 
 const CrewCallsPage = ({callsheet, setShow}) => {
 
@@ -37,15 +43,22 @@ const CrewCallsPage = ({callsheet, setShow}) => {
   const [showStu, setShowStu] = useState(false);
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
+  const [showCat, setShowCat] = useState(false);
+  const [showAD, setShowAD] = useState(false); 
+  const [showTra, setShowTra] = useState(false); 
+  const [showAdd, setShowAdd] = useState(false);
+  const [showTv, setShowTv] = useState(false);
+  const [showWra, setShowWra] = useState(false);
 
   return (
     <div className='mt-3'>
+      {/* md title */}
       <div className='d-none d-md-block mt-5'>
        <h4 className={`pl-3 py-0 px-1 ${styles.SubTitleSpan }`}
         style={{ textTransform: 'uppercase' }}>
         Crew Calls <span className={`${styles.HSpan }`} >Total</span></h4>
       </div>
-        {/* mobile */}
+        {/* mobile title */}
         <div className='d-block d-md-none'>
         <div className={`mb-3 text-center ${styles.SubTitle }`}>
             <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
@@ -53,85 +66,133 @@ const CrewCallsPage = ({callsheet, setShow}) => {
             style={{ textTransform: 'uppercase'}} >crew calls </h5>
             </div>
         </div>
-        {/* MEDIUM */}
-        <p style={{ textTransform: 'uppercase'}} className={`mb-3 pl-3 pt-1 ${styles.SubTitle }`}></p>
-        <div className='mt-0 mb-1'>
+        {/* department buttons */}
+        <p style={{ textTransform: 'uppercase'}} 
+        className={`pl-3 pt-1 ${styles.SubTitle }`}></p>
+        <div className={`mt-1 pt-2 ${styles.White }`}> 
           <Row className={`${styles.ButtonLine} mt-0`}>
-            <Col xs={4} md={2} className='text-center'>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                 <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowPro(showPro => !showPro)} > Production
                 </p>
             </Col>
-            <Col xs={4} md={2} className='text-center'>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                     <p
                       className={`py-0 mb-0 ${styles.Button}`}
                       onClick={() => setShowCam(showCam => !showCam)} > Camera
                     </p>
                 </Col>
-            <Col xs={4} className='text-center mx-0 py-0' md={2}>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
-                  onClick={() => setShowCas(showCas => !showCas)} > Casting/AD
+                  onClick={() => setShowAD(showAD => !showAD)} > AD/PA
               </p>
             </Col>
-            <Col xs={4} className='text-center' md={2}>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
                 onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
             </p>
             </Col>
-            <Col xs={4} className='text-center' md={2}>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
               </p>
             </Col>
-            <Col xs={4} className='mx-0 px-0 text-center' md={2}>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
-                  onClick={() => setShowScr(showScr => !showScr)} > Script/Catering
+                  onClick={() => setShowScr(showScr => !showScr)} > Script
               </p>
             </Col>
           </Row>  
-          <Row className={`${styles.ButtonLine} text-center mt-0`}>
-            <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+          <Row className={`${styles.ButtonLine} text-center mt-1`}>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                 <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
                 </p>
             </Col>
-            <Col xs={4} md={2} className='mx-0 px-0 py-0'>
+            <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                     <p
                       className={`py-0 mb-0 ${styles.Button}`}
                       onClick={() => setShowMak(showMak => !showMak)} > Makeup
                     </p>
-                </Col>
-            <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+            </Col>
+            <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
-                  onClick={() => setShowSou(showSou => !showSou)} > Sound/Transport
+                  onClick={() => setShowSou(showSou => !showSou)} > Sound
               </p>
             </Col>
-            <Col xs={4} className='py-0' md={2}>
+            <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
                 className={`py-0 mb-0 ${styles.Button}`}
-                onClick={() => setShowStu(showStu => !showStu)} >Stunts
+                onClick={() => setShowStu(showStu => !showStu)} >Stunts/SFX
             </p>
             </Col>
-            <Col xs={4} className='text-center' md={2}>
+            <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowArt(showArt => !showArt)} > Art
               </p>
             </Col>
-            <Col xs={4} className='mx-0 px-0 py-0' md={2}>
+            <Col xs={4} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
                   className={`py-0 mb-0 ${styles.Button}`}
-                  onClick={() => setShowPos(showPos => !showPos)} > Post/Additional
+                  onClick={() => setShowPos(showPos => !showPos)} > Post/VFX
               </p>
             </Col>
-          </Row>  
+          </Row> 
+          {/* new row - Catering - Casting - Transport - Wrangling - TV Studio -Additional */}
+          <Row className={`${styles.ButtonLine} mt-1`}>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowCat(showCat => !showCat)} > Catering/Craft
+              </p>
+          </Col>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowCas(showCas => !showCas)} > Casting
+              </p>
+          </Col>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowTra(showTra => !showTra)} > Transport
+              </p>
+          </Col>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                  className={`d-block d-md-none py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowWra(showWra => !showWra)} > Construction/Wr
+              </p>
+              <p
+                  className={`d-none d-md-block py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowWra(showWra => !showWra)} > Construction/Wrangling
+              </p>
+          </Col>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                  className={`py-0 mb-0 d-block d-md-none ${styles.Button}`}
+                  onClick={() => setShowTv(showTv => !showTv)} > TV
+              </p>
+              <p
+                  className={`py-0 mb-0 d-none d-md-block ${styles.Button}`}
+                  onClick={() => setShowTv(showTv => !showTv)} > TV Studio
+              </p>
+          </Col>
+          <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+              <p
+                  className={`py-0 mb-0 ${styles.Button}`}
+                  onClick={() => setShowAdd(showAdd => !showAdd)} >Additional
+              </p>
+          </Col>
+          </Row> 
         </div>
         <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
         <div className='mt-3'>
@@ -147,7 +208,14 @@ const CrewCallsPage = ({callsheet, setShow}) => {
               ) : (
                 <TimesCamera callsheet={callsheet} 
                 crewInfoOne={crewInfoOne} setShowCam={setShowCam} /> 
-                ) } 
+        ) } 
+        {/* AD/PA */}
+        {!showAD ? (
+                ""
+              ) : (
+                <TimesADPA callsheet={callsheet} 
+                crewInfoOne={crewInfoOne} setShowAD={setShowAD} /> 
+        ) } 
         {/* Casting */}
         {!showCas ? (
                 ""
@@ -197,7 +265,7 @@ const CrewCallsPage = ({callsheet, setShow}) => {
                 <TimesStunts crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowStu={setShowStu} /> 
                 ) } 
-        {/* Info Art */}
+        {/* Art */}
         {!showArt ? (
                 ""
               ) : (
@@ -217,7 +285,42 @@ const CrewCallsPage = ({callsheet, setShow}) => {
               ) : (
                 <TimesWardrobe crewInfoOne={crewInfoOne}
                 callsheet={callsheet} setShowWar={setShowWar} /> 
-                ) } 
+        ) } 
+        {/* Catering */}
+        {!showCat ? (
+                ""
+              ) : (
+                <TimesCater crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowCat={setShowCat} /> 
+        ) }
+        {/* Transport */}
+        {!showTra ? (
+                ""
+              ) : (
+                <TimesTransport crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowTra={setShowTra} /> 
+        ) }
+        {/* Construction/Wrangling */}
+        {!showWra ? (
+                ""
+              ) : (
+                <TimesConWrang crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowWra={setShowWra} /> 
+        ) }
+        {/* TV */}
+        {!showTv ? (
+                ""
+              ) : (
+                <TimesTVStudio crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowTv={setShowTv} /> 
+        ) }
+        {/* Additional */}
+        {!showAdd ? (
+                ""
+              ) : (
+                <TimesAdditional crewInfoOne={crewInfoOne}
+                callsheet={callsheet} setShowAdd={setShowAdd} /> 
+        ) }
         </div>
     </div>
   )
