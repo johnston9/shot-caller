@@ -419,7 +419,20 @@ p {
   border: 2px solid #e8f0f1;
 }
 
+/* .Borderl {
+  border-bottom: 2px solid #e8f0f1;
+  border-left: 2px solid #e8f0f1;
+  border-right: 2px solid #e8f0f1;
+}
+
+.Borderm {
+  border-bottom: 2px solid #e8f0f1;
+  border-left: 2px solid #e8f0f1;
+  border-right: 2px solid #e8f0f1;
+} */
+
 .Border {
+  border-top: 2px solid #e8f0f1;
   border-bottom: 2px solid #e8f0f1;
   border-left: 2px solid #e8f0f1;
   border-right: 2px solid #e8f0f1;

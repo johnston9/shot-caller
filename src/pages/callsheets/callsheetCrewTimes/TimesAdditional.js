@@ -5,7 +5,7 @@
    import Row from 'react-bootstrap/Row';
    import styles from "../../../styles/Callsheets.module.css";
    
-   const TimesAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
+   const TimesAdditional = ({crewInfoOne, callsheet, setShowAdd }) => {
    
      const {add_pos_1_job, add_pos_1_name,
        add_pos_2_job, add_pos_2_name,
@@ -44,7 +44,7 @@
      return (
        <div className="text-center">
          <div className={`mt-0 text-center ${styles.Subtitle2 }`}>
-         <span className={`float-right ${styles.Close }`} onClick={() => setShowPos(false) } >Close</span> 
+         <span className={`float-right ${styles.Close }`} onClick={() => setShowAdd(false) } >Close</span> 
          <h5 className={`d-block d-md-none pl-5 text-center`} 
          style={{ textTransform: 'uppercase'}} >ADDITIONAL </h5>
           <h5 className={`d-none d-md-block pl-5 text-center`} style={{ textTransform: 'uppercase'}} >

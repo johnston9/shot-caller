@@ -25,7 +25,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
     oth_camera_pos_3_calltime,} = callsheet ;
 
   return (
-    <div>
+    <div className="text-center">
       <div className={`mt-0 text-center  ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CAMERA </h5>
@@ -35,10 +35,10 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
         {dop_calltime && 
           (<Col xs={12} md={6}>
           <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>DOP</p>
+            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 `}>DOP</p>
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
+            <Col className={`mx-0 px-1  ${styles.Borderm}`} xs={5} md={5} >
               <p className={`my-0 py-0 `}>{dop_name} </p>
             </Col>
             <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
@@ -50,11 +50,11 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
          {/* Camera Operator */}
          {camera_operator_calltime && 
           (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
+          <Row className={`mt-1 mx-0 `} >
+            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
               <p className={`my-0 py-0 `}>Camera Operator</p>
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
+            <Col className={`mx-0 px-1  ${styles.Borderm}`} xs={5} md={5} >
               <p className={`my-0 py-0 `}>{camera_operator_name} </p>
             </Col>
             <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
