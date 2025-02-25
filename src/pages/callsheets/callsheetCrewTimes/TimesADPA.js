@@ -5,11 +5,9 @@
    import Row from 'react-bootstrap/Row';
    import styles from "../../../styles/Callsheets.module.css";
    
-   const TimesADPA = ({crewInfoOne, callsheet, setShowCas }) => {
+   const TimesADPA = ({crewInfoOne, callsheet, setShowAD }) => {
    
-     const {casting_director_name,
-       extras_casting_name, 
-       ad_1_name,
+     const {ad_1_name,
        ad_2_name,
        ad_3_name,
        ad_4_name,
@@ -20,56 +18,18 @@
        pro_assistant_4_name,
        pro_assistant_5_name,} = crewInfoOne;
    
-     const { casting_director_calltime, extras_casting_calltime, ad_1_calltime,
-       ad_2_calltime, ad_3_calltime, ad_4_calltime, ad_5_calltime, pro_assistant_1_calltime,
-       pro_assistant_2_calltime, pro_assistant_3_calltime, pro_assistant_4_calltime,
-       pro_assistant_5_calltime,
+     const { ad_1_calltime, ad_2_calltime, ad_3_calltime, ad_4_calltime, 
+      ad_5_calltime, pro_assistant_1_calltime,
+       pro_assistant_2_calltime, pro_assistant_3_calltime,
        } = callsheet;
+
      return (
        <div>
          <div className={`mt-0 text-center  ${styles.Back3 }`}>
-         <span className={`float-right ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
-         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CASTING </h5>
+         <span className={`float-right ${styles.Close }`} onClick={() => setShowAD(false) } >Close</span> 
+         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >AD POSITIONS </h5>
          </div>
-         <Row>
-         {/* Casting Director */}
-         {casting_director_calltime && 
-             (<Col xs={12} md={6}>
-             <Row className={` mx-0 `} >
-               <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>Casting Director</p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>{casting_director_name} </p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-                 <p className={`my-0 py-0 `}>{casting_director_calltime} </p>
-               </Col>
-             </Row>
-             </Col> )
-         }
-         {/* Extras Casting */}
-         {extras_casting_calltime && 
-           (<Col xs={12} md={6}>
-           <Row className={` mx-0 `} >
-             <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-               <p className={`my-0 py-0 `}>Extras Casting</p>
-             </Col>
-             <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-               <p className={`my-0 py-0 `}>{extras_casting_name} </p>
-             </Col>
-             <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-               <p className={`my-0 py-0 `}>{extras_casting_calltime} </p>
-             </Col>
-           </Row>
-           </Col> )
-         }
-         </Row>
-         {/* AD */}
-         <div className={`mt-3 mt-0 text-center ${styles.Back3 }`}>
-             <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >AD </h5>
-         </div>
-         <Row>
+         <div>
          {/* 1st AD */}
          {ad_1_calltime && 
            (<Col xs={12} md={6}>
@@ -150,6 +110,9 @@
            </Row>
            </Col> )
          }
+         <div className={`my-3 mt-0 text-center ${styles.SubTitle }`}>
+             <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PA POSITIONS </h5>
+        </div>
          {/* Pro Assistant 1 */}
          {pro_assistant_1_calltime && 
            (<Col xs={12} md={6}>
@@ -198,39 +161,7 @@
            </Row>
            </Col> )
          }
-         {/* Pro Assistant 4 */}
-         {pro_assistant_4_calltime && 
-           (<Col xs={12} md={6}>
-           <Row className={` mx-0 `} >
-             <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-               <p className={`my-0 py-0 `}>Pro Assistant 4</p>
-             </Col>
-             <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-               <p className={`my-0 py-0 `}>{pro_assistant_4_name} </p>
-             </Col>
-             <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-               <p className={`my-0 py-0 `}>{pro_assistant_4_calltime} </p>
-             </Col>
-           </Row>
-           </Col> )
-         }
-         {/* Pro Assistant 5 */}
-         {pro_assistant_5_calltime && 
-           (<Col xs={12} md={6}>
-           <Row className={` mx-0 `} >
-             <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-               <p className={`my-0 py-0 `}>Pro Assistant 5</p>
-             </Col>
-             <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-               <p className={`my-0 py-0 `}>{pro_assistant_5_name} </p>
-             </Col>
-             <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-               <p className={`my-0 py-0 `}>{pro_assistant_5_calltime} </p>
-             </Col>
-           </Row>
-           </Col> )
-         }
-       </Row>
+       </div>
        </div>
      )
    }

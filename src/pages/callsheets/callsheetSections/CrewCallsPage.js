@@ -168,11 +168,11 @@ const CrewCallsPage = ({callsheet, setShow}) => {
           </Col>
           <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
               <p
-                  className={`d-block d-md-none py-0 mb-0 ${styles.Button}`}
+                  className={`d-block d-lg-none py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowWra(showWra => !showWra)} > Construction/Wr
               </p>
               <p
-                  className={`d-none d-md-block py-0 mb-0 ${styles.Button}`}
+                  className={`d-none d-lg-block py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowWra(showWra => !showWra)} > Construction/Wrangling
               </p>
           </Col>

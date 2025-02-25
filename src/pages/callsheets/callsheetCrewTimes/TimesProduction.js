@@ -39,121 +39,142 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
         <Row>
         {/* director */}
         {director_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={`mt-1 mx-0 `} >
-            <Col className={`mx-0 px-1`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>Director</p>
+          (<Col xs={12} lg={6}>
+          <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Director</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Director</p>                    
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{director_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{director_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
         }
         {/* producer */}
         {producer_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={`mt-1 mx-0 `} >
-            <Col className={`mx-0 px-1  ${styles.Borderx}`}  xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>Producer</p>
+          (<Col xs={12} lg={6}>
+          <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Producer</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Producer</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`}  xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{producer_name} </p>
+            <Col className={`mx-0 px-0`}  xs={8} sm={4} >
+              <p className={`my-0 py-0 ${styles.Borderm}`}>{producer_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`}  xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{producer_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
-         {/* pro_coordinator */}
+         {/* pro_coordinator xs={4} sm={3}*/}
         {pro_coordinator_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0 ' >
-            <Col className={`mx-0 px-1  ${styles.Borderx}`}  xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>Pro Coordinator</p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Pro Coordinator</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Pro Coordinator</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`}  xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{pro_coordinator_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`}  xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{pro_coordinator_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
          {/* upm */}
         {upm_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>UPM</p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              UPM</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                UPM</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{upm_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{upm_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
          {/* Travel Coordinator */}
          {travel_coordinator_calltime && 
-          (<Col xs={12} md={6}>
+          (<Col xs={12} lg={6}>
           <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>Travel Coordinator </p>
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Travel Coordinator </p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Travel Coordinator </p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{travel_coordinator_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{travel_coordinator_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
            </Col>)
          }
          {/* Production PA */}
          {production_pa_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>Production PA </p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Production PA </p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Production PA </p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{production_pa_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{production_pa_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
         </Col> )
          }
          {/* Script Supervisor */}
          {script_supervisor_calltime && ( 
-          <Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>Script Supervisor</p>
+          <Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Script Supervisor</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Script Supervisor</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{script_supervisor_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{script_supervisor_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col>
            ) }
          {/* Legal  */}
@@ -173,104 +194,122 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          } */}
          {/* Set Medic */}
          {set_medic_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Border}l`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>Set Medic </p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Border}l`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Set Medic</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Set Medic</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{set_medic_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{set_medic_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
          {/* oth production pos 1 */}
          {oth_production_pos_1_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>{oth_production_pos_1_job} </p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                {oth_production_pos_1_job} </p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                {oth_production_pos_1_job} </p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{oth_production_pos_1_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{oth_production_pos_1_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
          {/* oth production pos 2 */}
          {oth_production_pos_2_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>{oth_production_pos_2_job}</p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                {oth_production_pos_2_job}</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                {oth_production_pos_2_job}</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{oth_production_pos_2_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{oth_production_pos_2_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
          {/* oth production pos 3 */}
          {oth_production_pos_3_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`${styles.BoldScene} mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{oth_production_pos_3_job} </p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              {oth_production_pos_3_job} </p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                {oth_production_pos_3_job} </p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{oth_production_pos_3_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{oth_production_pos_3_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
          {/* oth production pos 4 */}
          {oth_production_pos_4_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>{oth_production_pos_4_job} </p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                {oth_production_pos_4_job}</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                {oth_production_pos_4_job}</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{oth_production_pos_4_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{oth_production_pos_4_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
          {/* oth production pos 5 */}
          {oth_production_pos_5_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className='mt-1 mx-0' >
-            <Col className={`mx-0 px-1 ${styles.Borderl}`} xs={5} md={5} >
-              <p className={`${styles.BoldScene} my-0 py-0 `}>{oth_production_pos_5_job} </p>
+          (<Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              {oth_production_pos_5_job}</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                {oth_production_pos_5_job}</p> 
             </Col>
-            <Col className={`mx-0 px-1 ${styles.Borderm}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{oth_production_pos_5_name} </p>
             </Col>
-            <Col className={`mx-0 px-1 text-center ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{oth_production_pos_5_calltime} </p>
             </Col>
           </Row>
-          <hr className="mt-1 mb-0"/>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
          }
         </Row>
