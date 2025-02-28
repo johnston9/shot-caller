@@ -197,12 +197,12 @@
             <div className={`my-3 mt-0 text-center ${styles.SubTitle }`}>
              <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PA POSITIONS </h5>
            </div>
-            {/* pro assistant 1 */}
+            {/* Production assistant 1 */}
             {pro_assistant_1_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.BoldScene} `}>Pro Assistant 1</p>
+                 <p className={`${styles.BoldScene} `}>Production Assistant 1</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{pro_assistant_1_name} </p>
@@ -229,12 +229,12 @@
              <hr className="mt-0 mb-0"/>
              </div> )
             }
-            {/* pro assistant 2*/}
+            {/* Production assistant 2*/}
             {pro_assistant_2_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.BoldScene} `}>Pro Assistant 2</p>
+                 <p className={`${styles.BoldScene} `}>Production Assistant 2</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{pro_assistant_2_name} </p>
@@ -261,12 +261,12 @@
              <hr className="mt-0 mb-0"/>
              </div> )
             }
-            {/* pro assistant 3 */}
+            {/* Production assistant 3 */}
             {pro_assistant_3_name && 
              (<div className={`${styles.CrewInfoRow}`}>
              <Row className='text-center d-flex align-items-center' >
                <Col xs={6} md={4} >
-                 <p className={`${styles.BoldScene} `}>Pro Assistant 3</p>
+                 <p className={`${styles.BoldScene} `}>Production Assistant 3</p>
                </Col>
                <Col xs={6} md={4} >
                  <p className={`${styles.CrewInfop} `}>{pro_assistant_3_name} </p>
