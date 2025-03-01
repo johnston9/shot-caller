@@ -130,7 +130,7 @@
           </Col> )
         }
         </Row>
-        <div className={`my-3 mt-0 text-center ${styles.SubTitle }`}>
+        <div className={`my-3 mt-0 text-center ${styles.Back3 }`}>
         <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PA POSITIONS </h5>
         </div>
         <Row className="px-2">

@@ -26,11 +26,11 @@
          <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CATERING </h5>
          </div>
          <Row>
-        <Col className="text-center pt-2">
-        <p>
-        All Catering to be handled seperatly.
-        </p>
-        </Col>
+          <Col className="text-center pt-2">
+          <p>
+          All Catering to be handled seperatly.
+          </p>
+          </Col>
          </Row>
          <div className='mt-3'>
             {/* CRAFT SERVICES */}

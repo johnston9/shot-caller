@@ -407,7 +407,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
             <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Assist Prop Master</p>
+              <p className={`${styles.BoldScene} `}>Assistant Prop Master</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{ass_prop_master_name} </p>
@@ -434,7 +434,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
-         {/* On Set Props Person (Using Additional Camera Position 5 Keys)*/}
+         {/* On Set Props Person (Using Additional Camera Position 5 Keys) */}
           {oth_camera_pos_5_name && 
             (<div className={`${styles.CrewInfoRow}`}>
             <Row className='text-center d-flex align-items-center' >
