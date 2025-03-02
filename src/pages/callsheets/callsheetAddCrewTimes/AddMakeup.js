@@ -64,12 +64,12 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
           <hr className="mt-1 mb-0"/>
           </div> )
          }
-         {/* key hair stylist */}
+         {/* key hairstylist */}
          {key_hairstylist_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
-              <p className={`${styles.BoldScene} `}>Key Hair Stylist</p>
+              <p className={`${styles.BoldScene} `}>Key Hairstylist</p>
             </Col>
             <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{key_hairstylist_name} </p>

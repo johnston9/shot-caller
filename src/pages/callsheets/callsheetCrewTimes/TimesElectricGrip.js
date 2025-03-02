@@ -1,4 +1,4 @@
-/* Component to display the Elactric and Grip Departments
+/* Component to display the Electric and Grip Departments
    Calltimes on the Callsheet */
 import React from "react";
 import Col from 'react-bootstrap/Col';
@@ -25,210 +25,259 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
     dolly_grip_calltime, swing_ge1_calltime, swing_ge2_calltime,
     swing_ge3_calltime, swing_ge4_calltime, swing_ge5_calltime,
     } = callsheet;
+
   return (
     <div>
-      <div className={`mt-0 text-center  ${styles.Back3 }`}>
+      <div className={`mt-0 mb-2 text-center  ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowEle(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ELECTRIC </h5>
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ELECTRIC DEPARTMENT</h5>
       </div>
       <Row>
       {/* Gaffer */}
-      {gaffer_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Gaffer</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{gaffer_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{gaffer_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
-        }
-      {/* BB Electric */}
-      {best_boy_electric_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>BB Electric</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{best_boy_electric_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{best_boy_electric_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {(gaffer_calltime && gaffer_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Gaffer</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Gaffer</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{gaffer_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{gaffer_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
+      }
+      {/* Best Boy Electric */}
+      {(best_boy_electric_calltime && best_boy_electric_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Best Boy Electric</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Best Boy Electric</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{best_boy_electric_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{best_boy_electric_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
       {/* 3rd Electric */}
-      {electric_3_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>3rd Electric</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{electric_3_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{electric_3_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {(electric_3_calltime && electric_3_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                3rd Electric</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                3rd Electric</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{electric_3_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{electric_3_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
-      {/* 4th Electric */}
-      {electric_4_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>4th Electric</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{electric_4_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{electric_4_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {/* Electrician */}
+      {(electric_4_calltime && electric_4_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Electrician</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Electrician</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{electric_4_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{electric_4_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
       </Row>
       {/* GRIP */}
-      <div className={` mt-0 text-center ${styles.Back3 }`}>
-          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >GRIP </h5>
+      <div className={` mt-3 text-center ${styles.Back3 }`}>
+        <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >GRIP DEPARTMENT</h5>
       </div>
       <Row>
       {/* Keygrip */}
-      {keygrip_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Keygrip</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{keygrip_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{keygrip_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {(keygrip_calltime && keygrip_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Keygrip</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Keygrip</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{keygrip_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{keygrip_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
       {/* Best Boy Grip */}
-      {best_boy_grip_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Best Boy Grip</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{best_boy_grip_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{best_boy_grip_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {(best_boy_grip_calltime && best_boy_grip_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Best Boy Grip</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Best Boy Grip</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{best_boy_grip_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{best_boy_grip_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
       {/* Dolly Grip */}
-      {dolly_grip_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Dolly Grip</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{dolly_grip_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{dolly_grip_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {(dolly_grip_calltime && dolly_grip_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Dolly Grip</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Dolly Grip</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{dolly_grip_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{dolly_grip_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
-      {/* Swing G/E 1 */}
-      {swing_ge1_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Swing G/E 1</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{swing_ge1_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{swing_ge1_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {/* G&E Swing 1 */}
+      {(swing_ge1_calltime && swing_ge1_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                G&E Swing 1</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                G&E Swing 1</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{swing_ge1_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{swing_ge1_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
-      {/* Swing G/E 2 */}
-      {swing_ge2_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Swing G/E 2</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{swing_ge2_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{swing_ge2_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {/* G&E Swing 2 */}
+      {(swing_ge2_calltime && swing_ge2_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                G&E Swing 2</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                G&E Swing 2</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{swing_ge2_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{swing_ge2_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
-      {/* Swing G/E 3 */}
-      {swing_ge3_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Swing G/E 3</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{swing_ge3_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{swing_ge3_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {/* G&E Swing 3 */}
+      {(swing_ge3_calltime && swing_ge3_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                G&E Swing 3</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                G&E Swing 3</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{swing_ge3_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{swing_ge3_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
-      {/* Swing G/E 4 */}
-      {swing_ge4_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Swing G/E 4</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{swing_ge4_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{swing_ge4_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {/* G&E Swing 4 */}
+      {(swing_ge4_calltime && swing_ge4_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                G&E Swing 4</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                G&E Swing 4</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{swing_ge4_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{swing_ge4_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
-      {/* Swing G/E 5 */}
-      {swing_ge5_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Swing G/E 5</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{swing_ge5_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{swing_ge5_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {/* G&E Swing 5 */}
+      {(swing_ge5_calltime && swing_ge5_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                G&E Swing 5</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                G&E Swing 5</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{swing_ge5_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{swing_ge5_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
       </Row>
     </div>

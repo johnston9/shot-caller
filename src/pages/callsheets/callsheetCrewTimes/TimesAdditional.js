@@ -43,7 +43,7 @@
 
      return (
        <div className="text-center">
-         <div className={`mt-0 text-center ${styles.Subtitle2 }`}>
+         <div className={`mt-0 text-center ${styles.Back3 }`}>
          <span className={`float-right ${styles.Close }`} onClick={() => setShowAdd(false) } >Close</span> 
          <h5 className={`d-block d-md-none pl-5 text-center`} 
          style={{ textTransform: 'uppercase'}} >ADDITIONAL </h5>

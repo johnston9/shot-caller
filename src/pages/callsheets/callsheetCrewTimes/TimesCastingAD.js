@@ -20,7 +20,7 @@ const TimesCastingAD = ({crewInfoOne, callsheet, setShowCas }) => {
     <div>
       <div className={`mt-0 text-center  ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CASTING DEPARTMENT</h5>
+      <h5 className={`pl-3 text-center`} style={{ textTransform: 'uppercase'}} >CASTING DEPARTMENT</h5>
       </div>
       <Row>
       {/* Extras Casting */}

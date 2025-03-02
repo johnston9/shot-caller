@@ -98,10 +98,10 @@ const CrewMakeup = ({handleChange, postData, setShow}) => {
       <hr className={`mt-3 mb-3`}/>
       </Col>
       </Row>
-      {/* Key Hair Stylist */} 
+      {/* Key Hairstylist */} 
       <div>
       <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
-      style={{ textTransform: 'uppercase'}}>Key Hair Stylist</p> 
+      style={{ textTransform: 'uppercase'}}>Key Hairstylist</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
         CALLNAME: keyhair</span> 

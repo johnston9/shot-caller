@@ -132,7 +132,7 @@
           <hr className="mt-0 mb-0"/>
           </div> )
           }
-          {/* Standby Stagehand (Using Driver 6 keys) */}
+          {/* Standby Stagehand (Using Truck 3 keys) */}
           {truck3_name && 
             (<div className={`${styles.CrewInfoRow}`}>
             <Row className='text-center d-flex align-items-center' >
@@ -165,10 +165,10 @@
             </div> )
           }
           </div>
-            {/* WRANGLING */}
-            <div className={`mt-0 text-center ${styles.SubTitle }`}>
-            <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >WRANGLING DEPARTMENT</h5>
-            </div>
+          {/* WRANGLING */}
+          <div className={`mt-0 text-center ${styles.SubTitle }`}>
+          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >WRANGLING DEPARTMENT</h5>
+          </div>
             {/* Head Wrangler (Using legal keys) */}
             {legal_name && 
              (<div className={`${styles.CrewInfoRow}`}>

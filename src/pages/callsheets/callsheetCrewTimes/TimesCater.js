@@ -19,7 +19,7 @@
        <div>
          <div className={`mt-0 text-center ${styles.Back3 }`}>
          <span className={`float-right ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
-         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CATERING</h5>
+         <h5 className={`pl-3 text-center`} style={{ textTransform: 'uppercase'}} >CATERING</h5>
          </div>
          <Row>
           <Col className="text-center pt-2">
@@ -29,7 +29,7 @@
           </Col>
          </Row>
          {/* CRAFT SERVICES */}
-         <div className={`mt-0 text-center ${styles.Back3 }`}>
+         <div className={`mt-3 text-center ${styles.Back3 }`}>
            <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >CRAFT SERVICES  </h5>
          </div>
          <Row>
