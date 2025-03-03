@@ -1,4 +1,4 @@
-/* Component to display the Stunts Department Calltimes
+/* Component to display the TVStudio Department Calltimes
    on the Callsheet */
    import React from "react";
    import Col from 'react-bootstrap/Col';
