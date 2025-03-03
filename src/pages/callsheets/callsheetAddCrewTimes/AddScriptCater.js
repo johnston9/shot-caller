@@ -1,4 +1,4 @@
-/* Form to add the Script and Catering Departments Calltimes to the Callsheet
+/* Form to add the Script Calltimes to the Callsheet
    From the Callsheet Create and Edit pages */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";

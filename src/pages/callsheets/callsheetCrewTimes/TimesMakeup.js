@@ -14,12 +14,11 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
     makeup_artist_1_name,
     makeup_artist_2_name,
     makeup_artist_3_name,
-    makeup_artist_4_name,
-    makeup_artist_5_name, } = crewInfoOne || {};
+    makeup_artist_4_name, } = crewInfoOne || {};
 
   const { key_hairmakeup_calltime, key_hairstylist_calltime, sfx_makeup_calltime,
     sfx_makeup_assistant_calltime, makeup_artist_1_calltime, makeup_artist_2_calltime,
-    makeup_artist_3_calltime, makeup_artist_4_calltime, makeup_artist_5_calltime,
+    makeup_artist_3_calltime, makeup_artist_4_calltime,
     } = callsheet;
     
   return (

@@ -123,7 +123,7 @@ const AddSoundTransport = ({crewInfoOne, handleChange, postData, setShowSou }) =
           <hr className="mt-0 mb-0"/>
           </div> )
          }
-         {/* Sound Assistant - (Using Sound Assistant 2 keys)*/}
+         {/* Sound Assistant - (Using Sound Assistant 2 keys) */}
          {sound_assistant_2_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >

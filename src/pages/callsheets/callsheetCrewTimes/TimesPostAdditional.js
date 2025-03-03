@@ -63,38 +63,46 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
         POST/VFX </h5>
       </div>
       <div>
-      <Row>     
-      {/* Editor */}
-      {editor_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Editor</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{editor_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{editor_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      <Row>
+      {/* On Set Editor */}
+      {(editor_calltime && editor_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                On Set Editor</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                On Set Editor</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{editor_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{editor_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
-      {/* FX */}
-      {fx_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>FX</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{fx_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{fx_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
+      {/* VFX Supervisor */}
+      {(fx_calltime && fx_name) &&
+            (<Col xs={12} lg={6}>
+            <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+              <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                VFX Supervisor</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                VFX Supervisor</p>                    
+              </Col>
+              <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+                <p className={`my-0 py-0 `}>{fx_name} </p>
+              </Col>
+              <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+                <p className={`my-0 py-0 `}>{fx_calltime} </p>
+              </Col>
+            </Row>
+            <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+            </Col> )
       }
       </Row>
       </div>

@@ -21,104 +21,96 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
     <div>
       <div className={`mt-0 text-center ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNTS </h5>
+      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNT DEPARTMENT </h5>
       </div>
+      <Row>
       {/* Stunt Coordinator */}
-      {stunt_coordinator_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Stunt Coordinator</p>
+      {(stunt_coordinator_calltime && stunt_coordinator_name) && ( 
+          <Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Stunt Coordinator</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Stunt Coordinator</p> 
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{stunt_coordinator_name} </p>
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{stunt_coordinator_calltime} </p>
             </Col>
           </Row>
-          </Col> )
-      }
-      {/* Stunts 1 */}
-      {stunts_1_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Stunts 1</p>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+          </Col>
+      ) }
+      {/* Stunt Performer 1 */}
+      {(stunts_1_calltime && stunts_1_name) && ( 
+          <Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Stunt Performer 1</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Stunt Performer 1</p> 
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{stunts_1_name} </p>
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{stunts_1_calltime} </p>
             </Col>
           </Row>
-          </Col> )
-      }
-      {/* Stunts 2 */}
-      {stunts_2_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Stunts 2</p>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+          </Col>
+      ) }
+      {/* Stunt Performer 2 */}
+      {(stunts_2_calltime && stunts_2_name) && ( 
+          <Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Stunt Performer 2</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Stunt Performer 2</p> 
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
               <p className={`my-0 py-0 `}>{stunts_2_name} </p>
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
               <p className={`my-0 py-0 `}>{stunts_2_calltime} </p>
             </Col>
           </Row>
-          </Col> )
-      }
-      {/* Stunts 3 */}
-      {stunts_3_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Stunts 3</p>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+          </Col>
+      ) }
+      </Row>
+      <div className={`my-3 mt-0 text-center ${styles.SubTitle }`}>
+         <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >
+          SFX DEPARTMENT </h5>
+      </div>
+      <Row>
+      {/* Stunt Performer 2 */}
+      {(stunts_2_calltime && stunts_2_name) && ( 
+          <Col xs={12} lg={6}>
+          <Row className='mt-1 mx-0 d-flex align-items-center' >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+                Stunt Performer 2</p>
+                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+                Stunt Performer 2</p> 
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{stunts_3_name} </p>
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+              <p className={`my-0 py-0 `}>{stunts_2_name} </p>
             </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{stunts_3_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
-      }
-      {/* Stunts 4 */}
-      {stunts_4_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Stunts 4</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{stunts_4_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{stunts_4_calltime} </p>
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+              <p className={`my-0 py-0 `}>{stunts_2_calltime} </p>
             </Col>
           </Row>
-          </Col> )
-      }
-      {/* Stunts 5 */}
-      {stunts_5_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Stunts 5</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{stunts_5_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{stunts_5_calltime} </p>
-            </Col>
-          </Row>
-          </Col> )
-      }
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+          </Col>
+      ) }
+      </Row>
     </div>
   )
 }
