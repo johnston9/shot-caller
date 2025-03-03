@@ -25,10 +25,10 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
     ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
     prop_buyer_name, prop_buyer_email, prop_buyer_phone,
     armorer_name, armorer_email, armorer_phone,
-    // new
-    stunts_3_name, stunts_3_email, stunts_3_phone,
-    stunts_4_name, stunts_4_email, stunts_4_phone,
-    stunts_5_name, stunts_5_email, stunts_5_phone,
+    // new cater
+    catering_co_1_name, catering_co_1_email, catering_co_1_phone,
+    catering_co_2_name, catering_co_2_email, catering_co_2_phone,
+    catering_co_3_name, catering_co_3_email, catering_co_3_phone,
     oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
     } = crewInfoOne || {};
 
@@ -91,32 +91,32 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Row>
       </div> )
       }
-      {/* new Standby Art - (Using Stunt Performer 3 Keys ) */}
-      {stunts_3_name && 
-      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-      <div className='d-flex justify-content-center '>
-      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Standby Art</p>  
-      </div>
-      <Row className='text-center' >
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-          <p className={`${styles.CrewInfoP} `}>{stunts_3_name}</p>
-        </Col>
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-        <p className={`${styles.CrewInfop} `}>{stunts_3_phone}</p>
-        </Col>
-        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-          <p className={`${styles.CrewInfop} `}>{stunts_3_email}</p>
-        </Col>
-      </Row>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-0 mx-5`}/>
-      </Col>
-      </Row>
-      </div> )
-      }
+      {/* Standby Art - (Using Catering Company 1 keys) */}
+      {catering_co_1_name && 
+            (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+            <div className='d-flex justify-content-center '>
+            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Standby Art</p>  
+            </div>
+            <Row className='text-center' >
+              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+                <p className={`${styles.CrewInfoP} `}>{catering_co_1_name}</p>
+              </Col>
+              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfop} `}>{catering_co_1_phone}</p>
+              </Col>
+              <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+                <p className={`${styles.CrewInfop} `}>{catering_co_1_email}</p>
+              </Col>
+            </Row>
+            {/* break */}
+            <Row>
+            <Col xs={12}>
+            <hr className={`mt-3 mb-0 mx-5`}/>
+            </Col>
+            </Row>
+            </div> )
+        }
       {/* art assistant */}
       {art_assistant_name && 
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
@@ -175,32 +175,32 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Row>
       </div> )
       }
-      {/* new Assistant Set Decorator - (Using Stunt Performer 4 Keys) */}
-      {stunts_4_name && 
-      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-      <div className='d-flex justify-content-center '>
-      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Set Decorator</p>  
-      </div>
-      <Row className='text-center' >
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-          <p className={`${styles.CrewInfoP} `}>{stunts_4_name}</p>
-        </Col>
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-        <p className={`${styles.CrewInfop} `}>{stunts_4_phone}</p>
-        </Col>
-        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-          <p className={`${styles.CrewInfop} `}>{stunts_4_email}</p>
-        </Col>
-      </Row>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-0 mx-5`}/>
-      </Col>
-      </Row>
-      </div> )
-      }
+      {/* Assistant Set Decorator - (Using Catering Company 2 keys) */}
+      {catering_co_2_name && 
+            (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+            <div className='d-flex justify-content-center '>
+            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Assistant Set Decorator</p>  
+            </div>
+            <Row className='text-center' >
+              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+                <p className={`${styles.CrewInfoP} `}>{catering_co_2_name}</p>
+              </Col>
+              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfop} `}>{catering_co_2_phone}</p>
+              </Col>
+              <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+                <p className={`${styles.CrewInfop} `}>{catering_co_2_email}</p>
+              </Col>
+            </Row>
+            {/* break */}
+            <Row>
+            <Col xs={12}>
+            <hr className={`mt-3 mb-0 mx-5`}/>
+            </Col>
+            </Row>
+            </div> )
+        }
       {/* set dresser */}
       {set_dresser_name && 
       (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
@@ -279,32 +279,32 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       </Row>
       </div> )
       }
-      {/* Swing Gang 1 (Using Stunt Performer 5 Keys) */}
-      {stunts_5_name && 
-      (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-      <div className='d-flex justify-content-center '>
-      <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-      ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Swing Gang 1</p>  
-      </div>
-      <Row className='text-center' >
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-          <p className={`${styles.CrewInfoP} `}>{stunts_5_name}</p>
-        </Col>
-        <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-        <p className={`${styles.CrewInfop} `}>{stunts_5_phone}</p>
-        </Col>
-        <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-          <p className={`${styles.CrewInfop} `}>{stunts_5_email}</p>
-        </Col>
-      </Row>
-      {/* break */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`mt-3 mb-0 mx-5`}/>
-      </Col>
-      </Row>
-      </div> )
-      }
+      {/* Swing Gang 1 - (Using Catering Company 3 keys) */}
+      {catering_co_3_name && 
+            (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+            <div className='d-flex justify-content-center '>
+            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Swing Gang 1</p>  
+            </div>
+            <Row className='text-center' >
+              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+                <p className={`${styles.CrewInfoP} `}>{catering_co_3_name}</p>
+              </Col>
+              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+              <p className={`${styles.CrewInfop} `}>{catering_co_3_phone}</p>
+              </Col>
+              <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+                <p className={`${styles.CrewInfop} `}>{catering_co_3_email}</p>
+              </Col>
+            </Row>
+            {/* break */}
+            <Row>
+            <Col xs={12}>
+            <hr className={`mt-3 mb-0 mx-5`}/>
+            </Col>
+            </Row>
+            </div> )
+        }
       </div>
       {/* PROPERTY  */}
       <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>

@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 
 const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
+  
   const {stunt_coordinator_name, 
     stunts_1_name,
     stunts_2_name,
@@ -90,26 +91,66 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
           SFX DEPARTMENT </h5>
       </div>
       <Row>
-      {/* Stunt Performer 2 */}
-      {(stunts_2_calltime && stunts_2_name) && ( 
-          <Col xs={12} lg={6}>
-          <Row className='mt-1 mx-0 d-flex align-items-center' >
+      {/* Special Effects Supervisor - (Using Stunt Performer 3 Keys ) */}
+      {(stunts_3_calltime && stunts_3_name) &&
+          (<Col xs={12} lg={6}>
+          <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
-                <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
-                Stunt Performer 2</p>
-                <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
-                Stunt Performer 2</p> 
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Special Effects Supervisor</p>
+              <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+              Special Effects Supervisor</p>                    
             </Col>
             <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
-              <p className={`my-0 py-0 `}>{stunts_2_name} </p>
+              <p className={`my-0 py-0 `}>{stunts_3_name} </p>
             </Col>
             <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
-              <p className={`my-0 py-0 `}>{stunts_2_calltime} </p>
+              <p className={`my-0 py-0 `}>{stunts_3_calltime} </p>
             </Col>
           </Row>
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
-          </Col>
-      ) }
+          </Col> )
+      }
+      {/* Special Effects Assistant 1 - (Using Stunt Performer 4 Keys )*/}
+      {(stunts_4_calltime && stunts_4_name) &&
+          (<Col xs={12} lg={6}>
+          <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Special Effects Assistant 1</p>
+              <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+              Special Effects Assistant 1</p>                    
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+              <p className={`my-0 py-0 `}>{stunts_4_name} </p>
+            </Col>
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+              <p className={`my-0 py-0 `}>{stunts_4_calltime} </p>
+            </Col>
+          </Row>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+          </Col> )
+      }
+      {/* Special Effects Assistant 2 - (Using Stunt Performer 5 Keys )*/}
+      {(stunts_5_calltime && stunts_5_name) &&
+          (<Col xs={12} lg={6}>
+          <Row className={`mt-1 mx-0 d-flex align-items-center`} >
+            <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
+              <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
+              Special Effects Assistant 2 </p>
+              <p className={`${styles.BoldScene} my-0 py-0 d-none d-sm-block`}>
+              Special Effects Assistant 2 </p>                    
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
+              <p className={`my-0 py-0 `}>{stunts_5_name} </p>
+            </Col>
+            <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
+              <p className={`my-0 py-0 `}>{stunts_5_calltime} </p>
+            </Col>
+          </Row>
+          <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
+          </Col> )
+      }
       </Row>
     </div>
   )

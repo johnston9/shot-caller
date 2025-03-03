@@ -23,9 +23,9 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
     prop_buyer_name,
     armorer_name, 
     // new
-    stunts_3_name,
-    stunts_4_name,
-    stunts_5_name,
+    catering_co_1_name,
+    catering_co_2_name,
+    catering_co_3_name,
     oth_camera_pos_5_name,
     } = crewInfoOne || {};
 
@@ -34,7 +34,8 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
     ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime, 
     production_designer_calltime,
     // new
-    oth_camera_pos_5_calltime, stunts_3_calltime, stunts_4_calltime, stunts_5_calltime,
+    catering_co_1_calltime, catering_co_2_calltime, catering_co_3_calltime,
+    oth_camera_pos_5_calltime,
     } = postData || {};
 
   return (
@@ -108,29 +109,29 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-1 mb-0"/>
           </div> )
          }
-         {/* new Standby Art - (Using Stunt Performer 3 Keys ) */}
-         {stunts_3_name && 
+         {/* Standby Art - (Using Catering Company 1 keys) */}
+         {catering_co_1_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
               <p className={`${styles.BoldScene} `}>Standby Art</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{stunts_3_name} </p>
+              <p className={`${styles.CrewInfop} `}>{catering_co_1_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="stunts_3_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="catering_co_1_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="stunts_3_calltime"
-                value={stunts_3_calltime}
+                name="catering_co_1_calltime"
+                value={catering_co_1_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.stunts_3_calltime?.map((message, idx) => (
+            {errors?.catering_co_1_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -207,29 +208,29 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
-         {/* new Assistant Set Decorator - (Using Stunt Performer 4 Keys) */}
-         {stunts_4_name && 
+         {/* Assistant Set Decorator - (Using cater 2 Keys) */}
+         {catering_co_2_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
               <p className={`${styles.BoldScene} `}>Assistant Set Decorator</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{stunts_4_name} </p>
+              <p className={`${styles.CrewInfop} `}>{catering_co_2_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="stunts_4_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="catering_co_2_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="stunts_4_calltime"
-                value={stunts_4_calltime}
+                name="catering_co_2_calltime"
+                value={catering_co_2_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.stunts_4_calltime?.map((message, idx) => (
+            {errors?.catering_co_2_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -335,29 +336,29 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
-         {/* Swing Gang 1 (Using Stunt Performer 5 Keys) */}
-         {stunts_5_name && 
+         {/* Swing Gang 1 (Using cater 3 Keys) */}
+         {catering_co_3_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center ' >
             <Col xs={6} md={4} >
               <p className={`${styles.BoldScene} `}>Swing Gang 1</p>
             </Col>
             <Col xs={6} md={4} >
-              <p className={`${styles.CrewInfop} `}>{stunts_5_name} </p>
+              <p className={`${styles.CrewInfop} `}>{catering_co_3_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
-            <Form.Group controlId="stunts_5_calltime" className={`my-1 ${styles.Width} `}>
+            <Form.Group controlId="catering_co_3_calltime" className={`my-1 ${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`}
                 type="text"
                 placeholder="Call"
-                name="stunts_5_calltime"
-                value={stunts_5_calltime}
+                name="catering_co_3_calltime"
+                value={catering_co_3_calltime}
                 onChange={handleChange}
                     />
             </Form.Group>
-            {errors?.stunts_5_calltime?.map((message, idx) => (
+            {errors?.catering_co_3_calltime?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>

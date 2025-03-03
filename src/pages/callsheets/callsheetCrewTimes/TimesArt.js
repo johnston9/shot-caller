@@ -19,9 +19,9 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
     prop_buyer_name,
     armorer_name, 
     // new
-    stunts_3_name,
-    stunts_4_name,
-    stunts_5_name,
+    catering_co_1_name,
+    catering_co_2_name,
+    catering_co_3_name,
     oth_camera_pos_5_name,
     } = crewInfoOne || {};
 
@@ -29,7 +29,8 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
     set_dresser_calltime, lead_man_calltime, dresser_calltime, prop_master_calltime,
     ass_prop_master_calltime, prop_buyer_calltime, armorer_calltime, production_designer_calltime,
     // new
-    oth_camera_pos_5_calltime, stunts_3_calltime, stunts_4_calltime, stunts_5_calltime,
+    oth_camera_pos_5_calltime, 
+    catering_co_1_calltime, catering_co_2_calltime, catering_co_3_calltime,
     } = callsheet || {};
 
   return (
@@ -81,8 +82,8 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
       }
-      {/* new Standby Art - (Using Stunt Performer 3 Keys ) */}
-      {(stunts_3_calltime && stunts_3_name) &&
+      {/* Standby Art - (Using Catering Company 1 keys) */}
+      {(catering_co_1_calltime && catering_co_1_name) &&
           (<Col xs={12} lg={6}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
@@ -92,10 +93,10 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
               Standby Art</p>                    
             </Col>
             <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
-              <p className={`my-0 py-0 `}>{stunts_3_name} </p>
+              <p className={`my-0 py-0 `}>{catering_co_1_name} </p>
             </Col>
             <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
-              <p className={`my-0 py-0 `}>{stunts_3_calltime} </p>
+              <p className={`my-0 py-0 `}>{catering_co_1_calltime} </p>
             </Col>
           </Row>
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
@@ -147,8 +148,8 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
       }
-      {/* new Assistant Set Decorator - (Using Stunt Performer 4 Keys) */}
-      {(stunts_4_calltime && stunts_4_name) &&
+      {/* Assistant Set Decorator - (Using cater 2 Keys) */}
+      {(catering_co_2_calltime && catering_co_2_name) &&
           (<Col xs={12} lg={6}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
@@ -158,10 +159,10 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
               Assistant Set Decorator</p>                    
             </Col>
             <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
-              <p className={`my-0 py-0 `}>{stunts_4_name} </p>
+              <p className={`my-0 py-0 `}>{catering_co_2_name} </p>
             </Col>
             <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
-              <p className={`my-0 py-0 `}>{stunts_4_calltime} </p>
+              <p className={`my-0 py-0 `}>{catering_co_2_calltime} </p>
             </Col>
           </Row>
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
@@ -227,8 +228,8 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col> )
       }
-      {/* Swing Gang 1 (Using Stunt Performer 5 Keys) */}
-      {(stunts_5_calltime && stunts_5_name) &&
+      {/* Swing Gang 1 - (Using cater 3 Keys) */}
+      {(catering_co_3_calltime && catering_co_3_name) &&
           (<Col xs={12} lg={6}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
@@ -238,10 +239,10 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
               Swing Gang 1</p>                    
             </Col>
             <Col className={`mx-0 px-0 ${styles.Borderm}`} xs={8} sm={4} >
-              <p className={`my-0 py-0 `}>{stunts_5_name} </p>
+              <p className={`my-0 py-0 `}>{catering_co_3_name} </p>
             </Col>
             <Col className={`mx-0 px-0 text-center ${styles.Border}`} xs={4} sm={3} >
-              <p className={`my-0 py-0 `}>{stunts_5_calltime} </p>
+              <p className={`my-0 py-0 `}>{catering_co_3_calltime} </p>
             </Col>
           </Row>
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />

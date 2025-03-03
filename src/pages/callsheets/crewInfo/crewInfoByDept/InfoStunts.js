@@ -17,9 +17,9 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
   const {stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
     stunts_1_name, stunts_1_email, stunts_1_phone,
     stunts_2_name, stunts_2_email, stunts_2_phone,
-    catering_co_1_name, catering_co_1_email, catering_co_1_phone,
-    catering_co_2_name, catering_co_2_email, catering_co_2_phone,
-    catering_co_3_name, catering_co_3_email, catering_co_3_phone,} = crewInfoOne || {};
+    stunts_3_name, stunts_3_email, stunts_3_phone,
+    stunts_4_name, stunts_4_email, stunts_4_phone,
+    stunts_5_name, stunts_5_email, stunts_5_phone,} = crewInfoOne || {};
     
   return (
     <div>
@@ -126,83 +126,83 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
         <h5 className={`mb-0 text-center py-1 ${styles.Bold }`} >SFX DEPARTMENT</h5>
         </div>
         <div className={`px-md-5 mx-md-5 ${styles.White }`}>
-        {/* Special Effects Supervisor - (Using Catering Company 1 keys)*/}
-        {catering_co_1_name && 
-            (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-            <div className='d-flex justify-content-center '>
-            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        {/* Special Effects Supervisor - (Using Stunt Performer 3 Keys )*/}
+        {stunts_3_name && 
+        (<div className={`${styles.CrewInfoRow} mt-3 pb-2`}>
+        <div className='d-flex justify-content-center '>
+        <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
         ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Special Effects Supervisor</p>  
-            </div>
-            <Row className='text-center' >
-              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-                <p className={`${styles.CrewInfoP} `}>{catering_co_1_name}</p>
-              </Col>
-              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfop} `}>{catering_co_1_phone}</p>
-              </Col>
-              <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-                <p className={`${styles.CrewInfop} `}>{catering_co_1_email}</p>
-              </Col>
-            </Row>
-            {/* break */}
-            <Row>
-            <Col xs={12}>
-            <hr className={`mt-3 mb-0 mx-5`}/>
-            </Col>
-            </Row>
-            </div> )
+        </div>
+        <Row className='text-center' >
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfoP} `}>{stunts_3_name}</p>
+          </Col>
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfop} `}>{stunts_3_phone}</p>
+          </Col>
+          <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+            <p className={`${styles.CrewInfop} `}>{stunts_3_email}</p>
+          </Col>
+        </Row>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-0 mx-5`}/>
+        </Col>
+        </Row>
+        </div> )
         }
-        {/* Special Effects Assistant 1 - (Using Catering Company 2 keys) */}
-        {catering_co_2_name && 
-            (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-            <div className='d-flex justify-content-center '>
-            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        {/* Special Effects Assistant 1 - (Using Stunt Performer 4 Keys) */}
+        {stunts_4_name && 
+        (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+        <div className='d-flex justify-content-center '>
+        <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
         ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Special Effects Assistant 1</p>  
-            </div>
-            <Row className='text-center' >
-              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-                <p className={`${styles.CrewInfoP} `}>{catering_co_2_name}</p>
-              </Col>
-              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfop} `}>{catering_co_2_phone}</p>
-              </Col>
-              <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-                <p className={`${styles.CrewInfop} `}>{catering_co_2_email}</p>
-              </Col>
-            </Row>
-            {/* break */}
-            <Row>
-            <Col xs={12}>
-            <hr className={`mt-3 mb-0 mx-5`}/>
-            </Col>
-            </Row>
-            </div> )
+        </div>
+        <Row className='text-center' >
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfoP} `}>{stunts_4_name}</p>
+          </Col>
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfop} `}>{stunts_4_phone}</p>
+          </Col>
+          <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+            <p className={`${styles.CrewInfop} `}>{stunts_4_email}</p>
+          </Col>
+        </Row>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-0 mx-5`}/>
+        </Col>
+        </Row>
+        </div> )
         }
-        {/* Special Effects Assistant 2 - (Using Catering Company 3 keys) */}
-        {catering_co_3_name && 
-            (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
-            <div className='d-flex justify-content-center '>
-            <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
-        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Special Effects Assistant 1</p>  
-            </div>
-            <Row className='text-center' >
-              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-                <p className={`${styles.CrewInfoP} `}>{catering_co_3_name}</p>
-              </Col>
-              <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
-              <p className={`${styles.CrewInfop} `}>{catering_co_3_phone}</p>
-              </Col>
-              <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
-                <p className={`${styles.CrewInfop} `}>{catering_co_3_email}</p>
-              </Col>
-            </Row>
-            {/* break */}
-            <Row>
-            <Col xs={12}>
-            <hr className={`mt-3 mb-0 mx-5`}/>
-            </Col>
-            </Row>
-            </div> )
+        {/* Special Effects Assistant 2 - (Using Stunt Performer 5 Keys) */}
+        {stunts_5_name && 
+        (<div className={`${styles.CrewInfoRow} mt-1 pb-2`}>
+        <div className='d-flex justify-content-center '>
+        <p className={`mb-2 mx-4 py-0 text-center ${styles.Width95 }
+        ${styles.SubTitle2 }`} style={{ textTransform: 'uppercase'}}>Special Effects Assistant 2</p>  
+        </div>
+        <Row className='text-center' >
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+            <p className={`${styles.CrewInfoP} `}>{stunts_5_name}</p>
+          </Col>
+          <Col xs={6} md={4} className={`${styles.BorderRight} px-0 mx-0`} >
+          <p className={`${styles.CrewInfop} `}>{stunts_5_phone}</p>
+          </Col>
+          <Col xs={12} md={4}  className='px-0 mx-0 pt-3 pt-md-0' >
+            <p className={`${styles.CrewInfop} `}>{stunts_5_email}</p>
+          </Col>
+        </Row>
+        {/* break */}
+        <Row>
+        <Col xs={12}>
+        <hr className={`mt-3 mb-0 mx-5`}/>
+        </Col>
+        </Row>
+        </div> )
         }
         </div>
         {/* Extra SFX Positions Button */}

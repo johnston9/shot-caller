@@ -5,7 +5,7 @@
    import Row from 'react-bootstrap/Row';
    import styles from "../../../styles/Callsheets.module.css";
    
-   const TimesTransport = ({crewInfoOne, callsheet, setShowSou }) => {
+   const TimesTransport = ({crewInfoOne, callsheet, setShowTra }) => {
    
      const {sound_mixer_name,
        boom_operator_name, 
@@ -31,79 +31,9 @@
    
      return (
        <div>
-         <div className={`mt-0 text-center ${styles.Back3 }`}>
-         <span className={`float-right ${styles.Close }`} onClick={() => setShowSou(false) } >Close</span> 
-         <h5 className={`pl-5 ml-3 text-center`} style={{ textTransform: 'uppercase'}} >SOUND </h5>
-         </div>
-         <Row>
-         {/* Sound Mixer */}
-         {sound_mixer_calltime && 
-             (<Col xs={12} md={6}>
-             <Row className={` mx-0 `} >
-               <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>Sound Mixer</p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>{sound_mixer_name} </p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-                 <p className={`my-0 py-0 `}>{sound_mixer_calltime} </p>
-               </Col>
-             </Row>
-             </Col> )
-         }
-         {/* Boom Operator */}
-         {boom_operator_calltime && 
-             (<Col xs={12} md={6}>
-             <Row className={` mx-0 `} >
-               <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>Boom Operator</p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>{boom_operator_name} </p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-                 <p className={`my-0 py-0 `}>{boom_operator_calltime} </p>
-               </Col>
-             </Row>
-             </Col> )
-         }
-         {/* Sound Assist 1 */}
-         {sound_assistant_1_calltime && 
-             (<Col xs={12} md={6}>
-             <Row className={` mx-0 `} >
-               <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>Sound Assist 1</p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>{sound_assistant_1_name} </p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-                 <p className={`my-0 py-0 `}>{sound_assistant_1_calltime} </p>
-               </Col>
-             </Row>
-             </Col> )
-         }
-         {/* Sound Assist 2 */}
-         {sound_assistant_2_calltime && 
-             (<Col xs={12} md={6}>
-             <Row className={` mx-0 `} >
-               <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>Sound Assist 2</p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-                 <p className={`my-0 py-0 `}>{sound_assistant_2_name} </p>
-               </Col>
-               <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-                 <p className={`my-0 py-0 `}>{sound_assistant_2_calltime} </p>
-               </Col>
-             </Row>
-             </Col> )
-         }
-         </Row>
-         {/* TRANSPORT */}
-         <div className={` mt-3 text-center ${styles.Back3 }`}>
-             <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >TRANSPORT </h5>
+         <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
+         <span className={`float-right ${styles.Close }`} onClick={() => setShowTra(false) } >Close</span> 
+         <h5 className={`pl-5 ml-3 text-center`} style={{ textTransform: 'uppercase'}} >TRANSPORT DEPARTMENT </h5>
          </div>
          <Row>
          {/* Transport Captain */}
@@ -170,12 +100,6 @@
            </Row>
            </Col> )
          }
-         </Row>
-         {/* VEHICLES  */}
-         <div className={` mt-3 text-center ${styles.Back3 }`}>
-             <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >VEHICLES </h5>
-         </div>
-         <Row>
          {/* Car 1 */}
          {car1_calltime && 
            (<Col xs={12} md={6}>
