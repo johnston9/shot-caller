@@ -33,8 +33,11 @@ const AddWardrobe = ({crewInfoOne, handleChange, postData, setShowWar }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowWar(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >WARDROBE DEPARTMENT </h5>
+      <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowWar(false) } >Close</span> 
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      WARDROBE DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      WARDROBE</h5>
       </div>
       <div className='mt-3'>
         {/* Costume Designer */}

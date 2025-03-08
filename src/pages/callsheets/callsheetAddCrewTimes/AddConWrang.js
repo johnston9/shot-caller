@@ -28,7 +28,7 @@
      return (
        <div>
          <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-         <span className={`float-right ${styles.Close } pt-1`} onClick={() => setShowWra(false) } >Close</span> 
+         <span className={`float-right ${styles.Close } pt-md-1`} onClick={() => setShowWra(false) } >Close</span> 
          <h5 className={`d-none d-md-block pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
           CONSTRUCTION DEPARTMENT </h5>
           <h5 className={`d-block d-md-none pl-5 text-center`} style={{ textTransform: 'uppercase'}} >

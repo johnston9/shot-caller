@@ -12,14 +12,14 @@ function TopBox(props) {
         <Row className={styles.Row}>
         <Col xs={{ span: 1, offset: 1 }} lg={{ span: 1, offset: 3 }}
             md={{ span: 1, offset: 2 }}
-            className={`text-center ${styles.Longboxl}`}>    
+            className={`text-center ${styles.Longboxl} px-0`}>    
         <p>S</p> 
         <p>H</p>
         <p>O</p>
         <p>T</p> 
         </Col>
 
-        <Col className="pb-1" xs={8} md={6} lg={4}>
+        <Col className="pb-1 px-0" xs={8} md={6} lg={4}>
             <div className={`${styles.Titlebox}`}>
             <Row>
                 <Col xs={1}>

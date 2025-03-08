@@ -23,7 +23,10 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowScr }) => {
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
       <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >SCRIPT DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      SCRIPT DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      SCRIPT</h5>
       </div>
       <div className='mt-3'>
         {/* script supervisor */}
@@ -87,7 +90,7 @@ const AddScriptCater = ({crewInfoOne, handleChange, postData, setShowScr }) => {
             ))}
             </Col>
           </Row>
-          <hr className="mt-0 mb-0"/>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          </div>

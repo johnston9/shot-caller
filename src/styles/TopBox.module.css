@@ -91,20 +91,20 @@
 
 @media screen and (max-width: 400px) {
     .Title3 {
-        font-size: 1em;
+        font-size: .75em;
     }
 
     .Title {
-        font-size: 1.50em;
+        font-size: 1em;
     }
 
     .Title2 {
-        font-size: 1.25em;
+        font-size: 1em;
     }
 }
 
-@media screen and (max-width: 360px) {
+/* @media screen and (max-width: 360px) {
     .Longboxl {
         margin-left: 25px;
     }
-}
+} */

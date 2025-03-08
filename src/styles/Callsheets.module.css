@@ -3,11 +3,13 @@
 }
 
 hr {
-  /* border-top: 1px solid rgba(129, 102, 21, 0.99); */
   border-top: 1px solid #c2ecf3;
-  /* padding-top: 5px;
-  padding-bottom: 5px; */
+  border-top: 1px solid #c1f1f7;
 }
+
+/* .BreakCrew {
+  border: 1px solid #c1f1f7;
+} */
 
 .SmallSize {
   font-size: .75rem;
@@ -26,10 +28,6 @@ hr {
   border-left: 2px solid #c1f1f7;
   border-right: 2px solid #c1f1f7;
 }
-
-/* .BreakCrew {
-  border: 1px solid #c1f1f7;
-} */
 
 .White1 {
   border: 1px solid #999;
@@ -363,7 +361,10 @@ p {
 }
 
 .CrewInfoRow {
-  border-bottom: 1px solid #fff;
+  /* border-bottom: 5px solid #fff; */
+  /* border-top: 5px solid #fff; */
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .CrewInfoRowAdd {
@@ -411,6 +412,8 @@ p {
   box-sizing: border-box;
   border-radius: 2px;
   color: #747686;
+  color: #525463;
+  color: #0e1444;
   padding: 0px 10px;
   height: 30px !important;
   text-align: center;
@@ -421,7 +424,9 @@ p {
   border: 1px solid #dee1f7;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #747686;
+  color: #53587c;
+  color: #525463;
+  color: #0e1444;
   padding: 0px 10px;
   min-height: 30px !important;
   text-align: center;
@@ -542,9 +547,7 @@ p {
 
 @media screen and (max-width: 780px) {
   hr {
-    /* border-top: 1px solid rgba(129, 102, 21, 0.99); */
     border-top: 1px solid #c2ecf3;
-    padding-top: 5px;
     padding-bottom: 5px;
   }
 

@@ -41,7 +41,7 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
+      <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
       <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART DEPARTMENT</h5>
       </div>
       <div className='mt-3'>

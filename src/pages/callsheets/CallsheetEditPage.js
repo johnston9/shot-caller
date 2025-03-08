@@ -2151,7 +2151,7 @@ console.log(postData)
       <h5 className={`text-center py-1 mt-2 ${styles.SubTitle }`} >
       ADD CAST & BACKGROUND CALLTIMES</h5> 
       <Row className="text-center">
-      <Col xs={10} md={{span: 8, offset: 2 }} >
+      <Col xs={12} md={{span: 8, offset: 2 }} >
       <p className={`${styles.SmallSize } pt-2`}>
       Add Cast and Background Calls here. These forms are seperate from the main 
       Add/Edit Callsheet form below.
