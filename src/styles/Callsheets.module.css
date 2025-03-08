@@ -2,6 +2,13 @@
     min-height: 100px;
 }
 
+hr {
+  /* border-top: 1px solid rgba(129, 102, 21, 0.99); */
+  border-top: 1px solid #c2ecf3;
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
+}
+
 .SmallSize {
   font-size: .75rem;
 }
@@ -534,6 +541,13 @@ p {
 }
 
 @media screen and (max-width: 780px) {
+  hr {
+    /* border-top: 1px solid rgba(129, 102, 21, 0.99); */
+    border-top: 1px solid #c2ecf3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
   .Width3 {
     width: 50%;
   }

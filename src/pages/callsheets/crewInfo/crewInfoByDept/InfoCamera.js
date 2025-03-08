@@ -28,7 +28,10 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-1 pt-md-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CAMERA DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      CAMERA DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      CAMERA</h5>
       </div>
       <div className={`px-md-3 mx-md-5 ${styles.White }`}>
         {/* dop */}
@@ -322,7 +325,7 @@ const InfoCamera = ({crewInfoOne, setShowCam }) => {
         <Col className='text-center'>
         <Button onClick={() => setShow(show => !show)}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Camera Dept Positions </Button>
+          Non-Callsheet/Extra Camera Dept Positions </Button>
         </Col>
       </Row>
       {!show ? (

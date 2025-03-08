@@ -27,7 +27,7 @@
           get their Call Times from their department heads.
         </p> 
          <p className="px-3 pt-2" >
-         4. They can be added by clicking the "Extra Department Positions"
+         4. They can be added by clicking the "Non-Callsheet/Extra Dept Positions"
          button at the bottom of each Department page. 
          </p>
          <p className="px-3 pt-2" >

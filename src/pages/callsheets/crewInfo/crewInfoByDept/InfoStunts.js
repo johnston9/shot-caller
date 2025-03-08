@@ -25,7 +25,10 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-1 pt-md-2 ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNT DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      STUNT DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      STUNTS</h5>
       </div>
       <div className={`px-md-5 mx-md-5 ${styles.White }`}>
       {/* Stunt Coordinator */}
@@ -122,7 +125,7 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
                 dept="stunt"
                 setShow={setShow}  /> 
        ) } 
-      <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
+      <div className={`mt-4 mx-md-5 text-center ${styles.SubTitle }`}>
         <h5 className={`mb-0 text-center py-1 ${styles.Bold }`} >SFX DEPARTMENT</h5>
         </div>
         <div className={`px-md-5 mx-md-5 ${styles.White }`}>

@@ -1,5 +1,5 @@
 /* Form to add the Production Department Calltimes to the Callsheet
-   From the Callsheet Create and Edit pages */
+   From the Edit page */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from 'react-bootstrap/Col';
@@ -34,8 +34,11 @@ const AddProduction = ({crewInfoOne, handleChange, postData, setShowPro }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION DEPARTMENT</h5>
+      <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      PRODUCTION DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      PRODUCTION</h5>
       </div>
       <div className='mt-3'>
         {/* director */}

@@ -35,8 +35,11 @@
     return (
       <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >ADDITIONAL POSITIONS </h5>
+      <span className={`float-right pt-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.SubTitle }`} >
+      ADDITIONAL POSITIONS</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.SubTitle }`} >
+      ADDITIONAL</h5>
       </div>
       <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
       {/* Additional Position 1 */}

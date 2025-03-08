@@ -15,7 +15,6 @@ const InfoWrangling = ({crewInfoOne, setShowWra}) => {
       const [showConst, setShowConst] = useState(false); 
 
       const {legal_name, legal_email, legal_phone,
-        add_pos_15_name, add_pos_15_email, add_pos_15_phone, 
         add_pos_19_name, add_pos_19_email, add_pos_19_phone,
         makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
         truck3_name, truck3_email, truck3_phone,
@@ -24,7 +23,7 @@ const InfoWrangling = ({crewInfoOne, setShowWra}) => {
 
   return (
     <div>
-    <div className={`mt-0 text-center ${styles.SubTitle }`}>
+    <div className={`mt-0 mb-3 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-1 pt-md-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowWra(false) } >Close</span> 
       <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
       CONSTRUCTION DEPARTMENT</h5>

@@ -170,7 +170,7 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
         <Col className='text-center'>
         <Button onClick={() => setShowAd(showAd => !showAd)}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra AD Positions </Button>
+          Non-Callsheet/Extra AD Positions </Button>
         </Col>
       </Row>
       {!showAd ? (
@@ -181,7 +181,7 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
                 setShow={setShowAd}  /> 
        ) } 
       {/* PRODUCTION ASSISTANTS */}
-      <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
+      <div className={`mt-4 mx-md-5 text-center ${styles.SubTitle }`}>
       <h5 className={`d-none d-md-block mb-0 text-center py-1 ${styles.Bold }`} >
         PRODUCTION ASSISTANTS</h5>
         <h5 className={`d-block d-md-none mb-0 text-center py-1 ${styles.Bold }`} >
@@ -272,7 +272,7 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
         <Col className='text-center'>
         <Button onClick={() => setShowPa(showPa => !showPa)}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra PA Positions </Button>
+          Non-Callsheet/Extra PA Positions </Button>
         </Col>
       </Row>
       {!showPa ? (

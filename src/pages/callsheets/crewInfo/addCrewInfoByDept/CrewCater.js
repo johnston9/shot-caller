@@ -20,10 +20,21 @@
     return (
       <div className="pb-3 text-center">
         <div className={`mt-0 text-center ${styles.SubTitle }`}>
-        <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-        <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >CATERING/CRAFT SERVICES </h5>
+        <span className={`float-right pt-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+        <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.SubTitle }`} >
+        CATERING DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.SubTitle }`} >
+      CATERING</h5>
         </div>
         <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
+        <p className={`pt-md-3 text-center`} style={{fontStyle: 'italic'}}>
+        Add all Catering from the "Non-Callsheet/Extra Catering Dept Positions" 
+        tab on the Catering Crew Info page.
+        </p>
+        </div>
+        {/* CRAFT SERVICES */}
+         <h5 className={`mt-4 mx-md-5 mb-3 py-1 ${styles.SubTitle }`} >CRAFT SERVICES</h5> 
+         <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
         {/* Craft Service */} 
         <div>
         <p className={`mb-3 py-0 mx-md-4 ${styles.SubTitle }` } 

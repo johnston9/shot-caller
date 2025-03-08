@@ -21,7 +21,10 @@ const InfoScript = ({crewInfoOne, setShowScr }) => {
     <div>
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-1 pt-md-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >SCRIPT DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      SCRIPT DEPARTMENT</h5>
+        <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+        SCRIPT</h5>
       </div>
       <div className={`px-md-5 mx-md-5 ${styles.White }`}>
       {/* Script Supervisor  */}

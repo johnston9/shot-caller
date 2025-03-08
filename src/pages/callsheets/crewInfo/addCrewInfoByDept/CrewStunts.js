@@ -24,8 +24,11 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
   return (
     <div className="pb-3 text-center">
       <div className={`mt-0 text-center ${styles.SubTitle }`}>
-      <span className={`float-right pt-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-      <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >STUNT DEPARTMENT </h5>
+      <span className={`float-right pt-1 ${styles.Bold } ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      STUNT DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      STUNTS</h5>
       </div>
       <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
       {/* stunts */}
@@ -235,12 +238,13 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
       </Col>
       </Row>
       </div>
+      </div>
       {/* SFX */}
-      <div>
-      <h5 className={`mt-4 mb-0 py-1 ${styles.SubTitle }`} >SFX DEPARTMENT</h5> 
+      <h5 className={`mt-5 mx-md-5 mb-0 py-1 ${styles.SubTitle }`} >SFX DEPARTMENT</h5> 
+      <div className={`px-2 px-md-5 mx-md-5 pt-3 ${styles.White }`}>
       {/* Special Effects Supervisor - (Using Stunt Performer 3 Keys) */} 
       <div>
-      <p className={`my-3 py-0 mx-md-4 ${styles.SubTitle }` } 
+      <p className={`mb-3 py-0 mx-md-4 ${styles.SubTitle }` } 
       style={{ textTransform: 'uppercase'}}>Special Effects Supervisor</p> 
       <div>
       <span className={`py-1 px-3 px-md-5 ${styles.BoldTitleCall }`} >
@@ -444,7 +448,6 @@ const CrewStunts = ({handleChange, postData, setShow}) => {
       </Row> 
       </div>
       </div>  
-      </div>
   )
 }
 

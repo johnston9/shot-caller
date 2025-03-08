@@ -145,7 +145,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
       }
       </div>
       {/* SET DECORATION */}
-      <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
+      <div className={`mt-4 mx-md-5 text-center ${styles.SubTitle }`}>
       <h5 className={` mb-0 text-center py-1 ${styles.Bold }`} >SET DECORATION DEPARTMENT</h5>
       </div>
       <div className={`px-md-5 mx-md-5 ${styles.White }`}>
@@ -307,7 +307,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
         }
       </div>
       {/* PROPERTY  */}
-      <div className={`mt-4 mx-5 text-center ${styles.SubTitle }`}>
+      <div className={`mt-4 mx-md-5 text-center ${styles.SubTitle }`}>
       <h5 className={` mb-0 text-center py-1 ${styles.Bold }`} >PROPERTY DEPARTMENT</h5>
       </div>  
       <div className={`px-md-5 mx-md-5 ${styles.White }`}>   
@@ -447,7 +447,7 @@ const InfoArt = ({crewInfoOne, setShowArt}) => {
         <Col className='text-center'>
         <Button onClick={() => setShow(show => !show)}
           className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Art Dept Positions </Button>
+          Non-Callsheet/Extra Art Dept Positions </Button>
         </Col>
       </Row>
       {!show ? (

@@ -22,12 +22,14 @@
        <div>
          <div className={`mt-0 text-center ${styles.SubTitle }`}>
          <span className={`float-right pt-1 pt-md-2 ${styles.Bold } ${styles.Close }`} onClick={() => setShowCat(false) } >Close</span> 
-         <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
-          CATERING DEPARTMENT</h5>
+         <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+         CATERING DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+          CATERING</h5>
          </div>
          <div className={`px-md-5 mx-md-5 ${styles.White }`}>
-        <p className={`pt-3 text-center`}>
-        Add all Catering from the Extra/Non-Callsheet Crew Positions page.
+        <p className={`pt-3 text-center`} style={{fontStyle: 'italic'}}>
+        Add/View all Catering from the "Non-Callsheet/Extra Catering Dept Positions" tab below.
         </p>
          </div>
          {/* Extra Positions Button */}
@@ -46,7 +48,7 @@
                    setShow={setShowCater}  /> 
           ) } 
          {/* CRAFT SERVICES */}
-         <div className={`mt-4 text-center ${styles.SubTitle }`}>
+         <div className={`mt-4 mx-md-5 text-center ${styles.SubTitle }`}>
          <h5 className={`mb-0 text-center py-1 ${styles.Bold }`} >
          CRAFT SERVICES </h5></div>
          <div className={`px-md-5 mx-md-5 ${styles.White }`}>
