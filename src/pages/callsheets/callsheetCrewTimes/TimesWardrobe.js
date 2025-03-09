@@ -28,9 +28,12 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
     
   return (
     <div>
-      <div className={`mt-0 text-center ${styles.Back3 }`}>
+      <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowWar(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >WARDROBE DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      WARDROBE DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      WARDROBE</h5>
       </div>
       <Row>
       {/* Costume Designer */}

@@ -54,10 +54,10 @@ const AddAddition = ({crewInfoOne, handleChange, postData, setShowAdd }) => {
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
       <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowAdd(false) } >Close</span> 
-      <h5 className={`d-none d-md-block pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
       ADDITIONAL POSITIONS </h5>
-      <h5 className={`d-block d-md-none pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
-      ADDITIONAL </h5>
+        <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+        ADDITIONAL </h5>
       </div>
       <div className='mt-3'>
         {/* add pos 1 */}

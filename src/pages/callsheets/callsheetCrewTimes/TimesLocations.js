@@ -22,7 +22,10 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
     <div>
       <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowLoc(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >LOCATIONS DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      LOCATIONS DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      LOCATIONS</h5>
       </div>
       <Row>
       {/* Location Manager */}

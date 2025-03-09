@@ -18,14 +18,12 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
     oth_production_pos_3_job, oth_production_pos_3_name,
     oth_production_pos_4_job, oth_production_pos_4_name,
     oth_production_pos_5_job, oth_production_pos_5_name,
-    script_supervisor_name, 
-    legal_name, 
     set_medic_name, 
    } = crewInfoOne || {};
 
   const { director_calltime, producer_calltime, pro_coordinator_calltime, travel_coordinator_calltime,
-    upm_calltime, production_pa_calltime, script_supervisor_calltime, legal_calltime,
-    set_medic_calltime, oth_production_pos_1_calltime, oth_production_pos_2_calltime,
+    upm_calltime, production_pa_calltime, set_medic_calltime, 
+    oth_production_pos_1_calltime, oth_production_pos_2_calltime,
     oth_production_pos_3_calltime, oth_production_pos_4_calltime, oth_production_pos_5_calltime, 
     } = callsheet;
 
@@ -33,7 +31,10 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
     <div >
       <div className={`mt-0 mb-2 text-center  ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowPro(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >PRODUCTION </h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      PRODUCTION DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      PRODUCTION</h5>
       </div>
       <div >
         <Row className="px-2">

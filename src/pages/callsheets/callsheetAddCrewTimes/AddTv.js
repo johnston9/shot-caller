@@ -27,8 +27,11 @@
      return (
        <div>
          <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-         <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowTv(false) } >Close</span> 
-         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >TV STUDIO POSITIONS</h5>
+         <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowTv(false) } >Close</span> 
+         <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+         TV STUDIO POSITIONS</h5>
+          <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+          TV STUDIO</h5>
          </div>
          <div className="mt-3">
          {/* Technical Director - (Using Additional Position 16 keys) add_pos_16_job */}

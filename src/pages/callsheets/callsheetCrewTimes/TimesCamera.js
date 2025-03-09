@@ -27,9 +27,12 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
 
   return (
     <div className="">
-      <div className={`mt-0 text-center  ${styles.Back3 }`}>
+      <div className={`mt-0 text-center mb-2 ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowCam(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CAMERA DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      CAMERA DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      CAMERA</h5>
       </div>
       <Row>
       {/* DOP */}

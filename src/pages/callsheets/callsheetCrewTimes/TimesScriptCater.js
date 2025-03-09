@@ -9,27 +9,20 @@ const TimesScriptCater = ({crewInfoOne, callsheet, setShowScr }) => {
 
   const {writer_name,
     script_supervisor_name,
-    catering_co_1_name,
-    catering_co_2_name,
-    catering_co_3_name,
-    craft_service_name,
-    crafty_ass_name, 
   } = crewInfoOne || {};
 
   const { writer_calltime,
     script_supervisor_calltime,
-    catering_co_1_calltime,
-    catering_co_2_calltime,
-    catering_co_3_calltime,
-    craft_service_calltime,
-    crafty_ass_calltime,
     } = callsheet;
     
   return (
     <div>
-      <div className={`mt-0 text-center ${styles.Back3 }`}>
+      <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >SCRIPT DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      SCRIPT DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      SCRIPT</h5>
       </div>
       <Row>
       {/* Script Supervisor */}
@@ -72,57 +65,6 @@ const TimesScriptCater = ({crewInfoOne, callsheet, setShowScr }) => {
           <hr className={`mt-1 mb-1 ${styles.BreakCrew}`} />
           </Col>
       ) }
-      </Row>
-      {/* old Catering */}
-      <Row>
-      {/* Catering Co 1 */}
-      {catering_co_1_calltime && 
-        (<Col xs={12} md={6}>
-        <Row className={` mx-0 `} >
-          <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-            <p className={`my-0 py-0 `}>Catering Co 1</p>
-          </Col>
-          <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-            <p className={`my-0 py-0 `}>{catering_co_1_name} </p>
-          </Col>
-          <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-            <p className={`my-0 py-0 `}>{catering_co_1_calltime} </p>
-          </Col>
-        </Row>
-      </Col> )
-      }
-      {/* Catering Co 2 */}
-      {catering_co_2_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Catering Co 2</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{catering_co_2_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{catering_co_2_calltime} </p>
-            </Col>
-          </Row>
-        </Col> )
-      }
-      {/* Catering Co 3 */}
-      {catering_co_3_calltime && 
-          (<Col xs={12} md={6}>
-          <Row className={` mx-0 `} >
-            <Col className={`mx-0 px-1 ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>Catering Co 3</p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={5} md={5} >
-              <p className={`my-0 py-0 `}>{catering_co_3_name} </p>
-            </Col>
-            <Col className={`mx-0 px-1  ${styles.Border}`} xs={2} md={2} >
-              <p className={`my-0 py-0 `}>{catering_co_3_calltime} </p>
-            </Col>
-          </Row>
-        </Col> )
-      }
       </Row>
     </div>
   )

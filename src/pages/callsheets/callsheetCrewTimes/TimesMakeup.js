@@ -25,7 +25,10 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
     <div>
       <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowMak(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >MAKEUP DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      HAIR & MAKEUP DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      HAIR & MAKEUP</h5>
       </div>
       <Row>
       {/* Key Hair and Makeup */}

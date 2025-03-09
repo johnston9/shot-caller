@@ -23,9 +23,10 @@
 
      return (
        <div>
-        <div className={`mt-0 text-center  ${styles.Back3 }`}>
+        <div className={`mt-0 mb-2 text-center  ${styles.Back3 }`}>
         <span className={`float-right ${styles.Close }`} onClick={() => setShowAD(false) } >Close</span> 
-        <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >AD POSITIONS </h5>
+        <h5 className={`pl-5 mb-0 text-center ${styles.Bold }`} >
+        AD POSITIONS</h5>
         </div>
         <div>
         <Row className="px-2">
@@ -130,8 +131,9 @@
           </Col> )
         }
         </Row>
-        <div className={`my-3 mt-0 text-center ${styles.Back3 }`}>
-        <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PA POSITIONS </h5>
+        <div className={`mt-4 mb-2 mt-0 text-center ${styles.Back3 }`}>
+        <h5 className={`mb-0 text-center ${styles.Bold }`} >
+        PA POSITIONS</h5>
         </div>
         <Row className="px-2">
         {/* Production Assistant 1 */}

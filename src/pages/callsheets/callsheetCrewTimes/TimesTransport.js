@@ -14,21 +14,20 @@
        car1_name, 
        car2_name, 
        car3_name, 
-       truck1_name,
-       truck2_name,
-       truck3_name, } = crewInfoOne || {};
+       truck1_name,} = crewInfoOne || {};
    
      const {transport_captain_calltime, transport_manager_1_calltime,
        transport_manager_2_calltime, head_driver_calltime, car1_calltime,
-       car2_calltime, car3_calltime, truck1_calltime, truck2_calltime,
-       truck3_calltime,
-       } = callsheet;
+       car2_calltime, car3_calltime, truck1_calltime,} = callsheet;
    
      return (
        <div>
          <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
          <span className={`float-right ${styles.Close }`} onClick={() => setShowTra(false) } >Close</span> 
-         <h5 className={`pl-5 ml-3 text-center`} style={{ textTransform: 'uppercase'}} >TRANSPORT DEPARTMENT </h5>
+         <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+         TRANSPORTATION DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+          TRANSPORTATION</h5>
          </div>
          <Row>
          {/* Transport Captain */}

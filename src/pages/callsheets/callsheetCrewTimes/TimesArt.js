@@ -35,9 +35,10 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
 
   return (
     <div>
-      <div className={`mt-0 text-center ${styles.Back3 }`}>
+      <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART DEPARTMENT</h5>
+      <h5 className={`pl-5 mb-0 text-center ${styles.Bold }`} >
+      ART DEPARTMENT</h5>
       </div>
       <div>
       {/* art */}
@@ -124,8 +125,11 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       </Row>
       {/* set decoration */}
-      <div className={`my-3 mt-0 text-center ${styles.Back3 }`}>
-      <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >SET DECORATION </h5>
+      <div className={`mt-4 mb-2 text-center ${styles.Back3 }`}>
+      <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
+      SET DECORATION DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
+      SET DECORATION</h5>
       </div>
       <Row>
       {/* Set Decorator */}
@@ -250,8 +254,11 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       </Row>
       {/* PROPS */}
-      <div className={`mt-3 mt-0 text-center ${styles.Back3 }`}>
-          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
+      <div className={`mt-4 mb-2 text-center ${styles.Back3 }`}>
+      <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
+      PROPERTY DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
+      PROPERTY</h5>
       </div>
       <Row>
       {/* Prop Master */}

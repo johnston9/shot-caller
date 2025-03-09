@@ -28,8 +28,11 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowMak(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >MAKEUP DEPARTMENT</h5>
+      <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowMak(false) } >Close</span> 
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      HAIR & MAKEUP DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      HAIR & MAKEUP</h5>
       </div>
       <div className='mt-3'>
         {/* key hairmakeup */}
@@ -132,10 +135,10 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
          {sfx_makeup_assistant_name && 
           (<div className={`${styles.CrewInfoRow}`}>
           <Row className='text-center d-flex align-items-center' >
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.BoldScene} `}>SFX Makeup Assistant/Other</p>
             </Col>
-            <Col xs={6} md={3} >
+            <Col xs={6} md={4} >
               <p className={`${styles.CrewInfop} `}>{sfx_makeup_assistant_name} </p>
             </Col>
             <Col className="d-flex justify-content-center" xs={12} md={4} >
@@ -189,7 +192,7 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
             ))}
             </Col>
           </Row>
-          <hr className="mt-0 mb-0"/>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          {/* makeup artist 2 */}
@@ -221,7 +224,7 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
             ))}
             </Col>
           </Row>
-          <hr className="mt-0 mb-0"/>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          {/* makeup artist 3 */}
@@ -238,7 +241,7 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
             <Form.Group controlId="makeup_artist_3_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputB}`}
                 type="text"
                 placeholder="Call"
                 name="makeup_artist_3_calltime"
@@ -253,7 +256,7 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
             ))}
             </Col>
           </Row>
-          <hr className="mt-0 mb-0"/>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          {/* makeup artist 4 */}
@@ -270,7 +273,7 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
             <Form.Group controlId="makeup_artist_4_calltime" className={`${styles.Width} `}>
                 <Form.Label className={`d-none ${styles.Bold} `} ></Form.Label>
                 <Form.Control 
-                className={`${styles.Input}`}
+                className={`${styles.InputB}`}
                 type="text"
                 placeholder="Call"
                 name="makeup_artist_4_calltime"
@@ -285,7 +288,7 @@ const AddMakeup = ({crewInfoOne, handleChange, postData, setShowMak }) => {
             ))}
             </Col>
           </Row>
-          <hr className="mt-0 mb-0"/>
+          <hr className="mt-1 mb-0"/>
           </div> )
          }
          </div>

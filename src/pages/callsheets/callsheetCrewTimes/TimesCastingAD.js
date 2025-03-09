@@ -7,20 +7,19 @@ import styles from "../../../styles/Callsheets.module.css";
 
 const TimesCastingAD = ({crewInfoOne, callsheet, setShowCas }) => {
 
-  const {casting_director_name,
-    extras_casting_name, 
-    pro_assistant_4_name,
-    pro_assistant_5_name,} = crewInfoOne;
+  const {extras_casting_name, } = crewInfoOne;
 
-  const { casting_director_calltime, extras_casting_calltime, 
-     pro_assistant_4_calltime, pro_assistant_5_calltime,
+  const { extras_casting_calltime, 
     } = callsheet;
     
   return (
     <div>
-      <div className={`mt-0 text-center  ${styles.Back3 }`}>
+      <div className={`mt-0 mb-2 text-center  ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowCas(false) } >Close</span> 
-      <h5 className={`pl-3 text-center`} style={{ textTransform: 'uppercase'}} >CASTING DEPARTMENT</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      CASTING DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      CASTING</h5>
       </div>
       <Row>
       {/* Extras Casting */}

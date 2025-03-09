@@ -25,8 +25,11 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowStu }) => {
   return (
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
-      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNT DEPARTMENT</h5>
+      <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      STUNT DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      STUNTS</h5>
       </div>
       <div className='mt-3'>
         {/* stunt coordinator */}
@@ -127,8 +130,10 @@ const AddStunts = ({crewInfoOne, handleChange, postData, setShowStu }) => {
          }
          </div>
          <div className={`my-3 mt-0 text-center ${styles.SubTitle }`}>
-         <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >
-          SFX DEPARTMENT </h5>
+          <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
+          SFX DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
+          SFX</h5>
          </div>
          <div>
          {/* Special Effects Supervisor - (Using Stunt Performer 3 Keys ) */}

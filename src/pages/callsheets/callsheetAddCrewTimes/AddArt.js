@@ -42,7 +42,8 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
     <div>
       <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
       <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowArt(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >ART DEPARTMENT</h5>
+      <h5 className={`pl-5 mb-0 text-center ${styles.Bold }`} >
+      ART DEPARTMENT</h5>
       </div>
       <div className='mt-3'>
         {/* production designer */}
@@ -173,8 +174,11 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
-         <div className={`my-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >SET DECORATION </h5>
+         <div className={`mb-3 mt-4 mt-0 text-center ${styles.SubTitle }`}>
+          <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
+          SET DECORATION DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
+          SET DECORATION</h5>
         </div>
          {/* set decorator */}
         {set_decorator_name && 
@@ -368,8 +372,11 @@ const AddArt = ({crewInfoOne, handleChange, postData, setShowArt }) => {
           <hr className="mt-0 mb-0"/>
           </div> )
          }
-         <div className={`my-3 mx-5 mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >PROPERTY </h5>
+         <div className={`mt-4 mb-3 mt-0 text-center ${styles.SubTitle }`}>
+          <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
+          PROPERTY DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
+          PROPERTY</h5>
         </div>
          {/* prop Master */}
          {prop_master_name && 

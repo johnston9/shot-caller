@@ -29,10 +29,10 @@
        <div>
          <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
          <span className={`float-right ${styles.Close } pt-md-1`} onClick={() => setShowWra(false) } >Close</span> 
-         <h5 className={`d-none d-md-block pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
-          CONSTRUCTION DEPARTMENT </h5>
-          <h5 className={`d-block d-md-none pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
-          CONSTRUCTION </h5>
+          <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+          CONSTRUCTION DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+          CONSTRUCTION</h5>
          </div>
          <div className='mt-3'>
           <div>
@@ -166,8 +166,11 @@
           }
           </div>
           {/* WRANGLING */}
-          <div className={`mt-0 text-center ${styles.SubTitle }`}>
-          <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >WRANGLING DEPARTMENT</h5>
+          <div className={`mt-4 mb-3 text-center ${styles.SubTitle }`}>
+          <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
+          WRANGLING DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
+          WRANGLING</h5>
           </div>
             {/* Head Wrangler (Using legal keys) */}
             {legal_name && 

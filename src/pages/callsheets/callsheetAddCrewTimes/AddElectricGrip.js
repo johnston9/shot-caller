@@ -169,9 +169,9 @@ const AddElectricGrip = ({crewInfoOne, handleChange, postData, setShowEle }) => 
           </div> )
          }
          <div className={`my-3 text-center ${styles.SubTitle }`}>
-          <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+          <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
           GRIP DEPARTMENT</h5>
-          <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+          <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
           GRIP</h5>
         </div>
         {/* Keygrip */}

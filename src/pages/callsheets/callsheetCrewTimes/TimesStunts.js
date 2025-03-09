@@ -20,9 +20,12 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
     
   return (
     <div>
-      <div className={`mt-0 text-center ${styles.Back3 }`}>
+      <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
       <span className={`float-right ${styles.Close }`} onClick={() => setShowStu(false) } >Close</span> 
-      <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >STUNT DEPARTMENT </h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+      STUNT DEPARTMENT</h5>
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+      STUNTS</h5>
       </div>
       <Row>
       {/* Stunt Coordinator */}
@@ -86,9 +89,9 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
           </Col>
       ) }
       </Row>
-      <div className={`my-3 mt-0 text-center ${styles.SubTitle }`}>
-         <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >
-          SFX DEPARTMENT </h5>
+      <div className={`mt-4 mb-2 text-center ${styles.SubTitle }`}>
+          <h5 className={` mb-0 text-center ${styles.Bold }`} >
+          SFX DEPARTMENT</h5>
       </div>
       <Row>
       {/* Special Effects Supervisor - (Using Stunt Performer 3 Keys ) */}

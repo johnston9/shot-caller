@@ -19,18 +19,22 @@
        <div>
          <div className={`mt-0 text-center ${styles.Back3 }`}>
          <span className={`float-right ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
-         <h5 className={`pl-3 text-center`} style={{ textTransform: 'uppercase'}} >CATERING</h5>
+        <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+        CATERING DEPARTMENT</h5>
+        <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+        CATERING</h5>
          </div>
          <Row>
           <Col className="text-center pt-2">
-          <p>
+          <p style={{fontStyle: 'italic'}}>
           All Catering to be handled seperatly.
           </p>
           </Col>
          </Row>
          {/* CRAFT SERVICES */}
-         <div className={`mt-3 text-center ${styles.Back3 }`}>
-           <h5 className={` text-center`} style={{ textTransform: 'uppercase'}} >CRAFT SERVICES  </h5>
+         <div className={`mt-4 mb-2 text-center ${styles.Back3 }`}>
+           <h5 className={` mb-0 text-center ${styles.Bold }`} >
+           CRAFT SERVICES</h5>
          </div>
          <Row>
           {/* Craft Service */}

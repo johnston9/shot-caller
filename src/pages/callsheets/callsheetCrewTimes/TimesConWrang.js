@@ -22,7 +22,7 @@
        } = callsheet;
      return (
        <div>
-         <div className={`mt-0 text-center ${styles.Back3 }`}>
+         <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
          <span className={`float-right ${styles.Close }`} onClick={() => setShowWra(false) } >Close</span> 
          <h5 className={`d-none d-md-block pl-5 text-center`} style={{ textTransform: 'uppercase'}} >
           CONSTRUCTION DEPARTMENT </h5>
@@ -113,8 +113,11 @@
           }
           </Row>
           {/* WRANGLING */}
-          <div className={`mt-0 text-center ${styles.SubTitle }`}>
-            <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >WRANGLING DEPARTMENT</h5>
+          <div className={`mt-4 mb-2 text-center ${styles.SubTitle }`}>
+            <h5 className={`d-none d-md-block mb-0 text-center ${styles.Bold }`} >
+            WRANGLING DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none mb-0 text-center ${styles.Bold }`} >
+          WRANGLING</h5>
           </div>
           <Row>
           {/* Head Wrangler (Using legal keys) */}

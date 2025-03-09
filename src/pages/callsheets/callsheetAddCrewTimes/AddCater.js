@@ -23,11 +23,14 @@
        <div>
          <div className={`mt-0 text-center py-1 ${styles.SubTitle }`}>
          <span className={`float-right pt-md-1 ${styles.Close }`} onClick={() => setShowCat(false) } >Close</span> 
-         <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >CATERING </h5>
+         <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
+         CATERING DEPARTMENT</h5>
+          <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >
+          CATERING</h5>
          </div>
          <Row>
           <Col className="text-center pt-2">
-          <p>
+          <p style={{fontStyle: 'italic'}}>
           All Catering to be handled seperatly.
           </p>
           </Col>
@@ -35,7 +38,8 @@
          <div className='mt-3'>
             {/* CRAFT SERVICES */}
             <div className={`mt-0 text-center ${styles.SubTitle }`}>
-            <h5 className={`pr-3 text-center`} style={{ textTransform: 'uppercase'}} >CRAFT SERVICES </h5>
+            <h5 className={`mb-0 text-center ${styles.Bold }`} >
+            CRAFT SERVICES</h5>
             </div>
             {/* craft service */}
             {craft_service_name && 

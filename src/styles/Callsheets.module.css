@@ -3,8 +3,11 @@
 }
 
 hr {
-  border-top: 1px solid #c2ecf3;
   border-top: 1px solid #c1f1f7;
+}
+
+.Borderl {
+  padding-bottom: 5px;
 }
 
 /* .BreakCrew {
@@ -419,6 +422,19 @@ p {
   text-align: center;
 }
 
+.InputB {
+  background: #ffffff;
+  border: 2px solid #c1f1f7;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #747686;
+  color: #525463;
+  color: #0e1444;
+  padding: 0px 10px;
+  height: 30px !important;
+  text-align: center;
+}
+
 .InputScene {
   background: #ffffff;
   border: 1px solid #dee1f7;
@@ -522,6 +538,12 @@ p {
     font-size: .75rem !important;
   }
 
+  .InputB {
+    height: 20px !important;
+    text-align: center;
+    font-size: .75rem !important;
+  }
+
   .InputScene {
     min-height: 30px !important;
     text-align: center;
@@ -547,7 +569,8 @@ p {
 
 @media screen and (max-width: 780px) {
   hr {
-    border-top: 1px solid #c2ecf3;
+    border-top: 1px solid #a3eaf7;
+    /* border-top: 1px solid #c1f1f7; */
     padding-bottom: 5px;
   }
 

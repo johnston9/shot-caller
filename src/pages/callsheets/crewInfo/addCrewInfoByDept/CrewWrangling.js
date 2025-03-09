@@ -14,7 +14,6 @@ const CrewWrangling = ({handleChange, postData, setShow}) => {
         const [errors, setErrors] = useState({});
 
         const {legal_name, legal_email, legal_phone,
-          add_pos_15_name, add_pos_15_email, add_pos_15_phone, 
           add_pos_19_name, add_pos_19_email, add_pos_19_phone,
           makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
           truck3_name, truck3_email, truck3_phone,
