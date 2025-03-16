@@ -5,7 +5,7 @@
    import Row from 'react-bootstrap/Row';
    import styles from "../../../styles/Callsheets.module.css";
    
-   const TimesCater = ({crewInfoOne, callsheet, setShowScr }) => {
+   const TimesCater = ({crewInfoOne, callsheet, setShowCat }) => {
    
      const {craft_service_name,
        crafty_ass_name, 
@@ -18,7 +18,7 @@
      return (
        <div>
          <div className={`mt-0 text-center ${styles.Back3 }`}>
-         <span className={`float-right ${styles.Close }`} onClick={() => setShowScr(false) } >Close</span> 
+         <span className={`float-right ${styles.Close }`} onClick={() => setShowCat(false) } >Close</span> 
         <h5 className={`d-none d-md-block pl-5 mb-0 text-center ${styles.Bold }`} >
         CATERING DEPARTMENT</h5>
         <h5 className={`d-block d-md-none pl-5 mb-0 text-center ${styles.Bold }`} >

@@ -6,6 +6,14 @@ hr {
   border-top: 1px solid #c1f1f7;
 }
 
+.HRWide {
+  border-top: 3px solid #c1f1f7;
+}
+
+.HRWider {
+  border-top: 10px solid #e8f0f1;
+}
+
 .Borderl {
   padding-bottom: 5px;
 }
@@ -221,6 +229,13 @@ p {
 #dropdown-basic-button {
   padding: 0.1rem 0.1rem;
   color: #000;
+  background-color: #27c6cf;
+}
+
+#dropdown-basic-button {
+  padding: 0.01rem 0.01rem !important;
+  color: #000;
+  background-color: #27c6cf;
 }
 
 .DropButt {
@@ -393,7 +408,9 @@ p {
 }
 
 .CastEntered {
-  background-color: #deedfa;
+  background-color: #dde7ef;
+  background-color: #f1f5f7;
+  background-color: #ecfbfd;
   min-height: 40px;
 }
 

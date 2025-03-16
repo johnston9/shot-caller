@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
+import { toast } from 'react-toastify';
 
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -71,6 +72,7 @@ const AddBackGround = ({id, setShow, showSideBySide, dataDay, dataDate}) => {
     
     try {
         const { data } = await axiosReq.post("/backgroundcallsnew/", formData);
+        toast.success(`"${qty} ${type}" Added to Shoot Day "${dataDay}"`); 
         setPostData({qty: "",
                     type: "",
                     scenes: "",
