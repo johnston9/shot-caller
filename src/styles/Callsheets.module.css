@@ -247,14 +247,25 @@ p {
   background-color: #27c6cf;
 }
 
+.dropdown-menu {
+  overflow-y: scroll;
+}
+
 #dropdown-basic-button {
   padding: 0.01rem 0.01rem !important;
   color: #000;
   background-color: #27c6cf;
 }
 
+.dropdown-menu {
+  display: block;
+  overflow-y: scroll !important
+}
+
 .DropButt {
-  color: #000
+  color: #000;
+  overflow-y: scroll;
+  height: 100px;
 }
 
 .dropdown-toggle.btn.btn-primary {

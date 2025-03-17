@@ -2248,7 +2248,7 @@ console.log(postData)
           </div>
           <div>
         <AddBackGround 
-        showSideBySide={showSideBySide}
+        setShow={setShowSideBySide} 
         id={id} 
         dataDay={dataDay} dataDate={dataDate} />
           </div>

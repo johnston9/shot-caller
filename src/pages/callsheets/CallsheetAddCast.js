@@ -207,7 +207,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
   return (
     <div className={`my-3 `}>
       <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
-      <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
       <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
       ADD CAST</h5>
       </div>
@@ -253,7 +253,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       </p>
       </Col>
       <Col xs={4} md={2}>
-        <DropdownButton id="dropdown-basic-button" 
+        <DropdownButton id="dropdown-basic-button" variant="info"
         className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
         {characters.results.length && (
               characters.results.map((character) => (

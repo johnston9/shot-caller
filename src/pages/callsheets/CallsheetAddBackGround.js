@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 
 import { axiosReq } from "../../api/axiosDefaults";
 
-const AddBackGround = ({id, setShow, showSideBySide, dataDay, dataDate}) => {
+const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
     console.log(id)
     const [errors, setErrors] = useState({});
     const [background, setBackground] = useState({results: [] });
@@ -107,17 +107,13 @@ const AddBackGround = ({id, setShow, showSideBySide, dataDay, dataDate}) => {
 
 return (
     <div className={`my-3 `}>
-    {showSideBySide ? (
-        <h4 className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} 
-        style={{ textTransform: 'uppercase' }}>
-        ADD BG / Standins </h4>
-    ) : (
-        <h4 className={`mt-3 pl-3 py-0 text-center ${styles.SubTitleSpan }`} 
-        style={{ textTransform: 'uppercase' }}>
-        ADD BG / Standins
-        <span className={`pt-1 float-right ${styles.Close }`} 
-        onClick={() => setShow(false) } >Close</span>  </h4>
-    ) }
+        <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
+      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      ADD BG/STANDINS</h5>
+      <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
+      ADD BACKGROUND/STANDINS</h5>
+      </div>
     <div className={`mb-3 ${styles.Back3 }`}>
     <Row className="mt-2 pt-0">
         <Col sm={{span: 10, offset: 1} }>
