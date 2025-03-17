@@ -242,16 +242,17 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       </div>
       </Col>
       </Row>
-      <hr/>
       {/* select */}
       <Row>
-      {/* SELECT DROPDOWN */}
-      <Col xs={4}>
+      <Col  >
+      <div className={`${styles.SelectBox } mx-md-5 my-3 py-3`}>  
+      <Row>
+      <Col xs={4} md={5} >
       <p className={`float-right ml-md-2 pt-2 mb-0 ${styles.BoldScene }`}>
       SELECT ROLE
       </p>
       </Col>
-      <Col xs={4}>
+      <Col xs={4} md={2}>
         <DropdownButton id="dropdown-basic-button" 
         className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
         {characters.results.length && (
@@ -261,13 +262,17 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
               ) )) }
         </DropdownButton>
       </Col>
-      <Col xs={4}>
-      <p className={`float-left ml-md-2 pt-2 mb-0 ${styles.BoldScene }`}>
+      <Col xs={4} md={5}>
+      <div className={`mt-2 ${styles.HRGold }`}>
+      <p className={``}>
       {role}
       </p>
+      </div>
       </Col>
       </Row>
-      <hr/>
+      </div>
+      </Col>
+      </Row>
       {/* role */}
       {/* <Row>
         <Col className="d-none d-md-block" xs={4} ></Col>

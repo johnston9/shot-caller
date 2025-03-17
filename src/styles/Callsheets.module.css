@@ -2,6 +2,15 @@
     min-height: 100px;
 }
 
+.SelectBox {
+  border: 1px solid #c1f1f7;
+}
+
+.BoldSceneS {
+  border-bottom: #1ea7ae;
+  width: 80%;
+}
+
 hr {
   border-top: 1px solid #c1f1f7;
 }
@@ -12,6 +21,12 @@ hr {
 
 .HRWider {
   border-top: 10px solid #e8f0f1;
+}
+
+.HRGold {
+  border-bottom: 1px solid rgba(226, 200, 123, 0.99);
+  min-height: 20px;
+  width: 30%;
 }
 
 .Borderl {
