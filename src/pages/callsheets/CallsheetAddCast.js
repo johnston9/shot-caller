@@ -214,7 +214,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       <div className={`mb-3 ${styles.White }`}>
       <Form className="text-center" onSubmit={handleSubmit}>
       {/* CAST ADDED */}
-      <Row className="py-2">
+      <Row className="py-2" style={{fontStyle: 'italic'}}>
       <Col xs={12} md={6}>
       <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
       CAST ADDED

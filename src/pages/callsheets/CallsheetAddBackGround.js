@@ -108,17 +108,19 @@ const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
 return (
     <div className={`my-3 `}>
         <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
-      <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+      <span className={`float-right pt-2 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
       <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
       ADD BG/STANDINS</h5>
       <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
       ADD BACKGROUND/STANDINS</h5>
       </div>
-    <div className={`mb-3 ${styles.Back3 }`}>
-    <Row className="mt-2 pt-0">
-        <Col sm={{span: 10, offset: 1} }>
-        <p className="text-center mb-0">BACKGROUND ADDED</p>
-        <div className={`px-2 my-0 py-1 ${styles.CastEntered }`} >
+    <div className={`mb-3 ${styles.White }`}>
+    <Row className="mt-0 mb-3 pt-0" style={{fontStyle: 'italic'}}>
+        {/* <Col sm={{span: 8, offset: 2} }> */}
+        <Col md={6} >
+        <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
+        BACKGROUND ADDED</p>
+        <div className={`text-center px-2 my-0 py-1 ${styles.CastEntered }`} >
         {background.results.length ? (
             background.results.map((back) => (
                 <span key={back.id}>{back.type}, </span>
@@ -126,12 +128,13 @@ return (
         </div>
         </Col>
     </Row>
+    <hr/>
     <Form className="text-center" onSubmit={handleSubmit}>
             {/* qty call set scenes*/}
         <Row className="mx-0">
             <Col className="d-flex justify-content-center mx-0" xs={3}>
             <Form.Group controlId="qty" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Qty</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Qty</Form.Label>
                 <Form.Control
                 className={`${styles.Input}`} 
                 type="text"
@@ -148,7 +151,7 @@ return (
             </Col>
             <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
             <Form.Group controlId="call" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Call</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Call</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -165,7 +168,7 @@ return (
             </Col>
             <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
             <Form.Group controlId="set" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Set</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Set</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -182,7 +185,7 @@ return (
             </Col>
             <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
             <Form.Group controlId="scenes" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Scenes</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Scenes</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -198,11 +201,12 @@ return (
             ))}
             </Col>
         </Row>
+        <hr/>
         {/* type costume */}
         <Row className="text-center mx-0">
         <Col className="d-flex justify-content-center mx-0 px-1"  xs={6}>
             <Form.Group controlId="type" className={`${styles.Width2} `}  >
-                <Form.Label className={`${styles.Bold}`} >Type</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Type</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -219,7 +223,7 @@ return (
             </Col>
         <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
             <Form.Group controlId="costumes" className={`${styles.Width2 } `}  >
-                <Form.Label className={`${styles.Bold}`} >Costumes</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Costumes</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
