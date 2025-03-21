@@ -33,7 +33,7 @@ const ScheduleScene = (props) => {
                     <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                <p className='mb-0'>{filming_location}</p>                        
+                <p className='mb-0'>{filming_location} </p>                        
                 </Col>
                 {/* showSideBySide  used for the add castand schedule
                    are opened side by side*/}

@@ -247,12 +247,12 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       <Col  >
       <div className={`${styles.SelectBox } mx-md-5 my-3 py-3`}>  
       <Row>
-      <Col xs={4} md={5} >
+      <Col xs={4} >
       <p className={`float-right ml-md-2 pt-2 mb-0 ${styles.BoldScene }`}>
       SELECT ROLE
       </p>
       </Col>
-      <Col xs={4} md={2}>
+      <Col xs={4}>
         <DropdownButton id="dropdown-basic-button" variant="info"
         className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
         {characters.results.length && (
@@ -262,7 +262,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
               ) )) }
         </DropdownButton>
       </Col>
-      <Col xs={4} md={5}>
+      <Col xs={4} >
       <div className={`mt-2 ${styles.HRGold }`}>
       <p className={``}>
       {role}
