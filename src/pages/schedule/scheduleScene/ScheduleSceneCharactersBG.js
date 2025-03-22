@@ -35,7 +35,7 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
 
     return (
         <div className={`text-center py-2 mb-2 mx-2 mx-md-5 px-2 ${styles.SceneBox}`} >
-            <h5 className={`${styles.CharactersTitle } mt-2 mb-1`} >CHARACTERS</h5>
+            <p className={`${styles.CharactersTitle } mt-2 mb-1`} >CHARACTERS</p>
             {/* char titles */}
             <Row >
             <Col xs={12} md={4}>
@@ -105,7 +105,7 @@ const ScheduleSceneCharacters = ({ scene_id }) => {
             </Col>
             </Row>
             {/* Background Artists */}
-            <h5 className={`${styles.CharactersTitle } mt-3 mb-1`} >BG / STANDINGS</h5>
+            <p className={`${styles.CharactersTitle } mt-3 mb-1`} >BG / STANDINGS</p>
             {/* back titles */}
             <Row >
             {/* 1 */}

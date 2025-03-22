@@ -36,8 +36,8 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
     }, [scene_id])
 
     return (
-        <div className={`text-center mt-2 py-0 mb-2 mx-2 px-2 ${styles.White}`} >
-            <h5 className={`${styles.CharactersTitle }`} >CHARACTERS</h5>
+        <div className={`text-center mt-1 py-2 mb-2 mx-2 mx-md-5 px-2 ${styles.SceneBox}`} >
+            <p className={`${styles.CharactersTitle } mt-2 mb-1`} >CHARACTERS</p>
             {showSideBySide ? (
             <>
             <Row >
@@ -89,7 +89,7 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             ) : (
             <>
             <Row >
-            <Col xs={6} md={4}>
+            <Col xs={12} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
@@ -104,7 +104,7 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             </div>
             </Col>
             {/* 2 */}
-            <Col xs={6} md={4}>
+            <Col className='d-none d-md-block' xs={12} md={4}>
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
@@ -137,7 +137,7 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             <Row>
             {characters.results.length ? (
             characters.results.map((character) => (
-            <Col xs={6} md={4}
+            <Col xs={12} md={4}
             className="p-0 mx-0">
                 <SchedCharacter
                 character={character}
@@ -151,13 +151,13 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             </Row>
             </>
             ) }
-            <Row className={`mt-2 ${styles.BlueBack }`} style={style}>
+            <Row>
             <Col xs={12}>
-            <p></p>
+            <hr className={`${styles.Break1} mt-4 mb-0`}/>
             </Col>
             </Row>
             {/* Background Artists */}
-            <h5 className={` ${styles.CharactersTitle }`} >BG / STANDINGS</h5>
+            <p className={` ${styles.CharactersTitle } mt-3 mb-1`} >BG / STANDINGS</p>
             {/* back titles */}
             <Row className='' >
             {/* 1 */}

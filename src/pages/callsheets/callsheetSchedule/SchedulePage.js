@@ -25,14 +25,14 @@ const SchedulePage = (props) => {
         {/* title */}
         <div className='d-none d-md-block'>
         {showSideBySide ? (
-        <h4 className={`mt-3 pl-5 py-0 text-center 
+        <h5 className={`mt-3 pl-5 py-0 text-center 
         ${styles.SubTitleSpan }`} 
         style={{ textTransform: 'uppercase' }}>
         Schedule
         <span className={`pt-1 pl-1 ${styles.HSpan } float-right`} >                
         {pagestotal} Pages
         </span> 
-        </h4>
+        </h5>
         ) : (
             <h4 className={`mt-3 py-0 text-center 
             ${styles.SubTitleSpan }`} 
@@ -99,14 +99,11 @@ const SchedulePage = (props) => {
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Time</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
-                </Col>
-                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Details</p>
                 </Col>
-                <Col className={`mx-0 px-0 `} xs={2} md={1}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Info</p>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
                 </Col>
             </Row>
         </div>

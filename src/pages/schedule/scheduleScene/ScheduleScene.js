@@ -69,8 +69,8 @@ const ScheduleScene = (props) => {
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{number}</p>
                     </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
-                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
+                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night} </p>
                         <p className='mb-0'>{action}</p>
                     </Col>
                     </>
@@ -83,15 +83,12 @@ const ScheduleScene = (props) => {
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{number}</p>
                     </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
-                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={5} md={5}>
+                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night}</p>
                         <p className='mb-0'>{action}</p>
                     </Col>
                     </>
                 ) }
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                <p className='mb-0'>{day_night}</p>
-                </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>{filming_location}</p>                        
                 </Col>
@@ -199,11 +196,7 @@ const ScheduleScene = (props) => {
                 {/* info styles.Info */}
                 <Col className={`mx-0 pl-0 pr-2 text-right`} xs={4} >
                     <p onClick={() => setShowInfo(showInfo => !showInfo)} 
-                    className={`${styles.Info}`}
-                    //    className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-1`}
-                       >
-                        INFO
-                    </p>
+                    className={`${styles.Info}`}>INFO</p>
                 </Col>
                 {/* cast */}
                 <Col className={`text-left mx-0 pr-0 pl-2 `} xs={4}>

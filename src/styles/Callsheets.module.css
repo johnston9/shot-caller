@@ -2,6 +2,21 @@
     min-height: 100px;
 }
 
+.HrSched {
+  border-top: 2px solid #fff;
+}
+
+.Info {
+  font-size: .75rem !important;
+  font-weight: 700;
+  color: rgb(170, 27, 55);
+  cursor: pointer;
+}
+
+.Info:hover {
+  color: rgb(73, 2, 16);;
+}
+
 .SelectBox {
   border: 1px solid #c1f1f7;
 }

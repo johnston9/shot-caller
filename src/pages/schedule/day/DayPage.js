@@ -123,7 +123,7 @@ const DayPage = () => {
                         <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                             <p className='mb-0'>Scene</p>
                         </Col>
-                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                             <p className='mb-0'>Details</p>
                         </Col>
                         </>
@@ -135,14 +135,11 @@ const DayPage = () => {
                         <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                             <p className='mb-0'>Scene</p>
                         </Col>
-                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
+                        <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={5} md={5}>
                             <p className='mb-0'>Details</p>
                         </Col>
                         </>
                     )}
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>D/N</p>
-                    </Col>
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Filming</p>                        
                     </Col>
@@ -167,7 +164,7 @@ const DayPage = () => {
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Details</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Sc.</p>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
                 </Col>
                 </Row>
                 </div>

@@ -16,11 +16,11 @@ const ScheduleScene = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const [showInfoCast, setShowInfoCast] = useState(false);
     const {showSideBySide, scene, scene_id, style, next,
-        filming_location, action, pages,
+        filming_location, pages, action, day_night,
         start_time, number, int_ext, location } = props
 
     return (
-        <div style={style} className={` ${styles.Boldn}`} > 
+        <div style={style} className={` ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
             <Row className='pt-2 text-center mx-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
@@ -30,7 +30,7 @@ const ScheduleScene = (props) => {
                     <p className='mb-0'>{number}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location}</p>
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night} </p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                 <p className='mb-0'>{filming_location} </p>                        
@@ -102,29 +102,25 @@ const ScheduleScene = (props) => {
         <div className='d-block d-md-none'>
             <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
-                {/* <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Time</p> */}
                     <p className='mb-0'>{start_time}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                {/* <p style={{ textTransform: 'uppercase' }} className={`  ${styles.TitleBox}`}>Scene</p> */}
-                    <p className='mb-0'>{number}</p>
-                </Col>
-                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
-                {/* <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Details</p> */}
-                    {/* <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext} - {location} - {day_night}</p> */}
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{location}</p>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night}</p>
                     <p className='mb-0'>{action}</p>
                 </Col>
-                <Col className={`mx-0 px-0 `} xs={2} md={1}>
-                {/* <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Info</p> */}
-                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`mt-1 ${btnStyles.Button} ${btnStyles.Shed}`}>
-                        I
-                    </Button>
-                    <Button onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
-                    className={`px-2 mt-1 ${btnStyles.Button} ${btnStyles.Shed}`}>
-                    C
-                    </Button>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                    <p className='mb-0'>{number}</p>
+                </Col>
+                </Row>
+                <hr className={`${styles.HrSched} my-0 mx-3`}></hr>
+                <Row>
+                <Col className={`text-right`} xs={6} >
+                <p onClick={() => setShowInfo(showInfo => !showInfo)} 
+                    className={`${styles.Info}`}>INFO</p>
+                </Col>
+                <Col xs={6}>
+                <p onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
+                    className={`${styles.Info}`}>CAST</p>
                 </Col>
             </Row>
             {/* info cast */}
