@@ -51,7 +51,7 @@ const ScheduleSceneItem = (props) => {
             next: next,
             new_info: new_info,
         });
-        setScenes({results: [] });
+        // setScenes({results: [] });
     }
 
     return (
