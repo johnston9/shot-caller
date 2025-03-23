@@ -2233,13 +2233,13 @@ console.log(postData)
       ""
       ) : (                      
       <Row className="mx-0">
-        <Col className="px-1" xs={6}>
+        <Col className="px-1" md={6}>
         <SchedulePage
         showSideBySide={showSideBySide}
         setShow={setShowSideBySide}
         scenes={scenes}  />
         </Col>
-        <Col xs={6}>
+        <Col md={6}>
           <div>
         <AddCast 
         id={id} 

@@ -47,6 +47,7 @@ const DayPage = () => {
                     axiosReq.get(`/schedule/scenes/?day_id=${id}`),
                     axiosReq.get(`/callsheetsnew/?day_id=${id}`),
                 ])
+                console.log(scenes)
                 setDayData({ results: [dayGet] });
                 setDayScenes(scenes);
                 console.log(scenes);

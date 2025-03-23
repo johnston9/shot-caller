@@ -423,6 +423,7 @@ const buttons = (
                 <Col xs={12} md={6}>
                 <ScheduleSceneItem 
                       setPostData={setPostData} 
+                      setScenes={setScenes}
                       scene={scene} 
                       {...scene} 
                       key={scene.id} />
@@ -430,6 +431,8 @@ const buttons = (
               ))}
               </Row>
               </div>
+              </>
+                ) : ("")}
               <div className= {`px-3 mx-3 mt-3 mb-4 pb-3`}>
               <Row className="mt-3 pt-3" >
                 <Col>
@@ -455,8 +458,6 @@ const buttons = (
               </Row>
               </Form>
               </div>
-              </>
-                ) : ("")}
           </div>
     )
 }

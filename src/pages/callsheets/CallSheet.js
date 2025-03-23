@@ -429,7 +429,7 @@ const CallSheet = (props ) => {
       const advancedDay = parseInt(day) + 1;
 
   return (
-    <div className={`${styles.White} px-3`} >
+    <div className={`${styles.White} px-1 px-md-3`} >
       <TopBox work={`Call Sheet`}
                 title={`Day ${day}`}
                 title2={date}  />

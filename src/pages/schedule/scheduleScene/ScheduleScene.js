@@ -159,7 +159,8 @@ const ScheduleScene = (props) => {
                 </Col>
                 <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
                     <p style={{ textTransform: 'uppercase'}} className={`mb-0  ${styles.Para2}`}>{int_ext}. {location} - {day_night}</p>
-                    <p className={`mb-0  ${styles.Para2}`}>{action}</p>
+                    <hr className={`${styles.HrSched} my-0 mx-3`}></hr>
+                    <p className={`mb-0  ${styles.Para2}`}>{filming_location}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
                     <p className={`mb-0  ${styles.Para2}`}>{number}</p>

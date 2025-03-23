@@ -25,24 +25,16 @@ const SchedulePage = (props) => {
         {/* title */}
         <div className='d-none d-md-block'>
         {showSideBySide ? (
-        <h5 className={`mt-3 pl-5 py-0 text-center 
-        ${styles.SubTitleSpan }`} 
-        style={{ textTransform: 'uppercase' }}>
-        Schedule
+        <h5 className={`mt-3 mb-2 pl-5 py-1 text-center ${styles.SubTitle }`} >SCHEDULE
         <span className={`pt-1 pl-1 ${styles.HSpan } float-right`} >                
         {pagestotal} Pages
         </span> 
         </h5>
         ) : (
-            <h4 className={`mt-3 py-0 text-center 
-            ${styles.SubTitleSpan }`} 
-            style={{ textTransform: 'uppercase' }}>
-            <span className={`pt-1 pl-1 ${styles.HSpan } float-left`} >                
+            <h4 className={`mt-5 py-0 ${styles.SubTitleSpan }`} >SCHEDULE
+            <span className={`pt-1 pl-1 ml-3 ${styles.HSpan } `} >                
             {pagestotal} Pages
             </span>
-            Schedule 
-            <span className={`pt-1 float-right ${styles.Close }`} 
-            onClick={() => setShow(false) } >Close</span>
             </h4>
         )}
         </div>

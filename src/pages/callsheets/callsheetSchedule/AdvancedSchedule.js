@@ -36,20 +36,20 @@ const AdvancedSchedule = (props) => {
           <h4 className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
           style={{ textTransform: 'uppercase' }}>
             Advanced Schedule <span className={`${styles.HSpan }`} >
-              ({pagestotal} Pages) 
+              ({pagestotal} Pages) -
               Day {day ? (day) : ("Not Created") } - {date && (date) }
                </span>
           </h4>
       </div>
       <div className='d-block d-md-none'>
-          <div className={`mt-0 text-center ${styles.SubTitle }`}>
+          <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
           <span className={`float-right ${styles.Close }`} 
           onClick={() => setShow(false) } >Close</span> 
           <h5 className={`pl-5 text-center`} 
           style={{ textTransform: 'uppercase'}} >
             Adv Schedule </h5>
           <p className='pr-3'> 
-          ({pagestotal} Pages) 
+          ({pagestotal} Pages) -
           Day {day ? (day) : ("Not Created yet") } - {date && (date) }</p>
           </div>
       </div>
@@ -68,11 +68,11 @@ const AdvancedSchedule = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={3}>
                 <p className='mb-0'>Filming Loc</p>                        
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={1}>
-                    <p className='mb-0'>Cast</p>
-                </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Pages</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={1}>
+                    <p className='mb-0'>Cast</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Info</p>
@@ -84,14 +84,11 @@ const AdvancedSchedule = (props) => {
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Time</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
-                </Col>
-                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={6}>
+                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Details</p>
                 </Col>
-                <Col className={`mx-0 px-0 `} xs={2} md={1}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Info</p>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Scene</p>
                 </Col>
             </Row>
         </div>

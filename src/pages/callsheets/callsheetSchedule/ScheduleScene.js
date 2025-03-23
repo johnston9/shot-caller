@@ -103,13 +103,19 @@ const ScheduleScene = (props) => {
             <Row className='text-center mx-0 px-0' >
                 <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                     <p className='mb-0'>{start_time}</p>
+                    {/* <p onClick={() => setShowInfo(showInfo => !showInfo)} 
+                    className={`${styles.Info} mt-4`}>INFO</p> */}
                 </Col>
                 <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
                     <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night}</p>
-                    <p className='mb-0'>{action}</p>
+                    <hr className={`${styles.HrSched} my-0 mx-3`}></hr>
+                    {/* <p className='mb-0'>{action}</p> */}
+                    <p className='mb-0'>{filming_location}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2}>
                     <p className='mb-0'>{number}</p>
+                    {/* <p onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
+                    className={`${styles.Info} mt-4`}>CAST</p> */}
                 </Col>
                 </Row>
                 <hr className={`${styles.HrSched} my-0 mx-3`}></hr>
@@ -122,7 +128,7 @@ const ScheduleScene = (props) => {
                 <p onClick={() => setShowInfoCast(showInfoCast => !showInfoCast)} 
                     className={`${styles.Info}`}>CAST</p>
                 </Col>
-            </Row>
+               </Row>
             {/* info cast */}
             <Row>
                 <Col>
