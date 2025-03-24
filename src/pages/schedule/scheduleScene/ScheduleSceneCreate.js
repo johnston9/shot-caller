@@ -24,6 +24,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
   const { id } = useParams();
   const [query, setQuery] = useState("");
   const [scenes, setScenes] = useState({results: [] });
+  const [click, setClick] = useState(false);
   
   const [postData, setPostData] = useState({
       scene_id: "",
@@ -413,6 +414,92 @@ const buttons = (
           </Row>
           </div>
           {/* scenes */}
+          {scenes.results.length ? (
+                              <>
+                          {click ? (
+                              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3`}>
+                                <Row>
+                                <Col>
+                                <p>SCENE {number} SELECTED </p>
+                                </Col>
+                                </Row>
+                              <Row className="mt-3 pt-3" >
+                                <Col>
+                                <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
+                                    SCHEDULE SCENE {number} SHOOTING INFO </h5>
+                                  <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
+                                    SCENE {number} </h5>
+                                </Col>
+                              </Row>
+                              <Form className={`text-center px-3 ${styles.White }`} onSubmit={handleSubmit}>
+                              <Row>
+                              <Col xs={12} className="p-0 p-md-2">
+                                  {textFields}
+                                  {buttons}
+                                {/* hr */}
+                              <Row>
+                                <Col className="d-none d-sm-block" sm={2}></Col>
+                                <Col xs={8}>
+                                <hr className={`${styles.Break2} mt-5 mb-3`}/>
+                                </Col>
+                              </Row>
+                              </Col>
+                              </Row>
+                              </Form>
+                              </div>
+                          ) : (
+                            <>
+                            <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
+                            <p className={`text-center pt-2 px-5 mb-3`}>
+                              SELECT SCENE AND ADD SHOOTING INFO BELOW</p>
+                            <Row>
+                            {scenes.results.map((scene) => (
+                              <Col xs={12} md={6}>
+                              <ScheduleSceneItem 
+                                    setPostData={setPostData} 
+                                    setScenes={setScenes}
+                                    scene={scene} 
+                                    setClick={setClick}
+                                    {...scene} 
+                                    key={scene.id} />
+                              </Col>
+                            ))}
+                            </Row>
+                            </div>
+                            {/* FORM */}
+                            <div className= {`px-3 mx-3 mt-3 mb-4 pb-3`}>
+                            <Row className="mt-3 pt-3" >
+                              <Col>
+                              <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
+                                  SCHEDULE SCENE {number} SHOOTING INFO </h5>
+                                <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
+                                  SCENE {number} </h5>
+                              </Col>
+                            </Row>
+                            <Form className={`text-center px-3 ${styles.White }`} onSubmit={handleSubmit}>
+                            <Row>
+                            <Col xs={12} className="p-0 p-md-2">
+                                {textFields}
+                                {buttons}
+                              {/* hr */}
+                            <Row>
+                              <Col className="d-none d-sm-block" sm={2}></Col>
+                              <Col xs={8}>
+                              <hr className={`${styles.Break2} mt-5 mb-3`}/>
+                              </Col>
+                            </Row>
+                            </Col>
+                            </Row>
+                            </Form>
+                            </div>
+                            </>
+                          )}
+                          </>) : (
+                              <>
+                              <p>""</p>
+                              </>
+                              ) }  
+                              {/* old */}
           {scenes.results.length ? (
               <>
               <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>

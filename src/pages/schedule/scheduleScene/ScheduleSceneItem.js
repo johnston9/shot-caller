@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/ScheduleSceneItem.module.css";
 
 const ScheduleSceneItem = (props) => {
-    const {setPostData, setScenes, scene} = props
+    const {setPostData, setClick, scene} = props
 
     // eslint-disable-next-line
     const [newData, setNewData] = useState({
@@ -51,7 +51,7 @@ const ScheduleSceneItem = (props) => {
             next: next,
             new_info: new_info,
         });
-        // setScenes({results: [] });
+        setClick(true);
     }
 
     return (
