@@ -167,12 +167,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       {/* hr */}
       <Row>
         <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        <hr className={` mt-1 mb-1`}/>
         </Col>
       </Row>
       {/* filming location */}
       <Row>
-      <Col xs={{span: 6, offset: 3 } }className="d-flex justify-content-center p-0 p-md-2">
+      <Col md={{span: 8, offset: 2 } }className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
             <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
             <Form.Control 
@@ -193,12 +193,12 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       {/* hr */}
       <Row>
         <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        <hr className={` mt-1 mb-1`}/>
         </Col>
       </Row>
       {/* Location Address new info */}
       <Row>
-      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <Col md={6} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="location_address" className={`${styles.Width2} `}  >
               <Form.Label className={`${styles.BoldScene}`} >Location Address</Form.Label>
               <Form.Control 
@@ -206,7 +206,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
               type="text"
               name="location_address"
               as="textarea"
-              rows={2}
+              rows={1}
               value={location_address}
               onChange={handleChange}
                   />
@@ -217,7 +217,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
             </Alert>
           ))}
       </Col> 
-      <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
+      <Col md={6} className="d-flex justify-content-center p-0 p-md-2">
       <Form.Group controlId="new_info" className={`${styles.Width2} `}  >
           <Form.Label className={`${styles.BoldScene}`}>New Info</Form.Label>
           <Form.Control 
@@ -225,7 +225,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
               type="text"
               name="new_info"
               as="textarea"
-              rows={2}
+              rows={1}
               value={new_info}
               onChange={handleChange}
               />
@@ -240,23 +240,23 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       {/* hr */}
       <Row>
         <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
+        <hr className={` mt-1 mb-1`}/>
         </Col>
       </Row>
       {/* Next  */}
       <Row>
-      <Col xs={{span: 8, offset: 2 } } className="d-flex justify-content-center p-0 p-md-2">
+      <Col md={{span: 10, offset: 1 } } className="d-flex justify-content-center p-0 p-md-2">
       <Form.Group controlId="next" className={`${styles.Width2} `}  >
           <Form.Label >
             <p className={`${styles.BoldScene}`}>Next</p>
-            <p className={`${styles.BoldSceneNext}`}>Add breaks, moves and meals here</p>
+            <p className={`${styles.Para3}`}>Add breaks, moves and meals here</p>
             </Form.Label>
           <Form.Control 
               className={`${styles.InputSceneNext}`}
               type="text"
               name="next"
               as="textarea"
-              rows={2}
+              rows={1}
               value={next}
               onChange={handleChange}
               />
@@ -268,17 +268,11 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       ))}
       </Col>
       </Row>
-      {/* hr */}
-      <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
-        </Col>
-      </Row>
     </div>
 )
 
 const buttons = (  
-    <div className="mt-3">
+    <div className="mt-4">
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 mr-3`}
       onClick={() => setShow(show => !show)}
@@ -340,62 +334,77 @@ const buttons = (
      above functions to fetch scenes by Act or Location order */
   const handleClickLoc = () => {
     fetchScenesLoc();
+    setClick(false);
   }
 
   const handleClick1 = () => {
     fetchScenesOne();
+    setClick(false);
   }
 
   const handleClick2 = () => {
     fetchScenesTwoA();
+    setClick(false);
   }
 
   const handleClick3 = () => {
     fetchScenesTwoB();
+    setClick(false);
   }
 
   const handleClick4 = () => {
     fetchScenesThree();
+    setClick(false);
   }
     
     return (
         <div >
-            <h4 className={`text-center mx-3 pb-0 mb-3 ${styles.SubTitle }`}>ADD SCHEDULE SCENE </h4>
-            <div className= {`px-3 mx-3 pb-3 ${styles.ScenesBox} `}>
-            <p className="text-center pt-2">
-            FIND SCENE BY ACT LOCATION AND OR SEARCH
+        <Row>
+        <Col md={{span: 10, offset: 1}} className={` ${styles.White} px-0`}>
+            <h5 className={`text-center pb-0 ${styles.SubTitle }`}>ADD SCENE </h5>
+            <div>
+            <p className={`text-center py-2 ${styles.Para3} `}>
+            FIND SCENE BY ACT OR LOCATION
             </p>
-            <Row className="mt-3">
-              <Col xs={6} md={3} className="text-center">
+            <div>
+            <Row>
+            <Col md={{span: 10, offset: 1}} >
+            <Row className="mt-2">
+              <Col xs={6} md={3} className="text-center px-0">
                 <Button onClick={handleClick1} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act One</Button>               
+                className={`px-md-4 ${btnStyles.Button} ${btnStyles.Shed}`}>
+                ACT ONE</Button>               
               </Col>
-              <Col xs={6} md={3} className="text-center">
+              <Col xs={6} md={3} className="text-center px-0">
                 <Button onClick={handleClick2} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act Two A</Button>
+                className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                ACT TWO A</Button>
               </Col>
-              <Col xs={6} md={3} className="text-center pt-2 pt-md-0">
+              <Col xs={6} md={3} className="text-center pt-2 pt-md-0 px-0">
                 <Button onClick={handleClick3} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act Two B</Button>
+                className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                ACT TWO B</Button>
               </Col>
-              <Col xs={6} md={3} className="text-center pt-2 pt-md-0">
+              <Col xs={6} md={3} className="text-center pt-2 pt-md-0 mx-0 px-0">
                 <Button onClick={handleClick4} 
-                className={`${btnStyles.Button} ${btnStyles.Wide3} ${btnStyles.Bright}`}>
-                Act Three</Button>
+                className={`${btnStyles.Button} ${btnStyles.Shed} px-md-4`}>
+                ACT THREE</Button>
               </Col>
             </Row>
             <Row className="my-2">
-            <Col xs={12} className="text-center">
+            <Col xs={12} className="text-center px-0">
                 <Button onClick={handleClickLoc} 
-                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
-                Location</Button>
+                className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Shed}`}>
+                LOCATION</Button>
               </Col>
             </Row>
+            </Col>
+            </Row>
+            </div>
           {/* search  */}
-          <p className="text-center">For precise search enter value before clicking above</p>
+          <p className={`text-center pt-2 ${styles.Para2} `} style={{ textTransform: 'uppercase'}}>
+            For precise search enter Scene "Number", 
+            "Title" or "Location" before clicking a tab above</p>
           <Row>
             <Col className="mt-2" xs={12} sm={{ span: 6, offset: 3 }} >
             <Form
@@ -415,92 +424,80 @@ const buttons = (
           </div>
           {/* scenes */}
           {scenes.results.length ? (
-                              <>
-                          {click ? (
-                              <div className= {`px-3 mx-3 mt-3 mb-4 pb-3`}>
-                                <Row>
-                                <Col>
-                                <p>SCENE {number} SELECTED </p>
-                                </Col>
-                                </Row>
-                              <Row className="mt-3 pt-3" >
-                                <Col>
-                                <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
-                                    SCHEDULE SCENE {number} SHOOTING INFO </h5>
-                                  <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
-                                    SCENE {number} </h5>
-                                </Col>
-                              </Row>
-                              <Form className={`text-center px-3 ${styles.White }`} onSubmit={handleSubmit}>
-                              <Row>
-                              <Col xs={12} className="p-0 p-md-2">
-                                  {textFields}
-                                  {buttons}
-                                {/* hr */}
-                              <Row>
-                                <Col className="d-none d-sm-block" sm={2}></Col>
-                                <Col xs={8}>
-                                <hr className={`${styles.Break2} mt-5 mb-3`}/>
-                                </Col>
-                              </Row>
-                              </Col>
-                              </Row>
-                              </Form>
-                              </div>
-                          ) : (
-                            <>
-                            <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
-                            <p className={`text-center pt-2 px-5 mb-3`}>
-                              SELECT SCENE AND ADD SHOOTING INFO BELOW</p>
-                            <Row>
-                            {scenes.results.map((scene) => (
-                              <Col xs={12} md={6}>
-                              <ScheduleSceneItem 
-                                    setPostData={setPostData} 
-                                    setScenes={setScenes}
-                                    scene={scene} 
-                                    setClick={setClick}
-                                    {...scene} 
-                                    key={scene.id} />
-                              </Col>
-                            ))}
-                            </Row>
-                            </div>
-                            {/* FORM */}
-                            <div className= {`px-3 mx-3 mt-3 mb-4 pb-3`}>
-                            <Row className="mt-3 pt-3" >
-                              <Col>
-                              <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
-                                  SCHEDULE SCENE {number} SHOOTING INFO </h5>
-                                <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
-                                  SCENE {number} </h5>
-                              </Col>
-                            </Row>
-                            <Form className={`text-center px-3 ${styles.White }`} onSubmit={handleSubmit}>
-                            <Row>
-                            <Col xs={12} className="p-0 p-md-2">
-                                {textFields}
-                                {buttons}
-                              {/* hr */}
-                            <Row>
-                              <Col className="d-none d-sm-block" sm={2}></Col>
-                              <Col xs={8}>
-                              <hr className={`${styles.Break2} mt-5 mb-3`}/>
-                              </Col>
-                            </Row>
-                            </Col>
-                            </Row>
-                            </Form>
-                            </div>
-                            </>
-                          )}
-                          </>) : (
-                              <>
-                              <p>""</p>
-                              </>
-                              ) }  
-                              {/* old */}
-          {scenes.results.length ? (
+          <>
+          {click ? (
+          <div className= {`mt-3 mb-4 pb-3`}>
+            <Row>
+            <Col>
+            <p className= {`text-center ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>
+              SCENE {number} "{title}" - {int_ext} {filming_location} - {day_night} SELECTED </p>
+            </Col>
+            </Row>
+          <Row className="mt-3 pt-3" >
+            <Col>
+            <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
+                SCENE {number} SHOOTING INFO </h5>
+              <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
+                SCENE {number} </h5>
+            </Col>
+          </Row>
+          <Form className={`text-center ${styles.White }`} onSubmit={handleSubmit}>
+          <Row>
+          <Col xs={12} className="p-0 p-md-2">
+              {textFields}
+              {buttons}
+          </Col>
+          </Row>
+          </Form>
+          </div>
+      ) : (
+        <>
+        <div className= {`mb-4 pb-3 ${styles.ScenesBox} `}>
+        <p className={`text-center py-2 ${styles.Para3} `}>
+          SELECT SCENE THEN ADD SHOOTING INFO BELOW</p>
+        <Row>
+        {scenes.results.map((scene) => (
+          <Col xs={12} md={6}>
+          <ScheduleSceneItem 
+                setPostData={setPostData} 
+                setScenes={setScenes}
+                scene={scene} 
+                setClick={setClick}
+                {...scene} 
+                key={scene.id} />
+          </Col>
+        ))}
+        </Row>
+        </div>
+        {/* FORM */}
+        <div className= {`mt-3 mb-4 pb-3`}>
+        <Row className="mt-3 pt-3" >
+          <Col>
+          <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
+              SCHEDULE SCENE {number} SHOOTING INFO </h5>
+            <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
+              SCENE {number} </h5>
+          </Col>
+        </Row>
+        <Form className={`text-center px-3 ${styles.White }`} onSubmit={handleSubmit}>
+        <Row>
+        <Col xs={12} className="p-0 p-md-2">
+            {textFields}
+            {buttons}
+        {/* hr */}
+        </Col>
+        </Row>
+        </Form>
+        </div>
+        </>
+      )}
+          </>) : (
+              <>
+              <p></p>
+              </>
+         ) }  
+          {/* old */}
+          {/* {scenes.results.length ? (
               <>
               <div className= {`px-3 mx-3 mt-3 mb-4 pb-3 ${styles.ScenesBox} `}>
               <p className={`text-center pt-2 px-5 mb-3`}>
@@ -518,7 +515,6 @@ const buttons = (
               ))}
               </Row>
               </div>
-              {/* FORM */}
               <div className= {`px-3 mx-3 mt-3 mb-4 pb-3`}>
               <Row className="mt-3 pt-3" >
                 <Col>
@@ -533,19 +529,20 @@ const buttons = (
               <Col xs={12} className="p-0 p-md-2">
                   {textFields}
                   {buttons}
-                {/* hr */}
-              <Row>
-                <Col className="d-none d-sm-block" sm={2}></Col>
-                <Col xs={8}>
-                <hr className={`${styles.Break2} mt-5 mb-3`}/>
-                </Col>
-              </Row>
               </Col>
               </Row>
               </Form>
               </div>
               </>
-                ) : ("")}
+                ) : ("")} */}
+          </Col>
+          </Row>
+          <Row>
+          <Col className="d-none d-sm-block" md={2}></Col>
+          <Col xs={12} md={8} >
+          <hr className={`${styles.Break2} mt-3 mb-3`}/>
+          </Col>
+          </Row>
           </div>
     )
 }

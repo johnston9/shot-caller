@@ -7,9 +7,30 @@
   font-weight: 700;
 }
 
+.HrSched {
+  border-top: 2px solid #fff;
+}
+
+hr {
+  border-top: 1px solid #c1f1f7;
+}
+
+.InputBar {
+  height: 30px !important;
+  font-size: .75rem !important;
+}
+
+.UnderGold {
+  border-bottom: rgba(129, 102, 21, 0.99);
+}
+
 .Para2 {
   font-size: .75rem !important;
-  /* font-weight: 400; */
+}
+
+.Para3 {
+  font-size: .75rem !important;
+  font-weight: 600;
 }
 
 .BottomScene {
@@ -92,6 +113,7 @@
   box-sizing: border-box;
   border-radius: 2px;
   color: #747686;
+  color: #0e1444;
   padding: 0px 10px;
   height: 30px !important;
   text-align: center;
@@ -103,18 +125,23 @@
  box-sizing: border-box;
  border-radius: 2px;
  color: #747686;
+ color: #0e1444;
  padding: 0px 10px;
  text-align: center;
+ min-height: 30px;
 }
 
 .InputSceneNext {
   background: #ffffff;
   border: 1px solid rgba(228, 202, 121, 0.99);
+  border: 1px solid #dee1f7;
   box-sizing: border-box;
   border-radius: 2px;
   color: #747686;
+  color: #0e1444;
   padding: 0px 10px;
   text-align: center;
+  min-height: 30px;
  }
 
 .Number {
