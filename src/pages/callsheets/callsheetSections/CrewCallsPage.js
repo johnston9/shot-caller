@@ -56,7 +56,7 @@ const CrewCallsPage = ({callsheet, setShow}) => {
       <div className='d-none d-md-block mt-5'>
        <h4 className={`pl-3 py-0 px-1 ${styles.SubTitleSpan }`}
         style={{ textTransform: 'uppercase' }}>
-        Crew Calls <span className={`${styles.HSpan }`} >Total</span></h4>
+        Crew Calls</h4>
       </div>
         {/* mobile title */}
         <div className='d-block d-md-none'>

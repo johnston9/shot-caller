@@ -276,8 +276,6 @@ const CallsheetEditPage = () => {
     wardrobe_assistant_5_calltime: "",
 })
 
-console.log(postData)
-
   const { 
       // info
       unit_call,
@@ -2112,13 +2110,13 @@ console.log(postData)
   const buttons = (
     <div className={`text-center py-4 mb-3 mt-4 ${styles.White }`} >    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`ml-3 ${btnStyles.Button} ${btnStyles.Blue} px-3`} type="submit">
-        Create
+      <Button className={`ml-3 ${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3 `} type="submit">
+        Submit
       </Button>
     </div>
   );

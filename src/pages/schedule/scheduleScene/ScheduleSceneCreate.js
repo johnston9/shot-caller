@@ -429,7 +429,8 @@ const buttons = (
           <div className= {`mt-3 mb-4 pb-3`}>
             <Row>
             <Col>
-            <p className= {`text-center ${styles.BoldScene }`} style={{ textTransform: 'uppercase'}}>
+            <p className= {`text-center ${styles.BoldScene }`} 
+            style={{ textTransform: 'uppercase', fontStyle: 'italic'}}>
               SCENE {number} "{title}" - {int_ext} {filming_location} - {day_night} SELECTED </p>
             </Col>
             </Row>

@@ -91,15 +91,16 @@ const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
         }
     }
     }
+
     const buttons = (
     <div className="mb-2 text-center">    
         <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-4`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={clear}
         >
         Cancel
         </Button>
-        <Button className={`px-5 ml-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        <Button className={`px-3 px-md-5 ml-3 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         Add BG
         </Button>
     </div>
@@ -202,11 +203,11 @@ return (
             </Col>
         </Row>
         <hr/>
-        {/* type costume */}
+        {/* type - costume */}
         <Row className="text-center mx-0">
         <Col className="d-flex justify-content-center mx-0 px-1"  xs={6}>
             <Form.Group controlId="type" className={`${styles.Width2} `}  >
-                <Form.Label className={`${styles.BoldScene}`} >Type</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Role</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"

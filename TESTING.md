@@ -399,21 +399,103 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/calladd3.png" width="50%">
 </h2>
 
-- Use Case: Add to/Edit a Callsheet by Section.<br>
+- Use Case: Add/Edit and View Callsheet Info by Section.<br>
 
   1. On the Edit/Delete icon and click the Edit icon.<br>
   2. The Edit Callsheet form displays. <br>
-  3. Input the new details, i.e. change the date to - "27 Nov 2024".<br>
-  6. Press submit.<br>
-  7. A success message displays.<br>
-  8. The Shoot Day number "6" displays with the new Date "27 Nov 2024".<br>
+  3. Make changes and submit. <br>
+  4. On the Callsheet view the upaded info.<br>
 
-<p align="center"> <strong>Success Message and Day with changes</strong></p>
+- Use Case: Add/Edit and View Crew Calltimes<br>
+  1. In the Crew Calltimes section click on a department, e.g. "Camera". <br>
+  2. The Camera department form opens with all the Callsheet/Main crew members who were added to the Callsheet/Main Crew Camera department.<br/>
+  3. Input a crew members Calltime, e.g. for "DOP" enter 6 AM.<br/>
+  4. Press Submit.<br>
+  5. A success message displays.<br>
+  6. On the Callsheet in the Crew Calltimes section click the Camera department.<br>
+  7. The DOP displays with their corect Calltime.<br>
+  8. For crew who are not working that day the option is to either leave their calltime blank or input N/A or similar.<br>
+
+<p align="center"> <strong>DOP Calltime Entered</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scheddayedit.png" width="50%">
+<img src="documentation/readme-images/callcrewtime1.png" width="50%">
+</h2>
+<p align="center"> <strong>DOP Calltime on Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewtime2.png" width="50%">
+</h2>
+<p align="center"> <strong>Mobile View of Edit Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcreweditmo1.png" width="50%">
+</h2>
+<p align="center"> <strong>Mobile View of Crew Calls on Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewinfomo.png" width="50%">
 </h2>
 
-- Use Case: Delete a Shoot Day.<br>
+- Use Case: Use the "SET UNIT CALL" button to set all crew member's Calltimes to the "Unit Call".<br>
+  1. Input a time in the "Unit Call" field, e.g. "6.15 AM".<br>
+  2. Click the "SET UNIT CALL" button.<br/>
+  3. Click on a department to see all Calltimes have been set to 6.15 AM.<br/>
+  4. Change the "DOP" Calltime back to 6 AM and change the "Camera Operator's" to N/A.<br>
+  5. Press Submit.<br>
+  6. A success message displays.<br>
+  7. On the Callsheet in the Crew Calltimes section click the Camera department.<br>
+  8. The DOP displays with their corect Calltime "6 AM", the Camera Operator with "N/A" and all the other cew have "6.15 AM".<br>
+
+<p align="center"> <strong>Unit Calltime entered</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewunit1.png" width="50%">
+</h2>
+<p align="center"> <strong>Corect Calltimes on Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewunit2.png" width="50%">
+</h2>
+
+- Use Case: Add Cast Calltimes.<br>
+  1. Click the Add Cast button and the Add Cast form opens.<br>
+  2. Select a Character from the dropdown of all Characters added to the project, e.g. "Benny".<br/>
+  3. Benny's info displays in the Selected Cast box which e.g. Actor name: Rick Stone, Makeup time: 10 Minutes, Commute time: 30 Minutes and Contact mobile number: 086 2247333. The Pickup Address will be added in the Confirm Pickup Address field.<br/>
+  4. Input the fields<br>
+  5. Press Submit.<br>
+  6. A success message displays and Benny now displays in the "Cast Added" box.<br>
+  7. On the Callsheet in the Cast Calltimes section Benny and all the inputted info display correctly.<br>
+
+<p align="center"> <strong>Benny Selected and Inputs</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcast1.png" width="50%">
+</h2>
+<p align="center"> <strong>Benny Added and Success message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcast2.png" width="50%">
+</h2>
+<p align="center"> <strong>Add Cast Mobile View</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcasteditmo.png" width="50%">
+</h2>
+
+- Use Case: Add Background/Standins Calltimes.<br>
+  1. Click the Add BG button and the Add Background/Standins form opens.<br>
+  2. The BG already added displays i the Backdroung Added box. <br/>
+  3. Add the new BG item, e.g. "3 Clerks".<br/>
+  6. Press Submit.<br>
+  6. A success message displays and Clerks now displays in the "Background Added" box.<br>
+  7. On the Callsheet in the Background Calltimes section Clerks and all the inputted inf display correctly.<br>
+
+<p align="center"> <strong>Clerks details Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgadd1.png" width="50%">
+</h2>
+<p align="center"> <strong>Success message and Clerks Added to the Background Added Box</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgadd2.png" width="50%">
+</h2>
+<p align="center"> <strong>Add Background Form Mobile View</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgaddmo.png" width="50%">
+</h2>
+
+- Use Case: Delete a xxx.<br>
 
   1. On the Edit/Delete icon and click the Delete icon.<br>
   2. A Modal displays asking to Confirm Delete or Cancel<br>
