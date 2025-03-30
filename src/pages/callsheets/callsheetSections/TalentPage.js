@@ -64,16 +64,19 @@ const TalentPage = (props) => {
             style={{ textTransform: 'uppercase'}} >Talent </h5>
             </div>
             <Row className='text-center mx-0 px-0' >
-                <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
+                {/* <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>#</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
+                </Col> */}
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={5}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Role</p>
                 </Col>
-                <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
+                {/* <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Artist</p>
-                </Col>
+                </Col> */}
                 <Col className={`mx-0 px-0 `} xs={2} md={2}>
+                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>P/U</p>
+                </Col>
+                <Col className={`mx-0 px-0 `} xs={3} md={3}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Call</p>
                 </Col>
                 <Col className={`mx-0 px-0 `} xs={2} md={2}>

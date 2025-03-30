@@ -469,9 +469,26 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <h2 align="center">
 <img src="documentation/readme-images/callcast2.png" width="50%">
 </h2>
+<p align="center"> <strong>Benny displays on Callsheet with Info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcast3.png" width="50%">
+</h2>
 <p align="center"> <strong>Add Cast Mobile View</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/callcasteditmo.png" width="50%">
+</h2>
+<p align="center"> <strong>Cast Info Mobile View</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/castcallinfomo.png" width="50%">
+</h2>
+
+- Use Case: View the Cast Extra Info.<br>
+  1. Click the Info buttton.<br>
+  2. The Info displays. <br/>
+
+  <p align="center"> <strong>Extra info on Mobile</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/castcallinfomoinfo.png" width="50%">
 </h2>
 
 - Use Case: Add Background/Standins Calltimes.<br>
@@ -487,6 +504,10 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/callbgadd1.png" width="50%">
 </h2>
 <p align="center"> <strong>Success message and Clerks Added to the Background Added Box</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgadd2.png" width="50%">
+</h2>
+<p align="center"> <strong>Clerks display on Callsheet with Info</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/callbgadd2.png" width="50%">
 </h2>

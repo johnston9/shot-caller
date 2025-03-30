@@ -80,39 +80,39 @@ const CallCast = (props) => {
         <div style={style} className={` ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
             <Row className='text-center mx-0 mb-0 pb-0' >
-                <Col className={`mx-0 px-0 py-2 ${styles.Border}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 py-2 ${styles.Border2}`} xs={1} md={1}>
                     <p className='mb-0'>{cast_number1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 py-2  ${styles.Border}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 py-2  ${styles.Border2}`} xs={2} md={2}>
                     <p className='mb-0'>{role1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 py-2  ${styles.Border}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 py-2  ${styles.Border2}`} xs={2} md={2}>
                     <p className='mb-0'>{artist1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 py-2 ${styles.Border }`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 py-2 ${styles.Border2 }`} xs={1} md={1}>
                 <p className='mb-0'>{swf1}</p>                        
                 </Col>
-                <Col className={`mx-0 px-0 py-2  ${styles.Border}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 py-2  ${styles.Border2}`} xs={1} md={1}>
                     <p className='mb-0'>{pickup1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 py-2  ${styles.UnitCallBorder}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 py-2  ${styles.CastCall}`} xs={1} md={1}>
                 <p className='mb-0'>{call1}</p>                        
                 </Col>
-                <Col className={`mx-0 px-0 py-2 ${styles.Border} `} xs={1} md={1}>
+                <Col className={`mx-0 px-0 py-2 ${styles.Border2} `} xs={1} md={1}>
                     <p className='mb-0'>{hmw1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 py-2 ${styles.Border} `} xs={1} md={1}>
+                <Col className={`mx-0 px-0 py-2 ${styles.Border2} `} xs={1} md={1}>
                     <p className='mb-0'>{on_set1}</p>
                 </Col>
                 {admin ? (
                     <>
-                    <Col className={`mx-0 px-0 py-2 ${styles.Border} `} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 py-2 ${styles.Border2} `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         I
                     </Button>
                     </Col>
-                    <Col className={`mx-0 px-0 py-2 ${styles.Border} `} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 py-2 ${styles.Border2} `} xs={1} md={1}>
                     <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
@@ -120,7 +120,7 @@ const CallCast = (props) => {
                     </Col>
                     </>
                 ) : (
-                    <Col className={`mx-0 px-0 py-2 ${styles.Border} `} xs={2} md={2}>
+                    <Col className={`mx-0 px-0 py-2 ${styles.Border2} `} xs={2} md={2}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         Info
@@ -151,19 +151,21 @@ const CallCast = (props) => {
         {/* MOBILE */}
         <div className='d-block d-md-none'>
             <Row className='text-center mx-0 px-0' >
-                <Col className={`mx-0 px-0 ${styles.Border}`} xs={2}>
-                    <p className='mb-0 py-2'>{cast_number1}</p>
+                <Col className={`mx-0 py-1  ${styles.Border2}`} xs={5}>
+                    <p className={`mb-0 pb-0 ${styles.BoldScene}`}>{role1}</p>
+                    <p className='mb-0'>{artist1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.Border}`} xs={3}>
-                    <p className='mb-0 py-2'>{role1}</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.Border}`} xs={3}>
+                {/* <Col className={`mx-0 px-0 ${styles.Border2}`} xs={3}>
                     <p className='mb-0 py-2'>{artist1}</p>
-                </Col>  
-                <Col className={`mx-0 px-0 ${styles.UnitCallBorder}`} xs={2}>
-                    <p className='mb-0 py-2'>{call1}</p>
+                    d-flex align-items-center
+                </Col>  */}
+                <Col className={`mx-0 px-0 d-flex align-items-center ${styles.Border2}`} xs={2}>
+                    <p className='mb-0'>{pickup1}</p>
+                </Col> 
+                <Col className={`mx-0 px-0 ${styles.CastCall}`} xs={3}>
+                    <p className='mb-0 pt-2'>{call1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.Border} `} xs={2} md={2}>
+                <Col className={`mx-0 px-0 ${styles.Border2} `} xs={2} md={2}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                     className={`my-2 ${btnStyles.Button} ${btnStyles.Shed}`}>
                     I
