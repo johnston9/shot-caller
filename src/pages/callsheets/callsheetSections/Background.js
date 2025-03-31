@@ -50,27 +50,27 @@ const Background = (props) => {
     };
 
   return (
-    <div style={style}>
+    <div style={style} >
         <div className='d-none d-md-block pt-0 mt-0'>
             <Row className='text-center mx-0' >
-                <Col className={`mx-0 px-0  ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{qty1}</p>
+                <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={2} md={2}>
+                    <p className={` ${styles.Bold}`}>{qty1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{call1}</p>
+                <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={2} md={2}>
+                    <p className={` ${styles.Bold}`}>{call1}</p>
                 </Col>
                 {admin ? (
                     <>
-                    <Col className={`mx-0 px-0 ${styles.Border}`} xs={6} md={6}>
-                    <p className='mb-0'>{type1}</p>
+                    <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={6} md={6}>
+                    <p className={` ${styles.Bold}`}>{type1}</p>
                     </Col>
-                    <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 py-1 v ${styles.Border2} `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         I
                     </Button>
                     </Col>
-                    <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <PostDropdown
                             handleEdit={handleEdit}
                             handleDelete={handleDelete}
@@ -80,10 +80,10 @@ const Background = (props) => {
 
                 ) : (
                     <>
-                    <Col className={`mx-0 px-0 ${styles.Border}`} xs={6} md={6}>
-                    <p className='mb-0'>{type1}</p>
+                    <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={6} md={6}>
+                    <p className={` ${styles.Bold}`}>{type1}</p>
                     </Col>
-                    <Col className={`mx-0 px-0 ${styles.Border} `} xs={1} md={1}>
+                    <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         I
@@ -114,17 +114,17 @@ const Background = (props) => {
         </div>
         {/* MOBILE */}
         <div className='d-block d-md-none'>
-        <Row className='text-center mx-0' >
-                <Col className={`mx-0 px-0  ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{qty1}</p>
+        <Row className='text-center mx-0 mt-2' >
+                <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center py-1 ${styles.Border2}`} xs={2} md={2}>
+                    <p className={` ${styles.Bold}`}>{qty1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.Border}`} xs={2} md={2}>
-                    <p className='mb-0'>{call1}</p>
+                <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center py-1 ${styles.CastCall}`} xs={2} md={2}>
+                    <p className={` ${styles.Bold}`}>{call1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.Border}`} xs={6} md={6}>
-                    <p className='mb-0'>{type1}</p>
+                <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center py-1 ${styles.Border2}`} xs={6} md={6}>
+                    <p className={` ${styles.Bold}`}>{type1}</p>
                     </Col>
-                <Col className={`mx-0 px-0 ${styles.Border} `} xs={2} md={2}>
+                <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center py-1 ${styles.Border2} `} xs={2} md={2}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                     I

@@ -7,7 +7,7 @@ import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
 
 const CallCastInfoMob = (props) => {
-    const { id1, contact1, swf1, inst1, pickup1,
+    const { id1, contact1, swf1, inst1, pickup1, cast_number1,
         hmw1, on_set1, admin, setShowEdit, handleMount} = props;
 
         const handleEdit = () => {
@@ -25,35 +25,31 @@ const CallCastInfoMob = (props) => {
   return (
     <div>
         <Row className='text-center px-0 mx-0'>
-        {/* <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4}>
-            <p style={{ textTransform: 'uppercase' }} className={`text-center ${styles.TitleBox}`}>Artist</p>
-            <p className='mb-0'>{artist}</p>
-        </Col>  */}
+        <Col className={`mx-0 px-0  ${styles.Border2}`} xs={2}>
+        <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>#</p>
+            <p className='mb-0 py-2'>{cast_number1}</p>
+        </Col>
         <Col className={`mx-0 px-0 ${styles.Border2}`} xs={4}>
           <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Contact</p>
           <p className={`mb-0 mx-0 py-2`}>{contact1}</p>                        
         </Col>
-        <Col className={`mx-0 px-0  ${styles.Border2}`} xs={2}>
-            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>SWF</p>
-            <p className='mb-0 py-2'>{swf1}</p>
-        </Col>
-        <Col className={`mx-0 px-0  ${styles.Border2}`} xs={2}>
-        <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>PU</p>
-            <p className='mb-0 py-2'>{pickup1}</p>
-        </Col>
-        <Col className={`mx-0 px-0 ${styles.Border2}`} xs={2}>
+        <Col className={`mx-0 px-0 ${styles.Border2}`} xs={3}>
         <p style={{ textTransform: 'uppercase' }} className={`mb-0  text-center ${styles.TitleBox}`}>H/M/W</p>
             <p className='mb-0 py-2'>{hmw1}</p>
         </Col>  
-        <Col className={`mx-0 px-0 ${styles.Border2}`} xs={2}>
+        <Col className={`mx-0 px-0 ${styles.Border2}`} xs={3}>
         <p style={{ textTransform: 'uppercase' }} className={`mb-0  text-center ${styles.TitleBox}`}>Set</p>
             <p className='mb-0 py-2'>{on_set1}</p>
         </Col> 
         </Row>
         {admin ? (
             <Row className='text-center px-0 mx-0'>
-            <Col className={`text-center mx-0 px-0 ${styles.Border2}`} xs={10}>
-            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Instructions</p>
+            <Col className={`mx-0 px-0  ${styles.Border2}`} xs={2}>
+            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>SWF</p>
+            <p className='mb-0 py-2'>{swf1}</p>
+            </Col>
+            <Col className={`text-center mx-0 px-0 ${styles.Border2}`} xs={8}>
+            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Requirements</p>
             <p className={`mb-0 mx-0 py-2`}>{inst1}</p>
             </Col>   
             <Col className={`mx-0 px-0 ${styles.Border2} `} xs={2} md={2}>
@@ -67,8 +63,12 @@ const CallCastInfoMob = (props) => {
         </Row>
         ) : (
             <Row className='text-center px-0 mx-0'>
-            <Col className={`text-center mx-0 px-0 ${styles.Border2}`} xs={12}>
-            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Instructions</p>
+            <Col className={`mx-0 px-0  ${styles.Border2}`} xs={2}>
+            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>SWF</p>
+            <p className='mb-0 py-2'>{swf1}</p>
+            </Col>
+            <Col className={`text-center mx-0 px-0 ${styles.Border2}`} xs={10}>
+            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Requirements</p>
             <p className={`mb-0 mx-0 py-2`}>{inst1}</p>
             </Col>             
         </Row>

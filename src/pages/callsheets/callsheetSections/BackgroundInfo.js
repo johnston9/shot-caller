@@ -11,24 +11,26 @@ const BackgroundInfo = (props) => {
         <Row className='text-center px-3 mx-0'>
           <Col className={`mx-0 px-0 `} xs={2}>
           <div className={` ${styles.TitleBox2}`}>
-          <p style={{ textTransform: 'uppercase' }} className={`py-0 mb-0 ${styles.TitleBox}`}>Set</p>
+          <p style={{ textTransform: 'uppercase' }} 
+          className={`py-0 mb-0 ${styles.TitleBox}`}>Set</p>
           </div>
-          <div className={` ${styles.Border}`}>
-          <p className={`mb-0 mx-0 py-2`}>{set1}</p>  
+          <div className={` ${styles.Border2}`}>
+          <p className={`mb-0 mx-0 py-1 ${styles.Bold}`}>{set1}</p>  
           </div>                      
           </Col>
           <Col className={`mx-0 px-0`} xs={4}>
           <div className={` ${styles.TitleBox2}`}>
-          <p style={{ textTransform: 'uppercase' }} className={` mb-0 ${styles.TitleBox}`}>Scenes</p>
+          <p style={{ textTransform: 'uppercase' }} 
+          className={` mb-0 ${styles.TitleBox}`}>Scenes</p>
           </div>
-          <div className={` ${styles.Border}`}>
-          <p className={`mb-0 mx-0 py-2`}>{scenes1}</p> 
+          <div className={` ${styles.Border2}`}>
+          <p className={`mb-0 mx-0 py-1 ${styles.Bold}`}>{scenes1}</p> 
           </div>                       
           </Col>
           <Col className={`text-center mx-0 px-0 `} xs={6}>
           <p style={{ textTransform: 'uppercase' }} className={` mb-0  ${styles.TitleBox}`}>Costumes</p>
-          <div className={` ${styles.Border}`}>
-          <p className={`mb-0 mx-0 py-2 `}>{costumes1}</p>
+          <div className={` ${styles.Border2}`}>
+          <p className={`mb-0 mx-0 py-1 ${styles.Bold}`}>{costumes1}</p>
           </div>
           </Col>               
       </Row>

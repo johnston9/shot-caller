@@ -161,7 +161,6 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       try {
         const {data} = await axiosReq.post("/castcallsnew/", formData);
         toast.success(`"${role}" Added to Shoot Day "${dataDay}"`); 
-        console.log(data);
         setPostData({cast_number: "",
                       role: "",
                       username: "",

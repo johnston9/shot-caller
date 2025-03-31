@@ -24,33 +24,43 @@ const BgInfoMob = (props) => {
   return (
     <div>
         <Row className='text-center px-3 mx-0'>
-        <Col className={`mx-0 px-0  ${styles.Border}`} xs={2}>
+        <Col className={`mx-0 px-0 `} xs={2}>
             <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Set</p>
-            <p className='mb-0 py-2'>{set1}</p>
+            <div className={`mb-0 ${styles.Border2}`}>
+            <p className={`mb-0 py-1 ${styles.Bold}`}>{set1}</p>
+            </div>
         </Col>
-        <Col className={`mx-0 px-0 ${styles.Border}`} xs={3}>
+        <Col className={`mx-0 px-0`} xs={3}>
           <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Scenes</p>
-          <p className={`mb-0 mx-0 py-2`}>{scenes1}</p>                        
+          <div className={`mb-0 ${styles.Border2}`}>
+          <p className={`mb-0 py-1 ${styles.Bold}`}>{scenes1}</p>    
+          </div>                    
         </Col>
         {admin ? (
             <>
-            <Col className={`mx-0 px-0  ${styles.Border}`} xs={5}>
+            <Col className={`mx-0 px-0`} xs={5}>
             <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Costumes</p>
-                <p className='mb-0 py-2'>{costumes1}</p>
+            <div className={`mb-0 ${styles.Border2}`}>
+                <p className={`mb-0 py-1 ${styles.Bold}`}>{costumes1}</p>
+                </div>
             </Col>
-            <Col className={`mx-0 px-0 ${styles.Border} `} xs={2} md={2}>
+            <Col className={`mx-0 px-0 `} xs={2} md={2}>
             <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Edit</p>
+            <div className={`mb-0 ${styles.Border2}`}>
             <PostDropdown
                     className={` mx-0 my-2`}
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
                 />
+                </div>
             </Col>   
             </>        
         ) : (
-            <Col className={`mx-0 px-0  ${styles.Border}`} xs={7}>
+            <Col className={`mx-0 px-0`} xs={7}>
             <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Costumes</p>
-                <p className='mb-0 py-2'>{costumes1}</p>
+            <div className={`mb-0 ${styles.Border2}`}>
+                <p className={`mb-0 py-1 ${styles.Bold}`}>{costumes1}</p>
+                </div>
             </Col>
         )}
         </Row>

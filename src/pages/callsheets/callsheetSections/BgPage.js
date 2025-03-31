@@ -16,7 +16,7 @@ const BgPage = (props) => {
         {/* MEDIUM */}
         <div className='d-none d-md-block'>
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
-        style={{ textTransform: 'uppercase' }}>BG / STANDINS</span>
+        style={{ textTransform: 'uppercase' }}>BACKGROUND / STANDINS</span>
         {/* titles */}
         <Row >
         <Col md={6}>
@@ -36,7 +36,7 @@ const BgPage = (props) => {
                     <p className='mb-0'>Info</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Ed</p>
+                    <p className='mb-0'></p>
                 </Col>
                 </>
             ) : (
@@ -68,7 +68,7 @@ const BgPage = (props) => {
                     <p className='mb-0'>Info</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Ed</p>
+                    <p className='mb-0'></p>
                 </Col>
                 </>
             ) : (
@@ -106,7 +106,7 @@ const BgPage = (props) => {
         <div className='d-block d-md-none'>
         <div className={`mb-3 text-center ${styles.SubTitle }`}>
         <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-        <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >BG / Stand-ins (total) </h5>
+        <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >BG / Standins </h5>
         </div>
         {/* titles */}
         <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >

@@ -459,13 +459,13 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
   4. Input the fields<br>
   5. Press Submit.<br>
   6. A success message displays and Benny now displays in the "Cast Added" box.<br>
-  7. On the Callsheet in the Cast Calltimes section Benny and all the inputted info display correctly.<br>
+  7. On the Callsheet in the Cast Calltimes section Benny and all the inputted info displays correctly.<br>
 
 <p align="center"> <strong>Benny Selected and Inputs</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/callcast1.png" width="50%">
 </h2>
-<p align="center"> <strong>Benny Added and Success message</strong></p>
+<p align="center"> <strong>Benny Added and Success Message</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/callcast2.png" width="50%">
 </h2>
@@ -489,6 +489,16 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
   <p align="center"> <strong>Extra info on Mobile</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/castcallinfomoinfo.png" width="50%">
+</h2>
+
+- Use Case: Edit Cast Calltimes.<br>
+  1. Click the Edit button and the Edit Cast form opens.<br>
+  2. Input the changes, e.g. PU: 6.15 AM, Call: 7.15 AM and Set 8.15 AM and submit.<br/>
+  3. A success message displays and Benny's new Info now displays correctly.<br>
+
+<p align="center"> <strong>Benny's Info Updated and Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastedit.png" width="50%">
 </h2>
 
 - Use Case: Add Background/Standins Calltimes.<br>

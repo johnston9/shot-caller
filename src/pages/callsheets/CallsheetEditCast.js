@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
+import { toast } from 'react-toastify';
 
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -85,6 +86,7 @@ const EditCast = (props) => {
           hmw1: hmw,
           on_set1: on_set,
           inst1: inst,});
+        toast.success(`${role}'s Calltime Info Updated`); 
         setShowEdit((showEdit) => !showEdit)
       } catch (err) {
         console.log(err);
@@ -96,13 +98,13 @@ const EditCast = (props) => {
     const buttons = (
       <div className="mb-2 text-center">    
         <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
+          className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3 `}
           onClick={() => setShowEdit(showEdit => !showEdit)}
         >
           Cancel
         </Button>
-        <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          Edit
+        <Button className={`px-3 px-md-5 ml-3 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          Update
         </Button>
       </div>
     );
@@ -111,13 +113,15 @@ const EditCast = (props) => {
     <div >
       <Row>
         <Col xs={12} md={{span: 10, offset: 1 }} >
-        <h5 className={`text-center my-2 py-0 mx-5  ${styles.SubTitle }`} >EDIT CHARACTER</h5> 
-      <Form className="text-center" onSubmit={handleSubmit}>
+        <h5 className={`text-center my-2 py-0  ${styles.SubTitle }`}
+        style={{ textTransform: 'uppercase' }} >
+          EDIT {role} Calltime Info</h5> 
+      <Form className={`${styles.White} text-center`} onSubmit={handleSubmit}>
         {/* number swf pickup call hmw on_set */}
-        <Row className="mx-0">
-          <Col className="d-flex justify-content-center ml-4 ml-sm-5 px-0 px-sm-1" xs={2}>
+        <Row className="mx-0 d-flex align-items-center pl-5">
+          <Col className="d-flex justify-content-center ml-4 ml-sm-5 px-0 px-sm-3" xs={2}>
               <Form.Group controlId="swf" className={`${styles.Width95} `}  >
-                  <Form.Label className={`${styles.Bold}`} >SWF</Form.Label>
+                  <Form.Label className={`${styles.BoldScene}`} >SWF</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -134,7 +138,7 @@ const EditCast = (props) => {
           </Col>
           <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2}>
               <Form.Group controlId="pickup" className={`${styles.Width95} `}  >
-                  <Form.Label className={`${styles.Bold}`} >PU</Form.Label>
+                  <Form.Label className={`${styles.BoldScene}`} >PU</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
                   type="text"
@@ -151,7 +155,7 @@ const EditCast = (props) => {
           </Col>
           <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2} >
           <Form.Group controlId="call" className={`${styles.Width95} `}  >
-                <Form.Label className={`${styles.Bold}`} >Call</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Call</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -166,9 +170,9 @@ const EditCast = (props) => {
               </Alert>
             ))}
             </Col>
-          <Col className=" -flex justify-content-centermx-0 px-0" xs={2}>
+          <Col className=" d-flex justify-content-center mx-0 px-0" xs={2}>
           <Form.Group controlId="hmw" className={`${styles.Width95} `}  >
-              <Form.Label className={`${styles.Bold}`} >H/M/W</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >H/M/W</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
               type="text"
@@ -185,10 +189,7 @@ const EditCast = (props) => {
           </Col>
           <Col className="d-flex justify-content-center mx-0 px-0 px-sm-1" xs={2}>
           <Form.Group controlId="on_set" className={`${styles.Width95} `} >
-              <Form.Label className={`${styles.Bold}`} >
-                <span className="d-none d-sm-block">Set</span> 
-                <span className="d-sm-none">Set</span>
-                </Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >SET</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
               type="text"
@@ -204,21 +205,12 @@ const EditCast = (props) => {
           ))}
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-2">
             <Col className="d-flex justify-content-center px-1"  xs={{span: 10, offset: 1}}>
             <Form.Group controlId="inst" className={`${styles.Width95} `}  >
-                <Form.Label className={`${styles.Bold}`} >Inst</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Requirements</Form.Label>
                 <Form.Control
-                className={`d-block d-md-none ${styles.InputScene}`} 
-                as="textarea"
-                rows={1}
-                type="text"
-                name="inst"
-                value={inst}
-                onChange={handleChange}
-                    />
-                <Form.Control
-                className={`d-none d-md-block ${styles.InputScene}`} 
+                className={`${styles.InputScene}`} 
                 as="textarea"
                 rows={1}
                 type="text"

@@ -8,6 +8,7 @@ import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
+import { toast } from 'react-toastify'; 
 
 const EditBack = (props) => {
     const [errors, setErrors] = useState({});
@@ -66,6 +67,7 @@ const EditBack = (props) => {
                 scenes1: scenes,
                 set1: set,
                 costumes1: costumes});
+            toast.success(`${type}'s Calltime Info Updated`); 
             setShowEdit((showEdit) => !showEdit)
     } catch (err) {
         console.log(err);
