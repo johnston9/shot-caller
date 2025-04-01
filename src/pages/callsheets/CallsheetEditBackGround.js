@@ -76,29 +76,31 @@ const EditBack = (props) => {
         }
     }
     }
+
     const buttons = (
     <div className="mb-2 text-center">    
         <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => setShowEdit(showEdit => !showEdit)}
         >
         Cancel
         </Button>
-        <Button className={`px-4 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Edit
+        <Button className={`px-3 px-md-5 ml-3 ${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Update
         </Button>
     </div>
     );
 
 return (
     <div>
-    <h5 className={`text-center py-0 mx-5  ${styles.SubTitle }`} >EDIT BG / STAND-INS</h5> 
+    <h5 className={`text-center py-0 mx-5  ${styles.SubTitle }`}>
+        Edit <span style={{fontStyle: 'italic'}}>{type}</span></h5> 
     <Form className="text-center" onSubmit={handleSubmit}>
-            {/* qty call set scenes*/}
-        <Row className="mx-0">
+            {/* qty call set scenes style={{ textTransform: 'uppercase' }}  */}
+        <Row className="mx-0 mt-2">
             <Col className="d-flex justify-content-center mx-0" xs={3}>
             <Form.Group controlId="qty" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Qty</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Qty</Form.Label>
                 <Form.Control
                 className={`${styles.Input}`} 
                 type="text"
@@ -115,7 +117,7 @@ return (
             </Col>
             <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
             <Form.Group controlId="call" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Call</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Call</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -132,7 +134,7 @@ return (
             </Col>
             <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
             <Form.Group controlId="set" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Set</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Set</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -149,7 +151,7 @@ return (
             </Col>
             <Col className="d-flex justify-content-center mx-0 px-1"  xs={3}>
             <Form.Group controlId="scenes" className={`${styles.Width} `}  >
-                <Form.Label className={`${styles.Bold}`} >Scenes</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Scenes</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -166,10 +168,10 @@ return (
             </Col>
         </Row>
         {/* type costume */}
-        <Row className="text-center mx-0">
+        <Row className="text-center mx-0 mt-2">
         <Col className="d-flex justify-content-center mx-0 px-1"  xs={6}>
             <Form.Group controlId="type" className={`${styles.Width2} `}  >
-                <Form.Label className={`${styles.Bold}`} >Type</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Type</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"
@@ -186,7 +188,7 @@ return (
             </Col>
         <Col className="d-flex justify-content-center mx-0 px-1" xs={6} >
             <Form.Group controlId="costumes" className={`${styles.Width2 } `}  >
-                <Form.Label className={`${styles.Bold}`} >Costumes</Form.Label>
+                <Form.Label className={`${styles.BoldScene}`} >Costumes</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
                 type="text"

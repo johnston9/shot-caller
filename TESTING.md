@@ -479,7 +479,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 </h2>
 <p align="center"> <strong>Cast Info Mobile View</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/castcallinfomo.png" width="50%">
+<img src="documentation/readme-images/callcastinfomo.png" width="50%">
 </h2>
 
 - Use Case: View the Cast Extra Info.<br>
@@ -488,7 +488,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 
   <p align="center"> <strong>Extra info on Mobile</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/castcallinfomoinfo.png" width="50%">
+<img src="documentation/readme-images/callcastinfomoinfo.png" width="50%">
 </h2>
 
 - Use Case: Edit Cast Calltimes.<br>
@@ -519,11 +519,21 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 </h2>
 <p align="center"> <strong>Clerks display on Callsheet with Info</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callbgadd2.png" width="50%">
+<img src="documentation/readme-images/callbginfo.png" width="50%">
 </h2>
 <p align="center"> <strong>Add Background Form Mobile View</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/callbgaddmo.png" width="50%">
+</h2>
+
+- Use Case: Edit BG Calltimes.<br>
+  1. Click the Edit button and the Edit Cast form opens.<br>
+  2. Input the changes, e.g Call: 8.15 AM and Set 8.15 AM and submit.<br/>
+  3. A success message displays and Clerks's new Info now displays correctly.<br>
+
+<p align="center"> <strong>Clerks's Info Updated and Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgedit.png" width="50%">
 </h2>
 
 - Use Case: Delete a xxx.<br>
