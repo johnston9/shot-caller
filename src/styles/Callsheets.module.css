@@ -90,6 +90,10 @@ hr {
   border-right: 1px solid #c1f1f7;
 }
 
+.Border3 {
+  border-bottom: 1px solid #c1f1f7;
+}
+
 .White1 {
   border: 1px solid #999;
 }
@@ -121,6 +125,11 @@ p {
 .SubTitle {
   background-color: #e8f0f1;
   font-weight: 700;
+}
+
+.Break5 {
+  border-top: 5px solid #e8f0f1;
+  border-top: 4px solid #c1f1f7;
 }
 
 .SubTitle2 {
@@ -497,7 +506,7 @@ p {
   color: #0e1444;
   padding: 0px 10px;
   height: 30px !important;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .InputB {
@@ -510,7 +519,7 @@ p {
   color: #0e1444;
   padding: 0px 10px;
   height: 30px !important;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .InputScene {
@@ -519,11 +528,12 @@ p {
   box-sizing: border-box;
   border-radius: 2px;
   color: #53587c;
-  color: #525463;
+  color: #525677;
   color: #0e1444;
+  color: #474f7a;
   padding: 0px 10px;
   min-height: 30px !important;
-  text-align: center;
+  /* text-align: center; */
  }
 
 .TitleBox {
@@ -610,6 +620,10 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+  .SubTitleSpan {
+    font-size: 1rem;
+  }
+  
   .BoldScene {
     font-size: .75rem;
   }

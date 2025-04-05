@@ -67,8 +67,7 @@ const CrewCallsPage = ({callsheet, setShow}) => {
             </div>
         </div>
         {/* department buttons */}
-        <p style={{ textTransform: 'uppercase'}} 
-        className={`pl-3 pt-1 ${styles.SubTitle }`}></p>
+        <hr className={`mb-0 pl-3 mt-0 pt-1 ${styles.Break5 }`}/> 
         <div className={`mt-1 pt-2 ${styles.White }`}> 
           <Row className={`${styles.ButtonLine} mt-0`}>
             <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
@@ -194,7 +193,8 @@ const CrewCallsPage = ({callsheet, setShow}) => {
           </Col>
           </Row> 
         </div>
-        <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p>
+        <hr className={`mb-0 pl-3 mt-2 pt-1 ${styles.Break5 }`}/> 
+        {/* <p className={`mt-1 pl-3 mb-0 pt-1 ${styles.SubTitle }`}></p> */}
         <div className='mt-3'>
         {/* Production */}
         {!showPro ? (

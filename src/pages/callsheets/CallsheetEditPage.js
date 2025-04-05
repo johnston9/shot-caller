@@ -1886,7 +1886,7 @@ const CallsheetEditPage = () => {
       {/* DEPARTMENT & IMPORTANT INFO */}
       <div>
       <h5 className={`py-0 mt-3 ${styles.SubTitle }`} >
-      DEPARTMENT & IMPORTANT INFO
+      DEPARTMENT, TRANSPORT & IMPORTANT INFO
       </h5> 
       {/* department info */}
       <Row className="mt-2">

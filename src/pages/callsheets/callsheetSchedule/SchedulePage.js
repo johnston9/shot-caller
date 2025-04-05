@@ -31,7 +31,7 @@ const SchedulePage = (props) => {
         </span> 
         </h5>
         ) : (
-            <h4 className={`mt-5 py-0 ${styles.SubTitleSpan }`} >SCHEDULE
+            <h4 className={`mt-5 py-0 pl-3 ${styles.SubTitleSpan }`} >SCHEDULE
             <span className={`pt-1 pl-1 ml-3 ${styles.HSpan } `} >                
             {pagestotal} Pages
             </span>
