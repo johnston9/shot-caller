@@ -3,7 +3,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../../styles/Callsheets.module.css";
+import styles from "../../../styles/Scene.module.css";
 
 const Info = () => {
   return (
@@ -14,10 +14,10 @@ const Info = () => {
         <div className={`text-center px-3 py-2 mt-3 ${styles.SubTitle2 }`}>
         <h5 className={`text-center`} >INFO</h5>  
         <p className={`text-center px-3 pt-1`}>
-          New Locations must be added in Add New Location form
+          New Locations can be added here by clicking the "Add New Location" tab
           or on Locations Page. <br/>
-          The Storyboard and Script may also be added or 
-          updated here on this page.
+          The Storyboard and Script may also be added/updated here or on 
+          threir own pages.
           </p>     
          </div>
       </Col>

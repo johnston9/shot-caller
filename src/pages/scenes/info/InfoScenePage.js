@@ -2,7 +2,7 @@
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../../styles/Callsheets.module.css";
+import styles from "../../../styles/Scene.module.css";
 
 const InfoScenePage = () => {
   return (
@@ -11,7 +11,8 @@ const InfoScenePage = () => {
         <Col md={{span: 10, offset: 1}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>Collaborate on the scene in the Scene Workspace.<br/>
+        <p>Collaborate on the scene by Department in the Scene Workspace, 
+          see instructions below.<br/>
             Add and view Scene info in the Breakdown and 
             Characters/BG sections.<br/> Add and view the Scene Script
             and Storyboard.<br/>

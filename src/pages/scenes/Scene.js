@@ -195,11 +195,19 @@ const Scene = (props) => {
       history.push(`/dept/category`);
     };
 
-    const handleClickUniversal = () => {
+    // const handleClickUniversal = () => {
+    //   setSceneId(id); 
+    //   setNumber(number);
+    //   setDept("universal");
+    //   setCategory("");
+    //   history.push(`/dept/category`);
+    // };
+
+    const handleClickUni = (category) => {
       setSceneId(id); 
       setNumber(number);
       setDept("universal");
-      setCategory("");
+      setCategory(category);
       history.push(`/dept/category`);
     };
 
@@ -484,10 +492,17 @@ const Scene = (props) => {
               <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                   <Col className='px-1 px-md-2' xs={4} >
-                    <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
+                    {/* <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
                     <Card.Img height={100} className={`text-center ${styles.UniImg}`}
                      src={dep8} alt="Card image" />
                     <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
+                    </Card> */}
+                    <Card className={` ${styles.CardBox}`} >
+                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
+                     src={dep8} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
                     </Card>
                   </Col>
                   </Row>

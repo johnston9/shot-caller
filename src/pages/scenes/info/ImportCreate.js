@@ -12,10 +12,10 @@ const ImportCreate = () => {
       <Col className="d-none d-md-block" md={2}></Col>     
       <Col xs={12} md={8} >
         <div className={` px-3 pt-1 ${styles.SubTitle2 }`}>
-        <h5 className={`text-center px-3 py-2 ${styles.Crimson }`}>
-      Scene Numbers can never be changed once created.</h5>
-      <h5 className={`text-center px-3 py-2 ${styles.Bold }`}> To add new 
-      Scenes between Scenes use decimals as follows</h5>
+        <p className={`text-center px-3 py-2 ${styles.Crimson }`}>
+      Scene Numbers can not be changed once the freeze button has been clicked.</p>
+      <p className={`text-center px-3 py-2 ${styles.Bold }`}> If it has
+      use decimals to add new Scenes between Scenes, see example below.</p>
       <hr/>
       <div className="pl-5">
       <Row>

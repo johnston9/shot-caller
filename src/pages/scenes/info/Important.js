@@ -12,9 +12,9 @@ const Important = () => {
       <Col className="d-none d-md-block" md={2}></Col>     
       <Col xs={12} md={8} >
       <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}> 
-      <h5 className={`text-center px-3 pt-1 ${styles.Crimson }`}>
-        USE DECIMAL FOR PAGES INPUT FIELD, INSTEAD OF EIGHTS
-        </h5>     
+      <p className={`text-center px-3 pt-1 ${styles.Crimson }`}>
+        USE DECIMALS FOR THE "PAGES" INPUT FIELD, INSTEAD OF EIGHTS
+        </p>     
         <p className={`${styles.Bold}`}>Converter</p>
         <hr/>
       <Row>

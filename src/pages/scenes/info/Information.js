@@ -2,7 +2,7 @@
 import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styles from "../../../styles/Callsheets.module.css";
+import styles from "../../../styles/Scene.module.css";
 
 const Information = () => {
   return (
@@ -11,9 +11,9 @@ const Information = () => {
         <Col md={{span: 8, offset: 2}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>All Breakdowns, Storyboards, 
-          Shotlists and Workspaces are done by Scene. 
-          Start by adding a Scene here.
+        <p>Click the Create Scene tab to create Scenes. Click on a Scene to work
+        in its Breakdown, Characters & BG, Shotlist, Scene Script, Storboard,
+        and Workspace.
              </p>
          </div> 
         </Col>

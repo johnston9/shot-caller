@@ -3,6 +3,7 @@ import React from 'react';
 import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import appStyles from "../../App.module.css";
 
 import styles from "../../styles/Post.module.css";
 import Button from "react-bootstrap/Button"
@@ -416,11 +417,15 @@ const Post = (props) => {
               </Card.Body>
               <hr />
               <Row className='mb-2 px-5'>
-                  {/* image 1/2 */}
+                  {/* image 1/2 <iframe title="Image1" src={image1} className={appStyles.iframeFull}
+                                            alt="Script"  /> */}
                   <Col xs={12} md={6}  >
                       {image1 && <> 
                         <div className='px-2 px-md-4 mb-3'>
-                          <Card.Img src={image1} alt="image1" className={styles.Images} />
+                          {/* <Card.Img src={image1} alt="image1" className={appStyles.iframeFull}
+                           className={styles.Images} /> */}
+                          <iframe title="Image1" src={image1} 
+                          className={appStyles.iframeFull} alt="Script"  />
                         </div>
                           </>
                           }

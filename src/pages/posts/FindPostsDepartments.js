@@ -121,11 +121,17 @@ const Departments = () => {
 
     };
 
-    const handleClickUniversal = () => {
+    const handleClickUni = (category) => {
       setDept("universal");
-      setCategory("");
+      setCategory(category);
       history.push(`/departments`);
     };
+
+    // const handleClickUniversal = () => {
+    //   setDept("universal");
+    //   setCategory("");
+    //   history.push(`/departments`);
+    // };
 
     return (
         <div>
@@ -171,9 +177,14 @@ const Departments = () => {
                   <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                       <Col className='px-0' xs={4} md={4} lg={4} >
-                        <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
+                        {/* <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
                         <Card.Img className={`text-center ${styles.UniImg}`} src={dep1} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                        </Card> */}
+                        <Card className={` ${styles.CardBox}`}>
+                        <Card.Img className={`text-center ${styles.UniImg}`} src={dep1} alt="Card image" />
+                        <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                        <DeptDropdown depart handleClick={(category) => handleClickUni(category) } />
                         </Card>
                       </Col>
                   </Row>
