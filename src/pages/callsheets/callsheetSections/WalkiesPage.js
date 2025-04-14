@@ -28,18 +28,58 @@ const WalkiesPage = (props ) => {
             <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >Walkie Channels </h5>
             </div>
             </div>
-            <p style={{ textTransform: 'uppercase'}} className={`mb-0 pl-3 pt-1 ${styles.SubTitle }`}></p>
-            <Row className='px-0'>
-                <Col md={3} xs={6}>Production: {walkie_channel_production}</Col>
-                <Col md={3} xs={6}>Open: {walkie_channel_open}</Col>
-                <Col md={3} xs={6}>Rollover: {walkie_channel_rollover}</Col>
-                <Col md={3} xs={6}>Transport: {walkie_channel_transportation}</Col>
-                <Col md={3} xs={6}>Art Dept: {walkie_channel_art_dept}</Col>
-                <Col md={3} xs={6}>Camera: {walkie_channel_camera}</Col>
-                <Col md={3} xs={6}>Electric: {walkie_channel_electric}</Col>
-                <Col md={3} xs={6}>Grip: {walkie_channel_grip}</Col>
+            <hr className={`mb-0 pb-0 pl-3 mt-0 pt-0 ${styles.Break5 }`}/> 
+            <Row className='px-md-3'>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6} >PRODUCTION:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_production}</Col>
+                </Row>
+                </Col>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6}>OPEN:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_open}</Col>
+                </Row>
+                </Col>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6}>ROLLOVER:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_rollover}</Col>
+                </Row>
+                </Col>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6}>TRANSPORT:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_transportation}</Col>
+                </Row>
+                </Col>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6}>ART DEPT:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_art_dept}</Col>
+                </Row>
+                </Col>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6}>CAMERA:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_camera}</Col>
+                </Row>
+                </Col>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6}>ELECTRIC:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_electric}</Col>
+                </Row>
+                </Col>
+                <Col md={3} xs={6} className={`${styles.Border2}`}>
+                <Row>
+                <Col xs={9} lg={6}>GRIP:</Col>
+                <Col xs={3} lg={6}>{walkie_channel_grip}</Col>
+                </Row>
+                </Col>
             </Row>
-            <p style={{ textTransform: 'uppercase'}} className={`mb-5 pl-3 pt-1 ${styles.SubTitle }`}></p>
+            <hr className={`mb-0 pl-3 mt-0 pt-1 ${styles.Break5 }`}/>
         </div>
   )
 }
