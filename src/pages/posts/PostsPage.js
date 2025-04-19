@@ -61,7 +61,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
       clearTimeout(timer);
     };
     // eslint-disable-next-line
-  }, [filter, query])
+  }, [filter, query]);
   
   return (
     <div>      

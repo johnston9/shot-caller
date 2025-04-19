@@ -62,11 +62,40 @@ const Scene = (props) => {
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
     const { id, number, storyboard, script,
-      workspace_guide, admin,
+      workspace_guide, admin, posts,
       scene, setScene } = props;
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
     const [showWorkInfo, setShowWorkInfo] = useState(false);
+
+    
+    // for (let i = 0; i < posts.length; i++) {
+    //   if (posts[i].departments = 'camera') {
+    //     console.log("www")
+    //   }
+    // }
+
+    // for (var post in posts.results) {
+    //   if (post.departments = 'camera') {
+    //     console.log("www")
+    //   }
+    // }
+
+
+    // const cameravvv = posts.map((post) => (
+    // post.department = "camera"));
+    // console.log(cameravvv)
+    
+    //  posts.results.map((post) => (
+    //   post.department = "camera")
+    //  );
+
+      // const cameraTotal = 0;
+      // posts.forEach(x => 
+      //   (posts.department = "camera") {
+      //     sum += x;
+      // });
+      // console.log(sum);
 
     const handleEdit = () => {
       history.push(`/scenes/${id}/edit`);
@@ -79,7 +108,17 @@ const Scene = (props) => {
         history.push(`/scenes`);
       } catch (err) {
       }
-    };
+    }; 
+
+    /* Functions to get departments total posts  */
+
+      //  const pages = scenes.results.map((scene) => (
+      //   parseFloat(scene.pages)));
+      //   function addpages(page) {
+      //   return page > 0;
+      //   }
+      //   const pagenumbers = pages.filter(addpages);
+      //   const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
     /* The following 13 functions take the user to that Scenes 
        department and category they choose by setting the 

@@ -551,7 +551,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 
 - Use Case: Add Important, Transport and Department Notes.<br>
   1. On the Edit page add the notes to each field and submit.<br>
-  2. A success message displays and Important, Transport and Department Notes display on the Callsheet .<br>
+  2. A success message displays and the Important, Transport and Department Notes display on the Callsheet .<br>
 
 <p align="center"> <strong>Important, Transport and Department Info Added</strong></p>
 <h2 align="center">
@@ -562,17 +562,17 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/callinfo2.png" width="50%">
 </h2>
 
-- Use Case: Add Important, Transport and Department Notes.<br>
-  1. On the Edit page add the notes to each field and submit.<br>
-  2. A success message displays and Important, Transport and Department Notes display on the Callsheet .<br>
+- Use Case: Add Walkie Channels.<br>
+  1. On the Edit page add the Walkie Channel number to each field and submit.<br>
+  2. A success message displays and the Walkie Channels display on the Callsheet .<br>
 
-<p align="center"> <strong>Important, Transport and Department Info Added</strong></p>
+<p align="center"> <strong>Walkie Channels Added</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callinfo1.png" width="50%">
+<img src="documentation/readme-images/callwalk1.png" width="50%">
 </h2>
-<p align="center"> <strong>Important, Transport and Department Info Displays</strong></p>
+<p align="center"> <strong>Walkie Channels Display</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callinfo2.png" width="50%">
+<img src="documentation/readme-images/callwalk2.png" width="50%">
 </h2>
 
 ### Budgeting 
