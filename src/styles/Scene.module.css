@@ -2,6 +2,48 @@
   height: 1000px;
 }
 
+.BlackRead {
+  background-color: #000;
+  color: #fff;
+  font-size: .75rem;
+}
+
+.BlackReq {
+  background-color: #212529;
+  color: #fff;
+  font-size: .75rem;
+}
+
+.BlackReq:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.BlackWor {
+  background-color: #2f363c;
+  color: #fff;
+  font-size: .75rem;
+}
+
+.BlackWor:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.BlackFin {
+  background-color: #3b444b;
+  color: #fff;
+  font-size: .75rem;
+}
+
+.Blackfin:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
 .InfoBack {
   background-color: #fff;
 }

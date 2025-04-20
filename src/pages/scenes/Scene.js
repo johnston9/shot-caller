@@ -67,15 +67,6 @@ const Scene = (props) => {
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
     const [showWorkInfo, setShowWorkInfo] = useState(false);
-    
-    // console.log(posts.departments = "camera")
-
-    // const text = 0;
-      
-    //   for (let x of posts.results) {
-    //   if (x.departments === "camera" )
-    //   text => text++;
-    //   console.log(text)  
 
     const handleEdit = () => {
       history.push(`/scenes/${id}/edit`);
@@ -92,7 +83,7 @@ const Scene = (props) => {
 
     /* Functions to get departments total posts  */
 
-      //  const pages = scenes.results.map((scene) => (
+      //  const camtotal = posts.results.map((post) => (
       //   parseFloat(scene.pages)));
       //   function addpages(page) {
       //   return page > 0;
@@ -100,12 +91,74 @@ const Scene = (props) => {
       //   const pagenumbers = pages.filter(addpages);
       //   const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
 
-    /* The following 13 functions take the user to that Scenes 
+        // let filteredValues = posts.map((el) => el.departments === "sound");
+        // let filteredValues = posts.map((el) => 
+        //   el.departments);
+        // console.log(filteredValues)
+
+        // CAMERA
+        const camReqUnopen = posts.filter(post => post.departments === "camera" 
+          && post.category === "requirements" && post.opened_id === null).length;
+        console.log(camReqUnopen)
+
+        const camWorkUnopen = posts.filter(post => post.departments === "camera" 
+          && post.category === "workspace" && post.opened_id === null).length;
+        console.log(camWorkUnopen)
+
+        const camFinUnopen = posts.filter(post => post.departments === "camera" 
+          && post.category === "finals" && post.opened_id === null).length;
+        console.log(camFinUnopen)
+
+        const camReqOpen = posts.filter(post => post.departments === "camera" 
+          && post.category === "requirements" && post.opened_id).length;
+        console.log(camReqOpen)
+
+        const camWorkOpen = posts.filter(post => post.departments === "camera" 
+          && post.category === "workspace" && post.opened_id).length;
+        console.log(camWorkOpen)
+
+        const camFinOpen = posts.filter(post => post.departments === "camera" 
+          && post.category === "finals" && post.opened_id).length;
+        console.log(camFinOpen)
+
+        // result = posts.reduce((a,o)=>(arr1.find(n=>n.completedBy==o.id)?.score || 0)+a,0);
+
+        // for (let key in posts.results) if ()
+        //   { console.log(`${key}: ${mobile[key]}`); }
+
+    /* The following 13 functions take the user to that && el.Item Scenes 
        department and category they choose by setting the 
        useSetCategoryContext, useSetDeptContext, useSetNumberContext,
        and useSetSceneContext 
      * These values will be read in App.js and passed as a filter
        to The /dept/category Route */
+    
+       const handleClickCameraReq = () => {
+        setSceneId(id); 
+        setNumber(number);
+        setDept("camera");
+        setCategory("requirements");
+        history.push(`/dept/category`);
+  
+      };
+
+      const handleClickCameraWor = () => {
+        setSceneId(id); 
+        setNumber(number);
+        setDept("camera");
+        setCategory("workspace");
+        history.push(`/dept/category`);
+  
+      };
+
+      const handleClickCameraFin = () => {
+        setSceneId(id); 
+        setNumber(number);
+        setDept("camera");
+        setCategory("finals");
+        history.push(`/dept/category`);
+  
+      };
 
     const handleClickCamera = (category) => {
       setSceneId(id); 
@@ -527,11 +580,64 @@ const Scene = (props) => {
                   </Row>
                   <Row className='px-2' >
                   <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox} px-0`} >
+                  <Card className={` ${styles.CardBox} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.BlackRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.BlackReq}`} 
+                    onClick={() => handleClickCameraReq() }
+                    // onClick={handleClickCamera("requirements")}
+                    // handleClick={("requirements") => handleClickCamera("requirements") }
+                    >
+                    <Row>
+                    <Col xs={12} className={`text-center`}>
+                    <p>REQUIREMENTS</p>
+                    </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>{camReqOpen} </p></Col>
+                      <Col xs={6} className={`text-center`}><p> {camReqUnopen} </p></Col>
+                    </Row>
+                    </div>
+                    {/* workspace */}
+                    <div className={` ${styles.BlackWor}`}
+                    onClick={() => handleClickCameraWor() }>
+                    <Row>
+                    <Col xs={12} className={`text-center`}>
+                    <p>WORKSPACE</p>
+                    </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>{camWorkOpen} </p></Col>
+                      <Col xs={6} className={`text-center`}><p>{camWorkUnopen} </p></Col>
+                    </Row>
+                    </div>
+                    {/* Finals */}
+                    <div className={` ${styles.BlackFin}`}
+                    onClick={() => handleClickCameraFin() }>
+                    <Row>
+                    <Col xs={12} className={`text-center`}>
+                    <p>FINALS</p>
+                    </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>{camFinOpen} </p></Col>
+                      <Col xs={6} className={`text-center`}><p>{camFinUnopen} </p></Col>
+                    </Row>
+                    </div>
+                      <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                      {/* <DeptDropdown  handleClick={(category) => handleClickCamera(category) } /> */}
+                      </Card> 
+                      {/* <Card className={` ${styles.CardBox} px-0`} >
                       <Card.Img src={dep2} alt="Card image" />
                       <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
                       <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
-                      </Card> 
+                      </Card>  */}
                     </Col>
                     <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                       <Card className={` ${styles.CardBox}`}>

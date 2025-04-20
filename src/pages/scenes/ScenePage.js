@@ -21,6 +21,7 @@ const ScenePage = () => {
             try {
                 const { data } = await axiosReq.get(`/posts/?scene=${id}`);
                 setPosts(data);
+                console.log(data)
             } catch (err) {
                 console.log(err);
               }
@@ -50,7 +51,7 @@ const ScenePage = () => {
                   scene={scene.results[0]} 
                   setScene={setScene}
                   admin={admin}
-                  posts={posts}
+                  posts={posts.results}
                   />
                 </Col>
             </Row>
