@@ -15,17 +15,12 @@ const ScenePage = () => {
     const [posts, setPosts] = useState({ results: [] }); 
     const admin = true;
 
-    // if (scene.department = camera) {
-    //    setCamera(camera + 1) 
-    // }
-
     useEffect(() => {
         /* Fetch Scene posts */
         const fetchPosts = async () => {
             try {
                 const { data } = await axiosReq.get(`/posts/?scene=${id}`);
-                setPosts({ results: [data] });
-                console.log(data)
+                setPosts(data);
             } catch (err) {
                 console.log(err);
               }

@@ -9,7 +9,7 @@
     and bottom half both slightly differently shaded by opacity.
     The top one will say Requirements and the other Workspace both 
     with links to these Post pages. */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {  Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -67,35 +67,15 @@ const Scene = (props) => {
     const history = useHistory();
     const [showInfo, setShowInfo] = useState(false);
     const [showWorkInfo, setShowWorkInfo] = useState(false);
-
     
-    // for (let i = 0; i < posts.length; i++) {
-    //   if (posts[i].departments = 'camera') {
-    //     console.log("www")
-    //   }
-    // }
+    // console.log(posts.departments = "camera")
 
-    // for (var post in posts.results) {
-    //   if (post.departments = 'camera') {
-    //     console.log("www")
-    //   }
-    // }
-
-
-    // const cameravvv = posts.map((post) => (
-    // post.department = "camera"));
-    // console.log(cameravvv)
-    
-    //  posts.results.map((post) => (
-    //   post.department = "camera")
-    //  );
-
-      // const cameraTotal = 0;
-      // posts.forEach(x => 
-      //   (posts.department = "camera") {
-      //     sum += x;
-      // });
-      // console.log(sum);
+    // const text = 0;
+      
+    //   for (let x of posts.results) {
+    //   if (x.departments === "camera" )
+    //   text => text++;
+    //   console.log(text)  
 
     const handleEdit = () => {
       history.push(`/scenes/${id}/edit`);
