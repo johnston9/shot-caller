@@ -83,19 +83,6 @@ const Scene = (props) => {
 
     /* Functions to get departments total posts  */
 
-      //  const camtotal = posts.results.map((post) => (
-      //   parseFloat(scene.pages)));
-      //   function addpages(page) {
-      //   return page > 0;
-      //   }
-      //   const pagenumbers = pages.filter(addpages);
-      //   const pagestotal = pagenumbers.reduce((total, a) => total + a, 0);
-
-        // let filteredValues = posts.map((el) => el.departments === "sound");
-        // let filteredValues = posts.map((el) => 
-        //   el.departments);
-        // console.log(filteredValues)
-
         // CAMERA
         const camReqUnopen = posts.filter(post => post.departments === "camera" 
           && post.category === "requirements" && post.opened_id === null).length;
@@ -121,10 +108,8 @@ const Scene = (props) => {
           && post.category === "finals" && post.opened_id).length;
         console.log(camFinOpen)
 
-        // result = posts.reduce((a,o)=>(arr1.find(n=>n.completedBy==o.id)?.score || 0)+a,0);
 
-        // for (let key in posts.results) if ()
-        //   { console.log(`${key}: ${mobile[key]}`); }
+    // result = posts.reduce((a,o)=>(arr1.find(n=>n.completedBy==o.id)?.score || 0)+a,0);
 
     /* The following 13 functions take the user to that && el.Item Scenes 
        department and category they choose by setting the 
@@ -138,8 +123,7 @@ const Scene = (props) => {
         setNumber(number);
         setDept("camera");
         setCategory("requirements");
-        history.push(`/dept/category`);
-  
+        history.push(`/dept/category`);  
       };
 
       const handleClickCameraWor = () => {
@@ -147,8 +131,7 @@ const Scene = (props) => {
         setNumber(number);
         setDept("camera");
         setCategory("workspace");
-        history.push(`/dept/category`);
-  
+        history.push(`/dept/category`); 
       };
 
       const handleClickCameraFin = () => {
@@ -156,8 +139,7 @@ const Scene = (props) => {
         setNumber(number);
         setDept("camera");
         setCategory("finals");
-        history.push(`/dept/category`);
-  
+        history.push(`/dept/category`);  
       };
 
     const handleClickCamera = (category) => {
@@ -561,6 +543,7 @@ const Scene = (props) => {
               {/* Department Image links Original */}
               {/* Note: Potential changes see trial code below*/} 
               <div>
+              {/* Universal */}
               <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                   <Col className='px-1 px-md-2' xs={4} >
@@ -577,10 +560,11 @@ const Scene = (props) => {
                     <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
                     </Card>
                   </Col>
-                  </Row>
+              </Row>
+              {/* Camera Sound */}
                   <Row className='px-2' >
-                  <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                  <Card className={` ${styles.CardBox} px-0`} >
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <Card className={` ${styles.CardBox} px-0`} >
                     {/* read */}
                     <div className={` ${styles.BlackRead}`}>
                     <Row>
@@ -632,12 +616,12 @@ const Scene = (props) => {
                     </div>
                       <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
                       {/* <DeptDropdown  handleClick={(category) => handleClickCamera(category) } /> */}
-                      </Card> 
-                      {/* <Card className={` ${styles.CardBox} px-0`} >
-                      <Card.Img src={dep2} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                      <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
-                      </Card>  */}
+                    </Card> 
+                    {/* <Card className={` ${styles.CardBox} px-0`} >
+                    <Card.Img src={dep2} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
+                    </Card>  */}
                     </Col>
                     <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                       <Card className={` ${styles.CardBox}`}>

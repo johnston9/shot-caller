@@ -1,6 +1,7 @@
 /* Page to display the links to find Posts 
    by Department */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { axiosReq } from '../../api/axiosDefaults';
 import { Button, Card, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useSetCategoryContext, useSetDeptContext } from '../../contexts/DeptCategoryContext';
@@ -29,19 +30,82 @@ const Departments = () => {
     useRedirect();
     const setDept = useSetDeptContext();
     const setCategory = useSetCategoryContext();
+    const [postsAll, setPostsAll] = useState({ results: [] }); 
+    const admin = true;
+    const posts = postsAll.results;
+    console.log(posts);
 
     const history = useHistory();
+
+    useEffect(() => {
+            /* Fetch all posts */
+            const fetchPosts = async () => {
+                try {
+                    const { data } = await axiosReq.get(`/posts`);
+                    setPostsAll(data);
+                    console.log(data)
+                } catch (err) {
+                    console.log(err);
+                  }
+            }
+            fetchPosts();
+        }, []); 
+
+    /* Functions to get each departments category total posts  */
+
+    // CAMERA
+    const camReqUnopen = posts.filter(post => post.departments === "camera" 
+      && post.category === "requirements" && post.opened_id === null).length;
+    console.log(camReqUnopen)
+
+    const camWorkUnopen = posts.filter(post => post.departments === "camera" 
+      && post.category === "workspace" && post.opened_id === null).length;
+    console.log(camWorkUnopen)
+
+    const camFinUnopen = posts.filter(post => post.departments === "camera" 
+      && post.category === "finals" && post.opened_id === null).length;
+    console.log(camFinUnopen)
+
+    const camReqOpen = posts.filter(post => post.departments === "camera" 
+      && post.category === "requirements" && post.opened_id).length;
+    console.log(camReqOpen)
+
+    const camWorkOpen = posts.filter(post => post.departments === "camera" 
+      && post.category === "workspace" && post.opened_id).length;
+    console.log(camWorkOpen)
+
+    const camFinOpen = posts.filter(post => post.departments === "camera" 
+      && post.category === "finals" && post.opened_id).length;
+    console.log(camFinOpen) 
 
     /* The following 13 functions take the user to Posts
      * in a particular Department and Category
      * They set the Dept and Category Contexts 
      * This will be read on App.js page and passed
        as a filter to the /departments Route*/
+
+       const handleClickCameraReq = () => {
+        setDept("camera");
+        setCategory("requirements");
+        history.push(`/departments`);  
+      };
+
+      const handleClickCameraWor = () => {
+        setDept("camera");
+        setCategory("workspace");
+        history.push(`/departments`); 
+      };
+
+      const handleClickCameraFin = () => {
+        setDept("camera");
+        setCategory("finals");
+        history.push(`/departments`);  
+      };
+
     const handleClickCamera = (category) => {
       setDept("camera");
       setCategory(category);
       history.push(`/departments`);
-
     };
 
     const handleClickSound = (category) => {
@@ -174,6 +238,7 @@ const Departments = () => {
                   <Card.Body>
                   <h3 className={`text-center mt-3`}>Posts by Department</h3>
               <p className='text-center'>Requirements and Finals post are ordered by scene number</p>
+                  {/* Universal */}
                   <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                       <Col className='px-0' xs={4} md={4} lg={4} >
@@ -188,13 +253,68 @@ const Departments = () => {
                         </Card>
                       </Col>
                   </Row>
+                  {/* Camera Sound */}
                     <Row>
-                      <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                        <Card>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <Card className={` ${styles.CardBox} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.BlackRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.BlackReq}`} 
+                    onClick={() => handleClickCameraReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{camReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{camReqUnopen}</p></Col>
+                    </Row>
+                    {/* <Row>
+                      <Col xs={6} className={`text-center`}><p>{camReqOpen} </p></Col>
+                      <Col xs={6} className={`text-center`}><p>{camReqUnopen} </p></Col>
+                    </Row> */}
+                    </div>
+                    {/* workspace */}
+                    <div className={` ${styles.BlackWor}`}
+                    onClick={() => handleClickCameraWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{camWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{camWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    {/* Finals */}
+                    <div className={` ${styles.BlackFin}`}
+                    onClick={() => handleClickCameraFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{camFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{camFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                      {/* <DeptDropdown  handleClick={(category) => handleClickCamera(category) } /> */}
+                    </Card>
+                        {/* <Card>
                         <Card.Img src={dep2} alt="Card image" />
                         <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
                         <DeptDropdown depart handleClick={(category) => handleClickCamera(category) } />
-                        </Card>
+                        </Card> */}
                       </Col>
                       <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                         <Card>
