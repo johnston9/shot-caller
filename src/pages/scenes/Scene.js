@@ -86,32 +86,234 @@ const Scene = (props) => {
         // CAMERA
         const camReqUnopen = posts.filter(post => post.departments === "camera" 
           && post.category === "requirements" && post.opened_id === null).length;
-        console.log(camReqUnopen)
 
         const camWorkUnopen = posts.filter(post => post.departments === "camera" 
           && post.category === "workspace" && post.opened_id === null).length;
-        console.log(camWorkUnopen)
 
         const camFinUnopen = posts.filter(post => post.departments === "camera" 
           && post.category === "finals" && post.opened_id === null).length;
-        console.log(camFinUnopen)
 
         const camReqOpen = posts.filter(post => post.departments === "camera" 
           && post.category === "requirements" && post.opened_id).length;
-        console.log(camReqOpen)
 
         const camWorkOpen = posts.filter(post => post.departments === "camera" 
           && post.category === "workspace" && post.opened_id).length;
-        console.log(camWorkOpen)
 
         const camFinOpen = posts.filter(post => post.departments === "camera" 
           && post.category === "finals" && post.opened_id).length;
-        console.log(camFinOpen)
 
+        // SOUND
+        const souReqUnopen = posts.filter(post => post.departments === "sound" 
+          && post.category === "requirements" && post.opened_id === null).length;
+
+        const souWorkUnopen = posts.filter(post => post.departments === "sound" 
+          && post.category === "workspace" && post.opened_id === null).length;
+
+        const souFinUnopen = posts.filter(post => post.departments === "sound" 
+          && post.category === "finals" && post.opened_id === null).length;
+
+        const souReqOpen = posts.filter(post => post.departments === "sound" 
+          && post.category === "requirements" && post.opened_id).length;
+
+        const souWorkOpen = posts.filter(post => post.departments === "sound" 
+          && post.category === "workspace" && post.opened_id).length;
+
+        const souFinOpen = posts.filter(post => post.departments === "sound" 
+          && post.category === "finals" && post.opened_id).length;
+
+        // LOCATION
+        const locReqUnopen = posts.filter(post => post.departments === "location" 
+          && post.category === "requirements" && post.opened_id === null).length;
+
+        const locWorkUnopen = posts.filter(post => post.departments === "location" 
+          && post.category === "workspace" && post.opened_id === null).length;
+
+        const locFinUnopen = posts.filter(post => post.departments === "location" 
+          && post.category === "finals" && post.opened_id === null).length;
+
+        const locReqOpen = posts.filter(post => post.departments === "location" 
+          && post.category === "requirements" && post.opened_id).length;
+
+        const locWorkOpen = posts.filter(post => post.departments === "location" 
+          && post.category === "workspace" && post.opened_id).length;
+
+        const locFinOpen = posts.filter(post => post.departments === "location" 
+          && post.category === "finals" && post.opened_id).length;
+
+          // SCRIPT
+          const scrReqUnopen = posts.filter(post => post.departments === "script" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const scrWorkUnopen = posts.filter(post => post.departments === "script" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const scrFinUnopen = posts.filter(post => post.departments === "script" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const scrReqOpen = posts.filter(post => post.departments === "script" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const scrWorkOpen = posts.filter(post => post.departments === "script" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const scrFinOpen = posts.filter(post => post.departments === "script" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // ART
+          const artReqUnopen = posts.filter(post => post.departments === "art" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const artWorkUnopen = posts.filter(post => post.departments === "art" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const artFinUnopen = posts.filter(post => post.departments === "art" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const artReqOpen = posts.filter(post => post.departments === "art" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const artWorkOpen = posts.filter(post => post.departments === "art" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const artFinOpen = posts.filter(post => post.departments === "art" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // makeup
+          const makReqUnopen = posts.filter(post => post.departments === "make-up" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const makWorkUnopen = posts.filter(post => post.departments === "make-up" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const makFinUnopen = posts.filter(post => post.departments === "make-up" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const makReqOpen = posts.filter(post => post.departments === "make-up" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const makWorkOpen = posts.filter(post => post.departments === "make-up" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const makFinOpen = posts.filter(post => post.departments === "make-up" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // COSTUME
+          const warReqUnopen = posts.filter(post => post.departments === "wardrobe" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const warWorkUnopen = posts.filter(post => post.departments === "wardrobe" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const warFinUnopen = posts.filter(post => post.departments === "wardrobe" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const warReqOpen = posts.filter(post => post.departments === "wardrobe" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const warWorkOpen = posts.filter(post => post.departments === "wardrobe" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const warFinOpen = posts.filter(post => post.departments === "wardrobe" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // CASTING
+          const casReqUnopen = posts.filter(post => post.departments === "casting" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const casWorkUnopen = posts.filter(post => post.departments === "casting" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const casFinUnopen = posts.filter(post => post.departments === "casting" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const casReqOpen = posts.filter(post => post.departments === "casting" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const casWorkOpen = posts.filter(post => post.departments === "casting" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const casFinOpen = posts.filter(post => post.departments === "casting" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // CASTING
+          const posReqUnopen = posts.filter(post => post.departments === "post" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const posWorkUnopen = posts.filter(post => post.departments === "post" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const posFinUnopen = posts.filter(post => post.departments === "post" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const posReqOpen = posts.filter(post => post.departments === "post" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const posWorkOpen = posts.filter(post => post.departments === "post" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const posFinOpen = posts.filter(post => post.departments === "post" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // PRODUCTION
+          const proReqUnopen = posts.filter(post => post.departments === "production" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const proWorkUnopen = posts.filter(post => post.departments === "production" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const proFinUnopen = posts.filter(post => post.departments === "production" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const proReqOpen = posts.filter(post => post.departments === "production" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const proWorkOpen = posts.filter(post => post.departments === "production" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const proFinOpen = posts.filter(post => post.departments === "production" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // STUNTS
+          const stuReqUnopen = posts.filter(post => post.departments === "stunts" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const stuWorkUnopen = posts.filter(post => post.departments === "stunts" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const stuFinUnopen = posts.filter(post => post.departments === "stunts" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const stuReqOpen = posts.filter(post => post.departments === "stunts" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const stuWorkOpen = posts.filter(post => post.departments === "stunts" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const stuFinOpen = posts.filter(post => post.departments === "stunts" 
+            && post.category === "finals" && post.opened_id).length;
+
+          // ELECTRIC
+          const eleReqUnopen = posts.filter(post => post.departments === "electric" 
+            && post.category === "requirements" && post.opened_id === null).length;
+  
+          const eleWorkUnopen = posts.filter(post => post.departments === "electric" 
+            && post.category === "workspace" && post.opened_id === null).length;
+  
+          const eleFinUnopen = posts.filter(post => post.departments === "electric" 
+            && post.category === "finals" && post.opened_id === null).length;
+  
+          const eleReqOpen = posts.filter(post => post.departments === "electric" 
+            && post.category === "requirements" && post.opened_id).length;
+  
+          const eleWorkOpen = posts.filter(post => post.departments === "electric" 
+            && post.category === "workspace" && post.opened_id).length;
+  
+          const eleFinOpen = posts.filter(post => post.departments === "electric" 
+            && post.category === "finals" && post.opened_id).length;
 
     // result = posts.reduce((a,o)=>(arr1.find(n=>n.completedBy==o.id)?.score || 0)+a,0);
 
-    /* The following 13 functions take the user to that && el.Item Scenes 
+    /* The following 13 functions take the user to that Scenes 
        department and category they choose by setting the 
        useSetCategoryContext, useSetDeptContext, useSetNumberContext,
        and useSetSceneContext 
@@ -151,6 +353,30 @@ const Scene = (props) => {
 
     };
 
+    const handleClickSoundReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("sound");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickSoundWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("sound");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickSoundFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("sound");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
     const handleClickSound = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -160,6 +386,30 @@ const Scene = (props) => {
 
     };
 
+    const handleClickLocationReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("location");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickLocationWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("location");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickLocationFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("location");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
     const handleClickLocation = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -167,6 +417,30 @@ const Scene = (props) => {
       setCategory(category);
       history.push(`/dept/category`);
 
+    };
+    
+    const handleClickScriptReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("script");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickScriptWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("script");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickScriptFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("script");
+      setCategory("finals");
+      history.push(`/dept/category`);  
     };
 
     const handleClickScript = (category) => {
@@ -178,6 +452,30 @@ const Scene = (props) => {
 
     };
 
+    const handleClickArtReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("art");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickArtWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("art");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickArtFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("art");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
     const handleClickArt = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -185,6 +483,30 @@ const Scene = (props) => {
       setCategory(category);
       history.push(`/dept/category`);
 
+    };
+
+    const handleClickMakeupReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("make-up");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickMakeupWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("make-up");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickMakeupFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("make-up");
+      setCategory("finals");
+      history.push(`/dept/category`);  
     };
 
     const handleClickMakeup = (category) => {
@@ -196,6 +518,30 @@ const Scene = (props) => {
 
     };
 
+    const handleClickWardrobeReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("wardrobe");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickWardrobeWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("wardrobe");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickWardrobeFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("wardrobe");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
     const handleClickWardrobe = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -205,6 +551,30 @@ const Scene = (props) => {
 
     };
 
+    const handleClickCastingReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("casting");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickCastingWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("casting");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickCastingFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("casting");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
     const handleClickCasting = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -212,6 +582,30 @@ const Scene = (props) => {
       setCategory(category);
       history.push(`/dept/category`);
 
+    }; 
+
+    const handleClickPostReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("post");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickPostWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("post");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickPostFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("post");
+      setCategory("finals");
+      history.push(`/dept/category`);  
     };
 
     const handleClickPost = (category) => {
@@ -223,6 +617,30 @@ const Scene = (props) => {
 
     };
 
+    const handleClickProductionReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("production");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickProductionWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("production");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickProductionFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("production");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
     const handleClickProduction = (category) => {
       setSceneId(id); 
       setNumber(number);
@@ -230,6 +648,30 @@ const Scene = (props) => {
       setCategory(category);
       history.push(`/dept/category`);
 
+    };
+
+    const handleClickStuntsReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("stunts");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickStuntsWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("stunts");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickStuntsFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("stunts");
+      setCategory("finals");
+      history.push(`/dept/category`);  
     };
 
     const handleClickStunts = (category) => {
@@ -241,10 +683,66 @@ const Scene = (props) => {
 
     };
 
+    const handleClickElectricReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("electric");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickElectricWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("electric");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickElectricFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("electric");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
     const handleClickElectric = (category) => {
       setSceneId(id); 
       setNumber(number);
       setDept("electric");
+      setCategory(category);
+      history.push(`/dept/category`);
+    };
+
+    const handleClickUniversalReq = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("universal");
+      setCategory("requirements");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickUniversalWor = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("universal");
+      setCategory("workspace");
+      history.push(`/dept/category`); 
+    };
+
+    const handleClickUniversalFin = () => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("universal");
+      setCategory("finals");
+      history.push(`/dept/category`);  
+    };
+
+    const handleClickUni = (category) => {
+      setSceneId(id); 
+      setNumber(number);
+      setDept("universal");
       setCategory(category);
       history.push(`/dept/category`);
     };
@@ -256,14 +754,6 @@ const Scene = (props) => {
     //   setCategory("");
     //   history.push(`/dept/category`);
     // };
-
-    const handleClickUni = (category) => {
-      setSceneId(id); 
-      setNumber(number);
-      setDept("universal");
-      setCategory(category);
-      history.push(`/dept/category`);
-    };
 
     const handleClickMoods = () => {
       /* Function to open the Scene MoodBoards page
@@ -422,8 +912,7 @@ const Scene = (props) => {
                   </Row>  
               </div>
               </div>
-              {/* Breakdown CharactersBG Script Moodboards 
-                  Storyboard Slotlist ShotStory */}
+              {/* Breakdown CharactersBG Script Moodboards Storyboard Slotlist ShotStory */}
               <div>
               {!showBreak ? (
                       ""
@@ -540,19 +1029,12 @@ const Scene = (props) => {
                   </Col>
               </Row>
               </div>
-              {/* Department Image links Original */}
-              {/* Note: Potential changes see trial code below*/} 
+              {/* Department Image links New April 2025 */}
               <div>
               {/* Universal */}
               <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                   <Col className='px-1 px-md-2' xs={4} >
-                    {/* <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
-                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
-                     src={dep8} alt="Card image" />
-                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
-                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
-                    </Card> */}
                     <Card className={` ${styles.CardBox}`} >
                     <Card.Img height={100} className={`text-center ${styles.UniImg}`}
                      src={dep8} alt="Card image" />
@@ -561,8 +1043,9 @@ const Scene = (props) => {
                     </Card>
                   </Col>
               </Row>
-              {/* Camera Sound */}
+              {/* Camera Sound ... */}
                   <Row className='px-2' >
+                    {/* Camera */}
                     <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                     <Card className={` ${styles.CardBox} px-0`} >
                     {/* read */}
@@ -574,10 +1057,7 @@ const Scene = (props) => {
                     </div>
                     {/* requirements */}
                     <div className={` ${styles.BlackReq}`} 
-                    onClick={() => handleClickCameraReq() }
-                    // onClick={handleClickCamera("requirements")}
-                    // handleClick={("requirements") => handleClickCamera("requirements") }
-                    >
+                    onClick={() => handleClickCameraReq() }>
                     <Row>
                     <Col xs={12} className={`text-center`}>
                     <p>REQUIREMENTS</p>
@@ -622,6 +1102,262 @@ const Scene = (props) => {
                     <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
                     <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
                     </Card>  */}
+                    </Col>
+                    {/* Sound */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <Card className={` ${styles.CardBox} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.BlackRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.BlackReq}`} 
+                    onClick={() => handleClickSoundReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{souReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{souReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    {/* workspace */}
+                    <div className={` ${styles.BlackWor}`}
+                    onClick={() => handleClickSoundWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{souWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{souWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    {/* Finals */}
+                    <div className={` ${styles.BlackFin}`}
+                    onClick={() => handleClickSoundFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{souFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{souFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      <Card.Title className={`text-center ${styles.Title}`} >SOUND</Card.Title>
+                    </Card>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2}`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={`text-center ${styles.AquaReq}`}
+                    onClick={() => handleClickScriptReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{scrReqOpen}</p></Col>
+                    <Col xs={8} >
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{scrReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.AquaWork}`}
+                    onClick={() => handleClickScriptWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{scrWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{scrWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.AquaFin}`}
+                    onClick={() => handleClickScriptFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{scrFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{scrFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>SCRIPT</p>
+                      {/* <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep5} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickScript(category) } />
+                      </Card> */}
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep6} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickArt(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep7} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep9} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep1} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep10} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickPost(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep11} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep12} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep13} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
+                      </Card>
+                    </Col>
+                  </Row>
+              </div>
+
+              {/* Department Image links Original */}
+              <div>
+              {/* Universal */}
+              <Row className={`mt-1`} >
+                  <Col xs={4}  ></Col>
+                  <Col className='px-1 px-md-2' xs={4} >
+                    {/* <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
+                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
+                     src={dep8} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
+                    </Card> */}
+                    <Card className={` ${styles.CardBox}`} >
+                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
+                     src={dep8} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
+                    </Card>
+                  </Col>
+              </Row>
+              {/* Camera Sound */}
+                  <Row className='px-2' >
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <Card className={` ${styles.CardBox} px-0`} >
+                    <Card.Img src={dep2} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
+                    </Card> 
                     </Col>
                     <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
                       <Card className={` ${styles.CardBox}`}>
@@ -702,14 +1438,10 @@ const Scene = (props) => {
                     </Col>
                   </Row>
               </div>
-              {/* Department Image links - NEW TRIAL code*/}
-              {/* Potential changes to the department images:
-                  A/ The categories Finals, Shooting and Info will be removed
-                  B/ The actual image when clicked opens the dropdowm menu
-                  C/ Or the department images will be changed to have a top half
-                    and bottom half both slightly differently shaded by opacity.
-                    The top one will say Requirements and the other Workspace both 
-                    with links to these Post pages.  */}
+
+
+
+              {/* Department Image links - old NEW TRIAL code*/}
               {/* <div>
               <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>

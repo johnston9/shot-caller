@@ -2,10 +2,86 @@
   height: 1000px;
 }
 
+.Title {
+  font-size: 1em;
+}
+
 .BlackRead {
   background-color: #000;
   color: #fff;
   font-size: .75rem;
+}
+
+.WhiteRead {
+  background-color: #fff;
+  color: rgb(140, 111, 25, 99%);
+  color: #000;
+  font-size: .75rem;
+}
+
+.WhiteReq {
+  background-color: #fff;
+  color: rgb(140, 111, 25, 99%);
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+.WhiteReq:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.WhiteBackReq {
+  background-color: #fff;
+  color: rgb(31, 202, 202);
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+.WhiteBackReq:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.AquaReq {
+  background-color: aqua;
+  color: rgb(140, 111, 25, 99%);
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+.AquaReq:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.AquaWork {
+  background-color: rgb(120, 240, 240);
+  color: rgb(140, 111, 25, 99%);
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+.AquaWork:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.AquaFin {
+  background-color: aqua;
+  color: rgb(140, 111, 25, 99%);
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+.AquaFin:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
 }
 
 .BlackReq {
@@ -470,10 +546,19 @@ background: #ffffff;
 }
 
 .CardBox {
+  margin-top: 20px;
   border: 1px solid #fff;
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
-  height: 150px;
+  /* height: 150px; 1px solid #c1f1f7 */
+}
+
+.CardBox2 {
+  margin-top: 20px;
+  border: 3px solid #85ebf8;
+  transition-timing-function: ease;
+  transition: border .5s, background-color .5s, transform .5s;
+  /* height: 125px; */
 }
 
 .CardBox:hover {
@@ -580,7 +665,8 @@ background: #ffffff;
 
 .Red {
   color: crimson;
-  color: #f7a3f7;
+  color: rgb(140, 111, 25, 99%);
+  color: #000;
 }
 
 .Width {
