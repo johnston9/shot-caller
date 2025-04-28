@@ -6,6 +6,13 @@
   font-size: 1em;
 }
 
+.Small {
+  font-size: .65rem;
+}
+/* .CardBox7 {
+  font-size: .75rem;
+} */
+
 .BlackRead {
   background-color: #000;
   color: #fff;
@@ -292,6 +299,7 @@ background: #ffffff;
 .DeptImageBox {
   background-color: #000;
   color: #fff;
+  font-size: .60rem;
 }
 
 .DeptImageBox:hover {
@@ -555,7 +563,7 @@ background: #ffffff;
 
 .CardBox2 {
   margin-top: 20px;
-  border: 3px solid #85ebf8;
+  border: 2px solid #85ebf8;
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
   /* height: 125px; */

@@ -1029,12 +1029,20 @@ const Scene = (props) => {
                   </Col>
               </Row>
               </div>
-              {/* Department Image links New April 2025 */}
-              <div>
+              
+              {/* Department Image links Original */}
+              <div >
+              <h1>NO 1</h1>
               {/* Universal */}
               <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
                   <Col className='px-1 px-md-2' xs={4} >
+                    {/* <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
+                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
+                     src={dep8} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
+                    </Card> */}
                     <Card className={` ${styles.CardBox}`} >
                     <Card.Img height={100} className={`text-center ${styles.UniImg}`}
                      src={dep8} alt="Card image" />
@@ -1043,6 +1051,922 @@ const Scene = (props) => {
                     </Card>
                   </Col>
               </Row>
+              {/* Camera Sound */}
+                  <Row className='px-2' >
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <Card className={` ${styles.CardBox} px-0`} >
+                    <Card.Img src={dep2} alt="Card image" />
+                    <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
+                    <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
+                    </Card> 
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep3} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickSound(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep4} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep5} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickScript(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep6} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickArt(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep7} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep9} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep1} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep10} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickPost(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep11} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep12} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep13} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
+                      </Card>
+                    </Col>
+                  </Row>
+              </div>
+
+            {/* Department Image links New April 2025 all white */}
+            <div className='mt-5 pt-5'>
+            <h1>NO 2</h1>
+              {/* Camera Sound ... */}
+              <Row>
+              {/* Location */}
+              <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+                    {/* Location */}
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-0`} >
+                    {/* read */}
+                    <div className={` ${styles.WhiteRead}`}>
+                    <Row>
+                      <Col xs={6} className={`text-center`}><p>Read</p></Col>
+                      <Col xs={6} className={`text-center`}><p>Unread</p></Col>
+                    </Row>
+                    <hr className='my-0'/>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq}`} 
+                    onClick={() => handleClickLocationReq() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationWor() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    <hr className='my-0'/>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq}`}
+                    onClick={() => handleClickLocationFin() }>
+                    <Row className='py-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p> FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        LOCATION</Card.Title> */}
+                    </div>
+                    <p className={`text-center ${styles.Bold}`}>LOCATION</p>
+                    </Col>
+              </Row>
+              </div>
+
+              {/* Department Image links - old NEW TRIAL code*/}
+              <div className={` ${styles.CardBox7} mt-5 pt-5`}>
+              <h1>NO 3</h1>
+                  <Row className='px-2' >
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                    <Row className={` ${styles.Small} text-center`}>
+                      <Col xs={6}>
+                      <p className='float-left pl-1'>READ</p>
+                      </Col>
+                      <Col xs={6}>
+                      <p className='float-right pl-1'>UNREAD</p>
+                      </Col>
+                      </Row>
+                      <Card className={ `${styles.Small} px-0`} >
+                      <Card.Img src={dep2} alt="Card image" className='px-0'/>
+                      <Card.ImgOverlay className='px-0 text-center pt-3 ' > 
+                      <div onClick={() => handleClickLocationReq()}>                  
+                      <Row className={` ${styles.DeptImageBox} mx-0 py-1`}>
+                      <Col xs={2} className='px-0'><p>{camReqUnopen}</p> </Col>
+                      <Col xs={8} className='px-0'><p>REQUIREMENTS</p> </Col>
+                      <Col xs={2} className='px-0'><p>{camReqUnopen}</p> </Col>
+                      </Row>
+                      </div>
+                      {/* <Row className={` ${styles.DeptImageBox} mx-0 py-1`}>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center px-0`}>
+                    <p> REQUIREMENTS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{locReqUnopen}</p></Col>
+                    </Row> */}
+                    <div onClick={() => handleClickLocationWor()}>
+                      <Row className={` ${styles.DeptImageBox} mx-1 py-1 mt-3`}>
+                      <Col xs={2} className='px-0'><p>{camReqUnopen}</p> </Col>
+                      <Col xs={8} className='px-0'><p>WORKSPACE</p> </Col>
+                      <Col xs={2} className='px-0'><p>{camReqUnopen}</p> </Col>
+                      </Row>
+                      </div>
+                      <div onClick={() => handleClickLocationFin()}>
+                      <Row className={` ${styles.DeptImageBox} mx-1 mt-3 py-1`}>
+                      <Col xs={2} className='px-0'><p>{camReqUnopen}</p> </Col>
+                      <Col xs={8} className='px-0'><p>FINALS</p> </Col>
+                      <Col xs={2} className='px-0'><p>{camReqUnopen}</p> </Col>
+                      </Row>
+                      </div>
+                      </Card.ImgOverlay>
+                      {/* <Card.Title className={`text-center ${styles.Title}`} >
+                        Camera</Card.Title>                           */}
+                      </Card> 
+                      <p className={` ${styles.BoldScene} text-center`}>CAMERA</p>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep3} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickSound(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep4} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep5} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickScript(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep6} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickArt(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep7} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep9} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep1} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep10} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickPost(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep11} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep12} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
+                      </Card>
+                    </Col>
+                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
+                      <Card className={` ${styles.CardBox}`}>
+                      <Card.Img src={dep13} alt="Card image" />
+                      <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
+                      <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
+                      </Card>
+                    </Col>
+                  </Row>
+              </div>
+
+              {/* Department Image links New April 2025 */}
+              <div className='mt-5 pt-5'>
+                <h1>NO 4</h1>
               {/* Camera Sound ... */}
                   <Row className='px-2' >
                     {/* Camera */}
@@ -1329,226 +2253,6 @@ const Scene = (props) => {
                     </Col>
                   </Row>
               </div>
-
-              {/* Department Image links Original */}
-              <div>
-              {/* Universal */}
-              <Row className={`mt-1`} >
-                  <Col xs={4}  ></Col>
-                  <Col className='px-1 px-md-2' xs={4} >
-                    {/* <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
-                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
-                     src={dep8} alt="Card image" />
-                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
-                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
-                    </Card> */}
-                    <Card className={` ${styles.CardBox}`} >
-                    <Card.Img height={100} className={`text-center ${styles.UniImg}`}
-                     src={dep8} alt="Card image" />
-                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
-                    <DeptDropdown  handleClick={(category) => handleClickUni(category) } />
-                    </Card>
-                  </Col>
-              </Row>
-              {/* Camera Sound */}
-                  <Row className='px-2' >
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <Card className={` ${styles.CardBox} px-0`} >
-                    <Card.Img src={dep2} alt="Card image" />
-                    <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                    <DeptDropdown  handleClick={(category) => handleClickCamera(category) } />
-                    </Card> 
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep3} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickSound(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep4} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep5} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickScript(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep6} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickArt(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep7} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep9} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep1} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep10} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickPost(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep11} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep12} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep13} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
-                      </Card>
-                    </Col>
-                  </Row>
-              </div>
-
-
-
-              {/* Department Image links - old NEW TRIAL code*/}
-              {/* <div>
-              <Row className={`mt-1`} >
-                  <Col xs={4}  ></Col>
-                  <Col className='px-1 px-md-2' xs={4} >
-                    <Card className={` ${styles.CardBox}`} onClick={() => handleClickUniversal()}>
-                    <Card.Img height={100} className={`text-center ${styles.UniImg}`} src={dep8} alt="Card image" />
-                    <Card.Title className={`text-center ${styles.Title}`} >Universal</Card.Title>
-                    </Card>
-                  </Col>
-                  </Row>
-                  <Row className='px-2' >
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={ `px-0`} >
-                      <Card.Img src={dep2} alt="Card image" className='px-0'/>
-                      <Card.ImgOverlay className='px-0 text-center ' >
-                      <Card.Title 
-                      className={` ${styles.DeptImageBox}  px-0`} >
-                        Requirements</Card.Title>
-                      <Card.Title 
-                      className={` ${styles.DeptImageBox} mt-4 px-0`} >
-                        Workspace</Card.Title>
-                      </Card.ImgOverlay>
-                      <Card.Title className={`text-center ${styles.Title}`} >Camera</Card.Title>
-                      <DeptDropdown  handleClick={(category) => handleClickCamera(category) }
-                                      className={` ${styles.Drop}`} />
-                          
-                      </Card> 
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep3} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Sound</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickSound(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep4} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Location</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickLocation(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep5} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Script</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickScript(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep6} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Art</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickArt(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep7} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Makeup</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickMakeup(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep9} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Wardrobe</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickWardrobe(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep1} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Casting</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickCasting(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep10} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Post</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickPost(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep11} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Production</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickProduction(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep12} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Stunts</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickStunts(category) } />
-                      </Card>
-                    </Col>
-                    <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                      <Card className={` ${styles.CardBox}`}>
-                      <Card.Img src={dep13} alt="Card image" />
-                      <Card.Title className={`text-center ${styles.Title}`} >Electric</Card.Title>
-                      <DeptDropdown handleClick={(category) => handleClickElectric(category) } />
-                      </Card>
-                    </Col>
-                  </Row>
-              </div> */}
             </>
           ) }
         </div>
