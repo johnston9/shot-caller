@@ -12,7 +12,7 @@
 
 .CardBox2 {
   margin-top: 20px;
-  border: 2px solid rgb(140, 111, 25, 99%);
+  border: 1px solid rgb(140, 111, 25, 99%);
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
   /* height: 125px; */
