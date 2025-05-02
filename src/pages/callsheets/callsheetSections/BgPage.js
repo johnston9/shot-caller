@@ -17,6 +17,7 @@ const BgPage = (props) => {
         <div className='d-none d-md-block'>
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
         style={{ textTransform: 'uppercase' }}>BACKGROUND / STANDINS</span>
+        <hr className={`mb-2 pl-3 mt-0 pt-1 ${styles.Break5 }`}/>
         {/* titles */}
         <Row >
         <Col md={6}>

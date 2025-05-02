@@ -2187,19 +2187,25 @@ const Scene = (props) => {
               </Row>
             </div>
 
+            {/* style={{ backgroundColor: 'rgb(223 254 240)'}}
+            style={{ backgroundColor: '#dbfaf9'}}
+            style={{ backgroundColor: 'rgb(248 241 249)'}} */}
+
             {/* Department Image links New April 2025 all white small on mobile */}
             <div className='mt-5 pt-5'>
             <h1>NO 3 - White Small on mobile</h1>
               {/* Camera Sound ... */}
               <Row className='px-2'>
               {/* Location */}
-              <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+              <Col className='px-2 px-md-2' xs={4} md={3} lg={2} >
+                    <div className={` ${styles.CardBox2} px-2`}
+                    style={{ backgroundColor: 'rgb(248 241 249)'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
                       <Col xs={6} className={`text-center pr-5`}><p>Read</p></Col>
-                      <Col xs={6} className={`text-center pl-5`}><p>Unread</p></Col>
+                      <Col xs={6} className={`text-center pl-2`}><p>Unread</p></Col>
                     </Row>
                     <hr className='my-0'/>
                     </div>
@@ -2214,7 +2220,7 @@ const Scene = (props) => {
                     {/* requirements */}
                     <div className={` ${styles.WhiteReq}`} 
                     onClick={() => handleClickLocationReq() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2229,7 +2235,7 @@ const Scene = (props) => {
                     {/* workspace */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationWor() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2244,7 +2250,7 @@ const Scene = (props) => {
                     {/* Finals */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationFin() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2262,7 +2268,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: '#dbfaf9'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2282,7 +2290,7 @@ const Scene = (props) => {
                     {/* requirements */}
                     <div className={` ${styles.WhiteReq}`} 
                     onClick={() => handleClickLocationReq() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2297,7 +2305,7 @@ const Scene = (props) => {
                     {/* workspace */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationWor() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2312,7 +2320,7 @@ const Scene = (props) => {
                     {/* Finals */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationFin() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2330,7 +2338,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: 'rgb(223 254 240)'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2350,7 +2360,7 @@ const Scene = (props) => {
                     {/* requirements */}
                     <div className={` ${styles.WhiteReq}`} 
                     onClick={() => handleClickLocationReq() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2365,7 +2375,7 @@ const Scene = (props) => {
                     {/* workspace */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationWor() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2380,7 +2390,7 @@ const Scene = (props) => {
                     {/* Finals */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationFin() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2398,7 +2408,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: '#dbfaf9'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2418,7 +2430,7 @@ const Scene = (props) => {
                     {/* requirements */}
                     <div className={` ${styles.WhiteReq}`} 
                     onClick={() => handleClickLocationReq() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locReqOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2433,7 +2445,7 @@ const Scene = (props) => {
                     {/* workspace */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationWor() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locWorkOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2448,7 +2460,7 @@ const Scene = (props) => {
                     {/* Finals */}
                     <div className={` ${styles.WhiteReq}`}
                     onClick={() => handleClickLocationFin() }>
-                    <Row className='py-1 py-md-2'>
+                    <Row className='py-2 py-md-2'>
                     <Col xs={2} className={`text-center px-0`}>
                     <p className={`float-right ${styles.Red}`}>{locFinOpen}</p></Col>
                     <Col xs={8} className={`text-center`}>
@@ -2466,7 +2478,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: 'rgb(223 254 240)'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2535,7 +2549,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`}
+                    style={{ backgroundColor: 'rgb(248 241 249)'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2603,7 +2619,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: 'rgb(248 241 249)'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2671,7 +2689,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: 'rgb(223 254 240)'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2739,7 +2759,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: '#dbfaf9'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2807,7 +2829,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`}
+                    style={{ backgroundColor: '#dbfaf9'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2875,7 +2899,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`}
+                    style={{ backgroundColor: 'rgb(248 241 249)'}}
+                     >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
@@ -2944,7 +2970,9 @@ const Scene = (props) => {
               </Col>
               {/* Location */}
               <Col className='px-1 px-md-2' xs={4} md={3} lg={2} >
-                    <div className={` ${styles.CardBox2} px-2`} >
+                    <div className={` ${styles.CardBox2} px-2`} 
+                    style={{ backgroundColor: 'rgb(223 254 240)'}}
+                    >
                       {/* read */}
                     <div className={`d-none d-sm-block ${styles.WhiteRead}`}>
                     <Row>
