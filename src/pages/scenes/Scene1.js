@@ -150,7 +150,7 @@ const camReqUnopen = posts.filter(post => post.departments === "camera"
     const casFinOpen = posts.filter(post => post.departments === "casting" 
       && post.category === "finals" && post.opened_id).length;
 
-    // CASTING
+    // POST
     const posReqUnopen = posts.filter(post => post.departments === "post" 
       && post.category === "requirements" && post.opened_id === null).length;
 
