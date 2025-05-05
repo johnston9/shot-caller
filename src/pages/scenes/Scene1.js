@@ -225,3 +225,22 @@ const camReqUnopen = posts.filter(post => post.departments === "camera"
 
     const eleFinOpen = posts.filter(post => post.departments === "electric" 
       && post.category === "finals" && post.opened_id).length;
+
+    // UNIVERSAL
+    const uniReqUnopen = posts.filter(post => post.departments === "universal" 
+      && post.category === "requirements" && post.opened_id === null).length;
+
+    const uniWorkUnopen = posts.filter(post => post.departments === "universal" 
+      && post.category === "workspace" && post.opened_id === null).length;
+
+    const uniFinUnopen = posts.filter(post => post.departments === "universal" 
+      && post.category === "finals" && post.opened_id === null).length;
+
+    const uniReqOpen = posts.filter(post => post.departments === "universal" 
+      && post.category === "requirements" && post.opened_id).length;
+
+    const uniWorkOpen = posts.filter(post => post.departments === "universal" 
+      && post.category === "workspace" && post.opened_id).length;
+
+    const uniFinOpen = posts.filter(post => post.departments === "universal" 
+      && post.category === "finals" && post.opened_id).length;

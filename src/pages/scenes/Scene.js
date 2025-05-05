@@ -311,6 +311,25 @@ const Scene = (props) => {
           const eleFinOpen = posts.filter(post => post.departments === "electric" 
             && post.category === "finals" && post.opened_id).length;
 
+          // UNIVERSAL
+    const uniReqUnopen = posts.filter(post => post.departments === "universal" 
+      && post.category === "requirements" && post.opened_id === null).length;
+
+    const uniWorkUnopen = posts.filter(post => post.departments === "universal" 
+      && post.category === "workspace" && post.opened_id === null).length;
+
+    const uniFinUnopen = posts.filter(post => post.departments === "universal" 
+      && post.category === "finals" && post.opened_id === null).length;
+
+    const uniReqOpen = posts.filter(post => post.departments === "universal" 
+      && post.category === "requirements" && post.opened_id).length;
+
+    const uniWorkOpen = posts.filter(post => post.departments === "universal" 
+      && post.category === "workspace" && post.opened_id).length;
+
+    const uniFinOpen = posts.filter(post => post.departments === "universal" 
+      && post.category === "finals" && post.opened_id).length;
+
     // result = posts.reduce((a,o)=>(arr1.find(n=>n.completedBy==o.id)?.score || 0)+a,0);
 
     /* The following 13 functions take the user to that Scenes 
@@ -1145,13 +1164,65 @@ const Scene = (props) => {
                   </Row>
               </div>          
 
-            {/* style={{ backgroundColor: 'rgb(223 254 240)'}}
-            style={{ backgroundColor: '#dbfaf9'}}
-            style={{ backgroundColor: 'rgb(248 241 249)'}} */}
-
             {/* Department Image all white with color */}
             <div className='mt-5 pt-5'>
-            <h1>NO 2 - White with color</h1>
+              {/* Universal */}
+              <Row className={`mt-1`} >
+                  <Col xs={2} md={4}  ></Col>
+                  <Col className='px-1 px-md-2' xs={8} md={4} >
+                  <div className={` ${styles.CardBox2} px-2`}
+                    style={{ backgroundColor: 'rgb(248 241 249)'}}
+                    >
+                      {/* read */}
+                    <div className={`${styles.WhiteRead} mt-1`}>
+                    <Row>
+                    <Col xs={12} className={``}><p className='pl-3'>Read <span className='pr-3 float-right'>Unread</span> </p></Col>
+                    </Row>
+                    </div>
+                    {/* requirements */}
+                    <div className={` ${styles.WhiteReq} mt-1`} 
+                    onClick={() => handleClickUniversalReq() }>
+                    <Row className='py-2 py-md-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{uniReqOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p className={`${styles.WhiteReq1} d-none d-sm-block`}> REQUIREMENTS</p>
+                    <p className={`${styles.WhiteReq1} d-block d-sm-none`}> REQUIREM.</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`${styles.Red} float-left`}>{uniReqUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    {/* workspace */}
+                    <div className={` ${styles.WhiteReq} mt-1`}
+                    onClick={() => handleClickUniversalWor() }>
+                    <Row className='py-2 py-md-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{uniWorkOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p > WORKSPACE</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{uniWorkUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    {/* Finals */}
+                    <div className={` ${styles.WhiteReq} my-1`}
+                    onClick={() => handleClickUniversalFin() }>
+                    <Row className='py-2 py-md-2'>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-right ${styles.Red}`}>{uniFinOpen}</p></Col>
+                    <Col xs={8} className={`text-center`}>
+                    <p > FINALS</p>
+                    </Col>
+                    <Col xs={2} className={`text-center px-0`}>
+                    <p className={`float-left ${styles.Red}`}>{uniFinUnopen}</p></Col>
+                    </Row>
+                    </div>
+                    </div>
+                    <p className={`text-center pt-1 ${styles.Bold}`}>UNIVERSAL</p>
+                  </Col>
+              </Row>
               {/* Camera Sound ... */}
               <Row className='px-2'>
               {/* CAMERA 1*/}
@@ -1903,7 +1974,7 @@ const Scene = (props) => {
                     <p className={`text-center ${styles.Bold}`}>ELECTRIC/GRIP</p>
               </Col>
               </Row>
-              </div>
+            </div>
 
             {/* Department Image links New April 2025 all white small on mobile with color */}
             <div className='mt-5 pt-5'>
