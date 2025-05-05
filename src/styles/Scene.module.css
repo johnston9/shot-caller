@@ -2,6 +2,12 @@
   height: 1000px; 
 }
 
+/* .GoToScene:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+} */
+
 .Title {
   font-size: 1em;
 }

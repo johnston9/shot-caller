@@ -3,6 +3,12 @@
   color: #fff;
 }
 
+.GoToScene:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
 .GoldDark {
   color: rgba(129, 102, 21, 0.99);
 }

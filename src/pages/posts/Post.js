@@ -62,6 +62,15 @@ const Post = (props) => {
         setDept(departments);
         setCategory(category);
         history.push(`/dept/category`);
+        console.log("wwwwwccccc")
+      };
+
+      const handleGoToScene2 = () => {
+        /* Function to go to the post's Scene page 
+           and it's Department Category
+        *  Sets the Contexts SceneId, Number, Category 
+           ans Dept to be read in App.js*/
+        console.log("wwwwww")
       };
 
       const handleEdit = () => {
@@ -293,11 +302,11 @@ const Post = (props) => {
                 </div> 
             </Col> 
             <Col xs={12} sm={6} className="my-1" >
-            <div onClick={() => handleGoToScene() }>
-            <Row className={`${styles.Content3} py-2 my-0 mr-1 ml-1`}>
+            <div className={`${styles.GoToScene}`} onClick={() => handleGoToScene() }>
+            <Row className={` py-2 my-0 mr-1 ml-1`}>
                 <Col xs={12} 
                 className={` text-center`} >
-                <Row>
+                <Row >
                 <Col className='px-0 mx-0' xs={4}>
                 {number && <p style={{ fontWeight: '700' }}>Scene {number} </p>}
                 </Col>
@@ -409,7 +418,7 @@ const Post = (props) => {
             </Row>
             </Card.Body>
               {/* title */}
-              <Card.Body className='py-1 px-5 text-center'  >
+              <Card.Body className='py-1 px-5 text-center'>
                   {title && <h4 style={{ fontStyle: 'italic' }}
                   className="mb-0 pb-0">{title}</h4>}
                   <hr />
