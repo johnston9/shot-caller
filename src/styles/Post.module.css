@@ -92,6 +92,13 @@
   font-weight: 700;
 }
 
+.ContentOpened2 {
+  background-color: rgba(129, 102, 21, 0.99);
+  color: #000;
+  cursor: pointer;
+  font-weight: 700;
+}
+
 .ContentTitleOpened {
   color: #747686;
   font-weight: 400;

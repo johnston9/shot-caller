@@ -154,9 +154,9 @@ const PostTop = (props) => {
           <Card className={ `py-0 mt-1 mb-0`}>
             <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
             <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
-            <Col xs={12} sm={3} className="my-0" >
+            <Col xs={12} md={3} className="my-0" >
                 {/* small */}
-                <div className='d-none d-sm-block'>
+                <div className='d-none d-md-block'>
                 <Row >
                 <Col xs={3} className="pl-3 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
@@ -178,7 +178,7 @@ const PostTop = (props) => {
                 </Row>   
                 </div>     
                 {/* mobile */}
-                <div className='d-sm-none'>
+                <div className='d-md-none'>
                 <Row className='pb-0 mb-0'>
                 <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
                 <Link to={`/profiles/${profile_id}`}>
@@ -283,7 +283,7 @@ const PostTop = (props) => {
                 </Row>  
                 </div> 
             </Col> 
-            <Col xs={12} sm={6} className="my-1" >
+            <Col xs={12} md={6} className="my-1" >
             <Link to={`/posts/${id}`}>
             {opened_id ? (
               <Row className={`${styles.ContentOpened} pt-1 my-0 mr-1 ml-1`}>
@@ -340,8 +340,8 @@ const PostTop = (props) => {
             </Link>
             </Col>
             {/* edit and date small */}
-            <Col xs={12} sm={3} className="my-0 " >
-            <div className='d-none d-sm-block'>
+            <Col xs={12} md={3} className="my-0 " >
+            <div className='d-none d-md-block'>
             <Row >
             <Col sm={3}
             className="d-flex align-items-center px-0 float-right" >

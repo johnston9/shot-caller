@@ -62,15 +62,6 @@ const Post = (props) => {
         setDept(departments);
         setCategory(category);
         history.push(`/dept/category`);
-        console.log("wwwwwccccc")
-      };
-
-      const handleGoToScene2 = () => {
-        /* Function to go to the post's Scene page 
-           and it's Department Category
-        *  Sets the Contexts SceneId, Number, Category 
-           ans Dept to be read in App.js*/
-        console.log("wwwwww")
       };
 
       const handleEdit = () => {
@@ -301,27 +292,36 @@ const Post = (props) => {
                 </Row>  
                 </div> 
             </Col> 
-            <Col xs={12} sm={6} className="my-1" >
+            <Col xs={12} sm={6} className={`${styles.ContentOpened} my-1`} >
+            <OverlayTrigger
+               className="px-0 mx-0"
+                      placement="top"
+                      overlay={<Tooltip>Go to Scene</Tooltip>}>
             <div className={`${styles.GoToScene}`} onClick={() => handleGoToScene() }>
-            <Row className={` py-2 my-0 mr-1 ml-1`}>
-                <Col xs={12} 
-                className={` text-center`} >
-                <Row >
-                <Col className='px-0 mx-0' xs={4}>
+            <Row className={` py-md-2 my-0 px-2 d-flex align-items-center text-center`}>
+            <Col xs={12} 
+              className={` text-center`} >
+              <Row>
+                <Col className='px-0 mx-0 pt-1' xs={4}>
                 {number && <p style={{ fontWeight: '700' }}>Scene {number} </p>}
                 </Col>
-                <Col className='px-0 mx-0' xs={4}>
+                <Col className='px-0 mx-0 pt-1' xs={4}>
                   {departments && <p style={{ textTransform: 'capitalize'}}>
                     {departments}</p>}
                 </Col>
-                <Col className='px-0 mx-0' xs={4}>
+                <Col className='px-0 mx-0 pt-1' xs={3}>
                   {category && <p style={{ textTransform: 'capitalize'}}>
                         {category} </p>}  
                 </Col>
-                </Row>
+                <Col xs={1} className='px-0' >
+                      <i className="navicon fas fa-play"></i>
+                      {/* </OverlayTrigger> */}
                 </Col>
+              </Row>
+              </Col>
             </Row>
             </div>
+            </OverlayTrigger>
             </Col>
             {/* edit and date icons small */}
             <Col xs={12} sm={3} className="my-0 " >
