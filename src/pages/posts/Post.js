@@ -164,9 +164,9 @@ const Post = (props) => {
           <Card className={ `py-0 mt-1 mb-0`}>
             <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
             <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
-            <Col xs={12} sm={3} className="my-0" >
+            <Col xs={12} md={3} className="my-0" >
                 {/* small */}
-                <div className='d-none d-sm-block'>
+                <div className='d-none d-md-block'>
                 <Row >
                 <Col xs={3} className="pl-3 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
@@ -188,7 +188,7 @@ const Post = (props) => {
                 </Row>   
                 </div>     
                 {/* mobile */}
-                <div className='d-sm-none'>
+                <div className='d-md-none'>
                 <Row className='pb-0 mb-0'>
                 <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
                 <Link to={`/profiles/${profile_id}`}>
@@ -292,13 +292,13 @@ const Post = (props) => {
                 </Row>  
                 </div> 
             </Col> 
-            <Col xs={12} sm={6} className={`${styles.ContentOpened} my-1`} >
+            <Col xs={12} md={6} className={`${styles.ContentOpened} mb-2 mb-md-1 mt-1`} >
             <OverlayTrigger
                className="px-0 mx-0"
                       placement="top"
                       overlay={<Tooltip>Go to Scene</Tooltip>}>
             <div className={`${styles.GoToScene}`} onClick={() => handleGoToScene() }>
-            <Row className={` py-md-2 my-0 px-2 d-flex align-items-center text-center`}>
+            <Row className={` py-md-2 my-0 px-3 d-flex align-items-center text-center`}>
             <Col xs={12} 
               className={` text-center`} >
               <Row>
@@ -324,8 +324,8 @@ const Post = (props) => {
             </OverlayTrigger>
             </Col>
             {/* edit and date icons small */}
-            <Col xs={12} sm={3} className="my-0 " >
-            <div className='d-none d-sm-block'>
+            <Col xs={12} md={3} className="my-0 " >
+            <div className='d-none d-md-block'>
             <Row >
             <Col sm={3}
             className="d-flex align-items-center px-0 float-right" >
@@ -426,15 +426,14 @@ const Post = (props) => {
               </Card.Body>
               <hr />
               <Row className='mb-2 px-5'>
-                  {/* image 1/2 <iframe title="Image1" src={image1} className={appStyles.iframeFull}
-                                            alt="Script"  /> */}
+                  {/* image 1/2 */}
                   <Col xs={12} md={6}  >
                       {image1 && <> 
                         <div className='px-2 px-md-4 mb-3'>
                           {/* <Card.Img src={image1} alt="image1" className={appStyles.iframeFull}
                            className={styles.Images} /> */}
                           <iframe title="Image1" src={image1} 
-                          className={appStyles.iframeFull} alt="Script"  />
+                          className={appStyles.iframe2} alt="Script"  />
                         </div>
                           </>
                           }
@@ -480,7 +479,7 @@ const Post = (props) => {
                   </Col>  
               </Row>
             </Card>
-        </div>
+          </div>
     )
 }
 
