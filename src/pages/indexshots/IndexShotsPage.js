@@ -24,6 +24,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import Info2 from './Info2';
 import IndexShotCreate from './IndexShotCreate';
 import IndexShot from './IndexShot';
+import IndexShotsFullSize2 from './IndexShotsFullSize2';
 
 const IndexShotsPage = () => {
     useRedirect();

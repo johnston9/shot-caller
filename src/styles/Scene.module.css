@@ -16,6 +16,11 @@
   color: #fff;
 }
 
+.WhiteText {
+  color: #fff;
+  font-size: .70rem;
+}
+
 .Small {
   font-size: .65rem;
 }

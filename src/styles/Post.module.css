@@ -9,6 +9,15 @@
   cursor: pointer;
 }
 
+.FullsizeText {
+  color: rgb(36, 184, 184);
+  font-style: italic;
+}
+
+.FullsizeText:hover {
+  cursor: pointer;
+}
+
 .GoldDark {
   color: rgba(129, 102, 21, 0.99);
 }

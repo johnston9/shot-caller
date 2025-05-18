@@ -8,6 +8,7 @@ import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 import { DeptCategoryProvider } from "./contexts/DeptCategoryContext";
 import { ActProvider } from "./contexts/ActContext";
+import { ImageProvider } from "./contexts/ImageContext";
 import { ScenesCharactersLocationsProvider } from "./contexts/Scene_chars_locs";
 import { CharacterLocationProvider } from "./contexts/CharLocatContex";
 import { CrewInfoProvider } from "./contexts/BaseCallContext";
@@ -21,7 +22,9 @@ ReactDOM.render(
               <ScenesCharactersLocationsProvider >
                 <CharacterLocationProvider >
                   <CrewInfoProvider >
-                    <App />
+                    <ImageProvider >
+                      <App />
+                      </ImageProvider> 
                     </CrewInfoProvider>
                 </CharacterLocationProvider>
               </ScenesCharactersLocationsProvider>

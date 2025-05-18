@@ -9,8 +9,10 @@ import Row from 'react-bootstrap/Row';
 import { PostDropdown } from '../../components/PostDropdown';
 import { useSetCharacterContext } from '../../contexts/CharLocatContex';
 import { toast } from 'react-toastify';
+import { useSetImageContext } from '../../contexts/ImageContext';
 
 const Character = (props) => {
+    const setImage = useSetImageContext();
     const setCharacter = useSetCharacterContext();
     const { number,
             role,
@@ -75,6 +77,62 @@ const Character = (props) => {
         setCharacter(role);
         history.push(`/character/moodshot/create`);
     
+      };
+
+      const handleClickFullM = () => {
+        console.log(makeup_image);
+        console.log("full");
+        setImage(makeup_image); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFullC1 = () => {
+        console.log(costume1_image);
+        console.log("full");
+        setImage(costume1_image); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFullC2 = () => {
+        console.log(costume2_image);
+        console.log("full");
+        setImage(costume2_image); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFullC3 = () => {
+        console.log(costume3_image);
+        console.log("full");
+        setImage(costume3_image); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFullC4 = () => {
+        console.log(costume4_image);
+        console.log("full");
+        setImage(costume4_image); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFullC5 = () => {
+        console.log(costume5_image);
+        console.log("full");
+        setImage(costume5_image); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFullC6 = () => {
+        console.log(costume6_image);
+        console.log("full");
+        setImage(costume6_image); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFullC7 = () => {
+        console.log(costume7_image);
+        console.log("full");
+        setImage(costume7_image); 
+        history.push(`/fullshot`);  
       };
 
     return (
@@ -250,6 +308,8 @@ const Character = (props) => {
                     <Image className={styles.Images} 
                     src={makeup_image} alt="makeup image"  />
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullM() }>FULLSIZE</p>
                     </>
                 }
                 {makeup &&  <> 
@@ -265,6 +325,8 @@ const Character = (props) => {
                     <Image className={styles.Images} 
                     src={costume1_image} alt="costume 1" />
                 </div>
+                <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullC1() }>FULLSIZE</p>
                     </>
                 }
                 {costume1 &&  <> 
@@ -289,6 +351,8 @@ const Character = (props) => {
                     <Image className={styles.Images} src={costume2_image} 
                     alt="costume 2"  />
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullC2() }>FULLSIZE</p>
                     </>
                 }
                 {costume2 &&  <> 
@@ -304,6 +368,8 @@ const Character = (props) => {
                     <Image className={styles.Images} src={costume3_image} 
                     alt="costume 3"/>
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullC3() }>FULLSIZE</p>
                     </>
                 }
                 {costume3 &&  <> 
@@ -329,6 +395,8 @@ const Character = (props) => {
                     <Image className={styles.Images} src={costume4_image}
                      alt="costume 4" />
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullC4() }>FULLSIZE</p>
                     </>
                 }
                 {costume4 &&  <> 
@@ -345,6 +413,8 @@ const Character = (props) => {
                     <Image className={styles.Images} src={costume5_image}
                      alt="costume 5" />
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullC5() }>FULLSIZE</p>
                     </>
                 }
                 {costume5 &&  <> 
@@ -370,6 +440,8 @@ const Character = (props) => {
                     <Image className={styles.Images} src={costume6_image}
                      alt="costume 6"/>
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullC6() }>FULLSIZE</p>
                     </>
                 }
                 {costume6 &&  <> 
@@ -386,6 +458,8 @@ const Character = (props) => {
                     <Image className={styles.Images} src={costume7_image}
                      alt="costume 7"/>
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                    onClick={() => handleClickFullC7() }>FULLSIZE</p>
                     </>
                 }
                 {costume7 &&  <> 

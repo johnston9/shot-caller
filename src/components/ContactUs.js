@@ -27,7 +27,7 @@ export const ContactUs = (props ) => {
   const crewEmailList1 = props.crewEmailList;
   const castemails1 = props.castEmails;
   const emailList1 = crewEmailList1.concat(castemails1);
-  // Just using Cast Email list in Development to save EmailJS credits
+  // Just using Cast Email list in development to save EmailJS credits
   // eslint-disable-next-line
   const emailList = emailList1.toString();
 

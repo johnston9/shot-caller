@@ -4,14 +4,17 @@
 import React, { useState } from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import styles from "../../styles/Indexes.module.css";
 import IndexShotEdit from './IndexShotEdit';
+import { useSetImageContext } from '../../contexts/ImageContext';
 
 const IndexShot = (props) => {
     const [showEdit, setShowEdit] = useState(false);
+    const history = useHistory();
+    const setImage = useSetImageContext();
     const {
         ser_id,
         id,
@@ -22,6 +25,13 @@ const IndexShot = (props) => {
         setHasOrder,
         setIndexShots,
     } = props;
+
+    const handleClickFull = () => {
+        console.log(image);
+        console.log("full");
+        setImage(image); 
+        history.push(`/fullshot`);  
+      }; 
 
     const handleEdit = () => {
         setShowEdit(true);
@@ -54,8 +64,10 @@ const IndexShot = (props) => {
                     </Col>
                   </Row>
                 </Card.Header>
-                <Link to={`/indexshots/fullsize/${id}`}>
-                <Card.Body className={`text-center p-0 `}  >
+                {/* onClick={() => setShowFull(showFull => !showFull)} */}
+                {/* onClick={() => handleClickFull() } */}
+                {/* <Link to={`/indexshots/fullsize/${id}`}> */}
+                <Card.Body onClick={() => handleClickFull() } className={`text-center p-0 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {image && <> 
@@ -74,7 +86,7 @@ const IndexShot = (props) => {
                 </Col >
                 </Row>
                 </Card.Body>
-                </Link>
+                {/* </Link> */}
             </Card>
             {!showEdit ?("") : (
             <IndexShotEdit
@@ -83,7 +95,7 @@ const IndexShot = (props) => {
                 shot={shot}
                 id={id}
                 setShowEdit={setShowEdit} 
-                setHasOrder={setHasOrder} /> ) }
+            setHasOrder={setHasOrder} /> ) }
         </div>
     )
 }

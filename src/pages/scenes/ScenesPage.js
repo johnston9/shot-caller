@@ -43,7 +43,6 @@ const ScenesPage = ({message, filter = "" }) => {
     const handleClickAct1 = () => {
       setAct('one'); 
       history.push(`/act/scenes`);
-
     };
 
     const handleClickAct2a = () => {

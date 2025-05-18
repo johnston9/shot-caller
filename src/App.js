@@ -19,6 +19,7 @@ import ScenesPage from './pages/scenes/ScenesPage';
 import ScenePage from './pages/scenes/ScenePage';
 import { useCategoryContext, useDeptContext, useDeptGeneralContext, useNumberContext, useSceneContext } from './contexts/DeptCategoryContext';
 import { useActContext } from './contexts/ActContext';
+import { useImageContext } from './contexts/ImageContext';
 import BreakdownAddEditForm from './pages/scenes/breakdown/BreakdownAddEditForm';
 import Home from './pages/home/Home';
 import ProfilesPage from './pages/profiles/ProfilesPage';
@@ -68,6 +69,8 @@ import RegisterUsers from './pages/auth/RegisterUsers';
 import Storyboard from './pages/scenes/shotlistStoryboard/Storyboard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import IndexShotsFullSize2 from './pages/indexshots/IndexShotsFullSize2';
+import Fullshot from './components/Fullshot';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -80,6 +83,8 @@ function App() {
   const deptGeneral = useDeptGeneralContext();
   const character = useCharacterContext();
   const location = useLocationContext();
+  const image = useImageContext();
+  console.log(image);
 
   return (
     <div className={`pl-3 ${styles.App }`} >
@@ -204,13 +209,21 @@ function App() {
             <IndexShotsPage
              />
              )} />
-          <Route 
+             <Route 
+            exact 
+            path="/fullshot" 
+            render={() => (
+            <Fullshot
+            image={image}
+             />
+             )} />
+          {/* <Route 
             exact 
             path="/indexshots/fullsize/:id" 
             render={() => (
             <IndexShotsFullSize
              />
-             )} />
+             )} /> */}
         {/* ----------------- MOODBOARDS ------------------*/}
         {/* The word moodshot is used through the app in the urls for moodboard */}
         <Route exact path="/moodshot/create" render={() => <MoodboardCreate />} />

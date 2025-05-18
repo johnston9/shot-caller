@@ -16,8 +16,10 @@ import { PostDropdown } from '../../components/PostDropdown';
 import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { useSetImageContext } from '../../contexts/ImageContext';
 
 const Post = (props) => {
+  const setImage = useSetImageContext();
     const {
         id,
         owner,
@@ -51,6 +53,41 @@ const Post = (props) => {
       const setDept = useSetDeptContext();
       const setCategory = useSetCategoryContext();
       const setNumber = useSetNumberContext();
+
+      const handleClickFull1 = () => {
+        console.log(image1);
+        console.log("full");
+        setImage(image1); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull2 = () => {
+        console.log(image2);
+        console.log("full");
+        setImage(image2); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull3 = () => {
+        console.log(image3);
+        console.log("full");
+        setImage(image3); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull4 = () => {
+        console.log(image4);
+        console.log("full");
+        setImage(image4); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull5 = () => {
+        console.log(image5);
+        console.log("full");
+        setImage(image5); 
+        history.push(`/fullshot`);  
+      };
 
       const handleGoToScene = () => {
         /* Function to go to the post's Scene page 
@@ -429,12 +466,14 @@ const Post = (props) => {
                   {/* image 1/2 */}
                   <Col xs={12} md={6}  >
                       {image1 && <> 
-                        <div className='px-2 px-md-4 mb-3'>
+                        <div className='px-2 px-md-4 mb-3' onClick={() => handleClickFull1() }>
                           {/* <Card.Img src={image1} alt="image1" className={appStyles.iframeFull}
                            className={styles.Images} /> */}
-                          <iframe title="Image1" src={image1} 
+                          <iframe title="Image1" src={image1}
                           className={appStyles.iframe2} alt="Script"  />
                         </div>
+                        <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull1() }>FULLSIZE</p>
                           </>
                           }
                   </Col>  
@@ -443,8 +482,10 @@ const Post = (props) => {
                     <div className='px-2 px-md-4 mb-3'>
                           <Card.Img src={image2} alt="image2" className={styles.Images} />
                         </div>
+                        <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull2() }>FULLSIZE</p>
                           </>
-                          }
+                  }
                   </Col>
               </Row >
               {/* image 3/4 */}
@@ -454,6 +495,8 @@ const Post = (props) => {
                         <div className='px-2 px-md-4 mb-3'>
                           <Card.Img src={image3} alt="image3" className={styles.Images} />
                         </div>
+                        <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull3() }>FULLSIZE</p>
                           </>
                           }
                   </Col>  
@@ -462,6 +505,8 @@ const Post = (props) => {
                     <div className='px-2 px-md-4 mb-3'>
                           <Card.Img src={image4} alt="image4" className={styles.Images} />
                         </div>
+                        <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull4() }>FULLSIZE</p>
                           </>
                           }
                   </Col>
@@ -474,8 +519,10 @@ const Post = (props) => {
                     <div className='px-2 px-md-4 mb-3'>
                           <Card.Img src={image5} alt="image5" className={styles.Images} />
                         </div>
-                          </>
-                          }
+                        <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull5() }>FULLSIZE</p>
+                  </>
+                  }
                   </Col>  
               </Row>
             </Card>
