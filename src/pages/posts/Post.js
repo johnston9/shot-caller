@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import appStyles from "../../App.module.css";
-
+import Image from 'react-bootstrap/Image';
 import styles from "../../styles/Post.module.css";
 import Button from "react-bootstrap/Button"
 import btnStyles from "../../styles/Button.module.css";
@@ -466,7 +466,7 @@ const Post = (props) => {
                   {/* image 1/2 */}
                   <Col xs={12} md={6}  >
                       {image1 && <> 
-                        <div className='px-2 px-md-4 mb-3' onClick={() => handleClickFull1() }>
+                        <div className='px-2 px-md-4 mb-3' >
                           {/* <Card.Img src={image1} alt="image1" className={appStyles.iframeFull}
                            className={styles.Images} /> */}
                           <iframe title="Image1" src={image1}
@@ -480,7 +480,7 @@ const Post = (props) => {
                   <Col xs={12} md={6}>
                   {image2 && <> 
                     <div className='px-2 px-md-4 mb-3'>
-                          <Card.Img src={image2} alt="image2" className={styles.Images} />
+                          <Image src={image2} alt="image2" className={styles.Images} />
                         </div>
                         <p className={`text-center ${styles.FullsizeText }`}
                         onClick={() => handleClickFull2() }>FULLSIZE</p>

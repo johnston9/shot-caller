@@ -10,8 +10,10 @@ import { PostDropdown } from '../../components/PostDropdown';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { toast } from 'react-toastify';
+import { useSetImageContext } from '../../contexts/ImageContext';
 
 const DeptPost = (props) => {
+  const setImage = useSetImageContext();
     const {
         id,
         owner,
@@ -29,6 +31,41 @@ const DeptPost = (props) => {
         image5,
         updated_at,
       } = props;
+
+      const handleClickFull1 = () => {
+        console.log(image1);
+        console.log("full");
+        setImage(image1); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull2 = () => {
+        console.log(image2);
+        console.log("full");
+        setImage(image2); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull3 = () => {
+        console.log(image3);
+        console.log("full");
+        setImage(image3); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull4 = () => {
+        console.log(image4);
+        console.log("full");
+        setImage(image4); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull5 = () => {
+        console.log(image5);
+        console.log("full");
+        setImage(image5); 
+        history.push(`/fullshot`);  
+      };
 
       const currentUser = useCurrentUser()
       const is_owner = currentUser?.username === owner;
@@ -151,23 +188,27 @@ const DeptPost = (props) => {
               <Row className='mb-0'>
                 <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 1</p>
                       {image1 && <> 
+                        <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 1</p>
                         <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image1} alt="image1" 
                           className={`${styles.Images}`} />
                           </div>
+                          <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull1() }>FULLSIZE</p>
                           </>
                           }
                 </div>
                   </Col>  
                   <Col  xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                  <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 2</p>
                   {image2 && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 2</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image2} alt="image2" className={`${styles.Images}`}/>
                     </div>
+                    <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull2() }>FULLSIZE</p>
                           </>
                           }
                   </div>
@@ -183,22 +224,26 @@ const DeptPost = (props) => {
               <Row className='mb-2'>
               <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 3</p>
                       {image3 && <> 
+                        <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 3</p>
                         <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image3} alt="image3" className={`${styles.Images}`}/>
                           </div>
+                          <p className={`text-center ${styles.FullsizeText }`}
+                            onClick={() => handleClickFull3() }>FULLSIZE</p>
                           </>
                           }
                       </div>
                   </Col>  
                   <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                  <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 4</p>
                   {image4 && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 4</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image4} alt="image4" className={`${styles.Images}`}/>
                           </div>
+                          <p className={`text-center ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull1() }>FULLSIZE</p>
                           </>
                           }
                   </div>
@@ -215,11 +260,13 @@ const DeptPost = (props) => {
                   <Col className='d-none d-md-block' md={3} ></Col>
                   <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                  <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 5</p>
                       {image5 && <> 
+                        <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 5</p>
                         <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
                           <Card.Img src={image5} alt="image5" className={`${styles.Images}`}/>
                           </div>
+                          <p className={`text-center ${styles.FullsizeText }`}
+                          onClick={() => handleClickFull1() }>FULLSIZE</p>
                           </>
                           }
                     </div>
