@@ -35,6 +35,7 @@ const CallSheet = (props ) => {
     // eslint-disable-next-line
     const crewEmailList = useCrewEmailsContext();
     // console.log(crewEmailList);
+    const callsheetreal = true;
     const crewInfoOne = useCrewInfoContext();
     const history = useHistory();
     const [yourcalltime, setYourcalltime] = useState("");
@@ -621,6 +622,7 @@ const CallSheet = (props ) => {
         <SchedulePage scenes={scenes} />
         {/* Talent  */}
         <TalentPage 
+        callsheetreal={callsheetreal}
         handleMount={handleMount}
         cast={cast} />
         {/* BG AND STANDINS */}

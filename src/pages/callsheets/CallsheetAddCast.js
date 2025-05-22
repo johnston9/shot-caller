@@ -13,6 +13,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useCharactersContext } from "../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
 import { toast } from 'react-toastify';
+import TalentPage from "./callsheetSections/TalentPage";
 
 const AddCast = ({id, setShow, dataDay, dataDate}) => {
     const [errors, setErrors] = useState({});
@@ -121,17 +122,18 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       inst: "",})
     }
 
+    /* function to fetch the Callsheet Cast data already added */
+    const handleMount = async () => {
+      try {
+          const { data } = await axiosReq.get(`/castcallsnew/?day_id=${id}`)
+          setCast(data);
+          console.log(data);
+      } catch (err) {
+          console.log(err);
+        }
+  }
+
     useEffect(() => {
-      /* function to fetch the Callsheet Cast data already added */
-      const handleMount = async () => {
-          try {
-              const { data } = await axiosReq.get(`/castcallsnew/?day_id=${id}`)
-              setCast(data);
-              console.log(data);
-          } catch (err) {
-              console.log(err);
-            }
-      }
       handleMount();
       }, [id])
 
@@ -209,12 +211,20 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
       <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
       ADD CAST</h5>
-      </div>
+      </div>            
       <div className={`mb-3 ${styles.White }`}>
       <Form className="text-center" onSubmit={handleSubmit}>
-      {/* CAST ADDED */}
+
+      {/* <Row>
+      <Col xs={12} >
+      <p className={`mt-3 pt-2 mb-0 ${styles.BoldScene }`}>
+      SELECT ROLE
+      </p>
+      </Col>
+      </Row> */}
+      {/* select */}
       <Row className="py-2" style={{fontStyle: 'italic'}}>
-      <Col xs={12} md={6}>
+      {/* <Col xs={12} md={6}>
       <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
       CAST ADDED
       </p>
@@ -224,8 +234,8 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
               <span key={ca.id}>{ca.role}, </span>
             ))) : ("")}
         </div>
-      </Col>
-      <Col xs={12} md={6}>
+      </Col> */}
+      {/* <Col xs={12} >
       <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
       SELECTED ROLE INFO
       </p>
@@ -239,19 +249,13 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         ""
       )}
       </div>
-      </Col>
+      </Col> */}
       </Row>
-      {/* select */}
       <Row>
       <Col  >
       <div className={`${styles.SelectBox } mx-md-5 my-3 py-3`}>  
       <Row>
-      <Col xs={4} >
-      <p className={`float-right ml-md-2 pt-2 mb-0 ${styles.BoldScene }`}>
-      SELECT ROLE
-      </p>
-      </Col>
-      <Col xs={4}>
+      <Col xs={6} md={4} >
         <DropdownButton id="dropdown-basic-button" variant="info"
         className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
         {characters.results.length && (
@@ -261,11 +265,26 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
               ) )) }
         </DropdownButton>
       </Col>
-      <Col xs={4} >
+      <Col xs={6} md={2} >
       <div className={`mt-2 ${styles.HRGold }`}>
       <p className={``}>
       {role}
       </p>
+      </div>
+      </Col>
+      <Col xs={12} md={6} >
+      <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
+      SELECTED ROLE INFO
+      </p>
+      <div className={`text-center mx-2 mt-2 py-1 ${styles.CastEntered }`}>
+      {cast_number ? (
+        <>
+            <p>{role} Info - Actor: {artist}, Makeup: {make_up_time}, 
+            Commute: {commute_time}, Contact: {contact}</p>
+        </>
+      ) : (
+        ""
+      )}
       </div>
       </Col>
       </Row>
@@ -412,7 +431,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
               type="text"
               name="pickup_address"
               as="textarea"
-              rows={2}
+              rows={1}
               value={pickup_address}
               onChange={handleChange}
                   />
@@ -432,6 +451,21 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         </Col>
       </Row>
       </Form>
+      {/* NEW CAST ADDED */}
+      <Row className="py-md-2" >
+      <Col xs={12} >
+      <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
+      CAST ADDED
+      </p>
+      <p className="text-center d-none d-md-block" style={{fontStyle: 'italic'}}>
+        Edit previously added Cast here</p>
+      <p className="text-center d-block d-md-none" style={{fontStyle: 'italic'}}>
+      Edit previously added Cast here from the Info button</p>
+      </Col>
+      </Row>
+      <TalentPage
+      handleMount={handleMount}
+      cast={cast}/>
       <Row>
       <Col md={{span: 8, offset: 2}} >
       <hr className={`${styles.Break2} `}/>

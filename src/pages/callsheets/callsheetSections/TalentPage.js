@@ -9,14 +9,18 @@ import CallCast from './CallCast';
 
 const TalentPage = (props) => {
     const admin = true;
-    const {cast, setShow, handleMount} = props;
+    const {cast, setShow, handleMount, callsheetreal} = props;
   return (
     <div className='mt-3'>
         {/* titles */}
-        <div className='d-none d-md-block mt-5'>
-        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
+        <div className='d-none d-md-block'>
+        {callsheetreal ? (<>
+        <div className='mt-5'></div>
+            <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
         style={{ textTransform: 'uppercase' }}>Talent</span>
         <hr className={`mb-2 pl-3 mt-0 pt-1 ${styles.Break5 }`}/>
+        </>
+        ) : ("") }
             <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>#</p>
@@ -60,7 +64,8 @@ const TalentPage = (props) => {
         </div>
         <div className='d-block d-md-none'>
             <div className={`mb-3 text-center ${styles.SubTitle }`}>
-            <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
+                <span className={`float-right ${styles.Close }`} 
+                onClick={() => setShow(false) } >Close</span> 
             <h5 className={`pl-5 text-center`} 
             style={{ textTransform: 'uppercase'}} >Talent </h5>
             </div>
