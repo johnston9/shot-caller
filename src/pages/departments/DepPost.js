@@ -190,7 +190,7 @@ const DeptPost = (props) => {
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                       {image1 && <> 
                         <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 1</p>
-                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                           <Card.Img src={image1} alt="image1" 
                           className={`${styles.Images}`} />
                           </div>
@@ -204,7 +204,7 @@ const DeptPost = (props) => {
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                   {image2 && <> 
                     <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 2</p>
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                           <Card.Img src={image2} alt="image2" className={`${styles.Images}`}/>
                     </div>
                     <p className={`text-center ${styles.FullsizeText }`}
@@ -226,7 +226,7 @@ const DeptPost = (props) => {
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                       {image3 && <> 
                         <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 3</p>
-                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                           <Card.Img src={image3} alt="image3" className={`${styles.Images}`}/>
                           </div>
                           <p className={`text-center ${styles.FullsizeText }`}
@@ -239,11 +239,11 @@ const DeptPost = (props) => {
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                   {image4 && <> 
                     <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 4</p>
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
+                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                           <Card.Img src={image4} alt="image4" className={`${styles.Images}`}/>
                           </div>
                           <p className={`text-center ${styles.FullsizeText }`}
-                        onClick={() => handleClickFull1() }>FULLSIZE</p>
+                        onClick={() => handleClickFull4() }>FULLSIZE</p>
                           </>
                           }
                   </div>
@@ -262,11 +262,11 @@ const DeptPost = (props) => {
                   <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                       {image5 && <> 
                         <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 5</p>
-                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 mb-md-3`}>
+                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                           <Card.Img src={image5} alt="image5" className={`${styles.Images}`}/>
                           </div>
                           <p className={`text-center ${styles.FullsizeText }`}
-                          onClick={() => handleClickFull1() }>FULLSIZE</p>
+                          onClick={() => handleClickFull5() }>FULLSIZE</p>
                           </>
                           }
                     </div>

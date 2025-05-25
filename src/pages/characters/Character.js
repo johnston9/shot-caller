@@ -138,7 +138,7 @@ const Character = (props) => {
     return (
         <div className={`mb-3`}>
             {/* Moodboard */}
-            <Row className={`${styles.ButtonLine} mt-2 mx-3 d-flex align-items-center `}>
+            <Row className={`${styles.ButtonLine} mt-2 mx-1 d-flex align-items-center `}>
                 <Col className='text-center mx-0 px-0' xs={1}></Col>
                 <Col xs={10} sm={5} className='text-center mx-0 px-0'>
                     <p className={`py-0 mb-0 ${styles.Button}`}
@@ -157,12 +157,12 @@ const Character = (props) => {
                     />
                 </Col>
             </Row>
-            <h5 className={`text-center py-1 mb-3 ${styles.SubTitle }`}
+            <h5 className={`text-center py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>CHARACTER - {role} </h5>
-             <div className={`${styles.Header} px-3`}>
+             <div className={`${styles.Header} pb-3 px-3`}>
              {/* callname */}
             <Row>
-            <Col className='text-center mb-3'>
+            <Col className='text-center my-3'>
             <div className='mb-3'>
             <span className={`py-1 px-1 px-md-5 ${styles.BoldTitleCall } `} >
             CALLNAME: {username}
@@ -295,15 +295,15 @@ const Character = (props) => {
                 </Col>
             </Row>
             </div>
-            <h5 className={`text-center mt-4 mb-4 py-1 ${styles.SubTitle }`}
+            <h5 className={`text-center py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Makeup / Costumes</h5>
-             <div className='px-3'>
+             <div className={`${styles.Header} pb-3 px-3`}>
             {/* makeup/costume 1 */}
-            <Row className='text-center py-0'>
+            <Row className='text-center py-0 mt-3'>
             <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`}>
             <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>MAKEUP</p>
                 {makeup_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>MAKEUP</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} 
                     src={makeup_image} alt="makeup image"  />
@@ -319,8 +319,8 @@ const Character = (props) => {
             </Col>    
             <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`}>
             <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>COSTUME 1</p>
                 {costume1_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>COSTUME 1</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} 
                     src={costume1_image} alt="costume 1" />
@@ -338,15 +338,15 @@ const Character = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            <hr className={` mt-0 mb-5 d-none d-md-block`}/>
             </Col>
             </Row>
             {/* costume 2/3 */}
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 2</p>
                 {costume2_image && <> 
+                    <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 2</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume2_image} 
                     alt="costume 2"  />
@@ -362,8 +362,8 @@ const Character = (props) => {
                 </Col>
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>COSTUME 3</p>
                 {costume3_image && <> 
+                    <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 3</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume3_image} 
                     alt="costume 3"/>
@@ -381,16 +381,15 @@ const Character = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            <hr className={` mt-0 mb-5 d-none d-md-block`}/>
             </Col>
             </Row>
             {/* costume 4/5 */}
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
-                    COSTUME 4</p>
                 {costume4_image && <> 
+                    <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 4</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume4_image}
                      alt="costume 4" />
@@ -406,9 +405,8 @@ const Character = (props) => {
                 </Col>
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
-                    COSTUME 5</p>
                 {costume5_image && <> 
+                    <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 5</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume5_image}
                      alt="costume 5" />
@@ -426,16 +424,15 @@ const Character = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-5 d-none d-md-block`}/>
+            <hr className={`mt-0 mb-5 d-none d-md-block`}/>
             </Col>
             </Row>
             {/* costume 6/7 */}
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
-                    COSTUME 6</p>
                 {costume6_image && <> 
+                    <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 6</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume6_image}
                      alt="costume 6"/>
@@ -451,9 +448,8 @@ const Character = (props) => {
                 </Col>   
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
                 <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>
-                    COSTUME 7</p>
                 {costume7_image && <> 
+                    <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 7</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
                     <Image className={styles.Images} src={costume7_image}
                      alt="costume 7"/>
