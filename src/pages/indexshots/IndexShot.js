@@ -64,9 +64,6 @@ const IndexShot = (props) => {
                     </Col>
                   </Row>
                 </Card.Header>
-                {/* onClick={() => setShowFull(showFull => !showFull)} */}
-                {/* onClick={() => handleClickFull() } */}
-                {/* <Link to={`/indexshots/fullsize/${id}`}> */}
                 <Card.Body onClick={() => handleClickFull() } className={`text-center p-0 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>

@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'react-bootstrap/Image';
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
+import Card from "react-bootstrap/Card";
 import styles from "../../styles/Characters.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -297,11 +298,11 @@ const Character = (props) => {
             </div>
             <h5 className={`text-center py-1 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Makeup / Costumes</h5>
-             <div className={`${styles.Header} pb-3 px-3`}>
+             <div className={`${styles.Headerv} pb-3 px-3`}>
             {/* makeup/costume 1 */}
             <Row className='text-center py-0 mt-3'>
             <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`}>
-            <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+            {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {makeup_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>MAKEUP</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -315,10 +316,36 @@ const Character = (props) => {
                 {makeup &&  <> 
                 <p className={`${styles.Role}`}>{makeup} </p>
                 </>}
+            </div> */}
+            <Card className='mx-3 mx-md-5'>
+            <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullM() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {makeup_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>MAKEUP</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={makeup_image} alt="image" />
+                        </div>
+                    </>}
+                </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume1 &&  <> 
+                <p className={`${styles.Role}`}>{makeup} </p>
+                </>}
                 </div>
+                </Col >
+                </Row>
+                </Card.Body>
+            </Card>
             </Col>    
             <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`}>
-            <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+            {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {costume1_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>COSTUME 1</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -332,8 +359,34 @@ const Character = (props) => {
                 {costume1 &&  <> 
                 <p className={`${styles.Role}`}>{costume1} </p>
                 </>}
-            </div>
+            </div> */}
+            <Card className='mx-3 mx-md-5'>
+            <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullC1() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {costume1_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-3 mx-md-5`}>COSTUME 1</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={costume1_image} alt="image" />
+                        </div>
+                    </>}
                 </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume1 &&  <> 
+                <p className={`${styles.Role}`}>{costume1} </p>
+                </>}
+                </div>
+                </Col >
+                </Row>
+                </Card.Body>
+            </Card>
+            </Col>
             </Row>
             {/* break */}
             <Row>
@@ -344,7 +397,7 @@ const Character = (props) => {
             {/* costume 2/3 */}
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
-                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {costume2_image && <> 
                     <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 2</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -358,10 +411,37 @@ const Character = (props) => {
                 {costume2 &&  <> 
                 <p className={`${styles.Role}`}>{costume2} </p>
                 </>}
+                </div> */}
+                <Card className='mx-3 mx-md-5'>
+                <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullC2() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {costume2_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-3 mx-md-5`}>
+                        COSTUME 2</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={costume2_image} alt="image" />
+                        </div>
+                    </>}
+                </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume2 &&  <> 
+                <p className={`${styles.Role}`}>{costume2} </p>
+                </>}
                 </div>
+                </Col >
+                </Row>
+                </Card.Body>
+                </Card>
                 </Col>
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
-                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {costume3_image && <> 
                     <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 3</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -375,7 +455,34 @@ const Character = (props) => {
                 {costume3 &&  <> 
                 <p className={`${styles.Role}`}>{costume3} </p>
                 </>}
+                </div> */}
+                <Card className='mx-3 mx-md-5'>
+                <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullC3() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {costume3_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-3 mx-md-5`}>
+                        COSTUME 3</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={costume3_image} alt="image" />
+                        </div>
+                    </>}
+                </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume3 &&  <> 
+                <p className={`${styles.Role}`}>{costume3} </p>
+                </>}
                 </div>
+                </Col >
+                </Row>
+                </Card.Body>
+                </Card>
                 </Col>
             </Row>
             {/* break */}
@@ -387,7 +494,7 @@ const Character = (props) => {
             {/* costume 4/5 */}
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
-                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {costume4_image && <> 
                     <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 4</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -401,10 +508,37 @@ const Character = (props) => {
                 {costume4 &&  <> 
                 <p className={`${styles.Role}`}>{costume4} </p>
                 </>}
+                </div> */}
+                <Card className='mx-3 mx-md-5'>
+                <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullC4() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {costume4_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-3 mx-md-5`}>
+                        COSTUME 4</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={costume4_image} alt="image" />
+                        </div>
+                    </>}
+                </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume4 &&  <> 
+                <p className={`${styles.Role}`}>{costume4} </p>
+                </>}
                 </div>
+                </Col >
+                </Row>
+                </Card.Body>
+                </Card>
                 </Col>
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
-                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {costume5_image && <> 
                     <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 5</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -418,7 +552,34 @@ const Character = (props) => {
                 {costume5 &&  <> 
                 <p className={`${styles.Role}`}>{costume5} </p>
                 </>}
+                </div> */}
+                <Card className='mx-3 mx-md-5'>
+                <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullC5() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {costume5_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-3 mx-md-5`}>
+                        COSTUME 5</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={costume5_image} alt="image" />
+                        </div>
+                    </>}
+                </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume5 &&  <> 
+                <p className={`${styles.Role}`}>{costume5} </p>
+                </>}
                 </div>
+                </Col >
+                </Row>
+                </Card.Body>
+                </Card>
                 </Col>
             </Row>
             {/* break */}
@@ -430,7 +591,7 @@ const Character = (props) => {
             {/* costume 6/7 */}
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
-                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {costume6_image && <> 
                     <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 6</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -444,10 +605,37 @@ const Character = (props) => {
                 {costume6 &&  <> 
                 <p className={`${styles.Role}`}>{costume6} </p>
                 </>}
+                </div> */}
+                <Card className='mx-3 mx-md-5'>
+                <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullC6() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {costume6_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-3 mx-md-5`}>
+                        COSTUME 6</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={costume6_image} alt="image" />
+                        </div>
+                    </>}
+                </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume6 &&  <> 
+                <p className={`${styles.Role}`}>{costume6} </p>
+                </>}
                 </div>
+                </Col >
+                </Row>
+                </Card.Body>
+                </Card>
                 </Col>   
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
-                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
+                {/* <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
                 {costume7_image && <> 
                     <p className={`${styles.BoldTitle} mb-3 mx-sm-5`}>COSTUME 7</p>
                     <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
@@ -461,7 +649,34 @@ const Character = (props) => {
                 {costume7 &&  <> 
                 <p className={`${styles.Role}`}>{costume7} </p>
                 </>}
+                </div> */}
+                <Card className='mx-3 mx-md-5'>
+                <Card.Header className={`py-0 ${styles.TopCard }`}>
+                </Card.Header>
+                <Card.Body onClick={() => handleClickFullC7() } className={`text-center p-md-5 `}  >
+                    <Row>
+                    <Col className='text-center mt-0' xs={12}>
+                    {costume7_image && <> 
+                    <p className={`${styles.BoldTitle} mb-md-3 mx-sm-3 mx-md-5`}>
+                        COSTUME 7</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={costume7_image} alt="image" />
+                        </div>
+                    </>}
+                </Col>
+                </Row>
+                <Row >
+                <Col xs={12} className='mx-0 px-0 '>
+                <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+                {costume7 &&  <> 
+                <p className={`${styles.Role}`}>{costume7} </p>
+                </>}
                 </div>
+                </Col >
+                </Row>
+                </Card.Body>
+                </Card>
                 </Col>          
             </Row>
             </div>

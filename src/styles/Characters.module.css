@@ -5,6 +5,23 @@
     margin-bottom: 16px;
   }
 
+  .ImagesIndex {
+    object-fit: contain;
+    height: 400px;
+    width: 100%; 
+}
+
+.TopCard {
+    border: 1px solid #fff;
+    background-color: #fff;
+ }
+
+ .TopCard2 {
+    min-height: 40px;
+    color: rgb(140, 111, 25, 99%);
+    overflow: hidden;
+}
+
   .FullsizeText {
     color: rgb(36, 184, 184);
     font-style: italic;
@@ -144,7 +161,14 @@
   /* text-align: center; */
 } 
 
+/* @media screen and (max-width: 450px) {
+  .ImagesIndex {
+    height: 200px;
+  }
+} */
+
 @media screen and (max-width: 600px) {
+
   .InputBar {
     height: 20px !important;
     font-size: .75rem !important;
