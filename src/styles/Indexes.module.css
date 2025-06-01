@@ -3,11 +3,17 @@
     background-color: #fff;
 }
 
-/* .TopCard {
-   border: 1px solid #fff;
-   color: rgb(140, 111, 25, 99%);
-   background-color: #fff;
-} */
+.FullsizeText {
+  color: rgb(36, 184, 184);
+  color: rgb(140, 111, 25, 99%);
+  font-style: italic;
+  font-size: .70rem;
+}
+
+.FullsizeText:hover {
+  color: rgb(14, 66, 66);
+  cursor: pointer;
+}
 
 .TopCard {
     border: 1px solid #fff;   
@@ -22,6 +28,7 @@
 .TopCard2 {
     min-height: 40px;
     color: rgb(140, 111, 25, 99%);
+    color: #747686;
     overflow: hidden;
 }
 

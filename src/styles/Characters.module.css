@@ -5,9 +5,20 @@
     margin-bottom: 16px;
   }
 
-  .ImagesIndex {
+.FullsizeText {
+  color: rgb(36, 184, 184);
+  font-style: italic;
+  font-size: .70rem;
+}
+
+.FullsizeText:hover {
+  color: rgb(14, 66, 66);
+  cursor: pointer;
+}
+
+.ImagesIndex {
     object-fit: contain;
-    height: 400px;
+    height: 300px;
     width: 100%; 
 }
 
