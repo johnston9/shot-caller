@@ -5,6 +5,7 @@ import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
+import Image from 'react-bootstrap/Image'; 
 import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import Col from 'react-bootstrap/Col';
@@ -175,43 +176,56 @@ const DeptPost = (props) => {
             </Col>                
           </Row>
           </Card.Body>
-              <Card.Body className="pt-3" >
+              <Card.Body className="pt-2 px-md-5" >
                     {title && <h5 style={{ fontStyle: 'italic' }}
                      className="text-center">{title}</h5>}
-                    <hr />
+                    <hr className={`mt-2 mb-0`} />
                     {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
               </Card.Body>
-              <hr className="mt-0"/>
+              <hr />
+              {image1 || image2 || image3 || image4 || image5 ? (
+              <h5 className={`text-center py-0 mx-5 my-3 ${styles.SubTitle }`}
+              >IMAGES</h5>
+              ) : ("") }
               {/* images */}
               <div className='px-3'>
               {/* image 1/2  */}
               <Row className='mb-0'>
                 <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
-                <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                      {image1 && <> 
-                        <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 1</p>
-                        <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
-                          <Card.Img src={image1} alt="image1" 
-                          className={`${styles.Images}`} />
-                          </div>
-                          <p className={`text-center ${styles.FullsizeText }`}
-                        onClick={() => handleClickFull1() }>FULLSIZE</p>
-                          </>
-                          }
-                </div>
+                {image1 && <>
+                  <Card className='mx-3 mx-md-5' >
+                  <Card.Body className={`text-center px-md-5 `}  >
+                    <p className={`${styles.BoldTitle} mb-md-3`}>
+                        IMAGE 1</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={image1} alt="image" onClick={() => handleClickFull1() } />
+                        {/* <iframe title="Image1" src={image1}
+                          className={appStyles.iframeIm} alt="Image"  /> */}
+                          <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull1() }>FULLSIZE</p> 
+                    </div>
+                  </Card.Body>
+                  </Card>
+                  </>}
                   </Col>  
                   <Col  xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >
-                  <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                  {image2 && <> 
-                    <p className={`${styles.BoldTitle} mb-md-3 mx-md-5`}>IMAGE 2</p>
-                    <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
-                          <Card.Img src={image2} alt="image2" className={`${styles.Images}`}/>
+                  {image2 && <>
+                  <Card className='mx-3 mx-md-5' >
+                  <Card.Body className={`text-center px-md-5 `}  >
+                    <p className={`${styles.BoldTitle} mb-md-3`}>
+                        IMAGE 2</p>
+                    <div className='px-0 mb-0'>
+                        <Image className={styles.ImagesIndex} 
+                        src={image2} alt="image" onClick={() => handleClickFull2() } />
+                        {/* <iframe title="Image22" src={image1}
+                          className={appStyles.iframeIm} alt="Image"  /> */}
+                          <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull2() }>FULLSIZE</p> 
                     </div>
-                    <p className={`text-center ${styles.FullsizeText }`}
-                        onClick={() => handleClickFull2() }>FULLSIZE</p>
-                          </>
-                          }
-                  </div>
+                  </Card.Body>
+                  </Card>
+                  </>}
                   </Col>
               </Row >
               {/* break */}

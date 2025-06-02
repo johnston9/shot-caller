@@ -55,36 +55,26 @@ const Post = (props) => {
       const setNumber = useSetNumberContext();
 
       const handleClickFull1 = () => {
-        console.log(image1);
-        console.log("full");
         setImage(image1); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull2 = () => {
-        console.log(image2);
-        console.log("full");
         setImage(image2); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull3 = () => {
-        console.log(image3);
-        console.log("full");
         setImage(image3); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull4 = () => {
-        console.log(image4);
-        console.log("full");
         setImage(image4); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull5 = () => {
-        console.log(image5);
-        console.log("full");
         setImage(image5); 
         history.push(`/fullshot`);  
       };
@@ -200,7 +190,7 @@ const Post = (props) => {
           </Button>
           <Card className={ `py-0 mt-1 mb-0`}>
             <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
-            <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
+            <Row className={`d-flex align-items-center pt-0 pb-0 my-0 `}>
             <Col xs={12} md={3} className="my-0" >
                 {/* small */}
                 <div className='d-none d-md-block'>
@@ -455,21 +445,23 @@ const Post = (props) => {
             </Row>
             </Card.Body>
               {/* title */}
-              <Card.Body className='py-1 px-5'>
+              <Card.Body className='pt-2 px-md-5'>
                   {title && <h5 style={{ fontStyle: 'italic' }}
-                  className="mb-0 pb-0 text-center">{title}</h5>}
-                  <hr className='mt-2' />
+                  className="text-center">{title}</h5>}
+                  <hr className={`mt-2 mb-0`} />
                   {content && <Card.Text>{content}</Card.Text>}
               </Card.Body>
-              {/* <hr /> */}
+              <hr />
+              {image1 || image2 || image3 || image4 || image5 ? (
               <h5 className={`text-center py-0 mx-5 my-3 ${styles.SubTitle }`}
               >IMAGES</h5>
+              ) : ("") }
               <Row className='mb-2 px-5'>
                   {/* image 1/2 */}
                   <Col xs={12} md={6}  >
+                  {image1 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    {image1 && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 1</p>
                     <div className='px-0 mb-0'>
@@ -480,14 +472,14 @@ const Post = (props) => {
                           <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
                         onClick={() => handleClickFull1() }>FULLSIZE</p> 
                     </div>
-                    </>}
-                </Card.Body>
+                  </Card.Body>
                   </Card>
+                  </>}
                   </Col>  
                   <Col xs={12} md={6}>
+                  {image2 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    {image2 && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 2</p>
                     <div className='px-0 mb-0'>
@@ -498,23 +490,25 @@ const Post = (props) => {
                           <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
                         onClick={() => handleClickFull2() }>FULLSIZE</p> 
                     </div>
-                    </>}
                 </Card.Body>
                   </Card>
+                  </>}
                   </Col>
               </Row >
               {/* break */}
+              {image3 ? (
               <Row>
               <Col xs={12}>
               <hr className={`mt-0 mb-5 d-none d-md-block`}/>
               </Col>
               </Row>
+              ) : ("") }
               {/* image 3/4 */}
               <Row className='mb-2 px-5'>
                   <Col xs={12} md={6}  >
+                  {image3 && <> 
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    {image3 && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 3</p>
                     <div className='px-0 mb-0'>
@@ -525,14 +519,14 @@ const Post = (props) => {
                           <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
                         onClick={() => handleClickFull3() }>FULLSIZE</p> 
                     </div>
-                    </>}
-                </Card.Body>
+                  </Card.Body>
                   </Card>
+                  </>}
                   </Col>  
                   <Col xs={12} md={6}>
+                  {image4 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    {image4 && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 4</p>
                     <div className='px-0 mb-0'>
@@ -543,24 +537,26 @@ const Post = (props) => {
                           <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
                         onClick={() => handleClickFull4() }>FULLSIZE</p> 
                     </div>
-                    </>}
-                </Card.Body>
+                  </Card.Body>
                   </Card>
+                  </>}
                   </Col>
               </Row >
               {/* break */}
+              {image5 ? (
               <Row>
               <Col xs={12}>
               <hr className={`mt-0 mb-5 d-none d-md-block`}/>
               </Col>
               </Row>
+              ) : ("") }
               {/* image 5 */}
               <Row>
                   <Col className='d-none d-md-block' md={3} ></Col>
                   <Col xs={12} md={6}>
+                  {image5 && <> 
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    {image5 && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 5</p>
                     <div className='px-0 mb-0'>
@@ -571,9 +567,9 @@ const Post = (props) => {
                           <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
                         onClick={() => handleClickFull5() }>FULLSIZE</p> 
                     </div>
-                    </>}
-                </Card.Body>
+                  </Card.Body>
                   </Card>
+                  </>}
                   </Col>  
               </Row>
             </Card>

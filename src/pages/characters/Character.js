@@ -280,7 +280,7 @@ const Character = (props) => {
                 </Col>
             </Row>
             </div>
-            <h5 className={`text-center py-1 ${styles.SubTitle }`}
+            <h5 className={`text-center py-0 mt-3 mx-md-5 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Makeup / Costumes</h5>
              <div className={`${styles.Headerv} pb-3 px-3`}>
             {/* makeup/costume 1 */}
@@ -434,7 +434,7 @@ const Character = (props) => {
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center p-md-5 `}  >
+                <Card.Body className={`text-center px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume4_image && <> 
@@ -466,7 +466,7 @@ const Character = (props) => {
                 </Col>
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center p-md-5 `}  >
+                <Card.Body className={`text-center px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume5_image && <> 
@@ -507,7 +507,7 @@ const Character = (props) => {
             <Row className='text-center'>
                 <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center p-md-5 `}  >
+                <Card.Body className={`text-center px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume6_image && <> 
@@ -539,7 +539,7 @@ const Character = (props) => {
                 </Col>   
                 <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center p-md-5 `}  >
+                <Card.Body className={`text-center px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume7_image && <> 
