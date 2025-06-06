@@ -143,7 +143,7 @@ const Character = (props) => {
                 </Col>
             </Row>
             <h5 className={`text-center py-1 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>CHARACTER - {role} </h5>
+             style={{ textTransform: 'uppercase'}}>{role} </h5>
              <div className={`${styles.Header} pb-3 px-3`}>
              {/* callname */}
             <Row>
@@ -281,14 +281,14 @@ const Character = (props) => {
             </Row>
             </div>
             <h5 className={`text-center py-0 mt-3 mx-md-5 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Makeup / Costumes</h5>
+             style={{ textTransform: 'uppercase'}}>Makeup / Costumes - Images & Descriptions</h5>
              <div className={`${styles.Headerv} pb-3 px-3`}>
             {/* makeup/costume 1 */}
-            <Row className='text-center py-0 mt-3'>
-            <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`}>
+            <Row className='py-0 mt-3'>
+            <Col xs={12} md={6} className={`px-0 mx-0 mb-5`}>
             <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center px-md-5 `}  >
-                    <Row>
+                <Card.Body className={`px-md-5 `}  >
+                <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {makeup_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
@@ -297,7 +297,7 @@ const Character = (props) => {
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullM() } 
                         src={makeup_image} alt="image" />
-                        {/* <iframe title="Image1" src={image1}
+                        {/* <iframe title="makeup image" src={makeup_image}
                           className={appStyles.iframeIm} alt="Image"  /> */}
                         <p className={`pr-5 mb-0 pb-0 float-right ${styles.FullsizeText }`}
                         onClick={() => handleClickFullM() }>FULLSIZE</p> 
@@ -305,23 +305,18 @@ const Character = (props) => {
                     </>}
                 </Col>
                 </Row>
-                <Row >
-                <Col xs={12} className='mx-0 px-0 '>
                 <div className={`py-2 px-3 ${styles.TopCard2 }`}>
-                {costume1 &&  <> 
+                {makeup &&  <> 
                 <p className={`${styles.Role}`}>{makeup} </p>
                 </>}
                 </div>
-                </Col >
-                </Row>
                 </Card.Body>
             </Card>
             </Col>    
-            <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`}>
+            <Col xs={12} md={6} className={`px-0 mx-0 mb-5`}>
             <Card className='mx-3 mx-md-5'>
-                <Card.Body 
-                 className={`text-center px-md-5 `}  >
-                    <Row>
+                <Card.Body className={` px-md-5 `}  >
+                <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume1_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
@@ -358,10 +353,10 @@ const Character = (props) => {
             </Col>
             </Row>
             {/* costume 2/3 */}
-            <Row className='text-center'>
-                <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
+            <Row >
+                <Col className={` px-0 mx-0 mb-5`} xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center px-md-5 `}  >
+                <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume2_image && <> 
@@ -391,9 +386,9 @@ const Character = (props) => {
                 </Card.Body>
                 </Card>
                 </Col>
-                <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
+                <Col className='px-0 mx-0 mb-5' xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center px-md-5 `}  >
+                <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume3_image && <> 
@@ -431,10 +426,10 @@ const Character = (props) => {
             </Col>
             </Row>
             {/* costume 4/5 */}
-            <Row className='text-center'>
-                <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
+            <Row >
+                <Col className={`px-0 mx-0 mb-5`} xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center px-md-5 `}  >
+                <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume4_image && <> 
@@ -464,9 +459,9 @@ const Character = (props) => {
                 </Card.Body>
                 </Card>
                 </Col>
-                <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
+                <Col className=' px-0 mx-0 mb-5' xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center px-md-5 `}  >
+                <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume5_image && <> 
@@ -504,10 +499,10 @@ const Character = (props) => {
             </Col>
             </Row>
             {/* costume 6/7 */}
-            <Row className='text-center'>
-                <Col className={`text-center px-0 mx-0 mb-5`} xs={12} md={6}>
+            <Row >
+                <Col className={`px-0 mx-0 mb-5`} xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center px-md-5 `}  >
+                <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume6_image && <> 
@@ -537,9 +532,9 @@ const Character = (props) => {
                 </Card.Body>
                 </Card>
                 </Col>   
-                <Col className='text-center px-0 mx-0 mb-5' xs={12} md={6}>
+                <Col className=' px-0 mx-0 mb-5' xs={12} md={6}>
                 <Card className='mx-3 mx-md-5'>
-                <Card.Body className={`text-center px-md-5 `}  >
+                <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
                     {costume7_image && <> 

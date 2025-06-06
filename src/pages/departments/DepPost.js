@@ -34,36 +34,26 @@ const DeptPost = (props) => {
       } = props;
 
       const handleClickFull1 = () => {
-        console.log(image1);
-        console.log("full");
         setImage(image1); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull2 = () => {
-        console.log(image2);
-        console.log("full");
         setImage(image2); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull3 = () => {
-        console.log(image3);
-        console.log("full");
         setImage(image3); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull4 = () => {
-        console.log(image4);
-        console.log("full");
         setImage(image4); 
         history.push(`/fullshot`);  
       };
 
       const handleClickFull5 = () => {
-        console.log(image5);
-        console.log("full");
         setImage(image5); 
         history.push(`/fullshot`);  
       };
@@ -87,7 +77,7 @@ const DeptPost = (props) => {
 
     return (
         <div >
-          <Card className={`${styles.PostCard}`}>
+          <Card>
           <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
           <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
           <Col xs={12} sm={3} className="my-0" >
@@ -195,8 +185,9 @@ const DeptPost = (props) => {
                 {image1 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
+                    <p className={`${styles.BoldTitle} mb-md-2`}>
                         IMAGE 1</p>
+                    {/* <p>IMAGE 1</p> */}
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         src={image1} alt="image" onClick={() => handleClickFull1() } />
@@ -213,7 +204,7 @@ const DeptPost = (props) => {
                   {image2 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
+                    <p className={`${styles.BoldTitle} mb-md-2`}>
                         IMAGE 2</p>
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
@@ -240,7 +231,7 @@ const DeptPost = (props) => {
               {image3 && <> 
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
+                    <p className={`${styles.BoldTitle} mb-md-2`}>
                         IMAGE 3</p>
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
@@ -258,7 +249,7 @@ const DeptPost = (props) => {
               {image4 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
+                    <p className={`${styles.BoldTitle} mb-md-2`}>
                         IMAGE 4</p>
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
@@ -286,7 +277,7 @@ const DeptPost = (props) => {
                   {image5 && <> 
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
+                    <p className={`${styles.BoldTitle} mb-md-2`}>
                         IMAGE 5</p>
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 

@@ -6,11 +6,14 @@ import { axiosReq } from '../../api/axiosDefaults';
 import styles from "../../styles/Characters.module.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Card from "react-bootstrap/Card";
 import { PostDropdown } from '../../components/PostDropdown';
 import { useSetLocationContext } from '../../contexts/CharLocatContex';
 import { toast } from 'react-toastify';
+import { useSetImageContext } from '../../contexts/ImageContext';
 
 const Location = (props) => {
+    const setImage = useSetImageContext(); 
     const setLocation = useSetLocationContext();
     const { id,
         name,
@@ -34,6 +37,46 @@ const Location = (props) => {
         image7,
         image8_description,
         image8, } = props;
+
+    const handleClickFull1 = () => {
+        setImage(image1); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull2 = () => {
+        setImage(image2); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull3 = () => {
+        setImage(image3); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull4 = () => {
+        setImage(image4); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull5 = () => {
+        setImage(image5); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull6 = () => {
+        setImage(image6); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull7 = () => {
+        setImage(image7); 
+        history.push(`/fullshot`);  
+      };
+
+      const handleClickFull8 = () => {
+        setImage(image8); 
+        history.push(`/fullshot`);  
+      };
     
     const history = useHistory();
 
@@ -97,7 +140,7 @@ const Location = (props) => {
                 </Col>
             </Row>
             <h5 className={`text-center py-1 mb-3 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>LOCATION - {name} </h5>
+             style={{ textTransform: 'uppercase'}}>{name} </h5>
             <div className={`px-3 ${styles.Header}`}>
             <Row className='mb-3 text-center'>
                 <Col xs={12} md={6} className={`${styles.BorderRight} 
@@ -137,23 +180,37 @@ const Location = (props) => {
             </Row>
             </div>
             <h5 className={`text-center mt-4 mb-4 py-0 mx-md-4 ${styles.SubTitle }`}
-             style={{ textTransform: 'uppercase'}}>Images</h5>
+             style={{ textTransform: 'uppercase'}}>Images & Descriptions</h5>
             <div className='px-3'>
             {/* IMAGE 1/2 */}
-            <Row className='text-center'>
-            <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
-            <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
-                <p className={`${styles.BoldTitle} mb-md-3 mx-sm-5`}>IMAGE 1</p>
+            <Row >
+            <Col xs={12} md={6} className={`px-0 mx-0 mb-3`}>
+            <Card className='mx-3 mx-md-5'>
+            <Card.Body className={`px-md-5 `}  >
+            <Row>
+                <Col className='text-center mt-0' xs={12}>
                 {image1 && <> 
-                <div className={`${styles.ImageBox2} py-md-3 px-1 px-sm-2 px-md-3 mb-md-3`}>
-                <Image className={styles.Images} 
-                src={image1} alt="Image 1" />
+                <p className={`${styles.BoldTitle} mb-md-3`}>
+                    IMAGE 1</p>
+                <div className='px-0 mb-0'>
+                    <Image className={styles.ImagesIndex} 
+                    onClick={() => handleClickFull1() } 
+                    src={image1} alt="image" />
+                    {/* <iframe title="Image1" src={image1}
+                        className={appStyles.iframeIm} alt="Image"  /> */}
+                    <p className={`pr-5 mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                    onClick={() => handleClickFull1() }>FULLSIZE</p> 
                 </div>
                 </>}
-                {image1_description &&  <> 
-                <p className={`${styles.Role}`}>{image1_description} </p>
-                </>}
+            </Col>
+            </Row>
+            <div className={`py-2 px-3 ${styles.TopCard2 }`}>
+            {image1_description &&  <> 
+            <p className={`${styles.Role}`}>{image1_description} </p>
+            </>}
             </div>
+            </Card.Body>
+            </Card>
             </Col>  
             <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-3`}>
             <div className={`${styles.ImageBox} px-sm-2 px-md-5`}>
