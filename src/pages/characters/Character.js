@@ -290,9 +290,9 @@ const Character = (props) => {
                 <Card.Body className={`px-md-5 `}  >
                 <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {makeup_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         MAKEUP</p>
+                    {makeup_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullM() } 
@@ -318,9 +318,9 @@ const Character = (props) => {
                 <Card.Body className={` px-md-5 `}  >
                 <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {costume1_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         COSTUME 1</p>
+                    {costume1_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullC1() } 
@@ -359,9 +359,9 @@ const Character = (props) => {
                 <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {costume2_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         COSTUME 2</p>
+                    {costume2_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullC2() } 
@@ -391,9 +391,9 @@ const Character = (props) => {
                 <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {costume3_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         COSTUME 3</p>
+                    {costume3_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullC3() } 
@@ -432,9 +432,9 @@ const Character = (props) => {
                 <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {costume4_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         COSTUME 4</p>
+                    {costume4_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullC4() } 
@@ -464,9 +464,9 @@ const Character = (props) => {
                 <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {costume5_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         COSTUME 5</p>
+                    {costume5_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullC5() } 
@@ -505,9 +505,9 @@ const Character = (props) => {
                 <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {costume6_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         COSTUME 6</p>
+                    {costume6_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullC6() } 
@@ -537,9 +537,9 @@ const Character = (props) => {
                 <Card.Body className={`px-md-5 `}  >
                     <Row>
                     <Col className='text-center mt-0' xs={12}>
-                    {costume7_image && <> 
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         COSTUME 7</p>
+                    {costume7_image && <> 
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         onClick={() => handleClickFullC7() } 
