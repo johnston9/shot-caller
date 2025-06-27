@@ -492,7 +492,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 </h2>
 
 - Use Case: Edit Cast Calltimes.<br>
-  1. Click the Edit button and the Edit Cast form opens.<br>
+  1. On the Callsheet Edit page click the Edit button and the Edit Cast form opens.<br>
   2. Input the changes, e.g. PU: 6.15 AM, Call: 7.15 AM and Set 8.15 AM and submit.<br/>
   3. A success message displays and Benny's new Info now displays correctly.<br>
 
@@ -507,7 +507,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
   3. Add the new BG item, e.g. "3 Clerks".<br/>
   6. Press Submit.<br>
   6. A success message displays and Clerks now displays in the "Background Added" box.<br>
-  7. On the Callsheet in the Background Calltimes section Clerks and all the inputted inf display correctly.<br>
+  7. On the Callsheet in the Background Calltimes section Clerks and all the inputted info display correctly.<br>
 
 <p align="center"> <strong>Clerks details Added</strong></p>
 <h2 align="center">
@@ -527,7 +527,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 </h2>
 
 - Use Case: Edit BG Calltimes.<br>
-  1. Click the Edit button and the Edit Cast form opens.<br>
+  1. On the Callsheet Edit page c click the Edit button and the Edit Cast form opens.<br>
   2. Input the changes, e.g Call: 8.15 AM and Set 8.15 AM and submit.<br/>
   3. A success message displays and Clerks's new Info now displays correctly.<br>
 
@@ -535,19 +535,6 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <h2 align="center">
 <img src="documentation/readme-images/callbgedit.png" width="50%">
 </h2>
-
-- Use Case: Delete a xxx.<br>
-
-  1. On the Edit/Delete icon and click the Delete icon.<br>
-  2. A Modal displays asking to Confirm Delete or Cancel<br>
-  3. Click "Delete".<br>
-  6. A success message displays and the Day is deleted.<br>
-
-<p align="center"> <strong>Success Message and Day Deleted</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/scheddaydel.png" width="50%">
-</h2>
-
 
 - Use Case: Add Important, Transport and Department Notes.<br>
   1. On the Edit page add the notes to each field and submit.<br>
@@ -560,6 +547,19 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <p align="center"> <strong>Important, Transport and Department Info Displays</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/callinfo2.png" width="50%">
+</h2>
+
+- Use Case: Add Walkie Channels.<br>
+  1. On the Edit page add the Walkie Channel number to each field and submit.<br>
+  2. A success message displays and the Walkie Channels display on the Callsheet .<br>
+
+<p align="center"> <strong>Walkie Channels Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk1.png" width="50%">
+</h2>
+<p align="center"> <strong>Walkie Channels Display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk2.png" width="50%">
 </h2>
 
 - Use Case: Add Walkie Channels.<br>
@@ -1212,9 +1212,9 @@ Description: View and Create Characters.<br>
   1. Click Characters on the Home page menu or from the Features navlink.<br>
   2. The Characters page opens with all the Characters displaying and the "Add Character" tab on top.<br>
 
-<p align="center"> <strong>Sxxxx</strong></p>
+<p align="center"> <strong>Characters page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxxx.png" width="50%">
+<img src="documentation/readme-images/charsview.png" width="50%">
 </h2>
 
 - Use Case: Find a Characters in the Search Bar.<br>
@@ -1398,9 +1398,9 @@ Description: View and Create Locations.<br>
 </h2>
 
 ### Moodboards
-Description: xxxx<br>
+Description: Add and View Moodboards. These can be added and viewed from their page if they are Scene, Character or Location Moodboards or from the Moodboard page. If the are just "Title Moodboards" the can be added and viewed from the Moodboard page.<br>
 
-- Use Case: nnnn<br>
+- Use Case: View all Scene<br>
 
   1. nnnn.
   2. nnn.
@@ -1805,7 +1805,7 @@ Description: View and Create Post within each Department outside and separate to
 </h2>
 
 ### Latest Buzz
-Description: Use the Latest Buzz feature to View and Create Important Immediate Production Posts .<br>
+Description: Use the Latest Buzz feature to View and Create Important Immediate Production Posts.<br>
 
 - Use Case: View the Latest Buzz Posts<br>
 
@@ -1873,16 +1873,6 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
   4. A success message displays saying - "Post Edited"<br>
   5. The Post displays with the changes and all new 5 images.<br>
 
-<p align="center"> <strong>Edit Form</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
-</h2>
-
-<p align="center"> <strong>The Edited Post</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
-</h2>
-
 - Use Case: Delete a Post from the Post page<br>
 
   1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
@@ -1892,19 +1882,6 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
 <p align="center"> <strong>Post Deleted</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/latedel1.png" width="50%">
-</h2>
-
-### Character and locations page
-Description: xxxx<br>
-
-- Use Case: nnnn<br>
-
-  1. nnnn.
-  2. nnn.
-
-<p align="center"> <strong>nnnnnnnn</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/nnnnnn.png" width="50%">
 </h2>
 
 ## General Features

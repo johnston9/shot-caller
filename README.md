@@ -384,7 +384,7 @@ sqlparse==0.4.2 <br>
   
 ### Content
 
-All content was written by the developer and Capital Numbers.
+All content was written by the developer and Capital Numbers Infotech. [Capital Numbers](https://www.capitalnumbers.com/)
 
 ### Media
 
