@@ -18,6 +18,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
     location_ass_3_calltime, location_ass_4_calltime,
     location_security_calltime,
     } = callsheet;
+
   return (
     <div>
       <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
@@ -30,7 +31,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
       <Row>
       {/* Location Manager */}
       {(location_mngr_calltime && location_mngr_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -50,7 +51,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
       }
       {/* Location Manager 2/Other - (using Location Assistant 1 keys for this) */}
       {(location_ass_1_calltime && location_ass_1_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -70,7 +71,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
       }
       {/* Assistant Location Manager - (using "Location Assistant 2" keys for this) */}
       {(location_ass_2_calltime && location_ass_2_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -90,7 +91,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
       }
       {/* Location Assistant 1 - (using "Location Assistant 3" keys for this) */}
       {(location_ass_3_calltime && location_ass_3_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -110,7 +111,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
       }
       {/* Location Assistant 2 - (using "Location Assistant 4" keys for this) */}
       {(location_ass_4_calltime && location_ass_4_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -130,7 +131,7 @@ const TimesLocations = ({crewInfoOne, callsheet, setShowLoc }) => {
       }
       {/* Location Security/Other */}
       {(location_security_calltime && location_security_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

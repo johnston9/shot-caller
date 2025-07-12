@@ -11,6 +11,7 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
 
   const { editor_calltime, fx_calltime,
     } = callsheet;
+
   return (
     <div>
       <div className={`mt-0 mb-2 text-center ${styles.Back3 }`}>
@@ -24,7 +25,7 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
       <Row>
       {/* On Set Editor */}
       {(editor_calltime && editor_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -44,7 +45,7 @@ const TimesPostAdditional = ({crewInfoOne, callsheet, setShowPos }) => {
       }
       {/* VFX Supervisor */}
       {(fx_calltime && fx_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

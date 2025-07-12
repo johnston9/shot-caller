@@ -30,7 +30,7 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
       <Row>
       {/* Stunt Coordinator */}
       {(stunt_coordinator_calltime && stunt_coordinator_name) && ( 
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -50,7 +50,7 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
       ) }
       {/* Stunt Performer 1 */}
       {(stunts_1_calltime && stunts_1_name) && ( 
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -70,7 +70,7 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
       ) }
       {/* Stunt Performer 2 */}
       {(stunts_2_calltime && stunts_2_name) && ( 
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -96,7 +96,7 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
       <Row>
       {/* Special Effects Supervisor - (Using Stunt Performer 3 Keys ) */}
       {(stunts_3_calltime && stunts_3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -116,7 +116,7 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
       }
       {/* Special Effects Assistant 1 - (Using Stunt Performer 4 Keys )*/}
       {(stunts_4_calltime && stunts_4_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -136,7 +136,7 @@ const TimesStunts = ({crewInfoOne, callsheet, setShowStu }) => {
       }
       {/* Special Effects Assistant 2 - (Using Stunt Performer 5 Keys )*/}
       {(stunts_5_calltime && stunts_5_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

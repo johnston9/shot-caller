@@ -40,7 +40,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
         <Row className="px-2">
         {/* director */}
         {(director_calltime && director_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -60,7 +60,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
         }
         {/* producer */}
         {(producer_calltime && producer_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -80,7 +80,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* pro_coordinator */}
         {(pro_coordinator_calltime && pro_coordinator_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -100,7 +100,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* upm */}
         {(upm_calltime && upm_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -120,7 +120,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* Travel Coordinator */}
          {(travel_coordinator_calltime && travel_coordinator_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -140,7 +140,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* Production PA */}
          {(production_pa_calltime && production_pa_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -160,7 +160,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* Set Medic */}
          {(set_medic_calltime && set_medic_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Border}l`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -180,7 +180,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* oth production pos 1 */}
          {(oth_production_pos_1_calltime && oth_production_pos_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -200,7 +200,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* oth production pos 2 */}
          {(oth_production_pos_2_calltime && oth_production_pos_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -220,7 +220,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* oth production pos 3 */}
          {(oth_production_pos_3_calltime && oth_production_pos_3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -240,7 +240,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* oth production pos 4 */}
          {(oth_production_pos_4_calltime && oth_production_pos_4_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -260,7 +260,7 @@ const TimeCallsProduction = ({crewInfoOne, callsheet, setShowPro }) => {
          }
          {/* oth production pos 5 */}
          {(oth_production_pos_5_calltime && oth_production_pos_5_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

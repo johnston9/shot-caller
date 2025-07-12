@@ -32,7 +32,7 @@
          <Row>
          {/* Transport Captain */}
          {(transport_captain_calltime && transport_captain_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -52,7 +52,7 @@
          }
          {/* Transport Manager 1 */}
          {(transport_manager_1_calltime && transport_manager_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -72,7 +72,7 @@
          }
          {/* Transport Manager 2 */}
          {(transport_manager_2_calltime && transport_manager_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -92,7 +92,7 @@
          }
          {/* Head Driver */}
          {(head_driver_calltime && head_driver_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -112,7 +112,7 @@
          }
          {/* Driver 1 */}
          {(car1_calltime && car1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -132,7 +132,7 @@
          }
          {/* Driver 2 */}
          {(car2_calltime && car2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -152,7 +152,7 @@
          }
          {/* Driver 3 */}
          {(car3_calltime && car3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -172,7 +172,7 @@
          }
          {/* Driver 4 */}
          {(truck1_calltime && truck1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

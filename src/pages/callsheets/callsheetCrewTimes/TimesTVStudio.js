@@ -33,7 +33,7 @@
          <Row>
          {/* Technical Director - (Using Additional Position 16 keys) add_pos_16_job */}
          {(add_pos_16_calltime && add_pos_16_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -53,7 +53,7 @@
          }
          {/* Floor Manager - (Using Additional Position 17 keys) add_pos_17_job */}
          {(add_pos_17_calltime && add_pos_17_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -73,7 +73,7 @@
          }
          {/* A1/Audio - (Using Additional Position 18 keys) add_pos_18_job */}
          {(add_pos_18_calltime && add_pos_18_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -93,7 +93,7 @@
          }
          {/* Stage Manager - (Using Additional Position 20 keys) add_pos_20_job */}
          {(add_pos_20_calltime && add_pos_20_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

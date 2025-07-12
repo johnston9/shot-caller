@@ -32,7 +32,7 @@
         <Row className="px-2">
         {/* 1st AD */}
         {(ad_1_calltime && ad_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -52,7 +52,7 @@
         }
         {/* 2nd AD */}
         {(ad_2_calltime && ad_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -72,7 +72,7 @@
         }
         {/* 3rd AD */}
         {(ad_3_calltime && ad_3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -92,7 +92,7 @@
         }
         {/* 4th AD */}
         {(ad_4_calltime && ad_4_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -112,7 +112,7 @@
         }
         {/* 2nd 2nd AD */}
         {(ad_5_calltime && ad_5_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -138,7 +138,7 @@
         <Row className="px-2">
         {/* Production Assistant 1 */}
         {(pro_assistant_1_calltime && pro_assistant_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -158,7 +158,7 @@
         }
         {/* Production Assistant 2 */}
         {(pro_assistant_2_calltime && pro_assistant_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -178,7 +178,7 @@
         }
         {/* Production Assistant 3 */}
         {(pro_assistant_3_calltime && pro_assistant_3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

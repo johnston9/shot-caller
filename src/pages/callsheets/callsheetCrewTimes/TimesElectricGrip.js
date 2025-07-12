@@ -38,7 +38,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       <Row>
       {/* Gaffer */}
       {(gaffer_calltime && gaffer_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -58,7 +58,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* Best Boy Electric */}
       {(best_boy_electric_calltime && best_boy_electric_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -78,7 +78,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* 3rd Electric */}
       {(electric_3_calltime && electric_3_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -98,7 +98,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* Electrician */}
       {(electric_4_calltime && electric_4_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -125,7 +125,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       <Row>
       {/* Keygrip */}
       {(keygrip_calltime && keygrip_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -145,7 +145,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* Best Boy Grip */}
       {(best_boy_grip_calltime && best_boy_grip_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -165,7 +165,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* Dolly Grip */}
       {(dolly_grip_calltime && dolly_grip_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -185,7 +185,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* G&E Swing 1 */}
       {(swing_ge1_calltime && swing_ge1_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -205,7 +205,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* G&E Swing 2 */}
       {(swing_ge2_calltime && swing_ge2_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -225,7 +225,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* G&E Swing 3 */}
       {(swing_ge3_calltime && swing_ge3_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -245,7 +245,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* G&E Swing 4 */}
       {(swing_ge4_calltime && swing_ge4_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -265,7 +265,7 @@ const TimesElectricGrip = ({crewInfoOne, callsheet, setShowEle }) => {
       }
       {/* G&E Swing 5 */}
       {(swing_ge5_calltime && swing_ge5_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

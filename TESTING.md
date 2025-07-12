@@ -575,6 +575,19 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/callwalk2.png" width="50%">
 </h2>
 
+- Use Case: Add Location.<br>
+  1. On the Edit page add the Location and submit.<br>
+  2. A success message displays and the Locations display on the Callsheet .<br>
+
+<p align="center"> <strong> Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk1.png" width="50%">
+</h2>
+<p align="center"> <strong> Display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk2.png" width="50%">
+</h2>
+
 ### Budgeting 
 - As this feature is held on the "Shot Caller Production" home app the Budgeting testing is on it's Testing page. [Testing](https://github.com/johnston9/shot-caller-production/blob/main/TESTING.md)<br>
 

@@ -53,7 +53,7 @@
          <Row>
          {/* additional position 1 */}
          {(add_pos_1_calltime && add_pos_1_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -73,7 +73,7 @@
           }
           {/* additional position 2 */}
           {(add_pos_2_calltime && add_pos_2_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -93,7 +93,7 @@
           }
           {/* additional position 3 */}
           {(add_pos_3_calltime && add_pos_3_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -113,7 +113,7 @@
           }
           {/* additional position 4 */}
           {(add_pos_4_calltime && add_pos_4_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -133,7 +133,7 @@
           }
           {/* additional position 5 */}
           {(add_pos_5_calltime && add_pos_5_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -153,7 +153,7 @@
           }
           {/* additional position 6 */}
           {(add_pos_6_calltime && add_pos_6_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -173,7 +173,7 @@
           }
           {/* additional position 7 */}
           {(add_pos_7_calltime && add_pos_7_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -193,7 +193,7 @@
           }
           {/* additional position 8 */}
           {(add_pos_8_calltime && add_pos_8_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -213,7 +213,7 @@
           }
           {/* additional position 9 */}
           {(add_pos_9_calltime && add_pos_9_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -233,7 +233,7 @@
           }
           {/* additional position 10 */}
           {(add_pos_10_calltime && add_pos_10_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -253,7 +253,7 @@
           }
           {/* additional position 11 */}
           {(add_pos_11_calltime && add_pos_11_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -273,7 +273,7 @@
           }
           {/* additional position 12 */}
           {(add_pos_12_calltime && add_pos_12_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -293,7 +293,7 @@
           }
           {/* additional position 13 */}
           {(add_pos_13_calltime && add_pos_13_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -313,7 +313,7 @@
           }
           {/* additional position 14 */}
           {(add_pos_14_calltime && add_pos_14_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -333,7 +333,7 @@
           }
           {/* additional position 15 */}
           {(add_pos_15_calltime && add_pos_15_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

@@ -45,7 +45,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       <Row>
       {/* Production Designer */}
       {(production_designer_calltime && production_designer_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -65,7 +65,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Art Director */}
       {(art_director_calltime && art_director_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -85,7 +85,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Standby Art - (Using Catering Company 1 keys) */}
       {(catering_co_1_calltime && catering_co_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -105,7 +105,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Art Assistant */}
       {(art_assistant_calltime && art_assistant_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -134,7 +134,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       <Row>
       {/* Set Decorator */}
       {(set_decorator_calltime && set_decorator_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -154,7 +154,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Assistant Set Decorator - (Using cater 2 Keys) */}
       {(catering_co_2_calltime && catering_co_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -174,7 +174,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Set Dresser */}
       {(set_dresser_calltime && set_dresser_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -194,7 +194,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Lead Man */}
       {(lead_man_calltime && lead_man_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -214,7 +214,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Dresser */}
       {(dresser_calltime && dresser_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -234,7 +234,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Swing Gang 1 - (Using cater 3 Keys) */}
       {(catering_co_3_calltime && catering_co_3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -263,7 +263,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       <Row>
       {/* Prop Master */}
       {(prop_master_calltime && prop_master_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -283,7 +283,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Assistant Prop Master */}
       {(ass_prop_master_calltime && ass_prop_master_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -303,7 +303,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* On Set Props Person (Using Additional Camera Position 5 Keys) */}
       {(oth_camera_pos_5_calltime && oth_camera_pos_5_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -323,7 +323,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Prop Buyer */}
       {(prop_buyer_calltime && prop_buyer_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -343,7 +343,7 @@ const TimesArt = ({crewInfoOne, callsheet, setShowArt }) => {
       }
       {/* Armorer */}
       {(armorer_calltime && armorer_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

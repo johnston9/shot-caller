@@ -27,7 +27,7 @@ const TimesSoundTransport = ({crewInfoOne, callsheet, setShowSou }) => {
       <Row>
       {/* Sound Mixer */}
       {(sound_mixer_calltime && sound_mixer_name) && ( 
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -47,7 +47,7 @@ const TimesSoundTransport = ({crewInfoOne, callsheet, setShowSou }) => {
       ) }
       {/* Boom Operator */}
       {(boom_operator_calltime && boom_operator_name) && ( 
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -67,7 +67,7 @@ const TimesSoundTransport = ({crewInfoOne, callsheet, setShowSou }) => {
       ) }
       {/* Boom Operator 2/UTA - (Using Sound Assistant 1 keys) */}
       {(sound_assistant_1_calltime && sound_assistant_1_name) && ( 
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -87,7 +87,7 @@ const TimesSoundTransport = ({crewInfoOne, callsheet, setShowSou }) => {
       ) }
       {/* Sound Assistant - (Using Sound Assistant 2 keys) */}
       {(sound_assistant_2_calltime && sound_assistant_2_name) && ( 
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className='mt-1 mx-0 d-flex align-items-center' >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

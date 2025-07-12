@@ -33,7 +33,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       <Row>
       {/* Key Hair and Makeup */}
       {(key_hairmakeup_calltime && key_hairmakeup_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -53,7 +53,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       }
       {/* Key Hairstylist */}
       {(key_hairstylist_calltime && key_hairstylist_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -73,7 +73,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       }
       {/* SFX Makeup */}
       {(sfx_makeup_calltime && sfx_makeup_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -93,7 +93,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       }
       {/* SFX Makeup Assistant/Other */}
       {(sfx_makeup_assistant_calltime && sfx_makeup_assistant_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -113,7 +113,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       }
       {/* Hair/Makeup Artist 1 */}
       {(makeup_artist_1_calltime && makeup_artist_1_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -133,7 +133,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       }
       {/* Hair/Makeup Artist 2 */}
       {(makeup_artist_2_calltime && makeup_artist_2_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -153,7 +153,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       }
       {/* Hair/Makeup Artist 3 */}
       {(makeup_artist_3_calltime && makeup_artist_3_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -173,7 +173,7 @@ const TimesMakeup = ({crewInfoOne, callsheet, setShowMak }) => {
       }
       {/* Hair/Makeup Artist 4 */}
       {(makeup_artist_4_calltime && makeup_artist_4_name) &&
-            (<Col xs={12} lg={6}>
+            (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
             <Row className={`mt-1 mx-0 d-flex align-items-center`} >
               <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
                 <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

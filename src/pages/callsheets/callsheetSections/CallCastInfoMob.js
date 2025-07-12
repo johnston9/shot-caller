@@ -42,27 +42,7 @@ const CallCastInfoMob = (props) => {
             <p className='mb-0 py-2'>{on_set1}</p>
         </Col> 
         </Row>
-        {admin ? (
-            <Row className='text-center px-0 mx-0'>
-            <Col className={`mx-0 px-0  ${styles.Border2}`} xs={2}>
-            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>SWF</p>
-            <p className='mb-0 py-2'>{swf1}</p>
-            </Col>
-            <Col className={`text-center mx-0 px-0 ${styles.Border2}`} xs={8}>
-            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Requirements</p>
-            <p className={`mb-0 mx-0 py-2`}>{inst1}</p>
-            </Col>   
-            <Col className={`mx-0 px-0 ${styles.Border2} `} xs={2} md={2}>
-            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Edit</p>
-            <PostDropdown
-                    className={` mx-0 my-2`}
-                    handleEdit={handleEdit}
-                    handleDelete={handleDelete}
-                />
-            </Col>            
-        </Row>
-        ) : (
-            <Row className='text-center px-0 mx-0'>
+        <Row className='text-center px-0 mx-0'>
             <Col className={`mx-0 px-0  ${styles.Border2}`} xs={2}>
             <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>SWF</p>
             <p className='mb-0 py-2'>{swf1}</p>
@@ -72,7 +52,6 @@ const CallCastInfoMob = (props) => {
             <p className={`mb-0 mx-0 py-2`}>{inst1}</p>
             </Col>             
         </Row>
-        )}
     </div>
   )
 }

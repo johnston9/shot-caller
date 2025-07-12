@@ -24,7 +24,7 @@ const TimesCastingAD = ({crewInfoOne, callsheet, setShowCas }) => {
       <Row>
       {/* Extras Casting */}
       {(extras_casting_calltime && extras_casting_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

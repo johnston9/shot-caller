@@ -37,7 +37,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       <Row>
       {/* DOP */}
       {(dop_calltime && dop_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -57,7 +57,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* Camera Operator */}
       {(camera_operator_calltime && camera_operator_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -77,7 +77,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* 1st AC */}
       {(camera_ass_1_calltime && camera_ass_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -97,7 +97,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* 2nd AC */}
       {(camera_ass_2_calltime && camera_ass_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -117,7 +117,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* DIT */}
       {(dit_calltime && dit_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -137,7 +137,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* Steadicam */}
       {(steadicam_calltime && steadicam_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -157,7 +157,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* Camera PA */}
       {(camera_pa_calltime && camera_pa_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -177,7 +177,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* Other Camera Pos 1 */}
       {(oth_camera_pos_1_calltime && oth_camera_pos_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -197,7 +197,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* Other Camera Pos 2 */}
       {(oth_camera_pos_2_calltime && oth_camera_pos_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -217,7 +217,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* Other Camera Pos 3 */}
       {(oth_camera_pos_3_calltime && oth_camera_pos_3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -237,7 +237,7 @@ const TimesCamera = ({crewInfoOne, callsheet, setShowCam }) => {
       }
       {/* Other Camera Pos 4 */}
       {(oth_camera_pos_4_calltime && oth_camera_pos_4_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>

@@ -46,20 +46,9 @@ const TalentPage = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Set</p>
                 </Col>
-                {admin ? (
-                    <>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Info</p>
-                    </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                        <p className='mb-0'>Edit</p>
-                    </Col>
-                    </>
-                ): (
                     <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                     <p className='mb-0'>Info</p>
-                    </Col>
-                )}
+                </Col>
             </Row>
         </div>
         <div className='d-block d-md-none'>

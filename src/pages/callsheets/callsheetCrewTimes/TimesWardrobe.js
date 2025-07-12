@@ -38,7 +38,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       <Row>
       {/* Costume Designer */}
       {(costume_designer_calltime && costume_designer_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -58,7 +58,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Assistant Costume Designer */}
       {(ass_costume_designer_calltime && ass_costume_designer_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -78,7 +78,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Wardrobe Supervisor - (Using Casting Director keys) */}
       {(casting_director_calltime && casting_director_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -98,7 +98,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Key Costumer - (Using Production Assistant 4 keys) */}
       {(pro_assistant_4_calltime && pro_assistant_4_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -118,7 +118,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Truck Costumer - (Using Production Assistant 5 keys) */}
       {(pro_assistant_5_calltime && pro_assistant_5_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -138,7 +138,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Set Costumer 1 - (Using Wardrobe Assistant 4 keys) */}
       {(wardrobe_assistant_4_calltime && wardrobe_assistant_4_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -158,7 +158,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Set Costumer 2 - (Using Wardrobe Assistant 5 keys) */}
       {(wardrobe_assistant_5_calltime && wardrobe_assistant_5_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -178,7 +178,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Wardrobe Assistant 1 */}
       {(wardrobe_assistant_1_calltime && wardrobe_assistant_1_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -198,7 +198,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Wardrobe Assistant 2 */}
       {(wardrobe_assistant_2_calltime && wardrobe_assistant_2_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
@@ -218,7 +218,7 @@ const TimesWardrobe = ({crewInfoOne, callsheet, setShowWar }) => {
       }
       {/* Wardrobe Assistant 3 */}
       {(wardrobe_assistant_3_calltime && wardrobe_assistant_3_name) &&
-          (<Col xs={12} lg={6}>
+          (<Col xs={12} lg={6} className={`${styles.RightPanel}`}>
           <Row className={`mt-1 mx-0 d-flex align-items-center`} >
             <Col className={`mx-0 px-0 ${styles.Borderl}`} xs={12} sm={5} >
               <p className={`${styles.BoldScene} my-0 py-0 d-block d-sm-none text-center`}>
