@@ -206,7 +206,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
     );
     
   return (
-    <div className={`my-3 `}>
+    <div>
       <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-1 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
       <h5 className={`pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
@@ -214,59 +214,35 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       </div>            
       <div className={`mb-3 ${styles.White }`}>
       <Form className="text-center" onSubmit={handleSubmit}>
-
-      {/* <Row>
-      <Col xs={12} >
-      <p className={`mt-3 pt-2 mb-0 ${styles.BoldScene }`}>
-      SELECT ROLE
-      </p>
-      </Col>
-      </Row> */}
       {/* select */}
-      <Row className="py-2" style={{fontStyle: 'italic'}}>
-      {/* <Col xs={12} md={6}>
-      <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
-      CAST ADDED
-      </p>
-      <div className={`mt-2 px-1 py-1 ${styles.CastEntered }`} >
-        {cast.results.length ? (
-            cast.results.map((ca) => (
-              <span key={ca.id}>{ca.role}, </span>
-            ))) : ("")}
-        </div>
-      </Col> */}
-      {/* <Col xs={12} >
-      <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
-      SELECTED ROLE INFO
-      </p>
-      <div className={`text-center mx-2 mt-2 py-1 ${styles.CastEntered }`}>
-      {cast_number ? (
-        <>
-            <p>{role} Info - Actor: {artist}, Makeup: {make_up_time}, 
-            Commute: {commute_time}, Contact: {contact}</p>
-        </>
-      ) : (
-        ""
-      )}
-      </div>
-      </Col> */}
-      </Row>
       <Row>
       <Col  >
-      <div className={`${styles.SelectBox } mx-md-5 my-3 py-3`}>  
+      <div className={`${styles.SelectBoxv } py-0`}>  
       <Row>
-      <Col xs={6} md={4} >
-        <DropdownButton id="dropdown-basic-button" variant="info"
+      <Col xs={6} md={3} className="px-0 mx-0 mt-2" >
+        {/* <DropdownButton id="dropdown-basic-button" variant="info"
         className={`pt-1 pl-2 ${styles.DropButt}`} title="Select">
         {characters.results.length && (
               characters.results.map((character) => (
                 <Dropdown.Item onClick={() => setData(character) } 
                 key={character.id} >{character.role}</Dropdown.Item>
               ) )) }
-        </DropdownButton>
+        </DropdownButton> */}
+        <Dropdown>
+        <Dropdown.Toggle variant="info" id="dropdown-basic">
+          Select
+        </Dropdown.Toggle>
+        <Dropdown.Menu className={`pt-1 pl-2 ${styles.DropButt}`}>
+        {characters.results.length && (
+              characters.results.map((character) => (
+                <Dropdown.Item onClick={() => setData(character) } 
+                key={character.id} >{character.role}</Dropdown.Item>
+              ) )) }
+        </Dropdown.Menu>
+        </Dropdown>
       </Col>
-      <Col xs={6} md={2} >
-      <div className={`mt-2 ${styles.HRGold }`}>
+      <Col xs={6} md={3} className="px-0 mx-0">
+      <div className={`mt-4 px-md-5 ${styles.HRGold }`}>
       <p className={``}>
       {role}
       </p>
@@ -279,7 +255,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       <div className={`text-center mx-2 mt-2 py-1 ${styles.CastEntered }`}>
       {cast_number ? (
         <>
-            <p>{role} Info - Actor: {artist}, Makeup: {make_up_time}, 
+            <p>Actor: {artist}, Makeup: {make_up_time}, 
             Commute: {commute_time}, Contact: {contact}</p>
         </>
       ) : (
@@ -291,28 +267,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       </div>
       </Col>
       </Row>
-      {/* role */}
-      {/* <Row>
-        <Col className="d-none d-md-block" xs={4} ></Col>
-          <Col className="d-flex justify-content-center mx-0 px-1" md={4} >
-            <Form.Group controlId="role" className={`${styles.Width2} `}  >
-                <Form.Label className={`${styles.BoldScene}`} >Role</Form.Label>
-                <Form.Control 
-                className={`${styles.Input}`} 
-                type="text"
-                name="role"
-                value={role}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.role?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-        </Col>
-      </Row>
-      <hr/> */}
+      <hr/>
       {/* number swf pickup call hmw on_set */}
       <Row className="mx-0 my-3">
         <Col className="d-flex justify-content-center mx-0 px-1" xs={3}>
@@ -349,7 +304,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
             </Alert>
           ))}
           </Col>
-        <Col className=" -flex justify-content-centermx-0 px-1" xs={3}>
+        <Col className="d-flex justify-content-center mx-0 px-1" xs={3}>
         <Form.Group controlId="hmw" className={`${styles.Width2} `}  >
             <Form.Label className={`${styles.BoldScene}`} >H/M/W</Form.Label>
             <Form.Control 
@@ -451,8 +406,14 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         </Col>
       </Row>
       </Form>
+      <Row>
+        <Col md={2} className="d-none d-md-block"></Col>
+        <Col xs={12} md={8}>
+        <hr className={`${styles.Break7 }`}/>
+        </Col>
+      </Row>
       {/* NEW CAST ADDED */}
-      <Row className="py-md-2" >
+      <Row >
       <Col xs={12} >
       <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
       CAST ADDED
@@ -468,7 +429,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       cast={cast}/>
       <Row>
       <Col md={{span: 8, offset: 2}} >
-      <hr className={`${styles.Break2} `}/>
+      <hr className={`${styles.Break} mt-5`}/>
       </Col>
       </Row>
       </div>
