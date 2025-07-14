@@ -14,9 +14,9 @@ import CallCastInfo from './CallCastInfo';
 import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
 import EditCast from '../CallsheetEditCast';
-import CallCastInfoMob from './CallCastInfoMob';
+import CallCastInfoMoAddCast from './CallCastInfoMoAddCast';
 
-const CallCast = (props) => {
+const CallCastAddCast = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
 
@@ -94,7 +94,7 @@ const CallCast = (props) => {
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.Border2}`} xs={1} md={1}>
                     <p className='mb-0'>{pickup1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.CastCall}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.CastCall}`} xs={1} md={1}>
                 <p className={`mb-0`}>{call1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 v d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
@@ -103,11 +103,17 @@ const CallCast = (props) => {
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <p className='mb-0'>{on_set1}</p>
                 </Col>
-                    <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
-                    <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
-                        className={`${btnStyles.Button} ${btnStyles.Shed}`}>
-                        Info
-                    </Button>
+                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
+                <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
+                    className={`${btnStyles.Button} ${btnStyles.Shed}`}>
+                    I
+                </Button>
+                </Col>
+                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
+                <PostDropdown
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                    />
                 </Col>
             </Row>
             {/* info */}
@@ -154,7 +160,7 @@ const CallCast = (props) => {
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <CallCastInfoMob 
+                    <CallCastInfoMoAddCast
                     handleMount={handleMount}
                     setShowEdit={setShowEdit} 
                     {...castNew}/> 
@@ -180,5 +186,5 @@ const CallCast = (props) => {
         </div>
     )
 }
-  
-export default CallCast
+
+export default CallCastAddCast

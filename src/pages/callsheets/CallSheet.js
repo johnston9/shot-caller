@@ -35,7 +35,6 @@ const CallSheet = (props ) => {
     // eslint-disable-next-line
     const crewEmailList = useCrewEmailsContext();
     // console.log(crewEmailList);
-    const callsheetreal = true;
     const crewInfoOne = useCrewInfoContext();
     const history = useHistory();
     const [yourcalltime, setYourcalltime] = useState("");
@@ -450,7 +449,7 @@ const CallSheet = (props ) => {
          </Button> }
         </Col>
         </Row>
-        {/* MEDIUM pink fff6f6*/}
+        {/* MEDIUM */}
         <div className='d-none d-md-block mt-2'>
         {!showSend ? (
               ""
@@ -622,7 +621,6 @@ const CallSheet = (props ) => {
         <SchedulePage scenes={scenes} />
         {/* Talent  */}
         <TalentPage 
-        callsheetreal={callsheetreal}
         handleMount={handleMount}
         cast={cast} />
         {/* BG AND STANDINS */}

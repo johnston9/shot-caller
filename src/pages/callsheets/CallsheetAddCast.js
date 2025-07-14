@@ -8,12 +8,11 @@ import Col from "react-bootstrap/Col";
 import styles from "../../styles/Callsheets.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCharactersContext } from "../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
 import { toast } from 'react-toastify';
-import TalentPage from "./callsheetSections/TalentPage";
+import TalentPageAddCast from "./callsheetSections/TalentPageAddCast";
 
 const AddCast = ({id, setShow, dataDay, dataDate}) => {
     const [errors, setErrors] = useState({});
@@ -424,7 +423,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       Edit previously added Cast here from the Info button</p>
       </Col>
       </Row>
-      <TalentPage
+      <TalentPageAddCast
       handleMount={handleMount}
       cast={cast}/>
       <Row>

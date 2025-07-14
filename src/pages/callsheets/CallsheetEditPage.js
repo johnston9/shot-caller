@@ -302,21 +302,21 @@ const CallsheetEditPage = () => {
       location_3_parking_n_notes, 
       location_4_parking_n_notes,
       location_5_parking_n_notes,
-      location_6_name,
-      location_7_name,
-      location_8_name,
-      location_9_name,
-      location_10_name,
-      location_6_address, 
-      location_7_address, 
-      location_8_address, 
-      location_9_address, 
-      location_10_address, 
-      location_6_parking_n_notes, 
-      location_7_parking_n_notes, 
-      location_8_parking_n_notes, 
-      location_9_parking_n_notes,
-      location_10_parking_n_notes,
+      // location_6_name,
+      // location_7_name,
+      // location_8_name,
+      // location_9_name,
+      // location_10_name,
+      // location_6_address, 
+      // location_7_address, 
+      // location_8_address, 
+      // location_9_address, 
+      // location_10_address, 
+      // location_6_parking_n_notes, 
+      // location_7_parking_n_notes, 
+      // location_8_parking_n_notes, 
+      // location_9_parking_n_notes,
+      // location_10_parking_n_notes,
       nearest_hospital,
       hospital_address_line_1,
       hospital_address_line_2,
@@ -2252,8 +2252,8 @@ const CallsheetEditPage = () => {
         setShow={setShowSideBySide}
         scenes={scenes}  />
         </Col>
-        <Col md={6}>
-          <div>
+        <Col md={6} className="pt-3">
+        <div>
         <AddCast 
         id={id} 
         setShow={setShowSideBySide} 
