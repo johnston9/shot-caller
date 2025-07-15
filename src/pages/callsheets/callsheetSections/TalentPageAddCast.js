@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 import CallCastAddCast from './CallCastAddCast';
 
-const TalentPageAddCast = ({cast, setShow="", handleMount}) => {
+const TalentPageAddCast = ({cast, handleMount}) => {
 
   return (
     <div className='mt-3'>
@@ -24,9 +24,6 @@ const TalentPageAddCast = ({cast, setShow="", handleMount}) => {
                 <p className='mb-0'>Artist</p>
             </Col>
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-            <p className='mb-0'>SWF</p>                        
-            </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                 <p className='mb-0'>PU</p>
             </Col>
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
@@ -37,6 +34,9 @@ const TalentPageAddCast = ({cast, setShow="", handleMount}) => {
             </Col>
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                 <p className='mb-0'>Set</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+            <p className='mb-0'>SWF</p>                        
             </Col>
             <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                 <p className='mb-0'>Info</p>

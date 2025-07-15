@@ -29,9 +29,6 @@ const TalentPage = (props) => {
                     <p className='mb-0'>Artist</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                <p className='mb-0'>SWF</p>                        
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>PU</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
@@ -43,8 +40,11 @@ const TalentPage = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                     <p className='mb-0'>Set</p>
                 </Col>
-                    <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Info</p>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>SWF</p>                        
+                </Col>
+                <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>Info</p>
                 </Col>
             </Row>
         </div>

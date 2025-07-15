@@ -10,6 +10,7 @@ import Alert from "react-bootstrap/Alert";
 import { toast } from 'react-toastify';
 
 import { axiosReq } from "../../api/axiosDefaults";
+import BgPageAddBG from "./callsheetSections/BgPageAddBG";
 
 const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
     console.log(id)
@@ -43,7 +44,6 @@ const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
                     set: "",})
     }
 
-    useEffect(() => {
     const handleMount = async () => {
         try {
             const { data } = await axiosReq.get(`/backgroundcallsnew/?day_id=${id}`)
@@ -52,6 +52,8 @@ const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
             console.log(err);
             }
     }
+
+    useEffect(() => {
     handleMount();
     }, [id])
 
@@ -106,7 +108,7 @@ const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
     </div>
     );
 
-return (
+    return (
     <div className={`my-3 `}>
         <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
@@ -116,23 +118,9 @@ return (
       ADD BACKGROUND/STANDINS</h5>
       </div>
     <div className={`mb-3 ${styles.White }`}>
-    <Row className="mt-0 mb-3 pt-0" style={{fontStyle: 'italic'}}>
-        {/* <Col sm={{span: 8, offset: 2} }> */}
-        <Col md={6} >
-        <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
-        BACKGROUND ADDED</p>
-        <div className={`text-center px-2 my-0 py-1 ${styles.CastEntered }`} >
-        {background.results.length ? (
-            background.results.map((back) => (
-                <span key={back.id}>{back.type}, </span>
-            ))) : ("")}
-        </div>
-        </Col>
-    </Row>
-    <hr/>
     <Form className="text-center" onSubmit={handleSubmit}>
             {/* qty call set scenes*/}
-        <Row className="mx-0">
+        <Row className="mx-0 mt-3">
             <Col className="d-flex justify-content-center mx-0" xs={3}>
             <Form.Group controlId="qty" className={`${styles.Width} `}  >
                 <Form.Label className={`${styles.BoldScene}`} >Qty</Form.Label>
@@ -241,12 +229,40 @@ return (
             </Col>
         </Row>
         {/* buttons */}
-        <Row>
+        <Row className="mt-3">
         <Col className="text-center">
         <div className= {`mt-3 `} >{buttons}</div>
         </Col>
         </Row>
         </Form>
+        {/* break */}
+        <Row>
+        <Col md={2} className="d-none d-md-block"></Col>
+        <Col xs={12} md={8}>
+        <hr className={`${styles.Break7 }`}/>
+        </Col>
+        </Row>
+        {/* NEW BG ADDED */}
+        <Row >
+        <Col xs={12} >
+        <p className={`text-center pt-2 mb-0 ${styles.BoldScene }`}>
+        BACKGROUND & STANDINS ADDED
+        </p>
+        <p className="text-center d-none d-md-block" style={{fontStyle: 'italic'}}>
+        Edit previously added BG here</p>
+        <p className="text-center d-block d-md-none" style={{fontStyle: 'italic'}}>
+        Edit previously added BG here from the Info button</p>
+        </Col>
+        </Row> 
+        <BgPageAddBG
+        handleMount={handleMount}
+        background={background}/>
+        {/* break */}
+        <Row>
+        <Col md={{span: 8, offset: 2}} >
+        <hr className={`${styles.Break} mt-5`}/>
+        </Col>
+        </Row>
     </div>
     </div>
 )

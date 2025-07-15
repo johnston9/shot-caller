@@ -18,11 +18,9 @@ import CallCastInfoMob from './CallCastInfoMob';
 
 const CallCast = (props) => {
     const [showInfo, setShowInfo] = useState(false);
-    const [showEdit, setShowEdit] = useState(false);
 
     const { 
         style,
-        handleMount,
         id,
         day_id,
         cast_number,
@@ -63,18 +61,6 @@ const CallCast = (props) => {
         on_set1,
       } = castNew;
 
-    const handleEdit = () => {
-        setShowEdit(showEdit => !showEdit)
-      };
-    
-    const handleDelete = async () => {
-        try {
-            await axiosReq.delete(`/castcallsnew/${id}/`);
-            handleMount();
-        } catch (err) {
-        }
-    };
-
     return (
         <div style={style} className={` ${styles.Bold}`} > 
         <div className='d-none d-md-block'>
@@ -83,25 +69,25 @@ const CallCast = (props) => {
                     <p className={`mb-0`}>{cast_number1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.Border2}`} xs={2} md={2}>
-                    <p className='mb-0'>{role1}</p>
+                    <p className={`mb-0 pb-0 ${styles.BoldScene}`}>{role1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.Border2}`} xs={2} md={2}>
                     <p className={`mb-0`}>{artist1}</p>
-                </Col>
-                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2 }`} xs={1} md={1}>
-                <p className='mb-0'>{swf1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.Border2}`} xs={1} md={1}>
                     <p className='mb-0'>{pickup1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.CastCall}`} xs={2} md={2}>
-                <p className={`mb-0`}>{call1}</p>                        
+                <p className={`mb-0 pb-0 ${styles.BoldScene}`}>{call1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 v d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <p className='mb-0'>{hmw1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <p className='mb-0'>{on_set1}</p>
+                </Col>
+                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2 }`} xs={1} md={1}>
+                <p className='mb-0'>{swf1}</p>                        
                 </Col>
                     <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
@@ -118,17 +104,6 @@ const CallCast = (props) => {
                 <Col className={`mb-0 ${styles.NextCall}`}>
                 </Col>
             </Row>
-            {/* edit */}
-            <Row>
-                <Col>
-                    {!showEdit ?("") : (                       
-                    <EditCast
-                    setCastNew={setCastNew}
-                    setShowEdit={setShowEdit}
-                    {...castNew}/> 
-                    ) }
-                </Col>
-            </Row>  
         </div>
         {/* MOBILE */}
         <div className='d-block d-md-none'>
@@ -141,7 +116,7 @@ const CallCast = (props) => {
                     <p className='mb-0'>{pickup1}</p>
                 </Col> 
                 <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center ${styles.CastCall}`} xs={3}>
-                    <p className='mb-0'>{call1}</p>
+                    <p className={`mb-0 pb-0 ${styles.BoldScene}`}>{call1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={2} md={2}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
@@ -155,23 +130,10 @@ const CallCast = (props) => {
                 <Col>
                     {!showInfo ?("") : (                       
                     <CallCastInfoMob 
-                    handleMount={handleMount}
-                    setShowEdit={setShowEdit} 
                     {...castNew}/> 
                     ) }
                 </Col>
             </Row>
-            {/* edit */}
-            <Row>
-                <Col>
-                    {!showEdit ?("") : (                       
-                    <EditCast
-                    setCastNew={setCastNew}
-                    setShowEdit={setShowEdit}
-                    {...castNew}/> 
-                    ) }
-                </Col>
-            </Row>  
             <Row>
             <Col className={`mb-0 py-1 ${styles.NextCall}`}>
             </Col>

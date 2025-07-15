@@ -1,24 +1,19 @@
-/* Component in the Callsheet to display the Callsheet Background 
-   items passed down from the Callsheet
+/* Component in the Edit to display and edit the Callsheet Background 
  * Contains the Background component */
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import styles from "../../../styles/Callsheets.module.css";
 import Background from './Background';
+import BackgroundAddBG from './BackgroundAddBG';
 
-const BgPage = (props) => {
-    const {background, setShow, handleMount} = props;
+const BgPageAddBG = (props) => {
+    const {background, handleMount} = props;
 
   return (
-    <div className='my-5'>
+    <div className='mt-3'>
         {/* MEDIUM */}
         <div className='d-none d-md-block'>
-        <div>
-        <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
-        style={{ textTransform: 'uppercase' }}>BACKGROUND / STANDINS</span>
-        <hr className={`mb-2 pl-3 mt-0 pt-1 ${styles.Break5 }`}/>
-        </div>
         {/* titles */}
         <Row >
         <Col md={6}>
@@ -32,8 +27,11 @@ const BgPage = (props) => {
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
             <p className='mb-0'>Type</p>
             </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                 <p className='mb-0'>Info</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>Edit</p>
             </Col>
         </Row>
         </Col>
@@ -45,12 +43,15 @@ const BgPage = (props) => {
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
                 <p className='mb-0'>Call</p>
             </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
-            <p className='mb-0'>Type</p>
-            </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                <p className='mb-0'>Info</p>
-            </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
+                <p className='mb-0'>Type</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'>Info</p>
+                </Col>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                    <p className='mb-0'></p>
+                </Col>
         </Row> 
         </Col>
         </Row>
@@ -59,7 +60,7 @@ const BgPage = (props) => {
             {background.results.length ? (
                 background.results.map((back, index) => (
                     <Col md={6} >
-                    <Background
+                    <BackgroundAddBG
                     style={{ backgroundColor: (index % 3 === 0) 
                         ? '#f6fffe' : (index % 2 === 0) ? 
                         'rgb(246 254 245)' : 'rgb(254 249 254)' }}
@@ -73,10 +74,6 @@ const BgPage = (props) => {
         </div>
         {/* MOBILE */}
         <div className='d-block d-md-none'>
-        <div className={`mb-3 text-center ${styles.SubTitle }`}>
-        <span className={`float-right ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
-        <h5 className={`pl-5 text-center`} style={{ textTransform: 'uppercase'}} >BG / Standins </h5>
-        </div>
         {/* titles */}
         <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
@@ -97,7 +94,7 @@ const BgPage = (props) => {
             {background.results.length ? (
                 background.results.map((back, index) => (
                     <Col md={12} >
-                    <Background
+                    <BackgroundAddBG
                     style={{ backgroundColor: (index % 3 === 0) 
                         ? '#f6fffe' : (index % 2 === 0) ? 
                         'rgb(246 254 245)' : 'rgb(254 249 254)' }}
@@ -112,4 +109,4 @@ const BgPage = (props) => {
   )
 }
 
-export default BgPage
+export default BgPageAddBG

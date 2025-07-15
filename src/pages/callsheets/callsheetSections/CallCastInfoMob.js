@@ -3,24 +3,10 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import styles from "../../../styles/Callsheets.module.css";
-import { PostDropdown } from '../../../components/PostDropdown';
-import { axiosReq } from '../../../api/axiosDefaults';
 
 const CallCastInfoMob = (props) => {
-    const { id1, contact1, swf1, inst1, cast_number1,
-        hmw1, on_set1, setShowEdit, handleMount} = props;
-
-        // const handleEdit = () => {
-        //     setShowEdit(showEdit => !showEdit)
-        //   };
-        
-        // const handleDelete = async () => {
-        //     try {
-        //         await axiosReq.delete(`/castcallsnew/${id1}/`);
-        //         handleMount();
-        //     } catch (err) {
-        //     }
-        // };
+    const { contact1, swf1, inst1, cast_number1,
+        hmw1, on_set1} = props;
 
   return (
     <div>

@@ -7,8 +7,8 @@ import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
 
 const CallCastInfoMoAddCast = (props) => {
-    const { id1, contact1, swf1, inst1, pickup1, cast_number1,
-        hmw1, on_set1, admin, setShowEdit, handleMount} = props;
+    const { id1, contact1, swf1, inst1, cast_number1,
+        hmw1, on_set1, setShowEdit, handleMount} = props;
 
         const handleEdit = () => {
             setShowEdit(showEdit => !showEdit)

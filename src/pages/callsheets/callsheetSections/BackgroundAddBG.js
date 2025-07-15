@@ -1,4 +1,4 @@
-/* Component in the BgPage component to display the Callsheet 
+/* Component in the edit page to display and edit the Callsheet 
    Background items 
  * Contains the BackgroundInfo component to display 
    the extra background info 
@@ -11,14 +11,18 @@ import styles from "../../../styles/Callsheets.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 // eslint-disable-next-line
 import { Button } from 'react-bootstrap';
+import { PostDropdown } from '../../../components/PostDropdown';
+import { axiosReq } from '../../../api/axiosDefaults';
 import BackgroundInfo from './BackgroundInfo';
+import EditBack from '../CallsheetEditBackGround';
 import BgInfoMob from './BgInfoMob';
 
-const Background = (props) => {
+const BackgroundAddBG = (props) => {
     const [showInfo, setShowInfo] = useState(false);
+    const [showEdit, setShowEdit] = useState(false);
 
     const { id, day_id, qty, type, call, scenes, set, costumes,
-         style} = props
+        admin, style, handleMount} = props
 
     const [bgNew, setBgNew] = useState({
         id1: id,
@@ -33,9 +37,21 @@ const Background = (props) => {
 
     const { id1, qty1, type1, call1, } = bgNew;
 
+    const handleEdit = () => {
+        setShowEdit(showEdit => !showEdit)
+      };
+    
+    const handleDelete = async () => {
+        try {
+            await axiosReq.delete(`/backgroundcallsnew/${id1}/`);
+            handleMount();
+        } catch (err) {
+        }
+    };
+
   return (
     <div style={style} >
-        <div className='d-none d-md-block pt-0 mt-0'>
+        <div className='d-none d-md-block pt-0'>
             <Row className='text-center mx-0' >
                 <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={2} md={2}>
                     <p className={` ${styles.Bold}`}>{qty1}</p>
@@ -46,11 +62,17 @@ const Background = (props) => {
                     <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={6} md={6}>
                     <p className={` ${styles.Bold}`}>{type1}</p>
                     </Col>
-                    <Col className={`mx-0 px-0 py-1 v ${styles.Border2} `} xs={2} md={2}>
+                    <Col className={`mx-0 px-0 py-1 v ${styles.Border2} `} xs={1} md={1}>
                     <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                         className={`${btnStyles.Button} ${btnStyles.Shed}`}>
                         I
                     </Button>
+                    </Col>
+                    <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
+                    <PostDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
                     </Col>
             </Row>
             {/* info */}
@@ -58,6 +80,17 @@ const Background = (props) => {
                 <Col>
                     {!showInfo ?("") : (                       
                     <BackgroundInfo {...bgNew}/> 
+                    ) }
+                </Col>
+            </Row> 
+            {/* edit */}
+            <Row>
+                <Col>
+                    {!showEdit ?("") : (                       
+                    <EditBack
+                    setBgNew={setBgNew}
+                    setShowEdit={setShowEdit}
+                    {...bgNew}/> 
                     ) }
                 </Col>
             </Row> 
@@ -85,14 +118,25 @@ const Background = (props) => {
             <Row>
                 <Col>
                     {!showInfo ?("") : (                       
-                    <BgInfoMob 
-                    {...bgNew}/> 
+                    <BgInfoMob handleMount={handleMount}
+                    setShowEdit={setShowEdit} admin={admin} {...bgNew}/> 
                     ) }
                 </Col>
             </Row>
+            {/* edit */}
+            <Row>
+                <Col>
+                    {!showEdit ?("") : (                       
+                    <EditBack
+                    setBgNew={setBgNew}
+                    setShowEdit={setShowEdit}
+                    {...bgNew}/> 
+                    ) }
+                </Col>
+            </Row>  
         </div>
     </div>
   )
 }
 
-export default Background
+export default BackgroundAddBG

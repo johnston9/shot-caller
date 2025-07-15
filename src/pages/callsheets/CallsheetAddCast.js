@@ -405,6 +405,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
         </Col>
       </Row>
       </Form>
+      {/* break */}
       <Row>
         <Col md={2} className="d-none d-md-block"></Col>
         <Col xs={12} md={8}>
@@ -426,6 +427,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       <TalentPageAddCast
       handleMount={handleMount}
       cast={cast}/>
+      {/* break */}
       <Row>
       <Col md={{span: 8, offset: 2}} >
       <hr className={`${styles.Break} mt-5`}/>
