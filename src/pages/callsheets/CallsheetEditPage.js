@@ -1499,11 +1499,15 @@ const CallsheetEditPage = () => {
       <h5 className={`py-0 mt-3 mb-2 ${styles.SubTitle }`} >
       LOCATIONS   
       </h5> 
-      <div>
+      <div> 
         <Row className="mb-2" >
         <Col >
-        <p className={`${styles.Bold }`}>
+        {/* <p className={`${styles.Bold }`}>
         Each address line <span className={`${styles.Red }`} >MUST</span> be seperated with a comma and a space for Google Maps. Input the name if appropiate.
+        </p> */}
+        <p className={`${styles.Bold } mb-3`}>
+        If the Nearest Hospital is other to the one above add
+        it in the Parking and Notes field.
         </p>
         </Col>
         </Row>

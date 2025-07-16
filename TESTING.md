@@ -196,9 +196,9 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 <img src="documentation/readme-images/scheddaydel.png" width="50%">
 </h2>
 
-- Use Case: Find a Shoot Day in the Calender.<br>
+- Use Case: Find a Shoot Day in the Calendar.<br>
 
-  1. Click on the desired date in the Calender - "02 Jan 2023".<br>
+  1. Click on the desired date in the Calendar - "02 Jan 2023".<br>
   2. The Shoot Day opens if one has been created for that date. <br>
 
 <p align="center"> <strong>Shoot Day "02 Jan 2023"</strong></p>
@@ -218,7 +218,7 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 
 - Use Case: View the Shoot Day and its Stripboard.<br>
 
-  1. Click on the Shoot Day from the the selection displaying on the page or from the one if returned from the Calender search or Search Bar.<br>
+  1. Click on the Shoot Day from the the selection displaying on the page or from the one if returned from the Calendar search or Search Bar.<br>
   2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
 
 <p align="center"> <strong>The Shoot Day with the Add Scenes tab and Stripboard</strong></p>
@@ -361,6 +361,232 @@ Description: View Schedules for a Shoot Day. Create Schedules by Creating Days t
 <img src="documentation/readme-images/infosched.png" width="50%">
 </h2>
 
+### Scheduling
+Description: View Schedules for a Shoot Day. Create Schedules by Creating Days then selecting Scenes from a menu which automatically adds the Scene's breakdown info to a stripboard.<br>
+
+- Use Case: View all Shoot Days.<br>
+
+  1. Click on the Schedule link in the Home page or from the Navbar.<br>
+  2. The Schedule page displays with all the Shoot Days.<br>
+
+<p align="center"> <strong>The Schedule page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedsched.png" width="50%">
+</h2>
+
+- Use Case: Create a Shoot Day.<br>
+
+  1. On the Schedule page click on the "Create Day" tab.<br>
+  2. The Create Day form displays. <br>
+  3. Add the Day number - "6".<br>
+  4. Select the Date from the input box Calendar - "20 Nov 2024".<br>
+  5. The Date is added.<br>
+  6. Press submit.<br>
+  7. A success message displays.<br>
+  8. The Shoot Day number "6" and Date "20 Nov 2024" is created and added to the page.<br>
+
+<p align="center"> <strong>Shoot Day: Number "6" Created</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scheddaycre.png" width="50%">
+</h2>
+
+- Use Case: Edit a Shoot Day's Day or Date and automatically change the Callsheet as well.<br>
+
+  1. Click on the Edit/Delete icon and click the Edit icon.<br>
+  2. The Edit Day form displays. <br>
+  3. Input the new details, i.e. change the date to - "05 Jan 2026".<br>
+  6. Press submit.<br>
+  7. A success message displays.<br>
+  8. The Shoot Day number "1" displays with the new Date "05 Jan 2026".<br>
+
+<p align="center"> <strong>Input the date</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/dayedit1a.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success Messages for Day and Callsheet and Day with New Date</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/dayedit2a.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Callsheet with Changed Date</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/dayedit3a.png" width="50%">
+</h2>
+
+- Use Case: Delete a Shoot Day.<br>
+
+  1. Click on the Edit/Delete icon and click the Delete icon.<br>
+  2. A Modal displays asking to Confirm Delete or Cancel<br>
+  3. Click "Delete".<br>
+  6. A success message displays and the Day is deleted.<br>
+
+<p align="center"> <strong>Success Message and Day Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scheddaydel.png" width="50%">
+</h2>
+
+- Use Case: Find a Shoot Day in the Calendar.<br>
+
+  1. Click on the desired date in the Calendar - "02 Jan 2023".<br>
+  2. The Shoot Day opens if one has been created for that date. <br>
+
+<p align="center"> <strong>Shoot Day "02 Jan 2023"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedcal1.png" width="50%">
+</h2>
+
+- Use Case: Find a Shoot Day from the Search Bar.<br>
+
+  1. Enter the Day Number "1" in the Search Bar and Submit.<br>
+  2. The search returns Days containing the number "1".<br>
+
+<p align="center"> <strong>The Shoot Day "1" displays.</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedsearch1.png" width="50%">
+</h2>
+
+- Use Case: View the Shoot Day and its Stripboard.<br>
+
+  1. Click on the Shoot Day from the selection displaying on the page or from the one if returned from the Calendar search or Search Bar.<br>
+  2. The Shoot Day opens and the Add Scenes tab and Stripboard displays. <br>
+
+<p align="center"> <strong>The Shoot Day with the Add Scenes tab and Stripboard</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedstripb1.png" width="50%">
+</h2>
+
+- Use Case: Add Schedule Scenes to a Shoot Day.<br>
+
+  1. Click on the Shoot Day.<br>
+  2. The Shoot Day opens with the Add Scenes tab and Stripboard. <br>
+  3. Click the Add Scene tab.<br>
+  4. The Add Scene form opens below.<br>
+  5. Click on the Act One tab and the Scenes from Act One display.<br>
+  6. Click on the Act Two A tab and the Scenes from Act Two A display.<br>
+  7. Click on the Act Two B tab and the Scenes from Act Two B display.<br>
+  8. Click on the Act Three tab and the Scenes from Act Three display.<br>
+  9. Click on the Location tab and the Scenes display by Location.<br>
+  10. Input a Scene number, Title or Location to the Search Bar then click one of the above tabs and the Scenes in that tab group with the search value display.<br>
+  11. Select a Scene by clicking on it and the Shooting Info form opens below with the Scene number on top.<br>
+  12. Input the Day Order Number and other values and press Add Scene. It is up to the User to input an
+   unused Day Order Number not used in another Scene.<br>
+  13. A success message displays.
+  14. The Schedule Scene is added to the Stripboard and the page count is updated by Scene 4's length of 1 to 3.75.<br>
+
+<p align="center"> <strong>Add Scene Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedadds1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Act One Scenes displaying after clicking the Act One tab</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedaddact1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Enter value "Jake" in Search bar</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedjake1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Act One Scenes with Location Jake display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedjake2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Enter Shooting Info with Day order Number "6" and submit form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedshoot1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Scene 4 is added to the Stripboard with Day order number "6"</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedshoot2.png" width="50%">
+</h2>
+
+- Use Case: Edit Schedule Scene<br>
+
+  1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
+  2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
+  3. Make changes and click Edit.<br>
+  4. The Stripboard opens with the changes to that Schedule Scene.<br>
+
+<p align="center"> <strong>Make changes to New Info field</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Stripboard after Submitting</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schededit2.png" width="50%">
+</h2>
+
+- Use Case: Add a Next row with move or break info below a Schedule Scene.<br>
+
+  1. Click on the three Dots edit icon to open the Edit/Delete mini menu and click Edit.<br>
+  2. The Edit page opens with the fetched Schedule Scene info in the input boxes<br>
+  3. Input the new Next info in the Next input box and click Edit.<br>
+  4. The Stripboard opens with the new next Row displaying below that Schedule Scene.<br>
+
+<p align="center"> <strong>Make changes to Next field</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedednext1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Stripboard after submitting</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schedednext2.png" width="50%">
+</h2>
+
+- Use Case: Reorder a Schedule Scene Using Drag and Drop and Automatically give it and all the other Scenes the Correct new Order Numbers.<br>
+
+  1. Click on the Reorder button which currently displays the Scene's current order and the reorder form opens.<br>
+  2. Input the new Order number and click Reorder.<br>
+  3. The Stripboard opens with the new Order number for the Schedule Scene.<br>
+  4. Re-order all the following Schedule Scenes in a similar manner.<br>
+
+- Use Case: Use the Quick Edit to update the Scene's Next field and Times.<br>
+
+  1. Click on the Quick Edit button and the Quick Edit form opens.<br>
+  2. Input the new info and click Submit.<br>
+  3. The Stripboard opens with the new info for the Schedule Scene.<br>
+
+- Use Case: Add a Next row with new info below a Schedule Scene from the Quick Edit form.<br>
+
+  1. Click on the Reorder button and the reorder form opens.<br>
+  2. Input the new Next info in the Next input box and click Create.<br>
+  3. The Stripboard opens with the new next Row displaying below that Schedule Scene.<br>
+
+<p align="center"> <strong>Make changes to Next field</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schednext1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Stripboard after submitting</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/schednext2.png" width="50%">
+</h2>
+
+- Use Case: View the Schedule Scene Characters.<br>
+
+  1. Click on the Cast button.<br>
+  2. The Cast Info displays below.<br>
+
+<p align="center"> <strong>Character Info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/charssched.png" width="50%">
+</h2>
+
+- Use Case: View the Schedule Scene Info.<br>
+
+  1. Click on the Info button.<br>
+  2. The Info displays below.<br>
+
+<p align="center"> <strong>Scene Info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/infosched.png" width="50%">
+</h2>
+m
 ### Callsheets
 Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 
@@ -404,7 +630,239 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
   1. On the Edit/Delete icon and click the Edit icon.<br>
   2. The Edit Callsheet form displays. <br>
   3. Make changes and submit. <br>
-  4. On the Callsheet view the upaded info.<br>
+  4. On the Callsheet view the updated info.<br>
+
+- Use Case: Add/Edit and View Crew Calltimes<br>
+  1. In the Crew Calltimes section click on a department, e.g. "Camera". <br>
+  2. The Camera department form opens with all the Callsheet/Main crew members who were added to the Callsheet/Main Crew Camera department.<br/>
+  3. Input a crew members Calltime, e.g. for "DOP" enter 6 AM.<br/>
+  4. Press Submit.<br>
+  5. A success message displays.<br>
+  6. On the Callsheet in the Crew Calltimes section click the Camera department.<br>
+  7. The DOP displays with their correct Calltime.<br>
+  8. For crew who are not working that day the option is to either leave their calltime blank or input N/A or similar.<br>
+
+<p align="center"> <strong>DOP Calltime Entered</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewtime1.png" width="50%">
+</h2>
+<p align="center"> <strong>DOP Calltime on Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewtime2.png" width="50%">
+</h2>
+<p align="center"> <strong>Mobile View of Edit Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcreweditmo1.png" width="50%">
+</h2>
+<p align="center"> <strong>Mobile View of Crew Calls on Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewinfomo.png" width="50%">
+</h2>
+
+- Use Case: Use the "SET UNIT CALL" button to set all crew member's Calltimes to the "Unit Call".<br>
+  1. Input a time in the "Unit Call" field, e.g. "6.15 AM".<br>
+  2. Click the "SET UNIT CALL" button.<br/>
+  3. Click on a department to see all Calltimes have been set to 6.15 AM.<br/>
+  4. Change the "DOP" Calltime back to 6 AM and change the "Camera Operator's" to N/A.<br>
+  5. Press Submit.<br>
+  6. A success message displays.<br>
+  7. On the Callsheet in the Crew Calltimes section click the Camera department.<br>
+  8. The DOP displays with their corect Calltime "6 AM", the Camera Operator with "N/A" and all the other crew have "6.15 AM".<br>
+
+<p align="center"> <strong>Unit Calltime entered</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewunit1.png" width="50%">
+</h2>
+<p align="center"> <strong>Correct Calltimes on Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcrewunit2.png" width="50%">
+</h2>
+
+- Use Case: Add Cast Calltimes.<br>
+  1. Click the Add Cast button and the Add Cast form opens.<br>
+  2. Select a Character from the dropdown of all Characters added to the project, e.g. "Benny".<br/>
+  3. Benny's info displays in the Selected Cast box which e.g. Actor name: Rick Stone, Makeup time: 10 Minutes, Commute time: 30 Minutes and Contact mobile number: 086 2247333. The Pickup Address will be added in the Confirm Pickup Address field.<br/>
+  4. Input the fields<br>
+  5. Press Submit.<br>
+  6. A success message displays and Benny now displays in the "Cast Added" box.<br>
+  7. On the Callsheet in the Cast Calltimes section Benny and all the inputted info displays correctly.<br>
+
+<p align="center"> <strong>Benny Selected and Inputs</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastadd1.png" width="50%">
+</h2>
+<p align="center"> <strong>Benny Added and Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastadd2.png" width="50%">
+</h2>
+<p align="center"> <strong>Benny displays on Callsheet with Info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastadd3.png" width="50%">
+</h2>
+<p align="center"> <strong>Add Cast Mobile View</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastaddmo.png" width="50%">
+</h2>
+<p align="center"> <strong>Cast Call Mobile View</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastinfomo.png" width="50%">
+</h2>
+
+- Use Case: View the Cast Extra Info<br>
+  1. Click the Info button.<br>
+  2. The Info displays. <br/>
+
+  <p align="center"> <strong>Extra info on Mobile</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastinfomoinfo.png" width="50%">
+</h2>
+
+- Use Case: Edit Cast Calltimes.<br>
+  1. On the Callsheet Edit page click the Edit button and the Edit Cast form opens.<br>
+  2. Input the changes, e.g. PU: 6.15 AM, Call: 7.15 AM and Set 8.15 AM and submit.<br/>
+  3. A success message displays and Benny's new Info now displays correctly.<br>
+
+<p align="center"> <strong>Benny's Info Updated and Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callcastedit1.png" width="50%">
+</h2>
+
+- Use Case: Add Background/Standins Calltimes.<br>
+  1. Click the Add BG button and the Add Background/Standins form opens.<br>
+  2. The BG already added displays below. <br/>
+  3. Add the new BG item, e.g. "3 Clerks".<br/>
+  6. Press Submit.<br>
+  6. A success message displays and Clerks now displays in Background Added.<br>
+  7. On the Callsheet in the Background Calltimes section Clerks and all the inputted info display correctly.<br>
+
+<p align="center"> <strong>Clerks details Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgadd1.png" width="50%">
+</h2>
+<p align="center"> <strong>Success message and Clerks Added to the Background Added Box</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgadd2.png" width="50%">
+</h2>
+<p align="center"> <strong>Clerks display on Callsheet with Info</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbginfo.png" width="50%">
+</h2>
+<p align="center"> <strong>Add Background Form Mobile View</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callbgaddmo.png" width="50%">
+</h2>
+
+- Use Case: Edit BG Calltimes.<br>
+  1. On the Callsheet Edit page click the Edit button on the BG item and the Edit BG form opens. Using the Mobile version here to show mobile functionality.<br>
+  2. Input the changes, e.g add 3 to costume and submit.<br/>
+  3. A success message displays and Clerk’s new Info now displays correctly.<br>
+
+  <p align="center"> <strong>Clerk’s Costume changed</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calleditbg1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Clerk’s Info Updated and Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calleditbg2.png" width="50%">
+</h2>
+
+- Use Case: Add Important, Transport and Department Notes.<br>
+  1. On the Edit page add the notes to each field and submit.<br>
+  2. A success message displays and the Important, Transport and Department Notes display on the Callsheet .<br>
+
+<p align="center"> <strong>Important, Transport and Department Info Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callinfo1.png" width="50%">
+</h2>
+<p align="center"> <strong>Important, Transport and Department Info Displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callinfo2.png" width="50%">
+</h2>
+
+- Use Case: Add Walkie Channels.<br>
+  1. On the Edit page add the Walkie Channel number to each field and submit.<br>
+  2. A success message displays and the Walkie Channels display on the Callsheet .<br>
+
+<p align="center"> <strong>Walkie Channels Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk1.png" width="50%">
+</h2>
+<p align="center"> <strong>Walkie Channels Display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk2.png" width="50%">
+</h2>
+
+- Use Case: Add and View Walkie Channels.<br>
+  1. On the Edit page add the Walkie Channel number to each field and submit.<br>
+  2. A success message displays and the Walkie Channels display on the Callsheet .<br>
+
+<p align="center"> <strong>Walkie Channels Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk1.png" width="50%">
+</h2>
+<p align="center"> <strong>Walkie Channels Display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk2.png" width="50%">
+</h2>
+
+- Use Case: Add and View Location.<br>
+  1. On the Edit page add the Location and submit.<br>
+  2. A success message displays and the Locations display on the Callsheet .<br>
+
+<p align="center"> <strong> Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk1.png" width="50%">
+</h2>
+<p align="center"> <strong> Display</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callwalk2.png" width="50%">
+</h2>
+
+### Callsheets
+Description: View, Create and Edit Callsheets for a Shoot Day.<br>
+
+- Use Case: View all Callsheets.<br>
+
+  1. Click on the Callsheets link in the Home page or from the Navbar.<br>
+  2. The Callsheets page displays with all Callsheets.<br>
+
+<p align="center"> <strong>The Callsheets page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/callview.png" width="50%">
+</h2>
+
+- Use Case: Create a Callsheet.<br>
+
+  1. On a Schedule page Shoot Day, e.g. Day "2 - 06 Jan 2026" click on the "Create Callsheet" tab.<br>
+  2. The Create Day form displays with the Day and date showing e.g. Day "2 - 2 - 06 Jan 2026". <br>
+  3. Input any amount of data, e.g. Unit Call 6 AM and submit".<br>
+  4. The Callsheet is created, a success message displays and the Schedule Day opens
+  now with a "View Callsheet" tab instead of a "Create callsheet" one.
+  5. Click on the tab to open the Callsheet, Day "2 - 06 Jan 2026" with the correct data displaying, e.g. Unit Call 6 AM.<br>
+  6. It will also display Company/Crew details if added and the Schedule and Advanced Schedule.
+
+<p align="center"> <strong>The Create Day form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calladd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Success Message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calladd2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Callsheet</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calladd3.png" width="50%">
+</h2>
+
+- Use Case: Add/Edit and View Callsheet Info by Section.<br>
+
+  1. On the Edit/Delete icon and click the Edit icon.<br>
+  2. The Edit Callsheet form displays. <br>
+  3. Make changes and submit. <br>
+  4. On the Callsheet view the updated info.<br>
 
 - Use Case: Add/Edit and View Crew Calltimes<br>
   1. In the Crew Calltimes section click on a department, e.g. "Camera". <br>
@@ -567,7 +1025,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/callwalk2.png" width="50%">
 </h2>
 
-- Use Case: Add Walkie Channels.<br>
+- Use Case: Add and View Walkie Channels.<br>
   1. On the Edit page add the Walkie Channel number to each field and submit.<br>
   2. A success message displays and the Walkie Channels display on the Callsheet .<br>
 
@@ -580,7 +1038,7 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/callwalk2.png" width="50%">
 </h2>
 
-- Use Case: Add Location.<br>
+- Use Case: Add and View Location.<br>
   1. On the Edit page add the Location and submit.<br>
   2. A success message displays and the Locations display on the Callsheet .<br>
 
@@ -593,10 +1051,13 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 <img src="documentation/readme-images/callwalk2.png" width="50%">
 </h2>
 
+
+
+
+
+
 ### Budgeting 
 - As this feature is held on the "Shot Caller Production" home app the Budgeting testing is on it's Testing page. [Testing](https://github.com/johnston9/shot-caller-production/blob/main/TESTING.md)<br>
-
-
 
 ## The Creative Features
 

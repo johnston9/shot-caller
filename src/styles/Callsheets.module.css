@@ -81,6 +81,11 @@ hr {
   font-size: .75rem;
 }
 
+.SmallSizeBold {
+  font-size: .85rem;
+  font-weight: 700;
+}
+
 /* .Border {
   border-top: 2px solid #e8f0f1;
   border-bottom: 2px solid #e8f0f1;
@@ -89,10 +94,10 @@ hr {
 } */
 
 .Border {
-  border-top: 2px solid #c1f1f7;
-  border-bottom: 2px solid #c1f1f7;
-  border-left: 2px solid #c1f1f7;
-  border-right: 2px solid #c1f1f7;
+  border-top: 1px solid #c1f1f7;
+  border-bottom: 1px solid #c1f1f7;
+  border-left: 1px solid #c1f1f7;
+  border-right: 1px solid #c1f1f7;
 }
 
 .Border2 {
@@ -514,12 +519,10 @@ p {
   border: 1px solid #dee1f7;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #747686;
   color: #525463;
-  color: #0e1444;
+  /* color: #0e1444; */
   padding: 0px 10px;
   height: 30px !important;
-  /* text-align: center; */
 }
 
 .InputB {
@@ -527,7 +530,6 @@ p {
   border: 2px solid #c1f1f7;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #747686;
   color: #525463;
   color: #0e1444;
   padding: 0px 10px;
@@ -540,13 +542,11 @@ p {
   border: 1px solid #dee1f7;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #53587c;
   color: #525677;
-  color: #0e1444;
-  color: #474f7a;
+  color: #525463;
+  /* color: #0e1444; */
   padding: 0px 10px;
   min-height: 30px !important;
-  /* text-align: center; */
  }
 
 .TitleBox {
