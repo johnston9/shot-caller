@@ -92,10 +92,10 @@ const EditBack = (props) => {
     );
 
 return (
-    <div>
-    <h5 className={`text-center py-0 mx-5  ${styles.SubTitle }`}>
-        Edit <span style={{fontStyle: 'italic'}}>{type}</span></h5> 
-    <Form className="text-center" onSubmit={handleSubmit}>
+    <div className="mb-2 px-3">
+    <p className={`text-center py-0  ${styles.SubTitle }`}>
+        Edit <span style={{fontStyle: 'italic'}}>{type}</span></p> 
+    <Form className={`text-center ${styles.WhiteEdit }`} onSubmit={handleSubmit}>
             {/* qty call set scenes style={{ textTransform: 'uppercase' }}  */}
         <Row className="mx-0 mt-2">
             <Col className="d-flex justify-content-center mx-0" xs={3}>

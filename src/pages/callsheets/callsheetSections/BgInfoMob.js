@@ -7,7 +7,7 @@ import { PostDropdown } from '../../../components/PostDropdown';
 import { axiosReq } from '../../../api/axiosDefaults';
 
 const BgInfoMob = (props) => {
-    const { id1,  admin, setShowEdit, scenes1, set1, costumes1, handleMount } = props;
+    const { id1, setShowEdit, scenes1, set1, costumes1, handleMount } = props;
 
         const handleEdit = () => {
             setShowEdit(showEdit => !showEdit)
@@ -36,8 +36,6 @@ const BgInfoMob = (props) => {
           <p className={`mb-0 py-1 ${styles.Bold}`}>{scenes1}</p>    
           </div>                    
         </Col>
-        {admin ? (
-            <>
             <Col className={`mx-0 px-0`} xs={5}>
             <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Costumes</p>
             <div className={`mb-0 ${styles.Border2}`}>
@@ -54,15 +52,6 @@ const BgInfoMob = (props) => {
                 />
                 </div>
             </Col>   
-            </>        
-        ) : (
-            <Col className={`mx-0 px-0`} xs={7}>
-            <p style={{ textTransform: 'uppercase' }} className={`mb-0 ${styles.TitleBox}`}>Costumes</p>
-            <div className={`mb-0 ${styles.Border2}`}>
-                <p className={`mb-0 py-1 ${styles.Bold}`}>{costumes1}</p>
-                </div>
-            </Col>
-        )}
         </Row>
     </div>
   )

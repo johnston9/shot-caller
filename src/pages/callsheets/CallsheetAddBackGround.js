@@ -97,7 +97,7 @@ const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
     const buttons = (
     <div className="mb-2 text-center">    
         <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-4 px-md-5 mr-3`}
         onClick={clear}
         >
         Cancel

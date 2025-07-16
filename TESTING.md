@@ -463,21 +463,21 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 
 <p align="center"> <strong>Benny Selected and Inputs</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callcast1.png" width="50%">
+<img src="documentation/readme-images/callcastadd1.png" width="50%">
 </h2>
 <p align="center"> <strong>Benny Added and Success Message</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callcast2.png" width="50%">
+<img src="documentation/readme-images/callcastadd2.png" width="50%">
 </h2>
 <p align="center"> <strong>Benny displays on Callsheet with Info</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callcast3.png" width="50%">
+<img src="documentation/readme-images/callcastadd3.png" width="50%">
 </h2>
 <p align="center"> <strong>Add Cast Mobile View</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callcasteditmo.png" width="50%">
+<img src="documentation/readme-images/callcastaddmo.png" width="50%">
 </h2>
-<p align="center"> <strong>Cast Info Mobile View</strong></p>
+<p align="center"> <strong>Cast Call Mobile View</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/callcastinfomo.png" width="50%">
 </h2>
@@ -498,15 +498,15 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 
 <p align="center"> <strong>Benny's Info Updated and Success Message</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callcastedit.png" width="50%">
+<img src="documentation/readme-images/callcastedit1.png" width="50%">
 </h2>
 
 - Use Case: Add Background/Standins Calltimes.<br>
   1. Click the Add BG button and the Add Background/Standins form opens.<br>
-  2. The BG already added displays i the Backdroung Added box. <br/>
+  2. The BG already added displays below. <br/>
   3. Add the new BG item, e.g. "3 Clerks".<br/>
   6. Press Submit.<br>
-  6. A success message displays and Clerks now displays in the "Background Added" box.<br>
+  6. A success message displays and Clerks now displays in Background Added.<br>
   7. On the Callsheet in the Background Calltimes section Clerks and all the inputted info display correctly.<br>
 
 <p align="center"> <strong>Clerks details Added</strong></p>
@@ -527,13 +527,18 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 </h2>
 
 - Use Case: Edit BG Calltimes.<br>
-  1. On the Callsheet Edit page c click the Edit button and the Edit Cast form opens.<br>
-  2. Input the changes, e.g Call: 8.15 AM and Set 8.15 AM and submit.<br/>
+  1. On the Callsheet Edit page click the Edit button on the BG item and the Edit BG form opens. Using the Mobile version here to show mobile functionality.<br>
+  2. Input the changes, e.g add 3 to costume and submit.<br/>
   3. A success message displays and Clerks's new Info now displays correctly.<br>
+
+  <p align="center"> <strong>Clerks's Costume changed</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/calleditbg1.png" width="50%">
+</h2>
 
 <p align="center"> <strong>Clerks's Info Updated and Success Message</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/callbgedit.png" width="50%">
+<img src="documentation/readme-images/calleditbg2.png" width="50%">
 </h2>
 
 - Use Case: Add Important, Transport and Department Notes.<br>
