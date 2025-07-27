@@ -35,31 +35,7 @@ There is no installation needed and no requirements for the app. If a User has a
 # Table of Content
 
 ## Features “Shot Caller Production”
-Find these here. [Shot Caller Production Readme](https://github.com/johnston9/shot-caller-production)
-
-### Product Information
-- The Home page contain information about the app’s features and links to pages containing more detail information.<br>
-
-### Subscriptions page
-- Where users can buy or upgrade Monthly Subscription with Stripe from a large selection.<br>
-
-### Accounts Page
-- Where Users can create projects and view they ones already created.<br>
-
-### Transaction Page
-- Where Users can view all their transaction for Subscriptions bought. <br>
-
-### Login/Register/Logout Pages
-- The user can Register, Login and Logout easily.<br> 
-
-### Stripe 
-- Stripe is used for the payment system.<br> 
- 
-### Responsive Design
-- The site is responsive to all screen sizes and the images respond in proportion. <br> 
-
-### Budgeting
-- The Budget feature contains the Edit page and the Finalised Budget. The top of the Edit page contains the name of each Budget section and its current total. When clicked on it opens that section where a User can input values which are automatically totalled for that section and an number of other displaying Totals including the Grand Total. Globals can be used to quickly populate or change the crew Weeks length. The Finalised Budget, along with its Cover and Top pages can be viewed and downloaded. <br>
+Find these here. [Shot Caller Production Readme](https://github.com/johnston9/shot-caller-production/blob/main/README.md)
  
 ## Features “Shot Caller”
 
@@ -132,9 +108,10 @@ Security measures prevent unauthorised users from accessing Project URLs they do
 ### Responsive Design
 The site is responsive to all screen sizes and the images respond in proportion. <br>
 
-All Features testing for each app is covered in its Testing page. [Testing](/TESTING.md)
+All Features testing is covered on the Shot Caller Frontend Testing page. [Testing](https://github.com/johnston9/shot-caller/blob/main/TESTING.md)
 
 [Back to Table of Content](#table-of-content)
+
 
 ## Permissions
 
@@ -207,39 +184,7 @@ Only access to Callsheets<br>
 **Postgres** ?????????????
 
 ### Database structure for Shot Caller Production - Model Tables by App
-
-#### Django contrib auth
-1 - <strong>User</strong> - to hold the authenticated users.<br>
-  - OneToOne Key to Profile.
-
-#### Accounts App
-1 - <strong>Account</strong> - to hold the user's account details.<br>
-  - Foreign Key to User.
-
-2 - <strong>Project</strong> - to hold the user's Projects.
-  - Foreign Key to User. 
-
-#### Budget App
-1 - <strong>Budget</strong> - to hold the Project's Budget information<br>
-- Foreign Key to Project unless purchased as a sole product.
-
-<!-- #### Profiles App
-1 - <strong>UserProfile</strong> - to hold the registered users details.<br>
-  - OneToOne Key to User
-
-#### Profiles App
-1 - <strong>Profile</strong> - to hold the user's profile details.<br>
-  - OneToOne Key to User
-
-#### Followers App
-1 - <strong>Follower</strong> - to hold the Profile's Followers.<br>
-  - Foreign Key to User (as owner, who is following)
-  - Foreign Key to User (as followed, who is followed)
-
-#### Likes App
-1 - <strong>Like</strong> - to hold the Profile's Followers.<br>
-  - Foreign Key to User 
-  - Foreign Key to Chat -->
+Find these here. [Shot Caller Production Readme](https://github.com/johnston9/shot-caller-production/blob/main/README.md)
 
 [Back to Table of Content](#table-of-content)
 
@@ -331,14 +276,14 @@ Only access to Callsheets<br>
 1 - <strong>Shotlist</strong> - to hold the Shotlists' Info. <br>
     - Foreign Key to Scene.
 
-## Languages Used
+## Languages Used - (Shot Caller and Shot Caller Production - Front and Backend)
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JAVASCRIPT](https://en.wikipedia.org/wiki/JavaScript)
 - [PYTHON](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-## Frameworks, Databases, Libraries & Programs Used 
+## Frameworks, Databases, Libraries & Programs Used - (Shot Caller and Shot Caller Production - Front and Backend)
 
 - [React Bootstrap:](https://react-bootstrap.netlify.app/)
    - React Bootstrap with its grid-based format was used to create the overall    framework for the site. This included the primary responsiveness
@@ -391,20 +336,16 @@ The React Dependencies and DRF Requirements can be found in the Deployment secti
 [Back to Table of Content](#table-of-content)
 
 ## Testing
-- For the complete coverage of the Features testing go to the Shot Caller's Frontend Testing page.
+- Find the complete testing here.
 [Shot Caller testing](https://github.com/johnston9/shot-caller/blob/main/TESTING.md)
 
-[Testing](/TESTING.md)
-
-All functionality was tested as it was being built to ensure there were no errors, that it did what it was meant to do and that all database errors were handled correctly. <br> 
+All functionality was tested as it was being built to ensure there were no errors that it did what it was meant to do and that all database errors were handled correctly. <br> 
 
 On completion the functionality of the entire app was repeatedly tested on various devices both by the development team and by Capital Numbers, the InfoTech company responsible for part of the development.<br> 
 
-Pylint was also used in the backend workspace as the project was being built for Python and Django code and all errors were fixed on an ongoing process. <br> 
-
 All pages were checked in Lighthouse. All errors were fixed. <br>
 
-W3C Markup Validator, W3C CSS Validator, PEP8 and JSHint were used to validate all HTML, CSS, Python and JS in the project, the results are in documentation.
+W3C Markup Validator, W3C CSS Validator, and JSHint were used to validate all HTML, CSS, and JS in the project, the results are in documentation.
 
 - [W3C Markup Validator](https://validator.w3.org/) 
   - On validated by URL no errors were shown - Info messages were given for the trailing slash in the link and meta tags in index.html but were left in anyhow.
@@ -417,14 +358,10 @@ W3C Markup Validator, W3C CSS Validator, PEP8 and JSHint were used to validate a
 - [JSHint](https://jshint.com/) 
   - JSHint was used with "New JavaScript features (ES6)" checked in the configuration menu.
   [Results](documentation/testing/jshint)
-    
-- [PythonChecker](https://www.pythonchecker.com/) 
-  - PythonChecker approved all DRF python pages apart from a few too long lines in the setting.py which I decided to leave. 
-  [Results](documentation/testing/)
 
 [Back to Table of Content](#table-of-content)
 
-## Deployment
+## Deployment - (Shot Caller and Shot Caller Production - Front and Backend)
 
 ### Development platform
 
@@ -491,7 +428,7 @@ sqlparse==0.4.2 <br>
 
 [Back to Table of Content](#table-of-content)
 
-## Credits
+## Credits - (Shot Caller and Shot Caller Production - Front and Backend)
 
 ### Code
 
