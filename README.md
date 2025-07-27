@@ -35,6 +35,7 @@ There is no installation needed and no requirements for the app. If a User has a
 # Table of Content
 
 ## Features “Shot Caller Production”
+Find these here. [Shot Caller Production Readme](https://github.com/johnston9/shot-caller-production)
 
 ### Product Information
 - The Home page contain information about the app’s features and links to pages containing more detail information.<br>
