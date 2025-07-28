@@ -30,6 +30,7 @@
   border: 1px solid rgb(140, 111, 25, 99%);
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
+  background-size: contain;
   /* height: 125px; */
 }
 

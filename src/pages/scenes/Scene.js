@@ -17,6 +17,12 @@ import { useSetCategoryContext, useSetDeptContext,
   useSetNumberContext, 
   useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import styles from "../../styles/Scene.module.css";
+import sceneblue from "../../assets/sceneblue.png";
+import sceneblue2 from "../../assets/sceneblue2.png";
+import sceneblue3 from "../../assets/sceneblue3.png";
+import sceneblue4 from "../../assets/sceneblue4.png";
+import sceneblue5 from "../../assets/sceneblue5.png";
+import sceneblue6 from "../../assets/sceneblue6.png";
 import dep1 from "../../assets/dep1.png";
 import dep2 from "../../assets/dep2.png";
 import dep3 from "../../assets/dep3.png";
@@ -1059,7 +1065,9 @@ const Scene = (props) => {
                     <div className={` ${styles.CardBoxIm} py-2 px-2`}
                       // style={{ backgroundColor: 'rgb(248 241 249)'}}
                       style={{
-                        background: `url(${dep1})`
+                        // background: `url(${dep1})`
+                        background: `url(${sceneblue})`,
+                        objectFit: "contain", width: '100%', repeat: 'repeat'
                       }}
                       >
                         <Row className='my-2'>
@@ -1187,7 +1195,9 @@ const Scene = (props) => {
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`,
+                        objectFit: "contain", width: '100%', repeat: 'no-repeat'
                       }}
                       >
                         <Row className='my-2'>
@@ -1251,7 +1261,8 @@ const Scene = (props) => {
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1315,7 +1326,8 @@ const Scene = (props) => {
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1379,7 +1391,8 @@ const Scene = (props) => {
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1506,7 +1519,8 @@ const Scene = (props) => {
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1565,11 +1579,12 @@ const Scene = (props) => {
                       </div>
                       </div>
                 </Col>
-                {/* CAMERA 8 */}
+                {/* CASTING 8 */}
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1695,7 +1710,8 @@ const Scene = (props) => {
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1758,7 +1774,8 @@ const Scene = (props) => {
                 <Col className='px-2 px-md-2' xs={6} sm={4} md={3} lg={2} >
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
-                        background: `url(${dep1})`,
+                        // background: `url(${dep1})`,
+                        background: `url(${sceneblue3})`
                       }}
                       >
                         <Row className='my-2'>
