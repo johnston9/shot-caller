@@ -124,11 +124,12 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
         </Row>
         {/* posts */}
         <Row className="mb-3 mt-2 px-2">
-          <Col>
+          <Col >
         {hasLoaded ? (
           <>
             {posts.results.length ? (
               <InfiniteScroll
+              className="pb-5"
               children={posts.results.map((post) => (
                 <PostTop key={post.id} {...post} setPosts={setPosts} />
               ))}

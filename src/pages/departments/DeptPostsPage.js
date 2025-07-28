@@ -112,6 +112,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
           <>
             {posts.results.length ? (
               <InfiniteScroll
+              className="pb-5"
               children={posts.results.map((post) => (
                 <DeptPostTop 
                 fetchPosts={fetchPosts}

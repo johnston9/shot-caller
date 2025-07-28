@@ -17,10 +17,10 @@ import { useSetCategoryContext, useSetDeptContext,
   useSetNumberContext, 
   useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import styles from "../../styles/Scene.module.css";
-import sceneblue from "../../assets/sceneblue.png";
-import sceneblue2 from "../../assets/sceneblue2.png";
+import sceneblue8 from "../../assets/sceneblue8.png";
+import sceneblue7 from "../../assets/sceneblue7.png";
 import sceneblue3 from "../../assets/sceneblue3.png";
-import sceneblue4 from "../../assets/sceneblue4.png";
+import scenebluelines from "../../assets/scenebluelines.png";
 import sceneblue5 from "../../assets/sceneblue5.png";
 import sceneblue6 from "../../assets/sceneblue6.png";
 import dep1 from "../../assets/dep1.png";
@@ -1044,7 +1044,7 @@ const Scene = (props) => {
               {/* guide */}
               <Row>
                   <Col sm={{span: 10, offset: 1}} >
-                  <div className={`my-3 pb-0 ${styles.Guide}`}>
+                  <div className={`mt-3 pb-0 ${styles.Guide}`}>
                   <p style={{ textTransform: 'uppercase'}} 
                   className={`pb-0 mb-0 text-center ${styles.GuideTitle}`}  >
                     Workspace Guide</p>
@@ -1057,7 +1057,7 @@ const Scene = (props) => {
 
               {/* Department Image all white with pics  backgroundSize: 'cover',
                       backgroundRepeat: 'no-repeat', */}
-              <div className='mt-5 pt-5'>
+              <div className='mt-3 pt-0'>
                 {/* Universal */}
                 <Row className={`mt-1`} >
                     <Col xs={2} md={4}  ></Col>
@@ -1065,8 +1065,8 @@ const Scene = (props) => {
                     <div className={` ${styles.CardBoxIm} py-2 px-2`}
                       // style={{ backgroundColor: 'rgb(248 241 249)'}}
                       style={{
-                        // background: `url(${dep1})`
-                        background: `url(${sceneblue})`,
+                        // background: `url(${dep5})`,
+                        background: `url(${sceneblue8})`,
                         objectFit: "contain", width: '100%', repeat: 'repeat'
                       }}
                       >
@@ -1196,7 +1196,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`,
+                        background: `url(${sceneblue6})`,
                         objectFit: "contain", width: '100%', repeat: 'no-repeat'
                       }}
                       >
@@ -1262,7 +1262,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`
+                        background: `url(${sceneblue6})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1327,7 +1327,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`
+                        background: `url(${sceneblue6})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1392,7 +1392,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`
+                        background: `url(${sceneblue6})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1520,7 +1520,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`
+                        background: `url(${sceneblue6})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1584,7 +1584,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`
+                        background: `url(${sceneblue6})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1711,7 +1711,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`
+                        background: `url(${sceneblue6})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1775,7 +1775,7 @@ const Scene = (props) => {
                       <div className={` ${styles.CardBox2} px-2`}
                       style={{
                         // background: `url(${dep1})`,
-                        background: `url(${sceneblue3})`
+                        background: `url(${sceneblue6})`
                       }}
                       >
                         <Row className='my-2'>
@@ -1901,8 +1901,8 @@ const Scene = (props) => {
               </div>
               
               {/* Department Image links Original */}
-              <div >
-              <h1>NO 1 - Original</h1>
+              <div className='mt-5 pt-5' >
+              <h1 className='mt-5 pt-5'>NO 1 - Original</h1>
               {/* Universal */}
               <Row className={`mt-1`} >
                   <Col xs={4}  ></Col>
