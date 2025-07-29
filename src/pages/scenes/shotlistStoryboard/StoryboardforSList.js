@@ -33,7 +33,7 @@
    
        return (
            <div >
-               <Row className="h-100 my-2">
+               <Row >
                <Col xs={12} className='text-center'> 
                <h5 className={`mb-2 py-1 ${styles.SubTitle }`}>
                 STORYBOARD</h5>

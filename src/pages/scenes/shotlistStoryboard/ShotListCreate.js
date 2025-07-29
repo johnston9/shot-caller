@@ -182,13 +182,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
           </Col>
         </Row>
         {/* hr */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-3 mb-0`}/>
-        </Col>
-        </Row>
+        <hr className={`mt-0 mb-0`}/>
         {/* description Subject equipment */}
-        <Row className="mt-3">
+        <Row className="mt-0">
         <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="description" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Description</Form.Label>
@@ -248,13 +244,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-5 mb-0`}/>
-        </Col>
-        </Row>
+        <hr className={`mt-0 mb-0`}/>
         {/* size framing movement audio */}
-        <Row className="mt-3">
+        <Row >
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="size" className={`${styles.Width2}`} >
             <Form.Label className={`${styles.BoldScene}`} >Size</Form.Label>
@@ -325,13 +317,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-5 mb-0`}/>
-        </Col>
-        </Row>
+        <hr className={`mt-0 mb-0`}/>
         {/* location Int/Ext Day/Night Audio*/}
-        <Row className="mt-3">
+        <Row >
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="location" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
@@ -408,13 +396,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-5 mb-0`}/>
-        </Col>
-        </Row>
+        <hr className={`mt-0 mb-0`}/>
         {/* camera lens script ref story ref */}
-        <Row className="mt-3">
+        <Row >
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="camera" className={`${styles.Width2}`} >
               <Form.Label className={`${styles.BoldScene}`} >Camera</Form.Label>
@@ -486,13 +470,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-5 mb-0`}/>
-        </Col>
-        </Row>
+        <hr className={`mt-0 mb-0`}/>
         {/* lighting focus_pulls fx frame rate*/}
-        <Row className="mt-3">
+        <Row >
         <Col xs={12} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="lighting" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Lighting</Form.Label>
@@ -569,13 +549,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             </Col>
         </Row>
         {/* hr */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-0`}/>
-        </Col>
-        </Row>
+        <hr className={`mt-0 mb-0`}/>
         {/* notes */}
-        <Row className="mt-3">
+        <Row >
         <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="notes" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Notes</Form.Label>
@@ -597,17 +573,13 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-5 mb-0`}/>
-        </Col>
-        </Row>
+        <hr className={`mt-0 mb-0`}/>
         {/* image */}
-        <Row className="mt-3">
-        <Col className="text-center px-0" xs={12} md={{span: 6, offset: 3 } } >
+        <Row >
+        <Col className="text-center p-0 p-md-2" xs={12} md={{span: 6, offset: 3 } } >
           <p className={`${styles.BoldScene}`}>Sketch/Image</p>
           <Container
-                  className={`${appStyles.Content} px-0 mt-1 py-5 d-flex flex-column justify-content-center`}
+                  className={`${appStyles.Content} px-0 d-flex flex-column justify-content-center`}
                   >
               <Form.Group>
                 {image ? (
