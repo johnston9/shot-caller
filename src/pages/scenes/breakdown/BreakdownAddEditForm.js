@@ -513,9 +513,10 @@ const BreakdownEditForm = () => {
     }
         
     try {
-        await axiosReq.put(`/scenes/${id}/`, formData);
+        const data = await axiosReq.put(`/scenes/${id}/`, formData);
         toast.success(`Scene "${number}" Breakdown Updated`);
         history.push(`/scenes/${id}/`);
+        console.log(data)
     } catch (err) {
         console.log(err);
         if (err.response?.status !== 401) {
