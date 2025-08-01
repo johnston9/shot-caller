@@ -112,7 +112,7 @@ const Breakdown = (props) => {
                 <Col className={`${styles.BorderRight} text-center`} xs={12} md={6}>
                 <p className={`${styles.BoldTitle} 
                 mb-2 text-center mx-1 mx-sm-5`}>SHOOT INFO </p>
-                <p>{shooting_date} - {filming_location} </p>
+                <p>{filming_location} {shooting_date}</p>
                 <hr className='d-block d-md-none' />
             </Col>
                 <Col className={`text-center `} xs={12} md={6}>

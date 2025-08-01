@@ -148,7 +148,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
         </Col>
         <Col xs={6} md={4} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="end_time" className={`${styles.Width2} `}  >
-              <Form.Label className={`${styles.BoldScene}`} >End Time</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Est. Time</Form.Label>
               <Form.Control
               className={`${styles.Input}`} 
               type="text"
@@ -431,7 +431,7 @@ const buttons = (
             <Col>
             <p className= {`text-center ${styles.BoldScene }`} 
             style={{ textTransform: 'uppercase', fontStyle: 'italic'}}>
-              SCENE {number} "{title}" - {int_ext} {filming_location} - {day_night} SELECTED </p>
+              SCENE {number} - {title} - "{int_ext} {location} - {day_night}" SELECTED </p>
             </Col>
             </Row>
           <Row className="mt-3 pt-3" >
@@ -475,7 +475,7 @@ const buttons = (
         <Row className="mt-3 pt-3" >
           <Col>
           <h5 className={`d-none d-md-block text-center px-5 mb-0 ${styles.SubTitle }`}>
-              SCHEDULE SCENE {number} SHOOTING INFO </h5>
+             SCENE {number} SHOOTING INFO </h5>
             <h5 className={`d-block d-md-none text-center px-5 mb-0 ${styles.SubTitle }`}>
               SCENE {number} </h5>
           </Col>

@@ -70,7 +70,7 @@ const ScheduleScene = (props) => {
                         <p className='mb-0'>{number}</p>
                     </Col>
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
-                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night} </p>
+                        <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext} {location} - {day_night} </p>
                         <p className='mb-0'>{action}</p>
                     </Col>
                     </>

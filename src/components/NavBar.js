@@ -100,7 +100,7 @@ const NavBar = () => {
         </NavDropdown.Item>
       </NavDropdown>
 
-      {/* characters locations departments-xtra */}
+      {/* Featutes -characters locations departments-xtra */}
       <NavDropdown 
           title={
             <span 
@@ -117,7 +117,7 @@ const NavBar = () => {
         <NavDropdown.Item >
           <NavLink
           ref={reff1}
-          className={`noluv ${styles.NavLink} noluv`}
+          className={`noluv ${styles.DropLink} noluv`}
           to="/characters"
         >
           <i className="navicon fas fa-stream"></i>Characters
@@ -126,7 +126,7 @@ const NavBar = () => {
         <NavDropdown.Item >
         <NavLink
         ref={reff2}
-          className={`noluv mt-2 ${styles.NavLink} noluv`}
+          className={`noluv mt-2 ${styles.DropLink} noluv`}
           to="/characters/create"
         >
           <i className="far fa-plus-square"></i>Add Character 
@@ -135,7 +135,7 @@ const NavBar = () => {
       <NavDropdown.Item >
         <NavLink
         ref={reff3}
-          className={`mt-2 ${styles.NavLink} noluv`}
+          className={`mt-2 ${styles.DropLink} noluv`}
           to="/locations"
         >
           <i className="navicon fas fa-stream"></i>Locations
@@ -144,7 +144,7 @@ const NavBar = () => {
       <NavDropdown.Item >
         <NavLink
           ref={reff4}
-          className={`mt-2 ${styles.NavLink} noluv `}
+          className={`mt-2 ${styles.DropLink} noluv `}
           to="/locations/create"
         >
           <i className="far fa-plus-square"></i>Add Locations
@@ -153,19 +153,19 @@ const NavBar = () => {
         <NavDropdown.Item >
           <NavLink
           ref={reff5}
-          className={` ${styles.NavLink} noluv`}
+          className={` ${styles.DropLink} noluv`}
           to="/depts/general"
         >
-          <i className="navicon fas fa-stream"></i>Depts-Xtra
+          <i className="navicon fas fa-stream"></i>Department Posts
         </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item >
         <NavLink
          ref={reff6}
-          className={`mt-2 ${styles.NavLink} noluv`}
+          className={`mt-2 ${styles.DropLink} noluv`}
           to="/department/posts/create"
         >
-          <i className="far fa-plus-square"></i>Add Depts-Xtra 
+          <i className="far fa-plus-square"></i>Add Department Post 
       </NavLink>
       </NavDropdown.Item>
       </NavDropdown>

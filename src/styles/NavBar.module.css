@@ -9,6 +9,11 @@
   font-size: 12px;
 }
 
+.NavLink:hover {
+padding: 2px;
+color: #000
+}
+
 .NavLink:active p {
   color: red;
 }
@@ -33,12 +38,24 @@
   color: black;
 }
 
-.Active i {
+.DropLink:hover {
+  color: #000;
+}
+
+/* .Active i {
   color: #2142b2;
 }
 
 .Active {
   color: #2142b2;
+} */
+
+.Active i {
+color: rgb(3, 81, 81);
+}
+
+.Active {
+color: rgb(3, 81, 81);
 }
 
 Title {
