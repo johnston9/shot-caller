@@ -30,7 +30,7 @@ const ScheduleScene = (props) => {
                     <p className='mb-0'>{number}</p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night} </p>
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext} {location} - {day_night} </p>
                 </Col>
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={3} md={3}>
                 <p className='mb-0'>{filming_location} </p>                        
@@ -107,7 +107,7 @@ const ScheduleScene = (props) => {
                     className={`${styles.Info} mt-4`}>INFO</p> */}
                 </Col>
                 <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={8}>
-                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night}</p>
+                    <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext} {location} - {day_night}</p>
                     <hr className={`${styles.HrSched} my-0 mx-3`}></hr>
                     {/* <p className='mb-0'>{action}</p> */}
                     <p className='mb-0'>{filming_location}</p>
