@@ -379,7 +379,7 @@ const BreakdownEditForm = () => {
       <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={12}md={6}>
         <Form.Group controlId="filming_location" className={`${styles.Width2} `} >
-            <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
+            <Form.Label className={`${styles.BoldScene}`} >Filming Location Name</Form.Label>
             <Form.Control 
             type="text"
             className={styles.Input}

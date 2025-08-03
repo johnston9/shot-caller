@@ -174,7 +174,10 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       <Row>
       <Col md={{span: 8, offset: 2 } }className="d-flex justify-content-center p-0 p-md-2">
         <Form.Group controlId="filming_location" className={`${styles.Width2} `}  >
-            <Form.Label className={`${styles.BoldScene}`} >Filming Location</Form.Label>
+            <Form.Label >
+              <p className={`${styles.BoldScene}`}>Filming Location </p>
+              <p className={`${styles.Para3}`}>Auto-filled from Scene - change if neseccary</p>
+            </Form.Label>
             <Form.Control 
             className={`${styles.Input}`}
             type="text"
