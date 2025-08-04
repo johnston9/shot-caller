@@ -83,25 +83,25 @@ const CallCastAddCast = (props) => {
                     <p className={`mb-0`}>{cast_number1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.Border2}`} xs={2} md={2}>
-                    <p className='mb-0'>{role1}</p>
+                    <p className={`mb-0 pb-0 ${styles.BoldScene}`}>{role1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.Border2}`} xs={2} md={2}>
                     <p className={`mb-0`}>{artist1}</p>
-                </Col>
-                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2 }`} xs={1} md={1}>
-                <p className='mb-0'>{swf1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.Border2}`} xs={1} md={1}>
                     <p className='mb-0'>{pickup1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center  ${styles.CastCall}`} xs={1} md={1}>
-                <p className={`mb-0`}>{call1}</p>                        
+                <p className={`mb-0 pb-0 ${styles.BoldScene}`}>{call1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 v d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <p className='mb-0'>{hmw1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                     <p className='mb-0'>{on_set1}</p>
+                </Col>
+                <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2 }`} xs={1} md={1}>
+                <p className='mb-0'>{swf1}</p>                        
                 </Col>
                 <Col className={`mx-0 px-0 py-2 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={1} md={1}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
@@ -147,7 +147,7 @@ const CallCastAddCast = (props) => {
                     <p className='mb-0'>{pickup1}</p>
                 </Col> 
                 <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center ${styles.CastCall}`} xs={3}>
-                    <p className='mb-0'>{call1}</p>
+                    <p className={`mb-0 pb-0 ${styles.BoldScene}`}>{call1}</p>
                 </Col>
                 <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center ${styles.Border2} `} xs={2} md={2}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 

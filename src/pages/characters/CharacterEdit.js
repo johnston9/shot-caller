@@ -517,7 +517,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} md={6} className="mt-3 mt-md-3 d-flex justify-content-center">
+                  <Col xs={12} md={6} className="mt-3 mt-md-0 d-flex justify-content-center">
                   <Form.Group controlId="pickup_address_2" 
                     className={`${styles.Width2} text-center`} >
                           <Form.Label className={styles.BoldScene} >Agent Email</Form.Label>
@@ -543,7 +543,7 @@ const buttons = (
               </Col>
               </Row>
               {/* times */}
-              <Row className="text-center">
+              <Row className="text-center mt-3 mt-md-0">
                   <Col xs={12} md={6} className="d-flex justify-content-center" >
                   <Form.Group controlId="make_up_time" 
                     className={`${styles.Width}`} >
@@ -562,7 +562,7 @@ const buttons = (
                         </Alert>
                       ))}
                   </Col>
-                  <Col xs={12} md={6} className="mt-3 mt-md-3 d-flex justify-content-center" >
+                  <Col xs={12} md={6} className="mt-3 mt-md-0 d-flex justify-content-center" >
                   <Form.Group controlId="commute_time" 
                     className={`${styles.Width}`} >
                           <Form.Label className={styles.BoldScene} >Commute Time</Form.Label>
@@ -776,7 +776,8 @@ const buttons = (
                   <hr className={`${styles.Break1Cos} d-block d-md-none mt-4`}/>
                   </Col>
               </Row>
-              <hr className={`${styles.Break1Cos} mt-3 mb-3 d-none d-md-block`}/>
+              {/* <hr className={`${styles.Break1Cos} mt-3 mb-3 d-none d-md-block`}/> */}
+              <hr className={` mt-3 mb-3 d-none d-md-block`}/>
               {/* costume 2/3 */}
               <Row className="text-center">
                   <Col xs={12} md={6} >
