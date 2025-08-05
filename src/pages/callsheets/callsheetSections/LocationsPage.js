@@ -66,10 +66,10 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: '#f6fffe' }}
             className='px-3 '>
-            <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 ${styles.BorderLoc}`} xs={1} >
             <p></p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={11}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.BorderLoc}`} xs={11}>
             <p className={`mb-0 ${styles.BoldBase}`} >Nearest Hospital</p>
             <p className={`mb-0 ${styles.Bold}`} >{nearest_hospital}</p>
             <p className='mb-0'>
@@ -88,15 +88,15 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: 'rgb(254 249 254)' }}
             className='px-3 '>
-            <Col className={`mx-0 px-0 ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 ${styles.BorderLoc}`} xs={1} >
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6} md={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.BorderLoc}`} xs={6} md={5}>
             <p className={`mb-0 ${styles.BoldBase}`} >Basecamp</p>
             <p className={`mb-0 ${styles.Bold}`} >{basecamp_name}</p>
             <p className='mb-0'>{basecamp_address}</p>
             </Col>
             <Col className={`mx-0 px-1 px-md-3 d-flex align-items-center
-                 ${styles.Border}`} xs={5} md={6} >
+                 ${styles.BorderLoc}`} xs={5} md={6} >
             <p className='mb-0'>{basecamp_parking_n_notes}</p>
             </Col>
             </Row>
@@ -107,15 +107,15 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: 'rgb(246 254 245)'}}
             className='px-3'>
-            <Col className={`mx-0 px-0 px-md-3 ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 px-md-3 ${styles.BorderLoc}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>1</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6} md={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.BorderLoc}`} xs={6} md={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_1_name}</p>
             <p className='mb-0'>{location_1_address}</p>
             </Col>
             <Col className={`mx-0 px-1 px-md-3 d-flex align-items-center  
-                ${styles.Border}`} xs={5} md={6}>
+                ${styles.BorderLoc}`} xs={5} md={6}>
             <p className={`mb-0 py-1`}>{location_1_parking_n_notes}</p>
             </Col>
             </Row>
@@ -126,15 +126,15 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: '#f6fffe'}}
             className='px-3'>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 px-md-3  ${styles.BorderLoc}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>2</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6} md={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.BorderLoc}`} xs={6} md={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_2_name}</p>
             <p className='mb-0'>{location_2_address}</p>
             </Col>
             <Col className={`mx-0 px-1 px-md-3 d-flex align-items-center 
-                ${styles.Border}`} xs={5} md={6}>
+                ${styles.BorderLoc}`} xs={5} md={6}>
             <p className={`mb-0`}>{location_2_parking_n_notes}</p>
             </Col>
             </Row>
@@ -145,15 +145,15 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row
             style={{ backgroundColor: 'rgb(246 254 245)'}} 
             className='px-3'>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 px-md-3  ${styles.BorderLoc}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>3</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6} md={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.BorderLoc}`} xs={6} md={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_3_name}</p>
             <p className='mb-0'>{location_3_address}</p>
             </Col>
             <Col className={`mx-0 px-1 px-md-3 d-flex align-items-center 
-                ${styles.Border}`} xs={5} md={6}>
+                ${styles.BorderLoc}`} xs={5} md={6}>
             <p className={`mb-0`}>{location_3_parking_n_notes}</p>
             </Col>
             </Row>
@@ -164,15 +164,15 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: '#f6fffe'}}
             className='px-3'>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 px-md-3  ${styles.BorderLoc}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>4</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6} md={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.BorderLoc}`} xs={6} md={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_4_name}</p>
             <p className='mb-0'>{location_4_address}</p>
             </Col>
             <Col className={`mx-0 px-1 px-md-3 d-flex align-items-center  
-                ${styles.Border}`} xs={5} md={6}>
+                ${styles.BorderLoc}`} xs={5} md={6}>
             <p className={`mb-0`}>{location_4_parking_n_notes}</p>
             </Col>
             </Row>
@@ -183,15 +183,15 @@ const LocationsPage = ({callsheet, setShow}) => {
             <Row 
             style={{ backgroundColor: 'rgb(246 254 245)'}}
             className='px-3'>
-            <Col className={`mx-0 px-0 px-md-3  ${styles.Border}`} xs={1} >
+            <Col className={`mx-0 px-0 px-md-3  ${styles.BorderLoc}`} xs={1} >
             <p className={`mb-0 text-center ${styles.Bold}`}>5</p>
             </Col>
-            <Col className={`mx-0 px-1 px-md-3  ${styles.Border}`} xs={6} md={5}>
+            <Col className={`mx-0 px-1 px-md-3  ${styles.BorderLoc}`} xs={6} md={5}>
             <p className={`mb-0 ${styles.Bold}`} >{location_5_name}</p>
             <p className='mb-0'>{location_5_address}</p>
             </Col>
             <Col className={`mx-0 px-1 px-md-3 d-flex align-items-center  
-                ${styles.Border}`} xs={5} md={6} >
+                ${styles.BorderLoc}`} xs={5} md={6} >
             <p className={`mb-0`}>{location_5_parking_n_notes}</p>
             </Col>
             </Row>

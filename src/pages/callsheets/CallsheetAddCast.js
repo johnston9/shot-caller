@@ -19,6 +19,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
     const [errors, setErrors] = useState({});
     const [cast, setCast] = useState({results: [] });
     const characters = useCharactersContext();
+    console.log(characters)
 
     const [postData, setPostData] = useState({
         cast_number: "",

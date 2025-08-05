@@ -27,11 +27,8 @@ const BgPageAddBG = (props) => {
             <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
             <p className='mb-0'>Type</p>
             </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={2}>
                 <p className='mb-0'>Info</p>
-            </Col>
-            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                <p className='mb-0'>Edit</p>
             </Col>
         </Row>
         </Col>
@@ -46,11 +43,8 @@ const BgPageAddBG = (props) => {
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={6} md={6}>
                 <p className='mb-0'>Type</p>
                 </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={2}>
                     <p className='mb-0'>Info</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'></p>
                 </Col>
         </Row> 
         </Col>

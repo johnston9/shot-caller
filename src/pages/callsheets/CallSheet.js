@@ -625,13 +625,13 @@ const CallSheet = (props ) => {
         cast={cast} />
         {/* BG AND STANDINS */}
         <BgPage background={background} handleMount={handleMount}  />
+        {/* Crew */}
+        <CrewCallsPage callsheet={callsheet}/>
         {/* Notes */}
         <NotesPage
         important_info={important_info} 
         transport_info={transport_info} 
         department_info={department_info} />
-        {/* Crew */}
-        <CrewCallsPage callsheet={callsheet}/>
         {/* Advanced Schedule  */}
         <AdvancedSchedPage callsheet={callsheet} advancedDay={advancedDay} />
         {/* Walkie Channels */}

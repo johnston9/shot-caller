@@ -56,7 +56,7 @@ const BackgroundAddBG = (props) => {
                 <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={2} md={2}>
                     <p className={` ${styles.Bold}`}>{qty1}</p>
                 </Col>
-                <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={2} md={2}>
+                <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.CastCall}`} xs={2} md={2}>
                     <p className={` ${styles.Bold}`}>{call1}</p>
                 </Col>
                     <Col className={`mx-0 px-0 py-1 d-flex align-items-center justify-content-center ${styles.Border2}`} xs={6} md={6}>
@@ -106,7 +106,7 @@ const BackgroundAddBG = (props) => {
                 </Col>
                 <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center py-1 ${styles.Border2}`} xs={6} md={6}>
                     <p className={` ${styles.Bold}`}>{type1}</p>
-                    </Col>
+                </Col>
                 <Col className={`mx-0 px-0 d-flex align-items-center justify-content-center py-1 ${styles.Border2} `} xs={2} md={2}>
                 <Button onClick={() => setShowInfo(showInfo => !showInfo)} 
                     className={`${btnStyles.Button} ${btnStyles.Shed}`}>
