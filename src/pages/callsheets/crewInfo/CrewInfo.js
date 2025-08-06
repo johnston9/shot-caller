@@ -82,14 +82,14 @@ const CrewInfo = () => {
       <Button
       className={`py-0 mt-1 ${btnStyles.Red} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >
-        IMPORTANT - <span style={{fontStyle: 'italic'}}>CALLSHEET/MAIN CREW</span>
+        IMPORTANT - <span style={{fontStyle: 'italic'}}>CALLSHEET MAIN CREW</span>
       </Button>
       </Col>
       <Col md={6} className='text-center mt-3 mt-md-0'>
       <Button
       className={`py-0 mt-1 ${btnStyles.Red} ${btnStyles.Button}`}
       onClick={() => setShowEx(showEx => !showEx)} >
-        IMPORTANT - <span style={{fontStyle: 'italic'}}>NON-CALLSHEET/EXTRA CREW</span>
+        IMPORTANT - <span style={{fontStyle: 'italic'}}>NON-CALLSHEET EXTRA CREW</span>
       </Button>
       </Col>
       </Row>
@@ -104,33 +104,44 @@ const CrewInfo = () => {
               ) : (
                 <ExtraCrew  /> 
       ) }  
-      <p className={`${styles.SmallCrew} text-center`} style={{fontStyle: 'italic' }}>
-      Add Callsheet/Main Crew here
+      <p className={`${styles.SmallCrew} text-center`} 
+      style={{ fontStyle: 'italic'}}>
+      Add/Edit Callsheet Main Crew here
       </p>
-      {/* create/edit buttons */}
+      {/* create/edit buttons textTransform: 'uppercase', */}
       {id ? (
-        <div>
+        <div >
         <Row className='mt-2'>
-        <Col className='text-center'>
+        <Col className='text-center d-none d-md-block'>
         <Button onClick={() => history.push("crewinfo/edit/1")}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Add Callsheet/Main Crew</Button>
+          className={`${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide4}`}>
+          ADD/EDIT CALLSHEET MAIN CREW</Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => history.push("crewinfo/edit/1")}
+          className={`${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}>
+          ADD/EDIT MAIN CREW</Button>
         </Col>
         </Row>
         </div>
       ) : (
         <CreateOnce />
       )}
+      {/* style={{fontStyle: 'italic' }} */}
       <Row className='text-center mt-4'>
       <Col>
-      <p className={`${styles.SmallCrew} text-center`} style={{fontStyle: 'italic' }} >
-      View Callsheet/Main Crew and
-        Add/View Non-Callsheet/Extra Crew by Department.
+      <p className={`${styles.SmallCrew} text-center`} 
+      style={{fontStyle: 'italic' }}>
+      View Callsheet Main Crew here by Department
+      </p>
+      <p className={`${styles.SmallCrew} text-center`} 
+      style={{fontStyle: 'italic' }}>
+        Add/View Non-Callsheet Extra Crew here by Department
       </p>
       </Col>
       </Row>
       {/* department buttons */}
-      <div className={`mt-2 pt-2 ${styles.White }`}> 
+      <div className={` mt-2 ${styles.White }`}> 
         <Row className={`${styles.ButtonLine} mt-0`}>
           <Col md={{span: 4, offset: 4}} className='text-center'>
               <p

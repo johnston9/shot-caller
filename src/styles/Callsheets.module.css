@@ -123,7 +123,8 @@ hr {
 }
 
 .SmallCrew {
-  font-size: .75rem;
+  font-size: .85rem;
+  font-weight: 700;
 }
 
   .Width {
@@ -201,11 +202,13 @@ p {
   font-weight: 700;
   margin-bottom: 3px;
   color: #616370;
+  color: #494d70;
 }
 
 .CrewInfop {
   margin-bottom: 3px;
   color: #616370;
+  color: #494d70;
 }
 
 .BoldTitleCall {
@@ -684,6 +687,17 @@ p {
 }
 
 @media screen and (max-width: 780px) {
+  .CrewInfoP {
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: #212651;
+}
+
+.CrewInfop {
+  margin-bottom: 3px;
+  color: #212651;
+}
+
   .BreakCrew {
     border-bottom: 5px solid #c1f1f7 ;
     border-top: 1px solid #fff ;

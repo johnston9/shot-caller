@@ -173,11 +173,18 @@
   .Wide2 {
     width: 30%;
     /* padding: 2px 5px; */
+    font-size: 1rem;
   }
 
   .Wide3 {
     padding: 2px 10px;
-    width: 100%;
+    width: 90%;
+  }
+
+  .Wide4 {
+    padding: 4px 4px;
+    width: 40%;
+    font-size: 1rem;
   }
 
   @media screen and (max-width: 600px) {
