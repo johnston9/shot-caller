@@ -84,14 +84,14 @@
         font-size: 1.50em;
     } */
 
-    .Title3 {
+    /* .Title3 {
         font-size: 1.25em;
-    }
+    } */
 }
 
 @media screen and (max-width: 400px) {
-    .Title3 {
-        font-size: .75em;
+     .Title3 {
+        font-size: 1em;
     }
 
     .Title {
@@ -99,8 +99,8 @@
     }
 
     .Title2 {
-        font-size: 1em;
-    }
+        font-size: 1.5em;
+    } 
 }
 
 /* @media screen and (max-width: 360px) {

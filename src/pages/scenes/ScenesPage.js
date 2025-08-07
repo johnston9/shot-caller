@@ -104,9 +104,9 @@ const ScenesPage = ({message, filter = "" }) => {
               Back
           </Button>
             </Col>
-            <Col xs={4} className="text-center mt-2" >
-              <Button className={`${btnStyles.Button}  ${btnStyles.Bright}`}
-                onClick={() => clickScript()}> Script
+            <Col xs={4} className="text-center mt-2 px-0 mx-0" >
+              <Button className={`${btnStyles.Button}  ${btnStyles.Back}`}
+                onClick={() => clickScript()}>ENTIRE SCRIPT
               </Button>
             </Col>
             <Col xs={4} >
@@ -122,20 +122,6 @@ const ScenesPage = ({message, filter = "" }) => {
                     <Information  /> 
                     ) } 
           {/* Freeze component for the Super Admin only */}
-          { freeze ? (
-            ""
-          ) : (
-            <Row className='my-3'>
-            <Col className="text-center" md={{span: 10, offset: 1 }} >
-            <p>
-            Scene Numbers may be changed up to a certain point in production.
-            </p>
-            <p>
-            The production team will freeze the numbers at that point.
-            </p>
-            </Col>
-          </Row>
-          ) }
           { superAdmin && <Freeze /> }
           {/* Add Scene */}
           <Row className='mt-0'>
@@ -146,7 +132,7 @@ const ScenesPage = ({message, filter = "" }) => {
             </Col>
           </Row>
           {/* search  */}
-          <Row>
+          <Row className='mt-3'>
             <Col className="mt-2" xs={12} sm={{ span: 6, offset: 3 }} >
             <Form
                 className={styles.SearchBar}

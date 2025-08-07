@@ -25,6 +25,11 @@
   font-size: .65rem;
 }
 
+.SmallDepts {
+  font-size: .8rem;
+  font-weight: 700;
+}
+
 .CardBox2 {
   margin-top: 20px;
   border: 1px solid rgb(140, 111, 25, 99%);
@@ -768,7 +773,7 @@ overflow-y: scroll;
 }
 
 @media screen and (max-width: 600px) {
-  .InputBar {
+.InputBar {
     height: 20px !important;
     font-size: .75rem !important;
 }

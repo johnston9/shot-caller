@@ -456,11 +456,11 @@ const Post = (props) => {
               <h5 className={`text-center py-0 mx-5 my-3 ${styles.SubTitle }`}
               >IMAGES</h5>
               ) : ("") }
-              <Row className='mb-2 px-5'>
+              <Row className='mb-2 px-0'>
                   {/* image 1/2 */}
                   <Col xs={12} md={6}  >
                   {image1 && <>
-                  <Card className='mx-3 mx-md-5' >
+                  <Card className='mx-0 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 1</p>
@@ -478,7 +478,7 @@ const Post = (props) => {
                   </Col>  
                   <Col xs={12} md={6}>
                   {image2 && <>
-                  <Card className='mx-3 mx-md-5' >
+                  <Card className='mx-0 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 2</p>
@@ -507,7 +507,7 @@ const Post = (props) => {
               <Row className='mb-2 px-5'>
                   <Col xs={12} md={6}  >
                   {image3 && <> 
-                  <Card className='mx-3 mx-md-5' >
+                  <Card className='mx-0 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 3</p>
@@ -525,7 +525,7 @@ const Post = (props) => {
                   </Col>  
                   <Col xs={12} md={6}>
                   {image4 && <>
-                  <Card className='mx-3 mx-md-5' >
+                  <Card className='mx-0 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 4</p>
@@ -555,7 +555,7 @@ const Post = (props) => {
                   <Col className='d-none d-md-block' md={3} ></Col>
                   <Col xs={12} md={6}>
                   {image5 && <> 
-                  <Card className='mx-3 mx-md-5' >
+                  <Card className='mx-0 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
                     <p className={`${styles.BoldTitle} mb-md-3`}>
                         IMAGE 5</p>

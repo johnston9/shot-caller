@@ -11,10 +11,14 @@ const Information = () => {
         <Col md={{span: 8, offset: 2}}>
         <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
         <h5 className={`text-center `} >INFO</h5>  
-        <p>Click the Create Scene tab to create Scenes. Click on a Scene to work
+        <p>Click the Create Scene tab to create Scenes.</p>
+        <p> Click on a Scene to work
         in its Breakdown, Characters & BG, Shotlist, Scene Script, Storboard,
         and Workspace.
              </p>
+            <p>
+            Scene Numbers may be changed up to a certain point in production when
+            the production decide to freeze them.</p>
          </div> 
         </Col>
       </Row>

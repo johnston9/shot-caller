@@ -17,12 +17,12 @@ import { useSetCategoryContext, useSetDeptContext,
   useSetNumberContext, 
   useSetSceneContext } from '../../contexts/DeptCategoryContext';
 import styles from "../../styles/Scene.module.css";
+import sceneblue6 from "../../assets/sceneblue6.png";
 import sceneblue8 from "../../assets/sceneblue8.png";
 import sceneblue7 from "../../assets/sceneblue7.png";
 import sceneblue3 from "../../assets/sceneblue3.png";
 import scenebluelines from "../../assets/scenebluelines.png";
 import sceneblue5 from "../../assets/sceneblue5.png";
-import sceneblue6 from "../../assets/sceneblue6.png";
 import dep1 from "../../assets/dep1.png";
 import dep2 from "../../assets/dep2.png";
 import dep3 from "../../assets/dep3.png";
@@ -1055,7 +1055,7 @@ const Scene = (props) => {
               </Row>
               </div>
 
-              {/* Department Image all white with pics  backgroundSize: 'cover',
+              {/* Department Images Yes this one  backgroundSize: 'cover',
                       backgroundRepeat: 'no-repeat', */}
               <div className='mt-3 pt-0'>
                 {/* Universal */}

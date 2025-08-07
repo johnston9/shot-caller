@@ -188,6 +188,10 @@
   }
 
   @media screen and (max-width: 600px) {
+    .Button {
+    font-size: 0.7rem;
+  }
+
     .Wide2 {
       width: 50%;
     }

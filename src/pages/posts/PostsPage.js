@@ -114,9 +114,9 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
         >
           <Form.Control
             value={query}
+            className={`${styles.InputBar}`}
             onChange={(event) => setQuery(event.target.value)}
             type="text"
-            className="mr-sm-2 text-center"
             placeholder="Search by username or post title"
           />
         </Form>
