@@ -46,11 +46,11 @@ const ShotInfo = (props) => {
             {/* break */}
             <Row>
             <Col xs={12}>
-            <hr className={`${styles.Break1} mt-0 mb-0`}/>
+            <hr className={`${styles.Break1} pt-0 pb-0 mt-0 mb-0`}/>
             </Col>
             </Row>
             {/* audio equipment subject */}
-            <Row className='mt-3' >
+            <Row className='mt-2' >
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4}>
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>AUDIO</p>
@@ -80,7 +80,7 @@ const ShotInfo = (props) => {
             </Col>
             </Row>
             {/* Equipment frame rate lighting  */}
-            <Row className='mt-3' >
+            <Row className='mt-2' >
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4}>
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>FOCUS PULLS</p>
@@ -110,7 +110,7 @@ const ShotInfo = (props) => {
             </Col>
             </Row>
             {/* script ref story ref FX/VFX */}
-            <Row className='mt-3' >
+            <Row className='mt-2' >
             <Col className={`${styles.BorderRight} text-center`} xs={6} md={4}>
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>SCRIPT REF</p>
@@ -142,7 +142,7 @@ const ShotInfo = (props) => {
             </Col>
             </Row>
             {/* notes */}
-            <Row className='mt-3' >
+            <Row className='mt-2' >
             <Col className={`text-center`} xs={12} md={{span: 8, offset: 2}}>
             <p className={`${styles.BoldTitle} 
             mb-2 text-center mx-1 mx-sm-5`}>NOTES</p>
@@ -161,7 +161,8 @@ const ShotInfo = (props) => {
             <Row >
                 <Col className={`text-center mt-3`} xs={{span:4, offset: 4 }} >
                     <Button onClick={() => setShowImg(showImg => !showImg)} 
-                        className={`${btnStyles.Button} ${btnStyles.Blue} px-2 d-block d-md-none `}>
+                        className={`${btnStyles.Button} ${btnStyles.Blue}
+                        ${btnStyles.Wide5} px-2 d-block d-md-none `}>
                         Image
                     </Button>                 
                 </Col>

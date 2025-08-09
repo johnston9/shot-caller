@@ -208,7 +208,7 @@
 }
 
 .Para {
-  min-height: 35px;
+  min-height: 25px;
 }
 
 .Para2 {
@@ -263,6 +263,7 @@
  color: #747686;
  padding: 0px 10px;
  text-align: center;
+ min-height: 30px !important;
 }
 
 .InputChar {

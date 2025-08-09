@@ -162,7 +162,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </h5>
         <Form onSubmit={handleSubmit}className="text-center" >
         {/* number */}
-        <Row>
+        <Row className="mt-1" >
           <Col xs={{span: 4, offset: 4}} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="shot_number" className="mb-2" >
                 <Form.Label className={`${styles.BoldScene}`} >Number</Form.Label>
@@ -182,7 +182,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
           </Col>
         </Row>
         {/* hr */}
-        <hr className={`mt-0 mb-0`}/>
+        <hr className={`mt-2 mb-2`}/>
         {/* description Subject equipment */}
         <Row className="mt-0">
         <Col xs={12} md={4} className="d-flex justify-content-center p-0 p-md-2">
@@ -244,7 +244,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <hr className={`mt-0 mb-0`}/>
+        <hr className={`mt-2 mb-2`}/>
         {/* size framing movement audio */}
         <Row >
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
@@ -317,26 +317,9 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <hr className={`mt-0 mb-0`}/>
+        <hr className={`mt-2 mb-2`}/>
         {/* location Int/Ext Day/Night Audio*/}
         <Row >
-        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
-        <Form.Group controlId="location" className={`${styles.Width2}`} >
-                <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
-                <Form.Control 
-                className={styles.Input}
-                type="text"
-                name="location"
-                value={location}
-                onChange={handleChange}
-                    />
-          </Form.Group>
-          {errors?.location?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-        </Col>
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">         
         <Form.Group controlId="int_ext" className={`${styles.Width2}`}>
             <Form.Label className={`${styles.BoldScene}`}>Int-Ext</Form.Label>
@@ -378,6 +361,23 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         ))}
         </Col>
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
+        <Form.Group controlId="location" className={`${styles.Width2}`} >
+                <Form.Label className={`${styles.BoldScene}`} >Location</Form.Label>
+                <Form.Control 
+                className={styles.Input}
+                type="text"
+                name="location"
+                value={location}
+                onChange={handleChange}
+                    />
+          </Form.Group>
+          {errors?.location?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Col>
+        <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
             <Form.Group controlId="audio" className={`${styles.Width2}`} >
                 <Form.Label className={`${styles.BoldScene}`} >Audio</Form.Label>
                 <Form.Control 
@@ -396,7 +396,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <hr className={`mt-0 mb-0`}/>
+        <hr className={`mt-2 mb-2`}/>
         {/* camera lens script ref story ref */}
         <Row >
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
@@ -452,8 +452,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         <Col xs={6} md={3} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="storyboard_refs" className={`${styles.Width2}`} >
-              <Form.Label className={`${styles.BoldScene} d-block d-sm-none `} >StoryB. Ref</Form.Label>
-              <Form.Label className={`${styles.BoldScene} d-none d-sm-block `} >Storyboard Ref</Form.Label>
+              <Form.Label className={`${styles.BoldScene}`} >Storyboard Ref</Form.Label>
               <Form.Control 
               className={styles.Input}
               type="text"
@@ -470,7 +469,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <hr className={`mt-0 mb-0`}/>
+        <hr className={`mt-1 mb-1`}/>
         {/* lighting focus_pulls fx frame rate*/}
         <Row >
         <Col xs={12} md={3} className="d-flex justify-content-center p-0 p-md-2">
@@ -549,7 +548,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
             </Col>
         </Row>
         {/* hr */}
-        <hr className={`mt-0 mb-0`}/>
+        <hr className={`mt-2 mb-2`}/>
         {/* notes */}
         <Row >
         <Col xs={12} md={{span: 8, offset: 2}} className="d-flex justify-content-center p-0 p-md-2">
@@ -573,7 +572,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Col>
         </Row>
         {/* hr */}
-        <hr className={`mt-0 mb-0`}/>
+        <hr className={`mt-2 mb-2`}/>
         {/* image */}
         <Row >
         <Col className="text-center p-0 p-md-2" xs={12} md={{span: 6, offset: 3 } } >
