@@ -14,6 +14,7 @@ import Alert from "react-bootstrap/Alert";
 
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import Asset from "../../components/Asset";
 import Asset2 from "../../components/Asset2";
 import useRedirect from "../../hooks/Redirect";
 
@@ -141,44 +142,8 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
     }
   }
 
-  const textFields = (
-      <div>
-          <Form.Group controlId="title" className={`${styles.Width95} text-center`} >
-                <Form.Label className={`${styles.Bold} `} >Title</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.Input}
-                name="title"
-                value={title}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
-                <Form.Label className={`${styles.Bold} `} >Content</Form.Label>
-                <Form.Control 
-                    className={styles.InputScene}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={6}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </div>
-  )
   const buttons = (
-    <div className="text-center mt-5">    
+    <div className="text-center">    
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-3`}
         onClick={() => setShow(show => !show)} 
@@ -192,166 +157,200 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
   );
 
   return (
-    <div className={`${styles.Back} mt-3`} >
+    <div className={`${styles.White} mt-3`} >
        <h5 style={{ textTransform: 'uppercase'}} 
-          className={`mt-1 mb-1 pl-3 py-1 ${styles.SubTitle } text-center`}>
+          className={`mt-1 mb-1 py-1 ${styles.SubTitle } text-center`}>
           CREATE POST
       </h5>
-    {/* <TopBox title="Create Post" /> d-flex flex-column justify-content-center*/}
-    <Form className="mt-3 px-3" onSubmit={handleSubmit}>
+  <Form className="mt-3 px-3" onSubmit={handleSubmit}>
+      {/* title content*/}
     <Row>
-    <Col md={6} className="">
-        {/* <p style={{textTransform: 'capitalize'}}>Scene {number} - {dept} Dept {category} </p>
-        <p>SceneId {sceneId}</p> */}
-          {textFields}
-      </Col>
-      <Col className="mt-md-0 mt-2" md={6}>
-      <p className={`${styles.Bold} text-center mb-2`} >Image 1</p>
-      <Container className={`${appStyles.Content} ${styles.Container2}`}>
-          <Form.Group className="text-center ">
-              {image1 ? (
-                <>
-                  <figure>
-                    <Image className={appStyles.Image} src={image1} rounded />
-                  </figure>
-                  <div>
-                    <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                      htmlFor="image-upload"
-                    >
-                      Change the Image
-                    </Form.Label>
-                  </div>
-                </>
-              ) : (
-                <Form.Label 
-                  className="my-1"
-                  htmlFor="image-upload"
-                >
-                  <Asset2
-                    src={Upload}
-                    height={"20px"}
-                    width={"20px"}
-                    message="Upload Image"
-                  />
-                </Form.Label>
-              )}
-
-              <Form.Control
-                type="file"
-                id="image-upload"
-                accept="image/*"
-                onChange={handleChangeImage1}
-                ref={imageInput1}
-              />
-            </Form.Group>
-            {errors?.image1?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </Container>
-      {/* image 2 */}
-      <p className={`${styles.Bold} text-center mt-3 mb-2`} >Image 2</p>
-      <Container className={`${appStyles.Content} ${styles.Container2}`}>
-          <Form.Group className="text-center " >
-            {image2 ? (
-              <>
-                <figure>
-                  <Image className={appStyles.Image} src={image2} rounded />
-                </figure>
-                <div>
-                  <Form.Label
-                    className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                    htmlFor="image-upload2"
-                  >
-                    Change the image
-                  </Form.Label>
-                </div>
-              </>
-            ) : (
-              <Form.Label
-                className="my-1 "
-                htmlFor="image-upload2"
-              >
-                <Asset2
-                  src={Upload}
-                  height={"20px"}
-                  width={"20px"}
-                  message="Upload Image"
+    <Col xs={12} md={6} >
+    <Form.Group controlId="title" className={`${styles.Width95} text-center`} >
+            <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
+            <Form.Control 
+            type="text"
+            className={styles.Input}
+            name="title"
+            value={title}
+            onChange={handleChange}
                 />
-              </Form.Label>
-            )}
-
-            <Form.Control
-              type="file"
-              id="image-upload2"
-              accept="image/*"
-              onChange={handleChangeImage2}
-              ref={imageInput2}
-            />
-          </Form.Group>
-          {errors?.image2?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          {/* """ end image 2 """" */}
-      </Container>
-      {/* image 3 */}
-      <p className={`${styles.Bold} text-center mt-3 mb-2`} >Image 3</p>
-      <Container className={`${appStyles.Content} ${styles.Container2}`}>
-          <Form.Group className="text-center ">
-            {image3 ? (
-              <>
-                <figure>
-                  <Image className={appStyles.Image} src={image3} rounded />
-                </figure>
-                <div>
-                  <Form.Label
-                    className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                    htmlFor="image-upload3"
-                  >
-                    Change the image
-                  </Form.Label>
-                </div>
-              </>
-            ) : (
-              <Form.Label
-              className="my-1 ml-2 ml-sm-2 ml-md-3 ml-lg-5"
-                htmlFor="image-upload3"
-              >
-                <Asset2
-                  src={Upload}
-                  height={"20px"}
-                  width={"20px"}
-                  message="Upload Image"
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+    <hr className="d-block d-md-none"/>
+    </Col>
+    <Col xs={12} md={6} >
+    <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
+            <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+            <Form.Control 
+                className={styles.InputScene}
+                type="text"
+                name="content"
+                as="textarea"
+                rows={2}
+                value={content}
+                onChange={handleChange}
                 />
-              </Form.Label>
-            )}
-
-            <Form.Control
-              type="file"
-              id="image-upload3"
-              accept="image/*"
-              onChange={handleChangeImage3}
-              ref={imageInput3}
-            />
-          </Form.Group>
-          {errors?.image3?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          {/* """ end image 3 """" */}
-      </Container>
-      </Col>   
+        </Form.Group>
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+    <hr className="d-block d-md-none"/>
+    </Col>
     </Row>
+    <hr className="d-none d-md-block"/>
+    {/* image 1 2 */}
     <Row>
-    <Col md={6} className="">
-      {/* image 4 */}
-      <p className={`${styles.Bold} text-center mt-3 mb-2`} >Image 4</p>
-      <Container className={`${appStyles.Content} ${styles.Container2}`}>
+    <Col xs={12} md={6} className={`pr-md-5`}>
+    <p className={`${styles.BoldScene} text-center mb-2 mt-md-0 mt-2`} >Image 1</p>
+        <Form.Group className="text-center ">
+            {image1 ? (
+              <>
+                <figure>
+                  <Image className={appStyles.Image} src={image1} rounded />
+                </figure>
+                <div>
+                  <Form.Label
+                    className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                    htmlFor="image-upload"
+                  >
+                    Change the Image
+                  </Form.Label>
+                </div>
+              </>
+            ) : (
+              <Form.Label 
+                className="my-1"
+                htmlFor="image-upload"
+              >
+                <Asset
+                  src={Upload}
+                  height={"35px"}
+                  width={"35px"}
+                  message="Click or tap to Upload Image"
+                />
+              </Form.Label>
+            )}
+
+            <Form.Control
+              type="file"
+              id="image-upload"
+              accept="image/*"
+              onChange={handleChangeImage1}
+              ref={imageInput1}
+            />
+          </Form.Group>
+          {errors?.image1?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+    <hr className="d-block d-md-none"/>
+    </Col>
+    <Col xs={12} md={6} className={`pr-md-5`}>
+    <p className={`${styles.BoldScene} text-center mb-2 mt-md-0 mt-2`} >Image 2</p>
+        <Form.Group className="text-center" >
+          {image2 ? (
+            <>
+              <figure>
+                <Image className={appStyles.Image} src={image2} rounded />
+              </figure>
+              <div>
+                <Form.Label
+                  className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                  htmlFor="image-upload2"
+                >
+                  Change the image
+                </Form.Label>
+              </div>
+            </>
+          ) : (
+            <Form.Label
+              className="my-1 "
+              htmlFor="image-upload2"
+            >
+              <Asset
+                src={Upload}
+                height={"35px"}
+                width={"35px"}
+                message="Click or tap to Upload Image"
+              />
+            </Form.Label>
+          )}
+
+          <Form.Control
+            type="file"
+            id="image-upload2"
+            accept="image/*"
+            onChange={handleChangeImage2}
+            ref={imageInput2}
+          />
+        </Form.Group>
+        {errors?.image2?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+    <hr className="d-block d-md-none"/>
+    </Col>
+    </Row>
+    <hr className="d-none d-md-block"/>
+    {/* image 3 4*/}
+    <Row>
+    <Col xs={12} md={6} className={`pr-md-5`}>
+    <p className={`${styles.BoldScene} text-center mt-3 mb-2`} >Image 3</p>
+        <Form.Group className="text-center ">
+          {image3 ? (
+            <>
+              <figure>
+                <Image className={appStyles.Image} src={image3} rounded />
+              </figure>
+              <div>
+                <Form.Label
+                  className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                  htmlFor="image-upload3"
+                >
+                  Change the image
+                </Form.Label>
+              </div>
+            </>
+          ) : (
+            <Form.Label
+              className="my-1 "
+              htmlFor="image-upload3"
+            >
+              <Asset
+                src={Upload}
+                height={"35px"}
+                width={"35px"}
+                message="Click or tap to Upload Image"
+              />
+            </Form.Label>
+          )}
+
+          <Form.Control
+            type="file"
+            id="image-upload3"
+            accept="image/*"
+            onChange={handleChangeImage3}
+            ref={imageInput3}
+          />
+        </Form.Group>
+        {errors?.image3?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+    <hr className="d-block d-md-none"/>
+    </Col>
+    <Col xs={12} md={6} className={`pr-md-5`}>
+      <p className={`${styles.BoldScene} text-center mt-3 mb-2`} >Image 4</p>
           <Form.Group className="text-center ">
             {image4 ? (
               <>
@@ -360,7 +359,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
                 </figure>
                 <div>
                   <Form.Label
-                    className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                    className={`${btnStyles.Button} ${btnStyles.Blue}`}
                     htmlFor="image-upload4"
                   >
                     Change the image
@@ -369,14 +368,14 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
               </>
             ) : (
               <Form.Label
-                className="my-1 ml-2 ml-sm-2 ml-md-3 ml-lg-5"
-                htmlFor="image-upload4"
+              className="my-1 "
+              htmlFor="image-upload4"
               >
-                <Asset2
+                <Asset
                   src={Upload}
-                  height={"20px"}
-                  width={"20px"}
-                  message="Upload Image"
+                  height={"35px"}
+                  width={"35px"}
+                  message="Click or tap to Upload Image"
                 />
               </Form.Label>
             )}
@@ -394,11 +393,14 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
               {message}
             </Alert>
           ))}
-          {/* """ end image 4 """" */}
-      </Container>
-      </Col>
-      <Col md={6} className="">
-      <p className={`${styles.Bold} text-center mt-3 mb-2`} >Image 5</p>
+      <hr className="d-block d-md-none"/>
+    </Col>
+    </Row>
+    <hr className="d-none d-md-block"/>
+    {/* image 5*/}
+    <Row>
+      <Col xs={12} md={{span: 6, offset: 3}} className="">
+      <p className={`${styles.BoldScene} text-center mt-3 mb-2`} >Image 5</p>
       {/* image 5 */}
       <Container className={`${appStyles.Content} ${styles.Container2}`}>
           <Form.Group className="text-center ">
@@ -409,7 +411,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
                 </figure>
                 <div>
                   <Form.Label
-                    className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                    className={`${btnStyles.Button} ${btnStyles.Blue}`}
                     htmlFor="image-upload5"
                   >
                     Change the image
@@ -418,14 +420,14 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
               </>
             ) : (
               <Form.Label
-              className="my-1 ml-2 ml-sm-2 ml-md-3 ml-lg-5"
-                htmlFor="image-upload5"
-              >
-                <Asset2
+              className="my-1 "
+              htmlFor="image-upload5"
+            >
+                <Asset
                   src={Upload}
-                  height={"20px"}
-                  width={"20px"}
-                  message="Upload Image"
+                  height={"35px"}
+                  width={"35px"}
+                  message="Click or tap to Upload Image"
                 />
               </Form.Label>
             )}
@@ -447,9 +449,10 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
       </Container>
       </Col>
     </Row>
+    <hr/>
     <Row>
       <Col>
-        <div className= {` mt-3`} >{buttons} </div>
+        <div className= {`mt-3`} >{buttons} </div>
       </Col>
     </Row>
   </Form>
