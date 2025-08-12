@@ -1671,16 +1671,108 @@ Description: View and Add the Shotlist<br>
 </h2>
 
 #### Scenes Workspaces
-Description: Collorate on Scenes by department through Posts with images<br>
+Description: Collorate on Scenes by department through Posts with Images<br>
 
-- Use Case: View the Scenes Workspace<br>
+- Use Case: View the Scenes Workspace see how may Posts are in each Department both Read and Unread.<br>
 
-  1. Click on the "Primary Scenes Worksace" tab on the Home page or in the Navbar to Open the page.
-  2. View the "Workspace Guide" on top and the departments below.
+  1. Click on a Scene and the "Scenes Workspace" and the Scene page opens with the Workspace displaying and the "Workspace Guide" on top.<br>
+  2. In all the Departments the number of Read and Unread Posts display. <br>
 
-<p align="center"> <strong>nnnnnnnn</strong></p>
+<p align="center"> <strong>Scenes Workspace</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/nnnnnn.png" width="50%">
+</h2>
+
+- Use Case: View a Department Category's Posts<br>
+
+  1. Click a Department Category, e.g. Camera Workspace<br>
+  2. That Department Category's Posts page opens with the "Add Post" tab on top and the Posts displaying below.<br>
+
+<p align="center"> <strong>Camera Workspace Posts page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxxxxx.png" width="50%">
+</h2>
+
+- Use Case: Find a Post in the Search bar by it's title or the owner's name<br>
+
+  1. Input a title in the Search Bar, eg "window".<br>
+  2. All Posts with the word "window" are returned.<br>
+
+<p align="center"> <strong>"Window" Posts Returned</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxxxxx.png" width="50%">
+</h2>
+
+- Use Case: Create a Post<br>
+
+  1. Click the "Add Post" tab.<br>
+  2. The "Create Post" form opens.<br>
+  3. Input the details an upload up to 5 Images and submit.<br>
+  4. A success message displays saying - "Post Added"<br>
+  5. The new Post is added and is displayed with the Title, Content and all 5 Images.<br>
+
+<p align="center"> <strong>Create Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptadd1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The New Post Displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptadd2.png" width="50%">
+</h2>
+
+- Use Case: Open an Unopend Post to view its details and change its background and text colours to indicate it has been opened.<br>
+
+  1. Click on an unopened Post, with background Black and text White and Blue.<br>
+  2. The Post opens.<br>
+  3. Returning to the Posts page the background is now White and the text Blue.<br>
+
+<p align="center"> <strong>Opened Post</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptnew1.png" width="50%">
+</h2>
+
+- Use Case: Edit a Post from the Post Top on the Posts page<br>
+
+   1. Click on the "Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Post" form opens.<br>
+  3. Input the changes and submit.<br>
+  4. A success message displays saying - "Post Edited"<br>
+  5. The Post displays with the changes.<br>
+
+- Use Case: Delete a Post from the Post Top on the Posts page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
+  2. A dropdown opens asking to confirm delete.<br>
+  3. Select Delete and the Post is deleted.<br>
+
+- Use Case: Edit a Post from the Post page<br>
+
+  1. Click on the "Edit/Delete" icon and select Edit.<br>
+  2. The "Edit Post" form opens.<br>
+  3. Input the changes including the 5 Images and submit.<br>
+  4. A success message displays saying - "Post Edited"<br>
+  5. The Post displays with the changes and all new 5 images.<br>
+
+<p align="center"> <strong>Edit Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Edited Post</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/xxx.png" width="50%">
+</h2>
+
+- Use Case: Delete a Post from the Post page<br>
+
+  1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
+  2. A dropdown opens asking to confirm delete.<br>
+  3. Select Delete and the Post is deleted.<br>
+
+<p align="center"> <strong>Post Deleted</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/deptdel1.png" width="50%">
 </h2>
 
 ### Characters

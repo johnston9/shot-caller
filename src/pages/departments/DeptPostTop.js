@@ -83,11 +83,10 @@ const DeptPostTop = (props) => {
           </Col>
           <Col xs={9} className="pl-2 pr-0" >
           <div className={`${styles.Content4} pl-2 ml-2`}>
-          <p>
-          <span className={`pb-0`}>{name} </span>
+          <p >{name}
           </p>
           <p>
-          <span className='ml-0 '>{position}</span>
+          <span>{position}</span>
           </p>
           </div>
           <div>
@@ -104,7 +103,7 @@ const DeptPostTop = (props) => {
           </Link>
           </Col>
           <Col xs={8} className="text-center" >
-          <p><span className={`${styles.Italic}`}>{name} </span>
+          <p className={`${styles.Italic}`}>{name}
           </p>
           <p className=''>
           {position}

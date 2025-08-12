@@ -83,7 +83,7 @@ const DeptPost = (props) => {
           <Col xs={12} sm={3} className="my-0" >
           {/* small */}
           <div className='d-none d-sm-block'>
-          <Row className="mt-1">
+          <Row className='pt-1'>
           <Col xs={3} className="pl-3 pr-0" >
           <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={45}/>
@@ -136,8 +136,8 @@ const DeptPost = (props) => {
           <Col xs={12} sm={6} className="my-0" >
             <Row className={`${styles.Content3} pt-0 my-0 mr-1 ml-1`}>
                 <Col className='px-0 mx-0 py-0 text-center' xs={12}>
-                  {departments && <p className={`${styles.DeptTitle}`}
-                  style={{ textTransform: 'capitalize'}}>
+                  {departments && <p 
+                  style={{ textTransform: 'uppercase', fontWeight: '700'}}>
                     {departments}</p>}
                 </Col>
             </Row>

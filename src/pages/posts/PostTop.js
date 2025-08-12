@@ -151,13 +151,13 @@ const PostTop = (props) => {
 
     return (
         <div >
-          <Card className={ `py-0 mt-1 mb-0`}>
+          <Card className={ `py-0 mt-0 mb-0`}>
             <Card.Body className={`py-0 px-0 ${styles.PostTop}`}>
             <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
             <Col xs={12} md={3} className="my-0" >
                 {/* small */}
                 <div className='d-none d-md-block'>
-                <Row >
+                <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
                 <Col xs={3} className="pl-3 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}/>
@@ -165,11 +165,10 @@ const PostTop = (props) => {
                 </Col>
                 <Col xs={9} className="pl-2 pr-0" >
                 <div className={`${styles.Content4} pl-2 ml-2`}>
-                <p>
-                <span className=''>{name} </span>
+                <p>{name}
                 </p>
                 <p>
-                <span className='ml-0 '>{position}</span>
+                <span >{position}</span>
                 </p>
                 </div>
                 <div>
@@ -186,27 +185,13 @@ const PostTop = (props) => {
                 </Link>
                 </Col>
                 <Col xs={8} className="text-center" >
-                <p>
-                <span className=''>{name}</span>
+                <p className={`${styles.Italic}`}>{name}
                 </p>
                 <p className=''>
                 {position}
                 </p>
-                </Col>
-                <Col xs={2} 
-                className="d-flex align-items-center" >
-                {is_owner && (
-                <PostDropdown
-                    handleEdit={handleEdit}
-                    handleDelete={handleDelete}
-                />
-                ) } 
-                </Col>
-                </Row> 
-                <Row>
-                <Col xs={12}>
                 {/* icons */}
-                <div className='px-0 py-0 d-flex align-items-center justify-content-center' >
+                <div className='px-0 py-0 mt-2 d-flex align-items-center justify-content-center' >
                 {/* star uses archive_id from drf */}
                 {archive_id ? (
                       <OverlayTrigger
@@ -277,16 +262,26 @@ const PostTop = (props) => {
                   </Link>
                   </OverlayTrigger>
                   <span className='pt-0'>{comments_count}</span>
-                  <span className='ml-5'> {updated_at}</span>
+                  <span className='ml-3 ml-md-5'> {updated_at}</span>
                 </div>
                 </Col>
-                </Row>  
+                <Col xs={2} 
+                className="d-flex align-items-center" >
+                {is_owner && (
+                <PostDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                />
+                ) } 
+                </Col>
+                </Row> 
                 </div> 
             </Col> 
+            {/* Dept and Title small and mobile */}
             <Col xs={12} md={6} className="my-1" >
             <Link to={`/posts/${id}`}>
             {opened_id ? (
-              <Row className={`${styles.ContentOpened} pt-1 my-0 mr-1 ml-1`}>
+              <Row className={`${styles.ContentOpened} py-0 my-0 mr-1 ml-1`}>
               <Col xs={12} 
               className={` text-center`} >
               <Row>
@@ -312,7 +307,7 @@ const PostTop = (props) => {
               </Row>
             ) : (
               <Row onClick={handleOpened}
-                 className={`${styles.ContentUnOpen} pt-1 my-0 mr-1 ml-1`}>
+                 className={`${styles.ContentUnOpen} py-0 my-0 mr-1 ml-1`}>
                 <Col xs={12} 
                 className={` text-center`} >
                 <Row>
@@ -343,15 +338,6 @@ const PostTop = (props) => {
             <Col xs={12} md={3} className="my-0 " >
             <div className='d-none d-md-block'>
             <Row >
-            <Col sm={3}
-            className="d-flex align-items-center px-0 float-right" >
-            {is_owner && (
-            <PostDropdown
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-            />
-            ) } 
-            </Col>
             <Col className="pl-0 pr-0" sm={9} >
             <p className={ `text-center  ${styles.Date}`}>{updated_at}
             </p>
@@ -428,6 +414,15 @@ const PostTop = (props) => {
                   </OverlayTrigger>
                   <span className='pt-0'>{comments_count}</span>
                 </div>
+            </Col>
+            <Col sm={3}
+            className="d-flex align-items-center px-0 float-right" >
+            {is_owner && (
+            <PostDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+            />
+            ) } 
             </Col>
             </Row>   
             </div>     

@@ -49,7 +49,7 @@ function PostPage() {
   return (
     <div>
       <TopBox title="Post" />
-      <Row className="h-100">
+      <Row >
       <Col className="py-2 p-0 p-lg-1" >
         <Post {...post.results[0]} setPosts={setPost} postPage/>
         <Container className={`${appStyles.Content} mt-3 `} >

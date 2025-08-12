@@ -229,21 +229,8 @@ const Post = (props) => {
                 <p className=''>
                 {position}
                 </p>
-                </Col>
-                <Col xs={2} 
-                className="d-flex align-items-center" >
-                {is_owner && (
-                <PostDropdown
-                    handleEdit={handleEdit}
-                    handleDelete={handleDelete}
-                />
-                ) } 
-                </Col>
-                </Row> 
-                <Row>
-                <Col xs={12}>
                 {/* icons */}
-                <div className='px-0 py-0 d-flex align-items-center justify-content-center' >
+                <div className='px-0 py-0 mt-2 d-flex align-items-center justify-content-center' >
                 {archive_id ? (
                       <OverlayTrigger
                       placement="top"
@@ -313,10 +300,19 @@ const Post = (props) => {
                   </Link>
                   </OverlayTrigger>
                   <span className='pt-0'>{comments_count}</span>
-                  <span className='ml-5'> {updated_at}</span>
+                  <span className='ml-3 ml-md-5'> {updated_at}</span>
                 </div>
                 </Col>
-                </Row>  
+                <Col xs={2} 
+                className="d-flex align-items-center" >
+                {is_owner && (
+                <PostDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                />
+                ) } 
+                </Col>
+                </Row> 
                 </div> 
             </Col> 
             <Col xs={12} md={6} className={`${styles.ContentOpened} mb-2 mb-md-1 mt-1`} >
