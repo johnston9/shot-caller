@@ -11,6 +11,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
+import { toast } from 'react-toastify';
 
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -134,6 +135,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
   
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      toast.success(`Post Added`); 
       console.log(data)
       history.push(`/posts/${data.id}`);
     } catch (err) {
@@ -145,19 +147,19 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-3`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => setShow(show => !show)} 
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-5 pl-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 pl-3`} type="submit">
         Create
       </Button>
     </div>
   );
 
   return (
-    <div className={`${styles.White} mt-3`} >
+    <div className={`${styles.White}`} >
        <h5 style={{ textTransform: 'uppercase'}} 
           className={`mt-1 mb-1 py-1 ${styles.SubTitle } text-center`}>
           CREATE POST
@@ -181,9 +183,8 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
           {message}
         </Alert>
       ))}
-    <hr className="d-block d-md-none"/>
     </Col>
-    <Col xs={12} md={6} >
+    <Col xs={12} md={6} className="mt-3 mt-md-0" >
     <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
             <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
             <Form.Control 
@@ -191,7 +192,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
                 type="text"
                 name="content"
                 as="textarea"
-                rows={2}
+                rows={1}
                 value={content}
                 onChange={handleChange}
                 />
@@ -201,10 +202,9 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
             {message}
           </Alert>
         ))}
-    <hr className="d-block d-md-none"/>
     </Col>
     </Row>
-    <hr className="d-none d-md-block"/>
+    <hr/>
     {/* image 1 2 */}
     <Row>
     <Col xs={12} md={6} className={`pr-md-5`}>

@@ -13,6 +13,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { PostDropdown } from '../../components/PostDropdown';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { toast } from 'react-toastify';
 
 const PostTop = (props) => {
 
@@ -34,6 +35,7 @@ const PostTop = (props) => {
         category,
         updated_at,
         setPosts,
+        fetchPosts,
       } = props;
 
       const currentUser = useCurrentUser()
@@ -47,7 +49,8 @@ const PostTop = (props) => {
       const handleDelete = async () => {
         try {
           await axiosRes.delete(`/posts/${id}/`);
-          history.goBack();
+          toast.success(`Post Deleted`);
+          fetchPosts(); 
         } catch (err) {
           console.log(err);
         }
@@ -299,8 +302,13 @@ const PostTop = (props) => {
               </Row>
               <Row>
               <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
-              {title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleOpened}`}
-                 style={{ fontStyle: 'italic' }}> {title}</span>}
+              {title ? (
+                <span className={`text-center px-0 mx-0 ${styles.ContentTitleOpened}`}
+                 style={{ fontStyle: 'italic' }}> {title}</span>
+              ) : (
+                <span className={`text-center px-0 mx-0 ${styles.ContentTitleOpened}`}
+                 style={{ fontStyle: 'italic' }}>Post</span>
+              )}
               </Col>
               </Row>
               </Col>
@@ -325,8 +333,13 @@ const PostTop = (props) => {
                 </Row>
                 <Row>
                 <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
-                {title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`}
-                 style={{ fontStyle: 'italic' }}> {title}</span>}
+                {title ? (
+                title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`}
+                 style={{ fontStyle: 'italic' }}> {title}</span>
+                ) : (
+                <span className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`}
+                 style={{ fontStyle: 'italic' }}>Post</span>
+                )}
                 </Col>
                 </Row>
                 </Col>

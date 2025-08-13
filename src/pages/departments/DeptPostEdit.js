@@ -180,7 +180,7 @@ function DeptPostEdit() {
       </Alert>
     ))}
     </Col>
-    <Col className="d-flex justify-content-center" xs={12} md={6} >
+    <Col className="d-flex justify-content-center mt-3 mt-md-0" xs={12} md={6} >
       <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
       <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
           <Form.Control 
@@ -201,81 +201,6 @@ function DeptPostEdit() {
     </Col>
     </Row>
   </div>
-    // <div>
-    //   <Row className="mt-3">
-    //   <Col className="d-flex justify-content-center">
-    //     <Form.Group controlId="departments" className={`${styles.Width2} text-center`} >
-    //     <Form.Label className={`${styles.BoldScene} `} >Department</Form.Label>
-    //           <Form.Control as="select"
-    //             name="departments"
-    //             className={styles.InputDept}
-    //             value={departments}
-    //             onChange={handleChange}
-    //             aria-label="act select">
-    //             <option>Select</option>
-    //             <option value="art">Art</option>
-    //             <option value="camera">Camera</option>
-    //             <option value="casting">Casting</option>
-    //             <option value="electric">Electric/Grip</option>
-    //             <option value="location">Location</option>
-    //             <option value="make-up">Hair/Makeup</option>
-    //             <option value="post">Post/VFX</option>
-    //             <option value="production">Production</option>
-    //             <option value="script">Script</option>
-    //             <option value="sound">Sound</option>
-    //             <option value="stunts">Stunts</option>
-    //             <option value="wardrobe">Wardrobe</option> 
-                
-    //           </Form.Control>
-    //       </Form.Group>
-    //       {errors?.departments?.map((message, idx) => (
-    //         <Alert variant="warning" key={idx}>
-    //           {message}
-    //         </Alert>
-    //   ))}
-    //   </Col>
-    //   </Row>
-    //   <Row className="mt-3">
-    //   <Col className="d-flex justify-content-center">
-    //   <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
-    //   <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
-    //         <Form.Control 
-    //         className={styles.Input}
-    //         type="text"
-    //         name="title"
-    //         value={title}
-    //         onChange={handleChange}
-    //             />
-    //   </Form.Group>
-    //   {errors?.title?.map((message, idx) => (
-    //     <Alert variant="warning" key={idx}>
-    //       {message}
-    //     </Alert>
-    //   ))}
-    //   </Col>
-    //   </Row>
-    //   <Row className="mt-3">
-    //   <Col className="d-flex justify-content-center">
-    //     <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
-    //     <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
-    //         <Form.Control 
-    //             className={styles.InputSceneDept}
-    //             type="text"
-    //             name="content"
-    //             as="textarea"
-    //             rows={4}
-    //             value={content}
-    //             onChange={handleChange}
-    //             />
-    //     </Form.Group>
-    //     {errors?.content?.map((message, idx) => (
-    //       <Alert variant="warning" key={idx}>
-    //         {message}
-    //       </Alert>
-    //     ))}
-    //   </Col>
-    //   </Row>
-    // </div>
   )
 
   const buttons = (
@@ -305,13 +230,13 @@ function DeptPostEdit() {
     <h5 style={{ textTransform: 'uppercase'}} 
     className={`text-center mt-3 py-1 ${styles.SubTitle }`}>
     Edit Post</h5>
-    <Form className={` ${styles.White }`}  onSubmit={handleSubmit}>
+    <Form className={` ${styles.White } px-3`}  onSubmit={handleSubmit}>
     <Row>
     <Col className="p-0 p-md-2">
           {textFields}
     </Col>
     </Row>
-    <hr className="mt-3 mb-3"/>
+    <hr />
     {/* images */}
     <div>
     {/* image 1/2 */}
@@ -362,7 +287,7 @@ function DeptPostEdit() {
             </Alert>
           ))}
       </div>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+      <hr className={`d-block d-md-none`}/>
     </Col>
     <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
@@ -411,13 +336,13 @@ function DeptPostEdit() {
             </Alert>
           ))}
     </div>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+      <hr className={`d-block d-md-none`}/>
     </Col>   
     </Row>
-    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
+    <hr className={` d-none d-md-block`}/>
     {/* image 3/4 */}
     <Row>
-    <Col md={6} className="text-center mt-3">
+    <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 3</p>
     <Container
@@ -465,9 +390,9 @@ function DeptPostEdit() {
             </Alert>
           ))}
       </Container>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+      <hr className={` d-block d-md-none`}/>
     </Col>
-    <Col md={6} className="text-center mt-3">
+    <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 4</p>
     <Container
@@ -515,13 +440,13 @@ function DeptPostEdit() {
             </Alert>
           ))}
     </Container>
-    <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+    <hr className={`d-block d-md-none`}/>
     </Col>
     </Row>
-    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
+    <hr className={`d-none d-md-block`}/>
     {/* image 5 */}
     <Row>
-    <Col md={{span: 6, offset: 3}} className="text-center mt-3">
+    <Col md={{span: 6, offset: 3}} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 5</p>
     <Container
@@ -569,11 +494,10 @@ function DeptPostEdit() {
             </Alert>
           ))}
       </Container>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
     </Col>
     </Row>
     </div>
-    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
+    <hr/>
     <Row>
       <Col>
         <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>

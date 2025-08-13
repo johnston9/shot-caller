@@ -146,8 +146,13 @@ const DeptPostTop = (props) => {
             </Row>
             <Row>
             <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
-            {title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleOpened}`}
-               style={{ fontStyle: 'italic' }}> {title}</span>}
+            {title ? (
+                <span className={`text-center px-0 mx-0 ${styles.ContentTitleOpened}`}
+                 style={{ fontStyle: 'italic' }}> {title}</span>
+              ) : (
+                <span className={`text-center px-0 mx-0 ${styles.ContentTitleOpened}`}
+                 style={{ fontStyle: 'italic' }}>Post</span>
+              )}
             </Col>
             </Row>
             </Col>
@@ -166,8 +171,13 @@ const DeptPostTop = (props) => {
               </Row>
               <Row>
               <Col xs={12} className={`text-center px-0 mx-0 ${styles.Content4}`} >
-              {title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`}
-               style={{ fontStyle: 'italic' }}> {title}</span>}
+              {title ? (
+                title && <span className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`}
+                 style={{ fontStyle: 'italic' }}> {title}</span>
+                ) : (
+                <span className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`}
+                 style={{ fontStyle: 'italic' }}>Post</span>
+                )}
               </Col>
               </Row>
               </Col>

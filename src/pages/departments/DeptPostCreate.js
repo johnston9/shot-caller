@@ -146,7 +146,7 @@ const textFieldsDep = (
   <div>
     <Row className="mt-3">
     <Col className="d-flex justify-content-center" xs={12} md={6} >
-    <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
+    <Form.Group controlId="title" className={`${styles.Width95} text-center`} >
     <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
           <Form.Control 
           className={styles.Input}
@@ -162,8 +162,8 @@ const textFieldsDep = (
       </Alert>
     ))}
     </Col>
-    <Col className="d-flex justify-content-center" xs={12} md={6} >
-      <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+    <Col className="d-flex justify-content-center mt-3 mt-md-0" xs={12} md={6} >
+      <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
       <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
           <Form.Control 
               className={styles.InputScene}
@@ -189,7 +189,7 @@ const textFieldsDep = (
       <div>
         <Row className="mt-3">
         <Col className="d-flex justify-content-center" md={6}>
-          <Form.Group controlId="departments" className={`${styles.Width2} text-center`} >
+          <Form.Group controlId="departments" className={`${styles.Width95} text-center`} >
           <Form.Label className={`${styles.BoldScene} `} >Department</Form.Label>
                 <Form.Control as="select"
                   name="departments"
@@ -219,8 +219,8 @@ const textFieldsDep = (
               </Alert>
         ))}
         </Col>
-        <Col className="d-flex justify-content-center" md={6} >
-        <Form.Group controlId="title" className={`${styles.Width2} text-center`} >
+        <Col className="d-flex justify-content-center mt-3 mt-md-0" md={6} >
+        <Form.Group controlId="title" className={`${styles.Width95} text-center`} >
         <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
               <Form.Control 
               className={styles.Input}
@@ -239,7 +239,7 @@ const textFieldsDep = (
         </Row>
         <Row className="mt-3 mb-3">
         <Col className="d-flex justify-content-center" md={{span: 8, offset: 2}} >
-          <Form.Group controlId="content" className={`${styles.Width2} text-center`} >
+          <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
           <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
               <Form.Control 
                   className={styles.InputScene}
@@ -256,9 +256,9 @@ const textFieldsDep = (
               {message}
             </Alert>
           ))}
+          <hr className={` d-block d-md-none`}/>
         </Col>
         </Row>
-        {/* <hr/> */}
       </div>
   )
   
@@ -299,7 +299,7 @@ const textFieldsDep = (
     <h5 style={{ textTransform: 'uppercase'}} 
     className={`text-center mt-3 py-1 ${styles.SubTitle }`}>
     Create {deptGeneral} Post</h5>
-    <Form className={` ${styles.White }`} onSubmit={handleSubmit}>
+    <Form className={` ${styles.White } px-3`} onSubmit={handleSubmit}>
     {/* text image1 textFieldsDep */}
     <Row>
     <Col >
@@ -317,11 +317,11 @@ const textFieldsDep = (
       ) }
     </Col>
     </Row>
-    <hr/>
+    <hr />
     <div>
     {/* image 1/2 */}
     <Row>
-    <Col className="text-center" md={6}>
+    <Col md={6}>
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 1</p>
       <div className={`mt-3 p-0 d-flex flex-column justify-content-center`}>
@@ -367,7 +367,7 @@ const textFieldsDep = (
             </Alert>
           ))}
       </div>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+      <hr className={` d-block d-md-none`}/>
     </Col>
     <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
@@ -416,13 +416,13 @@ const textFieldsDep = (
             </Alert>
           ))}
     </div>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+    <hr className={` d-block d-md-none`}/>
     </Col>   
     </Row>
-    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
+    <hr className={`d-none d-md-block`}/>
     {/* image 3/4 */}
     <Row>
-    <Col md={6} className="text-center mt-3">
+    <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 3</p>
     <Container
@@ -470,9 +470,9 @@ const textFieldsDep = (
             </Alert>
           ))}
       </Container>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+    <hr className={` d-block d-md-none`}/>
     </Col>
-    <Col md={6} className="text-center mt-3">
+    <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 4</p>
     <Container
@@ -520,13 +520,13 @@ const textFieldsDep = (
             </Alert>
           ))}
     </Container>
-    <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
+    <hr className={` d-block d-md-none`}/>
     </Col>
     </Row>
-    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
+    <hr className={`d-none d-md-block`}/>
     {/* image 5 */}
     <Row>
-    <Col md={{span: 6, offset: 3}} className="text-center mt-3">
+    <Col md={{span: 6, offset: 3}} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 5</p>
     <Container
@@ -574,11 +574,10 @@ const textFieldsDep = (
             </Alert>
           ))}
       </Container>
-      <hr className={`${styles.Break1} d-block d-md-none mt-4`}/>
     </Col>
     </Row>
     </div>
-    <hr className={`${styles.Break1} mt-3 mb-3 d-none d-md-block`}/>
+    <hr />
     {/* buttons */}
     <Row className="mt-3">
       <Col>

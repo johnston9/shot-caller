@@ -33,8 +33,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
   console.log("postpage")
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    const fetchPosts = async () => {
+  const fetchPosts = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/?${filter}&search=${query}`);
         if (category === 'requirements') {
@@ -52,6 +51,8 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
         }
       }
     }
+
+  useEffect(() => {
     setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchPosts();
@@ -131,7 +132,11 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
               <InfiniteScroll
               className="pb-5"
               children={posts.results.map((post) => (
-                <PostTop key={post.id} {...post} setPosts={setPosts} />
+                <PostTop 
+                fetchPosts={fetchPosts}
+                key={post.id} 
+                {...post} 
+                setPosts={setPosts} />
               ))}
               dataLength={posts.results.length}
               loader={<Asset spinner />}

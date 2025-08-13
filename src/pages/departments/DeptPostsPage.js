@@ -26,6 +26,7 @@ import DeptPostCreate from "./DeptPostCreate";
 import DeptPostTop from "./DeptPostTop";
 
 function DeptPostsPage({ deptGeneral, filter = "" }) {
+  console.log(filter.departments)
   useRedirect();
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
@@ -70,7 +71,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
         <TopBox work={deptGeneral}
         title2="Department" />
       ) : (
-        <TopBox work="Departments" />
+        <TopBox work="All Departments" />
       ) }
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
@@ -78,6 +79,17 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
         >
             Back
         </Button>
+        <Row>
+        <Col className="text-center">
+        {deptGeneral ? ("") : (
+          <div>
+          <h5>All Department Posts</h5>
+          <p>Select Departments Posts from the Features
+           link in the Navbar to return to a Department</p>
+          </div>
+        )}
+        </Col>
+        </Row>
         <Row>
           <Col className="text-center">
           {deptGeneral ? (

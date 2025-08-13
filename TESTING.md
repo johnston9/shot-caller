@@ -1680,7 +1680,7 @@ Description: Collorate on Scenes by department through Posts with Images<br>
 
 <p align="center"> <strong>Scenes Workspace</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/nnnnnn.png" width="50%">
+<img src="documentation/readme-images/sceneworkview.png" width="50%">
 </h2>
 
 - Use Case: View a Department Category's Posts<br>
@@ -1690,7 +1690,7 @@ Description: Collorate on Scenes by department through Posts with Images<br>
 
 <p align="center"> <strong>Camera Workspace Posts page</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxxxxx.png" width="50%">
+<img src="documentation/readme-images/sceneworkposts.png" width="50%">
 </h2>
 
 - Use Case: Find a Post in the Search bar by it's title or the owner's name<br>
@@ -1700,7 +1700,7 @@ Description: Collorate on Scenes by department through Posts with Images<br>
 
 <p align="center"> <strong>"Window" Posts Returned</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxxxxx.png" width="50%">
+<img src="documentation/readme-images/sceneworkbar.png" width="50%">
 </h2>
 
 - Use Case: Create a Post<br>
@@ -1713,23 +1713,23 @@ Description: Collorate on Scenes by department through Posts with Images<br>
 
 <p align="center"> <strong>Create Form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd1.png" width="50%">
+<img src="documentation/readme-images/scenewoaddpost1.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The New Post Displays</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptadd2.png" width="50%">
+<img src="documentation/readme-images/scenewoaddpost2.png" width="50%">
 </h2>
 
 - Use Case: Open an Unopend Post to view its details and change its background and text colours to indicate it has been opened.<br>
 
   1. Click on an unopened Post, with background Black and text White and Blue.<br>
   2. The Post opens.<br>
-  3. Returning to the Posts page the background is now White and the text Blue.<br>
+  3. Returning to the Posts page the background is now White and the text Grey.<br>
 
-<p align="center"> <strong>Opened Post</strong></p>
+<p align="center"> <strong>Closed and Opened Posts</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptnew1.png" width="50%">
+<img src="documentation/readme-images/sceneworkposts.png" width="50%">
 </h2>
 
 - Use Case: Edit a Post from the Post Top on the Posts page<br>
@@ -1744,7 +1744,8 @@ Description: Collorate on Scenes by department through Posts with Images<br>
 
   1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
   2. A dropdown opens asking to confirm delete.<br>
-  3. Select Delete and the Post is deleted.<br>
+  3. Select Delete.<br>
+  4. A success message displays saying - "Post Deleted" and the Post is deleted.<br>
 
 - Use Case: Edit a Post from the Post page<br>
 
@@ -1754,14 +1755,14 @@ Description: Collorate on Scenes by department through Posts with Images<br>
   4. A success message displays saying - "Post Edited"<br>
   5. The Post displays with the changes and all new 5 images.<br>
 
-<p align="center"> <strong>Edit Form</strong></p>
+<p align="center"> <strong>Edit Form with Changes</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/scenewoeditpost1.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The Edited Post</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/scenewoeditpost2.png" width="50%">
 </h2>
 
 - Use Case: Delete a Post from the Post page<br>
@@ -2325,7 +2326,7 @@ Description: View and Create Post within each Department outside and separate to
 
   1. Click on an unopened Post, with background Black and text White and Blue.<br>
   2. The Post opens.<br>
-  3. Returning to the Posts page the background is now White and the text Blue.<br>
+  3. Returning to the Posts page the background is now White and the text Grey.<br>
 
 <p align="center"> <strong>Opened Post</strong></p>
 <h2 align="center">
@@ -2420,7 +2421,7 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
 
   1. Click on an unopened Post, with background Black and text White and Blue.<br>
   2. The Post opens.<br>
-  3. Returning to the Posts page the background is now White and the text Blue.<br>
+  3. Returning to the Posts page the background is now White and the text Grey.<br>
 
 - Use Case: Edit a Post from the Post Top on the Posts page<br>
 

@@ -178,7 +178,7 @@ const DeptPost = (props) => {
               >IMAGES</h5>
               ) : ("") }
               {/* images */}
-              <div className='px-3'>
+              <div className='px-0'>
               {/* image 1/2  */}
               <Row className='mb-0'>
                 <Col xs={12} md={6} className={`text-center px-0 mx-0 mb-5`} >

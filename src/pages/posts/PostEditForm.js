@@ -13,6 +13,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
+import { toast } from 'react-toastify';
 
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -157,6 +158,7 @@ function PostEditForm() {
   
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
+      toast.success(`Post Updated`);
       history.push(`/posts/${id}`);
     } catch (err) {
       console.log(err);
@@ -166,59 +168,22 @@ function PostEditForm() {
     }
   }
 
-  const textFields = (
-      <div>
-          <Form.Group controlId="title" className={`${styles.Width95} text-center`} >
-                <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
-                <Form.Control 
-                type="text"
-                className={styles.Input}
-                name="title"
-                value={title}
-                onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-            <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
-                <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
-                <Form.Control 
-                    className={styles.InputScene}
-                    type="text"
-                    name="content"
-                    as="textarea"
-                    rows={6}
-                    value={content}
-                    onChange={handleChange}
-                    />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-      </div>
-  )
-
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-5 mr-3`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-5 pl-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 pl-3`} type="submit">
         Update
       </Button>
     </div>
   );
 
   return (
-    <div>
+    <div className={`${styles.White}`}>
     <TopBox 
     scene={scene}
     title2={departments}
@@ -252,9 +217,8 @@ function PostEditForm() {
               {message}
             </Alert>
           ))}
-        <hr className="d-block d-md-none"/>
         </Col>
-        <Col xs={12} md={6} >
+        <Col xs={12} md={6} className="mt-3 mt-md-3">
         <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
                 <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
                 <Form.Control 
@@ -272,10 +236,9 @@ function PostEditForm() {
                 {message}
               </Alert>
             ))}
-        <hr className="d-block d-md-none"/>
         </Col>
         </Row>
-        <hr className="d-none d-md-block"/>
+        <hr/>
         {/* image 1 2 */}
         <Row>
         <Col xs={12} md={6} className={`pr-md-5`}>

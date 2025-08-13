@@ -17,6 +17,7 @@ import { useSetCategoryContext, useSetDeptContext, useSetNumberContext, useSetSc
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useSetImageContext } from '../../contexts/ImageContext';
+import { toast } from 'react-toastify'; 
 
 const Post = (props) => {
   const setImage = useSetImageContext();
@@ -98,7 +99,9 @@ const Post = (props) => {
       const handleDelete = async () => {
         try {
           await axiosRes.delete(`/posts/${id}/`);
-          history.goBack();
+          toast.success(`Post Deleted`);
+          // history.goBack();
+          history.push(`/dept/category`); 
         } catch (err) {
         }
       };
@@ -350,15 +353,6 @@ const Post = (props) => {
             <Col xs={12} md={3} className="my-0 " >
             <div className='d-none d-md-block'>
             <Row >
-            <Col sm={3}
-            className="d-flex align-items-center px-0 float-right" >
-            {is_owner && (
-            <PostDropdown
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-            />
-            ) } 
-            </Col>
             <Col className="pl-0 pr-0" sm={9} >
             <p className={ `text-center  ${styles.Date}`}>{updated_at}
             </p>
@@ -434,6 +428,15 @@ const Post = (props) => {
                   </OverlayTrigger>
                   <span className='pt-0'>{comments_count}</span>
                 </div>
+            </Col>
+            <Col sm={3}
+            className="d-flex align-items-center px-0 float-right" >
+            {is_owner && (
+            <PostDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+            />
+            ) } 
             </Col>
             </Row>   
             </div>     
