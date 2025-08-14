@@ -71,7 +71,7 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
         <TopBox work={deptGeneral}
         title2="Department" />
       ) : (
-        <TopBox work="All Departments" />
+        <TopBox work="All Departments Posts" />
       ) }
       <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
@@ -80,12 +80,11 @@ function DeptPostsPage({ deptGeneral, filter = "" }) {
             Back
         </Button>
         <Row>
-        <Col className="text-center">
+        <Col >
         {deptGeneral ? ("") : (
           <div>
-          <h5>All Department Posts</h5>
-          <p>Select Departments Posts from the Features
-           link in the Navbar to return to a Department</p>
+          <p className={`${styles.Blueback} text-center`}> Click the Back button or use the Features
+           link in the Navbar to select a Department</p>
           </div>
         )}
         </Col>

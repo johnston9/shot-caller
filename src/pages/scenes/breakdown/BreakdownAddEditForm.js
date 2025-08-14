@@ -125,10 +125,10 @@ const BreakdownEditForm = () => {
     };
 
   const infoFields = (
-    <div className="mt-3 text-center px-2">
+    <div className="mt-0 text-center px-2">
       {/* number title Dramatic-day */}
       <Row>
-        {/* Freeze - This may be removed */}
+        {/* Freeze  */}
         {freeze ? (
           <Col className=" p-0 p-md-2" xs={{ span: 6, order: 1 }} md={{ span: 4, order: 1 }}>
           <p className={`${styles.BoldScene}`}>Number</p>
@@ -194,11 +194,7 @@ const BreakdownEditForm = () => {
           </Col>
       </Row>
       {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
+      <hr className={`mt-3 mb-0`}/>
       {/* Int-Ext D Day Day/Night */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={6} md={4} >         
@@ -261,11 +257,7 @@ const BreakdownEditForm = () => {
       </Col>
       </Row  >
       {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
+      <hr className={`mt-3 mb-0`}/>
       {/* shooting-date time pages*/}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={6} md={4} >
@@ -322,11 +314,7 @@ const BreakdownEditForm = () => {
       </Col>
       </Row >
       {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
+      <hr className={`mt-3 mb-0`}/>
       {/* location location-detail  */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={12}md={6} >
@@ -370,11 +358,7 @@ const BreakdownEditForm = () => {
       </Col>
       </Row>
       {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
+      <hr className={`mt-3 mb-0`}/>
       {/* Filming Location - Action */}
       <Row className="mt-3">
         <Col className="d-flex justify-content-center p-0 p-md-2" xs={12}md={6}>
@@ -417,11 +401,7 @@ const BreakdownEditForm = () => {
         </Col>
       </Row>
       {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
+      <hr className={`mt-3 mb-0`}/>
       {/* department-info equip_set_props  */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={12}md={6}>
@@ -464,11 +444,7 @@ const BreakdownEditForm = () => {
       </Col>
       </Row>    
       {/* hr */}
-      <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-5 mb-0`}/>
-      </Col>
-      </Row>
+      <hr className={`mt-3 mb-0`}/>
     </div>
   )
 
@@ -527,9 +503,8 @@ const BreakdownEditForm = () => {
 
     return (
         <div>
-        <TopBox work={`Edit`}
-                title={`Scene ${number} `}
-                title2="Breakdown"/>
+        <TopBox scene={`${number} `}
+                title2="Edit Breakdown"/>
         <Row>
         <Col xs={6}>
         <Button
@@ -583,14 +558,8 @@ const BreakdownEditForm = () => {
                 ) } 
         <h5 style={{ textTransform: 'uppercase'}}
          className={`text-center mt-3 mb-0 py-1 ${styles.SubTitle }`}>
-         EDIT SCENE <span className={`${styles.SceneNo }`}>
-            {number}</span> BREAKDOWN
+         EDIT SCENE {number} BREAKDOWN
         </h5>
-        {/* <h5 className={`text-center mt-3 mb-0 py-1 ${styles.Titlex }`}>
-         EDIT SCENE <span className={`${styles.SceneNo }`}>
-            {number}</span> BREAKDOWN
-        </h5>
-        <hr className="py-0 my-0"/> */}
         <Form className= {`mb-3 px-3 ${styles.White}`} onSubmit={handleSubmit}>
         <Row>
         <Col xs={12} className="p-0 p-md-2">

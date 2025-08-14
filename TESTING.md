@@ -1223,7 +1223,7 @@ Description: This section contains the Scene Breakdown.
 
 - Use Case: View the Scene Breakdown<br>
 
-  1. Click on Breakdown tab on the Scene page to view the Scene Breakdown.
+  1. Click on Breakdown tab on the Scene page and the Scene Breakdown opens.
 
 - Use Case: Add/Edit details in the Breakdown<br>
 
@@ -1769,11 +1769,11 @@ Description: Collorate on Scenes by department through Posts with Images<br>
 
   1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
   2. A dropdown opens asking to confirm delete.<br>
-  3. Select Delete and the Post is deleted.<br>
+  3. Select Delete and a success message displays and the Post is deleted.<br>
 
 <p align="center"> <strong>Post Deleted</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/deptdel1.png" width="50%">
+<img src="documentation/readme-images/scenewodelpost.png" width="50%">
 </h2>
 
 ### Characters
@@ -2357,12 +2357,12 @@ Description: View and Create Post within each Department outside and separate to
 
 <p align="center"> <strong>Edit Form</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/deptedit1.png" width="50%">
 </h2>
 
 <p align="center"> <strong>The Edited Post</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/xxx.png" width="50%">
+<img src="documentation/readme-images/deptedit2.png" width="50%">
 </h2>
 
 - Use Case: Delete a Post from the Post page<br>
@@ -2445,6 +2445,16 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
   4. A success message displays saying - "Post Edited"<br>
   5. The Post displays with the changes and all new 5 images.<br>
 
+  <p align="center"> <strong>Create Form</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/latestedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The New Post Displays</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/latestedit2.png" width="50%">
+</h2>
+
 - Use Case: Delete a Post from the Post page<br>
 
   1. Click the "3 Dots Edit/Delete" icon and select the delete icon.<br>
@@ -2461,35 +2471,54 @@ Description: Use the Latest Buzz feature to View and Create Important Immediate 
 ### User Login/Logout
 Description: A User can easily Log In and out <br>
 
-- User Case: User Log In <br>
+- Use Case: User Log In <br>
   
-  Action: The User can Login by entering ther Username and Password.<br>
-  Result: The User is logged in and their Profile image displays in their My Account link in the Navbar if they have uploaded one.<br>
+  1. On the Sign In page enter the Username and Password.<br>
+  2. The Home page opens with the correct Profile image in the My Account link in the Navbar if one has been uploaded.<br>
 
-- User Case: User Log Out <br>
+- Use Case: User Log Out <br>
 
-  Action: The User can Logout by clicking the Log Out tab in the navbar.<br>
-  Result: The User is logged out and they are taken to the Sign In page.<br>
+  1. Click the Log Out tab in the navbar.<br>
+  2. A User is logged out and they are taken to the Sign In page.<br>
+
+### Profiles
+Description: The User can view all Profiles and follow or unfollow them.<br>
+
+- Use Case: View Profiles <br>
+
+  1. Click on the Profile link in the Navbar and the Profiles page opens with all the Profiles displaying.<br>
+
+- Use Case: View a Profile <br>
+
+  1. Click on a Profile and that User's Profile page opens with their info displaying.<br>
+
+- Use Case: Follow a Profile <br>
+
+  1. Click on a Profile's "Follow" button and it changes from unfollow to follow and all that User's posts will be returned when clicking on the feed button.<br>
+
+- Use Case: Unollow a Profile <br>
+
+  1. Click on a Profile's "Unfollow" button and it changes from follow to unfollow and  that User's posts will no longer be returned when clicking on the feed button.<br>
 
 ### User Change/Recover Password
 Description: The User can change or recover their Password.<br>
 
-- User Case: Change Password <br>
+- Use Case: Change Password <br>
 
-  Action: The User can change their Password by clicking on the three dots on their Profile page and entering a new password.<br>
-  Result: The User receives an email advising them of their new Password.<br>
+  1. Clicks on the three dots on the Profile page and enter a new Password and enter it again in the confirm Password field.<br>
+  2. The Password is changed.<br>
 
-- User Case: Forget Password <br>
+- Use Case: Forget Password <br>
 
-  Action: The User can recover their Password if forgotten by clicking on the "Forgot Password" link on the Sign In page then entering their email and a new password.<br>
-  Result: The User receives an email advising them of their new Password.<br>
+  1. Click on the "Forgot Password" link on the Sign In page then enter the email a new password.<br>
+  2. An email is sent advising of the new Password.<br>
 
 ### Security by both Frontend and Backend checks
 Description: Security measures by both Frontend and Backend code checks prevent unauthorised users from accessing Project URLs they don't are not registered on.<br>
 
 - Use Case: Unregistered User on any Project enters a Project URL.<br>
 
-  1. The User, unregistered on any Project in the app, enters a URL for a Project
+  1. The User, unregistered on any Project in the app, enters a URL for a Project<br>
   2. Result: A 401 displays for the User?<br>
 
 <p align="center"> <strong>nnnnnnnn</strong></p>
@@ -2501,9 +2530,28 @@ Description: Security measures by both Frontend and Backend code checks prevent 
 
    1. The User enters a URL for a Project they are not registered on despite being 
       registered on another Project in the app.<br>
-  2. A 401 displays for the User.?
+   2. A 401 displays for the User.?
 
 ### Responsive Design
 Description: The site is responsive to all screen sizes and the images respond in proportion. <br>
 
-- Use Case: xxx<br>
+- Use Case: Edit a Scene Breakdown in Mobile.<br>
+
+  1. Click the edit button and the Breakdown edit page opens.<br>
+  2. Input the changes and submit, e.g. change night to day for the int-ext field.<br>
+  3. A succuss message displays and on viewing the Breakdown the changes are correct.<br>
+
+<p align="center"> <strong>Breakdown edit page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/mobreakedit1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Success message</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/mobreakedit2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Breakdown with Changes</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/mobreakedit3.png" width="50%">
+</h2>

@@ -66,25 +66,31 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
   
   return (
     <div>      
+      {!dept && !allposts && !feed && !archived && !liked? (
+        <>
+        <TopBox work="All Posts"/>
+        <p className={`${styles.Blueback} text-center mt-3`}> 
+          Click the Back button or Scenes in the Workspace Navlink to return to the Scene</p>
+        </>
+      ) : ("") }
       {dept ? (
         <TopBox 
           scene={number}
           title2={dept}
           title3={category} />
-        ) :  (""
-        ) }
+        ) :  ("") }
       {allposts ? (
         <TopBox work="All Posts"/>
-      ) : ""}
+      ) : ("")}
       {feed ? (
         <TopBox work="Feed"/>
-      ) : ""}
+      ) : ("")}
       {archived ? (
         <TopBox work="Archived Posts"/>
-      ) : ""} 
+      ) : ("")} 
       {liked ? (
         <TopBox work="Liked Posts"/>
-      ) : ""}
+      ) : ("")}
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}

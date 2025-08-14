@@ -179,7 +179,7 @@ const PostTop = (props) => {
                 </Col>
                 </Row>   
                 </div>     
-                {/* mobile */}
+                {/* mobile className={`${styles.Blueback}`} */}
                 <div className='d-md-none'>
                 <Row className='pb-0 mb-0'>
                 <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
