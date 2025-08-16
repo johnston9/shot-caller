@@ -70,7 +70,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
         <>
         <TopBox work="All Posts"/>
         <p className={`${styles.Blueback} text-center mt-3`}> 
-          Click the Back button or Scenes in the Workspace Navlink to return to the Scene</p>
+          Click the Back button or the Workspace Navlink to select Scenes or Posts</p>
         </>
       ) : ("") }
       {dept ? (

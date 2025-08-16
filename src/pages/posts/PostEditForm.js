@@ -23,10 +23,12 @@ import { useRedirect } from "../../hooks/Redirect";
 function PostEditForm() {
   useRedirect();
   const [errors, setErrors] = useState({});
+
     const [postData, setPostData] = useState({
         title: "",
         content: "",
         scene: "",
+        number: "",
         departments: "",
         category: "",
         image1: "",
@@ -35,7 +37,8 @@ function PostEditForm() {
         image4: "",
         image5: "",
       });
-      const { title, content, scene, departments, 
+      
+      const { title, content, scene, departments, number,
         category, image1, image2, image3, 
         image4, image5 } = postData;
 
@@ -53,12 +56,12 @@ function PostEditForm() {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/posts/${id}/`);
-            const { title, content, scene, departments, 
+            const { title, content, scene, departments, number,
                 category, image1, image2, image3, image4, image5,
                 is_owner } = data;
     
                 /* Set postData with the data returned */
-                is_owner ? setPostData({ title, content, 
+                is_owner ? setPostData({ title, content, number,
                 scene, departments, category, image1, 
                 image2, image3, image4, image5 }) : history.push("/");
           } catch (err) {
@@ -185,7 +188,7 @@ function PostEditForm() {
   return (
     <div className={`${styles.White}`}>
     <TopBox 
-    scene={scene}
+    scene={number}
     title2={departments}
     title3={category} />
     <Button

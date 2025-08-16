@@ -100,8 +100,8 @@ const Post = (props) => {
         try {
           await axiosRes.delete(`/posts/${id}/`);
           toast.success(`Post Deleted`);
-          // history.goBack();
-          history.push(`/dept/category`); 
+          history.goBack();
+          // history.push(`/dept/category`); 
         } catch (err) {
         }
       };

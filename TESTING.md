@@ -2508,7 +2508,7 @@ Description: The User can change or recover their Password.<br>
   1. Clicks on the three dots on the Profile page and enter a new Password and enter it again in the confirm Password field.<br>
   2. The Password is changed.<br>
 
-- Use Case: Forget Password <br>
+- Use Case: Forgot Password <br>
 
   1. Click on the "Forgot Password" link on the Sign In page then enter the email a new password.<br>
   2. An email is sent advising of the new Password.<br>

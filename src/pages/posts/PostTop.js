@@ -50,7 +50,8 @@ const PostTop = (props) => {
         try {
           await axiosRes.delete(`/posts/${id}/`);
           toast.success(`Post Deleted`);
-          fetchPosts(); 
+          history.goBack();
+          // fetchPosts(); 
         } catch (err) {
           console.log(err);
         }
