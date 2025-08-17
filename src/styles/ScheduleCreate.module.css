@@ -71,12 +71,14 @@ hr {
 .Info {
   font-size: .75rem !important;
   font-weight: 700;
-  color: rgb(170, 27, 55);
+  /* color: rgb(170, 27, 55); */
+  color: rgb(183, 44, 72);
   cursor: pointer;
+  font-style: italic;
 }
 
 .Info:hover {
-  color: rgb(73, 2, 16);;
+  color: rgb(107, 10, 29);;
 }
 
 .White {

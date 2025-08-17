@@ -194,7 +194,7 @@ const ScheduleScene = (props) => {
                     <Col xs={2} ></Col>
                     </>
                     ) }          
-                {/* info styles.Info */}
+                {/* info */}
                 <Col className={`mx-0 pl-0 pr-2 text-right`} xs={4} >
                     <p onClick={() => setShowInfo(showInfo => !showInfo)} 
                     className={`${styles.Info}`}>INFO</p>

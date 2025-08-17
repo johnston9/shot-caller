@@ -182,11 +182,7 @@ const { scene_id, day_id, day_order_number, number,
         </Col>
       </Row>
       {/* hr */}
-      <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
-        </Col>
-      </Row>
+      <hr/>
       {/* filming location */}
       <Row>
       <Col md={{span: 6, offset: 3 } } className="d-flex justify-content-center p-0 p-md-2">
@@ -208,11 +204,7 @@ const { scene_id, day_id, day_order_number, number,
         </Col>
       </Row>
       {/* hr */}
-      <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
-        </Col>
-      </Row>
+      <hr/>
       {/* Location Address New info */}
       <Row>
       <Col xs={6} className="d-flex justify-content-center p-0 p-md-2">
@@ -255,11 +247,7 @@ const { scene_id, day_id, day_order_number, number,
       </Col>
       </Row>
       {/* hr */}
-      <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
-        </Col>
-      </Row>
+      <hr/>
       {/* next */}
       <Row>
       <Col md={{span: 8, offset: 2 } } className="d-flex justify-content-center p-0 p-md-2">
@@ -286,11 +274,7 @@ const { scene_id, day_id, day_order_number, number,
       </Col>
       </Row>
       {/* hr */}
-      <Row>
-        <Col xs={12}>
-        <hr className={`${styles.Break1} mt-4 mb-3`}/>
-        </Col>
-      </Row>
+      <hr/>
       </div>
   )
 
