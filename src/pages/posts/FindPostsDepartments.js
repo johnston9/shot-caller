@@ -709,7 +709,7 @@ const Departments = () => {
 
     return (
         <div>
-            <TopBox title="Find Posts"/>
+            <TopBox title="Quick Find Posts"/>
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}
