@@ -3,6 +3,29 @@
   color: #fff;
 }
 
+.Card {
+    border: 1px solid #1ea7ae;
+}
+
+.Top {
+  background-color: #1ea7ae;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.Top:hover {
+  background-color: #5de6ed;
+  color: #000;
+}
+
+.Top i {
+  color: #fff;
+}
+
+.Top:hover i {
+  color: #000;
+}
+
 .ImagesIndex {
     object-fit: contain;
     height: 300px;
@@ -28,6 +51,24 @@
 .Date {
   font-size: .7rem;
 }
+
+.Date2 {
+  font-size: .6rem;
+}
+
+.Bold {
+  font-weight: 700;
+}
+
+.Title {
+    color: rgb(140, 111, 25, 99%);
+}
+
+.DivSize {
+    height: 90px;
+    overflow: auto;
+} 
+
 .MoodTop:hover i {
   color: #666;
 }

@@ -43,51 +43,22 @@ const MoodboardTop = (props) => {
         return (
             <div>
             {/* card */}
-            <Card className={ `py-0 mt-1 mb-0 ${styles.MoodTop}`}>
+            <Card className={ `py-0 mt-1 mb-0 ${styles.Card} `}>
             <Link to={`/moodshots/${id}`}>
-            <Card.Body className={`py-0 px-0 ${styles.MoodTop}`}>
-            <Row className={`d-flex align-items-center pt-0 pb-0 my-0 pl-3`}>
-            <Col xs={12} sm={3} className="my-0" >
-                {/* small */}
-                <div className='d-none d-sm-block'>
-                <Row >
-                <Col xs={3} className="pl-0 pr-0" >
+            <Card.Header className={`py-0 px-0 ${styles.MoodTop}`}>
+            <Row className={`d-flex align-items-center py-1 my-0 pl-3`}>
+                <Col xs={2} className="pl-0 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
-                <Avatar src={profile_image} height={45}/>
+                <Avatar src={profile_image} height={30}/>
                 </Link>
                 </Col>
-                <Col xs={9} className="pl-0 pr-0" >
-                <div className={`${styles.Content4} pl-2 ml-2`}>
-                <p>
-                <span className=''>{name} </span>
-                </p>
-                <p>
-                <span className='ml-0 '>{position}</span>
-                </p>
-                </div>
-                <div>
-                </div>
+                <Col xs={8} className="text-center px-0" >
+                {title && <p 
+                className={`${styles.Bold }`}
+                style={{ fontStyle: 'italic' }}> {title}</p>}
                 </Col>
-                </Row>   
-                </div>     
-                {/* mobile */}
-                <div className='d-sm-none'>
-                <Row>
-                <Col className='d-flex align-items-center' xs={2}>
-                <Link to={`/profiles/${profile_id}`}>
-                <Avatar src={profile_image} height={45}  />
-                </Link>
-                </Col>
-                <Col xs={8} className="text-center" >
-                <p>
-                <span className=''>{name}</span>
-                </p>
-                <p className=''>
-                {position} - {updated_at}
-                </p>
-                </Col>
-                <Col xs={2} 
-                className="d-flex align-items-center" >
+                <Col xs={2}
+                className="d-flex align-items-center px-0 float-right" >
                 {is_owner && (
                 <PostDropdown
                     handleEdit={handleEdit}
@@ -95,168 +66,34 @@ const MoodboardTop = (props) => {
                 />
                 ) } 
                 </Col>
-                <Col xs={12} sm={3} 
-                    className="px-0 d-flex align-items-center justify-content-center"> 
-                </Col>
-                </Row>   
-                </div> 
-            </Col> 
-            <Col xs={12} sm={6} className="my-1" >
-            <Row className={`${styles.Content3} pt-1 my-0 pt-1-0 pl-2 mr-2 `}>
-                <Col xs={12} 
-                className={` ${styles.Content4} text-center`} >
-                <Row>
-                <Col className='px-0 mx-0' xs={4}>
-                {number && <h5 style={{ fontWeight: '700' }}>Scene {number} </h5>}
-                </Col>
-                <Col className='px-0 mx-0' xs={4}>{location && <h5> {location}</h5>}
-                </Col>
-                <Col className='px-0 mx-0' xs={4}>{character && 
-                        <h5 style={{  fontWeight: '700' }}>
-                        {character} </h5>}  
-                </Col>
-                </Row>
-                <Row>
-                <Col xs={12} className={`text-center px-0 mx-0 ${styles.ContentTitleUnOpen}`} >
-                {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
-                </Col>
-                </Row>
-                </Col>
-            </Row>
-            {/* <Row className={`${styles.Content3} py-1 pl-2 mr-2 `}>
-                    <Col xs={12} 
-                    className={` ${styles.Content4} text-center py-sm-2`} >
-                    <h5>
-                    {number && <span className='mr-3' style={{ fontWeight: '700' }}>Scene {number} </span>}
-                    {location && <span> {location}</span>}
-                    {character && <span className='ml-3'> {character} </span>} 
-                    </h5>
-                    </Col>
-            </Row> */}
-            </Col>
-            {/* edit and date small */}
-            <Col xs={12} sm={3} className="my-2 " >
-            <div className='d-none d-sm-block'>
-            <Row >
-            <Col sm={3}
-            className="d-flex align-items-center px-0 float-right" >
-            {is_owner && (
-            <PostDropdown
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-            />
-            ) } 
-            </Col>
-            <Col className="pl-0 pr-0" sm={9} >
-            <div className={`${styles.Content4} `}>
-            <p>
-            <span className={ ` text-center ${styles.Date}`}>{updated_at}</span>
-            </p>
+            </Row> 
+            </Card.Header>  
+            <Card.Body className={`py-0 pr-3 pl-4`} >
+            <Row>
+            <Col className='px-0 mx-0 text-center' xs={12}>
+            <div className={`${styles.DivSize } text-center px-1 py-2`}>
+            {number && <h5 className={`${styles.Title } mb-0 pb-0 py-auto`}>Scene {number} </h5>}
+            <h5 className={`${styles.Title } mb-0 pb-0 py-auto`}> {location}</h5>
+            <h5 className={`${styles.Title } mb-0 pb-0 py-auto`}>{character} </h5>  
+            {!number && !location && !character && <p style={{ fontStyle: 'italic' }}
+            className={`${styles.Title } mb-0 pb-0 py-auto`}>Title Only Moodboard</p>  }
             </div>
             </Col>
-            </Row>   
-            </div>     
-            </Col>
             </Row>
-            </Card.Body>
+            {/* date */}
+            <Row className='px-0'>     
+            <Col xs={9} className='px-0'>
+            <p className={`${styles.Date2}`}>
+            {name} - {position}
+            </p>
+            </Col>       
+            <Col className="px-0" xs={3} >
+            <p className={` ${styles.Date2}`}>{updated_at}</p>
+            </Col>
+            </Row>  
+            </Card.Body> 
             </Link>
             </Card> 
-            {/* card2 */}
-            {/* <Card className={ `mt-1 ${styles.MoodTop}`}>
-                <Link to={`/moodshots/${id}`}>
-                <Card.Body className={`py-0 px-0 ${styles.MoodTop}`}>
-                <Row className={`d-flex align-items-center pt-0 pb-0 my-0 pl-3`}>
-                <Col xs={12} lg={4} className="my-2 " >
-                    <div className='d-none d-sm-block'>
-                    <Row >
-                    <Col xs={2} className="pl-0 pr-0" >
-                    <Link to={`/profiles/${profile_id}`}>
-                    <Avatar src={profile_image} height={45}/>
-                    </Link>
-                    </Col>
-                    <Col xs={6} className="pl-0 pr-0" >
-                    <div className={`${styles.Content4} pl-2 ml-2`}>
-                    <p>
-                    <span className=''>{name} </span>
-                    </p>
-                    <p>
-                    <span className='ml-0 '>{position}</span>
-                    </p>
-                    </div>
-                    <div>
-                    </div>
-                    </Col>
-                    <Col className="pl-0 pr-0" xs={3} >
-                    <div className={`${styles.Content4} `}>
-                    <p>
-                    <span className={ ` text-center ${styles.Date}`}>{updated_at}</span>
-                    </p>
-                    </div>
-                    </Col>
-                    <Col xs={1}
-                    className="d-flex align-items-center px-0 float-right" >
-                    {is_owner && (
-                    <PostDropdown
-                        handleEdit={handleEdit}
-                        handleDelete={handleDelete}
-                    />
-                    ) } 
-                    </Col>
-                    </Row>   
-                    </div>     
-                    <div className='d-sm-none'>
-                    <Row>
-                    <Col className='d-flex align-items-center' 
-                    xs={2}>
-                    <Link to={`/profiles/${profile_id}`}>
-                    <Avatar src={profile_image} height={45}  />
-                    </Link>
-                    </Col>
-                    <Col xs={8} className="text-center" >
-                    <p>
-                    <span className=''>{name}</span>
-                    </p>
-                    <p className=''>
-                    {position} - {updated_at}
-                    </p>
-                    </Col>
-                    <Col xs={2} 
-                    className="d-flex align-items-center" >
-                    {is_owner && (
-                    <PostDropdown
-                        handleEdit={handleEdit}
-                        handleDelete={handleDelete}
-                    />
-                    ) } 
-                    </Col>
-                    </Row>   
-                    </div> 
-                </Col> 
-                <Col xs={12} lg={8} className="my-2" >
-                    <Row className={`${styles.Content3} text-center py-1 pl-2 mr-2 `}>
-                        <Col xs={12} sm={8} 
-                        className={` ${styles.Content4} py-sm-2`} >
-                        <Row>
-                        <Col className='px-0 mx-0' xs={4}>
-                        {number && <h5 style={{ fontWeight: '700' }}>Scene {number} </h5>}
-                        </Col>
-                        <Col className='px-0 mx-0' xs={4}>{location && <h5> {location}</h5>}
-                        </Col>
-                        <Col className='px-0 mx-0' xs={4}>{character && 
-                                <h5 style={{  fontWeight: '700' }}>
-                                {character} </h5>}  
-                        </Col>
-                        </Row>
-                        </Col>
-                        <Col xs={12} sm={4} className={`px-0 mx-0 py-sm-2 ${styles.Content4}`} >
-                        {title && <span style={{ fontStyle: 'italic' }}> {title}</span>}
-                        </Col>
-                    </Row>
-                </Col>
-                </Row>
-                </Card.Body>
-                </Link>
-            </Card>            */}
             </div>
         )
 };

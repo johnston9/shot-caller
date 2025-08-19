@@ -26,9 +26,9 @@ const IndexCard = (props ) => {
   };
   return (
     <div>
-      <Card className={`${styles.Card} text-center mr-1`}  >
-        <Card.Header className={`pt-2 pb-0 ${styles.Top }`}>
-          <Row >
+      <Card className={`${styles.Card} text-center`}  >
+        <Card.Header className={`py-0 ${styles.Top }`}>
+          <Row className={`d-flex align-items-center py-1 my-0`}>
             <Col className='mx-0 px-0' xs={1}></Col>
             <Col xs={10} className='mx-0 px-0 text-center'>
             <h5 className={` ${styles.Titlelist }`}>{number}
@@ -46,18 +46,6 @@ const IndexCard = (props ) => {
         <Row>
         <Col className='text-center mt-0' xs={12}>
             <div className={`${styles.DivSize } text-center px-1`}>
-              {/* <Row>
-              <Col xs={1} >
-              <p className={`${styles.Title } mb-0 pb-0`}>S</p>
-              <p className={`${styles.Title } mb-0 pb-0`}>t</p>
-              <p className={`${styles.Title } mb-0 pb-0`}>o</p>
-              <p className={`${styles.Title } mb-0 pb-0`}>r</p>
-              <p className={`${styles.Title } mb-0 pb-0`}>y</p>
-              </Col>
-              <Col xs={11}>
-              <p className={`mb-0 pb-0`}>{story} </p>
-              </Col>
-              </Row> */}
               <p className={`${styles.Title } mb-0 pb-0`}>Story</p>
               <p className={`mb-0 pb-0`}>{story} </p>
             </div>

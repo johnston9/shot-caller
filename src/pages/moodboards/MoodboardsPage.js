@@ -23,6 +23,7 @@ import { Button } from "react-bootstrap";
 import TopBox from "../../components/TopBox";
 import MoodboardTop from "./MoodboardTop";
 import Info from "./Info";
+import Moodboards from "./Moodboards";
 
 const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace="", message, filter="" }) => {
     useRedirect();
@@ -31,6 +32,7 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
   const [error, setErrors] = useState({});
   const [showInfo, setShowInfo] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  // const [hasOrder, setHasOrder] = useState(false); 
   const history = useHistory();
   // for testing only
   console.log(sceneId);
@@ -145,14 +147,17 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
               </Row>
               </>
               ) }
+              {/* moodboards */}
               <Row className="mt-3 px-2">
               <Col>
               {hasLoaded ? (
                 <>
                   {moodshots.results.length ? (
-                      moodshots.results.map((shot) => (
-                        <MoodboardTop key={shot.id} {...shot} />
-                      ))) 
+                    <Moodboards
+                    setMoodshots={setMoodshots}
+                    moodshots={moodshots}
+                    />
+                  ) 
                   : (
                     <Container className={appStyles.Content}>
                       <Asset src={NoResults } message={message} />
@@ -166,7 +171,6 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
               )}  
               </Col>
               </Row>
-
         </div>
     )
 }

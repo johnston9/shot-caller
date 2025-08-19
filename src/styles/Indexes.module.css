@@ -48,16 +48,9 @@ border-top: 5px solid #d0d9db;
     width: 90%;
 }
 
-/* .Title {
-    color: #4f649f;
-    font-weight: 700;
-} */
-
 .Title {
-    color: #6f8fe6;
     color: rgb(140, 111, 25, 99%);
     font-style: italic;
-    /* font-weight: 700; */
 }
 
 .golddark {
@@ -71,7 +64,7 @@ border-top: 5px solid #d0d9db;
 
 .DivSize {
     height: 100px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .Card {
@@ -295,9 +288,6 @@ h2 {
     font-size: 1.5rem;
 }
 
-.Titlelist {
-    font-size: .75rem ;
-  }
 }
 
 @media screen and (max-width: 780px) {
