@@ -8,14 +8,14 @@ const Info = () => {
   return (
     <div>
         <Row className='mb-3'>
-            <Col className={`text-center px-3 pt-1 ${styles.SubTitle2 }`} md={{span: 10, offset: 1 }}>
-            <p>Use Moodboards to use to explore and define visual 
-              themes.<br/> 
+            <Col className={`text-center px-3 pt-1 ${styles.SubTitle6 }`}
+             md={{span: 10, offset: 1 }}>
+            <p>
               Create Moodboards for Scenes, Locations and Characters on the Moodboards 
-              page or on that element's page.<br/>
-              Each element may have a number of Moodshots.<br/> 
-              Each Moodboard may be solely for 
-              a Scene, Location and Character or may reference the other elements.<br/>
+              page or from that element's page.<br/>
+              Each element may have numerous Moodboards.<br/> 
+              Moodboard may be solely for a Scene, Location or Character 
+              or any combination of the three.<br/>
               Moodboards by be used to explore other themes using the title solely. 
             </p>
             </Col>

@@ -8,13 +8,13 @@ import styles from "../../../styles/Callsheets.module.css";
 const ImportantCrewCalls = () => {
   return (
     <div>
-        <Row className="mb-3">
-        <Col md={{span: 10, offset: 1}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle7 }`}>
+        <Row className='mb-3'>
+            <Col className={`text-center px-3 pt-1 ${styles.SubTitle6 }`}
+             md={{span: 10, offset: 1 }}>
         <h5 className={`text-center `} >IMPORTANT</h5>  
         <p className="py-2 text-center"> All crew members needed to appear on the Callsheet
         <span className={` ${styles.Red }`}> MUST </span> be added to the Crew Info - "Callsheet/Main Crew".</p>
-         </div> 
+
         </Col>
       </Row>
     </div>
