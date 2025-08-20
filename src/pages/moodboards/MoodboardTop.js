@@ -26,6 +26,7 @@ const MoodboardTop = (props) => {
         title, 
         character, 
         location,
+        content,
     } = props;
     const history = useHistory();
 
@@ -68,7 +69,7 @@ const MoodboardTop = (props) => {
                 </Col>
             </Row> 
             </Card.Header>  
-            <Card.Body className={`py-0 pr-3 pl-4`} >
+            <Card.Body className={`py-0 pr-3 pl-4 ${styles.White }`} >
             <Row>
             <Col className='px-0 mx-0 text-center' xs={12}>
             <div className={`${styles.DivSize } text-center px-1 py-2`}>
@@ -81,7 +82,7 @@ const MoodboardTop = (props) => {
             </Col>
             </Row>
             {/* date */}
-            <Row className='px-0'>     
+            <Row className={`${styles.Datetext } px-0`}>     
             <Col xs={9} className='px-0'>
             <p className={`${styles.Date2}`}>
             {name} - {position}

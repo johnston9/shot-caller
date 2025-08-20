@@ -65,6 +65,11 @@ border-top: 5px solid #d0d9db;
 .DivSize {
     height: 100px;
     overflow: auto;
+    background-color: #fff;
+}
+
+.White {
+  background-color: #fff;
 }
 
 .Card {

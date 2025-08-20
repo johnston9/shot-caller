@@ -3,6 +3,19 @@
   color: #fff;
 }
 
+.Title {
+    color: rgb(140, 111, 25, 99%);
+    color: rgba(254, 228, 149, 0.99);
+    color: #f5f5f5;
+}
+
+.White {
+  background-color: #000;
+  background-color: #01222c;
+  background-color: #051413;
+  background-color: #030b0b;
+}
+
 .Card {
     border: 1px solid #1ea7ae;
 }
@@ -60,8 +73,9 @@
   font-weight: 700;
 }
 
-.Title {
-    color: rgb(140, 111, 25, 99%);
+.Datetext {
+  color: #fff;
+  /* color: #000; */
 }
 
 .DivSize {

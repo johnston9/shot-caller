@@ -42,7 +42,7 @@ const IndexCard = (props ) => {
             </Col>
           </Row>
         </Card.Header>
-        <Card.Body className='p-0' >
+        <Card.Body className={`py-0 ${styles.White }`} >
         <Row>
         <Col className='text-center mt-0' xs={12}>
             <div className={`${styles.DivSize } text-center px-1`}>
