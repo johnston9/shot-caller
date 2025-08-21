@@ -171,9 +171,9 @@ const dropfields = (
   <div>
     <Row>
       <Col xs={4} className="text-center" >
-        {/* scene */}
-          <Form.Group controlId="scenedrop" className="mb-2" >
-          <Form.Label className={`${styles.Bold} `} >Scene</Form.Label>
+      {/* scene */}
+      <Form.Group controlId="scenedrop" className="mb-2" >
+          <Form.Label className={`${styles.BoldScene} `} >Scene</Form.Label>
           <Form.Control as="select"
               name="scene"
               className={styles.InputChar}
@@ -198,7 +198,7 @@ const dropfields = (
       <Col xs={4} className="text-center" >
         {/* location */}
         <Form.Group controlId="locationdrop" className="mb-2" >
-            <Form.Label className={`${styles.Bold} `} >Location</Form.Label>
+            <Form.Label className={`${styles.BoldScene} `} >Location</Form.Label>
             <Form.Control as="select"
                 name="location"
                 className={styles.InputChar}
@@ -221,7 +221,7 @@ const dropfields = (
       <Col xs={4} className="text-center" >
         {/* character */}
         <Form.Group controlId="characterdrop" className="mb-2" >
-            <Form.Label className={`${styles.Bold} `} >Character</Form.Label>
+            <Form.Label className={`${styles.BoldScene} `} >Character</Form.Label>
             <Form.Control as="select"
                 name="character"
                 className={styles.InputChar}
@@ -248,17 +248,18 @@ const dropfields = (
 const scenePage = (
   <div>
     <Row>
-      <Col xs={6} >
+      <Col xs={6} className="text-center">
+      <p className={`${styles.BoldScene} pb-2`}>Character</p>
         {/* character */}
         <Form.Group controlId="characterdrop" className="mb-2" >
-            <Form.Label className="p-1 d-none" ></Form.Label>
+            <Form.Label className={`d-none`} ></Form.Label>
             <Form.Control as="select"
                 name="character"
                 className={styles.InputChar}
                 value={character}
                 onChange={handleChange}
                 aria-label="character select">
-                <option  >Character</option>
+                <option  ></option>
                 {characters.results.length && (
                     characters.results.map((character) => (
                     <option key={character.id} value={character.role} >{character.role}</option>
@@ -271,17 +272,18 @@ const scenePage = (
           </Alert>
         ))}
       </Col>
-      <Col xs={6}>
+      <Col xs={6} className="text-center">
         {/* location */}
+        <p className={`${styles.BoldScene} pb-2`}>Location</p>
         <Form.Group controlId="locationdrop" className="mb-2" >
-            <Form.Label className="p-1 d-none" ></Form.Label>
+            <Form.Label className="d-none" ></Form.Label>
             <Form.Control as="select"
                 name="location"
                 className={styles.InputChar}
                 value={location}
                 onChange={handleChange}
                 aria-label="location select">
-                <option  >Location</option>
+                <option  ></option>
                 {locations.results.length && (
                     locations.results.map((location) => (
                     <option key={location.id} value={location.name} >{location.name}</option>
@@ -298,54 +300,58 @@ const scenePage = (
   </div>
 )
 
-  const textFields = (
+const textFields = (
     <div>
-        <Form.Group controlId="title" className="mt-3 text-center mb-2" >
-              <Form.Label className={`${styles.Bold} `} >Title</Form.Label>
-              <Form.Control 
-              type="text"
-              placeholder="Title"
-              className={styles.InputScene}
-              name="title"
-              value={title}
-              onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.title?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          <Form.Group controlId="content" className="mt-3 mb-2 text-center" >
-              <Form.Label className={`${styles.Bold} `} >Content</Form.Label>
-              <Form.Control 
-                  className={styles.InputScene}
-                  placeholder="Content"
-                  type="text"
-                  name="content"
-                  as="textarea"
-                  rows={2}
-                  value={content}
-                  onChange={handleChange}
-                  />
-          </Form.Group>
-          {errors?.content?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
+    <Row>
+    <Col md={6}>
+    <Form.Group controlId="title" className={`${styles.Width95} text-center`} >
+    <Form.Label className={`${styles.BoldScene} `} >Title</Form.Label>
+    <Form.Control 
+    type="text"
+    className={styles.Input}
+    name="title"
+    value={title}
+    onChange={handleChange}
+        />
+</Form.Group>
+{errors?.title?.map((message, idx) => (
+  <Alert variant="warning" key={idx}>
+    {message}
+  </Alert>
+))}
+    </Col>
+    <Col md={6}>
+    <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
+    <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
+    <Form.Control 
+        className={styles.InputScene}
+        type="text"
+        name="content"
+        as="textarea"
+        rows={1}
+        value={content}
+        onChange={handleChange}
+        />
+</Form.Group>
+{errors?.content?.map((message, idx) => (
+  <Alert variant="warning" key={idx}>
+    {message}
+  </Alert>
+))}
+    </Col>
+    </Row>
     </div>
 )
 
 const buttons = (
   <div className="text-center mb-3">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 pl-3`} type="submit">
       Create
     </Button>
   </div>
@@ -364,46 +370,47 @@ const buttons = (
               className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
               onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
             </Button>
-              {!showInfo ? (
+            {!showInfo ? (
                   ""
                       ) : (
                         <Info  /> 
-                        ) } 
-            {/* <div>
+            ) } 
+            {/* titles */}
+            <div>
                 {sceneId ? (
                   <>
-                  <h3 className={`mt-1 mb-3 py-1 text-center ${styles.SubTitle }`}>Scene {number} Moodboards</h3>
+                  <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
+                  style={{ textTransform: 'uppercase'}}>Scene {number} Moodboard</h5>
                   <Row>
                   <Col xs={1} md={2}></Col>
                     <Col xs={10} md={8}>
-                        <p> Add Character and or Location to add the Moodboard 
+                        <p style={{ textTransform: 'uppercase'}} className={`text-center ${styles.SmallDepts }`}
+                        > Add Character and or Location for precise labeling adding the Moodboard 
                           to their pages too</p>
                     </Col>
                     </Row>
                     </>
                   ) : character ? (
                     <>
-                    <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{character} Moodboards</h3>
+                    <h3 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
+                    style={{ textTransform: 'uppercase'}}>
+                      {character} Moodboard</h3>
                       </>
                   ) : location ? (
                     <>
-                  <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>{location} Moodboards</h3>
+                  <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
+                  style={{ textTransform: 'uppercase'}}>
+                    {location} Moodboard</h5>
                     </>
                   ) : (
-                    <h3 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>
-                      Create Moodboard
-                    </h3>
+                    <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}>
+                      CREATE MOODBOARD
+                    </h5>
                   ) }
-            </div> */}
-            <h5 className={`mt-1 mb-2 py-1 text-center ${styles.SubTitle }`}>
-              {sceneNumber && <span>Scene {sceneNumber} </span> }
-              {location && <span> {location} </span> }
-              {character && <span> {character} </span> }
-              </h5>
-            <Form className="mt-3 px-3" onSubmit={handleSubmit}>
+            </div>
+            <Form onSubmit={handleSubmit} className={`pt-3 px-3 ${styles.White }`}>
                 <Row>
-                <Col md={6} className="p-0 p-md-2">
-                    <Container className= {`${appStyles.Content} ${styles.Container}`} >
+                <Col md={{span: 10, offset: 1 }} className="p-0 px-md-2">
                     { sceneId ? (
                       <>
                       {scenePage}
@@ -420,10 +427,12 @@ const buttons = (
                       </>
                     )
                     }
-                    
-                    {textFields}
-                    </Container>
                 </Col>
+                </Row>
+                {sceneId || dropfields ? (<hr/>) : ("")  }
+                {textFields}
+                <hr/>
+                <Row>
                 <Col className="pt-2 p-0 p-md-2" md={6}>
                 <Container
                     className={`${appStyles.Content2} ${styles.Container} d-flex flex-column justify-content-center`}

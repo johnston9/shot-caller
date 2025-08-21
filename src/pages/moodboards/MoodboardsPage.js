@@ -69,11 +69,12 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
 
     return (
         <div>
-            <TopBox work="Moodboards"
+            <TopBox 
               scene={number}
               title={query}
               title4={locationPlace}
               title3={characterRole}
+              work="Moodboards"
               />
             <Button
                     className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}
@@ -85,11 +86,39 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
               className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
               onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
             </Button>
-              {!showInfo ? (
-                  ""
-                      ) : (
-                        <Info  /> 
-                        ) } 
+            {!showInfo ? (
+                ""
+                    ) : (
+                      <Info  /> 
+            ) } 
+            {/* title */}
+            <h5 className={`mt-1 mb-3 py-1 text-center ${styles.SubTitle }`}
+                  style={{ textTransform: 'uppercase'}}>Moodboards</h5>
+            {/* <div>
+                {sceneId ? (
+                  <>
+                  <h5 className={`mt-1 mb-3 py-1 text-center ${styles.SubTitle }`}
+                  style={{ textTransform: 'uppercase'}}>Scene {number} Moodboards</h5>
+                    </>
+                  ) : characterRole ? (
+                    <>
+                    <h5 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}
+                    style={{ textTransform: 'uppercase'}}>
+                      character Moodboards</h5>
+                      </>
+                  ) : locationPlace ? (
+                    <>
+                  <h5 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}
+                  style={{ textTransform: 'uppercase'}}>
+                    location Moodboards</h5>
+                    </>
+                  ) : (
+                    <h5 className={`mt-1 mb-4 pl-3 py-1 text-center ${styles.SubTitle }`}>
+                     MOODBOARDS
+                    </h5>
+                  ) }
+            </div> */}
+            <div>
             {sceneId ? (
               <Row className="mb-3">
               <Col className="text-center">
@@ -128,7 +157,7 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
                   className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                   Add Moodboard</Button>
                 </Col>
-              </Row>
+              </Row>           
               <Row>
               <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
               <Form
@@ -147,6 +176,7 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
               </Row>
               </>
               ) }
+              </div>
               {/* moodboards */}
               <Row className="mt-3 px-2">
               <Col>

@@ -3,6 +3,11 @@
   color: #fff;
 }
 
+.SubTitle {
+  background-color: #e8f0f1;
+  font-weight: 700;
+}
+
 .Title {
     color: rgb(140, 111, 25, 99%);
     color: rgba(254, 228, 149, 0.99);
