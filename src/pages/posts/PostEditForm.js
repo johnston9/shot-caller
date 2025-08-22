@@ -179,7 +179,7 @@ function PostEditForm() {
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 pl-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
         Update
       </Button>
     </div>
@@ -221,7 +221,7 @@ function PostEditForm() {
             </Alert>
           ))}
         </Col>
-        <Col xs={12} md={6} className="mt-3 mt-md-3">
+        <Col xs={12} md={6} className="mt-3 mt-md-0">
         <Form.Group controlId="content" className={`${styles.Width95} text-center`} >
                 <Form.Label className={`${styles.BoldScene} `} >Content</Form.Label>
                 <Form.Control 

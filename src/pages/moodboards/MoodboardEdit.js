@@ -308,13 +308,13 @@ const MoodboardEdit = () => {
 const buttons = (
   <div className="text-center mb-3">    
     <Button
-      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 mr-3`}
+      className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
       onClick={() => history.goBack()}
     >
       Cancel
     </Button>
-    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 ml-3`} type="submit">
-      Edit
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
+      Update
     </Button>
   </div>
 );
@@ -337,6 +337,13 @@ const buttons = (
                       ) : (
                         <Info  /> 
                         ) }  */}
+            <Row>
+            <Col xs={1} md={2}></Col>
+              <Col xs={10} md={8}>
+                  <p style={{ textTransform: 'uppercase'}} className={`text-center pt-2 ${styles.SmallDepts }`}
+                  > If needed Scene, Character or Location may be added or changed</p>
+              </Col>
+              </Row>
             <Row>
               <Col className="text-center" >
                 <h5 className={`mt-1 mb-2 py-1 ${styles.SubTitle }`}>{number && <span>Scene {number} </span> }

@@ -152,7 +152,7 @@ function PostCreateForm({sceneId, number, dept, category, setShow }) {
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 pl-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
         Create
       </Button>
     </div>
