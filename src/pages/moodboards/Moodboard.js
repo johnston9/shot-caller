@@ -85,98 +85,100 @@ const Moodboard = (props) => {
         >
             Back
         </Button>     
-        {/* card */}
-        <Card className={ `mt-1 mb-0 ${styles.MoodTop}`}>
+        {/*  */}
+        <Card className={ `mt-1 mb-0 pb-0 ${styles.MoodTop}`}>
         <Card.Body className={`py-0 px-0 ${styles.MoodTop}`}>
         <Row className={`d-flex align-items-center pt-0 pb-0 my-0 pl-3`}>
-        <Col xs={12} sm={3} className="my-1 " >
-            <div className='d-none d-sm-block'>
-            <Row >
-            <Col xs={3} className="pl-0 pr-0" >
-            <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profile_image} height={45}/>
-            </Link>
-            </Col>
-            <Col xs={9} className="pl-0 pr-0" >
-            <div className={`${styles.Content4} pl-2 ml-2`}>
-            <p>
-            <span className=''>{name} </span>
-            </p>
-            <p>
-            <span className='ml-0 '>{position}</span>
-            </p>
-            </div>
-            <div>
-            </div>
-            </Col>
-            </Row>   
-            </div>     
-            {/* mobile */}
-            <div className='d-sm-none'>
-            <Row>
-            <Col className='d-flex align-items-center' xs={2}>
-            <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profile_image} height={45}  />
-            </Link>
-            </Col>
-            <Col xs={8} className="text-center" >
-            <p>
-            <span className=''>{name}</span>
-            </p>
-            <p className=''>
-            {position} - {updated_at}
-            </p>
-            </Col>
-            <Col xs={2} 
-            className="d-flex align-items-center" >
-            {is_owner && (
-            <PostDropdown
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-            />
-            ) } 
-            </Col>
-            <Col xs={12} sm={3} 
-                className="px-0 d-flex align-items-center justify-content-center"> 
-            </Col>
-            </Row>   
-            </div> 
+        <Col xs={12} md={3} className="my-1" >
+        <div className='d-none d-md-block'>
+        <Row >
+        <Col xs={3} className="pl-0 pr-0" >
+        <Link to={`/profiles/${profile_id}`}>
+        <Avatar src={profile_image} height={45}/>
+        </Link>
+        </Col>
+        <Col xs={9} className="pl-0 pr-0" >
+        <div className={`${styles.Content4} pl-2 ml-2`}>
+        <p>
+        <span className=''>{name} </span>
+        </p>
+        <p>
+        <span className='ml-0 '>{position}</span>
+        </p>
+        </div>
+        <div>
+        </div>
+        </Col>
+        </Row>   
+        </div>     
+        {/* mobile */}
+        <div className='d-md-none'>
+        <Row>
+        <Col className='d-flex align-items-center' xs={2}>
+        <Link to={`/profiles/${profile_id}`}>
+        <Avatar src={profile_image} height={45}  />
+        </Link>
+        </Col>
+        <Col xs={8} className="text-center" >
+        <p>
+        <span className=''>{name}</span>
+        </p>
+        <p className=''>
+        {position} - <span className={`${styles.Small }`}>{updated_at}</span>
+        </p>
+        </Col>
+        <Col xs={2} 
+        className="d-flex align-items-center" >
+        {is_owner && (
+        <PostDropdown
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
+        />
+        ) } 
+        </Col>
+        </Row>   
+        </div> 
         </Col> 
-        <Col xs={12} sm={6} className="my-0 my-sm-2" >
-        <Row className={`${styles.Content3} py-1 pl-2 mr-2 `}>
+        {/* titles */}
+        <Col xs={12} md={6} className="my-0 py-0" >
+        <Row className={`${styles.Content3} py-1`}>
             <Col xs={12} 
-            className={` ${styles.Content4} text-center py-sm-2`} >
-            <Row>
-            <Col className='px-0 mx-0' xs={4}>
-            {number && <h5 style={{ fontWeight: '700' }}>Scene {number} </h5>}
-            </Col>
-            <Col className='px-0 mx-0' xs={4}>{location && <h5> {location}</h5>}
-            </Col>
-            <Col className='px-0 mx-0' xs={4}>{character && 
-                    <h5 style={{  fontWeight: '700' }}>
-                    {character} </h5>}  
-            </Col>
-            </Row>
+            className={`text-center py-md-2`} >
+
+            {!number && !location && !character ? (
+              <Row>
+              <Col>
+              <h5 className={` ${styles.Span100 }`}
+                style={{ fontStyle: 'italic' }}>
+                {title}</h5>
+              </Col>
+              </Row>
+              ) : (
+                <Row>
+                <Col className='px-0 mx-0' xs={4}>
+                {number && <h5 className={`${styles.Span100 }`} style={{ fontWeight: '700' }}>
+                  Scene {number} </h5>}
+                </Col>
+                <Col className='px-0 mx-0' xs={4}>
+                {location && <h5 className={`${styles.Span100 }`} style={{ fontWeight: '700' }}> 
+                  {location}</h5>}
+                </Col>
+                <Col className='px-0 mx-0' xs={4}>
+                {character && <h5 className={`${styles.Span100 }`} style={{  fontWeight: '700' }}>
+                  {character} </h5>}  
+                </Col>
+                </Row>
+                )}
             </Col>
         </Row>
-        {/* <Row className={`${styles.Content3} py-1 pl-2 mr-2 `}>
-                <Col xs={12} 
-                className={` ${styles.Content4} text-center py-sm-2`} >
-                <h5>
-                {number && <span className='mr-3' style={{ fontWeight: '700' }}>Scene {number} </span>}
-                {location && <span> {location}</span>}
-                {character && <span className='ml-3'> {character} </span>} 
-                </h5>
-                </Col>
-        </Row> */}
         </Col>
-        <Col xs={12} sm={3} className="my-2 " >
-        <div className='d-none d-sm-block'>
+        <Col xs={12} md={3} className="my-2 " >
+        <div className='d-none d-md-block'>
         <Row >
         <Col className="pl-0 pr-0" sm={9} >
         <div className={`${styles.Content4} `}>
         <p>
-        <span className={ ` text-center ${styles.Date}`}>{updated_at}</span>
+        <span className={ `pl-3 text-center ${styles.Date}`}>{updated_at}</span>
         </p>
         </div>
         </Col>
@@ -195,32 +197,41 @@ const Moodboard = (props) => {
         </Row>
         </Card.Body>
         </Card>   
+        <div className={`${styles.MoodBack}`}>
         {/* title */}
-        <Row className='p-3'>
+        <Row className='py-3'>
             <Col xs={12} className='mx-0 px-0 text-center'>
-            <h3>{title && <span> {title} </span> }</h3>
+            <h5>{title} </h5>
             </Col >
         </Row>
-        <Row>
+        <hr className='mt-0'/>
+        <Row className='pb-3'>
             <Col xs={{span: 10, offset: 1}}>
-                <p className='text-center mb-3'>{content} </p>
+                <p className='text-center'>{content} </p>
             </Col>
         </Row>
-        <Row className="mt-3" >
+        <hr className='mt-0 mb-0'/>
+        </div>
+        {/* images */}
+        <div className={`${styles.MoodBackImage}`}>
+        <Row className="pt-5" >
             {/* image 1/2 */}
             <Col xs={12} md={6} >
             {image1 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
-                        IMAGE 1</p>
+                    {/* <p className={`${styles.BoldTitle} mb-md-3`}>IMAGE 1</p> */}
+                    {/* <p className={`${styles.BoldScene} mb-md-3`}>IMAGE 1</p> */}
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         src={image1} alt="image" onClick={() => handleClickFull1() } />
                         {/* <iframe title="Image1" src={image1}
                           className={appStyles.iframeIm} alt="Image"  /> */}
-                          <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
-                        onClick={() => handleClickFull1() }>FULLSIZE</p> 
+                    <div>
+                    <p className={`${styles.BoldScene} mb-md-0`}>IMAGE 1</p>
+                          <span className={`text-center py-0 my-0 mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull1() }>FULLSIZE</span> 
+                    </div>
                     </div>
                   </Card.Body>
                   </Card>
@@ -230,15 +241,18 @@ const Moodboard = (props) => {
             {image2 && <>
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
-                        IMAGE 2</p>
+                    {/* <p className={`${styles.BoldTitle} mb-md-3`}>
+                        IMAGE 2</p> */}
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         src={image2} alt="image" onClick={() => handleClickFull2() } />
                         {/* <iframe title="Image2" src={image2}
                           className={appStyles.iframeIm} alt="Image"  /> */}
-                          <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
-                        onClick={() => handleClickFull2() }>FULLSIZE</p> 
+                          <div>
+                          <p className={`${styles.BoldScene} mb-md-0`}>IMAGE 2</p>
+                          <span className={`text-center py-0 my-0 mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                           onClick={() => handleClickFull2() }>FULLSIZE</span> 
+                          </div>
                     </div>
                 </Card.Body>
                   </Card>
@@ -246,28 +260,33 @@ const Moodboard = (props) => {
             </Col>
         </Row>
         {/* break */}
-        {image3 ? (
+        {/* {image3 ? (
         <Row>
         <Col xs={12}>
-        <hr className={`mt-0 mb-5 d-none d-md-block`}/>
+        <hr className={`d-none d-md-block`}/>
         </Col>
         </Row>
-        ) : ("") }
+        ) : ("") } */}
         {/* image 3/4 */}
         <Row className="mt-3" >
             <Col xs={12} md={6}>
             {image3 && <> 
                   <Card className='mx-3 mx-md-5' >
                   <Card.Body className={`text-center px-md-5 `}  >
-                    <p className={`${styles.BoldTitle} mb-md-3`}>
-                        IMAGE 3</p>
+                    {/* <p className={`${styles.BoldTitle} mb-md-3`}>
+                        IMAGE 3</p> */}
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         src={image3} alt="image3" onClick={() => handleClickFull3() } />
                         {/* <iframe title="Image3" src={image3}
                           className={appStyles.iframeIm} alt="Image"  /> */}
-                          <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
-                        onClick={() => handleClickFull3() }>FULLSIZE</p> 
+                          <div>
+                          <p className={`${styles.BoldScene} mb-md-0`}>IMAGE 3</p>
+                          <span className={`text-center py-0 my-0 mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                           onClick={() => handleClickFull3() }>FULLSIZE</span> 
+                          </div>
+                          {/* <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                        onClick={() => handleClickFull3() }>FULLSIZE</p>  */}
                     </div>
                   </Card.Body>
                   </Card>
@@ -322,6 +341,7 @@ const Moodboard = (props) => {
                   </>}
             </Col>  
         </Row>
+        </div>
   </div>
   )
 

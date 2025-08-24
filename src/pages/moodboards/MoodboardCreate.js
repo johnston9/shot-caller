@@ -381,8 +381,10 @@ const buttons = (
             <div>
                 {sceneId ? (
                   <>
-                  <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
-                  style={{ textTransform: 'uppercase'}}>Scene {number} Moodboard</h5>
+                  <h5 className={`mt-1 py-1 text-center ${styles.SubTitleMood }`}
+                  style={{ textTransform: 'uppercase'}}>
+                  <span className={`${styles.Span100 }`} 
+                   style={{ fontStyle: 'italic'}}>Scene {number} - </span>Moodboard</h5>
                   <Row>
                   <Col xs={1} md={2}></Col>
                     <Col xs={10} md={8}>
@@ -394,18 +396,20 @@ const buttons = (
                     </>
                   ) : characterRole ? (
                     <>
-                    <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
+                    <h5 className={`mt-1 py-1 text-center ${styles.SubTitleMood }`}
                     style={{ textTransform: 'uppercase'}}>
-                      {characterRole} Moodboard</h5>
+                    <span style={{ fontStyle: 'italic'}} className={`${styles.Span100 }`} >
+                      {characterRole} - </span>Moodboard</h5>
                       </>
                   ) : locationPlace ? (
                     <>
-                  <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
+                  <h5 className={`mt-1 py-1 text-center ${styles.SubTitleMood }`}
                   style={{ textTransform: 'uppercase'}}>
-                    {locationPlace} Moodboard</h5>
+                    <span style={{ fontStyle: 'italic'}} className={`${styles.Span100 }`} >
+                      {locationPlace} - </span>Moodboard</h5>
                     </>
                   ) : (
-                    <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}>
+                    <h5 className={`mt-1 py-1 text-center ${styles.SubTitleMood }`}>
                       CREATE MOODBOARD
                     </h5>
                   ) }
@@ -434,7 +438,7 @@ const buttons = (
                 {textFields}
                 <hr/>
                 {/* image 1 2 */}
-                <Row>
+                <Row className="d-flex align-items-center">
                 <Col xs={12} md={6} className={`pr-md-2`}>
                 <p className={`${styles.BoldScene} text-center mb-2 mt-md-0 mt-2`} >
                   Image 1</p>
@@ -531,7 +535,7 @@ const buttons = (
                 </Row>
                 <hr className="d-none d-md-block"/>
                 {/* image 3 4 */}
-                <Row>
+                <Row className="d-flex align-items-center">
                 <Col xs={12} md={6} className={`pr-md-2`}>
                 <p className={`${styles.BoldScene} text-center mb-2 mt-md-0 mt-2`} >
                   Image 3</p>

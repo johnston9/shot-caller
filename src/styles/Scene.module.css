@@ -556,6 +556,11 @@ background: #ffffff;
   font-weight: 700;
 }
 
+.SubTitleMood {
+  background-color: #e8f0f1;
+  font-weight: 700;
+}
+
 .SubTitle2   {
   background-color: #d6fcff;
   font-weight: 700;
@@ -796,6 +801,14 @@ overflow-y: scroll;
 
 .BoldScene {
   font-size: .75rem !important;
+}
+
+.Span100 {
+  font-size: .85rem;
+}
+
+.SubTitleMood {
+  font-size: .85rem;
 }
 
 p {

@@ -343,18 +343,23 @@ const buttons = (
                       ) : (
                         <Info  /> 
                         ) }  */}
-            {/* title */}
+            {/* titles  */}
             <Row>
               <Col className="text-center" >
               {!number && !location && !character ? (
-              <h5 className={`mt-1 mb-2 py-1 ${styles.SubTitle }`}
+              <h5 className={`mt-1 mb-2 py-1 ${styles.SubTitleMood }`}
               style={{ textTransform: 'uppercase'}}>
-                {title} Moodboard </h5>) : (
-                <h5 className={`mt-1 mb-2 py-1 ${styles.SubTitle }`}
+              <span className={`${styles.Span100 }`} 
+              style={{ fontStyle: 'italic' }}>{title} - </span>Moodboard</h5>
+              ) : (
+                <h5 className={`mt-1 mb-2 py-1 ${styles.SubTitleMood }`}
               style={{ textTransform: 'uppercase'}}>
-                {number && <span>Scene {number} </span> }
-              {location && <span> - {location} </span> }
-              {character && <span> - {character} </span> }
+                {number && <span className={`${styles.Span100 }`} style={{ fontStyle: 'italic' }}>
+                  Scene {number} - </span> }
+              {location && <span className={`${styles.Span100 }`} style={{ fontStyle: 'italic' }}> 
+                {location} - </span> }
+              {character && <span className={`${styles.Span100 }`} style={{ fontStyle: 'italic' }}> 
+                {character} - </span> }
               Moodboard
               </h5>
                 )}
@@ -364,7 +369,7 @@ const buttons = (
                 {textFields}
                 <hr/>
                 {/* image 1 2 */}
-                <Row>
+                <Row className="d-flex align-items-center">
                 <Col xs={12} md={6} className={`pr-md-2`}>
                 <p className={`${styles.BoldScene} text-center mb-2 mt-md-0 mt-2`} >
                   Image 1</p>
@@ -461,7 +466,7 @@ const buttons = (
                 </Row>
                 <hr className="d-none d-md-block"/>
                 {/* image 3 4 */}
-                <Row>
+                <Row className="d-flex align-items-center">
                 <Col xs={12} md={6} className={`pr-md-2`}>
                 <p className={`${styles.BoldScene} text-center mb-2 mt-md-0 mt-2`} >
                   Image 3</p>
