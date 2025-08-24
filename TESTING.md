@@ -1065,7 +1065,8 @@ Description: View, Create and Edit Callsheets for a Shoot Day.<br>
 Description: View and create Scene pages containing Breakdowns, Characters and Background, Scripts, Storyboards, Shotlists, and Workspaces.<br>
 
 #### Scenes Page
-Description: This page displays all the currently added Scenes and the "Script" tab to the Script page where the whole Script can be uploaded and viewed.
+Description: This page displays all the currently added Scenes and the "Script" tab to the Script page where the whole Script can be uploaded and viewed. <br>
+In the TV version Episodes are above the Scenes but all functions the same.<br>
 
 - Use Case: View all the Scenes<br>
 
@@ -1132,15 +1133,58 @@ Description: This page displays all the currently added Scenes and the "Script" 
 <img src="documentation/readme-images/scenedel.png" width="50%">
 </h2>
 
-- Use Case: Delete a Scene on it's Scene page.<br>
+- Use Case: View all the Episodes in the TV version<br>
 
-  1. On the Scene click the Edit/Delete icon then click the Delete icon.<br>
-  2. A Modal displays asking to Confirm Delete or Cancel<br>
-  3. Click "Delete".<br>
-  6. A success message displays and the Scene is deleted.<br>
+  1. Click on Scenes Workspace on the Home page or Workspace in the Navbar.<br>
+  2. The Scenes Workspace page opens with all the currently created Episodes displaying on it.<br>
+  3. Click on an Episode to view it's Scenes.<br>
+
+<p align="center"> <strong>TV version Scenes Workspace</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTV1.png" width="50%">
+</h2>
+
+- Use Case: Create an Episode in the TV version<br>
+
+  1. In the Scenes Workspace page click on the "Create Episode" tab to open the "Create Episode" form.<br>
+  2. Input the new Episode Number, "5", and submit.<br>
+  3. Episode "5" is added to the Scenes Workspace.
+  4. A Success message displays saying "Episode 5 Created".
+
+<p align="center"> <strong>Episode 5 Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTV2.png" width="50%">
+</h2>
+
+- Use Case: Create a Scene in the TV version<br>
+
+  1. In the Scenes Workspace click on a Episode the click on the "Create Scene" tab to open the "Create Scene" form.<br>
+  2. Input the new Scene Number, "", and submit.<br>
+  3. Scene "" is added to the Scenes Workspace.
+  4. A Success message displays saying "Scene Created".
+
+<p align="center"> <strong>Scene 4 Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/sceneTv3.png" width="50%">
+</h2>
+
+  - Use Case: Edit a Episode in the TV version<br>
+
+    1. On the Episode page click the Edit/Delete icon on the Episode Top then click the Edit icon.<br>
+    2. Enter the changes, e.g. add E to title<br>
+    3. Click "Update".<br>
+    6. A success message displays and the Episode is updated.<br>
+
+  - Use Case: Delete a Episode in the TV version<br>
+
+    1. On the Episode page click the Edit/Delete icon on the Episode Top then click the Delete icon.<br>
+    2. A Modal displays asking to Confirm Delete or Cancel<br>
+    3. Click "Delete".<br>
+    6. A success message displays and the Episode is deleted.<br>
 
 #### Script
-Description: This page contains the whole script. It also had "Latest Changes" and "Notes" information sections on top and an "Add Latest Script" tab where the latest draft can be uploaded.<br>
+Description: This page contains the whole script. It also has "Latest Changes" and "Notes" information sections on top and an "Add Latest Script" tab where the latest draft can be uploaded.<br>
+For the TV version each Episode contains a Script page. <br>
 
 - Use Case: View the Script<br>
 
@@ -1154,30 +1198,29 @@ Description: This page contains the whole script. It also had "Latest Changes" a
 
 - Use Case: Add the first Script Draft along with Notes<br>
 
-  1. Click on the "Add Script" tab on the Scenes page. This will display is a Script has not been previously been added, if it has an "Add Latest Script" tab will display.
-  2. The "Add Script" form opens.
-  3. Input the "Draft Name" info.
-  4. Input the "Latest Changes" info if desired."
-  5. Input the "Notes" info."
-  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded.
-  7. The new file is added with its desktop name displaying below.
-  8. Click Upload and the updates are added to the database and the Scenes page opens.
-  9. A Success message displays.
-  9. Click Script to view the Script.
+  1. Click on the "Add Script" tab on the Scenes page.<br>
+  2. The "Add Script" form opens.<br>
+  3. Input the "Draft Name" info.<br>
+  4. Input the "Latest Changes" info if desired.<br>
+  5. Input the "Notes" info."<br>
+  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded.<br>
+  7. The new file is added with its desktop name displaying below.<br>
+  8. Click Upload and the updates are added to the database and the Scenes page opens.<br>
+  9. A Success message displays.<br>
+  9. Click Script to view the Script.<br>
 
 - Use Case: Add the Latest Draft along with the Latest Changes and Notes inputs<br>
 
-  1. Click on the "Add Latest Script" tab on the Scenes page.
-  2. The "Add Latest Script" form opens displaying the current database Script file name, "Script_Draft_1_ny25jg" and the current draft, latest changes and notes inputs.
-  3. Input the new "Draft Name" info, - "Draft 4, 02-04-24".
-  4. Input the new "Latest Changes" info, - "Scene, 1, 2 and 3 changed. Added scene 94."
-  5. Input the new "Notes" info, - "Scene 1 is 1.5 pages longer now."
-  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, - "Script Draft 4".
-  7. The new file is added with its desktop name displaying below, - "Script Draft 4.pdf".
-  8. Click Upload and the updates are added to the database and the Scenes page opens.
-  9. A Success message displays saying "Script Draft 4.pdf" added.
-  9. Click Script to view the changes including its new database file name "Script_Draft_4_v5omzy".
-
+  1. Click on the "Add Script" tab on the Scenes page.<br>
+  2. The "Add Latest Script" form opens displaying the current database Script file name, e.g. "Script_Draft_1_ny25jg" and the current draft, latest changes and notes inputs.<br>
+  3. Input the new "Draft Name" info, e.g. "Draft 4, 02-04-24".<br>
+  4. Input the new "Latest Changes" info, e.g. "Scene, 1, 2 and 3 changed. Added scene 94."<br>
+  5. Input the new "Notes" info, e.g. "Scene 1 is 1.5 pages longer now."<br>
+  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, e.g. "Script Draft 4".<br>
+  7. The new file is added with its desktop name displaying below, - "Script Draft 4.pdf".<br>
+  8. Click Upload and the updates are added to the database and the Scenes page opens.<br>
+  9. A Success message displays saying "Script Draft 4.pdf" added.<br>
+  9. Click Script to view the changes including its new database file name "Script_Draft_4_v5omzy".<br>
 
 <p align="center"> <strong>The "Add Latest Script" Form with the Changes</strong></p>
 <h2 align="center">
@@ -1209,6 +1252,37 @@ Description: This page contains the whole script. It also had "Latest Changes" a
   1. Click on the "Print" icon on the Script.<br>
   2. The Print menu opens. 
   3. Click Print and the Script is printed out.<br>
+
+- Use Case: Add the first Script Draft along with Notes for the TV version<br>
+
+  1. Click on the "Add Script" tab on an Episode's Scenes page.<br>
+  2. The "Add Script" form opens.<br>
+  3. Input the "Draft Name" info.<br>
+  4. Input the "Latest Changes" info if desired.<br>
+  5. Input the "Notes" info."<br>
+  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded.<br>
+  7. The new file is added with its desktop name displaying below.<br>
+  8. Click Upload and the updates are added to the database and the Episode's Scenes page opens.<br>
+  9. A Success message displays.<br>
+  9. Click Script to view the Script.<br>
+
+- Use Case: Add the Latest Draft along with the Latest Changes and Notes inputs for the TV version<br>
+
+  1. Click on the "Add Script" tab on an Episode's Scenes page.<br>
+  2. The "Add Script" form opens displaying the current database Script file name, e.g."Berlin_S_1_ftxkbb", and the current draft, latest changes and notes inputs.<br>
+  3. Input the new "Draft Name" info, e.g. "Episode 3 Draft 4, 02-04-25".<br>
+  4. Input the new "Latest Changes" info, e.g. "Scene 2 changed."<br>
+  5. Input the new "Notes" info, e.g. "Scene 2 .5 longer."<br>
+  6. Click the "Change the Script" tab to open the Desktop files and select the desired file to be uploaded, e.g. "Berlin E3".<br>
+  7. The new file is added with its desktop name displaying below, - "Berlin E3.pdf".<br>
+  8. Click Upload and the updates are added to the database and the Scenes page opens.<br>
+  9. A Success message displays saying "Berlin E3.pdf" added.<br>
+  9. Click Script to view the changes including its new database file name "Berlin_E3".<br>
+
+<p align="center"> <strong>The "Add Latest Script" Form with the Changes</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scriptchange1.png" width="50%">
+</h2>
 
 #### Scene Page
 Description: This page contains the Breakdown, Characters and Background, Scene Script, Storyboard, Shotlists, and Workspaces.<br>

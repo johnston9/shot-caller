@@ -71,9 +71,8 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
         <div>
             <TopBox 
               scene={number}
-              title={query}
+              title={characterRole}
               title4={locationPlace}
-              title3={characterRole}
               work="Moodboards"
               />
             <Button

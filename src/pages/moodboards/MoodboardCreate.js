@@ -242,6 +242,7 @@ const dropfields = (
         ))}
         </Col>
     </Row>
+    <hr/>
   </div>
 )
 
@@ -297,6 +298,7 @@ const scenePage = (
         ))}
         </Col>
     </Row>
+    <hr/>
   </div>
 )
 
@@ -385,22 +387,22 @@ const buttons = (
                   <Col xs={1} md={2}></Col>
                     <Col xs={10} md={8}>
                         <p style={{ textTransform: 'uppercase'}} className={`text-center pt-2 ${styles.SmallDepts }`}
-                        > If needed add Character and or Location adding the Moodboard 
+                        > If needed add Character and or Location - adding the Moodboard 
                           to their pages too</p>
                     </Col>
                     </Row>
                     </>
-                  ) : character ? (
+                  ) : characterRole ? (
                     <>
-                    <h3 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
+                    <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
                     style={{ textTransform: 'uppercase'}}>
-                      {character} Moodboard</h3>
+                      {characterRole} Moodboard</h5>
                       </>
-                  ) : location ? (
+                  ) : locationPlace ? (
                     <>
                   <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}
                   style={{ textTransform: 'uppercase'}}>
-                    {location} Moodboard</h5>
+                    {locationPlace} Moodboard</h5>
                     </>
                   ) : (
                     <h5 className={`mt-1 py-1 text-center ${styles.SubTitle }`}>
@@ -429,7 +431,6 @@ const buttons = (
                     }
                 </Col>
                 </Row>
-                {sceneId || dropfields ? (<hr/>) : ("")  }
                 {textFields}
                 <hr/>
                 {/* image 1 2 */}

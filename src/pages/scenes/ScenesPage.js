@@ -106,7 +106,7 @@ const ScenesPage = ({message, filter = "" }) => {
             </Col>
             <Col xs={4} className="text-center mt-2 px-0 mx-0" >
               <Button className={`${btnStyles.Button}  ${btnStyles.Back}`}
-                onClick={() => clickScript()}>ENTIRE SCRIPT
+                onClick={() => clickScript()}>SCRIPT
               </Button>
             </Col>
             <Col xs={4} >
