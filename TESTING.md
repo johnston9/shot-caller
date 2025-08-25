@@ -1082,7 +1082,7 @@ In the TV version Episodes are above the Scenes but all functions the same.<br>
 
   1. On the Scenes Workspace start typing a Scene Number, Title or Location in the Searchbar, e.g. for Location start typing "Alligator Club".<br>
   2. Results will display narrowing down with each charactor or digit typed.<br>
-  3. In this case by the time "alli" is typed in the results for Location "Alligaror Club" display.
+  3. In this case by the time "alli" is typed in the results for Location "Alligaror Club" display.<br>
 
 <p align="center"> <strong>Alligaror Club returned from Search</strong></p>
 <h2 align="center">
@@ -1091,7 +1091,7 @@ In the TV version Episodes are above the Scenes but all functions the same.<br>
 
 - Use Case: Find Scenes by Act or Location List<br>
 
-  1. On the Scenes Workspace click on the "Act Three" tab..<br>
+  1. On the Scenes Workspace click on the "Act Three" tab.<br>
   2. Results showing all scenes from Act Three display.<br>
 
 <p align="center"> <strong>Act Three</strong></p>
@@ -1103,8 +1103,8 @@ In the TV version Episodes are above the Scenes but all functions the same.<br>
 
   1. In the Scenes Workspace page click on the "Create Scene" tab to open the "Create Scene" form.<br>
   2. Input the new Scene Number, "11", and submit.<br>
-  3. Scene "11" is added to the Scenes Workspace.
-  4. A Success message displays saying "Scene 11 Created".
+  3. Scene "11" is added to the Scenes Workspace.<br>
+  4. A Success message displays saying "Scene 11 Created".<br>
 
 <p align="center"> <strong>Input "11" in the Create Scene form</strong></p>
 <h2 align="center">
@@ -1120,6 +1120,13 @@ In the TV version Episodes are above the Scenes but all functions the same.<br>
 <h2 align="center">
 <img src="documentation/readme-images/scenescreate2.png" width="50%">
 </h2>
+
+- Use Case: Edit a Scene on the Scenes page.<br>
+
+  1. On the Scenes page click the Edit/Delete icon on the Scene Top then click the Edit icon.<br>
+  2. The Scene Add/Edit Breakdown page opens.<br>
+  3. Input changes and submit".<br>
+  6. A success message displays and the Scene is updated.<br>
 
 - Use Case: Delete a Scene on the Scenes page.<br>
 
@@ -1148,24 +1155,12 @@ In the TV version Episodes are above the Scenes but all functions the same.<br>
 
   1. In the Scenes Workspace page click on the "Create Episode" tab to open the "Create Episode" form.<br>
   2. Input the new Episode Number, "5", and submit.<br>
-  3. Episode "5" is added to the Scenes Workspace.
-  4. A Success message displays saying "Episode 5 Created".
+  3. Episode "5" is added to the Scenes Workspace.<br>
+  4. A Success message displays saying "Episode 5 Created".<br>
 
 <p align="center"> <strong>Episode 5 Added</strong></p>
 <h2 align="center">
 <img src="documentation/readme-images/scenesTV2.png" width="50%">
-</h2>
-
-- Use Case: Create a Scene in the TV version<br>
-
-  1. In the Scenes Workspace click on a Episode the click on the "Create Scene" tab to open the "Create Scene" form.<br>
-  2. Input the new Scene Number, "", and submit.<br>
-  3. Scene "" is added to the Scenes Workspace.
-  4. A Success message displays saying "Scene Created".
-
-<p align="center"> <strong>Scene 4 Added</strong></p>
-<h2 align="center">
-<img src="documentation/readme-images/sceneTv3.png" width="50%">
 </h2>
 
   - Use Case: Edit a Episode in the TV version<br>
@@ -1181,6 +1176,33 @@ In the TV version Episodes are above the Scenes but all functions the same.<br>
     2. A Modal displays asking to Confirm Delete or Cancel<br>
     3. Click "Delete".<br>
     6. A success message displays and the Episode is deleted.<br>
+
+- Use Case: View all Scenes and Create a Scene in the TV version<br>
+
+  1. In the Scenes Workspace click on a Episode and all its Scenes display. <br>
+  2. Click on the "Create Scene" tab to open the "Create Scene" form.<br>
+  2. Input the new Scene Number, "4", and submit.<br>
+  3. Scene "4" is added to the Scenes Workspace.<br>
+  4. A Success message displays saying "Scene Created".<br>
+
+<p align="center"> <strong>Scene 4 Added</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTVadd1.png" width="50%">
+</h2>
+
+- Use Case: Edit a Scene on the Scenes page in the TV version.<br>
+
+  1. On the Scenes page click the Edit/Delete icon on the Scene Top then click the Edit icon.<br>
+  2. The Scene Add/Edit Breakdown page opens.<br>
+  3. Input changes and submit".<br>
+  6. A success message displays and the Scene is updated.<br>
+
+- Use Case: Delete a Scene on the Scenes page in the TV version.<br>
+
+  1. On the Scenes page click the Edit/Delete icon on the Scene Top then click the Delete icon.<br>
+  2. A Modal displays asking to Confirm Delete or Cancel<br>
+  3. Click "Delete".<br>
+  6. A success message displays and the Scene is deleted.<br>
 
 #### Script
 Description: This page contains the whole script. It also has "Latest Changes" and "Notes" information sections on top and an "Add Latest Script" tab where the latest draft can be uploaded.<br>
@@ -1281,36 +1303,48 @@ For the TV version each Episode contains a Script page. <br>
 
 <p align="center"> <strong>The "Add Latest Script" Form with the Changes</strong></p>
 <h2 align="center">
-<img src="documentation/readme-images/scriptchange1.png" width="50%">
+<img src="documentation/readme-images/scenesTVscript1.png" width="50%">
 </h2>
+
+<p align="center"> <strong>The "Add Latest Script" Form with the Changes</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTVscript2.png" width="50%">
+</h2>
+
+<h1>need fix</h1>
 
 #### Scene Page
 Description: This page contains the Breakdown, Characters and Background, Scene Script, Storyboard, Shotlists, and Workspaces.<br>
 
 - Use Case: View the Scene Page<br>
 
-  1. Click on a Scene on the Scenes page.
-  2. The Scene page opens.
+  1. Click on a Scene on the Scenes page.<br>
+  2. The Scene page opens.<br>
+
+- Use Case: View the Scene Page in the TV version<br>
+
+  1. Click on a Scene on an Epoisodes Scenes page.<br>
+  2. The Scene page opens.<br>
 
 #### Scene Breakdown
 Description: This section contains the Scene Breakdown.
 
 - Use Case: View the Scene Breakdown<br>
 
-  1. Click on Breakdown tab on the Scene page and the Scene Breakdown opens.
+  1. Click on Breakdown tab on the Scene page and the Scene Breakdown opens.<br>
 
 - Use Case: Add/Edit details in the Breakdown<br>
 
-  1. Click on the 3 Dots on the Scene page or the Add/Edit tab on the Breakdown page to open the Add/Edit Breakdown form.
-  2. Fill in the details.
-  3. If the Location is not already added to the Locations dropdown click the "Add new Location" tab on the top of the page to open the Add New Location form.
-  4. Input the new location "Train Station" and submit.
-  5. The new Location "Train Station" is now added to the Locations dropdown.
-  6. Add the Scene Script by selecting the desired PDF file "S 11 No 2 Script" from the desktop.
-  7. Add the Scene Storyboard by selecting the desired PDF file "S 11 Storyb" from the desktop.
-  8. Submit the form.
-  9. A Success message displays saying "Scene "11" Breakdown Updated".
-  10. Click on Breakdown tab on the Scene page to view the new Breakdown inputs.
+  1. Click on the Add/Edit tab on the Breakdown page to open the Add/Edit Breakdown form.<br>
+  2. Fill in the details.<br>
+  3. If the Location is not already added to the Locations dropdown click the "Add new Location" tab on the top of the page to open the Add New Location form.<br>
+  4. Input the new location "Train Station" and submit.<br>
+  5. The new Location "Train Station" is now added to the Locations dropdown.<br>
+  6. Add the Scene Script by selecting the desired PDF file "S 11 No 2 Script" from the desktop.<br>
+  7. Add the Scene Storyboard by selecting the desired PDF file "S 11 Storyb" from the desktop.<br>
+  8. Submit the form.<br>
+  9. A Success message displays saying "Scene "11" Breakdown Updated".<br>
+  10. Click on Breakdown tab on the Scene page to view the new Breakdown inputs.<br>
 
 <p align="center"> <strong>Add New Location</strong></p>
 <h2 align="center">
@@ -1337,11 +1371,39 @@ Description: This section contains the Scene Breakdown.
 <img src="documentation/readme-images/scenebreak2.png" width="50%">
 </h2>
 
-- Use Case: Add/Edit details in the Breakdown from the Scenes page<br>
+- Use Case: Add/Edit details in the Breakdown in the TV version<br>
 
-  1. Click on the 3 Dots on the Scene Top on the Scenes page to open the Add/Edit Breakdown form.
-  2. Fill in the details and submit.
-  3. A success message displays and the Scene it updated with the new details.
+  1. Click on the Add/Edit tab on the Breakdown page to open the Add/Edit Breakdown form.<br>
+  2. Fill in the details.<br>
+  3. If the Location is not already added to the Locations dropdown click the "Add new Location" tab on the top of the page to open the Add New Location form.<br>
+  4. Input the new location "Alligator Club" and submit.<br>
+  5. The new Location "Alligator Club" is now added to the Locations dropdown.<br>
+  6. Add the Scene Script by selecting the desired PDF file "E1 S4" from the desktop.<br>
+  7. Add the Scene Storyboard by selecting the desired PDF file "E1 S4 2nd" from the desktop.<br>
+  8. Submit the form.<br>
+  9. A Success message displays saying "Scene "4" Breakdown Updated".<br>
+  10. Click on Breakdown tab on the Scene page to view the new Breakdown inputs.<br>
+  1. Clicking the Script and Storyboard links will display the correctly added files. <br>
+
+<p align="center"> <strong>Add New Location</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTVnewloc1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>New Location in Dropdown</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTVnewloc2.png" width="50%">
+</h2>
+
+<p align="center"> <strong>Input Breakdown Fields</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTVbreak1.png" width="50%">
+</h2>
+
+<p align="center"> <strong>The Breakdown Page</strong></p>
+<h2 align="center">
+<img src="documentation/readme-images/scenesTVbreak2.png" width="50%">
+</h2>
 
 #### Scene Characters/BG
 - Description: This section contains the Scene's Characters and Background information. Admin can add/edit Scene Characters and BG here. Characters are added by a dropdown containing all Characters added to the Project. Selecting a Character automatically fills it's Role and Number input.<br>
