@@ -191,10 +191,18 @@
     width: 100%;
   }
 
+  .WideChar {
+    width: 25%;
+  }
+
   @media screen and (max-width: 600px) {
     .Button {
     font-size: 0.7rem;
   }
+
+  .WideChar {
+      width: 50%;
+    }
 
     .Wide2 {
       width: 50%;

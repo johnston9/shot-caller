@@ -5,13 +5,13 @@
 A web application for film, TV and video production.<br>
 
 ## Purpose
-A Film, TV, and Video Production Platform. The Platform includes Budgeting Software but this can also be purchased separately. It consists of two related apps, "Shot caller Production" and "Shot caller" each with a Backend and a Frontend. <br>
+A Film, TV, and Video Production Platform. The Platform includes Budgeting Software but this can also be purchased separately. It consists of two related apps, "Shot caller Production" and "Shot Caller" each with a Backend and a Frontend. <br>
 
 "Shot caller Production" is the commercial home site where users find out about and purchase the Platform and Budgeting software. 
 "Shot caller" runs the Platform while the Budgeting software is held on “Shot Caller Production”. <br> 
 
 This is the Frontend for Shot Caller. You may find the testing here.
-[Shot Caller Testing](https://github.com/johnston9/shot-caller/blob/main/TESTING.md)
+[Shot Caller Testing](https://github.com/johnston9/Testing-Shot-Caller/blob/main/TESTING.md)
 <br>
 
 The Platform contain both the Creative and the Production sides of media production.<br>
@@ -337,8 +337,8 @@ The React Dependencies and DRF Requirements can be found in the Deployment secti
 [Back to Table of Content](#table-of-content)
 
 ## Testing
-- Find the complete testing here.
-[Shot Caller testing](https://github.com/johnston9/shot-caller/blob/main/TESTING.md)
+- The TESTING.md file for Shot Caller is here.
+[Shot Caller Testing](https://github.com/johnston9/Testing-Shot-Caller/blob/main/TESTING.md)
 
 All functionality was tested as it was being built to ensure there were no errors that it did what it was meant to do and that all database errors were handled correctly. <br> 
 

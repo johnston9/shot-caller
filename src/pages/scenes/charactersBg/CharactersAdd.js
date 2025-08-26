@@ -24,13 +24,13 @@ const CharactersAdd = (props) => {
             <Row>
             <Col className="text-center mt-2" xs={12} sm={6}>
             <Button
-                className={`px-5 py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
+                className={`px-5 py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
                 onClick={() => setShowInfo(showInfo => !showInfo)} >IMPORTANT
             </Button> 
             </Col>
             <Col className="text-center mt-2" xs={12} sm={6}>
             <Button
-                className={`py-0 my-2 ${btnStyles.Shed} ${btnStyles.Button}`}
+                className={`px-5 py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
                 onClick={() => setShowAdd(showAdd => !showAdd)} >ADD NEW CHARACTERS
             </Button> 
             </Col>

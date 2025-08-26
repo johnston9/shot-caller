@@ -8,6 +8,13 @@
   cursor: pointer;
 } */
 
+.SubTitle6 {
+  background-color: #fff;
+  font-weight: 700;
+  color: #000;
+  border: 1px solid red;
+}
+
 .Title {
   font-size: 1em;
 }

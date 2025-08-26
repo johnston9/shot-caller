@@ -51,8 +51,9 @@ const CharactersBG = (props) => {
             </h5>
             <Row>
             <Col className='text-center py-3'>
+            {/* add char */}
             <Button
-                className={` py-0  ${btnStyles.Back} ${btnStyles.Button}`}
+                className={` py-0 ${btnStyles.WideChar} ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowCharactersAdd(showCharactersAdd => !showCharactersAdd)} >ADD CHARACTER
             </Button> 
             </Col>
@@ -162,8 +163,9 @@ const CharactersBG = (props) => {
             {/* BG / STANDINGS */}
             <Row>
             <Col xs={12} className='text-center mt-4' >
+            {/* add bg */}
             <Button
-                className={`py-0 ${btnStyles.Back} ${btnStyles.Button}`}
+                className={`${btnStyles.WideChar} ${btnStyles.Back} ${btnStyles.Button}`}
                 onClick={() => setShowBGAdd(showBGAdd => !showBGAdd)} >ADD BG / STANDINGS
             </Button> 
             </Col>

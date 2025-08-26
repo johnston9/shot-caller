@@ -108,7 +108,7 @@ const BGEdit = ({handleMount, setShowEditForm, id}) => {
         </Col>
         </Row>
         <Row className="pt-2">
-      <Col className="d-flex justify-content-center mx-0 pr-0 pl-0" xs={2} >
+        <Col className="d-flex justify-content-center mx-0 pr-0 pl-0" xs={2} >
         <Form.Group controlId="quantity" className={`${styles.Width2} `}  >
               <Form.Control 
               className={`${styles.InputCharEdit}`} 

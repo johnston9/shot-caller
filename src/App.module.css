@@ -9,6 +9,13 @@
   border: 1px solid #333;
 }
 
+.SubTitle6 {
+  background-color: #fff;
+  font-weight: 700;
+  color: #000;
+  border: 1px solid red;
+}
+
 .Toasttitle {
   font-family: 'Playball', cursive;
   color: red;
