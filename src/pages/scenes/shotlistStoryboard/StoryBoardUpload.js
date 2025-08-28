@@ -96,7 +96,7 @@ const StoryBoardUpload = ({storyboard1, number1, fileName1, id, setAddStory }) =
                 {fileName && <p className={`${styles.Italic}`} >File name: {fileName} </p> }
                 <div>
                   <Form.Label
-                    className={`${btnStyles.Button} ${btnStyles.Blue} btn mt-3`}
+                    className={`${btnStyles.Button} ${btnStyles.Order} btn mt-3`}
                     htmlFor="storyboard-upload"
                   >
                     Click Here to Select Latest StoryBoard File
