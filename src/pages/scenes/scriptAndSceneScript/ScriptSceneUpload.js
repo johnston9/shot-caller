@@ -98,7 +98,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
                   {fileName && <p className={`${styles.Italic}`} >File name: {fileName} </p> }
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn mt-3`}
+                      className={`${btnStyles.Button} ${btnStyles.Order} btn mt-3`}
                       htmlFor="script-upload"
                     >
                       Click Here to Select Latest Script File
