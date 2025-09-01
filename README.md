@@ -225,7 +225,7 @@ Only access to Callsheets<br>
 **SQLite3** was used during development and comes with Django Rest Frameworks. 
 
 - Deployment 
-**Postgres** ?????????????
+**Postgres** 
 
 ### Database structure for Shot Caller Production - Model Tables by App
 Find these here. [Shot Caller Production Readme](https://github.com/johnston9/shot-caller-production/blob/main/README.md)
@@ -340,8 +340,8 @@ Find these here. [Shot Caller Production Readme](https://github.com/johnston9/sh
    - Django Rest Frameworks the high-level Python Web framework was used to build the app's Backend.
 - [SQLite3:](https://www.sqlite.org/index.html)
    - SQLight came with Django and was used as the database for development.
-- [Postgres:](https://www.heroku.com/postgres) ?????????????????????????
-   - Postgres was added with Heroku and was used as the database for production.??????????????????
+- [Postgres:](https://www.heroku.com/postgres) 
+   - Postgres was added with Heroku and was used as the database for production.
 - [Cloudinary:](https://cloudinary.com/)
    - Cloudinary was used to hold the media files.
 - [Axios](https://axios-http.com/docs/intro)
@@ -447,28 +447,45 @@ sqlparse==0.4.2 <br>
 
 ### Dependencies for the Shot Caller React Frontend
 
-"@emailjs/browser": "^3.10.0" <br>
-"@react-google-maps/api": "^2.12.0", <br>
+"@emailjs/browser": "^3.10.0",<br>
+"@emotion/react": "^11.11.1",<br>
+"@hookform/resolvers": "^3.1.1",<br>
+"@mantine/core": "^6.0.17",<br>
+"@mantine/dates": "^6.0.17",<br>
+"@mantine/form": "^6.0.17",<br>
+"@mantine/hooks": "^6.0.17",<br>
+"@mantine/modals": "^6.0.17",<br>
+"@react-google-maps/api": "^2.12.0",<br>
+"@tabler/icons-react": "^2.29.0",<br>
 "@testing-library/jest-dom": "^5.15.0",<br>
 "@testing-library/react": "^11.2.7",<br>
 "@testing-library/user-event": "^12.8.3",<br>
 "axios": "^0.24.0",<br>
 "bootstrap": "^4.6.0",<br>
+"dayjs": "^1.11.9",<br>
+"html2canvas": "^1.4.1",<br>
+"jspdf": "^2.5.2",<br>
 "jwt-decode": "^3.1.2",<br>
+"mantine-react-table": "^1.0.0",<br>
 "npm": "^8.12.2",<br>
-"react": "^17.0.2",<br>
+"react": "^18.2.0",<br>
 "react-bootstrap": "^2.0.2",<br>
 "react-calendar": "^3.7.0",<br>
 "react-datepicker": "^4.5.0",<br>
-"react-dom": "^17.0.2",<br>
+"react-dom": "^18.2.0",<br>
+"react-hook-form": "^7.45.2",<br>
+"react-hot-toast": "^2.4.1",<br>
+"react-icons": "^4.10.1",<br>
 "react-infinite-scroll-component": "^6.1.0",<br>
 "react-router": "^6.3.0",<br>
 "react-router-dom": "^5.2.0",<br>
-"react-scripts": "4.0.3",<br>
-"react-toastify": "^9.0.0",<br>
+"react-scripts": "5.0.1",<br>
 "type-fest": "^0.13.1",<br>
 "use-places-autocomplete": "^4.0.0",<br>
-"web-vitals": "^1.1.2"<br>
+"web-vitals": "^1.1.2",<br>
+"zod": "^3.21.4",<br>
+"react-beautiful-dnd": "^13.1.1",<br>
+"serve": "^14.2.0"<br>
 
 [Back to Table of Content](#table-of-content)
 
