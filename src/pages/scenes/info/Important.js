@@ -10,13 +10,13 @@ const Important = () => {
     <div>
         <Row className="my-3">
       <Col className="d-none d-md-block" md={2}></Col>     
-      <Col xs={12} md={8} >
-      <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}> 
-      <p className={`text-center px-3 pt-1 ${styles.Crimson }`}>
-        USE DECIMALS FOR THE "PAGES" INPUT FIELD, INSTEAD OF EIGHTS
+      <Col xs={12} md={8} className="px-3">
+      <div className={`text-center px-3 pt-1 ${styles.SubTitle6 }`}> 
+      <p className={`text-center pt-1`}>
+        USE DECIMALS FOR THE "PAGES" INPUT FIELD INSTEAD OF EIGHTS
         </p>     
-        <p className={`${styles.Bold}`}>Converter</p>
-        <hr/>
+        <p className={`${styles.Bold} pt-2`}>Converter</p>
+        <hr className="mt-0 mb-2"/>
       <Row>
       <Col xs={6}>
       <Row>
