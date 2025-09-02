@@ -156,7 +156,8 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
                   className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright}`}>
                   Add Moodboard</Button>
                 </Col>
-              </Row>           
+              </Row>     
+              {/* search       */}
               <Row>
               <Col className="py-2 text-center" xs={12} md={{ span: 6, offset: 3 }} >
               <Form
@@ -168,7 +169,7 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
                   onChange={(event) => setQuery(event.target.value)}
                   type="text"
                   className="mr-sm-2"
-                  placeholder="Search by Scene Number, Location or Character"
+                  placeholder="Search by Title, Scene Number, Location or Character"
               />
               </Form>
               </Col>

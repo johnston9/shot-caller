@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Asset from "../../components/Asset";
-
+import { toast } from 'react-toastify';
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/Scene.module.css";
 import appStyles from "../../App.module.css";
@@ -302,6 +302,7 @@ const textFields = (
   
     try {
       await axiosReq.put(`/moodshots/${id}`, formData);
+      toast.success(`Moodboard Updated`);
       history.goBack();
     } catch (err) {
       console.log(err);

@@ -1,7 +1,6 @@
 /* Form Page to create a Moodboard 
  * The word moodshots is used through the app in the urls for moodboards */
 import React, { useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -16,6 +15,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 import Info from "./Info";
+import { toast } from 'react-toastify';
 
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -158,6 +158,7 @@ const MoodboardCreate = ({sceneId="", number="", characterRole="", locationPlace
   
     try {
       await axiosReq.post("/moodshots/", formData);
+      toast.success(`Moodboard Added`); 
       history.goBack();
     } catch (err) {
       console.log(err);
