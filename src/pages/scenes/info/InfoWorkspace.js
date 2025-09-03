@@ -10,34 +10,34 @@ const InfoWorkspace = ({setShowWorkInfo}) => {
     <div>
       <Row className="my-3">
         <Col md={{span: 10, offset: 1}}>
-        <div className={`px-3 pt-1 ${styles.SubTitle2 }`}> 
+        <div className={`px-3 py-2 ${styles.SubTitle6 }`}> 
         <div className={`mt-0 pb-2 `}>
             <span className={`float-right ${styles.Close }`} 
             onClick={() => setShowWorkInfo(false) } >Close</span> 
-            <h5 className={`pl-5 text-center`} 
-            style={{ textTransform: 'uppercase'}} >Instructions </h5>
+            <p className={`pl-5 text-center`} 
+            style={{ textTransform: 'uppercase'}} >Instructions </p>
             </div>
             <p>
-            1. Collaborate on the Scene by department in one of three categories, 
-            "Requirements", "Workspace" and "Finals".</p>
-            <p>2. Ideally the Director and their assistants will use the "Requirements" category to
-            show what is needed then collaborate with the department heads and their assistants in the "Workspace".</p>
-           <p>3. The "Finals" is the used to contain the the final outcome and choices.
+            1. Collaborate on the Scene by Department using the 
+            "Requirements", "Workspace" and "Finals" categories.</p>
+            <p className="pt-2">2. Use "Requirements" to inform
+           what is needed then collaborate in the "Workspace".</p>
+           <p className="pt-2">3. "Finals" is the used to contain the the final choices.
             </p>
-            <p>4. Use the Workspace Guide to indicate which
-                Departments Workspaces will be used for this Scene.
-                The Universal Workspace can be used for all work on the scene, including the 
-                "Requirements" and "Finals", or in conjunction with one or a number of departments.
+            <p className="pt-2">
+                4. The Universal Department can be used for all Scene worked or in conjunction with one or a number of departments.
             </p>
-            <p>
-            5. Also ideally any Location, Character or Prop in the production encounter for
-            the first time in the Script should be collaborated on in the Scene and Department
-            where it occurs.
+            <p className="pt-2">5. Use the Workspace Guide to indicate which
+                Departments will be worked on for this Scene.</p>
+            <p className="pt-2">
+            6. Ideally, when Locations, Characters and Props first appear in the Script
+            they should be collaborated on in the Scene and Department Workspace
+            where they occur. Moodboards work in conjunction with the Workspace to aid this.
             </p>
-            <p>
-            Department heads can use the "Quick Find Posts" page to quickly find their department posts
-            the "Requirements" ones being returned in Scene order.
-            </p>
+            <p className="pt-2">
+            7. The "Posts by Department" section on the "Quick Find Posts" page is designed to enable
+            precise and quick work by Department in the Scenes Workspace.<br/>
+            It can also be used to check in which Scenes departments have Requirements.</p>
          </div> 
         </Col>
       </Row>

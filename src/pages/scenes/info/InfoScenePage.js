@@ -9,14 +9,17 @@ const InfoScenePage = () => {
     <div>
       <Row className="mb-3">
         <Col md={{span: 10, offset: 1}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-        <h5 className={`text-center `} >INFO</h5>  
-        <p>Collaborate on the scene by Department in the Scene Workspace, 
-          see instructions below.<br/>
+        <div className={`text-center px-3 py-2 ${styles.SubTitle6}`}>
+        <p >Collaborate on the Scene by Department in the Scene Workspace, 
+          see instructions below.</p>
+          <p className="pt-2">
             Add and view Scene info in the Breakdown and 
-            Characters/BG sections.<br/> Add and view the Scene Script
-            and Storyboard.<br/>
-            Create and view the Shotlist. <br/>
+            Characters/BG sections.</p>
+          <p className="pt-2"> Add and view the Scene Script
+            and Storyboard.</p>
+          <p className="pt-2">
+            Create and view the Shotlist. </p>
+          <p className="pt-2">
             Add and view Moodshots to explore visual themes.
              </p>
          </div> 

@@ -11,8 +11,8 @@ const ImportCreate = () => {
     <Row className="mb-3">
       <Col className="d-none d-md-block" md={2}></Col>     
       <Col xs={12} md={8} >
-        <div className={` px-3 pt-1 ${styles.SubTitle2 }`}>
-        <p className={`text-center px-3 py-2 ${styles.Crimson }`}>
+        <div className={` px-3 pt-1 ${styles.SubTitle6 }`}>
+        <p className={`text-center px-3 py-2`}>
       Scene Numbers can not be changed once the freeze button has been clicked.</p>
       <p className={`text-center px-3 py-2 ${styles.Bold }`}> If it has
       use decimals to add new Scenes between Scenes, see example below.</p>
@@ -29,16 +29,10 @@ const ImportCreate = () => {
       <p>
       Scene between
       </p>
-      <p>
-      Scene between
-      </p>
       </Col>
       <Col xs={2}>
       <p>
       7
-      </p>
-      <p>
-      7.5
       </p>
       <p>
       7
@@ -57,14 +51,8 @@ const ImportCreate = () => {
       <p>
       and
       </p>
-      <p>
-      and
-      </p>
       </Col>
       <Col xs={2}>
-      <p>
-      8
-      </p>
       <p>
       8
       </p>
@@ -78,9 +66,6 @@ const ImportCreate = () => {
       <Col xs={2}>
       <p>
       7.5
-      </p>
-      <p>
-      7.75
       </p>
       <p>
       7.25

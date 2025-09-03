@@ -9,16 +9,15 @@ const Information = () => {
     <div>
       <Row className="mb-3">
         <Col md={{span: 8, offset: 2}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-        <h5 className={`text-center `} >INFO</h5>  
+        <div className={`text-center px-3 py-2 ${styles.SubTitle6 }`}>
         <p>Click the Create Scene tab to create Scenes.</p>
-        <p> Click on a Scene to work
+        <p className="pt-2"> Click on a Scene to work
         in its Breakdown, Characters & BG, Shotlist, Scene Script, Storboard,
         and Workspace.
              </p>
-            <p>
+            <p className="pt-2">
             Scene Numbers may be changed up to a certain point in production when
-            the production decide to freeze them.</p>
+            the production department decides to freeze them.</p>
          </div> 
         </Col>
       </Row>
