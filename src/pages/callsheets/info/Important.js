@@ -26,7 +26,7 @@ const Important = () => {
       and these will appear on the Callsheet.
       </p> 
       <p className="px-3 pt-2" >
-      4.  They can be added by clicking the "Add Callsheet/Main Crew" button below
+      4.  They can be added by clicking the "Add Callsheet/Main Crew" button
       and opening their department.
       </p> 
       <p className="px-3 pt-2" >
@@ -37,7 +37,7 @@ const Important = () => {
       inputted in the Calltime field when Registering them in Step 1 above.
       </p>  
       <p className="px-3 pt-2" >
-      7. They can be added by Viewed by clicking their 
+      7. They can be viewed by clicking their 
       Department below.
       </p>     
       </div>

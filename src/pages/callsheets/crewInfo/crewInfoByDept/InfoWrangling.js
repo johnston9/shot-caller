@@ -138,13 +138,20 @@ const InfoWrangling = ({crewInfoOne, setShowWra}) => {
          }
     </div>
     {/* Extra Positions Button */}
-    <Row className='mt-3'>
-           <Col className='text-center'>
-           <Button onClick={() => setShowConst(showConst => !showConst)}
-             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-             Extra Construction Dept Positions </Button>
-           </Col>
-         </Row>
+         <Row className='mt-3'>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShowConst(showConst => !showConst)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Construction Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowConst(showConst => !showConst)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Construction Dept Positions </Button>
+        </Col>
+      </Row>
          {!showConst ? (
              ""
                  ) : (
@@ -185,12 +192,19 @@ const InfoWrangling = ({crewInfoOne, setShowWra}) => {
       }
       </div>
       {/* Extra Positions Button */}
-      <Row className='mt-3'>
-           <Col className='text-center'>
-           <Button onClick={() => setShowWrang(showWrang => !showWrang)}
-             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-             Extra Wrangling Dept Positions </Button>
-           </Col>
+         <Row className='mt-3'>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShowWrang(showWrang => !showWrang)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Wrangling Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowWrang(showWrang => !showWrang)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Wrangling Dept Positions </Button>
+        </Col>
          </Row>
          {!showWrang ? (
              ""

@@ -433,12 +433,19 @@
         </div>
         {/* Extra Positions Button */}
         <Row className='mt-3'>
-          <Col className='text-center'>
-          <Button onClick={() => setShowAddit(showAddit => !showAddit)}
-            className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-            Non-Callsheet/Extra Additional Positions </Button>
-          </Col>
-        </Row>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShowAddit(showAddit => !showAddit)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Additional Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowAddit(showAddit => !showAddit)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Additional Positions </Button>
+        </Col>
+      </Row>
         {!showAddit ? (
             ""
                 ) : (

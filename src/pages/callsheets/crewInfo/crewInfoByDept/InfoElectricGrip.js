@@ -144,12 +144,19 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
       </div>
       {/* Extra Electric Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
-        <Button onClick={() => setShow(show => !show)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Electric Dept Positions </Button>
-        </Col>
-      </Row>
+              <Col className='text-center d-none d-md-block'>
+              <Button onClick={() => setShow(show => !show)}
+                className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+                ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+                Non-Callsheet Extra Electric Dept Positions </Button>
+              </Col>
+              <Col className='text-center d-block d-md-none'>
+              <Button onClick={() => setShow(show => !show)}
+                className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+                style={{ textTransform: 'uppercase'}}>
+                Non-Callsheet Extra Electric Dept Positions </Button>
+              </Col>
+            </Row>
       {!show ? (
           ""
               ) : (
@@ -372,11 +379,18 @@ const InfoElectric = ({crewInfoOne, setShowEle}) => {
         </div>
         {/* Extra Grip Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
-        <Button onClick={() => setShowGrip(showGrip => !showGrip)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Grip Positions </Button>
-        </Col>
+              <Col className='text-center d-none d-md-block'>
+              <Button onClick={() => setShowGrip(showGrip => !showGrip)}
+                className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+                ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+                Non-Callsheet Extra Grip Dept Positions </Button>
+              </Col>
+              <Col className='text-center d-block d-md-none'>
+              <Button onClick={() => setShowGrip(showGrip => !showGrip)}
+                className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+                style={{ textTransform: 'uppercase'}}>
+                Non-Callsheet Extra Grip Dept Positions </Button>
+              </Col>
       </Row>
       {!showGrip ? (
           ""

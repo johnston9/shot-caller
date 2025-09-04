@@ -1,5 +1,5 @@
 /* Info component on the Crew Info Page
-   telling users about Extar Crew */
+   telling users about Extra Crew */
    import React from "react";
    import Row from "react-bootstrap/Row";
    import Col from "react-bootstrap/Col";
@@ -11,7 +11,6 @@
            <Row className="mb-3">
          <Col className="d-none d-md-block" md={1}></Col>     
          <Col xs={12} md={10} >
-         {/* ${styles.SubTitle6 } */}
          <div className={`px-3 py-1 ${styles.SubTitle6}`}>
          <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>   
          <p className="px-3 pt-2" >

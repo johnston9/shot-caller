@@ -11,14 +11,12 @@
        <div>
            <Row className="mb-3">
            <Col md={{span: 10, offset: 1}}>
-           <div className={`text-center px-3 pt-1 ${styles.SubTitle7 }`}>
-           <h5 className={`text-center `} >INFO</h5>  
+           <div className={`text-center px-3 py-3 ${styles.SubTitle6 }`}>
            <p>
-           Create the Callsheet by filling in one or more time inputs and submiting. 
-           Add all other Info from the Edit page. 
-           <br /> 
-           Here the Cast and Background Calls are added seperatley from from links on the top section
-          of the page underneath which is the main Callsheet Edit form.
+           Create the Callsheet by filling in one or more time inputs and submiting.</p>
+           <p>
+           Add all other Info from the Edit page where the Cast and Background Calltimes
+          are added separately from links on the top.
              </p>
             </div> 
            </Col>

@@ -134,13 +134,20 @@ const InfoTVStudio = ({crewInfoOne, setShowTv}) => {
     }
     </div>
     {/* Extra Positions Button */}
-    <Row className='mt-3'>
-           <Col className='text-center'>
-           <Button onClick={() => setShowTvstu(showTvstu => !showTvstu)}
-             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-             Extra TV Studio Positions </Button>
-           </Col>
-         </Row>
+         <Row className='mt-3'>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShowTvstu(showTvstu => !showTvstu)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra TV Studio Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowTvstu(showTvstu => !showTvstu)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra TV Studio Positions </Button>
+        </Col>
+      </Row>
          {!showTvstu ? (
              ""
                  ) : (

@@ -137,10 +137,10 @@ const ExtraCrewInfo = (props) => {
     <div className="d-block d-md-none mt-3">
     <Row>
     <Col xs={12} >
-    <h5 className={`py-0 text-center ${styles.SubTitle }`} 
+    <h5 className={`py-1 text-center ${styles.SubTitle }`} 
         style={{ textTransform: 'uppercase' }}>
-            EXTRA {dept} 
-              </h5>
+            EXTRA {dept} POSITIONS
+    </h5>
     </Col>
     </Row>
     <Row>
@@ -155,7 +155,7 @@ const ExtraCrewInfo = (props) => {
       <Row>
       <Col>
       <div className="d-flex justify-content-center">
-      <p className={`text-center mt-3 ${styles.SubTitle3 }`}>ADD NEW POSITION</p>
+      <p className={`text-center mt-3 ${styles.SubTitle4 }`}>ADD NEW POSITION</p>
       </div>
       </Col>
       </Row>

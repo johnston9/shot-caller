@@ -112,10 +112,17 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
       </div>
       {/* Extra Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
+        <Col className='text-center d-none d-md-block'>
         <Button onClick={() => setShow(show => !show)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Stunt Dept Positions </Button>
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Stunt Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Stunt Dept Positions </Button>
         </Col>
       </Row>
       {!show ? (
@@ -210,10 +217,17 @@ const InfoStunts = ({crewInfoOne, setShowStu}) => {
         </div>
         {/* Extra SFX Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
+        <Col className='text-center d-none d-md-block'>
         <Button onClick={() => setShowSfx(showSfx => !showSfx)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra SFX Dept Positions </Button>
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra SFX Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowSfx(showSfx => !showSfx)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra SFX Dept Positions </Button>
         </Col>
       </Row>
       {!showSfx ? (

@@ -1,5 +1,5 @@
 /* Component in the CrewInfo page to display
-   the Camera Department crew info */
+   the Casting Department crew info */
    import React, { useState } from 'react';
    import { useRedirect } from '../../../../hooks/Redirect';
    import Col from 'react-bootstrap/Col';
@@ -54,12 +54,19 @@
          </div>
          {/* Extra Positions Button */}
          <Row className='mt-3'>
-           <Col className='text-center'>
-           <Button onClick={() => setShow(show => !show)}
-             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-             Extra Casting Dept Positions </Button>
-           </Col>
-         </Row>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Casting Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Casting Dept Positions </Button>
+        </Col>
+      </Row>
          {!show ? (
              ""
                  ) : (

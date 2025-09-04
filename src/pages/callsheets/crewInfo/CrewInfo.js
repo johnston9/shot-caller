@@ -136,7 +136,7 @@ const CrewInfo = () => {
       </p>
       <p className={`${styles.SmallCrew} text-center`} 
       style={{fontStyle: 'italic' }}>
-        Add/View Non-Callsheet Extra Crew here by Department
+        Add/View Non-Callsheet Extra Crew at the bottom of each Department
       </p>
       </Col>
       </Row>

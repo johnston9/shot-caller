@@ -297,10 +297,17 @@ const InfoWardrobe = ({setShowWar, crewInfoOne}) => {
       </div>
       {/* Extra Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
+        <Col className='text-center d-none d-md-block'>
         <Button onClick={() => setShow(show => !show)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Wardrobe Dept Positions </Button>
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Wardrobe Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Wardrobe Dept Positions </Button>
         </Col>
       </Row>
       {!show ? (

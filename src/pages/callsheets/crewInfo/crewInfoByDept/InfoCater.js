@@ -1,5 +1,5 @@
 /* Component in the CrewInfo page to display
-   the Script Department crew info */
+   the Catering Department crew info */
    import React, { useState } from 'react';
    import { useRedirect } from '../../../../hooks/Redirect';
    import Col from 'react-bootstrap/Col';
@@ -34,12 +34,19 @@
          </div>
          {/* Extra Positions Button */}
          <Row className='mt-3'>
-           <Col className='text-center'>
-           <Button onClick={() => setShowCater(showCater => !showCater)}
-             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-             Extra Catering Dept Positions </Button>
-           </Col>
-         </Row>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShowCater(showCater => !showCater)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Catering Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowCater(showCater => !showCater)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Catering Dept Positions </Button>
+        </Col>
+      </Row>
          {!showCater ? (
              ""
                  ) : (
@@ -107,12 +114,19 @@
          </div>
          {/* Extra Positions Button */}
          <Row className='mt-3'>
-           <Col className='text-center'>
-           <Button onClick={() => setShowCraft(showCraft => !showCraft)}
-             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-             Extra Craft Dept Positions </Button>
-           </Col>
-         </Row>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShowCraft(showCraft => !showCraft)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Craft Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowCraft(showCraft => !showCraft)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Craft Dept Positions </Button>
+        </Col>
+      </Row>
          {!showCraft ? (
              ""
                  ) : (

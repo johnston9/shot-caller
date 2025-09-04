@@ -1,5 +1,5 @@
 /* Component in the CrewInfo page to display
-   the Post Department and Additional Crew Positions crew info */
+   the Post/VFX Department Crew Positions crew info */
 import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';
@@ -83,10 +83,17 @@ const InfoPostVFX = ({crewInfoOne, setShowPos}) => {
 
       {/* Extra Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
+        <Col className='text-center d-none d-md-block'>
         <Button onClick={() => setShow(show => !show)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Extra Post/VFX Dept Positions </Button>
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Post/VFX Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShow(show => !show)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Post/VFX Positions </Button>
         </Col>
       </Row>
       {!show ? (

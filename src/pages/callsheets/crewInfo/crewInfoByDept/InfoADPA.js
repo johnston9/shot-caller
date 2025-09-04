@@ -167,10 +167,17 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
       </div> 
       {/* Extra Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
+        <Col className='text-center d-none d-md-block'>
         <Button onClick={() => setShowAd(showAd => !showAd)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Non-Callsheet/Extra AD Positions </Button>
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra AD Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowAd(showAd => !showAd)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra AD Positions </Button>
         </Col>
       </Row>
       {!showAd ? (
@@ -181,7 +188,7 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
                 setShow={setShowAd}  /> 
        ) } 
       {/* PRODUCTION ASSISTANTS */}
-      <div className={`mt-4 mx-md-5 text-center ${styles.SubTitle }`}>
+      <div className={`mt-5 mx-md-5 text-center ${styles.SubTitle }`}>
       <h5 className={`d-none d-md-block mb-0 text-center py-1 ${styles.Bold }`} >
         PRODUCTION ASSISTANTS</h5>
         <h5 className={`d-block d-md-none mb-0 text-center py-1 ${styles.Bold }`} >
@@ -269,10 +276,17 @@ const InfoADPA = ({crewInfoOne, setShowAD }) => {
       </div>      
       {/* Extra Positions Button */}
       <Row className='mt-3'>
-        <Col className='text-center'>
+        <Col className='text-center d-none d-md-block'>
         <Button onClick={() => setShowPa(showPa => !showPa)}
-          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-          Non-Callsheet/Extra PA Positions </Button>
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra PA Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowPa(showPa => !showPa)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra PA Positions </Button>
         </Col>
       </Row>
       {!showPa ? (

@@ -11,10 +11,10 @@ const InfoCrewCalls = () => {
     <div>
         <Row className="mb-3">
         <Col md={{span: 10, offset: 1}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle7 }`}>
-        <h5 className={`text-center `} >INFO</h5>  
-          <p>Clicking the SET UNIT CALL button will give every Crew member a call time
-            set to the Unit Call. This can then be changed individually for each 
+        <div className={`text-center px-3 py-2 ${styles.SubTitle6 }`}>
+          <p>Clicking the SET UNIT CALL button will give every Crew member a Calltime
+            set to the Unit Call.</p>
+            <p className="pt-2"> This can then be changed individually for each 
             Crew member.</p>
          </div> 
         </Col>

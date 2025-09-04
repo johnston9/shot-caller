@@ -243,13 +243,20 @@
          }
          </div>
         {/* Extra Positions Button */}
-         <Row className='mt-3'>
-           <Col className='text-center'>
-           <Button onClick={() => setShowTport(showTport => !showTport)}
-             className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}`}>
-             Extra Transport Dept Positions </Button>
-           </Col>
-         </Row>
+        <Row className='mt-3'>
+        <Col className='text-center d-none d-md-block'>
+        <Button onClick={() => setShowTport(showTport => !showTport)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed}
+          ${btnStyles.Wide4}`} style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Transport Dept Positions </Button>
+        </Col>
+        <Col className='text-center d-block d-md-none'>
+        <Button onClick={() => setShowTport(showTport => !showTport)}
+          className={`px-5 ${btnStyles.Button} ${btnStyles.Shed} ${btnStyles.Wide3}`}
+          style={{ textTransform: 'uppercase'}}>
+          Non-Callsheet Extra Transport Dept Positions </Button>
+        </Col>
+        </Row>
          {!showTport ? (
              ""
                  ) : (
