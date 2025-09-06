@@ -9,18 +9,21 @@ const Important = () => {
     <div>
         <Row className="mb-3">
         <Col md={{span: 8, offset: 2}}>
-        <div className={`text-center px-3 pt-1 ${styles.SubTitle2 }`}>
-        <h5 className={`text-center ${styles.golddark }`} >IMPORTANT</h5>  
-        <p className={`text-center pt-1 ${styles.Red }`}>
-          All Characters must be assigned a Number.<br/> 
-          The Email of the Actor playing the Character
-          must be added on the Edit Character page
-          accessible from the Edit Icon on the Character's Page.
-          This is imperative to the actor to receiving their Personal Calltimes on
-          their Callsheets.
-          </p>     
-          <p className={`text-center py-2`}>
-            The other Actor's Details and their Costume details are to be added on the Edit page too.
+        <div className={`px-3 py-2 ${styles.SubTitle6 }`}>
+          <p className={`${styles.Red} text-center`}>IMPORTANT</p>
+        <p className={`pt-1`}>
+          1. All Characters <span className={`${styles.Red}`}>MUST</span> be assigned a Number.</p>
+          <p className={`pt-2`}>
+          2. The actor playing the Character <span className={`${styles.Red}`}>MUST</span> be registered
+          in the "Manage Users" section on the Home page in order to access the app.
+        </p>
+        <p className={`pt-2`}>
+          3. When registering the actor their name and email <span className={`${styles.Red}`}>MUST ALSO</span> be
+          added on the Character Edit page, accessible from the Edit Icon on the Character's page,
+          in order for them to receive Callsheets.
+        </p>
+        <p className={`pt-2`}>
+          The Character Costume Details and Images are added on the Edit Character page.
           </p>
          </div> 
         </Col>

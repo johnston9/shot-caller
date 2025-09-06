@@ -146,10 +146,6 @@
   cursor: pointer;
 }
 
-/* i {
-  color: rgb(41, 180, 180);
-} */
-
 .Title {
   background-color: #fff;
 }
@@ -167,14 +163,7 @@
   color: #747686;
   padding: 0px 10px;
   height: 30px !important;
-  /* text-align: center; */
 } 
-
-/* @media screen and (max-width: 450px) {
-  .ImagesIndex {
-    height: 200px;
-  }
-} */
 
 @media screen and (max-width: 600px) {
 
