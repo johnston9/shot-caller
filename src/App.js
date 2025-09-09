@@ -111,6 +111,15 @@ function App() {
         {/* ---------------------HOME --------- */}
         {/* <Route exact path="/" render={() => <Landing />} /> */}
         <Route exact path="/home" render={() => <Home />} />
+        {/* ------------------FULLSIZE ------------------ */}
+        <Route 
+            exact 
+            path="/fullshot" 
+            render={() => (
+            <Fullshot
+            image={image}
+             />
+             )} />
         {/* -------------------SCHEDULE ----------- */}
         <Route exact path="/days/create" render={() => <DayCreateForm />} />
         <Route exact path="/edit/days/:id/" render={() => <DayEdit />} />
@@ -209,21 +218,6 @@ function App() {
             <IndexShotsPage
              />
              )} />
-             <Route 
-            exact 
-            path="/fullshot" 
-            render={() => (
-            <Fullshot
-            image={image}
-             />
-             )} />
-          {/* <Route 
-            exact 
-            path="/indexshots/fullsize/:id" 
-            render={() => (
-            <IndexShotsFullSize
-             />
-             )} /> */}
         {/* ----------------- MOODBOARDS ------------------*/}
         {/* The word moodshot is used through the app in the urls for moodboard */}
         <Route exact path="/moodshot/create" render={() => <MoodboardCreate />} />

@@ -16,7 +16,7 @@ const Important = () => {
       <h5 className={`text-center ${styles.Red }`} >IMPORTANT</h5>  
       <p className={`px-3 pt-1`}>
         1. All Crew Members needed to access the app must be registered
-         in the Admin section on the Home page.
+         in the "manage Users" section on the Home page.
       </p>
       <p className={`px-3 pt-2`}>
         2. The Crew positions have been divided into Callsheet/Main and Non-Callsheet/Extra.

@@ -1,21 +1,25 @@
-/* Component to continue to add and also edit the Company and Crew Info 
+/* Component to create the Company and Crew Info 
+ * It will be available only once to initialize the Company and Crew
+   Info dataset. After that all info will be added by the Edit page
  * Contains the CrewCompany, CrewProduction, CrewCastingAD,
-   CrewLocations, CrewScriptCater, CrewElecGrip, CrewMakeup,
+   CrewLocations, CrewScript, CrewCatering CrewElecGrip, CrewMakeup,
    CrewSoundTransport, CrewStunts, CrewArt, CrewCamera,
    CrewPostAdditional and CrewWardrobe Form components which are
    held in the addCrewInfoByDept folder to add info by department */
-import React, {useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styles from "../../../styles/Callsheets.module.css";
 import btnStyles from "../../../styles/Button.module.css";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../../api/axiosDefaults";
 import TopBox from "../../../components/TopBox";
 import { useRedirect } from "../../../hooks/Redirect";
 import { useSetEditCrewInfoContext } from "../../../contexts/BaseCallContext";
+
 import CrewCompany from "./addCrewInfoByDept/CrewCompany";
 import CrewProduction from "./addCrewInfoByDept/CrewProduction";
 import CrewLocations from "./addCrewInfoByDept/CrewLocations";
@@ -25,35 +29,28 @@ import CrewStunts from "./addCrewInfoByDept/CrewStunts";
 import CrewArt from "./addCrewInfoByDept/CrewArt";
 import CrewCamera from "./addCrewInfoByDept/CrewCamera";
 import CrewWardrobe from "./addCrewInfoByDept/CrewWardrobe";
-import Important from "../info/Important";
 import CrewScript from "./addCrewInfoByDept/CrewScript";
 import CrewCater from "./addCrewInfoByDept/CrewCater";
 import CrewCasting from "./addCrewInfoByDept/CrewCasting";
 import CrewADPA from "./addCrewInfoByDept/CrewADPA";
+import CrewSound from "./addCrewInfoByDept/CrewSound";
 import CrewTransport from "./addCrewInfoByDept/CrewTransport";
 import CrewPostVFX from "./addCrewInfoByDept/CrewPostVFX";
-import CrewWrangling from "./addCrewInfoByDept/CrewWrangling";
 import CrewTVStudio from "./addCrewInfoByDept/CrewTVStudio";
+import CrewWrangling from "./addCrewInfoByDept/CrewWrangling";
 import CrewAdditional from "./addCrewInfoByDept/CrewAdditional";
-import CrewSound from "./addCrewInfoByDept/CrewSound";
-// xx
-import Image from "react-bootstrap/Image";
-import Asset from "../../../components/Asset";
-import Upload from "../../../assets/upload.png";
-import Alert from "react-bootstrap/Alert";
+
+import Important from "../info/Important";
 import { toast } from 'react-toastify';
 
-const CrewInfoEdit = () => {
+const CrewInfoCreate = () => {
   useRedirect();
   // eslint-disable-next-line
   const [errors, setErrors] = useState({});
   const history = useHistory();
-  const { id } = useParams();
   const setEditCrewInfo = useSetEditCrewInfoContext();
-  // eslint-disable-next-line
-  const [show, setShow] = useState(false);
-  const [showImp, setShowImp] = useState(false);
 
+  const [showImp, setShowImp] = useState(false);
   const [showCom, setShowCom] = useState(false);
   const [showPro, setShowPro] = useState(false);
   const [showCam, setShowCam] = useState(false);
@@ -67,15 +64,12 @@ const CrewInfoEdit = () => {
   const [showStu, setShowStu] = useState(false);
   const [showPos, setShowPos] = useState(false);
   const [showWar, setShowWar] = useState(false);
-  const [showCat, setShowCat] = useState(false);
-  const [showAD, setShowAD] = useState(false); 
-  const [showTra, setShowTra] = useState(false); 
+  const [showCat, setShowCat] = useState(false); 
+  const [showAD, setShowAD] = useState(false);
+  const [showTra, setShowTra] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
   const [showTv, setShowTv] = useState(false);
   const [showWra, setShowWra] = useState(false);
-
-  const imageInput1 = useRef(null);  
-  console.log(imageInput1);
 
   const [postData, setPostData] = useState({
     // company
@@ -132,7 +126,7 @@ const CrewInfoEdit = () => {
     script_supervisor_name: "",
     script_supervisor_email: "",
     script_supervisor_phone: "",
-    // legal/medic
+    // legal / medic
     legal_name: "",
     legal_email: "",
     legal_phone: "",
@@ -225,7 +219,7 @@ const CrewInfoEdit = () => {
     sound_assistant_2_name: "",
     sound_assistant_2_email: "",
     sound_assistant_2_phone: "",
-    // hair/makeup
+    // makeup
     key_hairmakeup_name: "",
     key_hairmakeup_email: "",
     key_hairmakeup_phone: "",
@@ -532,7 +526,7 @@ const CrewInfoEdit = () => {
     add_pos_20_name: "",
     add_pos_20_email: "",
     add_pos_20_phone: "",
-  })
+})
 
   const { 
           // company
@@ -554,10 +548,7 @@ const CrewInfoEdit = () => {
           script_supervisor_name, script_supervisor_email, script_supervisor_phone,
           legal_name, legal_email, legal_phone,
           set_medic_name, set_medic_email, set_medic_phone,
-          // casting
-          casting_director_name, casting_director_email, casting_director_phone,
-          extras_casting_name, extras_casting_email, extras_casting_phone,
-          // AD
+          // ad
           ad_1_name, ad_1_email, ad_1_phone,
           ad_2_name, ad_2_email, ad_2_phone,
           ad_3_name, ad_3_email, ad_3_phone,
@@ -586,18 +577,7 @@ const CrewInfoEdit = () => {
           boom_operator_name, boom_operator_email, boom_operator_phone,
           sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
           sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
-          // transport
-          transport_captain_name, transport_captain_email, transport_captain_phone,
-          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
-          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
-          head_driver_name, head_driver_email, head_driver_phone,
-          car1_name, car1_email, car1_phone,
-          car2_name, car2_email, car2_phone,
-          car3_name, car3_email, car3_phone,
-          truck1_name, truck1_email, truck1_phone,
-          truck2_name, truck2_email, truck2_phone,
-          truck3_name, truck3_email, truck3_phone,
-          // makeup
+          // hair/makeup
           key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
           key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
           sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
@@ -648,15 +628,12 @@ const CrewInfoEdit = () => {
           stunts_4_name, stunts_4_email, stunts_4_phone,
           stunts_5_name, stunts_5_email, stunts_5_phone,
           // post/script
-          editor_name, editor_email, editor_phone, 
+          editor_name, editor_email, editor_phone,
           fx_name, fx_email, fx_phone,
           writer_name, writer_email, writer_phone,
-          // catering
-          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
-          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
-          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
-          craft_service_name, craft_service_email, craft_service_phone,
-          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
+          // casting
+          casting_director_name, casting_director_email, casting_director_phone,
+          extras_casting_name, extras_casting_email, extras_casting_phone,
           // locations
           location_mngr_name, location_mngr_email, location_mngr_phone,
           location_ass_1_name, location_ass_1_email, location_ass_1_phone,
@@ -664,6 +641,23 @@ const CrewInfoEdit = () => {
           location_ass_3_name, location_ass_3_email, location_ass_3_phone,
           location_ass_4_name, location_ass_4_email, location_ass_4_phone,
           location_security_name, location_security_email, location_security_phone,
+          // transport
+          transport_captain_name, transport_captain_email, transport_captain_phone,
+          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
+          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
+          head_driver_name, head_driver_email, head_driver_phone,
+          car1_name, car1_email, car1_phone,
+          car2_name, car2_email, car2_phone,
+          car3_name, car3_email, car3_phone,
+          truck1_name, truck1_email, truck1_phone,
+          truck2_name, truck2_email, truck2_phone,
+          truck3_name, truck3_email, truck3_phone,
+          // catering
+          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
+          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
+          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
+          craft_service_name, craft_service_email, craft_service_phone,
+          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
           // additional 1-10
           add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
           add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
@@ -686,294 +680,9 @@ const CrewInfoEdit = () => {
           add_pos_18_job, add_pos_18_name, add_pos_18_email, add_pos_18_phone,
           add_pos_19_job, add_pos_19_name, add_pos_19_email, add_pos_19_phone,
           add_pos_20_job, add_pos_20_name, add_pos_20_email, add_pos_20_phone,
-           } = postData;
+          } = postData;
 
-  useEffect(() => {
-    /* Function to fetch and set the crew info */
-    const handleMount = async () => {
-      try {
-        const { data } = await axiosReq.get(`/crewinfonew/${id}/`);
-        console.log(data);
-        const { 
-          production_name, production_company, company_phone, company_email,
-          company_address_line_1, company_address_line_2, company_address_line_3,
-          company_address_line_4, company_logo, total_shoot_days,
-          director_name, director_email, director_phone,
-          producer_name, producer_email, producer_phone,
-          pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
-          upm_name, upm_email, upm_phone,
-          travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
-          production_pa_name, production_pa_email, production_pa_phone,
-          oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
-          oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
-          oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
-          oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
-          oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
-          ad_1_name, ad_1_email, ad_1_phone,
-          ad_2_name, ad_2_email, ad_2_phone,
-          ad_3_name, ad_3_email, ad_3_phone,
-          ad_4_name, ad_4_email, ad_4_phone,
-          ad_5_name, ad_5_email, ad_5_phone,
-          pro_assistant_1_name, pro_assistant_1_email, pro_assistant_1_phone,
-          pro_assistant_2_name, pro_assistant_2_email, pro_assistant_2_phone,
-          pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
-          pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
-          pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
-          dop_name, dop_email, dop_phone,
-          camera_operator_name, camera_operator_email, camera_operator_phone,
-          camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
-          camera_ass_2_name, camera_ass_2_email, camera_ass_2_phone,
-          dit_name, dit_email, dit_phone,
-          steadicam_name, steadicam_email, steadicam_phone,
-          camera_pa_name, camera_pa_email, camera_pa_phone,
-          oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
-          oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
-          oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
-          oth_camera_pos_4_job, oth_camera_pos_4_name, oth_camera_pos_4_email, oth_camera_pos_4_phone,
-          oth_camera_pos_5_job, oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
-          sound_mixer_name, sound_mixer_email, sound_mixer_phone,
-          boom_operator_name, boom_operator_email, boom_operator_phone,
-          sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
-          sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
-          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
-          key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
-          key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
-          sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
-          sfx_makeup_assistant_name, sfx_makeup_assistant_email, sfx_makeup_assistant_phone,
-          makeup_artist_1_name, makeup_artist_1_email, makeup_artist_1_phone,
-          makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
-          makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
-          makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
-          makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
-          costume_designer_name, costume_designer_email, costume_designer_phone,
-          ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
-          wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
-          wardrobe_assistant_2_name, wardrobe_assistant_2_email, wardrobe_assistant_2_phone,
-          wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
-          wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
-          wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,
-          production_designer_name, production_designer_email, production_designer_phone,
-          art_director_name, art_director_email, art_director_phone,
-          art_assistant_name, art_assistant_email, art_assistant_phone,
-          set_decorator_name, set_decorator_email, set_decorator_phone,
-          set_dresser_name, set_dresser_email, set_dresser_phone,
-          lead_man_name, lead_man_email, lead_man_phone,
-          dresser_name, dresser_email, dresser_phone,
-          prop_master_name, prop_master_email, prop_master_phone,
-          ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
-          prop_buyer_name, prop_buyer_email, prop_buyer_phone,
-          armorer_name, armorer_email, armorer_phone,
-          gaffer_name, gaffer_email, gaffer_phone,
-          best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
-          electric_3_name, electric_3_email, electric_3_phone,
-          electric_4_name, electric_4_email, electric_4_phone,
-          keygrip_name, keygrip_email, keygrip_phone,
-          best_boy_grip_name, best_boy_grip_email, best_boy_grip_phone,
-          dolly_grip_name, dolly_grip_email, dolly_grip_phone,
-          swing_ge1_name, swing_ge1_email, swing_ge1_phone,
-          swing_ge2_name, swing_ge2_email, swing_ge2_phone,
-          swing_ge3_name, swing_ge3_email, swing_ge3_phone,
-          swing_ge4_name, swing_ge4_email, swing_ge4_phone,
-          swing_ge5_name, swing_ge5_email, swing_ge5_phone,
-          stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
-          stunts_1_name, stunts_1_email, stunts_1_phone,
-          stunts_2_name, stunts_2_email, stunts_2_phone,
-          stunts_3_name, stunts_3_email, stunts_3_phone,
-          stunts_4_name, stunts_4_email, stunts_4_phone,
-          stunts_5_name, stunts_5_email, stunts_5_phone,
-          legal_name, legal_email, legal_phone,
-          editor_name, editor_email, editor_phone,
-          set_medic_name, set_medic_email, set_medic_phone,
-          casting_director_name, casting_director_email, casting_director_phone,
-          extras_casting_name, extras_casting_email, extras_casting_phone,
-          writer_name, writer_email, writer_phone,
-          fx_name, fx_email, fx_phone,
-          location_mngr_name, location_mngr_email, location_mngr_phone,
-          location_ass_1_name, location_ass_1_email, location_ass_1_phone,
-          location_ass_2_name, location_ass_2_email, location_ass_2_phone,
-          location_ass_3_name, location_ass_3_email, location_ass_3_phone,
-          location_ass_4_name, location_ass_4_email, location_ass_4_phone,
-          location_security_name, location_security_email, location_security_phone,
-          transport_captain_name, transport_captain_email, transport_captain_phone,
-          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
-          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
-          head_driver_name, head_driver_email, head_driver_phone,
-          car1_name, car1_email, car1_phone,
-          car2_name, car2_email, car2_phone,
-          car3_name, car3_email, car3_phone,
-          truck1_name, truck1_email, truck1_phone,
-          truck2_name, truck2_email, truck2_phone,
-          truck3_name, truck3_email, truck3_phone,
-          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
-          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
-          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
-          craft_service_name, craft_service_email, craft_service_phone,
-          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
-          add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
-          add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
-          add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
-          add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
-          add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
-          add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
-          add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
-          add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
-          add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
-          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
-          add_pos_11_job, add_pos_11_name, add_pos_11_email, add_pos_11_phone,
-          add_pos_12_job, add_pos_12_name, add_pos_12_email, add_pos_12_phone,
-          add_pos_13_job, add_pos_13_name, add_pos_13_email, add_pos_13_phone,
-          add_pos_14_job, add_pos_14_name, add_pos_14_email, add_pos_14_phone,
-          add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone,
-          add_pos_16_job, add_pos_16_name, add_pos_16_email, add_pos_16_phone,
-          add_pos_17_job, add_pos_17_name, add_pos_17_email, add_pos_17_phone,
-          add_pos_18_job, add_pos_18_name, add_pos_18_email, add_pos_18_phone,
-          add_pos_19_job, add_pos_19_name, add_pos_19_email, add_pos_19_phone,
-          add_pos_20_job, add_pos_20_name, add_pos_20_email, add_pos_20_phone,
-           } = data;
-
-        setPostData({ 
-          production_name, production_company, company_phone, company_email,
-          company_address_line_1, company_address_line_2, company_address_line_3,
-          company_address_line_4, company_logo, total_shoot_days,
-          director_name, director_email, director_phone,
-          producer_name, producer_email, producer_phone,
-          pro_coordinator_name, pro_coordinator_email, pro_coordinator_phone,
-          upm_name, upm_email, upm_phone,
-          travel_coordinator_name, travel_coordinator_email, travel_coordinator_phone,
-          production_pa_name, production_pa_email, production_pa_phone,
-          oth_production_pos_1_job, oth_production_pos_1_name, oth_production_pos_1_email, oth_production_pos_1_phone,
-          oth_production_pos_2_job, oth_production_pos_2_name, oth_production_pos_2_email, oth_production_pos_2_phone,
-          oth_production_pos_3_job, oth_production_pos_3_name, oth_production_pos_3_email, oth_production_pos_3_phone,
-          oth_production_pos_4_job, oth_production_pos_4_name, oth_production_pos_4_email, oth_production_pos_4_phone,
-          oth_production_pos_5_job, oth_production_pos_5_name, oth_production_pos_5_email, oth_production_pos_5_phone,
-          ad_1_name, ad_1_email, ad_1_phone,
-          ad_2_name, ad_2_email, ad_2_phone,
-          ad_3_name, ad_3_email, ad_3_phone,
-          ad_4_name, ad_4_email, ad_4_phone,
-          ad_5_name, ad_5_email, ad_5_phone,
-          pro_assistant_1_name, pro_assistant_1_email, pro_assistant_1_phone,
-          pro_assistant_2_name, pro_assistant_2_email, pro_assistant_2_phone,
-          pro_assistant_3_name, pro_assistant_3_email, pro_assistant_3_phone,
-          pro_assistant_4_name, pro_assistant_4_email, pro_assistant_4_phone,
-          pro_assistant_5_name, pro_assistant_5_email, pro_assistant_5_phone,
-          dop_name, dop_email, dop_phone,
-          camera_operator_name, camera_operator_email, camera_operator_phone,
-          camera_ass_1_name, camera_ass_1_email, camera_ass_1_phone,
-          camera_ass_2_name, camera_ass_2_email, camera_ass_2_phone,
-          dit_name, dit_email, dit_phone,
-          steadicam_name, steadicam_email, steadicam_phone,
-          camera_pa_name, camera_pa_email, camera_pa_phone,
-          oth_camera_pos_1_job, oth_camera_pos_1_name, oth_camera_pos_1_email, oth_camera_pos_1_phone,
-          oth_camera_pos_2_job, oth_camera_pos_2_name, oth_camera_pos_2_email, oth_camera_pos_2_phone,
-          oth_camera_pos_3_job, oth_camera_pos_3_name, oth_camera_pos_3_email, oth_camera_pos_3_phone,
-          oth_camera_pos_4_job, oth_camera_pos_4_name, oth_camera_pos_4_email, oth_camera_pos_4_phone,
-          oth_camera_pos_5_job, oth_camera_pos_5_name, oth_camera_pos_5_email, oth_camera_pos_5_phone,
-          sound_mixer_name, sound_mixer_email, sound_mixer_phone,
-          boom_operator_name, boom_operator_email, boom_operator_phone,
-          sound_assistant_1_name, sound_assistant_1_email, sound_assistant_1_phone,
-          sound_assistant_2_name, sound_assistant_2_email, sound_assistant_2_phone,
-          script_supervisor_name, script_supervisor_email, script_supervisor_phone,
-          key_hairmakeup_name, key_hairmakeup_email, key_hairmakeup_phone,
-          key_hairstylist_name, key_hairstylist_email, key_hairstylist_phone,
-          sfx_makeup_name, sfx_makeup_email, sfx_makeup_phone,
-          sfx_makeup_assistant_name, sfx_makeup_assistant_email, sfx_makeup_assistant_phone,
-          makeup_artist_1_name, makeup_artist_1_email, makeup_artist_1_phone,
-          makeup_artist_2_name, makeup_artist_2_email, makeup_artist_2_phone,
-          makeup_artist_3_name, makeup_artist_3_email, makeup_artist_3_phone,
-          makeup_artist_4_name, makeup_artist_4_email, makeup_artist_4_phone,
-          makeup_artist_5_name, makeup_artist_5_email, makeup_artist_5_phone,
-          costume_designer_name, costume_designer_email, costume_designer_phone,
-          ass_costume_designer_name, ass_costume_designer_email, ass_costume_designer_phone,
-          wardrobe_assistant_1_name, wardrobe_assistant_1_email, wardrobe_assistant_1_phone,
-          wardrobe_assistant_2_name, wardrobe_assistant_2_email, wardrobe_assistant_2_phone,
-          wardrobe_assistant_3_name, wardrobe_assistant_3_email, wardrobe_assistant_3_phone,
-          wardrobe_assistant_4_name, wardrobe_assistant_4_email, wardrobe_assistant_4_phone,
-          wardrobe_assistant_5_name, wardrobe_assistant_5_email, wardrobe_assistant_5_phone,
-          production_designer_name, production_designer_email, production_designer_phone,
-          art_director_name, art_director_email, art_director_phone,
-          art_assistant_name, art_assistant_email, art_assistant_phone,
-          set_decorator_name, set_decorator_email, set_decorator_phone,
-          set_dresser_name, set_dresser_email, set_dresser_phone,
-          lead_man_name, lead_man_email, lead_man_phone,
-          dresser_name, dresser_email, dresser_phone,
-          prop_master_name, prop_master_email, prop_master_phone,
-          ass_prop_master_name, ass_prop_master_email, ass_prop_master_phone,
-          prop_buyer_name, prop_buyer_email, prop_buyer_phone,
-          armorer_name, armorer_email, armorer_phone,
-          gaffer_name, gaffer_email, gaffer_phone,
-          best_boy_electric_name, best_boy_electric_email, best_boy_electric_phone,
-          electric_3_name, electric_3_email, electric_3_phone,
-          electric_4_name, electric_4_email, electric_4_phone,
-          keygrip_name, keygrip_email, keygrip_phone,
-          best_boy_grip_name, best_boy_grip_email, best_boy_grip_phone,
-          dolly_grip_name, dolly_grip_email, dolly_grip_phone,
-          swing_ge1_name, swing_ge1_email, swing_ge1_phone,
-          swing_ge2_name, swing_ge2_email, swing_ge2_phone,
-          swing_ge3_name, swing_ge3_email, swing_ge3_phone,
-          swing_ge4_name, swing_ge4_email, swing_ge4_phone,
-          swing_ge5_name, swing_ge5_email, swing_ge5_phone,
-          stunt_coordinator_name, stunt_coordinator_email, stunt_coordinator_phone,
-          stunts_1_name, stunts_1_email, stunts_1_phone,
-          stunts_2_name, stunts_2_email, stunts_2_phone,
-          stunts_3_name, stunts_3_email, stunts_3_phone,
-          stunts_4_name, stunts_4_email, stunts_4_phone,
-          stunts_5_name, stunts_5_email, stunts_5_phone,
-          legal_name, legal_email, legal_phone,
-          editor_name, editor_email, editor_phone,
-          set_medic_name, set_medic_email, set_medic_phone,
-          casting_director_name, casting_director_email, casting_director_phone,
-          extras_casting_name, extras_casting_email, extras_casting_phone,
-          writer_name, writer_email, writer_phone,
-          fx_name, fx_email, fx_phone,
-          location_mngr_name, location_mngr_email, location_mngr_phone,
-          location_ass_1_name, location_ass_1_email, location_ass_1_phone,
-          location_ass_2_name, location_ass_2_email, location_ass_2_phone,
-          location_ass_3_name, location_ass_3_email, location_ass_3_phone,
-          location_ass_4_name, location_ass_4_email, location_ass_4_phone,
-          location_security_name, location_security_email, location_security_phone,
-          transport_captain_name, transport_captain_email, transport_captain_phone,
-          transport_manager_1_name, transport_manager_1_email, transport_manager_1_phone, 
-          transport_manager_2_name, transport_manager_2_email, transport_manager_2_phone, 
-          head_driver_name, head_driver_email, head_driver_phone,
-          car1_name, car1_email, car1_phone,
-          car2_name, car2_email, car2_phone,
-          car3_name, car3_email, car3_phone,
-          truck1_name, truck1_email, truck1_phone,
-          truck2_name, truck2_email, truck2_phone,
-          truck3_name, truck3_email, truck3_phone,
-          catering_co_1_name, catering_co_1_email, catering_co_1_phone,
-          catering_co_2_name, catering_co_2_email, catering_co_2_phone,
-          catering_co_3_name, catering_co_3_email, catering_co_3_phone,
-          craft_service_name, craft_service_email, craft_service_phone,
-          crafty_ass_name, crafty_ass_email, crafty_ass_phone,
-          add_pos_1_job, add_pos_1_name, add_pos_1_email, add_pos_1_phone,
-          add_pos_2_job, add_pos_2_name, add_pos_2_email, add_pos_2_phone,
-          add_pos_3_job, add_pos_3_name, add_pos_3_email, add_pos_3_phone,
-          add_pos_4_job, add_pos_4_name, add_pos_4_email, add_pos_4_phone,
-          add_pos_5_job, add_pos_5_name, add_pos_5_email, add_pos_5_phone,
-          add_pos_6_job, add_pos_6_name, add_pos_6_email, add_pos_6_phone,
-          add_pos_7_job, add_pos_7_name, add_pos_7_email, add_pos_7_phone,
-          add_pos_8_job, add_pos_8_name, add_pos_8_email, add_pos_8_phone,
-          add_pos_9_job, add_pos_9_name, add_pos_9_email, add_pos_9_phone,
-          add_pos_10_job, add_pos_10_name, add_pos_10_email, add_pos_10_phone,
-          add_pos_11_job, add_pos_11_name, add_pos_11_email, add_pos_11_phone,
-          add_pos_12_job, add_pos_12_name, add_pos_12_email, add_pos_12_phone,
-          add_pos_13_job, add_pos_13_name, add_pos_13_email, add_pos_13_phone,
-          add_pos_14_job, add_pos_14_name, add_pos_14_email, add_pos_14_phone,
-          add_pos_15_job, add_pos_15_name, add_pos_15_email, add_pos_15_phone,
-          add_pos_16_job, add_pos_16_name, add_pos_16_email, add_pos_16_phone,
-          add_pos_17_job, add_pos_17_name, add_pos_17_email, add_pos_17_phone,
-          add_pos_18_job, add_pos_18_name, add_pos_18_email, add_pos_18_phone,
-          add_pos_19_job, add_pos_19_name, add_pos_19_email, add_pos_19_phone,
-          add_pos_20_job, add_pos_20_name, add_pos_20_email, add_pos_20_phone,
-           } );
-          } catch (err) {
-            console.log(err);
-          }
-        };
-
-    handleMount();
-  }, [id]);
+  const imageInput1 = useRef(null);
 
   const handleChange = (event) => {
     setPostData({
@@ -1004,10 +713,6 @@ const CrewInfoEdit = () => {
     formData.append("company_address_line_2", company_address_line_2);
     formData.append("company_address_line_3", company_address_line_3);
     formData.append("company_address_line_4", company_address_line_4);
-    formData.append("company_address_line_4", company_address_line_4);
-    if(imageInput1.current.files[0]) {
-      formData.append("company_logo", imageInput1.current.files[0])
-    };
     formData.append("director_name", director_name);
     formData.append("director_email", director_email);
     formData.append("director_phone", director_phone); 
@@ -1352,6 +1057,7 @@ const CrewInfoEdit = () => {
     formData.append("crafty_ass_name", crafty_ass_name);
     formData.append("crafty_ass_email", crafty_ass_email);
     formData.append("crafty_ass_phone", crafty_ass_phone); 
+    // additional positions
     formData.append("add_pos_1_job", add_pos_1_job);
     formData.append("add_pos_1_name", add_pos_1_name);
     formData.append("add_pos_1_email", add_pos_1_email);
@@ -1391,7 +1097,7 @@ const CrewInfoEdit = () => {
     formData.append("add_pos_10_job", add_pos_10_job);
     formData.append("add_pos_10_name", add_pos_10_name);
     formData.append("add_pos_10_email", add_pos_10_email);
-    formData.append("add_pos_10_phone", add_pos_10_phone);
+    formData.append("add_pos_10_phone", add_pos_10_phone);   
     // addttional positions 11-20
     formData.append("add_pos_11_job", add_pos_11_job);
     formData.append("add_pos_11_name", add_pos_11_name);
@@ -1433,12 +1139,15 @@ const CrewInfoEdit = () => {
     formData.append("add_pos_20_name", add_pos_20_name);
     formData.append("add_pos_20_email", add_pos_20_email);
     formData.append("add_pos_20_phone", add_pos_20_phone); 
+    if(imageInput1.current.files[0]) {
+      formData.append("company_logo", imageInput1.current.files[0]);
+    }
     try {
-      const {data} = await axiosReq.put(`/crewinfonew/${id}/`, formData);
+      const {data} = await axiosReq.post("/crewinfonew/", formData);
       setEditCrewInfo(true);
-      console.log(data)
       history.goBack();
-      toast.success(`CrewInfo Updated`);
+      toast.success(`CrewInfo Created`);
+      console.log(data);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -1448,7 +1157,7 @@ const CrewInfoEdit = () => {
   }
 
   const buttons = (
-  <div className="text-center pb-3 mb-4 mt-4">    
+  <div className="text-center mt-4 mb-4">    
     <Button
       className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
       onClick={() => history.goBack()}
@@ -1464,7 +1173,7 @@ const CrewInfoEdit = () => {
   return (
     <div>
     <TopBox work="Crew Info"
-            title="Add / Edit"/>
+            title="Create"/>
     <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
         onClick={() => history.goBack()}
@@ -1475,13 +1184,25 @@ const CrewInfoEdit = () => {
       className={`float-right py-0 mt-1 ${btnStyles.Order} ${btnStyles.Button}`}
       onClick={() => setShowImp(showImp => !showImp)} >IMPORTANT
     </Button>
-    {/* logo */}
       {!showImp ? (
           ""
-      ) : (
-        <Important  /> 
-        ) }   
-    <Form className= {`mt-3 mb-1`} onSubmit={handleSubmit}>
+              ) : (
+                <Important  /> 
+                ) } 
+    <Row className="text-center mt-3">
+        <Col md={{span: 8, offset: 2}}>
+        <p>The "Create" Button on this page creates the "Crew Info" page for the
+          first time whether one crew member or many are added.
+        </p>
+        <p>
+          After that the Edit button on the "Crew Info" page is used 
+          to add or edit Callsheet Main Crew members the page at future stages.</p>
+        <p> 
+          The Information buttons on the page will instruct and inform more regarding
+          Crew Info.</p>
+        </Col>
+      </Row>
+    <Form className= {`my-3 ${styles.Back}`} onSubmit={handleSubmit}>
     <div className={`pt-2 ${styles.White }`}> 
       <Row className={`${styles.ButtonLine} mt-0`}>
       <Col className='text-center'>
@@ -1492,37 +1213,37 @@ const CrewInfoEdit = () => {
           </Col>
       </Row>
       <Row className={`${styles.ButtonLine} mt-0`}>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowPro(showPro => !showPro)} > Production
             </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                 <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowCam(showCam => !showCam)} > Camera
                 </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowAD(showAD => !showAD)} > AD/PA
           </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
         <p
             className={`py-0 mb-0 ${styles.Button}`}
             onClick={() => setShowLoc(showLoc => !showLoc)} >Locations
         </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowWar(showWar => !showWar)} >Wardrobe
           </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowScr(showScr => !showScr)} > Script
@@ -1530,80 +1251,76 @@ const CrewInfoEdit = () => {
         </Col>
       </Row>  
       <Row className={`${styles.ButtonLine} text-center mt-1`}>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
             <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowEle(showEle => !showEle)} > Electric/Grip
             </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
                 <p
                   className={`py-0 mb-0 ${styles.Button}`}
                   onClick={() => setShowMak(showMak => !showMak)} > Makeup
                 </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowSou(showSou => !showSou)} > Sound
           </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
         <p
             className={`py-0 mb-0 ${styles.Button}`}
             onClick={() => setShowStu(showStu => !showStu)} >Stunts/SFX
         </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowArt(showArt => !showArt)} > Art
           </p>
         </Col>
-        <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+        <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowPos(showPos => !showPos)} > Post/VFX
           </p>
         </Col>
       </Row>  
-      {/* new row - Catering - Casting - Transport - Wrangling - TV Studio -Additional */}
+      {/* new row - Catering - Casting - Transport - Wrangling - TV Studio -Additional*/}
       <Row className={`${styles.ButtonLine} mt-1`}>
-      <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowCat(showCat => !showCat)} > Catering/Craft
           </p>
       </Col>
-      <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowCas(showCas => !showCas)} > Casting
           </p>
       </Col>
-      <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowTra(showTra => !showTra)} > Transport
           </p>
       </Col>
-      <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
-              <p
-                  className={`d-block d-lg-none py-0 mb-0 ${styles.Button}`}
-                  onClick={() => setShowWra(showWra => !showWra)} > Construction/Wr
-              </p>
-              <p
-                  className={`d-none d-lg-block py-0 mb-0 ${styles.Button}`}
-                  onClick={() => setShowWra(showWra => !showWra)} > Construction/Wrangling
-              </p>
-          </Col>
-      <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+          <p
+              className={`py-0 mb-0 ${styles.Button}`}
+              onClick={() => setShowWra(showWra => !showWra)} >Construction/Wrangling
+          </p>
+      </Col>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowTv(showTv => !showTv)} > TV Studio
           </p>
       </Col>
-      <Col xs={4} md={2} className='mx-0 px-0 pt-1 text-center'>
+      <Col xs={6} sm={4} md={2} className='mx-0 px-0 pt-1 text-center'>
           <p
               className={`py-0 mb-0 ${styles.Button}`}
               onClick={() => setShowAdd(showAdd => !showAdd)} >Additional
@@ -1615,15 +1332,15 @@ const CrewInfoEdit = () => {
       </div>
     </div>
     <div className={`mt-0`}>
-    {/* Add Company */}
-    {!showCom ? (
-      ""
-          ) : (
-            <CrewCompany handleChange={handleChange}
-            handleChangeLogo={handleChangeLogo}
-            imageInput1={imageInput1}
-            postData={postData} setShow={setShowCom} /> 
-            ) }  
+        {/* Add Company */}
+        {!showCom ? (
+          ""
+              ) : (
+                <CrewCompany handleChange={handleChange}
+                handleChangeLogo={handleChangeLogo}
+                imageInput1={imageInput1}
+                postData={postData} setShow={setShowCom} /> 
+                ) }  
         {/* Add Production */}
         {!showPro ? (
           ""
@@ -1658,8 +1375,7 @@ const CrewInfoEdit = () => {
               ) : (
                 <CrewCater setShow={setShowCat} 
                 postData={postData} handleChange={handleChange}/> 
-                ) }
-        {/* Add Sound */}
+                ) } 
         {!showSou ? (
                 ""
               ) : (
@@ -1707,7 +1423,7 @@ const CrewInfoEdit = () => {
               ) : (
                 <CrewLocations setShow={setShowLoc} 
                 postData={postData} handleChange={handleChange}/> 
-                ) }  
+                ) } 
         {/* Add Electric */}
         {!showEle ? (
                 ""
@@ -1751,61 +1467,10 @@ const CrewInfoEdit = () => {
                 postData={postData} handleChange={handleChange} /> 
                 ) } 
     </div>
-    <div className={`py-2 ${styles.White }`}>
-    </div>
-      {/* buttons */}
-      <h3 className={` mb-0 py-1 ${styles.SubTitle }`} > </h3> 
-      <div className={`py-2 ${styles.White }`}>
-      </div>
     {buttons}
-    <Row>
-    <Col md={{span:6, offset:3}}>
-    <div className={`d-flex flex-column justify-content-center`}>
-    <Form.Group className="text-center pt-3">
-        {company_logo ? (
-        <>
-            <figure>
-            <Image className={styles.LogoEdit} src={company_logo} rounded />
-            </figure>
-            <div>
-            <Form.Label
-                className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                htmlFor="image-upload"
-            >
-            </Form.Label>
-            </div>
-        </>
-        ) : (
-        <Form.Label
-            className="d-flex justify-content-center"
-            htmlFor="image-upload"
-        >
-            <Asset
-            src={Upload}
-            message="Upload Image"
-            />
-        </Form.Label>
-        )}
-
-        <Form.Control
-        type="file"
-        id="image-upload"
-        accept="image/*"
-        onChange={handleChangeLogo}
-        ref={imageInput1}
-        />
-    </Form.Group>
-    {errors?.company_logo?.map((message, idx) => (
-    <Alert variant="warning" key={idx}>
-        {message}
-    </Alert>
-    ))}
-    </div>
-    </Col>
-    </Row>  
     </Form>
     </div>
   )
 }
 
-export default CrewInfoEdit
+export default CrewInfoCreate

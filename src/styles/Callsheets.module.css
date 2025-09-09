@@ -2,9 +2,8 @@
     min-height: 100px;
 }
 
-.WhiteEdit {
+.White {
   background-color: #fff;
-  border: 2px solid #c1f1f7;
 }
 
 .Break7 {
@@ -184,6 +183,13 @@ p {
 }
 
 .SubTitle6 {
+  background-color: #fff;
+  font-weight: 700;
+  color: #000;
+  border: 1px solid red;
+}
+
+.SubTitle11 {
   background-color: #fff;
   font-weight: 700;
   color: #000;

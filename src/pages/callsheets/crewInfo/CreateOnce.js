@@ -15,10 +15,12 @@ const CreateOnce = () => {
     useRedirect();
   const history = useHistory();
   return (
-    <div className={`${styles.Important} py-2 mx-5 my-3`}>
-        <h3 className={`text-center  ${styles.ImportantText}`}>INITIALIZE THE COMPANY AND CREWINFO PAGE </h3>
-        <p className={`text-center  ${styles.ImportantText}`} >The Create Crew Info Page Button is used to create the page. <br/> After that  
-          all new info and edits can be done by using the Edit Info Button.  </p>
+    <div className={`${styles.SubTitle11 } py-2 mx-5 mt-3 mb-5`}>
+        <h4 className={`text-center  ${styles.ImportantText}`}>
+          INITIALIZE THE CREWINFO PAGE </h4>
+        <p className={`text-center  ${styles.ImportantText}`} >
+          Before proceeding click the "Create Crew Info Page" 
+          button below to create the Crew Info page. </p>
         {/* crew info create button*/}
         <Row className=" mt-2 text-center">
               <Col >

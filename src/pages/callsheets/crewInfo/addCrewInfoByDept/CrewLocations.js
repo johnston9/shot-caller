@@ -1,5 +1,5 @@
-/*Form component in the CrewInfoCreate and CrewInfoEdit Form
-  components to add/edit the Location Department crew info */
+/*Form component in the CrewInfoEdit Form
+  component to add/edit the Location Department crew info */
 import React, { useState } from "react";
 import { useRedirect } from '../../../../hooks/Redirect';
 import Form from "react-bootstrap/Form";

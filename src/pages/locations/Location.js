@@ -149,6 +149,7 @@ const Location = (props) => {
                 <div className={`${styles.Para}`}>
                 <p className={`${styles.Role}`}>{description} </p>
                 </div>
+                <hr className='d-block d-md-none'/>
                 </Col>
                 <Col xs={12} md={6} className='pt-3 pt-md-3'>
                 <p className={`${styles.BoldTitle} mb-2 text-center mx-1 mx-sm-5`}>PRIMARY FILMING ADDRESS</p>
@@ -181,7 +182,7 @@ const Location = (props) => {
             </div>
             <h5 className={`text-center mt-4 mb-4 py-0 mx-md-4 ${styles.SubTitle }`}
              style={{ textTransform: 'uppercase'}}>Images & Descriptions</h5>
-            <div className='px-3'>
+        <div className='px-3'>
             {/* IMAGE 1/2 */}
             <Row >
             <Col xs={12} md={6} className={`px-0 mx-0 mb-5`}>
@@ -198,17 +199,19 @@ const Location = (props) => {
                     src={image1} alt="image" />
                     {/* <iframe title="Image1" src={image1}
                         className={appStyles.iframeIm} alt="Image"  /> */}
-                    <p className={`pr-5 mb-0 pb-0 float-right ${styles.FullsizeText }`}
-                    onClick={() => handleClickFull1() }>FULLSIZE</p> 
+                    {/* <p className={`pr-5 mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                    onClick={() => handleClickFull1() }>FULLSIZE</p>  */}
                 </div>
                 </>}
             </Col>
             </Row>
             <div className={`py-2 px-3 ${styles.TopCard2 }`}>
             {image1_description &&  <> 
-            <p className={`${styles.Role}`}>{image1_description} </p>
+            <p className={`${styles.Role} text-center`}>{image1_description} </p>
             </>}
             </div>
+            <p className={`pr-5 mb-0 pb-0 float-right ${styles.FullsizeText }`}
+                    onClick={() => handleClickFull1() }>FULLSIZE</p> 
             </Card.Body>
             </Card>
             </Col>  

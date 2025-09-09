@@ -13,6 +13,7 @@ import btnStyles from "../../../styles/Button.module.css";
 import { useHistory } from 'react-router-dom';
 import { useCrewInfoContext } from "../../../contexts/BaseCallContext";
 import CreateOnce from './CreateOnce';
+
 import InfoProduction from "./crewInfoByDept/InfoProduction";
 import InfoCamera from './crewInfoByDept/InfoCamera';
 import InfoCompany from './crewInfoByDept/InfoCompany';
@@ -24,8 +25,6 @@ import InfoElectric from './crewInfoByDept/InfoElectricGrip';
 import InfoArt from './crewInfoByDept/InfoArt';
 import InfoSound from './crewInfoByDept/InfoSound';
 import InfoStunts from './crewInfoByDept/InfoStunts';
-import TopBox from '../../../components/TopBox';
-import Important from '../info/Important';
 import InfoCater from './crewInfoByDept/InfoCater';
 import InfoTransport from './crewInfoByDept/InfoTransport';
 import InfoPostVFX from './crewInfoByDept/InfoPostVFX';
@@ -34,7 +33,10 @@ import InfoAdditional from './crewInfoByDept/InfoAdditional';
 import InfoTVStudio from './crewInfoByDept/InfoTVStudio';
 import InfoADPA from './crewInfoByDept/InfoADPA';
 import InfoMakeup from './crewInfoByDept/InfoMakeup';
+
 import ExtraCrew from '../info/ExtraCrew';
+import TopBox from '../../../components/TopBox';
+import Important from '../info/Important';
 
 const CrewInfo = () => {
   useRedirect();
@@ -104,13 +106,17 @@ const CrewInfo = () => {
               ) : (
                 <ExtraCrew  /> 
       ) }  
-      <p className={`${styles.SmallCrew} text-center`} 
-      style={{ fontStyle: 'italic'}}>
-      Add/Edit Callsheet Main Crew here
-      </p>
       {/* create/edit buttons textTransform: 'uppercase', */}
       {id ? (
         <div >
+        <Row>
+        <Col>
+        <p className={`${styles.SmallCrew} text-center`} 
+          style={{ fontStyle: 'italic'}}>
+          Add/Edit Callsheet Main Crew here
+          </p>
+        </Col>
+        </Row>
         <Row className='mt-2'>
         <Col className='text-center d-none d-md-block'>
         <Button onClick={() => history.push("crewinfo/edit/1")}

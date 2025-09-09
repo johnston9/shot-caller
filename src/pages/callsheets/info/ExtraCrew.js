@@ -30,7 +30,7 @@
          button at the bottom of each Department page. 
          </p>
          <p className="px-3 pt-2" >
-         4. They <span className={`${styles.Red}`}>MUST</span> be Registered in the Admin section on the Home page
+         4. They <span className={`${styles.Red}`}>MUST</span> be Registered in the "Manage Users" section on the Home page
          if they are needed to access the app.</p>
          </div>
          </Col>

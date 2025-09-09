@@ -342,7 +342,7 @@ const buttons = (
 );
     return (
         <div>
-            <TopBox title={`${role} Edit`} />
+            <TopBox title={`Edit ${role}`} />
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue} my-2`}
               onClick={() => history.goBack()}

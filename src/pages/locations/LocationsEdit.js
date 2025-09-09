@@ -304,7 +304,7 @@ const LocationsEdit = () => {
           <Container className= {`px-0 ${appStyles.Content} ${styles.Container}`} >
           <Form className="mt-3" onSubmit={handleSubmit}>
           <h5 className={`text-center mt-0 mb-2 py-0 ${styles.SubTitle }`}
-          style={{ textTransform: 'uppercase'}}>EDIT LOCATION - {name}</h5>
+          style={{ textTransform: 'uppercase'}}>EDIT {name}</h5>
           <Row>
           <Col md={3} ></Col>
           <Col md={6} className="d-flex justify-content-center">

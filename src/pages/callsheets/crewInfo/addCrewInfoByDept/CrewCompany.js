@@ -1,5 +1,5 @@
-/*Form component in the CrewInfoCreate and CrewInfoEdit Form
-  components to add/edit the Company info */
+/*Form component in the CrewInfoEdit Form
+  component to add/edit the Company info */
 import React, {useState } from "react";
 import { useRedirect } from '../../../../hooks/Redirect';
 import Form from "react-bootstrap/Form";
@@ -17,7 +17,7 @@ const CrewCompany = ({handleChange, handleChangeLogo, postData,
   setShow, imageInput1}) => {
 
   useRedirect();
-  // eslint-disable-next-line
+  // eslint-disable-next-line 
   const [errors, setErrors] = useState({});
 
   const { production_name, production_company, company_phone, company_email,
@@ -89,11 +89,12 @@ const CrewCompany = ({handleChange, handleChangeLogo, postData,
         {message}
     </Alert>
     ))}
-    {/* {buttons} */}
     </div>
     </Col>
     </Row>  
     <hr/>
+    {/* details */}
+    <div>
     {/* Production Name - Production Company */}
     <Row>
     <Col xs={12} md={6} className="d-flex justify-content-center p-0 p-lg-2">
@@ -267,7 +268,8 @@ const CrewCompany = ({handleChange, handleChangeLogo, postData,
           ))}
           </div>
       </Col>
-    </Row>    
+    </Row>  
+    </div>  
     </div>
     </div>
   )

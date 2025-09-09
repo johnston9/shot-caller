@@ -1,5 +1,5 @@
 /*Form component in the CrewInfoEdit Form
-  components to add/edit the Sound Department crew info */
+  component to add/edit the Sound Department crew info */
 import React, { useState } from "react";
 import { useRedirect } from '../../../../hooks/Redirect';
 import Form from "react-bootstrap/Form";
