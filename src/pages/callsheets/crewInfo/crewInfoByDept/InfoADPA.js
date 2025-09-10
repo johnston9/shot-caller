@@ -1,5 +1,5 @@
 /* Component in the CrewInfo page to display
-   the Camera Department crew info */
+   the AD and PA Departments crew info */
 import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

@@ -1,5 +1,5 @@
 /* Component in the CrewInfo page to display
-   the Post Department and Additional Crew Positions crew info */
+   the Additional Crew Positions crew info */
    import React, { useState } from 'react';
    import { useRedirect } from '../../../../hooks/Redirect';
    import Col from 'react-bootstrap/Col';

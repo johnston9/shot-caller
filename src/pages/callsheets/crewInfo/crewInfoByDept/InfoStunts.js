@@ -1,5 +1,5 @@
 /* Component in the CrewInfo page to display
-   the Stunts Department crew info */
+   the Stunts/SFX Department crew info */
 import React, { useState } from 'react';
 import { useRedirect } from '../../../../hooks/Redirect';
 import Col from 'react-bootstrap/Col';

@@ -127,12 +127,6 @@ const ExtraCrewInfo = (props) => {
     </h5>
     </Col>
     </Row>
-    {/* <Row>
-    <Col>
-            <span className={`pt-1 float-right ${styles.Close }`} 
-        onClick={() => setShow(false) } >Close</span>
-    </Col>
-    </Row> */}
     </div>
     <div className="d-block d-md-none mt-3">
     <Row>
@@ -159,10 +153,10 @@ const ExtraCrewInfo = (props) => {
       </div>
       </Col>
       </Row>
-      <Form className={`text-center`} onSubmit={handleSubmit}>
+      <Form className={`text-center px-3`} onSubmit={handleSubmit}>
       <Row className="mx-0 my-3">
-          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
-              <Form.Group controlId="position" className={`${styles.Width2} `}  >
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={6} sm={6} md={3} >
+              <Form.Group controlId="position" className={`${styles.Width95} `}  >
                   <Form.Label className={`${styles.BoldScene}`} >Position</Form.Label>
                   <Form.Control 
                   className={`${styles.Input}`} 
@@ -178,8 +172,8 @@ const ExtraCrewInfo = (props) => {
                 </Alert>
               ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3} >
-          <Form.Group controlId="name" className={`${styles.Width2} `}  >
+          <Col className="d-flex justify-content-center mx-0 px-0" xs={6} sm={6} md={3} >
+          <Form.Group controlId="name" className={`${styles.Width95} `}  >
                 <Form.Label className={`${styles.BoldScene}`} >Name</Form.Label>
                 <Form.Control 
                 className={`${styles.Input}`} 
@@ -195,8 +189,8 @@ const ExtraCrewInfo = (props) => {
               </Alert>
             ))}
           </Col>
-          <Col className=" d-flex justify-content-center mx-0 px-1" xs={12} sm={6} md={3}>
-          <Form.Group controlId="phone" className={`${styles.Width2} `}  >
+          <Col className=" d-flex justify-content-center mt-3 mt-md-0 mx-0 px-1" xs={6} sm={6} md={3}>
+          <Form.Group controlId="phone" className={`${styles.Width95} `}  >
               <Form.Label className={`${styles.BoldScene}`} >Phone</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
@@ -212,8 +206,8 @@ const ExtraCrewInfo = (props) => {
             </Alert>
           ))}
           </Col>
-          <Col className="d-flex justify-content-center mx-0 px-0" xs={12} sm={6} md={3}>
-          <Form.Group controlId="email" className={`${styles.Width2} `} >
+          <Col className="d-flex justify-content-center mt-3 mt-md-0 mx-0 px-0" xs={6} sm={6} md={3}>
+          <Form.Group controlId="email" className={`${styles.Width95} `} >
           <Form.Label className={`${styles.BoldScene}`} >Email</Form.Label>
               <Form.Control 
               className={`${styles.Input}`} 
@@ -233,20 +227,16 @@ const ExtraCrewInfo = (props) => {
         {buttons}
       </Form>
       </div>
-      {/* <Row>
-      <Col md={{span: 8, offset: 2}} >
-      <hr/>
-      </Col>
-      </Row> */}
       {/* crew */}
-      <div className="text-center">
+      {/* <div className="text-center">
       <Row>
       <Col>
       <div className="d-flex justify-content-center">
       </div>
       </Col>
       </Row>
-      </div>
+      </div> */}
+
       <Row>
       <Col>
       <div className="d-flex justify-content-center">

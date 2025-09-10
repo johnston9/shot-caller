@@ -1,5 +1,5 @@
 /* Component in the CrewInfo page to display
-   the Construction and Wrangling Department crew info */
+   the TV Studio crew info */
    import React, { useState } from 'react';
    import { useRedirect } from '../../../../hooks/Redirect';
    import Col from 'react-bootstrap/Col';

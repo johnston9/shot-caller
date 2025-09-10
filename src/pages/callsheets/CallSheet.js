@@ -449,8 +449,6 @@ const CallSheet = (props ) => {
          </Button> }
         </Col>
         </Row>
-        {/* MEDIUM */}
-        <div className='d-none d-md-block mt-2'>
         {!showSend ? (
               ""
           ) : (
@@ -461,6 +459,8 @@ const CallSheet = (props ) => {
               day1={day} 
               date1={date}/>  
             ) } 
+        {/* MEDIUM */}
+        <div className='d-none d-md-block mt-2'>
         <Row>
             <Col className={`mb-1 pl-3 text-center `} md={{span: 10, offset: 1}}>
                 <span className={` ${styles.MovieName}`} >{production_name}</span>
@@ -476,7 +476,8 @@ const CallSheet = (props ) => {
             <Col md={4} >
             <Row className='mb-1'>
               <Col xs={{span: 8, offset: 0}}>
-              <h5 className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{production_company} </h5>
+              <h5 className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>
+                {production_company} </h5>
               <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{company_address_line_1} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{company_address_line_2} </p>
               <p className={`mb-1 pl-0 ${styles.WhiteAquaPro}`}>{company_address_line_3} </p>
@@ -551,7 +552,8 @@ const CallSheet = (props ) => {
             weather_location={weather_location} />
             <Row>
                 <Col xs={6} >
-                <p className={`mb-1`} ><span className={`${styles.Bold}`}>Talent Call:</span > </p>
+                <p className={`mb-1`} ><span className={`${styles.Bold}`}>
+                  Talent Call:</span > </p>
                 <p className={`mb-1`} ><span className={`${styles.Bold}`}>First Shot:</span></p>
                 <p className={`mb-1`} ><span className={`${styles.Bold}`}>Breakfast:</span></p>
                 <p className={`mb-1`} ><span className={`${styles.Bold}`}>Lunch:</span></p>
