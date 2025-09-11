@@ -23,16 +23,18 @@ import { useCrewInfoContext } from "../../contexts/BaseCallContext";
 import AddCast from "./CallsheetAddCast";
 import SchedulePage from "./callsheetSchedule/SchedulePage";
 import AddBackGround from "./CallsheetAddBackGround";
+
+import AddCastingAD from './callsheetAddCrewTimes/AddCastingAD';
+import AddScriptCater from "./callsheetAddCrewTimes/AddScriptCater";
+import AddSoundTransport from './callsheetAddCrewTimes/AddSoundTransport';
+import AddPostAdditional from './callsheetAddCrewTimes/AddPostAdditional';
 import AddProduction from './callsheetAddCrewTimes/AddProduction';
 import AddCamera from './callsheetAddCrewTimes/AddCamera';
-import AddCastingAD from './callsheetAddCrewTimes/AddCastingAD';
 import AddLocations from './callsheetAddCrewTimes/AddLocations';
 import AddWardrobe from './callsheetAddCrewTimes/AddWardrobe';
-import AddScriptCater from "./callsheetAddCrewTimes/AddScriptCater";
 import AddElectricGrip from './callsheetAddCrewTimes/AddElectricGrip';
 import AddMakeup from './callsheetAddCrewTimes/AddMakeup';
 import AddArt from './callsheetAddCrewTimes/AddArt';
-import AddSoundTransport from './callsheetAddCrewTimes/AddSoundTransport';
 import AddStunts from './callsheetAddCrewTimes/AddStunts';
 import AddCater from './callsheetAddCrewTimes/AddCater';
 import AddADPA from './callsheetAddCrewTimes/AddADPA';
@@ -40,7 +42,7 @@ import AddTransport from './callsheetAddCrewTimes/AddTransport';
 import AddConWrang from './callsheetAddCrewTimes/AddConWrang';
 import AddTv from './callsheetAddCrewTimes/AddTv';
 import AddAddition from './callsheetAddCrewTimes/AddAddition';
-import AddPostAdditional from './callsheetAddCrewTimes/AddPostAdditional';
+
 import InformationEdit from "./info/InformationEdit";
 import InformationWeather from "./info/InformationWeather";
 import ImportantCrewCalls from "./info/ImportantCrewCalls";
@@ -2170,11 +2172,9 @@ const CallsheetEditPage = () => {
       <Row className="text-center">
       <Col xs={12} md={{span: 8, offset: 2 }} >
       <p className={`${styles.SmallSize } pt-2`}>
-      Add Cast and Background Calls here. These forms are seperate from the main 
+      Add/Edit Cast and Background Calls here. These forms are seperate from the main 
       Add/Edit Callsheet form below.
       </p>
-        <p className={`${styles.SmallSize }`}>Edit previously added Cast and BG from the Callsheet.
-        </p>
       </Col>
       </Row>
       {/* schedule button */}

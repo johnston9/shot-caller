@@ -1,5 +1,4 @@
-/* Form to add the Locations Department Calltimes to the Callsheet
-   From the Callsheet Create and Edit pages */
+/* Form to add the Locations Department Calltimes to the Edit page */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from 'react-bootstrap/Col';

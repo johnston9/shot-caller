@@ -110,13 +110,13 @@ const AddBackGround = ({id, setShow, dataDay, dataDate}) => {
 
     return (
     <div className={`my-3 `}>
-        <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
+    <div className={`mt-0 mb-2 text-center ${styles.SubTitle }`}>
       <span className={`float-right pt-2 ${styles.Close }`} onClick={() => setShow(false) } >Close</span> 
       <h5 className={`d-block d-md-none pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
       ADD BG/STANDINS</h5>
       <h5 className={`d-none d-md-block pl-5 mb-0 text-center py-1 ${styles.Bold }`} >
       ADD BACKGROUND/STANDINS</h5>
-      </div>
+    </div>
     <div className={`mb-3 ${styles.White }`}>
     <Form className="text-center" onSubmit={handleSubmit}>
             {/* qty call set scenes*/}

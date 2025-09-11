@@ -1,5 +1,4 @@
-/* Form to add the Post Department Crew Calltimes to the Callsheet
-   From the Callsheet Edit page */
+/* Form to add the Post Department Crew Calltimes to the Callsheet Edit page */
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from 'react-bootstrap/Col';
