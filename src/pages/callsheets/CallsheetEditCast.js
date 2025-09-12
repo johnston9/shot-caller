@@ -114,8 +114,8 @@ const EditCast = (props) => {
       <Row>
         <Col xs={12} md={{span: 10, offset: 1 }} >
         <h5 className={`text-center my-2 py-0  ${styles.SubTitle }`} >
-          Edit <span style={{fontStyle: 'italic'}}>{role}</span></h5> 
-      <Form className={`${styles.White} text-center`} onSubmit={handleSubmit}>
+        Edit <span style={{fontStyle: 'italic'}}>{role}</span></h5> 
+        <Form className={`${styles.White} text-center`} onSubmit={handleSubmit}>
         {/* number swf pickup call hmw on_set */}
         <Row className="mx-0 d-flex align-items-center pl-5">
           <Col className="d-flex justify-content-center ml-4 ml-sm-5 px-0 px-sm-3" xs={2}>

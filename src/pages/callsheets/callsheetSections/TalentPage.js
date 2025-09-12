@@ -18,35 +18,37 @@ const TalentPage = (props) => {
         <span className={`mt-3 pl-3 py-0 px-1 ${styles.SubTitleSpan }`} 
         style={{ textTransform: 'uppercase' }}>Talent</span></div>
         <hr className={`mb-2 pl-3 mt-0 pt-1 ${styles.Break5 }`}/>
-            <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  ${styles.TitleBox}`} >
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>#</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0 pl-2'>Role</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>Artist</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>PU</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
-                    <p className='mb-0'>Call</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>H/M/W</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                    <p className='mb-0'>Set</p>
-                </Col>
-                <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                <p className='mb-0'>SWF</p>                        
-                </Col>
-                <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
-                <p className='mb-0'>Info</p>
-                </Col>
-            </Row>
+
+        <Row style={{ textTransform: 'uppercase' }} className={`text-center mx-0  
+            ${styles.TitleBox}`} >
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>#</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0 pl-2'>Role</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0'>Artist</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>PU</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={2} md={2}>
+                <p className='mb-0'>Call</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>H/M/W</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+                <p className='mb-0'>Set</p>
+            </Col>
+            <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+            <p className='mb-0'>SWF</p>                        
+            </Col>
+            <Col className={`text-center mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
+            <p className='mb-0'>Info</p>
+            </Col>
+        </Row>
         </div>
         <div className='d-block d-md-none'>
             <div className={`mb-3 text-center ${styles.SubTitle }`}>
@@ -56,15 +58,9 @@ const TalentPage = (props) => {
             style={{ textTransform: 'uppercase'}} >Talent </h5>
             </div>
             <Row className='text-center mx-0 px-0' >
-                {/* <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={2}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>#</p>
-                </Col> */}
                 <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={5}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0  ${styles.TitleBox}`}>Role</p>
                 </Col>
-                {/* <Col className={` mx-0 px-0 ${styles.TitleBox2}`} xs={3}>
-                <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>Artist</p>
-                </Col> */}
                 <Col className={`mx-0 px-0 `} xs={2} md={2}>
                 <p style={{ textTransform: 'uppercase' }} className={`mb-0 text-center ${styles.TitleBox}`}>P/U</p>
                 </Col>

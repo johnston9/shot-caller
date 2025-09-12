@@ -13,7 +13,6 @@ import { useCharactersContext } from "../../contexts/Scene_chars_locs";
 import { Dropdown } from "react-bootstrap";
 import { toast } from 'react-toastify';
 import TalentPageAddCast from "./callsheetSections/TalentPageAddCast";
-import TalentPage from "./callsheetSections/TalentPage";
 
 const AddCast = ({id, setShow, dataDay, dataDate}) => {
     const [errors, setErrors] = useState({});

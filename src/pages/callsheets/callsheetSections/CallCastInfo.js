@@ -23,7 +23,7 @@ const CallCastInfo = (props) => {
           <p className={`mb-0 mx-0 py-2`}>{inst1}</p>   
           </div> 
           </Col>               
-      </Row>
+        </Row>
     </div>
   )
 }
