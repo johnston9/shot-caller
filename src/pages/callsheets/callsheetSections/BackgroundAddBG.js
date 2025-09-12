@@ -113,7 +113,7 @@ const BackgroundAddBG = (props) => {
                     I
                 </Button>
                 </Col>
-            </Row>
+        </Row>
             {/* info */}
             <Row>
                 <Col>

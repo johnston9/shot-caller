@@ -8,7 +8,7 @@ const BackgroundInfo = (props) => {
     const { scenes1, set1, costumes1 } = props
   return (
     <div>
-        <Row className='text-center px-3 mx-0'>
+      <Row className='text-center px-3 mx-0'>
           <Col className={`mx-0 px-0 `} xs={2}>
           <div className={` ${styles.TitleBox2}`}>
           <p style={{ textTransform: 'uppercase' }} 

@@ -269,6 +269,7 @@ const AddCast = ({id, setShow, dataDay, dataDate}) => {
       </Col>
       </Row>
       <hr/>
+      
       {/* number swf pickup call hmw on_set */}
       <Row className="mx-0 my-3">
         <Col className="d-flex justify-content-center mx-0 px-1" xs={3}>

@@ -679,7 +679,7 @@ const CallSheet = (props ) => {
         <h5 className={`my-1 pl-0 ${styles.WhiteAquaPro}`}>{production_company} </h5>
             <div className={`mt-1`}>
             {company_logo && <> 
-                <div className='px-0'>
+                <div className='px-5'>
                     <Image className={styles.LogoMo} src={company_logo} alt="logo image" height="200"  />
                     </div>
                     </>
