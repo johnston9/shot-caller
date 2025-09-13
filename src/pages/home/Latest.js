@@ -54,11 +54,22 @@ const Latest = (props) => {
                 {/* small */}
                 <div className='d-none d-sm-block'>
                 <Row >
+                  {/* mine */}
                 <Col xs={3} className="pl-3 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}/>
                 </Link>
                 </Col>
+                {/* theirs */}
+                  {/* <Col xs={3} className="pl-3 pr-0">
+                    <Link
+                      to={`/${localStorage.getItem(
+                        "projectSlug"
+                      )}/profiles/${profile_id}`}
+                    >
+                      <Avatar src={profile_image} height={45} />
+                    </Link>
+                  </Col> */}
                 <Col xs={9} className="pl-2 pr-0" >
                 <div className={`${styles.Content4} pl-2 ml-3`}>
                 <p>
@@ -76,11 +87,22 @@ const Latest = (props) => {
                 {/* mobile */}
                 <div className='d-sm-none'>
                 <Row className='pb-0 mb-0'>
+                  {/* mine */}
                 <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}  />
                 </Link>
                 </Col>
+                {/* theirs */}
+                {/* <Col className="d-flex align-items-center pt-2 pb-0" xs={2}>
+                    <Link
+                      to={`/${localStorage.getItem(
+                        "projectSlug"
+                      )}/profiles/${profile_id}`}
+                    >
+                      <Avatar src={profile_image} height={45} />
+                    </Link>
+                  </Col> */}
                 <Col xs={8} className="text-center" >
                 <p>
                 <span className=''>{name}</span>

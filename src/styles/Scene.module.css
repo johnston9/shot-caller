@@ -40,8 +40,8 @@
 .CardBox2 {
   margin-top: 20px;
   border: 1px solid rgb(140, 111, 25, 99%);
-  transition-timing-function: ease;
-  transition: border .5s, background-color .5s, transform .5s;
+  /* transition-timing-function: ease;
+  transition: border .5s, background-color .5s, transform .5s; */
   background-size: contain;
   /* height: 125px; */
 }
@@ -758,6 +758,10 @@ background: #ffffff;
   background-color: rgb(228, 245, 250);
   transition-timing-function: ease;
   transition: border .5s, background-color .5s, transform .5s;
+  margin-top: 20px;
+  border: 1px solid rgb(140, 111, 25, 99%);
+  background-size: contain;
+  height: 125px;
 }
 
 .Dept:hover {

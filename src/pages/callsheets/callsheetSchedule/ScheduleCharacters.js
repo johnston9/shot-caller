@@ -45,7 +45,7 @@ const ScheduleCharacters = ({scene_id, showSideBySide, style}) => {
             <div className='px-0 mx-3'>
             <Row >
             <Col className='px-0 mx-0' xs={2}>
-            <p className={`text-center ${styles.BoldTitle2}` }>#</p>
+            <p className={`text-center ${styles.BoldTitle2}`}>#</p>
             </Col>
             <Col className='px-0 mx-0' xs={7}>
             <p className={`text-center ${styles.BoldTitle2}` }>Role</p></Col>

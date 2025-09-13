@@ -1459,7 +1459,7 @@ const Scene = (props) => {
                         background: `url(${dep7})`,
                       }}
                       >
-                        <Row className='my-2'>
+                      <Row className='my-2'>
                       <Col>
                       <h5 className={`text-center ${styles.White2} mt-2`} >
                       MAKEUP
