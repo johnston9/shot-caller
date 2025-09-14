@@ -76,6 +76,7 @@ const DeptPostTop = (props) => {
           {/* small */}
           <div className='d-none d-sm-block'>
           <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
+            {/* mine */}
           <Col xs={3} className="pl-3 pr-0" >
           <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={45}/>
@@ -97,6 +98,7 @@ const DeptPostTop = (props) => {
           {/* mobile */}
           <div className='d-sm-none'>
           <Row className='pb-0 mb-0'>
+            {/* mine */}
           <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
           <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={45}  />

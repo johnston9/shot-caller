@@ -84,6 +84,7 @@ const DeptPost = (props) => {
           {/* small */}
           <div className='d-none d-sm-block'>
           <Row className='pt-1'>
+            {/* mine */}
           <Col xs={3} className="pl-3 pr-0" >
           <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={45}/>
@@ -166,13 +167,14 @@ const DeptPost = (props) => {
             </Col>                
           </Row>
           </Card.Body>
-              <Card.Body className="pt-2 px-md-5" >
-                    {title && <h5 style={{ fontStyle: 'italic' }}
-                     className="text-center">{title}</h5>}
-                    <hr className={`mt-2 mb-0`} />
-                    {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
-              </Card.Body>
-              <hr />
+          <Card.Body className="pt-2 px-md-5" >
+                {title && <h5 style={{ fontStyle: 'italic' }}
+                  className="text-center">{title}</h5>}
+                <hr className={`mt-2 mb-0`} />
+                {content && <Card.Text className={`${styles.Role}`}>{content}</Card.Text>}
+          </Card.Body>
+          <hr />
+
               {image1 || image2 || image3 || image4 || image5 ? (
               <h5 className={`text-center py-0 mx-5 my-3 ${styles.SubTitle }`}
               >IMAGES</h5>
@@ -191,8 +193,6 @@ const DeptPost = (props) => {
                     <div className='px-0 mb-0'>
                         <Image className={styles.ImagesIndex} 
                         src={image1} alt="image" onClick={() => handleClickFull1() } />
-                        {/* <iframe title="Image1" src={image1}
-                          className={appStyles.iframeIm} alt="Image"  /> */}
                           <p className={`text-center mb-0 pb-0 float-right ${styles.FullsizeText }`}
                         onClick={() => handleClickFull1() }>FULLSIZE</p> 
                     </div>
