@@ -249,7 +249,7 @@ function DeptPostEdit() {
             {image1 ? (
               <>
                 <figure>
-                  <Image className={appStyles.Image} src={image1} rounded />
+                  <Image className={appStyles.iframe} src={image1} rounded />
                 </figure>
                 <div>
                   <Form.Label

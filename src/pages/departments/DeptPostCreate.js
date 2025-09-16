@@ -425,9 +425,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 3</p>
-    <Container
-              className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-              >
+    <div className={`mt-3 p-0 d-flex flex-column justify-content-center`}>
           <Form.Group className="text-center" >
             {image3 ? (
               <>
@@ -469,15 +467,13 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               {message}
             </Alert>
           ))}
-      </Container>
+    </div>
     <hr className={` d-block d-md-none`}/>
     </Col>
     <Col md={6} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 4</p>
-    <Container
-              className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-              >
+    <div className={`mt-3 p-0 d-flex flex-column justify-content-center`}>
           <Form.Group className="text-center">
             {image4 ? (
               <>
@@ -519,7 +515,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               {message}
             </Alert>
           ))}
-    </Container>
+    </div>
     <hr className={` d-block d-md-none`}/>
     </Col>
     </Row>
@@ -529,9 +525,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
     <Col md={{span: 6, offset: 3}} className="text-center">
     <p className={`${styles.BoldScene} 
                 mb-0 text-center mx-3`} >Image 5</p>
-    <Container
-              className={`${appStyles.Content} ${styles.Container2} mt-3 p-0 d-flex flex-column justify-content-center`}
-              >
+    <div className={`mt-3 p-0 d-flex flex-column justify-content-center`}>
           <Form.Group className="text-center">
             {image5 ? (
               <>
@@ -573,7 +567,7 @@ function DeptPostCreate({deptGeneral="", setShow } ) {
               {message}
             </Alert>
           ))}
-      </Container>
+      </div>
     </Col>
     </Row>
     </div>
