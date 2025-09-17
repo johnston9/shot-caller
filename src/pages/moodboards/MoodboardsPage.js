@@ -73,7 +73,7 @@ const MoodboardsPage = ({sceneId="", number="", characterRole="", locationPlace=
               scene={number}
               title={characterRole}
               title4={locationPlace}
-              work="Moodboards"
+              work="Moodboards" 
               />
             <Button
                     className={`${btnStyles.Button} ${btnStyles.Blue} py-0 my-2`}

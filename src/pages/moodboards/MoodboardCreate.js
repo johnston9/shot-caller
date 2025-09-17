@@ -385,7 +385,7 @@ const buttons = (
                   <h5 className={`mt-1 py-1 text-center ${styles.SubTitleMood }`}
                   style={{ textTransform: 'uppercase'}}>
                   <span className={`${styles.Span100 }`} 
-                   style={{ fontStyle: 'italic'}}>Scene {number} - </span>Moodboard</h5>
+                   >Scene {number} - </span>Moodboard</h5>
                   <Row>
                   <Col xs={1} md={2}></Col>
                     <Col xs={10} md={8}>
@@ -399,14 +399,14 @@ const buttons = (
                     <>
                     <h5 className={`mt-1 py-1 text-center ${styles.SubTitleMood }`}
                     style={{ textTransform: 'uppercase'}}>
-                    <span style={{ fontStyle: 'italic'}} className={`${styles.Span100 }`} >
+                    <span className={`${styles.Span100 }`} >
                       {characterRole} - </span>Moodboard</h5>
                       </>
                   ) : locationPlace ? (
                     <>
                   <h5 className={`mt-1 py-1 text-center ${styles.SubTitleMood }`}
                   style={{ textTransform: 'uppercase'}}>
-                    <span style={{ fontStyle: 'italic'}} className={`${styles.Span100 }`} >
+                    <span className={`${styles.Span100 }`} >
                       {locationPlace} - </span>Moodboard</h5>
                     </>
                   ) : (
@@ -438,6 +438,7 @@ const buttons = (
                 </Row>
                 {textFields}
                 <hr/>
+                <div>
                 {/* image 1 2 */}
                 <Row className="d-flex align-items-center">
                 <Col xs={12} md={6} className={`pr-md-2`}>
@@ -681,6 +682,7 @@ const buttons = (
                 </Col>   
                 </Row>
                 <hr className="d-none d-md-block"/>
+                </div>
                 <Row>
                 <Col>
                     <Container className= {`${styles.Container} mt-3`} >{buttons} </Container>

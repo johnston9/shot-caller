@@ -150,7 +150,7 @@ const IndexCardsPage = () => {
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
                   type="text"
-                  className="mr-sm-2"
+                  className={`${styles.InputBar}`}
                   placeholder="Search by Card Number"
               />
               </Form>

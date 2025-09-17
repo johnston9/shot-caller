@@ -144,7 +144,7 @@ const IndexCardCreate = ({setShow, setHasOrder} ) => {
                   <div className= {` my-3`} >{buttons} </div>
                 </Col>
               </Row>
-          </Form>
+      </Form>
         </Col>
         </Row>
     </div>

@@ -45,10 +45,12 @@ const MoodboardTop = (props) => {
             <div>
             {/* card */}
             <Card className={ `py-0 mt-1 mb-0 ${styles.Card} `}>
+                {/* mine */}
             <Link to={`/moodshots/${id}`}>
             <Card.Header className={`py-0 px-0 ${styles.MoodTop}`}>
             <Row className={`d-flex align-items-center py-1 my-0 pl-3`}>
                 <Col xs={2} className="pl-0 pr-0" >
+                {/* mine */}
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={30}/>
                 </Link>
@@ -60,6 +62,7 @@ const MoodboardTop = (props) => {
                 </Col>
                 <Col xs={2}
                 className="d-flex align-items-center px-0 float-right" >
+                    {/* mine */}
                 {is_owner && (
                 <PostDropdown
                     handleEdit={handleEdit}

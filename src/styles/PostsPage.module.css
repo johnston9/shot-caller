@@ -1,9 +1,9 @@
-.SearchBar input {
+/* .SearchBar input {
     border-radius: 20px;
     color: #242a3d;
     padding-left: 40px;
     margin-bottom: 16px;
-}
+} */
 
 .Blueback {
   font-weight: 700;
@@ -37,11 +37,11 @@
   background: #ffffff;
   border: 1px solid #e0e3eb;
   box-sizing: border-box;
-  border-radius: 2px;
   color: #747686;
   padding: 0px 10px;
   height: 30px !important;
-  /* text-align: center; */
+  border-radius: 20px;
+  color: #242a3d;
 }
 
 @media screen and (max-width: 600px) {
