@@ -335,15 +335,6 @@ const buttons = (
                 >
                 Back
             </Button>
-            {/* <Button
-              className={`float-right py-0 my-2 ${btnStyles.Order} ${btnStyles.Button}`}
-              onClick={() => setShowInfo(showInfo => !showInfo)} >INFO
-            </Button>
-              {!showInfo ? (
-                  ""
-                      ) : (
-                        <Info  /> 
-                        ) }  */}
             {/* titles  */}
             <Row>
               <Col className="text-center" >
@@ -355,11 +346,11 @@ const buttons = (
               ) : (
                 <h5 className={`mt-1 mb-2 py-1 ${styles.SubTitleMood }`}
               style={{ textTransform: 'uppercase'}}>
-                {number && <span className={`${styles.Span100 }`} style={{ fontStyle: 'italic' }}>
+                {number && <span className={`${styles.Span100 }`}>
                   Scene {number} - </span> }
-              {location && <span className={`${styles.Span100 }`} style={{ fontStyle: 'italic' }}> 
+              {location && <span className={`${styles.Span100 }`}> 
                 {location} - </span> }
-              {character && <span className={`${styles.Span100 }`} style={{ fontStyle: 'italic' }}> 
+              {character && <span className={`${styles.Span100 }`}> 
                 {character} - </span> }
               Moodboard
               </h5>

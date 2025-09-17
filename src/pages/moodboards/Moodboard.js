@@ -92,6 +92,7 @@ const Moodboard = (props) => {
         <Col xs={12} md={3} className="my-1" >
         <div className='d-none d-md-block'>
         <Row >
+          {/* mine */}
         <Col xs={3} className="pl-0 pr-0" >
         <Link to={`/profiles/${profile_id}`}>
         <Avatar src={profile_image} height={45}/>
@@ -111,9 +112,10 @@ const Moodboard = (props) => {
         </Col>
         </Row>   
         </div>     
-        {/* mobile */}
+        {/* mobi le */}
         <div className='d-md-none'>
         <Row>
+          {/* mine */}
         <Col className='d-flex align-items-center' xs={2}>
         <Link to={`/profiles/${profile_id}`}>
         <Avatar src={profile_image} height={45}  />
@@ -168,6 +170,16 @@ const Moodboard = (props) => {
                   {character} </h5>}  
                 </Col>
                 </Row>
+              //   <Row className={`${styles.Content3} py-1 pl-2 mr-2 `}>
+              //   <Col xs={12} 
+              //   className={` ${styles.Content4} text-center py-sm-2`} >
+              //   <h5>
+              //   {number && <span className='mr-3' style={{ fontWeight: '700' }}>Scene {number} </span>}
+              //   {location && <span> {location}</span>}
+              //   {character && <span className='ml-3'> {character} </span>} 
+              //   </h5>
+              //   </Col>
+              //  </Row>
                 )}
             </Col>
         </Row>
@@ -212,6 +224,7 @@ const Moodboard = (props) => {
         </Row>
         <hr className='mt-0 mb-0'/>
         </div>
+
         {/* images */}
         <div className={`${styles.MoodBackImage}`}>
         <Row className="pt-5" >
