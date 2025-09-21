@@ -87,11 +87,13 @@ const Scene = (props) => {
       }
     }; 
 
-    /* Functions to get departments total posts  */
+    /* Functions to console.log("host nu 1") get departments total posts  */
 
         // CAMERA
         const camReqUnopen = posts.filter(post => post.departments === "camera" 
           && post.category === "requirements" && post.opened_id === null).length;
+
+          console.log(camReqUnopen)
 
         const camWorkUnopen = posts.filter(post => post.departments === "camera" 
           && post.category === "workspace" && post.opened_id === null).length;
@@ -345,7 +347,7 @@ const Scene = (props) => {
      * These values will be read in App.js and passed as a filter
        to The /dept/category Route */
     
-       const handleClickCameraReq = () => {
+      const handleClickCameraReq = () => {
         setSceneId(id); 
         setNumber(number);
         setDept("camera");

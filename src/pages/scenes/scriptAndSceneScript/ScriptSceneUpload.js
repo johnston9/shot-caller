@@ -81,7 +81,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
         <Col className="py-2 p-0 p-md-2" md={{span: 6, offset: 3} } >
         <h5 style={{ textTransform: 'uppercase'}} 
           className={`mt-1 mb-1 pl-3 ${styles.SubTitle } text-center`}>
-          Add Latest Script 
+          Add Latest Script
         </h5>
         <Form className={`${styles.Back} `} onSubmit={handleSubmit}>
         {/* script */}
@@ -98,10 +98,10 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
                   {fileName && <p className={`${styles.Italic}`} >File name: {fileName} </p> }
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Order} btn mt-3`}
+                      className={`${btnStyles.Button} ${btnStyles.Order} mt-3`}
                       htmlFor="script-upload"
                     >
-                      Click Here to Select Latest Script File
+                      Click here to Select Latest Script File
                     </Form.Label>
                   </div>
                 </>

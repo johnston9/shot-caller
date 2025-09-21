@@ -21,6 +21,7 @@ const ScenePage = () => {
             try {
                 const { data } = await axiosReq.get(`/posts/?scene=${id}`);
                 setPosts(data);
+                console.log(data)
             } catch (err) {
                 console.log(err);
               }
