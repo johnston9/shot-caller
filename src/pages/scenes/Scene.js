@@ -87,7 +87,7 @@ const Scene = (props) => {
       }
     }; 
 
-    /* Functions to console.log("host nu 1") get departments total posts  */
+    /* Functions to get departments total posts  */
 
         // CAMERA
         const camReqUnopen = posts.filter(post => post.departments === "camera" 
