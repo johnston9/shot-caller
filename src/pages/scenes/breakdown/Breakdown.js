@@ -35,7 +35,9 @@ const Breakdown = (props) => {
             </Button> 
             </Col>
             </Row>
-            {/* title */}
+            {/* title
+            {projectType !== "Television" && (
+            */}
             <Row>
                 <Col className='text-center' xs={{span: 10, offset: 1 }} 
                 md={{span: 6, offset: 3 }}>

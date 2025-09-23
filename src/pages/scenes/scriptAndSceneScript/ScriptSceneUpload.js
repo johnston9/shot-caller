@@ -85,9 +85,7 @@ const ScriptUpload = ({script1, number1, fileName1, id, setAddScript }) => {
         </h5>
         <Form className={`${styles.Back} `} onSubmit={handleSubmit}>
         {/* script */}
-        <div
-          className={` d-flex flex-column justify-content-center`}
-        >
+        <div className={` d-flex flex-column justify-content-center`}>
           <Form.Group className="text-center pt-3">
               {script ? (
                 <>  
