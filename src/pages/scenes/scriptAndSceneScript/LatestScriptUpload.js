@@ -98,7 +98,7 @@ const LatestScriptUpload = (
           Add Latest Script 
       </h5>
       <Form onSubmit={handleSubmit} className={`${styles.Back} `}>
-        {/* draft */}
+      {/* draft */}
       <Row >
       <Col className="d-flex justify-content-center p-0 p-md-2" 
         md={{span: 6, offset: 3 }}>
@@ -119,12 +119,6 @@ const LatestScriptUpload = (
         ))}
         </Col>
       </Row>
-      {/* hr */}
-      {/* <Row>
-      <Col xs={12}>
-      <hr className={`${styles.Break1} mt-3 mb-3 mb-0`}/>
-      </Col>
-      </Row> */}
       {/* changes notes */}
       <Row className="mt-3">
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={12} md={6}>

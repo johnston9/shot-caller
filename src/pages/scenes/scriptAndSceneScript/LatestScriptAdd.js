@@ -140,7 +140,7 @@ const LatestScriptAdd = ({setAddScript }) => {
       </Col>
       <Col className="d-flex justify-content-center p-0 p-md-2" xs={12} md={6}>
       <Form.Group controlId="notes" className={`${styles.Width2} `} >
-          <Form.Label className={`${styles.Bold}`} >NOTES</Form.Label>
+          <Form.Label className={`${styles.BoldScene}`} >NOTES</Form.Label>
           <Form.Control 
               className={styles.InputScene}
               type="text"

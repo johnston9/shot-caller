@@ -42,14 +42,14 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      {/*  home */}
+      {/*  h ome */}
       <NavLink
           className={`mt-1 pt-2  ${styles.NavLink} `}
           to="/home"
         >
           <i className="navicon fas fa-play"></i>Home
       </NavLink>
-      {/*  workspace */}
+      {/*  workspace */}  
       <NavDropdown 
           title={
             <span style={{ color: '#555555'}}>
