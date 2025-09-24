@@ -174,7 +174,7 @@ const NewCharacter = ({setShowAdd} ) => {
     );
 
     return (
-          <div className="px-3 mb-4" >
+          <div className="px-3 mb-4" > 
           <Row >
           <Col className={`px-0 ${styles.Back }`} xs={12} md={{span: 8, offset: 2 }} >
           <h5 className={`text-center mb-0 py-0 ${styles.SubTitle }`} >

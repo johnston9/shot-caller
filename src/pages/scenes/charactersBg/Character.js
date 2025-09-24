@@ -1,6 +1,6 @@
 /* Component in the CharacterBG Component to display the
    Character info
- * Contains the SceneCharacterEdit component */
+ * Contains the SceneCharacterEdit compone nt */
 import React from 'react'
 import styles from "../../../styles/Scene.module.css";
 import Col from 'react-bootstrap/Col';
