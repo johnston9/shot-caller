@@ -171,7 +171,7 @@ const Shot = (props) => {
                 </Button>
                 </div>
                 </Col>
-                <Col className={`${styles.TitleBox2} px-0 mx-0`} xs={1} md={1}>
+                <Col className={`${styles.TitleBox2} px-0 mx-0 `} xs={1} md={1}>
                     <p className={`${styles.Para2}`}>{shot_number}</p>
                 </Col>
                 <Col className={`px-0 mx-0 ${styles.TitleBox2}`} xs={2} md={2}>

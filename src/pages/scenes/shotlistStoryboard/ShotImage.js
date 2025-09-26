@@ -1,4 +1,4 @@
-/* Component in the Shot component to display 
+/* Component in the Shot component  to display 
    the image for each Shot */
 import React from 'react'
 import Col from 'react-bootstrap/Col';

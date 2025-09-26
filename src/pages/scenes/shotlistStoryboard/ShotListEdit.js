@@ -216,9 +216,10 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
 
     return (
       <div className={`mb-0 mt-3 ${styles.White }`} >
+        {/* mine */}
       <h5 className={`text-center ${styles.SubTitle }`}>Edit Shot {shot_number} </h5>
       <Form onSubmit={handleSubmit} className="text-center" >
-        {/* number */}
+        {/* number mine */}
         <Row className="mt-1" >
           <Col xs={{span: 4, offset: 4}} className="d-flex justify-content-center p-0 p-md-2">
           <Form.Group controlId="shot_number" className="mb-2" >
@@ -630,7 +631,7 @@ const ShotListEdit = ({handleMount, setShowEditForm, setShotNew, id}) => {
         </Row>
         {/* hr */}
         <hr className={`mt-2 mb-2`}/>
-        {/* image */}
+
         <Row className="mt-3">
         <Col className="text-center px-0" xs={12} md={{span: 6, offset: 3 } } >
           <p className={`${styles.BoldScene}`}>Sketch/Image</p>

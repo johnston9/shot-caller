@@ -272,7 +272,7 @@ const SceneScheduleCreate = ({xday, xdate, setShow, setHasOrder } ) => {
       </Col>
       </Row>
     </div>
-)
+  )
 
 const buttons = (  
     <div className="mt-4">
@@ -495,11 +495,11 @@ const buttons = (
         </div>
         </>
       )}
-          </>) : (
+            </>) : (
               <>
               <p></p>
               </>
-         ) }  
+            ) }  
           {/* old */}
           {/* {scenes.results.length ? (
               <>

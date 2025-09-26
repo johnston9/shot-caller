@@ -22,10 +22,11 @@ const ScheduleScene = (props) => {
     const [showOrder, setShowOrder] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const {sceneAll, scene_id, id, day_id, number, int_ext, start_time,
-           end_time, admin, location, filming_location, day_night, 
+           end_time, location, filming_location, day_night, 
            action, pages, callsheetshed, next, day_order_number, 
            // eslint-disable-next-line
            setHasOrder, style, showSideBySide, } = props
+    const admin = false;
         
     const handleEdit = () => {
         history.push(`/schedule/scenes/edit/${id}/`);

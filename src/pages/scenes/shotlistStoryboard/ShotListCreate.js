@@ -573,7 +573,7 @@ const ShotListCreate = ({setAddShot, scene, setShotlist }) => {
         </Row>
         {/* hr */}
         <hr className={`mt-2 mb-2`}/>
-        {/* image */}
+        {/* image mine*/}
         <Row >
         <Col className="text-center p-0 p-md-2" xs={12} md={{span: 6, offset: 3 } } >
           <p className={`${styles.BoldScene}`}>Sketch/Image</p>
