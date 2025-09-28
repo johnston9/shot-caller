@@ -26,7 +26,7 @@ const ScheduleScene = (props) => {
            action, pages, callsheetshed, next, day_order_number, 
            // eslint-disable-next-line
            setHasOrder, style, showSideBySide, } = props
-    const admin = false;
+    const admin = true;
         
     const handleEdit = () => {
         history.push(`/schedule/scenes/edit/${id}/`);
@@ -78,13 +78,20 @@ const ScheduleScene = (props) => {
                 ) : (
                     <>
                     <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
+                    <Button 
+                            className={`${btnStyles.Button} ${btnStyles.Shed} py-0 px-3`}>
+                            {day_order_number}
+                        </Button>
+                    </Col>
+                    
+                    <Col className={`mx-0 px-0  ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{start_time}</p>
                         <p className='mb-0'>{end_time}</p>
                     </Col>
                     <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={1} md={1}>
                         <p className='mb-0'>{number}</p>
                     </Col>
-                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={5} md={5}>
+                    <Col className={`mx-0 px-0 ${styles.TitleBox2}`} xs={4} md={4}>
                         <p style={{ textTransform: 'uppercase'}} className='mb-0'>{int_ext}. {location} - {day_night}</p>
                         <p className='mb-0'>{action}</p>
                     </Col>
