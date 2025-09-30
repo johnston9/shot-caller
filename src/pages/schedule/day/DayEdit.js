@@ -167,7 +167,7 @@ const DayEdit = () => {
         <div className="my-3">{buttons} </div>
         </Col>
     </Row>
-  </Form>
+    </Form>
   <Row>
   <Col sm={2}className="d-none d-sm-block" >
   </Col> 

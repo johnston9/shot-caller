@@ -1,4 +1,4 @@
-/* Form page to edit a Schedule Scene */
+/* Form page to edit a Schedule S cene */
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -276,7 +276,7 @@ const { scene_id, day_id, day_order_number, number,
       {/* hr */}
       <hr/>
       </div>
-  )
+    )
 
   const buttons = (
     <div className="text-center mt-4">    
@@ -302,7 +302,7 @@ const { scene_id, day_id, day_order_number, number,
                 Back
             </Button>
             <Form className={`pb-3 mt-5 mb-4 text-center `} onSubmit={handleSubmit}>
-            <h5 className={`text-center mb-0 pb-0 ${styles.SubTitle }`}>
+            <h5 className={`text-center mb-0 py-1 ${styles.SubTitle }`}>
               EDIT SCHEDULE SCENE {number} </h5>
             <div className={`px-3 ${styles.FormBox} `}>
             <Row>

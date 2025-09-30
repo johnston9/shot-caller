@@ -64,12 +64,12 @@ const DayCreateForm = () => {
   const buttons = (
     <div className="text-center mt-5">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 mr-3`}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-sm-5 ml-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
         Create
       </Button>
     </div>
@@ -107,7 +107,7 @@ const DayCreateForm = () => {
             </Alert>
         ))}
       </Col> 
-    <Col xs={6} className="pt-2 p-md-2 d-flex justify-content-center">
+    <Col xs={6} className="pt-2 p-md-2">
     <Form.Group controlId="date" className={`${styles.Width2} text-center`} >
               <Form.Label className={`${styles.BoldScene}`}>Date</Form.Label>
               <DatePicker 
@@ -123,7 +123,7 @@ const DayCreateForm = () => {
           ))}
     </Col> 
     </Row>
-    {/* buttons */}
+    {/* button s */}
     <Row>
         <Col>
         <div className="my-3" >{buttons} </div>
