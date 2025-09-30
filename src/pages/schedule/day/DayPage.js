@@ -27,7 +27,7 @@ const DayPage = () => {
     useRedirect();
     const [show, setShow] = useState(false);
     const { id } = useParams();
-    // eslint-disable-next-line
+    // eslint-disable-next-line 
     const [dayData, setDayData] = useState({ results: [] });
     const [dayScenes, setDayScenes] = useState({ results: [] });
     const [callsheet, setCallsheet] = useState({ results: [] });

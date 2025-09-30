@@ -124,13 +124,13 @@ const SchedOrder = (props ) => {
           <Col xs={12}>
           <div className="text-center pb-2 mt-3 mt-md-5">    
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-4`}
+              className={`${btnStyles.Button} ${btnStyles.Blue} mr-3 px-3 px-md-5`}
               onClick={() => setShowOrder(false)}
             >
               Cancel
             </Button>
-            <Button className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 px-4`} type="submit">
-              Reorder
+            <Button className={`${btnStyles.Button} ${btnStyles.Blue} ml-3 px-s px-md-5`} type="submit">
+              Submit
             </Button>
           </div>
           </Col>

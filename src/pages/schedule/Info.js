@@ -8,7 +8,7 @@ const Info = () => {
   return (
     <div>
         <Row className='mb-3'>
-            <Col className={`text-center px-3 pt-1 ${styles.SubTitle2 }`} md={{span: 10, offset: 1 }}>
+            <Col className={`text-center px-3 pt-1 ${styles.SubTitle6 }`} md={{span: 10, offset: 1 }}>
             <p>
             View all the Shooting Days below or use the Calender or Search to find a
             specific Day. Click on the day to view the Stripboard.

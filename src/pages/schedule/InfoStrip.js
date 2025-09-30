@@ -8,7 +8,7 @@ const InfoStrip = () => {
   return (
     <div>
         <Row className='mb-3'>
-            <Col className={`text-center px-3 pt-1 ${styles.SubTitle2 }`} md={{span: 10, offset: 1 }}>
+            <Col className={`text-center px-3 pt-1 ${styles.SubTitle6 }`} md={{span: 10, offset: 1 }}>
             <p>Find the Stripboard containing all the Shooting Day's Scenes below.
             Click on the "Cast" tab to view the Scene's Cast and Background. Click on the 
             "Info" tab to view Departments or new Scheduling info and the "Filming Location".

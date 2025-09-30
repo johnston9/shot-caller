@@ -1,5 +1,5 @@
 /* Component in the ScheduleDays page to display each day's data
-   and the number and location of each of that day's schedule scenes
+   and the number and location of each of  that day's schedule scenes
  * When clicked on it opens that Day's DayPage */
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
