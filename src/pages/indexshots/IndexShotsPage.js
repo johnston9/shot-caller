@@ -135,7 +135,7 @@ const IndexShotsPage = () => {
                   ) : (
                     <Info2  /> 
                     ) } 
-          {/* Add Index Shot */}
+          {/* Add  Index Shot */}
           <Row className='mt-0'>
             <Col className="text-center">
             <Button onClick={() => setShow(show => !show)} 

@@ -55,12 +55,12 @@ const SeriesCreateForm = ({setSeries, setShow}) => {
   const buttons = (
     <div className="text-center">    
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 mr-3 `}
+        className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 mr-3 `}
         onClick={() => setShow(false)}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-md-5 ml-3`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue} px-3 px-md-5 ml-3`} type="submit">
         Create
       </Button>
     </div>
