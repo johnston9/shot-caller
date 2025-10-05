@@ -100,7 +100,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
       <Form className={`text-center mb-4 px-3 ${styles.Back }`} 
       onSubmit={handleSubmit}>
       <Row className="mt-3">
-          <Col xs={12} md={6}  >
+          <Col xs={12} md={6} >
           <div className="d-flex justify-content-center">
           <Form.Group controlId="number" className={`${styles.Width} text-center`}  >
                   <Form.Label className={`${styles.BoldScene} `} >Number</Form.Label>
@@ -118,7 +118,7 @@ const IndexShotCreate = ({setShow, setHasOrder, seriesName} ) => {
                 </Alert>
               ))}
           </div>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center mt-3">
           <Form.Group controlId="content" className={`${styles.Width90}  text-center`} >
                         <Form.Label className={`${styles.BoldScene}`} >Content</Form.Label>
                         <Form.Control 

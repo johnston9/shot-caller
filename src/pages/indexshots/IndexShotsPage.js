@@ -117,6 +117,18 @@ const IndexShotsPage = () => {
           setIndexShots({results: end});
         };
 
+        const handleTopAdd = () => {
+        setShow(show => !show)
+        setShow2(false)
+        console.log("top ")
+        };
+
+        const handleBotAdd = () => {
+        setShow2(show => !show)
+        setShow(false)
+        console.log("bottom ")
+        };
+
     return (
         <div >
           <TopBox title={seriesName} />
@@ -138,7 +150,9 @@ const IndexShotsPage = () => {
           {/* Add  Index Shot */}
           <Row className='mt-0'>
             <Col className="text-center">
-            <Button onClick={() => setShow(show => !show)} 
+            <Button 
+            // onClick={() => setShow(show => !show)} 
+            onClick={() => handleTopAdd() }
               className={`${btnStyles.Button} ${btnStyles.Wide2} ${btnStyles.Bright} `}>
               Add Index Shot</Button>
             </Col>
@@ -231,7 +245,9 @@ const IndexShotsPage = () => {
             {/* add */}
             <Row className='my-3'>
               <Col className="text-center">
-                <Button onClick={() => setShow2(show2 => !show2)} 
+                <Button 
+                onClick={() => handleBotAdd() }
+                // onClick={() => setShow2(show2 => !show2)} 
                   className={`${btnStyles.Button} ${btnStyles.Wide2} 
                   ${btnStyles.Bright} px-5`}>
                   Add Card

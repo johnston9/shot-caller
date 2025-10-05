@@ -1,5 +1,4 @@
-/* Page to display each the IndexShot full size  
- * Contains the IndexShotEdit component */ 
+/* Page to display each the IndexShot full size   */ 
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
