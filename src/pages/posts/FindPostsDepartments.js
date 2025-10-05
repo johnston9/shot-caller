@@ -594,30 +594,6 @@ const Departments = () => {
       history.push(`/departments`);
     };
 
-    //    const handleClickCameraReq = () => {
-    //     setDept("camera");
-    //     setCategory("requirements");
-    //     history.push(`/departments`);  
-    //   };
-
-    //   const handleClickCameraWor = () => {
-    //     setDept("camera");
-    //     setCategory("workspace");
-    //     history.push(`/departments`); 
-    //   };
-
-    //   const handleClickCameraFin = () => {
-    //     setDept("camera");
-    //     setCategory("finals");
-    //     history.push(`/departments`);  
-    //   };
-
-    // const handleClickCamera = (category) => {
-    //   setDept("camera");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-    // };
-
     const handleClickSound = (category) => {
       setDept("sound");
       setCategory(category);
@@ -645,67 +621,6 @@ const Departments = () => {
       history.push(`/departments`);
 
     };
-
-    // const handleClickMakeup = (category) => {
-    //   setDept("make-up");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickWardrobe = (category) => {
-    //   setDept("wardrobe");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickCasting = (category) => {
-    //   setDept("casting");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickPost = (category) => {
-    //   setDept("post");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickProduction = (category) => {
-    //   setDept("production");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickStunts = (category) => {
-    //   setDept("stunts");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickElectric = (category) => {
-    //   setDept("electric");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-
-    // };
-
-    // const handleClickUni = (category) => {
-    //   setDept("universal");
-    //   setCategory(category);
-    //   history.push(`/departments`);
-    // };
-
-    // const handleClickUniversal = () => {
-    //   setDept("universal");
-    //   setCategory("");
-    //   history.push(`/departments`);
-    // };
 
     return (
         <div>

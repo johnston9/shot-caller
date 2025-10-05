@@ -1,4 +1,4 @@
-/* Component in IndexShot to edit an IndexShot */
+/* Component in IndexShot to edit an Inde xShot */
 import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
