@@ -200,9 +200,9 @@ function PostEditForm() {
     <h5 style={{ textTransform: 'uppercase'}} 
           className={`mt-1 mb-1 py-1 ${styles.SubTitle } text-center`}>
           EDIT POST
-      </h5>
+    </h5>
     <Form className="mt-3 px-3" onSubmit={handleSubmit}>
-          {/* title content*/}
+        {/* title content*/}
         <Row>
         <Col xs={12} md={6} >
         <Form.Group controlId="title" className={`${styles.Width95} text-center`} >

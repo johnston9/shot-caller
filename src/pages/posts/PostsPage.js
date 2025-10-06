@@ -90,7 +90,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
       ) : ("")} 
       {liked ? (
         <TopBox work="Liked Posts"/>
-      ) : ("")}
+      ) : ("")} 
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue} py-0 mt-1`}
             onClick={() => history.goBack()}
