@@ -134,7 +134,7 @@ function PostsPage({ feed, archived, allposts, liked, message, sceneId="", numbe
           <Col >
         {hasLoaded ? (
           <>
-            {posts.results.length ? (
+            {posts.results?.length ? (
               <InfiniteScroll
               className="pb-5"
               children={posts.results.map((post) => (

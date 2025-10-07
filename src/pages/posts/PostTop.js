@@ -50,8 +50,8 @@ const PostTop = (props) => {
         try {
           await axiosRes.delete(`/posts/${id}/`);
           toast.success(`Post Deleted`);
-          history.goBack();
-          // fetchPosts(); 
+          // history.goBack();
+          fetchPosts(); 
         } catch (err) {
           console.log(err);
         }
@@ -162,11 +162,23 @@ const PostTop = (props) => {
                 {/* small */}
                 <div className='d-none d-md-block'>
                 <Row className={`d-flex align-items-center pt-0 pb-0 my-0`}>
+                {/* mine */}
                 <Col xs={3} className="pl-3 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}/>
                 </Link>
                 </Col>
+                {/* theirs */}
+                {/* <Col xs={3} className="pl-3 pr-0">
+                    <Link
+                      to={`/${localStorage.getItem(
+                        "projectSlug"
+                      )}/profiles/${profile_id}`}
+                    >
+                      <Avatar src={profile_image} height={45} />
+                    </Link>
+                </Col> */}
+
                 <Col xs={9} className="pl-2 pr-0" >
                 <div className={`${styles.Content4} pl-2 ml-2`}>
                 <p>{name}
@@ -180,21 +192,34 @@ const PostTop = (props) => {
                 </Col>
                 </Row>   
                 </div>     
-                {/* mobile className={`${styles.Blueback}`} */}
+                {/* mobile */}
                 <div className='d-md-none'>
                 <Row className='pb-0 mb-0'>
+                  {/* mine */}
                 <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}  />
                 </Link>
                 </Col>
+                {/* theirs */}
+                {/* <Col className="d-flex align-items-center pt-2 pb-0" xs={2}>
+                    <Link
+                      to={`/${localStorage.getItem(
+                        "projectSlug"
+                      )}/profiles/${profile_id}`}
+                    >
+                      <Avatar src={profile_image} height={45} />
+                    </Link>
+                </Col> */}
+
+
                 <Col xs={8} className="text-center" >
                 <p className={`${styles.Italic}`}>{name}
                 </p>
                 <p className=''>
                 {position}
                 </p>
-                {/* icons */}
+                {/* icons mine */}
                 <div className='px-0 py-0 mt-2 d-flex align-items-center justify-content-center' >
                 {/* star uses archive_id from drf */}
                 {archive_id ? (
@@ -268,7 +293,183 @@ const PostTop = (props) => {
                   <span className='pt-0'>{comments_count}</span>
                   <span className='ml-3 ml-md-5'> {updated_at}</span>
                 </div>
+                {/* icons theirs for mobile*/}
+                {/* <div className="px-0 py-0 d-flex align-items-center justify-content-center">
+                {archive_id ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>UnStar</Tooltip>}
+                  >
+                    <span onClick={handleUnStar}>
+                      <i className={`fas fa-star ${styles.Star}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : currentUser ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Star</Tooltip>}
+                  >
+                    <span onClick={handleStar}>
+                      <i className={`far fa-star ${styles.Star}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in please</Tooltip>}
+                  >
+                    <i className={`far fa-star ${styles.Star}`} />
+                  </OverlayTrigger>
+                )}
+                {Loggedinuserid === owner || is_owner === true ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip>You can't like your own post!</Tooltip>
+                    }
+                  >
+                    <i className={`far fa-heart ${styles.Heart}`} />
+                  </OverlayTrigger>
+                ) : like_id ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Unlike</Tooltip>}
+                  >
+                    <span onClick={handleUnlike}>
+                      <i className={`fas fa-heart ${styles.Heart}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : currentUser ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Like</Tooltip>}
+                  >
+                    <span onClick={handleLike}>
+                      <i className={`far fa-heart ${styles.Heart}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in please</Tooltip>}
+                  >
+                    <i className={`far fa-heart ${styles.Heart}`} />
+                  </OverlayTrigger>
+                )}
+                <span className="pt-0">{likes_count}</span>
+                {showActionMenu && (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Comments</Tooltip>}
+                  >
+                    <Link
+                      to={`/${localStorage.getItem(
+                        "projectSlug"
+                      )}/posts/${id}${
+                        epi && project && episodeTitle && number
+                          ? `?episode=${epi}&project=${project}&episodeTitle=${episodeTitle}&sceneID=${number}`
+                          : ""
+                      }`}
+                    >
+                      <i
+                        className={`far fa-comments ${styles.Comment}`}
+                      />
+                    </Link>
+                  </OverlayTrigger>
+                )}
+                {showActionMenu && (
+                  <span className="pt-0">{comments_count}</span>
+                )}
+                <span className="ml-5"> {updated_at}</span>
+                </div> */}
+                {/* icons theirs for desktop */}
+                {/* <div className="px-0 py-0 d-flex align-items-center justify-content-center">
+                {archive_id ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>UnStar</Tooltip>}
+                  >
+                    <span onClick={handleUnStar}>
+                      <i className={`fas fa-star ${styles.Star}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : currentUser ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Star</Tooltip>}
+                  >
+                    <span onClick={handleStar}>
+                      <i className={`far fa-star ${styles.Star}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in please</Tooltip>}
+                  >
+                    <i className={`far fa-star ${styles.Star}`} />
+                  </OverlayTrigger>
+                )}
+                {Loggedinuserid === owner || is_owner === true ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip>You can't like your own post!</Tooltip>
+                    }
+                  >
+                    <i className={`far fa-heart ${styles.Heart}`} />
+                  </OverlayTrigger>
+                ) : like_id ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Unlike</Tooltip>}
+                  >
+                    <span onClick={handleUnlike}>
+                      <i className={`fas fa-heart ${styles.Heart}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : currentUser ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Like</Tooltip>}
+                  >
+                    <span onClick={handleLike}>
+                      <i className={`far fa-heart ${styles.Heart}`} />
+                    </span>
+                  </OverlayTrigger>
+                ) : (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in please</Tooltip>}
+                  >
+                    <i className={`far fa-heart ${styles.Heart}`} />
+                  </OverlayTrigger>
+                )}
+                <span className="pt-0">{likes_count}</span>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Comments</Tooltip>}
+                  >
+                    <Link
+                      to={`/${localStorage.getItem(
+                        "projectSlug"
+                      )}/posts/${id}${
+                        epi && project && episodeTitle && number
+                          ? `?episode=${epi}&project=${project}&episodeTitle=${episodeTitle}&sceneID=${number}`
+                          : ""
+                      }`}
+                    >
+                      <i
+                        className={`far fa-comments ${styles.Comment}`}
+                      />
+                    </Link>
+                  </OverlayTrigger>
+                  <span className="pt-0">{comments_count}</span>
+                </div> */}
+
+
                 </Col>
+                {/* mine */}
                 <Col xs={2} 
                 className="d-flex align-items-center" >
                 {is_owner && (
@@ -278,12 +479,34 @@ const PostTop = (props) => {
                 />
                 ) } 
                 </Col>
+                {/* theirs */}
+                {/* <Col xs={2} className="d-flex align-items-center">
+                  {showActionMenu && (
+                    <PostDropdown
+                      handleEdit={handleEdit}
+                      handleDelete={handleDelete}
+                    />
+                  )}
+                </Col> */}
+
+
                 </Row> 
                 </div> 
             </Col> 
             {/* Dept and Title small and mobile */}
             <Col xs={12} md={6} className="my-1" >
+            {/* mine */}
             <Link to={`/posts/${id}`}>
+            {/* theirs */}
+            {/* <Link
+              to={`/${localStorage.getItem("projectSlug")}/posts/${id}${
+                epi && project && episodeTitle && number
+                  ? `?episode=${epi}&project=${project}&episodeTitle=${episodeTitle}&sceneID=${number}`
+                  : ""
+              }`}
+            > */}
+
+
             {opened_id ? (
               <Row className={`${styles.ContentOpened} py-0 my-0 mr-1 ml-1`}>
               <Col xs={12} 
@@ -292,6 +515,16 @@ const PostTop = (props) => {
               <Col className='px-0 mx-0' xs={4}>
               {number && <p style={{ fontWeight: '700' }}>Scene {number} </p>}
               </Col>
+              {/* theirs */}
+              {/* <Col className="px-0 mx-0" xs={4}>
+                {episode_number && (
+                  <p style={{ fontWeight: "700" }}>
+                    Episode {episode_number}{" "}
+                  </p>
+                )}
+              </Col> */}
+
+
               <Col className='px-0 mx-0' xs={4}>
                 {departments && <p style={{ textTransform: 'capitalize'}}>
                   {departments}</p>}
@@ -323,6 +556,16 @@ const PostTop = (props) => {
                 <Col className='px-0 mx-0' xs={4}>
                 {number && <p style={{ fontWeight: '700' }}>Scene {number} </p>}
                 </Col>
+                {/* theirs */}
+                {/* <Col className="px-0 mx-0" xs={4}>
+                  {episode_number && (
+                    <p style={{ fontWeight: "700" }}>
+                      Episode {episode_number}{" "}
+                    </p>
+                  )}
+                </Col> */}
+
+
                 <Col className='px-0 mx-0' xs={4}>
                   {departments && <p style={{ textTransform: 'capitalize'}}>
                     {departments}</p>}
@@ -355,7 +598,7 @@ const PostTop = (props) => {
             <Col className="pl-0 pr-0" sm={9} >
             <p className={ `text-center  ${styles.Date}`}>{updated_at}
             </p>
-            {/* icons */}
+            {/* icons mine */}
             <div className='px-0 py-0 d-flex align-items-center justify-content-center' >
                 {/* star uses archive_id from drf */}
                 {archive_id ? (
@@ -427,8 +670,95 @@ const PostTop = (props) => {
                   </Link>
                   </OverlayTrigger>
                   <span className='pt-0'>{comments_count}</span>
-                </div>
+            </div>
+            {/* icons theirs */}
+            {/* <div className="px-0 py-0 d-flex align-items-center justify-content-center">
+            {archive_id ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>UnStar</Tooltip>}
+              >
+                <span onClick={handleUnStar}>
+                  <i className={`fas fa-star ${styles.Star}`} />
+                </span>
+              </OverlayTrigger>
+            ) : currentUser ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Star</Tooltip>}
+              >
+                <span onClick={handleStar}>
+                  <i className={`far fa-star ${styles.Star}`} />
+                </span>
+              </OverlayTrigger>
+            ) : (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in please</Tooltip>}
+              >
+                <i className={`far fa-star ${styles.Star}`} />
+              </OverlayTrigger>
+            )}
+            {Loggedinuserid === owner || is_owner === true ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={
+                  <Tooltip>You can't like your own post!</Tooltip>
+                }
+              >
+                <i className={`far fa-heart ${styles.Heart}`} />
+              </OverlayTrigger>
+            ) : like_id ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Unlike</Tooltip>}
+              >
+                <span onClick={handleUnlike}>
+                  <i className={`fas fa-heart ${styles.Heart}`} />
+                </span>
+              </OverlayTrigger>
+            ) : currentUser ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Like</Tooltip>}
+              >
+                <span onClick={handleLike}>
+                  <i className={`far fa-heart ${styles.Heart}`} />
+                </span>
+              </OverlayTrigger>
+            ) : (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in please</Tooltip>}
+              >
+                <i className={`far fa-heart ${styles.Heart}`} />
+              </OverlayTrigger>
+            )}
+            <span className="pt-0">{likes_count}</span>
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Comments</Tooltip>}
+              >
+                <Link
+                  to={`/${localStorage.getItem(
+                    "projectSlug"
+                  )}/posts/${id}${
+                    epi && project && episodeTitle && number
+                      ? `?episode=${epi}&project=${project}&episodeTitle=${episodeTitle}&sceneID=${number}`
+                      : ""
+                  }`}
+                >
+                  <i
+                    className={`far fa-comments ${styles.Comment}`}
+                  />
+                </Link>
+              </OverlayTrigger>
+              <span className="pt-0">{comments_count}</span>
+            </div> */}
+
+
             </Col>
+            {/* mine */}
             <Col sm={3}
             className="d-flex align-items-center px-0 float-right" >
             {is_owner && (
@@ -438,6 +768,17 @@ const PostTop = (props) => {
             />
             ) } 
             </Col>
+            {/* theirs */}
+            {/* <Col sm={3} className="d-flex align-items-center px-0 float-right">
+              {showActionMenu && (
+                <PostDropdown
+                  handleEdit={handleEdit}
+                  handleDelete={handleDelete}
+                />
+              )}
+            </Col> */}
+
+
             </Row>   
             </div>     
             </Col>
