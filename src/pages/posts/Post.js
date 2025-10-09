@@ -198,11 +198,22 @@ const Post = (props) => {
                 {/* small */}
                 <div className='d-none d-md-block'>
                 <Row >
+                  {/* mine */}
                 <Col xs={3} className="pl-3 pr-0" >
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}/>
                 </Link>
                 </Col>
+                {/* theirs */}
+                {/* <Col xs={3} className="pl-3 pr-0">
+                <Link
+                  to={`/${localStorage.getItem(
+                    "projectSlug"
+                  )}/profiles/${profile_id}`}
+                >
+                  <Avatar src={profile_image} height={45} />
+                </Link>
+                </Col> */}
                 <Col xs={9} className="pl-2 pr-0" >
                 <div className={`${styles.Content4} pl-2 ml-2`}>
                 <p>
@@ -212,19 +223,28 @@ const Post = (props) => {
                 <span className='ml-0 '>{position}</span>
                 </p>
                 </div>
-                <div>
-                </div>
                 </Col>
                 </Row>   
                 </div>     
                 {/* mobile */}
                 <div className='d-md-none'>
                 <Row className='pb-0 mb-0'>
+                {/* mine */}
                 <Col className='d-flex align-items-center pt-2 pb-0' xs={2}>
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={45}  />
                 </Link>
                 </Col>
+                {/* theirs */}
+                {/* <Col className="d-flex align-items-center pt-2 pb-0" xs={2}>
+                    <Link
+                      to={`/${localStorage.getItem(
+                        "projectSlug"
+                      )}/profiles/${profile_id}`}
+                    >
+                      <Avatar src={profile_image} height={45} />
+                    </Link>
+                </Col> */}
                 <Col xs={8} className="text-center" >
                 <p>
                 <span className=''>{name}</span>
@@ -232,7 +252,7 @@ const Post = (props) => {
                 <p className=''>
                 {position}
                 </p>
-                {/* icons */}
+                {/* icons mine mo */}
                 <div className='px-0 py-0 mt-2 d-flex align-items-center justify-content-center' >
                 {archive_id ? (
                       <OverlayTrigger
@@ -305,7 +325,93 @@ const Post = (props) => {
                   <span className='pt-0'>{comments_count}</span>
                   <span className='ml-3 ml-md-5'> {updated_at}</span>
                 </div>
+                {/* icons theirs mobile with block*/}
+                {/* <div className="px-0 py-0 d-flex align-items-center justify-content-center">
+                  {archive_id ? (
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>UnStar</Tooltip>}
+                    >
+                      <span onClick={handleUnStar}>
+                        <i className={`fas fa-star ${styles.Star}`} />
+                      </span>
+                    </OverlayTrigger>
+                  ) : currentUser ? (
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Star</Tooltip>}
+                    >
+                      <span onClick={handleStar}>
+                        <i className={`far fa-star ${styles.Star}`} />
+                      </span>
+                    </OverlayTrigger>
+                  ) : (
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Log in please</Tooltip>}
+                    >
+                      <i className={`far fa-star ${styles.Star}`} />
+                    </OverlayTrigger>
+                  )}
+                  {is_owner ? (
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={
+                        <Tooltip>You can't like your own post!</Tooltip>
+                      }
+                    >
+                      <i className={`far fa-heart ${styles.Heart}`} />
+                    </OverlayTrigger>
+                  ) : like_id ? (
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Unlike</Tooltip>}
+                    >
+                      <span onClick={handleUnlike}>
+                        <i className={`fas fa-heart ${styles.Heart}`} />
+                      </span>
+                    </OverlayTrigger>
+                  ) : currentUser ? (
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Like</Tooltip>}
+                    >
+                      <span onClick={handleLike}>
+                        <i className={`far fa-heart ${styles.Heart}`} />
+                      </span>
+                    </OverlayTrigger>
+                  ) : (
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip>Log in please</Tooltip>}
+                    >
+                      <i className={`far fa-heart ${styles.Heart}`} />
+                    </OverlayTrigger>
+                  )}
+                  <span className="pt-0">{likes_count}</span>
+                  {showActionMenu && (
+                    <>
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Comments</Tooltip>}
+                      >
+                        <Link
+                          to={`/${localStorage.getItem(
+                            "projectSlug"
+                          )}/posts/${id}`}
+                        >
+                          <i
+                            className={`far fa-comments ${styles.Comment}`}
+                          />
+                        </Link>
+                      </OverlayTrigger>
+                      <span className="pt-0">{comments_count}</span>
+                    </>
+                  )}
+                  <span className="ml-5"> {updated_at}</span>
+                </div> */}
                 </Col>
+                {/* mine */}
                 <Col xs={2} 
                 className="d-flex align-items-center" >
                 {is_owner && (
@@ -318,6 +424,7 @@ const Post = (props) => {
                 </Row> 
                 </div> 
             </Col> 
+            {/* scene dept categ */}
             <Col xs={12} md={6} className={`${styles.ContentOpened} mb-2 mb-md-1 mt-1`} >
             <OverlayTrigger
                className="px-0 mx-0"
@@ -341,7 +448,6 @@ const Post = (props) => {
                 </Col>
                 <Col xs={1} className='px-0' >
                       <i className="navicon fas fa-play"></i>
-                      {/* </OverlayTrigger> */}
                 </Col>
               </Row>
               </Col>
@@ -356,7 +462,7 @@ const Post = (props) => {
             <Col className="pl-0 pr-0" sm={9} >
             <p className={ `text-center  ${styles.Date}`}>{updated_at}
             </p>
-            {/* icons */}
+            {/* icons mine */}
             <div className='px-0 py-0 d-flex align-items-center justify-content-center' >
                 {archive_id ? (
                       <OverlayTrigger
@@ -427,8 +533,9 @@ const Post = (props) => {
                   </Link>
                   </OverlayTrigger>
                   <span className='pt-0'>{comments_count}</span>
-                </div>
+            </div>
             </Col>
+            {/* mine */}
             <Col sm={3}
             className="d-flex align-items-center px-0 float-right" >
             {is_owner && (
@@ -443,6 +550,8 @@ const Post = (props) => {
             </Col>
             </Row>
             </Card.Body>
+
+
               {/* title */}
               <Card.Body className='pt-2 px-md-5'>
                   {title && <h5 style={{ fontStyle: 'italic' }}

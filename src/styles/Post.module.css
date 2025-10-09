@@ -3,6 +3,10 @@
   color: #fff;
 }
 
+.SmallI {
+  font-size: .7rem;
+}
+
 .ImagesIndex {
     object-fit: contain;
     height: 300px;

@@ -281,7 +281,7 @@ const PostTop = (props) => {
                       <i className={`far fa-heart ${styles.Heart}`} />
                       </OverlayTrigger>
                   )}
-                  <span className='pt-0'>{likes_count}</span>
+                  <span className={`${styles.SmallI}`}>{likes_count}</span>
                   <OverlayTrigger
                       placement="top"
                       overlay={<Tooltip>Comments</Tooltip>}
@@ -290,7 +290,7 @@ const PostTop = (props) => {
                   <i className={`far fa-comments ${styles.Comment}`} />
                   </Link>
                   </OverlayTrigger>
-                  <span className='pt-0'>{comments_count}</span>
+                  <span className={`${styles.SmallI}`}>{comments_count}</span>
                   <span className='ml-3 ml-md-5'> {updated_at}</span>
                 </div>
                 {/* icons theirs for mobile*/}
