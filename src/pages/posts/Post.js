@@ -81,7 +81,7 @@ const Post = (props) => {
       };
 
       const handleGoToScene = () => {
-        /* Function to go to the post's Scene page 
+        /* Fu nction to go to the post's Scene page 
            and it's Department Category
         *  Sets the Contexts SceneId, Number, Category 
            ans Dept to be read in App.js*/
@@ -550,8 +550,6 @@ const Post = (props) => {
             </Col>
             </Row>
             </Card.Body>
-
-
               {/* title */}
               <Card.Body className='pt-2 px-md-5'>
                   {title && <h5 style={{ fontStyle: 'italic' }}
