@@ -563,7 +563,7 @@ const Post = (props) => {
               >IMAGES</h5>
               ) : ("") }
               <Row className='mb-2 px-0'>
-                  {/* image 1/2 */}
+                  {/* i mage 1/2 */}
                   <Col xs={12} md={6}  >
                   {image1 && <>
                   <Card className='mx-0 mx-md-5' >
